@@ -131,7 +131,8 @@ void RealPass::Remove(QString file, bool isDir) {
           // (a pinentry, an agent) does not freeze the window; finished()
           // judges it by what is left staged, since `pass git` exits 0
           // whatever git did.
-          m_linkCommits.enqueue(rel);
+          m_linkCommits.enqueue(
+              {rel, m_settings.passExecutable, exec.environment()});
           executePass(
               GIT_COMMIT,
               commit + QStringList{"-m", "Remove for " + rel + " using QtPass.",
@@ -166,12 +167,15 @@ void RealPass::finished(int id, int exitCode, const QString &out,
   Pass::finished(id, exitCode, out, err);
 }
 
-void RealPass::finishLinkCommit(const QString &rel, const QString &out,
+void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,
                                 const QString &err) {
+  // In the store the commit ran in, which a profile switch meanwhile does
+  // not change.
+  const QString &rel = commit.rel;
   QString staged;
   const bool committed =
       Executor::executeBlocking(
-          exec.environment(), m_settings.passExecutable,
+          commit.environ, commit.passExecutable,
           {"git", "diff", "--cached", "--name-only", "--", rel}, &staged,
           nullptr) == 0 &&
       staged.trimmed().isEmpty();

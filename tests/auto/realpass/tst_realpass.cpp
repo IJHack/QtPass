@@ -804,6 +804,23 @@ void tst_realpass::linkedFolderRemovalSaysWhenTheCommitFails() {
   QSignalSpy criticalSpy(pass.data(), &Pass::critical);
   QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
   pass->Remove(QStringLiteral("shared/"), true);
+  // Another profile while the commit runs: its pass says nothing is
+  // staged, and must not be the one asked.
+  const QString otherPass =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-other-profile"));
+  {
+    QFile f(otherPass);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\ncat > /dev/null\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto removeOther = qScopeGuard([&] { QFile::remove(otherPass); });
+  AppSettings other = withGit;
+  other.passExecutable = otherPass;
+  pass->init(other);
+  pass->updateEnv();
   // The commit is queued: wait for its verdict.
   QVERIFY(criticalSpy.count() == 1 || criticalSpy.wait(5000));
   QCOMPARE(criticalSpy.count(), 1);
