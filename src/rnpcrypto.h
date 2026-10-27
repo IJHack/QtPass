@@ -135,9 +135,9 @@ public:
    * fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8
    * hex digits) key ID with or without 0x, an e-mail address (the key with
    * a user ID of that address, any case; stricter than gpg's substring
-   * search; a user ID with no <address> must then be just the address, so
-   * "alice@example.org (work)" is not found by its address), or a whole user
-   * ID or part of one. Revoked user IDs, and ones without a valid
+   * search; a user ID with no address in angle brackets must then be just the
+   * address, so "alice@example.org (work)" is not found by its address), or a
+   * whole user ID or part of one. Revoked user IDs, and ones without a valid
    * self-signature, name nothing. Each must name exactly one key that can
    * encrypt (not expired or revoked, with a usable encryption key); an
    * empty recipient is an error.
