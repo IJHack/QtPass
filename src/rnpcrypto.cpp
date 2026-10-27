@@ -901,19 +901,23 @@ auto RnpCrypto::protectKey(const QString &fingerprint,
   rnp_locate_key(m_ffi, "fingerprint",
                  fingerprint.toUpper().toLatin1().constData(), &handle);
   const Key key(handle);
-  bool anyProtected = false;
+  // Every part that is still unprotected gets the passphrase; the ones that
+  // are protected keep theirs. So a key left half protected (an imported
+  // one, or a run that failed part-way) can be finished, rather than only
+  // saved with consent, unprotected parts and all.
+  int unprotected = 0;
   const int parts =
       handle == nullptr
           ? 0
-          : forEachSecretPart(handle, [&anyProtected](rnp_key_handle_t part) {
-              anyProtected = anyProtected || isProtected(part);
+          : forEachSecretPart(handle, [&unprotected](rnp_key_handle_t part) {
+              unprotected += isProtected(part) ? 0 : 1;
               return true;
             });
   if (parts == 0) {
     setError(error, QStringLiteral("No secret key for %1").arg(fingerprint));
     return false;
   }
-  if (anyProtected) {
+  if (unprotected == 0) {
     setError(error,
              QStringLiteral("The secret key %1 is protected already; its "
                             "passphrase is not changed here")
@@ -923,6 +927,9 @@ auto RnpCrypto::protectKey(const QString &fingerprint,
   QByteArray secret = passphrase.toUtf8();
   bool ok = true;
   forEachSecretPart(handle, [&](rnp_key_handle_t part) {
+    if (isProtected(part)) {
+      return true;
+    }
     // RNP's defaults: AES-256 and a SHA-256 S2K with its iteration count.
     const rnp_result_t result =
         rnp_key_protect(part, secret.constData(), nullptr, nullptr, nullptr, 0);

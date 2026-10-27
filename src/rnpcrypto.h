@@ -220,12 +220,13 @@ public:
    * @brief Protects the secret parts of a key with @p passphrase.
    *
    * For a key imported without protection: saveKeyring() keeps secret keys
-   * on disk only protected by their own passphrase. A key that is protected
-   * already is left alone, and that is an error (changing a passphrase is
-   * not done here).
+   * on disk only protected by their own passphrase. Only the parts not yet
+   * protected get @p passphrase, so a key left half protected can be
+   * finished; the others keep theirs (no passphrase is changed here). A key
+   * all of whose secret parts are protected already is an error.
    * @param fingerprint The primary key's fingerprint.
    * @param passphrase The passphrase; not empty.
-   * @param error Set to the reason when nothing was protected.
+   * @param error Set to the reason when not every part ended up protected.
    * @return Whether every secret part of the key here is now protected.
    */
   auto protectKey(const QString &fingerprint, const QString &passphrase,
