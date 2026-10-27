@@ -9,12 +9,12 @@
         <translation>පසුරු පුවරුවට පිටපත් කරන ලදී</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <location filename="../src/clipboardmanager.cpp" line="118"/>
         <source>Clipboard cleared</source>
         <translation>පිටපත්පුවරුව හිස් කරන ලදී</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <location filename="../src/clipboardmanager.cpp" line="119"/>
         <source>Clipboard not cleared</source>
         <translation>පිටපත්පුවරුව හිස් කරන්නට නොහැකි විය</translation>
     </message>
@@ -175,9 +175,8 @@
         <translation type="obsolete">Ctrl+M මගින් ප්‍රධාන කවුළුවෙන්ද එය පෙන්වීම හෝ සැඟවීම කළ හැකිය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search (pass grep)</source>
-        <translation>අන්තර්ගත සෙවුම සක්‍රීය කරන්න (pass grep)</translation>
+        <translation type="vanished">අන්තර්ගත සෙවුම සක්‍රීය කරන්න (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="226"/>
@@ -230,56 +229,66 @@
         <translation type="unfinished">සැකිලි ක්ෂේත්‍ර සහ සෑම &quot;යතුර: අගය&quot; පේළියක්ම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1036"/>
+        <location filename="../src/configdialog.ui" line="960"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="963"/>
+        <source>Use a Git repository in a folder above the store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1046"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
         <translation type="unfinished">PATH තුළ gpg, git, pwgen සහ pass සොයන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1100"/>
-        <location filename="../src/configdialog.ui" line="1103"/>
+        <location filename="../src/configdialog.ui" line="1110"/>
+        <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1113"/>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1123"/>
+        <location filename="../src/configdialog.ui" line="1126"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1132"/>
+        <location filename="../src/configdialog.ui" line="1142"/>
         <source>Generate</source>
         <translation>ජනනය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1135"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
         <source>Generate GPG key pair</source>
         <translation>GPG යතුරු යුගලය ජනනය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1168"/>
-        <location filename="../src/configdialog.ui" line="1171"/>
+        <location filename="../src/configdialog.ui" line="1178"/>
+        <location filename="../src/configdialog.ui" line="1181"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1208"/>
-        <location filename="../src/configdialog.ui" line="1211"/>
+        <location filename="../src/configdialog.ui" line="1218"/>
+        <location filename="../src/configdialog.ui" line="1221"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass ක්‍රියාත්මක ගොනුව තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1241"/>
+        <location filename="../src/configdialog.ui" line="1251"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK අභිබවා යෑම:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1484"/>
+        <location filename="../src/configdialog.ui" line="1494"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
         <translation type="unfinished">මෙම පැතිකඩ සඳහා ගිත් සැකසුම්; එය සක්‍රිය වන අතරතුර ඒවා ගිත් පිටුවේ සැකසුම් ප්‍රතිස්ථාපනය කරයි</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1530"/>
+        <location filename="../src/configdialog.ui" line="1540"/>
         <source>Active store</source>
         <translation type="unfinished">සක්‍රිය ගබඩාව</translation>
     </message>
@@ -288,42 +297,42 @@
         <translation type="vanished">SSH_AUTH_SOCK අභිබවා යෑම සඳහා විකල්ප මාර්ගය. gpgconf මගින් ස්වයංක්‍රීය විමර්ශනය සඳහා හිස්ව තබන්න (ගැටළුව #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1254"/>
+        <location filename="../src/configdialog.ui" line="1264"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf මගින් ස්වයංක්‍රීය විමර්ශනය)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1328"/>
+        <location filename="../src/configdialog.ui" line="1338"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">මෙම QtPass දන්නා මුරපද ගබඩා; සංස්කරණය කිරීමට එකක් තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1343"/>
+        <location filename="../src/configdialog.ui" line="1353"/>
         <source>Add a profile</source>
         <translation type="unfinished">පැතිකඩක් එක් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1361"/>
+        <location filename="../src/configdialog.ui" line="1371"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">තෝරාගත් පැතිකඩ අමතක කරන්න; ගබඩාව තැටියේ එලෙසම පවතී</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1407"/>
+        <location filename="../src/configdialog.ui" line="1417"/>
         <source>Profile</source>
         <translation type="unfinished">පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1423"/>
+        <location filename="../src/configdialog.ui" line="1433"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>පැතිකඩ නම, මෙම වින්‍යාස පැතිකඩ හඳුනා ගැනීමට භාවිතා කරයි</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1442"/>
+        <location filename="../src/configdialog.ui" line="1452"/>
         <source>Path to the password store directory</source>
         <translation>මුරපද ගබඩා නාමාවලියට යන මාර්ගය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1464"/>
+        <location filename="../src/configdialog.ui" line="1474"/>
         <source>Signing key</source>
         <translation>අත්සන් කිරීමේ යතුර</translation>
     </message>
@@ -332,12 +341,12 @@
         <translation type="vanished">අත්සන් කිරීමේ යතුර</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1474"/>
+        <location filename="../src/configdialog.ui" line="1484"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>විකල්පය: අඛණ්ඩතාව තහවුරු කිරීම සඳහා .gpg-id ගොනු අත්සන් කිරීමට GPG යතුරක්. පරිශීලක ලැයිස්තුව වෙනස් කිරීමෙන් ආරක්ෂා කිරීමට අවශ්‍ය නොවේ නම් මෙය හිස්ව තබන්න.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1477"/>
+        <location filename="../src/configdialog.ui" line="1487"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">pass ට අවශ්‍ය පරිදි, අක්ෂර 40 ක සම්පූර්ණ යතුරු ඇඟිලි සලකුණ</translation>
     </message>
@@ -388,13 +397,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="946"/>
-        <location filename="../src/configdialog.ui" line="1494"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Automatically push</source>
         <translation>ස්වයංක්‍රීයව තල්ලු කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
-        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1511"/>
         <source>Automatically pull</source>
         <translation>ස්වයංක්‍රීයව ලබා ගන්න</translation>
     </message>
@@ -435,7 +444,7 @@
         <translation>වැඩසටහන්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1022"/>
+        <location filename="../src/configdialog.ui" line="1032"/>
         <source>Select password storage program:</source>
         <translation>මුරපද ගබඩා කිරීමේ වැඩසටහන තෝරන්න:</translation>
     </message>
@@ -444,17 +453,17 @@
         <translation type="vanished">Nati&amp;ve git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1057"/>
+        <location filename="../src/configdialog.ui" line="1067"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Pass භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1081"/>
+        <location filename="../src/configdialog.ui" line="1091"/>
         <source>Native</source>
         <translation>සැඳිහිටු</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1087"/>
+        <location filename="../src/configdialog.ui" line="1097"/>
         <source>git</source>
         <translation>git</translation>
     </message>
@@ -463,22 +472,22 @@
         <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1142"/>
+        <location filename="../src/configdialog.ui" line="1152"/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1158"/>
+        <location filename="../src/configdialog.ui" line="1168"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1184"/>
+        <location filename="../src/configdialog.ui" line="1194"/>
         <source>Pass</source>
         <translation>පසු</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1195"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>pass</source>
         <translation>පසු</translation>
     </message>
@@ -512,6 +521,11 @@
         <translation type="unfinished">QR කේත පෙන්වන්න (qrencode)</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="223"/>
+        <source>Enable content search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
@@ -539,27 +553,27 @@
         <translation type="unfinished">මුරපද ජනනය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1244"/>
+        <location filename="../src/configdialog.ui" line="1254"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">SSH_AUTH_SOCK අභිබවා යෑම සඳහා විකල්ප මාර්ගය. gpgconf මගින් ස්වයංක්‍රීය විමර්ශනය සඳහා හිස්ව තබන්න.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1423"/>
         <source>Name</source>
         <translation>නම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1430"/>
+        <location filename="../src/configdialog.ui" line="1440"/>
         <source>Path</source>
         <translation>මාර්ගය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1346"/>
+        <location filename="../src/configdialog.ui" line="1356"/>
         <source>Add</source>
         <translation>එකතු කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1364"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Delete</source>
         <translation>මකන්න</translation>
     </message>
@@ -598,7 +612,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1570"/>
+        <location filename="../src/configdialog.ui" line="1580"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; අනුවාදය </translation>
     </message>
@@ -622,43 +636,43 @@ email</translation>
         <translation>අවශ්‍ය විට පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="276"/>
-        <location filename="../src/configdialog.cpp" line="281"/>
+        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="285"/>
         <source>This field is required</source>
         <translation>මෙම ක්ෂේත්‍රය අවශ්‍ය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="278"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">වෙනත් පැතිකඩකට දැනටමත් මෙම නම ඇත</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="287"/>
+        <location filename="../src/configdialog.cpp" line="291"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">සම්පූර්ණ යතුරු ඇඟිලි සලකුණු පමණි (ෂඩ්දශමය අක්ෂර 40 ක් හෝ 64 ක්), හිස්තැන් මගින් වෙන් කර</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="333"/>
+        <location filename="../src/configdialog.cpp" line="337"/>
         <source>The path does not exist.</source>
         <translation>මාර්ගය නොපවතී.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>The path is not readable.</source>
         <translation>මාර්ගය කියවිය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="343"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>මාර්ගය Unix වසම් සොකට් එකක් නොවේ.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
+        <location filename="../src/configdialog.cpp" line="347"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>විභව වලංගු නොවන SSH_AUTH_SOCK අභිබවා යෑම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="344"/>
+        <location filename="../src/configdialog.cpp" line="348"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -671,37 +685,37 @@ The value will still be saved as entered.</source>
 අගය ඇතුළත් කළ පරිදි තවමත් සුරැකෙනු ඇත.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>Create profile directory?</source>
         <translation>පැතිකඩ නාමාවලිය සෑදීමට අවශ්‍යද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="583"/>
+        <location filename="../src/configdialog.cpp" line="588"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>ඔබට %1 හි මුරපද ගබඩාවක් සාදීමට අවශ්‍යද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="590"/>
+        <location filename="../src/configdialog.cpp" line="595"/>
         <source>Could not create profile directory: %1</source>
         <translation>පැතිකඩ නාමාවලිය සෑදිය නොහැකි විය: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="610"/>
+        <location filename="../src/configdialog.cpp" line="615"/>
         <source>Select recipients for %1</source>
         <translation>%1 සඳහා ලබන්නන් තෝරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="619"/>
+        <location filename="../src/configdialog.cpp" line="624"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">%1 පැතිකඩ ආරම්භ කළ නොහැකි විය</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="622"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Profile %1</source>
         <translation type="unfinished">පැතිකඩ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="650"/>
         <source>New profile</source>
         <translation>නව පැතිකඩ</translation>
     </message>
@@ -710,12 +724,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">නව පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="666"/>
+        <location filename="../src/configdialog.cpp" line="671"/>
         <source>No profile selected</source>
         <translation>කිසිදු පැතිකඩක් තෝරා නැත</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="667"/>
+        <location filename="../src/configdialog.cpp" line="672"/>
         <source>No profile selected to delete</source>
         <translation>මකා දැමීමට පැතිකඩක් තෝරා නොමැත</translation>
     </message>
@@ -736,7 +750,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 හි මුරපද ගබඩාවක් සෑදීමට ඔබ කැමතිද?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="589"/>
+        <location filename="../src/configdialog.cpp" line="594"/>
         <source>Error</source>
         <translation>දෝෂය</translation>
     </message>
@@ -758,27 +772,27 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 ෆෝල්ඩරය මුරපද ගබඩාවක් ලෙස නොපෙනේ හෝ තවම ආරම්භ කර නොමැත.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="882"/>
+        <location filename="../src/configdialog.cpp" line="891"/>
         <source>New profile: %1 at %2</source>
         <translation>%2 හි %1 නව පැතිකඩ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="884"/>
+        <location filename="../src/configdialog.cpp" line="893"/>
         <source>Profile: %1 at %2</source>
         <translation>පැතිකඩ: %2 හි %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="887"/>
+        <location filename="../src/configdialog.cpp" line="896"/>
         <source>Fill in all required fields</source>
         <translation>අවශ්‍ය සියලු ක්ෂේත්‍ර පුරවන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1223"/>
+        <location filename="../src/configdialog.ui" line="1233"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1039"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>Autodetect</source>
         <translation>ස්වයංක්‍රීය හඳුනාගැනීම</translation>
     </message>
@@ -810,7 +824,7 @@ The value will still be saved as entered.</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="925"/>
-        <location filename="../src/configdialog.ui" line="1487"/>
+        <location filename="../src/configdialog.ui" line="1497"/>
         <source>Use Git</source>
         <translation>Git භාවිතා කරන්න</translation>
     </message>
@@ -823,7 +837,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">pass-otp දිගුව භාවිතා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>ස්වදේශීය (&amp;V) Git/GPG</translation>
     </message>
@@ -834,12 +848,12 @@ The value will still be saved as entered.</source>
         <translation>ගිත්</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1106"/>
-        <location filename="../src/configdialog.ui" line="1119"/>
-        <location filename="../src/configdialog.ui" line="1174"/>
-        <location filename="../src/configdialog.ui" line="1214"/>
-        <location filename="../src/configdialog.ui" line="1455"/>
-        <location filename="../src/configdialog.ui" line="1546"/>
+        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1129"/>
+        <location filename="../src/configdialog.ui" line="1184"/>
+        <location filename="../src/configdialog.ui" line="1224"/>
+        <location filename="../src/configdialog.ui" line="1465"/>
+        <location filename="../src/configdialog.ui" line="1556"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -852,10 +866,10 @@ The value will still be saved as entered.</source>
         <translation type="vanished">ප්‍රතිබදු කණ්ඩායම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1449"/>
-        <location filename="../src/configdialog.ui" line="1452"/>
-        <location filename="../src/configdialog.ui" line="1540"/>
-        <location filename="../src/configdialog.ui" line="1543"/>
+        <location filename="../src/configdialog.ui" line="1459"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
+        <location filename="../src/configdialog.ui" line="1550"/>
+        <location filename="../src/configdialog.ui" line="1553"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">මුරපද ගබඩා ෆෝල්ඩරය තෝරන්න</translation>
     </message>
@@ -940,17 +954,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="190"/>
+        <location filename="../src/executor.cpp" line="207"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">මෙම විධානය සඳහා ක්‍රියාත්මක ගොනුවක් වින්‍යාස කර නොමැත</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="219"/>
+        <location filename="../src/executor.cpp" line="236"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">%1 ආරම්භ කළ නොහැකි විය</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="413"/>
+        <location filename="../src/executor.cpp" line="430"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 බිඳ වැටුණි හෝ බලහත්කාරයෙන් නවත්වන ලදී</translation>
     </message>
@@ -1029,19 +1043,30 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <location filename="../src/fieldlabel.cpp" line="17"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">මෙම ක්ෂේත්‍රය නැවත නම් කිරීමට දෙවරක් ක්ලික් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <location filename="../src/fieldlabel.cpp" line="30"/>
         <source>Rename field…</source>
         <translation type="unfinished">ක්ෂේත්‍රය නැවත නම් කරන්න…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <location filename="../src/fieldlabel.cpp" line="31"/>
         <source>Remove field</source>
         <translation type="unfinished">ක්ෂේත්‍රය ඉවත් කරන්න</translation>
+    </message>
+</context>
+<context>
+    <name>FileContent</name>
+    <message numerus="yes">
+        <location filename="../src/filecontent.cpp" line="87"/>
+        <source>… %n more line(s) not shown</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -1232,127 +1257,127 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
-        <location filename="../src/imitatepass.cpp" line="575"/>
+        <location filename="../src/imitatepass.cpp" line="417"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 සඳහා අත්සන අවලංගුය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="197"/>
-        <location filename="../src/imitatepass.cpp" line="848"/>
+        <location filename="../src/imitatepass.cpp" line="204"/>
+        <location filename="../src/imitatepass.cpp" line="867"/>
         <source>Can not edit</source>
         <translation>සංස්කරණය කළ නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="220"/>
+        <location filename="../src/imitatepass.cpp" line="227"/>
         <source>Cannot add</source>
         <translation type="unfinished">එක් කළ නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="220"/>
+        <location filename="../src/imitatepass.cpp" line="227"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 දැනටමත් පවතී.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
-        <location filename="../src/imitatepass.cpp" line="849"/>
+        <location filename="../src/imitatepass.cpp" line="205"/>
+        <location filename="../src/imitatepass.cpp" line="868"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>භාවිතා කිරීමට සංකේතාංකන යතුර කියවිය නොහැකි විය, .gpg-id ගොනුව අස්ථානගත වී ඇත හෝ අවලංගුය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="167"/>
+        <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුව පරීක්ෂා කළ නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="168"/>
+        <location filename="../src/imitatepass.cpp" line="175"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 %2 ඉවත් කළේද යන්න කිව නොහැකි බැවින් කිසිවක් සංකේතනය නොකෙරිණි.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="174"/>
+        <location filename="../src/imitatepass.cpp" line="181"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුව නැත</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
+        <location filename="../src/imitatepass.cpp" line="182"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">අත්සන් කළ ලබන්නන් ලැයිස්තුව %1 නැත, නැතහොත් එය සාමාන්‍ය ගොනුවක් නොවේ. QtPass ඒ වෙනුවට මව් ෆෝල්ඩරයක ලැයිස්තුව භාවිතා නොකරයි: එම ලැයිස්තුව මෙම ෆෝල්ඩරය සඳහා අත්සන් කර නැත. එම නමින් සබැඳියක් ඇත්නම්, එය ඉවත් කරන්න. ඉන්පසු එම ෆෝල්ඩරය සඳහා පරිශීලකයින් විවෘත කර එහි ලබන්නන් සුරකින්න; එය අලුත් ලැයිස්තුවක් ලියා අත්සන් කරයි.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="232"/>
+        <location filename="../src/imitatepass.cpp" line="239"/>
         <source>Cannot write</source>
         <translation type="unfinished">ලිවිය නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="233"/>
+        <location filename="../src/imitatepass.cpp" line="240"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">තාවකාලික නාමාවලියක් සෑදිය නොහැක: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="401"/>
+        <location filename="../src/imitatepass.cpp" line="408"/>
         <source>GPG signing failed!</source>
         <translation>GPG අත්සන් කිරීම අසාර්ථකයි!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="403"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1.</source>
         <translation>%1 අත්සන් කිරීම අසාර්ථක විය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="520"/>
+        <location filename="../src/imitatepass.cpp" line="526"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">ලබන්නන් වෙනස් නොකෙරිණි</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="521"/>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">නැවත සංකේතනයක් තවමත් ක්‍රියාත්මක වෙමින් පවතී. එය අවසන් වන තෙක් රැඳී සිට, පසුව ලබන්නන් නැවත සුරකින්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="533"/>
         <source>No signing key!</source>
         <translation>අත්සන් කිරීම සඳහා යතුරක් නොමැත!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="528"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>රහස් අත්සන් කිරීමේ යතුරු කිසිවක් ලබාගත නොහැක.
 ඔබට පරිශීලක ලැයිස්තුව වෙනස් කළ නොහැකි වනු ඇත!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
-        <location filename="../src/imitatepass.cpp" line="341"/>
-        <location filename="../src/imitatepass.cpp" line="368"/>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="348"/>
+        <location filename="../src/imitatepass.cpp" line="375"/>
+        <location filename="../src/imitatepass.cpp" line="504"/>
         <source>Cannot update</source>
         <translation>යාවත්කාලීන කළ නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="112"/>
+        <location filename="../src/imitatepass.cpp" line="118"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull අසාර්ථක විය: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="409"/>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="748"/>
         <source>Check .gpg-id file signature!</source>
         <translation>.gpg-id ගොනු අත්සන පරීක්ෂා කරන්න!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="281"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Delete failed</source>
         <translation type="unfinished">මැකීම අසාර්ථක විය</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="282"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">%1 සබැඳිය ඉවත් කළ නොහැකි විය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="324"/>
+        <location filename="../src/imitatepass.cpp" line="331"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 මුරපද ගබඩාව තුළ නොමැත.</translation>
     </message>
@@ -1365,76 +1390,81 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">%1 ලිවීම අසාර්ථක විය: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="382"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුව ලියා ඇත, නමුත් වාර්තාගත කර නැත</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="390"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 ඉදිරියට යාමට ලබන්නන් තව වරක් සුරකින්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="388"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>Check selected users!</source>
         <translation>තෝරාගත් පරිශීලකයන් පරීක්ෂා කරන්න!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>තෝරාගත් යතුරු කිසිවක් රහස් යතුරක් නොමැත.
 ඔබට අලුතින් එකතු කරන ලද කිසිදු මුරපදයක් විකේතනය කිරීමට නොහැකි වනු ඇත!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="411"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 අත්සන් කිරීම අසාර්ථක විය: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="499"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">පැරණි අත්සන %1 ඉවත් කිරීම අසාර්ථක විය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="559"/>
+        <location filename="../src/imitatepass.cpp" line="565"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git කේතය %1 සමඟ අවසන් විය.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
-        <location filename="../src/imitatepass.cpp" line="641"/>
-        <location filename="../src/imitatepass.cpp" line="649"/>
+        <location filename="../src/imitatepass.cpp" line="616"/>
+        <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="630"/>
+        <location filename="../src/imitatepass.cpp" line="658"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">පෙර නැවත සංකේතනයකින් ඉතිරි වූ ගොනුවකි</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="614"/>
+        <location filename="../src/imitatepass.cpp" line="631"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 සාමාන්‍ය ගොනුවක් නොවන අතර එය නැවත ස්ථාපනය නොකෙරිණි. එය පරීක්ෂා කර ඉවත් කර, පසුව නැවත සංකේතනය කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="642"/>
+        <location filename="../src/imitatepass.cpp" line="659"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2 අසල %1 ද පවතී. දෙකම ඇතුළත්කිරීමේ සංකේතනය කළ පිටපත් ය; ඔබට අවශ්‍ය කුමක්දැයි පරීක්ෂා කර අනෙක මකා දමා, පසුව නැවත සංකේතනය කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="673"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">බාධා වූ නැවත සංකේතනයකින් ඉතිරි වූ උපස්ථයෙන් %1 නැවත ස්ථාපනය කරන ලදී.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="650"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 නොමැති අතර එහි උපස්ථය %2 නැවත නම් කළ නොහැකි විය. එය අතින් නැවත නම් කර, පසුව නැවත සංකේතනය කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="889"/>
+        <location filename="../src/imitatepass.cpp" line="908"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 නැවත සංකේතනය කළ නොහැකි විය: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1168"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
         <source>Re-encryption failed</source>
         <translation>නැවත සංකේතනය අසාර්ථක විය</translation>
     </message>
@@ -1451,75 +1481,75 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">නැවත සංකේතනය කිරීමෙන් පසු උපස්ථය %1 ඉවත් කළ නොහැකි විය; එය මකා දැමීම ආරක්ෂිතයි.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="900"/>
+        <location filename="../src/imitatepass.cpp" line="919"/>
         <source>Creating backup commit</source>
         <translation>උපස්ථ ප්‍රතිකාලයක් සාදමින්</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="914"/>
-        <location filename="../src/imitatepass.cpp" line="923"/>
+        <location filename="../src/imitatepass.cpp" line="933"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
         <source>Backup commit failed</source>
         <translation>කළමනාකරණ ක්‍රියාව නැව්මට හෝදාගනිය</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="934"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>ගිත් තත්ත්වය පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීම අත්හිටුවන ලදී.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="924"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>ගිට ප්‍රතිකාලය කළ හැකි වේදීම නොවෙන්න ඉංගුරු මුරපද සහිත ප්‍රතිකාලය කළ හැකි වේදීම නොවෙන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="953"/>
+        <location filename="../src/imitatepass.cpp" line="972"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">නැවත සංකේතනයක් දැනටමත් ක්‍රියාත්මක වෙමින් පවතී</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="960"/>
+        <location filename="../src/imitatepass.cpp" line="979"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ගබඩාවේ ෆෝල්ඩරයක් නොවේ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="961"/>
+        <location filename="../src/imitatepass.cpp" line="980"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 සංකේතාත්මක සබැඳියක් හෝ ජංක්ෂනයක් වේ, නැතහොත් එවැන්නක් පිටුපස පිහිටා ඇත. එය යොමු කරන දෙය මුරපද ගබඩාවේ කොටසක් නොවන අතර නැවත සංකේතනය නොකෙරිණි.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="970"/>
+        <location filename="../src/imitatepass.cpp" line="989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>%1 සහි ශ්‍රාණිකතා කළ හැකි වේදීම</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1031"/>
-        <location filename="../src/imitatepass.cpp" line="1195"/>
+        <location filename="../src/imitatepass.cpp" line="1053"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Updating password-store</source>
         <translation>මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1044"/>
-        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull අසාර්ථක විය</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull එකෙන් පසු ගබඩාවේ ඒකාබද්ධ නොකළ ගොනු තිබේදැයි පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීමට පෙර git මගින් එය පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1051"/>
+        <location filename="../src/imitatepass.cpp" line="1073"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull මගින් ගබඩාවේ ඒකාබද්ධ නොකළ ගොනු ඉතිරි විය. නැවත සංකේතනය කිරීමට පෙර ගැටුම විසඳන්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1055"/>
+        <location filename="../src/imitatepass.cpp" line="1077"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull අසාර්ථක විය, ගබඩාව ඇති අයුරින්ම නැවත සංකේතනය කරමින්</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1066"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>ඇතුළත් කිරීම් %n ක් මඟ හරින ලදී: සංකේතාත්මක සබැඳියක්, ජංක්ෂනයක් හෝ විශේෂ ගොනුවක් ගබඩාවේ කොටසක් නොවේ.</numerusform>
@@ -1527,17 +1557,27 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1087"/>
+        <location filename="../src/imitatepass.cpp" line="1109"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID ප්‍රවේශනය නොවෙන්න</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1088"/>
+        <location filename="../src/imitatepass.cpp" line="1110"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>දෙරින් ඉතිහාසයක් සමඟ .gpg-id කියල වැඩියන්න.</translation>
     </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1130"/>
+        <source>Not part of the store</source>
+        <translation type="unfinished">ගබඩාවේ කොටසක් නොවේ</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1166"/>
+        <location filename="../src/imitatepass.cpp" line="1200"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... සහ තව %n ක්</numerusform>
@@ -1545,7 +1585,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="1203"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>ගොනු %n ක් නැවත සංකේතනය කළ නොහැකි විය:</numerusform>
@@ -1553,18 +1593,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1209"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">නැවත සංකේතනය අවලංගු කරන ලදී: ගොනු %2 න් %1 ක් පරීක්ෂා කරන ලදී, %3 ක් නැවත සංකේතනය කරන ලදී, %4 ක් අසාර්ථක විය</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1285"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">ලබන්නන් commit කර නැත</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1577,7 +1617,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 වෙනස තවම commit කර හෝ push කර නැත. Git ගැටලුව නිවැරදි කර, පසුව වෙනස්කම් commit කරන්න, නැතහොත් ලබන්නන් නැවත සුරකින්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1286"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1590,12 +1630,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 නැවත සංකේතනය සම්පූර්ණ නොවූ බැවින්, සමහර හෝ සියලුම ඇතුළත් කිරීම් තවමත් පෙර ලබන්නන් සඳහා සංකේතනය කර ඇති අතර, ඔවුන්ට තවමත් ඒවා කියවිය හැක. කිසිවක් commit කර හෝ push කර නැත. Git ගැටලුව නිවැරදි කර, පසුව ලබන්නන් නැවත සුරකින්න.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1429"/>
+        <location filename="../src/imitatepass.cpp" line="1463"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git ක්‍රියාත්මක ගොනුව වින්‍යාස කර නොමැත, git මඟ හරිමින්</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1489"/>
+        <location filename="../src/imitatepass.cpp" line="1523"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg %1 සඳහා සංකේතිත පාඨයක් ලිව්වේ නැත.</translation>
     </message>
@@ -1624,17 +1664,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 හෝදුරු ඉතිහාසයක් සමඟ ශූන් කළ වැඩියන්න</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1184"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>%1 හෝදුරු ඉතිහාසයක් සමඟ කළ වැඩියන්න, %2 ශූන් කළ වැඩියන්න</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1189"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>විදුලතම කරන ලද: %1 විදුලය</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1232"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Push කරන්නේ නැත: ගොනු %n ක් නැවත සංකේතනය කිරීමට අසමත් විය</numerusform>
@@ -1642,14 +1682,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1351"/>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1385"/>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Copy failed</source>
         <translation type="unfinished">පිටපත් කිරීම අසාර්ථක විය</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1352"/>
-        <location filename="../src/imitatepass.cpp" line="1396"/>
+        <location filename="../src/imitatepass.cpp" line="1386"/>
+        <location filename="../src/imitatepass.cpp" line="1430"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 %2 වෙත පිටපත් කළ නොහැකි විය.</translation>
     </message>
@@ -1680,7 +1720,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>Import GPG key</source>
         <translation>GPG ක්‍රියාකලපතම</translation>
     </message>
@@ -1700,7 +1740,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>ආනයනය</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/importkeydialog.cpp" line="44"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-සන්නද්ධ GPG යතුර</translation>
     </message>
@@ -1713,12 +1753,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">පිටුව ඉස්‍රාල්‍ය</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="51"/>
+        <location filename="../src/importkeydialog.cpp" line="58"/>
         <source>Could not open file: %1</source>
         <translation>විදුලි විශේෂයක් නොපවතී: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="66"/>
+        <location filename="../src/importkeydialog.cpp" line="83"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ASCII-සන්නද්ධ GPG යතුරක් ලෙස නොපෙනේ. එය මුලින්ම &lt;code&gt;gpg --armor --export&lt;/code&gt; සමඟ පරිවර්තනය කරන්න, නැතහොත් සන්නද්ධ කොටස &lt;b&gt;පසුරු පුවරුවෙන්&lt;/b&gt; හරහා අලවන්න.</translation>
     </message>
@@ -1727,32 +1767,38 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ASCII-සන්නද්ධ GPG යතුරක් ලෙස නොපෙනේ. එය මුලින්ම &lt;code&gt;gpg --armor --export&lt;/code&gt; සමඟ පරිවර්තනය කරන්න, නැතහොත් &lt;b&gt;ක්ලිප්බෝඩ් එකෙන්&lt;/b&gt; හරහා සන්නද්ධ බ්ලොක් එක අලවන්න.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/importkeydialog.cpp" line="44"/>
         <source>All files</source>
         <translation>සියලුම ගොනු</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <location filename="../src/importkeydialog.cpp" line="57"/>
+        <location filename="../src/importkeydialog.cpp" line="70"/>
+        <location filename="../src/importkeydialog.cpp" line="82"/>
+        <location filename="../src/importkeydialog.cpp" line="182"/>
+        <location filename="../src/importkeydialog.cpp" line="186"/>
         <source>Import key</source>
         <translation>පිටුව ඉස්‍රාල්‍ය</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="113"/>
+        <location filename="../src/importkeydialog.cpp" line="71"/>
+        <source>%1 is larger than a key file can be.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="130"/>
         <source>GPG import failed:
 %1</source>
         <translation>GPG ආයාතය අසාර්ථක විය:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="123"/>
+        <location filename="../src/importkeydialog.cpp" line="140"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>GPG විශාල කරන ගැනීමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ හෝ එය වෙනස් කලේදුමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="168"/>
+        <location filename="../src/importkeydialog.cpp" line="187"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">පොදු යතුර %1 ආයාත කරන ලදී. එයට සංකේතනය කිරීමට පෙර එහි ඇඟිලි සලකුණ හිමිකරු සමඟ පරීක්ෂා කරන්න: යතුරක් ආයාත කිරීමෙන් එය කවුරුන් සතුව ඇත්දැයි කිසිවක් නොකියවේ.</translation>
     </message>
@@ -1857,37 +1903,37 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>විශේෂඥ විකල්ප සඳහා &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG අත්පොත&lt;/a&gt; පරීක්ෂා කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="155"/>
+        <location filename="../src/keygendialog.cpp" line="161"/>
         <source>Invalid name</source>
         <translation>විශාල අකුරු</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>නම අවම වශයෙන් අක්ෂර 5ක් දිගු විය යුතුය.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="166"/>
+        <location filename="../src/keygendialog.cpp" line="172"/>
         <source>Invalid email</source>
         <translation>වි-තැපෑල වලංගු නොවේ</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="167"/>
+        <location filename="../src/keygendialog.cpp" line="173"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>වෙනස් කරන විදුලි අඩංගය නැත.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="189"/>
+        <location filename="../src/keygendialog.cpp" line="195"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>මෙම මෙහෙයුමට මිනිත්තු කිහිපයක් ගත විය හැක.&lt;br /&gt;අපි අහඹු බයිට් ගොඩක් ජනනය කළ යුතුයි. ප්‍රමුඛ උත්පාදනය අතරතුර වෙනත් ක්‍රියාවක් (යතුරුපුවරුවේ ටයිප් කිරීම, මූසිකය චලනය කිරීම, තැටි භාවිතා කිරීම) සිදු කිරීම හොඳ අදහසකි; මෙය අහඹු සංඛ්‍යා උත්පාදක යන්ත්‍රයට ප්‍රමාණවත් එන්ට්‍රොපිය ලබා ගැනීමට වඩා හොඳ අවස්ථාවක් ලබා දෙයි.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="210"/>
+        <location filename="../src/keygendialog.cpp" line="216"/>
         <source>No password store backend available</source>
         <translation type="unfinished">මුරපද ගබඩා backend එකක් ලබා ගත නොහැක</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="244"/>
+        <location filename="../src/keygendialog.cpp" line="250"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">යතුර ජනනය අසාර්ථක විය: %1</translation>
     </message>
@@ -1904,16 +1950,16 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">Add</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="443"/>
         <location filename="../src/mainwindow.ui" line="446"/>
-        <location filename="../src/mainwindow.cpp" line="1376"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/mainwindow.cpp" line="1401"/>
         <source>Edit</source>
         <translation>සංස්කරණය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="451"/>
         <location filename="../src/mainwindow.ui" line="454"/>
-        <location filename="../src/mainwindow.cpp" line="1388"/>
+        <location filename="../src/mainwindow.ui" line="457"/>
+        <location filename="../src/mainwindow.cpp" line="1413"/>
         <source>Delete</source>
         <translation>මකන්න</translation>
     </message>
@@ -1922,7 +1968,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="470"/>
+        <location filename="../src/mainwindow.ui" line="473"/>
         <source>Push</source>
         <translation>හරහා</translation>
     </message>
@@ -1945,32 +1991,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;SourceCode&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="430"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="459"/>
+        <location filename="../src/mainwindow.ui" line="462"/>
         <source>OTP</source>
         <translation>මූලික අයිඩ්ටීලෝන් ක්‍රිප්තිස්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="462"/>
+        <location filename="../src/mainwindow.ui" line="465"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>මූලික අයිඩ්ටීලෝන් ක්‍රිප්තිස් සහිත ගබඩා කර පවතී</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="465"/>
+        <location filename="../src/mainwindow.ui" line="468"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="473"/>
+        <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
         <translation>ගිත් පළස්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="481"/>
+        <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
         <translation>ගිත් කුල්</translation>
     </message>
@@ -1979,7 +2025,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="478"/>
+        <location filename="../src/mainwindow.ui" line="481"/>
         <source>Update</source>
         <translation>යාවත්කාල කරන්න</translation>
     </message>
@@ -1995,13 +2041,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="489"/>
+        <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
         <translation>මුරපදයක් සඳහා මෙන් පළවීමට වූ උඩුගේ කිසිව කැබලිත්වය පරිපොල් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="486"/>
-        <location filename="../src/mainwindow.cpp" line="1370"/>
+        <location filename="../src/mainwindow.ui" line="489"/>
+        <location filename="../src/mainwindow.cpp" line="1395"/>
         <source>Users</source>
         <translation>පරිශීලකයින්</translation>
     </message>
@@ -2031,15 +2077,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="692"/>
-        <location filename="../src/mainwindow.cpp" line="872"/>
+        <location filename="../src/mainwindow.cpp" line="702"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Search password</source>
         <translation>පිහිට්‍යම කරන පවත්වන වාසන්දලය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>මුරපදයක් පහත මෙනිස් කොට පවතී (pass grep)</translation>
+        <translation type="vanished">මුරපදයක් පහත මෙනිස් කොට පවතී (pass grep)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="127"/>
+        <source>Search inside password content</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2082,12 +2132,12 @@ p, li { white-space: pre-wrap; }
         <translation>ප්‍රතිඵල</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/mainwindow.ui" line="266"/>
         <source>Welcome to QtPass</source>
         <translation>QtPass එක්වුණාද</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="319"/>
+        <location filename="../src/mainwindow.ui" line="322"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -2098,117 +2148,117 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;මූලාශ්‍ර කේතය&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="341"/>
+        <location filename="../src/mainwindow.ui" line="344"/>
         <source>&amp;File</source>
         <translation type="unfinished">(&amp;F) ගොනුව</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="354"/>
+        <location filename="../src/mainwindow.ui" line="357"/>
         <source>&amp;Store</source>
         <translation type="unfinished">(&amp;S) ගබඩාව</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="365"/>
+        <location filename="../src/mainwindow.ui" line="368"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">(&amp;E) සැකසුම්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="374"/>
+        <location filename="../src/mainwindow.ui" line="377"/>
         <source>&amp;Help</source>
         <translation type="unfinished">(&amp;H) උදවු</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="497"/>
+        <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show &amp;process output</source>
         <translation type="unfinished">(&amp;P) ක්‍රියාවලි ප්‍රතිදානය පෙන්වන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="500"/>
+        <location filename="../src/mainwindow.ui" line="503"/>
         <source>Show or hide the output of git, gpg and pass</source>
         <translation type="unfinished">git, gpg සහ pass හි ප්‍රතිදානය පෙන්වන්න හෝ සඟවන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="511"/>
+        <location filename="../src/mainwindow.ui" line="514"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">(&amp;M) මෙනු තීරුව පෙන්වන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="514"/>
+        <location filename="../src/mainwindow.ui" line="517"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">මෙනු තීරුව සඟවන්න හෝ පෙන්වන්න; Ctrl+M එය නැවත ගෙන එයි</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="517"/>
+        <location filename="../src/mainwindow.ui" line="520"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="522"/>
+        <location filename="../src/mainwindow.ui" line="525"/>
         <source>&amp;Configure QtPass…</source>
         <translation type="unfinished">(&amp;C) QtPass වින්‍යාස කරන්න…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="525"/>
+        <location filename="../src/mainwindow.ui" line="528"/>
         <source>Settings</source>
         <translation type="unfinished">සැකසුම්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="528"/>
+        <location filename="../src/mainwindow.ui" line="531"/>
         <source>Change the QtPass settings</source>
         <translation type="unfinished">QtPass සැකසුම් වෙනස් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="531"/>
+        <location filename="../src/mainwindow.ui" line="534"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="539"/>
+        <location filename="../src/mainwindow.ui" line="542"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">(&amp;C) කවුළුව වසන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="542"/>
+        <location filename="../src/mainwindow.ui" line="545"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">කවුළුව වසන්න; &quot;වසා දමන විට සඟවන්න&quot; සක්‍රීය නම් QtPass පද්ධති තැටියේ රැඳී සිටී</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="545"/>
+        <location filename="../src/mainwindow.ui" line="548"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="550"/>
+        <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;ඉවත් වන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="553"/>
+        <location filename="../src/mainwindow.ui" line="556"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="561"/>
+        <location filename="../src/mainwindow.ui" line="564"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">(&amp;F) නිතර අසන ප්‍රශ්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="564"/>
+        <location filename="../src/mainwindow.ui" line="567"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">qtpass.org හි නිතර අසන ප්‍රශ්න විවෘත කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="567"/>
+        <location filename="../src/mainwindow.ui" line="570"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="572"/>
+        <location filename="../src/mainwindow.ui" line="575"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">(&amp;A) QtPass ගැන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="580"/>
+        <location filename="../src/mainwindow.ui" line="583"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">(&amp;Q) Qt ගැන</translation>
     </message>
@@ -2229,7 +2279,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="396"/>
+        <location filename="../src/mainwindow.cpp" line="403"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass එක්වුණාද %1</translation>
     </message>
@@ -2268,8 +2318,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="524"/>
-        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
+        <location filename="../src/mainwindow.cpp" line="541"/>
         <source>Updating password-store</source>
         <translation>මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
     </message>
@@ -2286,8 +2336,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="614"/>
-        <location filename="../src/mainwindow.cpp" line="911"/>
+        <location filename="../src/mainwindow.cpp" line="621"/>
+        <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Content hidden</source>
         <translation>මුදල ප්‍රකාශය කරන්න</translation>
     </message>
@@ -2336,12 +2386,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="789"/>
         <source>Looking for: %1</source>
         <translation>මෙම අඩංගුව පසුව: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="921"/>
+        <location filename="../src/mainwindow.cpp" line="947"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n සිදුකරන ක්‍රියාව</numerusform>
@@ -2371,17 +2421,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ඔබට ඇත්තටම %1%2 සකල කිරීමට අවශ්‍යද?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1054"/>
         <source>Delete password?</source>
         <translation>මුරපදය සකල කරන්න?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1027"/>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">%1 මකා දැමීමට ඔබට විශ්වාසද?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>Delete folder?</source>
         <translation>මත් පද්ධතිය සකල කරන්න?</translation>
     </message>
@@ -2406,26 +2456,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1209"/>
+        <location filename="../src/mainwindow.cpp" line="1234"/>
         <source>Profile changed to %1</source>
         <translation>පුවත්තා මුරපදය %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1392"/>
         <source>Open folder with file manager</source>
         <translation>මුරපදය නිකුත් කිරීම් සඳහා පබැඩාගත කළ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="435"/>
         <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1368"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.cpp" line="1393"/>
         <source>Add folder</source>
         <translation>මුරපද ඇත්තුන්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="424"/>
         <location filename="../src/mainwindow.ui" line="427"/>
-        <location filename="../src/mainwindow.cpp" line="1369"/>
+        <location filename="../src/mainwindow.ui" line="430"/>
+        <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Add password</source>
         <translation>විසිත්ව කළ පහලය</translation>
     </message>
@@ -2444,65 +2494,64 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">පروسේස් එක්සොර්ටු</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="641"/>
+        <location filename="../src/mainwindow.cpp" line="651"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">මෙම මුරපද ඇතුළත් කිරීම විකේතනය කළ නොහැකි විය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="652"/>
-        <location filename="../src/mainwindow.cpp" line="670"/>
-        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
+        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="1152"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP කූඩය රිවීමට පත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="672"/>
-        <location filename="../src/mainwindow.cpp" line="1115"/>
+        <location filename="../src/mainwindow.cpp" line="682"/>
+        <location filename="../src/mainwindow.cpp" line="1140"/>
         <source>No OTP code found in this password entry</source>
         <translation>මෙම විසිත්ව පහලයේ OTP කූඩයක් ඇතුළු කර නැත</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="696"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Password and content hidden</source>
         <translation>පදවල් සහ මුදල් ප්‍රකාශය කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="761"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass ගැන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="762"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;සම්මත Unix මුරපද කළමනාකරු වන &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; සඳහා බහු-වේදිකා GUI එකක්.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;මූලාශ්‍රය සහ ගැටලු&lt;/a&gt;&lt;/p&gt;&lt;p&gt;ප්‍රකාශන හිමිකම &amp;copy; 2014&amp;ndash;%2 IJhack. &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 3 වන අනුවාදය&lt;/a&gt; හෝ ඊට පසු අනුවාදයක් යටතේ බලපත්‍ර ලබා ඇත.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="824"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
         <translation>මුල් පත්කරුවන…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="850"/>
+        <location filename="../src/mainwindow.cpp" line="860"/>
         <source>Search content (regex)</source>
         <translation>regex සහය කර මුල් පත්කරුවන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="855"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">අන්තර්ගත සෙවුම POSIX මූලික නියමිත ප්‍රකාශන භාවිතා කරයි (pass grep).</translation>
+        <translation type="obsolete">අන්තර්ගත සෙවුම POSIX මූලික නියමිත ප්‍රකාශන භාවිතා කරයි (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="857"/>
+        <location filename="../src/mainwindow.cpp" line="864"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">අන්තර්ගත සෙවුම Perl-අනුකූල නියමිත ප්‍රකාශන (PCRE) භාවිතා කරයි.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="897"/>
+        <location filename="../src/mainwindow.cpp" line="903"/>
         <source>No matches found.</source>
         <translation>මෙහි අඩංගු පත්කරුවන් සැකපළාගැනීමට කොටසක් ඇති නැත.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="949"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n එකට වැඩි.</numerusform>
@@ -2510,151 +2559,164 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="977"/>
+        <location filename="../src/mainwindow.cpp" line="1005"/>
         <source>Invalid name</source>
         <translation type="unfinished">විශාල අකුරු</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">එම නම මුරපද ගබඩාවෙන් පිටතට යොමු වේ. කරුණාකර වෙනත් නමක් තෝරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1059"/>
+        <location filename="../src/mainwindow.cpp" line="1085"/>
         <source>Delete link?</source>
         <translation type="unfinished">සබැඳිය මකන්නද?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1060"/>
+        <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 සංකේතාත්මක සබැඳියක් හෝ ජංක්ෂනයක් වේ. සබැඳිය ඉවත් කරන්නද? එය යොමු කරන දෙය එලෙසම තබනු ලැබේ.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1110"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP විශේෂතරජය සඳහා අවුත් කිරීමට පදනමක් ඇති නැත</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1382"/>
-        <location filename="../src/mainwindow.cpp" line="1459"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Rename folder</source>
         <translation>ගෙන්සිය කොටස වෙලංගුවන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1385"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Rename password</source>
         <translation>පදනම වෙලංගුවන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1322"/>
+        <location filename="../src/mainwindow.cpp" line="1347"/>
         <source>Share</source>
         <translation>සිංහල මුද්රණය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1033"/>
+        <location filename="../src/mainwindow.cpp" line="927"/>
+        <source>… more matches in this entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="942"/>
+        <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">%1 සහ එහි සම්පූර්ණ අන්තර්ගතය මකා දැමීමට ඔබට විශ්වාසද?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1046"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">අවධානය: දී ඇති ෆෝල්ඩරයේ අනපේක්ෂිත ගොනු ඇත; ඉදිරියට යාමට පෙර ඒවා පරීක්ෂා කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1332"/>
+        <location filename="../src/mainwindow.cpp" line="1357"/>
         <source>Re-encrypt all passwords</source>
         <translation>මුත්තු කළ ඇති උපාංග සියලුවක් පසුව මහා නිකුත් කරන</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1362"/>
         <source>Export my public key...</source>
         <translation>මම අදාල කිරීම් සැපයි...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
+        <location filename="../src/mainwindow.cpp" line="1366"/>
         <source>Add recipient...</source>
         <translation>ගැනීම් පහතට ඇතිවෙනු මුරපදයක් කළ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1346"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>What is this?</source>
         <translation>මෙය කිසියේ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1420"/>
+        <location filename="../src/mainwindow.cpp" line="1445"/>
         <source>New folder</source>
         <translation type="unfinished">නව ෆෝල්ඩරය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1421"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>නව ෆෝල්ඩරය:
 (%1 හි ස්ථානගත කෙරේ)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1459"/>
+        <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Rename folder to: </source>
         <translation>සංඝාවක් නමින්: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>Rename file to: </source>
         <translation>ගැලපුවක් නමින්: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1532"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">මෙම ඇතුළත් කිරීමේ ඇත්තේ මුරපදයක් නොව OTP රහසකි</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1584"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">මුරපද නැවත සංකේතනය කරමින්...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1585"/>
+        <location filename="../src/mainwindow.cpp" line="1612"/>
         <source>Cancel</source>
         <translation type="unfinished">අවලංගු කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1593"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">නැවත සංකේතනය අවලංගු කරමින්</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1604"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">මුරපද නැවත සංකේතනය කරමින්: %2 න් %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1625"/>
-        <location filename="../src/mainwindow.cpp" line="1644"/>
+        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1671"/>
         <source>Export public key</source>
         <translation>පොදු යතුර නිර්යාත කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1626"/>
+        <location filename="../src/mainwindow.cpp" line="1653"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;මුරපද පූලික් කළමනාව සැයීඩ කිරීම&lt;/h3&gt;&lt;p&gt;සංකේතන මුරපදය ඇති නොහැක. QtPass ආක්‍රමණ සාධක කළමනාව &amp;gt; GPG මුරපද තෝරාගෙන කරන්න, සහිත එය terminal යුතු පහසුවේ අඩංගු කරන්න:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;මෙය සමානුපාතීකරණය කරන්න එවකට පිහිටන.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">ගබඩාවේ ෆෝල්ඩරයක් නොවේ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 සංකේතාත්මක සබැඳියක් හෝ ජංක්ෂනයක් වේ, නැතහොත් එවැන්නක් පිටුපස පිහිටා ඇත. එය යොමු කරන දෙය මුරපද ගබඩාවේ කොටසක් නොවන අතර එලෙසම තබනු ලැබේ.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Sharing passwords with GPG</source>
         <translation>GPG සමඟ මුරපද පූලික් කළමනාව</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1683"/>
+        <location filename="../src/mainwindow.cpp" line="1710"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG සමඟ මුරපද බෙදා ගැනීම&lt;/h3&gt;&lt;p&gt;වෙනත් පරිශීලකයින් සමඟ මුරපද බෙදා ගැනීමට:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ඔබේ පොදු යතුර අපනයනය කරන්න&lt;/b&gt; සහ එය කණ්ඩායම් සාමාජිකයින්ට යවන්න&lt;/li&gt;&lt;li&gt;&lt;b&gt;කණ්ඩායමේ සාමාජිකයින්ගේ පොදු යතුරු ඔබේ GPG යතුරු වළල්ලට ආයාත කරන්න&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;සියලුම ලබන්නන්ට ඒවා විකේතනය කළ හැකි වන පරිදි නැවත සංකේතනය කරන්න&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ගැළපෙන රහස් යතුරක් ඇති පුද්ගලයින්ට පමණක් මුරපද විකේතනය කළ හැකිය.&lt;/p&gt;&lt;p&gt;&lt;b&gt;ඉඟිය:&lt;/b&gt; සියලුම බෙදාගත් ෆෝල්ඩර සඳහා එකම GPG යතුර භාවිතා කරන්න.&lt;/p&gt;&lt;p&gt;වැඩි විස්තර සඳහා නිතර අසන ප්‍රශ්න බලන්න.&lt;/p&gt;</translation>
     </message>
@@ -2667,7 +2729,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;මුරපද පූලික් කළමනාව සැයීඩ කිරීම&lt;/h3&gt;&lt;p&gt;සංකේතන මුරපදය ඇති නොහැක. QtPass ආක්‍රමණ සාධක කළමනාව &amp;gt; GPG මුරපද තෝරාගෙන කරන්න, සහිත එය terminal යුතු පහසුවේ අඩංගු කරන්න:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;මෙය සමානුපාතීකරණය කරන්න එවකට පිහිටන.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2676,7 +2738,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1647"/>
+        <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>No output from gpg.</source>
         <translation>gpg වෙත පසුබැල් ලෝගයක් ඇති නොහැක.</translation>
     </message>
@@ -2689,29 +2751,29 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;GPG සමඟ මුරපද බෙදා ගැනීම&lt;/h3&gt;&lt;p&gt;වෙනත් පරිශීලකයින් සමඟ මුරපද බෙදා ගැනීමට:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ඔබේ පොදු යතුර අපනයනය කරන්න&lt;/b&gt; සහ එය කණ්ඩායම් සාමාජිකයින්ට යවන්න&lt;/li&gt;&lt;li&gt;&lt;b&gt;කණ්ඩායමේ සාමාජිකයින්ගේ පොදු යතුරු ඔබේ GPG යතුරු වළල්ලට ආයාත කරන්න&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;සියලුම ලබන්නන්ට ඒවා විකේතනය කළ හැකි වන පරිදි නැවත සංකේතනය කරන්න&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ගැළපෙන රහස් යතුරක් ඇති පුද්ගලයින්ට පමණක් මුරපද විකේතනය කළ හැකිය.&lt;/p&gt;&lt;p&gt;&lt;b&gt;ඉඟිය:&lt;/b&gt; සියලුම බෙදාගත් ෆෝල්ඩර සඳහා එකම GPG යතුර භාවිතා කරන්න.&lt;/p&gt;&lt;p&gt;වැඩි විස්තර සඳහා නිතර අසන ප්‍රශ්න බලන්න.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1432"/>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
-        <location filename="../src/mainwindow.cpp" line="1545"/>
+        <location filename="../src/mainwindow.cpp" line="1461"/>
+        <location filename="../src/mainwindow.cpp" line="1476"/>
+        <location filename="../src/mainwindow.cpp" line="1573"/>
         <source>Error</source>
         <translation>දෝෂය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="200"/>
+        <location filename="../src/mainwindow.cpp" line="206"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">මෙහෙයුමේ කාලය ඉකුත් විය; අතුරුමුහුණත නැවත සක්‍රීය කරමින්.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1462"/>
         <source>Failed to create folder: %1</source>
         <translation>මුදලක් නිරීක්ෂණය කළ කෘතිය සාදන්නු නොහැක: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1448"/>
+        <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id ගොනුව %1 හි සෑදීමට අසමත් විය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>Rename file</source>
         <translation>ගැලපුවක් වෙනුවීම</translation>
     </message>
@@ -2724,18 +2786,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ගැලපුවක් නමින්: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Directory does not exist: %1</source>
         <translation>කොටසය %1 සඳහා මත කර ඇත</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1586"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1613"/>
         <source>Re-encrypt passwords</source>
         <translation>ගබඩා කරන අත්පත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1583"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2773,102 +2835,107 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="162"/>
+        <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">වින්‍යාස කර ඇති GPG මුල් නාමාවලිය %1 නොපවතී, පෙරනිමි යතුරු වළල්ල භාවිතා කරමින්</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="170"/>
+        <location filename="../src/pass.cpp" line="179"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">වින්‍යාස කර ඇති GPG මුල් නාමාවලිය %1 නොපවතී, පරිසරයෙන් GNUPGHOME %2 භාවිතා කරමින්</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="183"/>
+        <location filename="../src/pass.cpp" line="192"/>
         <source>Invalid password length</source>
         <translation>මුරපද පහත සංකීර්ණයක් වන අතර නොවේ</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="184"/>
+        <location filename="../src/pass.cpp" line="193"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>සැකසිම් කෙලින් පහත සංකීර්ණයක් නොවේ.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="219"/>
+        <location filename="../src/pass.cpp" line="228"/>
         <source>No characters chosen</source>
         <translation>කිසිවී කාර්තර් ලෙස පහනු ඇත</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="220"/>
+        <location filename="../src/pass.cpp" line="229"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>මුරපද සකසීමට කිසිවී කාර්තර් ලෙස පහනු ඇත!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="358"/>
-        <location filename="../src/pass.cpp" line="359"/>
+        <location filename="../src/pass.cpp" line="367"/>
+        <location filename="../src/pass.cpp" line="368"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">GPG ක්‍රියාත්මක ගොනුවක් වින්‍යාස කර නැත</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="429"/>
-        <location filename="../src/pass.cpp" line="448"/>
+        <location filename="../src/pass.cpp" line="438"/>
+        <location filename="../src/pass.cpp" line="457"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>සංකේතනය සැකසීමට කිරීමට අවසානය වුණු ලෙස GPG ක්‍රියාකාරීයතාව සංකීර්ණය කරිණි. එහි මත පැවත්නු ඇති හෝ නව ක්‍රියාකාරීයතාව ලබාගෙන තොරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="434"/>
-        <location filename="../src/pass.cpp" line="453"/>
+        <location filename="../src/pass.cpp" line="443"/>
+        <location filename="../src/pass.cpp" line="462"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>සංකේතනය සැකසීමට කිරීමට අවසානය වුණු ලෙස GPG ක්‍රියාකාරීයතාව පහඳගැනිණි.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="438"/>
-        <location filename="../src/pass.cpp" line="467"/>
+        <location filename="../src/pass.cpp" line="447"/>
+        <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>පිරාසනය නවතම්: වැඩි කළමනාකරණ GPG ක්‍රියාකලය හෝ ඉදිරිපත් පහසුව. .gpg-id ශේෂයට සඳහා අවශ්‍ය ක්‍රියාකල විශීම හෝ ඉදිරිපත් කරන්න.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="442"/>
-        <location filename="../src/pass.cpp" line="471"/>
+        <location filename="../src/pass.cpp" line="451"/>
+        <location filename="../src/pass.cpp" line="480"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>පිරාසනය නවතම්: ඔබගේ GPG ක්‍රියාකල හෝ ඉදිරිපත් විශීම.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="461"/>
+        <location filename="../src/pass.cpp" line="470"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">සංකේතනය අසාර්ථකයි: ලබන්නෙකුගේ GPG යතුර භාවිතා කළ නොහැක. එය කල් ඉකුත් වී හෝ අවලංගු කර තිබිය හැක, සංකේතන උප යතුරක් නොතිබිය හැක, හෝ විශ්වාස නොකළ හැක; පහත gpg පණිවිඩය කුමක්දැයි කියයි.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="726"/>
+        <location filename="../src/pass.cpp" line="711"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 සංකේතාත්මක සබැඳියක් හෝ ජංක්ෂනයක් වේ, නැතහොත් එවැන්නක් පිටුපස පිහිටා ඇත. එය යොමු කරන දෙය මුරපද ගබඩාවේ කොටසක් නොවන අතර එලෙසම තබනු ලැබේ.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="732"/>
+        <location filename="../src/pass.cpp" line="717"/>
         <source>Not part of the store</source>
         <translation type="unfinished">ගබඩාවේ කොටසක් නොවේ</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="773"/>
+        <location filename="../src/pass.cpp" line="758"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුවල පරම්පරා වාර්තාව කියවිය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="852"/>
+        <location filename="../src/pass.cpp" line="839"/>
+        <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="860"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුව %1 නැති නිසා හෝ එය සාමාන්‍ය ගොනුවක් නොවන නිසා කිසිවක් පෙර තෝරා නැත: මව් ෆෝල්ඩරයක ලැයිස්තුව මෙම ෆෝල්ඩරය සඳහා අත්සන් කර නැත. මෙම ෆෝල්ඩරයේ ලබන්නන් ඔබම තෝරන්න; OK අලුත් ලැයිස්තුවක් ලියා අත්සන් කරයි.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="857"/>
+        <location filename="../src/pass.cpp" line="865"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 කිසිවක් පෙර තෝරා නැත: %2 ඉවත් කළේද යන්න කිව නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="872"/>
+        <location filename="../src/pass.cpp" line="880"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">ලබන්නන් ලැයිස්තුව %1 අත්සන් කිරීමේ යතුරෙන් සත්‍යාපනය නොවන බැවින් කිසිවක් පෙර තෝරා නැත: සුරැකීමෙන් එහි ඇති ඕනෑම දෙයක් අත්සන් කෙරේ. ලබන්නන් ඔබම තෝරන්න; OK අලුත් ලැයිස්තුවක් ලියා අත්සන් කරයි.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="819"/>
+        <location filename="../src/pass.cpp" line="804"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 කිසිවක් පෙර තෝරා නැත: සුරැකීමෙන් එහි ඇති ඕනෑම දෙයක් අත්සන් කෙරේ. ලබන්නන් ඔබම තෝරන්න.</translation>
     </message>
@@ -2878,7 +2945,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="328"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Password</source>
         <translation>මුරපදය</translation>
     </message>
@@ -2966,84 +3033,92 @@ Continue?</source>
         <translation type="unfinished">ගබඩාවේ .templates ගොනුවෙන් ලැබෙන ක්ෂේත්‍ර සැකිල්ල. Ctrl+T මඟින් ඊළඟ එකට මාරු වේ.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">නව මුරපදය</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">විකේතනය කරමින්…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="182"/>
+        <location filename="../src/passworddialog.cpp" line="183"/>
         <source>Saving…</source>
         <translation type="unfinished">සුරකිමින්…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="213"/>
+        <location filename="../src/passworddialog.cpp" line="214"/>
         <source>Still saving</source>
         <translation type="unfinished">තවමත් සුරකිමින්</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="214"/>
+        <location filename="../src/passworddialog.cpp" line="215"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">ඇතුළත් කිරීම තවමත් සුරැකෙමින් පවතී. කෙසේ වෙතත් සංවාදය වසන්නද? ඉන් පසු සුරැකීම අසාර්ථක වුවහොත්, ඔබ ටයිප් කළ දේ නැති වේ.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="231"/>
+        <location filename="../src/passworddialog.cpp" line="232"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">සුරැකී නැත: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="273"/>
+        <location filename="../src/passworddialog.cpp" line="274"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">ඇතුළත් කිරීමට නමක් දෙන්න.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="277"/>
+        <location filename="../src/passworddialog.cpp" line="278"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">නමක් / වලින් අවසන් විය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="286"/>
+        <location filename="../src/passworddialog.cpp" line="287"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">එම නම මුරපද ගබඩාවෙන් පිටතට යොමු වේ.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="290"/>
+        <location filename="../src/passworddialog.cpp" line="291"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 නමින් ඇතුළත් කිරීමක් දැනටමත් පවතී.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="294"/>
+        <location filename="../src/passworddialog.cpp" line="295"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ෆෝල්ඩරයකි.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="324"/>
+        <location filename="../src/passworddialog.cpp" line="325"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 ෆෝල්ඩරය සෑදිය නොහැකි විය.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="380"/>
+        <location filename="../src/passworddialog.cpp" line="381"/>
         <source>Remove field</source>
         <translation type="unfinished">ක්ෂේත්‍රය ඉවත් කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="399"/>
+        <location filename="../src/passworddialog.cpp" line="400"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 නමින් ක්ෂේත්‍රයක් දැනටමත් පවතී.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="480"/>
+        <location filename="../src/passworddialog.cpp" line="481"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI හෝ base32 රහස</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="517"/>
+        <location filename="../src/passworddialog.cpp" line="518"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">වලංගු නොවන OTP රහස</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/passworddialog.cpp" line="718"/>
+        <source>This entry has %n line(s), too many to edit here.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -3071,12 +3146,12 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="36"/>
+        <location filename="../src/profileinit.cpp" line="56"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 සෑදිය නොහැකි විය.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="60"/>
+        <location filename="../src/profileinit.cpp" line="80"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 හි දැනටමත් සංකේතිත ගොනු %n ක් අඩංගුය; ඒවා නැවත සංකේතනය කළේ නැත. එය කිරීමට පැතිකඩට මාරු වී පරිශීලකයින් විවෘත කරන්න.</numerusform>
@@ -3084,12 +3159,12 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="78"/>
+        <location filename="../src/profileinit.cpp" line="98"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">ලබන්නෙකු තෝරා නොමැත; %1 ලියා නැත.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="127"/>
+        <location filename="../src/profileinit.cpp" line="147"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">%2 සමඟ %1 අත්සන් කළ නොහැකි විය.</translation>
     </message>
@@ -3098,13 +3173,13 @@ Continue?</source>
         <translation type="obsolete">%1 ලිවිය නොහැකි විය: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="129"/>
+        <location filename="../src/profileinit.cpp" line="149"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%2 සමඟ %1 අත්සන් කළ නොහැකි විය: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="149"/>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="170"/>
+        <location filename="../src/profileinit.cpp" line="200"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">%2 හි git %1 අසාර්ථක විය: %3</translation>
     </message>
@@ -3170,26 +3245,26 @@ Continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="166"/>
         <location filename="../main/main.cpp" line="170"/>
+        <location filename="../main/main.cpp" line="174"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="72"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="229"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="74"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="194"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="235"/>
         <source>Password</source>
         <translation type="unfinished">මුරපදය</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="157"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1 බ්‍රවුසරයේ විවෘත කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="302"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="315"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="316"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="329"/>
         <source>OTP code</source>
         <translation>OTP කේතය</translation>
     </message>
@@ -3198,7 +3273,7 @@ Continue?</source>
         <translation type="obsolete">OTP කේතය</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="303"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">මෙම විසිත්ව පහලයේ OTP කූඩයක් ඇතුළු කර නැත</translation>
     </message>
@@ -3367,12 +3442,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="289"/>
+        <location filename="../src/storemodel.cpp" line="290"/>
         <source>Force overwrite?</source>
         <translation>කාලවෙස පිරුන්නාද?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="290"/>
+        <location filename="../src/storemodel.cpp" line="291"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 හිමිය %2 හිමිය?</translation>
     </message>
@@ -3572,32 +3647,32 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>ප්‍රජාතියේ හෝ විද්‍යුත් කලනය කළමනාකරුව නගර කරන්න</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="174"/>
+        <location filename="../src/usersdialog.cpp" line="177"/>
         <source>Key not found in keyring</source>
         <translation>යතුරු පොකුරෙහි යතුර හමු නොවීය</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="315"/>
         <source>created</source>
         <translation>නිර්මාණය කර ඇත</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="319"/>
         <source>expires</source>
         <translation>පෙරිවේදය</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="339"/>
+        <location filename="../src/usersdialog.cpp" line="342"/>
         <source>[INVALID] </source>
         <translation>[සමානතා ප්‍රකාශනය] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="335"/>
+        <location filename="../src/usersdialog.cpp" line="338"/>
         <source>[EXPIRED] </source>
         <translation>[පෙරිවේදුණු] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="343"/>
+        <location filename="../src/usersdialog.cpp" line="346"/>
         <source>[PARTIAL] </source>
         <translation>[භාවිතා කළමනාකරණය] </translation>
     </message>
@@ -3605,34 +3680,34 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="687"/>
+        <location filename="../src/util.cpp" line="783"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1 අසල තාවකාලික ගොනුවක් සෑදිය නොහැක: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="699"/>
-        <location filename="../src/util.cpp" line="778"/>
-        <location filename="../src/util.cpp" line="808"/>
+        <location filename="../src/util.cpp" line="795"/>
+        <location filename="../src/util.cpp" line="874"/>
+        <location filename="../src/util.cpp" line="904"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 ලිවිය නොහැක: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="714"/>
+        <location filename="../src/util.cpp" line="810"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 ප්‍රතිස්ථාපනය කිරීමට අසමත් විය.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="719"/>
+        <location filename="../src/util.cpp" line="815"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 දැනටමත් පවතී.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="721"/>
+        <location filename="../src/util.cpp" line="817"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 ලිවීම අසාර්ථක විය.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="765"/>
+        <location filename="../src/util.cpp" line="861"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 ලියන අතරතුර එය වෙනත් ගොනුවක් සමඟ මාරු විය.</translation>
     </message>
@@ -3641,12 +3716,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="obsolete">%1 ලියන අතරතුර එය සබැඳියකින් ප්‍රතිස්ථාපනය විය.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="791"/>
+        <location filename="../src/util.cpp" line="887"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">%1 කියවිය නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="801"/>
+        <location filename="../src/util.cpp" line="897"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">%1 කියවිය නොහැක: %2</translation>
     </message>

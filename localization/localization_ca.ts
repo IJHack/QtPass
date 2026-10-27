@@ -9,12 +9,12 @@
         <translation>S&apos;ha copiat al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="71"/>
+        <location filename="../src/clipboardmanager.cpp" line="118"/>
         <source>Clipboard cleared</source>
         <translation>S&apos;ha netejat el porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="72"/>
+        <location filename="../src/clipboardmanager.cpp" line="119"/>
         <source>Clipboard not cleared</source>
         <translation>No s&apos;ha netejat el porta-retalls</translation>
     </message>
@@ -175,9 +175,8 @@
         <translation type="obsolete">Ctrl+M també la mostra o l&apos;oculta des de la finestra principal</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Habilita la cerca de contingut (pass grep)</translation>
+        <translation type="vanished">Habilita la cerca de contingut (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="226"/>
@@ -230,56 +229,66 @@
         <translation type="unfinished">Camps de la plantilla i cada línia «clau: valor»</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1036"/>
+        <location filename="../src/configdialog.ui" line="960"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="963"/>
+        <source>Use a Git repository in a folder above the store</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1046"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
         <translation type="unfinished">Cerca gpg, git, pwgen i pass al PATH</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1100"/>
-        <location filename="../src/configdialog.ui" line="1103"/>
+        <location filename="../src/configdialog.ui" line="1110"/>
+        <location filename="../src/configdialog.ui" line="1113"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">Tria l&apos;executable de gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1113"/>
-        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1123"/>
+        <location filename="../src/configdialog.ui" line="1126"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">Tria l&apos;executable de git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1132"/>
+        <location filename="../src/configdialog.ui" line="1142"/>
         <source>Generate</source>
         <translation>Genera</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1135"/>
+        <location filename="../src/configdialog.ui" line="1145"/>
         <source>Generate GPG key pair</source>
         <translation>Genera un parell de claus GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1168"/>
-        <location filename="../src/configdialog.ui" line="1171"/>
+        <location filename="../src/configdialog.ui" line="1178"/>
+        <location filename="../src/configdialog.ui" line="1181"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">Tria l&apos;executable de pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1208"/>
-        <location filename="../src/configdialog.ui" line="1211"/>
+        <location filename="../src/configdialog.ui" line="1218"/>
+        <location filename="../src/configdialog.ui" line="1221"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">Tria l&apos;executable de pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1241"/>
+        <location filename="../src/configdialog.ui" line="1251"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>Substitució de SSH_AUTH_SOCK:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1484"/>
+        <location filename="../src/configdialog.ui" line="1494"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
         <translation type="unfinished">Paràmetres de Git per a aquest perfil; substitueixen els de la pàgina Git mentre està actiu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1530"/>
+        <location filename="../src/configdialog.ui" line="1540"/>
         <source>Active store</source>
         <translation type="unfinished">Magatzem actiu</translation>
     </message>
@@ -288,42 +297,42 @@
         <translation type="vanished">Ruta opcional per substituir SSH_AUTH_SOCK. Deixeu en blanc per a la detecció automàtica via gpgconf (issue #543).</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1254"/>
+        <location filename="../src/configdialog.ui" line="1264"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(detecció automàtica via gpgconf)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1328"/>
+        <location filename="../src/configdialog.ui" line="1338"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">Els magatzems de contrasenyes que coneix aquest QtPass; trieu-ne un per editar-lo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1343"/>
+        <location filename="../src/configdialog.ui" line="1353"/>
         <source>Add a profile</source>
         <translation type="unfinished">Afegeix un perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1361"/>
+        <location filename="../src/configdialog.ui" line="1371"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">Oblida el perfil seleccionat; el magatzem es manté al disc</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1407"/>
+        <location filename="../src/configdialog.ui" line="1417"/>
         <source>Profile</source>
         <translation type="unfinished">Perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1423"/>
+        <location filename="../src/configdialog.ui" line="1433"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Nom del perfil, utilitzat per identificar aquest perfil de configuració</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1442"/>
+        <location filename="../src/configdialog.ui" line="1452"/>
         <source>Path to the password store directory</source>
         <translation>Camí al directori d&apos;emmagatzematge de contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1464"/>
+        <location filename="../src/configdialog.ui" line="1474"/>
         <source>Signing key</source>
         <translation>Clau de signatura</translation>
     </message>
@@ -332,12 +341,12 @@
         <translation type="vanished">Clau de signatura</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1474"/>
+        <location filename="../src/configdialog.ui" line="1484"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Opcional: Clau GPG per signar els fitxers .gpg-id per a la verificació de la integritat. Deixeu-ho en blanc tret que necessiteu protegir la llista d&apos;usuaris contra manipulacions.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1477"/>
+        <location filename="../src/configdialog.ui" line="1487"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">Empremta completa de la clau (40 caràcters), tal com requereix pass</translation>
     </message>
@@ -388,13 +397,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="946"/>
-        <location filename="../src/configdialog.ui" line="1494"/>
+        <location filename="../src/configdialog.ui" line="1504"/>
         <source>Automatically push</source>
         <translation>Pujada automàtica</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
-        <location filename="../src/configdialog.ui" line="1501"/>
+        <location filename="../src/configdialog.ui" line="1511"/>
         <source>Automatically pull</source>
         <translation>Baixada automàtica</translation>
     </message>
@@ -435,7 +444,7 @@
         <translation>Programes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1022"/>
+        <location filename="../src/configdialog.ui" line="1032"/>
         <source>Select password storage program:</source>
         <translation>Seleccioneu el programa d&apos;emmagatzematge de contrasenyes:</translation>
     </message>
@@ -444,17 +453,17 @@
         <translation type="vanished">Nati&amp;u git/gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1057"/>
+        <location filename="../src/configdialog.ui" line="1067"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Utilitza pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1081"/>
+        <location filename="../src/configdialog.ui" line="1091"/>
         <source>Native</source>
         <translation>Natiu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1087"/>
+        <location filename="../src/configdialog.ui" line="1097"/>
         <source>git</source>
         <translation>git</translation>
     </message>
@@ -463,22 +472,22 @@
         <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1142"/>
+        <location filename="../src/configdialog.ui" line="1152"/>
         <source>gpg</source>
         <translation>gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1158"/>
+        <location filename="../src/configdialog.ui" line="1168"/>
         <source>pwgen</source>
         <translation>pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1184"/>
+        <location filename="../src/configdialog.ui" line="1194"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1195"/>
+        <location filename="../src/configdialog.ui" line="1205"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -512,6 +521,11 @@
         <translation type="unfinished">Mostra els codis QR (qrencode)</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="223"/>
+        <source>Enable content search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="480"/>
         <source>seconds</source>
@@ -539,27 +553,27 @@
         <translation type="unfinished">Generació de contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1244"/>
+        <location filename="../src/configdialog.ui" line="1254"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">Ruta opcional per substituir SSH_AUTH_SOCK. Deixeu en blanc per a la detecció automàtica via gpgconf.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1413"/>
+        <location filename="../src/configdialog.ui" line="1423"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1430"/>
+        <location filename="../src/configdialog.ui" line="1440"/>
         <source>Path</source>
         <translation>Camí</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1346"/>
+        <location filename="../src/configdialog.ui" line="1356"/>
         <source>Add</source>
         <translation>Afegeix</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1364"/>
+        <location filename="../src/configdialog.ui" line="1374"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -598,7 +612,7 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1570"/>
+        <location filename="../src/configdialog.ui" line="1580"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versió </translation>
     </message>
@@ -622,43 +636,43 @@ email</translation>
         <translation>Copia sota demanda al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="276"/>
-        <location filename="../src/configdialog.cpp" line="281"/>
+        <location filename="../src/configdialog.cpp" line="280"/>
+        <location filename="../src/configdialog.cpp" line="285"/>
         <source>This field is required</source>
         <translation>Aquest camp és obligatori</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="278"/>
+        <location filename="../src/configdialog.cpp" line="282"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Ja hi ha un altre perfil amb aquest nom</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="287"/>
+        <location filename="../src/configdialog.cpp" line="291"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Només empremtes completes de clau (40 o 64 caràcters hexadecimals), separades per espais</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="333"/>
+        <location filename="../src/configdialog.cpp" line="337"/>
         <source>The path does not exist.</source>
         <translation>El camí no existeix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="336"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>The path is not readable.</source>
         <translation>El camí no és llegible.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="343"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>El camí no és un socket de domini Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
+        <location filename="../src/configdialog.cpp" line="347"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Substitució de SSH_AUTH_SOCK potencialment no vàlida</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="344"/>
+        <location filename="../src/configdialog.cpp" line="348"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -671,37 +685,37 @@ The value will still be saved as entered.</source>
 El valor es desarà tal com s&apos;ha introduït.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="582"/>
+        <location filename="../src/configdialog.cpp" line="587"/>
         <source>Create profile directory?</source>
         <translation>Voleu crear el directori del perfil?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="583"/>
+        <location filename="../src/configdialog.cpp" line="588"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Voleu crear un magatzem de contrasenyes a %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="590"/>
+        <location filename="../src/configdialog.cpp" line="595"/>
         <source>Could not create profile directory: %1</source>
         <translation>No s&apos;ha pogut crear el directori del perfil: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="610"/>
+        <location filename="../src/configdialog.cpp" line="615"/>
         <source>Select recipients for %1</source>
         <translation>Selecciona els destinataris per a %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="619"/>
+        <location filename="../src/configdialog.cpp" line="624"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">No s&apos;ha pogut inicialitzar el perfil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="622"/>
+        <location filename="../src/configdialog.cpp" line="627"/>
         <source>Profile %1</source>
         <translation type="unfinished">Perfil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="645"/>
+        <location filename="../src/configdialog.cpp" line="650"/>
         <source>New profile</source>
         <translation>Nou perfil</translation>
     </message>
@@ -710,12 +724,12 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation type="vanished">Nou perfil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="666"/>
+        <location filename="../src/configdialog.cpp" line="671"/>
         <source>No profile selected</source>
         <translation>Cap perfil seleccionat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="667"/>
+        <location filename="../src/configdialog.cpp" line="672"/>
         <source>No profile selected to delete</source>
         <translation>No s&apos;ha seleccionat cap perfil per suprimir</translation>
     </message>
@@ -736,7 +750,7 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation type="vanished">Voleu crear un magatzem de claus a %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="589"/>
+        <location filename="../src/configdialog.cpp" line="594"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -758,27 +772,27 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation type="vanished">La carpeta %1 no sembla ser un magatzem de claus o encara no ha estat inicialitzat.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="882"/>
+        <location filename="../src/configdialog.cpp" line="891"/>
         <source>New profile: %1 at %2</source>
         <translation>Perfil nou: %1 a %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="884"/>
+        <location filename="../src/configdialog.cpp" line="893"/>
         <source>Profile: %1 at %2</source>
         <translation>Perfil: %1 a %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="887"/>
+        <location filename="../src/configdialog.cpp" line="896"/>
         <source>Fill in all required fields</source>
         <translation>Empleneu tots els camps obligatoris</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1223"/>
+        <location filename="../src/configdialog.ui" line="1233"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1039"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>Autodetect</source>
         <translation>Detecció automàtica</translation>
     </message>
@@ -810,7 +824,7 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="925"/>
-        <location filename="../src/configdialog.ui" line="1487"/>
+        <location filename="../src/configdialog.ui" line="1497"/>
         <source>Use Git</source>
         <translation>Utilitzeu Git</translation>
     </message>
@@ -823,7 +837,7 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation type="vanished">Utilitzeu l’extensió pass-otp</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1050"/>
+        <location filename="../src/configdialog.ui" line="1060"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG &amp;natius</translation>
     </message>
@@ -834,12 +848,12 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation>Git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1106"/>
-        <location filename="../src/configdialog.ui" line="1119"/>
-        <location filename="../src/configdialog.ui" line="1174"/>
-        <location filename="../src/configdialog.ui" line="1214"/>
-        <location filename="../src/configdialog.ui" line="1455"/>
-        <location filename="../src/configdialog.ui" line="1546"/>
+        <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/configdialog.ui" line="1129"/>
+        <location filename="../src/configdialog.ui" line="1184"/>
+        <location filename="../src/configdialog.ui" line="1224"/>
+        <location filename="../src/configdialog.ui" line="1465"/>
+        <location filename="../src/configdialog.ui" line="1556"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -852,10 +866,10 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <translation type="vanished">PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1449"/>
-        <location filename="../src/configdialog.ui" line="1452"/>
-        <location filename="../src/configdialog.ui" line="1540"/>
-        <location filename="../src/configdialog.ui" line="1543"/>
+        <location filename="../src/configdialog.ui" line="1459"/>
+        <location filename="../src/configdialog.ui" line="1462"/>
+        <location filename="../src/configdialog.ui" line="1550"/>
+        <location filename="../src/configdialog.ui" line="1553"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Tria la carpeta del magatzem de contrasenyes</translation>
     </message>
@@ -940,17 +954,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="190"/>
+        <location filename="../src/executor.cpp" line="207"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">No hi ha cap executable configurat per a aquesta ordre</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="219"/>
+        <location filename="../src/executor.cpp" line="236"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">No s&apos;ha pogut iniciar %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="413"/>
+        <location filename="../src/executor.cpp" line="430"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 ha fallat o ha estat matat</translation>
     </message>
@@ -1029,19 +1043,30 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="13"/>
+        <location filename="../src/fieldlabel.cpp" line="17"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Feu doble clic per canviar el nom d&apos;aquest camp</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="26"/>
+        <location filename="../src/fieldlabel.cpp" line="30"/>
         <source>Rename field…</source>
         <translation type="unfinished">Canvia el nom del camp…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="27"/>
+        <location filename="../src/fieldlabel.cpp" line="31"/>
         <source>Remove field</source>
         <translation type="unfinished">Suprimeix el camp</translation>
+    </message>
+</context>
+<context>
+    <name>FileContent</name>
+    <message numerus="yes">
+        <location filename="../src/filecontent.cpp" line="87"/>
+        <source>… %n more line(s) not shown</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -1232,127 +1257,127 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
-        <location filename="../src/imitatepass.cpp" line="575"/>
+        <location filename="../src/imitatepass.cpp" line="417"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>Signature for %1 is invalid.</source>
         <translation>La signatura per a %1 no és vàlida.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="197"/>
-        <location filename="../src/imitatepass.cpp" line="848"/>
+        <location filename="../src/imitatepass.cpp" line="204"/>
+        <location filename="../src/imitatepass.cpp" line="867"/>
         <source>Can not edit</source>
         <translation>No es pot editar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="220"/>
+        <location filename="../src/imitatepass.cpp" line="227"/>
         <source>Cannot add</source>
         <translation type="unfinished">No es pot afegir</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="220"/>
+        <location filename="../src/imitatepass.cpp" line="227"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ja existeix.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
-        <location filename="../src/imitatepass.cpp" line="849"/>
+        <location filename="../src/imitatepass.cpp" line="205"/>
+        <location filename="../src/imitatepass.cpp" line="868"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>No s&apos;ha pogut llegir el fitxer que s&apos;ha d&apos;utilitzar per al xifratge, falta el fitxer .gpg-id o bé no és vàlid.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="167"/>
+        <location filename="../src/imitatepass.cpp" line="174"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">No es pot comprovar la llista de destinataris</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="168"/>
+        <location filename="../src/imitatepass.cpp" line="175"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 No es pot saber si %2 s&apos;ha suprimit, així que no s&apos;ha xifrat res.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="174"/>
+        <location filename="../src/imitatepass.cpp" line="181"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Falta la llista de destinataris</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
+        <location filename="../src/imitatepass.cpp" line="182"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">La llista de destinataris signada %1 falta o no és un fitxer normal. QtPass no recorre en el seu lloc a la llista d&apos;una carpeta pare: aquella llista no es va signar per a aquesta carpeta. Si hi ha un enllaç amb aquest nom, suprimiu-lo. Després obriu Usuaris per a aquesta carpeta i deseu-ne els destinataris, cosa que escriu i signa una llista nova.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="232"/>
+        <location filename="../src/imitatepass.cpp" line="239"/>
         <source>Cannot write</source>
         <translation type="unfinished">No es pot escriure</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="233"/>
+        <location filename="../src/imitatepass.cpp" line="240"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">No es pot crear un directori temporal: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="401"/>
+        <location filename="../src/imitatepass.cpp" line="408"/>
         <source>GPG signing failed!</source>
         <translation>La signatura del GPG ha fallat!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="403"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1.</source>
         <translation>No s&apos;ha pogut signar %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="520"/>
+        <location filename="../src/imitatepass.cpp" line="526"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">No s&apos;han canviat els destinataris</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="521"/>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Encara hi ha un rexifratge en curs. Espereu que acabi i després torneu a desar els destinataris.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="533"/>
         <source>No signing key!</source>
         <translation>Sense clau de signatura!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="528"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Cap de les claus secretes de signatura està disponible.
 No podràs canviar la llista d&apos;usuaris!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="323"/>
-        <location filename="../src/imitatepass.cpp" line="341"/>
-        <location filename="../src/imitatepass.cpp" line="368"/>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="330"/>
+        <location filename="../src/imitatepass.cpp" line="348"/>
+        <location filename="../src/imitatepass.cpp" line="375"/>
+        <location filename="../src/imitatepass.cpp" line="504"/>
         <source>Cannot update</source>
         <translation>No es pot actualitzar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="112"/>
+        <location filename="../src/imitatepass.cpp" line="118"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Ha fallat el Git pull: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="193"/>
-        <location filename="../src/imitatepass.cpp" line="409"/>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="200"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="748"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Comproveu la signatura del fitxer .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="281"/>
+        <location filename="../src/imitatepass.cpp" line="288"/>
         <source>Delete failed</source>
         <translation type="unfinished">La supressió ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="282"/>
+        <location filename="../src/imitatepass.cpp" line="289"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">No s&apos;ha pogut suprimir l&apos;enllaç %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="324"/>
+        <location filename="../src/imitatepass.cpp" line="331"/>
         <source>%1 is not inside the password store.</source>
         <translation type="unfinished">%1 no és dins del magatzem de contrasenyes.</translation>
     </message>
@@ -1365,76 +1390,81 @@ No podràs canviar la llista d&apos;usuaris!</translation>
         <translation type="obsolete">No s&apos;ha pogut escriure %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="382"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">S&apos;ha escrit la llista de destinataris, però no s&apos;ha registrat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="390"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Deseu els destinataris una altra vegada per resoldre-ho.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="388"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>Check selected users!</source>
         <translation>Comproveu els usuaris seleccionats!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Cap de les tecles seleccionades té una clau secreta disponible.
 Probablement no podreu desxifrar les contrasenyes afegides recentment!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="411"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">No s&apos;ha pogut signar %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="499"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">No s&apos;ha pogut suprimir la signatura antiga %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="559"/>
+        <location filename="../src/imitatepass.cpp" line="565"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git ha acabat amb el codi %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
-        <location filename="../src/imitatepass.cpp" line="641"/>
-        <location filename="../src/imitatepass.cpp" line="649"/>
+        <location filename="../src/imitatepass.cpp" line="616"/>
+        <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="630"/>
+        <location filename="../src/imitatepass.cpp" line="658"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Resta d&apos;un rexifratge anterior</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="614"/>
+        <location filename="../src/imitatepass.cpp" line="631"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 no és un fitxer normal i no s&apos;ha restaurat. Reviseu-lo i suprimiu-lo, i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="642"/>
+        <location filename="../src/imitatepass.cpp" line="659"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 existeix al costat de %2. Totes dues són còpies xifrades de l&apos;entrada; comproveu quina voleu i suprimiu l&apos;altra, i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="673"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">S&apos;ha restaurat %1 a partir de la còpia de seguretat que va deixar un rexifratge interromput.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="650"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">Falta %1 i no s&apos;ha pogut tornar a canviar el nom de la seva còpia de seguretat %2. Canvieu-li el nom a mà i després torneu a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="889"/>
+        <location filename="../src/imitatepass.cpp" line="908"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">No s&apos;ha pogut tornar a xifrar %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1168"/>
+        <location filename="../src/imitatepass.cpp" line="1202"/>
         <source>Re-encryption failed</source>
         <translation>El rexifratge ha fallat</translation>
     </message>
@@ -1451,75 +1481,75 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <translation type="obsolete">No s&apos;ha pogut suprimir la còpia de seguretat %1 després del rexifratge; es pot suprimir sense perill.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="900"/>
+        <location filename="../src/imitatepass.cpp" line="919"/>
         <source>Creating backup commit</source>
         <translation>Creació de commit de còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="914"/>
-        <location filename="../src/imitatepass.cpp" line="923"/>
+        <location filename="../src/imitatepass.cpp" line="933"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
         <source>Backup commit failed</source>
         <translation>Ha fallat el commit de la còpia de seguretat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="934"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>No s&apos;ha pogut inspeccionar l&apos;estat de git. S&apos;ha avortat el rexifratge.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="924"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>El rexifratge s&apos;ha avortat perquè no s&apos;ha pogut crear una còpia de seguretat de git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="953"/>
+        <location filename="../src/imitatepass.cpp" line="972"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Ja hi ha un rexifratge en curs</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="960"/>
+        <location filename="../src/imitatepass.cpp" line="979"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">No és una carpeta del magatzem</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="961"/>
+        <location filename="../src/imitatepass.cpp" line="980"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un. Allò a què apunta no forma part del magatzem de contrasenyes i no s&apos;ha tornat a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="970"/>
+        <location filename="../src/imitatepass.cpp" line="989"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-xifratge des de la carpeta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1031"/>
-        <location filename="../src/imitatepass.cpp" line="1195"/>
+        <location filename="../src/imitatepass.cpp" line="1053"/>
+        <location filename="../src/imitatepass.cpp" line="1229"/>
         <source>Updating password-store</source>
         <translation>Actualització del magatzem de contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1044"/>
-        <location filename="../src/imitatepass.cpp" line="1050"/>
+        <location filename="../src/imitatepass.cpp" line="1066"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Ha fallat el Git pull</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
+        <location filename="../src/imitatepass.cpp" line="1067"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">No s&apos;ha pogut comprovar si el magatzem té fitxers sense fusionar després del pull. Comproveu-ho amb git abans de tornar a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1051"/>
+        <location filename="../src/imitatepass.cpp" line="1073"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">El pull ha deixat el magatzem amb fitxers sense fusionar. Resoleu el conflicte abans de tornar a xifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1055"/>
+        <location filename="../src/imitatepass.cpp" line="1077"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Ha fallat el Git pull; es torna a xifrar el magatzem tal com està</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1066"/>
+        <location filename="../src/imitatepass.cpp" line="1088"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>S&apos;ha omès %n entrada: un enllaç simbòlic, un punt d&apos;unió o un fitxer especial no forma part del magatzem.</numerusform>
@@ -1527,17 +1557,27 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1087"/>
+        <location filename="../src/imitatepass.cpp" line="1109"/>
         <source>GPG ID verification failed</source>
         <translation>La verificació de l&apos;ID de GPG ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1088"/>
+        <location filename="../src/imitatepass.cpp" line="1110"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>No s&apos;ha pogut verificar l&apos;identificador de fitxer .gpg-id per al directori.</translation>
     </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1130"/>
+        <source>Not part of the store</source>
+        <translation type="unfinished">No forma part del magatzem</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1166"/>
+        <location filename="../src/imitatepass.cpp" line="1200"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... i %n més</numerusform>
@@ -1545,7 +1585,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1169"/>
+        <location filename="../src/imitatepass.cpp" line="1203"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>No s&apos;ha pogut tornar a xifrar %n fitxer:</numerusform>
@@ -1553,18 +1593,18 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1209"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Rexifratge cancel·lat: %1 de %2 fitxers comprovats, %3 tornats a xifrar, %4 han fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1276"/>
+        <location filename="../src/imitatepass.cpp" line="1285"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">No s&apos;ha fet commit dels destinataris</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1243"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1577,7 +1617,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Encara no s&apos;ha fet commit ni push del canvi. Resoleu el problema de Git i després feu commit dels canvis, o torneu a desar els destinataris.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1286"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1590,12 +1630,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encara estan xifrades per als destinataris anteriors, que encara les poden llegir. No s&apos;ha fet commit ni push de res. Resoleu el problema de Git i després torneu a desar els destinataris.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1429"/>
+        <location filename="../src/imitatepass.cpp" line="1463"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">L&apos;executable de Git no està configurat; s&apos;omet git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1489"/>
+        <location filename="../src/imitatepass.cpp" line="1523"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg no ha escrit cap text xifrat per a %1.</translation>
     </message>
@@ -1624,17 +1664,17 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
         <translation type="vanished">No s&apos;ha pogut tornar a xifrar %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1184"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Re-criptació completada: %1 correctes, %2 han fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1189"/>
+        <location filename="../src/imitatepass.cpp" line="1223"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Re-criptació completada: %1 fitxers re-encriptats</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1198"/>
+        <location filename="../src/imitatepass.cpp" line="1232"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>No es fa push: %n fitxer no s&apos;ha pogut tornar a xifrar</numerusform>
@@ -1642,14 +1682,14 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1351"/>
-        <location filename="../src/imitatepass.cpp" line="1395"/>
+        <location filename="../src/imitatepass.cpp" line="1385"/>
+        <location filename="../src/imitatepass.cpp" line="1429"/>
         <source>Copy failed</source>
         <translation type="unfinished">La còpia ha fallat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1352"/>
-        <location filename="../src/imitatepass.cpp" line="1396"/>
+        <location filename="../src/imitatepass.cpp" line="1386"/>
+        <location filename="../src/imitatepass.cpp" line="1430"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">No s&apos;ha pogut copiar %1 a %2.</translation>
     </message>
@@ -1680,7 +1720,7 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="41"/>
+        <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>Import GPG key</source>
         <translation>Importa una clau GPG</translation>
     </message>
@@ -1700,7 +1740,7 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
         <translation>Importa</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/importkeydialog.cpp" line="44"/>
         <source>ASCII-armored GPG key</source>
         <translation>Clau GPG ASCII-armored</translation>
     </message>
@@ -1713,12 +1753,12 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
         <translation type="vanished">Importa la clau</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="51"/>
+        <location filename="../src/importkeydialog.cpp" line="58"/>
         <source>Could not open file: %1</source>
         <translation>No s&apos;ha pogut obrir el fitxer: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="66"/>
+        <location filename="../src/importkeydialog.cpp" line="83"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 no sembla una clau GPG ASCII-armored. Convertiu-la primer amb &lt;code&gt;gpg --armor --export&lt;/code&gt;, o enganxeu el bloc ASCII-armored mitjançant &lt;b&gt;Des del porta-retalls&lt;/b&gt;.</translation>
     </message>
@@ -1727,32 +1767,38 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
         <translation type="vanished">%1 no sembla una clau GPG ASCII-armored. Convertiu-la primer amb &lt;code&gt;gpg --armor --export&lt;/code&gt;, o enganxeu el bloc ASCII-armored mitjançant &lt;b&gt;Des del porta-retalls&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/importkeydialog.cpp" line="44"/>
         <source>All files</source>
         <translation>Tots els fitxers</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="50"/>
-        <location filename="../src/importkeydialog.cpp" line="65"/>
-        <location filename="../src/importkeydialog.cpp" line="163"/>
-        <location filename="../src/importkeydialog.cpp" line="167"/>
+        <location filename="../src/importkeydialog.cpp" line="57"/>
+        <location filename="../src/importkeydialog.cpp" line="70"/>
+        <location filename="../src/importkeydialog.cpp" line="82"/>
+        <location filename="../src/importkeydialog.cpp" line="182"/>
+        <location filename="../src/importkeydialog.cpp" line="186"/>
         <source>Import key</source>
         <translation>Importa la clau</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="113"/>
+        <location filename="../src/importkeydialog.cpp" line="71"/>
+        <source>%1 is larger than a key file can be.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/importkeydialog.cpp" line="130"/>
         <source>GPG import failed:
 %1</source>
         <translation>La importació GPG ha fallat:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="123"/>
+        <location filename="../src/importkeydialog.cpp" line="140"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>No s&apos;ha pogut llegir l&apos;identificador de la clau importada de la sortida de GPG.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="168"/>
+        <location filename="../src/importkeydialog.cpp" line="187"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">S&apos;ha importat la clau pública %1. Comproveu-ne l&apos;empremta amb el seu propietari abans de xifrar-hi res: importar una clau no diu res sobre qui la té.</translation>
     </message>
@@ -1889,37 +1935,37 @@ Expire-Date: 0
         <translation>Per obtenir opcions d&apos;experts consulteu el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="155"/>
+        <location filename="../src/keygendialog.cpp" line="161"/>
         <source>Invalid name</source>
         <translation>El nom no és vàlid</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="156"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>El nom ha de tenir almenys 5 caràcters de longitud.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="166"/>
+        <location filename="../src/keygendialog.cpp" line="172"/>
         <source>Invalid email</source>
         <translation>El correu electrònic no és vàlid</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="167"/>
+        <location filename="../src/keygendialog.cpp" line="173"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>L&apos;adreça de correu electrònic que heu escrit no és una adreça electrònica vàlida.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="189"/>
+        <location filename="../src/keygendialog.cpp" line="195"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Aquesta operació pot trigar uns quants minuts.&lt;br /&gt;S&apos;han de generar molts bytes aleatoris. Una bona idea és realitzar alguna altra acció (teclegeu el teclat, moveu el ratolí, utilitzeu els discs) durant la generació de nombres primers; això dóna al generador de nombres aleatoris una millor oportunitat per obtenir prou entropia.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="210"/>
+        <location filename="../src/keygendialog.cpp" line="216"/>
         <source>No password store backend available</source>
         <translation type="unfinished">No hi ha cap rerefons de magatzem de contrasenyes disponible</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="244"/>
+        <location filename="../src/keygendialog.cpp" line="250"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">La generació de la clau ha fallat: %1</translation>
     </message>
@@ -1936,16 +1982,16 @@ Expire-Date: 0
         <translation type="vanished">Afegeix</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="443"/>
         <location filename="../src/mainwindow.ui" line="446"/>
-        <location filename="../src/mainwindow.cpp" line="1376"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/mainwindow.cpp" line="1401"/>
         <source>Edit</source>
         <translation>Edita</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="451"/>
         <location filename="../src/mainwindow.ui" line="454"/>
-        <location filename="../src/mainwindow.cpp" line="1388"/>
+        <location filename="../src/mainwindow.ui" line="457"/>
+        <location filename="../src/mainwindow.cpp" line="1413"/>
         <source>Delete</source>
         <translation>Suprimeix</translation>
     </message>
@@ -1954,7 +2000,7 @@ Expire-Date: 0
         <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="470"/>
+        <location filename="../src/mainwindow.ui" line="473"/>
         <source>Push</source>
         <translation>Puja</translation>
     </message>
@@ -1977,32 +2023,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Noto Sans&apos;; font-size:12pt; text-decoration: underline; color:#4183c4;&quot;&gt;Codi font&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="430"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="459"/>
+        <location filename="../src/mainwindow.ui" line="462"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="462"/>
+        <location filename="../src/mainwindow.ui" line="465"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Genera l&apos;OTP i copia&apos;l al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="465"/>
+        <location filename="../src/mainwindow.ui" line="468"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="473"/>
+        <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="481"/>
+        <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -2011,7 +2057,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="478"/>
+        <location filename="../src/mainwindow.ui" line="481"/>
         <source>Update</source>
         <translation>Actualitza</translation>
     </message>
@@ -2027,13 +2073,13 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt; &lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot;/&gt; &lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-family: Lato;&quot;&gt;QtPass&lt;/span&gt; és una IGU per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor estàndard de contrasenyes d&apos;unix.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Informeu de qualsevol &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;incidència&lt;/a&gt; que us trobeu amb aquest programari.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentació&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codi font&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="489"/>
+        <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
         <translation>Gestioneu qui pot llegir la contrasenya a la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="486"/>
-        <location filename="../src/mainwindow.cpp" line="1370"/>
+        <location filename="../src/mainwindow.ui" line="489"/>
+        <location filename="../src/mainwindow.cpp" line="1395"/>
         <source>Users</source>
         <translation>Usuaris</translation>
     </message>
@@ -2063,15 +2109,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="692"/>
-        <location filename="../src/mainwindow.cpp" line="872"/>
+        <location filename="../src/mainwindow.cpp" line="702"/>
+        <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Search password</source>
         <translation>Cerca la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Cerca dins del contingut de la contrasenya (pass grep)</translation>
+        <translation type="vanished">Cerca dins del contingut de la contrasenya (pass grep)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="127"/>
+        <source>Search inside password content</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2114,12 +2164,12 @@ p, li { white-space: pre-wrap; }
         <translation>Resultats</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/mainwindow.ui" line="266"/>
         <source>Welcome to QtPass</source>
         <translation>Benvingut a QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="319"/>
+        <location filename="../src/mainwindow.ui" line="322"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -2130,117 +2180,117 @@ p, li { white-space: pre-wrap; }
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Codi font&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="341"/>
+        <location filename="../src/mainwindow.ui" line="344"/>
         <source>&amp;File</source>
         <translation type="unfinished">&amp;Fitxer</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="354"/>
+        <location filename="../src/mainwindow.ui" line="357"/>
         <source>&amp;Store</source>
         <translation type="unfinished">&amp;Magatzem</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="365"/>
+        <location filename="../src/mainwindow.ui" line="368"/>
         <source>S&amp;ettings</source>
         <translation type="unfinished">&amp;Paràmetres</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="374"/>
+        <location filename="../src/mainwindow.ui" line="377"/>
         <source>&amp;Help</source>
         <translation type="unfinished">&amp;Ajuda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="497"/>
+        <location filename="../src/mainwindow.ui" line="500"/>
         <source>Show &amp;process output</source>
         <translation type="unfinished">Mostra la sortida del &amp;procés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="500"/>
+        <location filename="../src/mainwindow.ui" line="503"/>
         <source>Show or hide the output of git, gpg and pass</source>
         <translation type="unfinished">Mostra o amaga la sortida de git, gpg i pass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="511"/>
+        <location filename="../src/mainwindow.ui" line="514"/>
         <source>Show &amp;menu bar</source>
         <translation type="unfinished">Mostra la barra de &amp;menús</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="514"/>
+        <location filename="../src/mainwindow.ui" line="517"/>
         <source>Hide or show the menu bar; Ctrl+M brings it back</source>
         <translation type="unfinished">Oculta o mostra la barra de menús; Ctrl+M la torna a mostrar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="517"/>
+        <location filename="../src/mainwindow.ui" line="520"/>
         <source>Ctrl+M</source>
         <translation type="unfinished">Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="522"/>
+        <location filename="../src/mainwindow.ui" line="525"/>
         <source>&amp;Configure QtPass…</source>
         <translation type="unfinished">&amp;Configura QtPass…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="525"/>
+        <location filename="../src/mainwindow.ui" line="528"/>
         <source>Settings</source>
         <translation type="unfinished">Paràmetres</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="528"/>
+        <location filename="../src/mainwindow.ui" line="531"/>
         <source>Change the QtPass settings</source>
         <translation type="unfinished">Canvia els paràmetres de QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="531"/>
+        <location filename="../src/mainwindow.ui" line="534"/>
         <source>Ctrl+,</source>
         <translation type="unfinished">Ctrl+,</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="539"/>
+        <location filename="../src/mainwindow.ui" line="542"/>
         <source>&amp;Close window</source>
         <translation type="unfinished">&amp;Tanca la finestra</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="542"/>
+        <location filename="../src/mainwindow.ui" line="545"/>
         <source>Close the window; with &quot;Hide on close&quot; QtPass stays in the tray</source>
         <translation type="unfinished">Tanca la finestra; amb «Oculta amb el tancament» QtPass es manté a la safata del sistema</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="545"/>
+        <location filename="../src/mainwindow.ui" line="548"/>
         <source>Ctrl+W</source>
         <translation type="unfinished">Ctrl+W</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="550"/>
+        <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
         <translation type="unfinished">&amp;Surt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="553"/>
+        <location filename="../src/mainwindow.ui" line="556"/>
         <source>Ctrl+Q</source>
         <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="561"/>
+        <location filename="../src/mainwindow.ui" line="564"/>
         <source>&amp;FAQ</source>
         <translation type="unfinished">&amp;PMF</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="564"/>
+        <location filename="../src/mainwindow.ui" line="567"/>
         <source>Open the frequently asked questions on qtpass.org</source>
         <translation type="unfinished">Obre les preguntes més freqüents a qtpass.org</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="567"/>
+        <location filename="../src/mainwindow.ui" line="570"/>
         <source>F1</source>
         <translation type="unfinished">F1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="572"/>
+        <location filename="../src/mainwindow.ui" line="575"/>
         <source>&amp;About QtPass</source>
         <translation type="unfinished">&amp;Quant a QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="580"/>
+        <location filename="../src/mainwindow.ui" line="583"/>
         <source>About &amp;Qt</source>
         <translation type="unfinished">Quant a Q&amp;t</translation>
     </message>
@@ -2261,7 +2311,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="396"/>
+        <location filename="../src/mainwindow.cpp" line="403"/>
         <source>Welcome to QtPass %1</source>
         <translation>Benvingut a QtPass %1</translation>
     </message>
@@ -2300,8 +2350,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="524"/>
-        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="531"/>
+        <location filename="../src/mainwindow.cpp" line="541"/>
         <source>Updating password-store</source>
         <translation>Actualització del magatzem de contrasenyes</translation>
     </message>
@@ -2318,8 +2368,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">S&apos;ha ocultat la contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="614"/>
-        <location filename="../src/mainwindow.cpp" line="911"/>
+        <location filename="../src/mainwindow.cpp" line="621"/>
+        <location filename="../src/mainwindow.cpp" line="929"/>
         <source>Content hidden</source>
         <translation>S&apos;ha ocultat el contingut</translation>
     </message>
@@ -2368,12 +2418,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="779"/>
+        <location filename="../src/mainwindow.cpp" line="789"/>
         <source>Looking for: %1</source>
         <translation>Cerca de: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="921"/>
+        <location filename="../src/mainwindow.cpp" line="947"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>S&apos;ha trobat %n coincidència</numerusform>
@@ -2403,17 +2453,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Esteu segur que voleu suprimir %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1054"/>
         <source>Delete password?</source>
         <translation>Suprimir la contrasenya?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1027"/>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Esteu segur que voleu suprimir %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1050"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>Delete folder?</source>
         <translation>Suprimir la carpeta?</translation>
     </message>
@@ -2438,26 +2488,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generació del parell de claus GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1209"/>
+        <location filename="../src/mainwindow.cpp" line="1234"/>
         <source>Profile changed to %1</source>
         <translation>S&apos;ha canviat el perfil a %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1367"/>
+        <location filename="../src/mainwindow.cpp" line="1392"/>
         <source>Open folder with file manager</source>
         <translation>Obre la carpeta amb el gestor de fitxers</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="435"/>
         <location filename="../src/mainwindow.ui" line="438"/>
-        <location filename="../src/mainwindow.cpp" line="1368"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.cpp" line="1393"/>
         <source>Add folder</source>
         <translation>Afegeix una carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="424"/>
         <location filename="../src/mainwindow.ui" line="427"/>
-        <location filename="../src/mainwindow.cpp" line="1369"/>
+        <location filename="../src/mainwindow.ui" line="430"/>
+        <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Add password</source>
         <translation>Afegeix una contrasenya</translation>
     </message>
@@ -2472,30 +2522,30 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">S&apos;ha copiat al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="652"/>
-        <location filename="../src/mainwindow.cpp" line="670"/>
-        <location filename="../src/mainwindow.cpp" line="1127"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
+        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="1152"/>
         <source>OTP code copied to clipboard</source>
         <translation>Codi OTP copiat al porta-retalls</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="672"/>
-        <location filename="../src/mainwindow.cpp" line="1115"/>
+        <location filename="../src/mainwindow.cpp" line="682"/>
+        <location filename="../src/mainwindow.cpp" line="1140"/>
         <source>No OTP code found in this password entry</source>
         <translation>No s&apos;ha trobat cap codi OTP en aquesta entrada de contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="824"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
         <translation>Cercant…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="850"/>
+        <location filename="../src/mainwindow.cpp" line="860"/>
         <source>Search content (regex)</source>
         <translation>Cerca contingut (expressió regular)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="897"/>
+        <location filename="../src/mainwindow.cpp" line="903"/>
         <source>No matches found.</source>
         <translation>No s&apos;han trobat coincidències.</translation>
     </message>
@@ -2507,7 +2557,7 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="922"/>
+        <location filename="../src/mainwindow.cpp" line="949"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>a %n entrada.</numerusform>
@@ -2515,18 +2565,18 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1110"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source>No password selected for OTP generation</source>
         <translation>No s&apos;ha seleccionat cap contrasenya per a la generació d&apos;un OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1382"/>
-        <location filename="../src/mainwindow.cpp" line="1459"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Rename folder</source>
         <translation>Canviar el nom de la carpeta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1385"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Rename password</source>
         <translation>Canviar el nom de la contrasenya</translation>
     </message>
@@ -2535,7 +2585,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Torna a xifrar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="200"/>
+        <location filename="../src/mainwindow.cpp" line="206"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">L&apos;operació ha caducat; s&apos;està reactivant la interfície.</translation>
     </message>
@@ -2544,162 +2594,174 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Sortida del procés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="641"/>
+        <location filename="../src/mainwindow.cpp" line="651"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">No s&apos;ha pogut desxifrar aquesta entrada de contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="696"/>
+        <location filename="../src/mainwindow.cpp" line="706"/>
         <source>Password and content hidden</source>
         <translation>S&apos;ha ocultada la contrasenya i el contingut</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="761"/>
+        <location filename="../src/mainwindow.cpp" line="771"/>
         <source>About QtPass</source>
         <translation type="unfinished">Quant a QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="762"/>
+        <location filename="../src/mainwindow.cpp" line="772"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Una interfície gràfica multiplataforma per a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, el gestor de contrasenyes estàndard de Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Codi font i incidències&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Llicenciat sota la &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versió 3&lt;/a&gt; o posterior.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="855"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">La cerca de contingut utilitza expressions regulars bàsiques POSIX (pass grep).</translation>
+        <translation type="obsolete">La cerca de contingut utilitza expressions regulars bàsiques POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="857"/>
+        <location filename="../src/mainwindow.cpp" line="864"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">La cerca de contingut utilitza expressions regulars compatibles amb Perl (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="977"/>
+        <location filename="../src/mainwindow.cpp" line="927"/>
+        <source>… more matches in this entry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="942"/>
+        <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1005"/>
         <source>Invalid name</source>
         <translation type="unfinished">El nom no és vàlid</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Aquest nom es resoldria fora de l&apos;emmagatzematge de contrasenyes. Si us plau, trieu un nom diferent.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1033"/>
+        <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Esteu segur que voleu suprimir %1 i tot el seu contingut?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1046"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Atenció: hi ha fitxers inesperats a la carpeta indicada; reviseu-los abans de continuar.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1059"/>
+        <location filename="../src/mainwindow.cpp" line="1085"/>
         <source>Delete link?</source>
         <translation type="unfinished">Suprimir l&apos;enllaç?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1060"/>
+        <location filename="../src/mainwindow.cpp" line="1086"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió. Voleu suprimir l&apos;enllaç? Allò a què apunta es deixa intacte.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1322"/>
+        <location filename="../src/mainwindow.cpp" line="1347"/>
         <source>Share</source>
         <translation>Comparteix</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1332"/>
+        <location filename="../src/mainwindow.cpp" line="1357"/>
         <source>Re-encrypt all passwords</source>
         <translation>Torna a xifrar totes les contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1362"/>
         <source>Export my public key...</source>
         <translation>Exporta la meva clau pública…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
+        <location filename="../src/mainwindow.cpp" line="1366"/>
         <source>Add recipient...</source>
         <translation>Afegeix un destinatari…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1346"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>What is this?</source>
         <translation>Què és això?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1420"/>
+        <location filename="../src/mainwindow.cpp" line="1445"/>
         <source>New folder</source>
         <translation type="unfinished">Carpeta nova</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1421"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Carpeta nova: 
 (s&apos;ubicarà a %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1432"/>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
-        <location filename="../src/mainwindow.cpp" line="1545"/>
+        <location filename="../src/mainwindow.cpp" line="1461"/>
+        <location filename="../src/mainwindow.cpp" line="1476"/>
+        <location filename="../src/mainwindow.cpp" line="1573"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1462"/>
         <source>Failed to create folder: %1</source>
         <translation>S’ha produït un error en crear la carpeta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1448"/>
+        <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>No s&apos;ha pogut crear el fitxer .gpg-id a: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1459"/>
+        <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Rename folder to: </source>
         <translation>Canvia el nom de la carpeta per: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>Rename file</source>
         <translation>Canviar el nom del fitxer</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>Rename file to: </source>
         <translation>Canvieu el nom del fitxer a: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1625"/>
-        <location filename="../src/mainwindow.cpp" line="1644"/>
+        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1671"/>
         <source>Export public key</source>
         <translation>Exporta la clau pública</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1626"/>
+        <location filename="../src/mainwindow.cpp" line="1653"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exporteu la vostra clau pública&lt;/h3&gt;&lt;p&gt;No hi ha cap clau de signatura configurada. Definiu-ne una a Configuració de QtPass &amp;gt; Claus GPG, o executeu aquesta ordre en un terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Després envieu el fitxer als vostres companys d&apos;equip.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">No és una carpeta del magatzem</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un. Allò a què apunta no forma part del magatzem de contrasenyes i es deixa intacte.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Sharing passwords with GPG</source>
         <translation>Compartir contrasenyes amb GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1683"/>
+        <location filename="../src/mainwindow.cpp" line="1710"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Compartir contrasenyes amb GPG&lt;/h3&gt;&lt;p&gt;Per compartir contrasenyes amb altres usuaris:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteu la vostra clau pública&lt;/b&gt; i envieu-la als companys d&apos;equip&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeu les claus públiques dels companys&lt;/b&gt; al vostre clauer GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Torneu a xifrar les contrasenyes&lt;/b&gt; perquè tots els destinataris les puguin desxifrar&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Només les persones amb una clau secreta coincident poden desxifrar les contrasenyes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consell:&lt;/b&gt; Utilitzeu la mateixa clau GPG per a totes les carpetes compartides.&lt;/p&gt;&lt;p&gt;Consulteu les PMF per a més detalls.&lt;/p&gt;</translation>
     </message>
@@ -2712,7 +2774,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Canvieu el nom del fitxer a: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1532"/>
+        <location filename="../src/mainwindow.cpp" line="1560"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Aquesta entrada conté un secret OTP, no una contrasenya</translation>
     </message>
@@ -2721,18 +2783,18 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Obre %1 al navegador</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Directory does not exist: %1</source>
         <translation>La carpeta no existeix: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1586"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1613"/>
         <source>Re-encrypt passwords</source>
         <translation>Torna a xifrar les contrasenyes</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1583"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2749,22 +2811,22 @@ Això pot reescriure molts fitxers i no es pot desfer fàcilment.
 Voleu continuar?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1584"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">S&apos;estan tornant a xifrar les contrasenyes...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1585"/>
+        <location filename="../src/mainwindow.cpp" line="1612"/>
         <source>Cancel</source>
         <translation type="unfinished">Cancel·la</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1593"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">S&apos;està cancel·lant el rexifratge</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1604"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">S&apos;estan tornant a xifrar les contrasenyes: %1 de %2</translation>
     </message>
@@ -2777,7 +2839,7 @@ Voleu continuar?</translation>
         <translation type="vanished">&lt;h3&gt;Exporteu la vostra clau pública&lt;/h3&gt;&lt;p&gt;No hi ha cap clau de signatura configurada. Definiu-ne una a Configuració de QtPass &amp;gt; Claus GPG, o executeu aquesta ordre en un terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Després envieu el fitxer als vostres companys d&apos;equip.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1645"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2786,7 +2848,7 @@ Voleu continuar?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1647"/>
+        <location filename="../src/mainwindow.cpp" line="1674"/>
         <source>No output from gpg.</source>
         <translation>Sense sortida de gpg.</translation>
     </message>
@@ -2820,102 +2882,107 @@ Voleu continuar?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="162"/>
+        <location filename="../src/pass.cpp" line="171"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">El directori de GPG configurat %1 no existeix; s&apos;utilitza el clauer per defecte</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="170"/>
+        <location filename="../src/pass.cpp" line="179"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">El directori de GPG configurat %1 no existeix; s&apos;utilitza el GNUPGHOME %2 de l&apos;entorn</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="183"/>
+        <location filename="../src/pass.cpp" line="192"/>
         <source>Invalid password length</source>
         <translation>Longitud de la contrasenya no vàlida</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="184"/>
+        <location filename="../src/pass.cpp" line="193"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>No es pot generar una contrasenya amb longitud zero.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="219"/>
+        <location filename="../src/pass.cpp" line="228"/>
         <source>No characters chosen</source>
         <translation>Cap caràcter triat</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="220"/>
+        <location filename="../src/pass.cpp" line="229"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>No es pot generar la contrasenya, no hi ha caràcters per triar a la configuració!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="358"/>
-        <location filename="../src/pass.cpp" line="359"/>
+        <location filename="../src/pass.cpp" line="367"/>
+        <location filename="../src/pass.cpp" line="368"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">No hi ha cap executable de GPG configurat</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="429"/>
-        <location filename="../src/pass.cpp" line="448"/>
+        <location filename="../src/pass.cpp" line="438"/>
+        <location filename="../src/pass.cpp" line="457"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>El xifratge ha fallat: la clau GPG ha caducat. Si us plau, renoveu-la o substituïu-la.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="434"/>
-        <location filename="../src/pass.cpp" line="453"/>
+        <location filename="../src/pass.cpp" line="443"/>
+        <location filename="../src/pass.cpp" line="462"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>El xifratge ha fallat: la clau GPG s&apos;ha revocat.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="438"/>
-        <location filename="../src/pass.cpp" line="467"/>
+        <location filename="../src/pass.cpp" line="447"/>
+        <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>El xifratge ha fallat: no s&apos;ha trobat la clau GPG del destinatari o no és vàlida. Comproveu que l&apos;ID de la clau a .gpg-id sigui correcte i s&apos;hagi importat.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="442"/>
-        <location filename="../src/pass.cpp" line="471"/>
+        <location filename="../src/pass.cpp" line="451"/>
+        <location filename="../src/pass.cpp" line="480"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>El xifratge ha fallat. Comproveu que la vostra clau GPG sigui vàlida.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="461"/>
+        <location filename="../src/pass.cpp" line="470"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">Ha fallat el xifratge: no es pot fer servir la clau GPG d&apos;un destinatari. Pot haver caducat o estar revocada, no tenir cap subclau de xifratge, o no ser de confiança; el missatge de gpg de sota indica quin és el cas.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="726"/>
+        <location filename="../src/pass.cpp" line="711"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un. Allò a què apunta no forma part del magatzem de contrasenyes i es deixa intacte.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="732"/>
+        <location filename="../src/pass.cpp" line="717"/>
         <source>Not part of the store</source>
         <translation type="unfinished">No forma part del magatzem</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="773"/>
+        <location filename="../src/pass.cpp" line="758"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">No es pot llegir el registre de generacions de les llistes de destinataris.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="852"/>
+        <location filename="../src/pass.cpp" line="839"/>
+        <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="860"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">La llista de destinataris %1 falta o no és un fitxer normal, així que no hi ha res preseleccionat: la llista d&apos;una carpeta pare no es va signar per a aquesta. Seleccioneu vós mateix els destinataris d&apos;aquesta carpeta; OK escriu i signa una llista nova.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="857"/>
+        <location filename="../src/pass.cpp" line="865"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 No hi ha res preseleccionat: no es pot saber si %2 s&apos;ha suprimit.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="872"/>
+        <location filename="../src/pass.cpp" line="880"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">La llista de destinataris %1 no es pot verificar amb la clau de signatura, així que no hi ha res preseleccionat: desar signaria tot el que hi hagi. Seleccioneu vós mateix els destinataris; OK escriu i signa una llista nova.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="819"/>
+        <location filename="../src/pass.cpp" line="804"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 No hi ha res preseleccionat: desar signaria tot el que hi hagi. Seleccioneu vós mateix els destinataris.</translation>
     </message>
@@ -2925,7 +2992,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="328"/>
+        <location filename="../src/passworddialog.cpp" line="329"/>
         <source>Password</source>
         <translation>Contrasenya</translation>
     </message>
@@ -3013,84 +3080,92 @@ Voleu continuar?</translation>
         <translation type="unfinished">Plantilla de camps del fitxer .templates del magatzem. Ctrl+T canvia a la següent.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="76"/>
+        <location filename="../src/passworddialog.cpp" line="77"/>
         <source>New password</source>
         <translation type="unfinished">Contrasenya nova</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="97"/>
+        <location filename="../src/passworddialog.cpp" line="98"/>
         <source>Decrypting…</source>
         <translation type="unfinished">S&apos;està desxifrant…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="182"/>
+        <location filename="../src/passworddialog.cpp" line="183"/>
         <source>Saving…</source>
         <translation type="unfinished">S&apos;està desant…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="213"/>
+        <location filename="../src/passworddialog.cpp" line="214"/>
         <source>Still saving</source>
         <translation type="unfinished">Encara s&apos;està desant</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="214"/>
+        <location filename="../src/passworddialog.cpp" line="215"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">L&apos;entrada encara s&apos;està desant. Voleu tancar el diàleg igualment? Si després falla el desament, es perdrà el que heu escrit.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="231"/>
+        <location filename="../src/passworddialog.cpp" line="232"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">No s&apos;ha desat: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="273"/>
+        <location filename="../src/passworddialog.cpp" line="274"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Doneu un nom a l&apos;entrada.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="277"/>
+        <location filename="../src/passworddialog.cpp" line="278"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nom no pot acabar en /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="286"/>
+        <location filename="../src/passworddialog.cpp" line="287"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Aquest nom es resoldria fora del magatzem de contrasenyes.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="290"/>
+        <location filename="../src/passworddialog.cpp" line="291"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Ja existeix una entrada anomenada %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="294"/>
+        <location filename="../src/passworddialog.cpp" line="295"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 és una carpeta.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="324"/>
+        <location filename="../src/passworddialog.cpp" line="325"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">No s&apos;ha pogut crear la carpeta %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="380"/>
+        <location filename="../src/passworddialog.cpp" line="381"/>
         <source>Remove field</source>
         <translation type="unfinished">Suprimeix el camp</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="399"/>
+        <location filename="../src/passworddialog.cpp" line="400"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Ja existeix un camp anomenat %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="480"/>
+        <location filename="../src/passworddialog.cpp" line="481"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// o secret en base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="517"/>
+        <location filename="../src/passworddialog.cpp" line="518"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">El secret OTP no és vàlid</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/passworddialog.cpp" line="718"/>
+        <source>This entry has %n line(s), too many to edit here.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -3118,12 +3193,12 @@ Voleu continuar?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="36"/>
+        <location filename="../src/profileinit.cpp" line="56"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">No s&apos;ha pogut crear %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="60"/>
+        <location filename="../src/profileinit.cpp" line="80"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 ja conté %n fitxer xifrat; no s&apos;ha tornat a xifrar. Canvieu al perfil i obriu Usuaris per fer-ho.</numerusform>
@@ -3131,12 +3206,12 @@ Voleu continuar?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="78"/>
+        <location filename="../src/profileinit.cpp" line="98"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">No s&apos;ha seleccionat cap destinatari; no s&apos;ha escrit %1.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="127"/>
+        <location filename="../src/profileinit.cpp" line="147"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">No s&apos;ha pogut signar %1 amb %2.</translation>
     </message>
@@ -3145,13 +3220,13 @@ Voleu continuar?</translation>
         <translation type="obsolete">No s&apos;ha pogut escriure %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="129"/>
+        <location filename="../src/profileinit.cpp" line="149"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">No s&apos;ha pogut signar %1 amb %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="149"/>
-        <location filename="../src/profileinit.cpp" line="178"/>
+        <location filename="../src/profileinit.cpp" line="170"/>
+        <location filename="../src/profileinit.cpp" line="200"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 ha fallat a %2: %3</translation>
     </message>
@@ -3217,26 +3292,26 @@ Voleu continuar?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="166"/>
         <location filename="../main/main.cpp" line="170"/>
+        <location filename="../main/main.cpp" line="174"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="72"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="192"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="229"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="74"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="194"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="235"/>
         <source>Password</source>
         <translation type="unfinished">Contrasenya</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="157"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="159"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Obre %1 al navegador</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="302"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="315"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="316"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="329"/>
         <source>OTP code</source>
         <translation>Codi OTP</translation>
     </message>
@@ -3245,7 +3320,7 @@ Voleu continuar?</translation>
         <translation type="obsolete">Codi OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="303"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="317"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">No s&apos;ha trobat cap codi OTP en aquesta entrada de contrasenya</translation>
     </message>
@@ -3418,12 +3493,12 @@ Voleu continuar?</translation>
         <translation type="vanished">voleu forçar la sobreescriptura?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="289"/>
+        <location filename="../src/storemodel.cpp" line="290"/>
         <source>Force overwrite?</source>
         <translation>Voleu forçar la sobreescriptura?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="290"/>
+        <location filename="../src/storemodel.cpp" line="291"/>
         <source>overwrite %1 with %2?</source>
         <translation>sobreescriu %1 amb %2?</translation>
     </message>
@@ -3633,32 +3708,32 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation>No s&apos;ha pogut obtenir la llista de claus GPG disponibles</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="174"/>
+        <location filename="../src/usersdialog.cpp" line="177"/>
         <source>Key not found in keyring</source>
         <translation>No s&apos;ha trobat la clau a l&apos;anell de claus</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="315"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="319"/>
         <source>expires</source>
         <translation>venç</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="339"/>
+        <location filename="../src/usersdialog.cpp" line="342"/>
         <source>[INVALID] </source>
         <translation>[INVÀLID] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="335"/>
+        <location filename="../src/usersdialog.cpp" line="338"/>
         <source>[EXPIRED] </source>
         <translation>[CADUCAT] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="343"/>
+        <location filename="../src/usersdialog.cpp" line="346"/>
         <source>[PARTIAL] </source>
         <translation>[PARCIAL] </translation>
     </message>
@@ -3666,34 +3741,34 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="687"/>
+        <location filename="../src/util.cpp" line="783"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">No es pot crear un fitxer temporal al costat de %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="699"/>
-        <location filename="../src/util.cpp" line="778"/>
-        <location filename="../src/util.cpp" line="808"/>
+        <location filename="../src/util.cpp" line="795"/>
+        <location filename="../src/util.cpp" line="874"/>
+        <location filename="../src/util.cpp" line="904"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">No es pot escriure %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="714"/>
+        <location filename="../src/util.cpp" line="810"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">No s&apos;ha pogut substituir %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="719"/>
+        <location filename="../src/util.cpp" line="815"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ja existeix.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="721"/>
+        <location filename="../src/util.cpp" line="817"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">No s&apos;ha pogut escriure %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="765"/>
+        <location filename="../src/util.cpp" line="861"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 s&apos;ha canviat per un altre fitxer mentre s&apos;escrivia.</translation>
     </message>
@@ -3702,12 +3777,12 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
         <translation type="obsolete">%1 s&apos;ha substituït per un enllaç mentre s&apos;escrivia.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="791"/>
+        <location filename="../src/util.cpp" line="887"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">No es pot llegir %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="801"/>
+        <location filename="../src/util.cpp" line="897"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">No es pot llegir %1: %2</translation>
     </message>
