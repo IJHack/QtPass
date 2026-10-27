@@ -89,7 +89,8 @@ public:
   static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;
 
   /**
-   * @brief Most bytes loadKeyring() reads from one keyring file.
+   * @brief Most bytes of a keyring file: saveKeyring() writes no larger one,
+   * loadKeyring() reads no larger one.
    *
    * Far beyond a keyring of a few hundred keys; a file larger than this is
    * not read at all.
@@ -233,8 +234,9 @@ public:
                   QString *error = nullptr) -> bool;
 
   /**
-   * @brief Writes the keyring to @p dir: pubring.gpg and secring.gpg,
-   * OpenPGP keys as GnuPG 1 kept them, each owner-only and replaced whole.
+   * @brief Writes the keyring to @p dir: keyring.gpg, public and secret
+   * keys in one file (OpenPGP keys, as GnuPG 1 kept them), owner-only and
+   * replaced whole, so a reader sees the old keyring or the new one.
    *
    * Secret keys are written as they are held: protected by their own
    * passphrase, never decrypted for this. A secret key without protection is
@@ -245,7 +247,8 @@ public:
    * @param allowUnprotected Write unprotected secret keys as well.
    * @param error Set to the reason when nothing was written, naming the
    * first unprotected key.
-   * @return Whether both files were written.
+   * @return Whether the keyring was written; false, and nothing written,
+   * also when it would be larger than loadKeyring() reads.
    */
   auto saveKeyring(const QString &dir, bool allowUnprotected = false,
                    QString *error = nullptr) const -> bool;
@@ -254,8 +257,8 @@ public:
    * @brief Adds the keyring in @p dir (as saveKeyring() wrote it) to this
    * one. Secret keys stay protected until an operation needs them.
    *
-   * Each file is read as a regular file, not through a link, and only up to
-   * kMaxKeyringBytes. A missing or empty file is an empty keyring, not an
+   * keyring.gpg is read as a regular file, not through a link, and only up
+   * to kMaxKeyringBytes. A missing or empty file is an empty keyring, not an
    * error.
    * @param dir The keyring folder.
    * @param error Set to the reason when loading fails.

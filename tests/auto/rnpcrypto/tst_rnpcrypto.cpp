@@ -946,8 +946,7 @@ void tst_rnpcrypto::keyringRoundTripKeepsSecretKeysProtected() {
 #ifdef Q_OS_UNIX
   const auto owner = QFile::ReadOwner | QFile::WriteOwner;
   QCOMPARE(modeOf(dir), owner | QFile::ExeOwner);
-  QCOMPARE(modeOf(QDir(dir).filePath(QStringLiteral("pubring.gpg"))), owner);
-  QCOMPARE(modeOf(QDir(dir).filePath(QStringLiteral("secring.gpg"))), owner);
+  QCOMPARE(modeOf(QDir(dir).filePath(QStringLiteral("keyring.gpg"))), owner);
 #endif
   RnpCrypto loaded;
   QVERIFY2(loaded.loadKeyring(dir, &error), qPrintable(error));
@@ -988,14 +987,14 @@ void tst_rnpcrypto::saveRefusesAnUnprotectedSecretKey() {
   QVERIFY2(error.contains(m_alice), qPrintable(error));
   QVERIFY2(!QFileInfo::exists(dir), "nothing is written");
   QVERIFY2(rnp.saveKeyring(dir, true, &error), qPrintable(error));
-  const QString secring = QDir(dir).filePath(QStringLiteral("secring.gpg"));
-  QVERIFY(QFileInfo(secring).size() > 0);
+  QVERIFY(QFileInfo(QDir(dir).filePath(QStringLiteral("keyring.gpg"))).size() >
+          0);
 
-  // Saved again without the secret key: no stale secret file stays behind.
+  // Saved again without the secret key: the one file is replaced whole, so
+  // no secret key of the earlier save stays behind.
   RnpCrypto publicOnly;
   QVERIFY(!publicOnly.importKeys(exportKey(m_alice, {}, false)).isEmpty());
   QVERIFY2(publicOnly.saveKeyring(dir, false, &error), qPrintable(error));
-  QCOMPARE(QFileInfo(secring).size(), qint64{0});
   RnpCrypto reloaded;
   QVERIFY2(reloaded.loadKeyring(dir, &error), qPrintable(error));
   QCOMPARE(reloaded.listKeys().size(), 1);
@@ -1047,13 +1046,13 @@ void tst_rnpcrypto::loadKeyringReadsOnlyARegularFileOfBoundedSize() {
   QVERIFY(tmp.isValid());
   QString error;
   {
-    QFile big(tmp.filePath(QStringLiteral("pubring.gpg")));
+    QFile big(tmp.filePath(QStringLiteral("keyring.gpg")));
     QVERIFY(big.open(QIODevice::WriteOnly));
     QVERIFY(big.resize(RnpCrypto::kMaxKeyringBytes + 1));
   }
   RnpCrypto rnp;
   QVERIFY(!rnp.loadKeyring(tmp.path(), &error));
-  QVERIFY2(error.contains(QStringLiteral("pubring.gpg")), qPrintable(error));
+  QVERIFY2(error.contains(QStringLiteral("keyring.gpg")), qPrintable(error));
 #ifdef Q_OS_UNIX
   QTemporaryDir linked;
   QVERIFY(linked.isValid());
@@ -1062,8 +1061,8 @@ void tst_rnpcrypto::loadKeyringReadsOnlyARegularFileOfBoundedSize() {
     QVERIFY(!source.importKeys(exportKey(m_bob, {}, false)).isEmpty());
     QVERIFY(source.saveKeyring(tmp.filePath(QStringLiteral("real")), false));
   }
-  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("real/pubring.gpg")),
-                      linked.filePath(QStringLiteral("pubring.gpg"))));
+  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("real/keyring.gpg")),
+                      linked.filePath(QStringLiteral("keyring.gpg"))));
   RnpCrypto viaLink;
   QVERIFY2(!viaLink.loadKeyring(linked.path(), &error),
            "a keyring file behind a link is not read");

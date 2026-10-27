@@ -964,32 +964,34 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
       }
     }
   }
-  // RNP refuses to save an empty set; an empty file says the same, and
-  // replaces what an earlier save left (secret keys removed since, say).
-  const bool anyKey = !listKeys().isEmpty();
-  const bool anySecret = !listKeys(true).isEmpty();
-  const auto save = [this, error](uint32_t flags) -> std::optional<QByteArray> {
+  // One file with public and secret keys, replaced whole: two files could
+  // not be swapped together, and a save failing between them would leave a
+  // new public ring next to an old secret one, which the next load would
+  // combine (a secret key removed since back in). RNP refuses to save an
+  // empty set; an empty file says the same.
+  std::optional<QByteArray> ring = QByteArray();
+  if (!listKeys().isEmpty()) {
     Output output = memoryOutput(error, "Cannot save the keyring");
     if (!output) {
-      return std::nullopt;
+      return false;
     }
     const rnp_result_t result =
-        rnp_save_keys(m_ffi, "GPG", output.get(), flags);
+        rnp_save_keys(m_ffi, "GPG", output.get(),
+                      RNP_LOAD_SAVE_PUBLIC_KEYS | RNP_LOAD_SAVE_SECRET_KEYS);
     if (result != RNP_SUCCESS) {
       setError(error, rnpError("Cannot save the keyring", result));
-      return std::nullopt;
+      return false;
     }
-    std::optional<QByteArray> bytes = outputBytes(output.get());
-    if (!bytes) {
+    ring = outputBytes(output.get());
+    if (!ring) {
       setError(error, QStringLiteral("Cannot save the keyring: no output"));
+      return false;
     }
-    return bytes;
-  };
-  const std::optional<QByteArray> pub =
-      anyKey ? save(RNP_LOAD_SAVE_PUBLIC_KEYS) : QByteArray();
-  const std::optional<QByteArray> sec =
-      anySecret ? save(RNP_LOAD_SAVE_SECRET_KEYS) : QByteArray();
-  if (!pub || !sec) {
+  }
+  // What loadKeyring() would not read back is not written.
+  if (ring->size() > kMaxKeyringBytes) {
+    setError(error, QStringLiteral("The keyring is larger than %1 bytes")
+                        .arg(kMaxKeyringBytes));
     return false;
   }
   // QtPass's own folder, owner-only whatever the umask, also when it
@@ -1001,13 +1003,10 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
     return false;
   }
   // Staged and replaced whole (owner-only), as an entry is written: a
-  // reader never sees half a keyring.
+  // reader sees the old keyring or the new one, never a mix.
   QString why;
   if (!Util::writeFileReplacing(
-          QDir(dir).filePath(QStringLiteral("pubring.gpg")), *pub, true,
-          &why) ||
-      !Util::writeFileReplacing(
-          QDir(dir).filePath(QStringLiteral("secring.gpg")), *sec, true,
+          QDir(dir).filePath(QStringLiteral("keyring.gpg")), *ring, true,
           &why)) {
     setError(error, QStringLiteral("Cannot write the keyring: %1").arg(why));
     return false;
@@ -1020,38 +1019,34 @@ auto RnpCrypto::loadKeyring(const QString &dir, QString *error) -> bool {
     setError(error, QStringLiteral("RNP is not available"));
     return false;
   }
-  const QList<QPair<QString, uint32_t>> files{
-      {QStringLiteral("pubring.gpg"), RNP_LOAD_SAVE_PUBLIC_KEYS},
-      {QStringLiteral("secring.gpg"),
-       RNP_LOAD_SAVE_PUBLIC_KEYS | RNP_LOAD_SAVE_SECRET_KEYS}};
-  for (const auto &[name, flags] : files) {
-    const QString path = QDir(dir).filePath(name);
-    const QFileInfo info(path);
-    if (!info.exists() && !info.isSymLink()) {
-      continue; // no keyring yet
-    }
-    const std::optional<QByteArray> bytes =
-        Util::readRegularFile(path, kMaxKeyringBytes);
-    if (!bytes) {
-      setError(error, QStringLiteral("Cannot read %1 as a keyring (a regular "
-                                     "file of at most %2 bytes)")
-                          .arg(path)
-                          .arg(kMaxKeyringBytes));
-      return false;
-    }
-    if (bytes->isEmpty()) {
-      continue; // saved without keys of this kind
-    }
-    Input input = memoryInput(*bytes, error, "Cannot read the keyring");
-    if (!input) {
-      return false;
-    }
-    const rnp_result_t result = rnp_load_keys(m_ffi, "GPG", input.get(), flags);
-    if (result != RNP_SUCCESS) {
-      setError(error,
-               rnpError(QStringLiteral("Cannot load %1").arg(path), result));
-      return false;
-    }
+  const QString path = QDir(dir).filePath(QStringLiteral("keyring.gpg"));
+  const QFileInfo info(path);
+  if (!info.exists() && !info.isSymLink()) {
+    return true; // no keyring yet
+  }
+  const std::optional<QByteArray> bytes =
+      Util::readRegularFile(path, kMaxKeyringBytes);
+  if (!bytes) {
+    setError(error, QStringLiteral("Cannot read %1 as a keyring (a regular "
+                                   "file of at most %2 bytes)")
+                        .arg(path)
+                        .arg(kMaxKeyringBytes));
+    return false;
+  }
+  if (bytes->isEmpty()) {
+    return true; // saved without keys
+  }
+  Input input = memoryInput(*bytes, error, "Cannot read the keyring");
+  if (!input) {
+    return false;
+  }
+  const rnp_result_t result =
+      rnp_load_keys(m_ffi, "GPG", input.get(),
+                    RNP_LOAD_SAVE_PUBLIC_KEYS | RNP_LOAD_SAVE_SECRET_KEYS);
+  if (result != RNP_SUCCESS) {
+    setError(error,
+             rnpError(QStringLiteral("Cannot load %1").arg(path), result));
+    return false;
   }
   return true;
 }
