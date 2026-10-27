@@ -57,6 +57,36 @@ public:
 class FileContent {
 public:
   /**
+   * @brief Most named fields parse() takes from one entry.
+   *
+   * Every field becomes a row of widgets in the display panel. An entry is
+   * compressed before it is encrypted, so a small one in a shared store
+   * could decompress into millions of "a: b" lines within the plaintext
+   * limit; lines past this many fields stay in the remaining text. They are
+   * still looked at for an OTP configuration, as fields would be.
+   */
+  static constexpr int kMaxNamedFields = 1000;
+
+  /**
+   * @brief Most lines of remaining text getRemainingDataForDisplay() gives.
+   *
+   * The text browser makes a block, with its layout, per line. Past this
+   * many the display text ends with one line saying how many more there
+   * are; getRemainingData() keeps them all, so saving loses nothing.
+   */
+  static constexpr int kMaxDisplayLines = 10000;
+
+  /**
+   * @brief @p text cut to kMaxDisplayLines lines, as
+   * getRemainingDataForDisplay() is: for showing an entry as it is
+   * (displayAsIs).
+   * @param text The text to show.
+   * @return @p text when it is short enough, else its first kMaxDisplayLines
+   *         lines and one saying how many more there are.
+   */
+  [[nodiscard]] static auto boundedForDisplay(const QString &text) -> QString;
+
+  /**
    * @brief parse parses the given fileContent in a FileContent object.
    * The password is accessible through getPassword.
    * The named value pairs (name: value) are parsed and depending on the
@@ -115,6 +145,12 @@ public:
   [[nodiscard]] auto getRemainingDataForDisplay() const -> QString;
 
   /**
+   * @brief How many lines getRemainingData() holds.
+   * @return The line count; 0 when there is no remaining text.
+   */
+  [[nodiscard]] auto getRemainingLineCount() const -> qsizetype;
+
+  /**
    * @brief Whether a field name designates the one-time password field.
    * @param name Field name as written in the file; surrounding whitespace is
    *        ignored.
@@ -153,12 +189,14 @@ public:
 
 private:
   FileContent(QString password, NamedValues namedValues, QString remainingData,
-              QString remainingDataDisplay, QString otpUri);
+              QString remainingDataDisplay, QString otpUri,
+              qsizetype remainingLines);
 
   QString password;
   NamedValues namedValues;
   QString remainingData, remainingDataDisplay;
   QString otpUri;
+  qsizetype remainingLines = 0;
 };
 
 #endif // SRC_FILECONTENT_H_

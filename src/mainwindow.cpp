@@ -11,6 +11,7 @@
 #include "filecontent.h"
 #include "firstrunwizard.h"
 #include "menubarpeek.h"
+#include "nativegrep.h"
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
@@ -616,7 +617,10 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
 
   if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
-  } else if (!s.displayAsIs) {
+  } else if (s.displayAsIs) {
+    // As it is, but not a block per line of millions.
+    output = FileContent::boundedForDisplay(p_output);
+  } else {
     m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
                                   s.useOtp ? fileContent.getOtpUri()
                                            : QString());
@@ -906,25 +910,47 @@ void MainWindow::onGrepFinished(
   const AppSettings s = QtPassSettings::load();
   const bool hideContent = s.hideContent;
   int totalLines = 0;
+  int entries = 0;
+  bool stopped = false;
   for (const auto &pair : results) {
+    if (NativeGrep::isStoppedMarker(pair)) {
+      stopped = true;
+      continue;
+    }
+    ++entries;
     auto *entryItem = new QTreeWidgetItem(ui->grepResultsList);
     entryItem->setText(0, pair.first);
     entryItem->setData(0, Qt::UserRole, pair.first);
     for (const QString &line : pair.second) {
       auto *lineItem = new QTreeWidgetItem(entryItem);
-      lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
-                                       : line);
+      // The marker is no content: shown as it is with hidden content too,
+      // and not counted as a match.
+      if (NativeGrep::isMoreMarker(line)) {
+        lineItem->setText(0, tr("… more matches in this entry"));
+      } else {
+        lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
+                                         : line);
+        ++totalLines;
+      }
       lineItem->setData(0, Qt::UserRole, pair.first);
-      ++totalLines;
     }
   }
   ui->grepResultsList->expandAll();
   ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
-  ui->statusBar->showMessage(
-      tr("Found %n match(es)", nullptr, totalLines) + " " +
-          tr("in %n entr(ies).", nullptr, static_cast<int>(results.size())),
-      3000);
+  if (stopped) {
+    // The search stopped there; more entries may match.
+    ui->statusBar->showMessage(
+        tr("Showing the first %n match(es); search for something narrower "
+           "to see the rest.",
+           nullptr, totalLines),
+        10000);
+  } else {
+    ui->statusBar->showMessage(tr("Found %n match(es)", nullptr, totalLines) +
+                                   " " +
+                                   tr("in %n entr(ies).", nullptr, entries),
+                               3000);
+  }
   if (s.useAutoclearPanel)
     clearPanelTimer.start();
 }
@@ -1526,18 +1552,17 @@ void MainWindow::passwordFromFileToClipboard(const QString &text,
     return;
   }
   m_copyRequestFile.clear();
-  const QStringList tokens = text.split('\n');
-  if (tokens.isEmpty()) {
-    return;
-  }
+  // The first line, without a list of every line (an entry can expand into
+  // millions of them); left(-1) is the whole text when there is no newline.
+  const QString first = text.left(text.indexOf(QLatin1Char('\n')));
   // A `pass otp insert` entry's first line is the otpauth:// URI carrying the
   // TOTP seed; copying it would leak 2FA material. Matches the display path
   // (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
-  if (FileContent::isOtpUriValue(tokens[0])) {
+  if (FileContent::isOtpUriValue(first)) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }
-  m_qtPass->clipboard().copyText(tokens[0]);
+  m_qtPass->clipboard().copyText(first);
 }
 
 void MainWindow::showStatusMessage(const QString &msg, int timeout) {

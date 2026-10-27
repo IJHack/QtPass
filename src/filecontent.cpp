@@ -2,6 +2,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "filecontent.h"
 
+#include <QCoreApplication>
+#include <QStringTokenizer>
+
+#include <algorithm>
+#include <limits>
+
 #include <utility>
 
 /// Shorthand for the public FileContent::isOtpUriValue.
@@ -76,18 +82,37 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
   return true;
 }
 
+/// The line ending a text cut at FileContent::kMaxDisplayLines.
+auto moreLinesNotShown(qsizetype count) -> QString {
+  return QCoreApplication::translate(
+      "FileContent", "… %n more line(s) not shown", nullptr,
+      static_cast<int>(
+          std::min<qsizetype>(count, std::numeric_limits<int>::max())));
+}
+
 } // namespace
 
 auto FileContent::parse(const QString &fileContent,
                         const QStringList &templateFields, bool allFields)
     -> FileContent {
-  QStringList lines = fileContent.split("\n");
+  // Line by line over the text, never a list of every line: a compressed
+  // entry can expand into tens of millions of lines within the plaintext
+  // limit, and a QString each (empty ones too) would take gigabytes.
+  QStringTokenizer tokens = QStringView(fileContent).tokenize(u'\n');
+  auto it = tokens.begin();
   QString password;
-  if (!lines.isEmpty()) {
-    password = lines.takeFirst();
+  if (it != tokens.end()) {
+    password = it->toString();
+    ++it;
   }
-  QStringList remainingData;
-  QStringList remainingDataDisplay;
+  QString remainingData;
+  QString remainingDataDisplay;
+  qsizetype remainingLines = 0;
+  qsizetype displayedLines = 0;
+  qsizetype notShown = 0;
+  // Past kMaxNamedFields a line is still offered to takeNamedValue(), into
+  // this throwaway list, for what it notes about OTP: the line stays text.
+  NamedValues pastTheCap;
   NamedValues namedValues;
   OtpCandidates otp;
   // An entry from `pass otp insert` has the URI as its only (password) line,
@@ -95,29 +120,53 @@ auto FileContent::parse(const QString &fileContent,
   if (isOtpUri(password)) {
     otp.bareLine = password.trimmed();
   }
-  for (const QString &line : std::as_const(lines)) {
+  for (; it != tokens.end(); ++it) {
+    const QString line = it->toString();
     // A bare otpauth:// line is never a field, also not when the template
     // lists "otpauth": split at its colon, the value would lose the scheme
-    // that marks it as a shared secret and be shown seed and all.
-    if (!isOtpUri(line) &&
-        takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
-      continue;
+    // that marks it as a shared secret and be shown seed and all. Past
+    // kMaxNamedFields, lines stay text.
+    if (!isOtpUri(line)) {
+      if (namedValues.size() < kMaxNamedFields) {
+        if (takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
+          continue;
+        }
+      } else {
+        takeNamedValue(line, templateFields, allFields, pastTheCap, otp);
+        pastTheCap.clear();
+      }
     }
-    remainingData.append(line);
+    // Joined with "\n" as they go, as split() and join() did.
+    if (remainingLines > 0) {
+      remainingData += QLatin1Char('\n');
+    }
+    remainingData += line;
+    ++remainingLines;
     if (isOtpUri(line) && otp.bareLine.isEmpty()) {
       // A bare otpauth:// line, the convention the pass-otp extension uses.
       otp.bareLine = line.trimmed();
     }
     if (!isLineHidden(line)) {
-      remainingDataDisplay.append(line);
+      if (displayedLines == kMaxDisplayLines) {
+        ++notShown;
+        continue;
+      }
+      if (displayedLines > 0) {
+        remainingDataDisplay += QLatin1Char('\n');
+      }
+      remainingDataDisplay += line;
+      ++displayedLines;
     }
+  }
+  if (notShown > 0) {
+    remainingDataDisplay += QLatin1Char('\n') + moreLinesNotShown(notShown);
   }
   // The OTP value stays in namedValues/remainingData: the edit dialog reads it
   // from there and PasswordDialog::getPassword() drops empty fields, so
   // stripping it here would delete the secret on the next save. Suppression
   // happens in getRemainingDataForDisplay() and PasswordDisplayPanel.
-  return {password, namedValues, remainingData.join("\n"),
-          remainingDataDisplay.join("\n"), otp.pick()};
+  return {password,   namedValues,   remainingData, remainingDataDisplay,
+          otp.pick(), remainingLines};
 }
 
 auto FileContent::isOtpFieldName(const QString &name) -> bool {
@@ -153,11 +202,29 @@ auto FileContent::getOtpUri() const -> QString { return this->otpUri; }
 
 FileContent::FileContent(QString password, NamedValues namedValues,
                          QString remainingData, QString remainingDataDisplay,
-                         QString otpUri)
+                         QString otpUri, qsizetype remainingLines)
     : password(std::move(password)), namedValues(std::move(namedValues)),
       remainingData(std::move(remainingData)),
       remainingDataDisplay(std::move(remainingDataDisplay)),
-      otpUri(std::move(otpUri)) {}
+      otpUri(std::move(otpUri)), remainingLines(remainingLines) {}
+
+auto FileContent::boundedForDisplay(const QString &text) -> QString {
+  // Where the line after the last one shown starts, if there is one.
+  qsizetype end = -1;
+  for (int line = 0; line < kMaxDisplayLines; ++line) {
+    end = text.indexOf(QLatin1Char('\n'), end + 1);
+    if (end < 0) {
+      return text;
+    }
+  }
+  const qsizetype more =
+      text.count(QLatin1Char('\n'), Qt::CaseSensitive) - (kMaxDisplayLines - 1);
+  return text.left(end) + QLatin1Char('\n') + moreLinesNotShown(more);
+}
+
+auto FileContent::getRemainingLineCount() const -> qsizetype {
+  return remainingLines;
+}
 
 NamedValues::NamedValues() = default;
 

@@ -9,6 +9,7 @@
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
+#include <QStringTokenizer>
 #include <QThread>
 #include <utility>
 
@@ -52,14 +53,20 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       QString(), &plaintext, nullptr, cancel);
   if (rc != 0 || plaintext.isEmpty())
     return {};
+  // Line by line over the text, never a list of every line (a compressed
+  // entry can expand into tens of millions), and a bounded number taken.
   QStringList matches;
-  for (const QString &line : plaintext.split('\n')) {
-    QString candidate = line;
-    if (candidate.endsWith('\r'))
-      candidate.chop(1);
-    const QString t = candidate.trimmed();
-    if (!t.isEmpty() && candidate.contains(rx))
-      matches << t;
+  for (QStringView line : QStringView(plaintext).tokenize(u'\n')) {
+    if (line.endsWith(u'\r'))
+      line.chop(1);
+    const QStringView t = line.trimmed();
+    if (t.isEmpty() || !rx.matchView(line).hasMatch())
+      continue;
+    if (matches.size() == kMaxMatchesPerEntry) {
+      matches << QString(); // isMoreMarker(): not a match, not counted
+      break;
+    }
+    matches << t.toString();
   }
   return matches;
 }
@@ -73,6 +80,7 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
                            const std::atomic_bool *cancel)
     -> QList<QPair<QString, QStringList>> {
   QList<QPair<QString, QStringList>> results;
+  int total = 0; // matching lines, the markers not counted
   // Regular files only: a link or junction is not an entry, and searching
   // through one would decrypt files outside the store.
   const QStringList files =
@@ -81,13 +89,32 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
     if (QThread::currentThread()->isInterruptionRequested() ||
         (cancel != nullptr && cancel->load()))
       return {};
-    const QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
-    if (!matches.isEmpty()) {
-      QString entry = QDir(storeDir).relativeFilePath(filePath);
-      if (entry.endsWith(QLatin1String(".gpg")))
-        entry.chop(4);
-      results.append({entry, matches});
+    if (total == kMaxMatches) {
+      // The budget is spent and entries remain: the search stopped here.
+      results.append({QString(), {}});
+      break;
     }
+    QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
+    if (matches.isEmpty())
+      continue;
+    const bool more = isMoreMarker(matches.constLast());
+    if (more)
+      matches.removeLast();
+    // The store-wide budget: what still fits, and a marker when that cut
+    // the entry short.
+    const int room = kMaxMatches - total;
+    if (matches.size() > room) {
+      matches = matches.mid(0, room);
+      matches << QString();
+    } else if (more) {
+      matches << QString();
+    }
+    total += static_cast<int>(matches.size()) -
+             (isMoreMarker(matches.constLast()) ? 1 : 0);
+    QString entry = QDir(storeDir).relativeFilePath(filePath);
+    if (entry.endsWith(QLatin1String(".gpg")))
+      entry.chop(4);
+    results.append({entry, matches});
   }
   return results;
 }

@@ -31,6 +31,50 @@ public:
    * @param parent Owner; results are delivered on its thread.
    */
   explicit NativeGrep(QObject *parent = nullptr);
+
+  /**
+   * @brief Most matching lines taken from one entry.
+   *
+   * A compressed entry can expand into millions of lines within the
+   * plaintext limit, each a result and a row in the results list; past this
+   * many, the entry gets one line saying there are more.
+   */
+  static constexpr int kMaxMatchesPerEntry = 100;
+
+  /**
+   * @brief Most matching lines a search collects over the whole store.
+   *
+   * The search stops once it has this many; the window says so.
+   */
+  static constexpr int kMaxMatches = 10000;
+
+  /**
+   * @brief Whether a line in a result is the marker for "more matches in
+   * this entry" rather than a match.
+   *
+   * A match is a trimmed, non-empty line, so an empty one can only be the
+   * marker, which matchFile() and scanStore() put last. Not a match: not
+   * counted, not content to hide.
+   * @param line A line of a result.
+   * @return Whether it is the marker.
+   */
+  [[nodiscard]] static auto isMoreMarker(const QString &line) -> bool {
+    return line.isEmpty();
+  }
+
+  /**
+   * @brief Whether a result is the marker for "the search stopped at
+   * kMaxMatches, more entries were not searched".
+   *
+   * No entry has an empty name, so a result without one can only be the
+   * marker, which scanStore() puts last.
+   * @param result A result.
+   * @return Whether it is the marker.
+   */
+  [[nodiscard]] static auto
+  isStoppedMarker(const QPair<QString, QStringList> &result) -> bool {
+    return result.first.isEmpty();
+  }
   /**
    * @brief Interrupt running searches and wait up to five seconds for them.
    */
@@ -65,8 +109,9 @@ public:
    * @param rx The pattern.
    * @param cancel When set, gpg is not started, or is terminated while it
    *        runs; nullptr to run to completion.
-   * @return Matching lines; empty when gpg fails, is cancelled or nothing
-   *         matches.
+   * @return Matching lines, at most kMaxMatchesPerEntry and then a marker
+   *         (isMoreMarker()) when there are more; empty when gpg fails, is
+   *         cancelled or nothing matches.
    */
   static auto matchFile(const QProcessEnvironment &env, const QString &gpgExe,
                         const QString &filePath, const QRegularExpression &rx,
@@ -80,8 +125,11 @@ public:
    * @param rx The pattern.
    * @param cancel Stops the walk and the running gpg when set; nullptr to
    *        rely on QThread::isInterruptionRequested() alone.
-   * @return (entry name without .gpg, matching lines) per file with matches;
-   *         empty when the search is stopped.
+   * @return (entry name without .gpg, matching lines) per file with matches,
+   *         at most kMaxMatches lines in all, an entry cut short ending in a
+   *         marker (isMoreMarker()); when the walk stopped at that budget
+   *         with entries left, a last result that is a marker
+   *         (isStoppedMarker()). Empty when the search is stopped.
    */
   static auto scanStore(const QProcessEnvironment &env, const QString &gpgExe,
                         const QString &storeDir, const QRegularExpression &rx,

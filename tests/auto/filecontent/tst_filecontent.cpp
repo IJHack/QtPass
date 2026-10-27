@@ -9,6 +9,11 @@ class tst_filecontent : public QObject {
 
 private Q_SLOTS:
   void parsePlainPassword();
+  void parseTakesABoundedNumberOfFields();
+  void parseFindsOtpPastTheFieldCap();
+  void parseShowsABoundedNumberOfLines();
+  void boundedForDisplayCutsAtTheLineLimit();
+  void parseKeepsEmptyLinesAsSplitDid();
   void parsePasswordWithNamedFields();
   void parseWithTemplateFields();
   void parseWithAllFields();
@@ -59,6 +64,108 @@ private Q_SLOTS:
   void isOtpUriValueMatchesScheme_data();
   void isOtpUriValueMatchesScheme();
 };
+
+/**
+ * @brief Every named field becomes a row of widgets. A compressed entry in
+ * a shared store can expand into millions of "a: b" lines within the
+ * plaintext limit: past kMaxNamedFields they stay text.
+ */
+void tst_filecontent::parseTakesABoundedNumberOfFields() {
+  QString content = QStringLiteral("pw");
+  const int lines = FileContent::kMaxNamedFields + 5;
+  for (int i = 0; i < lines; ++i) {
+    content += QStringLiteral("\nf%1: v").arg(i);
+  }
+  const FileContent fc = FileContent::parse(content, {}, true);
+  QCOMPARE(fc.getPassword(), QStringLiteral("pw"));
+  QCOMPARE(fc.getNamedValues().size(), FileContent::kMaxNamedFields);
+  QCOMPARE(fc.getRemainingData(),
+           QStringLiteral("f%1: v\nf%2: v\nf%3: v\nf%4: v\nf%5: v")
+               .arg(lines - 5)
+               .arg(lines - 4)
+               .arg(lines - 3)
+               .arg(lines - 2)
+               .arg(lines - 1));
+}
+
+/**
+ * @brief Lines past kMaxNamedFields stay text but are still looked at for
+ * an OTP configuration, as fields would be.
+ */
+void tst_filecontent::parseFindsOtpPastTheFieldCap() {
+  QString content = QStringLiteral("pw");
+  for (int i = 0; i < FileContent::kMaxNamedFields; ++i) {
+    content += QStringLiteral("\nf%1: v").arg(i);
+  }
+  const QString uri =
+      QStringLiteral("otpauth://totp/x?secret=JBSWY3DPEHPK3PXP");
+  content += QStringLiteral("\notp: ") + uri;
+  const FileContent fc = FileContent::parse(content, {}, true);
+  QCOMPARE(fc.getNamedValues().size(), FileContent::kMaxNamedFields);
+  QCOMPARE(fc.getOtpUri(), uri);
+  QVERIFY2(!fc.getRemainingDataForDisplay().contains(QStringLiteral("JBSWY")),
+           "the secret stays out of the display");
+}
+
+/**
+ * @brief The text browser makes a block per line: past kMaxDisplayLines the
+ * display text ends in one line saying how many more there are, while the
+ * remaining text keeps them all.
+ */
+void tst_filecontent::parseShowsABoundedNumberOfLines() {
+  const int lines = FileContent::kMaxDisplayLines + 7;
+  QString content = QStringLiteral("pw");
+  for (int i = 0; i < lines; ++i) {
+    content += QStringLiteral("\nline %1").arg(i);
+  }
+  const FileContent fc = FileContent::parse(content, {}, false);
+  QCOMPARE(fc.getRemainingLineCount(), qsizetype{lines});
+  QCOMPARE(fc.getRemainingData().count(QLatin1Char('\n')), lines - 1);
+  const QString shown = fc.getRemainingDataForDisplay();
+  QCOMPARE(shown.count(QLatin1Char('\n')), FileContent::kMaxDisplayLines);
+  QVERIFY2(
+      shown.section(QLatin1Char('\n'), -1).contains(QStringLiteral("7 more")),
+      qPrintable(shown.right(60)));
+}
+
+/**
+ * @brief An entry shown as it is (displayAsIs) is cut at the same line limit
+ * as the remaining text; one that fits is left alone.
+ */
+void tst_filecontent::boundedForDisplayCutsAtTheLineLimit() {
+  const int limit = FileContent::kMaxDisplayLines;
+  QString fits;
+  for (int i = 0; i < limit; ++i) {
+    fits += (i > 0 ? QStringLiteral("\n") : QString()) +
+            QStringLiteral("l%1").arg(i);
+  }
+  QCOMPARE(FileContent::boundedForDisplay(fits), fits);
+  QCOMPARE(FileContent::boundedForDisplay(QString()), QString());
+
+  const QString tooLong = fits + QStringLiteral("\nx\ny\nz");
+  const QString shown = FileContent::boundedForDisplay(tooLong);
+  QVERIFY(shown.startsWith(fits + QLatin1Char('\n')));
+  QCOMPARE(shown.count(QLatin1Char('\n')), limit);
+  QVERIFY2(
+      shown.section(QLatin1Char('\n'), -1).contains(QStringLiteral("3 more")),
+      qPrintable(shown.right(60)));
+}
+
+/**
+ * @brief Read line by line now rather than split into a list: empty lines,
+ * a trailing newline and an empty entry come out as split() and join() made
+ * them.
+ */
+void tst_filecontent::parseKeepsEmptyLinesAsSplitDid() {
+  const FileContent empty = FileContent::parse(QString(), {}, false);
+  QCOMPARE(empty.getPassword(), QString());
+  QCOMPARE(empty.getRemainingData(), QString());
+  const FileContent fc =
+      FileContent::parse(QStringLiteral("pw\n\nnote\n\n"), {}, false);
+  QCOMPARE(fc.getPassword(), QStringLiteral("pw"));
+  QCOMPARE(fc.getRemainingData(), QStringLiteral("\nnote\n\n"));
+  QCOMPARE(fc.getRemainingDataForDisplay(), QStringLiteral("\nnote\n\n"));
+}
 
 void tst_filecontent::parsePlainPassword() {
   QString content = "my_secret_password";

@@ -328,6 +328,7 @@ private Q_SLOTS:
   void grepMatchFileFailedDecryptReturnsEmpty();
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepCancelEndsARunningGpg();
+  void grepTakesABoundedNumberOfMatches();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void grepImitatePassInvalidRegexEmitsEmpty();
   // SSH_AUTH_SOCK auto-probe (issue #543)
@@ -2953,6 +2954,110 @@ void tst_util::grepCancelEndsARunningGpg() {
   using GrepResults = QList<QPair<QString, QStringList>>;
   const auto results = finished.first().first().value<GrepResults>();
   QVERIFY(results.isEmpty());
+#endif
+}
+
+/**
+ * @brief A compressed entry can expand into millions of matching lines
+ * within the plaintext limit, each a result and a row in the results list.
+ * One entry gives at most kMaxMatchesPerEntry and a line saying there are
+ * more; the store at most kMaxMatches, and the walk stops there.
+ */
+void tst_util::grepTakesABoundedNumberOfMatches() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString gpg = tmp.filePath(QStringLiteral("gpg"));
+  QFile script(gpg);
+  QVERIFY(script.open(QIODevice::WriteOnly));
+  // HITS matching lines per "decrypted" entry (150 unless set), empty lines
+  // between them.
+  script.write("#!/bin/sh\ni=0\nwhile [ $i -lt ${HITS:-150} ]; do "
+               "printf 'hit %d\\n\\n' $i; i=$((i+1)); done\n");
+  script.close();
+  QVERIFY(QFile::setPermissions(gpg, QFile::ReadOwner | QFile::WriteOwner |
+                                         QFile::ExeOwner));
+  const QRegularExpression rx(QStringLiteral("hit"));
+  const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+
+  const QString store = tmp.filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  const auto entry = [&store](int i) {
+    QFile f(QDir(store).filePath(
+        QStringLiteral("e%1.gpg").arg(i, 4, 10, QChar('0'))));
+    return f.open(QIODevice::WriteOnly) && f.write("x") == 1;
+  };
+  QVERIFY(entry(0));
+  const QStringList one =
+      NativeGrep::matchFile(env, gpg, QDir(store).filePath("e0000.gpg"), rx);
+  QCOMPARE(one.size(), NativeGrep::kMaxMatchesPerEntry + 1);
+  QCOMPARE(one.first(), QStringLiteral("hit 0"));
+  QVERIFY2(NativeGrep::isMoreMarker(one.last()),
+           "the last line is the marker, not a match");
+
+  // Enough entries to pass the store-wide budget, and some to spare.
+  const int entries =
+      NativeGrep::kMaxMatches / (NativeGrep::kMaxMatchesPerEntry + 1) + 5;
+  for (int i = 1; i < entries; ++i) {
+    QVERIFY(entry(i));
+  }
+  // Matching lines only: the markers are not matches.
+  const auto countMatches = [](const QList<QPair<QString, QStringList>> &rs) {
+    qsizetype n = 0;
+    for (const auto &pair : rs) {
+      for (const QString &line : pair.second) {
+        n += NativeGrep::isMoreMarker(line) ? 0 : 1;
+      }
+    }
+    return n;
+  };
+  const auto results = NativeGrep::scanStore(env, gpg, store, rx);
+  QCOMPARE(countMatches(results), qsizetype{NativeGrep::kMaxMatches});
+  QVERIFY2(!results.isEmpty() && NativeGrep::isStoppedMarker(results.last()),
+           "the walk stops at the budget and says so");
+  QVERIFY(results.size() - 1 < entries);
+
+  // Exactly the budget, every entry whole: complete, no marker anywhere.
+  QProcessEnvironment exact = env;
+  exact.insert(QStringLiteral("HITS"),
+               QString::number(NativeGrep::kMaxMatchesPerEntry));
+  const QString whole = tmp.filePath(QStringLiteral("whole"));
+  QVERIFY(QDir().mkpath(whole));
+  const int wholeEntries =
+      NativeGrep::kMaxMatches / NativeGrep::kMaxMatchesPerEntry;
+  for (int i = 0; i < wholeEntries; ++i) {
+    QFile f(QDir(whole).filePath(QStringLiteral("w%1.gpg").arg(i)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto complete = NativeGrep::scanStore(exact, gpg, whole, rx);
+  QCOMPARE(complete.size(), wholeEntries);
+  QCOMPARE(countMatches(complete), qsizetype{NativeGrep::kMaxMatches});
+  for (const auto &pair : complete) {
+    QVERIFY(!NativeGrep::isStoppedMarker(pair));
+    QVERIFY(!NativeGrep::isMoreMarker(pair.second.last()));
+  }
+
+  // 70 a piece does not divide the budget: the entry it runs out in is cut
+  // part-way and says there is more, and the walk says it stopped.
+  QProcessEnvironment seventy = env;
+  seventy.insert(QStringLiteral("HITS"), QStringLiteral("70"));
+  const QString many = tmp.filePath(QStringLiteral("many"));
+  QVERIFY(QDir().mkpath(many));
+  for (int i = 0; i < NativeGrep::kMaxMatches / 70 + 5; ++i) {
+    QFile f(QDir(many).filePath(QStringLiteral("m%1.gpg").arg(i)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto cut = NativeGrep::scanStore(seventy, gpg, many, rx);
+  QCOMPARE(countMatches(cut), qsizetype{NativeGrep::kMaxMatches});
+  QVERIFY(cut.size() >= 2 && NativeGrep::isStoppedMarker(cut.last()));
+  const QStringList &partial = cut.at(cut.size() - 2).second;
+  QVERIFY2(NativeGrep::isMoreMarker(partial.last()),
+           "the entry cut short by the budget says so");
+  QCOMPARE(partial.size() - 1, NativeGrep::kMaxMatches % 70);
 #endif
 }
 
