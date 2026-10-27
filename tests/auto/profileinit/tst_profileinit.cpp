@@ -465,6 +465,24 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
   QVERIFY(ProfileInit::initialise(withSubStore.path(), twoUsers(),
                                   AppSettings(), false, &note));
   QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
+
+#ifndef Q_OS_WIN
+  // A linked .gpg-id is no list of its own: that folder's entries count.
+  QTemporaryDir withLinkedList;
+  QVERIFY(withLinkedList.isValid());
+  const QDir linked(withLinkedList.path());
+  QVERIFY(linked.mkpath(QStringLiteral("team")));
+  for (const char *name : {"top.gpg", "team/a.gpg", "elsewhere"}) {
+    QFile file(linked.filePath(QString::fromLatin1(name)));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(QFile::link(linked.filePath(QStringLiteral("elsewhere")),
+                      linked.filePath(QStringLiteral("team/.gpg-id"))));
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(),
+                                  AppSettings(), false, &note));
+  QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
+#endif
 }
 
 /**

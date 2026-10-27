@@ -117,7 +117,10 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   const auto underSubStore = [&root](const QString &entry) {
     QString dir = QFileInfo(entry).absolutePath();
     while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
-      if (QFileInfo(QDir(dir).filePath(QStringLiteral(".gpg-id"))).isFile()) {
+      // A list of its own: a regular file. A linked .gpg-id is no list, as
+      // everywhere in QtPass, so its folder's entries still count.
+      const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
+      if (list.isFile() && !list.isSymLink() && !list.isJunction()) {
         return true;
       }
       dir = QFileInfo(dir).absolutePath();
