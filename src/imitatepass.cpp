@@ -342,7 +342,10 @@ auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
       GpgIdGeneration::folderOf(gpgIdFile, m_settings.passStore);
   if (!folder) {
     emit critical(tr("Cannot update"),
-                  tr("%1 is not inside the password store.").arg(gpgIdFile));
+                  tr("%1 is not inside the password store, or a folder "
+                     "name on the way holds a line break, which a signed "
+                     "list cannot record.")
+                      .arg(gpgIdFile));
     return false;
   }
   // The list on disk counts only if it is this folder's own, verified list:

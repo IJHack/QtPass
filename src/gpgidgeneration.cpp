@@ -285,7 +285,14 @@ auto relativeFolder(const QString &path, const QString &root)
   if (!folder.startsWith(prefix)) {
     return std::nullopt;
   }
-  return folder.mid(prefix.size());
+  folder = folder.mid(prefix.size());
+  // The folder line is one line: a name with a line break in it would end
+  // it, and what follows would be read as a recipient of the signed list.
+  if (folder.contains(QLatin1Char('\n')) ||
+      folder.contains(QLatin1Char('\r'))) {
+    return std::nullopt;
+  }
+  return folder;
 }
 } // namespace
 
