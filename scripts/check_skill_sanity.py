@@ -31,7 +31,9 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # costs a scan up to the next one, linear over the file, not a rescan of the
 # rest of the line from every bracket.
 LINK_TEXT = r"(?<!!)\[[^\[\]\n]*\]"
-LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)"
+# The title starts with a non-blank, so its blanks and the separator's never
+# compete for the same characters (a run of blanks with no ")" stays linear).
+LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\s][^)\n]*)?\)"
 LINK_RE = re.compile(LINK_TEXT + LINK_DEST)
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
@@ -81,6 +83,12 @@ def parse_frontmatter(text: str, rel: str, result: CheckResult) -> dict:
         result.error("PyYAML is not installed: cannot parse frontmatter")
         return {}
     try:
+        # No aliases: merged references can expand exponentially while the
+        # mapping is built, before anything here looks at it. Checked on the
+        # event stream, which builds nothing.
+        if any(isinstance(event, yaml.AliasEvent) for event in yaml.parse(parts[1])):
+            result.error(f"{rel}: YAML aliases are not allowed in frontmatter")
+            return {}
         data = yaml.safe_load(parts[1])
     except yaml.YAMLError as error:
         result.error(f"{rel}: invalid YAML frontmatter: {error}")

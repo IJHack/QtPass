@@ -96,6 +96,22 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Re-encrypting with the `pass` backend active used the recipients and
+  signing key of the profile QtPass had last re-encrypted under, not the
+  current one: the native backend that does it was not refreshed on a
+  profile switch. It takes the current profile's settings now.
+- A new profile's recipient dialog preselects nothing: the folder had no
+  list when it was chosen, and one that appeared meanwhile was read under
+  the active profile's signing policy, not the new one's.
+- A decrypt that arrives after the selection was cleared (or the profile
+  switched) no longer shows the entry.
+- Bounded and non-blocking reads where store content or a pasted value
+  could cost QtPass: an OTP configuration over 4096 characters is refused
+  before it is parsed; content search keeps at most 200 characters of a
+  matching line; a `.gpg-id.sig` must be a regular file of at most 64 KiB
+  before `gpg` is given it (a FIFO blocked QtPass); a key file is opened
+  without blocking on a FIFO; and the key generator refuses a name or
+  passphrase with a line break, which would have become a batch directive.
 - An entry that decompresses into millions of lines no longer exhausts
   memory below the 64 MiB plaintext limit. Showing one read every line into
   a list of its own (gigabytes for an entry of newlines) and made a row of

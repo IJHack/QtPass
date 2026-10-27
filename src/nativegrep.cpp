@@ -66,7 +66,9 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       matches << QString(); // isMoreMarker(): not a match, not counted
       break;
     }
-    matches << t.toString();
+    matches << (t.size() > kMaxPreviewLength
+                    ? t.first(kMaxPreviewLength).toString() + QChar(0x2026)
+                    : t.toString());
   }
   return matches;
 }

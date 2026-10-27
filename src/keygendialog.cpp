@@ -148,6 +148,11 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
   return clear.join("\n");
 }
 
+auto KeygenDialog::isBatchValue(const QString &value) -> bool {
+  return !value.contains(QLatin1Char('\n')) &&
+         !value.contains(QLatin1Char('\r')) && !value.contains(QChar::Null);
+}
+
 void KeygenDialog::done(int r) {
   if (QDialog::Accepted == r) {
     // The button is disabled without a passphrase choice, but done() can be
@@ -155,6 +160,15 @@ void KeygenDialog::done(int r) {
     // No dialog: the disabled OK already says what is missing.
     if (!passphraseChosen()) {
       updateOkState();
+      return;
+    }
+    // Pasted text with a line break would become batch directives of its
+    // own; the email is matched whole by its pattern below.
+    if (!isBatchValue(ui->name->text()) ||
+        !isBatchValue(ui->passphrase1->text())) {
+      QMessageBox::critical(this, tr("Invalid input"),
+                            tr("The name and the passphrase cannot contain "
+                               "line breaks."));
       return;
     }
     if (ui->name->text().length() < 5) {

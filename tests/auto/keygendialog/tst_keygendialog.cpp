@@ -56,6 +56,7 @@ private Q_SLOTS:
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
   void applyPassphraseSeesNoProtectionBeforeANul();
+  void batchValuesHoldNoLineBreaks();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
   void applyPassphraseEmptyRestoresNoProtection();
@@ -367,6 +368,21 @@ void tst_keygendialog::templateEditorHiddenUnlessExpert() {
 
   checkBox->setChecked(false);
   QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
+}
+
+/**
+ * @brief A name or passphrase pasted with a line break would add a batch
+ * directive of its own (%no-protection after a passphrase, say).
+ */
+void tst_keygendialog::batchValuesHoldNoLineBreaks() {
+  QVERIFY(KeygenDialog::isBatchValue(QStringLiteral("Alice Example")));
+  QVERIFY(
+      KeygenDialog::isBatchValue(QStringLiteral("pass phrase with spaces")));
+  QVERIFY(!KeygenDialog::isBatchValue(QStringLiteral("x\n%no-protection")));
+  QVERIFY(!KeygenDialog::isBatchValue(QStringLiteral("x\r%no-protection")));
+  QString nul = QStringLiteral("x");
+  nul += QChar::Null;
+  QVERIFY(!KeygenDialog::isBatchValue(nul));
 }
 
 /**

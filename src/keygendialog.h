@@ -46,6 +46,17 @@ public:
   static QString applyPassphrase(const QString &batch,
                                  const QString &passphrase);
 
+  /**
+   * @brief Whether @p value can go into a GPG batch line as one value.
+   *
+   * The batch is line-oriented, and gpg reads a line as a C string: a line
+   * break or NUL in a name or passphrase would start a directive of its own
+   * (%no-protection, a Passphrase: of the paster's choosing).
+   * @param value A field's text.
+   * @return False when it holds a CR, LF or NUL.
+   */
+  [[nodiscard]] static auto isBatchValue(const QString &value) -> bool;
+
 protected:
 private slots:
   void on_passphrase1_textChanged(const QString &arg1);

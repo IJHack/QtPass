@@ -175,6 +175,19 @@ auto GpgIdSigner::verify(const QByteArray &contents,
                       << ": the signature file is a link";
     return false;
   }
+  // A regular file of bounded size, as the list itself is read: a FIFO
+  // planted under the name would block gpg, and the GUI thread waiting for
+  // it, and a sparse file of gigabytes would be read whole.
+  {
+    QFile probe;
+    if (!Util::openRegularFile(signatureFile, probe) ||
+        probe.size() > kMaxSignatureBytes) {
+      qCDebug(lcQtPass) << "Refusing to verify" << signatureFile
+                        << ": not a regular file of at most"
+                        << kMaxSignatureBytes << "bytes";
+      return false;
+    }
+  }
   QString out;
   const QString sig = Executor::translatePathForWsl(signatureFile, m_gpg);
   // "-" makes gpg read the signed data from stdin: the bytes we hold.

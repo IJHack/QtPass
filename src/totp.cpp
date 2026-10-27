@@ -109,7 +109,10 @@ auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
  */
 auto Totp::parse(const QString &config) -> std::optional<Settings> {
   const QString trimmed = config.trimmed();
-  if (trimmed.isEmpty()) {
+  // Checked before QUrl and QUrlQuery see it: a crafted URI of tens of MiB
+  // would otherwise become tens of millions of query items on the GUI
+  // thread.
+  if (trimmed.isEmpty() || trimmed.size() > MAX_CONFIG_LENGTH) {
     return std::nullopt;
   }
 

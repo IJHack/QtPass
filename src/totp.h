@@ -70,6 +70,10 @@ public:
   static constexpr uint MIN_DIGITS = 1U;   ///< Lower clamp for `digits`.
   static constexpr uint MAX_DIGITS = 10U;  ///< Upper clamp for `digits`.
   static constexpr uint MAX_STEP = 86400U; ///< Upper clamp for `period`.
+  /// Longest configuration parse() takes: far beyond any real otpauth URI,
+  /// short of what a compressed entry can expand to (millions of query
+  /// parameters, each an object, before anything is checked).
+  static constexpr qsizetype MAX_CONFIG_LENGTH = 4096;
 
   /**
    * @brief Parse an OTP configuration string.
@@ -83,7 +87,8 @@ public:
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32.
+   *         is not decodable base32, or the configuration is longer than
+   *         MAX_CONFIG_LENGTH.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;
