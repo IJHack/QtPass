@@ -77,6 +77,16 @@ public:
   static constexpr int kMaxDisplayLines = 10000;
 
   /**
+   * @brief @p text cut to kMaxDisplayLines lines, as
+   * getRemainingDataForDisplay() is: for showing an entry as it is
+   * (displayAsIs).
+   * @param text The text to show.
+   * @return @p text when it is short enough, else its first kMaxDisplayLines
+   *         lines and one saying how many more there are.
+   */
+  [[nodiscard]] static auto boundedForDisplay(const QString &text) -> QString;
+
+  /**
    * @brief parse parses the given fileContent in a FileContent object.
    * The password is accessible through getPassword.
    * The named value pairs (name: value) are parsed and depending on the

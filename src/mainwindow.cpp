@@ -617,7 +617,10 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
 
   if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
-  } else if (!s.displayAsIs) {
+  } else if (s.displayAsIs) {
+    // As it is, but not a block per line of millions.
+    output = FileContent::boundedForDisplay(p_output);
+  } else {
     m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
                                   s.useOtp ? fileContent.getOtpUri()
                                            : QString());
@@ -1549,18 +1552,17 @@ void MainWindow::passwordFromFileToClipboard(const QString &text,
     return;
   }
   m_copyRequestFile.clear();
-  const QStringList tokens = text.split('\n');
-  if (tokens.isEmpty()) {
-    return;
-  }
+  // The first line, without a list of every line (an entry can expand into
+  // millions of them); left(-1) is the whole text when there is no newline.
+  const QString first = text.left(text.indexOf(QLatin1Char('\n')));
   // A `pass otp insert` entry's first line is the otpauth:// URI carrying the
   // TOTP seed; copying it would leak 2FA material. Matches the display path
   // (FileContent::getPasswordForDisplay / PasswordDisplayPanel).
-  if (FileContent::isOtpUriValue(tokens[0])) {
+  if (FileContent::isOtpUriValue(first)) {
     flashText(tr("This entry holds an OTP secret, not a password"), true);
     return;
   }
-  m_qtPass->clipboard().copyText(tokens[0]);
+  m_qtPass->clipboard().copyText(first);
 }
 
 void MainWindow::showStatusMessage(const QString &msg, int timeout) {

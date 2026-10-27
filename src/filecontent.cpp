@@ -5,6 +5,9 @@
 #include <QCoreApplication>
 #include <QStringTokenizer>
 
+#include <algorithm>
+#include <limits>
+
 #include <utility>
 
 /// Shorthand for the public FileContent::isOtpUriValue.
@@ -79,6 +82,14 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
   return true;
 }
 
+/// The line ending a text cut at FileContent::kMaxDisplayLines.
+auto moreLinesNotShown(qsizetype count) -> QString {
+  return QCoreApplication::translate(
+      "FileContent", "… %n more line(s) not shown", nullptr,
+      static_cast<int>(
+          std::min<qsizetype>(count, std::numeric_limits<int>::max())));
+}
+
 } // namespace
 
 auto FileContent::parse(const QString &fileContent,
@@ -148,10 +159,7 @@ auto FileContent::parse(const QString &fileContent,
     }
   }
   if (notShown > 0) {
-    remainingDataDisplay +=
-        QLatin1Char('\n') + QCoreApplication::translate(
-                                "FileContent", "… %n more line(s) not shown",
-                                nullptr, static_cast<int>(notShown));
+    remainingDataDisplay += QLatin1Char('\n') + moreLinesNotShown(notShown);
   }
   // The OTP value stays in namedValues/remainingData: the edit dialog reads it
   // from there and PasswordDialog::getPassword() drops empty fields, so
@@ -199,6 +207,20 @@ FileContent::FileContent(QString password, NamedValues namedValues,
       remainingData(std::move(remainingData)),
       remainingDataDisplay(std::move(remainingDataDisplay)),
       otpUri(std::move(otpUri)), remainingLines(remainingLines) {}
+
+auto FileContent::boundedForDisplay(const QString &text) -> QString {
+  // Where the line after the last one shown starts, if there is one.
+  qsizetype end = -1;
+  for (int line = 0; line < kMaxDisplayLines; ++line) {
+    end = text.indexOf(QLatin1Char('\n'), end + 1);
+    if (end < 0) {
+      return text;
+    }
+  }
+  const qsizetype more =
+      text.count(QLatin1Char('\n'), Qt::CaseSensitive) - (kMaxDisplayLines - 1);
+  return text.left(end) + QLatin1Char('\n') + moreLinesNotShown(more);
+}
 
 auto FileContent::getRemainingLineCount() const -> qsizetype {
   return remainingLines;

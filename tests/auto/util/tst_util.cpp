@@ -3039,6 +3039,25 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
     QVERIFY(!NativeGrep::isStoppedMarker(pair));
     QVERIFY(!NativeGrep::isMoreMarker(pair.second.last()));
   }
+
+  // 70 a piece does not divide the budget: the entry it runs out in is cut
+  // part-way and says there is more, and the walk says it stopped.
+  QProcessEnvironment seventy = env;
+  seventy.insert(QStringLiteral("HITS"), QStringLiteral("70"));
+  const QString many = tmp.filePath(QStringLiteral("many"));
+  QVERIFY(QDir().mkpath(many));
+  for (int i = 0; i < NativeGrep::kMaxMatches / 70 + 5; ++i) {
+    QFile f(QDir(many).filePath(QStringLiteral("m%1.gpg").arg(i)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  const auto cut = NativeGrep::scanStore(seventy, gpg, many, rx);
+  QCOMPARE(countMatches(cut), qsizetype{NativeGrep::kMaxMatches});
+  QVERIFY(cut.size() >= 2 && NativeGrep::isStoppedMarker(cut.last()));
+  const QStringList &partial = cut.at(cut.size() - 2).second;
+  QVERIFY2(NativeGrep::isMoreMarker(partial.last()),
+           "the entry cut short by the budget says so");
+  QCOMPARE(partial.size() - 1, NativeGrep::kMaxMatches % 70);
 #endif
 }
 

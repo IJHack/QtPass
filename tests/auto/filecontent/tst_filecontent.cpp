@@ -12,6 +12,7 @@ private Q_SLOTS:
   void parseTakesABoundedNumberOfFields();
   void parseFindsOtpPastTheFieldCap();
   void parseShowsABoundedNumberOfLines();
+  void boundedForDisplayCutsAtTheLineLimit();
   void parseKeepsEmptyLinesAsSplitDid();
   void parsePasswordWithNamedFields();
   void parseWithTemplateFields();
@@ -124,6 +125,29 @@ void tst_filecontent::parseShowsABoundedNumberOfLines() {
   QCOMPARE(shown.count(QLatin1Char('\n')), FileContent::kMaxDisplayLines);
   QVERIFY2(
       shown.section(QLatin1Char('\n'), -1).contains(QStringLiteral("7 more")),
+      qPrintable(shown.right(60)));
+}
+
+/**
+ * @brief An entry shown as it is (displayAsIs) is cut at the same line limit
+ * as the remaining text; one that fits is left alone.
+ */
+void tst_filecontent::boundedForDisplayCutsAtTheLineLimit() {
+  const int limit = FileContent::kMaxDisplayLines;
+  QString fits;
+  for (int i = 0; i < limit; ++i) {
+    fits += (i > 0 ? QStringLiteral("\n") : QString()) +
+            QStringLiteral("l%1").arg(i);
+  }
+  QCOMPARE(FileContent::boundedForDisplay(fits), fits);
+  QCOMPARE(FileContent::boundedForDisplay(QString()), QString());
+
+  const QString tooLong = fits + QStringLiteral("\nx\ny\nz");
+  const QString shown = FileContent::boundedForDisplay(tooLong);
+  QVERIFY(shown.startsWith(fits + QLatin1Char('\n')));
+  QCOMPARE(shown.count(QLatin1Char('\n')), limit);
+  QVERIFY2(
+      shown.section(QLatin1Char('\n'), -1).contains(QStringLiteral("3 more")),
       qPrintable(shown.right(60)));
 }
 
