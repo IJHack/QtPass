@@ -113,9 +113,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - New folder: a name like `link/../x` was checked as the store's `x` but
   created beside the target of the link `link`, outside the store. The
   checked path is now the one created.
-- A `.gpg-id` is read only as a regular file and only up to 1 MiB, before its
-  signature is checked: a FIFO under that name blocked QtPass, and a sparse
-  file of gigabytes was read whole. Importing a key reads at most 16 MiB of
+- QtPass reads a `.gpg-id` only as a regular file and only up to 1 MiB,
+  before its signature is checked: a FIFO under that name blocked QtPass,
+  and a sparse file of gigabytes was read whole. (With the `pass` backend,
+  `pass` reads the list for its own operations.) The Users dialog says so
+  when the list cannot be read, instead of showing it as empty. Importing a key reads at most 16 MiB of
   a regular file.
 - Re-encryption checks the folder again after its `git pull`: a pulled
   commit that made it a link sent recovery of an interrupted run to rename

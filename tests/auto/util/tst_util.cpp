@@ -406,6 +406,7 @@ private Q_SLOTS:
   void refuseLinkedPathRefusesAndReleasesTheUi();
   void recipientsForEditingSignedStoreWithoutListIsVerified();
   void recipientsForEditingRefusesAFolderWhoseListIsALink();
+  void recipientsForEditingSaysWhenAnUnsignedListCannotBeRead();
   // Util paths and files
   void findBinaryInPathRelativePathIsNotTheCwd();
   void configIsValidWslLauncherThatCannotRunIsInvalid();
@@ -2401,12 +2402,13 @@ void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
     QByteArray value;
   };
   QList<Saved> saved;
-  for (const char *name :
-       {"GIT_DIR", "GIT_WORK_TREE", "PASSWORD_STORE_UMASK"}) {
+  for (const char *name : {"GIT_DIR", "GIT_WORK_TREE", "GIT_GLOB_PATHSPECS",
+                           "PASSWORD_STORE_UMASK"}) {
     saved.append({name, qEnvironmentVariableIsSet(name), qgetenv(name)});
   }
   qputenv("GIT_DIR", "/nonexistent/elsewhere.git");
   qputenv("GIT_WORK_TREE", "/nonexistent");
+  qputenv("GIT_GLOB_PATHSPECS", "1"); // git refuses it with literal ones
   qputenv("PASSWORD_STORE_UMASK", "027");
 #ifdef Q_OS_UNIX
   const mode_t before = ::umask(022);
@@ -2414,6 +2416,7 @@ void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
   Util::applyPassProcessDefaults();
   QVERIFY(!qEnvironmentVariableIsSet("GIT_DIR"));
   QVERIFY(!qEnvironmentVariableIsSet("GIT_WORK_TREE"));
+  QVERIFY(!qEnvironmentVariableIsSet("GIT_GLOB_PATHSPECS"));
 #ifdef Q_OS_UNIX
   const mode_t own = ::umask(022);
   QString childUmask;
@@ -2597,7 +2600,8 @@ void tst_util::readRegularFileIsBoundedAndRegular() {
 
 /**
  * @brief An entry named with glob characters names itself only: QtPass's
- * `git rm -f -- a*.gpg` must not remove every entry that matches.
+ * `git rm -f -- a[bc].gpg` must not remove ab.gpg and ac.gpg as well.
+ * Brackets, not "*", so it runs on Windows too.
  */
 void tst_util::gitTakesStorePathsLiterally() {
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
@@ -2610,9 +2614,6 @@ void tst_util::gitTakesStorePathsLiterally() {
   const QProcessEnvironment env = pass.environment();
   QCOMPARE(env.value(QStringLiteral("GIT_LITERAL_PATHSPECS")),
            QStringLiteral("1"));
-#ifdef Q_OS_WIN
-  QSKIP("Windows file names cannot hold the * the rest of this needs");
-#endif
 
   QTemporaryDir store;
   QVERIFY(store.isValid());
@@ -2630,7 +2631,7 @@ void tst_util::gitTakesStorePathsLiterally() {
     return p.exitCode();
   };
   QCOMPARE(run({QStringLiteral("init"), QStringLiteral("-q")}), 0);
-  for (const char *name : {"a*.gpg", "alice.gpg", "anna.gpg"}) {
+  for (const char *name : {"a[bc].gpg", "ab.gpg", "ac.gpg"}) {
     QFile f(QDir(store.path()).filePath(QString::fromLatin1(name)));
     QVERIFY(f.open(QIODevice::WriteOnly));
     f.write("x");
@@ -2640,12 +2641,12 @@ void tst_util::gitTakesStorePathsLiterally() {
                 QStringLiteral("init")}),
            0);
   QCOMPARE(run({QStringLiteral("rm"), QStringLiteral("-qf"),
-                QStringLiteral("--"), QStringLiteral("a*.gpg")}),
+                QStringLiteral("--"), QStringLiteral("a[bc].gpg")}),
            0);
-  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("a*.gpg"))));
-  QVERIFY2(QFileInfo::exists(store.filePath(QStringLiteral("alice.gpg"))) &&
-               QFileInfo::exists(store.filePath(QStringLiteral("anna.gpg"))),
-           "only the entry named a*.gpg goes");
+  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("a[bc].gpg"))));
+  QVERIFY2(QFileInfo::exists(store.filePath(QStringLiteral("ab.gpg"))) &&
+               QFileInfo::exists(store.filePath(QStringLiteral("ac.gpg"))),
+           "only the entry named a[bc].gpg goes");
 }
 
 // --- gpgErrorMessage tests ---
@@ -5653,6 +5654,34 @@ void tst_util::recipientsForEditingRefusesAFolderWhoseListIsALink() {
            "a folder whose list is a link is Rejected");
   QVERIFY2(r.recipients.isEmpty(), qPrintable(r.recipients.join(u',')));
   QVERIFY2(r.warning.contains(link), qPrintable(r.warning));
+}
+
+/**
+ * @brief Without a signing key, a list too large to read is not an empty
+ * one: Rejected, with a warning, so the Users dialog does not offer to
+ * write a new list over it as if there were none.
+ */
+void tst_util::recipientsForEditingSaysWhenAnUnsignedListCannotBeRead() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString list = QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(list);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(Util::kMaxGpgIdBytes + 1));
+  }
+  TestPass pass;
+  AppSettings s;
+  s.passStore = store.path();
+  pass.init(s);
+  const auto r = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY(r.state == Pass::RecipientsForEditing::State::Rejected);
+  QVERIFY(r.recipients.isEmpty());
+  QVERIFY2(r.warning.contains(list), qPrintable(r.warning));
+
+  QVERIFY(QFile::resize(list, 41));
+  const auto fine = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY(fine.state == Pass::RecipientsForEditing::State::Unsigned);
 }
 
 /**

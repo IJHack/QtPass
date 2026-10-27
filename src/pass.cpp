@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QHash>
+#include <QLocale>
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
@@ -819,6 +820,21 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
       m_settings.gpgExecutable,
       GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
   if (!signer.enabled()) {
+    // A list that is there but cannot be read as one (too large, not a
+    // regular file, unreadable) is not an empty list: preselecting nothing
+    // without a word would let OK write a new list over it, and later
+    // re-encryptions drop whoever it named.
+    if (QFileInfo::exists(gpgIdPath) &&
+        !Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes)) {
+      result.state = RecipientsForEditing::State::Rejected;
+      result.warning =
+          tr("%1 cannot be read as a recipient list (a regular file of at "
+             "most %2), so nothing is preselected. Check it before choosing "
+             "recipients here: OK writes a new list over it.")
+              .arg(gpgIdPath,
+                   QLocale().formattedDataSize(Util::kMaxGpgIdBytes));
+      return result;
+    }
     result.state = RecipientsForEditing::State::Unsigned;
     result.recipients = getRecipientList(folder, passStore);
     return result;

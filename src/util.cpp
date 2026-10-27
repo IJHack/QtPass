@@ -104,7 +104,10 @@ void Util::applyPassProcessDefaults() {
   // send every commit and push to that repository instead of the store.
   for (const char *variable :
        {"GIT_DIR", "GIT_WORK_TREE", "GIT_NAMESPACE", "GIT_INDEX_FILE",
-        "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR"}) {
+        "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR",
+        // QtPass sets GIT_LITERAL_PATHSPECS for its git; git refuses a
+        // pathspec when one of these is set as well.
+        "GIT_GLOB_PATHSPECS", "GIT_NOGLOB_PATHSPECS", "GIT_ICASE_PATHSPECS"}) {
     qunsetenv(variable);
   }
   Executor::setChildUmask(
