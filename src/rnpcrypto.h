@@ -4,6 +4,8 @@
 #define SRC_RNPCRYPTO_H_
 
 #include <QByteArray>
+#include <QDateTime>
+#include <QList>
 #include <QString>
 #include <QStringList>
 #include <functional>
@@ -32,6 +34,32 @@ struct rnp_ffi_st;
  */
 class RnpCrypto {
 public:
+  /**
+   * @brief One primary key in the keyring, as the Users dialog lists keys.
+   */
+  struct KeyInfo {
+    /** @brief The primary key's fingerprint, upper-case hex. */
+    QString fingerprint;
+    /** @brief The primary key's 16-hex-digit key ID. */
+    QString keyId;
+    /** @brief Its user IDs, in the keyring's order. */
+    QStringList userIds;
+    /** @brief When it was created. */
+    QDateTime created;
+    /** @brief When it expires; invalid when it does not. */
+    QDateTime expires;
+    /** @brief Whether it has been revoked. */
+    bool revoked = false;
+    /** @brief Whether it has expired. */
+    bool expired = false;
+    /** @brief Whether a secret part of it (primary or subkey) is here. */
+    bool hasSecret = false;
+    /** @brief Whether a message can be encrypted to it now. */
+    bool canEncrypt = false;
+    /** @brief Whether it can sign now, with a secret key that is here. */
+    bool canSign = false;
+  };
+
   /**
    * @brief Asks for the passphrase of a secret key.
    *
@@ -125,6 +153,44 @@ public:
    */
   auto decrypt(const QByteArray &ciphertext, QString *error = nullptr,
                bool *ok = nullptr) -> QByteArray;
+
+  /**
+   * @brief The primary keys in the keyring.
+   * @param secretOnly Only keys with a secret part here.
+   * @return One entry per primary key, in the keyring's order.
+   */
+  [[nodiscard]] auto listKeys(bool secretOnly = false) const -> QList<KeyInfo>;
+
+  /**
+   * @brief Makes a detached signature over @p data, as gpg --detach-sign
+   * --local-user @p signer does (for .gpg-id.sig).
+   * @param data The bytes signed, a .gpg-id as written.
+   * @param signer The key, named as gpg --local-user takes it: a
+   * fingerprint, a key ID or a user ID. It must name exactly one key that
+   * can sign and whose secret key is here; that key is used, not another.
+   * @param error Set to the reason when signing fails.
+   * @return The binary signature, empty on failure.
+   */
+  auto sign(const QByteArray &data, const QString &signer,
+            QString *error = nullptr) -> QByteArray;
+
+  /**
+   * @brief Checks a detached signature over @p data, as QtPass reads gpg's
+   * VALIDSIG.
+   *
+   * The first signature that verifies decides. A signature by a key that is
+   * now revoked (or whose primary is) counts for nothing, as with GnuPG in
+   * GpgIdSigner; one by a key that has since expired still counts, as gpg
+   * calls it a good signature.
+   * @param data The signed bytes.
+   * @param signature Binary or armored detached signature.
+   * @param error Set to the reason when no signature counts.
+   * @return The signing key's fingerprint and its primary key's, as
+   * GpgIdSigner::validSigFingerprints() gives them; empty when no signature
+   * counts.
+   */
+  auto verify(const QByteArray &data, const QByteArray &signature,
+              QString *error = nullptr) -> QStringList;
 
 private:
   rnp_ffi_st *m_ffi = nullptr;

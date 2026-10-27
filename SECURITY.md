@@ -80,6 +80,7 @@ A build option (`qmake6 CONFIG+=rnp`, see [#2005](https://github.com/IJHack/QtPa
 - **That keyring is in memory only today.** Once the mode keeps it on disk, the key is to stay protected by its own passphrase there, as GnuPG stores it.
 - **No smartcards or YubiKeys** in that mode: RNP cannot decrypt on a card. (Sequoia can, through the openpgp-card crates; a later option, not this one.)
 - **What it refuses, as GnuPG does:** a message without integrity protection (CFB without MDC, the kind EFAIL abuses), and plaintext beyond 64 MiB, so a small compressed entry cannot fill memory.
+- **Signed recipient lists:** it signs and checks `.gpg-id.sig` as QtPass does with GnuPG: signing uses exactly the configured key (never another secret key that is there), and a signature by a revoked key counts for nothing, while one by a key that has since expired still counts.
 - Choosing that mode will therefore be a deliberate step, explained where it is offered (the first-run wizard and the settings), never a silent fallback when `gpg` is missing.
 
 ## Dependencies

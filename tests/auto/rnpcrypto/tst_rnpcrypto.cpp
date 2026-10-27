@@ -44,6 +44,13 @@ private Q_SLOTS:
   void blanksOnlyInAFingerprint();
   void anExactlyNamedUnusableKeySaysWhy();
   void wrongKeyCannotDecrypt();
+  void gpgVerifiesWhatRnpSigned();
+  void verifiesWhatGpgSignedAndNotATamperedCopy();
+  void signNeedsTheNamedKeysSecret();
+  void signUnlocksAProtectedKeyThroughTheProvider();
+  void aRevokedSignerCountsForNothing();
+  void anExpiredSignersOlderSignatureStillCounts();
+  void listKeysSaysWhatEachKeyCanDo();
 
 private:
   struct Result {
@@ -55,6 +62,12 @@ private:
   auto generateKey(const QString &uid, const QString &passphrase) -> QString;
   auto exportKey(const QString &fpr, const QString &passphrase, bool secret)
       -> QByteArray;
+  /// gpg's own detached signature by @p fpr over @p data, binary.
+  auto gpgSign(const QString &fpr, const QByteArray &data,
+               const QStringList &extra = {}) -> QByteArray;
+  /// The fingerprints in gpg's VALIDSIG for @p signature over @p data.
+  auto gpgValidSig(const QByteArray &data, const QByteArray &signature)
+      -> QStringList;
 
   QString m_gpg;
   QTemporaryDir m_home;
@@ -602,6 +615,201 @@ void tst_rnpcrypto::wrongKeyCannotDecrypt() {
   QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
   QVERIFY(!ok);
   QVERIFY(!error.isEmpty());
+}
+
+auto tst_rnpcrypto::gpgSign(const QString &fpr, const QByteArray &data,
+                            const QStringList &extra) -> QByteArray {
+  return gpg(extra + QStringList{QStringLiteral("--pinentry-mode"),
+                                 QStringLiteral("loopback"),
+                                 QStringLiteral("--passphrase"), QString(),
+                                 QStringLiteral("--local-user"), fpr,
+                                 QStringLiteral("--detach-sign")},
+             data)
+      .out;
+}
+
+auto tst_rnpcrypto::gpgValidSig(const QByteArray &data,
+                                const QByteArray &signature) -> QStringList {
+  QTemporaryDir dir;
+  if (!dir.isValid()) {
+    return {};
+  }
+  QFile sig(dir.filePath(QStringLiteral("list.sig")));
+  if (!sig.open(QIODevice::WriteOnly)) {
+    return {};
+  }
+  sig.write(signature);
+  sig.close();
+  const Result r =
+      gpg({QStringLiteral("--status-fd"), QStringLiteral("1"),
+           QStringLiteral("--verify"), sig.fileName(), QStringLiteral("-")},
+          data);
+  for (const QByteArray &line : r.out.split('\n')) {
+    if (line.startsWith("[GNUPG:] VALIDSIG ")) {
+      const QList<QByteArray> f = line.trimmed().split(' ');
+      return {QString::fromLatin1(f.value(2)), QString::fromLatin1(f.last())};
+    }
+  }
+  return {};
+}
+
+namespace {
+const QByteArray kList = QByteArrayLiteral(
+    "# QtPass-GpgId-Generation: 1\nalice@example.org\nbob@example.org\n");
+} // namespace
+
+// A .gpg-id.sig RNP makes is one gpg (and so pass) accepts, by that key.
+void tst_rnpcrypto::gpgVerifiesWhatRnpSigned() {
+  RnpCrypto rnp;
+  QString error;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true), &error).isEmpty());
+  const QByteArray sig = rnp.sign(kList, m_alice, &error);
+  QVERIFY2(!sig.isEmpty(), qPrintable(error));
+  QVERIFY2(!sig.startsWith("-----BEGIN"), "binary, as gpg --detach-sign");
+  QCOMPARE(gpgValidSig(kList, sig), (QStringList{m_alice, m_alice}));
+  // And RNP itself agrees.
+  QCOMPARE(rnp.verify(kList, sig, &error), (QStringList{m_alice, m_alice}));
+}
+
+void tst_rnpcrypto::verifiesWhatGpgSignedAndNotATamperedCopy() {
+  const QByteArray sig = gpgSign(m_alice, kList);
+  QVERIFY(!sig.isEmpty());
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, false)).isEmpty());
+  QString error;
+  QCOMPARE(rnp.verify(kList, sig, &error), (QStringList{m_alice, m_alice}));
+
+  QByteArray planted = kList;
+  planted.append("mallory@example.org\n");
+  QVERIFY(rnp.verify(planted, sig, &error).isEmpty());
+  QVERIFY(!error.isEmpty());
+
+  // A signature by a key not in the keyring is no signature here.
+  RnpCrypto stranger;
+  QVERIFY(!stranger.importKeys(exportKey(m_bob, {}, false)).isEmpty());
+  QVERIFY(stranger.verify(kList, sig, &error).isEmpty());
+}
+
+// As gpg --local-user: the key named, with its secret here, or nothing;
+// never another key that could sign.
+void tst_rnpcrypto::signNeedsTheNamedKeysSecret() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true) +
+                          exportKey(m_bob, {}, false))
+               .isEmpty());
+  QString error;
+  QVERIFY(rnp.sign(kList, m_bob, &error).isEmpty());
+  QVERIFY2(error.contains(m_bob), qPrintable(error));
+  QVERIFY(
+      rnp.sign(kList, QStringLiteral("nobody@example.org"), &error).isEmpty());
+  // By e-mail address, as a signing key setting may name it.
+  const QByteArray sig =
+      rnp.sign(kList, QStringLiteral("alice@example.org"), &error);
+  QVERIFY2(!sig.isEmpty(), qPrintable(error));
+  QCOMPARE(gpgValidSig(kList, sig).value(1), m_alice);
+}
+
+void tst_rnpcrypto::signUnlocksAProtectedKeyThroughTheProvider() {
+  RnpCrypto rnp;
+  QVERIFY(
+      !rnp.importKeys(exportKey(m_carol, QStringLiteral("correct horse"), true))
+           .isEmpty());
+  QString error;
+  rnp.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("wrong"); });
+  QVERIFY(rnp.sign(kList, m_carol, &error).isEmpty());
+  QVERIFY(!error.isEmpty());
+  rnp.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("correct horse"); });
+  const QByteArray sig = rnp.sign(kList, m_carol, &error);
+  QVERIFY2(!sig.isEmpty(), qPrintable(error));
+  QCOMPARE(gpgValidSig(kList, sig).value(1), m_carol);
+}
+
+// As GpgIdSigner since #2059: a signing key revoked (after it leaked, say)
+// vouches for nothing, also for a signature made before the revocation.
+void tst_rnpcrypto::aRevokedSignerCountsForNothing() {
+  const QString dave =
+      generateKey(QStringLiteral("Dave <dave@example.org>"), {});
+  QVERIFY(!dave.isEmpty());
+  const QByteArray sig = gpgSign(dave, kList);
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(dave, {}, false)).isEmpty());
+  QString error;
+  QCOMPARE(rnp.verify(kList, sig, &error), (QStringList{dave, dave}));
+
+  // Revoked in GnuPG, and the key as exported now (carrying the revocation)
+  // imported again, as a refreshed key would be.
+  QFile rev(
+      m_home.filePath(QStringLiteral("openpgp-revocs.d/%1.rev").arg(dave)));
+  QVERIFY(rev.open(QIODevice::ReadOnly));
+  QByteArray revocation = rev.readAll();
+  // gpg guards the certificate with a leading ':' on its armor line.
+  revocation.replace("\n:-----BEGIN", "\n-----BEGIN");
+  QCOMPARE(gpg({QStringLiteral("--import")}, revocation).exitCode, 0);
+  QVERIFY2(!rnp.importKeys(exportKey(dave, {}, false), &error).isEmpty(),
+           qPrintable(error));
+  QVERIFY(rnp.listKeys().size() == 1 && rnp.listKeys().first().revoked);
+  // RNP already reports such a signature invalid (stricter than gpg's
+  // VALIDSIG); RnpCrypto::verify() checks the revocation itself as well.
+  QVERIFY(rnp.verify(kList, sig, &error).isEmpty());
+  QVERIFY(!error.isEmpty());
+}
+
+// gpg calls a signature by a key that has since expired a good one (and
+// so does GpgIdSigner): expiry is not compromise.
+void tst_rnpcrypto::anExpiredSignersOlderSignatureStillCounts() {
+  const QStringList past{QStringLiteral("--faked-system-time"),
+                         QStringLiteral("20250101T000000!")};
+  const Result gen =
+      gpg(past + QStringList{
+                     QStringLiteral("--yes"), QStringLiteral("--status-fd"),
+                     QStringLiteral("1"), QStringLiteral("--pinentry-mode"),
+                     QStringLiteral("loopback"), QStringLiteral("--passphrase"),
+                     QString(), QStringLiteral("--quick-gen-key"),
+                     QStringLiteral("Erin <erin@example.org>"),
+                     QStringLiteral("default"), QStringLiteral("default"),
+                     QStringLiteral("1d")});
+  QString erin;
+  for (const QByteArray &line : gen.out.split('\n')) {
+    if (line.startsWith("[GNUPG:] KEY_CREATED ")) {
+      erin = QString::fromLatin1(line.split(' ').value(3)).trimmed();
+    }
+  }
+  QVERIFY2(!erin.isEmpty(), gen.err.constData());
+  const QByteArray sig = gpgSign(erin, kList, past);
+  QVERIFY(!sig.isEmpty());
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(erin, {}, false)).isEmpty());
+  QVERIFY(rnp.listKeys().first().expired);
+  QString error;
+  QCOMPARE(rnp.verify(kList, sig, &error), (QStringList{erin, erin}));
+}
+
+void tst_rnpcrypto::listKeysSaysWhatEachKeyCanDo() {
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true) +
+                          exportKey(m_bob, {}, false))
+               .isEmpty());
+  const QList<RnpCrypto::KeyInfo> keys = rnp.listKeys();
+  QCOMPARE(keys.size(), 2);
+  for (const RnpCrypto::KeyInfo &key : keys) {
+    const bool alice = key.fingerprint == m_alice;
+    QVERIFY(alice || key.fingerprint == m_bob);
+    QCOMPARE(key.keyId, key.fingerprint.right(16));
+    QCOMPARE(key.userIds,
+             QStringList{alice ? QStringLiteral("Alice <alice@example.org>")
+                               : QStringLiteral("Bob <bob@example.org>")});
+    QVERIFY(key.created.isValid());
+    QVERIFY(!key.expires.isValid()); // made with "never"
+    QVERIFY(!key.revoked && !key.expired);
+    QCOMPARE(key.hasSecret, alice);
+    QVERIFY(key.canEncrypt);
+    QCOMPARE(key.canSign, alice);
+  }
+  const QList<RnpCrypto::KeyInfo> secret = rnp.listKeys(true);
+  QCOMPARE(secret.size(), 1);
+  QCOMPARE(secret.first().fingerprint, m_alice);
 }
 
 QTEST_MAIN(tst_rnpcrypto)
