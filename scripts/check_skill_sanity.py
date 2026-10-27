@@ -29,9 +29,7 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # runs up to the first whitespace or closing parenthesis.
 # Each part stays on one line, so a run of "[" with no "]" costs one line's
 # scan per bracket, not the rest of the file's (quadratic on a crafted file).
-LINK_RE = re.compile(
-    r"(?<!!)\[[^\]\n]*\]\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)"
-)
+LINK_RE = re.compile(r"(?<!!)\[[^\]\n]*\]\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)")
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
     r"(?:md|py|sh|bash|txt|json|yml|yaml))"
