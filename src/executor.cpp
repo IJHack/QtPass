@@ -17,9 +17,6 @@
 namespace {
 /// Executor::setChildUmask(); negative for none.
 std::atomic_int g_childUmask{-1};
-} // namespace
-
-namespace {
 /// How often a cancellable blocking run re-checks its cancel flag.
 constexpr int kBlockingCancelPollMs = 100;
 /// Grace between terminate() and kill() once a blocking run is cancelled;
