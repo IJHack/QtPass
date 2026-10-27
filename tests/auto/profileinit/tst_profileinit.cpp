@@ -394,6 +394,23 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
   QVERIFY(ProfileInit::initialise(nested.path(), twoUsers(), AppSettings(),
                                   false, &note));
   QVERIFY2(note.contains(QStringLiteral("not re-encrypted")), qPrintable(note));
+
+  // A sub-folder with a .gpg-id of its own keeps its recipients: its
+  // entries need nothing from this profile's list and are not counted.
+  QTemporaryDir withSubStore;
+  QVERIFY(withSubStore.isValid());
+  for (const char *name :
+       {"top.gpg", "team/.gpg-id", "team/a.gpg", "team/deep/b.gpg"}) {
+    const QString path =
+        QDir(withSubStore.path()).filePath(QString::fromLatin1(name));
+    QVERIFY(QDir().mkpath(QFileInfo(path).absolutePath()));
+    QFile file(path);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(ProfileInit::initialise(withSubStore.path(), twoUsers(),
+                                  AppSettings(), false, &note));
+  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
 }
 
 /**

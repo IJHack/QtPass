@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
+#include <algorithm>
 
 namespace {
 /// As Pass::updateEnv() sets it for the active store: git in @p dir does not
@@ -90,9 +91,26 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   }
 
   // Entries in sub-folders too: a store taken over whole has most of them
-  // there. Regular files only, not through links, .git not walked.
-  const QStringList existing =
-      Util::regularFilesUnder(folder.absolutePath(), {QStringLiteral("*.gpg")});
+  // there. Visible regular files only, not through links, .git not walked.
+  // Not those under a sub-folder with a .gpg-id of its own: its recipients
+  // did not change here, and Users on the profile's root leaves it alone,
+  // as pass does.
+  const QString root = QDir::cleanPath(folder.absolutePath());
+  const auto underSubStore = [&root](const QString &entry) {
+    QString dir = QFileInfo(entry).absolutePath();
+    while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
+      if (QFileInfo(QDir(dir).filePath(QStringLiteral(".gpg-id"))).isFile()) {
+        return true;
+      }
+      dir = QFileInfo(dir).absolutePath();
+    }
+    return false;
+  };
+  QStringList existing =
+      Util::regularFilesUnder(root, {QStringLiteral("*.gpg")});
+  existing.erase(
+      std::remove_if(existing.begin(), existing.end(), underSubStore),
+      existing.end());
   if (!existing.isEmpty()) {
     out = tr("%1 already contains %n encrypted file(s); they were not "
              "re-encrypted. Switch to the profile and open Users to do that.",
