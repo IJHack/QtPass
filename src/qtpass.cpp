@@ -475,9 +475,8 @@ void QtPass::setClipboardTimer() {
 void QtPass::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
   bool cleared = false;
-  // Ours: what QtPass copied, or a tracked copy out of a view of a secret.
   const auto ours = [this](const QString &text) {
-    return text == this->clippedText || copiedTexts.contains(text);
+    return isOurs(text, clippedText, copiedTexts);
   };
   if (ours(clipboard->text(QClipboard::Selection))) {
     clipboard->clear(QClipboard::Selection);
@@ -496,6 +495,12 @@ void QtPass::clearClipboard() {
 
   clippedText.clear();
   copiedTexts.clear();
+}
+
+auto QtPass::isOurs(const QString &text, const QString &clippedText,
+                    const CopiedTexts &copied) -> bool {
+  // What QtPass copied, or a tracked copy out of a view of a secret.
+  return !text.isEmpty() && (text == clippedText || copied.contains(text));
 }
 
 void QtPass::trackCopied(const QString &text) {

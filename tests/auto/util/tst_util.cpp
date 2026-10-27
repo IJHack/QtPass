@@ -182,6 +182,7 @@ private Q_SLOTS:
   void secretLineEditNeverPublishesAPlainSelection();
   void copiedTextsKeepsWhereASelectionEnds();
   void copiedTextsKeepsACopyStillOnTheClipboard();
+  void clearClipboardNeverTakesNonTextContent();
   void buildClipboardMimeDataWindows();
   void buildClipboardMimeDataMac();
   void utilRegexEnsuresGpg();
@@ -3621,6 +3622,22 @@ void tst_util::copiedTextsKeepsACopyStillOnTheClipboard() {
   QVERIFY(texts.contains(pin));
   QVERIFY(texts.size() <= 16);
   QVERIFY(!texts.contains(QString()));
+}
+
+/**
+ * @brief An image or a file list on the clipboard reads as an empty text.
+ * With nothing copied by QtPass yet (clippedText empty), a tracked selection
+ * starts autoclear; it must not then clear that unrelated content.
+ */
+void tst_util::clearClipboardNeverTakesNonTextContent() {
+  CopiedTexts copied;
+  copied.add(QStringLiteral("hunter2"), QString(), QStringLiteral("hunter2"));
+  QVERIFY(!QtPass::isOurs(QString(), QString(), copied));
+  QVERIFY(!QtPass::isOurs(QString(), QString(), CopiedTexts()));
+  QVERIFY(QtPass::isOurs(QStringLiteral("hunter2"), QString(), copied));
+  QVERIFY(QtPass::isOurs(QStringLiteral("pw"), QStringLiteral("pw"), copied));
+  QVERIFY(
+      !QtPass::isOurs(QStringLiteral("theirs"), QStringLiteral("pw"), copied));
 }
 
 QTEST_MAIN(tst_util)

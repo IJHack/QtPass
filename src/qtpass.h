@@ -116,6 +116,23 @@ public:
   void setClipboardTimer();
 
   /**
+   * @brief Whether a text found on the clipboard or in the selection is one
+   * QtPass put there, so autoclear may take it.
+   *
+   * Empty is never ours: the clipboard reports an image or a file list as an
+   * empty text, and with nothing copied yet @p clippedText is empty too, so
+   * without this a selection in a shown entry would start autoclear and clear
+   * someone else's clipboard content.
+   * @param text What the clipboard or the selection holds.
+   * @param clippedText What copyTextToClipboard() last put there, or empty.
+   * @param copied The texts copied out of a view of a secret.
+   * @return True for a non-empty @p text that QtPass copied or tracked.
+   */
+  [[nodiscard]] static auto isOurs(const QString &text,
+                                   const QString &clippedText,
+                                   const CopiedTexts &copied) -> bool;
+
+  /**
    * @brief Return whether this instance is in a fresh-start state.
    * @return true if in fresh-start state.
    */
