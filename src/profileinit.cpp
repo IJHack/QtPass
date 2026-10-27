@@ -17,10 +17,14 @@ namespace {
 /// As Pass::updateEnv() sets it for the active store: git in @p dir does not
 /// look above it, so neither the identity check nor a commit reads or uses a
 /// repository the new store merely lies in (a dotfiles one in the home
-/// folder), unless the user opted into that.
+/// folder), unless the user opted into that; and paths are names to it, not
+/// patterns.
 auto gitEnvironment(const QString &dir, const AppSettings &s)
     -> QProcessEnvironment {
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  // As for the active store: the paths handed to git are names, not
+  // patterns (see Pass::updateEnv()).
+  env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
   if (!s.gitUseParentRepository) {
     env.insert(QStringLiteral("GIT_CEILING_DIRECTORIES"),
                Util::gitCeiling(dir));

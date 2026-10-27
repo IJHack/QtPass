@@ -2487,31 +2487,6 @@ void tst_util::mkpathForStoreFollowsTheStoreUmask() {
  * manager or terminal it opens inherits, is left alone.
  */
 void tst_util::gitDoesNotClimbAboveTheStore() {
-void tst_util::readRegularFileIsBoundedAndRegular() {
-  QTemporaryDir dir;
-  QVERIFY(dir.isValid());
-  const QString path = dir.filePath(QStringLiteral("list"));
-  {
-    QFile f(path);
-    QVERIFY(f.open(QIODevice::WriteOnly));
-    f.write("0123456789");
-  }
-  QCOMPARE(Util::readRegularFile(path, 10).value_or("none"),
-           QByteArray("0123456789"));
-  QVERIFY2(!Util::readRegularFile(path, 9), "one byte too many");
-  QVERIFY(!Util::readRegularFile(dir.filePath(QStringLiteral("missing")), 10));
-  QVERIFY2(!Util::readRegularFile(dir.path(), 10), "a folder is no file");
-  const QString link = dir.filePath(QStringLiteral("link"));
-  if (QFile::link(path, link)) {
-    QVERIFY2(!Util::readRegularFile(link, 10), "a link is not followed");
-  }
-}
-
-/**
- * @brief An entry named with glob characters names itself only: QtPass's
- * `git rm -f -- a*.gpg` must not remove every entry that matches.
- */
-void tst_util::gitTakesStorePathsLiterally() {
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
   if (git.isEmpty()) {
     QSKIP("git not found");
@@ -2598,6 +2573,37 @@ void tst_util::gitTakesStorePathsLiterally() {
            "with gitUseParentRepository the parent's repository is used");
   QCOMPARE(inherited, QStringLiteral("/started/with"));
   QVERIFY2(!staleCeiling, "an empty store leaves no ceiling behind");
+}
+
+void tst_util::readRegularFileIsBoundedAndRegular() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString path = dir.filePath(QStringLiteral("list"));
+  {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("0123456789");
+  }
+  QCOMPARE(Util::readRegularFile(path, 10).value_or("none"),
+           QByteArray("0123456789"));
+  QVERIFY2(!Util::readRegularFile(path, 9), "one byte too many");
+  QVERIFY(!Util::readRegularFile(dir.filePath(QStringLiteral("missing")), 10));
+  QVERIFY2(!Util::readRegularFile(dir.path(), 10), "a folder is no file");
+  const QString link = dir.filePath(QStringLiteral("link"));
+  if (QFile::link(path, link)) {
+    QVERIFY2(!Util::readRegularFile(link, 10), "a link is not followed");
+  }
+}
+
+/**
+ * @brief An entry named with glob characters names itself only: QtPass's
+ * `git rm -f -- a*.gpg` must not remove every entry that matches.
+ */
+void tst_util::gitTakesStorePathsLiterally() {
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("git not found");
+  }
   TestPass pass;
   AppSettings s = QtPassSettings::load();
   pass.init(s);
