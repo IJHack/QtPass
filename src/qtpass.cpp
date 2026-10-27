@@ -475,12 +475,15 @@ void QtPass::setClipboardTimer() {
 void QtPass::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
   bool cleared = false;
-  if (this->clippedText == clipboard->text(QClipboard::Selection)) {
+  const auto ours = [this](const QString &text) {
+    return isOurs(text, clippedText, copiedTexts);
+  };
+  if (ours(clipboard->text(QClipboard::Selection))) {
     clipboard->clear(QClipboard::Selection);
     clipboard->setText(QString(""), QClipboard::Selection);
     cleared = true;
   }
-  if (this->clippedText == clipboard->text(QClipboard::Clipboard)) {
+  if (ours(clipboard->text(QClipboard::Clipboard))) {
     clipboard->clear(QClipboard::Clipboard);
     cleared = true;
   }
@@ -491,6 +494,54 @@ void QtPass::clearClipboard() {
   }
 
   clippedText.clear();
+  copiedTexts.clear();
+}
+
+auto QtPass::isOurs(const QString &text, const QString &clippedText,
+                    const CopiedTexts &copied) -> bool {
+  // What QtPass copied, or a tracked copy out of a view of a secret.
+  return !text.isEmpty() && (text == clippedText || copied.contains(text));
+}
+
+void QtPass::trackCopied(const QString &text) {
+  QClipboard *clipboard = QApplication::clipboard();
+  copiedTexts.add(text, clipboard->text(QClipboard::Clipboard),
+                  clipboard->text(QClipboard::Selection));
+  if (!text.isEmpty() && QtPassSettings::load().useAutoclear) {
+    clearClipboardTimer.start();
+  }
+}
+
+void CopiedTexts::add(const QString &text, const QString &onClipboard,
+                      const QString &inSelection) {
+  if (text.isEmpty() || m_texts.contains(text)) {
+    return;
+  }
+  // A mouse selection reports itself on every change; a new text that
+  // contains, or is contained in, the last one replaces it, unless that one
+  // is still on the clipboard proper (Ctrl+C'd).
+  const QString last = m_texts.isEmpty() ? QString() : m_texts.last();
+  if (!last.isEmpty() && (text.contains(last) || last.contains(text)) &&
+      onClipboard != last) {
+    m_texts.last() = text;
+    return;
+  }
+  constexpr qsizetype kMaxTexts = 16;
+  if (m_texts.size() >= kMaxTexts) {
+    // Never forget a text still on the clipboard or in the selection: it
+    // would outlive autoclear. At most two are, so another can always go.
+    for (qsizetype i = 0; i < m_texts.size(); ++i) {
+      if (m_texts.at(i) != onClipboard && m_texts.at(i) != inSelection) {
+        m_texts.removeAt(i);
+        break;
+      }
+    }
+  }
+  m_texts.append(text);
+}
+
+auto CopiedTexts::contains(const QString &text) const -> bool {
+  return !text.isEmpty() && m_texts.contains(text);
 }
 
 /**

@@ -290,7 +290,7 @@
          <layout class="QGridLayout" name="gridLayout"/>
         </item>
         <item>
-         <widget class="QTextBrowser" name="textBrowser">
+         <widget class="SecretTextBrowser" name="textBrowser">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -459,6 +459,11 @@
    <slots>
     <signal>signal1()</signal>
    </slots>
+  </customwidget>
+  <customwidget>
+   <class>SecretTextBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header location="global">secrettextbrowser.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
