@@ -114,9 +114,23 @@ void RealPass::Remove(QString file, bool isDir) {
                 exec.environment(), m_settings.passExecutable,
                 {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0;
         if (recorded) {
-          executePass(PASS_REMOVE,
-                      {"git", "commit", "-q", "-m",
-                       "Remove for " + rel + " using QtPass.", "--", rel});
+          // `pass git commit` is git's commit as it is: pass adds -S only
+          // to the commits it makes itself, so ask as its git_commit() does.
+          QString signs;
+          const bool sign =
+              Executor::executeBlocking(
+                  exec.environment(), m_settings.passExecutable,
+                  {"git", "config", "--bool", "--get", "pass.signcommits"},
+                  &signs, nullptr) == 0 &&
+              signs.trimmed() == QLatin1String("true");
+          QStringList commit{"git", "commit", "-q"};
+          if (sign) {
+            commit << "-S";
+          }
+          executePass(
+              PASS_REMOVE,
+              commit + QStringList{"-m", "Remove for " + rel + " using QtPass.",
+                                   "--", rel});
           return;
         }
       }

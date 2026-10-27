@@ -703,7 +703,9 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
   const QStringList invocations =
       QString::fromUtf8(f.readAll())
           .split(QStringLiteral("CALL\n"), Qt::SkipEmptyParts);
-  QCOMPARE(invocations.size(), 3);
+  // ls-files, rm --cached, the pass.signcommits query (as pass's own
+  // git_commit() asks; the stand-in answers nothing, so no -S), commit.
+  QCOMPARE(invocations.size(), 4);
   QList<QStringList> argv;
   for (const QString &record : invocations) {
     const QStringList lines =
@@ -722,6 +724,10 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
                         QStringLiteral("-q"), QStringLiteral("--cached"),
                         QStringLiteral("--"), QStringLiteral("shared")}));
   QCOMPARE(argv.at(2),
+           (QStringList{QStringLiteral("git"), QStringLiteral("config"),
+                        QStringLiteral("--bool"), QStringLiteral("--get"),
+                        QStringLiteral("pass.signcommits")}));
+  QCOMPARE(argv.at(3),
            (QStringList{QStringLiteral("git"), QStringLiteral("commit"),
                         QStringLiteral("-q"), QStringLiteral("-m"),
                         QStringLiteral("Remove for shared using QtPass."),

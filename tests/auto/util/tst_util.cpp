@@ -358,6 +358,7 @@ private Q_SLOTS:
   void normalizeFolder();
   // ImitatePass::createBackupCommit must not sweep up untracked files (#1682)
   void createBackupCommitLeavesUntrackedFilesAlone();
+  void commitsAreSignedWhenTheStoreAsks();
   void createBackupCommitSkipsWhenOnlyUntrackedFiles();
   // ImitatePass::Init must stage a .gpg-id that exists on disk but is not
   // tracked by git yet (follow-up to #1685)
@@ -3766,6 +3767,98 @@ QString tst_util::setUpBackupRepo(const QString &dir, QString *gitExe) {
  * untracked plaintext file ended up in a commit that autoPush then sent to
  * the shared remote.
  */
+/**
+ * @brief As pass signs its own commits when git config pass.signcommits is
+ * true, so does QtPass's git; without it, none is signed; and a commit that
+ * cannot be signed fails rather than going in unsigned. A stand-in
+ * gpg.program "signs", so no key is needed.
+ */
+void tst_util::commitsAreSignedWhenTheStoreAsks() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QString gitExe;
+  const QString tracked = setUpBackupRepo(tmp.path(), &gitExe);
+  if (gitExe.isEmpty())
+    QSKIP("git not installed");
+  QVERIFY(!tracked.isEmpty());
+  const QString signer = tmp.filePath(QStringLiteral("fake-gpg"));
+  {
+    QFile script(signer);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    // What git needs from gpg: a signature on stdout, SIG_CREATED in the
+    // status output (fd 2 by git's --status-fd=2).
+    script.write("#!/bin/sh\ncat >/dev/null\n"
+                 "echo '[GNUPG:] SIG_CREATED D 1 8 00 1 X' >&2\n"
+                 "printf -- '-----BEGIN PGP SIGNATURE-----\\n\\nfake\\n"
+                 "-----END PGP SIGNATURE-----\\n'\n");
+  }
+  QVERIFY(QFile::setPermissions(signer, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  // Nothing of the user's own git config: a global gpg.format=ssh would
+  // sign with their real key and never call gpg.program at all.
+  const QByteArray oldGlobal = qgetenv("GIT_CONFIG_GLOBAL");
+  const bool hadGlobal = qEnvironmentVariableIsSet("GIT_CONFIG_GLOBAL");
+  const bool hadNoSystem = qEnvironmentVariableIsSet("GIT_CONFIG_NOSYSTEM");
+  qputenv("GIT_CONFIG_GLOBAL",
+          QFile::encodeName(tmp.filePath(QStringLiteral("no-global-config"))));
+  qputenv("GIT_CONFIG_NOSYSTEM", "1");
+  const auto restore = qScopeGuard([&] {
+    if (hadGlobal) {
+      qputenv("GIT_CONFIG_GLOBAL", oldGlobal);
+    } else {
+      qunsetenv("GIT_CONFIG_GLOBAL");
+    }
+    if (!hadNoSystem) {
+      qunsetenv("GIT_CONFIG_NOSYSTEM");
+    }
+  });
+  QVERIFY(runGit(gitExe, tmp.path(), {"config", "gpg.format", "openpgp"}));
+  QVERIFY(runGit(gitExe, tmp.path(), {"config", "gpg.program", signer}));
+  const auto modify = [&tracked](const QByteArray &content) {
+    QFile f(tracked);
+    return f.open(QIODevice::WriteOnly) && f.write(content) > 0;
+  };
+  const auto headSigned = [&gitExe, &tmp] {
+    QString commit;
+    runGit(gitExe, tmp.path(), {"cat-file", "commit", "HEAD"}, &commit);
+    return commit.contains(QStringLiteral("gpgsig"));
+  };
+
+  TestPass pass;
+  AppSettings s;
+  s.useGit = true;
+  s.gitExecutable = gitExe;
+  s.passStore = tmp.path();
+  pass.init(s);
+
+  QVERIFY(modify("v2\n"));
+  QVERIFY(pass.callCreateBackupCommit());
+  QVERIFY2(!headSigned(), "not asked for: not signed");
+
+  QVERIFY(runGit(gitExe, tmp.path(), {"config", "pass.signcommits", "true"}));
+  QVERIFY(modify("v3 changed\n"));
+  QVERIFY(pass.callCreateBackupCommit());
+  QVERIFY2(headSigned(), "pass.signcommits: signed, as pass signs");
+
+  // A signer that fails: the commit fails, it does not go in unsigned.
+  {
+    QFile script(signer);
+    QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    script.write("#!/bin/sh\nexit 1\n");
+  }
+  QString before;
+  QVERIFY(runGit(gitExe, tmp.path(), {"rev-parse", "HEAD"}, &before));
+  QVERIFY(modify("v4 changed again\n"));
+  QVERIFY(!pass.callCreateBackupCommit());
+  QString after;
+  QVERIFY(runGit(gitExe, tmp.path(), {"rev-parse", "HEAD"}, &after));
+  QCOMPARE(after, before);
+#endif
+}
+
 void tst_util::createBackupCommitLeavesUntrackedFilesAlone() {
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());

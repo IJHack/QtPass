@@ -169,6 +169,12 @@ protected:
    */
   auto gitTracks(const QString &file) -> bool;
   /**
+   * @brief The start of a `git commit` for the store: "commit", and "-S"
+   * when git config pass.signcommits is true there, as pass signs its own.
+   * @return The arguments, to which the message and paths are appended.
+   */
+  auto commitArgs() -> QStringList;
+  /**
    * @brief Recipients for the directory of @p file, from its verified
    * `.gpg-id`.
    * @param file Password file path.

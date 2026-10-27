@@ -62,6 +62,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### New Features
 
+- Git commits are signed when the store asks for it, as `pass` signs its
+  own: with `git config pass.signcommits true` (in the store's repository or
+  the user's Git config), QtPass's commits get `-S` too, with Git's own
+  signing setup (`user.signingkey`, `gpg.format`). A commit that cannot be
+  signed fails and says so, rather than going in unsigned.
 - Windows code signing through the [SignPath Foundation](https://signpath.org/):
   when SignPath is configured, the release workflow has `qtpass.exe` and then
   the installer signed, each after manual approval in SignPath; without it

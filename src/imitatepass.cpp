@@ -259,11 +259,25 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                       " using QtPass.");
 }
 
+auto ImitatePass::commitArgs() -> QStringList {
+  // As pass's git_commit(): -S when the store (or the user's git config)
+  // sets pass.signcommits. A commit that cannot be signed then fails, as
+  // with pass, rather than going in unsigned.
+  QString out;
+  const bool sign = execBlocking(m_settings.gitExecutable,
+                                 {"-C", pgit(m_settings.passStore), "config",
+                                  "--bool", "--get", "pass.signcommits"},
+                                 &out) == 0 &&
+                    out.trimmed() == QLatin1String("true");
+  return sign ? QStringList{"commit", "-S"} : QStringList{"commit"};
+}
+
 void ImitatePass::gitCommit(const QString &file, const QString &msg) {
   if (file.isEmpty()) {
-    executeGit(GIT_COMMIT, {"commit", "-m", msg});
+    executeGit(GIT_COMMIT, commitArgs() + QStringList{"-m", msg});
   } else {
-    executeGit(GIT_COMMIT, {"commit", "-m", msg, "--", pgit(file)});
+    executeGit(GIT_COMMIT,
+               commitArgs() + QStringList{"-m", msg, "--", pgit(file)});
   }
 }
 
@@ -462,8 +476,8 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   }
   QString commitPath = gpgIdFile;
   commitPath.replace(Util::endsWithGpg(), "");
-  return run(QStringList{"commit", "-m",
-                         "Added " + commitPath + " using QtPass.", "--"} +
+  return run(commitArgs() +
+             QStringList{"-m", "Added " + commitPath + " using QtPass.", "--"} +
              paths);
 }
 
@@ -849,9 +863,10 @@ auto ImitatePass::commitReencrypted(const QString &fileName) -> bool {
   QString path = QDir(m_settings.passStore).relativeFilePath(fileName);
   path.replace(Util::endsWithGpg(), "");
   if (execBlocking(m_settings.gitExecutable,
-                   {"-C", store, "commit", "-m",
-                    "Re-encrypt for " + path + " using QtPass.", "--",
-                    pgit(fileName)}) != 0) {
+                   QStringList{"-C", store} + commitArgs() +
+                       QStringList{"-m",
+                                   "Re-encrypt for " + path + " using QtPass.",
+                                   "--", pgit(fileName)}) != 0) {
     qCDebug(lcQtPass) << "git commit failed after re-encrypting:" << fileName;
     return false;
   }
@@ -936,8 +951,9 @@ auto ImitatePass::createBackupCommit() -> bool {
   }
   if (!statusOut.trimmed().isEmpty()) {
     if (execBlocking(git, {"-C", store, "add", "-u"}) != 0 ||
-        execBlocking(git, {"-C", store, "commit", "-m",
-                           "Backup before re-encryption"}) != 0) {
+        execBlocking(
+            git, QStringList{"-C", store} + commitArgs() +
+                     QStringList{"-m", "Backup before re-encryption"}) != 0) {
       if (!m_reencryptCancel.load())
         emit critical(tr("Backup commit failed"),
                       tr("Re-encryption was aborted because a git backup "
