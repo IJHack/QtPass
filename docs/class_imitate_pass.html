@@ -269,6 +269,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:aae90cebd2128422bd41e32fc292a49a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage a <span class="tt">.gpg-id</span> and, when given, its <span class="tt">.sig</span>, and commit both in one commit, so no commit in the history has a recipient list without the signature that covers it. Nothing is committed when neither file changed.  <br /></td></tr>
 <tr class="memitem:a568cee878638fa0cbc4c862060ea35b3" id="r_a568cee878638fa0cbc4c862060ea35b3"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a568cee878638fa0cbc4c862060ea35b3">gitTracks</a> (const QString &amp;file) -&gt; bool</td></tr>
 <tr class="memdesc:a568cee878638fa0cbc4c862060ea35b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether git already tracks a file in the store.  <br /></td></tr>
+<tr class="memitem:a4b215c41496b7ab0479878e357bc4dac" id="r_a4b215c41496b7ab0479878e357bc4dac"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b215c41496b7ab0479878e357bc4dac">commitArgs</a> () -&gt; QStringList</td></tr>
+<tr class="memdesc:a4b215c41496b7ab0479878e357bc4dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">The start of a <span class="tt">git commit</span> for the store: "commit", and "-S" when git config pass.signcommits is true there, as pass signs its own.  <br /></td></tr>
 <tr class="memitem:a4b2388a7e250b886534e79c7ca131dbf" id="r_a4b2388a7e250b886534e79c7ca131dbf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b2388a7e250b886534e79c7ca131dbf">verifyGpgIdForDir</a> (const QString &amp;file, QHash&lt; QString, QStringList &gt; &amp;verified, QStringList &amp;gpgId) -&gt; bool</td></tr>
 <tr class="memdesc:a4b2388a7e250b886534e79c7ca131dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recipients for the directory of <code class="param">file</code>, from its verified <span class="tt">.gpg-id</span>.  <br /></td></tr>
 <tr class="memitem:a086365ec85674590afbd883df0b27a80" id="r_a086365ec85674590afbd883df0b27a80"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a086365ec85674590afbd883df0b27a80">createBackupCommit</a> () -&gt; bool</td></tr>
@@ -500,6 +502,34 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it does. </dd></dl>
+
+</div>
+</div>
+<a id="a4b215c41496b7ab0479878e357bc4dac" name="a4b215c41496b7ab0479878e357bc4dac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b215c41496b7ab0479878e357bc4dac">&#9670;&#160;</a></span>commitArgs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ImitatePass::commitArgs </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The start of a <span class="tt">git commit</span> for the store: "commit", and "-S" when git config pass.signcommits is true there, as pass signs its own. </p>
+<dl class="section return"><dt>Returns</dt><dd>The arguments, to which the message and paths are appended. </dd></dl>
 
 </div>
 </div>
@@ -1436,7 +1466,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#afda7320a4a3a5bcba47a862701c9b84e">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00339">339</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00345">345</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>

@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_real_pass-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">RealPass Class Reference</div></div>
 </div><!--header-->
@@ -169,6 +170,30 @@ void&#160;</td><td class="memItemRight"><b>updateEnv</b> ()</td></tr>
 <tr class="memitem:a849c5089c91fa9599653d9dad6e4c28c inherit pub_methods_class_pass" id="r_a849c5089c91fa9599653d9dad6e4c28c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">recipientsForEditing</a> (const QString &amp;dir, const QString &amp;passStore) -&gt; <a class="el" href="struct_pass_1_1_recipients_for_editing.html">RecipientsForEditing</a></td></tr>
 <tr class="memdesc:a849c5089c91fa9599653d9dad6e4c28c inherit pub_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The recipients a dialog may preselect for editing the list of <code class="param">dir</code>.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:acd99293fa04b5b21721a75f3afe0fe2b" id="r_acd99293fa04b5b21721a75f3afe0fe2b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acd99293fa04b5b21721a75f3afe0fe2b">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
+<tr class="memdesc:acd99293fa04b5b21721a75f3afe0fe2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish a process; a linked-folder removal commit (GIT_COMMIT, which <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> uses for nothing else) is judged by finishLinkCommit().  <br /></td></tr>
+<tr class="inherit_header pro_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
+<tr class="memitem:a0037d3169c1c0fc270270cde4b8d25d2 inherit pro_methods_class_pass" id="r_a0037d3169c1c0fc270270cde4b8d25d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a> () const -&gt; QProcessEnvironment</td></tr>
+<tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
+<tr class="memitem:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
+<tr class="memdesc:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
+<tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
+<tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
+<tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
+<tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
+<tr class="memitem:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
+<tr class="memdesc:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password from charset.  <br /></td></tr>
+<tr class="memitem:a4f63e4e86c7ffec6df333e466fb38c3b inherit pro_methods_class_pass" id="r_a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a> (quint32 bound) -&gt; quint32</td></tr>
+<tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
+<tr class="memitem:ab99111861b84c7efcda725c53946b2ca inherit pro_methods_class_pass" id="r_ab99111861b84c7efcda725c53946b2ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ab99111861b84c7efcda725c53946b2ca">setEnvVar</a> (const QString &amp;name, const QString &amp;value)</td></tr>
+<tr class="memdesc:ab99111861b84c7efcda725c53946b2ca inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an environment variable.  <br /></td></tr>
+<tr class="memitem:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass" id="r_a23d30214443a4bc0d0508491872f06c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a23d30214443a4bc0d0508491872f06c3">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
+<tr class="memdesc:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
+<tr class="memitem:a31ea796fe4d60101a9562d893647bcde inherit pro_methods_class_pass" id="r_a31ea796fe4d60101a9562d893647bcde"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a31ea796fe4d60101a9562d893647bcde">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id)</td></tr>
+<tr class="memdesc:a31ea796fe4d60101a9562d893647bcde inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook invoked just before a wrapped command is dispatched.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header signals_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
@@ -236,28 +261,6 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 <tr class="inherit_header pro_types_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a2e71b5174b4ef25a1e91d8c56177b772 inherit pro_types_class_pass" id="r_a2e71b5174b4ef25a1e91d8c56177b772"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a> = <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td></tr>
 <tr class="memdesc:a2e71b5174b4ef25a1e91d8c56177b772 inherit pro_types_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class.  <br /></td></tr>
-<tr class="inherit_header pro_slots_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Slots inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
-<tr class="memitem:a8efe916aa899deaed23aa445cc9a302f inherit pro_slots_class_pass" id="r_a8efe916aa899deaed23aa445cc9a302f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a8efe916aa899deaed23aa445cc9a302f">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err)</td></tr>
-<tr class="memdesc:a8efe916aa899deaed23aa445cc9a302f inherit pro_slots_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
-<tr class="inherit_header pro_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
-<tr class="memitem:a0037d3169c1c0fc270270cde4b8d25d2 inherit pro_methods_class_pass" id="r_a0037d3169c1c0fc270270cde4b8d25d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a> () const -&gt; QProcessEnvironment</td></tr>
-<tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
-<tr class="memitem:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
-<tr class="memdesc:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
-<tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
-<tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
-<tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
-<tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
-<tr class="memitem:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
-<tr class="memdesc:aff660edce34d33f5a2adfa8c130470f0 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password from charset.  <br /></td></tr>
-<tr class="memitem:a4f63e4e86c7ffec6df333e466fb38c3b inherit pro_methods_class_pass" id="r_a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a> (quint32 bound) -&gt; quint32</td></tr>
-<tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
-<tr class="memitem:ab99111861b84c7efcda725c53946b2ca inherit pro_methods_class_pass" id="r_ab99111861b84c7efcda725c53946b2ca"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ab99111861b84c7efcda725c53946b2ca">setEnvVar</a> (const QString &amp;name, const QString &amp;value)</td></tr>
-<tr class="memdesc:ab99111861b84c7efcda725c53946b2ca inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an environment variable.  <br /></td></tr>
-<tr class="memitem:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass" id="r_a23d30214443a4bc0d0508491872f06c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a23d30214443a4bc0d0508491872f06c3">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
-<tr class="memdesc:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
-<tr class="memitem:a31ea796fe4d60101a9562d893647bcde inherit pro_methods_class_pass" id="r_a31ea796fe4d60101a9562d893647bcde"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a31ea796fe4d60101a9562d893647bcde">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id)</td></tr>
-<tr class="memdesc:a31ea796fe4d60101a9562d893647bcde inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook invoked just before a wrapped command is dispatched.  <br /></td></tr>
 <tr class="inherit_header pro_attribs_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Attributes inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a21a21503b387384833ebd2271bd18592 inherit pro_attribs_class_pass" id="r_a21a21503b387384833ebd2271bd18592"><td class="memItemLeft"><a class="el" href="struct_app_settings.html">AppSettings</a>&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a></td></tr>
 <tr class="memdesc:a21a21503b387384833ebd2271bd18592 inherit pro_attribs_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application settings snapshot injected at <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init()</a> time.  <br /></td></tr>
@@ -274,7 +277,7 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 </ul>
 <p>This is the primary implementation when 'pass' is available on the system. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00022">22</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00023">23</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a18b236aa64e27f35289a7c51a46abb0e" name="a18b236aa64e27f35289a7c51a46abb0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a18b236aa64e27f35289a7c51a46abb0e">&#9670;&#160;</a></span>Copy()</h2>
@@ -319,6 +322,58 @@ void&#160;</td><td class="memItemRight"><b>startingExecuteWrapper</b> ()</td></t
 </dl>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
+
+</div>
+</div>
+<a id="acd99293fa04b5b21721a75f3afe0fe2b" name="acd99293fa04b5b21721a75f3afe0fe2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd99293fa04b5b21721a75f3afe0fe2b">&#9670;&#160;</a></span>finished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RealPass::finished </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exitCode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finish a process; a linked-folder removal commit (GIT_COMMIT, which <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> uses for nothing else) is judged by finishLinkCommit(). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
+    <tr><td class="paramname">exitCode</td><td>Exit code. </td></tr>
+    <tr><td class="paramname">out</td><td>Standard output. </td></tr>
+    <tr><td class="paramname">err</td><td>Standard error. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_pass.html#a8efe916aa899deaed23aa445cc9a302f">Pass</a>.</p>
 
 </div>
 </div>
