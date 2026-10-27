@@ -42,7 +42,10 @@ public:
     QString fingerprint;
     /** @brief The primary key's 16-hex-digit key ID. */
     QString keyId;
-    /** @brief Its user IDs that are not revoked, in the keyring's order. */
+    /**
+     * @brief Its user IDs that are still its own (valid, not revoked), in the
+     * keyring's order.
+     */
     QStringList userIds;
     /** @brief When it was created. */
     QDateTime created;
@@ -52,7 +55,10 @@ public:
     bool revoked = false;
     /** @brief Whether it has expired. */
     bool expired = false;
-    /** @brief Whether a secret part of it (primary or subkey) is here. */
+    /**
+     * @brief Whether a secret part of it (primary or subkey) is here to use:
+     * a GnuPG stub (a key left at home, or on a smartcard) does not count.
+     */
     bool hasSecret = false;
     /** @brief Whether a message can be encrypted to it now. */
     bool canEncrypt = false;
@@ -129,8 +135,10 @@ public:
    * fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8
    * hex digits) key ID with or without 0x, an e-mail address (the key with
    * a user ID of that address, any case; stricter than gpg's substring
-   * search), or a whole user ID or part of one. Revoked user IDs name
-   * nothing. Each must name exactly one key that can
+   * search; a user ID with no <address> must then be just the address, so
+   * "alice@example.org (work)" is not found by its address), or a whole user
+   * ID or part of one. Revoked user IDs, and ones without a valid
+   * self-signature, name nothing. Each must name exactly one key that can
    * encrypt (not expired or revoked, with a usable encryption key); an
    * empty recipient is an error.
    * @param error Set to the reason when encryption fails, naming the first

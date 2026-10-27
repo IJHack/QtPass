@@ -127,6 +127,29 @@ auto canEncryptTo(rnp_key_handle_t key) -> bool {
 }
 
 /**
+ * Whether the secret part of @p key is here to use: not only a record of
+ * one. GnuPG exports a stub for a primary left at home
+ * (--export-secret-subkeys) or held on a smartcard, and RNP counts such a
+ * stub as a secret key.
+ */
+auto secretIsHere(rnp_key_handle_t key) -> bool {
+  bool secret = false;
+  if (rnp_key_have_secret(key, &secret) != RNP_SUCCESS || !secret) {
+    return false;
+  }
+  char *type = nullptr;
+  if (rnp_key_get_protection_type(key, &type) != RNP_SUCCESS ||
+      type == nullptr) {
+    return false;
+  }
+  const QString protection = QString::fromLatin1(type);
+  rnp_buffer_destroy(type);
+  return protection != QLatin1String("GPG-None") &&
+         protection != QLatin1String("GPG-Smartcard") &&
+         protection != QLatin1String("Unknown");
+}
+
+/**
  * The key of the primary @p key that signs, as gpg --local-user picks it:
  * a valid key that may sign and whose secret part is here (the primary
  * itself, or a subkey). Null when there is none.
@@ -141,9 +164,7 @@ auto signingKeyOf(rnp_key_handle_t key) -> Key {
     return nullptr;
   }
   Key signer(handle);
-  bool secret = false;
-  if (!isValidKey(handle) ||
-      rnp_key_have_secret(handle, &secret) != RNP_SUCCESS || !secret) {
+  if (!isValidKey(handle) || !secretIsHere(handle)) {
     return nullptr;
   }
   return signer;
@@ -171,10 +192,11 @@ auto primaryFingerprint(rnp_key_handle_t key) -> QString {
   return result;
 }
 
-/// Whether any user ID of @p key satisfies @p hit.
 /**
- * @p key's user IDs that are not revoked, in the keyring's order: a revoked
- * one is no longer the key's (an address given up, say) and names nothing.
+ * @p key's user IDs that are still its own, in the keyring's order: valid
+ * (bound by a current self-signature, so not one a keyserver or a third
+ * party attached) and not revoked (an address given up, say). The rest
+ * name nothing. When RNP cannot say, the user ID is left out.
  */
 auto liveUserIds(rnp_key_handle_t key) -> QStringList {
   QStringList live;
@@ -182,14 +204,19 @@ auto liveUserIds(rnp_key_handle_t key) -> QStringList {
   rnp_key_get_uid_count(key, &uids);
   for (size_t i = 0; i < uids; ++i) {
     rnp_uid_handle_t handle = nullptr;
-    bool revoked = false;
-    if (rnp_key_get_uid_handle_at(key, i, &handle) == RNP_SUCCESS &&
-        handle != nullptr) {
-      rnp_uid_is_revoked(handle, &revoked);
-      rnp_uid_handle_destroy(handle);
+    if (rnp_key_get_uid_handle_at(key, i, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
+      continue;
     }
+    // Both: in RNP 0.17 a revoked user ID can still be "valid".
+    bool valid = false;
+    bool revoked = true;
+    const bool known = rnp_uid_is_valid(handle, &valid) == RNP_SUCCESS &&
+                       rnp_uid_is_revoked(handle, &revoked) == RNP_SUCCESS;
+    rnp_uid_handle_destroy(handle);
     char *uid = nullptr;
-    if (revoked || rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+    if (!known || !valid || revoked ||
+        rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
       continue;
     }
     live << QString::fromUtf8(uid);
@@ -346,8 +373,8 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why,
       rnp_buffer_destroy(keyId);
       return hit;
     });
-  } else if (static const QRegularExpression address(
-                 QStringLiteral(R"(^<?[^\s<>@]+@[^\s<>@]+>?$)"));
+  } else if (static const QRegularExpression address(QStringLiteral(
+                 R"(^(?:<[^\s<>@]+@[^\s<>@]+>|[^\s<>@]+@[^\s<>@]+)$)"));
              address.match(id).hasMatch()) {
     // An e-mail address (a .gpg-id often lists just that) names the key
     // whose user ID has that address, compared without regard to case, not
@@ -639,11 +666,6 @@ auto isRevoked(rnp_key_handle_t key) -> bool {
   return rnp_key_is_revoked(key, &revoked) == RNP_SUCCESS && revoked;
 }
 
-auto haveSecret(rnp_key_handle_t key) -> bool {
-  bool secret = false;
-  return rnp_key_have_secret(key, &secret) == RNP_SUCCESS && secret;
-}
-
 /// The primary key of @p key (itself when it is one), as a handle.
 auto primaryOf(rnp_ffi_t ffi, rnp_key_handle_t key) -> Key {
   const QString primary = primaryFingerprint(key);
@@ -703,7 +725,7 @@ auto RnpCrypto::listKeys(bool secretOnly) const -> QList<KeyInfo> {
     info.expired =
         rnp_key_is_expired(handle, &expired) == RNP_SUCCESS && expired;
     // A secret part may be a subkey's only (gpg --export-secret-subkeys).
-    info.hasSecret = haveSecret(handle);
+    info.hasSecret = secretIsHere(handle);
     size_t subkeys = 0;
     rnp_key_get_subkey_count(handle, &subkeys);
     for (size_t i = 0; i < subkeys && !info.hasSecret; ++i) {
@@ -711,7 +733,7 @@ auto RnpCrypto::listKeys(bool secretOnly) const -> QList<KeyInfo> {
       if (rnp_key_get_subkey_at(handle, i, &sub) == RNP_SUCCESS &&
           sub != nullptr) {
         const Key subkey(sub);
-        info.hasSecret = haveSecret(sub);
+        info.hasSecret = secretIsHere(sub);
       }
     }
     info.canEncrypt = canEncryptTo(handle);
