@@ -89,8 +89,10 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
     return false;
   }
 
-  const QStringList existing = folder.entryList(
-      {QStringLiteral("*.gpg")}, QDir::Files | QDir::NoDotAndDotDot);
+  // Entries in sub-folders too: a store taken over whole has most of them
+  // there. Regular files only, not through links, .git not walked.
+  const QStringList existing =
+      Util::regularFilesUnder(folder.absolutePath(), {QStringLiteral("*.gpg")});
   if (!existing.isEmpty()) {
     out = tr("%1 already contains %n encrypted file(s); they were not "
              "re-encrypted. Switch to the profile and open Users to do that.",
