@@ -1066,6 +1066,14 @@ void tst_rnpcrypto::loadKeyringReadsOnlyARegularFileOfBoundedSize() {
   RnpCrypto viaLink;
   QVERIFY2(!viaLink.loadKeyring(linked.path(), &error),
            "a keyring file behind a link is not read");
+  // Nor a keyring folder that is a link, for loading or saving.
+  const QString folderLink = tmp.filePath(QStringLiteral("folder-link"));
+  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("real")), folderLink));
+  RnpCrypto throughFolderLink;
+  QVERIFY(!throughFolderLink.loadKeyring(folderLink, &error));
+  QVERIFY(throughFolderLink.listKeys().isEmpty());
+  QVERIFY(!throughFolderLink.saveKeyring(folderLink, false, &error));
+  QVERIFY2(error.contains(QStringLiteral("link")), qPrintable(error));
 #endif
 }
 

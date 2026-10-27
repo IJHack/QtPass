@@ -708,6 +708,41 @@ auto isRevoked(rnp_key_handle_t key) -> bool {
   return rnp_key_is_revoked(key, &revoked) == RNP_SUCCESS && revoked;
 }
 
+/**
+ * The fingerprint of the first key in @p ffi (primary or subkey) with a
+ * secret part whose protection RNP reports as "Unknown"; empty when none.
+ */
+auto firstSecretOfUnknownProtection(rnp_ffi_t ffi) -> QString {
+  QString found;
+  rnp_identifier_iterator_t it = nullptr;
+  if (rnp_identifier_iterator_create(ffi, &it, "fingerprint") != RNP_SUCCESS) {
+    return found;
+  }
+  const char *fpr = nullptr;
+  while (found.isEmpty() &&
+         rnp_identifier_iterator_next(it, &fpr) == RNP_SUCCESS &&
+         fpr != nullptr) {
+    rnp_key_handle_t handle = nullptr;
+    if (rnp_locate_key(ffi, "fingerprint", fpr, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
+      continue;
+    }
+    const Key key(handle);
+    bool secret = false;
+    char *type = nullptr;
+    if (rnp_key_have_secret(handle, &secret) == RNP_SUCCESS && secret &&
+        rnp_key_get_protection_type(handle, &type) == RNP_SUCCESS &&
+        type != nullptr) {
+      if (QString::fromLatin1(type) == QLatin1String("Unknown")) {
+        found = QString::fromLatin1(fpr);
+      }
+      rnp_buffer_destroy(type);
+    }
+  }
+  rnp_identifier_iterator_destroy(it);
+  return found;
+}
+
 /// The primary key of @p key (itself when it is one), as a handle.
 auto primaryOf(rnp_ffi_t ffi, rnp_key_handle_t key) -> Key {
   const QString primary = primaryFingerprint(key);
@@ -952,6 +987,12 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
     setError(error, QStringLiteral("RNP is not available"));
     return false;
   }
+  // QtPass's own folder, not wherever a link would lead.
+  if (QFileInfo(dir).isSymLink()) {
+    setError(error,
+             QStringLiteral("%1 is a link, not a keyring folder").arg(dir));
+    return false;
+  }
   // Checked before anything is written: a secret key goes to disk only
   // protected by its own passphrase, unless the user said otherwise.
   if (!allowUnprotected) {
@@ -962,6 +1003,16 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
                             .arg(key.fingerprint));
         return false;
       }
+    }
+    // A secret part whose protection RNP cannot name is not counted as
+    // here (secretIsHere()), yet it would be written: what is in it is not
+    // known, so it is refused like an unprotected one.
+    if (const QString unknown = firstSecretOfUnknownProtection(m_ffi);
+        !unknown.isEmpty()) {
+      setError(error, QStringLiteral("The secret key %1 has a protection RNP "
+                                     "cannot name")
+                          .arg(unknown));
+      return false;
     }
   }
   // One file with public and secret keys, replaced whole: two files could
@@ -1017,6 +1068,12 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
 auto RnpCrypto::loadKeyring(const QString &dir, QString *error) -> bool {
   if (m_ffi == nullptr) {
     setError(error, QStringLiteral("RNP is not available"));
+    return false;
+  }
+  // As saveKeyring(): the folder itself is not read through a link either.
+  if (QFileInfo(dir).isSymLink()) {
+    setError(error,
+             QStringLiteral("%1 is a link, not a keyring folder").arg(dir));
     return false;
   }
   const QString path = QDir(dir).filePath(QStringLiteral("keyring.gpg"));
