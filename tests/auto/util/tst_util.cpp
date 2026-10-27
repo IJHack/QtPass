@@ -2604,6 +2604,9 @@ void tst_util::gitTakesStorePathsLiterally() {
   const QProcessEnvironment env = pass.environment();
   QCOMPARE(env.value(QStringLiteral("GIT_LITERAL_PATHSPECS")),
            QStringLiteral("1"));
+#ifdef Q_OS_WIN
+  QSKIP("Windows file names cannot hold the * the rest of this needs");
+#endif
 
   QTemporaryDir store;
   QVERIFY(store.isValid());
@@ -2611,10 +2614,11 @@ void tst_util::gitTakesStorePathsLiterally() {
     QProcess p;
     p.setProcessEnvironment(env);
     p.start(git,
-            QStringList{QStringLiteral("-C"), store.path(),
-                        QStringLiteral("-c"), QStringLiteral("user.name=t"),
-                        QStringLiteral("-c"),
-                        QStringLiteral("user.email=t@example.org")} +
+            QStringList{
+                QStringLiteral("-C"), store.path(), QStringLiteral("-c"),
+                QStringLiteral("user.name=t"), QStringLiteral("-c"),
+                QStringLiteral("user.email=t@example.org"),
+                QStringLiteral("-c"), QStringLiteral("commit.gpgsign=false")} +
                 args);
     p.waitForFinished(10000);
     return p.exitCode();

@@ -27,9 +27,12 @@ FENCE_RE = re.compile(r"^(```|~~~).*?^\1", re.MULTILINE | re.DOTALL)
 CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # [text](destination "optional title"); the destination is either <...> or
 # runs up to the first whitespace or closing parenthesis.
-# Each part stays on one line, so a run of "[" with no "]" costs one line's
-# scan per bracket, not the rest of the file's (quadratic on a crafted file).
-LINK_RE = re.compile(r"(?<!!)\[[^\]\n]*\]\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)")
+# Each part stays on one line, and the text holds no "[": a run of "[" then
+# costs a scan up to the next one, linear over the file, not a rescan of the
+# rest of the line from every bracket.
+LINK_TEXT = r"(?<!!)\[[^\[\]\n]*\]"
+LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)"
+LINK_RE = re.compile(LINK_TEXT + LINK_DEST)
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
     r"(?:md|py|sh|bash|txt|json|yml|yaml))"
