@@ -756,22 +756,44 @@ void tst_realpass::linkedFolderRemovalSaysWhenTheCommitFails() {
   QVERIFY(QFile::link(outsideDir.path(), shared));
   const QString gitPass =
       QDir(m_dir.path()).filePath(QStringLiteral("pass-git-failing"));
+  const QString stagedMark =
+      QDir(m_dir.path()).filePath(QStringLiteral("still-staged"));
   {
     QFile f(gitPass);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // The store asks for signed commits; a commit with -S fails to sign
+    // (and leaves the removal staged), one without would go through: so
+    // the test also fails when the -S goes missing.
     f.write("#!/bin/sh\ncat > /dev/null\n"
             "if [ \"$2\" = ls-files ]; then printf 'shared\\n'; fi\n"
-            "if [ \"$2\" = commit ]; then "
-            "echo 'error: gpg failed to sign the data' >&2; fi\n"
-            "if [ \"$2\" = diff ]; then printf 'shared\\n'; fi\n"
+            "if [ \"$2\" = config ]; then printf 'true\\n'; fi\n"
+            "if [ \"$2\" = commit ]; then\n"
+            "  case \" $* \" in *\" -S \"*)\n"
+            "    echo 'error: gpg failed to sign the data' >&2\n"
+            "    : > '%STAGED%' ;;\n"
+            "  esac\n"
+            "fi\n"
+            "if [ \"$2\" = diff ] && [ -e '%STAGED%' ]; then "
+            "printf 'shared\\n'; fi\n"
             "exit 0\n");
     f.close();
     QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                              QFile::ExeOwner));
   }
+  // The script names the mark by a placeholder, filled in here.
+  {
+    QFile f(gitPass);
+    QVERIFY(f.open(QIODevice::ReadOnly));
+    QByteArray script = f.readAll();
+    f.close();
+    script.replace("%STAGED%", QFile::encodeName(stagedMark));
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    f.write(script);
+  }
   const auto cleanup = qScopeGuard([&] {
     QFile::remove(shared);
     QFile::remove(gitPass);
+    QFile::remove(stagedMark);
   });
   AppSettings withGit = m_settings;
   withGit.useGit = true;
@@ -782,6 +804,8 @@ void tst_realpass::linkedFolderRemovalSaysWhenTheCommitFails() {
   QSignalSpy criticalSpy(pass.data(), &Pass::critical);
   QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
   pass->Remove(QStringLiteral("shared/"), true);
+  // The commit is queued: wait for its verdict.
+  QVERIFY(criticalSpy.count() == 1 || criticalSpy.wait(5000));
   QCOMPARE(criticalSpy.count(), 1);
   QVERIFY2(criticalSpy.first().at(1).toString().contains(
                QStringLiteral("gpg failed to sign")),

@@ -11,6 +11,7 @@
 #include <QRegularExpression>
 #include <utility>
 
+using Enums::GIT_COMMIT;
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
@@ -97,7 +98,7 @@ void RealPass::Remove(QString file, bool isDir) {
     }
     if (m_settings.useGit) {
       // `pass git` exits 0 whatever git did, so ask by output whether git
-      // knew the link, and whether the commit took.
+      // knew the link (these quick lookups block; the commit is queued).
       const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
@@ -126,36 +127,15 @@ void RealPass::Remove(QString file, bool isDir) {
           if (sign) {
             commit << "-S";
           }
-          // Blocking, and judged by what is left staged: `pass git` exits 0
-          // whatever git did, so a commit that failed (a signer that would
-          // not sign, say) would otherwise read as done.
-          QString out;
-          QString commitErr;
-          // Non-zero only when pass itself fails before git runs.
-          const int ran = Executor::executeBlocking(
-              exec.environment(), m_settings.passExecutable,
+          // Queued, as every other commit, so a signer or hook that waits
+          // (a pinentry, an agent) does not freeze the window; finished()
+          // judges it by what is left staged, since `pass git` exits 0
+          // whatever git did.
+          m_linkCommits.enqueue(rel);
+          executePass(
+              GIT_COMMIT,
               commit + QStringList{"-m", "Remove for " + rel + " using QtPass.",
-                                   "--", rel},
-              &out, &commitErr);
-          QString staged;
-          const bool committed =
-              ran == 0 &&
-              Executor::executeBlocking(
-                  exec.environment(), m_settings.passExecutable,
-                  {"git", "diff", "--cached", "--name-only", "--", rel},
-                  &staged, nullptr) == 0 &&
-              staged.trimmed().isEmpty();
-          if (committed) {
-            emit finishedRemove(out, commitErr);
-            return;
-          }
-          const QString why =
-              tr("The link %1 was removed and git no longer tracks it, but "
-                 "the commit failed: %2")
-                  .arg(rel, commitErr.trimmed());
-          emit critical(tr("Delete incomplete"), why);
-          emit processErrorExit(1, why);
-          emit finishedRemove(QString(), QString());
+                                   "--", rel});
           return;
         }
       }
@@ -173,6 +153,38 @@ void RealPass::Remove(QString file, bool isDir) {
     return;
   }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
+}
+
+void RealPass::finished(int id, int exitCode, const QString &out,
+                        const QString &err) {
+  if (static_cast<PROCESS>(id) == GIT_COMMIT && !m_linkCommits.isEmpty()) {
+    // Whatever the exit code (pass itself failing, or 0 whatever git
+    // did), what is left staged decides.
+    finishLinkCommit(m_linkCommits.dequeue(), out, err);
+    return;
+  }
+  Pass::finished(id, exitCode, out, err);
+}
+
+void RealPass::finishLinkCommit(const QString &rel, const QString &out,
+                                const QString &err) {
+  QString staged;
+  const bool committed =
+      Executor::executeBlocking(
+          exec.environment(), m_settings.passExecutable,
+          {"git", "diff", "--cached", "--name-only", "--", rel}, &staged,
+          nullptr) == 0 &&
+      staged.trimmed().isEmpty();
+  if (committed) {
+    emit finishedRemove(out, err);
+    return;
+  }
+  const QString why = tr("The link %1 was removed and git no longer tracks "
+                         "it, but the commit failed: %2")
+                          .arg(rel, err.trimmed());
+  emit critical(tr("Delete incomplete"), why);
+  emit processErrorExit(1, why);
+  emit finishedRemove(QString(), QString());
 }
 
 void RealPass::Init(QString path, const QList<UserInfo> &users) {

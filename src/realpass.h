@@ -5,6 +5,7 @@
 
 #include "nativegrep.h"
 #include "pass.h"
+#include <QQueue>
 
 /**
  * @class RealPass
@@ -23,6 +24,19 @@ class RealPass : public Pass {
   /// The store's own search: `pass grep` runs `find -L`, which follows a
   /// link out of the store and decrypts what it finds there.
   NativeGrep m_grep;
+  /// Store-relative paths of linked folders whose removal commit is queued
+  /// (as GIT_COMMIT), oldest first; finished() judges each.
+  QQueue<QString> m_linkCommits;
+
+  /**
+   * @brief Judge a queued linked-folder removal commit by what is left
+   * staged: `pass git` exits 0 whatever git did.
+   * @param rel The folder, relative to the store.
+   * @param out The commit's standard output.
+   * @param err The commit's standard error.
+   */
+  void finishLinkCommit(const QString &rel, const QString &out,
+                        const QString &err);
 
   /**
    * @brief Execute pass command with arguments.
@@ -121,6 +135,18 @@ public:
    * @param users GPG recipients.
    */
   void Init(QString path, const QList<UserInfo> &users) override;
+
+protected:
+  /**
+   * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,
+   * which RealPass uses for nothing else) is judged by finishLinkCommit().
+   * @param id Process identifier.
+   * @param exitCode Exit code.
+   * @param out Standard output.
+   * @param err Standard error.
+   */
+  void finished(int id, int exitCode, const QString &out,
+                const QString &err) override;
 
   // Pass interface
 public:
