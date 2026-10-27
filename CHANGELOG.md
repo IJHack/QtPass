@@ -8,6 +8,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **New files are private: umask 077, as with `pass`.** A store shared
+  through group permissions on one machine needs `PASSWORD_STORE_UMASK`
+  set (for example `007`), as `pass` itself does.
 - **WSL with a signing key: pass inside WSL now checks the signature.**
   QtPass never handed the signing key to `pass` running in WSL, so `pass`
   there did not check `.gpg-id.sig`. It does now: with a signing key set,
@@ -88,6 +91,18 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   it leaked still vouched for a `.gpg-id` planted in a shared store, as long
   as it stayed configured. A signature by an expired key still counts, as
   gpg calls it good and `pass` accepts it.
+- Git stays inside the store, as with `pass`. A store that is not a Git
+  repository itself but lies inside one (a dotfiles repository in the home
+  folder, say) was taken for part of it: with Git enabled, QtPass committed
+  entries to that repository, and pushed it. `GIT_CEILING_DIRECTORIES` now
+  stops Git at the store's parent, and an inherited `GIT_DIR`,
+  `GIT_WORK_TREE` (and the rest of that family) no longer sends QtPass's
+  commits elsewhere.
+- Files QtPass creates are the user's alone: it starts with umask 077, or
+  with `PASSWORD_STORE_UMASK` when that is set, as `pass` does. Entries were
+  written owner-only already, but a new folder in the store and what Git
+  writes under `.git` (the history of every entry) took the session's umask,
+  often 022, so other local users could list the store and read its history.
 - With a signing key, the Users dialog preselects only a recipient list that
   verifies. It read the list as it was on disk, and OK writes and signs the
   selection, so an unsigned edit planted in a shared store (a member

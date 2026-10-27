@@ -11,6 +11,7 @@
 #include <QFileDevice>
 #include <QFileInfo>
 #include <QHash>
+#include <QRegularExpression>
 #include <QRegularExpressionMatchIterator>
 #include <QStandardPaths>
 #include <QTemporaryFile>
@@ -95,6 +96,29 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
     normalizedPath += '/';
   }
   return normalizedPath;
+}
+
+void Util::applyPassProcessDefaults() {
+  // pass unsets these before it runs git: a GIT_DIR inherited from the
+  // environment (QtPass started from a git hook, or an IDE terminal) would
+  // send every commit and push to that repository instead of the store.
+  for (const char *variable :
+       {"GIT_DIR", "GIT_WORK_TREE", "GIT_NAMESPACE", "GIT_INDEX_FILE",
+        "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR"}) {
+    qunsetenv(variable);
+  }
+#ifdef Q_OS_UNIX
+  ::umask(static_cast<mode_t>(
+      passUmask(qEnvironmentVariable("PASSWORD_STORE_UMASK"))));
+#endif
+}
+
+auto Util::passUmask(const QString &value) -> int {
+  static const QRegularExpression octal(QStringLiteral("^[0-7]{1,4}$"));
+  if (!octal.match(value.trimmed()).hasMatch()) {
+    return 077;
+  }
+  return value.trimmed().toInt(nullptr, 8);
 }
 
 auto Util::findBinaryInPath(const QString &binary) -> QString {

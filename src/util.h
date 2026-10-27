@@ -23,6 +23,26 @@ constexpr int MS_PER_SECOND = 1000;
 class Util {
 public:
   /**
+   * @brief Set up the process the way pass sets up its own, before anything
+   * runs git or gpg or writes into the store.
+   *
+   * Clears the variables that point git at another repository (GIT_DIR,
+   * GIT_WORK_TREE and the rest pass clears), and on Unix sets the umask from
+   * PASSWORD_STORE_UMASK, 077 by default: folders QtPass creates in the
+   * store, and what git and gpg create there, are then the user's alone, as
+   * with pass. Call it first thing in main().
+   */
+  static void applyPassProcessDefaults();
+
+  /**
+   * @brief The umask pass would use for @p value of PASSWORD_STORE_UMASK.
+   * @param value The variable's value; empty when unset.
+   * @return The octal value when it is one (up to four octal digits), else
+   *         077, pass's default.
+   */
+  static auto passUmask(const QString &value) -> int;
+
+  /**
    * @brief Locate an executable by searching the process PATH and (on Windows)
    * falling back to WSL.
    * @param binary Executable name or relative path to locate (e.g., "gpg" or
