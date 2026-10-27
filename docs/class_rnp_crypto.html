@@ -480,7 +480,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds the keyring in <code class="param">dir</code> (as <a class="el" href="#ae6e958a87ecd1fa49b1159b2ad07e579" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,...">saveKeyring()</a> wrote it) to this one. Secret keys stay protected until an operation needs them. </p>
-<p>keyring.gpg is read as a regular file, not through a link, and only up to kMaxKeyringBytes. A missing or empty file is an empty keyring, not an error. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>keyring.gpg is read as a regular file, not through a link (nor is <code class="param">dir</code> itself a link or junction; its parents are as configured), and only up to kMaxKeyringBytes. A missing or empty file is an empty keyring, not an error. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>The keyring folder. </td></tr>
     <tr><td class="paramname">error</td><td>Set to the reason when loading fails. </td></tr>
@@ -528,7 +528,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Protects the secret parts of a key with <code class="param">passphrase</code>. </p>
-<p>For a key imported without protection: <a class="el" href="#ae6e958a87ecd1fa49b1159b2ad07e579" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,...">saveKeyring()</a> keeps secret keys on disk only protected by their own passphrase. Only the parts not yet protected get <code class="param">passphrase</code>, so a key left half protected can be finished; the others keep theirs (no passphrase is changed here). A key all of whose secret parts are protected already is an error. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For a key imported without protection: <a class="el" href="#ae6e958a87ecd1fa49b1159b2ad07e579" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,...">saveKeyring()</a> keeps secret keys on disk only protected by their own passphrase. Only the parts not yet protected get <code class="param">passphrase</code>, so a key left half protected can be finished; the others keep theirs (no passphrase is changed here). A key all of whose secret parts are protected already is an error. The UTF-8 copy made here is wiped afterwards; <code class="param">passphrase</code> itself, and any copy the caller holds, is the caller's to wipe. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fingerprint</td><td>The primary key's fingerprint. </td></tr>
     <tr><td class="paramname">passphrase</td><td>The passphrase; not empty. </td></tr>
@@ -577,9 +577,10 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Writes the keyring to <code class="param">dir:</code> keyring.gpg, public and secret keys in one file (OpenPGP keys, as GnuPG 1 kept them), owner-only and replaced whole, so a reader sees the old keyring or the new one. </p>
-<p>Secret keys are written as they are held: protected by their own passphrase, never decrypted for this. A secret key without protection is refused (nothing is written) unless <code class="param">allowUnprotected</code>, the user's explicit consent; <a class="el" href="#a9291eb10b1ea5adb343bfcb4da8455a6" title="Protects the secret parts of a key with passphrase.">protectKey()</a> first is the other way. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The file holds exactly this keyring afterwards: load the folder first (<a class="el" href="#ac556c26fad6682ee3090fc1fc5fe6e67" title="Adds the keyring in dir (as saveKeyring() wrote it) to this one. Secret keys stay protected until an ...">loadKeyring()</a>), or every key on disk that is not in this keyring is gone. That is how a removed key disappears from disk.</p>
+<p>Secret keys are written as they are held: protected by their own passphrase, never decrypted for this. A secret key without protection is refused (nothing is written) unless <code class="param">allowUnprotected</code>, the user's explicit consent; <a class="el" href="#a9291eb10b1ea5adb343bfcb4da8455a6" title="Protects the secret parts of a key with passphrase.">protectKey()</a> first is the other way. So is a secret part whose protection RNP cannot name. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dir</td><td>The keyring folder, created owner-only if missing; <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own, never ~/.gnupg. </td></tr>
+    <tr><td class="paramname">dir</td><td>The keyring folder, created owner-only if missing (on Windows: as private as the user profile it is in); <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own, never ~/.gnupg, and not a link or junction (the folder itself; its parents are as configured). </td></tr>
     <tr><td class="paramname">allowUnprotected</td><td>Write unprotected secret keys as well. </td></tr>
     <tr><td class="paramname">error</td><td>Set to the reason when nothing was written, naming the first unprotected key. </td></tr>
   </table>
