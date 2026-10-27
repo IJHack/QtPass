@@ -514,7 +514,18 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
     const QString friendly = gpgErrorMessage(err);
     const QString why =
         friendly.isEmpty() ? err : formatInsertError(friendly, err);
-    emit insertFailed(why, insertWritten());
+    const bool written = insertWritten();
+    emit insertFailed(why, written);
+    if (written) {
+      // The entry is in the store; a git step after it failed (a commit
+      // that could not be signed, with pass.signcommits, say). The dialog
+      // closes on this, so say it here rather than only in the output
+      // panel.
+      emit critical(tr("Saved, not committed"),
+                    tr("The entry is saved in the store, but git could not "
+                       "record it:\n\n%1")
+                        .arg(err.trimmed()));
+    }
     emit processErrorExit(exitCode, why);
     return;
   }

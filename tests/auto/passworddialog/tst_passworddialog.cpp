@@ -148,6 +148,7 @@ private Q_SLOTS:
   void refusedInsertKeepsWhatWasTyped();
   void savingLocksTheDialogUntilTheResult();
   void newEntryWrittenBeforeAFailedGitStepCloses();
+  void existingEntryWrittenBeforeAFailedGitStepCloses();
   void anotherWritersEntryIsNotThisOne();
   void savingCancelAsksBeforeClosing();
   void savingLocksTheTemplate();
@@ -1029,6 +1030,29 @@ void tst_passworddialog::newEntryWrittenBeforeAFailedGitStepCloses() {
 
   okButton(d)->click();
   QTRY_COMPARE(accepted.size(), 1);
+}
+
+/**
+ * @brief The same for an existing entry: it is saved, so "Not saved" would
+ *        be wrong; the dialog closes and the backend reports the git error
+ *        ("Saved, not committed").
+ */
+void tst_passworddialog::existingEntryWrittenBeforeAFailedGitStepCloses() {
+  FakePass pass;
+  pass.failWith = QStringLiteral("error: gpg failed to sign the data");
+  pass.failWritten = true;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\n"));
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  okButton(d)->click();
+  QTRY_COMPARE(accepted.size(), 1);
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY2(status == nullptr ||
+               !status->text().contains(QStringLiteral("Not saved")),
+           qPrintable(status->text()));
 }
 
 /**

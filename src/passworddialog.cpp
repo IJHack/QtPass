@@ -199,9 +199,11 @@ void PasswordDialog::onInsertFailed(const QString &err, bool written) {
   }
   setSaving(false);
   // The entry is in the store and a later step (git add or commit) failed,
-  // which the main window reports. Kept open, a new entry could only be
-  // tried again under a name it now has.
-  if (m_isNew && written) {
+  // which the backend reports ("Saved, not committed"). Saved is saved, so
+  // the dialog closes, also for an existing entry: "Not saved" would be
+  // wrong, and a new entry could only be tried again under a name it now
+  // has.
+  if (written) {
     QDialog::accept();
     return;
   }

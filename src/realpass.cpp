@@ -180,6 +180,9 @@ void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,
           nullptr) == 0 &&
       staged.trimmed().isEmpty();
   if (committed) {
+    // As Pass::finished() would: git's output (a hook's warning, say) for
+    // the output panel, then the removal.
+    emit finishedAnyWithPid(out, err, GIT_COMMIT);
     emit finishedRemove(out, err);
     return;
   }
