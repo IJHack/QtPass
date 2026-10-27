@@ -84,10 +84,13 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
 
 /// The line ending a text cut at FileContent::kMaxDisplayLines.
 auto moreLinesNotShown(qsizetype count) -> QString {
-  return QCoreApplication::translate(
-      "FileContent", "… %n more line(s) not shown", nullptr,
-      static_cast<int>(
-          std::min<qsizetype>(count, std::numeric_limits<int>::max())));
+  // The count in a variable of its own: lupdate up to 6.8 loses a
+  // translate() call with template arguments among its arguments and would
+  // mark the string vanished.
+  const int n = static_cast<int>(
+      std::min<qsizetype>(count, std::numeric_limits<int>::max()));
+  return QCoreApplication::translate("FileContent",
+                                     "… %n more line(s) not shown", nullptr, n);
 }
 
 } // namespace
