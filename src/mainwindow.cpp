@@ -1059,11 +1059,10 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   }
   // Whole sentences, not a question stitched from pieces: a verb-final
   // language cannot put the rest of the question after the path.
-  // Rich text for the warning below, so the path (a name from the store,
-  // which other writers control) goes in escaped.
+  // Plain text, as every box quoting the store: the path is a name other
+  // writers control, and as rich text "a  b" would also show as "a b".
   QString question =
-      tr("Are you sure you want to delete %1 and the whole content?")
-          .arg(path.toHtmlEscaped());
+      tr("Are you sure you want to delete %1 and the whole content?").arg(path);
   // A link, junction or special file inside is as unexpected as a stray
   // plain file: the walker leaves them out of content and reports them.
   QStringList skipped;
@@ -1075,16 +1074,11 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
         return QFileInfo(entry).suffix() != QLatin1String("gpg");
       });
   if (unexpected) {
-    question += QStringLiteral("<br><strong>") +
+    question += QStringLiteral("\n\n") +
                 tr("Attention: there are unexpected files in the given "
-                   "folder, check them before continuing.") +
-                QStringLiteral("</strong>");
+                   "folder, check them before continuing.");
   }
-  QMessageBox box(QMessageBox::Question, tr("Delete folder?"), QString(),
-                  QMessageBox::Yes | QMessageBox::No, this);
-  box.setTextFormat(Qt::RichText);
-  box.setText(question);
-  return box.exec() == QMessageBox::Yes;
+  return PlainMessageBox::askYes(this, tr("Delete folder?"), question);
 }
 
 auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
@@ -1677,11 +1671,11 @@ void MainWindow::exportPublicKey() {
   QString stdErr;
   int exitCode = Executor::executeBlocking(gpgExe, args, &stdOut, &stdErr);
   if (exitCode != 0 || stdOut.isEmpty()) {
-    QMessageBox::warning(this, tr("Export public key"),
-                         tr("Could not export public key for %1.\n\n%2")
-                             .arg(identity, stdErr.isEmpty()
-                                                ? tr("No output from gpg.")
-                                                : stdErr));
+    PlainMessageBox::warning(this, tr("Export public key"),
+                             tr("Could not export public key for %1.\n\n%2")
+                                 .arg(identity, stdErr.isEmpty()
+                                                    ? tr("No output from gpg.")
+                                                    : stdErr));
     return;
   }
   ExportPublicKeyDialog dialog(identity, stdOut, this);

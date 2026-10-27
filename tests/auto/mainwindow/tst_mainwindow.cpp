@@ -3828,6 +3828,9 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
   QVERIFY(outside.isValid());
   const QString target = QDir(outside.path()).filePath(QStringLiteral("t"));
   QVERIFY(QDir().mkpath(target));
+  // Unix only: on Windows QFile::link() makes a .lnk shortcut, which the
+  // system does not follow, so there would be nothing to test.
+#ifndef Q_OS_WIN
   const QString link = store.filePath(QStringLiteral("out"));
   if (QFile::link(target, link)) {
     ModalDriver driver(
@@ -3840,6 +3843,7 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
     QVERIFY(QFile::remove(link));
     QDir(store.filePath(QStringLiteral("through-link"))).removeRecursively();
   }
+#endif
 
   QVERIFY(store.mkpath(QStringLiteral("taken")));
   {
@@ -4081,6 +4085,8 @@ void tst_mainwindow::deleteFolderWarnsAboutStrayFiles() {
     QVERIFY2(text.contains(QStringLiteral("whole content")), qPrintable(text));
     QVERIFY2(text.contains(QStringLiteral("unexpected files")),
              qPrintable(text));
+    // Plain, as every box quoting the store ("a  b" stays two spaces).
+    QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
   }
   QVERIFY(QFileInfo(store.filePath(QStringLiteral("doomed-dir"))).isDir());
 

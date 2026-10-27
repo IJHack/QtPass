@@ -117,8 +117,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   before its signature is checked: a FIFO under that name blocked QtPass,
   and a sparse file of gigabytes was read whole. (With the `pass` backend,
   `pass` reads the list for its own operations.) The Users dialog says so
-  when the list cannot be read, instead of showing it as empty. Importing a key reads at most 16 MiB of
-  a regular file.
+  when the list cannot be read, instead of showing it as empty. Importing a
+  key reads at most 16 MiB of a regular file.
 - Re-encryption checks the folder again after its `git pull`: a pulled
   commit that made it a link sent recovery of an interrupted run to rename
   and remove files where the link pointed.

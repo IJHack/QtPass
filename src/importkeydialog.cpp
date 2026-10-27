@@ -50,6 +50,8 @@ void ImportKeyDialog::on_fileButton_clicked() {
   // A key file, so a regular one of sensible size: a FIFO would block the
   // GUI and /dev/zero (or a sparse file) would be read without end.
   constexpr qint64 kMaxKeyFileBytes = 16LL * 1024 * 1024;
+  // isFile() follows a link, deliberately: the user picked this file, unlike
+  // a name found in the store (Util::readRegularFile() for those).
   QFile file(fileName);
   if (!QFileInfo(fileName).isFile() || !file.open(QIODevice::ReadOnly)) {
     PlainMessageBox::warning(this, tr("Import key"),
@@ -125,7 +127,7 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   int result = Executor::executeBlocking(gpgExe, args, input, &stdOut, &stdErr);
 
   if (result != 0) {
-    showError(tr("GPG import failed:\n%1").arg(stdErr.toHtmlEscaped()));
+    showError(tr("GPG import failed:\n%1").arg(stdErr));
     return false;
   }
 
@@ -175,7 +177,9 @@ auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
 }
 
 void ImportKeyDialog::showError(const QString &message) {
-  QMessageBox::warning(this, tr("Import key"), message);
+  // gpg's stderr quotes user IDs ("Name <a@b>"): plain, so they show as
+  // written and cannot be markup.
+  PlainMessageBox::warning(this, tr("Import key"), message);
 }
 
 void ImportKeyDialog::showSuccess(const QString &keyId) {

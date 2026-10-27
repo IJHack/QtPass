@@ -571,7 +571,8 @@ void tst_importkeydialog::importFailureShowsStderrAndStaysOpen() {
 #endif
   const QString gpg = writeGpg(
       QStringLiteral("gpg-fail"),
-      QStringLiteral("echo 'gpg: no valid OpenPGP data found.' >&2\nexit 2\n"));
+      QStringLiteral("echo 'gpg: no valid OpenPGP data found.' >&2\n"
+                     "echo 'gpg: public key \"Name <a@b>\"' >&2\nexit 2\n"));
   QVERIFY2(!gpg.isEmpty(), "could not write fake gpg");
   ImportKeyDialog dialog(gpg);
   auto *edit =
@@ -590,6 +591,9 @@ void tst_importkeydialog::importFailureShowsStderrAndStaysOpen() {
            qPrintable(run.messageText));
   QVERIFY2(run.messageText.contains(
                QStringLiteral("gpg: no valid OpenPGP data found.")),
+           qPrintable(run.messageText));
+  // gpg quotes user IDs; shown as written, not as &quot;Name &lt;a@b&gt;.
+  QVERIFY2(run.messageText.contains(QStringLiteral("\"Name <a@b>\"")),
            qPrintable(run.messageText));
   QVERIFY2(dialog.importedKeyId().isEmpty(), "failed import stores no id");
   QCOMPARE(accepted.count(), 0);

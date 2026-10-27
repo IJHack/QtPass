@@ -604,7 +604,7 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
       return false;
     }
   } else {
-    if (!QFileInfo::exists(gpgIdFile)) {
+    if (const QFileInfo info(gpgIdFile); !info.exists() && !info.isSymLink()) {
       // No file is not a bad signature; the empty list says it all.
       return true;
     }

@@ -5682,6 +5682,16 @@ void tst_util::recipientsForEditingSaysWhenAnUnsignedListCannotBeRead() {
   QVERIFY(QFile::resize(list, 41));
   const auto fine = pass.recipientsForEditing(QString(), store.path());
   QVERIFY(fine.state == Pass::RecipientsForEditing::State::Unsigned);
+
+  // A dangling link under the name is there, and cannot be read as a list.
+  // Unix only: on Windows QFile::link() makes a .lnk file, a regular one.
+#ifndef Q_OS_WIN
+  QVERIFY(QFile::remove(list));
+  if (QFile::link(QDir(store.path()).filePath(QStringLiteral("gone")), list)) {
+    const auto dangling = pass.recipientsForEditing(QString(), store.path());
+    QVERIFY(dangling.state == Pass::RecipientsForEditing::State::Rejected);
+  }
+#endif
 }
 
 /**

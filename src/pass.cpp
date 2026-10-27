@@ -824,8 +824,16 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
     // regular file, unreadable) is not an empty list: preselecting nothing
     // without a word would let OK write a new list over it, and later
     // re-encryptions drop whoever it named.
-    if (QFileInfo::exists(gpgIdPath) &&
-        !Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes)) {
+    // Read once and parsed from those bytes: a second read could find
+    // something else under the name. A link counts as there, dangling too.
+    const QFileInfo info(gpgIdPath);
+    if (!info.exists() && !info.isSymLink()) {
+      result.state = RecipientsForEditing::State::Unsigned;
+      return result;
+    }
+    const std::optional<QByteArray> bytes =
+        Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+    if (!bytes) {
       result.state = RecipientsForEditing::State::Rejected;
       result.warning =
           tr("%1 cannot be read as a recipient list (a regular file of at "
@@ -836,7 +844,7 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
       return result;
     }
     result.state = RecipientsForEditing::State::Unsigned;
-    result.recipients = getRecipientList(folder, passStore);
+    result.recipients = parseRecipients(*bytes, gpgIdPath);
     return result;
   }
   QString recordError;
