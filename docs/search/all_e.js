@@ -41,8 +41,9 @@ var searchData=
   ['profileinit_38',['ProfileInit',['../class_profile_init.html',1,'']]],
   ['program_39',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
   ['programswizardpage_40',['ProgramsWizardPage',['../class_programs_wizard_page.html',1,'ProgramsWizardPage'],['../class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b',1,'ProgramsWizardPage::ProgramsWizardPage()']]],
-  ['protocolregex_41',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
-  ['proxy_42',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
-  ['pushrequested_43',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]],
-  ['pwgenexecutable_44',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['protectkey_41',['protectKey',['../class_rnp_crypto.html#a9291eb10b1ea5adb343bfcb4da8455a6',1,'RnpCrypto']]],
+  ['protocolregex_42',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]],
+  ['proxy_43',['proxy',['../class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593',1,'StoreTree']]],
+  ['pushrequested_44',['pushRequested',['../class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a',1,'QtPass']]],
+  ['pwgenexecutable_45',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
 ];

@@ -129,6 +129,8 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a7d980ac8ea8a70dd00cb12f481c5d1d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether it has expired.  <br /></td></tr>
 <tr class="memitem:acd2bc15989e8f1fbca3e258cec5ae258" id="r_acd2bc15989e8f1fbca3e258cec5ae258"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#acd2bc15989e8f1fbca3e258cec5ae258">hasSecret</a> = false</td></tr>
 <tr class="memdesc:acd2bc15989e8f1fbca3e258cec5ae258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a secret part of it (primary or subkey) is here to use: a GnuPG stub (a key left at home, or on a smartcard) does not count.  <br /></td></tr>
+<tr class="memitem:a686e709d0a448165f7180fda6716504e" id="r_a686e709d0a448165f7180fda6716504e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a686e709d0a448165f7180fda6716504e">secretProtected</a> = true</td></tr>
+<tr class="memdesc:a686e709d0a448165f7180fda6716504e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether every secret part of it that is here is protected by a passphrase; true when none is here.  <br /></td></tr>
 <tr class="memitem:a4b1cba6912f9edcbb4ef24ef74f83b5d" id="r_a4b1cba6912f9edcbb4ef24ef74f83b5d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4b1cba6912f9edcbb4ef24ef74f83b5d">canEncrypt</a> = false</td></tr>
 <tr class="memdesc:a4b1cba6912f9edcbb4ef24ef74f83b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a message can be encrypted to it now.  <br /></td></tr>
 <tr class="memitem:a4385215e8fe04c72597970bd64b4c864" id="r_a4385215e8fe04c72597970bd64b4c864"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4385215e8fe04c72597970bd64b4c864">canSign</a> = false</td></tr>
@@ -153,7 +155,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether a message can be encrypted to it now. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00064">64</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00069">69</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -171,7 +173,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether it can sign now, with a secret key that is here. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00066">66</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00071">71</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -298,6 +300,24 @@ Public Attributes</h2></td></tr>
 <p>Whether it has been revoked. </p>
 
 <p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00055">55</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+
+</div>
+</div>
+<a id="a686e709d0a448165f7180fda6716504e" name="a686e709d0a448165f7180fda6716504e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686e709d0a448165f7180fda6716504e">&#9670;&#160;</a></span>secretProtected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RnpCrypto::KeyInfo::secretProtected = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether every secret part of it that is here is protected by a passphrase; true when none is here. </p>
+
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00067">67</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>

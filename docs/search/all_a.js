@@ -9,8 +9,9 @@ var searchData=
   ['linecount_6',['lineCount',['../class_process_output_panel.html#abeca8ba2340d47d42c10125fb72c7a39',1,'ProcessOutputPanel']]],
   ['linkifyurls_7',['linkifyUrls',['../class_util.html#a96f0f96cc2e05dc680250717efe0c428',1,'Util']]],
   ['listkeys_8',['listKeys',['../class_pass.html#a6ed6c10b07137f62e127b290ebd428a2',1,'Pass::listKeys(QStringList keystrings, bool secret=false) -&gt; QList&lt; UserInfo &gt;'],['../class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6',1,'Pass::listKeys(const QString &amp;keystring=&quot;&quot;, bool secret=false) -&gt; QList&lt; UserInfo &gt;'],['../class_rnp_crypto.html#abb1ff64a36e7589409a89d853785e072',1,'RnpCrypto::listKeys()']]],
-  ['load_9',['load',['../class_qt_pass_settings.html#a6d6d2c5444b24ed89a71e7dc6dff877e',1,'QtPassSettings::load()'],['../class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754',1,'SettingsSerializer::load(QSettings &amp;qs) -&gt; AppSettings']]],
-  ['loadpasswordconfiguration_10',['loadPasswordConfiguration',['../class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4',1,'SettingsSerializer']]],
-  ['loadverifiedrecipients_11',['loadVerifiedRecipients',['../class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e',1,'ImitatePass']]],
-  ['loggableargs_12',['loggableArgs',['../class_pass.html#af657ee8dde5189ac7aba6585db8f2c6a',1,'Pass']]]
+  ['load_9',['load',['../class_qt_pass_settings.html#a6d6d2c5444b24ed89a71e7dc6dff877e',1,'QtPassSettings::load()'],['../class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754',1,'SettingsSerializer::load()']]],
+  ['loadkeyring_10',['loadKeyring',['../class_rnp_crypto.html#ac556c26fad6682ee3090fc1fc5fe6e67',1,'RnpCrypto']]],
+  ['loadpasswordconfiguration_11',['loadPasswordConfiguration',['../class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4',1,'SettingsSerializer']]],
+  ['loadverifiedrecipients_12',['loadVerifiedRecipients',['../class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e',1,'ImitatePass']]],
+  ['loggableargs_13',['loggableArgs',['../class_pass.html#af657ee8dde5189ac7aba6585db8f2c6a',1,'Pass']]]
 ];
