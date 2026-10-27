@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
@@ -109,6 +110,11 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p><code>#include &lt;<a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:KeyInfo" id="r_KeyInfo"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_rnp_crypto_1_1_key_info.html">KeyInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One primary key in the keyring, as the Users dialog lists keys.  <a href="struct_rnp_crypto_1_1_key_info.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a389051ff44ce503a7315d95087c2f0dc" id="r_a389051ff44ce503a7315d95087c2f0dc"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> = std::function&lt;QString(const QString &amp;keyId)&gt;</td></tr>
@@ -140,6 +146,12 @@ auto&#160;</td><td class="memItemRight"><b>operator=</b> (<a class="el" href="cl
 <tr class="memdesc:ac87baaf06247c5f80e3f32a36c44c60b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypts <code class="param">plaintext</code> to every recipient, as one message.  <br /></td></tr>
 <tr class="memitem:a9a472ef22897f9d80c62ddb62a342696" id="r_a9a472ef22897f9d80c62ddb62a342696"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9a472ef22897f9d80c62ddb62a342696">decrypt</a> (const QByteArray &amp;ciphertext, QString *error=nullptr, bool *ok=nullptr) -&gt; QByteArray</td></tr>
 <tr class="memdesc:a9a472ef22897f9d80c62ddb62a342696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypts an OpenPGP message with any secret key in the keyring.  <br /></td></tr>
+<tr class="memitem:abb1ff64a36e7589409a89d853785e072" id="r_abb1ff64a36e7589409a89d853785e072"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abb1ff64a36e7589409a89d853785e072">listKeys</a> (bool secretOnly=false) const -&gt; QList&lt; <a class="el" href="struct_rnp_crypto_1_1_key_info.html">KeyInfo</a> &gt;</td></tr>
+<tr class="memdesc:abb1ff64a36e7589409a89d853785e072"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary keys in the keyring.  <br /></td></tr>
+<tr class="memitem:a30389cc8522a6d684ecb8caacf934228" id="r_a30389cc8522a6d684ecb8caacf934228"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a30389cc8522a6d684ecb8caacf934228">sign</a> (const QByteArray &amp;data, const QString &amp;signer, QString *error=nullptr) -&gt; QByteArray</td></tr>
+<tr class="memdesc:a30389cc8522a6d684ecb8caacf934228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a detached signature over <code class="param">data</code>, as gpg &ndash;detach-sign &ndash;local-user <code class="param">signer</code> does (for .gpg-id.sig).  <br /></td></tr>
+<tr class="memitem:a681d3f35bd3c8db88dfb9a182d0d788b" id="r_a681d3f35bd3c8db88dfb9a182d0d788b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a681d3f35bd3c8db88dfb9a182d0d788b">verify</a> (const QByteArray &amp;data, const QByteArray &amp;signature, QString *error=nullptr) -&gt; QStringList</td></tr>
+<tr class="memdesc:a681d3f35bd3c8db88dfb9a182d0d788b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks a detached signature over <code class="param">data</code>, as <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads gpg's VALIDSIG.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -152,7 +164,7 @@ Static Public Attributes</h2></td></tr>
 <p>Output is binary OpenPGP, as pass and <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> write .gpg files. Every call reports failure through its return value and a human-readable error.</p>
 <p>Security trade-off (SECURITY.md, "In-process OpenPGP"): with gpg, <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> never holds a secret key; gpg-agent does, or a smartcard. Here the secret key is imported into this process and, while a message is decrypted, the unlocked key and the passphrase are in its memory. Imported keys keep their own passphrase protection; no smartcard support. A mode built on this must be chosen deliberately, never used as a silent fallback for a missing gpg. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00033">33</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00035">35</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a389051ff44ce503a7315d95087c2f0dc" name="a389051ff44ce503a7315d95087c2f0dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a389051ff44ce503a7315d95087c2f0dc">&#9670;&#160;</a></span>PassphraseProvider</h2>
@@ -169,7 +181,7 @@ Static Public Attributes</h2></td></tr>
 <p>Asks for the passphrase of a secret key. </p>
 <p>Called with the key's 16-hex-digit key ID; return an empty string to give up. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00041">41</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00075">75</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -302,7 +314,7 @@ Static Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">plaintext</td><td>The entry's content. </td></tr>
-    <tr><td class="paramname">recipients</td><td>As a .gpg-id lists them, in the forms gpg -r takes: a fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8 hex digits) key ID with or without 0x, a whole user ID, or part of one such as the e-mail address. Each must name exactly one key that can encrypt (not expired or revoked, with a usable encryption key); an empty recipient is an error. </td></tr>
+    <tr><td class="paramname">recipients</td><td>As a .gpg-id lists them, in the forms gpg -r takes: a fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8 hex digits) key ID with or without 0x, an e-mail address (the key with a user ID of that address, any case; stricter than gpg's substring search; a user ID with no address in angle brackets must then be just the address, so "alice@example.org (work)" is not found by its address), or a whole user ID or part of one. Revoked user IDs, and ones without a valid self-signature, name nothing. Each must name exactly one key that can encrypt (not expired or revoked, with a usable encryption key); an empty recipient is an error. </td></tr>
     <tr><td class="paramname">error</td><td>Set to the reason when encryption fails, naming the first recipient that has no usable key or names more than one. </td></tr>
   </table>
   </dd>
@@ -394,6 +406,52 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="abb1ff64a36e7589409a89d853785e072" name="abb1ff64a36e7589409a89d853785e072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb1ff64a36e7589409a89d853785e072">&#9670;&#160;</a></span>listKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RnpCrypto::listKeys </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>secretOnly</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td> const -&gt;  QList&lt; <a class="el" href="struct_rnp_crypto_1_1_key_info.html">KeyInfo</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The primary keys in the keyring. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">secretOnly</td><td>Only keys with a secret part here. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>One entry per primary key, in the keyring's order. </dd></dl>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_abb1ff64a36e7589409a89d853785e072_cgraph.svg" width="160" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_abb1ff64a36e7589409a89d853785e072_icgraph.svg" width="160" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a6e60d2db2c0567dfd8add85a357a80b1" name="a6e60d2db2c0567dfd8add85a357a80b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e60d2db2c0567dfd8add85a357a80b1">&#9670;&#160;</a></span>setMaxPlaintextBytes()</h2>
 
@@ -416,16 +474,16 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a6e60d2db2c0567dfd8add85a357a80b1_cgraph.svg" width="215" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a6e60d2db2c0567dfd8add85a357a80b1_icgraph.svg" width="215" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -453,17 +511,115 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a34d4b3fba554ee557ae749a3455992bf_cgraph.svg" width="202" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a34d4b3fba554ee557ae749a3455992bf_icgraph.svg" width="202" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a30389cc8522a6d684ecb8caacf934228" name="a30389cc8522a6d684ecb8caacf934228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30389cc8522a6d684ecb8caacf934228">&#9670;&#160;</a></span>sign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RnpCrypto::sign </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>signer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QByteArray</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Makes a detached signature over <code class="param">data</code>, as gpg &ndash;detach-sign &ndash;local-user <code class="param">signer</code> does (for .gpg-id.sig). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The bytes signed, a .gpg-id as written. </td></tr>
+    <tr><td class="paramname">signer</td><td>The key: a fingerprint or key ID names exactly that key; an e-mail address the key with a user ID of that address (any case); else a user ID, whole or in part. It must name exactly one key that can sign and whose secret key is here; that key is used, not another. </td></tr>
+    <tr><td class="paramname">error</td><td>Set to the reason when signing fails. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The binary signature, empty on failure. </dd></dl>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a30389cc8522a6d684ecb8caacf934228_cgraph.svg" width="136" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a30389cc8522a6d684ecb8caacf934228_icgraph.svg" width="136" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a681d3f35bd3c8db88dfb9a182d0d788b" name="a681d3f35bd3c8db88dfb9a182d0d788b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a681d3f35bd3c8db88dfb9a182d0d788b">&#9670;&#160;</a></span>verify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RnpCrypto::verify </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>signature</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QStringList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks a detached signature over <code class="param">data</code>, as <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads gpg's VALIDSIG. </p>
+<p>The first signature that verifies decides. A signature by a key that is now revoked (or whose primary is) counts for nothing, as with GnuPG in <a class="el" href="class_gpg_id_signer.html" title="The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...">GpgIdSigner</a>; one by a key that has since expired still counts, as gpg calls it a good signature. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The signed bytes. </td></tr>
+    <tr><td class="paramname">signature</td><td>Binary or armored detached signature. </td></tr>
+    <tr><td class="paramname">error</td><td>Set to the reason when no signature counts. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The signing key's fingerprint and its primary key's, as <a class="el" href="class_gpg_id_signer.html#aa6292096b3bcc832d4055b812f65c36f" title="Pick the fingerprints out of gpg&#39;s --status-fd VALIDSIG line.">GpgIdSigner::validSigFingerprints()</a> gives them; empty when no signature counts. </dd></dl>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a681d3f35bd3c8db88dfb9a182d0d788b_cgraph.svg" width="146" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_rnp_crypto_a681d3f35bd3c8db88dfb9a182d0d788b_icgraph.svg" width="146" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -492,7 +648,7 @@ Static Public Attributes</h2></td></tr>
 <p>Most bytes of plaintext <a class="el" href="#a9a472ef22897f9d80c62ddb62a342696" title="Decrypts an OpenPGP message with any secret key in the keyring.">decrypt()</a> produces by default. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; <a class="el" href="#a9a472ef22897f9d80c62ddb62a342696" title="Decrypts an OpenPGP message with any secret key in the keyring.">decrypt()</a> fails at this many instead of filling memory. The same limit <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> gives gpg (&ndash;max-output). </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00050">50</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00084">84</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>

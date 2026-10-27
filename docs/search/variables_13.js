@@ -9,8 +9,9 @@ var searchData=
   ['usepass_6',['usePass',['../struct_app_settings.html#a32643a3ae350c55c2441875d7e5966ad',1,'AppSettings']]],
   ['usepwgen_7',['usePwgen',['../struct_app_settings.html#a6c2e2a0291def634f07ab1608386676a',1,'AppSettings']]],
   ['useqrencode_8',['useQrencode',['../struct_app_settings.html#ac73a141ef053548af932d5d6cc56e1b9',1,'AppSettings']]],
-  ['useselection_9',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings']]],
-  ['usesymbols_10',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
-  ['usetemplate_11',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
-  ['usetrayicon_12',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings']]]
+  ['userids_9',['userIds',['../struct_rnp_crypto_1_1_key_info.html#a2cef07cc019ce6b9097c31dd2d3b2c32',1,'RnpCrypto::KeyInfo']]],
+  ['useselection_10',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings']]],
+  ['usesymbols_11',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
+  ['usetemplate_12',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
+  ['usetrayicon_13',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings']]]
 ];

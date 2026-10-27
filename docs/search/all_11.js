@@ -60,7 +60,7 @@ var searchData=
   ['showstatusmessage_57',['showStatusMessage',['../class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf',1,'MainWindow']]],
   ['showtextasqrcode_58',['showTextAsQRCode',['../class_qt_pass.html#aef5aaf0605c7681967995ede486590ef',1,'QtPass']]],
   ['showthis_59',['showThis',['../class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691',1,'StoreModel']]],
-  ['sign_60',['sign',['../class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7',1,'GpgIdSigner']]],
+  ['sign_60',['sign',['../class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7',1,'GpgIdSigner::sign()'],['../class_rnp_crypto.html#a30389cc8522a6d684ecb8caacf934228',1,'RnpCrypto::sign()']]],
   ['signgpgidfile_61',['signGpgIdFile',['../class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f',1,'ImitatePass']]],
   ['signingkey_62',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
   ['simpletransaction_63',['SimpleTransaction',['../class_simple_transaction.html',1,'SimpleTransaction'],['../class_simple_transaction.html#addd388511742931041e60cf7a2604fb5',1,'SimpleTransaction::SimpleTransaction()']]],

@@ -13,11 +13,12 @@ var searchData=
   ['usepass_10',['usePass',['../struct_app_settings.html#a32643a3ae350c55c2441875d7e5966ad',1,'AppSettings']]],
   ['usepwgen_11',['usePwgen',['../struct_app_settings.html#a6c2e2a0291def634f07ab1608386676a',1,'AppSettings::usePwgen'],['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
   ['useqrencode_12',['useQrencode',['../struct_app_settings.html#ac73a141ef053548af932d5d6cc56e1b9',1,'AppSettings::useQrencode'],['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog::useQrencode()']]],
-  ['userinfo_13',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
-  ['usersdialog_14',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22',1,'UsersDialog::UsersDialog()']]],
-  ['useselection_15',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings::useSelection'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],
-  ['usesymbols_16',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
-  ['usetemplate_17',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
-  ['usetrayicon_18',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings::useTrayIcon'],['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog::useTrayIcon()']]],
-  ['util_19',['Util',['../class_util.html',1,'']]]
+  ['userids_13',['userIds',['../struct_rnp_crypto_1_1_key_info.html#a2cef07cc019ce6b9097c31dd2d3b2c32',1,'RnpCrypto::KeyInfo']]],
+  ['userinfo_14',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
+  ['usersdialog_15',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22',1,'UsersDialog::UsersDialog()']]],
+  ['useselection_16',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings::useSelection'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],
+  ['usesymbols_17',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
+  ['usetemplate_18',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
+  ['usetrayicon_19',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings::useTrayIcon'],['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog::useTrayIcon()']]],
+  ['util_20',['Util',['../class_util.html',1,'']]]
 ];

@@ -7,7 +7,7 @@ var searchData=
   ['verdict_4',['Verdict',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9',1,'GpgIdGeneration']]],
   ['verified_5',['Verified',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f',1,'Pass::RecipientsForEditing']]],
   ['verifiedrollback_6',['VerifiedRollback',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a8a0f9d1cb7131a1031d38f0a7d9635bf',1,'Pass::RecipientsForEditing']]],
-  ['verify_7',['verify',['../class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858',1,'GpgIdSigner']]],
+  ['verify_7',['verify',['../class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858',1,'GpgIdSigner::verify()'],['../class_rnp_crypto.html#a681d3f35bd3c8db88dfb9a182d0d788b',1,'RnpCrypto::verify()']]],
   ['verifyfile_8',['verifyFile',['../class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f',1,'GpgIdSigner']]],
   ['verifygpgidfordir_9',['verifyGpgIdForDir',['../class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf',1,'ImitatePass']]],
   ['version_10',['version',['../struct_app_settings.html#aaf6d5f6bafc91640cf07293134308634',1,'AppSettings']]],
