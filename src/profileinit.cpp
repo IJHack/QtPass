@@ -31,6 +31,21 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
   }
   return env;
 }
+/// "commit", and "-S" when git config pass.signcommits is true for the
+/// repository @p git runs in (a new one: so the user's own git config), as
+/// pass signs its commits.
+auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {
+  QString out;
+  const bool sign =
+      Executor::executeBlocking(
+          git, s.gitExecutable,
+          {QStringLiteral("config"), QStringLiteral("--bool"),
+           QStringLiteral("--get"), QStringLiteral("pass.signcommits")},
+          QString(), &out, nullptr) == 0 &&
+      out.trimmed() == QLatin1String("true");
+  return sign ? QStringList{QStringLiteral("commit"), QStringLiteral("-S")}
+              : QStringList{QStringLiteral("commit")};
+}
 } // namespace
 
 auto ProfileInit::needsInit(const QString &path) -> bool {
@@ -180,12 +195,14 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
   }
   const QStringList add =
       QStringList{QStringLiteral("add"), QStringLiteral("--")} + files;
-  const QStringList commit =
-      QStringList{QStringLiteral("commit"), QStringLiteral("-m"),
-                  QStringLiteral("Added .gpg-id using QtPass."),
-                  QStringLiteral("--")} +
-      files;
-  return run({QStringLiteral("init")}) && run(add) && run(commit);
+  if (!run({QStringLiteral("init")}) || !run(add)) {
+    return false;
+  }
+  return run(commitArgs(git, s) +
+             QStringList{QStringLiteral("-m"),
+                         QStringLiteral("Added .gpg-id using QtPass."),
+                         QStringLiteral("--")} +
+             files);
 }
 
 auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
@@ -226,9 +243,9 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
       !run(QStringList{QStringLiteral("add"), QStringLiteral("--")} + files)) {
     return false;
   }
-  return run({QStringLiteral("commit"), QStringLiteral("--allow-empty"),
-              QStringLiteral("-m"),
-              QStringLiteral("Added password store using QtPass.")});
+  return run(commitArgs(git, s) +
+             QStringList{QStringLiteral("--allow-empty"), QStringLiteral("-m"),
+                         QStringLiteral("Added password store using QtPass.")});
 }
 
 auto ProfileInit::gitIdentityConfigured(const QString &dir,

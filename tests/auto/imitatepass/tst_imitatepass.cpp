@@ -336,6 +336,9 @@ class tst_imitatepass : public QObject {
   }
 
   /// Every logged gpg call, one QStringList of arguments per call.
+  /// The git calls the fake logged, without the `config --get
+  /// pass.signcommits` query before each commit: these tests are about
+  /// what git is asked to change (signing has its own test in tst_util).
   static QList<QStringList> loggedCalls(const QString &logPath) {
     QList<QStringList> calls;
     QFile f(logPath);
@@ -343,7 +346,7 @@ class tst_imitatepass : public QObject {
       return calls;
     for (const QString &line :
          QString::fromUtf8(f.readAll()).split(QLatin1Char('\n')))
-      if (!line.isEmpty())
+      if (!line.isEmpty() && !line.contains(QLatin1String("pass.signcommits")))
         calls << line.split(QLatin1Char(' '), Qt::SkipEmptyParts);
     return calls;
   }

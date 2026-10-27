@@ -11,6 +11,7 @@
 #include <QRegularExpression>
 #include <utility>
 
+using Enums::GIT_COMMIT;
 using Enums::GIT_INIT;
 using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
@@ -97,8 +98,7 @@ void RealPass::Remove(QString file, bool isDir) {
     }
     if (m_settings.useGit) {
       // `pass git` exits 0 whatever git did, so ask by output whether git
-      // knew the link, and run the rm blocking so the one commit is the one
-      // PASS_REMOVE that finishes.
+      // knew the link (these quick lookups block; the commit is queued).
       const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
@@ -114,9 +114,29 @@ void RealPass::Remove(QString file, bool isDir) {
                 exec.environment(), m_settings.passExecutable,
                 {"git", "rm", "-q", "--cached", "--", rel}, &known, &err) == 0;
         if (recorded) {
-          executePass(PASS_REMOVE,
-                      {"git", "commit", "-q", "-m",
-                       "Remove for " + rel + " using QtPass.", "--", rel});
+          // `pass git commit` is git's commit as it is: pass adds -S only
+          // to the commits it makes itself, so ask as its git_commit() does.
+          QString signs;
+          const bool sign =
+              Executor::executeBlocking(
+                  exec.environment(), m_settings.passExecutable,
+                  {"git", "config", "--bool", "--get", "pass.signcommits"},
+                  &signs, nullptr) == 0 &&
+              signs.trimmed() == QLatin1String("true");
+          QStringList commit{"git", "commit", "-q"};
+          if (sign) {
+            commit << "-S";
+          }
+          // Queued, as every other commit, so a signer or hook that waits
+          // (a pinentry, an agent) does not freeze the window; finished()
+          // judges it by what is left staged, since `pass git` exits 0
+          // whatever git did.
+          m_linkCommits.enqueue(
+              {rel, m_settings.passExecutable, exec.environment()});
+          executePass(
+              GIT_COMMIT,
+              commit + QStringList{"-m", "Remove for " + rel + " using QtPass.",
+                                   "--", rel});
           return;
         }
       }
@@ -134,6 +154,41 @@ void RealPass::Remove(QString file, bool isDir) {
     return;
   }
   executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
+}
+
+void RealPass::finished(int id, int exitCode, const QString &out,
+                        const QString &err) {
+  if (static_cast<PROCESS>(id) == GIT_COMMIT && !m_linkCommits.isEmpty()) {
+    // Whatever the exit code (pass itself failing, or 0 whatever git
+    // did), what is left staged decides.
+    finishLinkCommit(m_linkCommits.dequeue(), out, err);
+    return;
+  }
+  Pass::finished(id, exitCode, out, err);
+}
+
+void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,
+                                const QString &err) {
+  // In the store the commit ran in, which a profile switch meanwhile does
+  // not change.
+  const QString &rel = commit.rel;
+  QString staged;
+  const bool committed =
+      Executor::executeBlocking(
+          commit.environment, commit.passExecutable,
+          {"git", "diff", "--cached", "--name-only", "--", rel}, &staged,
+          nullptr) == 0 &&
+      staged.trimmed().isEmpty();
+  if (committed) {
+    emit finishedRemove(out, err);
+    return;
+  }
+  const QString why = tr("The link %1 was removed and git no longer tracks "
+                         "it, but the commit failed: %2")
+                          .arg(rel, err.trimmed());
+  emit critical(tr("Delete incomplete"), why);
+  emit processErrorExit(1, why);
+  emit finishedRemove(QString(), QString());
 }
 
 void RealPass::Init(QString path, const QList<UserInfo> &users) {

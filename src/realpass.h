@@ -5,6 +5,7 @@
 
 #include "nativegrep.h"
 #include "pass.h"
+#include <QQueue>
 
 /**
  * @class RealPass
@@ -23,6 +24,28 @@ class RealPass : public Pass {
   /// The store's own search: `pass grep` runs `find -L`, which follows a
   /// link out of the store and decrypts what it finds there.
   NativeGrep m_grep;
+  /// A linked folder whose removal commit is queued, with the store it
+  /// was queued for: the profile may change before the commit ends.
+  struct LinkCommit {
+    QString rel;            ///< The folder, relative to the store.
+    QString passExecutable; ///< The pass that runs the commit.
+    /// Its environment (PASSWORD_STORE_DIR). Not "environ": a macro on
+    /// Windows (stdlib.h).
+    QProcessEnvironment environment;
+  };
+  /// Queued linked-folder removal commits (as GIT_COMMIT), oldest first;
+  /// finished() judges each.
+  QQueue<LinkCommit> m_linkCommits;
+
+  /**
+   * @brief Judge a queued linked-folder removal commit by what is left
+   * staged in the store it ran in: `pass git` exits 0 whatever git did.
+   * @param commit The folder and the store it was queued for.
+   * @param out The commit's standard output.
+   * @param err The commit's standard error.
+   */
+  void finishLinkCommit(const LinkCommit &commit, const QString &out,
+                        const QString &err);
 
   /**
    * @brief Execute pass command with arguments.
@@ -121,6 +144,18 @@ public:
    * @param users GPG recipients.
    */
   void Init(QString path, const QList<UserInfo> &users) override;
+
+protected:
+  /**
+   * @brief Finish a process; a linked-folder removal commit (GIT_COMMIT,
+   * which RealPass uses for nothing else) is judged by finishLinkCommit().
+   * @param id Process identifier.
+   * @param exitCode Exit code.
+   * @param out Standard output.
+   * @param err Standard error.
+   */
+  void finished(int id, int exitCode, const QString &out,
+                const QString &err) override;
 
   // Pass interface
 public:
