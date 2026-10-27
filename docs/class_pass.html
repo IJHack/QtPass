@@ -1528,15 +1528,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search password content for a pattern. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The regular-expression dialect is <b>backend-dependent</b>, so the same pattern can match differently depending on the configured backend:<ul>
-<li><a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> shells out to <span class="tt">pass grep</span>, which uses <b>POSIX BRE</b> (GNU grep default): e.g. <span class="tt">+</span>, <span class="tt">?</span>, <span class="tt">|</span>, <span class="tt">()</span> are literal unless backslash-escaped.</li>
-<li><a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> evaluates the pattern with <span class="tt">QRegularExpression</span>, which is <b>PCRE</b>-style: those metacharacters are special without escaping.</li>
-</ul>
-</dd></dl>
-<p>This Liskov wart is documented rather than papered over: a reliable BRE↔PCRE translation is intractable and <span class="tt">grep -P</span> is unavailable on macOS/BSD. Keep patterns to the common subset (literals, anchors <span class="tt">^</span>/<span class="tt">$</span>, <span class="tt">.</span>, <span class="tt">*</span>, bracket classes) for backend-independent results.</p>
+<p>Both backends decrypt each entry with gpg and match it in-process (<a class="el" href="class_native_grep.html" title="Full-text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ...">NativeGrep</a>), never through <span class="tt">pass grep</span>, so the pattern is one dialect for both: QRegularExpression, Perl-compatible (PCRE).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pattern</td><td>Search pattern (regular expression; see dialect note). </td></tr>
+    <tr><td class="paramname">pattern</td><td>Search pattern, a Perl-compatible regular expression. </td></tr>
     <tr><td class="paramname">caseInsensitive</td><td>true for case-insensitive search. </td></tr>
   </table>
   </dd>
@@ -1723,7 +1718,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a80b717f6932e5645b2628fba4654a7da">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00385">385</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00377">377</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2005,7 +2000,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00395">395</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00387">387</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2428,7 +2423,7 @@ Protected Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00236">236</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00228">228</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

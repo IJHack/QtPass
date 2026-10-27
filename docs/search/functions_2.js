@@ -34,7 +34,7 @@ var searchData=
   ['createmimedatafromselection_31',['createMimeDataFromSelection',['../class_secret_text_browser.html#aba8acf3c7011b08b484a59e0d1762e1a',1,'SecretTextBrowser']]],
   ['createqrcodepopup_32',['createQRCodePopup',['../class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d',1,'QtPass']]],
   ['createsecretcontextmenu_33',['createSecretContextMenu',['../class_secret_line_edit.html#a4bd5b8640f8be96ed3e794bd936022f3',1,'SecretLineEdit']]],
-  ['critical_34',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()']]],
+  ['critical_34',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()'],['../namespace_plain_message_box.html#ae9796117699b84c7f457dcfa9cdc4335',1,'PlainMessageBox::critical()']]],
   ['currentdir_35',['currentDir',['../class_store_tree.html#af4af91d99f47811cd66ad9a61df2f95b',1,'StoreTree']]],
   ['currentfile_36',['currentFile',['../class_store_tree.html#a62c3481cf1a8554c312594e67be27d95',1,'StoreTree']]],
   ['currentindex_37',['currentIndex',['../class_store_tree.html#a2fd943329edb11eece8793a8dccff73b',1,'StoreTree']]],

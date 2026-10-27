@@ -144,7 +144,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af8ec4c669ae299698055cf9d36d50881" id="r_af8ec4c669ae299698055cf9d36d50881"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8ec4c669ae299698055cf9d36d50881">processName</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; QString</td></tr>
 <tr class="memdesc:af8ec4c669ae299698055cf9d36d50881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable command label for a process id.  <br /></td></tr>
 <tr class="memitem:ad6aa26912ba468c918d78d857c386da7" id="r_ad6aa26912ba468c918d78d857c386da7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad6aa26912ba468c918d78d857c386da7">isSensitiveProcess</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; bool</td></tr>
-<tr class="memdesc:ad6aa26912ba468c918d78d857c386da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass grep, pass insert).  <br /></td></tr>
+<tr class="memdesc:ad6aa26912ba468c918d78d857c386da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass insert; pass grep, should it ever run again).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -280,7 +280,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass grep, pass insert). </p>
+<p>Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass insert; pass grep, should it ever run again). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pid</td><td>Process identifier. </td></tr>

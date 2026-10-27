@@ -137,22 +137,22 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf">   86</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf">setPassphraseProvider</a>(<a class="code hl_typedef" href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> provider);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">   94</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">setMaxPlaintextBytes</a>(qint64 bytes);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#ac87baaf06247c5f80e3f32a36c44c60b">  109</a></span>  auto <a class="code hl_function" href="class_rnp_crypto.html#ac87baaf06247c5f80e3f32a36c44c60b">encrypt</a>(const QByteArray &amp;plaintext, const QStringList &amp;recipients,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>               QString *error = <span class="keywordtype">nullptr</span>) -&gt; QByteArray;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#a9a472ef22897f9d80c62ddb62a342696">  125</a></span>  auto <a class="code hl_function" href="class_rnp_crypto.html#a9a472ef22897f9d80c62ddb62a342696">decrypt</a>(const QByteArray &amp;ciphertext, QString *error = <span class="keywordtype">nullptr</span>,</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>               <span class="keywordtype">bool</span> *ok = <span class="keywordtype">nullptr</span>) -&gt; QByteArray;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>private:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  rnp_ffi_st *m_ffi = <span class="keywordtype">nullptr</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <a class="code hl_typedef" href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> m_passphrase;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  qint64 m_maxPlaintext = <a class="code hl_variable" href="class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35">kMaxPlaintextBytes</a>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">   95</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">setMaxPlaintextBytes</a>(qint64 bytes);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#ac87baaf06247c5f80e3f32a36c44c60b">  110</a></span>  auto <a class="code hl_function" href="class_rnp_crypto.html#ac87baaf06247c5f80e3f32a36c44c60b">encrypt</a>(const QByteArray &amp;plaintext, const QStringList &amp;recipients,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>               QString *error = <span class="keywordtype">nullptr</span>) -&gt; QByteArray;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="class_rnp_crypto.html#a9a472ef22897f9d80c62ddb62a342696">  126</a></span>  auto <a class="code hl_function" href="class_rnp_crypto.html#a9a472ef22897f9d80c62ddb62a342696">decrypt</a>(const QByteArray &amp;ciphertext, QString *error = <span class="keywordtype">nullptr</span>,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>               <span class="keywordtype">bool</span> *ok = <span class="keywordtype">nullptr</span>) -&gt; QByteArray;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>private:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  rnp_ffi_st *m_ffi = <span class="keywordtype">nullptr</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_typedef" href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> m_passphrase;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  qint64 m_maxPlaintext = <a class="code hl_variable" href="class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35">kMaxPlaintextBytes</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>};</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#endif </span><span class="comment">// SRC_RNPCRYPTO_H_</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif </span><span class="comment">// SRC_RNPCRYPTO_H_</span></div>
 <div class="ttc" id="aclass_rnp_crypto_html_a34d4b3fba554ee557ae749a3455992bf"><div class="ttname"><a href="class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf">RnpCrypto::setPassphraseProvider</a></div><div class="ttdeci">void setPassphraseProvider(PassphraseProvider provider)</div><div class="ttdoc">Sets how secret-key passphrases are obtained.</div></div>
 <div class="ttc" id="aclass_rnp_crypto_html_a389051ff44ce503a7315d95087c2f0dc"><div class="ttname"><a href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">RnpCrypto::PassphraseProvider</a></div><div class="ttdeci">std::function&lt; QString(const QString &amp;keyId)&gt; PassphraseProvider</div><div class="ttdoc">Asks for the passphrase of a secret key.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">rnpcrypto.h:41</a></div></div>
 <div class="ttc" id="aclass_rnp_crypto_html_a48d67c8b98abcd1583159eedbdba76a0"><div class="ttname"><a href="class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0">RnpCrypto::RnpCrypto</a></div><div class="ttdeci">RnpCrypto()</div><div class="ttdoc">Creates an empty keyring.</div></div>

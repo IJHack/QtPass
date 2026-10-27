@@ -8,6 +8,7 @@ var searchData=
   ['applypassphrase_5',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
   ['applypassprocessdefaults_6',['applyPassProcessDefaults',['../class_util.html#a0954978822dc30f773f1302003dbea84',1,'Util']]],
   ['argv_7',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['attach_8',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoscroll_9',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['askyes_8',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
+  ['attach_9',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoscroll_10',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];

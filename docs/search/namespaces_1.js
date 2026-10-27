@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['windowstatestore_0',['WindowStateStore',['../namespace_window_state_store.html',1,'']]]
+  ['plainmessagebox_0',['PlainMessageBox',['../namespace_plain_message_box.html',1,'']]]
 ];
