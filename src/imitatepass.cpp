@@ -1508,8 +1508,8 @@ void ImitatePass::beforeExecute(PROCESS id) {
   m_transaction.transactionAdd(id);
 }
 
-// PCRE, not pass's POSIX BRE (see Pass::Grep). Runs on a NativeGrep thread;
-// the result arrives on this thread as finishedGrep.
+// PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the
+// result arrives on this thread as finishedGrep.
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   m_grep.search(pattern, caseInsensitive, m_settings.gpgExecutable,
                 m_settings.passStore, exec.environment());

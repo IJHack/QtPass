@@ -533,6 +533,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- With the `pass` backend, the content search tooltip said patterns were
+  POSIX basic regular expressions (`pass grep`). Both backends search in
+  QtPass itself with Perl-compatible ones, so `a\|b` or `\(x\)` looked for
+  something else than the tooltip promised; it now says PCRE for both.
 - The Users dialog hid a folder's own recipients when their keys were
   expired, revoked or missing from the keyring, unless "Show unusable keys"
   was ticked. They stayed in `.gpg-id` unseen, could not be unticked, and

@@ -2786,11 +2786,14 @@ void tst_mainwindow::grepModeChangesTheSearchBox() {
   QVERIFY(search->toolTip().isEmpty());
   QVERIFY(treeView()->isVisibleTo(m_window.data()));
 
-  // The pass backend greps with POSIX basic regular expressions.
+  // The pass backend searches in-process too (NativeGrep): the same PCRE,
+  // not the POSIX basic expressions of `pass grep` it once claimed.
   QtPassSettings::setUsePass(true);
   const auto restore = qScopeGuard([] { QtPassSettings::setUsePass(false); });
   grep->setChecked(true);
-  QVERIFY2(search->toolTip().contains(QStringLiteral("POSIX")),
+  QVERIFY2(search->toolTip().contains(QStringLiteral("Perl-compatible")),
+           qPrintable(search->toolTip()));
+  QVERIFY2(!search->toolTip().contains(QStringLiteral("POSIX")),
            qPrintable(search->toolTip()));
   grep->setChecked(false);
 }

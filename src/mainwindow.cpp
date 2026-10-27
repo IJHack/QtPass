@@ -235,7 +235,8 @@ void MainWindow::initProcessOutput() {
             // Never route potentially-secret output through the panel:
             // PASS_SHOW goes to the text browser (cleared on a timer when
             // "Autoclear panel" is set),
-            // PASS_GREP returns password-file lines (#252), and PASS_INSERT
+            // PASS_GREP would return password-file lines (#252; it is no
+            // longer started, the check stays), and PASS_INSERT
             // is excluded defensively in case a future path uses --echo.
             if (ProcessOutputPanel::isSensitiveProcess(pid)) {
               return;
@@ -856,14 +857,10 @@ void MainWindow::on_grepButton_toggled(bool checked) {
   if (checked) {
     m_grep.enterGrepMode();
     ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
-    // The regex dialect depends on the backend (see Pass::Grep): the pass
-    // backend uses POSIX BRE via `pass grep`, the native backend uses PCRE.
+    // Both backends search through NativeGrep (QRegularExpression), so one
+    // dialect: PCRE.
     ui->lineEdit->setToolTip(
-        s.usePass
-            ? tr("Content search uses POSIX basic regular expressions "
-                 "(pass grep).")
-            : tr("Content search uses Perl-compatible regular expressions "
-                 "(PCRE)."));
+        tr("Content search uses Perl-compatible regular expressions (PCRE)."));
     ui->lineEdit->clear();
     searchTimer.stop();
     m_tree->setFilter(QRegularExpression());

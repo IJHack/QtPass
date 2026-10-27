@@ -124,7 +124,7 @@
           <item>
            <widget class="QToolButton" name="grepButton">
             <property name="toolTip">
-             <string>Search inside password content (pass grep)</string>
+             <string>Search inside password content</string>
             </property>
             <property name="text">
              <string>⌕</string>
