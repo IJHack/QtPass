@@ -453,6 +453,32 @@ void tst_gpgidsigner::validSigFingerprintsParsesStatusLines() {
   QVERIFY(GpgIdSigner::validSigFingerprints(
               QStringLiteral("VALIDSIG %1 x %2").arg(kFpr, kPrimary))
               .isEmpty()); // not a status line
+
+  // gpg prints VALIDSIG and exits 0 for a revoked signing key too; that
+  // signature does not count. An expired one does, as gpg's "good
+  // signature from expired key". The real status lines of gpg 2.5.
+  const QString revoked =
+      QStringLiteral("[GNUPG:] NEWSIG\n[GNUPG:] SIG_ID abc 2026-10-27 1\n"
+                     "[GNUPG:] REVKEYSIG 89ABCDEF01234567 Signer <s@x>\n"
+                     "[GNUPG:] VALIDSIG %1 2026-10-27 1793095590 0 4 0 22 10 "
+                     "00 %2\n[GNUPG:] KEYREVOKED\n")
+          .arg(kFpr, kPrimary);
+  QVERIFY(GpgIdSigner::validSigFingerprints(revoked).isEmpty());
+  QVERIFY(GpgIdSigner::validSigFingerprints(
+              QString(revoked).remove(
+                  QRegularExpression(QStringLiteral("^.*REVKEYSIG.*\n"),
+                                     QRegularExpression::MultilineOption)))
+              .isEmpty()); // KEYREVOKED alone says it as well
+  const QString expired =
+      QString(revoked)
+          .replace(QStringLiteral("REVKEYSIG"), QStringLiteral("EXPKEYSIG"))
+          .remove(QStringLiteral("[GNUPG:] KEYREVOKED\n"));
+  QCOMPARE(GpgIdSigner::validSigFingerprints(expired),
+           (QStringList{kFpr, kPrimary}));
+  // A revoked key's signature after the one that counts does not spoil it.
+  QCOMPARE(
+      GpgIdSigner::validSigFingerprints(validSig(kFpr, kPrimary) + revoked),
+      (QStringList{kFpr, kPrimary}));
 }
 
 void tst_gpgidsigner::defaultRunnerIsTheExecutor() {
