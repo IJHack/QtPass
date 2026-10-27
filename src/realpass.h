@@ -27,9 +27,11 @@ class RealPass : public Pass {
   /// A linked folder whose removal commit is queued, with the store it
   /// was queued for: the profile may change before the commit ends.
   struct LinkCommit {
-    QString rel;                 ///< The folder, relative to the store.
-    QString passExecutable;      ///< The pass that runs the commit.
-    QProcessEnvironment environ; ///< Its environment (PASSWORD_STORE_DIR).
+    QString rel;            ///< The folder, relative to the store.
+    QString passExecutable; ///< The pass that runs the commit.
+    /// Its environment (PASSWORD_STORE_DIR). Not "environ": a macro on
+    /// Windows (stdlib.h).
+    QProcessEnvironment environment;
   };
   /// Queued linked-folder removal commits (as GIT_COMMIT), oldest first;
   /// finished() judges each.

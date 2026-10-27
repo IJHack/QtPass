@@ -175,7 +175,7 @@ void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,
   QString staged;
   const bool committed =
       Executor::executeBlocking(
-          commit.environ, commit.passExecutable,
+          commit.environment, commit.passExecutable,
           {"git", "diff", "--cached", "--name-only", "--", rel}, &staged,
           nullptr) == 0 &&
       staged.trimmed().isEmpty();
