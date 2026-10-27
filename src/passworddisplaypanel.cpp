@@ -241,7 +241,12 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
             &PasswordDisplayPanel::textCopied);
     frame->layout()->addWidget(browser);
   }
-  addRow(position, new QLabel(trimmedField), frame);
+  // Plain text before the name is set: a field name comes from the entry,
+  // and as rich text <img src="/dev/zero"> has Qt read that file without end.
+  auto *label = new QLabel();
+  label->setTextFormat(Qt::PlainText);
+  label->setText(trimmedField);
+  addRow(position, label, frame);
 }
 
 void PasswordDisplayPanel::addRow(int position, QLabel *label, QFrame *frame) {

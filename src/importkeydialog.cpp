@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "importkeydialog.h"
+#include "plainmessagebox.h"
 
 #include "executor.h"
 #include "ui_importkeydialog.h"
@@ -9,6 +10,7 @@
 #include <QClipboard>
 #include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QRegularExpression>
@@ -45,15 +47,30 @@ void ImportKeyDialog::on_fileButton_clicked() {
     return;
   }
 
+  // A key file, so a regular one of sensible size: a FIFO would block the
+  // GUI and /dev/zero (or a sparse file) would be read without end.
+  constexpr qint64 kMaxKeyFileBytes = 16LL * 1024 * 1024;
+  // isFile() follows a link, deliberately: the user picked this file, unlike
+  // a name found in the store (Util::readRegularFile() for those).
   QFile file(fileName);
-  if (!file.open(QIODevice::ReadOnly)) {
-    QMessageBox::warning(this, tr("Import key"),
-                         tr("Could not open file: %1").arg(fileName));
+  if (!QFileInfo(fileName).isFile() || !file.open(QIODevice::ReadOnly)) {
+    PlainMessageBox::warning(this, tr("Import key"),
+                             tr("Could not open file: %1").arg(fileName));
     return;
   }
 
-  const QByteArray bytes = file.readAll();
+  // The size first, so a large file is not read at all; the read limit
+  // still guards one that grows meanwhile.
+  const bool tooLarge = file.size() > kMaxKeyFileBytes;
+  const QByteArray bytes =
+      tooLarge ? QByteArray() : file.read(kMaxKeyFileBytes + 1);
   file.close();
+  if (tooLarge || bytes.size() > kMaxKeyFileBytes) {
+    PlainMessageBox::warning(
+        this, tr("Import key"),
+        tr("%1 is larger than a key file can be.").arg(fileName));
+    return;
+  }
 
   // Only ASCII-armored content is shown in the text edit; binary keyrings
   // would lose bytes through UTF-8 conversion. Reject anything that doesn't
@@ -110,7 +127,7 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   int result = Executor::executeBlocking(gpgExe, args, input, &stdOut, &stdErr);
 
   if (result != 0) {
-    showError(tr("GPG import failed:\n%1").arg(stdErr.toHtmlEscaped()));
+    showError(tr("GPG import failed:\n%1").arg(stdErr));
     return false;
   }
 
@@ -160,7 +177,9 @@ auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
 }
 
 void ImportKeyDialog::showError(const QString &message) {
-  QMessageBox::warning(this, tr("Import key"), message);
+  // gpg's stderr quotes user IDs ("Name <a@b>"): plain, so they show as
+  // written and cannot be markup.
+  PlainMessageBox::warning(this, tr("Import key"), message);
 }
 
 void ImportKeyDialog::showSuccess(const QString &keyId) {

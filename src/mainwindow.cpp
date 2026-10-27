@@ -15,6 +15,7 @@
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
+#include "plainmessagebox.h"
 #include "processoutputpanel.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
@@ -1052,13 +1053,14 @@ void MainWindow::addPassword() { setPassword(QString()); }
 auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
   const QString path = QDir::separator() + file;
   if (!isDir) {
-    return QMessageBox::question(
-               this, tr("Delete password?"),
-               tr("Are you sure you want to delete %1?").arg(path),
-               QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+    return PlainMessageBox::askYes(
+        this, tr("Delete password?"),
+        tr("Are you sure you want to delete %1?").arg(path));
   }
   // Whole sentences, not a question stitched from pieces: a verb-final
   // language cannot put the rest of the question after the path.
+  // Plain text, as every box quoting the store: the path is a name other
+  // writers control, and as rich text "a  b" would also show as "a b".
   QString question =
       tr("Are you sure you want to delete %1 and the whole content?").arg(path);
   // A link, junction or special file inside is as unexpected as a stray
@@ -1072,25 +1074,21 @@ auto MainWindow::confirmDeletion(const QString &file, bool isDir) -> bool {
         return QFileInfo(entry).suffix() != QLatin1String("gpg");
       });
   if (unexpected) {
-    question += QStringLiteral("<br><strong>") +
+    question += QStringLiteral("\n\n") +
                 tr("Attention: there are unexpected files in the given "
-                   "folder, check them before continuing.") +
-                QStringLiteral("</strong>");
+                   "folder, check them before continuing.");
   }
-  return QMessageBox::question(this, tr("Delete folder?"), question,
-                               QMessageBox::Yes | QMessageBox::No) ==
-         QMessageBox::Yes;
+  return PlainMessageBox::askYes(this, tr("Delete folder?"), question);
 }
 
 auto MainWindow::confirmLinkRemoval(const QString &file) -> bool {
   // Only the link goes (ImitatePass::Remove unlinks it); nothing behind it
   // is looked at or mentioned.
-  return QMessageBox::question(
-             this, tr("Delete link?"),
-             tr("%1 is a symbolic link or junction. Remove the link? What it "
-                "points to is left alone.")
-                 .arg(QDir::separator() + file),
-             QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;
+  return PlainMessageBox::askYes(
+      this, tr("Delete link?"),
+      tr("%1 is a symbolic link or junction. Remove the link? What it "
+         "points to is left alone.")
+          .arg(QDir::separator() + file));
 }
 
 void MainWindow::onDelete() {
@@ -1454,14 +1452,17 @@ void MainWindow::addFolder() {
   if (!ok || newdir.isEmpty()) {
     return;
   }
-  newdir.prepend(dir);
+  // Checked and created as one and the same path: the check resolves ".."
+  // lexically, the system after following links, so "link/../x" would pass
+  // as the store's x and be made beside the link's target.
+  newdir = QDir::cleanPath(newdir.prepend(dir));
   if (!confirmPathInStore(newdir)) {
     return;
   }
   // Exists already: an error, as QDir::mkdir() made it before.
   if (QFileInfo::exists(newdir) || !Util::mkpathForStore(newdir)) {
-    QMessageBox::warning(this, tr("Error"),
-                         tr("Failed to create folder: %1").arg(newdir));
+    PlainMessageBox::warning(this, tr("Error"),
+                             tr("Failed to create folder: %1").arg(newdir));
     return;
   }
   // With a signing key, ImitatePass::loadVerifiedRecipients and pass
@@ -1474,7 +1475,7 @@ void MainWindow::addFolder() {
     // that flag is only set in UsersDialog, so it left a zero-byte .gpg-id
     // shadowing the parent's recipients (#1682).
     if (!Pass::seedGpgIdFile(newdir, s.passStore)) {
-      QMessageBox::warning(
+      PlainMessageBox::warning(
           this, tr("Error"),
           tr("Failed to create .gpg-id file in: %1").arg(newdir));
       return;
@@ -1572,25 +1573,24 @@ void MainWindow::showStatusMessage(const QString &msg, int timeout) {
 void MainWindow::reencryptPath(const QString &dir) {
   QDir checkDir(dir);
   if (!checkDir.exists()) {
-    QMessageBox::critical(this, tr("Error"),
-                          tr("Directory does not exist: %1").arg(dir));
+    PlainMessageBox::critical(this, tr("Error"),
+                              tr("Directory does not exist: %1").arg(dir));
     return;
   }
   if (refuseLinkedFolder(dir)) {
     return;
   }
 
-  int ret = QMessageBox::question(
+  const bool yes = PlainMessageBox::askYes(
       this, tr("Re-encrypt passwords"),
       tr("Re-encrypt all passwords in %1?\n\n"
          "This will re-encrypt ALL password files in this folder "
          "using the current recipients defined in .gpg-id.\n\n"
          "This may rewrite many files and cannot be undone easily.\n\n"
          "Continue?")
-          .arg(QDir(dir).dirName()),
-      QMessageBox::Yes | QMessageBox::No);
+          .arg(QDir(dir).dirName()));
 
-  if (ret != QMessageBox::Yes)
+  if (!yes)
     return;
 
   // Disable now; the asynchronous startReencryptPath signal re-runs this
@@ -1671,11 +1671,11 @@ void MainWindow::exportPublicKey() {
   QString stdErr;
   int exitCode = Executor::executeBlocking(gpgExe, args, &stdOut, &stdErr);
   if (exitCode != 0 || stdOut.isEmpty()) {
-    QMessageBox::warning(this, tr("Export public key"),
-                         tr("Could not export public key for %1.\n\n%2")
-                             .arg(identity, stdErr.isEmpty()
-                                                ? tr("No output from gpg.")
-                                                : stdErr));
+    PlainMessageBox::warning(this, tr("Export public key"),
+                             tr("Could not export public key for %1.\n\n%2")
+                                 .arg(identity, stdErr.isEmpty()
+                                                    ? tr("No output from gpg.")
+                                                    : stdErr));
     return;
   }
   ExportPublicKeyDialog dialog(identity, stdOut, this);
@@ -1699,7 +1699,7 @@ auto MainWindow::refuseLinkedFolder(const QString &dir) -> bool {
   if (!Util::isUnderLink(dir, QtPassSettings::load().passStore)) {
     return false;
   }
-  QMessageBox::critical(
+  PlainMessageBox::critical(
       this, tr("Not a folder of the store"),
       tr("%1 is, or lies behind, a symbolic link or junction. What that "
          "points to is not part of the password store and is left alone.")
@@ -1765,7 +1765,8 @@ void MainWindow::enableGitButtons(const bool &state) {
 }
 
 void MainWindow::critical(const QString &title, const QString &msg) {
-  QMessageBox::critical(this, title, msg);
+  // Pass's messages quote store paths; see PlainMessageBox.
+  PlainMessageBox::critical(this, title, msg);
 }
 
 void MainWindow::onProcessOutput(const QString &output, bool isError,

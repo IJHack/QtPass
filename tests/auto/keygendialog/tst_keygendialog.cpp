@@ -55,6 +55,7 @@ private Q_SLOTS:
   void passphraseNeverWrittenToTemplate();
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
+  void applyPassphraseSeesNoProtectionBeforeANul();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
   void applyPassphraseEmptyRestoresNoProtection();
@@ -366,6 +367,22 @@ void tst_keygendialog::templateEditorHiddenUnlessExpert() {
 
   checkBox->setChecked(false);
   QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
+}
+
+/**
+ * @brief gpg reads a parameter line as a C string, so "%no-protection" with
+ * a NUL and anything after it is "%no-protection" to gpg. It must be
+ * replaced by the passphrase all the same, not passed on.
+ */
+void tst_keygendialog::applyPassphraseSeesNoProtectionBeforeANul() {
+  QString batch = QStringLiteral("Key-Type: RSA\n%no-protection");
+  batch += QChar::Null;
+  batch += QStringLiteral("junk\n%commit");
+  const QString result =
+      KeygenDialog::applyPassphrase(batch, QStringLiteral("testkey123"));
+  QCOMPARE(result,
+           QStringLiteral("Key-Type: RSA\nPassphrase: testkey123\n%commit"));
+  QVERIFY(!result.contains(QChar::Null));
 }
 
 void tst_keygendialog::applyPassphraseReplacesNoProtection() {

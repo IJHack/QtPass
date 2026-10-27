@@ -10,6 +10,7 @@
 #include <QStringList>
 
 #include <functional>
+#include <optional>
 
 class QFile;
 class QFileDevice;
@@ -303,6 +304,26 @@ public:
    * @return Whether @p file is open on a regular file.
    */
   static auto openRegularFile(const QString &path, QFile &file) -> bool;
+
+  /**
+   * @brief Most bytes of a .gpg-id QtPass reads.
+   *
+   * A recipient list is a few lines; a shared store's other writers could
+   * otherwise hand it a sparse file of gigabytes to read before the
+   * signature is even checked. Far beyond any real list.
+   */
+  static constexpr qint64 kMaxGpgIdBytes = 1024 * 1024;
+
+  /**
+   * @brief Read @p path whole, as the regular file it is (openRegularFile()),
+   * when it holds at most @p maxBytes.
+   * @param path The file.
+   * @param maxBytes The most bytes accepted.
+   * @return The contents; nothing when the file is missing, not a regular
+   *         file (a link, FIFO or device included), unreadable or larger.
+   */
+  static auto readRegularFile(const QString &path, qint64 maxBytes)
+      -> std::optional<QByteArray>;
 
   /**
    * @brief Fills the temporary of stageFileReplacing() through its open

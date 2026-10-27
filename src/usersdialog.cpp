@@ -90,10 +90,13 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 }
 
 void UsersDialog::showRecipientWarning(const QString &text) {
-  auto *banner = new QLabel(text, this);
+  // Plain text before the text is set: it can quote the store's recipient
+  // list, which as rich text could make Qt load a file (<img src=...>).
+  auto *banner = new QLabel(this);
+  banner->setTextFormat(Qt::PlainText);
+  banner->setText(text);
   banner->setObjectName(QStringLiteral("recipientWarning"));
   banner->setWordWrap(true);
-  banner->setTextFormat(Qt::PlainText);
   // Palette, not a stylesheet colour, so it reads on dark themes too; red as
   // ProcessOutputPanel paints error lines.
   QFont bold = banner->font();

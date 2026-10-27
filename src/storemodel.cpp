@@ -3,6 +3,7 @@
 #include "storemodel.h"
 #include "pass.h"
 #include "pathvalidator.h"
+#include "plainmessagebox.h"
 #include "qtpasslogging.h"
 #include "util.h"
 #include <QApplication>
@@ -285,10 +286,9 @@ auto StoreModel::executeDropAction(const StoreDragItem &info,
     }
     return performDrop(
         cleanedSrc, cleanedDest, action,
-        QMessageBox::question(
+        PlainMessageBox::askYes(
             qobject_cast<QWidget *>(QObject::parent()), tr("Force overwrite?"),
-            tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
-            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes);
+            tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc)));
   default:
     qCWarning(lcQtPass)
         << "executeDropAction: unexpected ItemKind, ignoring drop";

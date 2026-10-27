@@ -89,7 +89,8 @@ public:
    * @brief Sets the most bytes of plaintext decrypt() may produce.
    * @param bytes The limit; kMaxPlaintextBytes until set. A value that is
    * not positive is ignored and the limit stays as it was: there is no
-   * "unlimited".
+   * "unlimited". A value above 4 GiB - 1 is capped to 4 GiB - 1, as RNP
+   * keeps the limit in 32 bits.
    */
   void setMaxPlaintextBytes(qint64 bytes);
 

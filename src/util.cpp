@@ -104,7 +104,10 @@ void Util::applyPassProcessDefaults() {
   // send every commit and push to that repository instead of the store.
   for (const char *variable :
        {"GIT_DIR", "GIT_WORK_TREE", "GIT_NAMESPACE", "GIT_INDEX_FILE",
-        "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR"}) {
+        "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR",
+        // QtPass sets GIT_LITERAL_PATHSPECS for its git; git refuses a
+        // pathspec when one of these is set as well.
+        "GIT_GLOB_PATHSPECS", "GIT_NOGLOB_PATHSPECS", "GIT_ICASE_PATHSPECS"}) {
     qunsetenv(variable);
   }
   Executor::setChildUmask(
@@ -668,6 +671,25 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
   }
   return true;
 #endif
+}
+
+auto Util::readRegularFile(const QString &path, qint64 maxBytes)
+    -> std::optional<QByteArray> {
+  QFile file;
+  if (!openRegularFile(path, file)) {
+    return std::nullopt;
+  }
+  // A regular file's size is reliable, also when sparse: refuse a large one
+  // before reading anything. One byte past the limit still guards a file
+  // that grows meanwhile.
+  if (file.size() > maxBytes) {
+    return std::nullopt;
+  }
+  QByteArray bytes = file.read(maxBytes + 1);
+  if (bytes.size() > maxBytes || file.error() != QFileDevice::NoError) {
+    return std::nullopt;
+  }
+  return bytes;
 }
 
 auto Util::syncToDisk(QFileDevice &file) -> bool {
