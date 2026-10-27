@@ -169,7 +169,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera innehållssökning</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
