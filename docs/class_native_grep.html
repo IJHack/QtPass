@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_native_grep-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">NativeGrep Class Reference</div></div>
 </div><!--header-->
@@ -140,10 +141,23 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5923d0185ca5c7739b00ef8159a11681" id="r_a5923d0185ca5c7739b00ef8159a11681"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a> (const QString &amp;line) -&gt; bool</td></tr>
+<tr class="memdesc:a5923d0185ca5c7739b00ef8159a11681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a line in a result is the marker for "more matches in
+this entry" rather than a match.  <br /></td></tr>
+<tr class="memitem:aa2bfb9a0d2fcdf94150d325e58e988d7" id="r_aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a> (const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</td></tr>
+<tr class="memdesc:aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a result is the marker for "the search stopped at
+kMaxMatches, more entries were not searched".  <br /></td></tr>
 <tr class="memitem:a58e093d9bb7bae2d02fcf9ea7fa0132a" id="r_a58e093d9bb7bae2d02fcf9ea7fa0132a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a58e093d9bb7bae2d02fcf9ea7fa0132a">matchFile</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td></tr>
 <tr class="memdesc:a58e093d9bb7bae2d02fcf9ea7fa0132a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>.  <br /></td></tr>
 <tr class="memitem:ad9b99ac184ab94d539f2937efbf13ed1" id="r_ad9b99ac184ab94d539f2937efbf13ed1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1">scanStore</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td></tr>
 <tr class="memdesc:ad9b99ac184ab94d539f2937efbf13ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walk <code class="param">storeDir</code>, decrypt every .gpg file and collect the matches.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a737ae7b7488d442dc5d2a5ee5dc19482" id="r_a737ae7b7488d442dc5d2a5ee5dc19482"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a> = 100</td></tr>
+<tr class="memdesc:a737ae7b7488d442dc5d2a5ee5dc19482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most matching lines taken from one entry.  <br /></td></tr>
+<tr class="memitem:a566acd70ea61876f0290f3b0ea900f78" id="r_a566acd70ea61876f0290f3b0ea900f78"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> = 10000</td></tr>
+<tr class="memdesc:a566acd70ea61876f0290f3b0ea900f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most matching lines a search collects over the whole store.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Full-text search over a password store without <span class="tt">pass grep</span>: every <span class="tt">.gpg</span> file is decrypted with gpg on a worker thread and its lines matched against a QRegularExpression. Only the newest search may report; a search started while another runs asks that one to stop and supersedes it. </p>
@@ -248,6 +262,80 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5923d0185ca5c7739b00ef8159a11681" name="a5923d0185ca5c7739b00ef8159a11681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5923d0185ca5c7739b00ef8159a11681">&#9670;&#160;</a></span>isMoreMarker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NativeGrep::isMoreMarker </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a line in a result is the marker for "more matches in
+this entry" rather than a match. </p>
+<p>A match is a trimmed, non-empty line, so an empty one can only be the marker, which <a class="el" href="#a58e093d9bb7bae2d02fcf9ea7fa0132a" title="Decrypt one .gpg file and return its trimmed lines matching rx.">matchFile()</a> and <a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> put last. Not a match: not counted, not content to hide. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00061">61</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2bfb9a0d2fcdf94150d325e58e988d7" name="aa2bfb9a0d2fcdf94150d325e58e988d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2bfb9a0d2fcdf94150d325e58e988d7">&#9670;&#160;</a></span>isStoppedMarker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NativeGrep::isStoppedMarker </td>
+          <td>(</td>
+          <td class="paramtype">const QPair&lt; QString, QStringList &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a result is the marker for "the search stopped at
+kMaxMatches, more entries were not searched". </p>
+<p>No entry has an empty name, so a result without one can only be the marker, which <a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> puts last. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>A result. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00075">75</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+
+</div>
+</div>
 <a id="a58e093d9bb7bae2d02fcf9ea7fa0132a" name="a58e093d9bb7bae2d02fcf9ea7fa0132a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58e093d9bb7bae2d02fcf9ea7fa0132a">&#9670;&#160;</a></span>matchFile()</h2>
 
@@ -301,7 +389,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Matching lines; empty when gpg fails, is cancelled or nothing matches. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Matching lines, at most kMaxMatchesPerEntry and then a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>) when there are more; empty when gpg fails, is cancelled or nothing matches. </dd></dl>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -364,7 +452,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>(entry name without .gpg, matching lines) per file with matches; empty when the search is stopped. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>(entry name without .gpg, matching lines) per file with matches, at most kMaxMatches lines in all, an entry cut short ending in a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>); when the walk stopped at that budget with entries left, a last result that is a marker (<a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7" title="Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...">isStoppedMarker()</a>). Empty when the search is stopped. </dd></dl>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
@@ -419,6 +507,61 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a566acd70ea61876f0290f3b0ea900f78" name="a566acd70ea61876f0290f3b0ea900f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a566acd70ea61876f0290f3b0ea900f78">&#9670;&#160;</a></span>kMaxMatches</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NativeGrep::kMaxMatches = 10000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most matching lines a search collects over the whole store. </p>
+<p>The search stops once it has this many; the window says so. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00049">49</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+
+</div>
+</div>
+<a id="a737ae7b7488d442dc5d2a5ee5dc19482" name="a737ae7b7488d442dc5d2a5ee5dc19482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a737ae7b7488d442dc5d2a5ee5dc19482">&#9670;&#160;</a></span>kMaxMatchesPerEntry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NativeGrep::kMaxMatchesPerEntry = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most matching lines taken from one entry. </p>
+<p>A compressed entry can expand into millions of lines within the plaintext limit, each a result and a row in the results list; past this many, the entry gets one line saying there are more. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00042">42</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>

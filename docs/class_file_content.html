@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_file_content-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">FileContent Class Reference</div></div>
 </div><!--header-->
@@ -117,17 +118,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a845c61a8c0f52e5aa73953c9162dd47d" id="r_a845c61a8c0f52e5aa73953c9162dd47d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a> () const -&gt; QString</td></tr>
 <tr class="memitem:ac38b9c211d6f62eb7420eecc66f935e8" id="r_ac38b9c211d6f62eb7420eecc66f935e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a> () const -&gt; QString</td></tr>
 <tr class="memdesc:ac38b9c211d6f62eb7420eecc66f935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getRemainingData but without data that should not be displayed (like a TOTP secret).  <br /></td></tr>
+<tr class="memitem:a58c11b05ff5987b86b38ef63098a53ee" id="r_a58c11b05ff5987b86b38ef63098a53ee"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a58c11b05ff5987b86b38ef63098a53ee">getRemainingLineCount</a> () const -&gt; qsizetype</td></tr>
+<tr class="memdesc:a58c11b05ff5987b86b38ef63098a53ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many lines <a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData()</a> holds.  <br /></td></tr>
 <tr class="memitem:ad196088dd0d816ee3c1311a4448940d2" id="r_ad196088dd0d816ee3c1311a4448940d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a> () const -&gt; QString</td></tr>
 <tr class="memdesc:ad196088dd0d816ee3c1311a4448940d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entry's raw one-time password configuration, if it has one.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad19ad6d4d081ae47e5206e675cb7dd54" id="r_ad19ad6d4d081ae47e5206e675cb7dd54"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad19ad6d4d081ae47e5206e675cb7dd54">boundedForDisplay</a> (const QString &amp;text) -&gt; QString</td></tr>
+<tr class="memdesc:ad19ad6d4d081ae47e5206e675cb7dd54"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">text</code> cut to kMaxDisplayLines lines, as <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> is: for showing an entry as it is (displayAsIs).  <br /></td></tr>
 <tr class="memitem:af8c5c3b19e2f1244c5e83aa40521ebde" id="r_af8c5c3b19e2f1244c5e83aa40521ebde"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
 <tr class="memdesc:af8c5c3b19e2f1244c5e83aa40521ebde"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depending on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
 <tr class="memitem:affff8612aceb9006d8b7117e2a6ef70a" id="r_affff8612aceb9006d8b7117e2a6ef70a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a> (const QString &amp;name) -&gt; bool</td></tr>
 <tr class="memdesc:affff8612aceb9006d8b7117e2a6ef70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name designates the one-time password field.  <br /></td></tr>
 <tr class="memitem:a92629a218b9fce0c611d9ac1e1eca638" id="r_a92629a218b9fce0c611d9ac1e1eca638"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a> (const QString &amp;value) -&gt; bool</td></tr>
 <tr class="memdesc:a92629a218b9fce0c611d9ac1e1eca638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field value is an otpauth URI, and therefore a secret.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a8f40336c23a584d3429013f4e16fe1b8" id="r_a8f40336c23a584d3429013f4e16fe1b8"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a> = 1000</td></tr>
+<tr class="memdesc:a8f40336c23a584d3429013f4e16fe1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most named fields <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry.  <br /></td></tr>
+<tr class="memitem:a803a9d95b4a7575124f3ed141c7d6365" id="r_a803a9d95b4a7575124f3ed141c7d6365"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a> = 10000</td></tr>
+<tr class="memdesc:a803a9d95b4a7575124f3ed141c7d6365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most lines of remaining text <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> gives.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the parsed contents of a password file. </p>
@@ -135,6 +147,40 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00057">57</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ad19ad6d4d081ae47e5206e675cb7dd54" name="ad19ad6d4d081ae47e5206e675cb7dd54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad19ad6d4d081ae47e5206e675cb7dd54">&#9670;&#160;</a></span>boundedForDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::boundedForDisplay </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code class="param">text</code> cut to kMaxDisplayLines lines, as <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> is: for showing an entry as it is (displayAsIs). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text to show. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="param">text</code> when it is short enough, else its first kMaxDisplayLines lines and one saying how many more there are. </dd></dl>
+
+</div>
+</div>
 <a id="a89393e371a598cb3e0d7d149dbc431b1" name="a89393e371a598cb3e0d7d149dbc431b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89393e371a598cb3e0d7d149dbc431b1">&#9670;&#160;</a></span>getNamedValues()</h2>
 
@@ -362,6 +408,46 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a58c11b05ff5987b86b38ef63098a53ee" name="a58c11b05ff5987b86b38ef63098a53ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58c11b05ff5987b86b38ef63098a53ee">&#9670;&#160;</a></span>getRemainingLineCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::getRemainingLineCount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt;  qsizetype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How many lines <a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData()</a> holds. </p>
+<dl class="section return"><dt>Returns</dt><dd>The line count; 0 when there is no remaining text. </dd></dl>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a58c11b05ff5987b86b38ef63098a53ee_cgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a58c11b05ff5987b86b38ef63098a53ee_icgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="affff8612aceb9006d8b7117e2a6ef70a" name="affff8612aceb9006d8b7117e2a6ef70a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#affff8612aceb9006d8b7117e2a6ef70a">&#9670;&#160;</a></span>isOtpFieldName()</h2>
 
@@ -393,16 +479,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for "OTP" or "TOTP", compared case-insensitively. </dd></dl>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_affff8612aceb9006d8b7117e2a6ef70a_cgraph.svg" width="219" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_affff8612aceb9006d8b7117e2a6ef70a_icgraph.svg" width="219" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -439,16 +525,16 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when it starts with "otpauth://", compared case-insensitively. </dd></dl>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a92629a218b9fce0c611d9ac1e1eca638_cgraph.svg" width="204" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a92629a218b9fce0c611d9ac1e1eca638_icgraph.svg" width="204" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -496,6 +582,61 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> instance with password, named values, and remaining data populated from the parsed input. </dd></dl>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a803a9d95b4a7575124f3ed141c7d6365" name="a803a9d95b4a7575124f3ed141c7d6365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a803a9d95b4a7575124f3ed141c7d6365">&#9670;&#160;</a></span>kMaxDisplayLines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileContent::kMaxDisplayLines = 10000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most lines of remaining text <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> gives. </p>
+<p>The text browser makes a block, with its layout, per line. Past this many the display text ends with one line saying how many more there are; <a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData()</a> keeps them all, so saving loses nothing. </p>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00077">77</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+
+</div>
+</div>
+<a id="a8f40336c23a584d3429013f4e16fe1b8" name="a8f40336c23a584d3429013f4e16fe1b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f40336c23a584d3429013f4e16fe1b8">&#9670;&#160;</a></span>kMaxNamedFields</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FileContent::kMaxNamedFields = 1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most named fields <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry. </p>
+<p>Every field becomes a row of widgets in the display panel. An entry is compressed before it is encrypted, so a small one in a shared store could decompress into millions of "a: b" lines within the plaintext limit; lines past this many fields stay in the remaining text. They are still looked at for an OTP configuration, as fields would be. </p>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00068">68</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
