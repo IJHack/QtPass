@@ -60,6 +60,11 @@ public:
      * a GnuPG stub (a key left at home, or on a smartcard) does not count.
      */
     bool hasSecret = false;
+    /**
+     * @brief Whether every secret part of it that is here is protected by a
+     * passphrase; true when none is here.
+     */
+    bool secretProtected = true;
     /** @brief Whether a message can be encrypted to it now. */
     bool canEncrypt = false;
     /** @brief Whether it can sign now, with a secret key that is here. */
@@ -82,6 +87,15 @@ public:
    * memory. The same limit QtPass gives gpg (--max-output).
    */
   static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;
+
+  /**
+   * @brief Most bytes of a keyring file: saveKeyring() writes no larger one,
+   * loadKeyring() reads no larger one.
+   *
+   * Far beyond a keyring of a few hundred keys; a file larger than this is
+   * not read at all.
+   */
+  static constexpr qint64 kMaxKeyringBytes = 64LL * 1024 * 1024;
 
   /**
    * @brief Creates an empty keyring.
@@ -202,6 +216,55 @@ public:
    */
   auto verify(const QByteArray &data, const QByteArray &signature,
               QString *error = nullptr) -> QStringList;
+
+  /**
+   * @brief Protects the secret parts of a key with @p passphrase.
+   *
+   * For a key imported without protection: saveKeyring() keeps secret keys
+   * on disk only protected by their own passphrase. Only the parts not yet
+   * protected get @p passphrase, so a key left half protected can be
+   * finished; the others keep theirs (no passphrase is changed here). A key
+   * all of whose secret parts are protected already is an error.
+   * @param fingerprint The primary key's fingerprint.
+   * @param passphrase The passphrase; not empty.
+   * @param error Set to the reason when not every part ended up protected.
+   * @return Whether every secret part of the key here is now protected.
+   */
+  auto protectKey(const QString &fingerprint, const QString &passphrase,
+                  QString *error = nullptr) -> bool;
+
+  /**
+   * @brief Writes the keyring to @p dir: keyring.gpg, public and secret
+   * keys in one file (OpenPGP keys, as GnuPG 1 kept them), owner-only and
+   * replaced whole, so a reader sees the old keyring or the new one.
+   *
+   * Secret keys are written as they are held: protected by their own
+   * passphrase, never decrypted for this. A secret key without protection is
+   * refused (nothing is written) unless @p allowUnprotected, the user's
+   * explicit consent; protectKey() first is the other way.
+   * @param dir The keyring folder, created owner-only if missing; QtPass's
+   * own, never ~/.gnupg.
+   * @param allowUnprotected Write unprotected secret keys as well.
+   * @param error Set to the reason when nothing was written, naming the
+   * first unprotected key.
+   * @return Whether the keyring was written; false, and nothing written,
+   * also when it would be larger than loadKeyring() reads.
+   */
+  auto saveKeyring(const QString &dir, bool allowUnprotected = false,
+                   QString *error = nullptr) const -> bool;
+
+  /**
+   * @brief Adds the keyring in @p dir (as saveKeyring() wrote it) to this
+   * one. Secret keys stay protected until an operation needs them.
+   *
+   * keyring.gpg is read as a regular file, not through a link, and only up
+   * to kMaxKeyringBytes. A missing or empty file is an empty keyring, not an
+   * error.
+   * @param dir The keyring folder.
+   * @param error Set to the reason when loading fails.
+   * @return Whether the keyring loaded (or there was none).
+   */
+  auto loadKeyring(const QString &dir, QString *error = nullptr) -> bool;
 
 private:
   rnp_ffi_st *m_ffi = nullptr;

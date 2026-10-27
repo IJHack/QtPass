@@ -1,7 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "rnpcrypto.h"
+#include "util.h"
 
+#include <QDir>
+#include <QFileInfo>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -147,6 +150,45 @@ auto secretIsHere(rnp_key_handle_t key) -> bool {
   return protection != QLatin1String("GPG-None") &&
          protection != QLatin1String("GPG-Smartcard") &&
          protection != QLatin1String("Unknown");
+}
+
+auto isProtected(rnp_key_handle_t key) -> bool {
+  bool locked = false;
+  return rnp_key_is_protected(key, &locked) == RNP_SUCCESS && locked;
+}
+
+/**
+ * Calls @p visit with each secret part of the primary @p key that is here
+ * (secretIsHere()): the primary itself, then its subkeys. Stops when it
+ * returns false.
+ * @return How many parts were visited.
+ */
+template <typename Visit>
+auto forEachSecretPart(rnp_key_handle_t key, Visit visit) -> int {
+  int visited = 0;
+  if (secretIsHere(key)) {
+    ++visited;
+    if (!visit(key)) {
+      return visited;
+    }
+  }
+  size_t subkeys = 0;
+  rnp_key_get_subkey_count(key, &subkeys);
+  for (size_t i = 0; i < subkeys; ++i) {
+    rnp_key_handle_t handle = nullptr;
+    if (rnp_key_get_subkey_at(key, i, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
+      continue;
+    }
+    const Key subkey(handle);
+    if (secretIsHere(handle)) {
+      ++visited;
+      if (!visit(handle)) {
+        return visited;
+      }
+    }
+  }
+  return visited;
 }
 
 /**
@@ -725,17 +767,11 @@ auto RnpCrypto::listKeys(bool secretOnly) const -> QList<KeyInfo> {
     info.expired =
         rnp_key_is_expired(handle, &expired) == RNP_SUCCESS && expired;
     // A secret part may be a subkey's only (gpg --export-secret-subkeys).
-    info.hasSecret = secretIsHere(handle);
-    size_t subkeys = 0;
-    rnp_key_get_subkey_count(handle, &subkeys);
-    for (size_t i = 0; i < subkeys && !info.hasSecret; ++i) {
-      rnp_key_handle_t sub = nullptr;
-      if (rnp_key_get_subkey_at(handle, i, &sub) == RNP_SUCCESS &&
-          sub != nullptr) {
-        const Key subkey(sub);
-        info.hasSecret = secretIsHere(sub);
-      }
-    }
+    info.hasSecret = forEachSecretPart(handle, [&info](rnp_key_handle_t part) {
+                       info.secretProtected =
+                           info.secretProtected && isProtected(part);
+                       return true;
+                     }) > 0;
     info.canEncrypt = canEncryptTo(handle);
     info.canSign = signingKeyOf(handle) != nullptr;
     if (!secretOnly || info.hasSecret) {
@@ -849,4 +885,168 @@ auto RnpCrypto::verify(const QByteArray &data, const QByteArray &signature,
   setError(error, result != RNP_SUCCESS ? rnpError("No valid signature", result)
                                         : QStringLiteral("No valid signature"));
   return {};
+}
+
+auto RnpCrypto::protectKey(const QString &fingerprint,
+                           const QString &passphrase, QString *error) -> bool {
+  if (m_ffi == nullptr) {
+    setError(error, QStringLiteral("RNP is not available"));
+    return false;
+  }
+  if (passphrase.isEmpty()) {
+    setError(error, QStringLiteral("An empty passphrase protects nothing"));
+    return false;
+  }
+  rnp_key_handle_t handle = nullptr;
+  rnp_locate_key(m_ffi, "fingerprint",
+                 fingerprint.toUpper().toLatin1().constData(), &handle);
+  const Key key(handle);
+  // Every part that is still unprotected gets the passphrase; the ones that
+  // are protected keep theirs. So a key left half protected (an imported
+  // one, or a run that failed part-way) can be finished, rather than only
+  // saved with consent, unprotected parts and all.
+  int unprotected = 0;
+  const int parts =
+      handle == nullptr
+          ? 0
+          : forEachSecretPart(handle, [&unprotected](rnp_key_handle_t part) {
+              unprotected += isProtected(part) ? 0 : 1;
+              return true;
+            });
+  if (parts == 0) {
+    setError(error, QStringLiteral("No secret key for %1").arg(fingerprint));
+    return false;
+  }
+  if (unprotected == 0) {
+    setError(error,
+             QStringLiteral("The secret key %1 is protected already; its "
+                            "passphrase is not changed here")
+                 .arg(fingerprint));
+    return false;
+  }
+  QByteArray secret = passphrase.toUtf8();
+  bool ok = true;
+  forEachSecretPart(handle, [&](rnp_key_handle_t part) {
+    if (isProtected(part)) {
+      return true;
+    }
+    // RNP's defaults: AES-256 and a SHA-256 S2K with its iteration count.
+    const rnp_result_t result =
+        rnp_key_protect(part, secret.constData(), nullptr, nullptr, nullptr, 0);
+    if (result != RNP_SUCCESS) {
+      setError(
+          error,
+          rnpError(QStringLiteral("Cannot protect %1").arg(fingerprintOf(part)),
+                   result));
+      ok = false;
+    }
+    return ok;
+  });
+  secret.fill('\0');
+  return ok;
+}
+
+auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
+                            QString *error) const -> bool {
+  if (m_ffi == nullptr) {
+    setError(error, QStringLiteral("RNP is not available"));
+    return false;
+  }
+  // Checked before anything is written: a secret key goes to disk only
+  // protected by its own passphrase, unless the user said otherwise.
+  if (!allowUnprotected) {
+    for (const KeyInfo &key : listKeys(true)) {
+      if (!key.secretProtected) {
+        setError(error, QStringLiteral("The secret key %1 is not protected "
+                                       "by a passphrase")
+                            .arg(key.fingerprint));
+        return false;
+      }
+    }
+  }
+  // One file with public and secret keys, replaced whole: two files could
+  // not be swapped together, and a save failing between them would leave a
+  // new public ring next to an old secret one, which the next load would
+  // combine (a secret key removed since back in). RNP refuses to save an
+  // empty set; an empty file says the same.
+  std::optional<QByteArray> ring = QByteArray();
+  if (!listKeys().isEmpty()) {
+    Output output = memoryOutput(error, "Cannot save the keyring");
+    if (!output) {
+      return false;
+    }
+    const rnp_result_t result =
+        rnp_save_keys(m_ffi, "GPG", output.get(),
+                      RNP_LOAD_SAVE_PUBLIC_KEYS | RNP_LOAD_SAVE_SECRET_KEYS);
+    if (result != RNP_SUCCESS) {
+      setError(error, rnpError("Cannot save the keyring", result));
+      return false;
+    }
+    ring = outputBytes(output.get());
+    if (!ring) {
+      setError(error, QStringLiteral("Cannot save the keyring: no output"));
+      return false;
+    }
+  }
+  // What loadKeyring() would not read back is not written.
+  if (ring->size() > kMaxKeyringBytes) {
+    setError(error, QStringLiteral("The keyring is larger than %1 bytes")
+                        .arg(kMaxKeyringBytes));
+    return false;
+  }
+  // QtPass's own folder, owner-only whatever the umask, also when it
+  // existed already.
+  if (!QDir().mkpath(dir) ||
+      !QFile::setPermissions(dir, QFile::ReadOwner | QFile::WriteOwner |
+                                      QFile::ExeOwner)) {
+    setError(error, QStringLiteral("Cannot create %1").arg(dir));
+    return false;
+  }
+  // Staged and replaced whole (owner-only), as an entry is written: a
+  // reader sees the old keyring or the new one, never a mix.
+  QString why;
+  if (!Util::writeFileReplacing(
+          QDir(dir).filePath(QStringLiteral("keyring.gpg")), *ring, true,
+          &why)) {
+    setError(error, QStringLiteral("Cannot write the keyring: %1").arg(why));
+    return false;
+  }
+  return true;
+}
+
+auto RnpCrypto::loadKeyring(const QString &dir, QString *error) -> bool {
+  if (m_ffi == nullptr) {
+    setError(error, QStringLiteral("RNP is not available"));
+    return false;
+  }
+  const QString path = QDir(dir).filePath(QStringLiteral("keyring.gpg"));
+  const QFileInfo info(path);
+  if (!info.exists() && !info.isSymLink()) {
+    return true; // no keyring yet
+  }
+  const std::optional<QByteArray> bytes =
+      Util::readRegularFile(path, kMaxKeyringBytes);
+  if (!bytes) {
+    setError(error, QStringLiteral("Cannot read %1 as a keyring (a regular "
+                                   "file of at most %2 bytes)")
+                        .arg(path)
+                        .arg(kMaxKeyringBytes));
+    return false;
+  }
+  if (bytes->isEmpty()) {
+    return true; // saved without keys
+  }
+  Input input = memoryInput(*bytes, error, "Cannot read the keyring");
+  if (!input) {
+    return false;
+  }
+  const rnp_result_t result =
+      rnp_load_keys(m_ffi, "GPG", input.get(),
+                    RNP_LOAD_SAVE_PUBLIC_KEYS | RNP_LOAD_SAVE_SECRET_KEYS);
+  if (result != RNP_SUCCESS) {
+    setError(error,
+             rnpError(QStringLiteral("Cannot load %1").arg(path), result));
+    return false;
+  }
+  return true;
 }
