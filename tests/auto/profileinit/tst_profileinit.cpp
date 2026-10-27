@@ -35,6 +35,7 @@ private Q_SLOTS:
   void initialiseCommitsUnderGit();
   void initialiseWarnsAboutExistingEntries();
   void initialiseCountsEntriesInSubfolders();
+  void initialiseSignsInTheConfiguredGpgHome();
   void initialiseLeavesNoHalfWrittenGpgId();
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
   void initialiseRefusesWhenNoGenerationCanBeReserved();
@@ -98,6 +99,48 @@ auto tst_profileinit::signingGpg(const QString &signedLog,
              "exit 0\n")
       .arg(signedLog, signer)
       .toUtf8();
+}
+
+/**
+ * @brief The new store's .gpg-id is signed in the configured GPG home, as
+ * every other gpg call of QtPass runs (Pass::init), not the default one:
+ * the signing key may live only there. A home that does not exist leaves
+ * the inherited GNUPGHOME alone, as there.
+ */
+void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir base;
+  QVERIFY(base.isValid());
+  const QString homeLog = QDir(base.path()).filePath(QStringLiteral("home"));
+  const QString fakeGpg = QDir(base.path()).filePath(QStringLiteral("gpg"));
+  QVERIFY(writeScript(
+      fakeGpg,
+      "printf '%s\\n' \"$GNUPGHOME\" >> '" + QFile::encodeName(homeLog) +
+          "'\n" +
+          signingGpg(QDir(base.path()).filePath(QStringLiteral("signed")),
+                     kSigningKey)));
+  const QString gpgHome = QDir(base.path()).filePath(QStringLiteral("gnupg"));
+  QVERIFY(QDir().mkpath(gpgHome));
+  AppSettings s;
+  s.gpgExecutable = fakeGpg;
+  s.passSigningKey = kSigningKey;
+  s.gpgHome = gpgHome;
+  QString note;
+  QVERIFY2(ProfileInit::initialise(
+               QDir(base.path()).filePath(QStringLiteral("store")), twoUsers(),
+               s, false, &note),
+           qPrintable(note));
+  QFile log(homeLog);
+  QVERIFY(log.open(QIODevice::ReadOnly));
+  const QStringList homes =
+      QString::fromUtf8(log.readAll()).split('\n', Qt::SkipEmptyParts);
+  QVERIFY2(!homes.isEmpty(), "gpg must have run");
+  for (const QString &home : homes) {
+    QCOMPARE(home, QDir(gpgHome).absolutePath());
+  }
+#endif
 }
 
 auto tst_profileinit::gitSettings() -> AppSettings {

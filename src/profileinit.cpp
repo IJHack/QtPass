@@ -15,6 +15,23 @@
 #include <algorithm>
 
 namespace {
+/// @p env with the configured GPG home applied as Pass::init() applies it:
+/// GNUPGHOME is that folder when it exists; otherwise the inherited one
+/// stays. The new store's .gpg-id is signed, and a signed commit made, with
+/// the keyring QtPass uses everywhere else, where the signing key may be
+/// the only place it is.
+auto withGpgHome(QProcessEnvironment env, const AppSettings &s)
+    -> QProcessEnvironment {
+  if (!s.gpgHome.isEmpty()) {
+    QDir home(s.gpgHome);
+    home.makeAbsolute();
+    if (home.exists()) {
+      env.insert(QStringLiteral("GNUPGHOME"), home.path());
+    }
+  }
+  return env;
+}
+
 /// As Pass::updateEnv() sets it for the active store: git in @p dir does not
 /// look above it, so neither the identity check nor a commit reads or uses a
 /// repository the new store merely lies in (a dotfiles one in the home
@@ -22,7 +39,8 @@ namespace {
 /// patterns.
 auto gitEnvironment(const QString &dir, const AppSettings &s)
     -> QProcessEnvironment {
-  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  QProcessEnvironment env =
+      withGpgHome(QProcessEnvironment::systemEnvironment(), s);
   // As for the active store: the paths handed to git are names, not
   // patterns (see Pass::updateEnv()).
   env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
@@ -174,8 +192,17 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
 auto ProfileInit::signGpgId(const QString &gpgIdFile,
                             const QByteArray &contents, const AppSettings &s,
                             QString *note) -> bool {
-  const GpgIdSigner signer(s.gpgExecutable,
-                           GpgIdSigner::keysFromSetting(s.passSigningKey));
+  // In the configured GPG home, as ImitatePass's signer runs in the store's
+  // environment.
+  const GpgIdSigner signer(
+      s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),
+      [&s](const QString &app, const QStringList &args, const QString &input,
+           QString *out, QString *err) {
+        QProcess gpg;
+        gpg.setProcessEnvironment(
+            withGpgHome(QProcessEnvironment::systemEnvironment(), s));
+        return Executor::executeBlocking(gpg, app, args, input, out, err);
+      });
   QString err;
   if (!signer.sign(gpgIdFile, contents, &err)) {
     *note = err.trimmed().isEmpty()
