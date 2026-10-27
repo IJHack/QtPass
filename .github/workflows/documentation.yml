@@ -199,7 +199,11 @@ jobs:
           files: "tests/auto/*/qtpass.junit.xml"
           report_type: test_results
           use_pypi: true
-          fail_ci_if_error: true
+          # Informational, as the coverage upload above: with use_pypi the
+          # action builds test-results-parser from source, and a new runner
+          # Python (3.15, beyond what its PyO3 supports) failed every PR
+          # whose tests had all passed.
+          fail_ci_if_error: false
 
       - name: Upload coverage to Coveralls
         if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
