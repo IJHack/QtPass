@@ -70,7 +70,8 @@ public:
 
   /**
    * @brief Whether a process's output may carry secrets and must never
-   *        reach this long-lived panel (pass show, pass grep, pass insert).
+   *        reach this long-lived panel (pass show, pass insert; pass grep,
+   *        should it ever run again).
    * @param pid Process identifier.
    * @return true when the output must be dropped.
    */

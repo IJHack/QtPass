@@ -203,7 +203,7 @@ public:
    */
   static auto isUseGit(const bool &defaultValue = QVariant().toBool()) -> bool;
   /**
-   * @brief Check whether content search (pass grep) is enabled.
+   * @brief Check whether content search is enabled.
    * @param defaultValue Value returned if not saved (defaults to false).
    * @return True if grep search is enabled.
    */

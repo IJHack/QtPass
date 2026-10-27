@@ -50,7 +50,9 @@ enum PROCESS {
   PASS_COPY,     /**< Copy password file */
   GIT_MOVE,      /**< Git move/rename */
   GIT_COPY,      /**< Git copy */
-  PASS_GREP,     /**< Search inside password content */
+  PASS_GREP,     /**< Not started any more (content search runs in-process,
+                      NativeGrep); kept for the process-name table and the
+                      checks that keep its output out of the panel */
   PROCESS_COUNT, /**< Total number of process types */
   INVALID        /**< Invalid/unknown process */
 };

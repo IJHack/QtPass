@@ -220,7 +220,7 @@
                   <item>
                    <widget class="QCheckBox" name="checkBoxUseGrepSearch">
                     <property name="text">
-                     <string>Enable content search (pass grep)</string>
+                     <string>Enable content search</string>
                     </property>
                     <property name="toolTip">
                      <string>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</string>

@@ -174,19 +174,11 @@ public:
   /**
    * @brief Search password content for a pattern.
    *
-   * @warning The regular-expression dialect is **backend-dependent**, so the
-   * same pattern can match differently depending on the configured backend:
-   * - RealPass shells out to `pass grep`, which uses **POSIX BRE** (GNU grep
-   *   default): e.g. `+`, `?`, `|`, `()` are literal unless backslash-escaped.
-   * - ImitatePass evaluates the pattern with `QRegularExpression`, which is
-   *   **PCRE**-style: those metacharacters are special without escaping.
+   * Both backends decrypt each entry with gpg and match it in-process
+   * (NativeGrep), never through `pass grep`, so the pattern is one dialect
+   * for both: QRegularExpression, Perl-compatible (PCRE).
    *
-   * This Liskov wart is documented rather than papered over: a reliable
-   * BRE↔PCRE translation is intractable and `grep -P` is unavailable on
-   * macOS/BSD. Keep patterns to the common subset (literals, anchors `^`/`$`,
-   * `.`, `*`, bracket classes) for backend-independent results.
-   *
-   * @param pattern Search pattern (regular expression; see dialect note).
+   * @param pattern Search pattern, a Perl-compatible regular expression.
    * @param caseInsensitive true for case-insensitive search.
    */
   virtual void Grep(QString pattern, bool caseInsensitive) = 0;
