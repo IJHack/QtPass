@@ -9,6 +9,7 @@
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
+#include <QStringTokenizer>
 #include <QThread>
 #include <utility>
 
@@ -52,14 +53,20 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
       QString(), &plaintext, nullptr, cancel);
   if (rc != 0 || plaintext.isEmpty())
     return {};
+  // Line by line over the text, never a list of every line (a compressed
+  // entry can expand into tens of millions), and a bounded number taken.
   QStringList matches;
-  for (const QString &line : plaintext.split('\n')) {
-    QString candidate = line;
-    if (candidate.endsWith('\r'))
-      candidate.chop(1);
-    const QString t = candidate.trimmed();
-    if (!t.isEmpty() && candidate.contains(rx))
-      matches << t;
+  for (QStringView line : QStringView(plaintext).tokenize(u'\n')) {
+    if (line.endsWith(u'\r'))
+      line.chop(1);
+    const QStringView t = line.trimmed();
+    if (t.isEmpty() || !rx.matchView(line).hasMatch())
+      continue;
+    if (matches.size() == kMaxMatchesPerEntry) {
+      matches << tr("… more matches in this entry");
+      break;
+    }
+    matches << t.toString();
   }
   return matches;
 }
@@ -73,6 +80,7 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
                            const std::atomic_bool *cancel)
     -> QList<QPair<QString, QStringList>> {
   QList<QPair<QString, QStringList>> results;
+  int total = 0;
   // Regular files only: a link or junction is not an entry, and searching
   // through one would decrypt files outside the store.
   const QStringList files =
@@ -81,12 +89,17 @@ auto NativeGrep::scanStore(const QProcessEnvironment &env,
     if (QThread::currentThread()->isInterruptionRequested() ||
         (cancel != nullptr && cancel->load()))
       return {};
-    const QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
+    QStringList matches = matchFile(env, gpgExe, filePath, rx, cancel);
     if (!matches.isEmpty()) {
+      // The store-wide budget: take what still fits, then stop the walk.
+      matches = matches.mid(0, kMaxMatches - total);
+      total += static_cast<int>(matches.size());
       QString entry = QDir(storeDir).relativeFilePath(filePath);
       if (entry.endsWith(QLatin1String(".gpg")))
         entry.chop(4);
       results.append({entry, matches});
+      if (total >= kMaxMatches)
+        break;
     }
   }
   return results;

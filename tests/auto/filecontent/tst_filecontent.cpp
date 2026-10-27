@@ -9,6 +9,8 @@ class tst_filecontent : public QObject {
 
 private Q_SLOTS:
   void parsePlainPassword();
+  void parseTakesABoundedNumberOfFields();
+  void parseKeepsEmptyLinesAsSplitDid();
   void parsePasswordWithNamedFields();
   void parseWithTemplateFields();
   void parseWithAllFields();
@@ -59,6 +61,45 @@ private Q_SLOTS:
   void isOtpUriValueMatchesScheme_data();
   void isOtpUriValueMatchesScheme();
 };
+
+/**
+ * @brief Every named field becomes a row of widgets. A compressed entry in
+ * a shared store can expand into millions of "a: b" lines within the
+ * plaintext limit: past kMaxNamedFields they stay text.
+ */
+void tst_filecontent::parseTakesABoundedNumberOfFields() {
+  QString content = QStringLiteral("pw");
+  const int lines = FileContent::kMaxNamedFields + 5;
+  for (int i = 0; i < lines; ++i) {
+    content += QStringLiteral("\nf%1: v").arg(i);
+  }
+  const FileContent fc = FileContent::parse(content, {}, true);
+  QCOMPARE(fc.getPassword(), QStringLiteral("pw"));
+  QCOMPARE(fc.getNamedValues().size(), FileContent::kMaxNamedFields);
+  QCOMPARE(fc.getRemainingData(),
+           QStringLiteral("f%1: v\nf%2: v\nf%3: v\nf%4: v\nf%5: v")
+               .arg(lines - 5)
+               .arg(lines - 4)
+               .arg(lines - 3)
+               .arg(lines - 2)
+               .arg(lines - 1));
+}
+
+/**
+ * @brief Read line by line now rather than split into a list: empty lines,
+ * a trailing newline and an empty entry come out as split() and join() made
+ * them.
+ */
+void tst_filecontent::parseKeepsEmptyLinesAsSplitDid() {
+  const FileContent empty = FileContent::parse(QString(), {}, false);
+  QCOMPARE(empty.getPassword(), QString());
+  QCOMPARE(empty.getRemainingData(), QString());
+  const FileContent fc =
+      FileContent::parse(QStringLiteral("pw\n\nnote\n\n"), {}, false);
+  QCOMPARE(fc.getPassword(), QStringLiteral("pw"));
+  QCOMPARE(fc.getRemainingData(), QStringLiteral("\nnote\n\n"));
+  QCOMPARE(fc.getRemainingDataForDisplay(), QStringLiteral("\nnote\n\n"));
+}
 
 void tst_filecontent::parsePlainPassword() {
   QString content = "my_secret_password";

@@ -57,6 +57,16 @@ public:
 class FileContent {
 public:
   /**
+   * @brief Most named fields parse() takes from one entry.
+   *
+   * Every field becomes a row of widgets in the display panel. An entry is
+   * compressed before it is encrypted, so a small one in a shared store
+   * could decompress into millions of "a: b" lines within the plaintext
+   * limit; lines past this many fields stay in the remaining text.
+   */
+  static constexpr int kMaxNamedFields = 1000;
+
+  /**
    * @brief parse parses the given fileContent in a FileContent object.
    * The password is accessible through getPassword.
    * The named value pairs (name: value) are parsed and depending on the

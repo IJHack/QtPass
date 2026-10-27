@@ -11,6 +11,7 @@
 #include "filecontent.h"
 #include "firstrunwizard.h"
 #include "menubarpeek.h"
+#include "nativegrep.h"
 #include "passworddialog.h"
 #include "passworddisplaypanel.h"
 #include "pathvalidator.h"
@@ -921,10 +922,19 @@ void MainWindow::onGrepFinished(
   ui->grepResultsList->expandAll();
   ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
-  ui->statusBar->showMessage(
-      tr("Found %n match(es)", nullptr, totalLines) + " " +
-          tr("in %n entr(ies).", nullptr, static_cast<int>(results.size())),
-      3000);
+  if (totalLines >= NativeGrep::kMaxMatches) {
+    // The search stopped there; more entries may match.
+    ui->statusBar->showMessage(
+        tr("Showing the first %n match(es); search for something narrower "
+           "to see the rest.",
+           nullptr, totalLines),
+        10000);
+  } else {
+    ui->statusBar->showMessage(
+        tr("Found %n match(es)", nullptr, totalLines) + " " +
+            tr("in %n entr(ies).", nullptr, static_cast<int>(results.size())),
+        3000);
+  }
   if (s.useAutoclearPanel)
     clearPanelTimer.start();
 }

@@ -91,6 +91,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- An entry that decompresses into millions of lines no longer exhausts
+  memory below the 64 MiB plaintext limit. Showing one read every line into
+  a list of its own (gigabytes for an entry of newlines) and made a row of
+  widgets for every field; it is now read line by line and takes at most
+  1000 fields, the rest staying text. Content search takes at most 100
+  matching lines from one entry and 10000 in all, and says when it stopped.
 - A recipient list signed by a revoked signing key no longer verifies. gpg
   reports such a signature as `REVKEYSIG` but still prints `VALIDSIG` and
   succeeds, and QtPass read only the latter, so a signing key revoked after
