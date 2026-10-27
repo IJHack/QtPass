@@ -11,7 +11,7 @@
 #include "ui_passworddialog.h"
 #include "util.h"
 #include <algorithm>
-#include <climits>
+#include <limits>
 
 #include <QAction>
 #include <QCheckBox>
@@ -701,11 +701,18 @@ void PasswordDialog::setPass(const QString &output, const QString &file) {
   // An editor block per line: an entry of millions of lines (a small,
   // compressed one in a shared store can be one) would take QtPass down.
   // Not loaded at all, so nothing can be saved over it from here either.
-  if (const qsizetype lines = output.count(QLatin1Char('\n')) + 1;
+  // Counted as an editor of the whole entry would hold it: the final
+  // newline pass and QtPass write ends the last line, it starts no new one.
+  // Password and fields count too, so this is stricter than the display's
+  // limit on the remaining text alone.
+  if (const qsizetype lines =
+          output.count(QLatin1Char('\n')) +
+          (output.isEmpty() || output.endsWith(QLatin1Char('\n')) ? 0 : 1);
       lines > FileContent::kMaxDisplayLines) {
     ui->statusLabel->setText(
         tr("This entry has %n line(s), too many to edit here.", nullptr,
-           static_cast<int>(std::min<qsizetype>(lines, INT_MAX))));
+           static_cast<int>(
+               std::min<qsizetype>(lines, std::numeric_limits<int>::max()))));
     return;
   }
   setPassword(output);

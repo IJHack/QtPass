@@ -480,7 +480,6 @@ private:
   QQueue<QString> m_pendingShows;
   void handleProcessError(PROCESS pid, int exitCode, const QString &out,
                           const QString &err);
-  void handleGrepError(int exitCode, const QString &err);
   auto formatInsertError(const QString &friendly, const QString &err)
       -> QString;
   void emitProcessFinishedSignal(PROCESS pid, const QString &out,
@@ -621,13 +620,5 @@ signals:
  * Pass object.
  */
 QString gpgErrorMessage(const QString &err);
-
-/**
- * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
- *
- * Declared here so it can be exercised by unit tests without linking the full
- * Pass object.
- */
-QList<QPair<QString, QStringList>> parseGrepOutput(const QString &rawOut);
 
 #endif // SRC_PASS_H_
