@@ -38,6 +38,9 @@ public:
 
   /**
    * @brief The standard context menu, with Copy going through the secret copy.
+   *
+   * The Copy action is named "edit-copy" on every Qt version (Qt 6.7 and
+   * later name it so themselves).
    * @return A new menu; the caller owns it.
    */
   [[nodiscard]] auto createSecretContextMenu() -> QMenu *;

@@ -3490,13 +3490,15 @@ void tst_util::secretLineEditContextMenuCopyIsMarked() {
   QApplication::clipboard()->setText(QStringLiteral("before"));
 
   const std::unique_ptr<QMenu> menu(edit.createSecretContextMenu());
+  // Qt itself names the action only since 6.7; createSecretContextMenu()
+  // names the one it rewired, so finding it here also shows it was found.
   QAction *copy = nullptr;
   for (QAction *action : menu->actions()) {
     if (action->objectName() == QLatin1String("edit-copy")) {
       copy = action;
     }
   }
-  QVERIFY2(copy != nullptr, "the standard menu has an edit-copy action");
+  QVERIFY2(copy != nullptr, "the menu's Copy was found and named edit-copy");
   QSignalSpy changed(QApplication::clipboard(), &QClipboard::dataChanged);
   copy->trigger();
   QCOMPARE(changed.count(), 1);

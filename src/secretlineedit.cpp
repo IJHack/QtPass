@@ -14,9 +14,17 @@ SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {}
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();
   for (QAction *action : menu->actions()) {
-    if (action->objectName() == QLatin1String("edit-copy")) {
-      // The standard action calls QLineEdit::copy(), which is not virtual.
-      disconnect(action, &QAction::triggered, this, nullptr);
+    // The standard Copy calls QLineEdit::copy(), which is not virtual. Only
+    // Qt 6.7 and later name the action "edit-copy", so it is told apart by
+    // that connection instead: disconnect() is true for the one action that
+    // had it, whichever way Qt connected it (a member pointer, or SIGNAL()
+    // and SLOT() as in 5.15).
+    const bool wasCopy =
+        disconnect(action, &QAction::triggered, this, &QLineEdit::copy) ||
+        disconnect(action, SIGNAL(triggered()), this, SLOT(copy()));
+    if (wasCopy) {
+      // Named on every Qt version, as Qt 6.7 and later do themselves.
+      action->setObjectName(QStringLiteral("edit-copy"));
       connect(action, &QAction::triggered, this,
               [this] { copySelection(QClipboard::Clipboard); });
     }
