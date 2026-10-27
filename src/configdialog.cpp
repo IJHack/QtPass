@@ -609,8 +609,12 @@ void ConfigDialog::initialiseProfileStore(const QString &name,
   AppSettings profileSettings = settings;
   profileSettings.passStore = Util::normalizeFolderPath(path);
   profileSettings.passSigningKey = profile.signingKey;
+  // needsInit() found no .gpg-id: nothing to preselect, and none that
+  // appears meanwhile is taken (it would be read under the active
+  // profile's signing policy).
   UsersDialog usersDialog(QtPassSettings::getPass(), profileSettings,
-                          profileSettings.passStore, this);
+                          profileSettings.passStore,
+                          UsersDialog::Preselect::Nothing, this);
   usersDialog.setInitOnAccept(false);
   usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
   if (usersDialog.exec() != QDialog::Accepted) {

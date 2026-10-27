@@ -1008,9 +1008,13 @@ void tst_mainwindow::
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
 
-  // A real entry on screen, with an OTP code and a leftover line.
+  // A real entry on screen, with an OTP code and a leftover line: clicked,
+  // so it is the entry asked to show, and its decrypt landing.
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
   m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"),
                             QStringLiteral("shown"));
   auto *browser =
@@ -2454,6 +2458,15 @@ void tst_mainwindow::staleDecryptDoesNotRepaintThePanel() {
   m_window->passShowHandler(QStringLiteral("new-secret\nfresh leftover"),
                             QStringLiteral("fresh"));
   QVERIFY2(browser()->toPlainText().contains(QStringLiteral("fresh leftover")),
+           qPrintable(browser()->toPlainText()));
+
+  // Deselected (or a profile switch): nothing is asked to show any more,
+  // so even the same entry's decrypt arriving late stays out of the panel.
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "deselect",
+                                    Qt::DirectConnection));
+  m_window->passShowHandler(QStringLiteral("late-secret\nlate leftover"),
+                            QStringLiteral("fresh"));
+  QVERIFY2(!browser()->toPlainText().contains(QStringLiteral("late leftover")),
            qPrintable(browser()->toPlainText()));
   QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 }

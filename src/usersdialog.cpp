@@ -27,9 +27,13 @@
 #include "qtpasslogging.h"
 UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
                          QWidget *parent)
+    : UsersDialog(pass, s, std::move(dir), Preselect::FromList, parent) {}
+
+UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
+                         Preselect preselect, QWidget *parent)
     : QDialog(parent), ui(new Ui::UsersDialog), m_pass(pass),
       m_passStore(s.passStore), m_gpgExe(s.gpgExecutable),
-      m_dir(std::move(dir)) {
+      m_dir(std::move(dir)), m_preselect(preselect) {
   Q_ASSERT(pass);
   ui->setupUi(this);
 
@@ -181,6 +185,12 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
 }
 
 void UsersDialog::loadRecipients() {
+  // A store that had no list when it was chosen (a new profile): a list
+  // that appeared since is nobody's choice, and was read under the active
+  // backend's signing policy, not the new profile's.
+  if (m_preselect == Preselect::Nothing) {
+    return;
+  }
   // Through the backend: with a signing key only a verified list may be
   // preselected, since OK signs whatever is selected.
   const Pass::RecipientsForEditing loaded =

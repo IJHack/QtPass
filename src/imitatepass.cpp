@@ -983,6 +983,15 @@ constexpr int kReencryptRetryMs = 100;
 constexpr int kReencryptMaxListedFailures = 15;
 } // namespace
 
+void ImitatePass::reencryptPath(const QString &dir,
+                                const AppSettings &settings) {
+  if (!m_reencryptActive) {
+    init(settings);
+    updateEnv();
+  }
+  reencryptPath(dir);
+}
+
 void ImitatePass::reencryptPath(const QString &dir) {
   if (m_reencryptActive) {
     emit statusMsg(tr("A re-encryption is already running"), 3000);
