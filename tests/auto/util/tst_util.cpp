@@ -296,6 +296,8 @@ private Q_SLOTS:
   void processDefaultsClearGitRedirectsAndSetTheUmask();
   void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
+  void readRegularFileIsBoundedAndRegular();
+  void gitTakesStorePathsLiterally();
   void gpgErrorMessageKeyExpiredStatusToken();
   void gpgErrorMessageKeyRevokedStatusToken();
   void gpgErrorMessageNoPubkeyStatusToken();
@@ -2485,6 +2487,31 @@ void tst_util::mkpathForStoreFollowsTheStoreUmask() {
  * manager or terminal it opens inherits, is left alone.
  */
 void tst_util::gitDoesNotClimbAboveTheStore() {
+void tst_util::readRegularFileIsBoundedAndRegular() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString path = dir.filePath(QStringLiteral("list"));
+  {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("0123456789");
+  }
+  QCOMPARE(Util::readRegularFile(path, 10).value_or("none"),
+           QByteArray("0123456789"));
+  QVERIFY2(!Util::readRegularFile(path, 9), "one byte too many");
+  QVERIFY(!Util::readRegularFile(dir.filePath(QStringLiteral("missing")), 10));
+  QVERIFY2(!Util::readRegularFile(dir.path(), 10), "a folder is no file");
+  const QString link = dir.filePath(QStringLiteral("link"));
+  if (QFile::link(path, link)) {
+    QVERIFY2(!Util::readRegularFile(link, 10), "a link is not followed");
+  }
+}
+
+/**
+ * @brief An entry named with glob characters names itself only: QtPass's
+ * `git rm -f -- a*.gpg` must not remove every entry that matches.
+ */
+void tst_util::gitTakesStorePathsLiterally() {
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
   if (git.isEmpty()) {
     QSKIP("git not found");
@@ -2571,6 +2598,44 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
            "with gitUseParentRepository the parent's repository is used");
   QCOMPARE(inherited, QStringLiteral("/started/with"));
   QVERIFY2(!staleCeiling, "an empty store leaves no ceiling behind");
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  pass.init(s);
+  const QProcessEnvironment env = pass.environment();
+  QCOMPARE(env.value(QStringLiteral("GIT_LITERAL_PATHSPECS")),
+           QStringLiteral("1"));
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const auto run = [&](const QStringList &args) {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(git,
+            QStringList{QStringLiteral("-C"), store.path(),
+                        QStringLiteral("-c"), QStringLiteral("user.name=t"),
+                        QStringLiteral("-c"),
+                        QStringLiteral("user.email=t@example.org")} +
+                args);
+    p.waitForFinished(10000);
+    return p.exitCode();
+  };
+  QCOMPARE(run({QStringLiteral("init"), QStringLiteral("-q")}), 0);
+  for (const char *name : {"a*.gpg", "alice.gpg", "anna.gpg"}) {
+    QFile f(QDir(store.path()).filePath(QString::fromLatin1(name)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QCOMPARE(run({QStringLiteral("add"), QStringLiteral("-A")}), 0);
+  QCOMPARE(run({QStringLiteral("commit"), QStringLiteral("-qm"),
+                QStringLiteral("init")}),
+           0);
+  QCOMPARE(run({QStringLiteral("rm"), QStringLiteral("-qf"),
+                QStringLiteral("--"), QStringLiteral("a*.gpg")}),
+           0);
+  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("a*.gpg"))));
+  QVERIFY2(QFileInfo::exists(store.filePath(QStringLiteral("alice.gpg"))) &&
+               QFileInfo::exists(store.filePath(QStringLiteral("anna.gpg"))),
+           "only the entry named a*.gpg goes");
 }
 
 // --- gpgErrorMessage tests ---

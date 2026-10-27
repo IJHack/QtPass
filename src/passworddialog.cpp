@@ -590,7 +590,12 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
         continue;
       }
       auto *line = new QLineEdit();
-      auto *label = new QLabel(field);
+      // Plain text before the name is set: the template comes from the
+      // store, and as rich text <img src="/dev/zero"> has Qt read that file
+      // without end.
+      auto *label = new QLabel();
+      label->setTextFormat(Qt::PlainText);
+      label->setText(field);
       line->setObjectName(field);
       ui->formLayout->addRow(label, line);
       setTabOrder(previous, line);

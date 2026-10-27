@@ -6,6 +6,11 @@
 #include <optional>
 
 #include "../../../src/gpgidsigner.h"
+#include "../../../src/util.h"
+
+#ifdef Q_OS_UNIX
+#include <sys/stat.h>
+#endif
 
 /**
  * @brief GpgIdSigner against a scripted gpg: which arguments it passes and
@@ -81,6 +86,7 @@ private slots:
   void signReplacesALinkUnderTheSignatureNameAsAnEntry();
   void verifyPassesArgsAndAcceptsEitherFingerprint();
   void verifyFileHandsBackTheBytesItVerified();
+  void verifyFileReadsOnlyARegularFileOfBoundedSize();
   void linkedGpgIdOrSignatureIsNotVerified();
   void verifyRefusesBytesThatAreNotUtf8();
   void verifyRejectsUnknownSignerAndGpgFailure();
@@ -417,6 +423,36 @@ void tst_gpgidsigner::verifyRefusesBytesThatAreNotUtf8() {
   QVERIFY2(gpg.calls.isEmpty(), "gpg must not be asked about altered bytes");
   QVERIFY(signer.verify(QByteArrayLiteral("ALICE \xc3\xa9\n"),
                         QStringLiteral("/store/.gpg-id.sig")));
+}
+
+/**
+ * @brief A .gpg-id larger than any real list (a sparse file of gigabytes,
+ * say) is refused before it is read whole, and so is one that is no
+ * regular file: a FIFO would block the GUI. gpg is not asked.
+ */
+void tst_gpgidsigner::verifyFileReadsOnlyARegularFileOfBoundedSize() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  FakeGpg gpg;
+  gpg.out = validSig(kFpr, kPrimary);
+  const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+
+  const QString big = dir.filePath(QStringLiteral("big.gpg-id"));
+  {
+    QFile f(big);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(Util::kMaxGpgIdBytes + 1)); // sparse where it can be
+  }
+  QByteArray contents = "stale";
+  QVERIFY(!signer.verifyFile(big, &contents));
+  QVERIFY(contents.isEmpty());
+
+#ifdef Q_OS_UNIX
+  const QString fifo = dir.filePath(QStringLiteral("fifo.gpg-id"));
+  QCOMPARE(::mkfifo(QFile::encodeName(fifo).constData(), 0600), 0);
+  QVERIFY2(!signer.verifyFile(fifo, &contents), "a FIFO is no list");
+#endif
+  QVERIFY2(gpg.calls.isEmpty(), "nothing to verify was read");
 }
 
 void tst_gpgidsigner::verifyFileHandsBackTheBytesItVerified() {

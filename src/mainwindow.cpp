@@ -1454,7 +1454,10 @@ void MainWindow::addFolder() {
   if (!ok || newdir.isEmpty()) {
     return;
   }
-  newdir.prepend(dir);
+  // Checked and created as one and the same path: the check resolves ".."
+  // lexically, the system after following links, so "link/../x" would pass
+  // as the store's x and be made beside the link's target.
+  newdir = QDir::cleanPath(newdir.prepend(dir));
   if (!confirmPathInStore(newdir)) {
     return;
   }

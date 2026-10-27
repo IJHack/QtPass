@@ -576,6 +576,11 @@ void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY"),
             m_settings.passSigningKey);
   setEnvVar(QStringLiteral("PASSWORD_STORE_DIR"), m_settings.passStore);
+  // Every path QtPass hands git names one file or folder: an entry called
+  // "a*.gpg" must not make `git rm -f -- a*.gpg` remove every entry that
+  // matches. Also reaches the git that pass runs, which passes names the
+  // same way.
+  setEnvVar(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
 
   const PasswordConfiguration &passConfig = m_settings.passwordConfiguration;
   setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH"),
@@ -866,11 +871,12 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
   if (Util::isLinkedFolder(gpgIdPath)) {
     return {};
   }
-  QFile gpgId(gpgIdPath);
-  if (!gpgId.open(QIODevice::ReadOnly)) {
+  const std::optional<QByteArray> bytes =
+      Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+  if (!bytes) {
     return {};
   }
-  return parseRecipients(gpgId.readAll(), gpgId.fileName());
+  return parseRecipients(*bytes, gpgIdPath);
 }
 
 auto Pass::parseRecipients(const QByteArray &contents,

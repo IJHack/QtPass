@@ -100,6 +100,28 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   does not open an entry longer than that, and Ctrl+C takes the first line
   without splitting the rest. Content search takes at most 100 matching
   lines from one entry and 10000 in all, and says when it stopped.
+- Names from the store are shown as plain text. An entry's path, its field
+  names and the `.templates` field names went into labels that Qt reads as
+  rich text when they look like it, so a shared store's other writers could
+  name one `<img src="/dev/zero">` and have QtPass read that file without
+  end when it was shown.
+- Deleting an entry named with glob characters (`a*.gpg`) removes that
+  entry only. Git read the name as a pattern, so `git rm -f` removed every
+  tracked entry that matched; `GIT_LITERAL_PATHSPECS` now makes Git take
+  every path QtPass, or `pass` run by QtPass, hands it as it is.
+- New folder: a name like `link/../x` was checked as the store's `x` but
+  created beside the target of the link `link`, outside the store. The
+  checked path is now the one created.
+- A `.gpg-id` is read only as a regular file and only up to 1 MiB, before its
+  signature is checked: a FIFO under that name blocked QtPass, and a sparse
+  file of gigabytes was read whole. Importing a key reads at most 16 MiB of
+  a regular file.
+- Re-encryption checks the folder again after its `git pull`: a pulled
+  commit that made it a link sent recovery of an interrupted run to rename
+  and remove files where the link pointed.
+- Generating a key: a `%no-protection` line in the expert template followed
+  by a NUL character was missed by the passphrase check but read by `gpg`,
+  which then made an unprotected key despite the passphrase given.
 - A recipient list signed by a revoked signing key no longer verifies. gpg
   reports such a signature as `REVKEYSIG` but still prints `VALIDSIG` and
   succeeds, and QtPass read only the latter, so a signing key revoked after

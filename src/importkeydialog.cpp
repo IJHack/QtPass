@@ -9,6 +9,7 @@
 #include <QClipboard>
 #include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QRegularExpression>
@@ -45,15 +46,24 @@ void ImportKeyDialog::on_fileButton_clicked() {
     return;
   }
 
+  // A key file, so a regular one of sensible size: a FIFO would block the
+  // GUI and /dev/zero (or a sparse file) would be read without end.
+  constexpr qint64 kMaxKeyFileBytes = 16LL * 1024 * 1024;
   QFile file(fileName);
-  if (!file.open(QIODevice::ReadOnly)) {
+  if (!QFileInfo(fileName).isFile() || !file.open(QIODevice::ReadOnly)) {
     QMessageBox::warning(this, tr("Import key"),
                          tr("Could not open file: %1").arg(fileName));
     return;
   }
 
-  const QByteArray bytes = file.readAll();
+  const QByteArray bytes = file.read(kMaxKeyFileBytes + 1);
   file.close();
+  if (bytes.size() > kMaxKeyFileBytes) {
+    QMessageBox::warning(this, tr("Import key"),
+                         tr("%1 is larger than a key file can be.")
+                             .arg(fileName.toHtmlEscaped()));
+    return;
+  }
 
   // Only ASCII-armored content is shown in the text edit; binary keyrings
   // would lose bytes through UTF-8 conversion. Reject anything that doesn't

@@ -203,11 +203,14 @@ auto GpgIdSigner::verifyFile(const QString &gpgIdFile,
     contents->clear();
     return false;
   }
-  QFile file(gpgIdFile);
-  if (!file.open(QIODevice::ReadOnly)) {
+  // Read as the regular file it is and bounded: a FIFO would block, a
+  // sparse file of gigabytes be read whole, before any signature is checked.
+  std::optional<QByteArray> bytes =
+      Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+  if (!bytes) {
     contents->clear();
     return false;
   }
-  *contents = file.readAll();
+  *contents = *std::move(bytes);
   return verify(*contents, gpgIdFile + QStringLiteral(".sig"));
 }

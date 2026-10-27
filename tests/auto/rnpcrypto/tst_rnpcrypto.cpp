@@ -525,6 +525,13 @@ void tst_rnpcrypto::plaintextLimitStopsADecompressionBomb() {
     QVERIFY(rnp.decrypt(enc.out, &error, &ok).isEmpty());
     QVERIFY(!ok);
   }
+
+  // RNP keeps the limit in 32 bits: 4 GiB + 5 would become 5 there (and
+  // 4 GiB exactly 0, no limit). Capped, it stays a large limit.
+  rnp.setMaxPlaintextBytes((qint64{1} << 32) + 5);
+  ok = false;
+  QCOMPARE(rnp.decrypt(enc.out, &error, &ok).size(), zeros.size());
+  QVERIFY2(ok, qPrintable(error));
 }
 
 // gpg allows blanks inside a fingerprint only: "dead beef" is a user ID,

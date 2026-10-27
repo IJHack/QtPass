@@ -670,6 +670,20 @@ auto Util::openRegularFile(const QString &path, QFile &file) -> bool {
 #endif
 }
 
+auto Util::readRegularFile(const QString &path, qint64 maxBytes)
+    -> std::optional<QByteArray> {
+  QFile file;
+  if (!openRegularFile(path, file)) {
+    return std::nullopt;
+  }
+  // One byte past the limit tells "exactly the limit" from "more".
+  QByteArray bytes = file.read(maxBytes + 1);
+  if (bytes.size() > maxBytes || file.error() != QFileDevice::NoError) {
+    return std::nullopt;
+  }
+  return bytes;
+}
+
 auto Util::syncToDisk(QFileDevice &file) -> bool {
   if (!file.flush()) {
     return false;

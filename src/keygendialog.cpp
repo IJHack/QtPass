@@ -119,7 +119,13 @@ QString KeygenDialog::applyPassphrase(const QString &batch,
   bool spliced = false;
   const QStringList lines =
       batch.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-  for (const QString &line : lines) {
+  for (QString line : lines) {
+    // gpg reads each line as a C string, so it ends at a NUL: what follows
+    // one would hide "%no-protection" from the check below and not from
+    // gpg. Cut it here as gpg does.
+    if (const qsizetype nul = line.indexOf(QChar::Null); nul >= 0) {
+      line.truncate(nul);
+    }
     if (isControlStatement(line, noProtection) ||
         line.trimmed().startsWith(passphraseKey, Qt::CaseInsensitive)) {
       if (!spliced) {

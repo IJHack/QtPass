@@ -3817,6 +3817,26 @@ void tst_mainwindow::addFolderRefusesEscapesAndDuplicates() {
   }
   QVERIFY2(!QFileInfo::exists(escaped), "nothing is created outside");
 
+  // "link/../x": the check resolved ".." lexically (the store's x), the
+  // system after following the link (beside its target, outside). Now
+  // both are the store's x.
+  QTemporaryDir outside;
+  QVERIFY(outside.isValid());
+  const QString target = QDir(outside.path()).filePath(QStringLiteral("t"));
+  QVERIFY(QDir().mkpath(target));
+  const QString link = store.filePath(QStringLiteral("out"));
+  if (QFile::link(target, link)) {
+    ModalDriver driver(
+        typeIntoInputDialog(QStringLiteral("out/../through-link")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QVERIFY2(!QFileInfo::exists(
+                 QDir(outside.path()).filePath(QStringLiteral("through-link"))),
+             "nothing is created beside the link's target");
+    QVERIFY(QFile::remove(link));
+    QDir(store.filePath(QStringLiteral("through-link"))).removeRecursively();
+  }
+
   QVERIFY(store.mkpath(QStringLiteral("taken")));
   {
     ModalDriver driver(typeIntoInputDialog(QStringLiteral("taken")));

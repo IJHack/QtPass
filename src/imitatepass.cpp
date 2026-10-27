@@ -603,12 +603,22 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
       return false;
     }
   } else {
-    QFile file(gpgIdFile);
-    if (!file.open(QIODevice::ReadOnly)) {
+    if (!QFileInfo::exists(gpgIdFile)) {
       // No file is not a bad signature; the empty list says it all.
       return true;
     }
-    contents = file.readAll();
+    // Bounded, and only a regular file: see Util::readRegularFile().
+    std::optional<QByteArray> bytes =
+        Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
+    if (!bytes) {
+      if (why != nullptr) {
+        *why = tr("%1 is not a regular file of at most %2 bytes.")
+                   .arg(gpgIdFile)
+                   .arg(Util::kMaxGpgIdBytes);
+      }
+      return false;
+    }
+    contents = *std::move(bytes);
   }
   *recipients = Pass::parseRecipients(contents, gpgIdFile);
   return true;
@@ -1108,6 +1118,18 @@ auto ImitatePass::recipientsForDir(const QString &fileName,
 auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   ReencryptResult result;
   if (!pullBeforeReencrypt()) {
+    result.aborted = true;
+    return result;
+  }
+  // reencryptPath() checked the folder before the pull; a pulled commit can
+  // have made it, or a folder above it, a link since. Recovery and the walk
+  // below would then rename and remove files beyond the store.
+  if (Util::isUnderLink(dir, m_settings.passStore)) {
+    emit critical(tr("Not part of the store"),
+                  tr("%1 is, or lies behind, a symbolic link or junction "
+                     "after pulling. What that points to is not part of the "
+                     "password store and is left alone.")
+                      .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))));
     result.aborted = true;
     return result;
   }
