@@ -251,7 +251,8 @@ public:
    * part whose protection RNP cannot name.
    * @param dir The keyring folder, created owner-only if missing (on
    * Windows: as private as the user profile it is in); QtPass's own, never
-   * ~/.gnupg, and not a link.
+   * ~/.gnupg, and not a link or junction (the folder itself; its parents
+   * are as configured).
    * @param allowUnprotected Write unprotected secret keys as well.
    * @param error Set to the reason when nothing was written, naming the
    * first unprotected key.
@@ -266,7 +267,8 @@ public:
    * one. Secret keys stay protected until an operation needs them.
    *
    * keyring.gpg is read as a regular file, not through a link (nor is @p dir
-   * a link), and only up to kMaxKeyringBytes. A missing or empty file is an
+   * itself a link or junction; its parents are as configured), and only up
+   * to kMaxKeyringBytes. A missing or empty file is an
    * empty keyring, not an error.
    * @param dir The keyring folder.
    * @param error Set to the reason when loading fails.

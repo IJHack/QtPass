@@ -710,36 +710,56 @@ auto isRevoked(rnp_key_handle_t key) -> bool {
 
 /**
  * The fingerprint of the first key in @p ffi (primary or subkey) with a
- * secret part whose protection RNP reports as "Unknown"; empty when none.
+ * secret part whose protection RNP reports as "Unknown"; empty when there is
+ * none. Nothing when the scan could not finish: any RNP error on the way,
+ * so a caller refuses rather than takes it for "none".
  */
-auto firstSecretOfUnknownProtection(rnp_ffi_t ffi) -> QString {
+auto firstSecretOfUnknownProtection(rnp_ffi_t ffi) -> std::optional<QString> {
   QString found;
   rnp_identifier_iterator_t it = nullptr;
   if (rnp_identifier_iterator_create(ffi, &it, "fingerprint") != RNP_SUCCESS) {
-    return found;
+    return std::nullopt;
   }
+  bool failed = false;
   const char *fpr = nullptr;
-  while (found.isEmpty() &&
-         rnp_identifier_iterator_next(it, &fpr) == RNP_SUCCESS &&
-         fpr != nullptr) {
+  while (found.isEmpty() && !failed) {
+    if (rnp_identifier_iterator_next(it, &fpr) != RNP_SUCCESS) {
+      failed = true;
+      break;
+    }
+    if (fpr == nullptr) {
+      break; // the end
+    }
     rnp_key_handle_t handle = nullptr;
     if (rnp_locate_key(ffi, "fingerprint", fpr, &handle) != RNP_SUCCESS ||
         handle == nullptr) {
-      continue;
+      failed = true;
+      break;
     }
     const Key key(handle);
     bool secret = false;
-    char *type = nullptr;
-    if (rnp_key_have_secret(handle, &secret) == RNP_SUCCESS && secret &&
-        rnp_key_get_protection_type(handle, &type) == RNP_SUCCESS &&
-        type != nullptr) {
-      if (QString::fromLatin1(type) == QLatin1String("Unknown")) {
-        found = QString::fromLatin1(fpr);
-      }
-      rnp_buffer_destroy(type);
+    if (rnp_key_have_secret(handle, &secret) != RNP_SUCCESS) {
+      failed = true;
+      break;
     }
+    if (!secret) {
+      continue;
+    }
+    char *type = nullptr;
+    if (rnp_key_get_protection_type(handle, &type) != RNP_SUCCESS ||
+        type == nullptr) {
+      failed = true;
+      break;
+    }
+    if (QString::fromLatin1(type) == QLatin1String("Unknown")) {
+      found = QString::fromLatin1(fpr);
+    }
+    rnp_buffer_destroy(type);
   }
   rnp_identifier_iterator_destroy(it);
+  if (failed) {
+    return std::nullopt;
+  }
   return found;
 }
 
@@ -987,8 +1007,9 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
     setError(error, QStringLiteral("RNP is not available"));
     return false;
   }
-  // QtPass's own folder, not wherever a link would lead.
-  if (QFileInfo(dir).isSymLink()) {
+  // QtPass's own folder, not wherever a link would lead: cleaned first, so
+  // "dir/" or "dir/." is not judged by its target, and a junction counts.
+  if (Util::isLinkedFolder(dir)) {
     setError(error,
              QStringLiteral("%1 is a link, not a keyring folder").arg(dir));
     return false;
@@ -1007,11 +1028,17 @@ auto RnpCrypto::saveKeyring(const QString &dir, bool allowUnprotected,
     // A secret part whose protection RNP cannot name is not counted as
     // here (secretIsHere()), yet it would be written: what is in it is not
     // known, so it is refused like an unprotected one.
-    if (const QString unknown = firstSecretOfUnknownProtection(m_ffi);
-        !unknown.isEmpty()) {
+    const std::optional<QString> unknown =
+        firstSecretOfUnknownProtection(m_ffi);
+    if (!unknown) {
+      setError(error, QStringLiteral("Cannot tell how every secret key is "
+                                     "protected; nothing is written"));
+      return false;
+    }
+    if (!unknown->isEmpty()) {
       setError(error, QStringLiteral("The secret key %1 has a protection RNP "
                                      "cannot name")
-                          .arg(unknown));
+                          .arg(*unknown));
       return false;
     }
   }
@@ -1071,7 +1098,7 @@ auto RnpCrypto::loadKeyring(const QString &dir, QString *error) -> bool {
     return false;
   }
   // As saveKeyring(): the folder itself is not read through a link either.
-  if (QFileInfo(dir).isSymLink()) {
+  if (Util::isLinkedFolder(dir)) {
     setError(error,
              QStringLiteral("%1 is a link, not a keyring folder").arg(dir));
     return false;
