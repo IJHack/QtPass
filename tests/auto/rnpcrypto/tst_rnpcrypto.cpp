@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QFileInfo>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTemporaryDir>
@@ -55,6 +56,11 @@ private Q_SLOTS:
   void onlyASecretSubkeyCanDecryptButNotSign();
   void aRevokedUserIdNamesNothing();
   void anAddressNamesThatAddressNotASubstring();
+  void keyringRoundTripKeepsSecretKeysProtected();
+  void saveRefusesAnUnprotectedSecretKey();
+  void protectKeyThenSaveAndUseIt();
+  void loadKeyringOfNothingIsEmpty();
+  void loadKeyringReadsOnlyARegularFileOfBoundedSize();
 
 private:
   struct Result {
@@ -910,6 +916,158 @@ void tst_rnpcrypto::anAddressNamesThatAddressNotASubstring() {
     QVERIFY(onlyMallory.sign(kList, QStringLiteral("alice@example.org"), &error)
                 .isEmpty());
   }
+}
+
+namespace {
+auto modeOf(const QString &path) -> QFile::Permissions {
+  return QFileInfo(path).permissions() &
+         (QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner |
+          QFile::ReadGroup | QFile::WriteGroup | QFile::ExeGroup |
+          QFile::ReadOther | QFile::WriteOther | QFile::ExeOther);
+}
+} // namespace
+
+// What saveKeyring() writes, loadKeyring() reads back: the same keys, the
+// secret ones still protected by their own passphrase, the files and the
+// folder owner-only.
+void tst_rnpcrypto::keyringRoundTripKeepsSecretKeysProtected() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString dir = tmp.filePath(QStringLiteral("keyring"));
+  QString error;
+  {
+    RnpCrypto rnp;
+    QVERIFY(!rnp.importKeys(
+                    exportKey(m_carol, QStringLiteral("correct horse"), true) +
+                    exportKey(m_bob, {}, false))
+                 .isEmpty());
+    QVERIFY2(rnp.saveKeyring(dir, false, &error), qPrintable(error));
+  }
+#ifdef Q_OS_UNIX
+  const auto owner = QFile::ReadOwner | QFile::WriteOwner;
+  QCOMPARE(modeOf(dir), owner | QFile::ExeOwner);
+  QCOMPARE(modeOf(QDir(dir).filePath(QStringLiteral("pubring.gpg"))), owner);
+  QCOMPARE(modeOf(QDir(dir).filePath(QStringLiteral("secring.gpg"))), owner);
+#endif
+  RnpCrypto loaded;
+  QVERIFY2(loaded.loadKeyring(dir, &error), qPrintable(error));
+  const QList<RnpCrypto::KeyInfo> keys = loaded.listKeys();
+  QCOMPARE(keys.size(), 2);
+  const QList<RnpCrypto::KeyInfo> secret = loaded.listKeys(true);
+  QCOMPARE(secret.size(), 1);
+  QCOMPARE(secret.first().fingerprint, m_carol);
+  QVERIFY(secret.first().secretProtected);
+
+  const QByteArray entry = "kept on disk\n";
+  const Result enc =
+      gpg({QStringLiteral("--trust-model"), QStringLiteral("always"),
+           QStringLiteral("-e"), QStringLiteral("-r"), m_carol},
+          entry);
+  bool ok = true;
+  loaded.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("wrong"); });
+  QVERIFY(loaded.decrypt(enc.out, &error, &ok).isEmpty());
+  QVERIFY2(!ok, "the key on disk is still protected by its passphrase");
+  loaded.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("correct horse"); });
+  QCOMPARE(loaded.decrypt(enc.out, &error, &ok), entry);
+  QVERIFY2(ok, qPrintable(error));
+}
+
+// A secret key reaches the disk only protected by its own passphrase,
+// unless the user agreed to it explicitly: refused, and nothing written.
+void tst_rnpcrypto::saveRefusesAnUnprotectedSecretKey() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString dir = tmp.filePath(QStringLiteral("keyring"));
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true)).isEmpty());
+  QVERIFY(!rnp.listKeys(true).first().secretProtected);
+  QString error;
+  QVERIFY(!rnp.saveKeyring(dir, false, &error));
+  QVERIFY2(error.contains(m_alice), qPrintable(error));
+  QVERIFY2(!QFileInfo::exists(dir), "nothing is written");
+  QVERIFY2(rnp.saveKeyring(dir, true, &error), qPrintable(error));
+  const QString secring = QDir(dir).filePath(QStringLiteral("secring.gpg"));
+  QVERIFY(QFileInfo(secring).size() > 0);
+
+  // Saved again without the secret key: no stale secret file stays behind.
+  RnpCrypto publicOnly;
+  QVERIFY(!publicOnly.importKeys(exportKey(m_alice, {}, false)).isEmpty());
+  QVERIFY2(publicOnly.saveKeyring(dir, false, &error), qPrintable(error));
+  QCOMPARE(QFileInfo(secring).size(), qint64{0});
+  RnpCrypto reloaded;
+  QVERIFY2(reloaded.loadKeyring(dir, &error), qPrintable(error));
+  QCOMPARE(reloaded.listKeys().size(), 1);
+  QVERIFY(reloaded.listKeys(true).isEmpty());
+}
+
+void tst_rnpcrypto::protectKeyThenSaveAndUseIt() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString dir = tmp.filePath(QStringLiteral("keyring"));
+  QString error;
+  {
+    RnpCrypto rnp;
+    QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, true)).isEmpty());
+    QVERIFY(!rnp.protectKey(m_alice, QString(), &error));
+    QVERIFY(!rnp.protectKey(m_bob, QStringLiteral("pw"), &error));
+    QVERIFY2(rnp.protectKey(m_alice, QStringLiteral("pw"), &error),
+             qPrintable(error));
+    QVERIFY(rnp.listKeys(true).first().secretProtected);
+    QVERIFY2(!rnp.protectKey(m_alice, QStringLiteral("other"), &error),
+             "a passphrase is not changed here");
+    QVERIFY2(rnp.saveKeyring(dir, false, &error), qPrintable(error));
+  }
+  RnpCrypto loaded;
+  QVERIFY2(loaded.loadKeyring(dir, &error), qPrintable(error));
+  loaded.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("wrong"); });
+  QVERIFY(loaded.sign(kList, m_alice, &error).isEmpty());
+  loaded.setPassphraseProvider(
+      [](const QString &) { return QStringLiteral("pw"); });
+  const QByteArray sig = loaded.sign(kList, m_alice, &error);
+  QVERIFY2(!sig.isEmpty(), qPrintable(error));
+  QCOMPARE(gpgValidSig(kList, sig).value(1), m_alice);
+}
+
+void tst_rnpcrypto::loadKeyringOfNothingIsEmpty() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  RnpCrypto rnp;
+  QString error;
+  QVERIFY2(rnp.loadKeyring(tmp.filePath(QStringLiteral("none")), &error),
+           qPrintable(error));
+  QVERIFY(rnp.listKeys().isEmpty());
+}
+
+// As the .gpg-id readers: a regular file, not through a link, and bounded.
+void tst_rnpcrypto::loadKeyringReadsOnlyARegularFileOfBoundedSize() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QString error;
+  {
+    QFile big(tmp.filePath(QStringLiteral("pubring.gpg")));
+    QVERIFY(big.open(QIODevice::WriteOnly));
+    QVERIFY(big.resize(RnpCrypto::kMaxKeyringBytes + 1));
+  }
+  RnpCrypto rnp;
+  QVERIFY(!rnp.loadKeyring(tmp.path(), &error));
+  QVERIFY2(error.contains(QStringLiteral("pubring.gpg")), qPrintable(error));
+#ifdef Q_OS_UNIX
+  QTemporaryDir linked;
+  QVERIFY(linked.isValid());
+  {
+    RnpCrypto source;
+    QVERIFY(!source.importKeys(exportKey(m_bob, {}, false)).isEmpty());
+    QVERIFY(source.saveKeyring(tmp.filePath(QStringLiteral("real")), false));
+  }
+  QVERIFY(QFile::link(tmp.filePath(QStringLiteral("real/pubring.gpg")),
+                      linked.filePath(QStringLiteral("pubring.gpg"))));
+  RnpCrypto viaLink;
+  QVERIFY2(!viaLink.loadKeyring(linked.path(), &error),
+           "a keyring file behind a link is not read");
+#endif
 }
 
 QTEST_MAIN(tst_rnpcrypto)
