@@ -225,6 +225,8 @@ public:
    * protected get @p passphrase, so a key left half protected can be
    * finished; the others keep theirs (no passphrase is changed here). A key
    * all of whose secret parts are protected already is an error.
+   * The UTF-8 copy made here is wiped afterwards; @p passphrase itself, and
+   * any copy the caller holds, is the caller's to wipe.
    * @param fingerprint The primary key's fingerprint.
    * @param passphrase The passphrase; not empty.
    * @param error Set to the reason when not every part ended up protected.
@@ -238,12 +240,19 @@ public:
    * keys in one file (OpenPGP keys, as GnuPG 1 kept them), owner-only and
    * replaced whole, so a reader sees the old keyring or the new one.
    *
+   * The file holds exactly this keyring afterwards: load the folder first
+   * (loadKeyring()), or every key on disk that is not in this keyring is
+   * gone. That is how a removed key disappears from disk.
+   *
    * Secret keys are written as they are held: protected by their own
    * passphrase, never decrypted for this. A secret key without protection is
    * refused (nothing is written) unless @p allowUnprotected, the user's
-   * explicit consent; protectKey() first is the other way.
-   * @param dir The keyring folder, created owner-only if missing; QtPass's
-   * own, never ~/.gnupg.
+   * explicit consent; protectKey() first is the other way. So is a secret
+   * part whose protection RNP cannot name.
+   * @param dir The keyring folder, created owner-only if missing (on
+   * Windows: as private as the user profile it is in); QtPass's own, never
+   * ~/.gnupg, and not a link or junction (the folder itself; its parents
+   * are as configured).
    * @param allowUnprotected Write unprotected secret keys as well.
    * @param error Set to the reason when nothing was written, naming the
    * first unprotected key.
@@ -257,9 +266,10 @@ public:
    * @brief Adds the keyring in @p dir (as saveKeyring() wrote it) to this
    * one. Secret keys stay protected until an operation needs them.
    *
-   * keyring.gpg is read as a regular file, not through a link, and only up
-   * to kMaxKeyringBytes. A missing or empty file is an empty keyring, not an
-   * error.
+   * keyring.gpg is read as a regular file, not through a link (nor is @p dir
+   * itself a link or junction; its parents are as configured), and only up
+   * to kMaxKeyringBytes. A missing or empty file is an
+   * empty keyring, not an error.
    * @param dir The keyring folder.
    * @param error Set to the reason when loading fails.
    * @return Whether the keyring loaded (or there was none).
