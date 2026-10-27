@@ -954,6 +954,16 @@ e-mail</string>
                     </property>
                    </widget>
                   </item>
+                  <item>
+                   <widget class="QCheckBox" name="checkBoxGitUseParentRepository">
+                    <property name="toolTip">
+                     <string>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake.</string>
+                    </property>
+                    <property name="text">
+                     <string>Use a Git repository in a folder above the store</string>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </item>
                </layout>

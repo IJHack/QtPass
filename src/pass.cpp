@@ -660,8 +660,23 @@ void Pass::updateEnv() {
   // committed and pushed there. Git climbs from the store's real path, so the
   // ceiling is the real parent when the configured root is a link. Set in
   // QtPass's own environment as well, which the blocking git calls (pull,
-  // re-encryption) inherit.
-  if (!m_settings.passStore.isEmpty()) {
+  // re-encryption) inherit. A store kept inside a larger repository on
+  // purpose opts out (gitUseParentRepository): then whatever ceiling QtPass
+  // was started with applies again.
+  static const std::optional<QByteArray> inheritedCeiling =
+      qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES")
+          ? std::optional<QByteArray>(qgetenv("GIT_CEILING_DIRECTORIES"))
+          : std::nullopt;
+  if (m_settings.gitUseParentRepository) {
+    if (inheritedCeiling) {
+      setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"),
+                QFile::decodeName(*inheritedCeiling));
+      qputenv("GIT_CEILING_DIRECTORIES", *inheritedCeiling);
+    } else {
+      setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"), QString());
+      qunsetenv("GIT_CEILING_DIRECTORIES");
+    }
+  } else if (!m_settings.passStore.isEmpty()) {
     QString store = QFileInfo(m_settings.passStore).canonicalFilePath();
     if (store.isEmpty()) {
       store = QDir::cleanPath(QDir(m_settings.passStore).absolutePath());

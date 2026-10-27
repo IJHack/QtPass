@@ -67,6 +67,7 @@ public:
   static const QString alwaysOnTop;
   static const QString autoPull;
   static const QString autoPush;
+  static const QString gitUseParentRepository;
   static const QString passTemplate;
   static const QString useTemplate;
   static const QString templateAllFields;

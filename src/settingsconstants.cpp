@@ -62,6 +62,8 @@ const QString SettingsConstants::startMinimized = "startMinimized";
 const QString SettingsConstants::alwaysOnTop = "alwaysOnTop";
 const QString SettingsConstants::autoPull = "autoPull";
 const QString SettingsConstants::autoPush = "autoPush";
+const QString SettingsConstants::gitUseParentRepository =
+    "gitUseParentRepository";
 const QString SettingsConstants::passTemplate = "passTemplate";
 const QString SettingsConstants::useTemplate = "useTemplate";
 const QString SettingsConstants::templateAllFields = "templateAllFields";

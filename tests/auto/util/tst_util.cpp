@@ -2464,6 +2464,17 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
            ceiling);
   const bool stillInside = insideARepo(store);
 
+  // Kept inside a larger repository on purpose: the setting lets git climb
+  // again, and the ceiling QtPass was started with (none here) is back.
+  s.gitUseParentRepository = true;
+  pass.init(s);
+  QVERIFY(
+      !pass.environment().contains(QStringLiteral("GIT_CEILING_DIRECTORIES")));
+  QVERIFY(!qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES"));
+  const bool optedInFindsParent = insideARepo(store);
+  s.gitUseParentRepository = false;
+  pass.init(s);
+
   // The configured root a link to a store inside a repository elsewhere:
   // git climbs from the real path, so the ceiling is the real parent.
   QTemporaryDir links;
@@ -2485,6 +2496,8 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
   }
   QVERIFY2(!stillInside, "git must not take the parent's repository");
   QVERIFY2(!viaLinkInside, "nor through a linked store root");
+  QVERIFY2(optedInFindsParent,
+           "with gitUseParentRepository the parent's repository is used");
 }
 
 // --- gpgErrorMessage tests ---

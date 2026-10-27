@@ -163,6 +163,8 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->plainTextEditTemplate->setEnabled(settings.useTemplate);
   ui->checkBoxAutoPull->setChecked(settings.autoPull);
   ui->checkBoxAutoPush->setChecked(settings.autoPush);
+  ui->checkBoxGitUseParentRepository->setChecked(
+      settings.gitUseParentRepository);
   ui->checkBoxAlwaysOnTop->setChecked(settings.alwaysOnTop);
 
   // Dependent helpers: set after the plain values above so the enable/disable
@@ -221,6 +223,8 @@ auto ConfigDialog::readSettings() -> AppSettings {
   // globals, which left both checkboxes without effect.
   settings.autoPush = ui->checkBoxAutoPush->isChecked();
   settings.autoPull = ui->checkBoxAutoPull->isChecked();
+  settings.gitUseParentRepository =
+      ui->checkBoxGitUseParentRepository->isChecked();
   settings.useOtp = ui->checkBoxUseOtp->isChecked();
   settings.useGrepSearch = ui->checkBoxUseGrepSearch->isChecked();
   settings.useQrencode = ui->checkBoxUseQrencode->isChecked();
@@ -739,6 +743,8 @@ void ConfigDialog::on_checkBoxUseGit_clicked() {
   ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
+  ui->checkBoxGitUseParentRepository->setEnabled(
+      ui->checkBoxUseGit->isChecked());
 }
 
 void ConfigDialog::on_toolButtonPwgen_clicked() {

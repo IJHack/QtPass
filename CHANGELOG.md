@@ -8,6 +8,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **Git stops at the store, as with `pass`.** A store without a Git
+  repository of its own no longer uses one in a folder above it. A store
+  kept inside a larger repository on purpose needs Settings ▸ Git ▸ "Use a
+  Git repository in a folder above the store", or pull, commit and push
+  report "not a git repository".
 - **New files are private: umask 077, as with `pass`.** A store shared
   through group permissions on one machine needs `PASSWORD_STORE_UMASK`
   set (for example `007`), as `pass` itself does.
@@ -97,7 +102,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   entries to that repository, and pushed it. `GIT_CEILING_DIRECTORIES` now
   stops Git at the store's parent, and an inherited `GIT_DIR`,
   `GIT_WORK_TREE` (and the rest of that family) no longer sends QtPass's
-  commits elsewhere.
+  commits elsewhere. A store kept inside a larger repository on purpose
+  can opt back in under Settings ▸ Git.
 - Files QtPass creates are the user's alone: it starts with umask 077, or
   with `PASSWORD_STORE_UMASK` when that is set, as `pass` does. Entries were
   written owner-only already, but a new folder in the store and what Git
