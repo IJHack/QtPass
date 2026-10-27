@@ -121,24 +121,35 @@ void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
           "'\n" +
           signingGpg(QDir(base.path()).filePath(QStringLiteral("signed")),
                      kSigningKey)));
+  // And git, which signs a commit through gpg when the user's git config
+  // says so: a stand-in that only logs the GNUPGHOME it runs with.
+  const QString gitLog = QDir(base.path()).filePath(QStringLiteral("git-home"));
+  const QString fakeGit = QDir(base.path()).filePath(QStringLiteral("git"));
+  QVERIFY(writeScript(fakeGit, "printf '%s\\n' \"$GNUPGHOME\" >> '" +
+                                   QFile::encodeName(gitLog) +
+                                   "'\ncat >/dev/null\nexit 0\n"));
   const QString gpgHome = QDir(base.path()).filePath(QStringLiteral("gnupg"));
   QVERIFY(QDir().mkpath(gpgHome));
   AppSettings s;
   s.gpgExecutable = fakeGpg;
+  s.gitExecutable = fakeGit;
   s.passSigningKey = kSigningKey;
   s.gpgHome = gpgHome;
   QString note;
   QVERIFY2(ProfileInit::initialise(
                QDir(base.path()).filePath(QStringLiteral("store")), twoUsers(),
-               s, false, &note),
+               s, true, &note),
            qPrintable(note));
-  QFile log(homeLog);
-  QVERIFY(log.open(QIODevice::ReadOnly));
-  const QStringList homes =
-      QString::fromUtf8(log.readAll()).split('\n', Qt::SkipEmptyParts);
-  QVERIFY2(!homes.isEmpty(), "gpg must have run");
-  for (const QString &home : homes) {
-    QCOMPARE(home, QDir(gpgHome).absolutePath());
+  for (const auto &[path, what] :
+       {std::pair{homeLog, "gpg"}, std::pair{gitLog, "git"}}) {
+    QFile log(path);
+    QVERIFY(log.open(QIODevice::ReadOnly));
+    const QStringList homes =
+        QString::fromUtf8(log.readAll()).split('\n', Qt::SkipEmptyParts);
+    QVERIFY2(!homes.isEmpty(), what);
+    for (const QString &home : homes) {
+      QCOMPARE(home, QDir(gpgHome).absolutePath());
+    }
   }
 #endif
 }
