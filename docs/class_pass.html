@@ -255,6 +255,8 @@ Protected Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0037d3169c1c0fc270270cde4b8d25d2" id="r_a0037d3169c1c0fc270270cde4b8d25d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a> () const -&gt; QProcessEnvironment</td></tr>
+<tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
 <tr class="memitem:afda7320a4a3a5bcba47a862701c9b84e" id="r_afda7320a4a3a5bcba47a862701c9b84e"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#afda7320a4a3a5bcba47a862701c9b84e">insertWritten</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:afda7320a4a3a5bcba47a862701c9b84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
@@ -315,7 +317,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00076">76</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00088">88</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1721,7 +1723,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a80b717f6932e5645b2628fba4654a7da">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00373">373</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00385">385</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2003,7 +2005,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00383">383</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00395">395</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2346,6 +2348,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a0037d3169c1c0fc270270cde4b8d25d2" name="a0037d3169c1c0fc270270cde4b8d25d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0037d3169c1c0fc270270cde4b8d25d2">&#9670;&#160;</a></span>storeEnvironment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::storeEnvironment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; QProcessEnvironment</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in. </p>
+<p>What <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a> made: the git ceiling and the PASSWORD_STORE_ variables <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own environment does not carry. For blocking calls that start their own process. </p><dl class="section return"><dt>Returns</dt><dd>A copy of the environment. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00069">69</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a903a833ade1109f9cb75e3bbeab8d0af" name="a903a833ade1109f9cb75e3bbeab8d0af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a903a833ade1109f9cb75e3bbeab8d0af">&#9670;&#160;</a></span>exec</h2>
@@ -2369,7 +2401,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal command executor for queuing and running subprocesses. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00071">71</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00083">83</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2396,7 +2428,7 @@ Protected Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00224">224</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00236">236</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2423,7 +2455,7 @@ Protected Attributes</h2></td></tr>
 <p>Application settings snapshot injected at <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init()</a> time. </p>
 <p>Populated by init(AppSettings) and valid for the lifetime of this backend instance. Subclasses read it in place of calling <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00067">67</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00079">79</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

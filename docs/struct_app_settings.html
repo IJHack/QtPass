@@ -180,7 +180,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a58078cf5ba353cf2fa920e79f5f6bd4f" id="r_a58078cf5ba353cf2fa920e79f5f6bd4f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a58078cf5ba353cf2fa920e79f5f6bd4f">autoPull</a> {false}</td></tr>
 <tr class="memdesc:a58078cf5ba353cf2fa920e79f5f6bd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically <span class="tt">git pull</span> on open.  <br /></td></tr>
 <tr class="memitem:aaf958d6fdb0d9d28ddf10872e9be0238" id="r_aaf958d6fdb0d9d28ddf10872e9be0238"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aaf958d6fdb0d9d28ddf10872e9be0238">autoPush</a> {false}</td></tr>
-<tr class="memdesc:aaf958d6fdb0d9d28ddf10872e9be0238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automatically <span class="tt">git push</span> after changes.  <br /></td></tr>
+<tr class="memitem:a7cb6dcad3fce49e715f4d8873f98c3ed" id="r_a7cb6dcad3fce49e715f4d8873f98c3ed"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a7cb6dcad3fce49e715f4d8873f98c3ed">gitUseParentRepository</a> {false}</td></tr>
 <tr class="memitem:a61d0d4c9f61852bac9fe3be71a9b1814" id="r_a61d0d4c9f61852bac9fe3be71a9b1814"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a61d0d4c9f61852bac9fe3be71a9b1814">showProcessOutput</a> {false}</td></tr>
 <tr class="memdesc:a61d0d4c9f61852bac9fe3be71a9b1814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show external process output.  <br /></td></tr>
 <tr class="memitem:a4b414237cc2001c4a07a242f2565cb85" id="r_a4b414237cc2001c4a07a242f2565cb85"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a4b414237cc2001c4a07a242f2565cb85">showMenuBar</a> {false}</td></tr>
@@ -267,7 +267,7 @@ Public Attributes</h2></td></tr>
 
 <p>Keep the main window always on top. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00095">95</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00098">98</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -336,7 +336,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Automatically <span class="tt">git push</span> after changes. </p>
 
 <p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00075">75</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
@@ -357,7 +356,7 @@ Public Attributes</h2></td></tr>
 
 <p>Exclude uppercase letters. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00086">86</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00089">89</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -375,7 +374,7 @@ Public Attributes</h2></td></tr>
 
 <p>Exclude digits. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00087">87</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00090">90</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -454,6 +453,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a7cb6dcad3fce49e715f4d8873f98c3ed" name="a7cb6dcad3fce49e715f4d8873f98c3ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cb6dcad3fce49e715f4d8873f98c3ed">&#9670;&#160;</a></span>gitUseParentRepository</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AppSettings::gitUseParentRepository {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Let git use a repository in a folder above the store when the store has none of its own; off, git stops at the store's parent, as in pass. </p>
+
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00078">78</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+
+</div>
+</div>
 <a id="a0d19db5f33a7d4728142617f99cb55db" name="a0d19db5f33a7d4728142617f99cb55db"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d19db5f33a7d4728142617f99cb55db">&#9670;&#160;</a></span>gpgExecutable</h2>
 
@@ -522,7 +538,7 @@ Public Attributes</h2></td></tr>
 
 <p>Hide to tray instead of quitting on close. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00093">93</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00096">96</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -558,7 +574,7 @@ Public Attributes</h2></td></tr>
 
 <p>Generate memorable (less random) passwords. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00088">88</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00091">91</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -648,7 +664,7 @@ Public Attributes</h2></td></tr>
 
 <p>Newline-separated template field names. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00080">80</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00083">83</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -666,7 +682,7 @@ Public Attributes</h2></td></tr>
 
 <p>Length/charset/custom chars. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00085">85</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00088">88</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -738,7 +754,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show the menu bar (Ctrl+M toggles it). </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00077">77</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00080">80</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -756,7 +772,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show external process output. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00076">76</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00079">79</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -792,7 +808,7 @@ Public Attributes</h2></td></tr>
 
 <p>Start the window minimised. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00094">94</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00097">97</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -810,7 +826,7 @@ Public Attributes</h2></td></tr>
 
 <p>Treat every <span class="tt">key:</span> line as a field. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00082">82</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00085">85</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1024,7 @@ Public Attributes</h2></td></tr>
 
 <p>Include special symbols. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00089">89</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00092">92</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1026,7 +1042,7 @@ Public Attributes</h2></td></tr>
 
 <p>Use the password template. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00081">81</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00084">84</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1044,7 +1060,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show a system tray icon. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00092">92</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00095">95</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>

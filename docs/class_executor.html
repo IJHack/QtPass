@@ -172,6 +172,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9fbf09f8da63419fa052c9d8ebf08408"><td class="mdescLeft">&#160;</td><td class="mdescRight">The one rule for turning a configured executable into what runs.  <br /></td></tr>
 <tr class="memitem:a37986d339c981097b639c76fab602f92" id="r_a37986d339c981097b639c76fab602f92"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a37986d339c981097b639c76fab602f92">detachFromTerminal</a> (QProcess &amp;process)</td></tr>
 <tr class="memdesc:a37986d339c981097b639c76fab602f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make <code class="param">process</code> start its child without a controlling terminal.  <br /></td></tr>
+<tr class="memitem:a1c8933b8dca68b4967740d6193a2ea4d" id="r_a1c8933b8dca68b4967740d6193a2ea4d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1c8933b8dca68b4967740d6193a2ea4d">setChildUmask</a> (int mask)</td></tr>
+<tr class="memdesc:a1c8933b8dca68b4967740d6193a2ea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The umask every child <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts gets, as pass sets its own.  <br /></td></tr>
+<tr class="memitem:ab60903ccdf163f6f025f4bc857632887" id="r_ab60903ccdf163f6f025f4bc857632887"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab60903ccdf163f6f025f4bc857632887">childUmask</a> () -&gt; int</td></tr>
+<tr class="memdesc:ab60903ccdf163f6f025f4bc857632887"><td class="mdescLeft">&#160;</td><td class="mdescRight">The umask <a class="el" href="#a1c8933b8dca68b4967740d6193a2ea4d" title="The umask every child QtPass starts gets, as pass sets its own.">setChildUmask()</a> set.  <br /></td></tr>
 <tr class="memitem:a78f8f16776f308c83b48b00a941c944e" id="r_a78f8f16776f308c83b48b00a941c944e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a78f8f16776f308c83b48b00a941c944e">parseWslCommand</a> (const QString &amp;app) -&gt; std::optional&lt; <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a> &gt;</td></tr>
 <tr class="memdesc:a78f8f16776f308c83b48b00a941c944e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a configured executable as a WSL command.  <br /></td></tr>
 <tr class="memitem:a694edbdebf865b549812969f49bc0c3d" id="r_a694edbdebf865b549812969f49bc0c3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a> (const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td></tr>
@@ -248,6 +252,34 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aee160ee2ec954bdb58a3a38555536090_icgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="ab60903ccdf163f6f025f4bc857632887" name="ab60903ccdf163f6f025f4bc857632887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60903ccdf163f6f025f4bc857632887">&#9670;&#160;</a></span>childUmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::childUmask </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The umask <a class="el" href="#a1c8933b8dca68b4967740d6193a2ea4d" title="The umask every child QtPass starts gets, as pass sets its own.">setChildUmask()</a> set. </p>
+<dl class="section return"><dt>Returns</dt><dd>The umask, or a negative value when none was set. </dd></dl>
 
 </div>
 </div>
@@ -880,7 +912,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00365">365</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00383">383</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -963,6 +995,39 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>What to hand to QProcess::start(). </dd></dl>
+
+</div>
+</div>
+<a id="a1c8933b8dca68b4967740d6193a2ea4d" name="a1c8933b8dca68b4967740d6193a2ea4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8933b8dca68b4967740d6193a2ea4d">&#9670;&#160;</a></span>setChildUmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Executor::setChildUmask </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mask</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The umask every child <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts gets, as pass sets its own. </p>
+<p>pass runs git and gpg under umask 077 (or PASSWORD_STORE_UMASK), so the folders and files they create in the store, .git included, are the user's alone. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> gives that umask to the processes it starts (startProcess(), the queue and the blocking calls) and not to itself: a browser or file manager it opens keeps the session's. Unix only. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mask</td><td>The umask, or a negative value for none (the default). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -132,7 +132,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>A configured executable that runs a Linux program through WSL. </p>
 <p>The one definition of "a WSL command" in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>; see <a class="el" href="class_executor.html#a78f8f16776f308c83b48b00a941c944e" title="Parse a configured executable as a WSL command.">parseWslCommand()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00268">268</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00286">286</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1810c7113590bc37be94c370a6ac549b" name="a1810c7113590bc37be94c370a6ac549b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1810c7113590bc37be94c370a6ac549b">&#9670;&#160;</a></span>argv()</h2>
@@ -201,7 +201,7 @@ Public Attributes</h2></td></tr>
 
 <p>The Linux program to run, looked up on the WSL PATH. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00284">284</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00302">302</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -220,7 +220,7 @@ Public Attributes</h2></td></tr>
 <p>What to start. </p>
 <p>On Windows a bare <span class="tt">wsl</span>/<span class="tt">wsl.exe</span> in any case becomes <span class="tt">wsl</span>, which the PATH lookup resolves; elsewhere (<a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> itself running inside WSL, where <span class="tt">wsl.exe</span> is reachable through interop but <span class="tt">wsl</span> need not be) and for a launcher given as a path it stays as configured. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00277">277</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00295">295</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -238,7 +238,7 @@ Public Attributes</h2></td></tr>
 
 <p>wsl.exe options that go before the program (<span class="tt">-d Debian</span>, <span class="tt">-u me</span>), without any <span class="tt">-e</span>/<span class="tt">--exec</span>: <a class="el" href="#a1810c7113590bc37be94c370a6ac549b" title="Arguments for launcher that run command with args.">argv()</a> always adds that. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00282">282</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00300">300</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>

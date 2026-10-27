@@ -115,6 +115,14 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a0954978822dc30f773f1302003dbea84" id="r_a0954978822dc30f773f1302003dbea84"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0954978822dc30f773f1302003dbea84">applyPassProcessDefaults</a> ()</td></tr>
+<tr class="memdesc:a0954978822dc30f773f1302003dbea84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store.  <br /></td></tr>
+<tr class="memitem:a595b817bda4e90e2de3afbafe8914306" id="r_a595b817bda4e90e2de3afbafe8914306"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a595b817bda4e90e2de3afbafe8914306">gitCeiling</a> (const QString &amp;store) -&gt; QString</td></tr>
+<tr class="memdesc:a595b817bda4e90e2de3afbafe8914306"><td class="mdescLeft">&#160;</td><td class="mdescRight">GIT_CEILING_DIRECTORIES for a store, as pass sets it.  <br /></td></tr>
+<tr class="memitem:af014b42fcbaf221a947950a289ad4d1b" id="r_af014b42fcbaf221a947950a289ad4d1b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af014b42fcbaf221a947950a289ad4d1b">mkpathForStore</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:af014b42fcbaf221a947950a289ad4d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <code class="param">path</code> and any missing parents as pass would.  <br /></td></tr>
+<tr class="memitem:a18b864b454324ed54da82252dc77a15c" id="r_a18b864b454324ed54da82252dc77a15c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a18b864b454324ed54da82252dc77a15c">passUmask</a> (const QString &amp;value) -&gt; int</td></tr>
+<tr class="memdesc:a18b864b454324ed54da82252dc77a15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The umask pass would use for <code class="param">value</code> of PASSWORD_STORE_UMASK.  <br /></td></tr>
 <tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
 <tr class="memdesc:aa93547aecfd166a3e0eac955370cc05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
 <tr class="memitem:abdd60f9928354b515d9d6bd2ee837699" id="r_abdd60f9928354b515d9d6bd2ee837699"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abdd60f9928354b515d9d6bd2ee837699">findBinaryInPath</a> (const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td></tr>
@@ -182,11 +190,39 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 <p>Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00265">265</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00312">312</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a0954978822dc30f773f1302003dbea84" name="a0954978822dc30f773f1302003dbea84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0954978822dc30f773f1302003dbea84">&#9670;&#160;</a></span>applyPassProcessDefaults()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Util::applyPassProcessDefaults </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store. </p>
+<p>Clears the variables that point git at another repository (GIT_DIR, GIT_WORK_TREE and the rest pass clears), and on Unix gives the processes <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts (git, gpg, pass) the umask from PASSWORD_STORE_UMASK, 077 by default (<a class="el" href="class_executor.html#a1c8933b8dca68b4967740d6193a2ea4d" title="The umask every child QtPass starts gets, as pass sets its own.">Executor::setChildUmask()</a>): what they create in the store is then the user's alone, as with pass. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask stays the session's, so a browser or file manager it opens is not affected. Call it first thing in main(). </p>
+
+</div>
+</div>
 <a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
 
@@ -470,6 +506,40 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  
 
 </div>
 </div>
+<a id="a595b817bda4e90e2de3afbafe8914306" name="a595b817bda4e90e2de3afbafe8914306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595b817bda4e90e2de3afbafe8914306">&#9670;&#160;</a></span>gitCeiling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::gitCeiling </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>GIT_CEILING_DIRECTORIES for a store, as pass sets it. </p>
+<p>The store's parent, so git never takes a repository above the store for the store's own. git compares ceilings with its real working directory, so this is the real parent when the store path is a link; a store that does not exist yet gets the parent of its absolute path. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">store</td><td>The store's path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The ceiling, empty for an empty <code class="param">store</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a0a5f8ed9bf31f351af081b45b92360d0" name="a0a5f8ed9bf31f351af081b45b92360d0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a5f8ed9bf31f351af081b45b92360d0">&#9670;&#160;</a></span>isLaunchableWebUrl()</h2>
 
@@ -666,6 +736,40 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 
 </div>
 </div>
+<a id="af014b42fcbaf221a947950a289ad4d1b" name="af014b42fcbaf221a947950a289ad4d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af014b42fcbaf221a947950a289ad4d1b">&#9670;&#160;</a></span>mkpathForStore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::mkpathForStore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create <code class="param">path</code> and any missing parents as pass would. </p>
+<p>What pass's mkdir -p does under its umask, for the folders <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> makes in the store itself: on Unix the mode is 0777 less the store umask (<a class="el" href="class_executor.html#ab60903ccdf163f6f025f4bc857632887" title="The umask setChildUmask() set.">Executor::childUmask()</a>, from PASSWORD_STORE_UMASK, 077 by default and when none is set), whatever <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask. Existing folders are left as they are. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The folder to create. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when <code class="param">path</code> is a folder afterwards. </dd></dl>
+
+</div>
+</div>
 <a id="a0ba6ef4e4542287d5b257252728d1aa4" name="a0ba6ef4e4542287d5b257252728d1aa4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ba6ef4e4542287d5b257252728d1aa4">&#9670;&#160;</a></span>newLinesRegex()</h2>
 
@@ -765,6 +869,40 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> is open on a regular file. </dd></dl>
+
+</div>
+</div>
+<a id="a18b864b454324ed54da82252dc77a15c" name="a18b864b454324ed54da82252dc77a15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b864b454324ed54da82252dc77a15c">&#9670;&#160;</a></span>passUmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::passUmask </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The umask pass would use for <code class="param">value</code> of PASSWORD_STORE_UMASK. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The variable's value; empty when unset. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The octal value when it is one (up to four octal digits), else 077, pass's default. </dd></dl>
 
 </div>
 </div>

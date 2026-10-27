@@ -6,7 +6,8 @@ var searchData=
   ['addtoggle_3',['addToggle',['../class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f',1,'TrayIcon']]],
   ['append_4',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
   ['applypassphrase_5',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
-  ['argv_6',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['attach_7',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoscroll_8',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['applypassprocessdefaults_6',['applyPassProcessDefaults',['../class_util.html#a0954978822dc30f773f1302003dbea84',1,'Util']]],
+  ['argv_7',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
+  ['attach_8',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoscroll_9',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];
