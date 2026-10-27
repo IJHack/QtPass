@@ -34,6 +34,7 @@ private Q_SLOTS:
   void initialiseCreatesTheDirectory();
   void initialiseCommitsUnderGit();
   void initialiseWarnsAboutExistingEntries();
+  void initialiseCountsEntriesInSubfolders();
   void initialiseLeavesNoHalfWrittenGpgId();
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
   void initialiseRefusesWhenNoGenerationCanBeReserved();
@@ -360,6 +361,39 @@ void tst_profileinit::initialiseWarnsAboutExistingEntries() {
            qPrintable(note));
   QVERIFY2(note.contains(QStringLiteral("not re-encrypted")),
            qPrintable("existing entries must be pointed out: " + note));
+}
+
+/**
+ * @brief A store taken over whole has most of its entries in folders: they
+ * count too, so the note does not say there are none, or too few.
+ */
+void tst_profileinit::initialiseCountsEntriesInSubfolders() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  for (const char *name : {"top.gpg", "work/vpn.gpg", "work/deep/mail.gpg"}) {
+    const QString path = QDir(dir.path()).filePath(QString::fromLatin1(name));
+    QVERIFY(QDir().mkpath(QFileInfo(path).absolutePath()));
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QString note;
+  QVERIFY2(ProfileInit::initialise(dir.path(), twoUsers(), AppSettings(), false,
+                                   &note),
+           qPrintable(note));
+  QVERIFY2(note.contains(QStringLiteral("3 encrypted")), qPrintable(note));
+
+  // Only nested entries: still pointed out.
+  QTemporaryDir nested;
+  QVERIFY(nested.isValid());
+  QVERIFY(QDir(nested.path()).mkpath(QStringLiteral("a")));
+  QFile f(QDir(nested.path()).filePath(QStringLiteral("a/x.gpg")));
+  QVERIFY(f.open(QIODevice::WriteOnly));
+  f.write("x");
+  f.close();
+  QVERIFY(ProfileInit::initialise(nested.path(), twoUsers(), AppSettings(),
+                                  false, &note));
+  QVERIFY2(note.contains(QStringLiteral("not re-encrypted")), qPrintable(note));
 }
 
 /**
