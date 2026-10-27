@@ -2389,10 +2389,12 @@ void tst_util::gpgOptsCarryTheOutputLimitAfterTheUsersOwn() {
 void tst_util::passUmaskReadsOctalOrFallsBackTo077() {
   QCOMPARE(Util::passUmask(QString()), 077);
   QCOMPARE(Util::passUmask(QStringLiteral("027")), 027);
-  QCOMPARE(Util::passUmask(QStringLiteral(" 0077 ")), 077);
+  QCOMPARE(Util::passUmask(QStringLiteral("0077")), 077);
   QCOMPARE(Util::passUmask(QStringLiteral("022")), 022);
-  for (const QString &bad : {QStringLiteral("8"), QStringLiteral("abc"),
-                             QStringLiteral("07777"), QStringLiteral("-1")}) {
+  for (const QString &bad :
+       {QStringLiteral("8"), QStringLiteral("abc"), QStringLiteral("07777"),
+        QStringLiteral("-1"), QStringLiteral(" 0022 "),
+        QStringLiteral("022\n")}) {
     QCOMPARE(Util::passUmask(bad), 077);
   }
 }

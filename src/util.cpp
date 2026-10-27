@@ -114,11 +114,16 @@ void Util::applyPassProcessDefaults() {
 }
 
 auto Util::passUmask(const QString &value) -> int {
-  static const QRegularExpression octal(QStringLiteral("^[0-7]{1,4}$"));
-  if (!octal.match(value.trimmed()).hasMatch()) {
+  // Taken as it is, as bash's umask builtin (which pass hands it to) takes
+  // it: " 022" is no umask there either. pass then keeps the session's;
+  // QtPass falls back to 077.
+  // anchoredPattern(), not ^...$: $ also matches before a final newline.
+  static const QRegularExpression octal(
+      QRegularExpression::anchoredPattern(QStringLiteral("[0-7]{1,4}")));
+  if (!octal.match(value).hasMatch()) {
     return 077;
   }
-  return value.trimmed().toInt(nullptr, 8);
+  return value.toInt(nullptr, 8);
 }
 
 auto Util::findBinaryInPath(const QString &binary) -> QString {
