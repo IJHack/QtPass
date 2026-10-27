@@ -414,6 +414,7 @@ void ConfigDialog::setGroupBoxState() {
   bool state = ui->radioButtonPass->isChecked();
   ui->groupBoxNative->setEnabled(!state);
   ui->groupBoxPass->setEnabled(state);
+  on_checkBoxUseGit_clicked();
   if (state) {
     ui->spinBoxPasswordLength->setEnabled(false);
     ui->checkBoxUsePwgen->setEnabled(false);
@@ -588,7 +589,7 @@ auto ConfigDialog::ensureProfileFolder(const QString &path) -> bool {
           QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
     return false;
   }
-  if (!QDir().mkpath(path)) {
+  if (!Util::mkpathForStore(path)) {
     QMessageBox::warning(
         this, tr("Error"),
         tr("Could not create profile directory: %1").arg(path));
@@ -743,8 +744,10 @@ void ConfigDialog::on_checkBoxUseGit_clicked() {
   ui->checkBoxAddGPGId->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
   ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
+  // pass always stops git at the store's parent itself, so the choice only
+  // means something in native mode.
   ui->checkBoxGitUseParentRepository->setEnabled(
-      ui->checkBoxUseGit->isChecked());
+      ui->checkBoxUseGit->isChecked() && !ui->radioButtonPass->isChecked());
 }
 
 void ConfigDialog::on_toolButtonPwgen_clicked() {

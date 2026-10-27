@@ -107,10 +107,8 @@ void Util::applyPassProcessDefaults() {
         "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR"}) {
     qunsetenv(variable);
   }
-#ifdef Q_OS_UNIX
-  ::umask(static_cast<mode_t>(
-      passUmask(qEnvironmentVariable("PASSWORD_STORE_UMASK"))));
-#endif
+  Executor::setChildUmask(
+      passUmask(qEnvironmentVariable("PASSWORD_STORE_UMASK")));
 }
 
 auto Util::passUmask(const QString &value) -> int {
@@ -124,6 +122,53 @@ auto Util::passUmask(const QString &value) -> int {
     return 077;
   }
   return value.toInt(nullptr, 8);
+}
+
+auto Util::gitCeiling(const QString &store) -> QString {
+  if (store.isEmpty()) {
+    return {};
+  }
+  QString path = QFileInfo(store).canonicalFilePath();
+  if (path.isEmpty()) {
+    path = QDir::cleanPath(QDir(store).absolutePath());
+  }
+  return QFileInfo(path).absolutePath();
+}
+
+auto Util::mkpathForStore(const QString &path) -> bool {
+  const QString clean = QDir::cleanPath(QDir(path).absolutePath());
+  if (QFileInfo(clean).isDir()) {
+    return true;
+  }
+  const QString parent = QFileInfo(clean).absolutePath();
+  if (parent != clean && !mkpathForStore(parent)) {
+    return false;
+  }
+#ifdef Q_OS_UNIX
+  // The store's umask, as git and gpg get it: a store shared with a group
+  // (PASSWORD_STORE_UMASK=007) gets group folders, the default owner-only.
+  const int umask = Executor::childUmask() >= 0 ? Executor::childUmask() : 077;
+  QFile::Permissions permissions;
+  const QFile::Permission bits[] = {
+      QFile::ReadOwner, QFile::WriteOwner, QFile::ExeOwner,
+      QFile::ReadGroup, QFile::WriteGroup, QFile::ExeGroup,
+      QFile::ReadOther, QFile::WriteOther, QFile::ExeOther};
+  for (int i = 0; i < 9; ++i) {
+    if ((umask & (0400 >> i)) == 0) {
+      permissions |= bits[i];
+    }
+  }
+  // mkdir() still takes QtPass's own umask off (a session's 022 would drop
+  // the group's write bit); set the mode exactly afterwards. That only ever
+  // widens it to what was asked, never past.
+  const bool made = QDir().mkdir(clean, permissions) &&
+                    QFile::setPermissions(clean, permissions);
+#else
+  // Windows: permissions here would become an ACL of their own, replacing
+  // the inherited one; the folder takes its parent's, as before.
+  const bool made = QDir().mkdir(clean);
+#endif
+  return made || QFileInfo(clean).isDir();
 }
 
 auto Util::findBinaryInPath(const QString &binary) -> QString {

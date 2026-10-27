@@ -1432,7 +1432,8 @@ void MainWindow::addFolder() {
   if (!confirmPathInStore(newdir)) {
     return;
   }
-  if (!QDir().mkdir(newdir)) {
+  // Exists already: an error, as QDir::mkdir() made it before.
+  if (QFileInfo::exists(newdir) || !Util::mkpathForStore(newdir)) {
     QMessageBox::warning(this, tr("Error"),
                          tr("Failed to create folder: %1").arg(newdir));
     return;

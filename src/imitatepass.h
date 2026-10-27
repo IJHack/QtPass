@@ -538,14 +538,19 @@ private:
   /// is never touched from another thread.
   std::atomic<bool> m_reencryptCancel{false};
   QThread *m_reencryptThread = nullptr;
+  /// storeEnvironment() as it was when the worker started; the worker's
+  /// processes run in it.
+  QProcessEnvironment m_reencryptEnv;
   /**
    * @brief Executor::executeBlocking() for the re-encryption helpers.
    *
-   * On the owning thread this is a plain blocking run. On the worker thread
-   * it hands m_reencryptCancel to the cancellable executeBlocking() overload:
-   * nothing is started once the flag is set, and a process that is running
-   * when it gets set is terminated (then killed) by the worker thread, which
-   * is what lets cancelReencryptPath() and the destructor interrupt an
+   * Runs in the store's environment (storeEnvironment(); on the worker, the
+   * copy taken when it started), which carries the git ceiling QtPass's own
+   * does not. On the owning thread this is a plain blocking run. On the worker
+   * thread it hands m_reencryptCancel to the cancellable executeBlocking()
+   * overload: nothing is started once the flag is set, and a process that is
+   * running when it gets set is terminated (then killed) by the worker thread,
+   * which is what lets cancelReencryptPath() and the destructor interrupt an
    * active gpg or git without touching its QProcess or pid.
    * @return Exit code, or -1 when refused, failed to start or interrupted.
    */

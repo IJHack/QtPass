@@ -123,7 +123,7 @@ auto FirstRunWizard::initialiseStore(const QString &store) -> bool {
     }
   }
   const bool created = !QDir(store).exists();
-  if (created && !QDir().mkpath(store)) {
+  if (created && !Util::mkpathForStore(store)) {
     QMessageBox::warning(
         this, tr("Error"),
         tr("Failed to create password-store at: %1").arg(store));

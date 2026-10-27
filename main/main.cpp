@@ -79,8 +79,8 @@ static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
  * @return Application exit code.
  */
 auto main(int argc, char *argv[]) -> int {
-  // Before anything creates a file or starts git: pass's umask and a git
-  // environment that points at the store only.
+  // Before anything starts git or gpg: pass's umask for them, and no
+  // inherited variable pointing git at another repository.
   Util::applyPassProcessDefaults();
   QString text;
 #if SINGLE_APP

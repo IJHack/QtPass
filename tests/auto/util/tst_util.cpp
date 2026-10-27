@@ -29,6 +29,7 @@
 
 #include "../../../src/clipboardmanager.h"
 #include "../../../src/enums.h"
+#include "../../../src/executor.h"
 #include "../../../src/filecontent.h"
 #include "../../../src/imitatepass.h"
 #include "../../../src/nativegrep.h"
@@ -293,6 +294,7 @@ private Q_SLOTS:
   void gpgOptsCarryTheOutputLimitAfterTheUsersOwn();
   void passUmaskReadsOctalOrFallsBackTo077();
   void processDefaultsClearGitRedirectsAndSetTheUmask();
+  void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
   void gpgErrorMessageKeyExpiredStatusToken();
   void gpgErrorMessageKeyRevokedStatusToken();
@@ -2401,12 +2403,21 @@ void tst_util::passUmaskReadsOctalOrFallsBackTo077() {
 
 /**
  * @brief As pass does at its start: an inherited GIT_DIR (and the rest)
- * cannot send QtPass's commits elsewhere, and what it creates is the
- * user's alone.
+ * cannot send QtPass's commits elsewhere, and what git and gpg create is
+ * the user's alone. The umask is the children's, not QtPass's own: a
+ * browser or file manager QtPass opens keeps the session's.
  */
 void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
-  const QByteArray previousUmask = qgetenv("PASSWORD_STORE_UMASK");
-  const bool hadUmask = qEnvironmentVariableIsSet("PASSWORD_STORE_UMASK");
+  struct Saved {
+    const char *name;
+    bool had;
+    QByteArray value;
+  };
+  QList<Saved> saved;
+  for (const char *name :
+       {"GIT_DIR", "GIT_WORK_TREE", "PASSWORD_STORE_UMASK"}) {
+    saved.append({name, qEnvironmentVariableIsSet(name), qgetenv(name)});
+  }
   qputenv("GIT_DIR", "/nonexistent/elsewhere.git");
   qputenv("GIT_WORK_TREE", "/nonexistent");
   qputenv("PASSWORD_STORE_UMASK", "027");
@@ -2417,21 +2428,76 @@ void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
   QVERIFY(!qEnvironmentVariableIsSet("GIT_DIR"));
   QVERIFY(!qEnvironmentVariableIsSet("GIT_WORK_TREE"));
 #ifdef Q_OS_UNIX
-  const mode_t now = ::umask(before);
-  QCOMPARE(static_cast<int>(now), 027);
+  const mode_t own = ::umask(022);
+  QString childUmask;
+  const int rc = Executor::executeBlocking(
+      QStringLiteral("/bin/sh"),
+      {QStringLiteral("-c"), QStringLiteral("umask")}, &childUmask);
+  Executor::setChildUmask(-1);
+  ::umask(before);
 #endif
-  if (hadUmask) {
-    qputenv("PASSWORD_STORE_UMASK", previousUmask);
-  } else {
-    qunsetenv("PASSWORD_STORE_UMASK");
+  for (const Saved &v : std::as_const(saved)) {
+    if (v.had) {
+      qputenv(v.name, v.value);
+    } else {
+      qunsetenv(v.name);
+    }
   }
+#ifdef Q_OS_UNIX
+  QCOMPARE(static_cast<int>(own), 022);
+  QCOMPARE(rc, 0);
+  QCOMPARE(childUmask.trimmed().toInt(nullptr, 8), 027);
+#endif
+}
+
+/**
+ * @brief Folders QtPass makes in the store follow the store's umask (077
+ * by default: owner-only), also with a session umask of 022, and an
+ * existing folder is left as it is.
+ */
+void tst_util::mkpathForStoreFollowsTheStoreUmask() {
+#ifndef Q_OS_UNIX
+  QSKIP("folder modes are a Unix permission");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const auto modeOf = [](const QString &path) {
+    struct stat st{};
+    return ::stat(QFile::encodeName(path).constData(), &st) == 0
+               ? static_cast<int>(st.st_mode & 0777)
+               : -1;
+  };
+  const mode_t before = ::umask(022);
+  const int previous = Executor::childUmask();
+  Executor::setChildUmask(-1);
+  const QString deep = dir.filePath(QStringLiteral("a/b/c"));
+  const bool made = Util::mkpathForStore(deep);
+  Executor::setChildUmask(007); // a store shared with a group
+  const bool madeShared =
+      Util::mkpathForStore(dir.filePath(QStringLiteral("shared/x")));
+  Executor::setChildUmask(previous);
+  const QString open = dir.filePath(QStringLiteral("open"));
+  QDir().mkdir(open);
+  ::umask(before);
+  QVERIFY(made && madeShared);
+  QCOMPARE(modeOf(dir.filePath(QStringLiteral("a"))), 0700);
+  QCOMPARE(modeOf(deep), 0700);
+  QCOMPARE(modeOf(dir.filePath(QStringLiteral("shared/x"))), 0770);
+  QVERIFY(Util::mkpathForStore(open));
+  QCOMPARE(modeOf(open), 0755);
+  QFile file(dir.filePath(QStringLiteral("file")));
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.close();
+  QVERIFY2(!Util::mkpathForStore(file.fileName()), "a file is no folder");
+#endif
 }
 
 /**
  * @brief A store that is not a repository itself but lies inside one (a
  * dotfiles repository in the home folder, say) is not taken for part of it:
- * GIT_CEILING_DIRECTORIES stops git at the store's parent, in Pass's
- * environment and in QtPass's own, which the blocking git calls inherit.
+ * GIT_CEILING_DIRECTORIES stops git at the store's parent in the
+ * environment QtPass runs git in, and only there: QtPass's own, which a file
+ * manager or terminal it opens inherits, is left alone.
  */
 void tst_util::gitDoesNotClimbAboveTheStore() {
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
@@ -2444,8 +2510,10 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
                                   home.path()}) == 0);
   const QString store = QDir(home.path()).filePath(QStringLiteral("store"));
   QVERIFY(QDir().mkpath(store));
-  const auto insideARepo = [&git](const QString &dir) {
+  const auto insideARepo = [&git](const QString &dir,
+                                  const QProcessEnvironment &env) {
     QProcess p;
+    p.setProcessEnvironment(env);
     p.start(git, {QStringLiteral("-C"), dir, QStringLiteral("rev-parse"),
                   QStringLiteral("--git-dir")});
     p.waitForFinished(10000);
@@ -2455,7 +2523,8 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
   const QByteArray previous = qgetenv("GIT_CEILING_DIRECTORIES");
   const bool had = qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES");
   qunsetenv("GIT_CEILING_DIRECTORIES");
-  QVERIFY2(insideARepo(store), "control: git finds the parent repository");
+  QVERIFY2(insideARepo(store, QProcessEnvironment::systemEnvironment()),
+           "control: git finds the parent repository");
 
   TestPass pass;
   AppSettings s = QtPassSettings::load();
@@ -2464,18 +2533,21 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
   const QString ceiling = QFileInfo(home.path()).canonicalFilePath();
   QCOMPARE(pass.environment().value(QStringLiteral("GIT_CEILING_DIRECTORIES")),
            ceiling);
-  const bool stillInside = insideARepo(store);
+  const bool stillInside = insideARepo(store, pass.environment());
+  const bool leaked = qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES");
 
   // Kept inside a larger repository on purpose: the setting lets git climb
-  // again, and the ceiling QtPass was started with (none here) is back.
+  // again, under whatever ceiling QtPass was started with.
   s.gitUseParentRepository = true;
   pass.init(s);
   QVERIFY(
       !pass.environment().contains(QStringLiteral("GIT_CEILING_DIRECTORIES")));
-  QVERIFY(!qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES"));
-  const bool optedInFindsParent = insideARepo(store);
+  const bool optedInFindsParent = insideARepo(store, pass.environment());
+  qputenv("GIT_CEILING_DIRECTORIES", "/started/with");
+  const QString inherited =
+      pass.environment().value(QStringLiteral("GIT_CEILING_DIRECTORIES"));
+  qunsetenv("GIT_CEILING_DIRECTORIES");
   s.gitUseParentRepository = false;
-  pass.init(s);
 
   // The configured root a link to a store inside a repository elsewhere:
   // git climbs from the real path, so the ceiling is the real parent.
@@ -2489,17 +2561,27 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
     QCOMPARE(
         pass.environment().value(QStringLiteral("GIT_CEILING_DIRECTORIES")),
         ceiling);
-    viaLinkInside = insideARepo(link);
+    viaLinkInside = insideARepo(link, pass.environment());
   }
+
+  // No store: no ceiling of a previous one stays behind.
+  s.passStore.clear();
+  pass.init(s);
+  const bool staleCeiling =
+      pass.environment().contains(QStringLiteral("GIT_CEILING_DIRECTORIES"));
+
   if (had) {
     qputenv("GIT_CEILING_DIRECTORIES", previous);
   } else {
     qunsetenv("GIT_CEILING_DIRECTORIES");
   }
   QVERIFY2(!stillInside, "git must not take the parent's repository");
+  QVERIFY2(!leaked, "QtPass's own environment must not carry the ceiling");
   QVERIFY2(!viaLinkInside, "nor through a linked store root");
   QVERIFY2(optedInFindsParent,
            "with gitUseParentRepository the parent's repository is used");
+  QCOMPARE(inherited, QStringLiteral("/started/with"));
+  QVERIFY2(!staleCeiling, "an empty store leaves no ceiling behind");
 }
 
 // --- gpgErrorMessage tests ---

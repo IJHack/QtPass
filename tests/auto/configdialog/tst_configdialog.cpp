@@ -1168,6 +1168,17 @@ void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
   QVERIFY2(
       child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isChecked(),
       "and come back checked");
+  // pass sets its own ceiling, so the choice only applies to native git.
+  // Enabled first: without pass installed the radio button is disabled and
+  // a click would do nothing.
+  child<QRadioButton>(again, "radioButtonPass")->setEnabled(true);
+  child<QRadioButton>(again, "radioButtonPass")->click();
+  QVERIFY(
+      !child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isEnabled());
+  child<QRadioButton>(again, "radioButtonNative")->setEnabled(true);
+  child<QRadioButton>(again, "radioButtonNative")->click();
+  QVERIFY(
+      child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isEnabled());
 }
 
 /**

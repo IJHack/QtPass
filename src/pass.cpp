@@ -657,34 +657,16 @@ void Pass::updateEnv() {
   // As pass does: git never looks for a repository above the store's own
   // parent. A store that is not a repository itself but lies inside one (a
   // dotfiles repository in the home folder) would otherwise have its entries
-  // committed and pushed there. Git climbs from the store's real path, so the
-  // ceiling is the real parent when the configured root is a link. Set in
-  // QtPass's own environment as well, which the blocking git calls (pull,
-  // re-encryption) inherit. A store kept inside a larger repository on
-  // purpose opts out (gitUseParentRepository): then whatever ceiling QtPass
-  // was started with applies again.
-  static const std::optional<QByteArray> inheritedCeiling =
-      qEnvironmentVariableIsSet("GIT_CEILING_DIRECTORIES")
-          ? std::optional<QByteArray>(qgetenv("GIT_CEILING_DIRECTORIES"))
-          : std::nullopt;
-  if (m_settings.gitUseParentRepository) {
-    if (inheritedCeiling) {
-      setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"),
-                QFile::decodeName(*inheritedCeiling));
-      qputenv("GIT_CEILING_DIRECTORIES", *inheritedCeiling);
-    } else {
-      setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"), QString());
-      qunsetenv("GIT_CEILING_DIRECTORIES");
-    }
-  } else if (!m_settings.passStore.isEmpty()) {
-    QString store = QFileInfo(m_settings.passStore).canonicalFilePath();
-    if (store.isEmpty()) {
-      store = QDir::cleanPath(QDir(m_settings.passStore).absolutePath());
-    }
-    const QString ceiling = QFileInfo(store).absolutePath();
-    setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"), ceiling);
-    qputenv("GIT_CEILING_DIRECTORIES", QFile::encodeName(ceiling));
-  }
+  // committed and pushed there by native git mode. Only in the environment
+  // of the processes QtPass runs for the store, never QtPass's own, which a
+  // file manager or terminal it opens would inherit. pass sets its own
+  // ceiling whatever this says. A store kept inside a larger repository on
+  // purpose opts out (gitUseParentRepository), and then, as without a
+  // store, whatever ceiling QtPass was started with applies.
+  setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"),
+            m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()
+                ? qEnvironmentVariable("GIT_CEILING_DIRECTORIES")
+                : Util::gitCeiling(m_settings.passStore));
 
   exec.setEnvironment(env);
 }

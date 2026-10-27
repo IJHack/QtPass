@@ -32,7 +32,7 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   out.clear();
 
   const QDir folder(dir);
-  if (!folder.exists() && !QDir().mkpath(folder.absolutePath())) {
+  if (!folder.exists() && !Util::mkpathForStore(folder.absolutePath())) {
     out = tr("Could not create %1.").arg(folder.absolutePath());
     return false;
   }

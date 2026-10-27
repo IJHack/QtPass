@@ -10,6 +10,15 @@
 
 #include "qtpasslogging.h"
 
+#ifdef Q_OS_UNIX
+#include <sys/stat.h>
+#endif
+
+namespace {
+/// Executor::setChildUmask(); negative for none.
+std::atomic_int g_childUmask{-1};
+} // namespace
+
 namespace {
 /// How often a cancellable blocking run re-checks its cancel flag.
 constexpr int kBlockingCancelPollMs = 100;
@@ -54,9 +63,20 @@ void Executor::detachFromTerminal(QProcess &process) {
 #endif
 }
 
+void Executor::setChildUmask(int mask) { g_childUmask.store(mask); }
+
+auto Executor::childUmask() -> int { return g_childUmask.load(); }
+
 void Executor::startProcess(QProcess &process, const QString &app,
                             const QStringList &args) {
   detachFromTerminal(process);
+#ifdef Q_OS_UNIX
+  // In the child, between fork and exec: umask() is async-signal-safe.
+  if (const int mask = g_childUmask.load(); mask >= 0) {
+    process.setChildProcessModifier(
+        [mask] { ::umask(static_cast<mode_t>(mask)); });
+  }
+#endif
   if (const auto wsl = parseWslCommand(app)) {
     process.start(wsl->launcher, wsl->argv(args));
   } else {

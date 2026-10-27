@@ -27,12 +27,39 @@ public:
    * runs git or gpg or writes into the store.
    *
    * Clears the variables that point git at another repository (GIT_DIR,
-   * GIT_WORK_TREE and the rest pass clears), and on Unix sets the umask from
-   * PASSWORD_STORE_UMASK, 077 by default: folders QtPass creates in the
-   * store, and what git and gpg create there, are then the user's alone, as
-   * with pass. Call it first thing in main().
+   * GIT_WORK_TREE and the rest pass clears), and on Unix gives the processes
+   * QtPass starts (git, gpg, pass) the umask from PASSWORD_STORE_UMASK, 077
+   * by default (Executor::setChildUmask()): what they create in the store is
+   * then the user's alone, as with pass. QtPass's own umask stays the
+   * session's, so a browser or file manager it opens is not affected. Call
+   * it first thing in main().
    */
   static void applyPassProcessDefaults();
+
+  /**
+   * @brief GIT_CEILING_DIRECTORIES for a store, as pass sets it.
+   *
+   * The store's parent, so git never takes a repository above the store for
+   * the store's own. git compares ceilings with its real working directory,
+   * so this is the real parent when the store path is a link; a store that
+   * does not exist yet gets the parent of its absolute path.
+   * @param store The store's path.
+   * @return The ceiling, empty for an empty @p store.
+   */
+  static auto gitCeiling(const QString &store) -> QString;
+
+  /**
+   * @brief Create @p path and any missing parents as pass would.
+   *
+   * What pass's mkdir -p does under its umask, for the folders QtPass makes
+   * in the store itself: on Unix the mode is 0777 less the store umask
+   * (Executor::childUmask(), from PASSWORD_STORE_UMASK, 077 by default and
+   * when none is set), whatever QtPass's own umask. Existing folders are
+   * left as they are.
+   * @param path The folder to create.
+   * @return True when @p path is a folder afterwards.
+   */
+  static auto mkpathForStore(const QString &path) -> bool;
 
   /**
    * @brief The umask pass would use for @p value of PASSWORD_STORE_UMASK.
