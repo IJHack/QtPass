@@ -3802,6 +3802,7 @@ void tst_util::commitsAreSignedWhenTheStoreAsks() {
   const QByteArray oldGlobal = qgetenv("GIT_CONFIG_GLOBAL");
   const bool hadGlobal = qEnvironmentVariableIsSet("GIT_CONFIG_GLOBAL");
   const bool hadNoSystem = qEnvironmentVariableIsSet("GIT_CONFIG_NOSYSTEM");
+  const QByteArray oldNoSystem = qgetenv("GIT_CONFIG_NOSYSTEM");
   qputenv("GIT_CONFIG_GLOBAL",
           QFile::encodeName(tmp.filePath(QStringLiteral("no-global-config"))));
   qputenv("GIT_CONFIG_NOSYSTEM", "1");
@@ -3811,7 +3812,9 @@ void tst_util::commitsAreSignedWhenTheStoreAsks() {
     } else {
       qunsetenv("GIT_CONFIG_GLOBAL");
     }
-    if (!hadNoSystem) {
+    if (hadNoSystem) {
+      qputenv("GIT_CONFIG_NOSYSTEM", oldNoSystem);
+    } else {
       qunsetenv("GIT_CONFIG_NOSYSTEM");
     }
   });

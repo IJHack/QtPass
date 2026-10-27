@@ -41,6 +41,7 @@ private slots:
   void gitPullBlockingReturnsAfterPassRanWhateverItsExitCode();
   void linkedFolderThatCannotBeUnlinkedReportsDeleteFailed();
   void linkedFolderKnownToGitIsForgottenByGitAlone();
+  void linkedFolderRemovalSaysWhenTheCommitFails();
   void linkedFolderGitFailureIsReported();
 
 private:
@@ -704,8 +705,9 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
       QString::fromUtf8(f.readAll())
           .split(QStringLiteral("CALL\n"), Qt::SkipEmptyParts);
   // ls-files, rm --cached, the pass.signcommits query (as pass's own
-  // git_commit() asks; the stand-in answers nothing, so no -S), commit.
-  QCOMPARE(invocations.size(), 4);
+  // git_commit() asks; the stand-in answers nothing, so no -S), commit, and
+  // the check that nothing is left staged.
+  QCOMPARE(invocations.size(), 5);
   QList<QStringList> argv;
   for (const QString &record : invocations) {
     const QStringList lines =
@@ -732,6 +734,61 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
                         QStringLiteral("-q"), QStringLiteral("-m"),
                         QStringLiteral("Remove for shared using QtPass."),
                         QStringLiteral("--"), QStringLiteral("shared")}));
+  QCOMPARE(
+      argv.at(4),
+      (QStringList{QStringLiteral("git"), QStringLiteral("diff"),
+                   QStringLiteral("--cached"), QStringLiteral("--name-only"),
+                   QStringLiteral("--"), QStringLiteral("shared")}));
+}
+
+/**
+ * @brief `pass git` exits 0 whatever git did. A commit that failed (here a
+ * signer that would not sign) leaves the removal staged, and that is how
+ * it is told: reported, not taken for a clean removal.
+ */
+void tst_realpass::linkedFolderRemovalSaysWhenTheCommitFails() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the pass stand-in");
+#else
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString shared = m_store + QStringLiteral("shared");
+  QVERIFY(QFile::link(outsideDir.path(), shared));
+  const QString gitPass =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-git-failing"));
+  {
+    QFile f(gitPass);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\ncat > /dev/null\n"
+            "if [ \"$2\" = ls-files ]; then printf 'shared\\n'; fi\n"
+            "if [ \"$2\" = commit ]; then "
+            "echo 'error: gpg failed to sign the data' >&2; fi\n"
+            "if [ \"$2\" = diff ]; then printf 'shared\\n'; fi\n"
+            "exit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(shared);
+    QFile::remove(gitPass);
+  });
+  AppSettings withGit = m_settings;
+  withGit.useGit = true;
+  withGit.passExecutable = gitPass;
+  QScopedPointer<RealPass> pass(makePass());
+  pass->init(withGit);
+  pass->updateEnv();
+  QSignalSpy criticalSpy(pass.data(), &Pass::critical);
+  QSignalSpy errorSpy(pass.data(), &Pass::processErrorExit);
+  pass->Remove(QStringLiteral("shared/"), true);
+  QCOMPARE(criticalSpy.count(), 1);
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("gpg failed to sign")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QCOMPARE(errorSpy.count(), 1);
+  QVERIFY2(!QFileInfo(shared).isSymLink(), "the link is gone all the same");
+#endif
 }
 
 QTEST_MAIN(tst_realpass)

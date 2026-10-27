@@ -97,8 +97,7 @@ void RealPass::Remove(QString file, bool isDir) {
     }
     if (m_settings.useGit) {
       // `pass git` exits 0 whatever git did, so ask by output whether git
-      // knew the link, and run the rm blocking so the one commit is the one
-      // PASS_REMOVE that finishes.
+      // knew the link, and whether the commit took.
       const QString rel = QDir(m_settings.passStore).relativeFilePath(full);
       // With the store's environment (PASSWORD_STORE_DIR), as executePass.
       QString known;
@@ -127,10 +126,36 @@ void RealPass::Remove(QString file, bool isDir) {
           if (sign) {
             commit << "-S";
           }
-          executePass(
-              PASS_REMOVE,
+          // Blocking, and judged by what is left staged: `pass git` exits 0
+          // whatever git did, so a commit that failed (a signer that would
+          // not sign, say) would otherwise read as done.
+          QString out;
+          QString commitErr;
+          // Non-zero only when pass itself fails before git runs.
+          const int ran = Executor::executeBlocking(
+              exec.environment(), m_settings.passExecutable,
               commit + QStringList{"-m", "Remove for " + rel + " using QtPass.",
-                                   "--", rel});
+                                   "--", rel},
+              &out, &commitErr);
+          QString staged;
+          const bool committed =
+              ran == 0 &&
+              Executor::executeBlocking(
+                  exec.environment(), m_settings.passExecutable,
+                  {"git", "diff", "--cached", "--name-only", "--", rel},
+                  &staged, nullptr) == 0 &&
+              staged.trimmed().isEmpty();
+          if (committed) {
+            emit finishedRemove(out, commitErr);
+            return;
+          }
+          const QString why =
+              tr("The link %1 was removed and git no longer tracks it, but "
+                 "the commit failed: %2")
+                  .arg(rel, commitErr.trimmed());
+          emit critical(tr("Delete incomplete"), why);
+          emit processErrorExit(1, why);
+          emit finishedRemove(QString(), QString());
           return;
         }
       }
