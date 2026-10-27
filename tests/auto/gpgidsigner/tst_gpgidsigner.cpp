@@ -342,6 +342,15 @@ void tst_gpgidsigner::verifyRejectsUnknownSignerAndGpgFailure() {
   gpg.out = QStringLiteral("[GNUPG:] NEWSIG\n[GNUPG:] ERRSIG 1 2 3\n");
   QVERIFY2(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
            "exit 0 without VALIDSIG is not a verification");
+  // What gpg 2.5 prints, exit 0, for the configured key once revoked.
+  gpg.out =
+      QStringLiteral("[GNUPG:] NEWSIG\n"
+                     "[GNUPG:] REVKEYSIG 89ABCDEF01234567 Signer <s@x>\n"
+                     "[GNUPG:] VALIDSIG %1 2026-10-27 1793095590 0 4 0 22 10 "
+                     "00 %2\n[GNUPG:] KEYREVOKED\n")
+          .arg(kFpr, kPrimary);
+  QVERIFY2(!mine.verify(kGpgId, QStringLiteral("/store/.gpg-id.sig")),
+           "a revoked signing key vouches for nothing");
 }
 
 /**
