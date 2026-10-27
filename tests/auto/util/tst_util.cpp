@@ -5020,7 +5020,8 @@ void tst_util::wslenvMergesIntoAnInheritedEntry() {
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_CEILING_DIRECTORIES/p")), 1);
-  QCOMPARE(parts.size(), 7);
+  QCOMPARE(parts.count(QStringLiteral("GIT_LITERAL_PATHSPECS/u")), 1);
+  QCOMPARE(parts.size(), 8);
 }
 
 /**

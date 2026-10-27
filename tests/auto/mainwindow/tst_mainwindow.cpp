@@ -145,6 +145,8 @@ public:
   QStringList boxTitles;
   /// Plain text of the message boxes the handler saw.
   QStringList boxTexts;
+  /// Text formats of those message boxes.
+  QList<Qt::TextFormat> boxFormats;
 
 private:
   /// One fresh single-shot timer per tick: a repeating QTimer does not fire
@@ -177,6 +179,7 @@ private:
     if (auto *box = qobject_cast<QMessageBox *>(widget)) {
       boxTitles << box->windowTitle();
       boxTexts << box->text();
+      boxFormats << box->textFormat();
     }
     m_handler(widget);
   }
@@ -469,6 +472,7 @@ private Q_SLOTS:
   void renamePasswordMovesIt();
   void deleteNeedsASelection();
   void deletePasswordAsksFirst();
+  void backendErrorsArePlainText();
   void deleteFolderWarnsAboutStrayFiles();
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
@@ -4020,6 +4024,9 @@ void tst_mainwindow::deletePasswordAsksFirst() {
                        QStringList{QStringLiteral("Delete password?")});
     QVERIFY2(driver.boxTexts.value(0).contains(QStringLiteral("doomed-file")),
              qPrintable(driver.boxTexts.value(0)));
+    // A name from the store, which other writers control: as rich text,
+    // <img src="/dev/zero"> in it would have Qt read that file without end.
+    QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
   }
   QVERIFY2(QFileInfo::exists(file), "No keeps the entry");
 
@@ -4029,6 +4036,21 @@ void tst_mainwindow::deletePasswordAsksFirst() {
                                     Qt::DirectConnection));
   QCOMPARE(driver.seen, 1);
   QTRY_VERIFY2(!QFileInfo::exists(file), "Yes removes the entry");
+}
+
+/**
+ * @brief Pass's errors quote store paths, which other writers of a shared
+ * store control; the box shows them as the text they are.
+ */
+void tst_mainwindow::backendErrorsArePlainText() {
+  const QString message = QStringLiteral("<img src=\"/nonexistent\"> is odd");
+  ModalDriver driver(answerBox(QMessageBox::Ok));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "critical", Qt::DirectConnection,
+      Q_ARG(QString, QStringLiteral("Title")), Q_ARG(QString, message)));
+  QCOMPARE(driver.seen, 1);
+  QCOMPARE(driver.boxTexts.value(0), message);
+  QCOMPARE(driver.boxFormats.value(0), Qt::PlainText);
 }
 
 /**

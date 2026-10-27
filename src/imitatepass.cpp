@@ -8,6 +8,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QLocale>
 #include <QPointer>
 #include <QProcess>
 #include <QRegularExpression>
@@ -612,9 +613,10 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
         Util::readRegularFile(gpgIdFile, Util::kMaxGpgIdBytes);
     if (!bytes) {
       if (why != nullptr) {
-        *why = tr("%1 is not a regular file of at most %2 bytes.")
-                   .arg(gpgIdFile)
-                   .arg(Util::kMaxGpgIdBytes);
+        *why = tr("%1 cannot be read as a recipient list (a regular file "
+                  "of at most %2).")
+                   .arg(gpgIdFile,
+                        QLocale().formattedDataSize(Util::kMaxGpgIdBytes));
       }
       return false;
     }

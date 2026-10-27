@@ -65,7 +65,8 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/u"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u"),
       QStringLiteral("PASSWORD_STORE_GPG_OPTS/u"),
-      QStringLiteral("GIT_CEILING_DIRECTORIES/p")};
+      QStringLiteral("GIT_CEILING_DIRECTORIES/p"),
+      QStringLiteral("GIT_LITERAL_PATHSPECS/u")};
   const QString existing = env.value(QStringLiteral("WSLENV"));
   if (existing.isEmpty()) {
     env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));

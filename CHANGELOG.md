@@ -101,10 +101,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   without splitting the rest. Content search takes at most 100 matching
   lines from one entry and 10000 in all, and says when it stopped.
 - Names from the store are shown as plain text. An entry's path, its field
-  names and the `.templates` field names went into labels that Qt reads as
-  rich text when they look like it, so a shared store's other writers could
-  name one `<img src="/dev/zero">` and have QtPass read that file without
-  end when it was shown.
+  names and the `.templates` field names went into labels, and paths into
+  message boxes (deleting, moving, errors from the backend), that Qt reads
+  as rich text when they look like it, so a shared store's other writers
+  could name one `<img src="/dev/zero">` and have QtPass read that file
+  without end when it was shown.
 - Deleting an entry named with glob characters (`a*.gpg`) removes that
   entry only. Git read the name as a pattern, so `git rm -f` removed every
   tracked entry that matched; `GIT_LITERAL_PATHSPECS` now makes Git take

@@ -75,6 +75,7 @@ CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
 
 SOURCES   += mainwindow.cpp \
+             plainmessagebox.cpp \
              menubarpeek.cpp \
              processinfo.cpp \
              windowstatestore.cpp \
@@ -124,6 +125,7 @@ SOURCES   += mainwindow.cpp \
              profileinit.cpp
 
 HEADERS   += mainwindow.h \
+             plainmessagebox.h \
              windowstatestore.h \
              grepsearchcontroller.h \
              configdialog.h \

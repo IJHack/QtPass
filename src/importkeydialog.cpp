@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "importkeydialog.h"
+#include "plainmessagebox.h"
 
 #include "executor.h"
 #include "ui_importkeydialog.h"
@@ -51,17 +52,21 @@ void ImportKeyDialog::on_fileButton_clicked() {
   constexpr qint64 kMaxKeyFileBytes = 16LL * 1024 * 1024;
   QFile file(fileName);
   if (!QFileInfo(fileName).isFile() || !file.open(QIODevice::ReadOnly)) {
-    QMessageBox::warning(this, tr("Import key"),
-                         tr("Could not open file: %1").arg(fileName));
+    PlainMessageBox::warning(this, tr("Import key"),
+                             tr("Could not open file: %1").arg(fileName));
     return;
   }
 
-  const QByteArray bytes = file.read(kMaxKeyFileBytes + 1);
+  // The size first, so a large file is not read at all; the read limit
+  // still guards one that grows meanwhile.
+  const bool tooLarge = file.size() > kMaxKeyFileBytes;
+  const QByteArray bytes =
+      tooLarge ? QByteArray() : file.read(kMaxKeyFileBytes + 1);
   file.close();
-  if (bytes.size() > kMaxKeyFileBytes) {
-    QMessageBox::warning(this, tr("Import key"),
-                         tr("%1 is larger than a key file can be.")
-                             .arg(fileName.toHtmlEscaped()));
+  if (tooLarge || bytes.size() > kMaxKeyFileBytes) {
+    PlainMessageBox::warning(
+        this, tr("Import key"),
+        tr("%1 is larger than a key file can be.").arg(fileName));
     return;
   }
 

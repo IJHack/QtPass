@@ -676,7 +676,12 @@ auto Util::readRegularFile(const QString &path, qint64 maxBytes)
   if (!openRegularFile(path, file)) {
     return std::nullopt;
   }
-  // One byte past the limit tells "exactly the limit" from "more".
+  // A regular file's size is reliable, also when sparse: refuse a large one
+  // before reading anything. One byte past the limit still guards a file
+  // that grows meanwhile.
+  if (file.size() > maxBytes) {
+    return std::nullopt;
+  }
   QByteArray bytes = file.read(maxBytes + 1);
   if (bytes.size() > maxBytes || file.error() != QFileDevice::NoError) {
     return std::nullopt;
