@@ -51,6 +51,10 @@ private Q_SLOTS:
   void aRevokedSignerCountsForNothing();
   void anExpiredSignersOlderSignatureStillCounts();
   void listKeysSaysWhatEachKeyCanDo();
+  void verifiesAnArmoredSignature();
+  void onlyASecretSubkeyCanDecryptButNotSign();
+  void aRevokedUserIdNamesNothing();
+  void anAddressNamesThatAddressNotASubstring();
 
 private:
   struct Result {
@@ -749,7 +753,8 @@ void tst_rnpcrypto::aRevokedSignerCountsForNothing() {
   QCOMPARE(gpg({QStringLiteral("--import")}, revocation).exitCode, 0);
   QVERIFY2(!rnp.importKeys(exportKey(dave, {}, false), &error).isEmpty(),
            qPrintable(error));
-  QVERIFY(rnp.listKeys().size() == 1 && rnp.listKeys().first().revoked);
+  const QList<RnpCrypto::KeyInfo> keys = rnp.listKeys();
+  QVERIFY(keys.size() == 1 && keys.first().revoked);
   // RNP already reports such a signature invalid (stricter than gpg's
   // VALIDSIG); RnpCrypto::verify() checks the revocation itself as well.
   QVERIFY(rnp.verify(kList, sig, &error).isEmpty());
@@ -810,6 +815,101 @@ void tst_rnpcrypto::listKeysSaysWhatEachKeyCanDo() {
   const QList<RnpCrypto::KeyInfo> secret = rnp.listKeys(true);
   QCOMPARE(secret.size(), 1);
   QCOMPARE(secret.first().fingerprint, m_alice);
+}
+
+// verify() takes an armored signature as well as a binary one.
+void tst_rnpcrypto::verifiesAnArmoredSignature() {
+  const QByteArray sig = gpgSign(m_alice, kList, {QStringLiteral("--armor")});
+  QVERIFY(sig.startsWith("-----BEGIN PGP SIGNATURE-----"));
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(m_alice, {}, false)).isEmpty());
+  QString error;
+  QCOMPARE(rnp.verify(kList, sig, &error), (QStringList{m_alice, m_alice}));
+}
+
+// gpg --export-secret-subkeys leaves the primary's secret at home: the key
+// has a secret part here (it decrypts), but nothing that signs.
+void tst_rnpcrypto::onlyASecretSubkeyCanDecryptButNotSign() {
+  const Result subkeys =
+      gpg({QStringLiteral("--armor"), QStringLiteral("--pinentry-mode"),
+           QStringLiteral("loopback"), QStringLiteral("--passphrase"),
+           QString(), QStringLiteral("--export-secret-subkeys"), m_alice});
+  QCOMPARE(subkeys.exitCode, 0);
+  RnpCrypto rnp;
+  QString error;
+  QVERIFY2(!rnp.importKeys(subkeys.out, &error).isEmpty(), qPrintable(error));
+  const QList<RnpCrypto::KeyInfo> keys = rnp.listKeys(true);
+  QCOMPARE(keys.size(), 1);
+  QVERIFY(keys.first().hasSecret);
+  QVERIFY(keys.first().canEncrypt);
+  QVERIFY2(!keys.first().canSign, "the primary, which signs, is not here");
+  QVERIFY(rnp.sign(kList, m_alice, &error).isEmpty());
+
+  const QByteArray entry = "subkey entry\n";
+  const Result enc =
+      gpg({QStringLiteral("--trust-model"), QStringLiteral("always"),
+           QStringLiteral("-e"), QStringLiteral("-r"), m_alice},
+          entry);
+  bool ok = false;
+  QCOMPARE(rnp.decrypt(enc.out, &error, &ok), entry);
+  QVERIFY2(ok, qPrintable(error));
+}
+
+// A revoked user ID (an address given up) is no longer the key's: not
+// listed, and it names no key.
+void tst_rnpcrypto::aRevokedUserIdNamesNothing() {
+  const QString frank =
+      generateKey(QStringLiteral("Frank <frank@example.org>"), {});
+  QVERIFY(!frank.isEmpty());
+  const QString old = QStringLiteral("Frank <old@example.org>");
+  QCOMPARE(gpg({QStringLiteral("--quick-add-uid"), frank, old}).exitCode, 0);
+  QCOMPARE(gpg({QStringLiteral("--quick-revoke-uid"), frank, old}).exitCode, 0);
+  RnpCrypto rnp;
+  QVERIFY(!rnp.importKeys(exportKey(frank, {}, true)).isEmpty());
+  const QList<RnpCrypto::KeyInfo> keys = rnp.listKeys();
+  QCOMPARE(keys.size(), 1);
+  QCOMPARE(keys.first().userIds,
+           QStringList{QStringLiteral("Frank <frank@example.org>")});
+  QString error;
+  QVERIFY(
+      rnp.encrypt("x", {QStringLiteral("old@example.org")}, &error).isEmpty());
+  QVERIFY(rnp.sign(kList, QStringLiteral("Frank <old@example.org>"), &error)
+              .isEmpty());
+  QVERIFY(!rnp.encrypt("x", {QStringLiteral("frank@example.org")}, &error)
+               .isEmpty());
+}
+
+// An e-mail address names the key with that address, in any case (the
+// signing key setting comes in upper case), not one whose address merely
+// contains it: alice@ is not malice@.
+void tst_rnpcrypto::anAddressNamesThatAddressNotASubstring() {
+  const QString malice =
+      generateKey(QStringLiteral("Mallory <malice@example.org>"), {});
+  QVERIFY(!malice.isEmpty());
+  QString error;
+  {
+    RnpCrypto both;
+    QVERIFY(!both.importKeys(exportKey(m_alice, {}, true) +
+                             exportKey(malice, {}, true))
+                 .isEmpty());
+    const QByteArray sig =
+        both.sign(kList, QStringLiteral("ALICE@EXAMPLE.ORG"), &error);
+    QVERIFY2(!sig.isEmpty(), qPrintable(error));
+    QCOMPARE(gpgValidSig(kList, sig).value(1), m_alice);
+    QVERIFY2(!both.encrypt("x", {QStringLiteral("<alice@example.org>")}, &error)
+                  .isEmpty(),
+             qPrintable(error));
+  }
+  {
+    // Only Mallory's secret key is here: naming Alice must not sign with it.
+    RnpCrypto onlyMallory;
+    QVERIFY(!onlyMallory
+                 .importKeys(exportKey(m_alice, {}, false) +
+                             exportKey(malice, {}, true))
+                 .isEmpty());
+    QVERIFY(onlyMallory.sign(kList, QStringLiteral("alice@example.org"), &error)
+                .isEmpty());
+  }
 }
 
 QTEST_MAIN(tst_rnpcrypto)

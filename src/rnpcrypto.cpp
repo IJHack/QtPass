@@ -172,22 +172,45 @@ auto primaryFingerprint(rnp_key_handle_t key) -> QString {
 }
 
 /// Whether any user ID of @p key satisfies @p hit.
-template <typename Hit>
-auto anyUserIdMatches(rnp_key_handle_t key, Hit hit) -> bool {
+/**
+ * @p key's user IDs that are not revoked, in the keyring's order: a revoked
+ * one is no longer the key's (an address given up, say) and names nothing.
+ */
+auto liveUserIds(rnp_key_handle_t key) -> QStringList {
+  QStringList live;
   size_t uids = 0;
   rnp_key_get_uid_count(key, &uids);
   for (size_t i = 0; i < uids; ++i) {
+    rnp_uid_handle_t handle = nullptr;
+    bool revoked = false;
+    if (rnp_key_get_uid_handle_at(key, i, &handle) == RNP_SUCCESS &&
+        handle != nullptr) {
+      rnp_uid_is_revoked(handle, &revoked);
+      rnp_uid_handle_destroy(handle);
+    }
     char *uid = nullptr;
-    if (rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+    if (revoked || rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
       continue;
     }
-    const bool matched = hit(QString::fromUtf8(uid));
+    live << QString::fromUtf8(uid);
     rnp_buffer_destroy(uid);
-    if (matched) {
-      return true;
-    }
   }
-  return false;
+  return live;
+}
+
+/// Whether any live user ID of @p key satisfies @p hit.
+template <typename Hit>
+auto anyUserIdMatches(rnp_key_handle_t key, Hit hit) -> bool {
+  const QStringList uids = liveUserIds(key);
+  return std::any_of(uids.cbegin(), uids.cend(), hit);
+}
+
+/// The e-mail address in a user ID: between < and >, or the whole of it.
+auto mailboxOf(const QString &uid) -> QString {
+  const qsizetype open = uid.lastIndexOf(QLatin1Char('<'));
+  const qsizetype close = uid.lastIndexOf(QLatin1Char('>'));
+  return open >= 0 && close > open ? uid.mid(open + 1, close - open - 1)
+                                   : uid.trimmed();
 }
 
 /**
@@ -323,11 +346,26 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why,
       rnp_buffer_destroy(keyId);
       return hit;
     });
+  } else if (static const QRegularExpression address(
+                 QStringLiteral(R"(^<?[^\s<>@]+@[^\s<>@]+>?$)"));
+             address.match(id).hasMatch()) {
+    // An e-mail address (a .gpg-id often lists just that) names the key
+    // whose user ID has that address, compared without regard to case, not
+    // every user ID that contains it: as part of a name, alice@example.org
+    // would also find malice@example.org. Stricter than gpg -r, which
+    // searches for a substring.
+    QString mailbox = id;
+    mailbox.remove(QLatin1Char('<')).remove(QLatin1Char('>'));
+    primaries = matchingPrimaries(ffi, usage, [&mailbox](rnp_key_handle_t key) {
+      return anyUserIdMatches(key, [&mailbox](const QString &uid) {
+        return mailboxOf(uid).compare(mailbox, Qt::CaseInsensitive) == 0;
+      });
+    });
   } else {
-    // The whole user ID first, then part of one (gpg -r takes both; a
-    // .gpg-id often lists just the e-mail address). Both through
-    // matchingPrimaries, so an expired key is skipped and two keys with the
-    // same user ID (after a key rotation, say) are an error, not a pick.
+    // The whole user ID first, then part of one (gpg -r takes both). Both
+    // through matchingPrimaries, so an expired key is skipped and two keys
+    // with the same user ID (after a key rotation, say) are an error, not a
+    // pick.
     primaries = matchingPrimaries(ffi, usage, [&id](rnp_key_handle_t key) {
       return anyUserIdMatches(key,
                               [&id](const QString &uid) { return uid == id; });
@@ -650,15 +688,7 @@ auto RnpCrypto::listKeys(bool secretOnly) const -> QList<KeyInfo> {
       info.keyId = QString::fromLatin1(keyId);
       rnp_buffer_destroy(keyId);
     }
-    size_t uids = 0;
-    rnp_key_get_uid_count(handle, &uids);
-    for (size_t i = 0; i < uids; ++i) {
-      char *uid = nullptr;
-      if (rnp_key_get_uid_at(handle, i, &uid) == RNP_SUCCESS) {
-        info.userIds << QString::fromUtf8(uid);
-        rnp_buffer_destroy(uid);
-      }
-    }
+    info.userIds = liveUserIds(handle);
     uint32_t created = 0;
     if (rnp_key_get_creation(handle, &created) == RNP_SUCCESS) {
       info.created = QDateTime::fromSecsSinceEpoch(created, QTimeZone::UTC);

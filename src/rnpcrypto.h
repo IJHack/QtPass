@@ -42,7 +42,7 @@ public:
     QString fingerprint;
     /** @brief The primary key's 16-hex-digit key ID. */
     QString keyId;
-    /** @brief Its user IDs, in the keyring's order. */
+    /** @brief Its user IDs that are not revoked, in the keyring's order. */
     QStringList userIds;
     /** @brief When it was created. */
     QDateTime created;
@@ -127,8 +127,10 @@ public:
    * @param plaintext The entry's content.
    * @param recipients As a .gpg-id lists them, in the forms gpg -r takes: a
    * fingerprint (40 or 64 hex digits, blanks allowed), a long or short (8
-   * hex digits) key ID with or without 0x, a whole user ID, or part of one
-   * such as the e-mail address. Each must name exactly one key that can
+   * hex digits) key ID with or without 0x, an e-mail address (the key with
+   * a user ID of that address, any case; stricter than gpg's substring
+   * search), or a whole user ID or part of one. Revoked user IDs name
+   * nothing. Each must name exactly one key that can
    * encrypt (not expired or revoked, with a usable encryption key); an
    * empty recipient is an error.
    * @param error Set to the reason when encryption fails, naming the first
@@ -165,9 +167,10 @@ public:
    * @brief Makes a detached signature over @p data, as gpg --detach-sign
    * --local-user @p signer does (for .gpg-id.sig).
    * @param data The bytes signed, a .gpg-id as written.
-   * @param signer The key, named as gpg --local-user takes it: a
-   * fingerprint, a key ID or a user ID. It must name exactly one key that
-   * can sign and whose secret key is here; that key is used, not another.
+   * @param signer The key: a fingerprint or key ID names exactly that key; an
+   * e-mail address the key with a user ID of that address (any case); else
+   * a user ID, whole or in part. It must name exactly one key that can sign
+   * and whose secret key is here; that key is used, not another.
    * @param error Set to the reason when signing fails.
    * @return The binary signature, empty on failure.
    */
