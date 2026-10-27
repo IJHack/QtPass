@@ -6,6 +6,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QRegularExpression>
+#include <QTimeZone>
 #include <algorithm>
 #include <cstring>
 #include <limits>
@@ -125,6 +126,58 @@ auto canEncryptTo(rnp_key_handle_t key) -> bool {
   return false;
 }
 
+/**
+ * Whether the secret part of @p key is here to use: not only a record of
+ * one. GnuPG exports a stub for a primary left at home
+ * (--export-secret-subkeys) or held on a smartcard, and RNP counts such a
+ * stub as a secret key.
+ */
+auto secretIsHere(rnp_key_handle_t key) -> bool {
+  bool secret = false;
+  if (rnp_key_have_secret(key, &secret) != RNP_SUCCESS || !secret) {
+    return false;
+  }
+  char *type = nullptr;
+  if (rnp_key_get_protection_type(key, &type) != RNP_SUCCESS ||
+      type == nullptr) {
+    return false;
+  }
+  const QString protection = QString::fromLatin1(type);
+  rnp_buffer_destroy(type);
+  return protection != QLatin1String("GPG-None") &&
+         protection != QLatin1String("GPG-Smartcard") &&
+         protection != QLatin1String("Unknown");
+}
+
+/**
+ * The key of the primary @p key that signs, as gpg --local-user picks it:
+ * a valid key that may sign and whose secret part is here (the primary
+ * itself, or a subkey). Null when there is none.
+ */
+auto signingKeyOf(rnp_key_handle_t key) -> Key {
+  if (!isValidKey(key)) {
+    return nullptr;
+  }
+  rnp_key_handle_t handle = nullptr;
+  if (rnp_key_get_default_key(key, "sign", 0, &handle) != RNP_SUCCESS ||
+      handle == nullptr) {
+    return nullptr;
+  }
+  Key signer(handle);
+  if (!isValidKey(handle) || !secretIsHere(handle)) {
+    return nullptr;
+  }
+  return signer;
+}
+
+/// What a key is looked up for: what makes a primary key a candidate.
+enum class Usage { Encrypt, Sign };
+
+auto usableFor(rnp_key_handle_t primary, Usage usage) -> bool {
+  return usage == Usage::Encrypt ? canEncryptTo(primary)
+                                 : signingKeyOf(primary) != nullptr;
+}
+
 /// The primary key's fingerprint for @p key, itself if it is primary.
 auto primaryFingerprint(rnp_key_handle_t key) -> QString {
   bool primary = false;
@@ -139,32 +192,61 @@ auto primaryFingerprint(rnp_key_handle_t key) -> QString {
   return result;
 }
 
-/// Whether any user ID of @p key satisfies @p hit.
-template <typename Hit>
-auto anyUserIdMatches(rnp_key_handle_t key, Hit hit) -> bool {
+/**
+ * @p key's user IDs that are still its own, in the keyring's order: valid
+ * (bound by a current self-signature, so not one a keyserver or a third
+ * party attached) and not revoked (an address given up, say). The rest
+ * name nothing. When RNP cannot say, the user ID is left out.
+ */
+auto liveUserIds(rnp_key_handle_t key) -> QStringList {
+  QStringList live;
   size_t uids = 0;
   rnp_key_get_uid_count(key, &uids);
   for (size_t i = 0; i < uids; ++i) {
-    char *uid = nullptr;
-    if (rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+    rnp_uid_handle_t handle = nullptr;
+    if (rnp_key_get_uid_handle_at(key, i, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
       continue;
     }
-    const bool matched = hit(QString::fromUtf8(uid));
-    rnp_buffer_destroy(uid);
-    if (matched) {
-      return true;
+    // Both: in RNP 0.17 a revoked user ID can still be "valid".
+    bool valid = false;
+    bool revoked = true;
+    const bool known = rnp_uid_is_valid(handle, &valid) == RNP_SUCCESS &&
+                       rnp_uid_is_revoked(handle, &revoked) == RNP_SUCCESS;
+    rnp_uid_handle_destroy(handle);
+    char *uid = nullptr;
+    if (!known || !valid || revoked ||
+        rnp_key_get_uid_at(key, i, &uid) != RNP_SUCCESS) {
+      continue;
     }
+    live << QString::fromUtf8(uid);
+    rnp_buffer_destroy(uid);
   }
-  return false;
+  return live;
+}
+
+/// Whether any live user ID of @p key satisfies @p hit.
+template <typename Hit>
+auto anyUserIdMatches(rnp_key_handle_t key, Hit hit) -> bool {
+  const QStringList uids = liveUserIds(key);
+  return std::any_of(uids.cbegin(), uids.cend(), hit);
+}
+
+/// The e-mail address in a user ID: between < and >, or the whole of it.
+auto mailboxOf(const QString &uid) -> QString {
+  const qsizetype open = uid.lastIndexOf(QLatin1Char('<'));
+  const qsizetype close = uid.lastIndexOf(QLatin1Char('>'));
+  return open >= 0 && close > open ? uid.mid(open + 1, close - open - 1)
+                                   : uid.trimmed();
 }
 
 /**
- * Fingerprints of the primary keys that can be encrypted to (canEncryptTo)
- * for which @p match holds, given
- * each key in the keyring (primaries and subkeys) in turn.
+ * Fingerprints of the primary keys usable for @p usage (usableFor()) for
+ * which @p match holds, given each key in the keyring (primaries and
+ * subkeys) in turn.
  */
 template <typename Match>
-auto matchingPrimaries(rnp_ffi_t ffi, Match match) -> QStringList {
+auto matchingPrimaries(rnp_ffi_t ffi, Usage usage, Match match) -> QStringList {
   QStringList primaries;
   rnp_identifier_iterator_t it = nullptr;
   if (rnp_identifier_iterator_create(ffi, &it, "fingerprint") != RNP_SUCCESS) {
@@ -191,7 +273,7 @@ auto matchingPrimaries(rnp_ffi_t ffi, Match match) -> QStringList {
       continue;
     }
     const Key primaryKey(primaryHandle);
-    if (canEncryptTo(primaryHandle)) {
+    if (usableFor(primaryHandle, usage)) {
       primaries << primary;
     }
   }
@@ -206,7 +288,8 @@ auto matchingPrimaries(rnp_ffi_t ffi, Match match) -> QStringList {
  * key ID or a partial user ID must name exactly one valid key. Sets @p why
  * when there is no such key.
  */
-auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
+auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why,
+               Usage usage = Usage::Encrypt) -> Key {
   const QString id = recipient.trimmed();
   if (id.isEmpty()) {
     setError(why, QStringLiteral("Empty recipient"));
@@ -248,7 +331,10 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
     rnp_key_handle_t handle = nullptr;
     rnp_locate_key(ffi, type, lookup.toUpper().toLatin1().constData(), &handle);
     if (handle == nullptr) {
-      setError(why, QStringLiteral("No public key for %1").arg(recipient));
+      setError(why, (usage == Usage::Encrypt
+                         ? QStringLiteral("No public key for %1")
+                         : QStringLiteral("No secret key for %1"))
+                        .arg(recipient));
       return nullptr;
     }
     Key key(handle);
@@ -259,11 +345,16 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
     rnp_locate_key(ffi, "fingerprint", primary.toLatin1().constData(),
                    &primaryHandle);
     const Key primaryKey(primaryHandle);
-    if (primaryHandle == nullptr || !canEncryptTo(primaryHandle)) {
-      setError(why, QStringLiteral("The key %1 cannot be encrypted to: it "
-                                   "is expired or revoked, or has no valid "
-                                   "encryption subkey")
-                        .arg(recipient));
+    if (primaryHandle == nullptr || !usableFor(primaryHandle, usage)) {
+      setError(why,
+               (usage == Usage::Encrypt
+                    ? QStringLiteral("The key %1 cannot be encrypted to: it "
+                                     "is expired or revoked, or has no valid "
+                                     "encryption subkey")
+                    : QStringLiteral("The key %1 cannot sign: it is expired "
+                                     "or revoked, has no valid signing key, "
+                                     "or its secret key is not here"))
+                   .arg(recipient));
       return nullptr;
     }
     return key;
@@ -273,7 +364,7 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
   if (isHexId && keyId.size() == 8) {
     // A short key ID: the last eight digits of a key's (or subkey's) ID.
     const QString shortId = keyId.toUpper();
-    primaries = matchingPrimaries(ffi, [&shortId](rnp_key_handle_t key) {
+    primaries = matchingPrimaries(ffi, usage, [&shortId](rnp_key_handle_t key) {
       char *keyId = nullptr;
       if (rnp_key_get_keyid(key, &keyId) != RNP_SUCCESS) {
         return false;
@@ -282,17 +373,32 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
       rnp_buffer_destroy(keyId);
       return hit;
     });
+  } else if (static const QRegularExpression address(QStringLiteral(
+                 R"(^(?:<[^\s<>@]+@[^\s<>@]+>|[^\s<>@]+@[^\s<>@]+)$)"));
+             address.match(id).hasMatch()) {
+    // An e-mail address (a .gpg-id often lists just that) names the key
+    // whose user ID has that address, compared without regard to case, not
+    // every user ID that contains it: as part of a name, alice@example.org
+    // would also find malice@example.org. Stricter than gpg -r, which
+    // searches for a substring.
+    QString mailbox = id;
+    mailbox.remove(QLatin1Char('<')).remove(QLatin1Char('>'));
+    primaries = matchingPrimaries(ffi, usage, [&mailbox](rnp_key_handle_t key) {
+      return anyUserIdMatches(key, [&mailbox](const QString &uid) {
+        return mailboxOf(uid).compare(mailbox, Qt::CaseInsensitive) == 0;
+      });
+    });
   } else {
-    // The whole user ID first, then part of one (gpg -r takes both; a
-    // .gpg-id often lists just the e-mail address). Both through
-    // matchingPrimaries, so an expired key is skipped and two keys with the
-    // same user ID (after a key rotation, say) are an error, not a pick.
-    primaries = matchingPrimaries(ffi, [&id](rnp_key_handle_t key) {
+    // The whole user ID first, then part of one (gpg -r takes both). Both
+    // through matchingPrimaries, so an expired key is skipped and two keys
+    // with the same user ID (after a key rotation, say) are an error, not a
+    // pick.
+    primaries = matchingPrimaries(ffi, usage, [&id](rnp_key_handle_t key) {
       return anyUserIdMatches(key,
                               [&id](const QString &uid) { return uid == id; });
     });
     if (primaries.isEmpty()) {
-      primaries = matchingPrimaries(ffi, [&id](rnp_key_handle_t key) {
+      primaries = matchingPrimaries(ffi, usage, [&id](rnp_key_handle_t key) {
         return anyUserIdMatches(key, [&id](const QString &uid) {
           return uid.contains(id, Qt::CaseInsensitive);
         });
@@ -305,7 +411,10 @@ auto locateKey(rnp_ffi_t ffi, const QString &recipient, QString *why) -> Key {
     return nullptr;
   }
   if (primaries.isEmpty()) {
-    setError(why, QStringLiteral("No usable public key for %1").arg(recipient));
+    setError(why, (usage == Usage::Encrypt
+                       ? QStringLiteral("No usable public key for %1")
+                       : QStringLiteral("No usable secret key for %1"))
+                      .arg(recipient));
     return nullptr;
   }
   rnp_key_handle_t key = nullptr;
@@ -537,4 +646,207 @@ auto RnpCrypto::decrypt(const QByteArray &ciphertext, QString *error, bool *ok)
     *ok = true;
   }
   return *plain;
+}
+
+namespace {
+
+/// @p key's own fingerprint, primary or subkey.
+auto fingerprintOf(rnp_key_handle_t key) -> QString {
+  char *fpr = nullptr;
+  if (rnp_key_get_fprint(key, &fpr) != RNP_SUCCESS) {
+    return {};
+  }
+  QString result = QString::fromLatin1(fpr);
+  rnp_buffer_destroy(fpr);
+  return result;
+}
+
+auto isRevoked(rnp_key_handle_t key) -> bool {
+  bool revoked = false;
+  return rnp_key_is_revoked(key, &revoked) == RNP_SUCCESS && revoked;
+}
+
+/// The primary key of @p key (itself when it is one), as a handle.
+auto primaryOf(rnp_ffi_t ffi, rnp_key_handle_t key) -> Key {
+  const QString primary = primaryFingerprint(key);
+  rnp_key_handle_t handle = nullptr;
+  if (primary.isEmpty() ||
+      rnp_locate_key(ffi, "fingerprint", primary.toLatin1().constData(),
+                     &handle) != RNP_SUCCESS) {
+    return nullptr;
+  }
+  return Key(handle);
+}
+
+} // namespace
+
+auto RnpCrypto::listKeys(bool secretOnly) const -> QList<KeyInfo> {
+  QList<KeyInfo> keys;
+  if (m_ffi == nullptr) {
+    return keys;
+  }
+  rnp_identifier_iterator_t it = nullptr;
+  if (rnp_identifier_iterator_create(m_ffi, &it, "fingerprint") !=
+      RNP_SUCCESS) {
+    return keys;
+  }
+  const char *fpr = nullptr;
+  while (rnp_identifier_iterator_next(it, &fpr) == RNP_SUCCESS &&
+         fpr != nullptr) {
+    rnp_key_handle_t handle = nullptr;
+    if (rnp_locate_key(m_ffi, "fingerprint", fpr, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
+      continue;
+    }
+    const Key key(handle);
+    bool primary = false;
+    if (rnp_key_is_primary(handle, &primary) != RNP_SUCCESS || !primary) {
+      continue;
+    }
+    KeyInfo info;
+    info.fingerprint = fingerprintOf(handle);
+    char *keyId = nullptr;
+    if (rnp_key_get_keyid(handle, &keyId) == RNP_SUCCESS) {
+      info.keyId = QString::fromLatin1(keyId);
+      rnp_buffer_destroy(keyId);
+    }
+    info.userIds = liveUserIds(handle);
+    uint32_t created = 0;
+    if (rnp_key_get_creation(handle, &created) == RNP_SUCCESS) {
+      info.created = QDateTime::fromSecsSinceEpoch(created, QTimeZone::UTC);
+    }
+    uint32_t lifetime = 0;
+    if (rnp_key_get_expiration(handle, &lifetime) == RNP_SUCCESS &&
+        lifetime > 0) {
+      info.expires = info.created.addSecs(lifetime);
+    }
+    info.revoked = isRevoked(handle);
+    bool expired = false;
+    info.expired =
+        rnp_key_is_expired(handle, &expired) == RNP_SUCCESS && expired;
+    // A secret part may be a subkey's only (gpg --export-secret-subkeys).
+    info.hasSecret = secretIsHere(handle);
+    size_t subkeys = 0;
+    rnp_key_get_subkey_count(handle, &subkeys);
+    for (size_t i = 0; i < subkeys && !info.hasSecret; ++i) {
+      rnp_key_handle_t sub = nullptr;
+      if (rnp_key_get_subkey_at(handle, i, &sub) == RNP_SUCCESS &&
+          sub != nullptr) {
+        const Key subkey(sub);
+        info.hasSecret = secretIsHere(sub);
+      }
+    }
+    info.canEncrypt = canEncryptTo(handle);
+    info.canSign = signingKeyOf(handle) != nullptr;
+    if (!secretOnly || info.hasSecret) {
+      keys << info;
+    }
+  }
+  rnp_identifier_iterator_destroy(it);
+  return keys;
+}
+
+auto RnpCrypto::sign(const QByteArray &data, const QString &signer,
+                     QString *error) -> QByteArray {
+  if (m_ffi == nullptr) {
+    setError(error, QStringLiteral("RNP is not available"));
+    return {};
+  }
+  // As gpg --local-user: exactly the key named, never another one that
+  // happens to have a secret key here.
+  QString why;
+  const Key named = locateKey(m_ffi, signer, &why, Usage::Sign);
+  if (!named) {
+    setError(error, why);
+    return {};
+  }
+  const Key primary = primaryOf(m_ffi, named.get());
+  const Key signing = primary ? signingKeyOf(primary.get()) : nullptr;
+  if (!signing) {
+    setError(error, QStringLiteral("The key %1 cannot sign").arg(signer));
+    return {};
+  }
+  Input input = memoryInput(data, error, "Cannot read the data to sign");
+  Output output = memoryOutput(error, "Cannot sign");
+  if (!input || !output) {
+    return {};
+  }
+  rnp_op_sign_t op = nullptr;
+  rnp_result_t result =
+      rnp_op_sign_detached_create(&op, m_ffi, input.get(), output.get());
+  if (result != RNP_SUCCESS) {
+    setError(error, rnpError("Cannot sign", result));
+    return {};
+  }
+  const std::unique_ptr<rnp_op_sign_st, rnp_result_t (*)(rnp_op_sign_t)> guard(
+      op, rnp_op_sign_destroy);
+  rnp_op_sign_set_armor(op, false);
+  result = rnp_op_sign_add_signature(op, signing.get(), nullptr);
+  if (result == RNP_SUCCESS) {
+    // Unlocks the secret key through the passphrase provider.
+    result = rnp_op_sign_execute(op);
+  }
+  if (result != RNP_SUCCESS) {
+    setError(error, rnpError("Cannot sign", result));
+    return {};
+  }
+  std::optional<QByteArray> signature = outputBytes(output.get());
+  if (!signature || signature->isEmpty()) {
+    setError(error, QStringLiteral("Cannot sign: no output from RNP"));
+    return {};
+  }
+  return *signature;
+}
+
+auto RnpCrypto::verify(const QByteArray &data, const QByteArray &signature,
+                       QString *error) -> QStringList {
+  if (m_ffi == nullptr) {
+    setError(error, QStringLiteral("RNP is not available"));
+    return {};
+  }
+  Input input = memoryInput(data, error, "Cannot read the signed data");
+  Input sigInput = memoryInput(signature, error, "Cannot read the signature");
+  if (!input || !sigInput) {
+    return {};
+  }
+  rnp_op_verify_t op = nullptr;
+  rnp_result_t result =
+      rnp_op_verify_detached_create(&op, m_ffi, input.get(), sigInput.get());
+  if (result != RNP_SUCCESS) {
+    setError(error, rnpError("Cannot verify", result));
+    return {};
+  }
+  const std::unique_ptr<rnp_op_verify_st, rnp_result_t (*)(rnp_op_verify_t)>
+      guard(op, rnp_op_verify_destroy);
+  // Fails when no signature verifies; each one's own status says why.
+  result = rnp_op_verify_execute(op);
+  size_t count = 0;
+  rnp_op_verify_get_signature_count(op, &count);
+  for (size_t i = 0; i < count; ++i) {
+    rnp_op_verify_signature_t sig = nullptr;
+    if (rnp_op_verify_get_signature_at(op, i, &sig) != RNP_SUCCESS ||
+        rnp_op_verify_signature_get_status(sig) != RNP_SUCCESS) {
+      continue;
+    }
+    rnp_key_handle_t handle = nullptr;
+    if (rnp_op_verify_signature_get_key(sig, &handle) != RNP_SUCCESS ||
+        handle == nullptr) {
+      continue;
+    }
+    const Key key(handle);
+    const Key primary = primaryOf(m_ffi, handle);
+    // The first good signature decides, as the first VALIDSIG does in
+    // GpgIdSigner: by a revoked key (a leaked one, say) it counts for
+    // nothing. RNP 0.17 and 0.18 already give such a signature a failed
+    // status; checked here too, so that holds whatever RNP decides.
+    if (isRevoked(handle) || !primary || isRevoked(primary.get())) {
+      setError(error, QStringLiteral("The signature is by a revoked key (%1)")
+                          .arg(primaryFingerprint(handle)));
+      return {};
+    }
+    return {fingerprintOf(handle), fingerprintOf(primary.get())};
+  }
+  setError(error, result != RNP_SUCCESS ? rnpError("No valid signature", result)
+                                        : QStringLiteral("No valid signature"));
+  return {};
 }
