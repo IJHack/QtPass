@@ -1140,23 +1140,45 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
  *        had no effect.
  */
 void tst_configdialog::acceptSavesTheGlobalAutoPushAndAutoPull() {
+  SettingsRestorer restorer;
   {
     AppSettings seed = QtPassSettings::load();
     seed.useGit = false;
     seed.autoPush = false;
     seed.autoPull = false;
+    seed.gitUseParentRepository = false;
     QtPassSettings::save(seed);
   }
   ConfigDialog dialog(nullptr);
+  auto *parentRepo = child<QCheckBox>(dialog, "checkBoxGitUseParentRepository");
+  QVERIFY(!parentRepo->isChecked());
   child<QCheckBox>(dialog, "checkBoxUseGit")->setChecked(true);
   child<QCheckBox>(dialog, "checkBoxAutoPush")->setChecked(true);
   child<QCheckBox>(dialog, "checkBoxAutoPull")->setChecked(true);
+  parentRepo->setChecked(true);
   dialog.accept();
   const AppSettings s = QtPassSettings::load();
   QVERIFY(s.useGit);
   QVERIFY2(s.autoPush, "auto push must reach the global setting");
   QVERIFY2(s.autoPull, "auto pull must reach the global setting");
   QVERIFY(QtPassSettings::isAutoPush());
+  QVERIFY2(s.gitUseParentRepository,
+           "the parent-repository choice must reach the setting");
+  ConfigDialog again(nullptr);
+  QVERIFY2(
+      child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isChecked(),
+      "and come back checked");
+  // pass sets its own ceiling, so the choice only applies to native git.
+  // Enabled first: without pass installed the radio button is disabled and
+  // a click would do nothing.
+  child<QRadioButton>(again, "radioButtonPass")->setEnabled(true);
+  child<QRadioButton>(again, "radioButtonPass")->click();
+  QVERIFY(
+      !child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isEnabled());
+  child<QRadioButton>(again, "radioButtonNative")->setEnabled(true);
+  child<QRadioButton>(again, "radioButtonNative")->click();
+  QVERIFY(
+      child<QCheckBox>(again, "checkBoxGitUseParentRepository")->isEnabled());
 }
 
 /**

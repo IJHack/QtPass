@@ -60,10 +60,15 @@ ImitatePass::~ImitatePass() {
 auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
                                QString *process_err) -> int {
-  if (QThread::currentThread() == thread())
-    return Executor::executeBlocking(app, args, input, process_out,
-                                     process_err);
+  // In the store's environment: the git ceiling QtPass's own does not
+  // carry.
   QProcess process;
+  if (QThread::currentThread() == thread()) {
+    process.setProcessEnvironment(storeEnvironment());
+    return Executor::executeBlocking(process, app, args, input, process_out,
+                                     process_err);
+  }
+  process.setProcessEnvironment(m_reencryptEnv);
   return Executor::executeBlocking(process, app, args, input, process_out,
                                    process_err, &m_reencryptCancel);
 }
@@ -105,9 +110,9 @@ void ImitatePass::GitPull_b() {
   // git would run in QtPass's launch directory and pull an unrelated
   // repository, or fail with "not a git repository".
   QString err;
-  const int rc = Executor::executeBlocking(
-      m_settings.gitExecutable, {"-C", pgit(m_settings.passStore), "pull"},
-      QString(), nullptr, &err);
+  const int rc =
+      execBlocking(m_settings.gitExecutable,
+                   {"-C", pgit(m_settings.passStore), "pull"}, nullptr, &err);
   if (rc != 0) {
     emit statusMsg(tr("Git pull failed: %1").arg(err.trimmed()), 5000);
   }
@@ -425,8 +430,8 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   auto run = [&](const QStringList &args) -> int {
     QString runOut;
     QString runErr;
-    const int rc = Executor::executeBlocking(
-        git, QStringList{"-C", store} + args, &runOut, &runErr);
+    const int rc =
+        execBlocking(git, QStringList{"-C", store} + args, &runOut, &runErr);
     if (out != nullptr) {
       out->append(runOut);
     }
@@ -462,10 +467,9 @@ auto ImitatePass::gitAddGpgId(const QString &gpgIdFile,
 }
 
 auto ImitatePass::gitTracks(const QString &file) -> bool {
-  return Executor::executeBlocking(m_settings.gitExecutable,
-                                   {"-C", pgit(m_settings.passStore),
-                                    "ls-files", "--error-unmatch", "--",
-                                    pgit(file)}) == 0;
+  return execBlocking(m_settings.gitExecutable,
+                      {"-C", pgit(m_settings.passStore), "ls-files",
+                       "--error-unmatch", "--", pgit(file)}) == 0;
 }
 
 auto ImitatePass::refuseLinkedGpgIdFolder(const QString &path) -> bool {
@@ -1003,6 +1007,9 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
   // destructor cancels and joins m_reencryptThread. `self` only guards the
   // queued completion, which may run after the thread object is gone.
   QPointer<ImitatePass> self(this);
+  // The worker's own copy: env is the owning thread's to change meanwhile.
+  updateEnv();
+  m_reencryptEnv = storeEnvironment();
   QThread *thread = QThread::create([this, self, dir]() {
     ReencryptResult result = reencryptFiles(dir);
     QMetaObject::invokeMethod(

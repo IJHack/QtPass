@@ -184,7 +184,7 @@ auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
   // ensure directory exists if never used pass or misconfigured.
   // otherwise process->setWorkingDirectory(passStore); will fail on execution.
   if (!QDir(returnValue).exists()) {
-    if (!QDir().mkdir(returnValue)) {
+    if (!Util::mkpathForStore(returnValue)) {
       qWarning() << "Failed to create password store directory:" << returnValue;
     }
   }

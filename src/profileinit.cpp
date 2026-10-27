@@ -13,6 +13,22 @@
 #include <QFileInfo>
 #include <QProcess>
 
+namespace {
+/// As Pass::updateEnv() sets it for the active store: git in @p dir does not
+/// look above it, so neither the identity check nor a commit reads or uses a
+/// repository the new store merely lies in (a dotfiles one in the home
+/// folder), unless the user opted into that.
+auto gitEnvironment(const QString &dir, const AppSettings &s)
+    -> QProcessEnvironment {
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  if (!s.gitUseParentRepository) {
+    env.insert(QStringLiteral("GIT_CEILING_DIRECTORIES"),
+               Util::gitCeiling(dir));
+  }
+  return env;
+}
+} // namespace
+
 auto ProfileInit::needsInit(const QString &path) -> bool {
   if (path.isEmpty()) {
     return false;
@@ -32,7 +48,7 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   out.clear();
 
   const QDir folder(dir);
-  if (!folder.exists() && !QDir().mkpath(folder.absolutePath())) {
+  if (!folder.exists() && !Util::mkpathForStore(folder.absolutePath())) {
     out = tr("Could not create %1.").arg(folder.absolutePath());
     return false;
   }
@@ -140,6 +156,7 @@ auto ProfileInit::commitGpgId(const QString &dir, const QString &gpgIdFile,
   // the shared Executor or PASSWORD_STORE_DIR of the active store.
   QProcess git;
   git.setWorkingDirectory(dir);
+  git.setProcessEnvironment(gitEnvironment(dir, s));
   auto run = [&](const QStringList &args) -> bool {
     QString err;
     const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
@@ -169,6 +186,7 @@ auto ProfileInit::initGit(const QString &dir, const AppSettings &s,
                           QString *note) -> bool {
   QProcess git;
   git.setWorkingDirectory(dir);
+  git.setProcessEnvironment(gitEnvironment(dir, s));
   auto run = [&](const QStringList &args) -> bool {
     QString err;
     const int rc = Executor::executeBlocking(git, s.gitExecutable, args,
@@ -211,6 +229,7 @@ auto ProfileInit::gitIdentityConfigured(const QString &dir,
                                         const AppSettings &s) -> bool {
   QProcess git;
   git.setWorkingDirectory(dir);
+  git.setProcessEnvironment(gitEnvironment(dir, s));
   for (const char *key : {"user.name", "user.email"}) {
     QString out;
     if (Executor::executeBlocking(git, s.gitExecutable,

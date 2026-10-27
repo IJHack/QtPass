@@ -12,6 +12,7 @@
 #include "appsettings.h"
 #include "pass.h"
 #include "qtpasssettings.h"
+#include "util.h"
 
 #include <QDir>
 
@@ -25,7 +26,7 @@ auto PassBackendFactory::getPass() -> Pass * {
     // Ensure store directory exists (first-run side effect — load() normalises
     // the path but does not create the directory).
     if (!QDir(s.passStore).exists())
-      QDir().mkpath(s.passStore);
+      Util::mkpathForStore(s.passStore);
     if (s.usePass) {
       pass = getRealPass();
     } else {

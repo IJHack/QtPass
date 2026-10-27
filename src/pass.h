@@ -59,6 +59,18 @@ class Pass : public QObject {
 
 protected:
   /**
+   * @brief The environment QtPass runs the store's processes in.
+   *
+   * What updateEnv() made: the git ceiling and the PASSWORD_STORE_ variables
+   * QtPass's own environment does not carry. For blocking calls that start
+   * their own process.
+   * @return A copy of the environment.
+   */
+  [[nodiscard]] auto storeEnvironment() const -> QProcessEnvironment {
+    return env;
+  }
+
+  /**
    * @brief Application settings snapshot injected at init() time.
    *
    * Populated by init(AppSettings) and valid for the lifetime of this backend

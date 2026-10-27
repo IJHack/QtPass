@@ -101,6 +101,8 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
   s.usePwgen = qs.value(SettingsConstants::usePwgen, false).toBool();
   s.autoPull = qs.value(SettingsConstants::autoPull, false).toBool();
   s.autoPush = qs.value(SettingsConstants::autoPush, false).toBool();
+  s.gitUseParentRepository =
+      qs.value(SettingsConstants::gitUseParentRepository, false).toBool();
   s.showProcessOutput =
       qs.value(SettingsConstants::showProcessOutput, false).toBool();
   s.showMenuBar = qs.value(SettingsConstants::showMenuBar, false).toBool();
@@ -182,6 +184,8 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
   }
   qs.setValue(SettingsConstants::autoPull, s.autoPull);
   qs.setValue(SettingsConstants::autoPush, s.autoPush);
+  qs.setValue(SettingsConstants::gitUseParentRepository,
+              s.gitUseParentRepository);
   qs.setValue(SettingsConstants::showProcessOutput, s.showProcessOutput);
   qs.setValue(SettingsConstants::showMenuBar, s.showMenuBar);
 

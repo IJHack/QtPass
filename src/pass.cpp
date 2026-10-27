@@ -65,7 +65,8 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_SIGNING_KEY/u"),
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/u"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u"),
-      QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")};
+      QStringLiteral("PASSWORD_STORE_GPG_OPTS/u"),
+      QStringLiteral("GIT_CEILING_DIRECTORIES/p")};
   const QString existing = env.value(QStringLiteral("WSLENV"));
   if (existing.isEmpty()) {
     env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
@@ -652,6 +653,20 @@ void Pass::updateEnv() {
   gpgOpts << maxOutputArgs();
   setEnvVar(QStringLiteral("PASSWORD_STORE_GPG_OPTS"),
             gpgOpts.join(QLatin1Char(' ')));
+
+  // As pass does: git never looks for a repository above the store's own
+  // parent. A store that is not a repository itself but lies inside one (a
+  // dotfiles repository in the home folder) would otherwise have its entries
+  // committed and pushed there by native git mode. Only in the environment
+  // of the processes QtPass runs for the store, never QtPass's own, which a
+  // file manager or terminal it opens would inherit. pass sets its own
+  // ceiling whatever this says. A store kept inside a larger repository on
+  // purpose opts out (gitUseParentRepository), and then, as without a
+  // store, whatever ceiling QtPass was started with applies.
+  setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"),
+            m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()
+                ? qEnvironmentVariable("GIT_CEILING_DIRECTORIES")
+                : Util::gitCeiling(m_settings.passStore));
 
   exec.setEnvironment(env);
 }

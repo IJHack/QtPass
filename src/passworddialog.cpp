@@ -319,7 +319,7 @@ void PasswordDialog::accept() {
     }
     // A name like work/vpn may need its folder; gpg does not create it.
     const QString parent = QFileInfo(QDir(m_storeRoot).filePath(rel)).path();
-    if (!QDir(parent).exists() && !QDir().mkpath(parent)) {
+    if (!QDir(parent).exists() && !Util::mkpathForStore(parent)) {
       ui->statusLabel->setText(
           tr("Could not create the folder %1.").arg(parent));
       return;

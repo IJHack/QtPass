@@ -261,6 +261,24 @@ public:
   static void detachFromTerminal(QProcess &process);
 
   /**
+   * @brief The umask every child QtPass starts gets, as pass sets its own.
+   *
+   * pass runs git and gpg under umask 077 (or PASSWORD_STORE_UMASK), so the
+   * folders and files they create in the store, .git included, are the
+   * user's alone. QtPass gives that umask to the processes it starts
+   * (startProcess(), the queue and the blocking calls) and not to itself:
+   * a browser or file manager it opens keeps the session's. Unix only.
+   * @param mask The umask, or a negative value for none (the default).
+   */
+  static void setChildUmask(int mask);
+
+  /**
+   * @brief The umask setChildUmask() set.
+   * @return The umask, or a negative value when none was set.
+   */
+  [[nodiscard]] static auto childUmask() -> int;
+
+  /**
    * @brief A configured executable that runs a Linux program through WSL.
    *
    * The one definition of "a WSL command" in QtPass; see parseWslCommand().

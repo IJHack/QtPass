@@ -46,6 +46,7 @@ private Q_SLOTS:
   void initGitReportsAFailingAdd();
   void gitIdentityConfiguredWithNameAndEmail();
   void gitIdentityConfiguredFalseWithoutAnEmail();
+  void gitIdentityIsNotTheParentRepositorysOwn();
   void gitIdentityConfiguredFalseWhenGitCannotRun();
 
 private:
@@ -714,6 +715,41 @@ void tst_profileinit::gitIdentityConfiguredFalseWithoutAnEmail() {
            QStringLiteral("tst_profileinit"));
   QVERIFY2(!ProfileInit::gitIdentityConfigured(dir.path(), s),
            "a name without an e-mail is not an identity git commits with");
+}
+
+/**
+ * @brief A new store inside a repository (a dotfiles one in the home
+ * folder) does not borrow that repository's identity: git stops at the
+ * store's parent, as for the active store, so the check answers what the
+ * commit in the new store's own repository will see. Opted into the parent
+ * repository, it is that repository's again.
+ */
+void tst_profileinit::gitIdentityIsNotTheParentRepositorysOwn() {
+  AppSettings s = gitSettings();
+  if (s.gitExecutable.isEmpty())
+    QSKIP("git not found in PATH");
+  useTestGitIdentity();
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  QCOMPARE(
+      QProcess::execute(s.gitExecutable, {QStringLiteral("init"),
+                                          QStringLiteral("-q"), home.path()}),
+      0);
+  for (const auto &[key, value] :
+       {std::pair{QStringLiteral("user.name"), QStringLiteral("Dotfiles")},
+        std::pair{QStringLiteral("user.email"),
+                  QStringLiteral("dot@example.invalid")}}) {
+    QCOMPARE(QProcess::execute(s.gitExecutable,
+                               {QStringLiteral("-C"), home.path(),
+                                QStringLiteral("config"), key, value}),
+             0);
+  }
+  const QString store = QDir(home.path()).filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(store));
+  QVERIFY2(!ProfileInit::gitIdentityConfigured(store, s),
+           "the dotfiles repository's identity is not the new store's");
+  s.gitUseParentRepository = true;
+  QVERIFY(ProfileInit::gitIdentityConfigured(store, s));
 }
 
 /**

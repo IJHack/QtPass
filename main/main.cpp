@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include "qtpasssettings.h"
 #include "sshauthsock.h"
+#include "util.h"
 #if SINGLE_APP
 #include "singleapplication.h"
 #endif
@@ -78,6 +79,9 @@ static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
  * @return Application exit code.
  */
 auto main(int argc, char *argv[]) -> int {
+  // Before anything starts git or gpg: pass's umask for them, and no
+  // inherited variable pointing git at another repository.
+  Util::applyPassProcessDefaults();
   QString text;
 #if SINGLE_APP
   QString name = qgetenv("USER");

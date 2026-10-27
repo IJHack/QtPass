@@ -65,14 +65,17 @@ struct AppSettings {
   bool noLineWrapping{false}; ///< Disable line wrapping in the panel.
 
   // --- Features ---
-  bool addGPGId{true};           ///< Auto-add `.gpg-id` files to git.
-  bool useGit{false};            ///< Enable git integration.
-  bool useGrepSearch{false};     ///< Enable content (grep) search.
-  bool useOtp{true};             ///< Enable native TOTP (OTP) support.
-  bool useQrencode{false};       ///< Enable qrencode support.
-  bool usePwgen{false};          ///< Use pwgen for password generation.
-  bool autoPull{false};          ///< Automatically `git pull` on open.
-  bool autoPush{false};          ///< Automatically `git push` after changes.
+  bool addGPGId{true};       ///< Auto-add `.gpg-id` files to git.
+  bool useGit{false};        ///< Enable git integration.
+  bool useGrepSearch{false}; ///< Enable content (grep) search.
+  bool useOtp{true};         ///< Enable native TOTP (OTP) support.
+  bool useQrencode{false};   ///< Enable qrencode support.
+  bool usePwgen{false};      ///< Use pwgen for password generation.
+  bool autoPull{false};      ///< Automatically `git pull` on open.
+  bool autoPush{false};      ///< Automatically `git push` after changes.
+  /// Let git use a repository in a folder above the store when the store
+  /// has none of its own; off, git stops at the store's parent, as in pass.
+  bool gitUseParentRepository{false};
   bool showProcessOutput{false}; ///< Show external process output.
   bool showMenuBar{false};       ///< Show the menu bar (Ctrl+M toggles it).
 

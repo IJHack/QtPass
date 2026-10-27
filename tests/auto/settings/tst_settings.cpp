@@ -200,6 +200,7 @@ const BoolSetting boolSettings[] = {
     {"alwaysOnTop", &AppSettings::alwaysOnTop},
     {"autoPull", &AppSettings::autoPull},
     {"autoPush", &AppSettings::autoPush},
+    {"gitUseParentRepository", &AppSettings::gitUseParentRepository},
     {"useTemplate", &AppSettings::useTemplate},
     {"templateAllFields", &AppSettings::templateAllFields},
     {"useQrencode", &AppSettings::useQrencode},
@@ -567,6 +568,7 @@ void tst_settings::serializerRoundTrip() {
   out.usePwgen = true;
   out.autoPull = true;
   out.autoPush = true;
+  out.gitUseParentRepository = true;
   out.showProcessOutput = true;
   out.passTemplate = QStringLiteral("login\nurl");
   out.useTemplate = true;
@@ -617,6 +619,7 @@ void tst_settings::serializerRoundTrip() {
   QCOMPARE(in.usePwgen, out.usePwgen);
   QCOMPARE(in.autoPull, out.autoPull);
   QCOMPARE(in.autoPush, out.autoPush);
+  QCOMPARE(in.gitUseParentRepository, out.gitUseParentRepository);
   QCOMPARE(in.showProcessOutput, out.showProcessOutput);
   QCOMPARE(in.passTemplate, out.passTemplate);
   QCOMPARE(in.useTemplate, out.useTemplate);
