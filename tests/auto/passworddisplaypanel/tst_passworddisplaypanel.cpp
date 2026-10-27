@@ -32,6 +32,7 @@ private Q_SLOTS:
   void init();
   void cleanup();
   void displayFieldsAddsRows();
+  void fieldNamesArePlainText();
   void doubleClickOnARowAsksForEdit();
   void displayFieldsSkipsEmptyPassword();
   void clearRemovesAllRows();
@@ -90,6 +91,27 @@ void tst_passworddisplaypanel::displayFieldsAddsRows() {
                          NamedValues{{"url", "https://example.org"}}, s);
   // Two fields (password + url), each a label + value widget => 4 grid items.
   QCOMPARE(m_grid->count(), 4);
+}
+
+/**
+ * @brief A field name comes from the entry, which other writers of a shared
+ * store control: as rich text, <img src="/dev/zero"> would have Qt read
+ * that file without end. Names are shown as the text they are.
+ */
+void tst_passworddisplaypanel::fieldNamesArePlainText() {
+  AppSettings s;
+  const QString name = QStringLiteral("<img src=\"/nonexistent\">");
+  m_panel->displayFields(QStringLiteral("secret"),
+                         NamedValues{{name, QStringLiteral("v")}}, s);
+  bool found = false;
+  const auto labels = m_parent->findChildren<QLabel *>();
+  for (const QLabel *label : labels) {
+    if (label->text() == name) {
+      found = true;
+      QCOMPARE(label->textFormat(), Qt::PlainText);
+    }
+  }
+  QVERIFY2(found, "the field's label shows the name as it is");
 }
 
 /**

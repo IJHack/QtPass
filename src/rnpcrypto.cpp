@@ -6,7 +6,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QRegularExpression>
+#include <algorithm>
 #include <cstring>
+#include <limits>
 #include <memory>
 #include <optional>
 #include <rnp/rnp.h>
@@ -361,9 +363,12 @@ auto RnpCrypto::isValid() const -> bool { return m_ffi != nullptr; }
 
 void RnpCrypto::setMaxPlaintextBytes(qint64 bytes) {
   // RNP reads 0 as "no limit", and a negative value would wrap to a huge
-  // size_t: either would switch the guard off without a word.
+  // size_t: either would switch the guard off without a word. RNP 0.17 and
+  // 0.18 also keep the limit in 32 bits, so 4 GiB would become 0 (no limit)
+  // and 4 GiB + 5 become 5: anything wider is capped to what fits.
   if (bytes > 0) {
-    m_maxPlaintext = bytes;
+    m_maxPlaintext =
+        std::min<qint64>(bytes, std::numeric_limits<quint32>::max());
   }
 }
 

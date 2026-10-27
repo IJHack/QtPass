@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QHash>
+#include <QLocale>
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
@@ -65,7 +66,8 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/u"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u"),
       QStringLiteral("PASSWORD_STORE_GPG_OPTS/u"),
-      QStringLiteral("GIT_CEILING_DIRECTORIES/p")};
+      QStringLiteral("GIT_CEILING_DIRECTORIES/p"),
+      QStringLiteral("GIT_LITERAL_PATHSPECS/u")};
   const QString existing = env.value(QStringLiteral("WSLENV"));
   if (existing.isEmpty()) {
     env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
@@ -576,6 +578,11 @@ void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY"),
             m_settings.passSigningKey);
   setEnvVar(QStringLiteral("PASSWORD_STORE_DIR"), m_settings.passStore);
+  // Every path QtPass hands git names one file or folder: an entry called
+  // "a*.gpg" must not make `git rm -f -- a*.gpg` remove every entry that
+  // matches. Also reaches the git that pass runs, which passes names the
+  // same way.
+  setEnvVar(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
 
   const PasswordConfiguration &passConfig = m_settings.passwordConfiguration;
   setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH"),
@@ -813,8 +820,31 @@ auto Pass::recipientsForEditing(const QString &dir, const QString &passStore)
       m_settings.gpgExecutable,
       GpgIdSigner::keysFromSetting(m_settings.passSigningKey));
   if (!signer.enabled()) {
+    // A list that is there but cannot be read as one (too large, not a
+    // regular file, unreadable) is not an empty list: preselecting nothing
+    // without a word would let OK write a new list over it, and later
+    // re-encryptions drop whoever it named.
+    // Read once and parsed from those bytes: a second read could find
+    // something else under the name. A link counts as there, dangling too.
+    const QFileInfo info(gpgIdPath);
+    if (!info.exists() && !info.isSymLink()) {
+      result.state = RecipientsForEditing::State::Unsigned;
+      return result;
+    }
+    const std::optional<QByteArray> bytes =
+        Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+    if (!bytes) {
+      result.state = RecipientsForEditing::State::Rejected;
+      result.warning =
+          tr("%1 cannot be read as a recipient list (a regular file of at "
+             "most %2), so nothing is preselected. Check it before choosing "
+             "recipients here: OK writes a new list over it.")
+              .arg(gpgIdPath,
+                   QLocale().formattedDataSize(Util::kMaxGpgIdBytes));
+      return result;
+    }
     result.state = RecipientsForEditing::State::Unsigned;
-    result.recipients = getRecipientList(folder, passStore);
+    result.recipients = parseRecipients(*bytes, gpgIdPath);
     return result;
   }
   QString recordError;
@@ -866,11 +896,12 @@ auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
   if (Util::isLinkedFolder(gpgIdPath)) {
     return {};
   }
-  QFile gpgId(gpgIdPath);
-  if (!gpgId.open(QIODevice::ReadOnly)) {
+  const std::optional<QByteArray> bytes =
+      Util::readRegularFile(gpgIdPath, Util::kMaxGpgIdBytes);
+  if (!bytes) {
     return {};
   }
-  return parseRecipients(gpgId.readAll(), gpgId.fileName());
+  return parseRecipients(*bytes, gpgIdPath);
 }
 
 auto Pass::parseRecipients(const QByteArray &contents,

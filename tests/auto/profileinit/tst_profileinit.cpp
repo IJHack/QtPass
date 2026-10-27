@@ -47,6 +47,7 @@ private Q_SLOTS:
   void gitIdentityConfiguredWithNameAndEmail();
   void gitIdentityConfiguredFalseWithoutAnEmail();
   void gitIdentityIsNotTheParentRepositorysOwn();
+  void gitRunsWithLiteralPathspecs();
   void gitIdentityConfiguredFalseWhenGitCannotRun();
 
 private:
@@ -750,6 +751,25 @@ void tst_profileinit::gitIdentityIsNotTheParentRepositorysOwn() {
            "the dotfiles repository's identity is not the new store's");
   s.gitUseParentRepository = true;
   QVERIFY(ProfileInit::gitIdentityConfigured(store, s));
+}
+
+/**
+ * @brief ProfileInit's git takes paths as names, as the active store's does:
+ * a "*" in a file name must not stage or commit every file that matches.
+ */
+void tst_profileinit::gitRunsWithLiteralPathspecs() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the git stand-in");
+#else
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  AppSettings s;
+  s.gitExecutable = dir.filePath(QStringLiteral("git"));
+  // Answers an identity only when it runs with literal pathspecs.
+  QVERIFY(writeScript(s.gitExecutable, "[ \"$GIT_LITERAL_PATHSPECS\" = 1 ] && "
+                                       "echo someone\n"));
+  QVERIFY(ProfileInit::gitIdentityConfigured(dir.path(), s));
+#endif
 }
 
 /**

@@ -296,6 +296,8 @@ private Q_SLOTS:
   void processDefaultsClearGitRedirectsAndSetTheUmask();
   void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
+  void readRegularFileIsBoundedAndRegular();
+  void gitTakesStorePathsLiterally();
   void gpgErrorMessageKeyExpiredStatusToken();
   void gpgErrorMessageKeyRevokedStatusToken();
   void gpgErrorMessageNoPubkeyStatusToken();
@@ -404,6 +406,7 @@ private Q_SLOTS:
   void refuseLinkedPathRefusesAndReleasesTheUi();
   void recipientsForEditingSignedStoreWithoutListIsVerified();
   void recipientsForEditingRefusesAFolderWhoseListIsALink();
+  void recipientsForEditingSaysWhenAnUnsignedListCannotBeRead();
   // Util paths and files
   void findBinaryInPathRelativePathIsNotTheCwd();
   void configIsValidWslLauncherThatCannotRunIsInvalid();
@@ -2399,12 +2402,13 @@ void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
     QByteArray value;
   };
   QList<Saved> saved;
-  for (const char *name :
-       {"GIT_DIR", "GIT_WORK_TREE", "PASSWORD_STORE_UMASK"}) {
+  for (const char *name : {"GIT_DIR", "GIT_WORK_TREE", "GIT_GLOB_PATHSPECS",
+                           "PASSWORD_STORE_UMASK"}) {
     saved.append({name, qEnvironmentVariableIsSet(name), qgetenv(name)});
   }
   qputenv("GIT_DIR", "/nonexistent/elsewhere.git");
   qputenv("GIT_WORK_TREE", "/nonexistent");
+  qputenv("GIT_GLOB_PATHSPECS", "1"); // git refuses it with literal ones
   qputenv("PASSWORD_STORE_UMASK", "027");
 #ifdef Q_OS_UNIX
   const mode_t before = ::umask(022);
@@ -2412,6 +2416,7 @@ void tst_util::processDefaultsClearGitRedirectsAndSetTheUmask() {
   Util::applyPassProcessDefaults();
   QVERIFY(!qEnvironmentVariableIsSet("GIT_DIR"));
   QVERIFY(!qEnvironmentVariableIsSet("GIT_WORK_TREE"));
+  QVERIFY(!qEnvironmentVariableIsSet("GIT_GLOB_PATHSPECS"));
 #ifdef Q_OS_UNIX
   const mode_t own = ::umask(022);
   QString childUmask;
@@ -2571,6 +2576,77 @@ void tst_util::gitDoesNotClimbAboveTheStore() {
            "with gitUseParentRepository the parent's repository is used");
   QCOMPARE(inherited, QStringLiteral("/started/with"));
   QVERIFY2(!staleCeiling, "an empty store leaves no ceiling behind");
+}
+
+void tst_util::readRegularFileIsBoundedAndRegular() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString path = dir.filePath(QStringLiteral("list"));
+  {
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("0123456789");
+  }
+  QCOMPARE(Util::readRegularFile(path, 10).value_or("none"),
+           QByteArray("0123456789"));
+  QVERIFY2(!Util::readRegularFile(path, 9), "one byte too many");
+  QVERIFY(!Util::readRegularFile(dir.filePath(QStringLiteral("missing")), 10));
+  QVERIFY2(!Util::readRegularFile(dir.path(), 10), "a folder is no file");
+  const QString link = dir.filePath(QStringLiteral("link"));
+  if (QFile::link(path, link)) {
+    QVERIFY2(!Util::readRegularFile(link, 10), "a link is not followed");
+  }
+}
+
+/**
+ * @brief An entry named with glob characters names itself only: QtPass's
+ * `git rm -f -- a[bc].gpg` must not remove ab.gpg and ac.gpg as well.
+ * Brackets, not "*", so it runs on Windows too.
+ */
+void tst_util::gitTakesStorePathsLiterally() {
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("git not found");
+  }
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  pass.init(s);
+  const QProcessEnvironment env = pass.environment();
+  QCOMPARE(env.value(QStringLiteral("GIT_LITERAL_PATHSPECS")),
+           QStringLiteral("1"));
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const auto run = [&](const QStringList &args) {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(git,
+            QStringList{
+                QStringLiteral("-C"), store.path(), QStringLiteral("-c"),
+                QStringLiteral("user.name=t"), QStringLiteral("-c"),
+                QStringLiteral("user.email=t@example.org"),
+                QStringLiteral("-c"), QStringLiteral("commit.gpgsign=false")} +
+                args);
+    p.waitForFinished(10000);
+    return p.exitCode();
+  };
+  QCOMPARE(run({QStringLiteral("init"), QStringLiteral("-q")}), 0);
+  for (const char *name : {"a[bc].gpg", "ab.gpg", "ac.gpg"}) {
+    QFile f(QDir(store.path()).filePath(QString::fromLatin1(name)));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+  }
+  QCOMPARE(run({QStringLiteral("add"), QStringLiteral("-A")}), 0);
+  QCOMPARE(run({QStringLiteral("commit"), QStringLiteral("-qm"),
+                QStringLiteral("init")}),
+           0);
+  QCOMPARE(run({QStringLiteral("rm"), QStringLiteral("-qf"),
+                QStringLiteral("--"), QStringLiteral("a[bc].gpg")}),
+           0);
+  QVERIFY(!QFileInfo::exists(store.filePath(QStringLiteral("a[bc].gpg"))));
+  QVERIFY2(QFileInfo::exists(store.filePath(QStringLiteral("ab.gpg"))) &&
+               QFileInfo::exists(store.filePath(QStringLiteral("ac.gpg"))),
+           "only the entry named a[bc].gpg goes");
 }
 
 // --- gpgErrorMessage tests ---
@@ -4955,7 +5031,8 @@ void tst_util::wslenvMergesIntoAnInheritedEntry() {
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("PASSWORD_STORE_GPG_OPTS/u")), 1);
   QCOMPARE(parts.count(QStringLiteral("GIT_CEILING_DIRECTORIES/p")), 1);
-  QCOMPARE(parts.size(), 7);
+  QCOMPARE(parts.count(QStringLiteral("GIT_LITERAL_PATHSPECS/u")), 1);
+  QCOMPARE(parts.size(), 8);
 }
 
 /**
@@ -5577,6 +5654,44 @@ void tst_util::recipientsForEditingRefusesAFolderWhoseListIsALink() {
            "a folder whose list is a link is Rejected");
   QVERIFY2(r.recipients.isEmpty(), qPrintable(r.recipients.join(u',')));
   QVERIFY2(r.warning.contains(link), qPrintable(r.warning));
+}
+
+/**
+ * @brief Without a signing key, a list too large to read is not an empty
+ * one: Rejected, with a warning, so the Users dialog does not offer to
+ * write a new list over it as if there were none.
+ */
+void tst_util::recipientsForEditingSaysWhenAnUnsignedListCannotBeRead() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString list = QDir(store.path()).filePath(QStringLiteral(".gpg-id"));
+  {
+    QFile f(list);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(Util::kMaxGpgIdBytes + 1));
+  }
+  TestPass pass;
+  AppSettings s;
+  s.passStore = store.path();
+  pass.init(s);
+  const auto r = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY(r.state == Pass::RecipientsForEditing::State::Rejected);
+  QVERIFY(r.recipients.isEmpty());
+  QVERIFY2(r.warning.contains(list), qPrintable(r.warning));
+
+  QVERIFY(QFile::resize(list, 41));
+  const auto fine = pass.recipientsForEditing(QString(), store.path());
+  QVERIFY(fine.state == Pass::RecipientsForEditing::State::Unsigned);
+
+  // A dangling link under the name is there, and cannot be read as a list.
+  // Unix only: on Windows QFile::link() makes a .lnk file, a regular one.
+#ifndef Q_OS_WIN
+  QVERIFY(QFile::remove(list));
+  if (QFile::link(QDir(store.path()).filePath(QStringLiteral("gone")), list)) {
+    const auto dangling = pass.recipientsForEditing(QString(), store.path());
+    QVERIFY(dangling.state == Pass::RecipientsForEditing::State::Rejected);
+  }
+#endif
 }
 
 /**

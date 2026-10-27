@@ -8,8 +8,12 @@
 #include <QLineEdit>
 #include <QMenu>
 
-FieldLabel::FieldLabel(const QString &name, QWidget *parent)
-    : QLabel(name, parent) {
+FieldLabel::FieldLabel(const QString &name, QWidget *parent) : QLabel(parent) {
+  // A field name comes from the entry, which a shared store's other writers
+  // control: as rich text, <img src="/dev/zero"> would have Qt read that
+  // file without end. Plain text before the name is set.
+  setTextFormat(Qt::PlainText);
+  setText(name);
   setToolTip(tr("Double-click to rename this field"));
 }
 
