@@ -714,10 +714,12 @@ void PasswordDialog::setPass(const QString &output, const QString &file) {
           output.count(QLatin1Char('\n')) +
           (output.isEmpty() || output.endsWith(QLatin1Char('\n')) ? 0 : 1);
       lines > FileContent::kMaxDisplayLines) {
+    // The count in a variable first, as in FileContent: older lupdate
+    // versions lose a tr() with template arguments among its arguments.
+    const int n = static_cast<int>(
+        std::min<qsizetype>(lines, std::numeric_limits<int>::max()));
     ui->statusLabel->setText(
-        tr("This entry has %n line(s), too many to edit here.", nullptr,
-           static_cast<int>(
-               std::min<qsizetype>(lines, std::numeric_limits<int>::max()))));
+        tr("This entry has %n line(s), too many to edit here.", nullptr, n));
     return;
   }
   setPassword(output);
