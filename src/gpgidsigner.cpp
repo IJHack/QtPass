@@ -125,8 +125,29 @@ auto GpgIdSigner::validSigFingerprints(const QString &statusOutput)
       R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}(?:[A-F0-9]{24})?) .* )"
       R"(([A-F0-9]{40}(?:[A-F0-9]{24})?)\r?$)",
       QRegularExpression::MultilineOption);
+  // gpg reports a signature by a revoked key as REVKEYSIG plus KEYREVOKED,
+  // and still prints VALIDSIG and exits 0. A signing key revoked because it
+  // was compromised must not vouch for a recipient list, so a signature
+  // whose block (from one NEWSIG to the next) says so does not count. One
+  // by an expired key does, as gpg calls it a good signature: expiry is not
+  // compromise, and pass accepts it too.
+  static const QRegularExpression revoked(
+      QStringLiteral(R"(^\[GNUPG:\] (?:REVKEYSIG|KEYREVOKED)\b)"),
+      QRegularExpression::MultilineOption);
+  static const QRegularExpression newSig(
+      QStringLiteral(R"(^\[GNUPG:\] NEWSIG\b)"),
+      QRegularExpression::MultilineOption);
   const QRegularExpressionMatch m = re.match(statusOutput);
   if (!m.hasMatch()) {
+    return {};
+  }
+  const qsizetype from =
+      statusOutput.lastIndexOf(newSig, m.capturedStart()) < 0
+          ? 0
+          : statusOutput.lastIndexOf(newSig, m.capturedStart());
+  const qsizetype to = statusOutput.indexOf(newSig, m.capturedEnd());
+  const QString block = statusOutput.mid(from, to < 0 ? -1 : to - from);
+  if (revoked.match(block).hasMatch()) {
     return {};
   }
   return {m.captured(1), m.captured(2)};

@@ -82,6 +82,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- A recipient list signed by a revoked signing key no longer verifies. gpg
+  reports such a signature as `REVKEYSIG` but still prints `VALIDSIG` and
+  succeeds, and QtPass read only the latter, so a signing key revoked after
+  it leaked still vouched for a `.gpg-id` planted in a shared store, as long
+  as it stayed configured. A signature by an expired key still counts, as
+  gpg calls it good and `pass` accepts it.
 - With a signing key, the Users dialog preselects only a recipient list that
   verifies. It read the list as it was on disk, and OK writes and signs the
   selection, so an unsigned edit planted in a shared store (a member

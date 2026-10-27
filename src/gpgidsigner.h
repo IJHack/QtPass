@@ -129,7 +129,8 @@ public:
    * @brief Pick the fingerprints out of gpg's `--status-fd` VALIDSIG line.
    * @param statusOutput gpg's status output.
    * @return The signing key's fingerprint and the primary key's fingerprint,
-   *         or an empty list when there is no VALIDSIG.
+   *         or an empty list when there is no VALIDSIG, or when gpg says the
+   *         key that made that signature is revoked (REVKEYSIG, KEYREVOKED).
    */
   static auto validSigFingerprints(const QString &statusOutput) -> QStringList;
 
