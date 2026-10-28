@@ -414,7 +414,14 @@ auto Executor::cancelNext() -> int {
     return -1;
   }
   const int id = m_execQueue.dequeue().id;
+  // As in executeNext(): while the signal is out, a slot's cancelNext()
+  // drops nothing and its execute() only queues. Nothing is started here
+  // afterwards: the caller (ImitatePass dropping the rest of a failed
+  // transaction from its completion handler) may cancel again, and the
+  // queue moves on when that handler returns (onProcessFinished()).
+  running = true;
   emit dequeuing(id, false);
+  running = false;
   return id;
 }
 

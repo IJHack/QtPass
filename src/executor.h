@@ -409,8 +409,9 @@ signals:
    *        do so in the order they left the queue.
    *
    * A slot may queue more with execute(): that waits behind this item. The
-   * item counts as running while the signal is out, so cancelNext() drops
-   * nothing then (-1).
+   * executor counts as running while the signal is out, also for an item
+   * cancelNext() drops, so cancelNext() drops nothing then (-1) and
+   * nothing starts until the signal has returned.
    */
   void dequeuing(int id, bool completes);
   /**

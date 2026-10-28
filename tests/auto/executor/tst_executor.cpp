@@ -54,6 +54,7 @@ private Q_SLOTS:
   void cancelNextFromErrorHandlerDropsQueuedItem();
   void dequeuingNamesEveryItemThatLeavesTheQueue();
   void dequeuingSlotMayCallBackIntoTheExecutor();
+  void dequeuingOfADroppedItemMayCallBackIntoTheExecutor();
   void executeAsyncWorkDirDoesNotCarryOver();
   void executeAsyncNonUtf8OutputIsNotDropped();
   void bareNameRunsFromPathOnBothPaths();
@@ -861,6 +862,56 @@ void tst_executor::dequeuingSlotMayCallBackIntoTheExecutor() {
   QCOMPARE(ran, expected);
   QCOMPARE(dequeued, expected);
   QVERIFY(finished.first().at(2).toString().contains(QStringLiteral("first")));
+}
+
+/**
+ * @brief The same for an item cancelNext() drops (completes == false), as
+ *        ImitatePass does from a completion handler: a slot's cancelNext()
+ *        drops nothing more, and what it queues starts only after the
+ *        signal has returned, once the handler is done.
+ */
+void tst_executor::dequeuingOfADroppedItemMayCallBackIntoTheExecutor() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy finished(&exec, &Executor::finished);
+  bool inDroppedSignal = false;
+  bool startedInside = false;
+  int nestedCancel = -2;
+  int cancelled = -2;
+  connect(&exec, &Executor::dequeuing, &exec, [&](int id, bool completes) {
+    if (inDroppedSignal) {
+      startedInside = true; // something left the queue meanwhile
+      return;
+    }
+    if (!completes && id == 2) {
+      inDroppedSignal = true;
+      nestedCancel = exec.cancelNext();
+      exec.execute(4, sh, {"-c", "exit 0"}, false, false);
+      inDroppedSignal = false;
+    }
+  });
+  connect(&exec, &Executor::finished, &exec,
+          [&exec, &cancelled](int id, int exitCode) {
+            if (id == 1 && exitCode != 0) {
+              cancelled = exec.cancelNext();
+            }
+          });
+
+  exec.execute(1, sh, {"-c", "exit 3"}, false, false);
+  exec.execute(2, sh, {"-c", "echo must-not-run"}, true, false);
+  exec.execute(3, sh, {"-c", "exit 0"}, false, false);
+  QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 3, 10000);
+  QTest::qWait(100);
+  QCOMPARE(cancelled, 2);
+  QCOMPARE(nestedCancel, -1);
+  QVERIFY2(!startedInside, "nothing starts while the signal is out");
+  QList<int> ran;
+  for (const QList<QVariant> &call : std::as_const(finished)) {
+    ran << call.at(0).toInt();
+  }
+  QCOMPARE(ran, (QList<int>{1, 3, 4}));
 }
 
 /**
