@@ -59,6 +59,8 @@ class LinkPatternTest(unittest.TestCase):
             "[a](" * 30000,
             "[a](x" * 20000,
             "[a](<x " * 20000,
+            # Many starts whose one run ends in a long blank run.
+            "[a](x" * 20000 + " " * 100000,
             # Many titles that all reach one far ")" past a long blank run.
             "[a](x y" * 20000 + " " * 100000 + "z\r )",
         ):

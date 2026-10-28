@@ -59,62 +59,76 @@ def _last_non_blanks(line: str) -> list:
     return last
 
 
-def _closes(line: str, pos: int, close: list, last: list) -> int:
-    """
-    Where the link closes when its destination ends at pos: blanks, then ")"
-    or a title (text without ")" that starts and ends with a non-space) and
-    blanks and its ")". -1 when it does not close on this line.
-    """
-    after = pos
-    while pos < len(line) and line[pos] in BLANKS:
-        pos += 1
-    if pos == len(line):
-        return -1
-    if line[pos] == ")":
-        return pos
-    # Anything else starts a title, after at least one blank; it runs up to
-    # the next ")" (a title cannot hold one).
-    if pos == after or line[pos].isspace():
-        return -1
-    end = close[pos]
-    # Only blanks between the title's last character and the ")".
-    if end == -1 or line[last[end]].isspace():
-        return -1
-    return end
+def _next_non_blanks(line: str) -> list:
+    """For every position, the first one at or after it that is no blank."""
+    after = list(range(len(line) + 1))
+    for i in range(len(line) - 1, -1, -1):
+        if line[i] in BLANKS:
+            after[i] = after[i + 1]
+    return after
+
+
+class _Tables:  # pylint: disable=too-few-public-methods
+    """One line and what link_targets() looks up in it instead of scanning."""
+
+    def __init__(self, line: str) -> None:
+        self.line = line
+        self.close = _next_index(line, ")")
+        self.gt = _next_index(line, ">")
+        self.ends = _run_ends(line)
+        self.last = _last_non_blanks(line)
+        self.skip = _next_non_blanks(line)
+
+    def closes(self, pos: int) -> int:
+        """
+        Where the link closes when its destination ends at pos: blanks, then
+        ")" or a title (text without ")" that starts and ends with a
+        non-space) and blanks and its ")". -1 when it does not close here.
+        """
+        line = self.line
+        title = self.skip[pos]
+        if title == len(line):
+            return -1
+        if line[title] == ")":
+            return title
+        # Anything else starts a title, after at least one blank; it runs up
+        # to the next ")" (a title cannot hold one).
+        if title == pos or line[title].isspace():
+            return -1
+        end = self.close[title]
+        # Only blanks between the title's last character and the ")".
+        if end == -1 or line[self.last[end]].isspace():
+            return -1
+        return end
 
 
 def link_targets(text: str) -> list:
     """
     The destination of every [text](destination "title") link in text.
 
-    One pass per line: the next ")" and ">", the end of every run and the
-    last non-blank are looked up, not searched for, so a line of many link starts with no ")"
-    (or no end to its run) costs no rescan of the rest of it per start.
+    One pass per line: the next ")" and ">", the end of every run, and the
+    nearest non-blank either side are looked up, never searched for, so a
+    line of many link starts costs no rescan of the rest of it per start.
     """
     targets = []
     for line in text.split("\n"):
         # Only a line with "](" can hold a link; its tables are built once.
         if "](" not in line:
             continue
-        close = _next_index(line, ")")
-        gt = _next_index(line, ">")
-        ends = _run_ends(line)
-        last = _last_non_blanks(line)
+        tables = _Tables(line)
         resume = 0
         for match in LINK_TEXT_RE.finditer(line):
             start = match.end()
             if match.start() < resume or not line.startswith("(", start):
                 continue
-            pos = start + 1
-            while pos < len(line) and line[pos] in BLANKS:
-                pos += 1
+            pos = tables.skip[start + 1]
             candidates = []
-            if line.startswith("<", pos) and gt[pos] != -1:
-                candidates.append(gt[pos] + 1)
-            if pos < len(line) and ends[pos] > pos:
-                candidates.append(ends[pos])
+            if line.startswith("<", pos) and tables.gt[pos] != -1:
+                candidates.append(tables.gt[pos] + 1)
+            if pos < len(line) and tables.ends[pos] > pos:
+                candidates.append(tables.ends[pos])
             for end in candidates:
-                closed = _closes(line, end, close, last)
+                closed = tables.closes(end)
                 if closed != -1:
                     targets.append(line[pos:end])
                     resume = closed + 1
