@@ -563,6 +563,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- An entry that was saved but whose Git commit then failed (a commit that
+  could not be signed with `pass.signcommits`, say) said nothing about it:
+  a new entry's dialog just closed, and an edited one said "Not saved",
+  which was wrong. Both close now, and QtPass says the entry is saved but
+  not committed, with Git's message.
 - With the `pass` backend, the content search tooltip said patterns were
   POSIX basic regular expressions (`pass grep`). Both backends search in
   QtPass itself with Perl-compatible ones, so `a\|b` or `\(x\)` looked for

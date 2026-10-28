@@ -151,6 +151,10 @@ private:
       Pass::finished(id, exitCode, out, err);
     }
     bool callCreateBackupCommit() { return createBackupCommit(); }
+    void callGitCommit(const QString &file, const QString &msg) {
+      gitCommit(file, msg);
+    }
+    void setInsertPlaced(bool placed) { m_insertPlaced = placed; }
     void callExecuteWrapper(PROCESS id, const QString &app,
                             const QStringList &args) {
       executeWrapper(id, app, args);
@@ -3760,14 +3764,6 @@ QString tst_util::setUpBackupRepo(const QString &dir, QString *gitExe) {
 }
 
 /**
- * @brief createBackupCommit snapshots modified tracked files but leaves
- * untracked ones (plaintext exports, swap files) out of the commit.
- *
- * Regression for #1682: `git add -A` staged everything in the store, so an
- * untracked plaintext file ended up in a commit that autoPush then sent to
- * the shared remote.
- */
-/**
  * @brief As pass signs its own commits when git config pass.signcommits is
  * true, so does QtPass's git; without it, none is signed; and a commit that
  * cannot be signed fails rather than going in unsigned. A stand-in
@@ -3846,6 +3842,21 @@ void tst_util::commitsAreSignedWhenTheStoreAsks() {
   QVERIFY(pass.callCreateBackupCommit());
   QVERIFY2(headSigned(), "pass.signcommits: signed, as pass signs");
 
+  // The queued commit every insert, remove and move ends in signs too.
+  QVERIFY(modify("v3 queued, longer\n"));
+  QVERIFY(runGit(gitExe, tmp.path(), {"add", "tracked.gpg"}));
+  QString beforeQueued;
+  QVERIFY(runGit(gitExe, tmp.path(), {"rev-parse", "HEAD"}, &beforeQueued));
+  pass.callGitCommit(tracked, QStringLiteral("Edit for tracked using QtPass."));
+  QTRY_VERIFY_WITH_TIMEOUT(
+      [&] {
+        QString head;
+        runGit(gitExe, tmp.path(), {"rev-parse", "HEAD"}, &head);
+        return head != beforeQueued;
+      }(),
+      10000);
+  QVERIFY2(headSigned(), "the queued commit: signed");
+
   // A signer that fails: the commit fails, it does not go in unsigned.
   {
     QFile script(signer);
@@ -3862,6 +3873,14 @@ void tst_util::commitsAreSignedWhenTheStoreAsks() {
 #endif
 }
 
+/**
+ * @brief createBackupCommit snapshots modified tracked files but leaves
+ * untracked ones (plaintext exports, swap files) out of the commit.
+ *
+ * Regression for #1682: `git add -A` staged everything in the store, so an
+ * untracked plaintext file ended up in a commit that autoPush then sent to
+ * the shared remote.
+ */
 void tst_util::createBackupCommitLeavesUntrackedFilesAlone() {
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
@@ -5582,6 +5601,21 @@ void tst_util::passFinishedInsertErrorEmitsInsertFailed() {
   pass.callPassFinished(static_cast<int>(Enums::GIT_PUSH), 1, QString(),
                         QStringLiteral("rejected\n"));
   QCOMPARE(failedSpy.count(), 1);
+
+  // Written, and a git step after it failed: the dialog closes on that, so
+  // the backend says it in a box of its own; not when nothing was written.
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 1, QString(),
+                        QStringLiteral("gpg: no public key\n"));
+  QCOMPARE(criticalSpy.count(), 0);
+  pass.setInsertPlaced(true);
+  pass.callPassFinished(static_cast<int>(Enums::PASS_INSERT), 1, QString(),
+                        QStringLiteral("error: gpg failed to sign the data\n"));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Saved, not committed"));
+  QVERIFY(criticalSpy.first().at(1).toString().contains(
+      QStringLiteral("failed to sign")));
 }
 
 /**
