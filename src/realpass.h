@@ -91,6 +91,16 @@ class RealPass : public Pass {
   [[nodiscard]] auto insertWritten(const QString &err) const -> bool override;
 
   /**
+   * @brief With signing on, refuse to have pass encrypt @p file when the
+   * signed list it would use is not one QtPass accepts: its folder's own
+   * list was passed over, the signature does not verify, or the list is
+   * older than one this device accepted or signed for another folder.
+   * @param file The entry (or the place a move or copy writes to).
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseUnverifiedList(const QString &file) -> bool;
+
+  /**
    * @brief The executor is about to run (or drop) its next item: for an
    * insert, take its entry from m_insertQueue and fingerprint it now, not
    * when it was queued, so an earlier queued save of the same entry counts

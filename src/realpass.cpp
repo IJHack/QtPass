@@ -2,14 +2,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
 #include "executor.h"
+#include "gpgidsigner.h"
 #include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
 
+#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QProcess>
 #include <QRegularExpression>
 #include <utility>
 
@@ -54,14 +57,54 @@ void RealPass::Show(QString file) {
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
 
+auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
+  // pass verifies the signature itself, but knows nothing of the generation
+  // and folder lines: an older authentic list put back, or one signed for
+  // another folder, would get the secret (#2077). The same checks as the
+  // native backend, with gpg in the store's environment. pass reads the list
+  // again afterwards; a swap in between is a concurrent writer, out of
+  // scope (SECURITY.md).
+  const GpgIdSigner signer(
+      m_settings.gpgExecutable,
+      GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+      [this](const QString &app, const QStringList &args, const QString &input,
+             QString *out, QString *err) {
+        QProcess gpg;
+        gpg.setProcessEnvironment(exec.environment());
+        return Executor::executeBlocking(gpg, app, args, input, out, err);
+      });
+  if (!signer.enabled()) {
+    return false;
+  }
+  if (refuseSkippedGpgId(file, true)) {
+    return true;
+  }
+  const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
+  QString why =
+      QCoreApplication::translate("ImitatePass", "Signature for %1 is invalid.")
+          .arg(gpgIdFile);
+  QByteArray contents;
+  if (!verifySignedList(signer, gpgIdFile, &contents, &why)) {
+    emit critical(QCoreApplication::translate("ImitatePass",
+                                              "Check .gpg-id file signature!"),
+                  why);
+    return true;
+  }
+  return false;
+}
+
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
   }
-  m_insertQueue.enqueue(QDir::cleanPath(
-      QDir::isAbsolutePath(file)
-          ? file + ".gpg"
-          : QDir(m_settings.passStore).filePath(file) + ".gpg"));
+  const QString entry =
+      QDir::cleanPath(QDir::isAbsolutePath(file)
+                          ? file + ".gpg"
+                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
+  if (refuseUnverifiedList(entry)) {
+    return;
+  }
+  m_insertQueue.enqueue(entry);
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -300,6 +343,13 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
 
   // pass always forces when called from QtPass, so refuse file-onto-file.
   if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
+    return;
+  }
+
+  // pass re-encrypts what it moves or copies to the destination's list.
+  if (refuseUnverifiedList(destFileInfo.isDir()
+                               ? QDir(dest).filePath(srcFileInfo.fileName())
+                               : dest)) {
     return;
   }
 

@@ -11,6 +11,7 @@
 #include <QtTest>
 
 #include "../../../src/appsettings.h"
+#include "../../../src/gpgidgeneration.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/realpass.h"
 #include "../../../src/userinfo.h"
@@ -35,6 +36,7 @@ private slots:
   void insertPipesTheValue();
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
+  void signedListIsCheckedAsTheNativeBackendDoes();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
@@ -399,6 +401,105 @@ void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
   QCOMPARE(critical.count(), 0);
   QVERIFY(!QFile::exists(first));
   QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 5000);
+}
+
+/**
+ * @brief With a signing key set, pass is only asked to encrypt to a signed
+ *        list QtPass accepts, as the native backend does (#2077): pass
+ *        checks the signature but not the generation or folder lines, so an
+ *        older authentic list put back, one signed for another folder, or a
+ *        folder whose own list was replaced by a link is refused before pass
+ *        runs. A current list goes through.
+ */
+void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
+  const QString signer =
+      QStringLiteral("0123456789ABCDEF0123456789ABCDEF01234567");
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  const QString store = QDir::cleanPath(storeDir.path());
+  // A gpg that verifies anything as signed by `signer`.
+  const QString gpg = QDir(m_dir.path()).filePath(QStringLiteral("sign-gpg"));
+  {
+    QFile f(gpg);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write(QStringLiteral(
+                "#!/bin/sh\ncat >/dev/null\n"
+                "printf '[GNUPG:] VALIDSIG %1 2026-09-19 1758200000 0 4 0 1 "
+                "10 00 %1\\n'\nexit 0\n")
+                .arg(signer)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  const QString gpgIdFile = QDir(store).filePath(QStringLiteral(".gpg-id"));
+  const auto writeList = [&gpgIdFile](qint64 generation, const QString &folder,
+                                      const QByteArray &keys) {
+    QFile list(gpgIdFile);
+    QFile sig(gpgIdFile + QStringLiteral(".sig"));
+    return list.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           list.write(GpgIdGeneration::withHeader(generation, folder, keys)) >
+               0 &&
+           sig.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           sig.write("sig") == 3;
+  };
+  AppSettings settings = m_settings;
+  settings.passStore = store;
+  settings.gpgExecutable = gpg;
+  settings.passSigningKey = signer;
+  RealPass pass;
+  pass.init(settings);
+  pass.updateEnv();
+  QSignalSpy critical(&pass, &Pass::critical);
+  const auto passRan = [this]() {
+    QTest::qWait(300);
+    return QFile::exists(m_log);
+  };
+
+  // Generation 2, for the root: pass is asked, and this device remembers 2.
+  QVERIFY(writeList(2, QStringLiteral("."), "ALICE\n"));
+  QFile::remove(m_log);
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("v"), false);
+  QVERIFY2(passRan(), "a current, bound list goes through");
+  QCOMPARE(critical.count(), 0);
+
+  // Generation 1 put back, authentic and naming Mallory: refused.
+  QVERIFY(writeList(1, QStringLiteral("."), "ALICE\nMALLORY\n"));
+  QFile::remove(m_log);
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("v"), true);
+  QVERIFY2(!passRan(), "pass never sees the secret for a rolled-back list");
+  QCOMPARE(critical.count(), 1);
+
+  // A newer list, but signed for another folder: refused.
+  QVERIFY(writeList(3, QStringLiteral("team"), "MALLORY\n"));
+  QFile::remove(m_log);
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("v"), true);
+  QVERIFY2(!passRan(), "a list signed for another folder is refused");
+  QCOMPARE(critical.count(), 2);
+
+  // A folder whose own list is a link: a move into it is refused, not
+  // encrypted to the root's list.
+#ifndef Q_OS_WIN
+  QVERIFY(writeList(4, QStringLiteral("."), "ALICE\n"));
+  QVERIFY(QDir(store).mkpath(QStringLiteral("shared")));
+  {
+    QFile other(QDir(m_dir.path()).filePath(QStringLiteral("elsewhere")));
+    QVERIFY(other.open(QIODevice::WriteOnly));
+    other.write("MALLORY\n");
+  }
+  QVERIFY(QFile::link(QDir(m_dir.path()).filePath(QStringLiteral("elsewhere")),
+                      QDir(store).filePath(QStringLiteral("shared/.gpg-id"))));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("entry.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Move(QDir(store).filePath(QStringLiteral("entry.gpg")),
+            QDir(store).filePath(QStringLiteral("shared")), false);
+  QVERIFY2(!passRan(), "no move under a list QtPass cannot vouch for");
+  QCOMPARE(critical.count(), 3);
+#endif
 }
 
 void tst_realpass::removeFileAndFolder() {

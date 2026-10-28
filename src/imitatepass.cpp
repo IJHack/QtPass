@@ -159,39 +159,10 @@ auto encryptArgs(QStringList leading, const QString &output,
 
 } // namespace
 
-auto ImitatePass::refuseSkippedGpgId(const QString &file) -> bool {
-  // Without a signing key the parent's list applies, as it does for pass.
-  if (!gpgIdSigner().enabled()) {
-    return false;
-  }
-  QString recordError;
-  const std::optional<QString> skipped =
-      Pass::skippedGpgId(file, m_settings.passStore, &recordError);
-  if (!skipped) {
-    return false;
-  }
-  if (!recordError.isEmpty()) {
-    emit critical(tr("Cannot check the recipient list"),
-                  tr("%1 Whether %2 was removed cannot be told, so nothing "
-                     "was encrypted.")
-                      .arg(recordError, QDir::toNativeSeparators(*skipped)));
-    return true;
-  }
-  emit critical(
-      tr("Recipient list missing"),
-      tr("The signed recipient list %1 is missing or is not a regular file. "
-         "QtPass does not fall back to a parent folder's list for it: that "
-         "list was not signed for this folder. If a link is under that name, "
-         "remove it. Then open Users for that folder and save its "
-         "recipients, which writes and signs a fresh list.")
-          .arg(QDir::toNativeSeparators(*skipped)));
-  return true;
-}
-
 auto ImitatePass::recipientsForEntry(const QString &file,
                                      QStringList *recipients) -> bool {
   recipients->clear();
-  if (refuseSkippedGpgId(file)) {
+  if (refuseSkippedGpgId(file, gpgIdSigner().enabled())) {
     return false;
   }
   QString why;
@@ -605,19 +576,7 @@ auto ImitatePass::loadVerifiedRecipients(const QString &gpgIdFile,
   QByteArray contents;
   const GpgIdSigner signer = gpgIdSigner();
   if (signer.enabled()) {
-    if (!signer.verifyFile(gpgIdFile, &contents)) {
-      return false;
-    }
-    // Authentic and unmodified is not the same as current: an older signed
-    // list put back into the store is refused once this device has seen a
-    // newer one.
-    QString reason;
-    if (GpgIdGeneration::accept(gpgIdFile, contents, m_settings.passStore,
-                                &reason) !=
-        GpgIdGeneration::Verdict::Accepted) {
-      if (why != nullptr) {
-        *why = reason;
-      }
+    if (!verifySignedList(signer, gpgIdFile, &contents, why)) {
       return false;
     }
   } else {
@@ -746,7 +705,7 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
                                     QStringList &gpgId) -> bool {
   // Before the cache: two folders can resolve to the same list, and only
   // one of them may have had its own.
-  if (refuseSkippedGpgId(file)) {
+  if (refuseSkippedGpgId(file, gpgIdSigner().enabled())) {
     return false;
   }
   const QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);

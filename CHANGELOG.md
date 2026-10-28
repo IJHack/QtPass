@@ -96,6 +96,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- With the `pass` backend and a signing key, an older signed `.gpg-id` put
+  back, one signed for another folder, or a sub-folder whose own list was
+  replaced by a link was accepted: `pass` checks the signature, not
+  QtPass's generation and folder lines. QtPass now runs the native
+  backend's checks before it has `pass` insert, move or copy, and refuses
+  as that backend does
+  ([#2077](https://github.com/IJHack/QtPass/issues/2077)).
 - The profile settings warn when two profiles for different stores name
   the same signing-key fingerprint: a recipient list signed for one of them is accepted in
   the other, since its folder line names a folder of a store, not the
