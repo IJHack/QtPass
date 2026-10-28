@@ -293,8 +293,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:adfd24194a7787a48b6eddbe8d31fc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve destination for move operation.  <br /></td></tr>
 <tr class="memitem:aa0b75b53b2a2d62b0fbffbb5d2d7efe4" id="r_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
 <tr class="memdesc:aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
-<tr class="memitem:a80b717f6932e5645b2628fba4654a7da" id="r_a80b717f6932e5645b2628fba4654a7da"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a80b717f6932e5645b2628fba4654a7da">insertWritten</a> () const -&gt; bool override</td></tr>
-<tr class="memdesc:a80b717f6932e5645b2628fba4654a7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the failed insert had placed its entry (see placeEncryptedFile()) before a later git step failed.  <br /></td></tr>
+<tr class="memitem:a54b0d821ced68089162fd3872087e7ec" id="r_a54b0d821ced68089162fd3872087e7ec"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a54b0d821ced68089162fd3872087e7ec">insertWritten</a> (const QString &amp;err) const -&gt; bool override</td></tr>
+<tr class="memdesc:a54b0d821ced68089162fd3872087e7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the failed insert had placed its entry (see placeEncryptedFile()) before a later git step failed.  <br /></td></tr>
 <tr class="memitem:afea4899feebac58489e710f4f8eba501" id="r_afea4899feebac58489e710f4f8eba501"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afea4899feebac58489e710f4f8eba501">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id) override</td></tr>
 <tr class="memdesc:afea4899feebac58489e710f4f8eba501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a transaction for every execution.  <br /></td></tr>
 <tr class="inherit_header pro_methods_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
@@ -1440,8 +1440,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a80b717f6932e5645b2628fba4654a7da" name="a80b717f6932e5645b2628fba4654a7da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80b717f6932e5645b2628fba4654a7da">&#9670;&#160;</a></span>insertWritten()</h2>
+<a id="a54b0d821ced68089162fd3872087e7ec" name="a54b0d821ced68089162fd3872087e7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54b0d821ced68089162fd3872087e7ec">&#9670;&#160;</a></span>insertWritten()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1452,7 +1452,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">auto ImitatePass::insertWritten </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>err</em></span></td><td>)</td>
           <td> const -&gt; bool</td>
         </tr>
       </table>
@@ -1464,11 +1464,17 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether the failed insert had placed its entry (see placeEncryptedFile()) before a later git step failed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">err</td><td>Not needed: the placement is known, not inferred. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the entry is in the store. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_pass.html#afda7320a4a3a5bcba47a862701c9b84e">Pass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00345">345</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00346">346</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 
 </div>
 </div>

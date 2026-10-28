@@ -134,6 +134,8 @@ Signals</h2></td></tr>
 <tr class="memitem:acfcfc18b0b973791530302eb8179e038" id="r_acfcfc18b0b973791530302eb8179e038"><td class="memItemLeft"><a id="acfcfc18b0b973791530302eb8179e038" name="acfcfc18b0b973791530302eb8179e038"></a>
 void&#160;</td><td class="memItemRight"><b>starting</b> ()</td></tr>
 <tr class="memdesc:acfcfc18b0b973791530302eb8179e038"><td class="mdescLeft">&#160;</td><td class="mdescRight">starting signal that is emitted when process starts <br /></td></tr>
+<tr class="memitem:a22b5633f6b06f7f15be77370b5bd2871" id="r_a22b5633f6b06f7f15be77370b5bd2871"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22b5633f6b06f7f15be77370b5bd2871">dequeuing</a> (int id, bool completes)</td></tr>
+<tr class="memdesc:a22b5633f6b06f7f15be77370b5bd2871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted, synchronously, when the queue's head leaves it: just before it is started, when it cannot be (no executable, a failed start), or when <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> drops it. Lets a caller do per-item work at the moment the item actually runs, not when it was queued.  <br /></td></tr>
 <tr class="memitem:a9c450bcba881197a3e10eb1bf59b3a88" id="r_a9c450bcba881197a3e10eb1bf59b3a88"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88">error</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
 <tr class="memdesc:a9c450bcba881197a3e10eb1bf59b3a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">error signal that is emitted when process finishes with an error  <br /></td></tr>
 </table><table class="memberdecls">
@@ -280,6 +282,44 @@ Static Public Member Functions</h2></td></tr>
 
 <p>The umask <a class="el" href="#a1c8933b8dca68b4967740d6193a2ea4d" title="The umask every child QtPass starts gets, as pass sets its own.">setChildUmask()</a> set. </p>
 <dl class="section return"><dt>Returns</dt><dd>The umask, or a negative value when none was set. </dd></dl>
+
+</div>
+</div>
+<a id="a22b5633f6b06f7f15be77370b5bd2871" name="a22b5633f6b06f7f15be77370b5bd2871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b5633f6b06f7f15be77370b5bd2871">&#9670;&#160;</a></span>dequeuing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Executor::dequeuing </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>completes</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emitted, synchronously, when the queue's head leaves it: just before it is started, when it cannot be (no executable, a failed start), or when <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> drops it. Lets a caller do per-item work at the moment the item actually runs, not when it was queued. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The item's id. </td></tr>
+    <tr><td class="paramname">completes</td><td>Whether <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="finished signal that is emitted when process finishes">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="error signal that is emitted when process finishes with an error">error()</a> follows for it: for every item but one <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> dropped. Those that complete do so in the order they left the queue. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
