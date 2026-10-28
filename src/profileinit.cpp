@@ -114,13 +114,17 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   // did not change here, and Users on the profile's root leaves it alone,
   // as pass does.
   const QString root = QDir::cleanPath(folder.absolutePath());
-  const auto underSubStore = [&root](const QString &entry) {
+  const bool viaPass = s.usePass;
+  const auto underSubStore = [&root, viaPass](const QString &entry) {
     QString dir = QFileInfo(entry).absolutePath();
     while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
-      // A list of its own: a regular file. A linked .gpg-id is no list, as
-      // everywhere in QtPass, so its folder's entries still count.
+      // A list of its own: a regular file. A linked .gpg-id is no list to
+      // the native backend, as everywhere in QtPass, so its folder's
+      // entries still count; pass follows the link (`-f`) and keeps that
+      // folder on the linked list, so with it they do not.
       const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
-      if (list.isFile() && !list.isSymLink() && !list.isJunction()) {
+      if (list.isFile() &&
+          (viaPass || (!list.isSymLink() && !list.isJunction()))) {
         return true;
       }
       dir = QFileInfo(dir).absolutePath();
@@ -213,6 +217,17 @@ auto ProfileInit::signGpgId(const QString &gpgIdFile,
                       .arg(gpgIdFile, signer.keys().first())
                 : tr("Could not sign %1 with %2: %3")
                       .arg(gpgIdFile, signer.keys().first(), err.trimmed());
+    // withGpgHome() fell back to the inherited home: gpg's "no secret key"
+    // would not say that the configured one is missing.
+    if (!s.gpgHome.isEmpty()) {
+      QDir home(s.gpgHome);
+      home.makeAbsolute();
+      if (!home.exists()) {
+        *note +=
+            QLatin1Char(' ') +
+            tr("The configured GPG home %1 does not exist.").arg(home.path());
+      }
+    }
     return false;
   }
   return true;

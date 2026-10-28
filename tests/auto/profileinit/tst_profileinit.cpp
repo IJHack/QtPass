@@ -105,7 +105,8 @@ auto tst_profileinit::signingGpg(const QString &signedLog,
  * @brief The new store's .gpg-id is signed in the configured GPG home, as
  * every other gpg call of QtPass runs (Pass::init), not the default one:
  * the signing key may live only there. A home that does not exist leaves
- * the inherited GNUPGHOME alone, as there.
+ * the inherited GNUPGHOME alone, as there, and a failed signature then
+ * names it.
  */
 void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
 #ifdef Q_OS_WIN
@@ -151,6 +152,21 @@ void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
       QCOMPARE(home, QDir(gpgHome).absolutePath());
     }
   }
+
+  // A configured home that does not exist: gpg runs in the inherited one
+  // and fails there, and the note names the missing home, which gpg's own
+  // "no secret key" would not.
+  const QString failingGpg =
+      QDir(base.path()).filePath(QStringLiteral("gpg-fails"));
+  QVERIFY(writeScript(failingGpg, "echo 'gpg: no secret key' >&2\nexit 2\n"));
+  s.gpgExecutable = failingGpg;
+  s.gpgHome = QDir(base.path()).filePath(QStringLiteral("missing"));
+  QVERIFY(!ProfileInit::initialise(
+      QDir(base.path()).filePath(QStringLiteral("store2")), twoUsers(), s,
+      false, &note));
+  QVERIFY2(note.contains(QStringLiteral("no secret key")) &&
+               note.contains(s.gpgHome + QStringLiteral(" does not exist")),
+           qPrintable(note));
 #endif
 }
 
@@ -482,6 +498,13 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
   QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(),
                                   AppSettings(), false, &note));
   QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
+  // pass follows the link: team/ keeps the linked list, and Users on the
+  // root does not re-encrypt it, so only top.gpg counts.
+  AppSettings viaPass;
+  viaPass.usePass = true;
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(), viaPass,
+                                  false, &note));
+  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
 #endif
 }
 
