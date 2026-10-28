@@ -94,10 +94,11 @@ class RealPass : public Pass {
    * @brief The executor is about to run (or drop) its next item: for an
    * insert, take its entry from m_insertQueue and fingerprint it now, not
    * when it was queued, so an earlier queued save of the same entry counts
-   * as "before".
+   * as "before". Kept in m_insertPending for that insert's own completion.
    * @param id The item's process id.
+   * @param completes Whether a completion follows (not for a dropped one).
    */
-  void onDequeuing(int id);
+  void onDequeuing(int id, bool completes);
 
   /**
    * @brief A SHA-256 of the regular file @p path (opened without following
@@ -107,12 +108,20 @@ class RealPass : public Pass {
    */
   static auto entryFingerprint(const QString &path) -> QByteArray;
 
+  /// An insert's entry and its fingerprint when the insert started to run
+  /// (empty when the entry did not exist).
+  struct InsertRecord {
+    QString target;    ///< The entry's file.
+    QByteArray before; ///< Its fingerprint when the insert started.
+  };
   /// The entries of the queued inserts, oldest first.
   QQueue<QString> m_insertQueue;
-  /// The entry the running insert writes, and its fingerprint when it
-  /// started (empty when it did not exist).
-  QString m_insertTarget;
-  QByteArray m_insertTargetBefore;
+  /// The inserts that left the queue and have yet to complete, in the
+  /// order their completions come: a failed start's error is posted, and
+  /// the next insert may start before it arrives.
+  QQueue<InsertRecord> m_insertPending;
+  /// The insert whose completion is being handled.
+  InsertRecord m_insertDone;
 
 public:
   /**

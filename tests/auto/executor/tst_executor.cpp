@@ -779,7 +779,8 @@ void tst_executor::cancelNextFromErrorHandlerDropsQueuedItem() {
 /**
  * @brief dequeuing() names every item as it leaves the queue, in order: one
  *        that cannot start (no executable), one that runs, one that
- *        cancelNext() drops, and one that runs after it. It comes before
+ *        cancelNext() drops (the only one no completion follows), and one
+ *        that runs after it. It comes before
  *        the item runs, so a caller can look at the world as it is then.
  */
 void tst_executor::dequeuingNamesEveryItemThatLeavesTheQueue() {
@@ -790,10 +791,12 @@ void tst_executor::dequeuingNamesEveryItemThatLeavesTheQueue() {
   QSignalSpy finished(&exec, &Executor::finished);
   QList<int> order;
   QList<int> finishedSoFar;
+  QList<bool> completes;
   connect(&exec, &Executor::dequeuing, &exec,
-          [&order, &finishedSoFar, &finished](int id) {
+          [&order, &finishedSoFar, &finished, &completes](int id, bool c) {
             order << id;
             finishedSoFar << static_cast<int>(finished.count());
+            completes << c;
           });
   connect(&exec, &Executor::finished, &exec, [&exec](int id) {
     if (id == 2) {
@@ -807,6 +810,8 @@ void tst_executor::dequeuingNamesEveryItemThatLeavesTheQueue() {
   exec.execute(4, sh, {"-c", "exit 0"}, false, false);
   QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 2, 5000);
   QCOMPARE(order, (QList<int>{1, 2, 3, 4}));
+  // All but the dropped one complete.
+  QCOMPARE(completes, (QList<bool>{true, true, false, true}));
   // Item 2 left the queue before anything had finished, item 4 after 2.
   QCOMPARE(finishedSoFar.at(1), 0);
   QCOMPARE(finishedSoFar.at(3), 1);

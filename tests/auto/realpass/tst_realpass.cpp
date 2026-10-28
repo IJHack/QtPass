@@ -1,11 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QLoggingCategory>
 #include <QScopeGuard>
 #include <QSignalSpy>
 #include <QTemporaryDir>
+#include <QThread>
 #include <QtTest>
 
 #include "../../../src/appsettings.h"
@@ -32,6 +34,7 @@ private slots:
   void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
+  void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
@@ -340,6 +343,62 @@ void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
       run(QStringLiteral("folder/fresh"), false, {QStringLiteral("commit")});
   QVERIFY(written);
   QCOMPARE(title, QStringLiteral("Saved, not committed"));
+}
+
+/**
+ * @brief An insert whose pass cannot start reports that later (the error is
+ *        posted), and the next queued insert starts at once. If that one
+ *        has written its entry by the time the error is handled, the failed
+ *        insert is still judged by its own entry, not credited with it.
+ */
+void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-late-start"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // stdin is not read: QProcess writes it from the event loop, which
+    // this test holds off on purpose.
+    f.write("#!/bin/sh\nfor last; do :; done\n"
+            "printf 'new %s\\n' \"$$\" > \"$PASSWORD_STORE_DIR/$last.gpg\"\n"
+            "exit 0\n");
+    f.close();
+    // Not executable yet: the first insert cannot start.
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner));
+  }
+  const QString first = m_store + QStringLiteral("folder/never.gpg");
+  const QString second = m_store + QStringLiteral("folder/later.gpg");
+  QFile::remove(first);
+  QFile::remove(second);
+  AppSettings settings = m_settings;
+  settings.passExecutable = script;
+  RealPass pass;
+  pass.init(settings);
+  pass.updateEnv();
+  QSignalSpy failed(&pass, &Pass::insertFailed);
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+
+  pass.Insert(QStringLiteral("folder/never"), QStringLiteral("v"), false);
+  QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  pass.Insert(QStringLiteral("folder/later"), QStringLiteral("v"), false);
+  // The second pass runs on its own; give it time to write before the
+  // event loop delivers the first insert's error.
+  QElapsedTimer timer;
+  timer.start();
+  while (!QFile::exists(second) && timer.elapsed() < 5000) {
+    QThread::msleep(10);
+  }
+  QThread::msleep(50);
+  QVERIFY(QFile::exists(second));
+
+  QTRY_COMPARE_WITH_TIMEOUT(failed.count(), 1, 5000);
+  QVERIFY2(!failed.first().at(1).toBool(),
+           "the insert that never started wrote nothing");
+  QCOMPARE(critical.count(), 0);
+  QVERIFY(!QFile::exists(first));
+  QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 5000);
 }
 
 void tst_realpass::removeFileAndFolder() {
