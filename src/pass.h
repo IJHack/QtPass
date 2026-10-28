@@ -382,9 +382,12 @@ protected:
    * what was signed for it.
    * @param file The entry or folder about to be encrypted to.
    * @param signing Whether a signing key is set (signed lists in use).
+   * @param except A list about to be written (by `pass init`), which may
+   *        be missing now without that being refused.
    * @return Whether it was refused (and the user told).
    */
-  auto refuseSkippedGpgId(const QString &file, bool signing) -> bool;
+  auto refuseSkippedGpgId(const QString &file, bool signing,
+                          const QString &except = QString()) -> bool;
 
   /**
    * @brief Whether @p gpgIdFile is a signed list QtPass accepts: its

@@ -100,10 +100,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   back, one signed for another folder, or a sub-folder whose own list was
   replaced by a link was accepted: `pass` checks the signature, not
   QtPass's generation and folder lines. QtPass now runs the native
-  backend's checks before it has `pass` insert, move or copy (for a
-  folder, also the lists inside it, hidden entries included, and every list
-  in an existing destination folder, which `pass` re-encrypts whole), and
-  refuses as that backend does
+  backend's checks before it has `pass` insert, move or copy, or save a
+  folder's recipients (`pass init`, which re-encrypts what is under it):
+  for a folder, the lists inside it are checked too, hidden entries
+  included, and every list in an existing destination folder, which
+  `pass` re-encrypts whole. It refuses as that backend does
   ([#2077](https://github.com/IJHack/QtPass/issues/2077)).
 - The profile settings warn when two profiles for different stores name
   the same signing-key fingerprint: a recipient list signed for one of them is accepted in

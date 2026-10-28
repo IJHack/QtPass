@@ -69,14 +69,18 @@ auto RealPass::listSigner() -> GpgIdSigner {
 }
 
 auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
-                          QSet<QString> &verified, const QString &within)
-    -> bool {
-  if (refuseSkippedGpgId(file, true)) {
+                          QSet<QString> &verified, const QString &within,
+                          const QString &except) -> bool {
+  if (refuseSkippedGpgId(file, true, except)) {
     return true;
   }
   const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
+  const QString absolute =
+      QDir::cleanPath(QFileInfo(gpgIdFile).absoluteFilePath());
   if (verified.contains(gpgIdFile) ||
-      (!within.isEmpty() && !QDir::cleanPath(gpgIdFile).startsWith(within))) {
+      (!except.isEmpty() &&
+       absolute == QDir::cleanPath(QFileInfo(except).absoluteFilePath())) ||
+      (!within.isEmpty() && !absolute.startsWith(within))) {
     return false;
   }
   QString why =
@@ -151,12 +155,17 @@ auto passFoldersUnder(const QString &dir) -> QStringList {
 }
 } // namespace
 
-auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
-    -> bool {
+auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
+                                    const QString &except) -> bool {
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
   }
+  // One gpg call per list, before pass runs: a store with many lists makes
+  // that a noticeable pause, so say what it is.
+  emit statusMsg(tr("Checking the recipient lists under %1…")
+                     .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))),
+                 3000);
   // pass mv and cp re-encrypt every entry of the folder they write to, each
   // to its nearest list, walking as passEntriesUnder() does. For the folder
   // that moves, the lists inside it go along: checked where they lie now
@@ -164,11 +173,15 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
   // recipients are saved there again), while a list above it is replaced
   // by the destination's, which the caller checks. For entries already in
   // the destination, their lists stay where they are: all of them count.
+  // Absolute, as getGpgIdPath() hands lists back: a relative or other
+  // spelling would match nothing and check nothing.
   const QString within =
-      onlyListsWithin ? QDir::cleanPath(dir) + QLatin1Char('/') : QString();
+      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
+                            QLatin1Char('/')
+                      : QString();
   QSet<QString> verified;
   for (const QString &entry : passEntriesUnder(dir)) {
-    if (refuseList(entry, signer, verified, within)) {
+    if (refuseList(entry, signer, verified, within, except)) {
       return true;
     }
   }
@@ -177,7 +190,7 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.
   for (const QString &folder : passFoldersUnder(dir)) {
-    if (refuseList(folder, signer, verified, within)) {
+    if (refuseList(folder, signer, verified, within, except)) {
       return true;
     }
   }
@@ -389,6 +402,14 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
     if (dirWithoutPassdir == QStringLiteral(".")) {
       dirWithoutPassdir.clear();
     }
+  }
+  // pass init writes this folder's list and then re-encrypts everything
+  // under it to each entry's nearest list, a deeper folder's own included:
+  // those are checked as for a move. This folder's list is the one being
+  // written, so it is neither verified nor missed.
+  if (refuseUnverifiedTree(folder, true,
+                           QDir(folder).filePath(QStringLiteral(".gpg-id")))) {
+    return;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   for (const UserInfo &user : users) {

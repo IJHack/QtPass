@@ -632,6 +632,36 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
             QDir(store).filePath(QStringLiteral("dest")), false);
   QVERIFY2(!passRan(), "a list the source brings counts, entries or not");
   QCOMPARE(critical.count(), before + 5);
+
+  // Users (pass init) re-encrypts everything under its folder to each
+  // entry's nearest list: a deeper rolled-back list is refused.
+  UserInfo alice;
+  alice.key_id = signer;
+  alice.enabled = true;
+  QVERIFY(rolledBack(QStringLiteral("outer/inner")));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("outer/inner/e.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Init(QDir(store).filePath(QStringLiteral("outer")), {alice});
+  QVERIFY2(!passRan(), "init does not re-encrypt under a rolled-back list");
+  QCOMPARE(critical.count(), before + 6);
+
+  // Its own list is the one being written: a folder whose list was
+  // removed is no refusal there, that is the way back.
+  QVERIFY(rolledBack(QStringLiteral("gone")));
+  QVERIFY(QFile::remove(QDir(store).filePath(QStringLiteral("gone/.gpg-id"))));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("gone/e.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Init(QDir(store).filePath(QStringLiteral("gone")), {alice});
+  QVERIFY2(passRan(), "re-initialising a folder whose list was removed");
+  QCOMPARE(critical.count(), before + 6);
 }
 
 void tst_realpass::removeFileAndFolder() {

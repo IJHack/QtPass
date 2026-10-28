@@ -115,9 +115,12 @@ class RealPass : public Pass {
    * @param onlyListsWithin Whether only lists inside @p dir count: for the
    *        folder that moves, whose entries get the destination's list in
    *        place of any list above it.
+   * @param except A list about to be written (`pass init`'s own), neither
+   *        verified nor refused for being missing.
    * @return Whether it was refused (and the user told).
    */
-  auto refuseUnverifiedTree(const QString &dir, bool onlyListsWithin) -> bool;
+  auto refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
+                            const QString &except = QString()) -> bool;
 
   /**
    * @brief The verifier for signed lists, gpg in the store's environment.
@@ -131,13 +134,16 @@ class RealPass : public Pass {
    * @param file The entry.
    * @param signer The verifier.
    * @param verified The lists already found good; extended.
-   * @param within When set, only a list under this folder (with a trailing
-   *        "/") is verified; the skipped-list check applies regardless.
+   * @param within When set, only a list under this folder (absolute,
+   *        cleaned, with a trailing "/") is verified; the skipped-list check
+   *        applies regardless.
+   * @param except A list about to be written, neither verified nor refused
+   *        for being missing.
    * @return Whether it was refused (and the user told).
    */
   auto refuseList(const QString &file, const GpgIdSigner &signer,
-                  QSet<QString> &verified, const QString &within = QString())
-      -> bool;
+                  QSet<QString> &verified, const QString &within = QString(),
+                  const QString &except = QString()) -> bool;
 
   /**
    * @brief The executor is about to run (or drop) its next item: for an

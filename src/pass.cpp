@@ -749,7 +749,8 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
           QDir(QDir::fromNativeSeparators(passStore)).filePath(".gpg-id"));
 }
 
-auto Pass::refuseSkippedGpgId(const QString &file, bool signing) -> bool {
+auto Pass::refuseSkippedGpgId(const QString &file, bool signing,
+                              const QString &except) -> bool {
   // Without a signing key the parent's list applies, as it does for pass.
   if (!signing) {
     return false;
@@ -757,7 +758,8 @@ auto Pass::refuseSkippedGpgId(const QString &file, bool signing) -> bool {
   QString recordError;
   const std::optional<QString> skipped =
       skippedGpgId(file, m_settings.passStore, &recordError);
-  if (!skipped) {
+  if (!skipped || (!except.isEmpty() &&
+                   QDir::cleanPath(*skipped) == QDir::cleanPath(except))) {
     return false;
   }
   // The strings keep the context they were translated in.
