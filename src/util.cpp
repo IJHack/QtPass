@@ -138,6 +138,33 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+auto Util::gitStoreVariables(const QString &store)
+    -> QList<std::pair<QString, QString>> {
+  const QString ceiling = gitCeiling(store);
+  if (ceiling.isEmpty()) {
+    return {};
+  }
+  QList<std::pair<QString, QString>> vars{
+      {QStringLiteral("GIT_CEILING_DIRECTORIES"), ceiling}};
+#ifdef Q_OS_WIN
+  const QChar separator = QLatin1Char(';');
+#else
+  const QChar separator = QLatin1Char(':');
+#endif
+  // git splits the ceiling list on the separator: "/home/a:b" would be
+  // "/home/a" and "b", neither of them the parent, and git would climb.
+  if (ceiling.contains(separator)) {
+    QString root = QFileInfo(store).canonicalFilePath();
+    if (root.isEmpty()) {
+      root = QDir::cleanPath(QDir(store).absolutePath());
+    }
+    vars.append({QStringLiteral("GIT_DIR"),
+                 QDir(root).filePath(QStringLiteral(".git"))});
+    vars.append({QStringLiteral("GIT_WORK_TREE"), root});
+  }
+  return vars;
+}
+
 auto Util::mkpathForStore(const QString &path) -> bool {
   const QString clean = QDir::cleanPath(QDir(path).absolutePath());
   if (QFileInfo(clean).isDir()) {

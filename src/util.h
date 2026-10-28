@@ -50,6 +50,19 @@ public:
   static auto gitCeiling(const QString &store) -> QString;
 
   /**
+   * @brief The variables that keep git in @p store's own repository, never
+   * one above it: GIT_CEILING_DIRECTORIES (gitCeiling()), and, when that
+   * ceiling holds git's list separator (":", ";" on Windows) and so cannot
+   * be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's
+   * own `.git` and the store. A store without a `.git` then has no
+   * repository to git, rather than the one above it.
+   * @param store The store's path.
+   * @return Name and value pairs to set; empty for an empty @p store.
+   */
+  static auto gitStoreVariables(const QString &store)
+      -> QList<std::pair<QString, QString>>;
+
+  /**
    * @brief Create @p path and any missing parents as pass would.
    *
    * What pass's mkdir -p does under its umask, for the folders QtPass makes

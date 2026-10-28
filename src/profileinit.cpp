@@ -45,8 +45,9 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
   // patterns (see Pass::updateEnv()).
   env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
   if (!s.gitUseParentRepository) {
-    env.insert(QStringLiteral("GIT_CEILING_DIRECTORIES"),
-               Util::gitCeiling(dir));
+    for (const auto &[name, value] : Util::gitStoreVariables(dir)) {
+      env.insert(name, value);
+    }
   }
   return env;
 }

@@ -300,6 +300,7 @@ private Q_SLOTS:
   void processDefaultsClearGitRedirectsAndSetTheUmask();
   void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
+  void gitStaysInTheStoreWhenItsParentHoldsTheSeparator();
   void readRegularFileIsBoundedAndRegular();
   void gitTakesStorePathsLiterally();
   void gpgErrorMessageKeyExpiredStatusToken();
@@ -2484,6 +2485,78 @@ void tst_util::mkpathForStoreFollowsTheStoreUmask() {
   QVERIFY(file.open(QIODevice::WriteOnly));
   file.close();
   QVERIFY2(!Util::mkpathForStore(file.fileName()), "a file is no folder");
+#endif
+}
+
+/**
+ * @brief git splits GIT_CEILING_DIRECTORIES on ":" (";" on Windows): a store
+ *        whose parent path holds one cannot be fenced by the ceiling, so
+ *        GIT_DIR and GIT_WORK_TREE name the store's own repository instead
+ *        (#2076). Without one git finds none, not the one above; with one
+ *        it finds that. An ordinary path keeps the ceiling alone.
+ */
+void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
+#ifdef Q_OS_WIN
+  QSKIP("':' cannot be part of a Windows path");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("git not found");
+  }
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  QVERIFY(QProcess::execute(git, {QStringLiteral("init"), QStringLiteral("-q"),
+                                  home.path()}) == 0);
+  const QString store = QDir(home.path()).filePath(QStringLiteral("a:b/store"));
+  QVERIFY(QDir().mkpath(store));
+  const QString real = QFileInfo(store).canonicalFilePath();
+  const auto gitDir = [&git](const QString &dir,
+                             const QProcessEnvironment &env) {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(git, {QStringLiteral("-C"), dir, QStringLiteral("rev-parse"),
+                  QStringLiteral("--absolute-git-dir")});
+    p.waitForFinished(10000);
+    return p.exitCode() == 0
+               ? QString::fromUtf8(p.readAllStandardOutput()).trimmed()
+               : QString();
+  };
+
+  // The helper: the ceiling, and the store's own repository named.
+  const auto vars = Util::gitStoreVariables(store);
+  QHash<QString, QString> named;
+  for (const auto &[name, value] : vars) {
+    named.insert(name, value);
+  }
+  QCOMPARE(named.value(QStringLiteral("GIT_CEILING_DIRECTORIES")),
+           QFileInfo(real).absolutePath());
+  QCOMPARE(named.value(QStringLiteral("GIT_DIR")),
+           QDir(real).filePath(QStringLiteral(".git")));
+  QCOMPARE(named.value(QStringLiteral("GIT_WORK_TREE")), real);
+  // An ordinary path: the ceiling alone.
+  QCOMPARE(Util::gitStoreVariables(home.path()).size(), 1);
+
+  // As the backend sets it: git does not reach the repository above.
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  s.passStore = store;
+  s.gitUseParentRepository = false;
+  pass.init(s);
+  const QProcessEnvironment env = pass.environment();
+  QCOMPARE(env.value(QStringLiteral("GIT_DIR")),
+           QDir(real).filePath(QStringLiteral(".git")));
+  QVERIFY2(gitDir(store, env).isEmpty(),
+           qPrintable("git found " + gitDir(store, env)));
+  // The store's own repository, once there, is the one.
+  QVERIFY(QProcess::execute(
+              git, {QStringLiteral("init"), QStringLiteral("-q"), store}) == 0);
+  QCOMPARE(gitDir(store, env), QDir(real).filePath(QStringLiteral(".git")));
+
+  // Kept inside a larger repository on purpose: nothing is pinned.
+  s.gitUseParentRepository = true;
+  pass.init(s);
+  QVERIFY(!pass.environment().contains(QStringLiteral("GIT_DIR")));
+  QVERIFY(!pass.environment().contains(QStringLiteral("GIT_WORK_TREE")));
 #endif
 }
 
