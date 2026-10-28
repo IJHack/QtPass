@@ -31,6 +31,7 @@ private slots:
   void showAndGrep();
   void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
+  void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
@@ -242,6 +243,74 @@ void tst_realpass::insertPipesTheValue() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("insert"), QStringLiteral("-m"),
                         QStringLiteral("-f"), QStringLiteral("folder/new")}));
+}
+
+/**
+ * @brief pass writes the entry, then its git commit fails (one that cannot
+ *        be signed, say) and pass exits non-zero: the entry is saved, for a
+ *        new entry and for an edited one alike. When pass fails before it
+ *        writes, nothing was saved.
+ */
+void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
+  const QString entry = m_store + QStringLiteral("folder/edited.gpg");
+  const auto writeEntry = [&entry](const QByteArray &bytes) {
+    QFile f(entry);
+    return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
+  };
+  // WRITE says whether this stand-in rewrites the entry before "git" fails.
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-commit-fails"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\ncat >/dev/null\n"
+            "for last; do :; done\n"
+            "if [ \"$WRITE\" = 1 ]; then\n"
+            "  printf 'new %s\\n' \"$$\" > \"$PASSWORD_STORE_DIR/$last.gpg\"\n"
+            "  echo 'error: gpg failed to sign the data' >&2\n"
+            "else\n  echo 'gpg: no public key' >&2\nfi\nexit 1\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings settings = m_settings;
+  settings.passExecutable = script;
+  const auto run = [&settings](const QString &name, bool overwrite,
+                               bool write) -> std::pair<bool, QString> {
+    qputenv("WRITE", write ? "1" : "0");
+    RealPass pass;
+    pass.init(settings);
+    pass.updateEnv();
+    QSignalSpy failed(&pass, &Pass::insertFailed);
+    QSignalSpy critical(&pass, &Pass::critical);
+    pass.Insert(name, QStringLiteral("v"), overwrite);
+    if (!failed.wait(5000) && failed.isEmpty()) {
+      return {false, QStringLiteral("no insertFailed")};
+    }
+    const bool written = failed.first().at(1).toBool();
+    const QString title =
+        critical.isEmpty() ? QString() : critical.first().at(0).toString();
+    return {written, title};
+  };
+
+  // An existing entry, rewritten before the commit fails.
+  QVERIFY(writeEntry("old"));
+  auto [written, title] = run(QStringLiteral("folder/edited"), true, true);
+  QVERIFY2(written, "the edited entry was written");
+  QCOMPARE(title, QStringLiteral("Saved, not committed"));
+
+  // An existing entry pass never got to: not written, no box.
+  QVERIFY(writeEntry("old"));
+  std::tie(written, title) = run(QStringLiteral("folder/edited"), true, false);
+  QVERIFY(!written);
+  QVERIFY2(title.isEmpty(), qPrintable(title));
+
+  // A new entry, written before the commit fails.
+  QFile::remove(m_store + QStringLiteral("folder/fresh.gpg"));
+  std::tie(written, title) = run(QStringLiteral("folder/fresh"), false, true);
+  QVERIFY(written);
+  QCOMPARE(title, QStringLiteral("Saved, not committed"));
+  qunsetenv("WRITE");
 }
 
 void tst_realpass::removeFileAndFolder() {

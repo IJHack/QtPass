@@ -6,7 +6,9 @@
 #include "qtpasslogging.h"
 #include "util.h"
 
+#include <QCryptographicHash>
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QRegularExpression>
 #include <utility>
@@ -59,7 +61,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
       QDir::cleanPath(QDir::isAbsolutePath(file)
                           ? file + ".gpg"
                           : QDir(m_settings.passStore).filePath(file) + ".gpg");
-  m_insertTargetExisted = QFileInfo::exists(m_insertTarget);
+  m_insertTargetBefore = entryFingerprint(m_insertTarget);
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -69,8 +71,26 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
 }
 
 auto RealPass::insertWritten() const -> bool {
-  return !m_insertTarget.isEmpty() && !m_insertTargetExisted &&
-         QFileInfo::exists(m_insertTarget);
+  if (m_insertTarget.isEmpty()) {
+    return false;
+  }
+  // pass writes the new ciphertext to the entry's name before it commits,
+  // and an encryption never gives the same bytes twice (a fresh session
+  // key), so an edited entry has changed as surely as a new one appeared.
+  const QByteArray after = entryFingerprint(m_insertTarget);
+  return !after.isEmpty() && after != m_insertTargetBefore;
+}
+
+auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
+  QFile file;
+  if (!Util::openRegularFile(path, file)) {
+    return {};
+  }
+  QCryptographicHash hash(QCryptographicHash::Sha256);
+  if (!hash.addData(&file)) {
+    return {};
+  }
+  return hash.result();
 }
 
 /**

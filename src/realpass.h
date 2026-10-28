@@ -81,15 +81,25 @@ class RealPass : public Pass {
 
   /**
    * @brief Whether the failed `pass insert` wrote its entry before its git
-   * step failed. pass does not say, so: the entry did not exist when the
-   * insert started and does now.
-   * @return true when a new entry appeared.
+   * step failed. pass does not say, so: the entry's bytes differ from what
+   * they were when the insert started (a new entry appeared, or an existing
+   * one was rewritten).
+   * @return true when the entry was written.
    */
   [[nodiscard]] auto insertWritten() const -> bool override;
 
-  /// The entry the last Insert() writes, and whether it existed beforehand.
+  /**
+   * @brief A SHA-256 of the regular file @p path (opened without following
+   * a link or blocking on a FIFO).
+   * @param path The entry's file.
+   * @return The hash; empty when @p path is no readable regular file.
+   */
+  static auto entryFingerprint(const QString &path) -> QByteArray;
+
+  /// The entry the last Insert() writes, and its fingerprint beforehand
+  /// (empty when it did not exist).
   QString m_insertTarget;
-  bool m_insertTargetExisted = false;
+  QByteArray m_insertTargetBefore;
 
 public:
   /**
