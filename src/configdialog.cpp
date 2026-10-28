@@ -329,35 +329,38 @@ void ConfigDialog::showProblems(int row, const ProfileProblems &problems) {
   ui->profileSigningKey->setToolTip(tipOr(problems.key, m_keyTip));
 }
 
-auto ConfigDialog::sharingTheKey(int row) const -> QStringList {
+auto ConfigDialog::signingStores() const -> SigningStores {
+  // One folder spelled two ways (through a link, another case on a
+  // case-insensitive file system) is one store: compared as the file system
+  // resolves it where it exists. Resolved once per validate(), not once per
+  // pair of profiles.
+  SigningStores resolved;
+  for (const ProfileEntry &entry : std::as_const(m_entries)) {
+    const QString real = QFileInfo(entry.profile.path).canonicalFilePath();
+    resolved.stores << (real.isEmpty() ? QDir::cleanPath(entry.profile.path)
+                                       : real);
+    const QStringList keys = entry.profile.signingKey.toUpper().split(
+        QLatin1Char(' '), Qt::SkipEmptyParts);
+    resolved.keys << QSet<QString>(keys.cbegin(), keys.cend());
+  }
+  return resolved;
+}
+
+auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const
+    -> QStringList {
   // A list signed for one store verifies in the other when the stores share
   // a signing key; the folder line names a folder, not a store (#2050).
-  const ProfileEntry &entry = m_entries.at(row);
-  const auto fingerprints = [](const QString &setting) {
-    QStringList keys =
-        setting.toUpper().split(QLatin1Char(' '), Qt::SkipEmptyParts);
-    return QSet<QString>(keys.cbegin(), keys.cend());
-  };
-  const QSet<QString> mine = fingerprints(entry.profile.signingKey);
   QStringList others;
+  const QSet<QString> &mine = resolved.keys.at(row);
   if (mine.isEmpty()) {
     return others;
   }
-  // One folder spelled two ways (through a link, another case on a
-  // case-insensitive file system) is one store: compared as the file system
-  // resolves it where it exists.
-  const auto storeOf = [](const QString &path) {
-    const QString real = QFileInfo(path).canonicalFilePath();
-    return real.isEmpty() ? QDir::cleanPath(path) : real;
-  };
-  const QString store = storeOf(entry.profile.path);
   for (int other = 0; other < m_entries.size(); ++other) {
-    const ProfileEntry &candidate = m_entries.at(other);
-    if (other == row || storeOf(candidate.profile.path) == store) {
+    if (other == row || resolved.stores.at(other) == resolved.stores.at(row)) {
       continue;
     }
-    if (fingerprints(candidate.profile.signingKey).intersects(mine)) {
-      others << candidate.name;
+    if (resolved.keys.at(other).intersects(mine)) {
+      others << m_entries.at(other).name;
     }
   }
   others.sort();
@@ -370,9 +373,11 @@ void ConfigDialog::validate() {
     names[entry.name]++;
   }
   bool status = true;
+  const SigningStores resolved = signingStores();
   for (int row = 0; row < m_entries.size(); ++row) {
     ProfileProblems problems = problemsOf(m_entries.at(row), names);
-    if (const QStringList others = sharingTheKey(row); !others.isEmpty()) {
+    if (const QStringList others = sharingTheKey(row, resolved);
+        !others.isEmpty()) {
       problems.sharedKey =
           tr("%1 signs with the same key for another store. A recipient "
              "list signed for one of these stores is accepted in the other: "

@@ -9,6 +9,7 @@
 #include "profile.h"
 
 #include <QDialog>
+#include <QSet>
 
 namespace Ui {
 struct UserInfo;
@@ -235,13 +236,26 @@ private:
    * @param problems What problemsOf() found for it.
    */
   void showProblems(int row, const ProfileProblems &problems);
+  /// Per profile row: its store as the file system resolves it, and its
+  /// signing-key fingerprints (upper case).
+  struct SigningStores {
+    QStringList stores;        ///< Canonical (or cleaned) store path.
+    QList<QSet<QString>> keys; ///< Fingerprints of the signing key.
+  };
+  /**
+   * @brief Resolve every profile's store and fingerprints once.
+   * @return One entry per row of m_entries.
+   */
+  [[nodiscard]] auto signingStores() const -> SigningStores;
   /**
    * @brief The other profiles, for other stores, whose signing keys share a
    * fingerprint with row @p row's.
    * @param row The profile's row.
+   * @param resolved What signingStores() gave for this validation.
    * @return Their names, sorted; empty when none or no key is set.
    */
-  [[nodiscard]] auto sharingTheKey(int row) const -> QStringList;
+  [[nodiscard]] auto sharingTheKey(int row, const SigningStores &resolved) const
+      -> QStringList;
 
   void initializeNewProfiles(const Profiles &existingProfiles);
   /**
