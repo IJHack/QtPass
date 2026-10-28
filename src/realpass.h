@@ -109,8 +109,9 @@ class RealPass : public Pass {
    * walk takes, hidden ones included) is not one QtPass accepts where it
    * lies now (as refuseUnverifiedList()).
    * @param dir The folder moved or copied, or the existing folder written
-   *        into (then each of its folders' lists counts too, used yet or
-   *        not: a copy merges into a folder of the same name there).
+   *        into. Each of its folders' lists counts, used by an entry yet or
+   *        not: a copy merges into a folder of the same name, so lists on
+   *        either side meet the other side's entries.
    * @param onlyListsWithin Whether only lists inside @p dir count: for the
    *        folder that moves, whose entries get the destination's list in
    *        place of any list above it.

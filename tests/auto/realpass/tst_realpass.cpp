@@ -607,6 +607,31 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
             QDir(store).filePath(QStringLiteral("dest")), false);
   QVERIFY2(!passRan(), "a list waiting in the destination counts");
   QCOMPARE(critical.count(), before + 4);
+
+  // The other way round: a source folder that holds only a rolled-back
+  // list replaces the current one in the folder it merges into, whose entry
+  // pass then re-encrypts to it. Refused.
+  QVERIFY(QDir(QDir(store).filePath(QStringLiteral("dest/src")))
+              .removeRecursively());
+  QVERIFY(rolledBack(QStringLiteral("lists")));
+  {
+    const QString there = QStringLiteral("dest/lists");
+    QVERIFY(QDir(store).mkpath(there));
+    QFile list(QDir(QDir(store).filePath(there)).filePath(".gpg-id"));
+    QVERIFY(list.open(QIODevice::WriteOnly));
+    list.write(GpgIdGeneration::withHeader(7, there, "ALICE\n"));
+    QFile sig(list.fileName() + QStringLiteral(".sig"));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+    QFile e(QDir(QDir(store).filePath(there)).filePath("kept.gpg"));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Copy(QDir(store).filePath(QStringLiteral("lists")),
+            QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(!passRan(), "a list the source brings counts, entries or not");
+  QCOMPARE(critical.count(), before + 5);
 }
 
 void tst_realpass::removeFileAndFolder() {

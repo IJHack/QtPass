@@ -172,14 +172,13 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
       return true;
     }
   }
-  // Written into, its folders' lists count even where no entry uses them
-  // yet: cp -r merges an incoming folder into one of the same name, and the
-  // entries it brings get the list already there.
-  if (!onlyListsWithin) {
-    for (const QString &folder : passFoldersUnder(dir)) {
-      if (refuseList(folder, signer, verified)) {
-        return true;
-      }
+  // Every folder's list counts even where no entry uses it yet: cp -r
+  // merges an incoming folder into one of the same name, so the entries it
+  // brings get a list already there, and a list it brings replaces the one
+  // there for the entries already in it.
+  for (const QString &folder : passFoldersUnder(dir)) {
+    if (refuseList(folder, signer, verified, within)) {
+      return true;
     }
   }
   return false;
