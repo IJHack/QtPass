@@ -35,6 +35,7 @@ private Q_SLOTS:
   void initialiseCommitsUnderGit();
   void initialiseWarnsAboutExistingEntries();
   void initialiseCountsEntriesInSubfolders();
+  void initialiseSignsInTheConfiguredGpgHome();
   void initialiseLeavesNoHalfWrittenGpgId();
   void initialiseFailsWhenTheDirectoryCannotBeCreated();
   void initialiseRefusesWhenNoGenerationCanBeReserved();
@@ -98,6 +99,75 @@ auto tst_profileinit::signingGpg(const QString &signedLog,
              "exit 0\n")
       .arg(signedLog, signer)
       .toUtf8();
+}
+
+/**
+ * @brief The new store's .gpg-id is signed in the configured GPG home, as
+ * every other gpg call of QtPass runs (Pass::init), not the default one:
+ * the signing key may live only there. A home that does not exist leaves
+ * the inherited GNUPGHOME alone, as there, and a failed signature then
+ * names it.
+ */
+void tst_profileinit::initialiseSignsInTheConfiguredGpgHome() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir base;
+  QVERIFY(base.isValid());
+  const QString homeLog = QDir(base.path()).filePath(QStringLiteral("home"));
+  const QString fakeGpg = QDir(base.path()).filePath(QStringLiteral("gpg"));
+  QVERIFY(writeScript(
+      fakeGpg,
+      "printf '%s\\n' \"$GNUPGHOME\" >> '" + QFile::encodeName(homeLog) +
+          "'\n" +
+          signingGpg(QDir(base.path()).filePath(QStringLiteral("signed")),
+                     kSigningKey)));
+  // And git, which signs a commit through gpg when the user's git config
+  // says so: a stand-in that only logs the GNUPGHOME it runs with.
+  const QString gitLog = QDir(base.path()).filePath(QStringLiteral("git-home"));
+  const QString fakeGit = QDir(base.path()).filePath(QStringLiteral("git"));
+  QVERIFY(writeScript(fakeGit, "printf '%s\\n' \"$GNUPGHOME\" >> '" +
+                                   QFile::encodeName(gitLog) +
+                                   "'\ncat >/dev/null\nexit 0\n"));
+  const QString gpgHome = QDir(base.path()).filePath(QStringLiteral("gnupg"));
+  QVERIFY(QDir().mkpath(gpgHome));
+  AppSettings s;
+  s.gpgExecutable = fakeGpg;
+  s.gitExecutable = fakeGit;
+  s.passSigningKey = kSigningKey;
+  s.gpgHome = gpgHome;
+  QString note;
+  QVERIFY2(ProfileInit::initialise(
+               QDir(base.path()).filePath(QStringLiteral("store")), twoUsers(),
+               s, true, &note),
+           qPrintable(note));
+  for (const auto &[path, what] :
+       {std::pair{homeLog, "gpg"}, std::pair{gitLog, "git"}}) {
+    QFile log(path);
+    QVERIFY(log.open(QIODevice::ReadOnly));
+    const QStringList homes =
+        QString::fromUtf8(log.readAll()).split('\n', Qt::SkipEmptyParts);
+    QVERIFY2(!homes.isEmpty(), what);
+    for (const QString &home : homes) {
+      QCOMPARE(home, QDir(gpgHome).absolutePath());
+    }
+  }
+
+  // A configured home that does not exist: gpg runs in the inherited one
+  // and fails there, and the note names the missing home, which gpg's own
+  // "no secret key" would not.
+  const QString failingGpg =
+      QDir(base.path()).filePath(QStringLiteral("gpg-fails"));
+  QVERIFY(writeScript(failingGpg, "echo 'gpg: no secret key' >&2\nexit 2\n"));
+  s.gpgExecutable = failingGpg;
+  s.gpgHome = QDir(base.path()).filePath(QStringLiteral("missing"));
+  QVERIFY(!ProfileInit::initialise(
+      QDir(base.path()).filePath(QStringLiteral("store2")), twoUsers(), s,
+      false, &note));
+  QVERIFY2(note.contains(QStringLiteral("no secret key")) &&
+               note.contains(s.gpgHome + QStringLiteral(" does not exist")),
+           qPrintable(note));
+#endif
 }
 
 auto tst_profileinit::gitSettings() -> AppSettings {
@@ -394,6 +464,61 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
   QVERIFY(ProfileInit::initialise(nested.path(), twoUsers(), AppSettings(),
                                   false, &note));
   QVERIFY2(note.contains(QStringLiteral("not re-encrypted")), qPrintable(note));
+
+  // A sub-folder with a .gpg-id of its own keeps its recipients: its
+  // entries need nothing from this profile's list and are not counted.
+  QTemporaryDir withSubStore;
+  QVERIFY(withSubStore.isValid());
+  for (const char *name :
+       {"top.gpg", "team/.gpg-id", "team/a.gpg", "team/deep/b.gpg"}) {
+    const QString path =
+        QDir(withSubStore.path()).filePath(QString::fromLatin1(name));
+    QVERIFY(QDir().mkpath(QFileInfo(path).absolutePath()));
+    QFile file(path);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(ProfileInit::initialise(withSubStore.path(), twoUsers(),
+                                  AppSettings(), false, &note));
+  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
+
+#ifndef Q_OS_WIN
+  // A linked .gpg-id is no list of its own: that folder's entries count.
+  QTemporaryDir withLinkedList;
+  QVERIFY(withLinkedList.isValid());
+  const QDir linked(withLinkedList.path());
+  QVERIFY(linked.mkpath(QStringLiteral("team")));
+  for (const char *name : {"top.gpg", "team/a.gpg", "elsewhere"}) {
+    QFile file(linked.filePath(QString::fromLatin1(name)));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(QFile::link(linked.filePath(QStringLiteral("elsewhere")),
+                      linked.filePath(QStringLiteral("team/.gpg-id"))));
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(),
+                                  AppSettings(), false, &note));
+  QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
+  // pass follows the link: team/ keeps the linked list, and Users on the
+  // root does not re-encrypt it, so only top.gpg counts.
+  AppSettings viaPass;
+  viaPass.usePass = true;
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(), viaPass,
+                                  false, &note));
+  QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
+  // Unless the link leads to the root's own list: then that folder follows
+  // the root, and its entry counts again.
+  QVERIFY(linked.mkpath(QStringLiteral("root-linked/deep")));
+  {
+    QFile file(linked.filePath(QStringLiteral("root-linked/deep/c.gpg")));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(QFile::link(linked.filePath(QStringLiteral(".gpg-id")),
+                      linked.filePath(QStringLiteral("root-linked/.gpg-id"))));
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(), viaPass,
+                                  false, &note));
+  QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
+#endif
 }
 
 /**

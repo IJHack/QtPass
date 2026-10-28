@@ -12,8 +12,26 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QProcess>
+#include <algorithm>
 
 namespace {
+/// @p env with the configured GPG home applied as Pass::init() applies it:
+/// GNUPGHOME is that folder when it exists; otherwise the inherited one
+/// stays. The new store's .gpg-id is signed, and a signed commit made, with
+/// the keyring QtPass uses everywhere else, where the signing key may be
+/// the only place it is.
+auto withGpgHome(QProcessEnvironment env, const AppSettings &s)
+    -> QProcessEnvironment {
+  if (!s.gpgHome.isEmpty()) {
+    QDir home(s.gpgHome);
+    home.makeAbsolute();
+    if (home.exists()) {
+      env.insert(QStringLiteral("GNUPGHOME"), home.path());
+    }
+  }
+  return env;
+}
+
 /// As Pass::updateEnv() sets it for the active store: git in @p dir does not
 /// look above it, so neither the identity check nor a commit reads or uses a
 /// repository the new store merely lies in (a dotfiles one in the home
@@ -21,7 +39,8 @@ namespace {
 /// patterns.
 auto gitEnvironment(const QString &dir, const AppSettings &s)
     -> QProcessEnvironment {
-  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  QProcessEnvironment env =
+      withGpgHome(QProcessEnvironment::systemEnvironment(), s);
   // As for the active store: the paths handed to git are names, not
   // patterns (see Pass::updateEnv()).
   env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
@@ -90,9 +109,42 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   }
 
   // Entries in sub-folders too: a store taken over whole has most of them
-  // there. Regular files only, not through links, .git not walked.
-  const QStringList existing =
-      Util::regularFilesUnder(folder.absolutePath(), {QStringLiteral("*.gpg")});
+  // there. Visible regular files only, not through links, .git not walked.
+  // Not those under a sub-folder with a .gpg-id of its own: its recipients
+  // did not change here, and Users on the profile's root leaves it alone,
+  // as pass does.
+  const QString root = QDir::cleanPath(folder.absolutePath());
+  const bool viaPass = s.usePass;
+  const QString rootList =
+      QFileInfo(QDir(root).filePath(QStringLiteral(".gpg-id")))
+          .canonicalFilePath();
+  const auto underSubStore = [&root, &rootList, viaPass](const QString &entry) {
+    QString dir = QFileInfo(entry).absolutePath();
+    while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
+      // A list of its own: a regular file. A linked .gpg-id is no list to
+      // the native backend, as everywhere in QtPass, so its folder's
+      // entries still count; pass follows the link (`-f`) and keeps that
+      // folder on the linked list, so with it they do not, unless the link
+      // leads to the root's own list: that folder follows the root, and
+      // Users on it re-encrypts them.
+      const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
+      if (viaPass && list.isFile() && !rootList.isEmpty() &&
+          list.canonicalFilePath() == rootList) {
+        return false;
+      }
+      if (list.isFile() &&
+          (viaPass || (!list.isSymLink() && !list.isJunction()))) {
+        return true;
+      }
+      dir = QFileInfo(dir).absolutePath();
+    }
+    return false;
+  };
+  QStringList existing =
+      Util::regularFilesUnder(root, {QStringLiteral("*.gpg")});
+  existing.erase(
+      std::remove_if(existing.begin(), existing.end(), underSubStore),
+      existing.end());
   if (!existing.isEmpty()) {
     out = tr("%1 already contains %n encrypted file(s); they were not "
              "re-encrypted. Switch to the profile and open Users to do that.",
@@ -156,8 +208,17 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
 auto ProfileInit::signGpgId(const QString &gpgIdFile,
                             const QByteArray &contents, const AppSettings &s,
                             QString *note) -> bool {
-  const GpgIdSigner signer(s.gpgExecutable,
-                           GpgIdSigner::keysFromSetting(s.passSigningKey));
+  // In the configured GPG home, as ImitatePass's signer runs in the store's
+  // environment.
+  const GpgIdSigner signer(
+      s.gpgExecutable, GpgIdSigner::keysFromSetting(s.passSigningKey),
+      [&s](const QString &app, const QStringList &args, const QString &input,
+           QString *out, QString *err) {
+        QProcess gpg;
+        gpg.setProcessEnvironment(
+            withGpgHome(QProcessEnvironment::systemEnvironment(), s));
+        return Executor::executeBlocking(gpg, app, args, input, out, err);
+      });
   QString err;
   if (!signer.sign(gpgIdFile, contents, &err)) {
     *note = err.trimmed().isEmpty()
@@ -165,6 +226,17 @@ auto ProfileInit::signGpgId(const QString &gpgIdFile,
                       .arg(gpgIdFile, signer.keys().first())
                 : tr("Could not sign %1 with %2: %3")
                       .arg(gpgIdFile, signer.keys().first(), err.trimmed());
+    // withGpgHome() fell back to the inherited home: gpg's "no secret key"
+    // would not say that the configured one is missing.
+    if (!s.gpgHome.isEmpty()) {
+      QDir home(s.gpgHome);
+      home.makeAbsolute();
+      if (!home.exists()) {
+        *note +=
+            QLatin1Char(' ') +
+            tr("The configured GPG home %1 does not exist.").arg(home.path());
+      }
+    }
     return false;
   }
   return true;
