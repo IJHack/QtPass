@@ -77,12 +77,19 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
     // it; "…" marks what was left out on either side.
     const qsizetype at =
         qMax<qsizetype>(0, m.capturedStart() - (t.data() - line.data()));
-    const qsizetype start = qBound<qsizetype>(0, at - kMaxPreviewLength / 4,
-                                              t.size() - kMaxPreviewLength);
-    QString preview = t.mid(start, kMaxPreviewLength).toString();
+    qsizetype start = qBound<qsizetype>(0, at - kMaxPreviewLength / 4,
+                                        t.size() - kMaxPreviewLength);
+    qsizetype end = start + kMaxPreviewLength;
+    // Never half a surrogate pair (an emoji, CJK Extension B) at either
+    // edge: the window takes the whole character.
+    if (start > 0 && t[start].isLowSurrogate())
+      --start;
+    if (end < t.size() && t[end - 1].isHighSurrogate())
+      ++end;
+    QString preview = t.sliced(start, end - start).toString();
     if (start > 0)
       preview.prepend(QChar(0x2026));
-    if (start + kMaxPreviewLength < t.size())
+    if (end < t.size())
       preview.append(QChar(0x2026));
     matches << preview;
   }
