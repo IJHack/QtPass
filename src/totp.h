@@ -87,8 +87,8 @@ public:
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32, or the configuration is longer than
-   *         MAX_CONFIG_LENGTH.
+   *         is not decodable base32, or the configuration (its surrounding
+   *         whitespace included) is longer than MAX_CONFIG_LENGTH.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;

@@ -8,27 +8,35 @@ import time
 import unittest
 from pathlib import Path
 
-_SPEC = importlib.util.spec_from_file_location(
-    "check_skill_sanity", Path(__file__).with_name("check_skill_sanity.py")
-)
+_PATH = Path(__file__).with_name("check_skill_sanity.py")
+_SPEC = importlib.util.spec_from_file_location("check_skill_sanity", _PATH)
 assert _SPEC is not None and _SPEC.loader is not None
 sanity = importlib.util.module_from_spec(_SPEC)
 _SPEC.loader.exec_module(sanity)
 
 
 def targets(text: str) -> list:
-    """The link destinations LINK_RE finds in text."""
-    return [match.group(1) for match in sanity.LINK_RE.finditer(text)]
+    """The link destinations link_targets finds in text."""
+    return sanity.link_targets(text)
 
 
 class LinkPatternTest(unittest.TestCase):
-    """LINK_RE finds every link form and stays fast on bad input."""
+    """link_targets finds every link form and stays fast on bad input."""
 
     def test_plain_and_angle_destinations(self) -> None:
         """A bare and an angle-bracketed destination are both found."""
-        self.assertEqual(
-            targets("[a](doc.md) [b](<my doc.md>)"), ["doc.md", "<my doc.md>"]
-        )
+        found = targets("[a](doc.md) [b](<my doc.md>)")
+        self.assertEqual(found, ["doc.md", "<my doc.md>"])
+
+    def test_image_is_no_link(self) -> None:
+        """An image is not a link; text after a link is still searched."""
+        self.assertEqual(targets("![i](img.png) [a](a.md)"), ["a.md"])
+        self.assertEqual(targets("[a](a.md) and [b](b.md)"), ["a.md", "b.md"])
+
+    def test_unclosed_link_is_none(self) -> None:
+        """A link without its ")" on the line is not a link."""
+        self.assertEqual(targets("[a](missing\n)"), [])
+        self.assertEqual(targets("[a](x y"), [])
 
     def test_title(self) -> None:
         """A title after the destination does not hide the link."""
@@ -46,6 +54,13 @@ class LinkPatternTest(unittest.TestCase):
             "[a](x" + " " * 20000,
             "[a](x " + "y " * 10000,
             "[a](x y" + " " * 20000,
+            # Many link starts on one line, none of them closed.
+            "[a](x " * 20000,
+            "[a](" * 30000,
+            "[a](x" * 20000,
+            "[a](<x " * 20000,
+            # Many titles that all reach one far ")" past a long blank run.
+            "[a](x y" * 20000 + " " * 100000 + "z\r )",
         ):
             start = time.monotonic()
             self.assertEqual(targets(text), [])

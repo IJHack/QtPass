@@ -30,12 +30,97 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # Each part stays on one line, and the text holds no "[": a run of "[" then
 # costs a scan up to the next one, linear over the file, not a rescan of the
 # rest of the line from every bracket.
-LINK_TEXT = r"(?<!!)\[[^\[\]\n]*\]"
-# The title starts and ends with a non-blank, so its blanks, the separator's
-# and the trailing ones before ")" never compete for the same characters (a
-# run of blanks with no ")" stays linear).
-LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\s](?:[^)\n]*[^)\s])?)?[ \t]*\)"
-LINK_RE = re.compile(LINK_TEXT + LINK_DEST)
+LINK_TEXT_RE = re.compile(r"(?<!!)\[[^\[\]\n]*\]")
+BLANKS = " \t"
+
+
+def _next_index(line: str, wanted: str) -> list:
+    """For every position, where wanted next occurs at or after it, or -1."""
+    found = [-1] * (len(line) + 1)
+    for i in range(len(line) - 1, -1, -1):
+        found[i] = i if line[i] == wanted else found[i + 1]
+    return found
+
+
+def _run_ends(line: str) -> list:
+    """For every position, where its run of non-blank, non-")" characters ends."""
+    ends = list(range(len(line) + 1))
+    for i in range(len(line) - 1, -1, -1):
+        if line[i] != ")" and not line[i].isspace():
+            ends[i] = ends[i + 1]
+    return ends
+
+
+def _last_non_blanks(line: str) -> list:
+    """For every position, the last one before it that is no blank, or -1."""
+    last = [-1] * (len(line) + 1)
+    for i in range(1, len(line) + 1):
+        last[i] = last[i - 1] if line[i - 1] in BLANKS else i - 1
+    return last
+
+
+def _closes(line: str, pos: int, close: list, last: list) -> int:
+    """
+    Where the link closes when its destination ends at pos: blanks, then ")"
+    or a title (text without ")" that starts and ends with a non-space) and
+    blanks and its ")". -1 when it does not close on this line.
+    """
+    after = pos
+    while pos < len(line) and line[pos] in BLANKS:
+        pos += 1
+    if pos == len(line):
+        return -1
+    if line[pos] == ")":
+        return pos
+    # Anything else starts a title, after at least one blank; it runs up to
+    # the next ")" (a title cannot hold one).
+    if pos == after or line[pos].isspace():
+        return -1
+    end = close[pos]
+    # Only blanks between the title's last character and the ")".
+    if end == -1 or line[last[end]].isspace():
+        return -1
+    return end
+
+
+def link_targets(text: str) -> list:
+    """
+    The destination of every [text](destination "title") link in text.
+
+    One pass per line: the next ")" and ">", the end of every run and the
+    last non-blank are looked up, not searched for, so a line of many link starts with no ")"
+    (or no end to its run) costs no rescan of the rest of it per start.
+    """
+    targets = []
+    for line in text.split("\n"):
+        close = gt = ends = last = None
+        resume = 0
+        for match in LINK_TEXT_RE.finditer(line):
+            start = match.end()
+            if match.start() < resume or not line.startswith("(", start):
+                continue
+            if close is None:
+                close = _next_index(line, ")")
+                gt = _next_index(line, ">")
+                ends = _run_ends(line)
+                last = _last_non_blanks(line)
+            pos = start + 1
+            while pos < len(line) and line[pos] in BLANKS:
+                pos += 1
+            candidates = []
+            if line.startswith("<", pos) and gt[pos] != -1:
+                candidates.append(gt[pos] + 1)
+            if pos < len(line) and ends[pos] > pos:
+                candidates.append(ends[pos])
+            for end in candidates:
+                closed = _closes(line, end, close, last)
+                if closed != -1:
+                    targets.append(line[pos:end])
+                    resume = closed + 1
+                    break
+    return targets
+
+
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
     r"(?:md|py|sh|bash|txt|json|yml|yaml))"
@@ -116,8 +201,8 @@ def check_markdown_links(
 ) -> None:
     """Every relative link resolves to a file inside the repository."""
     rel = repo_relative(root, skill_md)
-    for match in LINK_RE.finditer(strip_code(text)):
-        raw_target = match.group(1).strip("<>")
+    for target_text in link_targets(strip_code(text)):
+        raw_target = target_text.strip("<>")
         target = raw_target.split("#", 1)[0]
         # Skip empty targets, URLs and protocol-relative //host links.
         if not target or URL_RE.match(target) or target.startswith("//"):

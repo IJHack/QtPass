@@ -108,11 +108,14 @@ auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
  * @return Validated settings, or std::nullopt when the secret is unusable.
  */
 auto Totp::parse(const QString &config) -> std::optional<Settings> {
+  // Checked before anything else sees it (trimmed() copies it, QUrl and
+  // QUrlQuery would make a crafted URI of tens of MiB tens of millions of
+  // query items on the GUI thread); padding counts too.
+  if (config.size() > MAX_CONFIG_LENGTH) {
+    return std::nullopt;
+  }
   const QString trimmed = config.trimmed();
-  // Checked before QUrl and QUrlQuery see it: a crafted URI of tens of MiB
-  // would otherwise become tens of millions of query items on the GUI
-  // thread.
-  if (trimmed.isEmpty() || trimmed.size() > MAX_CONFIG_LENGTH) {
+  if (trimmed.isEmpty()) {
     return std::nullopt;
   }
 

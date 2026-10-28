@@ -1012,16 +1012,20 @@ void tst_mainwindow::
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
 
-  // A real entry on screen, with an OTP code and a leftover line: clicked,
-  // so it is the entry asked to show, and its decrypt landing.
+  // A real entry on screen, with an OTP code and a leftover line. Clicked
+  // first, and its own decrypt (of a file that is not encrypted) drained:
+  // its start, which empties the panel, and its failure are delivered
+  // before the leftover goes up, so only the refusal below can take that
+  // off again. The failure forgot the entry, so the stand-in for its
+  // content is an untagged show.
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
   ShowAnswers answers;
   QVERIFY(QMetaObject::invokeMethod(
       m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
       Q_ARG(QModelIndex, treeView()->currentIndex())));
-  m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"),
-                            QStringLiteral("shown"));
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
+  m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"));
   auto *browser =
       m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
   QVERIFY(browser != nullptr);
@@ -1090,9 +1094,6 @@ void tst_mainwindow::
   poker.stop();
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QTRY_VERIFY_WITH_TIMEOUT(tree->isEnabled(), 3000);
-  // The first click's own decrypt (of a file that is not encrypted) comes
-  // back here, never in the next test's window.
-  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 #endif
 }
 

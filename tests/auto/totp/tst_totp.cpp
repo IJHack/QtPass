@@ -246,6 +246,10 @@ void tst_totp::parseRejectsBadInput_data() {
     padded += QStringLiteral("&x=y");
   }
   QTest::newRow("longer than MAX_CONFIG_LENGTH") << padded;
+  // Surrounding blanks count: the value is refused before it is trimmed.
+  const QString blanks(Totp::MAX_CONFIG_LENGTH, QLatin1Char(' '));
+  QTest::newRow("valid secret padded past MAX_CONFIG_LENGTH")
+      << blanks + QStringLiteral("JBSWY3DPEHPK3PXP") + blanks;
   // An otpauth: prefix that does not resolve to a valid totp URI must be
   // rejected, not reinterpreted as a bare secret: sanitizeInput() would strip
   // the punctuation and leave decodable base32, yielding a silently wrong code.
