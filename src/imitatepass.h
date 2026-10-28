@@ -340,9 +340,11 @@ protected:
   /**
    * @brief Whether the failed insert had placed its entry (see
    * placeEncryptedFile()) before a later git step failed.
+   * @param err Not needed: the placement is known, not inferred.
    * @return true when the entry is in the store.
    */
-  [[nodiscard]] auto insertWritten() const -> bool override {
+  [[nodiscard]] auto insertWritten(const QString &err) const -> bool override {
+    Q_UNUSED(err);
     return m_insertPlaced;
   }
 

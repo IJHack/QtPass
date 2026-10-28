@@ -26,6 +26,7 @@ using Enums::PASS_SHOW;
 
 RealPass::RealPass() : m_grep(this) {
   connect(&m_grep, &NativeGrep::finished, this, &RealPass::finishedGrep);
+  connect(&exec, &Executor::dequeuing, this, &RealPass::onDequeuing);
 }
 
 RealPass::~RealPass() { m_grep.cancel(); }
@@ -57,11 +58,10 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
   }
-  m_insertTarget =
-      QDir::cleanPath(QDir::isAbsolutePath(file)
-                          ? file + ".gpg"
-                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
-  m_insertTargetBefore = entryFingerprint(m_insertTarget);
+  m_insertQueue.enqueue(QDir::cleanPath(
+      QDir::isAbsolutePath(file)
+          ? file + ".gpg"
+          : QDir(m_settings.passStore).filePath(file) + ".gpg"));
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -70,8 +70,21 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   executePass(PASS_INSERT, args, newValue);
 }
 
-auto RealPass::insertWritten() const -> bool {
+void RealPass::onDequeuing(int id) {
+  if (id != PASS_INSERT || m_insertQueue.isEmpty()) {
+    return;
+  }
+  m_insertTarget = m_insertQueue.dequeue();
+  m_insertTargetBefore = entryFingerprint(m_insertTarget);
+}
+
+auto RealPass::insertWritten(const QString &err) const -> bool {
   if (m_insertTarget.isEmpty()) {
+    return false;
+  }
+  // gpg broke off (a full disk, killed): pass says so, and what gpg left
+  // at the entry's name, if anything, is no entry.
+  if (err.contains(QLatin1String("Password encryption aborted."))) {
     return false;
   }
   // pass writes the new ciphertext to the entry's name before it commits,

@@ -192,6 +192,7 @@ void Executor::executeNext() {
     return;
   }
   const ExecQueueItem &i = m_execQueue.head();
+  emit dequeuing(i.id);
 
   // An empty executable never emits finished(); dropping it wedged the queue
   // (#1682). Fail it like a failed-to-start process so the queue drains.
@@ -410,7 +411,9 @@ auto Executor::cancelNext() -> int {
   if (running || m_execQueue.isEmpty()) {
     return -1;
   }
-  return m_execQueue.dequeue().id;
+  const int id = m_execQueue.dequeue().id;
+  emit dequeuing(id);
+  return id;
 }
 
 void Executor::onProcessFinished(int exitCode,
