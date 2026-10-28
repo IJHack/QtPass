@@ -2967,6 +2967,43 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
              qPrintable(far.first()));
     QVERIFY(far.first().startsWith(QChar(0x2026)));
     QVERIFY(far.first().endsWith(QChar(0x2026)));
+
+    // Characters outside the BMP on both sides, the window's edges falling
+    // inside a surrogate pair: the preview keeps every pair whole.
+    const QString emoji = QString::fromUtf8("\xF0\x9F\x98\x80");
+    // The "x" puts the match an odd number of code units from the pairs
+    // before it, so the window starts inside one and ends inside another.
+    const QString wide = QStringLiteral("ab") + emoji.repeated(1000) +
+                         QStringLiteral("xhit") + emoji.repeated(1000);
+    const QString plain = tmp.filePath(QStringLiteral("wide.txt"));
+    {
+      QFile f(plain);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write(wide.toUtf8() + '\n');
+    }
+    QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    // Next to the script, so no path is quoted into it (TMPDIR may hold a
+    // quote).
+    script.write("#!/bin/sh\ncat \"$(dirname \"$0\")/wide.txt\"\n");
+    script.close();
+    const QStringList pairs = NativeGrep::matchFile(
+        env, longGpg, QDir(store).filePath("e0000.gpg"), rx);
+    QCOMPARE(pairs.size(), 1);
+    const QString shown = pairs.first();
+    QVERIFY2(shown.contains(QStringLiteral("hit")), qPrintable(shown));
+    // Both edges fell inside a pair and took one more code unit, and "…"
+    // stands on either side.
+    QCOMPARE(shown.size(), NativeGrep::kMaxPreviewLength + 4);
+    for (qsizetype i = 0; i < shown.size(); ++i) {
+      if (shown.at(i).isHighSurrogate()) {
+        QVERIFY2(
+            i + 1 < shown.size() && shown.at(i + 1).isLowSurrogate(),
+            qPrintable(QStringLiteral("lone high surrogate at %1").arg(i)));
+      } else if (shown.at(i).isLowSurrogate()) {
+        QVERIFY2(i > 0 && shown.at(i - 1).isHighSurrogate(),
+                 qPrintable(QStringLiteral("lone low surrogate at %1").arg(i)));
+      }
+    }
   }
 
   // Exactly the budget, every entry whole: complete, no marker anywhere.
