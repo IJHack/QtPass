@@ -522,8 +522,8 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
       // closes on this, so say it here rather than only in the output
       // panel.
       emit critical(tr("Saved, not committed"),
-                    tr("The entry is saved in the store, but git could not "
-                       "record it:\n\n%1")
+                    tr("The entry is saved in the store, but recording it "
+                       "in git failed. What was reported:\n\n%1")
                         .arg(err.trimmed()));
     }
     emit processErrorExit(exitCode, why);
