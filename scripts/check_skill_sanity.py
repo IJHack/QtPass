@@ -87,8 +87,7 @@ def parse_frontmatter(text: str, rel: str, result: CheckResult) -> dict:
         # mapping is built, before anything here looks at it. Checked on the
         # event stream, which builds nothing.
         if any(isinstance(event, yaml.AliasEvent) for event in yaml.parse(parts[1])):
-            result.error(f"{rel}: YAML aliases are not allowed in frontmatter")
-            return {}
+            raise yaml.YAMLError("aliases are not allowed")
         data = yaml.safe_load(parts[1])
     except yaml.YAMLError as error:
         result.error(f"{rel}: invalid YAML frontmatter: {error}")

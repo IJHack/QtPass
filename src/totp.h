@@ -141,6 +141,9 @@ public:
    * Always emits `secret`, `digits` and `period`; emits `issuer` when it is
    * set, `algorithm` only when it differs from the RFC 6238 default, and
    * `encoder=steam` for Encoder::Steam.
+   *
+   * Percent-encoding can make the URI longer than the configuration it was
+   * parsed from: for one near MAX_CONFIG_LENGTH, parse() refuses it.
    * @param settings Validated settings.
    * @return An `otpauth://totp/...` URI.
    */

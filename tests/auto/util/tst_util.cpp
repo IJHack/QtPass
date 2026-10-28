@@ -2941,8 +2941,8 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
     const QString longGpg = tmp.filePath(QStringLiteral("gpg-long"));
     QFile script(longGpg);
     QVERIFY(script.open(QIODevice::WriteOnly));
-    script.write("#!/bin/sh\nprintf 'hit'; head -c 100000 /dev/zero | "
-                 "tr '\\0' x; printf '\\n'\n");
+    script.write("#!/bin/sh\nprintf 'hit'; dd if=/dev/zero bs=1000 count=100 "
+                 "2>/dev/null | tr '\\0' x; printf '\\n'\n");
     script.close();
     QVERIFY(QFile::setPermissions(
         longGpg, QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));

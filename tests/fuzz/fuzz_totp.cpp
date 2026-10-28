@@ -39,7 +39,13 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
   if (code.size() != static_cast<qsizetype>(settings->digits)) {
     abort();
   }
-  const auto again = Totp::parse(Totp::toUri(*settings));
+  // Percent-encoding can take a configuration near the length cap past it;
+  // parse() rightly refuses that one, so it is no round-trip to check.
+  const QString uri = Totp::toUri(*settings);
+  if (uri.trimmed().size() > Totp::MAX_CONFIG_LENGTH) {
+    return 0;
+  }
+  const auto again = Totp::parse(uri);
   if (!again || again->key != settings->key ||
       again->digits != settings->digits || again->step != settings->step ||
       again->algorithm != settings->algorithm ||
