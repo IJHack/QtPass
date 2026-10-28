@@ -968,6 +968,9 @@ void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
   // Simulate the tree click's decrypt landing: the pane renders the OTP row.
+  // The click's own decrypt answers at the end, never after the window is
+  // gone; nothing before that runs the event loop, so it cannot land early.
+  ShowAnswers answers;
   QMetaObject::invokeMethod(
       m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
       Q_ARG(QModelIndex,
@@ -984,6 +987,7 @@ void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
   clip->setText(QStringLiteral("sentinel"));
   m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("shown"));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 }
 
 /**
@@ -1012,6 +1016,7 @@ void tst_mainwindow::
   // so it is the entry asked to show, and its decrypt landing.
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
+  ShowAnswers answers;
   QVERIFY(QMetaObject::invokeMethod(
       m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
       Q_ARG(QModelIndex, treeView()->currentIndex())));
@@ -1085,6 +1090,9 @@ void tst_mainwindow::
   poker.stop();
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
   QTRY_VERIFY_WITH_TIMEOUT(tree->isEnabled(), 3000);
+  // The first click's own decrypt (of a file that is not encrypted) comes
+  // back here, never in the next test's window.
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 #endif
 }
 
@@ -2462,12 +2470,16 @@ void tst_mainwindow::staleDecryptDoesNotRepaintThePanel() {
 
   // Deselected (or a profile switch): nothing is asked to show any more,
   // so even the same entry's decrypt arriving late stays out of the panel.
+  // The interface was locked for that decrypt; with nothing else pending,
+  // dropping it releases the interface rather than leave it to the watchdog.
   QVERIFY(QMetaObject::invokeMethod(m_window.data(), "deselect",
                                     Qt::DirectConnection));
+  treeView()->setEnabled(false);
   m_window->passShowHandler(QStringLiteral("late-secret\nlate leftover"),
                             QStringLiteral("fresh"));
   QVERIFY2(!browser()->toPlainText().contains(QStringLiteral("late leftover")),
            qPrintable(browser()->toPlainText()));
+  QVERIFY2(treeView()->isEnabled(), "a dropped decrypt releases the interface");
   QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 }
 

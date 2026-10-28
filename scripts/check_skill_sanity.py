@@ -31,9 +31,10 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # costs a scan up to the next one, linear over the file, not a rescan of the
 # rest of the line from every bracket.
 LINK_TEXT = r"(?<!!)\[[^\[\]\n]*\]"
-# The title starts with a non-blank, so its blanks and the separator's never
-# compete for the same characters (a run of blanks with no ")" stays linear).
-LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\s][^)\n]*)?\)"
+# The title starts and ends with a non-blank, so its blanks, the separator's
+# and the trailing ones before ")" never compete for the same characters (a
+# run of blanks with no ")" stays linear).
+LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\s](?:[^)\n]*[^)\s])?)?[ \t]*\)"
 LINK_RE = re.compile(LINK_TEXT + LINK_DEST)
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."

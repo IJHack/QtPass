@@ -60,15 +60,31 @@ auto NativeGrep::matchFile(const QProcessEnvironment &env,
     if (line.endsWith(u'\r'))
       line.chop(1);
     const QStringView t = line.trimmed();
-    if (t.isEmpty() || !rx.matchView(line).hasMatch())
+    if (t.isEmpty())
+      continue;
+    const QRegularExpressionMatch m = rx.matchView(line);
+    if (!m.hasMatch())
       continue;
     if (matches.size() == kMaxMatchesPerEntry) {
       matches << QString(); // isMoreMarker(): not a match, not counted
       break;
     }
-    matches << (t.size() > kMaxPreviewLength
-                    ? t.first(kMaxPreviewLength).toString() + QChar(0x2026)
-                    : t.toString());
+    if (t.size() <= kMaxPreviewLength) {
+      matches << t.toString();
+      continue;
+    }
+    // A window of the line that holds the match, a little context before
+    // it; "…" marks what was left out on either side.
+    const qsizetype at =
+        qMax<qsizetype>(0, m.capturedStart() - (t.data() - line.data()));
+    const qsizetype start = qBound<qsizetype>(0, at - kMaxPreviewLength / 4,
+                                              t.size() - kMaxPreviewLength);
+    QString preview = t.mid(start, kMaxPreviewLength).toString();
+    if (start > 0)
+      preview.prepend(QChar(0x2026));
+    if (start + kMaxPreviewLength < t.size())
+      preview.append(QChar(0x2026));
+    matches << preview;
   }
   return matches;
 }

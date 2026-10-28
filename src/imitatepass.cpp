@@ -343,8 +343,8 @@ auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
   if (!folder) {
     emit critical(tr("Cannot update"),
                   tr("%1 is not inside the password store, or a folder "
-                     "name on the way holds a line break, which a signed "
-                     "list cannot record.")
+                     "name on the way holds a line break or another control "
+                     "character, which a signed list cannot record.")
                       .arg(gpgIdFile));
     return false;
   }

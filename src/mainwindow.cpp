@@ -599,6 +599,12 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
   // one that arrives after the selection was cleared (deselect, a profile
   // switch): nothing is asked to be shown then.
   if (!file.isEmpty() && file != m_shownFile) {
+    // A newer show is pending and releases the interface when it lands;
+    // with none (the selection was cleared) nothing else would until the
+    // watchdog. setUiElementsEnabled() keeps a re-encryption's lock.
+    if (m_shownFile.isEmpty()) {
+      setUiElementsEnabled(true);
+    }
     return;
   }
   const AppSettings s = QtPassSettings::load();

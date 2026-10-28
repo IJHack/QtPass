@@ -162,10 +162,16 @@ void tst_gpgidgeneration::folderOfIsStoreRelativeAndCanonical() {
   QVERIFY(!GpgIdGeneration::folderOf(
                root.filePath(broken + QStringLiteral("/.gpg-id")), store)
                .has_value());
-  QVERIFY(root.mkpath(QStringLiteral("store/x\rEVE")));
-  QVERIFY(!GpgIdGeneration::folderOf(
-               root.filePath(QStringLiteral("store/x\rEVE/.gpg-id")), store)
-               .has_value());
+  // Nor any other control character: parse() would refuse the list.
+  for (const QString &name :
+       {QStringLiteral("store/x\rEVE"), QStringLiteral("store/x\tEVE"),
+        QStringLiteral("store/x") + QChar(0x7f) + QStringLiteral("EVE")}) {
+    QVERIFY(root.mkpath(name));
+    QVERIFY2(!GpgIdGeneration::folderOf(
+                  root.filePath(name + QStringLiteral("/.gpg-id")), store)
+                  .has_value(),
+             qPrintable(name));
+  }
 #endif
 }
 

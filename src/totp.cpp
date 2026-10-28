@@ -347,7 +347,13 @@ auto Totp::normalize(const QString &config, const QString &label,
   if (canonical.issuer.isEmpty()) {
     canonical.issuer = issuer;
   }
-  return toUri(canonical);
+  // Percent-encoding and the added fields can take a value near the length
+  // cap past it; a URI parse() refuses would store an OTP that makes no code.
+  const QString uri = toUri(canonical);
+  if (uri.size() > MAX_CONFIG_LENGTH) {
+    return {};
+  }
+  return uri;
 }
 
 /**

@@ -2952,6 +2952,21 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
     QCOMPARE(lines.first().size(), NativeGrep::kMaxPreviewLength + 1);
     QVERIFY(lines.first().startsWith(QStringLiteral("hitxxx")));
     QVERIFY(lines.first().endsWith(QChar(0x2026)));
+
+    // A match far into the line: the preview is the part around it.
+    QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    script.write("#!/bin/sh\ndd if=/dev/zero bs=1000 count=100 2>/dev/null | "
+                 "tr '\\0' x; printf 'hit'; dd if=/dev/zero bs=1000 count=1 "
+                 "2>/dev/null | tr '\\0' y; printf '\\n'\n");
+    script.close();
+    const QStringList far = NativeGrep::matchFile(
+        env, longGpg, QDir(store).filePath("e0000.gpg"), rx);
+    QCOMPARE(far.size(), 1);
+    QCOMPARE(far.first().size(), NativeGrep::kMaxPreviewLength + 2);
+    QVERIFY2(far.first().contains(QStringLiteral("xhity")),
+             qPrintable(far.first()));
+    QVERIFY(far.first().startsWith(QChar(0x2026)));
+    QVERIFY(far.first().endsWith(QChar(0x2026)));
   }
 
   // Exactly the budget, every entry whole: complete, no marker anywhere.

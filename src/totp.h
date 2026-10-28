@@ -143,7 +143,8 @@ public:
    * `encoder=steam` for Encoder::Steam.
    *
    * Percent-encoding can make the URI longer than the configuration it was
-   * parsed from: for one near MAX_CONFIG_LENGTH, parse() refuses it.
+   * parsed from: for one near MAX_CONFIG_LENGTH, parse() refuses it, and
+   * normalize() returns nothing rather than such a URI.
    * @param settings Validated settings.
    * @return An `otpauth://totp/...` URI.
    */
@@ -155,7 +156,8 @@ public:
    * @param label Fallback label, used when @p config carries none. The entry
    *        name is a good choice.
    * @param issuer Fallback issuer, used when @p config carries none.
-   * @return A canonical URI, or an empty string when @p config is not valid.
+   * @return A canonical URI, or an empty string when @p config is not valid
+   *         or its URI would be longer than MAX_CONFIG_LENGTH.
    */
   [[nodiscard]] static auto normalize(const QString &config,
                                       const QString &label = {},

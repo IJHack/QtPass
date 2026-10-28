@@ -506,6 +506,14 @@ void tst_totp::normalizeRejectsInvalidInput() {
   QVERIFY(Totp::normalize(
               QStringLiteral("otpauth://hotp/x?secret=JBSWY3DPEHPK3PXP"))
               .isEmpty());
+  // A secret just under the length cap parses, but its URI would not: no
+  // URI rather than one that makes no code.
+  const QString longSecret(Totp::MAX_CONFIG_LENGTH - 8, QLatin1Char('A'));
+  QVERIFY(Totp::parse(longSecret).has_value());
+  QVERIFY(Totp::normalize(longSecret).isEmpty());
+  // A long one that still fits comes back parseable.
+  const QString fits(1024, QLatin1Char('A'));
+  QVERIFY(Totp::parse(Totp::normalize(fits)).has_value());
 }
 
 void tst_totp::isValidMatchesParse() {

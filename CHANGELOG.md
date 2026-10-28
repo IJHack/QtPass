@@ -102,7 +102,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   profile switch. It takes the current profile's settings now.
 - A signed recipient list is not written for a folder whose name holds a
   line break: the name would have ended the folder line, and what followed
-  would have been read, and signed, as a recipient.
+  would have been read, and signed, as a recipient. Nor for one with
+  another control character (a tab, DEL), whose list could not be read
+  back.
 - A new profile's recipient dialog preselects nothing: the folder had no
   list when it was chosen, and one that appeared meanwhile was read under
   the active profile's signing policy, not the new one's.

@@ -83,6 +83,12 @@ void KeygenDialog::on_name_textChanged(const QString &arg1) {
 }
 
 void KeygenDialog::replace(const QString &key, const QString &value) {
+  // A pasted line break would put batch directives of its own into the
+  // template, and correcting the field later would leave them there:
+  // nothing such goes in. done() refuses the field itself.
+  if (!isBatchValue(value)) {
+    return;
+  }
   QStringList clear;
   QString expert = ui->plainTextEdit->toPlainText();
   const QStringList lines =
@@ -163,7 +169,8 @@ void KeygenDialog::done(int r) {
       return;
     }
     // Pasted text with a line break would become batch directives of its
-    // own; the email is matched whole by its pattern below.
+    // own (replace() kept it out of the template); the email is matched
+    // whole by its pattern below.
     if (!isBatchValue(ui->name->text()) ||
         !isBatchValue(ui->passphrase1->text())) {
       QMessageBox::critical(this, tr("Invalid input"),

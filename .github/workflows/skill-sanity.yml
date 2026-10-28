@@ -8,6 +8,7 @@ on:
       - ".opencode/skills/**"
       - "localization/**"
       - "scripts/check_skill_sanity.py"
+      - "scripts/test_check_skill_sanity.py"
       - ".github/workflows/skill-sanity.yml"
   push:
     branches: ["main", "1.8"]
@@ -15,6 +16,7 @@ on:
       - ".opencode/skills/**"
       - "localization/**"
       - "scripts/check_skill_sanity.py"
+      - "scripts/test_check_skill_sanity.py"
       - ".github/workflows/skill-sanity.yml"
   merge_group:
   workflow_dispatch:
@@ -32,5 +34,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Test the checker
+        run: python3 scripts/test_check_skill_sanity.py
       - name: Check skill structure
         run: scripts/check_skill_sanity.py
