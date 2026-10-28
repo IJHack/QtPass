@@ -104,13 +104,18 @@ class RealPass : public Pass {
   auto refuseUnverifiedList(const QString &file) -> bool;
 
   /**
-   * @brief For a folder pass is about to move or copy: refuse when one of
-   * the signed lists inside it, which its entries keep after the move, is
-   * not one QtPass accepts where it lies now (as refuseUnverifiedList()).
-   * @param dir The folder being moved or copied.
+   * @brief For a folder pass is about to re-encrypt in a move or copy:
+   * refuse when the signed list of one of its entries (every one pass's
+   * walk takes, hidden ones included) is not one QtPass accepts where it
+   * lies now (as refuseUnverifiedList()).
+   * @param dir The folder moved or copied, or the existing folder written
+   *        into.
+   * @param onlyListsWithin Whether only lists inside @p dir count: for the
+   *        folder that moves, whose entries get the destination's list in
+   *        place of any list above it.
    * @return Whether it was refused (and the user told).
    */
-  auto refuseUnverifiedTree(const QString &dir) -> bool;
+  auto refuseUnverifiedTree(const QString &dir, bool onlyListsWithin) -> bool;
 
   /**
    * @brief The verifier for signed lists, gpg in the store's environment.

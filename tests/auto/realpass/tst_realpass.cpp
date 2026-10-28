@@ -535,6 +535,60 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
   pass.Move(team, QDir(store).filePath(QStringLiteral("dest")), false);
   QVERIFY2(!passRan(), "a rolled-back list inside the folder is refused");
   QCOMPARE(critical.count(), before + 1);
+
+  // A list this device accepted at generation 2, then put back at 1.
+  const auto rolledBack = [&store](const QString &folder) {
+    const QString list =
+        QDir(QDir(store).filePath(folder)).filePath(QStringLiteral(".gpg-id"));
+    const QByteArray current =
+        GpgIdGeneration::withHeader(2, folder, "ALICE\n");
+    QFile f(list);
+    QFile sig(list + QStringLiteral(".sig"));
+    if (!QDir(store).mkpath(folder) ||
+        !f.open(QIODevice::WriteOnly | QIODevice::Truncate) ||
+        f.write(current) <= 0 ||
+        !sig.open(QIODevice::WriteOnly | QIODevice::Truncate) ||
+        sig.write("sig") != 3) {
+      return false;
+    }
+    f.close();
+    if (GpgIdGeneration::accept(list, current, store) !=
+        GpgIdGeneration::Verdict::Accepted) {
+      return false;
+    }
+    QFile old(list);
+    return old.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           old.write(
+               GpgIdGeneration::withHeader(1, folder, "ALICE\nMALLORY\n")) > 0;
+  };
+
+  // pass's walk takes hidden entries too: a folder holding only one, under
+  // a rolled-back list, is refused.
+  QVERIFY(rolledBack(QStringLiteral("hidden")));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("hidden/.secret.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Move(QDir(store).filePath(QStringLiteral("hidden")),
+            QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(!passRan(), "a hidden entry's rolled-back list is refused");
+  QCOMPARE(critical.count(), before + 2);
+
+  // Writing into an existing folder re-encrypts all of it: an entry already
+  // there, under a rolled-back list, makes the move refused.
+  QVERIFY(rolledBack(QStringLiteral("dest/private")));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("dest/private/s.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QFile::remove(m_log);
+  pass.Move(QDir(store).filePath(QStringLiteral("entry.gpg")),
+            QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(!passRan(), "the destination's own entries count too");
+  QCOMPARE(critical.count(), before + 3);
 }
 
 void tst_realpass::removeFileAndFolder() {

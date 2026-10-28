@@ -108,20 +108,50 @@ auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
   return refuseList(file, signer, verified);
 }
 
-auto RealPass::refuseUnverifiedTree(const QString &dir) -> bool {
+namespace {
+/// The entries pass's reencrypt_path() walks under @p dir: every file named
+/// *.gpg (any case), hidden ones and those in hidden folders included,
+/// .git left out, and no link followed or taken (find without -L, and
+/// `[[ -L $passfile ]] && continue`).
+auto passEntriesUnder(const QString &dir) -> QStringList {
+  QStringList entries;
+  const QFileInfoList children = QDir(dir).entryInfoList(
+      QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
+  for (const QFileInfo &child : children) {
+    if (child.isSymLink() || child.isJunction()) {
+      continue;
+    }
+    if (child.isDir()) {
+      if (child.fileName() != QLatin1String(".git")) {
+        entries << passEntriesUnder(child.absoluteFilePath());
+      }
+    } else if (child.isFile() &&
+               child.fileName().endsWith(QLatin1String(".gpg"),
+                                         Qt::CaseInsensitive)) {
+      entries << child.absoluteFilePath();
+    }
+  }
+  return entries;
+}
+} // namespace
+
+auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
+    -> bool {
   const GpgIdSigner signer = listSigner();
   if (!signer.enabled()) {
     return false;
   }
-  // pass mv and cp re-encrypt every entry of a folder to its nearest list.
-  // The lists inside the folder go along with it: checked where they lie
-  // now, before the move (after it, their folder line names the old place
-  // until the recipients are saved there again). An entry whose list lies
-  // above the folder gets the destination's list, checked by the caller.
-  const QString within = QDir::cleanPath(dir) + QLatin1Char('/');
+  // pass mv and cp re-encrypt every entry of the folder they write to, each
+  // to its nearest list, walking as passEntriesUnder() does. For the folder
+  // that moves, the lists inside it go along: checked where they lie now
+  // (after the move their folder line names the old place until the
+  // recipients are saved there again), while a list above it is replaced
+  // by the destination's, which the caller checks. For entries already in
+  // the destination, their lists stay where they are: all of them count.
+  const QString within =
+      onlyListsWithin ? QDir::cleanPath(dir) + QLatin1Char('/') : QString();
   QSet<QString> verified;
-  for (const QString &entry :
-       Util::regularFilesUnder(dir, {QStringLiteral("*.gpg")})) {
+  for (const QString &entry : passEntriesUnder(dir)) {
     if (refuseList(entry, signer, verified, within)) {
       return true;
     }
@@ -382,12 +412,15 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  // pass re-encrypts what it moves or copies to the destination's list,
-  // and a folder's entries also to the lists that go along with it.
+  // pass re-encrypts what it moves or copies to the destination's list, a
+  // folder's entries also to the lists that go along with it, and, when it
+  // writes into an existing folder, everything already in that folder too
+  // (reencrypt_path on the whole destination).
   if (refuseUnverifiedList(destFileInfo.isDir()
                                ? QDir(dest).filePath(srcFileInfo.fileName())
                                : dest) ||
-      (srcFileInfo.isDir() && refuseUnverifiedTree(src))) {
+      (srcFileInfo.isDir() && refuseUnverifiedTree(src, true)) ||
+      (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
     return;
   }
 
