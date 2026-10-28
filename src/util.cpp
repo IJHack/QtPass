@@ -138,7 +138,7 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
-auto Util::gitStoreVariables(const QString &store)
+auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
     -> QList<std::pair<QString, QString>> {
   const QString ceiling = gitCeiling(store);
   if (ceiling.isEmpty()) {
@@ -158,8 +158,36 @@ auto Util::gitStoreVariables(const QString &store)
     if (root.isEmpty()) {
       root = QDir::cleanPath(QDir(store).absolutePath());
     }
-    vars.append({QStringLiteral("GIT_DIR"),
-                 QDir(root).filePath(QStringLiteral(".git"))});
+    QString gitDir = QDir(root).filePath(QStringLiteral(".git"));
+#ifdef Q_OS_UNIX
+    // What discovery's ownership check would have looked at: the work tree,
+    // the .git, and the directory a gitfile names. Not the user's: no
+    // repository at all, under a path that cannot be created (its parent
+    // is a device), rather than another user's hooks run as this one.
+    const uint me = asUser.value_or(static_cast<uint>(::geteuid()));
+    const auto ownedOrMissing = [me](const QString &path) {
+      const QFileInfo info(path);
+      return !info.exists() || info.ownerId() == me;
+    };
+    bool owned = ownedOrMissing(root) && ownedOrMissing(gitDir);
+    if (owned && QFileInfo(gitDir).isFile()) {
+      QFile gitFile(gitDir);
+      if (gitFile.open(QIODevice::ReadOnly)) {
+        const QString line =
+            QString::fromUtf8(gitFile.readLine(4096)).trimmed();
+        if (line.startsWith(QLatin1String("gitdir:"))) {
+          const QString target = line.mid(7).trimmed();
+          owned = ownedOrMissing(QDir(root).absoluteFilePath(target));
+        }
+      }
+    }
+    if (!owned) {
+      gitDir = QStringLiteral("/dev/null/.git");
+    }
+#else
+    Q_UNUSED(asUser);
+#endif
+    vars.append({QStringLiteral("GIT_DIR"), gitDir});
     vars.append({QStringLiteral("GIT_WORK_TREE"), root});
   }
   return vars;

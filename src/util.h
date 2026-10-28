@@ -56,10 +56,19 @@ public:
    * be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's
    * own `.git` and the store. A store without a `.git` then has no
    * repository to git, rather than the one above it.
+   *
+   * An explicit GIT_DIR skips git's ownership check (safe.directory), which
+   * runs only when git discovers a repository. On Unix the store is
+   * therefore pinned only when it, its `.git` and a gitfile's target are
+   * the user's own; otherwise GIT_DIR names a path that cannot exist, and
+   * git refuses rather than run another user's repository and hooks.
    * @param store The store's path.
+   * @param asUser The user to compare owners with; the effective user when
+   *        not given (a test passes another).
    * @return Name and value pairs to set; empty for an empty @p store.
    */
-  static auto gitStoreVariables(const QString &store)
+  static auto gitStoreVariables(const QString &store,
+                                std::optional<uint> asUser = std::nullopt)
       -> QList<std::pair<QString, QString>>;
 
   /**

@@ -2496,9 +2496,6 @@ void tst_util::mkpathForStoreFollowsTheStoreUmask() {
  *        it finds that. An ordinary path keeps the ceiling alone.
  */
 void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
-#ifdef Q_OS_WIN
-  QSKIP("':' cannot be part of a Windows path");
-#else
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
   if (git.isEmpty()) {
     QSKIP("git not found");
@@ -2507,7 +2504,13 @@ void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
   QVERIFY(home.isValid());
   QVERIFY(QProcess::execute(git, {QStringLiteral("init"), QStringLiteral("-q"),
                                   home.path()}) == 0);
+  // git's list separator: ";" on Windows (where ":" is no file name), ":"
+  // elsewhere.
+#ifdef Q_OS_WIN
+  const QString store = QDir(home.path()).filePath(QStringLiteral("a;b/store"));
+#else
   const QString store = QDir(home.path()).filePath(QStringLiteral("a:b/store"));
+#endif
   QVERIFY(QDir().mkpath(store));
   const QString real = QFileInfo(store).canonicalFilePath();
   const auto gitDir = [&git](const QString &dir,
@@ -2557,6 +2560,24 @@ void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
   pass.init(s);
   QVERIFY(!pass.environment().contains(QStringLiteral("GIT_DIR")));
   QVERIFY(!pass.environment().contains(QStringLiteral("GIT_WORK_TREE")));
+
+#ifdef Q_OS_UNIX
+  // Another user's store: an explicit GIT_DIR would skip git's ownership
+  // check, so nothing is pinned to it; git finds no repository at all,
+  // neither the store's nor the one above.
+  QHash<QString, QString> foreign;
+  for (const auto &[name, value] :
+       Util::gitStoreVariables(store, static_cast<uint>(::geteuid()) + 1)) {
+    foreign.insert(name, value);
+  }
+  QCOMPARE(foreign.value(QStringLiteral("GIT_DIR")),
+           QStringLiteral("/dev/null/.git"));
+  QProcessEnvironment foreignEnv = QProcessEnvironment::systemEnvironment();
+  for (auto it = foreign.cbegin(); it != foreign.cend(); ++it) {
+    foreignEnv.insert(it.key(), it.value());
+  }
+  QVERIFY2(gitDir(store, foreignEnv).isEmpty(),
+           qPrintable("git found " + gitDir(store, foreignEnv)));
 #endif
 }
 
