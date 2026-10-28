@@ -93,17 +93,18 @@ def link_targets(text: str) -> list:
     """
     targets = []
     for line in text.split("\n"):
-        close = gt = ends = last = None
+        # Only a line with "](" can hold a link; its tables are built once.
+        if "](" not in line:
+            continue
+        close = _next_index(line, ")")
+        gt = _next_index(line, ">")
+        ends = _run_ends(line)
+        last = _last_non_blanks(line)
         resume = 0
         for match in LINK_TEXT_RE.finditer(line):
             start = match.end()
             if match.start() < resume or not line.startswith("(", start):
                 continue
-            if close is None:
-                close = _next_index(line, ")")
-                gt = _next_index(line, ">")
-                ends = _run_ends(line)
-                last = _last_non_blanks(line)
             pos = start + 1
             while pos < len(line) and line[pos] in BLANKS:
                 pos += 1
