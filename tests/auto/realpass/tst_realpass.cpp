@@ -589,6 +589,24 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
             QDir(store).filePath(QStringLiteral("dest")), false);
   QVERIFY2(!passRan(), "the destination's own entries count too");
   QCOMPARE(critical.count(), before + 3);
+
+  // A copy merges into a folder of the same name: an incoming entry gets a
+  // list already there that no entry uses yet. Rolled back: refused.
+  // The rolled-back dest/private from above is gone again first.
+  QVERIFY(QDir(QDir(store).filePath(QStringLiteral("dest/private")))
+              .removeRecursively());
+  QVERIFY(QDir(store).mkpath(QStringLiteral("src/sub")));
+  {
+    QFile e(QDir(store).filePath(QStringLiteral("src/sub/secret.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  QVERIFY(rolledBack(QStringLiteral("dest/src/sub")));
+  QFile::remove(m_log);
+  pass.Copy(QDir(store).filePath(QStringLiteral("src")),
+            QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(!passRan(), "a list waiting in the destination counts");
+  QCOMPARE(critical.count(), before + 4);
 }
 
 void tst_realpass::removeFileAndFolder() {

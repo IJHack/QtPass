@@ -133,6 +133,22 @@ auto passEntriesUnder(const QString &dir) -> QStringList {
   }
   return entries;
 }
+
+/// @p dir and every folder under it as passEntriesUnder() walks them:
+/// hidden ones included, .git left out, no link followed.
+auto passFoldersUnder(const QString &dir) -> QStringList {
+  QStringList folders{QDir::cleanPath(dir)};
+  const QFileInfoList children = QDir(dir).entryInfoList(
+      QDir::Dirs | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
+  for (const QFileInfo &child : children) {
+    if (child.isSymLink() || child.isJunction() ||
+        child.fileName() == QLatin1String(".git")) {
+      continue;
+    }
+    folders << passFoldersUnder(child.absoluteFilePath());
+  }
+  return folders;
+}
 } // namespace
 
 auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
@@ -154,6 +170,16 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin)
   for (const QString &entry : passEntriesUnder(dir)) {
     if (refuseList(entry, signer, verified, within)) {
       return true;
+    }
+  }
+  // Written into, its folders' lists count even where no entry uses them
+  // yet: cp -r merges an incoming folder into one of the same name, and the
+  // entries it brings get the list already there.
+  if (!onlyListsWithin) {
+    for (const QString &folder : passFoldersUnder(dir)) {
+      if (refuseList(folder, signer, verified)) {
+        return true;
+      }
     }
   }
   return false;

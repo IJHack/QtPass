@@ -101,8 +101,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   replaced by a link was accepted: `pass` checks the signature, not
   QtPass's generation and folder lines. QtPass now runs the native
   backend's checks before it has `pass` insert, move or copy (for a
-  folder, also the lists inside it, hidden entries included, and those of
-  an existing destination folder, which `pass` re-encrypts whole), and
+  folder, also the lists inside it, hidden entries included, and every list
+  in an existing destination folder, which `pass` re-encrypts whole), and
   refuses as that backend does
   ([#2077](https://github.com/IJHack/QtPass/issues/2077)).
 - The profile settings warn when two profiles for different stores name
