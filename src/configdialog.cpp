@@ -343,10 +343,17 @@ auto ConfigDialog::sharingTheKey(int row) const -> QStringList {
   if (mine.isEmpty()) {
     return others;
   }
-  const QString store = QDir::cleanPath(entry.profile.path);
+  // One folder spelled two ways (through a link, another case on a
+  // case-insensitive file system) is one store: compared as the file system
+  // resolves it where it exists.
+  const auto storeOf = [](const QString &path) {
+    const QString real = QFileInfo(path).canonicalFilePath();
+    return real.isEmpty() ? QDir::cleanPath(path) : real;
+  };
+  const QString store = storeOf(entry.profile.path);
   for (int other = 0; other < m_entries.size(); ++other) {
     const ProfileEntry &candidate = m_entries.at(other);
-    if (other == row || QDir::cleanPath(candidate.profile.path) == store) {
+    if (other == row || storeOf(candidate.profile.path) == store) {
       continue;
     }
     if (fingerprints(candidate.profile.signingKey).intersects(mine)) {

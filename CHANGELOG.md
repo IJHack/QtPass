@@ -96,8 +96,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
-- The profile settings warn when two profiles for different stores sign
-  with the same key: a recipient list signed for one of them is accepted in
+- The profile settings warn when two profiles for different stores name
+  the same signing-key fingerprint: a recipient list signed for one of them is accepted in
   the other, since its folder line names a folder of a store, not the
   store. A warning, not an error: Settings can still be saved
   ([#2050](https://github.com/IJHack/QtPass/issues/2050)).

@@ -781,6 +781,35 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
     }
   }
   QVERIFY2(warning->isHidden(), "work no longer shares its key elsewhere");
+
+#ifndef Q_OS_WIN
+  // One store reached through a link is one store: not named either.
+  QTemporaryDir real;
+  QVERIFY(real.isValid());
+  const QString viaLink = real.path() + QStringLiteral("-link");
+  QVERIFY(QFile::link(real.path(), viaLink));
+  const auto unlink = qScopeGuard([&viaLink] { QFile::remove(viaLink); });
+  Profiles linked;
+  Profile direct;
+  direct.path = real.path();
+  direct.signingKey = key;
+  linked.insert(QStringLiteral("direct"), direct);
+  Profile link;
+  link.path = viaLink;
+  link.signingKey = key;
+  linked.insert(QStringLiteral("link"), link);
+  QtPassSettings::setProfiles(linked);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("direct");
+    QtPassSettings::save(s);
+  }
+  ConfigDialog second(nullptr);
+  auto *secondWarning =
+      second.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
+  QVERIFY(secondWarning != nullptr);
+  QVERIFY2(secondWarning->isHidden(), qPrintable(secondWarning->text()));
+#endif
 }
 
 /**
