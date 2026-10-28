@@ -514,7 +514,7 @@ void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
     const QString friendly = gpgErrorMessage(err);
     const QString why =
         friendly.isEmpty() ? err : formatInsertError(friendly, err);
-    const bool written = insertWritten();
+    const bool written = insertWritten(err);
     emit insertFailed(why, written);
     if (written) {
       // The entry is in the store; a git step after it failed (a commit

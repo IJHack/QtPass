@@ -399,6 +399,17 @@ signals:
    */
   void starting();
   /**
+   * @brief Emitted, synchronously, when the queue's head leaves it: just
+   * before it is started, when it cannot be (no executable, a failed
+   * start), or when cancelNext() drops it. Lets a caller do per-item work
+   * at the moment the item actually runs, not when it was queued.
+   * @param id The item's id.
+   * @param completes Whether finished() or error() follows for it: for
+   *        every item but one cancelNext() dropped. Those that complete
+   *        do so in the order they left the queue.
+   */
+  void dequeuing(int id, bool completes);
+  /**
    * @brief error       signal that is emitted when process finishes with an
    * error
    *

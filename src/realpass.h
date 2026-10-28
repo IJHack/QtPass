@@ -82,11 +82,23 @@ class RealPass : public Pass {
   /**
    * @brief Whether the failed `pass insert` wrote its entry before its git
    * step failed. pass does not say, so: the entry's bytes differ from what
-   * they were when the insert started (a new entry appeared, or an existing
-   * one was rewritten).
+   * they were when that insert started to run (a new entry appeared, or an
+   * existing one was rewritten), and pass did not say that the encryption
+   * broke off (gpg can leave a partial file behind then).
+   * @param err What pass reported on stderr.
    * @return true when the entry was written.
    */
-  [[nodiscard]] auto insertWritten() const -> bool override;
+  [[nodiscard]] auto insertWritten(const QString &err) const -> bool override;
+
+  /**
+   * @brief The executor is about to run (or drop) its next item: for an
+   * insert, take its entry from m_insertQueue and fingerprint it now, not
+   * when it was queued, so an earlier queued save of the same entry counts
+   * as "before". Kept in m_insertPending for that insert's own completion.
+   * @param id The item's process id.
+   * @param completes Whether a completion follows (not for a dropped one).
+   */
+  void onDequeuing(int id, bool completes);
 
   /**
    * @brief A SHA-256 of the regular file @p path (opened without following
@@ -96,10 +108,20 @@ class RealPass : public Pass {
    */
   static auto entryFingerprint(const QString &path) -> QByteArray;
 
-  /// The entry the last Insert() writes, and its fingerprint beforehand
-  /// (empty when it did not exist).
-  QString m_insertTarget;
-  QByteArray m_insertTargetBefore;
+  /// An insert's entry and its fingerprint when the insert started to run
+  /// (empty when the entry did not exist).
+  struct InsertRecord {
+    QString target;    ///< The entry's file.
+    QByteArray before; ///< Its fingerprint when the insert started.
+  };
+  /// The entries of the queued inserts, oldest first.
+  QQueue<QString> m_insertQueue;
+  /// The inserts that left the queue and have yet to complete, in the
+  /// order their completions come: a failed start's error is posted, and
+  /// the next insert may start before it arrives.
+  QQueue<InsertRecord> m_insertPending;
+  /// The insert whose completion is being handled.
+  InsertRecord m_insertDone;
 
 public:
   /**

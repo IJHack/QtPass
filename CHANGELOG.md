@@ -588,7 +588,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   could not be signed with `pass.signcommits`, say) said nothing about it:
   a new entry's dialog just closed, and an edited one said "Not saved",
   which was wrong. Both close now, with either backend, and QtPass says
-  the entry is saved but not committed, with what was reported.
+  the entry is saved but not committed, with what was reported. Not when
+  `gpg` broke off part-way (`pass`: "Password encryption aborted."), and a
+  queued second save of the same entry compares against what the first
+  left.
 - With the `pass` backend, the content search tooltip said patterns were
   POSIX basic regular expressions (`pass grep`). Both backends search in
   QtPass itself with Perl-compatible ones, so `a\|b` or `\(x\)` looked for

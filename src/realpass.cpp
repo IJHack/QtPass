@@ -26,6 +26,7 @@ using Enums::PASS_SHOW;
 
 RealPass::RealPass() : m_grep(this) {
   connect(&m_grep, &NativeGrep::finished, this, &RealPass::finishedGrep);
+  connect(&exec, &Executor::dequeuing, this, &RealPass::onDequeuing);
 }
 
 RealPass::~RealPass() { m_grep.cancel(); }
@@ -57,11 +58,10 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
   }
-  m_insertTarget =
-      QDir::cleanPath(QDir::isAbsolutePath(file)
-                          ? file + ".gpg"
-                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
-  m_insertTargetBefore = entryFingerprint(m_insertTarget);
+  m_insertQueue.enqueue(QDir::cleanPath(
+      QDir::isAbsolutePath(file)
+          ? file + ".gpg"
+          : QDir(m_settings.passStore).filePath(file) + ".gpg"));
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -70,15 +70,30 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   executePass(PASS_INSERT, args, newValue);
 }
 
-auto RealPass::insertWritten() const -> bool {
-  if (m_insertTarget.isEmpty()) {
+void RealPass::onDequeuing(int id, bool completes) {
+  if (id != PASS_INSERT || m_insertQueue.isEmpty()) {
+    return;
+  }
+  const QString target = m_insertQueue.dequeue();
+  if (completes) {
+    m_insertPending.enqueue({target, entryFingerprint(target)});
+  }
+}
+
+auto RealPass::insertWritten(const QString &err) const -> bool {
+  if (m_insertDone.target.isEmpty()) {
+    return false;
+  }
+  // gpg broke off (a full disk, killed): pass says so, and what gpg left
+  // at the entry's name, if anything, is no entry.
+  if (err.contains(QLatin1String("Password encryption aborted."))) {
     return false;
   }
   // pass writes the new ciphertext to the entry's name before it commits,
   // and an encryption never gives the same bytes twice (a fresh session
   // key), so an edited entry has changed as surely as a new one appeared.
-  const QByteArray after = entryFingerprint(m_insertTarget);
-  return !after.isEmpty() && after != m_insertTargetBefore;
+  const QByteArray after = entryFingerprint(m_insertDone.target);
+  return !after.isEmpty() && after != m_insertDone.before;
 }
 
 auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
@@ -183,6 +198,11 @@ void RealPass::finished(int id, int exitCode, const QString &out,
     // did), what is left staged decides.
     finishLinkCommit(m_linkCommits.dequeue(), out, err);
     return;
+  }
+  if (static_cast<PROCESS>(id) == PASS_INSERT) {
+    // This completion's own insert, not whichever left the queue last.
+    m_insertDone =
+        m_insertPending.isEmpty() ? InsertRecord{} : m_insertPending.dequeue();
   }
   Pass::finished(id, exitCode, out, err);
 }

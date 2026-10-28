@@ -372,9 +372,13 @@ protected:
    * @brief Whether the insert that just failed had put its entry in the
    * store before a later step failed. The backend that writes the entry
    * knows; this default says no.
+   * @param err What the failed insert reported on stderr.
    * @return true when the failed insert's entry was written.
    */
-  [[nodiscard]] virtual auto insertWritten() const -> bool { return false; }
+  [[nodiscard]] virtual auto insertWritten(const QString &err) const -> bool {
+    Q_UNUSED(err);
+    return false;
+  }
 
   /**
    * @brief Remember what a Show() asked for, so its completion can say so.

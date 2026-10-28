@@ -1,11 +1,13 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QLoggingCategory>
 #include <QScopeGuard>
 #include <QSignalSpy>
 #include <QTemporaryDir>
+#include <QThread>
 #include <QtTest>
 
 #include "../../../src/appsettings.h"
@@ -32,6 +34,7 @@ private slots:
   void grepDecryptsRealEntriesOnlyNeverThroughALink();
   void insertPipesTheValue();
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
+  void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
   void loggedArgvRedactsSecretShapedValues();
@@ -249,7 +252,10 @@ void tst_realpass::insertPipesTheValue() {
  * @brief pass writes the entry, then its git commit fails (one that cannot
  *        be signed, say) and pass exits non-zero: the entry is saved, for a
  *        new entry and for an edited one alike. When pass fails before it
- *        writes, nothing was saved.
+ *        writes, or gpg breaks off part-way ("Password encryption
+ *        aborted."), nothing was saved. Two saves of one entry queued back
+ *        to back: the second compares against what the first left, not
+ *        against the entry before either ran.
  */
 void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
   const QString entry = m_store + QStringLiteral("folder/edited.gpg");
@@ -257,33 +263,44 @@ void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
     QFile f(entry);
     return f.open(QIODevice::WriteOnly) && f.write(bytes) == bytes.size();
   };
-  // WRITE says whether this stand-in rewrites the entry before "git" fails.
+  // The value piped in says what this stand-in does: "ok" writes and
+  // succeeds, "commit" writes and then fails as git does, "abort" leaves a
+  // partial file as gpg breaking off does, anything else fails first.
   const QString script =
       QDir(m_dir.path()).filePath(QStringLiteral("pass-commit-fails"));
   {
     QFile f(script);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
-    f.write("#!/bin/sh\ncat >/dev/null\n"
+    f.write("#!/bin/sh\nmode=$(cat)\n"
             "for last; do :; done\n"
-            "if [ \"$WRITE\" = 1 ]; then\n"
-            "  printf 'new %s\\n' \"$$\" > \"$PASSWORD_STORE_DIR/$last.gpg\"\n"
-            "  echo 'error: gpg failed to sign the data' >&2\n"
-            "else\n  echo 'gpg: no public key' >&2\nfi\nexit 1\n");
+            "out=\"$PASSWORD_STORE_DIR/$last.gpg\"\n"
+            "case \"$mode\" in\n"
+            "ok) printf 'new %s\\n' \"$$\" > \"$out\"; exit 0 ;;\n"
+            "commit) printf 'new %s\\n' \"$$\" > \"$out\"\n"
+            "  echo 'error: gpg failed to sign the data' >&2 ;;\n"
+            "abort) printf 'part' > \"$out\"\n"
+            "  echo 'Password encryption aborted.' >&2 ;;\n"
+            "*) echo 'gpg: no public key' >&2 ;;\n"
+            "esac\nexit 1\n");
     f.close();
     QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
                              QFile::ExeOwner));
   }
   AppSettings settings = m_settings;
   settings.passExecutable = script;
-  const auto run = [&settings](const QString &name, bool overwrite,
-                               bool write) -> std::pair<bool, QString> {
-    qputenv("WRITE", write ? "1" : "0");
+  // Runs the inserts in turn on one backend; what the (single) failure
+  // said: whether the entry was written, and the box's title if any.
+  const auto run =
+      [&settings](const QString &name, bool overwrite,
+                  const QStringList &modes) -> std::pair<bool, QString> {
     RealPass pass;
     pass.init(settings);
     pass.updateEnv();
     QSignalSpy failed(&pass, &Pass::insertFailed);
     QSignalSpy critical(&pass, &Pass::critical);
-    pass.Insert(name, QStringLiteral("v"), overwrite);
+    for (const QString &mode : modes) {
+      pass.Insert(name, mode, overwrite);
+    }
     if (!failed.wait(5000) && failed.isEmpty()) {
       return {false, QStringLiteral("no insertFailed")};
     }
@@ -292,25 +309,96 @@ void tst_realpass::insertWhoseCommitFailsSaysWhetherTheEntryWasWritten() {
         critical.isEmpty() ? QString() : critical.first().at(0).toString();
     return {written, title};
   };
+  const QString edited = QStringLiteral("folder/edited");
 
   // An existing entry, rewritten before the commit fails.
   QVERIFY(writeEntry("old"));
-  auto [written, title] = run(QStringLiteral("folder/edited"), true, true);
+  auto [written, title] = run(edited, true, {QStringLiteral("commit")});
   QVERIFY2(written, "the edited entry was written");
   QCOMPARE(title, QStringLiteral("Saved, not committed"));
 
   // An existing entry pass never got to: not written, no box.
   QVERIFY(writeEntry("old"));
-  std::tie(written, title) = run(QStringLiteral("folder/edited"), true, false);
+  std::tie(written, title) = run(edited, true, {QStringLiteral("fail")});
   QVERIFY(!written);
+  QVERIFY2(title.isEmpty(), qPrintable(title));
+
+  // gpg broke off and left a partial file: changed, but no entry.
+  QVERIFY(writeEntry("old"));
+  std::tie(written, title) = run(edited, true, {QStringLiteral("abort")});
+  QVERIFY2(!written, "a broken-off encryption is not a saved entry");
+  QVERIFY2(title.isEmpty(), qPrintable(title));
+
+  // Two saves queued: the first writes and succeeds, the second fails
+  // before it writes. The second did not write, whatever the first did.
+  QVERIFY(writeEntry("old"));
+  std::tie(written, title) =
+      run(edited, true, {QStringLiteral("ok"), QStringLiteral("fail")});
+  QVERIFY2(!written, "the second save wrote nothing");
   QVERIFY2(title.isEmpty(), qPrintable(title));
 
   // A new entry, written before the commit fails.
   QFile::remove(m_store + QStringLiteral("folder/fresh.gpg"));
-  std::tie(written, title) = run(QStringLiteral("folder/fresh"), false, true);
+  std::tie(written, title) =
+      run(QStringLiteral("folder/fresh"), false, {QStringLiteral("commit")});
   QVERIFY(written);
   QCOMPARE(title, QStringLiteral("Saved, not committed"));
-  qunsetenv("WRITE");
+}
+
+/**
+ * @brief An insert whose pass cannot start reports that later (the error is
+ *        posted), and the next queued insert starts at once. If that one
+ *        has written its entry by the time the error is handled, the failed
+ *        insert is still judged by its own entry, not credited with it.
+ */
+void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("pass-late-start"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // stdin is not read: QProcess writes it from the event loop, which
+    // this test holds off on purpose.
+    f.write("#!/bin/sh\nfor last; do :; done\n"
+            "printf 'new %s\\n' \"$$\" > \"$PASSWORD_STORE_DIR/$last.gpg\"\n"
+            "exit 0\n");
+    f.close();
+    // Not executable yet: the first insert cannot start.
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner));
+  }
+  const QString first = m_store + QStringLiteral("folder/never.gpg");
+  const QString second = m_store + QStringLiteral("folder/later.gpg");
+  QFile::remove(first);
+  QFile::remove(second);
+  AppSettings settings = m_settings;
+  settings.passExecutable = script;
+  RealPass pass;
+  pass.init(settings);
+  pass.updateEnv();
+  QSignalSpy failed(&pass, &Pass::insertFailed);
+  QSignalSpy critical(&pass, &Pass::critical);
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+
+  pass.Insert(QStringLiteral("folder/never"), QStringLiteral("v"), false);
+  QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                            QFile::ExeOwner));
+  pass.Insert(QStringLiteral("folder/later"), QStringLiteral("v"), false);
+  // The second pass runs on its own; give it time to write before the
+  // event loop delivers the first insert's error.
+  QElapsedTimer timer;
+  timer.start();
+  while (!QFile::exists(second) && timer.elapsed() < 5000) {
+    QThread::msleep(10);
+  }
+  QThread::msleep(50);
+  QVERIFY(QFile::exists(second));
+
+  QTRY_COMPARE_WITH_TIMEOUT(failed.count(), 1, 5000);
+  QVERIFY2(!failed.first().at(1).toBool(),
+           "the insert that never started wrote nothing");
+  QCOMPARE(critical.count(), 0);
+  QVERIFY(!QFile::exists(first));
+  QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 5000);
 }
 
 void tst_realpass::removeFileAndFolder() {

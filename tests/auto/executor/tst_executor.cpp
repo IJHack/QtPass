@@ -52,6 +52,7 @@ private Q_SLOTS:
   void executeAsyncCrashExitReportsNonZeroCode();
   void cancelNextWhileRunningReturnsMinusOne();
   void cancelNextFromErrorHandlerDropsQueuedItem();
+  void dequeuingNamesEveryItemThatLeavesTheQueue();
   void executeAsyncWorkDirDoesNotCarryOver();
   void executeAsyncNonUtf8OutputIsNotDropped();
   void bareNameRunsFromPathOnBothPaths();
@@ -773,6 +774,48 @@ void tst_executor::cancelNextFromErrorHandlerDropsQueuedItem() {
   QTest::qWait(200);
   QCOMPARE(finished.count(), 2); // item 2 never ran
   QCOMPARE(errors.count(), 0);
+}
+
+/**
+ * @brief dequeuing() names every item as it leaves the queue, in order: one
+ *        that cannot start (no executable), one that runs, one that
+ *        cancelNext() drops (the only one no completion follows), and one
+ *        that runs after it. It comes before
+ *        the item runs, so a caller can look at the world as it is then.
+ */
+void tst_executor::dequeuingNamesEveryItemThatLeavesTheQueue() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy finished(&exec, &Executor::finished);
+  QList<int> order;
+  QList<int> finishedSoFar;
+  QList<bool> completes;
+  connect(&exec, &Executor::dequeuing, &exec,
+          [&order, &finishedSoFar, &finished, &completes](int id, bool c) {
+            order << id;
+            finishedSoFar << static_cast<int>(finished.count());
+            completes << c;
+          });
+  connect(&exec, &Executor::finished, &exec, [&exec](int id) {
+    if (id == 2) {
+      exec.cancelNext();
+    }
+  });
+
+  exec.execute(1, "", {}, false, false);
+  exec.execute(2, sh, {"-c", "exit 0"}, false, false);
+  exec.execute(3, sh, {"-c", "echo must-not-run"}, true, false);
+  exec.execute(4, sh, {"-c", "exit 0"}, false, false);
+  QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 2, 5000);
+  QCOMPARE(order, (QList<int>{1, 2, 3, 4}));
+  // All but the dropped one complete.
+  QCOMPARE(completes, (QList<bool>{true, true, false, true}));
+  // Item 2 left the queue before anything had finished, item 4 after 2.
+  QCOMPARE(finishedSoFar.at(1), 0);
+  QCOMPARE(finishedSoFar.at(3), 1);
+  QCOMPARE(finished.at(1).at(0).toInt(), 4);
 }
 
 /**
