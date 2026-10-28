@@ -316,10 +316,11 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>The item's id. </td></tr>
-    <tr><td class="paramname">completes</td><td>Whether <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="finished signal that is emitted when process finishes">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="error signal that is emitted when process finishes with an error">error()</a> follows for it: for every item but one <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> dropped. Those that complete do so in the order they left the queue. </td></tr>
+    <tr><td class="paramname">completes</td><td>Whether <a class="el" href="#ace810a6d93c74dec7188038210c5a731" title="finished signal that is emitted when process finishes">finished()</a> or <a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88" title="error signal that is emitted when process finishes with an error">error()</a> follows for it: for every item but one <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> dropped. Those that complete do so in the order they left the queue.</td></tr>
   </table>
   </dd>
 </dl>
+<p>A slot may queue more with <a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Queue a command without stdin input.">execute()</a>: that waits behind this item. The executor counts as running while the signal is out, also for an item <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> drops, so <a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Cancel the next queued command without executing it.">cancelNext()</a> drops nothing then (-1) and nothing starts until the signal has returned. </p>
 
 </div>
 </div>
