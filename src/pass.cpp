@@ -54,6 +54,7 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   connect(&exec, &Executor::error, this, &Pass::finished);
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
+  connect(&exec, &Executor::drained, this, &Pass::idle);
   // Merge our vars into WSLENV rather than blindly appending a duplicate
   // entry. WSLENV flags: /p translates the path, /u forwards from Windows
   // into WSL only; /w would be the other direction, from WSL out, and leaves

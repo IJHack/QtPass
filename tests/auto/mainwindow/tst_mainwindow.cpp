@@ -3313,6 +3313,71 @@ void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
   m_window->setUiElementsEnabled(true);
   QVERIFY2(box->isEnabled(), "back once the operation is done");
 
+  // Refilling the box (after Settings) is no switch, even when the first
+  // item added is another profile than the active one.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("other");
+    QtPassSettings::save(s);
+  }
+  m_window->statusBar()->clearMessage();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QCOMPARE(m_window->statusBar()->currentMessage(), QString());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("main");
+    QtPassSettings::save(s);
+  }
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("main"));
+
+  // The watchdog releases the interface while a slow git still runs: the
+  // box waits for the backend, and comes back when its queue is done.
+#ifndef Q_OS_WIN
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString slowGit =
+      QDir(scratch.path()).filePath(QStringLiteral("slow-git"));
+  {
+    QFile f(slowGit);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\nsleep 1\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  Pass *backend = QtPassSettings::getPass();
+  AppSettings busy = QtPassSettings::load();
+  busy.useGit = true;
+  busy.gitExecutable = slowGit;
+  backend->init(busy);
+  const auto reinit =
+      qScopeGuard([backend] { backend->init(QtPassSettings::load()); });
+  backend->GitPull();
+  QVERIFY(!backend->isIdle());
+  QTRY_VERIFY_WITH_TIMEOUT(!box->isEnabled(), 5000);
+  m_window->setUiElementsEnabled(true); // as the watchdog does
+  QVERIFY(treeView()->isEnabled());
+  QVERIFY2(!box->isEnabled(), "no switch while git still runs");
+  QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 10000);
+  QTRY_VERIFY_WITH_TIMEOUT(box->isEnabled(), 5000);
+#endif
+
+  // A content search runs outside the queue: switching leaves grep mode,
+  // which cancels it, so no results of the old store are shown.
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(grep != nullptr);
+  grep->setChecked(true);
+  box->setCurrentText(QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QVERIFY2(!grep->isChecked(), "the switch left grep mode");
+  box->setCurrentText(QStringLiteral("main"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("main"));
+
   // With a single profile there is nothing to pick, enabled or not.
   profiles.remove(QStringLiteral("other"));
   QtPassSettings::setProfiles(profiles);

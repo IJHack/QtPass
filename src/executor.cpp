@@ -213,6 +213,7 @@ void Executor::executeNext() {
         },
         Qt::QueuedConnection);
     executeNext();
+    postDrainedIfIdle();
     return;
   }
 
@@ -240,6 +241,7 @@ void Executor::executeNext() {
         },
         Qt::QueuedConnection);
     executeNext();
+    postDrainedIfIdle();
     return;
   }
 
@@ -447,6 +449,20 @@ void Executor::onProcessFinished(int exitCode,
     emit error(i.id, -1, output, err);
   }
   executeNext();
+  postDrainedIfIdle();
+}
+
+void Executor::postDrainedIfIdle() {
+  // Queued, and checked again then: an error() of a failed start is posted
+  // too and comes first, and a slot may have queued more meanwhile.
+  QMetaObject::invokeMethod(
+      this,
+      [this]() {
+        if (isIdle()) {
+          emit drained();
+        }
+      },
+      Qt::QueuedConnection);
 }
 
 auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)

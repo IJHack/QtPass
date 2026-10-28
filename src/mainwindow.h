@@ -270,6 +270,16 @@ public slots:
   void endReencryptPath();
 
 private slots:
+  /**
+   * @brief Fill the profile box from the settings, the active profile
+   * selected, without switching profiles while doing so.
+   */
+  void updateProfileBox();
+  /**
+   * @brief Enable the profile box only when there is more than one profile,
+   * the interface is enabled and the backend is idle.
+   */
+  void updateProfileBoxEnabled();
   void on_grepButton_toggled(bool checked);
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
   void addPassword();
@@ -403,7 +413,6 @@ private:
   void setPassword(const QString &, bool isNew = true);
   auto confirmPathInStore(const QString &candidate) -> bool;
 
-  void updateProfileBox();
   void initTrayIcon();
   void destroyTrayIcon();
   void reencryptPath(const QString &dir);

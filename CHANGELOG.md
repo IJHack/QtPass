@@ -586,9 +586,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 ### Bugfixes
 
 - The profile box is disabled while an operation runs, as the other
-  controls are: switching profiles then changed the store under queued
-  work, and what still finished (a push after a save, say) was handled for
-  the other profile
+  controls are, and stays so until `gpg`, `git` or `pass` are done, also
+  when the watchdog released the rest of the interface: switching profiles
+  then changed the store under queued work, and what still finished (a
+  push after a save, say) was handled for the other profile. A content
+  search is cancelled by a switch, so no results of the old store are shown
   ([#2071](https://github.com/IJHack/QtPass/issues/2071)).
 - An entry that was saved but whose Git commit then failed (a commit that
   could not be signed with `pass.signcommits`, say) said nothing about it:

@@ -66,6 +66,9 @@ class Executor : public QObject {
   QProcess m_process;
   bool running{false};
   void executeNext();
+  /// Post drained() for after what is being emitted now (a finished() or
+  /// error() and what its slots queue), if the executor is idle by then.
+  void postDrainedIfIdle();
   /**
    * @brief Start @p process running @p app, handling the "wsl " prefix once
    * for both the queued and the blocking path.
@@ -384,6 +387,11 @@ public:
 private slots:
   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
+  /**
+   * @brief Emitted once the last queued item is done and nothing runs or
+   * waits any more (isIdle()), after that item's finished() or error().
+   */
+  void drained();
   /**
    * @brief finished    signal that is emitted when process finishes
    *

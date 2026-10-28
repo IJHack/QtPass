@@ -266,6 +266,9 @@ void MainWindow::connectPassSignals(Pass *pass) {
   connect(pass, &Pass::critical, this, &MainWindow::critical);
   connect(pass, &Pass::startingExecuteWrapper, this,
           &MainWindow::executeWrapperStarted);
+  // The profile box comes back when the queue is done, also after the
+  // watchdog released the rest of the interface early.
+  connect(pass, &Pass::idle, this, &MainWindow::updateProfileBoxEnabled);
   connect(pass, &Pass::statusMsg, this, &MainWindow::showStatusMessage);
   connect(pass, &Pass::finishedShow, this, &MainWindow::passShowHandler);
   // Both check the file against their own pending request and ignore the
@@ -738,11 +741,8 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionAddFolder->setEnabled(state);
   ui->actionUsers->setEnabled(state);
   ui->actionConfig->setEnabled(state);
-  // Nor a profile switch while an operation runs: the backend's store and
-  // environment would change under it, and what is still queued (a push
-  // after an insert, say) would finish for the other profile (#2071).
   m_uiEnabled = state;
-  ui->profileBox->setEnabled(state && ui->profileBox->count() > 1);
+  updateProfileBoxEnabled();
   const bool uiEnabled = state;
   // is a file selected?
   state &= ui->treeView->currentIndex().isValid();
@@ -1212,8 +1212,9 @@ void MainWindow::updateProfileBox() {
     ui->profileWidget->hide();
   } else {
     ui->profileWidget->show();
-    // As setUiElementsEnabled() leaves it: not while an operation runs.
-    ui->profileBox->setEnabled(m_uiEnabled && profiles.size() > 1);
+    // A refill is no choice of the user's: clearing and adding items moves
+    // the current text, which would otherwise switch profiles.
+    const QSignalBlocker quiet(ui->profileBox);
     ui->profileBox->clear();
     for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {
       if (!i.key().isEmpty()) {
@@ -1221,16 +1222,41 @@ void MainWindow::updateProfileBox() {
       }
     }
     ui->profileBox->model()->sort(0);
+    int index = ui->profileBox->findText(QtPassSettings::getProfile());
+    if (index != -1) { //  -1 for not found
+      ui->profileBox->setCurrentIndex(index);
+    }
   }
-  int index = ui->profileBox->findText(QtPassSettings::getProfile());
-  if (index != -1) { //  -1 for not found
-    ui->profileBox->setCurrentIndex(index);
-  }
+  updateProfileBoxEnabled();
+}
+
+void MainWindow::updateProfileBoxEnabled() {
+  // No profile switch while anything of the store runs or waits: the
+  // backend's store and environment would change under it, and what is
+  // still queued (a push after a save, say) would finish for the other
+  // profile (#2071). Asked of the backend, not only of the interface: the
+  // watchdog releases the interface while a slow gpg or git still runs.
+  const Pass *pass = QtPassSettings::getPass();
+  ui->profileBox->setEnabled(m_uiEnabled && ui->profileBox->count() > 1 &&
+                             (pass == nullptr || pass->isIdle()));
 }
 
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
   if (m_freshStart || name == QtPassSettings::getProfile()) {
     return;
+  }
+  // The box is disabled while anything runs; should a change come through
+  // anyway, the active profile stays and the box says so again.
+  if (const Pass *pass = QtPassSettings::getPass();
+      !m_uiEnabled || (pass != nullptr && !pass->isIdle())) {
+    const QSignalBlocker quiet(ui->profileBox);
+    ui->profileBox->setCurrentText(QtPassSettings::getProfile());
+    return;
+  }
+  // A content search runs outside the queue: leaving grep mode cancels it,
+  // so its results for the old store are dropped, not shown for the new.
+  if (m_grep.inGrepMode()) {
+    ui->grepButton->setChecked(false);
   }
 
   ui->lineEdit->clear();
