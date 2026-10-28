@@ -16,6 +16,8 @@ struct UserInfo;
 class ConfigDialog;
 } // namespace Ui
 
+class QLabel;
+
 /**
  * @class ConfigDialog
  * @brief The ConfigDialog handles the configuration interface.
@@ -154,6 +156,9 @@ private:
     QString name;
     QString path;
     QString key;
+    /// Not a problem, a warning: other profiles sign with the same key.
+    /// It neither blocks OK nor marks the row.
+    QString sharedKey;
     /// Whether all three fields are fine.
     [[nodiscard]] auto none() const -> bool {
       return name.isEmpty() && path.isEmpty() && key.isEmpty();
@@ -166,6 +171,8 @@ private:
   /// Designer tooltips of the form fields, put back when validate() has no
   /// complaint about them.
   QString m_nameTip, m_pathTip, m_keyTip;
+  /// Below the signing key: the profiles that share it, if any.
+  QLabel *m_sharedKeyWarning = nullptr;
   /// The profiles as shown; index == row in profileList.
   QList<ProfileEntry> m_entries;
   /// Row whose fields the form shows, -1 for none.
@@ -228,6 +235,13 @@ private:
    * @param problems What problemsOf() found for it.
    */
   void showProblems(int row, const ProfileProblems &problems);
+  /**
+   * @brief The other profiles, for other stores, whose signing keys share a
+   * fingerprint with row @p row's.
+   * @param row The profile's row.
+   * @return Their names, sorted; empty when none or no key is set.
+   */
+  [[nodiscard]] auto sharingTheKey(int row) const -> QStringList;
 
   void initializeNewProfiles(const Profiles &existingProfiles);
   /**

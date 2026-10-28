@@ -175,6 +175,7 @@ private Q_SLOTS:
   void addProfileSelectsTheNewOne();
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
+  void sharedSigningKeyWarnsWithoutBlocking();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
   void fieldLabelsHaveBuddies();
@@ -711,6 +712,75 @@ void tst_configdialog::profileFormEditsTheSelectedProfile() {
            QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01"));
   QCOMPARE(office.useGit, std::optional<bool>(true));
   QCOMPARE(office.autoPush, std::optional<bool>(true));
+}
+
+/**
+ * @brief Two profiles for different stores that sign with the same key get
+ *        a warning under the key (#2050): a list signed for one store is
+ *        accepted in the other. It is no problem: OK stays on, the row is not
+ *        marked. A profile for the same store is not named, case does not
+ *        matter, and another key makes the warning go.
+ */
+void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  const QString key =
+      QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01");
+  Profiles profiles;
+  Profile work;
+  work.path = QStringLiteral("/store/work");
+  work.signingKey = key;
+  profiles.insert(QStringLiteral("work"), work);
+  Profile home;
+  home.path = QStringLiteral("/store/home");
+  home.signingKey = key.toLower();
+  profiles.insert(QStringLiteral("home"), home);
+  Profile mirror;
+  mirror.path = QStringLiteral("/store/work/");
+  mirror.signingKey = key;
+  profiles.insert(QStringLiteral("mirror"), mirror);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("work");
+    QtPassSettings::save(s);
+  }
+
+  ConfigDialog dialog(nullptr);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("profileList"));
+  auto *warning =
+      dialog.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
+  auto *ok = dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"))
+                 ->button(QDialogButtonBox::Ok);
+  QVERIFY(list != nullptr && warning != nullptr && ok != nullptr);
+  QCOMPARE(list->currentItem()->text(), QStringLiteral("work"));
+  QVERIFY(!warning->isHidden());
+  QVERIFY2(warning->text().contains(QStringLiteral("home")),
+           qPrintable(warning->text()));
+  QVERIFY2(!warning->text().contains(QStringLiteral("mirror")),
+           "a profile for the same store is not named");
+  QVERIFY2(ok->isEnabled(), "a warning, not a problem");
+  QCOMPARE(list->currentItem()->background(), QBrush());
+  QCOMPARE(list->currentItem()->toolTip(), warning->text());
+
+  // The home profile gets a key of its own: no warning left for work.
+  for (int row = 0; row < list->count(); ++row) {
+    if (list->item(row)->text() == QStringLiteral("home")) {
+      list->setCurrentRow(row);
+    }
+  }
+  auto *keyEdit = child<QLineEdit>(dialog, "profileSigningKey");
+  keyEdit->setText(QStringLiteral("1111111111111111111111111111111111111111"));
+  emit keyEdit->textEdited(keyEdit->text());
+  QVERIFY(warning->isHidden());
+  for (int row = 0; row < list->count(); ++row) {
+    if (list->item(row)->text() == QStringLiteral("work")) {
+      list->setCurrentRow(row);
+    }
+  }
+  QVERIFY2(warning->isHidden(), "work no longer shares its key elsewhere");
 }
 
 /**
