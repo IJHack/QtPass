@@ -2982,7 +2982,9 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
       f.write(wide.toUtf8() + '\n');
     }
     QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    script.write("#!/bin/sh\ncat '" + QFile::encodeName(plain) + "'\n");
+    // Next to the script, so no path is quoted into it (TMPDIR may hold a
+    // quote).
+    script.write("#!/bin/sh\ncat \"$(dirname \"$0\")/wide.txt\"\n");
     script.close();
     const QStringList pairs = NativeGrep::matchFile(
         env, longGpg, QDir(store).filePath("e0000.gpg"), rx);
