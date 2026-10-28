@@ -96,10 +96,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
-- A store whose parent folder's path holds `:` (`;` on Windows) was not
-  kept out of a repository above it with "use a parent repository" off:
-  Git splits its ceiling list on that character. Git is then pointed at
-  the store's own repository, and without one finds none
+- In native Git mode, a store whose parent folder's path holds `:` (`;` on
+  Windows) was not kept out of a repository above it with "use a parent
+  repository" off: Git splits its ceiling list on that character. Git is
+  then pointed at the store's own repository, and without one finds none.
+  The `pass` backend's Git steps are `pass`'s own, which sets the same
+  ceiling and has the same limit
   ([#2076](https://github.com/IJHack/QtPass/issues/2076)).
 - Re-encrypting with the `pass` backend active used the recipients and
   signing key of the profile QtPass had last re-encrypted under, not the
