@@ -115,14 +115,23 @@ auto ProfileInit::initialise(const QString &dir, const QList<UserInfo> &users,
   // as pass does.
   const QString root = QDir::cleanPath(folder.absolutePath());
   const bool viaPass = s.usePass;
-  const auto underSubStore = [&root, viaPass](const QString &entry) {
+  const QString rootList =
+      QFileInfo(QDir(root).filePath(QStringLiteral(".gpg-id")))
+          .canonicalFilePath();
+  const auto underSubStore = [&root, &rootList, viaPass](const QString &entry) {
     QString dir = QFileInfo(entry).absolutePath();
     while (dir != root && dir.startsWith(root + QLatin1Char('/'))) {
       // A list of its own: a regular file. A linked .gpg-id is no list to
       // the native backend, as everywhere in QtPass, so its folder's
       // entries still count; pass follows the link (`-f`) and keeps that
-      // folder on the linked list, so with it they do not.
+      // folder on the linked list, so with it they do not, unless the link
+      // leads to the root's own list: that folder follows the root, and
+      // Users on it re-encrypts them.
       const QFileInfo list(QDir(dir).filePath(QStringLiteral(".gpg-id")));
+      if (viaPass && list.isFile() && !rootList.isEmpty() &&
+          list.canonicalFilePath() == rootList) {
+        return false;
+      }
       if (list.isFile() &&
           (viaPass || (!list.isSymLink() && !list.isJunction()))) {
         return true;

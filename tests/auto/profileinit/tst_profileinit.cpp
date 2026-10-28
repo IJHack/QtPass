@@ -505,6 +505,19 @@ void tst_profileinit::initialiseCountsEntriesInSubfolders() {
   QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(), viaPass,
                                   false, &note));
   QVERIFY2(note.contains(QStringLiteral("1 encrypted")), qPrintable(note));
+  // Unless the link leads to the root's own list: then that folder follows
+  // the root, and its entry counts again.
+  QVERIFY(linked.mkpath(QStringLiteral("root-linked/deep")));
+  {
+    QFile file(linked.filePath(QStringLiteral("root-linked/deep/c.gpg")));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("x");
+  }
+  QVERIFY(QFile::link(linked.filePath(QStringLiteral(".gpg-id")),
+                      linked.filePath(QStringLiteral("root-linked/.gpg-id"))));
+  QVERIFY(ProfileInit::initialise(withLinkedList.path(), twoUsers(), viaPass,
+                                  false, &note));
+  QVERIFY2(note.contains(QStringLiteral("2 encrypted")), qPrintable(note));
 #endif
 }
 
