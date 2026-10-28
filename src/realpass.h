@@ -5,7 +5,10 @@
 
 #include "nativegrep.h"
 #include "pass.h"
+
+class GpgIdSigner;
 #include <QQueue>
+#include <QSet>
 
 /**
  * @class RealPass
@@ -99,6 +102,35 @@ class RealPass : public Pass {
    * @return Whether it was refused (and the user told).
    */
   auto refuseUnverifiedList(const QString &file) -> bool;
+
+  /**
+   * @brief For a folder pass is about to move or copy: refuse when one of
+   * the signed lists inside it, which its entries keep after the move, is
+   * not one QtPass accepts where it lies now (as refuseUnverifiedList()).
+   * @param dir The folder being moved or copied.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseUnverifiedTree(const QString &dir) -> bool;
+
+  /**
+   * @brief The verifier for signed lists, gpg in the store's environment.
+   * @return A GpgIdSigner with the configured signing keys.
+   */
+  auto listSigner() -> GpgIdSigner;
+
+  /**
+   * @brief The checks of refuseUnverifiedList() for @p file's nearest list,
+   * once per list.
+   * @param file The entry.
+   * @param signer The verifier.
+   * @param verified The lists already found good; extended.
+   * @param within When set, only a list under this folder (with a trailing
+   *        "/") is verified; the skipped-list check applies regardless.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseList(const QString &file, const GpgIdSigner &signer,
+                  QSet<QString> &verified, const QString &within = QString())
+      -> bool;
 
   /**
    * @brief The executor is about to run (or drop) its next item: for an

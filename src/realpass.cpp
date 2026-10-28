@@ -57,29 +57,28 @@ void RealPass::Show(QString file) {
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
 
-auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
-  // pass verifies the signature itself, but knows nothing of the generation
-  // and folder lines: an older authentic list put back, or one signed for
-  // another folder, would get the secret (#2077). The same checks as the
-  // native backend, with gpg in the store's environment. pass reads the list
-  // again afterwards; a swap in between is a concurrent writer, out of
-  // scope (SECURITY.md).
-  const GpgIdSigner signer(
-      m_settings.gpgExecutable,
-      GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
-      [this](const QString &app, const QStringList &args, const QString &input,
-             QString *out, QString *err) {
-        QProcess gpg;
-        gpg.setProcessEnvironment(exec.environment());
-        return Executor::executeBlocking(gpg, app, args, input, out, err);
-      });
-  if (!signer.enabled()) {
-    return false;
-  }
+auto RealPass::listSigner() -> GpgIdSigner {
+  return {m_settings.gpgExecutable,
+          GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+          [this](const QString &app, const QStringList &args,
+                 const QString &input, QString *out, QString *err) {
+            QProcess gpg;
+            gpg.setProcessEnvironment(exec.environment());
+            return Executor::executeBlocking(gpg, app, args, input, out, err);
+          }};
+}
+
+auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
+                          QSet<QString> &verified, const QString &within)
+    -> bool {
   if (refuseSkippedGpgId(file, true)) {
     return true;
   }
   const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
+  if (verified.contains(gpgIdFile) ||
+      (!within.isEmpty() && !QDir::cleanPath(gpgIdFile).startsWith(within))) {
+    return false;
+  }
   QString why =
       QCoreApplication::translate("ImitatePass", "Signature for %1 is invalid.")
           .arg(gpgIdFile);
@@ -89,6 +88,43 @@ auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
                                               "Check .gpg-id file signature!"),
                   why);
     return true;
+  }
+  verified.insert(gpgIdFile);
+  return false;
+}
+
+auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
+  // pass verifies the signature itself, but knows nothing of the generation
+  // and folder lines: an older authentic list put back, or one signed for
+  // another folder, would get the secret (#2077). The same checks as the
+  // native backend, with gpg in the store's environment. pass reads the list
+  // again afterwards; a swap in between is a concurrent writer, out of
+  // scope (SECURITY.md).
+  const GpgIdSigner signer = listSigner();
+  if (!signer.enabled()) {
+    return false;
+  }
+  QSet<QString> verified;
+  return refuseList(file, signer, verified);
+}
+
+auto RealPass::refuseUnverifiedTree(const QString &dir) -> bool {
+  const GpgIdSigner signer = listSigner();
+  if (!signer.enabled()) {
+    return false;
+  }
+  // pass mv and cp re-encrypt every entry of a folder to its nearest list.
+  // The lists inside the folder go along with it: checked where they lie
+  // now, before the move (after it, their folder line names the old place
+  // until the recipients are saved there again). An entry whose list lies
+  // above the folder gets the destination's list, checked by the caller.
+  const QString within = QDir::cleanPath(dir) + QLatin1Char('/');
+  QSet<QString> verified;
+  for (const QString &entry :
+       Util::regularFilesUnder(dir, {QStringLiteral("*.gpg")})) {
+    if (refuseList(entry, signer, verified, within)) {
+      return true;
+    }
   }
   return false;
 }
@@ -346,10 +382,12 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  // pass re-encrypts what it moves or copies to the destination's list.
+  // pass re-encrypts what it moves or copies to the destination's list,
+  // and a folder's entries also to the lists that go along with it.
   if (refuseUnverifiedList(destFileInfo.isDir()
                                ? QDir(dest).filePath(srcFileInfo.fileName())
-                               : dest)) {
+                               : dest) ||
+      (srcFileInfo.isDir() && refuseUnverifiedTree(src))) {
     return;
   }
 

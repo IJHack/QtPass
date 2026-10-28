@@ -499,7 +499,42 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
             QDir(store).filePath(QStringLiteral("shared")), false);
   QVERIFY2(!passRan(), "no move under a list QtPass cannot vouch for");
   QCOMPARE(critical.count(), 3);
+  QFile::remove(QDir(store).filePath(QStringLiteral("shared/.gpg-id")));
 #endif
+
+  // A folder with its own list, moved: pass re-encrypts its entries to that
+  // list, which goes along. Checked where it lies now: a current one lets
+  // the move through, a rolled-back one does not.
+  const QString team = QDir(store).filePath(QStringLiteral("team"));
+  QVERIFY(QDir(store).mkpath(QStringLiteral("team")));
+  QVERIFY(QDir(store).mkpath(QStringLiteral("dest")));
+  {
+    QFile e(QDir(team).filePath(QStringLiteral("a.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  const QString teamList = QDir(team).filePath(QStringLiteral(".gpg-id"));
+  const auto writeTeamList = [&teamList](qint64 generation,
+                                         const QByteArray &keys) {
+    QFile list(teamList);
+    QFile sig(teamList + QStringLiteral(".sig"));
+    return list.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           list.write(GpgIdGeneration::withHeader(
+               generation, QStringLiteral("team"), keys)) > 0 &&
+           sig.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           sig.write("sig") == 3;
+  };
+  QVERIFY(writeList(5, QStringLiteral("."), "ALICE\n"));
+  QVERIFY(writeTeamList(2, "ALICE\n"));
+  QFile::remove(m_log);
+  pass.Copy(team, QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(passRan(), "a folder whose own list is current goes through");
+  const int before = static_cast<int>(critical.count());
+  QVERIFY(writeTeamList(1, "ALICE\nMALLORY\n"));
+  QFile::remove(m_log);
+  pass.Move(team, QDir(store).filePath(QStringLiteral("dest")), false);
+  QVERIFY2(!passRan(), "a rolled-back list inside the folder is refused");
+  QCOMPARE(critical.count(), before + 1);
 }
 
 void tst_realpass::removeFileAndFolder() {
