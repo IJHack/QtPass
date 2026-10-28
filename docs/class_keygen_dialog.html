@@ -129,6 +129,8 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f57d71d0288d8088b23b8124088a62a" id="r_a8f57d71d0288d8088b23b8124088a62a"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a8f57d71d0288d8088b23b8124088a62a">applyPassphrase</a> (const QString &amp;batch, const QString &amp;passphrase)</td></tr>
 <tr class="memdesc:a8f57d71d0288d8088b23b8124088a62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splice a passphrase into a GPG batch template.  <br /></td></tr>
+<tr class="memitem:aa57783258b6c2b910bc1a27659103976" id="r_aa57783258b6c2b910bc1a27659103976"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa57783258b6c2b910bc1a27659103976">isBatchValue</a> (const QString &amp;value) -&gt; bool</td></tr>
+<tr class="memdesc:aa57783258b6c2b910bc1a27659103976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">value</code> can go into a GPG batch line as one value.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles GPG keypair generation. </p>
@@ -186,7 +188,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
 <div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_icgraph.svg" width="499" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_icgraph.svg" width="474" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -228,11 +230,45 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Batch text ready for gpg &ndash;gen-key &ndash;batch. </dd></dl>
+
+</div>
+</div>
+<a id="aa57783258b6c2b910bc1a27659103976" name="aa57783258b6c2b910bc1a27659103976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa57783258b6c2b910bc1a27659103976">&#9670;&#160;</a></span>isBatchValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto KeygenDialog::isBatchValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">value</code> can go into a GPG batch line as one value. </p>
+<p>The batch is line-oriented, and gpg reads a line as a C string: a line break or NUL in a name or passphrase would start a directive of its own (no-protection, a Passphrase: of the paster's choosing). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>A field's text. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>False when it holds a CR, LF or NUL. </dd></dl>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a8f57d71d0288d8088b23b8124088a62a_cgraph.svg" width="499" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_aa57783258b6c2b910bc1a27659103976_cgraph.svg" width="474" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

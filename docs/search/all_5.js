@@ -35,5 +35,6 @@ var searchData=
   ['folderof_32',['folderOf',['../class_gpg_id_generation.html#a09b1614889db306cfd1efe17acc4ea8c',1,'GpgIdGeneration']]],
   ['formatoutput_33',['formatOutput',['../class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f',1,'QtPass']]],
   ['from_20source_34',['From source',['../index.html#source',1,'']]],
-  ['fullyvalid_35',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['fromlist_35',['FromList',['../class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014',1,'UsersDialog']]],
+  ['fullyvalid_36',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];

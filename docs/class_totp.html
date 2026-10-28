@@ -161,7 +161,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:ae890b9f9d1440b99756ba7c74bd03ae0" id="r_ae890b9f9d1440b99756ba7c74bd03ae0"><td class="memItemLeft">static constexpr uint&#160;</td><td class="memItemRight"><a class="el" href="#ae890b9f9d1440b99756ba7c74bd03ae0">MAX_DIGITS</a> = 10U</td></tr>
 <tr class="memdesc:ae890b9f9d1440b99756ba7c74bd03ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper clamp for <span class="tt">digits</span>.  <br /></td></tr>
 <tr class="memitem:a1ff6b1d22ea9f2cf5da5fedd1e116505" id="r_a1ff6b1d22ea9f2cf5da5fedd1e116505"><td class="memItemLeft">static constexpr uint&#160;</td><td class="memItemRight"><a class="el" href="#a1ff6b1d22ea9f2cf5da5fedd1e116505">MAX_STEP</a> = 86400U</td></tr>
-<tr class="memdesc:a1ff6b1d22ea9f2cf5da5fedd1e116505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper clamp for <span class="tt">period</span>.  <br /></td></tr>
+<tr class="memitem:a79b5e8d618fa81604df1699b2d4b2e9a" id="r_a79b5e8d618fa81604df1699b2d4b2e9a"><td class="memItemLeft">static constexpr qsizetype&#160;</td><td class="memItemRight"><a class="el" href="#a79b5e8d618fa81604df1699b2d4b2e9a">MAX_CONFIG_LENGTH</a> = 4096</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RFC 6238 time-based one-time password generation. </p>
@@ -452,7 +452,7 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A canonical URI, or an empty string when <code class="param">config</code> is not valid. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A canonical URI, or an empty string when <code class="param">config</code> is not valid or its URI would be longer than MAX_CONFIG_LENGTH. </dd></dl>
 
 </div>
 </div>
@@ -487,7 +487,7 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Validated settings, or std::nullopt when the secret is missing or is not decodable base32. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Validated settings, or std::nullopt when the secret is missing or is not decodable base32, or the configuration (its surrounding whitespace included) is longer than MAX_CONFIG_LENGTH. </dd></dl>
 
 </div>
 </div>
@@ -554,7 +554,8 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Serialise settings as a canonical otpauth URI. </p>
-<p>Always emits <span class="tt">secret</span>, <span class="tt">digits</span> and <span class="tt">period</span>; emits <span class="tt">issuer</span> when it is set, <span class="tt">algorithm</span> only when it differs from the RFC 6238 default, and <span class="tt">encoder=steam</span> for <a class="el" href="#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b" title="Steam Guard&#39;s five-character alphabet.">Encoder::Steam</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Always emits <span class="tt">secret</span>, <span class="tt">digits</span> and <span class="tt">period</span>; emits <span class="tt">issuer</span> when it is set, <span class="tt">algorithm</span> only when it differs from the RFC 6238 default, and <span class="tt">encoder=steam</span> for <a class="el" href="#acd260916c919c39104526b0ccadce8a0a4db4563826bad0eb2f60ee6e42d0ea4b" title="Steam Guard&#39;s five-character alphabet.">Encoder::Steam</a>.</p>
+<p>Percent-encoding can make the URI longer than the configuration it was parsed from: for one near MAX_CONFIG_LENGTH, <a class="el" href="#a4b9e16c21366dc739b9855bbd1fbd7cb" title="Parse an OTP configuration string.">parse()</a> refuses it, and <a class="el" href="#ae84cc73aa9f5f9e1f90032554d0fa85f" title="Normalise a user-entered value to a canonical otpauth URI.">normalize()</a> returns nothing rather than such a URI. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">settings</td><td>Validated settings. </td></tr>
   </table>
@@ -617,6 +618,31 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a79b5e8d618fa81604df1699b2d4b2e9a" name="a79b5e8d618fa81604df1699b2d4b2e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b5e8d618fa81604df1699b2d4b2e9a">&#9670;&#160;</a></span>MAX_CONFIG_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qsizetype Totp::MAX_CONFIG_LENGTH = 4096</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Longest configuration <a class="el" href="#a4b9e16c21366dc739b9855bbd1fbd7cb" title="Parse an OTP configuration string.">parse()</a> takes: far beyond any real otpauth URI, short of what a compressed entry can expand to (millions of query parameters, each an object, before anything is checked). </p>
+
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00076">76</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+
+</div>
+</div>
 <a id="ae890b9f9d1440b99756ba7c74bd03ae0" name="ae890b9f9d1440b99756ba7c74bd03ae0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae890b9f9d1440b99756ba7c74bd03ae0">&#9670;&#160;</a></span>MAX_DIGITS</h2>
 
@@ -662,7 +688,6 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>Upper clamp for <span class="tt">period</span>. </p>
 
 <p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00072">72</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>

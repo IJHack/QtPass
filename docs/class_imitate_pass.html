@@ -215,6 +215,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6fe6b48df3fb04071c8c2c1d5c1d1206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize store.  <br /></td></tr>
 <tr class="memitem:af331446d163c31f1fca714646c0f6244" id="r_af331446d163c31f1fca714646c0f6244"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af331446d163c31f1fca714646c0f6244">reencryptPath</a> (const QString &amp;dir)</td></tr>
 <tr class="memdesc:af331446d163c31f1fca714646c0f6244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encrypt entire directory.  <br /></td></tr>
+<tr class="memitem:abf14214692366809c82ad29e8d18c77b" id="r_abf14214692366809c82ad29e8d18c77b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abf14214692366809c82ad29e8d18c77b">reencryptPath</a> (const QString &amp;dir, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
+<tr class="memdesc:abf14214692366809c82ad29e8d18c77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encrypt <code class="param">dir</code> under <code class="param">settings</code>, the current profile's.  <br /></td></tr>
 <tr class="memitem:a5cbd9d68f47d53b994ec25cecbb27436" id="r_a5cbd9d68f47d53b994ec25cecbb27436"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5cbd9d68f47d53b994ec25cecbb27436">cancelReencryptPath</a> ()</td></tr>
 <tr class="memdesc:a5cbd9d68f47d53b994ec25cecbb27436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask a running <a class="el" href="#af331446d163c31f1fca714646c0f6244" title="Re-encrypt entire directory.">reencryptPath()</a> to stop.  <br /></td></tr>
 <tr class="memitem:ae647ee1e408862bb6d66ee4d6324f0b1" id="r_ae647ee1e408862bb6d66ee4d6324f0b1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae647ee1e408862bb6d66ee4d6324f0b1">Move</a> (const QString src, const QString dest, const bool force) override</td></tr>
@@ -1601,7 +1603,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="af331446d163c31f1fca714646c0f6244" name="af331446d163c31f1fca714646c0f6244"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af331446d163c31f1fca714646c0f6244">&#9670;&#160;</a></span>reencryptPath()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af331446d163c31f1fca714646c0f6244">&#9670;&#160;</a></span>reencryptPath() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1619,6 +1621,36 @@ Additional Inherited Members</h2></td></tr>
 <p>Emits <a class="el" href="#aecffecc95bd1c0281849dbfe11231e36" title="Emitted before starting re-encryption.">startReencryptPath()</a> synchronously, then runs the scan and the per-file gpg calls on a worker thread. Progress is reported through <a class="el" href="#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re-encryption progress: current of total files checked.">reencryptProgress()</a>; per-file failures are collected and reported in a single <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> once the run is over, followed by <a class="el" href="#a9df2c7246a8686cf92c442c00dc55af7" title="Emitted after finishing re-encryption.">endReencryptPath()</a>. A second call while a run is active is ignored. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>Directory path. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf14214692366809c82ad29e8d18c77b" name="abf14214692366809c82ad29e8d18c77b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf14214692366809c82ad29e8d18c77b">&#9670;&#160;</a></span>reencryptPath() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImitatePass::reencryptPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>settings</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Re-encrypt <code class="param">dir</code> under <code class="param">settings</code>, the current profile's. </p>
+<p>This backend re-encrypts also when pass is the active one, and then is not re-initialised on a profile switch: without this it would decrypt the current profile's entries and encrypt them to the recipients and signing policy of the profile it last ran for. The settings are taken only when no run is active, so a running one keeps its own. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir</td><td>Directory path. </td></tr>
+    <tr><td class="paramname">settings</td><td>The current settings. </td></tr>
   </table>
   </dd>
 </dl>

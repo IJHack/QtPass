@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_gpg_id_signer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GpgIdSigner Class Reference</div></div>
 </div><!--header-->
@@ -137,6 +138,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae61fd84eecb96bc0214fcc3b9fe6815e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split the settings value into keys, upper-cased the way gpg prints fingerprints.  <br /></td></tr>
 <tr class="memitem:aa6292096b3bcc832d4055b812f65c36f" id="r_aa6292096b3bcc832d4055b812f65c36f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa6292096b3bcc832d4055b812f65c36f">validSigFingerprints</a> (const QString &amp;statusOutput) -&gt; QStringList</td></tr>
 <tr class="memdesc:aa6292096b3bcc832d4055b812f65c36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the fingerprints out of gpg's <span class="tt">--status-fd</span> VALIDSIG line.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aa88d2f58405a056d72bba32958fdd77a" id="r_aa88d2f58405a056d72bba32958fdd77a"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#aa88d2f58405a056d72bba32958fdd77a">kMaxSignatureBytes</a> = 64 * 1024</td></tr>
+<tr class="memdesc:aa88d2f58405a056d72bba32958fdd77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of a .gpg-id.sig <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a> hands to gpg.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The detached signature on a store's <span class="tt">.gpg-id</span>: whether the configured signing key is usable, signing the file, and checking that an existing <span class="tt">.gpg-id.sig</span> was made by one of the configured keys. </p>
@@ -162,7 +168,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Blocking process runner: <a class="el" href="class_executor.html#acd16a6a2c0d0cb55406c99b72c9d299f" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a>'s shape. </p>
 <dl class="section return"><dt>Returns</dt><dd>The exit code, or -1 when the process could not run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00028">28</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00035">35</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -230,7 +236,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether any signing key is configured at all. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot...">sign()</a> will do something. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00059">59</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00066">66</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -280,7 +286,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The keys this signer was given. </p>
 <dl class="section return"><dt>Returns</dt><dd>The list from the constructor. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00065">65</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00072">72</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>
@@ -497,6 +503,34 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_signer_aa22ae26377898dfe7fb0c780d451719f_icgraph.svg" width="180" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aa88d2f58405a056d72bba32958fdd77a" name="aa88d2f58405a056d72bba32958fdd77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa88d2f58405a056d72bba32958fdd77a">&#9670;&#160;</a></span>kMaxSignatureBytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qint64 GpgIdSigner::kMaxSignatureBytes = 64 * 1024</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Most bytes of a .gpg-id.sig <a class="el" href="#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary-k...">verify()</a> hands to gpg. </p>
+<p>A detached signature is well under a KiB; far beyond any real one. </p>
+
+<p class="definition">Definition at line <a class="el" href="gpgidsigner_8h_source.html#l00029">29</a> of file <a class="el" href="gpgidsigner_8h_source.html">gpgidsigner.h</a>.</p>
 
 </div>
 </div>

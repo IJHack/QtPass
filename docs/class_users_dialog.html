@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -121,6 +122,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog__coll__graph.svg" width="112" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4bc2c40314993e5e06b649bc6c037111" id="r_a4bc2c40314993e5e06b649bc6c037111"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> { <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">FromList</a>
+, <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5">Nothing</a>
+ }</td></tr>
+<tr class="memdesc:a4bc2c40314993e5e06b649bc6c037111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the recipients on disk are ticked when it opens.  <a href="#a4bc2c40314993e5e06b649bc6c037111">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:aa1630582c14afcef9ad80398752762a4" id="r_aa1630582c14afcef9ad80398752762a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1630582c14afcef9ad80398752762a4">accept</a> () override</td></tr>
@@ -130,6 +138,8 @@ Public Slots</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aadc5be04d9f54b8d827348bf9248ae22" id="r_aadc5be04d9f54b8d827348bf9248ae22"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a> (<a class="el" href="class_pass.html">Pass</a> *pass, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:aadc5be04d9f54b8d827348bf9248ae22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct users dialog.  <br /></td></tr>
+<tr class="memitem:a03e8b70497881510ffc82e753e6f8296" id="r_a03e8b70497881510ffc82e753e6f8296"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a03e8b70497881510ffc82e753e6f8296">UsersDialog</a> (<a class="el" href="class_pass.html">Pass</a> *pass, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir, <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> preselect, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a03e8b70497881510ffc82e753e6f8296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct users dialog, saying what to preselect.  <br /></td></tr>
 <tr class="memitem:a046728922f9ad9d2bf17ff64bf639d06" id="r_a046728922f9ad9d2bf17ff64bf639d06"><td class="memItemLeft"><a id="a046728922f9ad9d2bf17ff64bf639d06" name="a046728922f9ad9d2bf17ff64bf639d06"></a>
 &#160;</td><td class="memItemRight"><b>~UsersDialog</b> () override</td></tr>
 <tr class="memdesc:a046728922f9ad9d2bf17ff64bf639d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
@@ -150,9 +160,42 @@ Protected Member Functions</h2></td></tr>
 <p><a class="el" href="class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption.">UsersDialog</a> allows users to select which GPG keys to encrypt passwords to. It displays available keys, supports filtering, and shows key expiration status. </p>
 
 <p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00030">30</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a4bc2c40314993e5e06b649bc6c037111" name="a4bc2c40314993e5e06b649bc6c037111"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc2c40314993e5e06b649bc6c037111">&#9670;&#160;</a></span>Preselect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">UsersDialog::Preselect</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the recipients on disk are ticked when it opens. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014" name="a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014"></a>FromList&#160;</td><td class="fielddoc"><p>The folder's recipient list, as the backend reads it. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5" name="a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5"></a>Nothing&#160;</td><td class="fielddoc"><p>None: for a store that had no list when it was chosen. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00035">35</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aadc5be04d9f54b8d827348bf9248ae22" name="aadc5be04d9f54b8d827348bf9248ae22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadc5be04d9f54b8d827348bf9248ae22">&#9670;&#160;</a></span>UsersDialog()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc5be04d9f54b8d827348bf9248ae22">&#9670;&#160;</a></span>UsersDialog() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,6 +247,54 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-2-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aadc5be04d9f54b8d827348bf9248ae22_icgraph.svg" width="451" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a03e8b70497881510ffc82e753e6f8296" name="a03e8b70497881510ffc82e753e6f8296"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e8b70497881510ffc82e753e6f8296">&#9670;&#160;</a></span>UsersDialog() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UsersDialog::UsersDialog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pass.html">Pass</a> *</td>          <td class="paramname"><span class="paramname"><em>pass</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>dir</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a></td>          <td class="paramname"><span class="paramname"><em>preselect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct users dialog, saying what to preselect. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pass</td><td>Active <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend. </td></tr>
+    <tr><td class="paramname">s</td><td>Application settings snapshot. </td></tr>
+    <tr><td class="paramname">dir</td><td>Password store directory path. </td></tr>
+    <tr><td class="paramname">preselect</td><td>What is ticked when it opens. </td></tr>
+    <tr><td class="paramname">parent</td><td>Parent widget. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -346,7 +437,7 @@ Protected Member Functions</h2></td></tr>
 <p>The key list with the user's choice in each entry's enabled flag. </p>
 <dl class="section return"><dt>Returns</dt><dd>All listed users; the selected ones have enabled == true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00062">62</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00078">78</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +472,7 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00056">56</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00072">72</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>

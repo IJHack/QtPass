@@ -8,5 +8,6 @@ var searchData=
   ['newlinesregex_5',['newLinesRegex',['../class_util.html#a0ba6ef4e4542287d5b257252728d1aa4',1,'Util']]],
   ['nolinewrapping_6',['noLineWrapping',['../struct_app_settings.html#a4898b5fbd42cc0b4e6959d1851656673',1,'AppSettings']]],
   ['normalize_7',['normalize',['../class_totp.html#ae84cc73aa9f5f9e1f90032554d0fa85f',1,'Totp']]],
-  ['normalizefolderpath_8',['normalizeFolderPath',['../class_util.html#ab23a1afdcad63df9101660fd6e53b763',1,'Util']]]
+  ['normalizefolderpath_8',['normalizeFolderPath',['../class_util.html#ab23a1afdcad63df9101660fd6e53b763',1,'Util']]],
+  ['nothing_9',['Nothing',['../class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5',1,'UsersDialog']]]
 ];

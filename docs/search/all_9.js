@@ -19,5 +19,7 @@ var searchData=
   ['kmaxmatches_16',['kMaxMatches',['../class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78',1,'NativeGrep']]],
   ['kmaxmatchesperentry_17',['kMaxMatchesPerEntry',['../class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482',1,'NativeGrep']]],
   ['kmaxnamedfields_18',['kMaxNamedFields',['../class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8',1,'FileContent']]],
-  ['kmaxplaintextbytes_19',['kMaxPlaintextBytes',['../class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72',1,'Pass::kMaxPlaintextBytes'],['../class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35',1,'RnpCrypto::kMaxPlaintextBytes']]]
+  ['kmaxplaintextbytes_19',['kMaxPlaintextBytes',['../class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72',1,'Pass::kMaxPlaintextBytes'],['../class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35',1,'RnpCrypto::kMaxPlaintextBytes']]],
+  ['kmaxpreviewlength_20',['kMaxPreviewLength',['../class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d',1,'NativeGrep']]],
+  ['kmaxsignaturebytes_21',['kMaxSignatureBytes',['../class_gpg_id_signer.html#aa88d2f58405a056d72bba32958fdd77a',1,'GpgIdSigner']]]
 ];
