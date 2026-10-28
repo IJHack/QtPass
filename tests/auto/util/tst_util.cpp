@@ -2908,6 +2908,9 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
       NativeGrep::matchFile(env, gpg, QDir(store).filePath("e0000.gpg"), rx);
   QCOMPARE(one.size(), NativeGrep::kMaxMatchesPerEntry + 1);
   QCOMPARE(one.first(), QStringLiteral("hit 0"));
+  for (const QString &line : one) {
+    QVERIFY(line.size() <= NativeGrep::kMaxPreviewLength + 1);
+  }
   QVERIFY2(NativeGrep::isMoreMarker(one.last()),
            "the last line is the marker, not a match");
 
@@ -2932,6 +2935,39 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
   QVERIFY2(!results.isEmpty() && NativeGrep::isStoppedMarker(results.last()),
            "the walk stops at the budget and says so");
   QVERIFY(results.size() - 1 < entries);
+
+  // One long matching line is shown as a preview, not copied whole.
+  {
+    const QString longGpg = tmp.filePath(QStringLiteral("gpg-long"));
+    QFile script(longGpg);
+    QVERIFY(script.open(QIODevice::WriteOnly));
+    script.write("#!/bin/sh\nprintf 'hit'; dd if=/dev/zero bs=1000 count=100 "
+                 "2>/dev/null | tr '\\0' x; printf '\\n'\n");
+    script.close();
+    QVERIFY(QFile::setPermissions(
+        longGpg, QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+    const QStringList lines = NativeGrep::matchFile(
+        env, longGpg, QDir(store).filePath("e0000.gpg"), rx);
+    QCOMPARE(lines.size(), 1);
+    QCOMPARE(lines.first().size(), NativeGrep::kMaxPreviewLength + 1);
+    QVERIFY(lines.first().startsWith(QStringLiteral("hitxxx")));
+    QVERIFY(lines.first().endsWith(QChar(0x2026)));
+
+    // A match far into the line: the preview is the part around it.
+    QVERIFY(script.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    script.write("#!/bin/sh\ndd if=/dev/zero bs=1000 count=100 2>/dev/null | "
+                 "tr '\\0' x; printf 'hit'; dd if=/dev/zero bs=1000 count=1 "
+                 "2>/dev/null | tr '\\0' y; printf '\\n'\n");
+    script.close();
+    const QStringList far = NativeGrep::matchFile(
+        env, longGpg, QDir(store).filePath("e0000.gpg"), rx);
+    QCOMPARE(far.size(), 1);
+    QCOMPARE(far.first().size(), NativeGrep::kMaxPreviewLength + 2);
+    QVERIFY2(far.first().contains(QStringLiteral("xhity")),
+             qPrintable(far.first()));
+    QVERIFY(far.first().startsWith(QChar(0x2026)));
+    QVERIFY(far.first().endsWith(QChar(0x2026)));
+  }
 
   // Exactly the budget, every entry whole: complete, no marker anywhere.
   QProcessEnvironment exact = env;

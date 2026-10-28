@@ -49,6 +49,16 @@ public:
   static constexpr int kMaxMatches = 10000;
 
   /**
+   * @brief Longest preview of a matching line, in characters.
+   *
+   * A result shows where the pattern matched, not the line; a single line
+   * can be most of an entry's 64 MiB plaintext, and 10000 such copies would
+   * not fit in memory. A longer line is shown as a window of this many
+   * characters around the match, "…" where the line goes on.
+   */
+  static constexpr qsizetype kMaxPreviewLength = 200;
+
+  /**
    * @brief Whether a line in a result is the marker for "more matches in
    * this entry" rather than a match.
    *

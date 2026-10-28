@@ -3,6 +3,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QDir>
+#include <QElapsedTimer>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -12,6 +13,10 @@
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QtTest>
+
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
 
 #include <functional>
 
@@ -51,6 +56,7 @@ private Q_SLOTS:
   void fileButtonLoadsArmoredFileIntoInput();
   void fileButtonRejectsNonArmoredFile();
   void fileButtonWarnsWhenFileCannotBeOpened();
+  void fileButtonDoesNotWaitOnAFifo();
 
 private:
   /**
@@ -795,6 +801,30 @@ void tst_importkeydialog::fileButtonWarnsWhenFileCannotBeOpened() {
            qPrintable(run.messageText));
   QVERIFY2(run.messageText.contains(path), qPrintable(run.messageText));
   QCOMPARE(edit->toPlainText(), typed);
+}
+
+/**
+ * @brief A FIFO picked (or swapped in for the picked file) is not opened
+ *        and waited on: the dialog says it cannot open it, at once.
+ */
+void tst_importkeydialog::fileButtonDoesNotWaitOnAFifo() {
+#ifdef Q_OS_WIN
+  QSKIP("FIFOs are POSIX");
+#else
+  const QString path = m_dir.filePath(QStringLiteral("fifo-key.asc"));
+  QCOMPARE(::mkfifo(QFile::encodeName(path).constData(), 0600), 0);
+  ImportKeyDialog dialog(QString{});
+  auto *fileButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("fileButton"));
+  QVERIFY(fileButton != nullptr);
+  QElapsedTimer elapsed;
+  elapsed.start();
+  const ModalRun run = driveModals([&]() { fileButton->click(); }, path);
+  QVERIFY2(elapsed.elapsed() < 5000, "the dialog waited on the FIFO");
+  QCOMPARE(run.messageBoxes, 1);
+  QVERIFY2(run.messageText.startsWith(QStringLiteral("Could not open file")),
+           qPrintable(run.messageText));
+#endif
 }
 
 QTEST_MAIN(tst_importkeydialog)

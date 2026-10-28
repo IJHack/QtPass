@@ -342,7 +342,10 @@ auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
       GpgIdGeneration::folderOf(gpgIdFile, m_settings.passStore);
   if (!folder) {
     emit critical(tr("Cannot update"),
-                  tr("%1 is not inside the password store.").arg(gpgIdFile));
+                  tr("%1 is not inside the password store, or a folder "
+                     "name on the way holds a line break or another control "
+                     "character, which a signed list cannot record.")
+                      .arg(gpgIdFile));
     return false;
   }
   // The list on disk counts only if it is this folder's own, verified list:
@@ -982,6 +985,15 @@ constexpr int kReencryptRetryMs = 100;
 /// Cap on the file names listed in the aggregated failure dialog.
 constexpr int kReencryptMaxListedFailures = 15;
 } // namespace
+
+void ImitatePass::reencryptPath(const QString &dir,
+                                const AppSettings &settings) {
+  if (!m_reencryptActive) {
+    init(settings);
+    updateEnv();
+  }
+  reencryptPath(dir);
+}
 
 void ImitatePass::reencryptPath(const QString &dir) {
   if (m_reencryptActive) {

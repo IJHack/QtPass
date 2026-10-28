@@ -56,6 +56,8 @@ private Q_SLOTS:
   void templateEditorHiddenUnlessExpert();
   void applyPassphraseReplacesNoProtection();
   void applyPassphraseSeesNoProtectionBeforeANul();
+  void batchValuesHoldNoLineBreaks();
+  void pastedLineBreakNeverReachesTheTemplate();
   void applyPassphraseEmptyKeepsNoProtection();
   void applyPassphraseReplacesExistingPassphraseLine();
   void applyPassphraseEmptyRestoresNoProtection();
@@ -367,6 +369,46 @@ void tst_keygendialog::templateEditorHiddenUnlessExpert() {
 
   checkBox->setChecked(false);
   QVERIFY2(editor->isHidden(), "unchecking expert hides the template box");
+}
+
+/**
+ * @brief A name or passphrase pasted with a line break would add a batch
+ * directive of its own (%no-protection after a passphrase, say).
+ */
+void tst_keygendialog::batchValuesHoldNoLineBreaks() {
+  QVERIFY(KeygenDialog::isBatchValue(QStringLiteral("Alice Example")));
+  QVERIFY(
+      KeygenDialog::isBatchValue(QStringLiteral("pass phrase with spaces")));
+  QVERIFY(!KeygenDialog::isBatchValue(QStringLiteral("x\n%no-protection")));
+  QVERIFY(!KeygenDialog::isBatchValue(QStringLiteral("x\r%no-protection")));
+  QString nul = QStringLiteral("x");
+  nul += QChar::Null;
+  QVERIFY(!KeygenDialog::isBatchValue(nul));
+}
+
+/**
+ * @brief A name pasted with a line break never reaches the template, so a
+ *        directive in it does not stay behind once the name is corrected.
+ */
+void tst_keygendialog::pastedLineBreakNeverReachesTheTemplate() {
+  KeygenDialog dialog(QString(), nullptr);
+  auto *name = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
+  auto *email = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
+  auto *editor =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  QVERIFY(name != nullptr && email != nullptr && editor != nullptr);
+  name->setText(QStringLiteral("Alice Example\nPassphrase: injected"));
+  email->setText(QStringLiteral("a@example.org\nPreferences: S1"));
+  name->setText(QStringLiteral("Alice Example"));
+  email->setText(QStringLiteral("a@example.org"));
+  const QString tpl = editor->toPlainText();
+  QVERIFY2(!tpl.contains(QStringLiteral("Passphrase: injected")),
+           qPrintable(tpl));
+  QVERIFY2(!tpl.contains(QStringLiteral("Preferences: S1")), qPrintable(tpl));
+  QVERIFY2(tpl.contains(QStringLiteral("Name-Real: Alice Example")),
+           qPrintable(tpl));
+  QVERIFY2(tpl.contains(QStringLiteral("Name-Email: a@example.org")),
+           qPrintable(tpl));
 }
 
 /**

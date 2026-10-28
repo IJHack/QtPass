@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "importkeydialog.h"
 #include "plainmessagebox.h"
+#include "util.h"
 
 #include "executor.h"
 #include "ui_importkeydialog.h"
@@ -50,10 +51,13 @@ void ImportKeyDialog::on_fileButton_clicked() {
   // A key file, so a regular one of sensible size: a FIFO would block the
   // GUI and /dev/zero (or a sparse file) would be read without end.
   constexpr qint64 kMaxKeyFileBytes = 16LL * 1024 * 1024;
-  // isFile() follows a link, deliberately: the user picked this file, unlike
-  // a name found in the store (Util::readRegularFile() for those).
-  QFile file(fileName);
-  if (!QFileInfo(fileName).isFile() || !file.open(QIODevice::ReadOnly)) {
+  // A link is followed, deliberately: the user picked this file, unlike a
+  // name found in the store. Its target is then opened as the regular file
+  // it is at the moment of the open, without blocking: a FIFO swapped in
+  // after the pick would otherwise hang the GUI waiting for a writer.
+  QFile file;
+  const QString target = QFileInfo(fileName).canonicalFilePath();
+  if (target.isEmpty() || !Util::openRegularFile(target, file)) {
     PlainMessageBox::warning(this, tr("Import key"),
                              tr("Could not open file: %1").arg(fileName));
     return;

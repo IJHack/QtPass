@@ -238,6 +238,18 @@ void tst_totp::parseRejectsBadInput_data() {
       << QStringLiteral("otpauth://hotp/Example?secret=JBSWY3DPEHPK3PXP&"
                         "counter=1");
   QTest::newRow("bare non-base32") << QStringLiteral("!!!!");
+  // Valid in itself, but longer than any real one: refused before QUrlQuery
+  // turns its padding into items (a compressed entry can be millions).
+  QString padded =
+      QStringLiteral("otpauth://totp/Example?secret=JBSWY3DPEHPK3PXP");
+  while (padded.size() <= Totp::MAX_CONFIG_LENGTH) {
+    padded += QStringLiteral("&x=y");
+  }
+  QTest::newRow("longer than MAX_CONFIG_LENGTH") << padded;
+  // Surrounding blanks count: the value is refused before it is trimmed.
+  const QString blanks(Totp::MAX_CONFIG_LENGTH, QLatin1Char(' '));
+  QTest::newRow("valid secret padded past MAX_CONFIG_LENGTH")
+      << blanks + QStringLiteral("JBSWY3DPEHPK3PXP") + blanks;
   // An otpauth: prefix that does not resolve to a valid totp URI must be
   // rejected, not reinterpreted as a bare secret: sanitizeInput() would strip
   // the punctuation and leave decodable base32, yielding a silently wrong code.
@@ -498,6 +510,14 @@ void tst_totp::normalizeRejectsInvalidInput() {
   QVERIFY(Totp::normalize(
               QStringLiteral("otpauth://hotp/x?secret=JBSWY3DPEHPK3PXP"))
               .isEmpty());
+  // A secret just under the length cap parses, but its URI would not: no
+  // URI rather than one that makes no code.
+  const QString longSecret(Totp::MAX_CONFIG_LENGTH - 8, QLatin1Char('A'));
+  QVERIFY(Totp::parse(longSecret).has_value());
+  QVERIFY(Totp::normalize(longSecret).isEmpty());
+  // A long one that still fits comes back parseable.
+  const QString fits(1024, QLatin1Char('A'));
+  QVERIFY(Totp::parse(Totp::normalize(fits)).has_value());
 }
 
 void tst_totp::isValidMatchesParse() {

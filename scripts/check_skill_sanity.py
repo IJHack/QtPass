@@ -30,9 +30,112 @@ CODE_SPAN_RE = re.compile(r"`[^`\n]*`")
 # Each part stays on one line, and the text holds no "[": a run of "[" then
 # costs a scan up to the next one, linear over the file, not a rescan of the
 # rest of the line from every bracket.
-LINK_TEXT = r"(?<!!)\[[^\[\]\n]*\]"
-LINK_DEST = r"\([ \t]*(<[^>\n]*>|[^)\s]+)(?:[ \t]+[^)\n]*)?\)"
-LINK_RE = re.compile(LINK_TEXT + LINK_DEST)
+LINK_TEXT_RE = re.compile(r"(?<!!)\[[^\[\]\n]*\]")
+BLANKS = " \t"
+
+
+def _next_index(line: str, wanted: str) -> list:
+    """For every position, where wanted next occurs at or after it, or -1."""
+    found = [-1] * (len(line) + 1)
+    for i in range(len(line) - 1, -1, -1):
+        found[i] = i if line[i] == wanted else found[i + 1]
+    return found
+
+
+def _run_ends(line: str) -> list:
+    """For every position, where its run of non-blank, non-")" characters ends."""
+    ends = list(range(len(line) + 1))
+    for i in range(len(line) - 1, -1, -1):
+        if line[i] != ")" and not line[i].isspace():
+            ends[i] = ends[i + 1]
+    return ends
+
+
+def _last_non_blanks(line: str) -> list:
+    """For every position, the last one before it that is no blank, or -1."""
+    last = [-1] * (len(line) + 1)
+    for i in range(1, len(line) + 1):
+        last[i] = last[i - 1] if line[i - 1] in BLANKS else i - 1
+    return last
+
+
+def _next_non_blanks(line: str) -> list:
+    """For every position, the first one at or after it that is no blank."""
+    after = list(range(len(line) + 1))
+    for i in range(len(line) - 1, -1, -1):
+        if line[i] in BLANKS:
+            after[i] = after[i + 1]
+    return after
+
+
+class _Tables:  # pylint: disable=too-few-public-methods
+    """One line and what link_targets() looks up in it instead of scanning."""
+
+    def __init__(self, line: str) -> None:
+        self.line = line
+        self.close = _next_index(line, ")")
+        self.gt = _next_index(line, ">")
+        self.ends = _run_ends(line)
+        self.last = _last_non_blanks(line)
+        self.skip = _next_non_blanks(line)
+
+    def closes(self, pos: int) -> int:
+        """
+        Where the link closes when its destination ends at pos: blanks, then
+        ")" or a title (text without ")" that starts and ends with a
+        non-space) and blanks and its ")". -1 when it does not close here.
+        """
+        line = self.line
+        title = self.skip[pos]
+        if title == len(line):
+            return -1
+        if line[title] == ")":
+            return title
+        # Anything else starts a title, after at least one blank; it runs up
+        # to the next ")" (a title cannot hold one).
+        if title == pos or line[title].isspace():
+            return -1
+        end = self.close[title]
+        # Only blanks between the title's last character and the ")".
+        if end == -1 or line[self.last[end]].isspace():
+            return -1
+        return end
+
+
+def link_targets(text: str) -> list:
+    """
+    The destination of every [text](destination "title") link in text.
+
+    One pass per line: the next ")" and ">", the end of every run, and the
+    nearest non-blank either side are looked up, never searched for, so a
+    line of many link starts costs no rescan of the rest of it per start.
+    """
+    targets = []
+    for line in text.split("\n"):
+        # Only a line with "](" can hold a link; its tables are built once.
+        if "](" not in line:
+            continue
+        tables = _Tables(line)
+        resume = 0
+        for match in LINK_TEXT_RE.finditer(line):
+            start = match.end()
+            if match.start() < resume or not line.startswith("(", start):
+                continue
+            pos = tables.skip[start + 1]
+            candidates = []
+            if line.startswith("<", pos) and tables.gt[pos] != -1:
+                candidates.append(tables.gt[pos] + 1)
+            if pos < len(line) and tables.ends[pos] > pos:
+                candidates.append(tables.ends[pos])
+            for end in candidates:
+                closed = tables.closes(end)
+                if closed != -1:
+                    targets.append(line[pos:end])
+                    resume = closed + 1
+                    break
+    return targets
+
+
 PATH_MENTION_RE = re.compile(
     r"(?<![`\w/.-])((?:references|scripts)/[A-Za-z0-9_./-]+\."
     r"(?:md|py|sh|bash|txt|json|yml|yaml))"
@@ -81,6 +184,11 @@ def parse_frontmatter(text: str, rel: str, result: CheckResult) -> dict:
         result.error("PyYAML is not installed: cannot parse frontmatter")
         return {}
     try:
+        # No aliases: merged references can expand exponentially while the
+        # mapping is built, before anything here looks at it. Checked on the
+        # event stream, which builds nothing.
+        if any(isinstance(event, yaml.AliasEvent) for event in yaml.parse(parts[1])):
+            raise yaml.YAMLError("aliases are not allowed")
         data = yaml.safe_load(parts[1])
     except yaml.YAMLError as error:
         result.error(f"{rel}: invalid YAML frontmatter: {error}")
@@ -108,8 +216,8 @@ def check_markdown_links(
 ) -> None:
     """Every relative link resolves to a file inside the repository."""
     rel = repo_relative(root, skill_md)
-    for match in LINK_RE.finditer(strip_code(text)):
-        raw_target = match.group(1).strip("<>")
+    for target_text in link_targets(strip_code(text)):
+        raw_target = target_text.strip("<>")
         target = raw_target.split("#", 1)[0]
         # Skip empty targets, URLs and protocol-relative //host links.
         if not target or URL_RE.match(target) or target.startswith("//"):

@@ -70,6 +70,10 @@ public:
   static constexpr uint MIN_DIGITS = 1U;   ///< Lower clamp for `digits`.
   static constexpr uint MAX_DIGITS = 10U;  ///< Upper clamp for `digits`.
   static constexpr uint MAX_STEP = 86400U; ///< Upper clamp for `period`.
+  /// Longest configuration parse() takes: far beyond any real otpauth URI,
+  /// short of what a compressed entry can expand to (millions of query
+  /// parameters, each an object, before anything is checked).
+  static constexpr qsizetype MAX_CONFIG_LENGTH = 4096;
 
   /**
    * @brief Parse an OTP configuration string.
@@ -83,7 +87,8 @@ public:
    * `digits` is clamped to MIN_DIGITS..MAX_DIGITS and `period` to 1..MAX_STEP.
    * @param config URI or bare base32 secret; surrounding whitespace is ignored.
    * @return Validated settings, or std::nullopt when the secret is missing or
-   *         is not decodable base32.
+   *         is not decodable base32, or the configuration (its surrounding
+   *         whitespace included) is longer than MAX_CONFIG_LENGTH.
    */
   [[nodiscard]] static auto parse(const QString &config)
       -> std::optional<Settings>;
@@ -136,6 +141,10 @@ public:
    * Always emits `secret`, `digits` and `period`; emits `issuer` when it is
    * set, `algorithm` only when it differs from the RFC 6238 default, and
    * `encoder=steam` for Encoder::Steam.
+   *
+   * Percent-encoding can make the URI longer than the configuration it was
+   * parsed from: for one near MAX_CONFIG_LENGTH, parse() refuses it, and
+   * normalize() returns nothing rather than such a URI.
    * @param settings Validated settings.
    * @return An `otpauth://totp/...` URI.
    */
@@ -147,7 +156,8 @@ public:
    * @param label Fallback label, used when @p config carries none. The entry
    *        name is a good choice.
    * @param issuer Fallback issuer, used when @p config carries none.
-   * @return A canonical URI, or an empty string when @p config is not valid.
+   * @return A canonical URI, or an empty string when @p config is not valid
+   *         or its URI would be longer than MAX_CONFIG_LENGTH.
    */
   [[nodiscard]] static auto normalize(const QString &config,
                                       const QString &label = {},

@@ -427,6 +427,18 @@ public:
    */
   void reencryptPath(const QString &dir);
   /**
+   * @brief Re-encrypt @p dir under @p settings, the current profile's.
+   *
+   * This backend re-encrypts also when pass is the active one, and then is
+   * not re-initialised on a profile switch: without this it would decrypt
+   * the current profile's entries and encrypt them to the recipients and
+   * signing policy of the profile it last ran for. The settings are taken
+   * only when no run is active, so a running one keeps its own.
+   * @param dir Directory path.
+   * @param settings The current settings.
+   */
+  void reencryptPath(const QString &dir, const AppSettings &settings);
+  /**
    * @brief Ask a running reencryptPath() to stop.
    *
    * Only sets a flag. The worker starts no further gpg or git process, and

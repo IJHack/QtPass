@@ -968,6 +968,9 @@ void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
   // Simulate the tree click's decrypt landing: the pane renders the OTP row.
+  // The click's own decrypt answers at the end, never after the window is
+  // gone; nothing before that runs the event loop, so it cannot land early.
+  ShowAnswers answers;
   QMetaObject::invokeMethod(
       m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
       Q_ARG(QModelIndex,
@@ -984,6 +987,7 @@ void tst_mainwindow::otpFastPathCopiesTheVisibleCodeWithoutDecrypting() {
   clip->setText(QStringLiteral("sentinel"));
   m_window->otpFromFileToClipboard(kOtpEntry, QStringLiteral("shown"));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 }
 
 /**
@@ -1008,11 +1012,20 @@ void tst_mainwindow::
   QClipboard *clip = QApplication::clipboard();
   clip->setText(QStringLiteral("sentinel"));
 
-  // A real entry on screen, with an OTP code and a leftover line.
+  // A real entry on screen, with an OTP code and a leftover line. Clicked
+  // first, and its own decrypt (of a file that is not encrypted) drained:
+  // its start, which empties the panel, and its failure are delivered
+  // before the leftover goes up, so only the refusal below can take that
+  // off again. The failure forgot the entry, so the stand-in for its
+  // content is an untagged show.
   QVERIFY(
       selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("shown")));
-  m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"),
-                            QStringLiteral("shown"));
+  ShowAnswers answers;
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
+  m_window->passShowHandler(kOtpEntry + QStringLiteral("leftover line\n"));
   auto *browser =
       m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
   QVERIFY(browser != nullptr);
@@ -2455,6 +2468,19 @@ void tst_mainwindow::staleDecryptDoesNotRepaintThePanel() {
                             QStringLiteral("fresh"));
   QVERIFY2(browser()->toPlainText().contains(QStringLiteral("fresh leftover")),
            qPrintable(browser()->toPlainText()));
+
+  // Deselected (or a profile switch): nothing is asked to show any more,
+  // so even the same entry's decrypt arriving late stays out of the panel.
+  // The interface was locked for that decrypt; with nothing else pending,
+  // dropping it releases the interface rather than leave it to the watchdog.
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "deselect",
+                                    Qt::DirectConnection));
+  treeView()->setEnabled(false);
+  m_window->passShowHandler(QStringLiteral("late-secret\nlate leftover"),
+                            QStringLiteral("fresh"));
+  QVERIFY2(!browser()->toPlainText().contains(QStringLiteral("late leftover")),
+           qPrintable(browser()->toPlainText()));
+  QVERIFY2(treeView()->isEnabled(), "a dropped decrypt releases the interface");
   QVERIFY2(answers.waitFor(1), "the click's own decrypt must come back");
 }
 

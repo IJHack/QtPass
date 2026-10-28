@@ -129,7 +129,8 @@ void tst_gpgidgeneration::headerRoundTripsAndIsIgnoredByTheRecipientParser() {
 }
 
 /// The folder a list is bound to: `.` at the root, `/`-separated below, the
-/// same through a link or a `..`, nothing outside the store.
+/// same through a link or a `..`, nothing outside the store or through a
+/// name with a line break.
 void tst_gpgidgeneration::folderOfIsStoreRelativeAndCanonical() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
@@ -154,6 +155,23 @@ void tst_gpgidgeneration::folderOfIsStoreRelativeAndCanonical() {
   QCOMPARE(GpgIdGeneration::folderOf(
                root.filePath(QStringLiteral("link/work/mail/.gpg-id")), store),
            std::optional<QString>(QStringLiteral("work/mail")));
+  // A line break would end the folder line; what follows it would be read
+  // as a recipient of the signed list.
+  const QString broken = QStringLiteral("store/x\nEVE");
+  QVERIFY(root.mkpath(broken));
+  QVERIFY(!GpgIdGeneration::folderOf(
+               root.filePath(broken + QStringLiteral("/.gpg-id")), store)
+               .has_value());
+  // Nor any other control character: parse() would refuse the list.
+  for (const QString &name :
+       {QStringLiteral("store/x\rEVE"), QStringLiteral("store/x\tEVE"),
+        QStringLiteral("store/x") + QChar(0x7f) + QStringLiteral("EVE")}) {
+    QVERIFY(root.mkpath(name));
+    QVERIFY2(!GpgIdGeneration::folderOf(
+                  root.filePath(name + QStringLiteral("/.gpg-id")), store)
+                  .has_value(),
+             qPrintable(name));
+  }
 #endif
 }
 

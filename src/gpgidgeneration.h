@@ -99,7 +99,9 @@ public:
    * from canonical paths, lower-cased on Windows.
    * @param gpgIdFile The `.gpg-id`.
    * @param storeRoot The configured store.
-   * @return The folder, or nothing when @p gpgIdFile is not under the store.
+   * @return The folder, or nothing when @p gpgIdFile is not under the store
+   *         or a folder name on the way holds a control character, a line
+   *         break among them (the folder line could not record it).
    */
   static auto folderOf(const QString &gpgIdFile, const QString &storeRoot)
       -> std::optional<QString>;

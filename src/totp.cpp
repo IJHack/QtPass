@@ -108,6 +108,12 @@ auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
  * @return Validated settings, or std::nullopt when the secret is unusable.
  */
 auto Totp::parse(const QString &config) -> std::optional<Settings> {
+  // Checked before anything else sees it (trimmed() copies it, QUrl and
+  // QUrlQuery would make a crafted URI of tens of MiB tens of millions of
+  // query items on the GUI thread); padding counts too.
+  if (config.size() > MAX_CONFIG_LENGTH) {
+    return std::nullopt;
+  }
   const QString trimmed = config.trimmed();
   if (trimmed.isEmpty()) {
     return std::nullopt;
@@ -344,7 +350,13 @@ auto Totp::normalize(const QString &config, const QString &label,
   if (canonical.issuer.isEmpty()) {
     canonical.issuer = issuer;
   }
-  return toUri(canonical);
+  // Percent-encoding and the added fields can take a value near the length
+  // cap past it; a URI parse() refuses would store an OTP that makes no code.
+  const QString uri = toUri(canonical);
+  if (uri.size() > MAX_CONFIG_LENGTH) {
+    return {};
+  }
+  return uri;
 }
 
 /**

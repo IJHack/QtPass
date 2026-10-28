@@ -1251,6 +1251,13 @@ void tst_imitatepass::insertEncryptsToTheRecipientsWhoseSignatureWasChecked() {
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 0));
+  // verify() reads only a regular .gpg-id.sig; the fake gpg ignores what
+  // is in it.
+  {
+    QFile sig(QDir(storeDir.path()).filePath(QStringLiteral(".gpg-id.sig")));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+  }
   const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
   const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath,
                                           QStringLiteral("MALLORY0MALLORY0"));
@@ -1999,6 +2006,13 @@ void tst_imitatepass::reencryptUsesTheRecipientsWhoseSignatureWasChecked() {
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());
   QVERIFY(populateStore(storeDir.path(), 2));
+  // verify() reads only a regular .gpg-id.sig; the fake gpg ignores what
+  // is in it.
+  {
+    QFile sig(QDir(storeDir.path()).filePath(QStringLiteral(".gpg-id.sig")));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+  }
   const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
   const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath,
                                           QStringLiteral("MALLORY0MALLORY0"));

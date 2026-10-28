@@ -259,8 +259,18 @@ struct Transaction {
   }
 };
 
+/// Whether @p value holds a control character (a line break, a tab, a NUL,
+/// DEL): the folder line can carry none of them, so parse() refuses a line
+/// with one and folderOf() a folder whose name has one.
+auto hasControl(const QByteArray &value) -> bool {
+  return std::any_of(value.cbegin(), value.cend(), [](const char c) {
+    const auto u = static_cast<unsigned char>(c);
+    return u < 0x20 || u == 0x7f;
+  });
+}
+
 /// Store-relative, `/`-separated, canonical, `.` for the root; nothing when
-/// @p path is not under @p root.
+/// @p path is not under @p root, or the name holds a control character.
 auto relativeFolder(const QString &path, const QString &root)
     -> std::optional<QString> {
   QString folder = QFileInfo(path).absoluteDir().canonicalPath();
@@ -285,7 +295,15 @@ auto relativeFolder(const QString &path, const QString &root)
   if (!folder.startsWith(prefix)) {
     return std::nullopt;
   }
-  return folder.mid(prefix.size());
+  folder = folder.mid(prefix.size());
+  // The folder line is one line: a name with a line break in it would end
+  // it, and what follows would be read as a recipient of the signed list.
+  // Any other control character parse() refuses: the list written would be
+  // one that cannot be read back.
+  if (hasControl(folder.toUtf8())) {
+    return std::nullopt;
+  }
+  return folder;
 }
 } // namespace
 
@@ -333,12 +351,7 @@ auto takeHeaderLine(const QByteArray &line, std::optional<qint64> &generation,
     // A control character (a second \r of "\r\r\n", a tab, a NUL) is not
     // part of a folder name QtPass writes, and would not survive being
     // written back: header() ends the line, parse() strips one \r.
-    const bool control =
-        std::any_of(value.cbegin(), value.cend(), [](const char c) {
-          const auto u = static_cast<unsigned char>(c);
-          return u < 0x20 || u == 0x7f;
-        });
-    if (!value.isEmpty() && !control) {
+    if (!value.isEmpty() && !hasControl(value)) {
       folder = QString::fromUtf8(value);
       return {};
     }

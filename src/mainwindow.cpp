@@ -595,8 +595,16 @@ void MainWindow::executeWrapperStarted() {
 
 void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
   // Only the entry we most recently asked to show may repaint the panel; a
-  // slower decrypt of an entry the user has since left is dropped.
-  if (!file.isEmpty() && !m_shownFile.isEmpty() && file != m_shownFile) {
+  // slower decrypt of an entry the user has since left is dropped, and so is
+  // one that arrives after the selection was cleared (deselect, a profile
+  // switch): nothing is asked to be shown then.
+  if (!file.isEmpty() && file != m_shownFile) {
+    // A newer show is pending and releases the interface when it lands;
+    // with none (the selection was cleared) nothing else would until the
+    // watchdog. setUiElementsEnabled() keeps a re-encryption's lock.
+    if (m_shownFile.isEmpty()) {
+      setUiElementsEnabled(true);
+    }
     return;
   }
   const AppSettings s = QtPassSettings::load();
@@ -1594,8 +1602,10 @@ void MainWindow::reencryptPath(const QString &dir) {
   // harmlessly.
   startReencryptPath();
 
+  // Under the current profile's settings: with the pass backend active, the
+  // native one is not re-initialised on a profile switch.
   QtPassSettings::getImitatePass()->reencryptPath(
-      QDir::cleanPath(QDir(dir).absolutePath()));
+      QDir::cleanPath(QDir(dir).absolutePath()), QtPassSettings::load());
 }
 
 // Idempotent: reencryptPath() calls it before ImitatePass emits the signal.

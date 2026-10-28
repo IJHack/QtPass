@@ -22,6 +22,13 @@
 class GpgIdSigner {
 public:
   /**
+   * @brief Most bytes of a .gpg-id.sig verify() hands to gpg.
+   *
+   * A detached signature is well under a KiB; far beyond any real one.
+   */
+  static constexpr qint64 kMaxSignatureBytes = 64 * 1024;
+
+  /**
    * @brief Blocking process runner: Executor::executeBlocking()'s shape.
    * @return The exit code, or -1 when the process could not run.
    */

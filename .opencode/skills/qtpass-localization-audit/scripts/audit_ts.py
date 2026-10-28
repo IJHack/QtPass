@@ -158,12 +158,23 @@ def check_mixed_script(src, forms, script):
     (gpg, git, QtPass + a particle), so only Latin runs the source lacks."""
     if not script:
         return None
-    glued = re.compile(f"(?<=[{script}])[A-Za-z]+|[A-Za-z]+(?=[{script}])")
+    # Each maximal Latin run once, its neighbours looked at directly: a
+    # lookahead alternative rescanned every suffix of a run with no native
+    # neighbour (quadratic in the run's length).
+    latin = re.compile(r"[A-Za-z]+")
+    native = re.compile(f"[{script}]")
     src_lower = src.lower()
 
+    def glued_runs(t):
+        for m in latin.finditer(t):
+            before = t[m.start() - 1] if m.start() > 0 else ""
+            after = t[m.end()] if m.end() < len(t) else ""
+            if (before and native.match(before)) or (after and native.match(after)):
+                yield m.group()
+
     def foreign_latin(t):
-        runs = glued.finditer(re.sub(r"%(?:\d+|n)", " ", t))
-        return any(m.group().lower() not in src_lower for m in runs)
+        runs = glued_runs(re.sub(r"%(?:\d+|n)", " ", t))
+        return any(run.lower() not in src_lower for run in runs)
 
     return first(forms, foreign_latin)
 

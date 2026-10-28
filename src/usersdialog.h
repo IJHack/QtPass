@@ -31,6 +31,12 @@ class UsersDialog : public QDialog {
   Q_OBJECT
 
 public:
+  /** @brief Whether the recipients on disk are ticked when it opens. */
+  enum class Preselect {
+    FromList, ///< The folder's recipient list, as the backend reads it.
+    Nothing,  ///< None: for a store that had no list when it was chosen.
+  };
+
   /**
    * @brief Construct users dialog.
    * @param pass Active Pass backend.
@@ -40,6 +46,16 @@ public:
    */
   explicit UsersDialog(Pass *pass, const AppSettings &s, QString dir,
                        QWidget *parent = nullptr);
+  /**
+   * @brief Construct users dialog, saying what to preselect.
+   * @param pass Active Pass backend.
+   * @param s Application settings snapshot.
+   * @param dir Password store directory path.
+   * @param preselect What is ticked when it opens.
+   * @param parent Parent widget.
+   */
+  UsersDialog(Pass *pass, const AppSettings &s, QString dir,
+              Preselect preselect, QWidget *parent = nullptr);
   /**
    * @brief Destructor.
    */
@@ -117,7 +133,8 @@ private:
   QList<UserInfo> m_userList; /**< List of available GPG users */
   bool m_initOnAccept{true};  /**< Whether accept() runs Pass::Init. */
   void updateOkButton();
-  QString m_dir;                         /**< Password store directory */
+  QString m_dir;                               /**< Password store directory */
+  Preselect m_preselect = Preselect::FromList; /**< What opens ticked */
   QString m_lastFilter;                  /**< Last filter text for caching */
   QString m_cachedPatternString;         /**< Cached pattern string */
   QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
