@@ -54,8 +54,8 @@ public:
    * A result shows where the pattern matched, not the line; a single line
    * can be most of an entry's 64 MiB plaintext, and 10000 such copies would
    * not fit in memory. A longer line is shown as a window of this many
-   * characters around the match (one more to keep a surrogate pair whole),
-   * "…" where the line goes on.
+   * characters around the match (up to two more, one per edge, to keep a
+   * surrogate pair whole), "…" where the line goes on.
    */
   static constexpr qsizetype kMaxPreviewLength = 200;
 
