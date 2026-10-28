@@ -278,6 +278,12 @@ public:
    * @return Pointer to imitate pass backend.
    */
   static auto getImitatePass() -> ImitatePass *;
+  /**
+   * @brief Whether no backend, the active one or one kept from before a
+   * switch, runs or waits for anything (PassBackendFactory::isIdle()).
+   * @return true when all are idle.
+   */
+  static auto backendsIdle() -> bool;
 };
 
 #endif // SRC_QTPASSSETTINGS_H_

@@ -280,3 +280,7 @@ auto QtPassSettings::getRealPass() -> RealPass * {
 auto QtPassSettings::getImitatePass() -> ImitatePass * {
   return PassBackendFactory::getImitatePass();
 }
+
+auto QtPassSettings::backendsIdle() -> bool {
+  return PassBackendFactory::isIdle();
+}

@@ -66,9 +66,14 @@ class Executor : public QObject {
   QProcess m_process;
   bool running{false};
   void executeNext();
-  /// Post drained() for after what is being emitted now (a finished() or
-  /// error() and what its slots queue), if the executor is idle by then.
+  /// Post one check for drained(), coalesced: it comes after what is
+  /// being emitted now, and fires only when the executor is idle and no
+  /// error() of a failed start is still on its way.
   void postDrainedIfIdle();
+  /// error()s of failed starts posted but not delivered yet.
+  int m_pendingErrors = 0;
+  /// A drained() check is posted and not run yet.
+  bool m_drainCheckPosted = false;
   /**
    * @brief Start @p process running @p app, handling the "wsl " prefix once
    * for both the queued and the blocking path.

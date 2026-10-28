@@ -1236,9 +1236,10 @@ void MainWindow::updateProfileBoxEnabled() {
   // still queued (a push after a save, say) would finish for the other
   // profile (#2071). Asked of the backend, not only of the interface: the
   // watchdog releases the interface while a slow gpg or git still runs.
-  const Pass *pass = QtPassSettings::getPass();
+  // Every backend: one kept from before a switch of backend may still
+  // run what was queued on it.
   ui->profileBox->setEnabled(m_uiEnabled && ui->profileBox->count() > 1 &&
-                             (pass == nullptr || pass->isIdle()));
+                             QtPassSettings::backendsIdle());
 }
 
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
@@ -1247,8 +1248,7 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
   }
   // The box is disabled while anything runs; should a change come through
   // anyway, the active profile stays and the box says so again.
-  if (const Pass *pass = QtPassSettings::getPass();
-      !m_uiEnabled || (pass != nullptr && !pass->isIdle())) {
+  if (!m_uiEnabled || !QtPassSettings::backendsIdle()) {
     const QSignalBlocker quiet(ui->profileBox);
     ui->profileBox->setCurrentText(QtPassSettings::getProfile());
     return;

@@ -952,6 +952,17 @@ void tst_executor::drainedComesOnceTheLastItemIsDone() {
   QTest::qWait(100);
   QCOMPARE(events, (QList<QString>{QStringLiteral("error 3"),
                                    QStringLiteral("drained")}));
+
+  // Two failed starts queued before the event loop runs: both errors, then
+  // one drained, not one between them.
+  events.clear();
+  exec.execute(4, "", {}, false, false);
+  exec.execute(5, "", {}, false, false);
+  QTRY_VERIFY_WITH_TIMEOUT(events.contains(QStringLiteral("drained")), 5000);
+  QTest::qWait(100);
+  QCOMPARE(events,
+           (QList<QString>{QStringLiteral("error 4"), QStringLiteral("error 5"),
+                           QStringLiteral("drained")}));
 }
 
 /**

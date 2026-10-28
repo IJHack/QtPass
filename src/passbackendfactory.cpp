@@ -55,4 +55,9 @@ auto PassBackendFactory::getImitatePass() -> ImitatePass * {
   return imitatePass.data();
 }
 
+auto PassBackendFactory::isIdle() -> bool {
+  return (realPass.isNull() || realPass->isIdle()) &&
+         (imitatePass.isNull() || imitatePass->isIdle());
+}
+
 void PassBackendFactory::invalidate() { pass = nullptr; }
