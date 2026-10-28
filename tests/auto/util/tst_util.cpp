@@ -2989,6 +2989,9 @@ void tst_util::grepTakesABoundedNumberOfMatches() {
     QCOMPARE(pairs.size(), 1);
     const QString shown = pairs.first();
     QVERIFY2(shown.contains(QStringLiteral("hit")), qPrintable(shown));
+    // Both edges fell inside a pair and took one more code unit, and "…"
+    // stands on either side.
+    QCOMPARE(shown.size(), NativeGrep::kMaxPreviewLength + 4);
     for (qsizetype i = 0; i < shown.size(); ++i) {
       if (shown.at(i).isHighSurrogate()) {
         QVERIFY2(

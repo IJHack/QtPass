@@ -113,7 +113,7 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - Bounded and non-blocking reads where store content or a pasted value
   could cost QtPass: an OTP configuration over 4096 characters is refused
   before it is parsed; content search keeps at most 200 characters of a
-  matching line, around the match and never half an emoji; a
+  matching line, around the match and never half a surrogate pair; a
   `.gpg-id.sig` must be a regular file of at most 64 KiB before `gpg` is
   given it (a FIFO blocked QtPass); a key file is opened without blocking
   on a FIFO; and the key generator refuses a name or passphrase with a
