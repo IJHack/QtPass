@@ -120,5 +120,10 @@ RewriteRule ^$ index.html.gz [L]
   <FilesMatch "^sw\.js(\.gz)?$">
     Header set Cache-Control "no-cache, max-age=0, must-revalidate"
   </FilesMatch>
+  # Content-Security-Policy for the pages, replacing the vhost's partial one.
+  # The site has no inline script or style; the only outside resources are the
+  # badge images. The vhost keeps its own policy for /docs/ (Doxygen needs inline
+  # script) and drops the header on static files.
+  Header set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://repology.org https://github.com https://www.bestpractices.dev https://api.reuse.software; font-src 'self'; media-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
 </IfModule>
 
