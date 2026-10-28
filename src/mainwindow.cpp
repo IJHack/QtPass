@@ -1207,6 +1207,7 @@ void MainWindow::messageAvailable(const QString &message) {
 
 void MainWindow::updateProfileBox() {
   const Profiles profiles = QtPassSettings::getProfiles();
+  bool activeGone = false;
 
   if (profiles.isEmpty()) {
     ui->profileWidget->hide();
@@ -1225,7 +1226,16 @@ void MainWindow::updateProfileBox() {
     int index = ui->profileBox->findText(QtPassSettings::getProfile());
     if (index != -1) { //  -1 for not found
       ui->profileBox->setCurrentIndex(index);
+    } else if (ui->profileBox->count() > 0) {
+      // The active profile is gone (removed in Settings): the box shows the
+      // first one, and the settings and backend must follow it, or the
+      // removed profile's store stays in use behind it.
+      ui->profileBox->setCurrentIndex(0);
+      activeGone = true;
     }
+  }
+  if (activeGone) {
+    on_profileBox_currentTextChanged(ui->profileBox->currentText());
   }
   updateProfileBoxEnabled();
 }

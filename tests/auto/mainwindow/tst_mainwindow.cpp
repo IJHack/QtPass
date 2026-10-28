@@ -3335,6 +3335,30 @@ void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
                                     Qt::DirectConnection));
   QCOMPARE(box->currentText(), QStringLiteral("main"));
 
+  // Settings removed the active profile (it clears activeProfile and leaves
+  // the store as it was): the refill switches to the profile the box then
+  // shows, settings and store included, not just the box.
+  {
+    Profiles left;
+    left.insert(QStringLiteral("other"), otherProfile);
+    QtPassSettings::setProfiles(left);
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile.clear();
+    QtPassSettings::save(s);
+  }
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QCOMPARE(QDir::cleanPath(QtPassSettings::load().passStore),
+           QDir::cleanPath(otherProfile.path));
+  // Back to both, main active, for what follows.
+  QtPassSettings::setProfiles(profiles);
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  box->setCurrentText(QStringLiteral("main"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("main"));
+
   // The watchdog releases the interface while a slow git still runs: the
   // box waits for the backend, and comes back when its queue is done.
 #ifndef Q_OS_WIN
