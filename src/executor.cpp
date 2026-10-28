@@ -191,15 +191,19 @@ void Executor::executeNext() {
   if (running || m_execQueue.isEmpty()) {
     return;
   }
-  const ExecQueueItem &i = m_execQueue.head();
+  // A copy, and marked running, before anyone hears of it: a slot on
+  // dequeuing() that queues more cannot invalidate it or start it a second
+  // time, and one that calls cancelNext() cannot drop it.
+  const ExecQueueItem i = m_execQueue.head();
+  running = true;
   emit dequeuing(i.id, true);
 
   // An empty executable never emits finished(); dropping it wedged the queue
   // (#1682). Fail it like a failed-to-start process so the queue drains.
   if (i.app.isEmpty()) {
     qCDebug(lcQtPass) << "No executable set for:" << i.id;
-    // Capture before dequeue() invalidates the head reference.
     const int failedId = i.id;
+    running = false;
     m_execQueue.dequeue();
     QMetaObject::invokeMethod(
         this,
@@ -212,7 +216,6 @@ void Executor::executeNext() {
     return;
   }
 
-  running = true;
   // Always set it: an item without a directory runs in the application's
   // cwd, not wherever the previous item happened to run.
   m_process.setWorkingDirectory(i.workingDir);
@@ -224,7 +227,6 @@ void Executor::executeNext() {
   // Pass::finished's non-zero error gate.
   if (!m_process.waitForStarted(-1)) {
     qCDebug(lcQtPass) << "Process failed to start:" << i.id << " " << i.app;
-    // Capture before dequeue() invalidates the head reference.
     const int failedId = i.id;
     const QString failedApp = i.app;
     m_process.closeWriteChannel();

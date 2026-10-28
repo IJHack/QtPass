@@ -53,6 +53,7 @@ private Q_SLOTS:
   void cancelNextWhileRunningReturnsMinusOne();
   void cancelNextFromErrorHandlerDropsQueuedItem();
   void dequeuingNamesEveryItemThatLeavesTheQueue();
+  void dequeuingSlotMayCallBackIntoTheExecutor();
   void executeAsyncWorkDirDoesNotCarryOver();
   void executeAsyncNonUtf8OutputIsNotDropped();
   void bareNameRunsFromPathOnBothPaths();
@@ -816,6 +817,50 @@ void tst_executor::dequeuingNamesEveryItemThatLeavesTheQueue() {
   QCOMPARE(finishedSoFar.at(1), 0);
   QCOMPARE(finishedSoFar.at(3), 1);
   QCOMPARE(finished.at(1).at(0).toInt(), 4);
+}
+
+/**
+ * @brief A slot on dequeuing() that calls back into the executor: queuing
+ *        more waits behind the item that is leaving, and cancelNext() drops
+ *        nothing while that item counts as running (-1, as for any running
+ *        head). Every item runs once, in order.
+ */
+void tst_executor::dequeuingSlotMayCallBackIntoTheExecutor() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy finished(&exec, &Executor::finished);
+  QList<int> dequeued;
+  int cancelled = -2;
+  connect(&exec, &Executor::dequeuing, &exec,
+          [&exec, &dequeued, &cancelled, &sh](int id, bool) {
+            dequeued << id;
+            if (id == 1) {
+              // Enough to make the queue's storage grow under the head.
+              for (int more = 2; more <= 40; ++more) {
+                exec.execute(more, sh, {"-c", "exit 0"}, false, false);
+              }
+              cancelled = exec.cancelNext();
+            }
+          });
+
+  exec.execute(1, sh, {"-c", "echo first"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(finished.count(), 40, 10000);
+  QTest::qWait(100);
+  QCOMPARE(finished.count(), 40);
+  QCOMPARE(cancelled, -1);
+  QList<int> ran;
+  for (const QList<QVariant> &call : std::as_const(finished)) {
+    ran << call.at(0).toInt();
+  }
+  QList<int> expected;
+  for (int id = 1; id <= 40; ++id) {
+    expected << id;
+  }
+  QCOMPARE(ran, expected);
+  QCOMPARE(dequeued, expected);
+  QVERIFY(finished.first().at(2).toString().contains(QStringLiteral("first")));
 }
 
 /**

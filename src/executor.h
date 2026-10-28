@@ -407,6 +407,10 @@ signals:
    * @param completes Whether finished() or error() follows for it: for
    *        every item but one cancelNext() dropped. Those that complete
    *        do so in the order they left the queue.
+   *
+   * A slot may queue more with execute(): that waits behind this item. The
+   * item counts as running while the signal is out, so cancelNext() drops
+   * nothing then (-1).
    */
   void dequeuing(int id, bool completes);
   /**
