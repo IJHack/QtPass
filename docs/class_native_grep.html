@@ -159,7 +159,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a566acd70ea61876f0290f3b0ea900f78" id="r_a566acd70ea61876f0290f3b0ea900f78"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> = 10000</td></tr>
 <tr class="memdesc:a566acd70ea61876f0290f3b0ea900f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most matching lines a search collects over the whole store.  <br /></td></tr>
 <tr class="memitem:a60260a9fd1bcaffe995b0a52115ebe0d" id="r_a60260a9fd1bcaffe995b0a52115ebe0d"><td class="memItemLeft">static constexpr qsizetype&#160;</td><td class="memItemRight"><a class="el" href="#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> = 200</td></tr>
-<tr class="memdesc:a60260a9fd1bcaffe995b0a52115ebe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Longest preview of a matching line, in characters.  <br /></td></tr>
+<tr class="memdesc:a60260a9fd1bcaffe995b0a52115ebe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Longest preview of a matching line, in UTF-16 code units.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Full-text search over a password store without <span class="tt">pass grep</span>: every <span class="tt">.gpg</span> file is decrypted with gpg on a worker thread and its lines matched against a QRegularExpression. Only the newest search may report; a search started while another runs asks that one to stop and supersedes it. </p>
@@ -297,7 +297,7 @@ this entry" rather than a match. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00071">71</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00074">74</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00085">85</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00088">88</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -587,10 +587,10 @@ kMaxMatches, more entries were not searched". </p>
 </table>
 </div><div class="memdoc">
 
-<p>Longest preview of a matching line, in characters. </p>
-<p>A result shows where the pattern matched, not the line; a single line can be most of an entry's 64 MiB plaintext, and 10000 such copies would not fit in memory. A longer line is shown as a window of this many characters around the match, "…" where the line goes on. </p>
+<p>Longest preview of a matching line, in UTF-16 code units. </p>
+<p>A result shows where the pattern matched, not the line; a single line can be most of an entry's 64 MiB plaintext, and 10000 such copies would not fit in memory. A longer line is shown as a window of this many code units around the match (up to two more, one per edge, to keep a surrogate pair whole), "…" where the line goes on. A sequence of several code points (a ZWJ emoji, a flag) can still be cut between them. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00059">59</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00062">62</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
