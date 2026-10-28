@@ -410,7 +410,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Włącz wyszukiwanie treści</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
@@ -458,12 +458,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani przeniesiony tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="963"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj repozytorium Git w folderze nad magazynem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1046"/>
@@ -1019,10 +1019,10 @@ e-mail</translation>
     <message numerus="yes">
         <location filename="../src/filecontent.cpp" line="87"/>
         <source>… %n more line(s) not shown</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>… %n kolejny wiersz nie został pokazany</numerusform>
+            <numerusform>… %n kolejne wiersze nie zostały pokazane</numerusform>
+            <numerusform>… %n kolejnych wierszy nie zostało pokazanych</numerusform>
         </translation>
     </message>
 </context>
@@ -1386,7 +1386,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="616"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie można odczytać jako listy odbiorców (zwykły plik zawierający maksymalnie %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="630"/>
@@ -1527,12 +1527,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1130"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Nie należy do magazynu</translation>
+        <translation>Nie jest częścią magazynu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1131"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jest dowiązaniem symbolicznym lub skrzyżowaniem po pobraniu lub znajduje się za nim. To, na co ono wskazuje, nie jest częścią magazynu haseł i&#xa0;pozostaje nietknięte.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1200"/>
@@ -1744,7 +1744,7 @@ Proces ponownego szyfrowania nie został ukończony, więc niektóre lub wszystk
     <message>
         <location filename="../src/importkeydialog.cpp" line="71"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 przekracza dopuszczalny rozmiar pliku klucza.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="130"/>
@@ -2224,7 +2224,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation>Przeszukaj zawartość haseł</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -2477,15 +2477,15 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation>… więcej dopasowań w&#xa0;tym wpisie</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="942"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Wyświetlono pierwsze %n dopasowanie; aby zobaczyć pozostałe, zawęź kryteria wyszukiwania.</numerusform>
+            <numerusform>Wyświetlono pierwsze %n dopasowania; aby zobaczyć pozostałe, zawęź kryteria wyszukiwania.</numerusform>
+            <numerusform>Wyświetlono pierwsze %n dopasowań; aby zobaczyć pozostałe, zawęź kryteria wyszukiwania.</numerusform>
         </translation>
     </message>
     <message>
@@ -2811,7 +2811,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="839"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nie można odczytać jako listy odbiorców (musi to być zwykły plik o&#xa0;rozmiarze co najwyżej %2), dlatego żaden element nie został wstępnie wybrany. Sprawdź ten plik przed dokonaniem wyboru odbiorców: zatwierdzenie przyciskiem „OK” spowoduje nadpisanie go nową listą.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="860"/>
@@ -3009,10 +3009,10 @@ Kontynuować?</translation>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="718"/>
         <source>This entry has %n line(s), too many to edit here.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Ten wpis zawiera %n wiersz — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
+            <numerusform>Ten wpis zawiera %n wiersze — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
+            <numerusform>Ten wpis zawiera %n wierszy — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
         </translation>
     </message>
 </context>
