@@ -206,12 +206,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation>När lagringsplatsen inte har något eget Git-arkiv; använd istället det som finns i mappen ovanför. Detta är avstängt som standard – precis som i *pass* – för att förhindra att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="963"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd ett Git-arkiv i en mapp ovanför arkivet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1046"/>
@@ -1035,9 +1035,9 @@ e-mail</translation>
     <message numerus="yes">
         <location filename="../src/filecontent.cpp" line="87"/>
         <source>… %n more line(s) not shown</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>… %n ytterligare rad visas inte</numerusform>
+            <numerusform>… %n ytterligare rader visas inte</numerusform>
         </translation>
     </message>
 </context>
@@ -1401,7 +1401,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="616"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kan inte läsas som en mottagarlista (en vanlig fil på högst %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="630"/>
@@ -1536,12 +1536,12 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1130"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Ingår inte i lösenordsutrymmet</translation>
+        <translation>Inte en del av lösenordsutrymmet</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1131"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är, eller ligger bakom, en symbolisk länk eller en så kallad junction efter en hämtning (pull). Det som denna pekar på ingår inte i lösenordslagret och lämnas därför orört.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1200"/>
@@ -1755,7 +1755,7 @@ Omkrypteringen slutfördes inte, så vissa eller alla poster är fortfarande kry
     <message>
         <location filename="../src/importkeydialog.cpp" line="71"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 är större än vad en nyckelfil kan vara.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="130"/>
@@ -2200,7 +2200,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök inuti lösenordsinnehåll</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2545,14 +2545,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="927"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation>… mer matchningar i denna post</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="942"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Visar den/de första %n matchningen/matchningarna; sök efter något mer specifikt för att se resten.</numerusform>
+            <numerusform>Visar dom/dessa första %n matchningen/matchningarna; sök efter något mer specifikt för att se resten.</numerusform>
         </translation>
     </message>
     <message>
@@ -2886,7 +2886,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="839"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 kan inte läsas som en mottagarlista (en vanlig fil på högst %2), så ingenting är förvalt. Kontrollera filen innan du väljer mottagare här: Om du klickar på OK skrivs en ny lista över den befintliga.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="860"/>
@@ -3084,9 +3084,9 @@ Fortsätta?</translation>
     <message numerus="yes">
         <location filename="../src/passworddialog.cpp" line="718"/>
         <source>This entry has %n line(s), too many to edit here.</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Denna post har %n rad – för många för att redigeras här.</numerusform>
+            <numerusform>Denna post har %n rader – för många för att redigeras här.</numerusform>
         </translation>
     </message>
 </context>
