@@ -368,6 +368,9 @@ private:
   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
   /// while the re-encryption worker is still rewriting files.
   bool m_reencryptRunning = false;
+  /// What setUiElementsEnabled() last set: updateProfileBox() keeps the
+  /// profile box disabled while an operation runs.
+  bool m_uiEnabled = true;
   TrayIcon *m_tray{};
   /// Whether the constructor ended with a usable configuration; main()
   /// consults it via initSucceeded() to decide whether the application should

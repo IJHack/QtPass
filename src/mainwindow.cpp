@@ -738,6 +738,11 @@ void MainWindow::setUiElementsEnabled(bool state) {
   ui->actionAddFolder->setEnabled(state);
   ui->actionUsers->setEnabled(state);
   ui->actionConfig->setEnabled(state);
+  // Nor a profile switch while an operation runs: the backend's store and
+  // environment would change under it, and what is still queued (a push
+  // after an insert, say) would finish for the other profile (#2071).
+  m_uiEnabled = state;
+  ui->profileBox->setEnabled(state && ui->profileBox->count() > 1);
   const bool uiEnabled = state;
   // is a file selected?
   state &= ui->treeView->currentIndex().isValid();
@@ -1207,7 +1212,8 @@ void MainWindow::updateProfileBox() {
     ui->profileWidget->hide();
   } else {
     ui->profileWidget->show();
-    ui->profileBox->setEnabled(profiles.size() > 1);
+    // As setUiElementsEnabled() leaves it: not while an operation runs.
+    ui->profileBox->setEnabled(m_uiEnabled && profiles.size() > 1);
     ui->profileBox->clear();
     for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {
       if (!i.key().isEmpty()) {
