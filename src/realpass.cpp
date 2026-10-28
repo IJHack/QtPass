@@ -85,7 +85,9 @@ auto RealPass::insertWritten(const QString &err) const -> bool {
     return false;
   }
   // gpg broke off (a full disk, killed): pass says so, and what gpg left
-  // at the entry's name, if anything, is no entry.
+  // at the entry's name, if anything, is no entry. The line is pass's own
+  // (`die "Password encryption aborted."` after gpg in cmd_insert and
+  // cmd_edit of password-store.sh), which pass does not translate.
   if (err.contains(QLatin1String("Password encryption aborted."))) {
     return false;
   }
