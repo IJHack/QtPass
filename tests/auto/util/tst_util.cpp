@@ -1408,6 +1408,21 @@ void tst_util::getGpgIdPathSubfolder() {
   QString expected = QDir::cleanPath(gpgIdFile);
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+
+  // In a folder that does not exist yet (a new entry's, a move's target):
+  // the nearest list above it, as pass finds it, not the store root's.
+  QFile rootList(passStore + "/.gpg-id");
+  QVERIFY(rootList.open(QIODevice::WriteOnly));
+  rootList.write("ROOT0000\n");
+  rootList.close();
+  path = QDir::cleanPath(
+      Pass::getGpgIdPath(subfolder + "/new/deeper/password.gpg", passStore));
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+  path = QDir::cleanPath(
+      Pass::getGpgIdPath(subfolder + "/new/deeper/", passStore));
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
 /**

@@ -113,33 +113,10 @@ auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
 }
 
 namespace {
-/// The entries pass's reencrypt_path() walks under @p dir: every file named
-/// *.gpg (any case), hidden ones and those in hidden folders included,
-/// .git left out, and no link followed or taken (find without -L, and
-/// `[[ -L $passfile ]] && continue`).
-auto passEntriesUnder(const QString &dir) -> QStringList {
-  QStringList entries;
-  const QFileInfoList children = QDir(dir).entryInfoList(
-      QDir::AllEntries | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
-  for (const QFileInfo &child : children) {
-    if (child.isSymLink() || child.isJunction()) {
-      continue;
-    }
-    if (child.isDir()) {
-      if (child.fileName() != QLatin1String(".git")) {
-        entries << passEntriesUnder(child.absoluteFilePath());
-      }
-    } else if (child.isFile() &&
-               child.fileName().endsWith(QLatin1String(".gpg"),
-                                         Qt::CaseInsensitive)) {
-      entries << child.absoluteFilePath();
-    }
-  }
-  return entries;
-}
-
-/// @p dir and every folder under it as passEntriesUnder() walks them:
-/// hidden ones included, .git left out, no link followed.
+/// @p dir and every folder under it as pass's reencrypt_path() walks them
+/// (find without -L): hidden ones included, .git left out, no link
+/// followed. Each entry pass re-encrypts lies in one of them, and its list
+/// is that folder's nearest.
 auto passFoldersUnder(const QString &dir) -> QStringList {
   QStringList folders{QDir::cleanPath(dir)};
   const QFileInfoList children = QDir(dir).entryInfoList(
@@ -167,7 +144,7 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                      .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))),
                  3000);
   // pass mv and cp re-encrypt every entry of the folder they write to, each
-  // to its nearest list, walking as passEntriesUnder() does. For the folder
+  // to its nearest list, walking as passFoldersUnder() does. For the folder
   // that moves, the lists inside it go along: checked where they lie now
   // (after the move their folder line names the old place until the
   // recipients are saved there again), while a list above it is replaced
@@ -180,12 +157,7 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
                             QLatin1Char('/')
                       : QString();
   QSet<QString> verified;
-  for (const QString &entry : passEntriesUnder(dir)) {
-    if (refuseList(entry, signer, verified, within, except)) {
-      return true;
-    }
-  }
-  // Every folder's list counts even where no entry uses it yet: cp -r
+  // Every folder's list counts, also where no entry uses it yet: cp -r
   // merges an incoming folder into one of the same name, so the entries it
   // brings get a list already there, and a list it brings replaces the one
   // there for the entries already in it.

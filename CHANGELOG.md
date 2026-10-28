@@ -96,6 +96,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- An entry saved into, or moved to, a folder that does not exist yet was
+  encrypted to the store root's recipients, not to those of the nearest
+  folder above it with a list of its own, as `pass` finds them: the lookup
+  of the recipient list started in the missing folder and stopped there.
+  It starts at the nearest folder that exists now, with either backend.
 - With the `pass` backend and a signing key, an older signed `.gpg-id` put
   back, one signed for another folder, or a sub-folder whose own list was
   replaced by a link was accepted: `pass` checks the signature, not

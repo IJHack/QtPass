@@ -692,8 +692,17 @@ auto gpgIdLookup(const QString &for_file, const QString &passStore)
   // directory) wants its own list; an entry wants its folder's.
   const bool isFolder =
       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
-  return {QDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath()),
-          storeDir, storePrefix};
+  // A folder that does not exist yet (an entry saved into a new folder, a
+  // move to one) starts the walk at its nearest existing ancestor in the
+  // store, as pass's set_gpg_recipients does: otherwise the walk ended at
+  // once and the store root's list was taken over the one in between.
+  QString start = isFolder ? fullPath : QFileInfo(fullPath).absolutePath();
+  while (!QFileInfo(start).exists() &&
+         isAtOrUnder(QDir::cleanPath(start), storeDir, storePrefix) &&
+         QDir::cleanPath(start) != storeDir) {
+    start = QFileInfo(start).absolutePath();
+  }
+  return {QDir(start), storeDir, storePrefix};
 }
 
 /// Whether @p candidate can be its folder's .gpg-id. A link under the name
