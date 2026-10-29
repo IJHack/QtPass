@@ -120,6 +120,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0954978822dc30f773f1302003dbea84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store.  <br /></td></tr>
 <tr class="memitem:a595b817bda4e90e2de3afbafe8914306" id="r_a595b817bda4e90e2de3afbafe8914306"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a595b817bda4e90e2de3afbafe8914306">gitCeiling</a> (const QString &amp;store) -&gt; QString</td></tr>
 <tr class="memdesc:a595b817bda4e90e2de3afbafe8914306"><td class="mdescLeft">&#160;</td><td class="mdescRight">GIT_CEILING_DIRECTORIES for a store, as pass sets it.  <br /></td></tr>
+<tr class="memitem:af707d08c525092779706139369753d6b" id="r_af707d08c525092779706139369753d6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af707d08c525092779706139369753d6b">gitStoreVariables</a> (const QString &amp;store, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td></tr>
+<tr class="memdesc:af707d08c525092779706139369753d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#a595b817bda4e90e2de3afbafe8914306" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it.  <br /></td></tr>
 <tr class="memitem:af014b42fcbaf221a947950a289ad4d1b" id="r_af014b42fcbaf221a947950a289ad4d1b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af014b42fcbaf221a947950a289ad4d1b">mkpathForStore</a> (const QString &amp;path) -&gt; bool</td></tr>
 <tr class="memdesc:af014b42fcbaf221a947950a289ad4d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <code class="param">path</code> and any missing parents as pass would.  <br /></td></tr>
 <tr class="memitem:a18b864b454324ed54da82252dc77a15c" id="r_a18b864b454324ed54da82252dc77a15c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a18b864b454324ed54da82252dc77a15c">passUmask</a> (const QString &amp;value) -&gt; int</td></tr>
@@ -198,7 +200,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00333">333</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00355">355</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
@@ -545,6 +547,45 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The ceiling, empty for an empty <code class="param">store</code>. </dd></dl>
+
+</div>
+</div>
+<a id="af707d08c525092779706139369753d6b" name="af707d08c525092779706139369753d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af707d08c525092779706139369753d6b">&#9670;&#160;</a></span>gitStoreVariables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::gitStoreVariables </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; uint &gt;</td>          <td class="paramname"><span class="paramname"><em>asUser</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;) -&gt;  QList&lt; std::pair&lt; QString, QString &gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#a595b817bda4e90e2de3afbafe8914306" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it. </p>
+<p>An explicit GIT_DIR skips git's ownership check (safe.directory), which runs only when git discovers a repository. On Unix the store is therefore pinned only when it, its <span class="tt">.git</span> and a gitfile's target are the user's own; otherwise GIT_DIR names a path that cannot exist, and git refuses rather than run another user's repository and hooks. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">store</td><td>The store's path. </td></tr>
+    <tr><td class="paramname">asUser</td><td>The user to compare owners with; the effective user when not given (a test passes another). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Name and value pairs to set; empty for an empty <code class="param">store</code>. </dd></dl>
 
 </div>
 </div>
@@ -1273,7 +1314,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Most bytes of a .gpg-id <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads. </p>
 <p>A recipient list is a few lines; a shared store's other writers could otherwise hand it a sparse file of gigabytes to read before the signature is even checked. Far beyond any real list. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00315">315</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00337">337</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
