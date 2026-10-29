@@ -96,6 +96,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- The profile settings warn when two profiles for different stores name
+  the same signing-key fingerprint: a recipient list signed for one of them is accepted in
+  the other, since its folder line names a folder of a store, not the
+  store. A warning, not an error: Settings can still be saved
+  ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
 - In native Git mode, a store whose parent folder's path holds `:` (`;` on
   Windows) was not kept out of a repository above it with "use a parent
   repository" off: Git splits its ceiling list on that character. Git is

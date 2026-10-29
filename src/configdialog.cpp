@@ -14,12 +14,15 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QFormLayout>
 #include <QGuiApplication>
 #include <QHash>
+#include <QLabel>
 #include <QListWidgetItem>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QRegularExpression>
+#include <QSet>
 #include <QSystemTrayIcon>
 #include <algorithm>
 #include <utility>
@@ -95,6 +98,20 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   m_nameTip = ui->profileName->toolTip();
   m_pathTip = ui->profilePath->toolTip();
   m_keyTip = ui->profileSigningKey->toolTip();
+  // A warning, not a problem: shown under the signing key while another
+  // profile, for another store, signs with the same key (#2050).
+  m_sharedKeyWarning = new QLabel(this);
+  m_sharedKeyWarning->setObjectName(QStringLiteral("profileSharedKeyWarning"));
+  m_sharedKeyWarning->setTextFormat(Qt::PlainText);
+  m_sharedKeyWarning->setWordWrap(true);
+  m_sharedKeyWarning->hide();
+  {
+    int row = -1;
+    QFormLayout::ItemRole role = QFormLayout::FieldRole;
+    ui->profileFormLayout->getWidgetPosition(ui->profileSigningKey, &row,
+                                             &role);
+    ui->profileFormLayout->insertRow(row + 1, QString(), m_sharedKeyWarning);
+  }
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
 
   ui->label->setText(ui->label->text() + VERSION);
@@ -297,11 +314,13 @@ auto ConfigDialog::problemsOf(const ProfileEntry &entry,
 void ConfigDialog::showProblems(int row, const ProfileProblems &problems) {
   if (QListWidgetItem *item = ui->profileList->item(row)) {
     item->setBackground(problems.none() ? QBrush() : QBrush(Qt::red));
-    item->setToolTip(problems.first());
+    item->setToolTip(problems.none() ? problems.sharedKey : problems.first());
   }
   if (row != m_currentEntry) {
     return;
   }
+  m_sharedKeyWarning->setText(problems.sharedKey);
+  m_sharedKeyWarning->setVisible(!problems.sharedKey.isEmpty());
   const auto tipOr = [](const QString &problem, const QString &tip) {
     return problem.isEmpty() ? tip : problem;
   };
@@ -310,14 +329,62 @@ void ConfigDialog::showProblems(int row, const ProfileProblems &problems) {
   ui->profileSigningKey->setToolTip(tipOr(problems.key, m_keyTip));
 }
 
+auto ConfigDialog::signingStores() const -> SigningStores {
+  // One folder spelled two ways (through a link, another case on a
+  // case-insensitive file system) is one store: compared as the file system
+  // resolves it where it exists. Resolved once per validate(), not once per
+  // pair of profiles.
+  SigningStores resolved;
+  for (const ProfileEntry &entry : std::as_const(m_entries)) {
+    const QString real = QFileInfo(entry.profile.path).canonicalFilePath();
+    resolved.stores << (real.isEmpty() ? QDir::cleanPath(entry.profile.path)
+                                       : real);
+    const QStringList keys = entry.profile.signingKey.toUpper().split(
+        QLatin1Char(' '), Qt::SkipEmptyParts);
+    resolved.keys << QSet<QString>(keys.cbegin(), keys.cend());
+  }
+  return resolved;
+}
+
+auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const
+    -> QStringList {
+  // A list signed for one store verifies in the other when the stores share
+  // a signing key; the folder line names a folder, not a store (#2050).
+  QStringList others;
+  const QSet<QString> &mine = resolved.keys.at(row);
+  if (mine.isEmpty()) {
+    return others;
+  }
+  for (int other = 0; other < m_entries.size(); ++other) {
+    if (other == row || resolved.stores.at(other) == resolved.stores.at(row)) {
+      continue;
+    }
+    if (resolved.keys.at(other).intersects(mine)) {
+      others << m_entries.at(other).name;
+    }
+  }
+  others.sort();
+  return others;
+}
+
 void ConfigDialog::validate() {
   QHash<QString, int> names;
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
     names[entry.name]++;
   }
   bool status = true;
+  const SigningStores resolved = signingStores();
   for (int row = 0; row < m_entries.size(); ++row) {
-    const ProfileProblems problems = problemsOf(m_entries.at(row), names);
+    ProfileProblems problems = problemsOf(m_entries.at(row), names);
+    if (const QStringList others = sharingTheKey(row, resolved);
+        !others.isEmpty()) {
+      problems.sharedKey =
+          tr("%1 signs with the same key for another store. A recipient "
+             "list signed for one of these stores is accepted in the other: "
+             "use a separate signing key for each store whose recipients "
+             "differ.")
+              .arg(others.join(QStringLiteral(", ")));
+    }
     showProblems(row, problems);
     status = status && problems.none();
   }
