@@ -270,6 +270,16 @@ public slots:
   void endReencryptPath();
 
 private slots:
+  /**
+   * @brief Fill the profile box from the settings, the active profile
+   * selected, without switching profiles while doing so.
+   */
+  void updateProfileBox();
+  /**
+   * @brief Enable the profile box only when there is more than one profile,
+   * the interface is enabled and the backend is idle.
+   */
+  void updateProfileBoxEnabled();
   void on_grepButton_toggled(bool checked);
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
   void addPassword();
@@ -368,6 +378,9 @@ private:
   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
   /// while the re-encryption worker is still rewriting files.
   bool m_reencryptRunning = false;
+  /// What setUiElementsEnabled() last set: updateProfileBox() keeps the
+  /// profile box disabled while an operation runs.
+  bool m_uiEnabled = true;
   TrayIcon *m_tray{};
   /// Whether the constructor ended with a usable configuration; main()
   /// consults it via initSucceeded() to decide whether the application should
@@ -400,7 +413,6 @@ private:
   void setPassword(const QString &, bool isNew = true);
   auto confirmPathInStore(const QString &candidate) -> bool;
 
-  void updateProfileBox();
   void initTrayIcon();
   void destroyTrayIcon();
   void reencryptPath(const QString &dir);

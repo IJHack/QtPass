@@ -457,6 +457,7 @@ private Q_SLOTS:
   void configDialogCancelledChangesNothing();
   void aboutBoxNamesTheProgramAndLicence();
   void profilesFillTheBoxAndSwitchTheStore();
+  void profileBoxIsDisabledWhileAnOperationRuns();
   void trayIconFollowsTheSetting();
   void keyPressesReachTheWindow();
   void downArrowInTheSearchBoxMovesToTheTree();
@@ -3270,6 +3271,147 @@ void tst_mainwindow::profilesFillTheBoxAndSwitchTheStore() {
       Q_ARG(QString, QStringLiteral("other"))));
   QVERIFY(m_window->statusBar()->currentMessage().isEmpty());
   QCOMPARE(passwordName()->text(), QStringLiteral("kept"));
+}
+
+/**
+ * @brief The profile box is disabled with the rest of the interface while
+ *        an operation runs, so no switch can change the store under queued
+ *        work (#2071), and enabled again with it, if there is more than one
+ *        profile to pick.
+ */
+void tst_mainwindow::profileBoxIsDisabledWhileAnOperationRuns() {
+  QTemporaryDir other;
+  QVERIFY(other.isValid());
+  Profiles profiles;
+  Profile mainProfile;
+  mainProfile.path = QDir::cleanPath(m_storeDir.path());
+  Profile otherProfile;
+  otherProfile.path = QDir::cleanPath(other.path());
+  profiles.insert(QStringLiteral("main"), mainProfile);
+  profiles.insert(QStringLiteral("other"), otherProfile);
+  QtPassSettings::setProfiles(profiles);
+  rebuildWindow(
+      [](AppSettings &s) { s.activeProfile = QStringLiteral("main"); });
+  const auto restore = qScopeGuard([this] {
+    m_window.reset();
+    QtPassSettings::setProfiles({});
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile.clear();
+    s.passStore = QDir::cleanPath(m_storeDir.path());
+    QtPassSettings::save(s);
+  });
+  auto *box = m_window->findChild<QComboBox *>(QStringLiteral("profileBox"));
+  QVERIFY(box != nullptr);
+  QVERIFY(box->isEnabled());
+
+  // An operation starts: the box goes with the rest.
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "executeWrapperStarted",
+                                    Qt::DirectConnection));
+  QVERIFY2(!box->isEnabled(), "no profile switch while an operation runs");
+  QVERIFY(!treeView()->isEnabled());
+
+  m_window->setUiElementsEnabled(true);
+  QVERIFY2(box->isEnabled(), "back once the operation is done");
+
+  // Refilling the box (after Settings) is no switch, even when the first
+  // item added is another profile than the active one.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("other");
+    QtPassSettings::save(s);
+  }
+  m_window->statusBar()->clearMessage();
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QCOMPARE(m_window->statusBar()->currentMessage(), QString());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("main");
+    QtPassSettings::save(s);
+  }
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("main"));
+
+  // Settings removed the active profile (it clears activeProfile and leaves
+  // the store as it was): the refill switches to the profile the box then
+  // shows, settings and store included, not just the box.
+  {
+    Profiles left;
+    left.insert(QStringLiteral("other"), otherProfile);
+    QtPassSettings::setProfiles(left);
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile.clear();
+    QtPassSettings::save(s);
+  }
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  QCOMPARE(box->currentText(), QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QCOMPARE(QDir::cleanPath(QtPassSettings::load().passStore),
+           QDir::cleanPath(otherProfile.path));
+  // Back to both, main active, for what follows.
+  QtPassSettings::setProfiles(profiles);
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "updateProfileBox",
+                                    Qt::DirectConnection));
+  box->setCurrentText(QStringLiteral("main"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("main"));
+
+  // The watchdog releases the interface while a slow git still runs: the
+  // box waits for the backend, and comes back when its queue is done.
+#ifndef Q_OS_WIN
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString slowGit =
+      QDir(scratch.path()).filePath(QStringLiteral("slow-git"));
+  {
+    QFile f(slowGit);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\nsleep 1\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  Pass *backend = QtPassSettings::getPass();
+  AppSettings busy = QtPassSettings::load();
+  busy.useGit = true;
+  busy.gitExecutable = slowGit;
+  backend->init(busy);
+  const auto reinit =
+      qScopeGuard([backend] { backend->init(QtPassSettings::load()); });
+  backend->GitPull();
+  QVERIFY(!backend->isIdle());
+  QTRY_VERIFY_WITH_TIMEOUT(!box->isEnabled(), 5000);
+  m_window->setUiElementsEnabled(true); // as the watchdog does
+  QVERIFY(treeView()->isEnabled());
+  QVERIFY2(!box->isEnabled(), "no switch while git still runs");
+  QTRY_VERIFY_WITH_TIMEOUT(backend->isIdle(), 10000);
+  QTRY_VERIFY_WITH_TIMEOUT(box->isEnabled(), 5000);
+#endif
+
+  // A content search runs outside the queue: switching leaves grep mode,
+  // which cancels it, so no results of the old store are shown.
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(grep != nullptr);
+  grep->setChecked(true);
+  box->setCurrentText(QStringLiteral("other"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("other"));
+  QVERIFY2(!grep->isChecked(), "the switch left grep mode");
+  box->setCurrentText(QStringLiteral("main"));
+  QCOMPARE(QtPassSettings::load().activeProfile, QStringLiteral("main"));
+
+  // With a single profile there is nothing to pick, enabled or not.
+  profiles.remove(QStringLiteral("other"));
+  QtPassSettings::setProfiles(profiles);
+  rebuildWindow(
+      [](AppSettings &s) { s.activeProfile = QStringLiteral("main"); });
+  box = m_window->findChild<QComboBox *>(QStringLiteral("profileBox"));
+  QVERIFY(box != nullptr);
+  m_window->setUiElementsEnabled(false);
+  m_window->setUiElementsEnabled(true);
+  QVERIFY(!box->isEnabled());
 }
 
 /**

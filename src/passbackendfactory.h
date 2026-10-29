@@ -46,6 +46,13 @@ public:
    * after changing the "use pass" setting so the switch takes effect.
    */
   static void invalidate();
+  /**
+   * @brief Whether neither backend runs or waits for anything: after a
+   * switch of backend the previous one is kept, with its own queue.
+   * Backends not constructed yet count as idle (none is constructed here).
+   * @return true when every constructed backend is idle.
+   */
+  static auto isIdle() -> bool;
 
 private:
   static Pass *pass;

@@ -15,6 +15,7 @@
  */
 
 #include <QDir>
+#include <QFile>
 #include <QTemporaryDir>
 #include <QtTest>
 
@@ -40,6 +41,7 @@ private Q_SLOTS:
   void passModeReturnsRealPass();
   void getPassCachesInstance();
   void switchingModeRebuildsBackend();
+  void isIdleAsksTheBackendKeptFromBeforeASwitch();
   void createsMissingStoreDirectory();
   void passSignalSurfaceHasNoDeadSignals();
 };
@@ -105,6 +107,49 @@ void tst_passbackendfactory::switchingModeRebuildsBackend() {
   QVERIFY2(dynamic_cast<ImitatePass *>(PassBackendFactory::getPass()) !=
                nullptr,
            "switching back to usePass=false rebuilds as ImitatePass");
+}
+
+/**
+ * @brief After a switch of backend the previous one is kept with its own
+ *        queue: isIdle() asks it too, so work queued there before the switch
+ *        still counts as running.
+ */
+void tst_passbackendfactory::isIdleAsksTheBackendKeptFromBeforeASwitch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a slow git");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QString slowGit =
+      QDir(scratch.path()).filePath(QStringLiteral("slow-git"));
+  {
+    QFile f(slowGit);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\nsleep 1\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  QtPassSettings::setPassStore(m_storeDir.path());
+  QtPassSettings::setUsePass(false);
+  Pass *imitate = PassBackendFactory::getPass();
+  QVERIFY(PassBackendFactory::isIdle());
+  AppSettings s = QtPassSettings::load();
+  s.useGit = true;
+  s.gitExecutable = slowGit;
+  imitate->init(s);
+  imitate->GitPull();
+
+  // Switched to pass: the active backend is idle, the kept one is not.
+  QtPassSettings::setUsePass(true);
+  Pass *real = PassBackendFactory::getPass();
+  QVERIFY(real != imitate);
+  QVERIFY(real->isIdle());
+  QVERIFY2(!PassBackendFactory::isIdle(),
+           "the previous backend still runs its git");
+  QTRY_VERIFY_WITH_TIMEOUT(PassBackendFactory::isIdle(), 10000);
+  QtPassSettings::setUsePass(false);
+#endif
 }
 
 void tst_passbackendfactory::createsMissingStoreDirectory() {

@@ -367,6 +367,12 @@ public:
   static auto seedGpgIdFile(const QString &newDir, const QString &passStore)
       -> bool;
 
+  /**
+   * @brief Whether no gpg, git or pass of this backend runs or waits.
+   * @return true when its executor is idle.
+   */
+  [[nodiscard]] auto isIdle() const -> bool { return exec.isIdle(); }
+
 protected:
   /**
    * @brief Whether the insert that just failed had put its entry in the
@@ -482,6 +488,10 @@ private:
                                  const QString &err);
 
 signals:
+  /**
+   * @brief Nothing of the store's runs or waits any more (isIdle()).
+   */
+  void idle();
   /**
    * @brief Emitted before executing a command.
    */

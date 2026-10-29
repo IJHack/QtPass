@@ -53,6 +53,7 @@ private Q_SLOTS:
   void cancelNextWhileRunningReturnsMinusOne();
   void cancelNextFromErrorHandlerDropsQueuedItem();
   void dequeuingNamesEveryItemThatLeavesTheQueue();
+  void drainedComesOnceTheLastItemIsDone();
   void dequeuingSlotMayCallBackIntoTheExecutor();
   void dequeuingOfADroppedItemMayCallBackIntoTheExecutor();
   void executeAsyncWorkDirDoesNotCarryOver();
@@ -912,6 +913,56 @@ void tst_executor::dequeuingOfADroppedItemMayCallBackIntoTheExecutor() {
     ran << call.at(0).toInt();
   }
   QCOMPARE(ran, (QList<int>{1, 3, 4}));
+}
+
+/**
+ * @brief drained() comes once the queue is empty and nothing runs, after
+ *        the last item's finished() (or a failed start's error()), not
+ *        between items; isIdle() says the same.
+ */
+void tst_executor::drainedComesOnceTheLastItemIsDone() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QList<QString> events;
+  connect(&exec, &Executor::finished, &exec, [&events](int id) {
+    events << QStringLiteral("finished %1").arg(id);
+  });
+  connect(&exec, &Executor::error, &exec,
+          [&events](int id) { events << QStringLiteral("error %1").arg(id); });
+  connect(&exec, &Executor::drained, &exec, [&events, &exec]() {
+    events << QStringLiteral("drained");
+    QVERIFY(exec.isIdle());
+  });
+  QVERIFY(exec.isIdle());
+  exec.execute(1, sh, {"-c", "exit 0"}, false, false);
+  exec.execute(2, sh, {"-c", "exit 0"}, false, false);
+  QVERIFY(!exec.isIdle());
+  QTRY_VERIFY_WITH_TIMEOUT(events.contains(QStringLiteral("drained")), 5000);
+  QTest::qWait(100);
+  QCOMPARE(events, (QList<QString>{QStringLiteral("finished 1"),
+                                   QStringLiteral("finished 2"),
+                                   QStringLiteral("drained")}));
+
+  // A failed start: its posted error first, then drained.
+  events.clear();
+  exec.execute(3, "", {}, false, false);
+  QTRY_VERIFY_WITH_TIMEOUT(events.contains(QStringLiteral("drained")), 5000);
+  QTest::qWait(100);
+  QCOMPARE(events, (QList<QString>{QStringLiteral("error 3"),
+                                   QStringLiteral("drained")}));
+
+  // Two failed starts queued before the event loop runs: both errors, then
+  // one drained, not one between them.
+  events.clear();
+  exec.execute(4, "", {}, false, false);
+  exec.execute(5, "", {}, false, false);
+  QTRY_VERIFY_WITH_TIMEOUT(events.contains(QStringLiteral("drained")), 5000);
+  QTest::qWait(100);
+  QCOMPARE(events,
+           (QList<QString>{QStringLiteral("error 4"), QStringLiteral("error 5"),
+                           QStringLiteral("drained")}));
 }
 
 /**

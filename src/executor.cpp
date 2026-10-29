@@ -205,11 +205,14 @@ void Executor::executeNext() {
     const int failedId = i.id;
     running = false;
     m_execQueue.dequeue();
+    ++m_pendingErrors;
     QMetaObject::invokeMethod(
         this,
         [this, failedId]() {
           emit error(failedId, -1, QString(),
                      tr("No executable configured for this command"));
+          --m_pendingErrors;
+          postDrainedIfIdle();
         },
         Qt::QueuedConnection);
     executeNext();
@@ -232,11 +235,14 @@ void Executor::executeNext() {
     m_process.closeWriteChannel();
     running = false;
     m_execQueue.dequeue();
+    ++m_pendingErrors;
     QMetaObject::invokeMethod(
         this,
         [this, failedId, failedApp]() {
           emit error(failedId, -1, QString(),
                      tr("Failed to start %1").arg(failedApp));
+          --m_pendingErrors;
+          postDrainedIfIdle();
         },
         Qt::QueuedConnection);
     executeNext();
@@ -447,6 +453,26 @@ void Executor::onProcessFinished(int exitCode,
     emit error(i.id, -1, output, err);
   }
   executeNext();
+  postDrainedIfIdle();
+}
+
+void Executor::postDrainedIfIdle() {
+  // One check at a time, run after what is emitted now; it fires only once
+  // nothing runs or waits and every posted error() of a failed start is
+  // out (the last of those posts the check again).
+  if (m_drainCheckPosted) {
+    return;
+  }
+  m_drainCheckPosted = true;
+  QMetaObject::invokeMethod(
+      this,
+      [this]() {
+        m_drainCheckPosted = false;
+        if (isIdle() && m_pendingErrors == 0) {
+          emit drained();
+        }
+      },
+      Qt::QueuedConnection);
 }
 
 auto Executor::collectOutput(const ExecQueueItem &item, int exitCode)
