@@ -692,8 +692,17 @@ auto gpgIdLookup(const QString &for_file, const QString &passStore)
   // directory) wants its own list; an entry wants its folder's.
   const bool isFolder =
       normalizedFile.endsWith(QLatin1Char('/')) || QFileInfo(fullPath).isDir();
-  return {QDir(isFolder ? fullPath : QFileInfo(fullPath).absolutePath()),
-          storeDir, storePrefix};
+  // A folder that does not exist yet (an entry saved into a new folder, a
+  // move to one) starts the walk at its nearest existing ancestor in the
+  // store, as pass's set_gpg_recipients does: otherwise the walk ended at
+  // once and the store root's list was taken over the one in between.
+  QString start = isFolder ? fullPath : QFileInfo(fullPath).absolutePath();
+  while (!QFileInfo(start).exists() &&
+         isAtOrUnder(QDir::cleanPath(start), storeDir, storePrefix) &&
+         QDir::cleanPath(start) != storeDir) {
+    start = QFileInfo(start).absolutePath();
+  }
+  return {QDir(start), storeDir, storePrefix};
 }
 
 /// Whether @p candidate can be its folder's .gpg-id. A link under the name
@@ -747,6 +756,61 @@ auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
   return nearestGpgId(gpgIdLookup(for_file, passStore))
       .value_or(
           QDir(QDir::fromNativeSeparators(passStore)).filePath(".gpg-id"));
+}
+
+auto Pass::refuseSkippedGpgId(const QString &file, bool signing,
+                              const QString &except) -> bool {
+  // Without a signing key the parent's list applies, as it does for pass.
+  if (!signing) {
+    return false;
+  }
+  QString recordError;
+  const std::optional<QString> skipped =
+      skippedGpgId(file, m_settings.passStore, &recordError);
+  if (!skipped || (!except.isEmpty() &&
+                   QDir::cleanPath(*skipped) == QDir::cleanPath(except))) {
+    return false;
+  }
+  // The strings keep the context they were translated in.
+  if (!recordError.isEmpty()) {
+    emit critical(QCoreApplication::translate(
+                      "ImitatePass", "Cannot check the recipient list"),
+                  QCoreApplication::translate(
+                      "ImitatePass", "%1 Whether %2 was removed cannot be "
+                                     "told, so nothing was encrypted.")
+                      .arg(recordError, QDir::toNativeSeparators(*skipped)));
+    return true;
+  }
+  emit critical(
+      QCoreApplication::translate("ImitatePass", "Recipient list missing"),
+      QCoreApplication::translate(
+          "ImitatePass",
+          "The signed recipient list %1 is missing or is not a regular file. "
+          "QtPass does not fall back to a parent folder's list for it: that "
+          "list was not signed for this folder. If a link is under that name, "
+          "remove it. Then open Users for that folder and save its "
+          "recipients, which writes and signs a fresh list.")
+          .arg(QDir::toNativeSeparators(*skipped)));
+  return true;
+}
+
+auto Pass::verifySignedList(const GpgIdSigner &signer, const QString &gpgIdFile,
+                            QByteArray *contents, QString *why) const -> bool {
+  if (!signer.verifyFile(gpgIdFile, contents)) {
+    return false;
+  }
+  // Authentic and unmodified is not the same as current: an older signed
+  // list put back into the store is refused once this device has seen a
+  // newer one, and one signed for another folder is refused here.
+  QString reason;
+  if (GpgIdGeneration::accept(gpgIdFile, *contents, m_settings.passStore,
+                              &reason) != GpgIdGeneration::Verdict::Accepted) {
+    if (why != nullptr) {
+      *why = reason;
+    }
+    return false;
+  }
+  return true;
 }
 
 auto Pass::skippedGpgId(const QString &forFile, const QString &passStore,

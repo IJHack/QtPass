@@ -14,6 +14,8 @@
 #include <QQueue>
 #include <QString>
 #include <QStringList>
+
+class GpgIdSigner;
 #include <cassert>
 #include <map>
 #include <optional>
@@ -374,6 +376,34 @@ public:
   [[nodiscard]] auto isIdle() const -> bool { return exec.isIdle(); }
 
 protected:
+  /**
+   * @brief With signing on, refuse to encrypt @p file when the lookup passed
+   * over its folder's own list (skippedGpgId()): the parent's list is not
+   * what was signed for it.
+   * @param file The entry or folder about to be encrypted to.
+   * @param signing Whether a signing key is set (signed lists in use).
+   * @param except A list about to be written (by `pass init`), which may
+   *        be missing now without that being refused.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseSkippedGpgId(const QString &file, bool signing,
+                          const QString &except = QString()) -> bool;
+
+  /**
+   * @brief Whether @p gpgIdFile is a signed list QtPass accepts: its
+   * signature verifies (GpgIdSigner::verifyFile()), and it is current and
+   * bound to the folder it lies in (GpgIdGeneration::accept()), so an older
+   * authentic list put back, or one signed for another folder, is refused.
+   * @param signer The verifier, with the configured signing keys.
+   * @param gpgIdFile The `.gpg-id`.
+   * @param contents Receives the verified bytes.
+   * @param why Receives why a current-and-bound check refused the list;
+   *        left as it is when the signature itself does not verify.
+   * @return Whether the list may be encrypted to.
+   */
+  auto verifySignedList(const GpgIdSigner &signer, const QString &gpgIdFile,
+                        QByteArray *contents, QString *why) const -> bool;
+
   /**
    * @brief Whether the insert that just failed had put its entry in the
    * store before a later step failed. The backend that writes the entry

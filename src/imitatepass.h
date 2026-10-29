@@ -95,14 +95,6 @@ protected:
    */
   auto refuseLinkedGpgIdFolder(const QString &path) -> bool;
   /**
-   * @brief With a signing key set, refuse to encrypt @p file when the lookup
-   * passed over its folder's own list (Pass::skippedGpgId()): the parent's
-   * list is not what was signed for it.
-   * @param file The entry or folder about to be encrypted to.
-   * @return Whether it was refused (and the user told).
-   */
-  auto refuseSkippedGpgId(const QString &file) -> bool;
-  /**
    * @brief The recipients to encrypt @p file to: its folder's `.gpg-id`,
    * verified when a signing key is set.
    * @param file The entry, absolute.

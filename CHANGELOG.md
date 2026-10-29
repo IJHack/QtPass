@@ -96,6 +96,21 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- An entry saved into, or moved to, a folder that does not exist yet was
+  encrypted to the store root's recipients, not to those of the nearest
+  folder above it with a list of its own, as `pass` finds them: the lookup
+  of the recipient list started in the missing folder and stopped there.
+  It starts at the nearest folder that exists now, with either backend.
+- With the `pass` backend and a signing key, an older signed `.gpg-id` put
+  back, one signed for another folder, or a sub-folder whose own list was
+  replaced by a link was accepted: `pass` checks the signature, not
+  QtPass's generation and folder lines. QtPass now runs the native
+  backend's checks before it has `pass` insert, move or copy, or save a
+  folder's recipients (`pass init`, which re-encrypts what is under it):
+  for a folder, the lists inside it are checked too, hidden entries
+  included, and every list in an existing destination folder, which
+  `pass` re-encrypts whole. It refuses as that backend does
+  ([#2077](https://github.com/IJHack/QtPass/issues/2077)).
 - The profile settings warn when two profiles for different stores name
   the same signing-key fingerprint: a recipient list signed for one of them is accepted in
   the other, since its folder line names a folder of a store, not the

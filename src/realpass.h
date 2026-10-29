@@ -5,7 +5,10 @@
 
 #include "nativegrep.h"
 #include "pass.h"
+
+class GpgIdSigner;
 #include <QQueue>
+#include <QSet>
 
 /**
  * @class RealPass
@@ -89,6 +92,58 @@ class RealPass : public Pass {
    * @return true when the entry was written.
    */
   [[nodiscard]] auto insertWritten(const QString &err) const -> bool override;
+
+  /**
+   * @brief With signing on, refuse to have pass encrypt @p file when the
+   * signed list it would use is not one QtPass accepts: its folder's own
+   * list was passed over, the signature does not verify, or the list is
+   * older than one this device accepted or signed for another folder.
+   * @param file The entry (or the place a move or copy writes to).
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseUnverifiedList(const QString &file) -> bool;
+
+  /**
+   * @brief For a folder pass is about to re-encrypt in a move or copy:
+   * refuse when the signed list of one of its entries (every one pass's
+   * walk takes, hidden ones included) is not one QtPass accepts where it
+   * lies now (as refuseUnverifiedList()).
+   * @param dir The folder moved or copied, or the existing folder written
+   *        into. Each of its folders' lists counts, used by an entry yet or
+   *        not: a copy merges into a folder of the same name, so lists on
+   *        either side meet the other side's entries.
+   * @param onlyListsWithin Whether only lists inside @p dir count: for the
+   *        folder that moves, whose entries get the destination's list in
+   *        place of any list above it.
+   * @param except A list about to be written (`pass init`'s own), neither
+   *        verified nor refused for being missing.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
+                            const QString &except = QString()) -> bool;
+
+  /**
+   * @brief The verifier for signed lists, gpg in the store's environment.
+   * @return A GpgIdSigner with the configured signing keys.
+   */
+  auto listSigner() -> GpgIdSigner;
+
+  /**
+   * @brief The checks of refuseUnverifiedList() for @p file's nearest list,
+   * once per list.
+   * @param file The entry.
+   * @param signer The verifier.
+   * @param verified The lists already found good; extended.
+   * @param within When set, only a list under this folder (absolute,
+   *        cleaned, with a trailing "/") is verified; the skipped-list check
+   *        applies regardless.
+   * @param except A list about to be written, neither verified nor refused
+   *        for being missing.
+   * @return Whether it was refused (and the user told).
+   */
+  auto refuseList(const QString &file, const GpgIdSigner &signer,
+                  QSet<QString> &verified, const QString &within = QString(),
+                  const QString &except = QString()) -> bool;
 
   /**
    * @brief The executor is about to run (or drop) its next item: for an

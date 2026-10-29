@@ -2,14 +2,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
 #include "executor.h"
+#include "gpgidsigner.h"
 #include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
 
+#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QProcess>
 #include <QRegularExpression>
 #include <utility>
 
@@ -54,14 +57,130 @@ void RealPass::Show(QString file) {
   executePass(PASS_SHOW, {"show", file}, "", true);
 }
 
+auto RealPass::listSigner() -> GpgIdSigner {
+  return {m_settings.gpgExecutable,
+          GpgIdSigner::keysFromSetting(m_settings.passSigningKey),
+          [this](const QString &app, const QStringList &args,
+                 const QString &input, QString *out, QString *err) {
+            QProcess gpg;
+            gpg.setProcessEnvironment(exec.environment());
+            return Executor::executeBlocking(gpg, app, args, input, out, err);
+          }};
+}
+
+auto RealPass::refuseList(const QString &file, const GpgIdSigner &signer,
+                          QSet<QString> &verified, const QString &within,
+                          const QString &except) -> bool {
+  if (refuseSkippedGpgId(file, true, except)) {
+    return true;
+  }
+  const QString gpgIdFile = Pass::getGpgIdPath(file, m_settings.passStore);
+  const QString absolute =
+      QDir::cleanPath(QFileInfo(gpgIdFile).absoluteFilePath());
+  if (verified.contains(gpgIdFile) ||
+      (!except.isEmpty() &&
+       absolute == QDir::cleanPath(QFileInfo(except).absoluteFilePath())) ||
+      (!within.isEmpty() && !absolute.startsWith(within))) {
+    return false;
+  }
+  QString why =
+      QCoreApplication::translate("ImitatePass", "Signature for %1 is invalid.")
+          .arg(gpgIdFile);
+  QByteArray contents;
+  if (!verifySignedList(signer, gpgIdFile, &contents, &why)) {
+    emit critical(QCoreApplication::translate("ImitatePass",
+                                              "Check .gpg-id file signature!"),
+                  why);
+    return true;
+  }
+  verified.insert(gpgIdFile);
+  return false;
+}
+
+auto RealPass::refuseUnverifiedList(const QString &file) -> bool {
+  // pass verifies the signature itself, but knows nothing of the generation
+  // and folder lines: an older authentic list put back, or one signed for
+  // another folder, would get the secret (#2077). The same checks as the
+  // native backend, with gpg in the store's environment. pass reads the list
+  // again afterwards; a swap in between is a concurrent writer, out of
+  // scope (SECURITY.md).
+  const GpgIdSigner signer = listSigner();
+  if (!signer.enabled()) {
+    return false;
+  }
+  QSet<QString> verified;
+  return refuseList(file, signer, verified);
+}
+
+namespace {
+/// @p dir and every folder under it as pass's reencrypt_path() walks them
+/// (find without -L): hidden ones included, .git left out, no link
+/// followed. Each entry pass re-encrypts lies in one of them, and its list
+/// is that folder's nearest.
+auto passFoldersUnder(const QString &dir) -> QStringList {
+  QStringList folders{QDir::cleanPath(dir)};
+  const QFileInfoList children = QDir(dir).entryInfoList(
+      QDir::Dirs | QDir::Hidden | QDir::System | QDir::NoDotAndDotDot);
+  for (const QFileInfo &child : children) {
+    if (child.isSymLink() || child.isJunction() ||
+        child.fileName() == QLatin1String(".git")) {
+      continue;
+    }
+    folders << passFoldersUnder(child.absoluteFilePath());
+  }
+  return folders;
+}
+} // namespace
+
+auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
+                                    const QString &except) -> bool {
+  const GpgIdSigner signer = listSigner();
+  if (!signer.enabled()) {
+    return false;
+  }
+  // One gpg call per list, before pass runs: a store with many lists makes
+  // that a noticeable pause, so say what it is.
+  emit statusMsg(tr("Checking the recipient lists under %1…")
+                     .arg(QDir::toNativeSeparators(QDir::cleanPath(dir))),
+                 3000);
+  // pass mv and cp re-encrypt every entry of the folder they write to, each
+  // to its nearest list, walking as passFoldersUnder() does. For the folder
+  // that moves, the lists inside it go along: checked where they lie now
+  // (after the move their folder line names the old place until the
+  // recipients are saved there again), while a list above it is replaced
+  // by the destination's, which the caller checks. For entries already in
+  // the destination, their lists stay where they are: all of them count.
+  // Absolute, as getGpgIdPath() hands lists back: a relative or other
+  // spelling would match nothing and check nothing.
+  const QString within =
+      onlyListsWithin ? QDir::cleanPath(QFileInfo(dir).absoluteFilePath()) +
+                            QLatin1Char('/')
+                      : QString();
+  QSet<QString> verified;
+  // Every folder's list counts, also where no entry uses it yet: cp -r
+  // merges an incoming folder into one of the same name, so the entries it
+  // brings get a list already there, and a list it brings replaces the one
+  // there for the entries already in it.
+  for (const QString &folder : passFoldersUnder(dir)) {
+    if (refuseList(folder, signer, verified, within, except)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
   }
-  m_insertQueue.enqueue(QDir::cleanPath(
-      QDir::isAbsolutePath(file)
-          ? file + ".gpg"
-          : QDir(m_settings.passStore).filePath(file) + ".gpg"));
+  const QString entry =
+      QDir::cleanPath(QDir::isAbsolutePath(file)
+                          ? file + ".gpg"
+                          : QDir(m_settings.passStore).filePath(file) + ".gpg");
+  if (refuseUnverifiedList(entry)) {
+    return;
+  }
+  m_insertQueue.enqueue(entry);
   QStringList args = {"insert", "-m"};
   if (overwrite) {
     args.append("-f");
@@ -256,6 +375,14 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
       dirWithoutPassdir.clear();
     }
   }
+  // pass init writes this folder's list and then re-encrypts everything
+  // under it to each entry's nearest list, a deeper folder's own included:
+  // those are checked as for a move. This folder's list is the one being
+  // written, so it is neither verified nor missed.
+  if (refuseUnverifiedTree(folder, true,
+                           QDir(folder).filePath(QStringLiteral(".gpg-id")))) {
+    return;
+  }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   for (const UserInfo &user : users) {
     if (user.enabled) {
@@ -300,6 +427,18 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
 
   // pass always forces when called from QtPass, so refuse file-onto-file.
   if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
+    return;
+  }
+
+  // pass re-encrypts what it moves or copies to the destination's list, a
+  // folder's entries also to the lists that go along with it, and, when it
+  // writes into an existing folder, everything already in that folder too
+  // (reencrypt_path on the whole destination).
+  if (refuseUnverifiedList(destFileInfo.isDir()
+                               ? QDir(dest).filePath(srcFileInfo.fileName())
+                               : dest) ||
+      (srcFileInfo.isDir() && refuseUnverifiedTree(src, true)) ||
+      (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
     return;
   }
 
