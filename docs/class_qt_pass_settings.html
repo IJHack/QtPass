@@ -186,6 +186,8 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:ac52b7ef718ee01e521d4e07d07a08e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get real pass backend instance.  <br /></td></tr>
 <tr class="memitem:a9d6e6cd009f6fa307d9fccd821fd45ad" id="r_a9d6e6cd009f6fa307d9fccd821fd45ad"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9d6e6cd009f6fa307d9fccd821fd45ad">getImitatePass</a> () -&gt; <a class="el" href="class_imitate_pass.html">ImitatePass</a> *</td></tr>
 <tr class="memdesc:a9d6e6cd009f6fa307d9fccd821fd45ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get imitate pass backend instance.  <br /></td></tr>
+<tr class="memitem:ab582b8d98277d74c1127dd42e2eeb7b7" id="r_ab582b8d98277d74c1127dd42e2eeb7b7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab582b8d98277d74c1127dd42e2eeb7b7">backendsIdle</a> () -&gt; bool</td></tr>
+<tr class="memdesc:ab582b8d98277d74c1127dd42e2eeb7b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no backend, the active one or one kept from before a switch, runs or waits for anything (<a class="el" href="class_pass_backend_factory.html#a801a5d6a05ebf5212394021f2f0b6a22" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep...">PassBackendFactory::isIdle()</a>).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton that stores <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> settings, handles persistence and defaults. </p>
@@ -200,6 +202,34 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 <p class="definition">Definition at line <a class="el" href="qtpasssettings_8h_source.html#l00036">36</a> of file <a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ab582b8d98277d74c1127dd42e2eeb7b7" name="ab582b8d98277d74c1127dd42e2eeb7b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab582b8d98277d74c1127dd42e2eeb7b7">&#9670;&#160;</a></span>backendsIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::backendsIdle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether no backend, the active one or one kept from before a switch, runs or waits for anything (<a class="el" href="class_pass_backend_factory.html#a801a5d6a05ebf5212394021f2f0b6a22" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep...">PassBackendFactory::isIdle()</a>). </p>
+<dl class="section return"><dt>Returns</dt><dd>true when all are idle. </dd></dl>
+
+</div>
+</div>
 <a id="ae18fe9b401aac964c72e7d7711283afe" name="ae18fe9b401aac964c72e7d7711283afe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae18fe9b401aac964c72e7d7711283afe">&#9670;&#160;</a></span>getAutoclearSeconds()</h2>
 

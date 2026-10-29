@@ -117,6 +117,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5a14430b6795b7dc6e5d83a78734037d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lazily-constructed <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> backend.  <br /></td></tr>
 <tr class="memitem:a03fc5df993c6ee7cd1dad826b51562c7" id="r_a03fc5df993c6ee7cd1dad826b51562c7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a03fc5df993c6ee7cd1dad826b51562c7">invalidate</a> ()</td></tr>
 <tr class="memdesc:a03fc5df993c6ee7cd1dad826b51562c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget the currently active backend.  <br /></td></tr>
+<tr class="memitem:a801a5d6a05ebf5212394021f2f0b6a22" id="r_a801a5d6a05ebf5212394021f2f0b6a22"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a801a5d6a05ebf5212394021f2f0b6a22">isIdle</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a801a5d6a05ebf5212394021f2f0b6a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether neither backend runs or waits for anything: after a switch of backend the previous one is kept, with its own queue. Backends not constructed yet count as idle (none is constructed here).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Owns the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend lifecycle (<a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> vs <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a>). </p>
@@ -233,6 +235,34 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Forget the currently active backend. </p>
 <p>The next <a class="el" href="#a0de7edf419660c1e7910e2aa097fa364" title="Get the active backend, constructing and initialising it on first use after construction or invalidat...">getPass()</a> call re-selects and re-initialises a backend. Call after changing the "use pass" setting so the switch takes effect. </p>
+
+</div>
+</div>
+<a id="a801a5d6a05ebf5212394021f2f0b6a22" name="a801a5d6a05ebf5212394021f2f0b6a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a801a5d6a05ebf5212394021f2f0b6a22">&#9670;&#160;</a></span>isIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto PassBackendFactory::isIdle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether neither backend runs or waits for anything: after a switch of backend the previous one is kept, with its own queue. Backends not constructed yet count as idle (none is constructed here). </p>
+<dl class="section return"><dt>Returns</dt><dd>true when every constructed backend is idle. </dd></dl>
 
 </div>
 </div>

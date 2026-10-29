@@ -1,4 +1,6 @@
 <map id="Executor::isIdle" name="Executor::isIdle">
-<area shape="rect" id="Node000001" title="Whether no command is running and nothing is queued." alt="" coords="5,29,127,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="86,18,80,11,66,8,54,10,48,14,46,20,50,28,45,30,41,21,43,11,52,5,66,3,83,6,90,14"/>
+<area shape="rect" id="Node000001" title="Whether no command is running and nothing is queued." alt="" coords="148,29,269,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="235,19,228,11,209,8,193,10,184,15,182,20,187,28,183,31,177,21,180,11,191,5,209,3,230,6,239,15"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a66d554f693ae3069381483cb229bb193" title="Whether no gpg, git or pass of this backend runs or waits." alt="" coords="5,29,100,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="134,45,100,45,100,39,134,39"/>
 </map>
