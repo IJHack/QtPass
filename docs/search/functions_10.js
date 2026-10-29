@@ -15,7 +15,7 @@ var searchData=
   ['refreshpalette_12',['refreshPalette',['../class_password_display_panel.html#a399a1b0ecdea8fe814a7c418e8e96c0f',1,'PasswordDisplayPanel']]],
   ['refuselinkedgpgidfolder_13',['refuseLinkedGpgIdFolder',['../class_imitate_pass.html#abe06761236eb789f13dd4e8814ce7f15',1,'ImitatePass']]],
   ['refuselinkedpath_14',['refuseLinkedPath',['../class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29',1,'Pass']]],
-  ['refuseskippedgpgid_15',['refuseSkippedGpgId',['../class_imitate_pass.html#aec8ce2f5fd8281d1d33e76e0411d62c3',1,'ImitatePass']]],
+  ['refuseskippedgpgid_15',['refuseSkippedGpgId',['../class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb',1,'Pass']]],
   ['regularfilesunder_16',['regularFilesUnder',['../class_util.html#a77bcdde819b9f0bd6a68c84cd8198e23',1,'Util']]],
   ['reject_17',['reject',['../class_password_dialog.html#a7316201e5b7ea4caf1a5dfb6f36799f2',1,'PasswordDialog']]],
   ['remembered_18',['remembered',['../class_gpg_id_generation.html#a495c019fdefb8cb6c7349d4ff2f52cd5',1,'GpgIdGeneration']]],

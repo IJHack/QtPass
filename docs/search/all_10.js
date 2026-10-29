@@ -18,7 +18,7 @@ var searchData=
   ['refreshpalette_15',['refreshPalette',['../class_password_display_panel.html#a399a1b0ecdea8fe814a7c418e8e96c0f',1,'PasswordDisplayPanel']]],
   ['refuselinkedgpgidfolder_16',['refuseLinkedGpgIdFolder',['../class_imitate_pass.html#abe06761236eb789f13dd4e8814ce7f15',1,'ImitatePass']]],
   ['refuselinkedpath_17',['refuseLinkedPath',['../class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29',1,'Pass']]],
-  ['refuseskippedgpgid_18',['refuseSkippedGpgId',['../class_imitate_pass.html#aec8ce2f5fd8281d1d33e76e0411d62c3',1,'ImitatePass']]],
+  ['refuseskippedgpgid_18',['refuseSkippedGpgId',['../class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb',1,'Pass']]],
   ['regularfilesunder_19',['regularFilesUnder',['../class_util.html#a77bcdde819b9f0bd6a68c84cd8198e23',1,'Util']]],
   ['reject_20',['reject',['../class_password_dialog.html#a7316201e5b7ea4caf1a5dfb6f36799f2',1,'PasswordDialog']]],
   ['rejected_21',['Rejected',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073ad37b1f6c0512e2118cee17fea015b699',1,'Pass::RecipientsForEditing']]],

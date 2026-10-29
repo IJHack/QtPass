@@ -5,5 +5,6 @@ var searchData=
   ['verify_2',['verify',['../class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858',1,'GpgIdSigner::verify()'],['../class_rnp_crypto.html#a681d3f35bd3c8db88dfb9a182d0d788b',1,'RnpCrypto::verify()']]],
   ['verifyfile_3',['verifyFile',['../class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f',1,'GpgIdSigner']]],
   ['verifygpgidfordir_4',['verifyGpgIdForDir',['../class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf',1,'ImitatePass']]],
-  ['view_5',['view',['../class_store_tree.html#aa93e44448a60d9e87d003529b5364ce1',1,'StoreTree']]]
+  ['verifysignedlist_5',['verifySignedList',['../class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb',1,'Pass']]],
+  ['view_6',['view',['../class_store_tree.html#aa93e44448a60d9e87d003529b5364ce1',1,'StoreTree']]]
 ];

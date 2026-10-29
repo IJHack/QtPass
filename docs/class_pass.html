@@ -262,6 +262,10 @@ Protected Slots</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0037d3169c1c0fc270270cde4b8d25d2" id="r_a0037d3169c1c0fc270270cde4b8d25d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a> () const -&gt; QProcessEnvironment</td></tr>
 <tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
+<tr class="memitem:a3aea03014a99498ace9df6c5edaa1dfb" id="r_a3aea03014a99498ace9df6c5edaa1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td></tr>
+<tr class="memdesc:a3aea03014a99498ace9df6c5edaa1dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="#a717df61e5c322ebe742c564de47d74d7" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
+<tr class="memitem:aa048c50cd2e6fa95033b4c69910e04bb" id="r_aa048c50cd2e6fa95033b4c69910e04bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a> (const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td></tr>
+<tr class="memdesc:aa048c50cd2e6fa95033b4c69910e04bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">gpgIdFile</code> is a signed list <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its signature verifies (<a class="el" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig.">GpgIdSigner::verifyFile()</a>), and it is current and bound to the folder it lies in (<a class="el" href="class_gpg_id_generation.html#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">GpgIdGeneration::accept()</a>), so an older authentic list put back, or one signed for another folder, is refused.  <br /></td></tr>
 <tr class="memitem:a6097de48d30068d8a73f7dc80ff01de0" id="r_a6097de48d30068d8a73f7dc80ff01de0"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a6097de48d30068d8a73f7dc80ff01de0">insertWritten</a> (const QString &amp;err) const -&gt; bool</td></tr>
 <tr class="memdesc:a6097de48d30068d8a73f7dc80ff01de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
@@ -298,7 +302,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 <p>Subclasses must implement Git and password operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00054">54</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00056">56</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a2e71b5174b4ef25a1e91d8c56177b772" name="a2e71b5174b4ef25a1e91d8c56177b772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e71b5174b4ef25a1e91d8c56177b772">&#9670;&#160;</a></span>PROCESS</h2>
@@ -322,7 +326,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00088">88</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00090">90</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1729,7 +1733,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00384">384</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00414">414</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1759,7 +1763,7 @@ Protected Attributes</h2></td></tr>
 <p>Whether no gpg, git or pass of this backend runs or waits. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when its executor is idle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00374">374</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00376">376</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -2047,7 +2051,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00397">397</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00427">427</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2118,6 +2122,51 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
+
+</div>
+</div>
+<a id="a3aea03014a99498ace9df6c5edaa1dfb" name="a3aea03014a99498ace9df6c5edaa1dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aea03014a99498ace9df6c5edaa1dfb">&#9670;&#160;</a></span>refuseSkippedGpgId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::refuseSkippedGpgId </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>signing</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="#a717df61e5c322ebe742c564de47d74d7" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The entry or folder about to be encrypted to. </td></tr>
+    <tr><td class="paramname">signing</td><td>Whether a signing key is set (signed lists in use). </td></tr>
+    <tr><td class="paramname">except</td><td>A list about to be written (by <span class="tt">pass <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>), which may be missing now without that being refused. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
 </div>
 </div>
@@ -2416,7 +2465,58 @@ Protected Attributes</h2></td></tr>
 <p>The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in. </p>
 <p>What <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a> made: the git ceiling and the PASSWORD_STORE_ variables <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own environment does not carry. For blocking calls that start their own process. </p><dl class="section return"><dt>Returns</dt><dd>A copy of the environment. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00069">69</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00071">71</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a id="aa048c50cd2e6fa95033b4c69910e04bb" name="aa048c50cd2e6fa95033b4c69910e04bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa048c50cd2e6fa95033b4c69910e04bb">&#9670;&#160;</a></span>verifySignedList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::verifySignedList </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>signer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QByteArray *</td>          <td class="paramname"><span class="paramname"><em>contents</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>why</em></span>&#160;) const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">gpgIdFile</code> is a signed list <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its signature verifies (<a class="el" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig.">GpgIdSigner::verifyFile()</a>), and it is current and bound to the folder it lies in (<a class="el" href="class_gpg_id_generation.html#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">GpgIdGeneration::accept()</a>), so an older authentic list put back, or one signed for another folder, is refused. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signer</td><td>The verifier, with the configured signing keys. </td></tr>
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span>. </td></tr>
+    <tr><td class="paramname">contents</td><td>Receives the verified bytes. </td></tr>
+    <tr><td class="paramname">why</td><td>Receives why a current-and-bound check refused the list; left as it is when the signature itself does not verify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the list may be encrypted to. </dd></dl>
 
 </div>
 </div>
@@ -2443,7 +2543,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal command executor for queuing and running subprocesses. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00083">83</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00085">85</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2470,7 +2570,7 @@ Protected Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00228">228</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00230">230</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2497,7 +2597,7 @@ Protected Attributes</h2></td></tr>
 <p>Application settings snapshot injected at <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init()</a> time. </p>
 <p>Populated by init(AppSettings) and valid for the lifetime of this backend instance. Subclasses read it in place of calling <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00079">79</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00081">81</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
