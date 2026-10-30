@@ -50,6 +50,7 @@ private Q_SLOTS:
   void getRemainingDataEmptyWhenAllTemplate();
   void isSecretFieldNameMatchesWholeWords_data();
   void isSecretFieldNameMatchesWholeWords();
+  void isSecretFieldNameFollowsTheList();
   void isOtpFieldNameMatchesOtpAndTotp_data();
   void isOtpFieldNameMatchesOtpAndTotp();
   void getOtpUriFromTemplateField();
@@ -548,6 +549,26 @@ void tst_filecontent::isSecretFieldNameMatchesWholeWords() {
   QCOMPARE(FileContent::isSecretFieldName(
                name, AppSettings::defaultSecretFieldNames()),
            secret);
+}
+
+/**
+ * @brief The pattern is built once per list, and a changed list is matched
+ *        at once: another list, an empty one (nothing is secret), and a
+ *        word with pattern characters, which are taken as they are.
+ */
+void tst_filecontent::isSecretFieldNameFollowsTheList() {
+  const QStringList first{QStringLiteral("iban")};
+  const QStringList second{QStringLiteral("pin")};
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("IBAN"), first));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"), first));
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("PIN"), second));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("IBAN"), second));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"), {}));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"),
+                                          {QStringLiteral("  ")}));
+  const QStringList special{QStringLiteral("a.b")};
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my a.b"), special));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("axb"), special));
 }
 
 void tst_filecontent::isOtpFieldNameMatchesOtpAndTotp_data() {

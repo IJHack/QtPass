@@ -181,21 +181,28 @@ auto FileContent::isOtpFieldName(const QString &name) -> bool {
 
 auto FileContent::isSecretFieldName(const QString &name,
                                     const QStringList &secrets) -> bool {
-  for (const QString &secret : secrets) {
-    const QString word = secret.trimmed();
-    if (word.isEmpty()) {
-      continue;
+  // One pattern for the whole list, compiled once per list: the panel asks
+  // for every field of every entry shown, and the list rarely changes.
+  thread_local QStringList cachedSecrets;
+  thread_local QRegularExpression cachedPattern;
+  thread_local bool cachedAny = false;
+  if (secrets != cachedSecrets || !cachedPattern.isValid()) {
+    QStringList words;
+    for (const QString &secret : secrets) {
+      const QString word = secret.trimmed();
+      if (!word.isEmpty()) {
+        words << QRegularExpression::escape(word);
+      }
     }
-    const QRegularExpression whole(
-        QStringLiteral("(?<!\\w)%1(?!\\w)")
-            .arg(QRegularExpression::escape(word)),
-        QRegularExpression::CaseInsensitiveOption |
-            QRegularExpression::UseUnicodePropertiesOption);
-    if (whole.match(name).hasMatch()) {
-      return true;
-    }
+    cachedSecrets = secrets;
+    cachedAny = !words.isEmpty();
+    cachedPattern =
+        QRegularExpression(QStringLiteral("(?<!\\w)(?:%1)(?!\\w)")
+                               .arg(words.join(QLatin1Char('|'))),
+                           QRegularExpression::CaseInsensitiveOption |
+                               QRegularExpression::UseUnicodePropertiesOption);
   }
-  return false;
+  return cachedAny && cachedPattern.match(name).hasMatch();
 }
 
 auto FileContent::isOtpUriValue(const QString &value) -> bool {
