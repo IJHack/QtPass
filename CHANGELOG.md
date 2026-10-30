@@ -9,8 +9,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 ### Upgrade Notes
 
 - **"Hide password" hides more.** With it on, fields that name a secret
-  (PIN, PUK, CVV, CVC, secret, token, key, passphrase, password, recovery,
-  answer, seed, mnemonic, as whole words) are behind the eye button too.
+  (PIN, PIN code, PUK, CVV, CVC, secret, token, key, passphrase, password,
+  recovery, answer, seed, mnemonic, as whole words) are behind the eye
+  button too.
   For only the password, as in 1.8, switch off Settings › Display › "Also
   hide other secrets"; the words next to it can be changed, and "Default"
   puts the set back.

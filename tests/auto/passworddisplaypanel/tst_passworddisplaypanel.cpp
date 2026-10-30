@@ -118,11 +118,14 @@ void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
   QVERIFY(hidden(QStringLiteral("API key")));
   QVERIFY(!hidden(QStringLiteral("keyboard layout")));
   QVERIFY(!hidden(QStringLiteral("url")));
-  int urlButtons = 0;
-  for (int row = 0; row < m_grid->rowCount(); ++row) {
-    urlButtons += urlButtonAt(row) != nullptr ? 1 : 0;
-  }
-  QCOMPARE(urlButtons, 1); // the url field's, not the API key's
+  const auto countUrlButtons = [this]() {
+    int buttons = 0;
+    for (int row = 0; row < m_grid->rowCount(); ++row) {
+      buttons += urlButtonAt(row) != nullptr ? 1 : 0;
+    }
+    return buttons;
+  };
+  QCOMPARE(countUrlButtons(), 1); // the url field's, not the hidden API key's
 
   // Other secrets switched off: only the password, as in 1.8.
   m_panel->clear();
@@ -132,12 +135,17 @@ void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
   QVERIFY(!hidden(QStringLiteral("pin")));
   QVERIFY(!hidden(QStringLiteral("API key")));
 
+  // Shown in plain view, a secret field keeps its link: the API key's
+  // button is back next to the url's.
+  QCOMPARE(countUrlButtons(), 2);
+
   m_panel->clear();
   s.hidePassword = false;
   s.hideSecretFields = true;
   m_panel->displayFields(QStringLiteral("secret"), fields, s);
   QVERIFY(!hidden(QStringLiteral("pin")));
   QVERIFY(!hidden(QStringLiteral("API key")));
+  QCOMPARE(countUrlButtons(), 2);
 }
 
 /**
