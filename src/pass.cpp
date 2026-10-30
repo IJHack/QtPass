@@ -55,6 +55,14 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
   connect(&exec, &Executor::drained, this, &Pass::idle);
+  // Each queued process starts in the environment as the store is then:
+  // the Git pin is judged at that moment (dequeuing() comes just before the
+  // start, on this thread).
+  connect(&exec, &Executor::dequeuing, this, [this](int, bool completes) {
+    if (completes) {
+      exec.setEnvironment(withCurrentGitPin(env));
+    }
+  });
   // Merge our vars into WSLENV rather than blindly appending a duplicate
   // entry. WSLENV flags: /p translates the path, /u forwards from Windows
   // into WSL only; /w would be the other direction, from WSL out, and leaves
@@ -640,6 +648,20 @@ void Pass::updateEnv() {
   }
 
   exec.setEnvironment(env);
+}
+
+auto Pass::withCurrentGitPin(QProcessEnvironment base) const
+    -> QProcessEnvironment {
+  if (m_settings.gitUseParentRepository || m_settings.passStore.isEmpty()) {
+    return base;
+  }
+  base.remove(QStringLiteral("GIT_DIR"));
+  base.remove(QStringLiteral("GIT_WORK_TREE"));
+  for (const auto &[name, value] :
+       Util::gitStoreVariables(m_settings.passStore)) {
+    base.insert(name, value);
+  }
+  return base;
 }
 
 auto Pass::maxOutputArgs() -> QStringList {

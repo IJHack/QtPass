@@ -138,6 +138,15 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+namespace {
+/// setGitOwnerForTests(): who owns "the user's own" store, when set.
+std::optional<uint> s_gitOwnerForTests;
+} // namespace
+
+void Util::setGitOwnerForTests(std::optional<uint> user) {
+  s_gitOwnerForTests = user;
+}
+
 auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
     -> QList<std::pair<QString, QString>> {
   const QString ceiling = gitCeiling(store);
@@ -164,7 +173,8 @@ auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
     // the .git, and the directory a gitfile names. Not the user's: no
     // repository at all, under a path that cannot be created (its parent
     // is a device), rather than another user's hooks run as this one.
-    const uint me = asUser.value_or(static_cast<uint>(::geteuid()));
+    const uint me = asUser.value_or(
+        s_gitOwnerForTests.value_or(static_cast<uint>(::geteuid())));
     const auto ownedOrMissing = [me](const QString &path) {
       const QFileInfo info(path);
       return !info.exists() || info.ownerId() == me;
@@ -185,6 +195,9 @@ auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
       gitDir = QStringLiteral("/dev/null/.git");
     }
 #else
+    // Git for Windows runs the same ownership check during discovery, on
+    // SIDs, with its own rules for the Administrators group; this pin skips
+    // it there and does not repeat it (a known gap, #2089).
     Q_UNUSED(asUser);
 #endif
     vars.append({QStringLiteral("GIT_DIR"), gitDir});

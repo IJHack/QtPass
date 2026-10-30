@@ -319,6 +319,42 @@ public:
   };
 
 protected:
+  /// storeEnvironment() as it was when the worker started; the worker's
+  /// processes run in it.
+  QProcessEnvironment m_reencryptEnv;
+  /**
+   * @brief Executor::executeBlocking() for the re-encryption helpers.
+   *
+   * Runs in the store's environment (storeEnvironment(); on the worker, the
+   * copy taken when it started), which carries the git ceiling QtPass's own
+   * does not. On the owning thread this is a plain blocking run. On the worker
+   * thread it hands m_reencryptCancel to the cancellable executeBlocking()
+   * overload: nothing is started once the flag is set, and a process that is
+   * running when it gets set is terminated (then killed) by the worker thread,
+   * which is what lets cancelReencryptPath() and the destructor interrupt an
+   * active gpg or git without touching its QProcess or pid.
+   * @param app The program.
+   * @param args Its arguments.
+   * @param input What to write to its stdin.
+   * @param process_out Receives stdout, if not null.
+   * @param process_err Receives stderr, if not null.
+   * @return Exit code, or -1 when refused, failed to start or interrupted.
+   */
+  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
+                                  const QString &input = QString(),
+                                  QString *process_out = nullptr,
+                                  QString *process_err = nullptr) -> int;
+  /**
+   * @brief Overload capturing stdout (and stderr) without stdin input.
+   * @param app The program.
+   * @param args Its arguments.
+   * @param process_out Receives stdout.
+   * @param process_err Receives stderr, if not null.
+   * @return As the overload above.
+   */
+  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
+                                  QString *process_out,
+                                  QString *process_err = nullptr) -> int;
   /**
    * @brief Handle process completion.
    * @param id Process identifier.
@@ -550,30 +586,6 @@ private:
   /// is never touched from another thread.
   std::atomic<bool> m_reencryptCancel{false};
   QThread *m_reencryptThread = nullptr;
-  /// storeEnvironment() as it was when the worker started; the worker's
-  /// processes run in it.
-  QProcessEnvironment m_reencryptEnv;
-  /**
-   * @brief Executor::executeBlocking() for the re-encryption helpers.
-   *
-   * Runs in the store's environment (storeEnvironment(); on the worker, the
-   * copy taken when it started), which carries the git ceiling QtPass's own
-   * does not. On the owning thread this is a plain blocking run. On the worker
-   * thread it hands m_reencryptCancel to the cancellable executeBlocking()
-   * overload: nothing is started once the flag is set, and a process that is
-   * running when it gets set is terminated (then killed) by the worker thread,
-   * which is what lets cancelReencryptPath() and the destructor interrupt an
-   * active gpg or git without touching its QProcess or pid.
-   * @return Exit code, or -1 when refused, failed to start or interrupted.
-   */
-  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
-                                  const QString &input = QString(),
-                                  QString *process_out = nullptr,
-                                  QString *process_err = nullptr) -> int;
-  /// Overload capturing stdout (and stderr) without stdin input.
-  [[nodiscard]] auto execBlocking(const QString &app, const QStringList &args,
-                                  QString *process_out,
-                                  QString *process_err = nullptr) -> int;
   /**
    * @brief Start the worker thread once the Executor queue is idle.
    * @param dir Directory passed to reencryptPath().

@@ -69,7 +69,7 @@ auto ImitatePass::execBlocking(const QString &app, const QStringList &args,
     return Executor::executeBlocking(process, app, args, input, process_out,
                                      process_err);
   }
-  process.setProcessEnvironment(m_reencryptEnv);
+  process.setProcessEnvironment(withCurrentGitPin(m_reencryptEnv));
   return Executor::executeBlocking(process, app, args, input, process_out,
                                    process_err, &m_reencryptCancel);
 }
