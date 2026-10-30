@@ -5,6 +5,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QClipboard>
+#include <utility>
 
 ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {
   setAutoclearTimer();
@@ -50,7 +51,10 @@ void ClipboardManager::copyText(const QString &text) {
                                            ? m_previousSelection
                                            : m_previousClipboard;
     const QString now = clip->text(mode);
-    if (!previous && now != m_clippedText && !m_otherCopies.contains(now)) {
+    // Not a text of ours, and not the very text being copied: restoring
+    // that would leave the secret on the clipboard for good.
+    if (!previous && now != text && now != m_clippedText &&
+        !m_otherCopies.contains(now)) {
       previous = now;
     }
   }
@@ -107,6 +111,12 @@ void ClipboardManager::trackCopied(const QString &text) {
 }
 
 void ClipboardManager::clear() {
+  // Whatever happens below, the saved text is forgotten: it is the user's,
+  // and no later autoclear may put it back.
+  const std::optional<QString> previousClipboard =
+      std::exchange(m_previousClipboard, std::nullopt);
+  const std::optional<QString> previousSelection =
+      std::exchange(m_previousSelection, std::nullopt);
   if (m_clippedText.isEmpty() && m_otherCopies.isEmpty()) {
     // Nothing of ours is out there. The old code compared the empty tracker
     // with an empty selection, "cleared" that and said so on every deselect.
@@ -120,14 +130,17 @@ void ClipboardManager::clear() {
   const bool restore = QtPassSettings::load().restoreClipboard;
   bool cleared = false;
   bool restored = false;
-  // Ours still there: the text from before comes back if there was one,
-  // otherwise it is cleared. Something else copied meanwhile is left alone.
+  // Ours still there: the text from before comes back if there was one and
+  // what is there is copyText()'s own copy, otherwise it is cleared (a copy
+  // from a shown field, trackCopied(), is cleared, not written over).
+  // Something else copied meanwhile is left alone.
   const auto putBack = [&](QClipboard::Mode mode,
                            const std::optional<QString> &previous) {
-    if (!ours(clipboard->text(mode))) {
+    const QString now = clipboard->text(mode);
+    if (!ours(now)) {
       return;
     }
-    if (restore && previous && !previous->isEmpty()) {
+    if (restore && previous && !previous->isEmpty() && now == m_clippedText) {
       clipboard->setText(*previous, mode);
       restored = true;
       return;
@@ -138,15 +151,13 @@ void ClipboardManager::clear() {
     }
     cleared = true;
   };
-  putBack(QClipboard::Selection, m_previousSelection);
-  putBack(QClipboard::Clipboard, m_previousClipboard);
+  putBack(QClipboard::Selection, previousSelection);
+  putBack(QClipboard::Clipboard, previousClipboard);
   emit statusMessage(restored  ? tr("Clipboard restored")
                      : cleared ? tr("Clipboard cleared")
                                : tr("Clipboard not cleared"));
   m_clippedText.clear();
   m_otherCopies.clear();
-  m_previousClipboard.reset();
-  m_previousSelection.reset();
 }
 
 /**

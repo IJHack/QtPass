@@ -129,6 +129,39 @@ void tst_clipboardmanager::autoclearRestoresWhatWasThereBefore() {
   QCOMPARE(status.at(1).at(0).toString(),
            QStringLiteral("Clipboard not cleared"));
 
+  // The very text being copied was there already: not saved as "before",
+  // or it would come back and stay.
+  status.clear();
+  QApplication::clipboard()->setText(QStringLiteral("hunter2"));
+  manager.copyText(QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QVERIFY2(QApplication::clipboard()->text() != QStringLiteral("hunter2"),
+           "the copied secret is not put back as what was there before");
+
+  // A copy from a shown field after the copy: cleared, not written over
+  // with the text from before.
+  status.clear();
+  QApplication::clipboard()->setText(QStringLiteral("sentinel"));
+  manager.copyText(QStringLiteral("hunter2"));
+  QApplication::clipboard()->setText(QStringLiteral("pin: 1234"));
+  manager.trackCopied(QStringLiteral("pin: 1234"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QVERIFY(QApplication::clipboard()->text().isEmpty());
+  QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard cleared"));
+
+  // An empty copy saves nothing that a later clear could bring back.
+  status.clear();
+  QApplication::clipboard()->setText(QStringLiteral("old secret"));
+  manager.copyText(QString());
+  manager.clear();
+  QApplication::clipboard()->setText(QStringLiteral("newer"));
+  manager.copyText(QStringLiteral("hunter2"));
+  QApplication::clipboard()->clear();
+  manager.copyText(QStringLiteral("hunter2"));
+  manager.clear();
+  QVERIFY2(QApplication::clipboard()->text() != QStringLiteral("old secret"),
+           "a text saved before an early return is forgotten");
+
   // Nothing there before: cleared, as without restoring.
   status.clear();
   QApplication::clipboard()->clear();
