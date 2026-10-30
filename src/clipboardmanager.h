@@ -113,6 +113,8 @@ private:
   /// only, as pass -c keeps it; absent when nothing was saved.
   std::optional<QString> m_previousClipboard;
   std::optional<QString> m_previousSelection;
+  /// Empty a saved previous text equal to @p text, now copied as a secret.
+  void forgetIfSaved(const QString &text);
   QStringList m_otherCopies; ///< trackCopied() texts, cleared with the rest
 };
 

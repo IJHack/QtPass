@@ -58,6 +58,7 @@ void ClipboardManager::copyText(const QString &text) {
       previous = now;
     }
   }
+  forgetIfSaved(text);
   clip->setMimeData(buildClipboardMimeData(text), mode);
 
   m_clippedText = text;
@@ -67,10 +68,23 @@ void ClipboardManager::copyText(const QString &text) {
   }
 }
 
+void ClipboardManager::forgetIfSaved(const QString &text) {
+  // The saved text is copied as a secret now: putting it back would leave
+  // that secret on the clipboard. Emptied, not dropped, so no later copy
+  // takes a new snapshot in this window either; clear() then clears.
+  for (std::optional<QString> *previous :
+       {&m_previousClipboard, &m_previousSelection}) {
+    if (*previous && **previous == text) {
+      *previous = QString();
+    }
+  }
+}
+
 void ClipboardManager::trackCopied(const QString &text) {
   if (text.isEmpty()) {
     return;
   }
+  forgetIfSaved(text);
   // Kept beside m_clippedText, not instead of it: replacing it would leave a
   // password copied earlier on the clipboard past its autoclear (#1607).
   constexpr qsizetype kMaxOtherCopies = 16;

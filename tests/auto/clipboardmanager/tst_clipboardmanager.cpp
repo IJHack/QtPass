@@ -162,6 +162,26 @@ void tst_clipboardmanager::autoclearRestoresWhatWasThereBefore() {
   QVERIFY2(QApplication::clipboard()->text() != QStringLiteral("old secret"),
            "a text saved before an early return is forgotten");
 
+  // The saved text copied as a secret later (by QtPass, or from a shown
+  // field): not put back, cleared.
+  for (const bool fromField : {false, true}) {
+    status.clear();
+    QApplication::clipboard()->setText(QStringLiteral("second secret"));
+    manager.copyText(QStringLiteral("hunter2"));
+    if (fromField) {
+      // Copied from a field, then QtPass copies again: its own copy is
+      // what autoclear finds, and the saved text must not come back.
+      QApplication::clipboard()->setText(QStringLiteral("second secret"));
+      manager.trackCopied(QStringLiteral("second secret"));
+      manager.copyText(QStringLiteral("hunter2"));
+    } else {
+      manager.copyText(QStringLiteral("second secret"));
+    }
+    QTRY_COMPARE_WITH_TIMEOUT(status.count(), 3, 3000);
+    QVERIFY2(QApplication::clipboard()->text().isEmpty(),
+             qPrintable(QApplication::clipboard()->text()));
+  }
+
   // Nothing there before: cleared, as without restoring.
   status.clear();
   QApplication::clipboard()->clear();
