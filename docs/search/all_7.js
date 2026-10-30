@@ -8,5 +8,6 @@ var searchData=
   ['header_5',['header',['../class_gpg_id_generation.html#ae91580bee956fc0138e35db7eabbd2a6',1,'GpgIdGeneration']]],
   ['hidecontent_6',['hideContent',['../struct_app_settings.html#a386eab4e60ad6e21c2d860c04d6d687c',1,'AppSettings']]],
   ['hideonclose_7',['hideOnClose',['../struct_app_settings.html#a1fbf2293fb2e2f41ed8eb0277079a168',1,'AppSettings']]],
-  ['hidepassword_8',['hidePassword',['../struct_app_settings.html#a456348bb05697510a3ee66d82847b047',1,'AppSettings']]]
+  ['hidepassword_8',['hidePassword',['../struct_app_settings.html#a456348bb05697510a3ee66d82847b047',1,'AppSettings']]],
+  ['hidesecretfields_9',['hideSecretFields',['../struct_app_settings.html#a610eb03686814827c70c12e01489ac77',1,'AppSettings']]]
 ];

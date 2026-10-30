@@ -131,6 +131,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:af8c5c3b19e2f1244c5e83aa40521ebde"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depending on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
 <tr class="memitem:affff8612aceb9006d8b7117e2a6ef70a" id="r_affff8612aceb9006d8b7117e2a6ef70a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a> (const QString &amp;name) -&gt; bool</td></tr>
 <tr class="memdesc:affff8612aceb9006d8b7117e2a6ef70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name designates the one-time password field.  <br /></td></tr>
+<tr class="memitem:a18a02db7e70b10aaf86f76345418fd00" id="r_a18a02db7e70b10aaf86f76345418fd00"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a18a02db7e70b10aaf86f76345418fd00">isSecretFieldName</a> (const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</td></tr>
+<tr class="memdesc:a18a02db7e70b10aaf86f76345418fd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name names a secret: one of <code class="param">secrets</code> occurs in it as whole words, compared case-insensitively ("key" matches "API key" and "Recovery key", not "keyboard layout").  <br /></td></tr>
 <tr class="memitem:a92629a218b9fce0c611d9ac1e1eca638" id="r_a92629a218b9fce0c611d9ac1e1eca638"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a> (const QString &amp;value) -&gt; bool</td></tr>
 <tr class="memdesc:a92629a218b9fce0c611d9ac1e1eca638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field value is an otpauth URI, and therefore a secret.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -536,6 +538,57 @@ Static Public Attributes</h2></td></tr>
 </div>
 <div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a92629a218b9fce0c611d9ac1e1eca638_icgraph.svg" width="204" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a18a02db7e70b10aaf86f76345418fd00" name="a18a02db7e70b10aaf86f76345418fd00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a02db7e70b10aaf86f76345418fd00">&#9670;&#160;</a></span>isSecretFieldName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto FileContent::isSecretFieldName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>secrets</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a field name names a secret: one of <code class="param">secrets</code> occurs in it as whole words, compared case-insensitively ("key" matches "API key" and "Recovery key", not "keyboard layout"). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Field name as written in the file. </td></tr>
+    <tr><td class="paramname">secrets</td><td>The secret field names (<a class="el" href="struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2">AppSettings::secretFieldNames</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when one of them occurs in <code class="param">name</code>. </dd></dl>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a18a02db7e70b10aaf86f76345418fd00_cgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a18a02db7e70b10aaf86f76345418fd00_icgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

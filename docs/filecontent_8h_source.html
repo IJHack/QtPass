@@ -159,24 +159,29 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="class_file_content.html#affff8612aceb9006d8b7117e2a6ef70a">  161</a></span>  [[nodiscard]] static auto <a class="code hl_function" href="class_file_content.html#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a>(const QString &amp;name) -&gt; <span class="keywordtype">bool</span>;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">  172</a></span>  [[nodiscard]] static auto <a class="code hl_function" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a>(const QString &amp;value) -&gt; <span class="keywordtype">bool</span>;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">  190</a></span>  [[nodiscard]] auto <a class="code hl_function" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a>() const -&gt; QString;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>private:</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  FileContent(QString password, <a class="code hl_class" href="class_named_values.html">NamedValues</a> namedValues, QString remainingData,</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>              QString remainingDataDisplay, QString otpUri,</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>              qsizetype remainingLines);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  QString password;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> namedValues;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  QString remainingData, remainingDataDisplay;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  QString otpUri;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  qsizetype remainingLines = 0;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>};</div>
-</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_file_content.html#a18a02db7e70b10aaf86f76345418fd00">  171</a></span>  [[nodiscard]] static auto <a class="code hl_function" href="class_file_content.html#a18a02db7e70b10aaf86f76345418fd00">isSecretFieldName</a>(const QString &amp;name,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                                              const QStringList &amp;secrets)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">  184</a></span>  [[nodiscard]] static auto <a class="code hl_function" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a>(const QString &amp;value) -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">  202</a></span>  [[nodiscard]] auto <a class="code hl_function" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a>() const -&gt; QString;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#endif </span><span class="comment">// SRC_FILECONTENT_H_</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>private:</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  FileContent(QString password, <a class="code hl_class" href="class_named_values.html">NamedValues</a> namedValues, QString remainingData,</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>              QString remainingDataDisplay, QString otpUri,</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>              qsizetype remainingLines);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  QString password;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> namedValues;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  QString remainingData, remainingDataDisplay;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  QString otpUri;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  qsizetype remainingLines = 0;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>};</div>
+</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#endif </span><span class="comment">// SRC_FILECONTENT_H_</span></div>
+<div class="ttc" id="aclass_file_content_html_a18a02db7e70b10aaf86f76345418fd00"><div class="ttname"><a href="class_file_content.html#a18a02db7e70b10aaf86f76345418fd00">FileContent::isSecretFieldName</a></div><div class="ttdeci">static auto isSecretFieldName(const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</div><div class="ttdoc">Whether a field name names a secret: one of secrets occurs in it as whole words, compared case-insens...</div></div>
 <div class="ttc" id="aclass_file_content_html_a58c11b05ff5987b86b38ef63098a53ee"><div class="ttname"><a href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">FileContent::getRemainingLineCount</a></div><div class="ttdeci">auto getRemainingLineCount() const -&gt; qsizetype</div><div class="ttdoc">How many lines getRemainingData() holds.</div></div>
 <div class="ttc" id="aclass_file_content_html_a803a9d95b4a7575124f3ed141c7d6365"><div class="ttname"><a href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">FileContent::kMaxDisplayLines</a></div><div class="ttdeci">static constexpr int kMaxDisplayLines</div><div class="ttdoc">Most lines of remaining text getRemainingDataForDisplay() gives.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">filecontent.h:79</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a845c61a8c0f52e5aa73953c9162dd47d"><div class="ttname"><a href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a></div><div class="ttdeci">auto getRemainingData() const -&gt; QString</div></div>
