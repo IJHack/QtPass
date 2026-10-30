@@ -238,7 +238,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // CVV, an API key): behind the eye button too.
   if (s.hidePassword &&
       (trimmedField == QObject::tr("Password") ||
-       FileContent::isSecretFieldName(trimmedField, s.secretFieldNames))) {
+       (s.hideSecretFields &&
+        FileContent::isSecretFieldName(trimmedField, s.secretFieldNames)))) {
     addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
     SecretTextBrowser *browser =

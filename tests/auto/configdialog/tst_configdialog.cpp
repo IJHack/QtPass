@@ -1176,31 +1176,46 @@ void tst_configdialog::invalidConfigurationOpensPrograms() {
 }
 
 /**
- * @brief The secret field names show as a comma list, can be edited only
- *        while passwords are hidden, and an emptied list is saved as the
- *        default set.
+ * @brief The secret fields in Settings: the switch can be used only while
+ *        passwords are hidden, the words and "Default" only while the
+ *        switch is on; "Default" puts the set back, and an emptied list is
+ *        saved as empty (nothing extra hidden), not swapped for the set.
  */
 void tst_configdialog::secretFieldsFollowHidePassword() {
   {
     AppSettings seed = QtPassSettings::load();
     seed.hidePassword = false;
+    seed.hideSecretFields = true;
     seed.secretFieldNames = AppSettings::defaultSecretFieldNames();
     seed.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
     QtPassSettings::save(seed);
   }
   ConfigDialog dialog(nullptr);
   auto *hide = child<QCheckBox>(dialog, "checkBoxHidePassword");
+  auto *secrets = child<QCheckBox>(dialog, "checkBoxHideSecretFields");
   auto *names = child<QLineEdit>(dialog, "lineEditSecretFields");
-  QCOMPARE(names->text(),
-           AppSettings::defaultSecretFieldNames().join(QStringLiteral(", ")));
-  QVERIFY2(!names->isEnabled(), "nothing to hide while passwords show");
+  auto *reset = child<QPushButton>(dialog, "buttonDefaultSecretFields");
+  const QString defaults =
+      AppSettings::defaultSecretFieldNames().join(QStringLiteral(", "));
+  QCOMPARE(names->text(), defaults);
+  QVERIFY(secrets->isChecked());
+  QVERIFY2(!secrets->isEnabled() && !names->isEnabled() && !reset->isEnabled(),
+           "nothing to hide while passwords show");
   hide->setChecked(true);
-  QVERIFY(names->isEnabled());
+  QVERIFY(secrets->isEnabled() && names->isEnabled() && reset->isEnabled());
+  secrets->setChecked(false);
+  QVERIFY2(secrets->isEnabled() && !names->isEnabled() && !reset->isEnabled(),
+           "the words only while other secrets are hidden");
+  secrets->setChecked(true);
+  names->setText(QStringLiteral("iban"));
+  reset->click();
+  QCOMPARE(names->text(), defaults);
   names->clear();
   dialog.accept();
   const AppSettings s = QtPassSettings::load();
   QVERIFY(s.hidePassword);
-  QCOMPARE(s.secretFieldNames, AppSettings::defaultSecretFieldNames());
+  QVERIFY(s.hideSecretFields);
+  QVERIFY2(s.secretFieldNames.isEmpty(), "emptied is saved as empty");
 }
 
 /**
@@ -1240,11 +1255,13 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
   child<QComboBox>(dialog, "comboBoxFields")->setCurrentIndex(2);
   child<QLineEdit>(dialog, "lineEditSecretFields")
       ->setText(QStringLiteral("iban, cvv ,"));
+  child<QCheckBox>(dialog, "checkBoxHideSecretFields")->setChecked(false);
   dialog.accept();
 
   const AppSettings s = QtPassSettings::load();
   QCOMPARE(s.secretFieldNames,
            (QStringList{QStringLiteral("iban"), QStringLiteral("cvv")}));
+  QVERIFY(!s.hideSecretFields);
   QCOMPARE(s.passExecutable, QStringLiteral("/opt/pass"));
   QCOMPARE(s.gitExecutable, QStringLiteral("/opt/git"));
   QCOMPARE(s.gpgExecutable, QStringLiteral("/opt/gpg"));

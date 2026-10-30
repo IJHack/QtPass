@@ -462,19 +462,29 @@
                 <item>
                  <layout class="QHBoxLayout" name="layoutSecretFields">
                   <item>
-                   <widget class="QLabel" name="labelSecretFields">
+                   <widget class="QCheckBox" name="checkBoxHideSecretFields">
                     <property name="text">
-                     <string>And fields named:</string>
+                     <string>Also hide other secrets:</string>
                     </property>
-                    <property name="buddy">
-                     <cstring>lineEditSecretFields</cstring>
+                    <property name="toolTip">
+                     <string>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLineEdit" name="lineEditSecretFields">
                     <property name="toolTip">
-                     <string>Fields hidden behind the eye button together with the password, separated by commas. A name counts when it holds one of these as whole words, in any case: "key" hides "API key", not "keyboard". Left empty, the usual set comes back.</string>
+                     <string>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: "key" hides "API key", not "keyboard layout".</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="buttonDefaultSecretFields">
+                    <property name="text">
+                     <string>Default</string>
+                    </property>
+                    <property name="toolTip">
+                     <string>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</string>
                     </property>
                    </widget>
                   </item>

@@ -78,8 +78,11 @@ struct AppSettings {
 
   // --- Content display ---
   bool hidePassword{false}; ///< Hide the password line in the panel.
-  /// With hidePassword: field names hidden behind an eye button too, as
-  /// whole words in any case ("key" hides "API key", not "keyboard").
+  /// With hidePassword: hide the fields named in secretFieldNames too. Off,
+  /// only the password is hidden, as in 1.8.
+  bool hideSecretFields{true};
+  /// The field names hideSecretFields hides, as whole words in any case
+  /// ("key" hides "API key", not "keyboard"). May be empty.
   QStringList secretFieldNames{defaultSecretFieldNames()};
   bool hideContent{false};    ///< Hide the entire content panel.
   bool useMonospace{false};   ///< Render content in a monospace font.

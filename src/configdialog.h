@@ -140,7 +140,8 @@ private slots:
   void onProfileGitToggled();
 
 private:
-  /// The secret field names, enabled only while passwords are hidden.
+  /// The secret-fields checkbox only while passwords are hidden, its words
+  /// and "Default" only while it is checked.
   void updateSecretFieldsEnabled();
   /**
    * @brief One row of the profile list while the dialog is open. A QList

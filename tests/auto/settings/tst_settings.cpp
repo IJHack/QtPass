@@ -795,19 +795,28 @@ void tst_settings::facadePasswordCharsSelectionOutOfRange() {
 }
 
 /**
- * @brief The secret field names: a settings file without the key (from
- *        1.8) or with an emptied list gets the default set; a list of the
- *        user's own is kept as written.
+ * @brief The secret fields: a settings file without the keys (new, or from
+ *        1.8) hides the default set; a list the user saved is kept as
+ *        written, an empty one included (nothing extra hidden), and the
+ *        switch, once off, stays off.
  */
 void tst_settings::secretFieldNamesDefaultWhenMissingOrEmpty() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
   QSettings old(dir.filePath(QStringLiteral("old.ini")), QSettings::IniFormat);
+  QVERIFY(SettingsSerializer::load(old).hideSecretFields);
   QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
            AppSettings::defaultSecretFieldNames());
-  old.setValue(QStringLiteral("secretFieldNames"), QStringList{});
-  QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
-           AppSettings::defaultSecretFieldNames());
+  AppSettings cleared = SettingsSerializer::load(old);
+  cleared.secretFieldNames.clear();
+  cleared.hideSecretFields = false;
+  SettingsSerializer::save(old, cleared);
+  old.sync();
+  QSettings reread(dir.filePath(QStringLiteral("old.ini")),
+                   QSettings::IniFormat);
+  QVERIFY2(SettingsSerializer::load(reread).secretFieldNames.isEmpty(),
+           "a list saved empty stays empty");
+  QVERIFY(!SettingsSerializer::load(reread).hideSecretFields);
   old.setValue(QStringLiteral("secretFieldNames"),
                QStringList{QStringLiteral(" iban "), QString()});
   QCOMPARE(SettingsSerializer::load(old).secretFieldNames,

@@ -97,7 +97,8 @@ void tst_passworddisplaypanel::displayFieldsAddsRows() {
 /**
  * @brief With "Hide password", the other secrets an entry holds (a PIN, an
  *        API key) are behind the eye button too, and get no URL button;
- *        other fields stay as they are. Without it, nothing is hidden.
+ *        other fields stay as they are. With other secrets switched off
+ *        only the password is; without "Hide password", nothing is.
  */
 void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
   const NamedValues fields{
@@ -123,8 +124,17 @@ void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
   }
   QCOMPARE(urlButtons, 1); // the url field's, not the API key's
 
+  // Other secrets switched off: only the password, as in 1.8.
+  m_panel->clear();
+  s.hideSecretFields = false;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(hidden(QStringLiteral("Password")));
+  QVERIFY(!hidden(QStringLiteral("pin")));
+  QVERIFY(!hidden(QStringLiteral("API key")));
+
   m_panel->clear();
   s.hidePassword = false;
+  s.hideSecretFields = true;
   m_panel->displayFields(QStringLiteral("secret"), fields, s);
   QVERIFY(!hidden(QStringLiteral("pin")));
   QVERIFY(!hidden(QStringLiteral("API key")));
