@@ -8,6 +8,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **Autoclear puts the previous clipboard back.** As `pass -c` does, when
+  the clipboard autoclear runs, what was on the clipboard before the copy
+  comes back instead of an empty clipboard, unless something else was
+  copied meanwhile. That text stays in QtPass's memory until then. Settings
+  › Clipboard › "Restore the previous clipboard" switches it off.
 - **Git stops at the store, as with `pass`.** In native Git mode a store
   without a Git repository of its own no longer uses one in a folder above
   it. A store kept inside a larger repository on purpose needs Settings ▸
@@ -62,6 +67,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### New Features
 
+- Restore the previous clipboard after autoclear, on by default, as
+  `pass -c` does: text only, for the clipboard and the primary selection
+  each, and only when QtPass's own copy is still there
+  ([#2058](https://github.com/IJHack/QtPass/issues/2058)).
 - Git commits are signed when the store asks for it, as `pass` signs its
   own: with `git config pass.signcommits true` (in the store's repository or
   the user's Git config), QtPass's commits get `-S` too, with Git's own

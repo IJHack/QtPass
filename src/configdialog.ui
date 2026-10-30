@@ -357,6 +357,16 @@
                    </widget>
                   </item>
                   <item>
+                   <widget class="QCheckBox" name="checkBoxRestoreClipboard">
+                    <property name="toolTip">
+                     <string>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. That text stays in memory until then.</string>
+                    </property>
+                    <property name="text">
+                     <string>Restore the previous clipboard</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
                    <spacer name="layoutAutoclearSpacer">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>

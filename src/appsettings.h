@@ -50,9 +50,12 @@ struct AppSettings {
 
   // --- Clipboard / autoclear ---
   Enums::ClipBoardType clipBoardType{
-      Enums::CLIPBOARD_NEVER};   ///< Clipboard copy behaviour.
-  bool useSelection{false};      ///< Use the X11 primary selection.
-  bool useAutoclear{false};      ///< Clear the clipboard after a delay.
+      Enums::CLIPBOARD_NEVER}; ///< Clipboard copy behaviour.
+  bool useSelection{false};    ///< Use the X11 primary selection.
+  bool useAutoclear{false};    ///< Clear the clipboard after a delay.
+  /// When autoclear runs: put back what was on the clipboard before, as
+  /// `pass -c` does, unless something else was copied meanwhile.
+  bool restoreClipboard{true};
   int autoclearSeconds{0};       ///< Clipboard autoclear delay (seconds).
   bool useAutoclearPanel{false}; ///< Clear the content panel after a delay.
   int autoclearPanelSeconds{0};  ///< Panel autoclear delay (seconds).

@@ -42,6 +42,18 @@ void ClipboardManager::copyText(const QString &text) {
     mode = QClipboard::Selection;
   }
 
+  // What was there before the first secret, to put back when autoclear
+  // runs (as pass -c does). Not a text of ours: a second copy in the same
+  // window keeps the user's own text, not the first password.
+  if (s.useAutoclear && s.restoreClipboard) {
+    std::optional<QString> &previous = mode == QClipboard::Selection
+                                           ? m_previousSelection
+                                           : m_previousClipboard;
+    const QString now = clip->text(mode);
+    if (!previous && now != m_clippedText && !m_otherCopies.contains(now)) {
+      previous = now;
+    }
+  }
   clip->setMimeData(buildClipboardMimeData(text), mode);
 
   m_clippedText = text;
@@ -105,20 +117,36 @@ void ClipboardManager::clear() {
            (text == m_clippedText || m_otherCopies.contains(text));
   };
   QClipboard *clipboard = QApplication::clipboard();
+  const bool restore = QtPassSettings::load().restoreClipboard;
   bool cleared = false;
-  if (ours(clipboard->text(QClipboard::Selection))) {
-    clipboard->clear(QClipboard::Selection);
-    clipboard->setText(QString(""), QClipboard::Selection);
+  bool restored = false;
+  // Ours still there: the text from before comes back if there was one,
+  // otherwise it is cleared. Something else copied meanwhile is left alone.
+  const auto putBack = [&](QClipboard::Mode mode,
+                           const std::optional<QString> &previous) {
+    if (!ours(clipboard->text(mode))) {
+      return;
+    }
+    if (restore && previous && !previous->isEmpty()) {
+      clipboard->setText(*previous, mode);
+      restored = true;
+      return;
+    }
+    clipboard->clear(mode);
+    if (mode == QClipboard::Selection) {
+      clipboard->setText(QString(""), QClipboard::Selection);
+    }
     cleared = true;
-  }
-  if (ours(clipboard->text(QClipboard::Clipboard))) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  emit statusMessage(cleared ? tr("Clipboard cleared")
-                             : tr("Clipboard not cleared"));
+  };
+  putBack(QClipboard::Selection, m_previousSelection);
+  putBack(QClipboard::Clipboard, m_previousClipboard);
+  emit statusMessage(restored  ? tr("Clipboard restored")
+                     : cleared ? tr("Clipboard cleared")
+                               : tr("Clipboard not cleared"));
   m_clippedText.clear();
   m_otherCopies.clear();
+  m_previousClipboard.reset();
+  m_previousSelection.reset();
 }
 
 /**

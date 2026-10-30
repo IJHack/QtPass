@@ -75,6 +75,8 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
           .toInt());
   s.useSelection = qs.value(SettingsConstants::useSelection, false).toBool();
   s.useAutoclear = qs.value(SettingsConstants::useAutoclear, false).toBool();
+  s.restoreClipboard =
+      qs.value(SettingsConstants::restoreClipboard, true).toBool();
   s.autoclearSeconds = qs.value(SettingsConstants::autoclearSeconds, 0).toInt();
   s.useAutoclearPanel =
       qs.value(SettingsConstants::useAutoclearPanel, false).toBool();
@@ -156,6 +158,7 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
               static_cast<int>(s.clipBoardType));
   qs.setValue(SettingsConstants::useSelection, s.useSelection);
   qs.setValue(SettingsConstants::useAutoclear, s.useAutoclear);
+  qs.setValue(SettingsConstants::restoreClipboard, s.restoreClipboard);
   qs.setValue(SettingsConstants::autoclearSeconds, s.autoclearSeconds);
   qs.setValue(SettingsConstants::useAutoclearPanel, s.useAutoclearPanel);
   qs.setValue(SettingsConstants::autoclearPanelSeconds,

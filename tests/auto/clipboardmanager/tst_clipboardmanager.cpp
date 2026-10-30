@@ -4,7 +4,9 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QMenu>
+#include <QSettings>
 #include <QSignalSpy>
+#include <QTemporaryDir>
 #include <QtTest>
 #include <memory>
 
@@ -12,6 +14,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/secretlineedit.h"
 #include "../../../src/secrettextbrowser.h"
+#include "../../../src/settingsserializer.h"
 #include "../testsettings.h"
 
 /**
@@ -28,6 +31,8 @@ private slots:
   void copyTextPutsTextOnTheClipboardAndReports();
   void autoclearRemovesOnlyItsOwnText();
   void autoclearLeavesOtherContentAlone();
+  void autoclearRestoresWhatWasThereBefore();
+  void restoreIsOnByDefault();
   void clearWithNothingTrackedIsSilent();
   void copyIfAlwaysOnlyCopiesInAlwaysMode();
   void copyIfAlwaysDoesNotDisturbTracking();
@@ -42,14 +47,17 @@ private slots:
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
-                                    Enums::ClipBoardType type);
+                                    Enums::ClipBoardType type,
+                                    bool restore = false);
 };
 
 void tst_clipboardmanager::saveClipboardSettings(bool autoclear, int seconds,
-                                                 Enums::ClipBoardType type) {
+                                                 Enums::ClipBoardType type,
+                                                 bool restore) {
   AppSettings s = QtPassSettings::load();
   s.useSelection = false;
   s.useAutoclear = autoclear;
+  s.restoreClipboard = restore;
   s.autoclearSeconds = seconds;
   s.clipBoardType = type;
   QtPassSettings::save(s);
@@ -93,6 +101,55 @@ void tst_clipboardmanager::autoclearLeavesOtherContentAlone() {
            QStringLiteral("Clipboard not cleared"));
   QVERIFY2(manager.trackedText().isEmpty(),
            "tracking ends with the timer even when nothing was removed");
+}
+
+/**
+ * @brief With restoring on, autoclear puts back what was on the clipboard
+ *        before the first copy, as pass -c does: a second copy in the same
+ *        window keeps the user's own text, not the first password, and
+ *        something copied meanwhile is left alone.
+ */
+void tst_clipboardmanager::autoclearRestoresWhatWasThereBefore() {
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND, true);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("hunter2"));
+  manager.copyText(QStringLiteral("correct horse"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 3, 3000);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("sentinel"));
+  QCOMPARE(status.at(2).at(0).toString(), QStringLiteral("Clipboard restored"));
+  QVERIFY(manager.trackedText().isEmpty());
+
+  // Copied over meanwhile: left alone, nothing put back over it.
+  status.clear();
+  manager.copyText(QStringLiteral("hunter2"));
+  QApplication::clipboard()->setText(QStringLiteral("grocery list"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("grocery list"));
+  QCOMPARE(status.at(1).at(0).toString(),
+           QStringLiteral("Clipboard not cleared"));
+
+  // Nothing there before: cleared, as without restoring.
+  status.clear();
+  QApplication::clipboard()->clear();
+  manager.copyText(QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QVERIFY(QApplication::clipboard()->text().isEmpty());
+  QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard cleared"));
+}
+
+/**
+ * @brief Restoring the previous clipboard is on unless switched off, as
+ *        pass -c does it.
+ */
+void tst_clipboardmanager::restoreIsOnByDefault() {
+  QVERIFY(AppSettings{}.restoreClipboard);
+  // A settings file from before (1.8) has no such key: on as well.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings empty(dir.filePath(QStringLiteral("old.ini")),
+                  QSettings::IniFormat);
+  QVERIFY(SettingsSerializer::load(empty).restoreClipboard);
 }
 
 /**

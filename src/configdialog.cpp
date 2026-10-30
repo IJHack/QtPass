@@ -44,8 +44,12 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   ui->spinBoxAutoclearPanelSeconds->updateGeometry();
 
   // "Seconds" says nothing next to "Never" (the spin box's 0).
+  // Restoring is part of clearing: only there when the clipboard is cleared.
   connect(ui->spinBoxAutoclearSeconds, &QSpinBox::valueChanged, this,
-          [this](int value) { ui->labelSeconds->setVisible(value > 0); });
+          [this](int value) {
+            ui->labelSeconds->setVisible(value > 0);
+            ui->checkBoxRestoreClipboard->setVisible(value > 0);
+          });
   connect(ui->spinBoxAutoclearPanelSeconds, &QSpinBox::valueChanged, this,
           [this](int value) { ui->labelPanelSeconds->setVisible(value > 0); });
   connect(
@@ -155,6 +159,9 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->spinBoxAutoclearSeconds->setValue(
       settings.useAutoclear ? settings.autoclearSeconds : 0);
   ui->labelSeconds->setVisible(ui->spinBoxAutoclearSeconds->value() > 0);
+  ui->checkBoxRestoreClipboard->setChecked(settings.restoreClipboard);
+  ui->checkBoxRestoreClipboard->setVisible(
+      ui->spinBoxAutoclearSeconds->value() > 0);
   ui->spinBoxAutoclearPanelSeconds->setValue(
       settings.useAutoclearPanel ? settings.autoclearPanelSeconds : 0);
   ui->labelPanelSeconds->setVisible(ui->spinBoxAutoclearPanelSeconds->value() >
@@ -215,6 +222,7 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.useSelection = ui->checkBoxSelection->isChecked();
   settings.autoclearSeconds = ui->spinBoxAutoclearSeconds->value();
   settings.useAutoclear = settings.autoclearSeconds > 0;
+  settings.restoreClipboard = ui->checkBoxRestoreClipboard->isChecked();
   settings.autoclearPanelSeconds = ui->spinBoxAutoclearPanelSeconds->value();
   settings.useAutoclearPanel = settings.autoclearPanelSeconds > 0;
   settings.hidePassword = ui->checkBoxHidePassword->isChecked();
@@ -571,6 +579,7 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
   ui->labelAutoclear->setEnabled(state);
   ui->spinBoxAutoclearSeconds->setEnabled(state);
   ui->labelSeconds->setEnabled(state);
+  ui->checkBoxRestoreClipboard->setEnabled(state);
 }
 
 void ConfigDialog::useSelection(bool useSelection) {
