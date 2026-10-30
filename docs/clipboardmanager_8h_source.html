@@ -112,45 +112,49 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">auto</span> buildClipboardMimeData(<span class="keyword">const</span> QString &amp;text) -&gt; QMimeData *;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> dwordBytes(quint32 value) -&gt; QByteArray {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">return</span> {<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;value), <span class="keyword">sizeof</span>(value)};</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html">   40</a></span><span class="keyword">class </span><a class="code hl_function" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a> : <span class="keyword">public</span> QObject {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  Q_OBJECT</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">   49</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">   54</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">setAutoclearTimer</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">copyIfAlways</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> QString &amp;p_output = QString());</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">   72</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">trackedText</a>() const -&gt; QString { <span class="keywordflow">return</span> m_clippedText; }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">   80</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">copyText</a>(<span class="keyword">const</span> QString &amp;text);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">   92</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">trackCopied</a>(<span class="keyword">const</span> QString &amp;text);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1">   98</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1">clear</a>();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>signals:</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b">  105</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b">statusMessage</a>(<span class="keyword">const</span> QString &amp;message);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  QTimer m_clearTimer;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  QString m_clippedText;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  QStringList m_otherCopies; </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">auto</span> buildClipboardMimeData(<span class="keyword">const</span> QString &amp;text) -&gt; QMimeData *;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> dwordBytes(quint32 value) -&gt; QByteArray {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">return</span> {<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(&amp;value), <span class="keyword">sizeof</span>(value)};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="};">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html">   41</a></span><span class="keyword">class </span><a class="code hl_function" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  Q_OBJECT</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">   50</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">   55</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">setAutoclearTimer</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">   67</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">copyIfAlways</a>(<span class="keyword">const</span> QString &amp;text, <span class="keyword">const</span> QString &amp;p_output = QString());</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">   73</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">trackedText</a>() const -&gt; QString { <span class="keywordflow">return</span> m_clippedText; }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">   81</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">copyText</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">   93</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">trackCopied</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1">   99</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1">clear</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>signals:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b">  106</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b">statusMessage</a>(<span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  QTimer m_clearTimer;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  QString m_clippedText;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  std::optional&lt;QString&gt; m_previousClipboard;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  std::optional&lt;QString&gt; m_previousSelection;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">void</span> forgetIfSaved(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  QStringList m_otherCopies; </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
 </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CLIPBOARDMANAGER_H_</span></div>
-<div class="ttc" id="aclass_clipboard_manager_html_a17d1e93dc5cddccbd6f486f3d772b5cc"><div class="ttname"><a href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">ClipboardManager::trackedText</a></div><div class="ttdeci">auto trackedText() const -&gt; QString</div><div class="ttdoc">The text this manager last put on the clipboard and still tracks.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">clipboardmanager.h:72</a></div></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// SRC_CLIPBOARDMANAGER_H_</span></div>
+<div class="ttc" id="aclass_clipboard_manager_html_a17d1e93dc5cddccbd6f486f3d772b5cc"><div class="ttname"><a href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">ClipboardManager::trackedText</a></div><div class="ttdeci">auto trackedText() const -&gt; QString</div><div class="ttdoc">The text this manager last put on the clipboard and still tracks.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">clipboardmanager.h:73</a></div></div>
 <div class="ttc" id="aclass_clipboard_manager_html_a17f2c6bd33ca83f2044ef232b8edf65a"><div class="ttname"><a href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">ClipboardManager::trackCopied</a></div><div class="ttdeci">void trackCopied(const QString &amp;text)</div><div class="ttdoc">Track text that got onto the clipboard some other way.</div></div>
 <div class="ttc" id="aclass_clipboard_manager_html_a5542929aedc19e3572d1b25328959c6c"><div class="ttname"><a href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">ClipboardManager::copyIfAlways</a></div><div class="ttdeci">void copyIfAlways(const QString &amp;text, const QString &amp;p_output=QString())</div><div class="ttdoc">Handle clipboard copying for a shown entry.</div></div>
 <div class="ttc" id="aclass_clipboard_manager_html_a6614eba6805293ea0ff96118c0567872"><div class="ttname"><a href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">ClipboardManager::setAutoclearTimer</a></div><div class="ttdeci">void setAutoclearTimer()</div><div class="ttdoc">Re-read the autoclear delay from the settings.</div></div>
