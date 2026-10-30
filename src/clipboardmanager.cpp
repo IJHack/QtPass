@@ -51,11 +51,14 @@ void ClipboardManager::copyText(const QString &text) {
                                            ? m_previousSelection
                                            : m_previousClipboard;
     const QString now = clip->text(mode);
-    // Not a text of ours, and not the very text being copied: restoring
-    // that would leave the secret on the clipboard for good.
-    if (!previous && now != text && now != m_clippedText &&
-        !m_otherCopies.contains(now)) {
-      previous = now;
+    // Taken once per window, at the first copy, whatever is there: a text
+    // of ours, or the very text being copied, is saved as nothing (restoring
+    // it would leave a secret on the clipboard for good), and a later copy
+    // in the window cannot take a snapshot instead.
+    if (!previous) {
+      const bool safe =
+          now != text && now != m_clippedText && !m_otherCopies.contains(now);
+      previous = safe ? now : QString();
     }
   }
   forgetIfSaved(text);

@@ -182,6 +182,18 @@ void tst_clipboardmanager::autoclearRestoresWhatWasThereBefore() {
              qPrintable(QApplication::clipboard()->text()));
   }
 
+  // Empty at the first copy: that is the snapshot. A, B, A copied
+  // elsewhere, then C: A is not taken as "before" by the later copy.
+  status.clear();
+  QApplication::clipboard()->clear();
+  manager.copyText(QStringLiteral("secret A"));
+  manager.copyText(QStringLiteral("secret B"));
+  QApplication::clipboard()->setText(QStringLiteral("secret A"));
+  manager.copyText(QStringLiteral("secret C"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 4, 3000);
+  QVERIFY2(QApplication::clipboard()->text().isEmpty(),
+           qPrintable(QApplication::clipboard()->text()));
+
   // Nothing there before: cleared, as without restoring.
   status.clear();
   QApplication::clipboard()->clear();
