@@ -185,6 +185,7 @@ private Q_SLOTS:
   void pagesFollowTheSidebar();
   void invalidConfigurationOpensPrograms();
   void acceptRoundTripsEveryOwnedSetting();
+  void secretFieldsFollowHidePassword();
   void acceptSavesTheGlobalAutoPushAndAutoPull();
   void qrencodeMissingDisablesTheCheckbox();
   void qrencodeConfiguredExecutableEnablesTheCheckbox();
@@ -1175,6 +1176,34 @@ void tst_configdialog::invalidConfigurationOpensPrograms() {
 }
 
 /**
+ * @brief The secret field names show as a comma list, can be edited only
+ *        while passwords are hidden, and an emptied list is saved as the
+ *        default set.
+ */
+void tst_configdialog::secretFieldsFollowHidePassword() {
+  {
+    AppSettings seed = QtPassSettings::load();
+    seed.hidePassword = false;
+    seed.secretFieldNames = AppSettings::defaultSecretFieldNames();
+    seed.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
+    QtPassSettings::save(seed);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *hide = child<QCheckBox>(dialog, "checkBoxHidePassword");
+  auto *names = child<QLineEdit>(dialog, "lineEditSecretFields");
+  QCOMPARE(names->text(),
+           AppSettings::defaultSecretFieldNames().join(QStringLiteral(", ")));
+  QVERIFY2(!names->isEnabled(), "nothing to hide while passwords show");
+  hide->setChecked(true);
+  QVERIFY(names->isEnabled());
+  names->clear();
+  dialog.accept();
+  const AppSettings s = QtPassSettings::load();
+  QVERIFY(s.hidePassword);
+  QCOMPARE(s.secretFieldNames, AppSettings::defaultSecretFieldNames());
+}
+
+/**
  * @brief The regression net for #1602's six config-clobbering paths: flip
  *        every setting the dialog owns to a non-default value, accept, load
  *        again, and expect exactly those values back. Keys the dialog does
@@ -1209,9 +1238,13 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
     child<QCheckBox>(dialog, box)->setChecked(true);
   }
   child<QComboBox>(dialog, "comboBoxFields")->setCurrentIndex(2);
+  child<QLineEdit>(dialog, "lineEditSecretFields")
+      ->setText(QStringLiteral("iban, cvv ,"));
   dialog.accept();
 
   const AppSettings s = QtPassSettings::load();
+  QCOMPARE(s.secretFieldNames,
+           (QStringList{QStringLiteral("iban"), QStringLiteral("cvv")}));
   QCOMPARE(s.passExecutable, QStringLiteral("/opt/pass"));
   QCOMPARE(s.gitExecutable, QStringLiteral("/opt/git"));
   QCOMPARE(s.gpgExecutable, QStringLiteral("/opt/gpg"));

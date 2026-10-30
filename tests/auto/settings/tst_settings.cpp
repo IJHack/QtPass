@@ -20,6 +20,7 @@ class tst_settings : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
+  void secretFieldNamesDefaultWhenMissingOrEmpty();
   void initTestCase();
   void cleanupTestCase();
   void getPasswordConfigurationDefault();
@@ -791,6 +792,26 @@ void tst_settings::facadePasswordCharsSelectionOutOfRange() {
 
   QtPassSettings::getInstance()->setValue(
       SettingsConstants::passwordCharsSelection, savedRaw);
+}
+
+/**
+ * @brief The secret field names: a settings file without the key (from
+ *        1.8) or with an emptied list gets the default set; a list of the
+ *        user's own is kept as written.
+ */
+void tst_settings::secretFieldNamesDefaultWhenMissingOrEmpty() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings old(dir.filePath(QStringLiteral("old.ini")), QSettings::IniFormat);
+  QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
+           AppSettings::defaultSecretFieldNames());
+  old.setValue(QStringLiteral("secretFieldNames"), QStringList{});
+  QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
+           AppSettings::defaultSecretFieldNames());
+  old.setValue(QStringLiteral("secretFieldNames"),
+               QStringList{QStringLiteral(" iban "), QString()});
+  QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
+           QStringList{QStringLiteral("iban")});
 }
 
 QTEST_MAIN(tst_settings)

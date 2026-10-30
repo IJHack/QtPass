@@ -189,9 +189,11 @@ void PasswordDisplayPanel::addActionButtons(QLayout *layout,
     qr->setStyleSheet(buttonStyle);
     layout->addWidget(qr);
   }
-  // Never on the password field: its secret must not reach a tooltip or the
-  // browser.
-  if (field != QObject::tr("Password") && Util::isLaunchableWebUrl(value)) {
+  // Never on the password field, nor on another secret one: its secret must
+  // not reach a tooltip or the browser.
+  if (field != QObject::tr("Password") &&
+      !FileContent::isSecretFieldName(field, s.secretFieldNames) &&
+      Util::isLaunchableWebUrl(value)) {
     layout->addWidget(urlButton(value, m_widgetParent));
   }
 }
@@ -232,7 +234,11 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
             "transparent; font-family: monospace; }"
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
-  if (s.hidePassword && trimmedField == QObject::tr("Password")) {
+  // The password, and with it the other secrets an entry holds (a PIN, a
+  // CVV, an API key): behind the eye button too.
+  if (s.hidePassword &&
+      (trimmedField == QObject::tr("Password") ||
+       FileContent::isSecretFieldName(trimmedField, s.secretFieldNames))) {
     addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
     SecretTextBrowser *browser =

@@ -43,6 +43,9 @@ ConfigDialog::ConfigDialog(QWidget *parent)
   ui->spinBoxAutoclearSeconds->updateGeometry();
   ui->spinBoxAutoclearPanelSeconds->updateGeometry();
 
+  // The secret field names only mean something while passwords are hidden.
+  connect(ui->checkBoxHidePassword, &QCheckBox::toggled, this,
+          [this] { updateSecretFieldsEnabled(); });
   // "Seconds" says nothing next to "Never" (the spin box's 0).
   // Restoring is part of clearing: only there when the clipboard is cleared.
   connect(ui->spinBoxAutoclearSeconds, &QSpinBox::valueChanged, this,
@@ -167,6 +170,9 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
   ui->labelPanelSeconds->setVisible(ui->spinBoxAutoclearPanelSeconds->value() >
                                     0);
   ui->checkBoxHidePassword->setChecked(settings.hidePassword);
+  ui->lineEditSecretFields->setText(
+      settings.secretFieldNames.join(QStringLiteral(", ")));
+  updateSecretFieldsEnabled();
   ui->checkBoxHideContent->setChecked(settings.hideContent);
   ui->checkBoxUseMonospace->setChecked(settings.useMonospace);
   ui->checkBoxDisplayAsIs->setChecked(settings.displayAsIs);
@@ -226,6 +232,17 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.autoclearPanelSeconds = ui->spinBoxAutoclearPanelSeconds->value();
   settings.useAutoclearPanel = settings.autoclearPanelSeconds > 0;
   settings.hidePassword = ui->checkBoxHidePassword->isChecked();
+  // Emptied: the default set again (SettingsSerializer, on the next load).
+  settings.secretFieldNames.clear();
+  for (const QString &name :
+       ui->lineEditSecretFields->text().split(QLatin1Char(','))) {
+    if (!name.trimmed().isEmpty()) {
+      settings.secretFieldNames << name.trimmed();
+    }
+  }
+  if (settings.secretFieldNames.isEmpty()) {
+    settings.secretFieldNames = AppSettings::defaultSecretFieldNames();
+  }
   settings.hideContent = ui->checkBoxHideContent->isChecked();
   settings.useMonospace = ui->checkBoxUseMonospace->isChecked();
   settings.displayAsIs = ui->checkBoxDisplayAsIs->isChecked();
@@ -575,11 +592,19 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
 
   ui->checkBoxSelection->setEnabled(state);
   ui->checkBoxHidePassword->setEnabled(state);
+  updateSecretFieldsEnabled();
   ui->checkBoxHideContent->setEnabled(state);
   ui->labelAutoclear->setEnabled(state);
   ui->spinBoxAutoclearSeconds->setEnabled(state);
   ui->labelSeconds->setEnabled(state);
   ui->checkBoxRestoreClipboard->setEnabled(state);
+}
+
+void ConfigDialog::updateSecretFieldsEnabled() {
+  const bool on = ui->checkBoxHidePassword->isEnabled() &&
+                  ui->checkBoxHidePassword->isChecked();
+  ui->labelSecretFields->setEnabled(on);
+  ui->lineEditSecretFields->setEnabled(on);
 }
 
 void ConfigDialog::useSelection(bool useSelection) {

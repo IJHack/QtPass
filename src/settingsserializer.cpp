@@ -85,6 +85,17 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
 
   // Content display
   s.hidePassword = qs.value(SettingsConstants::hidePassword, false).toBool();
+  // Missing (a settings file from 1.8) or emptied: the default set, so
+  // hiding the password also hides the usual secrets beside it.
+  QStringList secrets;
+  for (const QString &name :
+       qs.value(SettingsConstants::secretFieldNames).toStringList()) {
+    if (!name.trimmed().isEmpty()) {
+      secrets << name.trimmed();
+    }
+  }
+  s.secretFieldNames =
+      secrets.isEmpty() ? AppSettings::defaultSecretFieldNames() : secrets;
   s.hideContent = qs.value(SettingsConstants::hideContent, false).toBool();
   s.useMonospace = qs.value(SettingsConstants::useMonospace, false).toBool();
   s.displayAsIs = qs.value(SettingsConstants::displayAsIs, false).toBool();
@@ -166,6 +177,7 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
 
   // Content display
   qs.setValue(SettingsConstants::hidePassword, s.hidePassword);
+  qs.setValue(SettingsConstants::secretFieldNames, s.secretFieldNames);
   qs.setValue(SettingsConstants::hideContent, s.hideContent);
   qs.setValue(SettingsConstants::useMonospace, s.useMonospace);
   qs.setValue(SettingsConstants::displayAsIs, s.displayAsIs);

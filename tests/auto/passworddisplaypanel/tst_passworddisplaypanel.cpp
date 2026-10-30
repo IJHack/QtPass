@@ -32,6 +32,7 @@ private Q_SLOTS:
   void init();
   void cleanup();
   void displayFieldsAddsRows();
+  void secretFieldsHideWithThePassword();
   void fieldNamesArePlainText();
   void doubleClickOnARowAsksForEdit();
   void displayFieldsSkipsEmptyPassword();
@@ -91,6 +92,42 @@ void tst_passworddisplaypanel::displayFieldsAddsRows() {
                          NamedValues{{"url", "https://example.org"}}, s);
   // Two fields (password + url), each a label + value widget => 4 grid items.
   QCOMPARE(m_grid->count(), 4);
+}
+
+/**
+ * @brief With "Hide password", the other secrets an entry holds (a PIN, an
+ *        API key) are behind the eye button too, and get no URL button;
+ *        other fields stay as they are. Without it, nothing is hidden.
+ */
+void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
+  const NamedValues fields{
+      {QStringLiteral("pin"), QStringLiteral("1234")},
+      {QStringLiteral("API key"), QStringLiteral("https://example.org/k")},
+      {QStringLiteral("keyboard layout"), QStringLiteral("dvorak")},
+      {QStringLiteral("url"), QStringLiteral("https://example.org")}};
+  const auto hidden = [this](const QString &name) {
+    const auto *edit = m_parent->findChild<QLineEdit *>(name);
+    return edit != nullptr && edit->echoMode() == QLineEdit::Password;
+  };
+  AppSettings s;
+  s.hidePassword = true;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(hidden(QStringLiteral("Password")));
+  QVERIFY(hidden(QStringLiteral("pin")));
+  QVERIFY(hidden(QStringLiteral("API key")));
+  QVERIFY(!hidden(QStringLiteral("keyboard layout")));
+  QVERIFY(!hidden(QStringLiteral("url")));
+  int urlButtons = 0;
+  for (int row = 0; row < m_grid->rowCount(); ++row) {
+    urlButtons += urlButtonAt(row) != nullptr ? 1 : 0;
+  }
+  QCOMPARE(urlButtons, 1); // the url field's, not the API key's
+
+  m_panel->clear();
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(!hidden(QStringLiteral("pin")));
+  QVERIFY(!hidden(QStringLiteral("API key")));
 }
 
 /**

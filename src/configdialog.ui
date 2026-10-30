@@ -359,7 +359,7 @@
                   <item>
                    <widget class="QCheckBox" name="checkBoxRestoreClipboard">
                     <property name="toolTip">
-                     <string>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. That text stays in memory until then.</string>
+                     <string>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</string>
                     </property>
                     <property name="text">
                      <string>Restore the previous clipboard</string>
@@ -458,6 +458,27 @@
                    <string>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</string>
                   </property>
                  </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="layoutSecretFields">
+                  <item>
+                   <widget class="QLabel" name="labelSecretFields">
+                    <property name="text">
+                     <string>And fields named:</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>lineEditSecretFields</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="lineEditSecretFields">
+                    <property name="toolTip">
+                     <string>Fields hidden behind the eye button together with the password, separated by commas. A name counts when it holds one of these as whole words, in any case: "key" hides "API key", not "keyboard". Left empty, the usual set comes back.</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_7">

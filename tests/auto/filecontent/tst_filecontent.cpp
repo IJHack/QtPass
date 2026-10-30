@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
+#include "../../../src/appsettings.h"
 #include "../../../src/filecontent.h"
 
 class tst_filecontent : public QObject {
@@ -47,6 +48,8 @@ private Q_SLOTS:
   void parseUnicodeFieldValue();
   void parseFieldWithSpacesAroundColon();
   void getRemainingDataEmptyWhenAllTemplate();
+  void isSecretFieldNameMatchesWholeWords_data();
+  void isSecretFieldNameMatchesWholeWords();
   void isOtpFieldNameMatchesOtpAndTotp_data();
   void isOtpFieldNameMatchesOtpAndTotp();
   void getOtpUriFromTemplateField();
@@ -518,6 +521,34 @@ void tst_filecontent::getRemainingDataEmptyWhenAllTemplate() {
 static const QString kOtpUri = QStringLiteral(
     "otpauth://totp/Example:alice?secret=JBSWY3DPEHPK3PXP&issuer=Example&"
     "digits=6&period=30");
+
+void tst_filecontent::isSecretFieldNameMatchesWholeWords_data() {
+  QTest::addColumn<QString>("name");
+  QTest::addColumn<bool>("secret");
+  QTest::newRow("PIN, any case") << QStringLiteral("PIN") << true;
+  QTest::newRow("a word in a longer name") << QStringLiteral("API key") << true;
+  QTest::newRow("another word around it")
+      << QStringLiteral("Recovery codes") << true;
+  QTest::newRow("its own entry") << QStringLiteral("pincode") << true;
+  QTest::newRow("not part of a word")
+      << QStringLiteral("keyboard layout") << false;
+  QTest::newRow("not a word ending") << QStringLiteral("spinning") << false;
+  QTest::newRow("no secret") << QStringLiteral("username") << false;
+  QTest::newRow("after punctuation")
+      << QStringLiteral("security-answer") << true;
+}
+
+/**
+ * @brief A field counts as secret when one of the names occurs in it as
+ *        whole words, case aside: "key" in "API key", not in "keyboard".
+ */
+void tst_filecontent::isSecretFieldNameMatchesWholeWords() {
+  QFETCH(QString, name);
+  QFETCH(bool, secret);
+  QCOMPARE(FileContent::isSecretFieldName(
+               name, AppSettings::defaultSecretFieldNames()),
+           secret);
+}
 
 void tst_filecontent::isOtpFieldNameMatchesOtpAndTotp_data() {
   QTest::addColumn<QString>("name");
