@@ -12,6 +12,7 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QThread>
 #include <QUuid>
 #include <QtTest>
 #ifdef Q_OS_WIN
@@ -152,6 +153,12 @@ private:
     }
     bool callCreateBackupCommit() { return createBackupCommit(); }
     QProcessEnvironment callStoreEnvironment() { return storeEnvironment(); }
+    /// The re-encryption worker's environment, taken when it starts.
+    void setReencryptEnv(const QProcessEnvironment &e) { m_reencryptEnv = e; }
+    /// execBlocking(), called on another thread: the worker's branch.
+    int callExecBlockingOnWorker(const QString &app, const QStringList &args) {
+      return execBlocking(app, args);
+    }
     void callGitCommit(const QString &file, const QString &msg) {
       gitCommit(file, msg);
     }
@@ -2556,6 +2563,26 @@ void tst_util::gitPinIsJudgedWhenGitRuns() {
   QFile got(log);
   QVERIFY(got.open(QIODevice::ReadOnly));
   QCOMPARE(QString::fromUtf8(got.readAll()).trimmed(),
+           QStringLiteral("/dev/null/.git"));
+  got.close();
+
+  // And the re-encryption worker, whose environment was taken before the
+  // .git changed hands: its own Git process is judged when it starts.
+  Util::setGitOwnerForTests({});
+  QVERIFY(QFile::remove(log));
+  pass.setReencryptEnv(pass.callStoreEnvironment());
+  QCOMPARE(pass.callStoreEnvironment().value(QStringLiteral("GIT_DIR")),
+           QDir(real).filePath(QStringLiteral(".git")));
+  Util::setGitOwnerForTests(static_cast<uint>(::geteuid()) + 1);
+  QThread *worker = QThread::create([&pass, &git] {
+    pass.callExecBlockingOnWorker(git, {QStringLiteral("status")});
+  });
+  worker->start();
+  QVERIFY(worker->wait(10000));
+  delete worker;
+  QFile fromWorker(log);
+  QVERIFY(fromWorker.open(QIODevice::ReadOnly));
+  QCOMPARE(QString::fromUtf8(fromWorker.readAll()).trimmed(),
            QStringLiteral("/dev/null/.git"));
 #endif
 }
