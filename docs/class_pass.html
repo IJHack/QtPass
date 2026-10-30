@@ -262,6 +262,8 @@ Protected Slots</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a0037d3169c1c0fc270270cde4b8d25d2" id="r_a0037d3169c1c0fc270270cde4b8d25d2"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a> () const -&gt; QProcessEnvironment</td></tr>
 <tr class="memdesc:a0037d3169c1c0fc270270cde4b8d25d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The environment <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs the store's processes in.  <br /></td></tr>
+<tr class="memitem:ab81d7dbed9e18a9368c2be06876c4630" id="r_ab81d7dbed9e18a9368c2be06876c4630"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab81d7dbed9e18a9368c2be06876c4630">withCurrentGitPin</a> (QProcessEnvironment base) const -&gt; QProcessEnvironment</td></tr>
+<tr class="memdesc:ab81d7dbed9e18a9368c2be06876c4630"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">base</code> with GIT_DIR and GIT_WORK_TREE as the store is now (<a class="el" href="class_util.html#af707d08c525092779706139369753d6b" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">Util::gitStoreVariables()</a>), not as it was at <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a>: a <span class="tt">.git</span> that appeared or changed hands since then is judged when Git runs.  <br /></td></tr>
 <tr class="memitem:a3aea03014a99498ace9df6c5edaa1dfb" id="r_a3aea03014a99498ace9df6c5edaa1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td></tr>
 <tr class="memdesc:a3aea03014a99498ace9df6c5edaa1dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="#a717df61e5c322ebe742c564de47d74d7" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
 <tr class="memitem:aa048c50cd2e6fa95033b4c69910e04bb" id="r_aa048c50cd2e6fa95033b4c69910e04bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a> (const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td></tr>
@@ -326,7 +328,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00090">90</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00101">101</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1733,7 +1735,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00414">414</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00425">425</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1763,7 +1765,7 @@ Protected Attributes</h2></td></tr>
 <p>Whether no gpg, git or pass of this backend runs or waits. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when its executor is idle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00376">376</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00387">387</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -2051,7 +2053,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00427">427</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00438">438</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2466,6 +2468,12 @@ Protected Attributes</h2></td></tr>
 <p>What <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a> made: the git ceiling and the PASSWORD_STORE_ variables <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own environment does not carry. For blocking calls that start their own process. </p><dl class="section return"><dt>Returns</dt><dd>A copy of the environment. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00071">71</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0037d3169c1c0fc270270cde4b8d25d2_cgraph.svg" width="408" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -2520,6 +2528,46 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab81d7dbed9e18a9368c2be06876c4630" name="ab81d7dbed9e18a9368c2be06876c4630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81d7dbed9e18a9368c2be06876c4630">&#9670;&#160;</a></span>withCurrentGitPin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::withCurrentGitPin </td>
+          <td>(</td>
+          <td class="paramtype">QProcessEnvironment</td>          <td class="paramname"><span class="paramname"><em>base</em></span></td><td>)</td>
+          <td> const -&gt;  QProcessEnvironment</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code class="param">base</code> with GIT_DIR and GIT_WORK_TREE as the store is now (<a class="el" href="class_util.html#af707d08c525092779706139369753d6b" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">Util::gitStoreVariables()</a>), not as it was at <a class="el" href="#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">updateEnv()</a>: a <span class="tt">.git</span> that appeared or changed hands since then is judged when Git runs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">base</td><td>The environment to update. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code class="param">base</code>, the two variables recomputed (left as they are when the store keeps to a parent repository or there is none). </dd></dl>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab81d7dbed9e18a9368c2be06876c4630_icgraph.svg" width="408" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a903a833ade1109f9cb75e3bbeab8d0af" name="a903a833ade1109f9cb75e3bbeab8d0af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a903a833ade1109f9cb75e3bbeab8d0af">&#9670;&#160;</a></span>exec</h2>
@@ -2543,7 +2591,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Internal command executor for queuing and running subprocesses. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00085">85</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00096">96</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2570,7 +2618,7 @@ Protected Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00230">230</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00241">241</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2597,7 +2645,7 @@ Protected Attributes</h2></td></tr>
 <p>Application settings snapshot injected at <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init()</a> time. </p>
 <p>Populated by init(AppSettings) and valid for the lifetime of this backend instance. Subclasses read it in place of calling <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00081">81</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00092">92</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
