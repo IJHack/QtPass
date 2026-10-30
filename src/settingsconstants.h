@@ -21,6 +21,7 @@ public:
 
   static const QString usePass;
   static const QString useAutoclear;
+  static const QString restoreClipboard;
   static const QString useSelection;
   static const QString autoclearSeconds;
   static const QString useAutoclearPanel;

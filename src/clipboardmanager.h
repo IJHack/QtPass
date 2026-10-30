@@ -8,6 +8,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTimer>
+#include <optional>
 
 /**
  * @brief Build clipboard MIME data with platform-specific security hints.
@@ -107,6 +108,13 @@ signals:
 private:
   QTimer m_clearTimer;
   QString m_clippedText;
+  /// What was on the clipboard and in the selection before copyText() first
+  /// put a secret there, for clear() to put back (restoreClipboard). Text
+  /// only, as pass -c keeps it; absent when nothing was saved.
+  std::optional<QString> m_previousClipboard;
+  std::optional<QString> m_previousSelection;
+  /// Empty a saved previous text equal to @p text, now copied as a secret.
+  void forgetIfSaved(const QString &text);
   QStringList m_otherCopies; ///< trackCopied() texts, cleared with the rest
 };
 

@@ -1246,7 +1246,8 @@ void tst_mainwindow::clipboardAutoclearSurvivesShowingAnotherEntry() {
   clipboard->copyText(QStringLiteral("hunter2"));
   m_window->passShowHandler(QStringLiteral("otherpass\nlogin: bob"));
   QCOMPARE(clip->text(), QStringLiteral("hunter2"));
-  QTRY_VERIFY_WITH_TIMEOUT(clip->text().isEmpty(), 3000);
+  // Gone when autoclear runs: cleared, or what was there before put back.
+  QTRY_VERIFY_WITH_TIMEOUT(clip->text() != QStringLiteral("hunter2"), 3000);
 }
 
 /**

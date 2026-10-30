@@ -21,6 +21,7 @@ const QString SettingsConstants::dialogGeometry = "dialog/geometry";
 const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useSelection = "useSelection";
 const QString SettingsConstants::useAutoclear = "useAutoclear";
+const QString SettingsConstants::restoreClipboard = "restoreClipboard";
 const QString SettingsConstants::autoclearSeconds = "autoclearSeconds";
 const QString SettingsConstants::useAutoclearPanel = "useAutoclearPanel";
 const QString SettingsConstants::autoclearPanelSeconds =

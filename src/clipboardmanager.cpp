@@ -5,6 +5,7 @@
 #include "util.h"
 #include <QApplication>
 #include <QClipboard>
+#include <utility>
 
 ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {
   setAutoclearTimer();
@@ -42,6 +43,25 @@ void ClipboardManager::copyText(const QString &text) {
     mode = QClipboard::Selection;
   }
 
+  // What was there before the first secret, to put back when autoclear
+  // runs (as pass -c does). Not a text of ours: a second copy in the same
+  // window keeps the user's own text, not the first password.
+  if (s.useAutoclear && s.restoreClipboard) {
+    std::optional<QString> &previous = mode == QClipboard::Selection
+                                           ? m_previousSelection
+                                           : m_previousClipboard;
+    const QString now = clip->text(mode);
+    // Taken once per window, at the first copy, whatever is there: a text
+    // of ours, or the very text being copied, is saved as nothing (restoring
+    // it would leave a secret on the clipboard for good), and a later copy
+    // in the window cannot take a snapshot instead.
+    if (!previous) {
+      const bool safe =
+          now != text && now != m_clippedText && !m_otherCopies.contains(now);
+      previous = safe ? now : QString();
+    }
+  }
+  forgetIfSaved(text);
   clip->setMimeData(buildClipboardMimeData(text), mode);
 
   m_clippedText = text;
@@ -51,10 +71,23 @@ void ClipboardManager::copyText(const QString &text) {
   }
 }
 
+void ClipboardManager::forgetIfSaved(const QString &text) {
+  // The saved text is copied as a secret now: putting it back would leave
+  // that secret on the clipboard. Emptied, not dropped, so no later copy
+  // takes a new snapshot in this window either; clear() then clears.
+  for (std::optional<QString> *previous :
+       {&m_previousClipboard, &m_previousSelection}) {
+    if (*previous && **previous == text) {
+      *previous = QString();
+    }
+  }
+}
+
 void ClipboardManager::trackCopied(const QString &text) {
   if (text.isEmpty()) {
     return;
   }
+  forgetIfSaved(text);
   // Kept beside m_clippedText, not instead of it: replacing it would leave a
   // password copied earlier on the clipboard past its autoclear (#1607).
   constexpr qsizetype kMaxOtherCopies = 16;
@@ -95,6 +128,12 @@ void ClipboardManager::trackCopied(const QString &text) {
 }
 
 void ClipboardManager::clear() {
+  // Whatever happens below, the saved text is forgotten: it is the user's,
+  // and no later autoclear may put it back.
+  const std::optional<QString> previousClipboard =
+      std::exchange(m_previousClipboard, std::nullopt);
+  const std::optional<QString> previousSelection =
+      std::exchange(m_previousSelection, std::nullopt);
   if (m_clippedText.isEmpty() && m_otherCopies.isEmpty()) {
     // Nothing of ours is out there. The old code compared the empty tracker
     // with an empty selection, "cleared" that and said so on every deselect.
@@ -105,18 +144,35 @@ void ClipboardManager::clear() {
            (text == m_clippedText || m_otherCopies.contains(text));
   };
   QClipboard *clipboard = QApplication::clipboard();
+  const bool restore = QtPassSettings::load().restoreClipboard;
   bool cleared = false;
-  if (ours(clipboard->text(QClipboard::Selection))) {
-    clipboard->clear(QClipboard::Selection);
-    clipboard->setText(QString(""), QClipboard::Selection);
+  bool restored = false;
+  // Ours still there: the text from before comes back if there was one and
+  // what is there is copyText()'s own copy, otherwise it is cleared (a copy
+  // from a shown field, trackCopied(), is cleared, not written over).
+  // Something else copied meanwhile is left alone.
+  const auto putBack = [&](QClipboard::Mode mode,
+                           const std::optional<QString> &previous) {
+    const QString now = clipboard->text(mode);
+    if (!ours(now)) {
+      return;
+    }
+    if (restore && previous && !previous->isEmpty() && now == m_clippedText) {
+      clipboard->setText(*previous, mode);
+      restored = true;
+      return;
+    }
+    clipboard->clear(mode);
+    if (mode == QClipboard::Selection) {
+      clipboard->setText(QString(""), QClipboard::Selection);
+    }
     cleared = true;
-  }
-  if (ours(clipboard->text(QClipboard::Clipboard))) {
-    clipboard->clear(QClipboard::Clipboard);
-    cleared = true;
-  }
-  emit statusMessage(cleared ? tr("Clipboard cleared")
-                             : tr("Clipboard not cleared"));
+  };
+  putBack(QClipboard::Selection, previousSelection);
+  putBack(QClipboard::Clipboard, previousClipboard);
+  emit statusMessage(restored  ? tr("Clipboard restored")
+                     : cleared ? tr("Clipboard cleared")
+                               : tr("Clipboard not cleared"));
   m_clippedText.clear();
   m_otherCopies.clear();
 }
