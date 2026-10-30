@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "filecontent.h"
+#include <QRegularExpression>
 
 #include <QCoreApplication>
 #include <QStringTokenizer>
@@ -176,6 +177,25 @@ auto FileContent::isOtpFieldName(const QString &name) -> bool {
   const QString trimmed = name.trimmed();
   return trimmed.compare(QStringLiteral("OTP"), Qt::CaseInsensitive) == 0 ||
          trimmed.compare(QStringLiteral("TOTP"), Qt::CaseInsensitive) == 0;
+}
+
+auto FileContent::isSecretFieldName(const QString &name,
+                                    const QStringList &secrets) -> bool {
+  for (const QString &secret : secrets) {
+    const QString word = secret.trimmed();
+    if (word.isEmpty()) {
+      continue;
+    }
+    const QRegularExpression whole(
+        QStringLiteral("(?<!\\w)%1(?!\\w)")
+            .arg(QRegularExpression::escape(word)),
+        QRegularExpression::CaseInsensitiveOption |
+            QRegularExpression::UseUnicodePropertiesOption);
+    if (whole.match(name).hasMatch()) {
+      return true;
+    }
+  }
+  return false;
 }
 
 auto FileContent::isOtpUriValue(const QString &value) -> bool {

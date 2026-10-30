@@ -170,6 +170,15 @@ auto urlButton(const QString &url, QWidget *parent) -> QPushButton * {
 
 } // namespace
 
+namespace {
+/// Whether @p field is one of the other secrets "Hide password" hides with
+/// the password ("Also hide other secrets", AppSettings::secretFieldNames).
+auto hidesAsSecret(const QString &field, const AppSettings &s) -> bool {
+  return s.hidePassword && s.hideSecretFields &&
+         FileContent::isSecretFieldName(field, s.secretFieldNames);
+}
+} // namespace
+
 void PasswordDisplayPanel::addActionButtons(QLayout *layout,
                                             const QString &field,
                                             const QString &value,
@@ -189,9 +198,11 @@ void PasswordDisplayPanel::addActionButtons(QLayout *layout,
     qr->setStyleSheet(buttonStyle);
     layout->addWidget(qr);
   }
-  // Never on the password field: its secret must not reach a tooltip or the
-  // browser.
-  if (field != QObject::tr("Password") && Util::isLaunchableWebUrl(value)) {
+  // Never on the password field, nor on a secret field hidden like it: its
+  // secret must not reach a tooltip or the browser. A secret field shown in
+  // plain view keeps its link.
+  if (field != QObject::tr("Password") && !hidesAsSecret(field, s) &&
+      Util::isLaunchableWebUrl(value)) {
     layout->addWidget(urlButton(value, m_widgetParent));
   }
 }
@@ -232,7 +243,10 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
             "transparent; font-family: monospace; }"
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
-  if (s.hidePassword && trimmedField == QObject::tr("Password")) {
+  // The password, and with it the other secrets an entry holds (a PIN, a
+  // CVV, an API key): behind the eye button too.
+  if ((s.hidePassword && trimmedField == QObject::tr("Password")) ||
+      hidesAsSecret(trimmedField, s)) {
     addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
     SecretTextBrowser *browser =

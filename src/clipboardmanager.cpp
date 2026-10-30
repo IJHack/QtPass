@@ -44,8 +44,10 @@ void ClipboardManager::copyText(const QString &text) {
   }
 
   // What was there before the first secret, to put back when autoclear
-  // runs (as pass -c does). Not a text of ours: a second copy in the same
-  // window keeps the user's own text, not the first password.
+  // runs (as pass -c does). Text only, as pass keeps it: rich content comes
+  // back as its plain text. Where Qt cannot read the clipboard without focus
+  // (some Wayland compositors, a copy from the tray), "before" reads as
+  // nothing and autoclear clears instead: the safe way round.
   if (s.useAutoclear && s.restoreClipboard) {
     std::optional<QString> &previous = mode == QClipboard::Selection
                                            ? m_previousSelection
@@ -148,9 +150,12 @@ void ClipboardManager::clear() {
   bool cleared = false;
   bool restored = false;
   // Ours still there: the text from before comes back if there was one and
-  // what is there is copyText()'s own copy, otherwise it is cleared (a copy
-  // from a shown field, trackCopied(), is cleared, not written over).
-  // Something else copied meanwhile is left alone.
+  // what is there is copyText()'s own copy, otherwise it is cleared. A copy
+  // from a shown field (trackCopied()) is cleared on purpose, not restored
+  // over: it can come long after copyText(), when "before" is stale, and the
+  // user chose that copy themselves. Something else copied meanwhile is left
+  // alone. The setting is read now: switched off during the window, the
+  // saved text was still held until here, and is dropped unused.
   const auto putBack = [&](QClipboard::Mode mode,
                            const std::optional<QString> &previous) {
     const QString now = clipboard->text(mode);

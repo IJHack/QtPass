@@ -161,6 +161,18 @@ public:
   [[nodiscard]] static auto isOtpFieldName(const QString &name) -> bool;
 
   /**
+   * @brief Whether a field name names a secret: one of @p secrets occurs in
+   * it as whole words, compared case-insensitively ("key" matches "API key"
+   * and "Recovery key", not "keyboard layout").
+   * @param name Field name as written in the file.
+   * @param secrets The secret field names (AppSettings::secretFieldNames).
+   * @return true when one of them occurs in @p name.
+   */
+  [[nodiscard]] static auto isSecretFieldName(const QString &name,
+                                              const QStringList &secrets)
+      -> bool;
+
+  /**
    * @brief Whether a field value is an otpauth URI, and therefore a secret.
    *
    * A URI is a shared secret whatever the field is called, so both the

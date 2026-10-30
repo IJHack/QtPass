@@ -85,6 +85,21 @@ auto SettingsSerializer::load(QSettings &qs) -> AppSettings {
 
   // Content display
   s.hidePassword = qs.value(SettingsConstants::hidePassword, false).toBool();
+  s.hideSecretFields =
+      qs.value(SettingsConstants::hideSecretFields, true).toBool();
+  // Never saved (a new settings file, or one from 1.8): the default set.
+  // Saved, it is what the user left, an empty list included.
+  if (qs.contains(SettingsConstants::secretFieldNames)) {
+    s.secretFieldNames.clear();
+    for (const QString &name :
+         qs.value(SettingsConstants::secretFieldNames).toStringList()) {
+      if (!name.trimmed().isEmpty()) {
+        s.secretFieldNames << name.trimmed();
+      }
+    }
+  } else {
+    s.secretFieldNames = AppSettings::defaultSecretFieldNames();
+  }
   s.hideContent = qs.value(SettingsConstants::hideContent, false).toBool();
   s.useMonospace = qs.value(SettingsConstants::useMonospace, false).toBool();
   s.displayAsIs = qs.value(SettingsConstants::displayAsIs, false).toBool();
@@ -166,6 +181,8 @@ void SettingsSerializer::save(QSettings &qs, const AppSettings &s) {
 
   // Content display
   qs.setValue(SettingsConstants::hidePassword, s.hidePassword);
+  qs.setValue(SettingsConstants::hideSecretFields, s.hideSecretFields);
+  qs.setValue(SettingsConstants::secretFieldNames, s.secretFieldNames);
   qs.setValue(SettingsConstants::hideContent, s.hideContent);
   qs.setValue(SettingsConstants::useMonospace, s.useMonospace);
   qs.setValue(SettingsConstants::displayAsIs, s.displayAsIs);

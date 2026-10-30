@@ -8,6 +8,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **"Hide password" hides more.** With it on, fields that name a secret
+  (PIN, PIN code, PUK, CVV, CVC, secret, token, key, passphrase, password,
+  recovery, answer, seed, mnemonic, as whole words) are behind the eye
+  button too.
+  For only the password, as in 1.8, switch off Settings › Display › "Also
+  hide other secrets"; the words next to it can be changed, and "Default"
+  puts the set back.
 - **Autoclear puts the previous clipboard back.** As `pass -c` does, when
   the clipboard autoclear runs, what was on the clipboard before the copy
   comes back instead of an empty clipboard, unless something else was
@@ -67,6 +74,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### New Features
 
+- "Hide password" also hides the other secrets an entry holds: every
+  field whose name holds one of a configurable set of words (a PIN, a CVV,
+  an API key, a recovery code) gets the eye button, and no link button, as
+  the password does. Matched as whole words in any case, so "key" hides
+  "API key" but not "keyboard layout". "Also hide other secrets" switches
+  it off
+  ([#2054](https://github.com/IJHack/QtPass/issues/2054)).
 - Restore the previous clipboard after autoclear, on by default, as
   `pass -c` does: text only, for the clipboard and the primary selection
   each, and only when QtPass's own copy is still there

@@ -10,6 +10,7 @@
 #include <QPoint>
 #include <QSize>
 #include <QString>
+#include <QStringList>
 
 /**
  * @struct AppSettings
@@ -28,6 +29,21 @@
  * out of scope here and still go through QtPassSettings directly.
  */
 struct AppSettings {
+  /**
+   * @brief The secret field names a new or emptied setting starts with:
+   * what an entry commonly holds besides its password.
+   * @return The names, lower case.
+   */
+  static auto defaultSecretFieldNames() -> QStringList {
+    return {QStringLiteral("pin"),        QStringLiteral("pincode"),
+            QStringLiteral("puk"),        QStringLiteral("cvv"),
+            QStringLiteral("cvc"),        QStringLiteral("secret"),
+            QStringLiteral("token"),      QStringLiteral("key"),
+            QStringLiteral("passphrase"), QStringLiteral("password"),
+            QStringLiteral("recovery"),   QStringLiteral("answer"),
+            QStringLiteral("seed"),       QStringLiteral("mnemonic")};
+  }
+
   // --- Window / session ---
   QString version;       ///< Last-run application version.
   QByteArray geometry;   ///< Main-window saved geometry.
@@ -61,7 +77,13 @@ struct AppSettings {
   int autoclearPanelSeconds{0};  ///< Panel autoclear delay (seconds).
 
   // --- Content display ---
-  bool hidePassword{false};   ///< Hide the password line in the panel.
+  bool hidePassword{false}; ///< Hide the password line in the panel.
+  /// With hidePassword: hide the fields named in secretFieldNames too. Off,
+  /// only the password is hidden, as in 1.8.
+  bool hideSecretFields{true};
+  /// The field names hideSecretFields hides, as whole words in any case
+  /// ("key" hides "API key", not "keyboard"). May be empty.
+  QStringList secretFieldNames{defaultSecretFieldNames()};
   bool hideContent{false};    ///< Hide the entire content panel.
   bool useMonospace{false};   ///< Render content in a monospace font.
   bool displayAsIs{false};    ///< Show file content unmodified.
