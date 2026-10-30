@@ -577,10 +577,14 @@ void tst_filecontent::isSecretFieldNameFollowsTheList() {
   for (int i = 0; i < 40000; ++i) {
     many << QStringLiteral("word%1").arg(i);
   }
-  QVERIFY2(!QRegularExpression(
-                QStringLiteral("(?:%1)").arg(many.join(QLatin1Char('|'))))
-                .isValid(),
-           "the list must be too large for one pattern");
+  // With PCRE2's default LINK_SIZE the list is too large for one pattern
+  // and the word-by-word path runs; a build with a larger LINK_SIZE takes
+  // the one pattern. The answers below are the same either way.
+  if (QRegularExpression(
+          QStringLiteral("(?:%1)").arg(many.join(QLatin1Char('|'))))
+          .isValid()) {
+    qInfo("this PCRE2 build takes the whole list as one pattern");
+  }
   QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my word39999"), many));
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("keyboard"), many));
 }
