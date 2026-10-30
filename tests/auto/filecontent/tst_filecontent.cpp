@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QRegularExpression>
 #include <QtTest>
 
 #include "../../../src/appsettings.h"
@@ -569,6 +570,19 @@ void tst_filecontent::isSecretFieldNameFollowsTheList() {
   const QStringList special{QStringLiteral("a.b")};
   QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my a.b"), special));
   QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("axb"), special));
+
+  // More words than fit one pattern (PCRE2's size limit): still matched,
+  // word by word, not every secret field shown.
+  QStringList many;
+  for (int i = 0; i < 40000; ++i) {
+    many << QStringLiteral("word%1").arg(i);
+  }
+  QVERIFY2(!QRegularExpression(
+                QStringLiteral("(?:%1)").arg(many.join(QLatin1Char('|'))))
+                .isValid(),
+           "the list must be too large for one pattern");
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my word39999"), many));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("keyboard"), many));
 }
 
 void tst_filecontent::isOtpFieldNameMatchesOtpAndTotp_data() {
