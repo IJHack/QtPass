@@ -105,6 +105,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- When the store's own repository is pinned (a parent path holding `:`),
+  its owner is checked each time Git runs, not only when the store is set
+  up: a `.git` that appeared later and is another user's is refused then,
+  for queued, blocking and re-encryption Git calls alike
+  ([#2089](https://github.com/IJHack/QtPass/issues/2089)).
 - An entry saved into, or moved to, a folder that does not exist yet was
   encrypted to the store root's recipients, not to those of the nearest
   folder above it with a list of its own, as `pass` finds them: the lookup

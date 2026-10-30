@@ -69,8 +69,19 @@ protected:
    * @return A copy of the environment.
    */
   [[nodiscard]] auto storeEnvironment() const -> QProcessEnvironment {
-    return env;
+    return withCurrentGitPin(env);
   }
+
+  /**
+   * @brief @p base with GIT_DIR and GIT_WORK_TREE as the store is now
+   * (Util::gitStoreVariables()), not as it was at updateEnv(): a `.git` that
+   * appeared or changed hands since then is judged when Git runs.
+   * @param base The environment to update.
+   * @return @p base, the two variables recomputed (left as they are when
+   *         the store keeps to a parent repository or there is none).
+   */
+  [[nodiscard]] auto withCurrentGitPin(QProcessEnvironment base) const
+      -> QProcessEnvironment;
 
   /**
    * @brief Application settings snapshot injected at init() time.

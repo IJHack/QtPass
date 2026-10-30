@@ -151,6 +151,7 @@ private:
       Pass::finished(id, exitCode, out, err);
     }
     bool callCreateBackupCommit() { return createBackupCommit(); }
+    QProcessEnvironment callStoreEnvironment() { return storeEnvironment(); }
     void callGitCommit(const QString &file, const QString &msg) {
       gitCommit(file, msg);
     }
@@ -301,6 +302,7 @@ private Q_SLOTS:
   void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
   void gitStaysInTheStoreWhenItsParentHoldsTheSeparator();
+  void gitPinIsJudgedWhenGitRuns();
   void readRegularFileIsBoundedAndRegular();
   void gitTakesStorePathsLiterally();
   void gpgErrorMessageKeyExpiredStatusToken();
@@ -2500,6 +2502,61 @@ void tst_util::mkpathForStoreFollowsTheStoreUmask() {
   QVERIFY(file.open(QIODevice::WriteOnly));
   file.close();
   QVERIFY2(!Util::mkpathForStore(file.fileName()), "a file is no folder");
+#endif
+}
+
+/**
+ * @brief The Git pin is judged when Git runs, not only at updateEnv(): a
+ *        store without a .git is pinned to its own (so `git init` can make
+ *        it); a .git that appears afterwards and is not the user's is then
+ *        refused for a blocking call and for a queued one alike (#2089).
+ */
+void tst_util::gitPinIsJudgedWhenGitRuns() {
+#ifndef Q_OS_UNIX
+  QSKIP("the ownership check is Unix-only");
+#else
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  const QString store = QDir(home.path()).filePath(QStringLiteral("a:b/store"));
+  QVERIFY(QDir().mkpath(store));
+  const QString real = QFileInfo(store).canonicalFilePath();
+  const auto owner = qScopeGuard([] { Util::setGitOwnerForTests({}); });
+
+  TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  s.passStore = store;
+  s.gitUseParentRepository = false;
+  pass.init(s);
+  // No .git yet: pinned to the one git init would make.
+  QCOMPARE(pass.environment().value(QStringLiteral("GIT_DIR")),
+           QDir(real).filePath(QStringLiteral(".git")));
+
+  // One appears, and it is someone else's.
+  QVERIFY(QDir(real).mkdir(QStringLiteral(".git")));
+  Util::setGitOwnerForTests(static_cast<uint>(::geteuid()) + 1);
+
+  // A blocking call starts in the store as it is now.
+  QCOMPARE(pass.callStoreEnvironment().value(QStringLiteral("GIT_DIR")),
+           QStringLiteral("/dev/null/.git"));
+
+  // So does a queued one: a stand-in git says which GIT_DIR it got.
+  const QString log = QDir(home.path()).filePath(QStringLiteral("git-dir.log"));
+  const QString git = QDir(home.path()).filePath(QStringLiteral("log-git"));
+  {
+    QFile f(git);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("#!/bin/sh\nprintf '%s\\n' \"$GIT_DIR\" > '" +
+            QFile::encodeName(log) + "'\nexit 0\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  pass.callExecuteWrapper(Enums::GIT_PULL, git, {QStringLiteral("pull")});
+  QTRY_VERIFY_WITH_TIMEOUT(QFileInfo(log).size() > 0, 5000);
+  QFile got(log);
+  QVERIFY(got.open(QIODevice::ReadOnly));
+  QCOMPARE(QString::fromUtf8(got.readAll()).trimmed(),
+           QStringLiteral("/dev/null/.git"));
 #endif
 }
 

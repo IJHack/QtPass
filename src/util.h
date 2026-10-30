@@ -72,6 +72,14 @@ public:
       -> QList<std::pair<QString, QString>>;
 
   /**
+   * @brief For tests: the user gitStoreVariables() compares owners with
+   * when no @p asUser is given, in place of the effective user. A file
+   * owned by another user cannot be made without root.
+   * @param user The user, or nothing to go back to the effective user.
+   */
+  static void setGitOwnerForTests(std::optional<uint> user);
+
+  /**
    * @brief Create @p path and any missing parents as pass would.
    *
    * What pass's mkdir -p does under its umask, for the folders QtPass makes
