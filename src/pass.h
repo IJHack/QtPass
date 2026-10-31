@@ -460,10 +460,15 @@ protected:
    *        included where it applies) or absolute (as Move/Copy get it).
    * @param includeSelf Whether the entry itself counts; false for a removal,
    *        which unlinks a link and touches nothing behind it.
+   * @param placed Whether the caller places a path spelled through the
+   *        target of a linked store root itself (Init() does); otherwise
+   *        such a path, which breaks the class's path rule, is logged as a
+   *        warning so tests catch a caller that hands one over.
    * @return true when critical() and processErrorExit() were emitted and
    *         the caller must stop.
    */
-  auto refuseLinkedPath(const QString &path, bool includeSelf = true) -> bool;
+  auto refuseLinkedPath(const QString &path, bool includeSelf = true,
+                        bool placed = false) -> bool;
   /**
    * @brief Refuse recipients for a folder outside the store, as pass
    * refuses a path with `..` in it.

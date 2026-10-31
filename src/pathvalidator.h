@@ -64,6 +64,21 @@ public:
                                 const QString &candidate)
       -> std::optional<QString>;
 
+  /**
+   * @brief Whether @p path is spelled through the target of a store root
+   * that is itself a link, rather than from the root as configured.
+   *
+   * The Pass operations take the configured spelling (see the Pass class
+   * documentation); this names the one spelling that breaks that rule
+   * while still lying in the store. Nothing is resolved below the root.
+   * @param storeRoot Password store root, as configured.
+   * @param path An absolute path; a relative one is never off-rule.
+   * @return true when @p path lies under the root's canonical path but not
+   * under the root as configured, and the two differ.
+   */
+  static auto isTargetSpelled(const QString &storeRoot, const QString &path)
+      -> bool;
+
 private:
   PathValidator() = default;
 };

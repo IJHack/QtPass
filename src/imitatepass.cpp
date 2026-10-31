@@ -465,9 +465,10 @@ auto ImitatePass::refuseLinkedGpgIdFolder(const QString &path) -> bool {
   // A link planted later is replaced, not written through: the writes stage
   // and rename.
   const QString folder = QDir::cleanPath(path);
-  return refuseLinkedPath(path) ||
-         refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
-         refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"));
+  // Init() places a folder spelled through a linked root's target itself.
+  return refuseLinkedPath(path, true, true) ||
+         refuseLinkedPath(folder + QStringLiteral("/.gpg-id"), true, true) ||
+         refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"), true, true);
 }
 
 auto ImitatePass::settleSignature(const QString &gpgIdFile,
