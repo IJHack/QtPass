@@ -614,6 +614,7 @@ private Q_SLOTS:
   void initWithALockedGitIndexStillReencryptsAndCommitsNothing();
   void initWithAWorkingGitCommitsTheListAndTheEntries();
   void initRefusesWhileAReencryptionRuns();
+  void initTakesARelativePathInTheStore();
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
   void reencryptRestoresABackupWhoseOriginalIsMissing();
@@ -2330,6 +2331,46 @@ void tst_imitatepass::initRefusesWhileAReencryptionRuns() {
   QFile after(gpgIdFile);
   QVERIFY(after.open(QIODevice::ReadOnly));
   QCOMPARE(after.readAll(), original);
+}
+
+/**
+ * @brief A relative folder is one in the store, as it is for pass: its list
+ *        is written there, not in the working directory.
+ */
+void tst_imitatepass::initTakesARelativePathInTheStore() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir workDir;
+  QVERIFY(storeDir.isValid() && workDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("team")));
+  QVERIFY(QDir(workDir.path()).mkpath(QStringLiteral("team")));
+  const QString fakeGpg =
+      writeSigningGpg(storeDir.path(), store.filePath("gpg-argv.log"));
+  QVERIFY(!fakeGpg.isEmpty());
+
+  ImitatePass pass;
+  pass.init(settingsFor(storeDir.path(), fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  const QString previous = QDir::currentPath();
+  QVERIFY(QDir::setCurrent(workDir.path()));
+  pass.Init(QStringLiteral("team/"),
+            {user(QStringLiteral("0123456789ABCDEF"))});
+  QVERIFY(QDir::setCurrent(previous));
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+
+  QCOMPARE(criticalSpy.count(), 0);
+  QFile list(store.filePath(QStringLiteral("team/.gpg-id")));
+  QVERIFY2(list.open(QIODevice::ReadOnly), "the list lands in the store");
+  QVERIFY(list.readAll().contains("0123456789ABCDEF"));
+  QVERIFY2(!QFileInfo::exists(
+               QDir(workDir.path()).filePath(QStringLiteral("team/.gpg-id"))),
+           "nothing is written in the working directory");
+#endif
 }
 
 /**

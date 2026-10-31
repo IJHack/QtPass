@@ -648,6 +648,12 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
   pass.Init(QDir(store).filePath(QStringLiteral("outer")), {alice});
   QVERIFY2(!passRan(), "init does not re-encrypt under a rolled-back list");
   QCOMPARE(critical.count(), before + 6);
+  // The same folder named relative to the store, as --path names it: the
+  // walk looks in the store, not in the working directory.
+  QFile::remove(m_log);
+  pass.Init(QStringLiteral("outer"), {alice});
+  QVERIFY2(!passRan(), "a relative folder is checked in the store");
+  QCOMPARE(critical.count(), before + 7);
 
   // Its own list is the one being written: a folder whose list was
   // removed is no refusal there, that is the way back.
@@ -661,7 +667,7 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
   QFile::remove(m_log);
   pass.Init(QDir(store).filePath(QStringLiteral("gone")), {alice});
   QVERIFY2(passRan(), "re-initialising a folder whose list was removed");
-  QCOMPARE(critical.count(), before + 6);
+  QCOMPARE(critical.count(), before + 7);
 
   // A target in a folder that does not exist yet gets the list above it,
   // as pass looks it up: a rolled-back one there is refused.
@@ -671,7 +677,7 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
             QDir(store).filePath(QStringLiteral("a/new/renamed.gpg")), false);
   QVERIFY2(!passRan(), "a target under a missing folder is checked against "
                        "the list above it");
-  QCOMPARE(critical.count(), before + 7);
+  QCOMPARE(critical.count(), before + 8);
 }
 
 void tst_realpass::removeFileAndFolder() {
