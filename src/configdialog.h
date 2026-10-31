@@ -183,9 +183,9 @@ private:
   /// Primary fingerprint per gpg and signing-key token (empty: gpg does
   /// not know it), so each key is looked up once, not on every keystroke.
   mutable QHash<QString, QString> m_primaryOf;
-  /// The environment those lookups run in (the configured GPG home), built
-  /// on first use.
-  mutable std::optional<QProcessEnvironment> m_gpgEnvironment;
+  /// The settings naming the GPG home those lookups run in, read on first
+  /// use.
+  mutable std::optional<AppSettings> m_gpgSettings;
   /// The profiles as shown; index == row in profileList.
   QList<ProfileEntry> m_entries;
   /// Row whose fields the form shows, -1 for none.

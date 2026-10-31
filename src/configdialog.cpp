@@ -370,11 +370,12 @@ auto ConfigDialog::signingStores() const -> SigningStores {
   // Keys are looked up in the keyring that signs: the configured GPG home,
   // as profiles sign with it, not whatever GNUPGHOME QtPass inherited. The
   // dialog does not edit the home, so the settings are read once, not on
-  // every keystroke.
-  if (!m_gpgEnvironment) {
-    m_gpgEnvironment = ProfileInit::gpgEnvironment(QtPassSettings::load());
+  // every keystroke; the environment is built each time, as the home may
+  // only appear meanwhile (a key generated from this dialog).
+  if (!m_gpgSettings) {
+    m_gpgSettings = QtPassSettings::load();
   }
-  const QProcessEnvironment &env = *m_gpgEnvironment;
+  const QProcessEnvironment env = ProfileInit::gpgEnvironment(*m_gpgSettings);
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
     const QString real = QFileInfo(entry.profile.path).canonicalFilePath();
     resolved.stores << (real.isEmpty() ? QDir::cleanPath(entry.profile.path)

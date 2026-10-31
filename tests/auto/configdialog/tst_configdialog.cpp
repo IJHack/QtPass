@@ -808,7 +808,10 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
     // check: the keyring that signs, and a lookup that stays quick.
     QTemporaryDir home;
     QVERIFY(home.isValid());
-    const QByteArray homePath = QDir(home.path()).absolutePath().toLocal8Bit();
+    // The home appears only once the dialog is open (a key generated from
+    // it): the next check must use it, not the environment of the first.
+    const QString later = QDir(home.path()).filePath(QStringLiteral("later"));
+    const QByteArray homePath = later.toLocal8Bit();
     QVERIFY(writeScript(
         gpg, "[ \"$GNUPGHOME\" = '" + homePath + "' ] || exit 2\n" +
                  "case \"$*\" in\n*--no-auto-check-trustdb*--list-keys*) " +
@@ -835,13 +838,17 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
       AppSettings s = QtPassSettings::load();
       s.activeProfile = QStringLiteral("primary");
       s.gpgExecutable = gpg;
-      s.gpgHome = home.path();
+      s.gpgHome = later;
       QtPassSettings::save(s);
     }
     ConfigDialog byKey(nullptr);
     auto *keyWarning =
         byKey.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
     QVERIFY(keyWarning != nullptr);
+    QVERIFY2(keyWarning->isHidden(), "no GPG home yet: gpg knows no key");
+    QVERIFY(QDir().mkpath(later));
+    auto *signingKey = child<QLineEdit>(byKey, "profileSigningKey");
+    emit signingKey->textEdited(signingKey->text());
     QVERIFY2(!keyWarning->isHidden(), "the subkey signs as its primary key");
     QVERIFY2(keyWarning->text().contains(QStringLiteral("subkey")),
              qPrintable(keyWarning->text()));
