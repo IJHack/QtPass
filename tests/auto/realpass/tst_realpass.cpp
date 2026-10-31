@@ -712,6 +712,27 @@ void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
                         QStringLiteral("AAAA")}));
+  // A store root reached through a link, the folder spelled through the
+  // link's target: --path is still the folder's place in the store (a
+  // lexical relative path made it ../../target/folder, which pass refuses).
+  QTemporaryDir links;
+  QVERIFY(links.isValid());
+  const QString linkedStore = QDir(links.path()).filePath("store");
+  QVERIFY(QFile::link(QDir::cleanPath(m_store), linkedStore));
+  {
+    AppSettings linked = m_settings;
+    linked.passStore = linkedStore + QLatin1Char('/');
+    RealPass viaLink;
+    viaLink.init(linked);
+    viaLink.updateEnv();
+    QFile::remove(m_log);
+    viaLink.Init(QFileInfo(m_store).canonicalFilePath() +
+                     QStringLiteral("/folder"),
+                 {alice});
+    QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("init"),
+                                              QStringLiteral("--path=folder"),
+                                              QStringLiteral("AAAA")}));
+  }
   // A folder outside the store is refused, as pass refuses `..`: pass
   // would take --path=/abs as a folder under the store. A directory whose
   // name merely starts with the store's is not inside it (the old prefix
