@@ -52,6 +52,17 @@ struct ResolvedGpgconfCommand {
  * - Random password generation
  *
  * Subclasses must implement Git and password operations.
+ *
+ * Paths: the operations take a path relative to the store, or an absolute
+ * path spelled from the store as configured (`passStore`), as the store
+ * tree and the dialogs build them. The link checks, `pass` names and Git
+ * paths are worked out against that spelling. A path spelled through the
+ * target of a store root that is itself a link is not under the store as
+ * named. Init() places such a folder from its canonical path; the other
+ * operations would check only the entry itself for a link and give `pass`
+ * and Git `../` names, so callers must not hand one over. Resolving every
+ * link instead is no way out: a removal would then reach a link's target,
+ * not the link.
  */
 class Pass : public QObject {
   Q_OBJECT
