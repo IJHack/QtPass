@@ -140,11 +140,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   included, and every list in an existing destination folder, which
   `pass` re-encrypts whole. It refuses as that backend does
   ([#2077](https://github.com/IJHack/QtPass/issues/2077)).
-- The profile settings warn when two profiles for different stores name
-  the same signing-key fingerprint: a recipient list signed for one of them is accepted in
+- The profile settings warn when two profiles for different stores sign
+  with the same key: a recipient list signed for one of them is accepted in
   the other, since its folder line names a folder of a store, not the
-  store. A warning, not an error: Settings can still be saved
-  ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
+  store. One key counts once however it is written: its fingerprint, a
+  subkey's fingerprint or a key ID. A warning, not an error: Settings can
+  still be saved ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
 - In native Git mode, a store whose parent folder's path holds `:` (`;` on
   Windows) was not kept out of a repository above it with "use a parent
   repository" off: Git splits its ceiling list on that character. Git is

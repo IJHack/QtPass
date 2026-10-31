@@ -15,4 +15,6 @@ GpgRecordType classifyRecord(const QString &record_type);
 
 QList<UserInfo> parseGpgColonOutput(const QString &output, bool secret);
 
+QString primaryFingerprintOf(const QString &output, const QString &key);
+
 #endif // SRC_GPGKEYSTATE_H_

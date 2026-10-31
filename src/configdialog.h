@@ -9,6 +9,7 @@
 #include "profile.h"
 
 #include <QDialog>
+#include <QHash>
 #include <QSet>
 
 namespace Ui {
@@ -177,6 +178,9 @@ private:
   QString m_nameTip, m_pathTip, m_keyTip;
   /// Below the signing key: the profiles that share it, if any.
   QLabel *m_sharedKeyWarning = nullptr;
+  /// Primary fingerprint per gpg and signing-key token (empty: gpg does
+  /// not know it), so each key is looked up once, not on every keystroke.
+  mutable QHash<QString, QString> m_primaryOf;
   /// The profiles as shown; index == row in profileList.
   QList<ProfileEntry> m_entries;
   /// Row whose fields the form shows, -1 for none.
@@ -250,6 +254,15 @@ private:
    * @return One entry per row of m_entries.
    */
   [[nodiscard]] auto signingStores() const -> SigningStores;
+  /**
+   * @brief One profile's signing keys as signers: each key as written, plus
+   * the primary fingerprint gpg gives for a complete key ID or (sub)key
+   * fingerprint.
+   * @param signingKey The profile's signing-key setting.
+   * @return Upper-case fingerprints and key IDs.
+   */
+  [[nodiscard]] auto signerKeys(const QString &signingKey) const
+      -> QSet<QString>;
   /**
    * @brief The other profiles, for other stores, whose signing keys share a
    * fingerprint with row @p row's.

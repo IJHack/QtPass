@@ -39,6 +39,7 @@ private Q_SLOTS:
   void parseGpgColonOutputPubWithoutUid();
   void parseGpgColonOutputOnlySubRecords();
   void parseGpgColonOutputShortLinesIgnored();
+  void primaryFingerprintOfFindsTheKeysBlock();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -571,6 +572,48 @@ void tst_gpgkeystate::parseGpgColonOutputShortLinesIgnored() {
            "short lines must be skipped; only the well-formed key is parsed");
   QVERIFY2(result.first().key_id == QStringLiteral("VALIDKEY1"),
            "key_id must be parsed from the well-formed pub record");
+}
+
+/**
+ * @brief primaryFingerprintOf() gives the primary fingerprint of the block
+ *        that holds the key, named by its primary or a subkey fingerprint or
+ *        by a key ID, in any case and with 0x; nothing for a key no block
+ *        holds, whatever else gpg printed.
+ */
+void tst_gpgkeystate::primaryFingerprintOfFindsTheKeysBlock() {
+  const QString alice =
+      QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9");
+  const QString aliceSub =
+      QStringLiteral("FEDCBA9876543210FEDCBA980123456789ABCDEF");
+  const QString bob =
+      QStringLiteral("4EF2550F79F4E9E68B09F71D693A0AF3FA364E76");
+  const QString listing =
+      QStringLiteral("tru::1:1774947438:0:3:1:5\n"
+                     "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "uid:u::::1774947438::H::Alice <alice@example.org>::::\n"
+                     "sub:u:4096:1:0123456789ABCDEF:1774947438::::::s:\n"
+                     "fpr:::::::::%2:\n"
+                     "pub:f:4096:1:693A0AF3FA364E76:1775005968:::f::::\n"
+                     "fpr:::::::::%3:\n"
+                     "uid:f::::1775005968::H::Bob <bob@example.org>::::\n")
+          .arg(alice, aliceSub, bob);
+  QCOMPARE(primaryFingerprintOf(listing, alice), alice);
+  QCOMPARE(primaryFingerprintOf(listing, aliceSub), alice);
+  QCOMPARE(primaryFingerprintOf(listing, aliceSub.toLower()), alice);
+  QCOMPARE(primaryFingerprintOf(listing, QStringLiteral("0x0123456789abcdef")),
+           alice);
+  QCOMPARE(primaryFingerprintOf(listing, QStringLiteral("89ABCDEF")), alice);
+  QCOMPARE(primaryFingerprintOf(listing, bob), bob);
+  QCOMPARE(primaryFingerprintOf(listing, QStringLiteral("FA364E76")), bob);
+  // Not a whole fingerprint and not a key ID: no tail match.
+  QCOMPARE(primaryFingerprintOf(listing, aliceSub.left(39)), QString());
+  QCOMPARE(
+      primaryFingerprintOf(
+          listing, QStringLiteral("1111111111111111111111111111111111111111")),
+      QString());
+  QCOMPARE(primaryFingerprintOf(listing, QString()), QString());
+  QCOMPARE(primaryFingerprintOf(QString(), alice), QString());
 }
 
 QTEST_MAIN(tst_gpgkeystate)

@@ -166,3 +166,66 @@ auto parseGpgColonOutput(const QString &output, bool secret)
 
   return users;
 }
+
+/**
+ * @brief The primary key fingerprint of the key that @p key names.
+ *
+ * gpg accepts a signature by a subkey for its primary key, and verification
+ * here takes either fingerprint from VALIDSIG: a key written as a subkey's
+ * fingerprint, or as a key ID, signs as its primary key. Only a block that
+ * holds @p key is taken, whatever else gpg printed.
+ * @param output Raw output from GPG --with-colons --with-fingerprint
+ *        --with-subkey-fingerprint --list-keys.
+ * @param key A fingerprint (40 or 64 hex) or a key ID (8 or 16 hex, the
+ *        fingerprint's tail), optionally with 0x; any case.
+ * @return The primary fingerprint in upper case, or empty when no block in
+ *         @p output holds @p key.
+ */
+auto primaryFingerprintOf(const QString &output, const QString &key)
+    -> QString {
+  QString wanted = key.trimmed().toUpper();
+  if (wanted.startsWith(QLatin1String("0X"))) {
+    wanted.remove(0, 2);
+  }
+  const bool isId = wanted.size() == 8 || wanted.size() == 16;
+  const auto names = [&](const QString &fingerprint) {
+    const QString upper = fingerprint.toUpper();
+    return isId ? upper.endsWith(wanted) : upper == wanted;
+  };
+  QString primary;
+  bool expectPrimary = false;
+  bool found = false;
+  const QStringList lines =
+      output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
+  for (const QString &line : lines) {
+    const QStringList props = line.split(QLatin1Char(':'));
+    if (props.size() < GPG_MIN_FIELDS) {
+      continue;
+    }
+    switch (classifyRecord(props[0])) {
+    case GpgRecordType::Pub:
+      if (found) {
+        return primary;
+      }
+      primary.clear();
+      expectPrimary = true;
+      break;
+    case GpgRecordType::Sub:
+      expectPrimary = false;
+      break;
+    case GpgRecordType::Fpr:
+      if (expectPrimary) {
+        primary = props[GPG_FIELD_FINGERPRINT].toUpper();
+        expectPrimary = false;
+      }
+      if (!wanted.isEmpty() && !primary.isEmpty() &&
+          names(props[GPG_FIELD_FINGERPRINT])) {
+        found = true;
+      }
+      break;
+    default:
+      break;
+    }
+  }
+  return found ? primary : QString();
+}
