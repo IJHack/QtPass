@@ -616,6 +616,7 @@ private Q_SLOTS:
   void initRefusesWhileAReencryptionRuns();
   void initTakesARelativePathInTheStore();
   void initRefusesAFolderOutsideTheStore();
+  void initWritesWhereItChecksPastALinkAndDotDot();
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
   void reencryptRestoresABackupWhoseOriginalIsMissing();
@@ -2404,6 +2405,44 @@ void tst_imitatepass::initRefusesAFolderOutsideTheStore() {
   QVERIFY2(
       !QFileInfo::exists(root.filePath(QStringLiteral("elsewhere/.gpg-id"))),
       "nothing is written outside the store");
+}
+
+/**
+ * @brief /store/link/../team/ is checked as /store/team/, so that is where
+ *        the list goes: written as given, the system took link first and
+ *        put it beside the folder the link points to, outside the store.
+ */
+void tst_imitatepass::initWritesWhereItChecksPastALinkAndDotDot() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symbolic link and a shell script as fake gpg");
+#else
+  QTemporaryDir parent;
+  QVERIFY(parent.isValid());
+  const QDir root(parent.path());
+  for (const char *dir : {"store/team", "elsewhere/target", "elsewhere/team"})
+    QVERIFY(root.mkpath(QString::fromLatin1(dir)));
+  const QString store = root.filePath(QStringLiteral("store"));
+  QVERIFY(populateStore(store, 0));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral("elsewhere/target")),
+                      QDir(store).filePath(QStringLiteral("link"))));
+  const QString fakeGpg =
+      writeSigningGpg(store, QDir(store).filePath("gpg-argv.log"));
+  QVERIFY(!fakeGpg.isEmpty());
+
+  ImitatePass pass;
+  pass.init(settingsFor(store, fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.Init(store + QStringLiteral("/link/../team/"),
+            {user(QStringLiteral("0123456789ABCDEF"))});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+
+  QVERIFY2(!QFileInfo::exists(
+               root.filePath(QStringLiteral("elsewhere/team/.gpg-id"))),
+           "nothing is written outside the store");
+  QVERIFY2(
+      QFileInfo::exists(QDir(store).filePath(QStringLiteral("team/.gpg-id"))),
+      "the list goes to the folder that was checked");
+#endif
 }
 
 /**
