@@ -274,6 +274,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
 <tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
 <tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
+<tr class="memitem:aeb935d08903b37ad61815391556a742b" id="r_aeb935d08903b37ad61815391556a742b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeb935d08903b37ad61815391556a742b">refuseFolderOutsideStore</a> (const QString &amp;folder) -&gt; bool</td></tr>
+<tr class="memdesc:aeb935d08903b37ad61815391556a742b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse recipients for a folder outside the store, as pass refuses a path with <span class="tt">..</span> in it.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -2085,6 +2087,40 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The state, the recipients to preselect and the warning to show. </dd></dl>
+
+</div>
+</div>
+<a id="aeb935d08903b37ad61815391556a742b" name="aeb935d08903b37ad61815391556a742b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb935d08903b37ad61815391556a742b">&#9670;&#160;</a></span>refuseFolderOutsideStore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::refuseFolderOutsideStore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>folder</em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse recipients for a folder outside the store, as pass refuses a path with <span class="tt">..</span> in it. </p>
+<p><a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> would write a <span class="tt">.gpg-id</span> that the store never reads, and <span class="tt">pass <a class="el" href="#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a> --path</span> would take the folder's absolute path as a folder under the store. Links on the way are resolved, as for the store root. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">folder</td><td>The folder, absolute. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
 
 </div>
 </div>
