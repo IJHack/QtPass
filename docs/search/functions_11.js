@@ -67,9 +67,10 @@ var searchData=
   ['store_64',['store',['../class_store_tree.html#a7900b8e82db6a34d4720c58ffafbf240',1,'StoreTree']]],
   ['storeenvironment_65',['storeEnvironment',['../class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2',1,'Pass']]],
   ['storemodel_66',['StoreModel',['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel']]],
-  ['storetree_67',['StoreTree',['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree']]],
-  ['storewizardpage_68',['StoreWizardPage',['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage']]],
-  ['supporteddragactions_69',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_70',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
-  ['synctodisk_71',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
+  ['storerelativepath_67',['storeRelativePath',['../class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0',1,'PathValidator']]],
+  ['storetree_68',['StoreTree',['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree']]],
+  ['storewizardpage_69',['StoreWizardPage',['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage']]],
+  ['supporteddragactions_70',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
+  ['supporteddropactions_71',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
+  ['synctodisk_72',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
 ];

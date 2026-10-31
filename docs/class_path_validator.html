@@ -111,13 +111,15 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a15120558ca5dd41cdd9c485ae08030c7" id="r_a15120558ca5dd41cdd9c485ae08030c7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7">isPathInStore</a> (const QString &amp;storeRoot, const QString &amp;candidate) -&gt; bool</td></tr>
 <tr class="memdesc:a15120558ca5dd41cdd9c485ae08030c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that a candidate path resolves inside the password store root, after following symlinks and resolving <span class="tt">..</span> components.  <br /></td></tr>
+<tr class="memitem:a10bc672c74cdd476c6f89df5ca8027d0" id="r_a10bc672c74cdd476c6f89df5ca8027d0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a10bc672c74cdd476c6f89df5ca8027d0">storeRelativePath</a> (const QString &amp;storeRoot, const QString &amp;candidate) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a10bc672c74cdd476c6f89df5ca8027d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where <code class="param">candidate</code> lies in the store, judged as <a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7" title="Check that a candidate path resolves inside the password store root, after following symlinks and res...">isPathInStore()</a> judges it.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Password-store path-boundary checks. </p>
 <p>Extracted from <a class="el" href="class_util.html" title="Some static utilities to be used elsewhere.">Util</a>. Guards file/folder create, rename, and drag-drop against paths that resolve outside the configured password store.</p>
 <p>Threat model: this catches mistakes and malformed input, such as a typed <span class="tt">..</span>, a pasted absolute path or a symlink that happens to point outside the store. It is not a defence against another process that can write to the store while <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> runs: the check and the file operation that follows it are separate steps, and a symlink swapped in between them is not seen (the usual time-of-check/time-of-use gap of a path-based API). Anyone who can write to your password store can also replace its contents, so that is outside what <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> can protect. </p>
 
-<p class="definition">Definition at line <a class="el" href="pathvalidator_8h_source.html#l00024">24</a> of file <a class="el" href="pathvalidator_8h_source.html">pathvalidator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pathvalidator_8h_source.html#l00025">25</a> of file <a class="el" href="pathvalidator_8h_source.html">pathvalidator.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a15120558ca5dd41cdd9c485ae08030c7" name="a15120558ca5dd41cdd9c485ae08030c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15120558ca5dd41cdd9c485ae08030c7">&#9670;&#160;</a></span>isPathInStore()</h2>
@@ -156,6 +158,46 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if <span class="tt">candidate</span> resolves to a path equal to or strictly inside <span class="tt">storeRoot</span>; false otherwise (including when <span class="tt">storeRoot</span> itself does not exist). </dd></dl>
+
+</div>
+</div>
+<a id="a10bc672c74cdd476c6f89df5ca8027d0" name="a10bc672c74cdd476c6f89df5ca8027d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10bc672c74cdd476c6f89df5ca8027d0">&#9670;&#160;</a></span>storeRelativePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto PathValidator::storeRelativePath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>candidate</em></span>&#160;) -&gt;  std::optional&lt; QString &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Where <code class="param">candidate</code> lies in the store, judged as <a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7" title="Check that a candidate path resolves inside the password store root, after following symlinks and res...">isPathInStore()</a> judges it. </p>
+<p>The relative path comes from the same canonical pair the check uses, so a store root reached through a link and a candidate spelled through the link's target still give <span class="tt">team</span>, not <span class="tt">../../data/pass/team</span>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storeRoot</td><td>Password store root. </td></tr>
+    <tr><td class="paramname">candidate</td><td>Path to place, as for <a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7" title="Check that a candidate path resolves inside the password store root, after following symlinks and res...">isPathInStore()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The path relative to the store root, with <span class="tt">/</span> separators and empty for the root itself; nothing when <a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7" title="Check that a candidate path resolves inside the password store root, after following symlinks and res...">isPathInStore()</a> is false. </dd></dl>
 
 </div>
 </div>

@@ -16,7 +16,7 @@ var searchData=
   ['reencryptsinglefile_13',['reencryptSingleFile',['../class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c',1,'ImitatePass']]],
   ['refresh_14',['refresh',['../class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec',1,'OtpCodeWidget']]],
   ['refreshpalette_15',['refreshPalette',['../class_password_display_panel.html#a399a1b0ecdea8fe814a7c418e8e96c0f',1,'PasswordDisplayPanel']]],
-  ['refusefolderoutsidestore_16',['refuseFolderOutsideStore',['../class_pass.html#aeb935d08903b37ad61815391556a742b',1,'Pass']]],
+  ['refusefolderoutsidestore_16',['refuseFolderOutsideStore',['../class_pass.html#afea04fa657d65846e2772b0b25c96276',1,'Pass']]],
   ['refuselinkedgpgidfolder_17',['refuseLinkedGpgIdFolder',['../class_imitate_pass.html#abe06761236eb789f13dd4e8814ce7f15',1,'ImitatePass']]],
   ['refuselinkedpath_18',['refuseLinkedPath',['../class_pass.html#a9e4a43d75fb8f1dd3419a9d6c7e07b29',1,'Pass']]],
   ['refuseskippedgpgid_19',['refuseSkippedGpgId',['../class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb',1,'Pass']]],
