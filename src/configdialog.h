@@ -10,6 +10,7 @@
 
 #include <QDialog>
 #include <QHash>
+#include <QProcessEnvironment>
 #include <QSet>
 
 namespace Ui {
@@ -259,9 +260,11 @@ private:
    * the primary fingerprint gpg gives for a complete key ID or (sub)key
    * fingerprint.
    * @param signingKey The profile's signing-key setting.
+   * @param env The environment gpg looks keys up in (its GPG home).
    * @return Upper-case fingerprints and key IDs.
    */
-  [[nodiscard]] auto signerKeys(const QString &signingKey) const
+  [[nodiscard]] auto signerKeys(const QString &signingKey,
+                                const QProcessEnvironment &env) const
       -> QSet<QString>;
   /**
    * @brief The other profiles, for other stores, whose signing keys share a

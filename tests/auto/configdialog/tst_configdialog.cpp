@@ -804,13 +804,21 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
         "sub:u:4096:1:0123456789ABCDEF:1774947438::::::s:\n"
         "fpr:::::::::" +
         subkey.toLatin1() + ":\n";
-    QVERIFY(
-        writeScript(gpg, "case \"$*\" in\n*--list-keys*) cat <<'LISTING'\n" +
-                             listing + "LISTING\nexit 0 ;;\nesac\nexit 0\n"));
-    const QString savedGpg = QtPassSettings::load().gpgExecutable;
-    const auto restoreGpg = qScopeGuard([&savedGpg] {
+    // Answers only in the configured GPG home, and only without a trustdb
+    // check: the keyring that signs, and a lookup that stays quick.
+    QTemporaryDir home;
+    QVERIFY(home.isValid());
+    const QByteArray homePath = QDir(home.path()).absolutePath().toLocal8Bit();
+    QVERIFY(writeScript(
+        gpg, "[ \"$GNUPGHOME\" = '" + homePath + "' ] || exit 2\n" +
+                 "case \"$*\" in\n*--no-auto-check-trustdb*--list-keys*) " +
+                 "cat <<'LISTING'\n" + listing +
+                 "LISTING\nexit 0 ;;\nesac\nexit 2\n"));
+    const AppSettings saved = QtPassSettings::load();
+    const auto restoreGpg = qScopeGuard([&saved] {
       AppSettings s = QtPassSettings::load();
-      s.gpgExecutable = savedGpg;
+      s.gpgExecutable = saved.gpgExecutable;
+      s.gpgHome = saved.gpgHome;
       QtPassSettings::save(s);
     });
     Profiles split;
@@ -827,6 +835,7 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
       AppSettings s = QtPassSettings::load();
       s.activeProfile = QStringLiteral("primary");
       s.gpgExecutable = gpg;
+      s.gpgHome = home.path();
       QtPassSettings::save(s);
     }
     ConfigDialog byKey(nullptr);

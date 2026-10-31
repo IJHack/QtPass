@@ -367,16 +367,21 @@ auto ConfigDialog::signingStores() const -> SigningStores {
   // resolves it where it exists. Resolved once per validate(), not once per
   // pair of profiles.
   SigningStores resolved;
+  // Keys are looked up in the keyring that signs: the configured GPG home,
+  // as profiles sign with it, not whatever GNUPGHOME QtPass inherited.
+  const QProcessEnvironment env =
+      ProfileInit::gpgEnvironment(QtPassSettings::load());
   for (const ProfileEntry &entry : std::as_const(m_entries)) {
     const QString real = QFileInfo(entry.profile.path).canonicalFilePath();
     resolved.stores << (real.isEmpty() ? QDir::cleanPath(entry.profile.path)
                                        : real);
-    resolved.keys << signerKeys(entry.profile.signingKey);
+    resolved.keys << signerKeys(entry.profile.signingKey, env);
   }
   return resolved;
 }
 
-auto ConfigDialog::signerKeys(const QString &signingKey) const
+auto ConfigDialog::signerKeys(const QString &signingKey,
+                              const QProcessEnvironment &env) const
     -> QSet<QString> {
   // Verification takes the primary or the signing subkey's fingerprint
   // from VALIDSIG, and gpg signs for a primary key with its subkey: a key
@@ -393,13 +398,19 @@ auto ConfigDialog::signerKeys(const QString &signingKey) const
     if (gpg.isEmpty() || !complete.match(key).hasMatch()) {
       continue;
     }
-    const QString cacheKey = gpg + QLatin1Char('\n') + key;
+    const QString cacheKey = gpg + QLatin1Char('\n') +
+                             env.value(QStringLiteral("GNUPGHOME")) +
+                             QLatin1Char('\n') + key;
     auto cached = m_primaryOf.constFind(cacheKey);
     if (cached == m_primaryOf.cend()) {
       QString out;
+      // Blocking, once per key: no trustdb check, which a large keyring
+      // would make slow.
       const int rc = Executor::executeBlocking(
-          gpg,
-          {QStringLiteral("--no-tty"), QStringLiteral("--with-colons"),
+          env, gpg,
+          {QStringLiteral("--no-tty"), QStringLiteral("--batch"),
+           QStringLiteral("--no-auto-check-trustdb"),
+           QStringLiteral("--with-colons"),
            QStringLiteral("--with-fingerprint"),
            QStringLiteral("--with-subkey-fingerprint"),
            QStringLiteral("--list-keys"), QStringLiteral("--"), key},

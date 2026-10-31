@@ -172,14 +172,17 @@ auto parseGpgColonOutput(const QString &output, bool secret)
  *
  * gpg accepts a signature by a subkey for its primary key, and verification
  * here takes either fingerprint from VALIDSIG: a key written as a subkey's
- * fingerprint, or as a key ID, signs as its primary key. Only a block that
- * holds @p key is taken, whatever else gpg printed.
+ * fingerprint, or as a key ID, signs as its primary key. Only the block that
+ * holds @p key is taken, whatever else gpg printed; when several do (a short
+ * ID, which collides easily), none is.
  * @param output Raw output from GPG --with-colons --with-fingerprint
  *        --with-subkey-fingerprint --list-keys.
- * @param key A fingerprint (40 or 64 hex) or a key ID (8 or 16 hex, the
- *        fingerprint's tail), optionally with 0x; any case.
- * @return The primary fingerprint in upper case, or empty when no block in
- *         @p output holds @p key.
+ * @param key A fingerprint (40 or 64 hex) or a key ID (8 or 16 hex),
+ *        optionally with 0x; any case. A key ID is matched against the
+ *        record's own key ID, so it works for v4 keys (the fingerprint's
+ *        tail) and v5/v6 keys (its head) alike.
+ * @return The primary fingerprint in upper case, or empty when no block, or
+ *         more than one, in @p output holds @p key.
  */
 auto primaryFingerprintOf(const QString &output, const QString &key)
     -> QString {
@@ -187,14 +190,26 @@ auto primaryFingerprintOf(const QString &output, const QString &key)
   if (wanted.startsWith(QLatin1String("0X"))) {
     wanted.remove(0, 2);
   }
+  if (wanted.isEmpty()) {
+    return {};
+  }
   const bool isId = wanted.size() == 8 || wanted.size() == 16;
-  const auto names = [&](const QString &fingerprint) {
-    const QString upper = fingerprint.toUpper();
-    return isId ? upper.endsWith(wanted) : upper == wanted;
-  };
+  QStringList holders;
   QString primary;
   bool expectPrimary = false;
-  bool found = false;
+  bool holds = false;
+  // A pub or sub record carries the key's own ID: the fingerprint's tail
+  // for v4 keys, its head for v5/v6. A short ID is the long one's tail.
+  const auto namesKeyId = [&](const QStringList &props) {
+    return isId && props[GPG_FIELD_KEY_ID].toUpper().endsWith(wanted);
+  };
+  const auto endBlock = [&] {
+    if (holds && !primary.isEmpty() && !holders.contains(primary)) {
+      holders << primary;
+    }
+    primary.clear();
+    holds = false;
+  };
   const QStringList lines =
       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
   for (const QString &line : lines) {
@@ -204,28 +219,27 @@ auto primaryFingerprintOf(const QString &output, const QString &key)
     }
     switch (classifyRecord(props[0])) {
     case GpgRecordType::Pub:
-      if (found) {
-        return primary;
-      }
-      primary.clear();
+      endBlock();
       expectPrimary = true;
+      holds = holds || namesKeyId(props);
       break;
     case GpgRecordType::Sub:
       expectPrimary = false;
+      holds = holds || namesKeyId(props);
       break;
     case GpgRecordType::Fpr:
       if (expectPrimary) {
         primary = props[GPG_FIELD_FINGERPRINT].toUpper();
         expectPrimary = false;
       }
-      if (!wanted.isEmpty() && !primary.isEmpty() &&
-          names(props[GPG_FIELD_FINGERPRINT])) {
-        found = true;
+      if (!isId && props[GPG_FIELD_FINGERPRINT].toUpper() == wanted) {
+        holds = true;
       }
       break;
     default:
       break;
     }
   }
-  return found ? primary : QString();
+  endBlock();
+  return holders.size() == 1 ? holders.first() : QString();
 }
