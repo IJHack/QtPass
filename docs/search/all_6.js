@@ -61,12 +61,13 @@ var searchData=
   ['gittracks_58',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
   ['gituseparentrepository_59',['gitUseParentRepository',['../struct_app_settings.html#a7cb6dcad3fce49e715f4d8873f98c3ed',1,'AppSettings']]],
   ['gpg_5fgenkeys_60',['GPG_GENKEYS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c',1,'Enums']]],
-  ['gpgexecutable_61',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
-  ['gpghome_62',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]],
-  ['gpgidgeneration_63',['GpgIdGeneration',['../class_gpg_id_generation.html',1,'']]],
-  ['gpgidsigner_64',['GpgIdSigner',['../class_gpg_id_signer.html',1,'GpgIdSigner'],['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner::GpgIdSigner()']]],
-  ['gpgidsigner_65',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
-  ['gpgsupportsed25519_66',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
-  ['grep_67',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
-  ['grepsearchcontroller_68',['GrepSearchController',['../class_grep_search_controller.html',1,'']]]
+  ['gpgenvironment_61',['gpgEnvironment',['../class_profile_init.html#ab844fe61a6e6181d03050ebcad18ee93',1,'ProfileInit']]],
+  ['gpgexecutable_62',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
+  ['gpghome_63',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]],
+  ['gpgidgeneration_64',['GpgIdGeneration',['../class_gpg_id_generation.html',1,'']]],
+  ['gpgidsigner_65',['GpgIdSigner',['../class_gpg_id_signer.html',1,'GpgIdSigner'],['../class_gpg_id_signer.html#a4861ba0784a1a7644ca697e3a72cd5b5',1,'GpgIdSigner::GpgIdSigner()']]],
+  ['gpgidsigner_66',['gpgIdSigner',['../class_imitate_pass.html#aff483e62ab4ceede87aa3007c8f55588',1,'ImitatePass']]],
+  ['gpgsupportsed25519_67',['gpgSupportsEd25519',['../class_pass.html#a407558ed7e2d88f953de7b179a1d143a',1,'Pass']]],
+  ['grep_68',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
+  ['grepsearchcontroller_69',['GrepSearchController',['../class_grep_search_controller.html',1,'']]]
 ];
