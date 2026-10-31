@@ -508,8 +508,11 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   if (!QDir::isAbsolutePath(path)) {
     path = QDir(m_settings.passStore).filePath(path);
   }
-  path = Util::normalizeFolderPath(path);
-  if (refuseLinkedGpgIdFolder(path)) {
+  // Cleaned before any check: the checks clean what they look at, and the
+  // write must go to the same place. Left as /store/link/../team/, the
+  // system resolves link first and writes beside wherever it points.
+  path = Util::normalizeFolderPath(QDir::cleanPath(path));
+  if (refuseLinkedGpgIdFolder(path) || refuseFolderOutsideStore(path)) {
     return;
   }
   // A running re-encryption cannot take a second folder: the new list would

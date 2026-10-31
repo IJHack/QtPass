@@ -615,6 +615,8 @@ private Q_SLOTS:
   void initWithAWorkingGitCommitsTheListAndTheEntries();
   void initRefusesWhileAReencryptionRuns();
   void initTakesARelativePathInTheStore();
+  void initRefusesAFolderOutsideTheStore();
+  void initWritesWhereItChecksPastALinkAndDotDot();
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
   void reencryptRestoresABackupWhoseOriginalIsMissing();
@@ -2374,6 +2376,76 @@ void tst_imitatepass::initTakesARelativePathInTheStore() {
 }
 
 /**
+ * @brief A folder outside the store gets no list, absolute or reached
+ *        through `..`, as pass refuses such a path; signing off, nothing
+ *        else would stop the write.
+ */
+void tst_imitatepass::initRefusesAFolderOutsideTheStore() {
+  QTemporaryDir parent;
+  QVERIFY(parent.isValid());
+  const QDir root(parent.path());
+  QVERIFY(root.mkpath(QStringLiteral("store")));
+  QVERIFY(root.mkpath(QStringLiteral("elsewhere")));
+  const QString store = root.filePath(QStringLiteral("store"));
+  QVERIFY(populateStore(store, 0));
+
+  ImitatePass pass;
+  pass.init(settingsFor(store, QDir(store).filePath("no-gpg")));
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy errorSpy(&pass, &Pass::processErrorExit);
+  const QString alice = QStringLiteral("0123456789ABCDEF");
+  pass.Init(root.filePath(QStringLiteral("elsewhere/")), {user(alice)});
+  pass.Init(QStringLiteral("../elsewhere/"), {user(alice)});
+
+  QCOMPARE(criticalSpy.count(), 2);
+  QCOMPARE(errorSpy.count(), 2);
+  QVERIFY2(criticalSpy.at(1).at(1).toString().contains(
+               QStringLiteral("not inside the password store")),
+           qPrintable(criticalSpy.at(1).at(1).toString()));
+  QVERIFY2(
+      !QFileInfo::exists(root.filePath(QStringLiteral("elsewhere/.gpg-id"))),
+      "nothing is written outside the store");
+}
+
+/**
+ * @brief /store/link/../team/ is checked as /store/team/, so that is where
+ *        the list goes: written as given, the system took link first and
+ *        put it beside the folder the link points to, outside the store.
+ */
+void tst_imitatepass::initWritesWhereItChecksPastALinkAndDotDot() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symbolic link and a shell script as fake gpg");
+#else
+  QTemporaryDir parent;
+  QVERIFY(parent.isValid());
+  const QDir root(parent.path());
+  for (const char *dir : {"store/team", "elsewhere/target", "elsewhere/team"})
+    QVERIFY(root.mkpath(QString::fromLatin1(dir)));
+  const QString store = root.filePath(QStringLiteral("store"));
+  QVERIFY(populateStore(store, 0));
+  QVERIFY(QFile::link(root.filePath(QStringLiteral("elsewhere/target")),
+                      QDir(store).filePath(QStringLiteral("link"))));
+  const QString fakeGpg =
+      writeSigningGpg(store, QDir(store).filePath("gpg-argv.log"));
+  QVERIFY(!fakeGpg.isEmpty());
+
+  ImitatePass pass;
+  pass.init(settingsFor(store, fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.Init(store + QStringLiteral("/link/../team/"),
+            {user(QStringLiteral("0123456789ABCDEF"))});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+
+  QVERIFY2(!QFileInfo::exists(
+               root.filePath(QStringLiteral("elsewhere/team/.gpg-id"))),
+           "nothing is written outside the store");
+  QVERIFY2(
+      QFileInfo::exists(QDir(store).filePath(QStringLiteral("team/.gpg-id"))),
+      "the list goes to the folder that was checked");
+#endif
+}
+
+/**
  * @brief The same store with a working Git: the `.gpg-id` is committed first,
  *        then each entry is re-encrypted to the new recipients and committed,
  *        with no critical() and a finishedInit, as before.
@@ -3611,8 +3683,9 @@ void tst_imitatepass::removeReportsALinkItCannotUnlink() {
 
 /**
  * @brief With a signing key the recipient list carries a folder line, and a
- *        folder that is not inside the store has no such line to give: Init
- *        refuses and writes nothing there.
+ *        folder that is not inside the store has no such line to give. Init
+ *        refuses such a folder before that, signing or not
+ *        (initRefusesAFolderOutsideTheStore), and writes nothing there.
  */
 void tst_imitatepass::initRefusesAFolderOutsideTheStoreWhenSigning() {
 #ifdef Q_OS_WIN
@@ -3636,7 +3709,7 @@ void tst_imitatepass::initRefusesAFolderOutsideTheStoreWhenSigning() {
   QTest::qWait(200);
   QCOMPARE(criticalSpy.count(), 1);
   QCOMPARE(criticalSpy.first().at(0).toString(),
-           QStringLiteral("Cannot update"));
+           QStringLiteral("Not part of the store"));
   QVERIFY2(criticalSpy.first().at(1).toString().contains(
                QStringLiteral("not inside the password store")),
            qPrintable(criticalSpy.first().at(1).toString()));
