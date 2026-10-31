@@ -378,9 +378,14 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // pass init writes this folder's list and then re-encrypts everything
   // under it to each entry's nearest list, a deeper folder's own included:
   // those are checked as for a move. This folder's list is the one being
-  // written, so it is neither verified nor missed.
-  if (refuseUnverifiedTree(folder, true,
-                           QDir(folder).filePath(QStringLiteral(".gpg-id")))) {
+  // written, so it is neither verified nor missed. Walked in the store's
+  // own spelling: a folder spelled through the target of a linked store
+  // root is not under the store as named, and the lookup of each nearest
+  // list would stop at once and miss the deeper ones.
+  const QString inStore =
+      QDir::cleanPath(QDir(m_settings.passStore).filePath(dirWithoutPassdir));
+  if (refuseUnverifiedTree(inStore, true,
+                           QDir(inStore).filePath(QStringLiteral(".gpg-id")))) {
     return;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};

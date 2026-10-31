@@ -654,6 +654,27 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
   pass.Init(QStringLiteral("outer"), {alice});
   QVERIFY2(!passRan(), "a relative folder is checked in the store");
   QCOMPARE(critical.count(), before + 7);
+  // And spelled through the target of a store root reached by a link: the
+  // walk is in the store's spelling, so the deeper list is still found.
+  {
+    QTemporaryDir links;
+    QVERIFY(links.isValid());
+    const QString linkedStore = QDir(links.path()).filePath("store");
+    QVERIFY(QFile::link(QDir::cleanPath(store), linkedStore));
+    AppSettings linked = settings;
+    linked.passStore = linkedStore;
+    RealPass viaLink;
+    viaLink.init(linked);
+    viaLink.updateEnv();
+    QSignalSpy linkedCritical(&viaLink, &Pass::critical);
+    QFile::remove(m_log);
+    viaLink.Init(QDir(QFileInfo(store).canonicalFilePath())
+                     .filePath(QStringLiteral("outer")),
+                 {alice});
+    QVERIFY2(!passRan(), "a folder spelled through the link target is "
+                         "checked as the store names it");
+    QCOMPARE(linkedCritical.count(), 1);
+  }
 
   // Its own list is the one being written: a folder whose list was
   // removed is no refusal there, that is the way back.
