@@ -181,21 +181,43 @@ auto FileContent::isOtpFieldName(const QString &name) -> bool {
 
 auto FileContent::isSecretFieldName(const QString &name,
                                     const QStringList &secrets) -> bool {
-  for (const QString &secret : secrets) {
-    const QString word = secret.trimmed();
-    if (word.isEmpty()) {
-      continue;
+  // One pattern for the whole list, compiled once per list: the panel asks
+  // for every field of every entry shown, and the list rarely changes.
+  thread_local QStringList cachedSecrets;
+  thread_local QStringList cachedWords;
+  thread_local QRegularExpression cachedPattern;
+  thread_local bool cachedYet = false;
+  constexpr auto options = QRegularExpression::CaseInsensitiveOption |
+                           QRegularExpression::UseUnicodePropertiesOption;
+  const auto whole = [](const QString &alternatives) {
+    return QStringLiteral("(?<!\\w)(?:%1)(?!\\w)").arg(alternatives);
+  };
+  if (!cachedYet || secrets != cachedSecrets) {
+    cachedWords.clear();
+    for (const QString &secret : secrets) {
+      const QString word = secret.trimmed();
+      if (!word.isEmpty()) {
+        cachedWords << QRegularExpression::escape(word);
+      }
     }
-    const QRegularExpression whole(
-        QStringLiteral("(?<!\\w)%1(?!\\w)")
-            .arg(QRegularExpression::escape(word)),
-        QRegularExpression::CaseInsensitiveOption |
-            QRegularExpression::UseUnicodePropertiesOption);
-    if (whole.match(name).hasMatch()) {
-      return true;
-    }
+    cachedSecrets = secrets;
+    cachedYet = true;
+    cachedPattern =
+        QRegularExpression(whole(cachedWords.join(QLatin1Char('|'))), options);
   }
-  return false;
+  if (cachedWords.isEmpty()) {
+    return false;
+  }
+  if (cachedPattern.isValid()) {
+    return cachedPattern.match(name).hasMatch();
+  }
+  // Too many words for one pattern (PCRE2's size limit): word by word,
+  // rather than every secret field shown in plain view.
+  return std::any_of(
+      cachedWords.cbegin(), cachedWords.cend(),
+      [&name, &whole, options](const QString &word) {
+        return QRegularExpression(whole(word), options).match(name).hasMatch();
+      });
 }
 
 auto FileContent::isOtpUriValue(const QString &value) -> bool {

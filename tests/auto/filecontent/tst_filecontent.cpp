@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QRegularExpression>
 #include <QtTest>
 
 #include "../../../src/appsettings.h"
@@ -50,6 +51,7 @@ private Q_SLOTS:
   void getRemainingDataEmptyWhenAllTemplate();
   void isSecretFieldNameMatchesWholeWords_data();
   void isSecretFieldNameMatchesWholeWords();
+  void isSecretFieldNameFollowsTheList();
   void isOtpFieldNameMatchesOtpAndTotp_data();
   void isOtpFieldNameMatchesOtpAndTotp();
   void getOtpUriFromTemplateField();
@@ -548,6 +550,43 @@ void tst_filecontent::isSecretFieldNameMatchesWholeWords() {
   QCOMPARE(FileContent::isSecretFieldName(
                name, AppSettings::defaultSecretFieldNames()),
            secret);
+}
+
+/**
+ * @brief The pattern is built once per list, and a changed list is matched
+ *        at once: another list, an empty one (nothing is secret), and a
+ *        word with pattern characters, which are taken as they are.
+ */
+void tst_filecontent::isSecretFieldNameFollowsTheList() {
+  const QStringList first{QStringLiteral("iban")};
+  const QStringList second{QStringLiteral("pin")};
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("IBAN"), first));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"), first));
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("PIN"), second));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("IBAN"), second));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"), {}));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("PIN"),
+                                          {QStringLiteral("  ")}));
+  const QStringList special{QStringLiteral("a.b")};
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my a.b"), special));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("axb"), special));
+
+  // More words than fit one pattern (PCRE2's size limit): still matched,
+  // word by word, not every secret field shown.
+  QStringList many;
+  for (int i = 0; i < 40000; ++i) {
+    many << QStringLiteral("word%1").arg(i);
+  }
+  // With PCRE2's default LINK_SIZE the list is too large for one pattern
+  // and the word-by-word path runs; a build with a larger LINK_SIZE takes
+  // the one pattern. The answers below are the same either way.
+  if (QRegularExpression(
+          QStringLiteral("(?:%1)").arg(many.join(QLatin1Char('|'))))
+          .isValid()) {
+    qInfo("this PCRE2 build takes the whole list as one pattern");
+  }
+  QVERIFY(FileContent::isSecretFieldName(QStringLiteral("my word39999"), many));
+  QVERIFY(!FileContent::isSecretFieldName(QStringLiteral("keyboard"), many));
 }
 
 void tst_filecontent::isOtpFieldNameMatchesOtpAndTotp_data() {

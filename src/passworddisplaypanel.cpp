@@ -168,9 +168,6 @@ auto urlButton(const QString &url, QWidget *parent) -> QPushButton * {
   return button;
 }
 
-} // namespace
-
-namespace {
 /// Whether @p field is one of the other secrets "Hide password" hides with
 /// the password ("Also hide other secrets", AppSettings::secretFieldNames).
 auto hidesAsSecret(const QString &field, const AppSettings &s) -> bool {

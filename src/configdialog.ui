@@ -474,7 +474,7 @@
                   <item>
                    <widget class="QLineEdit" name="lineEditSecretFields">
                     <property name="toolTip">
-                     <string>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: "key" hides "API key", not "keyboard layout".</string>
+                     <string>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: "key" hides "API key", not "keyboard layout". That errs on the hidden side: "Public key" and "Password hint" are hidden too; take a word out to show them.</string>
                     </property>
                    </widget>
                   </item>
