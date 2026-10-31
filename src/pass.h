@@ -453,6 +453,18 @@ protected:
    *         the caller must stop.
    */
   auto refuseLinkedPath(const QString &path, bool includeSelf = true) -> bool;
+  /**
+   * @brief Refuse recipients for a folder outside the store, as pass
+   * refuses a path with `..` in it.
+   *
+   * ImitatePass would write a `.gpg-id` that the store never reads, and
+   * `pass init --path` would take the folder's absolute path as a folder
+   * under the store. Links on the way are resolved, as for the store root.
+   * @param folder The folder, absolute.
+   * @return true when critical() and processErrorExit() were emitted and
+   *         the caller must stop.
+   */
+  auto refuseFolderOutsideStore(const QString &folder) -> bool;
 
   /**
    * @brief Execute external wrapper command.
@@ -527,6 +539,9 @@ private:
       -> QString;
   void emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                  const QString &err);
+  /// critical() and processErrorExit() for something not part of the
+  /// store; refuseLinkedPath() and refuseFolderOutsideStore() say why.
+  void refuseAsNotPartOfStore(const QString &why);
 
 signals:
   /**

@@ -712,15 +712,27 @@ void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
                         QStringLiteral("AAAA")}));
-  // A directory whose name merely starts with the store's is not inside it;
-  // the old prefix test turned /store-other into --path=-other.
-  QFile::remove(m_log);
+  // A folder outside the store is refused, as pass refuses `..`: pass
+  // would take --path=/abs as a folder under the store. A directory whose
+  // name merely starts with the store's is not inside it (the old prefix
+  // test turned /store-other into --path=-other); neither is one reached
+  // through `..`.
+  QSignalSpy critical(pass.data(), &Pass::critical);
+  QSignalSpy errorExit(pass.data(), &Pass::processErrorExit);
   const QString sibling = QDir::cleanPath(m_store) + QStringLiteral("-other");
   QVERIFY(QDir().mkpath(sibling));
-  pass->Init(sibling, {alice});
-  QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("init"),
-                                            QStringLiteral("--path=") + sibling,
-                                            QStringLiteral("AAAA")}));
+  for (const QString &outside :
+       {sibling, QStringLiteral("../") + QFileInfo(sibling).fileName()}) {
+    QFile::remove(m_log);
+    pass->Init(outside, {alice});
+    QTest::qWait(300);
+    QVERIFY2(!QFile::exists(m_log), qPrintable(outside + " reached pass"));
+  }
+  QCOMPARE(critical.count(), 2);
+  QCOMPARE(errorExit.count(), 2);
+  QVERIFY2(critical.at(0).at(1).toString().contains(
+               QStringLiteral("not inside the password store")),
+           qPrintable(critical.at(0).at(1).toString()));
 }
 
 /**

@@ -3,7 +3,6 @@
 #include "realpass.h"
 #include "executor.h"
 #include "gpgidsigner.h"
-#include "pathvalidator.h"
 #include "qtpasslogging.h"
 #include "util.h"
 
@@ -366,18 +365,15 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // signature with --output; both follow a link planted under those names.
   if (refuseLinkedPath(folder) ||
       refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig")) ||
+      refuseFolderOutsideStore(folder)) {
     return;
   }
-  // --path is store-relative, or pass creates passStore/passStore/dir. A
-  // plain prefix test would take /home/me/store-other for /home/me/store.
-  const QString normalizedStore = QDir::cleanPath(m_settings.passStore);
-  QString dirWithoutPassdir = folder;
-  if (PathValidator::isPathInStore(normalizedStore, folder)) {
-    dirWithoutPassdir = QDir(normalizedStore).relativeFilePath(folder);
-    if (dirWithoutPassdir == QStringLiteral(".")) {
-      dirWithoutPassdir.clear();
-    }
+  // --path is store-relative, or pass creates passStore/passStore/dir.
+  QString dirWithoutPassdir =
+      QDir(QDir::cleanPath(m_settings.passStore)).relativeFilePath(folder);
+  if (dirWithoutPassdir == QStringLiteral(".")) {
+    dirWithoutPassdir.clear();
   }
   // pass init writes this folder's list and then re-encrypts everything
   // under it to each entry's nearest list, a deeper folder's own included:

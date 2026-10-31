@@ -509,7 +509,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
     path = QDir(m_settings.passStore).filePath(path);
   }
   path = Util::normalizeFolderPath(path);
-  if (refuseLinkedGpgIdFolder(path)) {
+  if (refuseLinkedGpgIdFolder(path) || refuseFolderOutsideStore(path)) {
     return;
   }
   // A running re-encryption cannot take a second folder: the new list would

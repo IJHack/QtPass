@@ -5,6 +5,7 @@
 #include "gpgidgeneration.h"
 #include "gpgidsigner.h"
 #include "gpgkeystate.h"
+#include "pathvalidator.h"
 #include "processinfo.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -765,12 +766,27 @@ auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
       tr("%1 is, or lies behind, a symbolic link or junction. What that "
          "points to is not part of the password store and is left alone.")
           .arg(QDir::toNativeSeparators(QDir::cleanPath(full)));
+  refuseAsNotPartOfStore(why);
+  return true;
+}
+
+auto Pass::refuseFolderOutsideStore(const QString &folder) -> bool {
+  if (PathValidator::isPathInStore(m_settings.passStore, folder)) {
+    return false;
+  }
+  refuseAsNotPartOfStore(
+      tr("%1 is not inside the password store. Recipients are set for the "
+         "store or a folder in it.")
+          .arg(QDir::toNativeSeparators(QDir::cleanPath(folder))));
+  return true;
+}
+
+void Pass::refuseAsNotPartOfStore(const QString &why) {
   // The interface arms itself when an operation starts and is released by
   // finished or processErrorExit; a refusal starts nothing, so emits both.
   emit startingExecuteWrapper();
   emit critical(tr("Not part of the store"), why);
   emit processErrorExit(1, why);
-  return true;
 }
 
 auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
