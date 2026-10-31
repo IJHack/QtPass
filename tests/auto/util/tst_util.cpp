@@ -346,6 +346,7 @@ private Q_SLOTS:
   void isPathInStoreRejectsSymlinkEscape();
   void isPathInStoreAllowsNewChild();
   void isPathInStoreRejectsEmptyArgs();
+  void storeRelativePathFollowsTheCheck();
   // .gpg-id permission hardening (security)
   void writeGpgIdFileSetsOwnerOnlyPerms();
   void writeGpgIdFileCanBeWrittenAgainAfterLockingDown();
@@ -3506,6 +3507,39 @@ void tst_util::isPathInStoreRejectsEmptyArgs() {
   // Non-existent root.
   QVERIFY(!PathValidator::isPathInStore(QStringLiteral("/no/such/dir"),
                                         QStringLiteral("/no/such/dir/foo")));
+}
+
+/**
+ * @brief storeRelativePath() places what isPathInStore() accepts, from the
+ *        same canonical pair: empty for the root, the rest below it, a new
+ *        child included, and the same name for a store root reached
+ *        through a link and a candidate spelled through its target.
+ */
+void tst_util::storeRelativePathFollowsTheCheck() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  QVERIFY(QDir(root).mkpath(QStringLiteral("team")));
+  QCOMPARE(PathValidator::storeRelativePath(root, root), QString());
+  QCOMPARE(PathValidator::storeRelativePath(root, root + "/team"),
+           QStringLiteral("team"));
+  QCOMPARE(PathValidator::storeRelativePath(root, root + "/team/new/x.gpg"),
+           QStringLiteral("team/new/x.gpg"));
+  QCOMPARE(PathValidator::storeRelativePath(root, root + "/team/../team/"),
+           QStringLiteral("team"));
+  QVERIFY(!PathValidator::storeRelativePath(root, root + "/../escape"));
+  QVERIFY(!PathValidator::storeRelativePath(root, root + "-other"));
+#ifndef Q_OS_WIN
+  QTemporaryDir links;
+  QVERIFY(links.isValid());
+  const QString linkedRoot = QDir(links.path()).filePath("store");
+  QVERIFY(QFile::link(root, linkedRoot));
+  const QString canonical = QFileInfo(root).canonicalFilePath();
+  QCOMPARE(PathValidator::storeRelativePath(linkedRoot, canonical + "/team"),
+           QStringLiteral("team"));
+  QCOMPARE(PathValidator::storeRelativePath(root, linkedRoot + "/team"),
+           QStringLiteral("team"));
+#endif
 }
 
 /**

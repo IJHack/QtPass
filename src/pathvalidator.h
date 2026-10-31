@@ -4,6 +4,7 @@
 #define SRC_PATHVALIDATOR_H_
 
 #include <QString>
+#include <optional>
 
 /**
  * @class PathValidator
@@ -45,6 +46,23 @@ public:
    */
   static auto isPathInStore(const QString &storeRoot, const QString &candidate)
       -> bool;
+
+  /**
+   * @brief Where @p candidate lies in the store, judged as isPathInStore()
+   * judges it.
+   *
+   * The relative path comes from the same canonical pair the check uses, so
+   * a store root reached through a link and a candidate spelled through the
+   * link's target still give `team`, not `../../data/pass/team`.
+   *
+   * @param storeRoot Password store root.
+   * @param candidate Path to place, as for isPathInStore().
+   * @return The path relative to the store root, with `/` separators and
+   * empty for the root itself; nothing when isPathInStore() is false.
+   */
+  static auto storeRelativePath(const QString &storeRoot,
+                                const QString &candidate)
+      -> std::optional<QString>;
 
 private:
   PathValidator() = default;

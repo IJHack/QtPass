@@ -15,12 +15,18 @@
 
 auto PathValidator::isPathInStore(const QString &storeRoot,
                                   const QString &candidate) -> bool {
+  return storeRelativePath(storeRoot, candidate).has_value();
+}
+
+auto PathValidator::storeRelativePath(const QString &storeRoot,
+                                      const QString &candidate)
+    -> std::optional<QString> {
   if (storeRoot.isEmpty() || candidate.isEmpty()) {
-    return false;
+    return std::nullopt;
   }
   const QString rootCanon = QDir(storeRoot).canonicalPath();
   if (rootCanon.isEmpty()) {
-    return false;
+    return std::nullopt;
   }
 
   QString resolved;
@@ -40,20 +46,25 @@ auto PathValidator::isPathInStore(const QString &storeRoot,
       // before cdUp() can fail; this guard is defensive against a
       // pathological QDir that can neither exist nor ascend.
       if (!parent.cdUp()) {
-        return false;
+        return std::nullopt;
       }
     }
     const QString parentCanon = parent.canonicalPath();
     if (parentCanon.isEmpty()) {
-      return false;
+      return std::nullopt;
     }
     resolved = QDir::cleanPath(parentCanon + QLatin1Char('/') +
                                tail.join(QLatin1Char('/')));
   }
 
   if (resolved.isEmpty()) {
-    return false;
+    return std::nullopt;
   }
-  return resolved == rootCanon ||
-         resolved.startsWith(rootCanon + QLatin1Char('/'));
+  if (resolved == rootCanon) {
+    return QString();
+  }
+  if (!resolved.startsWith(rootCanon + QLatin1Char('/'))) {
+    return std::nullopt;
+  }
+  return resolved.mid(rootCanon.size() + 1);
 }

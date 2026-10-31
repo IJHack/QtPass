@@ -654,6 +654,27 @@ void tst_realpass::signedListIsCheckedAsTheNativeBackendDoes() {
   pass.Init(QStringLiteral("outer"), {alice});
   QVERIFY2(!passRan(), "a relative folder is checked in the store");
   QCOMPARE(critical.count(), before + 7);
+  // And spelled through the target of a store root reached by a link: the
+  // walk is in the store's spelling, so the deeper list is still found.
+  {
+    QTemporaryDir links;
+    QVERIFY(links.isValid());
+    const QString linkedStore = QDir(links.path()).filePath("store");
+    QVERIFY(QFile::link(QDir::cleanPath(store), linkedStore));
+    AppSettings linked = settings;
+    linked.passStore = linkedStore;
+    RealPass viaLink;
+    viaLink.init(linked);
+    viaLink.updateEnv();
+    QSignalSpy linkedCritical(&viaLink, &Pass::critical);
+    QFile::remove(m_log);
+    viaLink.Init(QDir(QFileInfo(store).canonicalFilePath())
+                     .filePath(QStringLiteral("outer")),
+                 {alice});
+    QVERIFY2(!passRan(), "a folder spelled through the link target is "
+                         "checked as the store names it");
+    QCOMPARE(linkedCritical.count(), 1);
+  }
 
   // Its own list is the one being written: a folder whose list was
   // removed is no refusal there, that is the way back.
@@ -712,6 +733,27 @@ void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {
   QCOMPARE(waitForCall().args,
            (QStringList{QStringLiteral("init"), QStringLiteral("--path="),
                         QStringLiteral("AAAA")}));
+  // A store root reached through a link, the folder spelled through the
+  // link's target: --path is still the folder's place in the store (a
+  // lexical relative path made it ../../target/folder, which pass refuses).
+  QTemporaryDir links;
+  QVERIFY(links.isValid());
+  const QString linkedStore = QDir(links.path()).filePath("store");
+  QVERIFY(QFile::link(QDir::cleanPath(m_store), linkedStore));
+  {
+    AppSettings linked = m_settings;
+    linked.passStore = linkedStore + QLatin1Char('/');
+    RealPass viaLink;
+    viaLink.init(linked);
+    viaLink.updateEnv();
+    QFile::remove(m_log);
+    viaLink.Init(QFileInfo(m_store).canonicalFilePath() +
+                     QStringLiteral("/folder"),
+                 {alice});
+    QCOMPARE(waitForCall().args, (QStringList{QStringLiteral("init"),
+                                              QStringLiteral("--path=folder"),
+                                              QStringLiteral("AAAA")}));
+  }
   // A folder outside the store is refused, as pass refuses `..`: pass
   // would take --path=/abs as a folder under the store. A directory whose
   // name merely starts with the store's is not inside it (the old prefix

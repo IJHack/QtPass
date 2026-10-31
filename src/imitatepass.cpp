@@ -512,9 +512,17 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // write must go to the same place. Left as /store/link/../team/, the
   // system resolves link first and writes beside wherever it points.
   path = Util::normalizeFolderPath(QDir::cleanPath(path));
-  if (refuseLinkedGpgIdFolder(path) || refuseFolderOutsideStore(path)) {
+  QString inStore;
+  if (refuseLinkedGpgIdFolder(path) ||
+      refuseFolderOutsideStore(path, &inStore)) {
     return;
   }
+  // From here on in the store's own spelling, the same folder: one spelled
+  // through the target of a linked store root is not under the store as
+  // named, so each entry's nearest list was looked up past the new one and
+  // the entries were encrypted to the store root's.
+  path = Util::normalizeFolderPath(
+      QDir::cleanPath(QDir(m_settings.passStore).filePath(inStore)));
   // A running re-encryption cannot take a second folder: the new list would
   // be written and its entries left encrypted to the old recipients, which
   // for a removed person means they can still read them. Nothing is written.

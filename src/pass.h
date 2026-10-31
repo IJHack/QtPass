@@ -461,10 +461,14 @@ protected:
    * `pass init --path` would take the folder's absolute path as a folder
    * under the store. Links on the way are resolved, as for the store root.
    * @param folder The folder, absolute.
+   * @param relative Where the folder lies in the store, as
+   *        PathValidator::storeRelativePath() gives it (empty for the root),
+   *        when it is not refused; may be null.
    * @return true when critical() and processErrorExit() were emitted and
    *         the caller must stop.
    */
-  auto refuseFolderOutsideStore(const QString &folder) -> bool;
+  auto refuseFolderOutsideStore(const QString &folder,
+                                QString *relative = nullptr) -> bool;
 
   /**
    * @brief Execute external wrapper command.

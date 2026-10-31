@@ -770,8 +770,13 @@ auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
   return true;
 }
 
-auto Pass::refuseFolderOutsideStore(const QString &folder) -> bool {
-  if (PathValidator::isPathInStore(m_settings.passStore, folder)) {
+auto Pass::refuseFolderOutsideStore(const QString &folder, QString *relative)
+    -> bool {
+  if (const std::optional<QString> inStore =
+          PathValidator::storeRelativePath(m_settings.passStore, folder)) {
+    if (relative != nullptr) {
+      *relative = *inStore;
+    }
     return false;
   }
   refuseAsNotPartOfStore(

@@ -617,6 +617,7 @@ private Q_SLOTS:
   void initTakesARelativePathInTheStore();
   void initRefusesAFolderOutsideTheStore();
   void initWritesWhereItChecksPastALinkAndDotDot();
+  void initThroughALinkedStoreEncryptsToTheNewList();
   void initRemovesTheOldSignatureWhenSigningIsOff();
   void reencryptWritesThroughItsOwnTemporaryFileOnly();
   void reencryptRestoresABackupWhoseOriginalIsMissing();
@@ -2442,6 +2443,51 @@ void tst_imitatepass::initWritesWhereItChecksPastALinkAndDotDot() {
   QVERIFY2(
       QFileInfo::exists(QDir(store).filePath(QStringLiteral("team/.gpg-id"))),
       "the list goes to the folder that was checked");
+#endif
+}
+
+/**
+ * @brief A store root reached through a link, the folder spelled through the
+ *        link's target: the entries are encrypted to the folder's new list,
+ *        not the store root's, which the lookup found when it walked the
+ *        folder in the target's spelling.
+ */
+void tst_imitatepass::initThroughALinkedStoreEncryptsToTheNewList() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a symbolic link and a shell script as fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QTemporaryDir links;
+  QVERIFY(storeDir.isValid() && links.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QDir store(storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral("team")));
+  {
+    QFile e(store.filePath(QStringLiteral("team/e.gpg")));
+    QVERIFY(e.open(QIODevice::WriteOnly));
+    e.write("x");
+  }
+  const QString linkedStore = QDir(links.path()).filePath("store");
+  QVERIFY(QFile::link(storeDir.path(), linkedStore));
+  const QString gpgLog = store.filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), gpgLog);
+  QVERIFY(!fakeGpg.isEmpty());
+
+  ImitatePass pass;
+  pass.init(settingsFor(linkedStore, fakeGpg));
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  const QString fresh = QStringLiteral("FEDCBA9876543210");
+  pass.Init(QFileInfo(storeDir.path()).canonicalFilePath() +
+                QStringLiteral("/team/"),
+            {user(fresh)});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+
+  const QList<QStringList> enc = encryptCalls(loggedCalls(gpgLog));
+  QCOMPARE(enc.size(), 1);
+  QVERIFY2(
+      enc.first().contains(fresh) &&
+          !enc.first().contains(QStringLiteral("0123456789ABCDEF")),
+      qPrintable("encrypted to the folder's list: " + enc.first().join(' ')));
 #endif
 }
 
