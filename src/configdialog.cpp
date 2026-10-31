@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "configdialog.h"
 #include "appsettings.h"
+#include "executor.h"
+#include "gpgkeystate.h"
 #include "keygendialog.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
@@ -369,11 +371,47 @@ auto ConfigDialog::signingStores() const -> SigningStores {
     const QString real = QFileInfo(entry.profile.path).canonicalFilePath();
     resolved.stores << (real.isEmpty() ? QDir::cleanPath(entry.profile.path)
                                        : real);
-    const QStringList keys = entry.profile.signingKey.toUpper().split(
-        QLatin1Char(' '), Qt::SkipEmptyParts);
-    resolved.keys << QSet<QString>(keys.cbegin(), keys.cend());
+    resolved.keys << signerKeys(entry.profile.signingKey);
   }
   return resolved;
+}
+
+auto ConfigDialog::signerKeys(const QString &signingKey) const
+    -> QSet<QString> {
+  // Verification takes the primary or the signing subkey's fingerprint
+  // from VALIDSIG, and gpg signs for a primary key with its subkey: a key
+  // written as the subkey in one profile and as the primary in another is
+  // one signer (#2087). Only complete IDs are asked about, so typing a key
+  // does not start gpg for every prefix.
+  static const QRegularExpression complete(QStringLiteral(
+      "^(?:0X)?(?:[0-9A-F]{8}|[0-9A-F]{16}|[0-9A-F]{40}|[0-9A-F]{64})$"));
+  const QString gpg = ui->gpgPath->text();
+  QSet<QString> keys;
+  for (const QString &key :
+       signingKey.toUpper().split(QLatin1Char(' '), Qt::SkipEmptyParts)) {
+    keys.insert(key);
+    if (gpg.isEmpty() || !complete.match(key).hasMatch()) {
+      continue;
+    }
+    const QString cacheKey = gpg + QLatin1Char('\n') + key;
+    auto cached = m_primaryOf.constFind(cacheKey);
+    if (cached == m_primaryOf.cend()) {
+      QString out;
+      const int rc = Executor::executeBlocking(
+          gpg,
+          {QStringLiteral("--no-tty"), QStringLiteral("--with-colons"),
+           QStringLiteral("--with-fingerprint"),
+           QStringLiteral("--with-subkey-fingerprint"),
+           QStringLiteral("--list-keys"), QStringLiteral("--"), key},
+          &out);
+      cached = m_primaryOf.insert(
+          cacheKey, rc == 0 ? primaryFingerprintOf(out, key) : QString());
+    }
+    if (!cached->isEmpty()) {
+      keys.insert(*cached);
+    }
+  }
+  return keys;
 }
 
 auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const

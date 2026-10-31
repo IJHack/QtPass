@@ -784,6 +784,60 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
   QVERIFY2(warning->isHidden(), "work no longer shares its key elsewhere");
 
 #ifndef Q_OS_WIN
+  // One key written as its primary fingerprint in one profile and as its
+  // signing subkey's in another is one signer: gpg signs for the primary
+  // with the subkey, and verification takes either fingerprint (#2087).
+  {
+    const QString primary =
+        QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9");
+    const QString subkey =
+        QStringLiteral("FEDCBA9876543210FEDCBA980123456789ABCDEF");
+    QTemporaryDir bin;
+    QVERIFY(bin.isValid());
+    const QString gpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
+    const QByteArray listing =
+        "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u::::\n"
+        "fpr:::::::::" +
+        primary.toLatin1() +
+        ":\n"
+        "uid:u::::1774947438::H::Alice <alice@example.org>::::\n"
+        "sub:u:4096:1:0123456789ABCDEF:1774947438::::::s:\n"
+        "fpr:::::::::" +
+        subkey.toLatin1() + ":\n";
+    QVERIFY(
+        writeScript(gpg, "case \"$*\" in\n*--list-keys*) cat <<'LISTING'\n" +
+                             listing + "LISTING\nexit 0 ;;\nesac\nexit 0\n"));
+    const QString savedGpg = QtPassSettings::load().gpgExecutable;
+    const auto restoreGpg = qScopeGuard([&savedGpg] {
+      AppSettings s = QtPassSettings::load();
+      s.gpgExecutable = savedGpg;
+      QtPassSettings::save(s);
+    });
+    Profiles split;
+    Profile byPrimary;
+    byPrimary.path = QStringLiteral("/store/primary");
+    byPrimary.signingKey = primary;
+    split.insert(QStringLiteral("primary"), byPrimary);
+    Profile bySubkey;
+    bySubkey.path = QStringLiteral("/store/subkey");
+    bySubkey.signingKey = subkey.toLower();
+    split.insert(QStringLiteral("subkey"), bySubkey);
+    QtPassSettings::setProfiles(split);
+    {
+      AppSettings s = QtPassSettings::load();
+      s.activeProfile = QStringLiteral("primary");
+      s.gpgExecutable = gpg;
+      QtPassSettings::save(s);
+    }
+    ConfigDialog byKey(nullptr);
+    auto *keyWarning =
+        byKey.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
+    QVERIFY(keyWarning != nullptr);
+    QVERIFY2(!keyWarning->isHidden(), "the subkey signs as its primary key");
+    QVERIFY2(keyWarning->text().contains(QStringLiteral("subkey")),
+             qPrintable(keyWarning->text()));
+  }
+
   // One store reached through a link is one store: not named either.
   QTemporaryDir real;
   QVERIFY(real.isValid());
