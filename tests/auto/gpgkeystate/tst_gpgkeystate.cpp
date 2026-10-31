@@ -40,6 +40,7 @@ private Q_SLOTS:
   void parseGpgColonOutputOnlySubRecords();
   void parseGpgColonOutputShortLinesIgnored();
   void primaryFingerprintOfFindsTheKeysBlock();
+  void primaryFingerprintOfV5AndCollidingIds();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -614,6 +615,41 @@ void tst_gpgkeystate::primaryFingerprintOfFindsTheKeysBlock() {
       QString());
   QCOMPARE(primaryFingerprintOf(listing, QString()), QString());
   QCOMPARE(primaryFingerprintOf(QString(), alice), QString());
+}
+
+/**
+ * @brief A v5/v6 key's ID is its fingerprint's head, so a key ID is matched
+ *        against the record's own ID field, not a fingerprint's tail. A short
+ *        ID that two keys share names neither.
+ */
+void tst_gpgkeystate::primaryFingerprintOfV5AndCollidingIds() {
+  const QString v5 = QStringLiteral(
+      "A1B2C3D4E5F60718293A4B5C6D7E8F90112233445566778899AABBCCDDEEFF00");
+  const QString v5listing =
+      QStringLiteral("pub:u:255:22:A1B2C3D4E5F60718:1774947438:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "uid:u::::1774947438::H::Carol <carol@example.org>::::\n")
+          .arg(v5);
+  QCOMPARE(primaryFingerprintOf(v5listing, QStringLiteral("A1B2C3D4E5F60718")),
+           v5);
+  QCOMPARE(primaryFingerprintOf(v5listing, v5.toLower()), v5);
+  // The tail of a v5 fingerprint is not its ID.
+  QCOMPARE(primaryFingerprintOf(v5listing, v5.right(16)), QString());
+
+  const QString first =
+      QStringLiteral("1111111111111111111111111111AAAA2D9CDDE9");
+  const QString second =
+      QStringLiteral("2222222222222222222222222222BBBB2D9CDDE9");
+  const QString colliding =
+      QStringLiteral("pub:u:4096:1:1111AAAA2D9CDDE9:1774947438:::u::::\n"
+                     "fpr:::::::::%1:\n"
+                     "pub:u:4096:1:2222BBBB2D9CDDE9:1774947438:::u::::\n"
+                     "fpr:::::::::%2:\n")
+          .arg(first, second);
+  QCOMPARE(primaryFingerprintOf(colliding, QStringLiteral("2D9CDDE9")),
+           QString());
+  QCOMPARE(primaryFingerprintOf(colliding, QStringLiteral("2222BBBB2D9CDDE9")),
+           second);
 }
 
 QTEST_MAIN(tst_gpgkeystate)

@@ -68,6 +68,10 @@ auto commitArgs(QProcess &git, const AppSettings &s) -> QStringList {
 }
 } // namespace
 
+auto ProfileInit::gpgEnvironment(const AppSettings &s) -> QProcessEnvironment {
+  return withGpgHome(QProcessEnvironment::systemEnvironment(), s);
+}
+
 auto ProfileInit::needsInit(const QString &path) -> bool {
   if (path.isEmpty()) {
     return false;

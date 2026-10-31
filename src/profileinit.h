@@ -5,6 +5,7 @@
 
 #include <QCoreApplication>
 #include <QList>
+#include <QProcessEnvironment>
 #include <QString>
 
 struct AppSettings;
@@ -24,6 +25,14 @@ class ProfileInit {
   Q_DECLARE_TR_FUNCTIONS(ProfileInit)
 
 public:
+  /**
+   * @brief The environment QtPass runs gpg in outside the active store's
+   * backend: the system's, with GNUPGHOME set to the configured GPG home
+   * when there is one, so lookups and signatures use the keyring that signs.
+   * @param s The settings naming the GPG home.
+   * @return The environment for a gpg process.
+   */
+  static auto gpgEnvironment(const AppSettings &s) -> QProcessEnvironment;
   /**
    * @brief Check if a profile path needs initialization.
    * @param path The profile path to check.
