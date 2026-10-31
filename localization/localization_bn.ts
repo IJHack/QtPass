@@ -4,17 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="48"/>
+        <location filename="../src/clipboardmanager.cpp" line="70"/>
         <source>Copied to clipboard</source>
         <translation>ক্লিপবোর্ডে কপি করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="118"/>
+        <location filename="../src/clipboardmanager.cpp" line="178"/>
+        <source>Clipboard restored</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/clipboardmanager.cpp" line="179"/>
         <source>Clipboard cleared</source>
         <translation>ক্লিপবোর্ড মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="119"/>
+        <location filename="../src/clipboardmanager.cpp" line="180"/>
         <source>Clipboard not cleared</source>
         <translation>ক্লিপবোর্ড মুছে ফেলা হয়নি</translation>
     </message>
@@ -46,7 +51,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
-        <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/configdialog.ui" line="508"/>
         <source>Never</source>
         <translation type="unfinished">কখনও না</translation>
     </message>
@@ -59,22 +64,22 @@
         <translation type="vanished">কনটেন্ট প্যানেলের আচরণ:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="435"/>
+        <location filename="../src/configdialog.ui" line="445"/>
         <source>Hide content</source>
         <translation>কনটেন্ট লুকান</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="445"/>
+        <location filename="../src/configdialog.ui" line="455"/>
         <source>Hide password</source>
         <translation>পাসওয়ার্ড লুকান</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="457"/>
+        <location filename="../src/configdialog.ui" line="498"/>
         <source>Autoclear panel after:</source>
         <translation>উল্লিখিত সময়ের পরে প্যানেল স্বয়ংক্রিয়ভাবে মুছুন:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="499"/>
+        <location filename="../src/configdialog.ui" line="540"/>
         <source>Use a monospace font</source>
         <translation>মনোস্পেস ফন্ট ব্যবহার করুন</translation>
     </message>
@@ -83,7 +88,7 @@
         <translation type="vanished">ফাইলগুলোর অর্থপূর্ণ দৃশ্য প্রদর্শন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="513"/>
+        <location filename="../src/configdialog.ui" line="554"/>
         <source>No line wrapping</source>
         <translation>কোনো লাইনের সুম্পলসি নেই</translation>
     </message>
@@ -104,12 +109,12 @@
         <translation type="vanished">অক্ষর</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/configdialog.ui" line="698"/>
         <source>Use characters:</source>
         <translation>কারেক্টার ব্যবহার করুন:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="678"/>
+        <location filename="../src/configdialog.ui" line="719"/>
         <source>Select character set for password generation</source>
         <translation>পাসওয়ার্ড জেনারেশনের জন্য অক্ষর সেট নির্বাচন করুন</translation>
     </message>
@@ -118,22 +123,22 @@
         <translation type="vanished">সব কারেক্টার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="687"/>
+        <location filename="../src/configdialog.ui" line="728"/>
         <source>Alphabetical</source>
         <translation>অক্ষরীয়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="692"/>
+        <location filename="../src/configdialog.ui" line="733"/>
         <source>Alphanumerical</source>
         <translation>অক্ষর ও সংখ্যার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="697"/>
+        <location filename="../src/configdialog.ui" line="738"/>
         <source>Custom</source>
         <translation>মোটামুটি</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="735"/>
+        <location filename="../src/configdialog.ui" line="776"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
@@ -142,22 +147,22 @@
         <translation type="vanished">PWGen ব্যবহার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="759"/>
+        <location filename="../src/configdialog.ui" line="800"/>
         <source>Exclude capital letters</source>
         <translation>সুরাসনে অপরিষ্কার হওয়া দূষণ অপশন না দেওয়া</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
+        <location filename="../src/configdialog.ui" line="817"/>
         <source>Include special symbols</source>
         <translation>বিশেষ চিহ্নগুলো সহ পাসওয়ার্ড তৈরি করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="783"/>
+        <location filename="../src/configdialog.ui" line="824"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>সহজে যত্নমত্ত করা যায় কিন্তু অপরিষ্কার পাসওয়ার্ড তৈরি করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="766"/>
+        <location filename="../src/configdialog.ui" line="807"/>
         <source>Exclude numbers</source>
         <translation>সংখ্যাগুলো অপরিষেবণীকরণ</translation>
     </message>
@@ -166,25 +171,25 @@
         <translation type="vanished">গিট:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="925"/>
-        <location filename="../src/configdialog.ui" line="1497"/>
+        <location filename="../src/configdialog.ui" line="966"/>
+        <location filename="../src/configdialog.ui" line="1538"/>
         <source>Use Git</source>
         <translation>গিট ব্যবহার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="939"/>
+        <location filename="../src/configdialog.ui" line="980"/>
         <source>Automatically add .gpg-id files</source>
         <translation>অটোমেটিভ .gpg-id ফাইল যুক্ত</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="946"/>
-        <location filename="../src/configdialog.ui" line="1504"/>
+        <location filename="../src/configdialog.ui" line="987"/>
+        <location filename="../src/configdialog.ui" line="1545"/>
         <source>Automatically push</source>
         <translation>অটোমেটিভ প্রেসহো</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="953"/>
-        <location filename="../src/configdialog.ui" line="1511"/>
+        <location filename="../src/configdialog.ui" line="994"/>
+        <location filename="../src/configdialog.ui" line="1552"/>
         <source>Automatically pull</source>
         <translation>অটোমেটিভ পালহো</translation>
     </message>
@@ -243,28 +248,28 @@
         <translation>প্রোগ্রাম</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1032"/>
+        <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>পাসওয়ার্ড স্টোরেজ প্রোগ্রাম নির্বাচন করুন:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1060"/>
+        <location filename="../src/configdialog.ui" line="1101"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>(&amp;V) নেটিভ Git/GPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1067"/>
+        <location filename="../src/configdialog.ui" line="1108"/>
         <source>&amp;Use pass</source>
         <translation>&amp;পাস ব্যবহার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1091"/>
+        <location filename="../src/configdialog.ui" line="1132"/>
         <source>Native</source>
         <translation>স্থানীয়</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
-        <location filename="../src/configdialog.ui" line="914"/>
+        <location filename="../src/configdialog.ui" line="955"/>
         <source>Git</source>
         <translation>গিট</translation>
     </message>
@@ -297,64 +302,64 @@
         <translation type="vanished">পাসওয়ার্ড তৈরি:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="589"/>
+        <location filename="../src/configdialog.ui" line="630"/>
         <source>Password length:</source>
         <translation>পাসওয়ার্ডের দৈর্ঘ্য:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="682"/>
+        <location filename="../src/configdialog.ui" line="723"/>
         <source>All characters</source>
         <translation>সব কারেক্টার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="810"/>
+        <location filename="../src/configdialog.ui" line="851"/>
         <source>Fields:</source>
         <translation type="unfinished">ফিল্ড:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="824"/>
+        <location filename="../src/configdialog.ui" line="865"/>
         <source>Off</source>
         <translation type="unfinished">বন্ধ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="829"/>
+        <location filename="../src/configdialog.ui" line="870"/>
         <source>Template fields</source>
         <translation type="unfinished">টেমপ্লেট ফিল্ড</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="834"/>
+        <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation type="unfinished">টেমপ্লেট ফিল্ড এবং প্রতিটি &quot;কী: মান&quot; লাইন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1110"/>
-        <location filename="../src/configdialog.ui" line="1113"/>
+        <location filename="../src/configdialog.ui" line="1151"/>
+        <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
         <translation type="unfinished">gpg এক্সিকিউটেবল নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1116"/>
-        <location filename="../src/configdialog.ui" line="1129"/>
-        <location filename="../src/configdialog.ui" line="1184"/>
-        <location filename="../src/configdialog.ui" line="1224"/>
-        <location filename="../src/configdialog.ui" line="1465"/>
-        <location filename="../src/configdialog.ui" line="1556"/>
+        <location filename="../src/configdialog.ui" line="1157"/>
+        <location filename="../src/configdialog.ui" line="1170"/>
+        <location filename="../src/configdialog.ui" line="1225"/>
+        <location filename="../src/configdialog.ui" line="1265"/>
+        <location filename="../src/configdialog.ui" line="1506"/>
+        <location filename="../src/configdialog.ui" line="1597"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1123"/>
-        <location filename="../src/configdialog.ui" line="1126"/>
+        <location filename="../src/configdialog.ui" line="1164"/>
+        <location filename="../src/configdialog.ui" line="1167"/>
         <source>Choose the git executable</source>
         <translation type="unfinished">git এক্সিকিউটেবল নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1142"/>
+        <location filename="../src/configdialog.ui" line="1183"/>
         <source>Generate</source>
         <translation>তৈরি করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1145"/>
+        <location filename="../src/configdialog.ui" line="1186"/>
         <source>Generate GPG key pair</source>
         <translation>GPG চইন্স পেয়ার তৈরি</translation>
     </message>
@@ -367,39 +372,39 @@
         <translation type="vanished">PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1178"/>
-        <location filename="../src/configdialog.ui" line="1181"/>
+        <location filename="../src/configdialog.ui" line="1219"/>
+        <location filename="../src/configdialog.ui" line="1222"/>
         <source>Choose the pwgen executable</source>
         <translation type="unfinished">pwgen এক্সিকিউটেবল নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1194"/>
+        <location filename="../src/configdialog.ui" line="1235"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1205"/>
+        <location filename="../src/configdialog.ui" line="1246"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1218"/>
-        <location filename="../src/configdialog.ui" line="1221"/>
+        <location filename="../src/configdialog.ui" line="1259"/>
+        <location filename="../src/configdialog.ui" line="1262"/>
         <source>Choose the pass executable</source>
         <translation type="unfinished">pass এক্সিকিউটেবল নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1233"/>
+        <location filename="../src/configdialog.ui" line="1274"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1090"/>
         <source>Autodetect</source>
         <translation>অটো ডিটেক্ট</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1251"/>
+        <location filename="../src/configdialog.ui" line="1292"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation>SSH_AUTH_SOCK ওভাররাইড:</translation>
     </message>
@@ -408,7 +413,7 @@
         <translation type="vanished">SSH_AUTH_SOCK ওভাররাইড করতে ঐচ্ছিক পাথ। gpgconf-এর মাধ্যমে স্বয়ংক্রিয়ভাবে শনাক্ত করতে খালি রাখুন (ইস্যু #543)।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1264"/>
+        <location filename="../src/configdialog.ui" line="1305"/>
         <source>(auto-probe via gpgconf)</source>
         <translation>(gpgconf-এর মাধ্যমে স্বয়ংক্রিয় শনাক্ত)</translation>
     </message>
@@ -449,113 +454,148 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
-        <location filename="../src/configdialog.ui" line="480"/>
+        <location filename="../src/configdialog.ui" line="521"/>
         <source>seconds</source>
         <translation type="unfinished">সেকেন্ড</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="429"/>
+        <location filename="../src/configdialog.ui" line="362"/>
+        <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="365"/>
+        <source>Restore the previous clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="439"/>
         <source>Content panel</source>
         <translation type="unfinished">কনটেন্ট প্যানেল</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="438"/>
         <location filename="../src/configdialog.ui" line="448"/>
+        <location filename="../src/configdialog.ui" line="458"/>
         <source>Needs a clipboard mode on the Clipboard page, so a hidden password can still be copied</source>
         <translation type="unfinished">ক্লিপবোর্ড পৃষ্ঠায় একটি ক্লিপবোর্ড মোড প্রয়োজন, যাতে লুকানো পাসওয়ার্ডও কপি করা যায়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="506"/>
+        <location filename="../src/configdialog.ui" line="467"/>
+        <source>Also hide other secrets:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="470"/>
+        <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="484"/>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="487"/>
+        <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="547"/>
         <source>Show the file content as-is</source>
         <translation type="unfinished">ফাইলের কনটেন্ট যেমন আছে তেমন দেখান</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="578"/>
+        <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">পাসওয়ার্ড তৈরি</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="626"/>
+        <location filename="../src/configdialog.ui" line="667"/>
         <source>characters</source>
         <translation type="unfinished">অক্ষর</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="747"/>
+        <location filename="../src/configdialog.ui" line="788"/>
         <source>Use pwgen</source>
         <translation type="unfinished">pwgen ব্যবহার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="960"/>
+        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="963"/>
+        <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1046"/>
+        <location filename="../src/configdialog.ui" line="1087"/>
         <source>Look up gpg, git, pwgen and pass in the PATH</source>
         <translation type="unfinished">PATH-এ gpg, git, pwgen এবং pass খুঁজুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1097"/>
+        <location filename="../src/configdialog.ui" line="1138"/>
         <source>git</source>
         <translation type="unfinished">git</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1152"/>
+        <location filename="../src/configdialog.ui" line="1193"/>
         <source>gpg</source>
         <translation type="unfinished">gpg</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1168"/>
+        <location filename="../src/configdialog.ui" line="1209"/>
         <source>pwgen</source>
         <translation type="unfinished">pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1254"/>
+        <location filename="../src/configdialog.ui" line="1295"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">SSH_AUTH_SOCK ওভাররাইড করতে ঐচ্ছিক পাথ। gpgconf-এর মাধ্যমে স্বয়ংক্রিয়ভাবে শনাক্ত করতে খালি রাখুন।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1338"/>
+        <location filename="../src/configdialog.ui" line="1379"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
         <translation type="unfinished">এই QtPass যে পাসওয়ার্ড স্টোরগুলো চেনে; সম্পাদনা করতে একটি বেছে নিন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1353"/>
+        <location filename="../src/configdialog.ui" line="1394"/>
         <source>Add a profile</source>
         <translation type="unfinished">একটি প্রফাইল যুক্ত করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1371"/>
+        <location filename="../src/configdialog.ui" line="1412"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
         <translation type="unfinished">নির্বাচিত প্রফাইলটি ভুলে যান; স্টোরটি নিজে ডিস্কে থেকে যায়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1417"/>
+        <location filename="../src/configdialog.ui" line="1458"/>
         <source>Profile</source>
         <translation type="unfinished">প্রফাইল</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1423"/>
+        <location filename="../src/configdialog.ui" line="1464"/>
         <source>Name</source>
         <translation>নাম</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1433"/>
+        <location filename="../src/configdialog.ui" line="1474"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>প্রোফাইল নাম, এই কনফিগারেশন প্রোফাইল চিহ্নিত করতে ব্যবহৃত হয়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1440"/>
+        <location filename="../src/configdialog.ui" line="1481"/>
         <source>Path</source>
         <translation>পাথ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1452"/>
+        <location filename="../src/configdialog.ui" line="1493"/>
         <source>Path to the password store directory</source>
         <translation>পাসওয়ার্ড স্টোর ডিক্টেরিতে পথ</translation>
     </message>
@@ -564,17 +604,17 @@
         <translation type="vanished">সাক্ষর কী</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1484"/>
+        <location filename="../src/configdialog.ui" line="1525"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>ঐচ্ছিক: .gpg-id ফাইলগুলি অখণ্ডতা যাচাইয়ের জন্য স্বাক্ষর করতে GPG কী। ব্যবহারকারীর তালিকা টেম্পারিং থেকে রক্ষা করার প্রয়োজন না হলে খালি রাখুন।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1356"/>
+        <location filename="../src/configdialog.ui" line="1397"/>
         <source>Add</source>
         <translation>এন্ট্রি যুক্ত</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1374"/>
+        <location filename="../src/configdialog.ui" line="1415"/>
         <source>Delete</source>
         <translation>এন্ট্রি মুছে ফেল</translation>
     </message>
@@ -583,15 +623,15 @@
         <translation type="vanished">বর্তমান পথ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1459"/>
-        <location filename="../src/configdialog.ui" line="1462"/>
-        <location filename="../src/configdialog.ui" line="1550"/>
-        <location filename="../src/configdialog.ui" line="1553"/>
+        <location filename="../src/configdialog.ui" line="1500"/>
+        <location filename="../src/configdialog.ui" line="1503"/>
+        <location filename="../src/configdialog.ui" line="1591"/>
+        <location filename="../src/configdialog.ui" line="1594"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">পাসওয়ার্ড স্টোর ফোল্ডার নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1487"/>
+        <location filename="../src/configdialog.ui" line="1528"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
         <translation type="unfinished">পূর্ণ ৪০ অক্ষরের কী ফিঙ্গারপ্রিন্ট, যেমনটি pass-এর প্রয়োজন</translation>
     </message>
@@ -600,12 +640,12 @@
         <translation type="obsolete">এই প্রফাইলের গিট সেটিংস; প্রফাইলটি সক্রিয় থাকাকালে এগুলো সেটিংস ট্যাবের সেটিংসের জায়গা নেয়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="795"/>
+        <location filename="../src/configdialog.ui" line="836"/>
         <source>Template</source>
         <translation>টেমপ্লেট</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="801"/>
+        <location filename="../src/configdialog.ui" line="842"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>টেমপ্লেটগুলি পাসওয়ার্ড তৈরি করার ডিয়ালগ এবং পাসওয়ার্ড দেখার ব্যবস্থায় অতিরিক্ত ফিল্ড যোগ করে।</translation>
     </message>
@@ -614,7 +654,7 @@
         <translation type="vanished">টেমপ্লেট ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="820"/>
+        <location filename="../src/configdialog.ui" line="861"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>একটি শব্দের পরে একটি কলন থাকা সব লাইনগুলোকে পাসওয়ার্ড বাটনের উপর অ্যাক্সিডেন্টাল ফিল্ডসহিত দেখান, নয়তো তাদের থেকে তাদের বিশেষজ্ঞ এলিমেন্টসহ</translation>
     </message>
@@ -623,7 +663,7 @@
         <translation type="vanished">সব ফিল্ডগুলো তৈরি করা হয়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="847"/>
+        <location filename="../src/configdialog.ui" line="888"/>
         <source>login
 URL
 e-mail</source>
@@ -632,27 +672,27 @@ URL
 ইমেইল</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1474"/>
+        <location filename="../src/configdialog.ui" line="1515"/>
         <source>Signing key</source>
         <translation>সাক্ষর কী</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1494"/>
+        <location filename="../src/configdialog.ui" line="1535"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
         <translation type="unfinished">এই প্রফাইলের জন্য গিট সেটিংস; এটি সক্রিয় থাকাকালীন এগুলো গিট পৃষ্ঠার সেটিংসের পরিবর্তে ব্যবহৃত হয়</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1540"/>
+        <location filename="../src/configdialog.ui" line="1581"/>
         <source>Active store</source>
         <translation type="unfinished">সক্রিয় স্টোর</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1580"/>
+        <location filename="../src/configdialog.ui" line="1621"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; সংস্করণ </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="57"/>
+        <location filename="../src/configdialog.cpp" line="73"/>
         <source>System tray is not available</source>
         <translation>সিস্টেম ট্রে উপযুক্ত নয়</translation>
     </message>
@@ -661,12 +701,12 @@ URL
         <translation type="vanished">Pass OTP এক্সটেনশনটি ইনস্টল করতে হবে</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
+        <location filename="../src/configdialog.cpp" line="84"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Wayland-এ উপলব্ধ নয়; এর পরিবর্তে আপনার কম্পোজিটরের &quot;উপরে রাখুন&quot; উইন্ডো নিয়ম ব্যবহার করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="80"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode ইনস্টল করতে হবে</translation>
     </message>
@@ -675,58 +715,63 @@ URL
         <translation type="vanished">কপি বোর্ড নেই</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="103"/>
+        <location filename="../src/configdialog.cpp" line="133"/>
         <source>No clipboard</source>
         <translation type="unfinished">ক্লিপবোর্ড নেই</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="104"/>
+        <location filename="../src/configdialog.cpp" line="134"/>
         <source>Always copy to clipboard</source>
         <translation>সর্বদা ক্লিপবোর্ডে কপি করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="105"/>
+        <location filename="../src/configdialog.cpp" line="135"/>
         <source>On-demand copy to clipboard</source>
         <translation>চাহিদা অনুযায়ী ক্লিপবোর্ডে কপি করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="280"/>
-        <location filename="../src/configdialog.cpp" line="285"/>
+        <location filename="../src/configdialog.cpp" line="327"/>
+        <location filename="../src/configdialog.cpp" line="332"/>
         <source>This field is required</source>
         <translation>এই ক্ষেত্রটি আবশ্যক</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="282"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">অন্য একটি প্রফাইলের ইতিমধ্যে এই নাম রয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="291"/>
+        <location filename="../src/configdialog.cpp" line="338"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">শুধুমাত্র পূর্ণ কী ফিঙ্গারপ্রিন্ট (৪০ বা ৬৪টি হেক্সাডেসিমেল অক্ষর), স্পেস দিয়ে আলাদা করা</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="337"/>
+        <location filename="../src/configdialog.cpp" line="412"/>
+        <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="434"/>
         <source>The path does not exist.</source>
         <translation>পথটি বিদ্যমান নেই।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="340"/>
+        <location filename="../src/configdialog.cpp" line="437"/>
         <source>The path is not readable.</source>
         <translation>পথটি পাঠযোগ্য নয়।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
+        <location filename="../src/configdialog.cpp" line="440"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>পথটি একটি Unix ডোমেইন সকেট নয়।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="347"/>
+        <location filename="../src/configdialog.cpp" line="444"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>সম্ভাব্য অবৈধ SSH_AUTH_SOCK ওভাররাইড</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="348"/>
+        <location filename="../src/configdialog.cpp" line="445"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -739,42 +784,42 @@ The value will still be saved as entered.</source>
 মানটি যেভাবে লেখা হয়েছে সেভাবেই সংরক্ষিত হবে।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="587"/>
+        <location filename="../src/configdialog.cpp" line="697"/>
         <source>Create profile directory?</source>
         <translation>প্রোফাইল ডিক্টেরিটি তৈরি করতে চান?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="588"/>
+        <location filename="../src/configdialog.cpp" line="698"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>আপনি কি %1 এ একটি পাসওয়ার্ড স্টোর তৈরি করতে চান?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="594"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>Error</source>
         <translation>ত্রুটি</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="595"/>
+        <location filename="../src/configdialog.cpp" line="705"/>
         <source>Could not create profile directory: %1</source>
         <translation>প্রফাইল ডাটা ফোলারটি তৈরি করতে পারা গেল না: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="615"/>
+        <location filename="../src/configdialog.cpp" line="729"/>
         <source>Select recipients for %1</source>
         <translation>%1 এর জন্য প্রাপক নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="624"/>
+        <location filename="../src/configdialog.cpp" line="738"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">প্রফাইল %1 আরম্ভ করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="627"/>
+        <location filename="../src/configdialog.cpp" line="741"/>
         <source>Profile %1</source>
         <translation type="unfinished">প্রফাইল %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="650"/>
+        <location filename="../src/configdialog.cpp" line="764"/>
         <source>New profile</source>
         <translation>নতুন প্রফাইল</translation>
     </message>
@@ -783,12 +828,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">নতুন প্রফাইল</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="671"/>
+        <location filename="../src/configdialog.cpp" line="785"/>
         <source>No profile selected</source>
         <translation>কোনো প্রফাইল নির্বাচিত হয়েছে না</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="672"/>
+        <location filename="../src/configdialog.cpp" line="786"/>
         <source>No profile selected to delete</source>
         <translation>শুধুমাত্র ডিলিট করতে একটি প্রফাইল নির্বাচন করুন</translation>
     </message>
@@ -829,17 +874,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 ফোল্ডারটি পাসওয়ার্ড-স্টোরের মত দেখতে না পায় বা অনুপস্থিত ছিল।</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="891"/>
+        <location filename="../src/configdialog.cpp" line="1005"/>
         <source>New profile: %1 at %2</source>
         <translation>নতুন প্রফাইল: %1 এর অবস্থান %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="893"/>
+        <location filename="../src/configdialog.cpp" line="1007"/>
         <source>Profile: %1 at %2</source>
         <translation>প্রফাইল: %1 এর অবস্থান %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="896"/>
+        <location filename="../src/configdialog.cpp" line="1010"/>
         <source>Fill in all required fields</source>
         <translation>সমস্ত আবশ্যিক ক্ষেত্র পূরণ করুন</translation>
     </message>
@@ -910,17 +955,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="207"/>
+        <location filename="../src/executor.cpp" line="213"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">এই কমান্ডের জন্য কোনো এক্সিকিউটেবল কনফিগার করা নেই</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="236"/>
+        <location filename="../src/executor.cpp" line="243"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">%1 চালু করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="430"/>
+        <location filename="../src/executor.cpp" line="448"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 ক্র্যাশ করেছে বা বন্ধ করে দেওয়া হয়েছে</translation>
     </message>
@@ -1017,7 +1062,7 @@ The value will still be saved as entered.</source>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="87"/>
+        <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1094,67 +1139,67 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 লক করা যায়নি: সম্ভবত অন্য একটি QtPass এটি ব্যবহার করছে, অথবা এর ফোল্ডারে লেখা যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="315"/>
+        <location filename="../src/gpgidgeneration.cpp" line="333"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">তালিকায় একাধিক জেনারেশন লাইন রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="323"/>
+        <location filename="../src/gpgidgeneration.cpp" line="341"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">জেনারেশন লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="329"/>
+        <location filename="../src/gpgidgeneration.cpp" line="347"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">তালিকায় একাধিক ফোল্ডার লাইন রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="345"/>
+        <location filename="../src/gpgidgeneration.cpp" line="358"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">ফোল্ডার লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="349"/>
+        <location filename="../src/gpgidgeneration.cpp" line="362"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">হেডার লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="381"/>
+        <location filename="../src/gpgidgeneration.cpp" line="394"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">তালিকায় জেনারেশন লাইন রয়েছে, কিন্তু কোনো ফোল্ডার লাইন নেই।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="528"/>
+        <location filename="../src/gpgidgeneration.cpp" line="541"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 বিশ্বাস করার মতো নয়: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="455"/>
+        <location filename="../src/gpgidgeneration.cpp" line="468"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 স্টোরের &quot;%2&quot; ফোল্ডারের জন্য লেখা হয়েছিল, &quot;%3&quot;-এর জন্য নয়, তাই এটি ব্যবহার করা হচ্ছে না। অন্য কেউ এটি এখানে কপি করে থাকতে পারে; আর যদি ফোল্ডারটি সরানো হয়ে থাকে বা এর নাম পরিবর্তন করা হয়ে থাকে, তবে যাঁর কাছে স্বাক্ষর কী আছে তিনি এই ফোল্ডারে ব্যবহারকারীরা খুলে প্রাপকদের সংরক্ষণ করবেন, এতে তালিকাটি তার বর্তমান অবস্থানের সাথে বাঁধা পড়বে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="468"/>
+        <location filename="../src/gpgidgeneration.cpp" line="481"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">জেনারেশন %1-ই সর্বোচ্চ সম্ভব, তাই এখানে এর চেয়ে নতুন কোনো তালিকা লেখা যাবে না। %2 মুছে ফেললে এই ডিভাইস আগে যা গ্রহণ করেছিল তা ভুলে যাবে; এরপর যাঁর কাছে স্বাক্ষর কী আছে, তাঁর এগিয়ে যাওয়ার পথ হল ব্যবহারকারীরা খুলে %3।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="475"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">যাঁর কাছে স্বাক্ষর কী আছে, তাঁর এগিয়ে যাওয়ার পথ হল ব্যবহারকারীরা খুলে %1। এতে জেনারেশন %2 লেখা হবে। %3 মুছে ফেললে এই ডিভাইস আগে যা গ্রহণ করেছিল তা ভুলে যাবে।</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="492"/>
+        <location filename="../src/gpgidgeneration.cpp" line="505"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো জেনারেশন লাইন নেই, অথচ এখানে আগে জেনারেশন %2 গ্রহণ করা হয়েছিল। pass কোনো জেনারেশন লাইন লেখে না (QtPass-এর pass ব্যাকএন্ডের মাধ্যমেও নয়), আর 2.0-এর আগে QtPass-ও লিখত না; জেনারেশন লাইন না থাকায় তালিকাটি স্টোরের অন্য কোনো ফোল্ডারের জন্য লেখা হয়ে এখানে কপি করা হয়ে থাকতেও পারে। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="501"/>
+        <location filename="../src/gpgidgeneration.cpp" line="514"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">প্রাপকদের নতুন করে নির্বাচন করে সংরক্ষণ করা</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="626"/>
+        <location filename="../src/gpgidgeneration.cpp" line="639"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">জেনারেশন %3 লেখা চলাকালেই প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড %1 জেনারেশন %2-এ এগিয়ে গেছে।</translation>
     </message>
@@ -1167,27 +1212,27 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো জেনারেশন লাইন নেই, অথচ এখানে আগে জেনারেশন %2 গ্রহণ করা হয়েছিল। pass কোনো জেনারেশন লাইন লেখে না (QtPass-এর pass ব্যাকএন্ডের মাধ্যমেও নয়), আর 2.0-এর আগে QtPass-ও লিখত না। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="506"/>
+        <location filename="../src/gpgidgeneration.cpp" line="519"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 জেনারেশন %2-এর, যা QtPass এখানে শেষবার গ্রহণ করা জেনারেশন %3-এর চেয়ে পুরোনো। অন্য কেউ এটি আবার ফিরিয়ে রেখে থাকতে পারে। %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="513"/>
+        <location filename="../src/gpgidgeneration.cpp" line="526"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">প্রাপকদের সংরক্ষণ করা: সেখানে আগে থেকে নির্বাচিত প্রাপকরা এই তালিকারই, তাই যাদের আর অ্যাক্সেস থাকা উচিত নয় তাদের প্রথমে সরিয়ে দিন</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="561"/>
+        <location filename="../src/gpgidgeneration.cpp" line="574"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 জেনারেশন %2-এর, অথচ এই ডিভাইস আগে একই জেনারেশনের একটি ভিন্ন তালিকা গ্রহণ করেছিল। হয় দুটি ডিভাইস একই সময়ে প্রাপক সংরক্ষণ করেছে (Git তখন দ্বন্দ্বটি দেখিয়ে থাকবে), নয়তো ওই জেনারেশনের একটি আসল তালিকা এখানে বদলে বসানো হয়েছে। %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="569"/>
+        <location filename="../src/gpgidgeneration.cpp" line="582"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">প্রাপকদের যাচাই করে সংরক্ষণ করা</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="594"/>
+        <location filename="../src/gpgidgeneration.cpp" line="607"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">প্রাপক তালিকা %1 জেনারেশন %2-এ পৌঁছেছে, যা সর্বোচ্চ সম্ভব; তালিকাটি লেখা যাবে না।</translation>
     </message>
@@ -1218,92 +1263,93 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="200"/>
-        <location filename="../src/imitatepass.cpp" line="416"/>
-        <location filename="../src/imitatepass.cpp" line="748"/>
+        <location filename="../src/imitatepass.cpp" line="171"/>
+        <location filename="../src/imitatepass.cpp" line="404"/>
+        <location filename="../src/imitatepass.cpp" line="729"/>
+        <location filename="../src/realpass.cpp" line="90"/>
         <source>Check .gpg-id file signature!</source>
         <translation>এ .gpg-id ফাইলের স্বাক্ষর যাচাই করুন!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="417"/>
-        <location filename="../src/imitatepass.cpp" line="581"/>
+        <location filename="../src/imitatepass.cpp" line="405"/>
+        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/realpass.cpp" line="86"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 এর সিগনচার অক্ষম।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="204"/>
-        <location filename="../src/imitatepass.cpp" line="867"/>
+        <location filename="../src/imitatepass.cpp" line="175"/>
+        <location filename="../src/imitatepass.cpp" line="849"/>
         <source>Can not edit</source>
         <translation>সম্পাদনা করা যায় না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="227"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
         <source>Cannot add</source>
         <translation type="unfinished">যুক্ত করা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="227"/>
+        <location filename="../src/imitatepass.cpp" line="198"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ইতিমধ্যে বিদ্যমান।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="205"/>
-        <location filename="../src/imitatepass.cpp" line="868"/>
+        <location filename="../src/imitatepass.cpp" line="176"/>
+        <location filename="../src/imitatepass.cpp" line="850"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>এনক্রিপশন কী পড়া যায়নি, .gpg-id ফাইল অনুপস্থিত বা অবৈধ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="174"/>
+        <location filename="../src/pass.cpp" line="814"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">প্রাপক তালিকা যাচাই করা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
+        <location filename="../src/pass.cpp" line="816"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 %2 সরানো হয়েছে কি না তা বলা যাচ্ছে না, তাই কিছুই এনক্রিপ্ট করা হয়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="181"/>
+        <location filename="../src/pass.cpp" line="823"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">প্রাপক তালিকা অনুপস্থিত</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="182"/>
+        <location filename="../src/pass.cpp" line="824"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 অনুপস্থিত অথবা এটি একটি সাধারণ ফাইল নয়। QtPass এর বদলে কোনো প্যারেন্ট ফোল্ডারের তালিকা ব্যবহার করে না: সেই তালিকা এই ফোল্ডারের জন্য স্বাক্ষরিত হয়নি। এই নামে কোনো লিংক থাকলে সেটি সরিয়ে ফেলুন। তারপর সেই ফোল্ডারের জন্য ব্যবহারকারীরা খুলে এর প্রাপকদের সংরক্ষণ করুন; এতে একটি নতুন তালিকা লেখা ও স্বাক্ষর করা হবে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="239"/>
+        <location filename="../src/imitatepass.cpp" line="210"/>
         <source>Cannot write</source>
         <translation type="unfinished">লেখা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="240"/>
+        <location filename="../src/imitatepass.cpp" line="211"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">অস্থায়ী ডিরেক্টরি তৈরি করা যাচ্ছে না: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="288"/>
+        <location filename="../src/imitatepass.cpp" line="273"/>
         <source>Delete failed</source>
         <translation type="unfinished">মুছে ফেলা ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="289"/>
+        <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">লিংক %1 সরানো যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="330"/>
-        <location filename="../src/imitatepass.cpp" line="348"/>
-        <location filename="../src/imitatepass.cpp" line="375"/>
-        <location filename="../src/imitatepass.cpp" line="504"/>
+        <location filename="../src/imitatepass.cpp" line="315"/>
+        <location filename="../src/imitatepass.cpp" line="336"/>
+        <location filename="../src/imitatepass.cpp" line="363"/>
+        <location filename="../src/imitatepass.cpp" line="492"/>
         <source>Cannot update</source>
         <translation>আপডেট করা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="331"/>
         <source>%1 is not inside the password store.</source>
-        <translation type="unfinished">%1 পাসওয়ার্ড স্টোরের ভিতরে নেই।</translation>
+        <translation type="obsolete">%1 পাসওয়ার্ড স্টোরের ভিতরে নেই।</translation>
     </message>
     <message>
         <source>Failed to open .gpg-id for writing.</source>
@@ -1314,113 +1360,118 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">%1 লিখতে ব্যর্থ: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="377"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">প্রাপক তালিকা লেখা হয়েছে, কিন্তু রেকর্ড করা হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="390"/>
+        <location filename="../src/imitatepass.cpp" line="378"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 এগিয়ে যেতে প্রাপকদের আরও একবার সংরক্ষণ করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="383"/>
         <source>Check selected users!</source>
         <translation>মনোনিত ব্যবহারকারীদের যাচাই করুন!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="396"/>
+        <location filename="../src/imitatepass.cpp" line="384"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>নির্বাচিত কোনো কী-এর গোপন কী উপলব্ধ নেই।
 আপনি নতুন যুক্ত করা পাসওয়ার্ডগুলি ডিক্রিপ্ট করতে পারবেন না!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="408"/>
+        <location filename="../src/imitatepass.cpp" line="396"/>
         <source>GPG signing failed!</source>
         <translation>GPG সাইনিং ত্রুটি!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="398"/>
         <source>Failed to sign %1.</source>
         <translation>%1 এর সাইনিং অসম্পূর্ণ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="411"/>
+        <location filename="../src/imitatepass.cpp" line="399"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 সাইন করতে ব্যর্থ: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="526"/>
+        <location filename="../src/imitatepass.cpp" line="519"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">প্রাপক পরিবর্তন করা হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="520"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">একটি পুনরায় এনক্রিপশন এখনও চলছে। এটি শেষ হওয়া পর্যন্ত অপেক্ষা করুন, তারপর আবার প্রাপকদের সংরক্ষণ করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="533"/>
+        <location filename="../src/imitatepass.cpp" line="526"/>
         <source>No signing key!</source>
         <translation>কোনও সাইনিং কি নেই!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="534"/>
+        <location filename="../src/imitatepass.cpp" line="527"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>কোনো গোপন সাক্ষর কী উপলব্ধ নেই।
 আপনি ব্যবহারকারী তালিকা পরিবর্তন করতে পারবেন না!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="505"/>
+        <location filename="../src/imitatepass.cpp" line="493"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">পুরনো স্বাক্ষর %1 সরাতে ব্যর্থ।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="565"/>
+        <location filename="../src/imitatepass.cpp" line="316"/>
+        <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="558"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git কোড %1 দিয়ে বন্ধ হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="616"/>
+        <location filename="../src/imitatepass.cpp" line="597"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="630"/>
-        <location filename="../src/imitatepass.cpp" line="658"/>
-        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="611"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
+        <location filename="../src/imitatepass.cpp" line="647"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">আগের একটি পুনরায় এনক্রিপশনের অবশিষ্টাংশ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="631"/>
+        <location filename="../src/imitatepass.cpp" line="612"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 একটি সাধারণ ফাইল নয় এবং পুনরুদ্ধার করা হয়নি। এটি দেখে সরিয়ে ফেলুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="659"/>
+        <location filename="../src/imitatepass.cpp" line="640"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2-এর পাশে %1 রয়েছে। দুটিই এন্ট্রির এনক্রিপ্ট করা কপি; কোনটি রাখতে চান তা যাচাই করে অন্যটি মুছে ফেলুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="673"/>
+        <location filename="../src/imitatepass.cpp" line="654"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">একটি বাধাপ্রাপ্ত পুনরায় এনক্রিপশন যে ব্যাকআপ রেখে গিয়েছিল, তা থেকে %1 পুনরুদ্ধার করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="667"/>
+        <location filename="../src/imitatepass.cpp" line="648"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 অনুপস্থিত এবং এর ব্যাকআপ %2-এর নাম ফিরিয়ে পরিবর্তন করা যায়নি। নিজ হাতে এর নাম পরিবর্তন করুন, তারপর আবার পুনরায় এনক্রিপ্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="908"/>
+        <location filename="../src/imitatepass.cpp" line="890"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 পুনরায় এনক্রিপ্ট করা যায়নি: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1202"/>
+        <location filename="../src/imitatepass.cpp" line="1194"/>
         <source>Re-encryption failed</source>
         <translation>পুনরায় এনক্রিপশন ব্যর্থ হয়েছে</translation>
     </message>
@@ -1437,75 +1488,75 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">পুনরায় এনক্রিপ্ট করার পর ব্যাকআপ %1 সরানো যায়নি; এটি নিরাপদে মুছে ফেলা যায়।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="919"/>
+        <location filename="../src/imitatepass.cpp" line="901"/>
         <source>Creating backup commit</source>
         <translation>ব্যাকআপ কমিট তৈরি করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="933"/>
-        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="915"/>
+        <location filename="../src/imitatepass.cpp" line="925"/>
         <source>Backup commit failed</source>
         <translation>ব্যাকআপ কমিট ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="934"/>
+        <location filename="../src/imitatepass.cpp" line="916"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>গিট স্ট্যাটাস পরীক্ষা করা যায়নি। পুনরায় এনক্রিপশন বাতিল করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
+        <location filename="../src/imitatepass.cpp" line="926"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>পুনরায় এনক্রিপশন বাতিল করা হয়েছে কারণ একটি গিট ব্যাকআপ তৈরি করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="964"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">একটি পুনরায় এনক্রিপশন ইতিমধ্যেই চলছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="979"/>
+        <location filename="../src/imitatepass.cpp" line="971"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">স্টোরের কোনো ফোল্ডার নয়</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="972"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 নিজেই একটি সিম্বলিক লিংক বা জাংশন, অথবা এমন একটির পেছনে রয়েছে। সেটি যেখানে নির্দেশ করে তা পাসওয়ার্ড স্টোরের অংশ নয় এবং পুনরায় এনক্রিপ্ট করা হয়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="989"/>
+        <location filename="../src/imitatepass.cpp" line="981"/>
         <source>Re-encrypting from folder %1</source>
         <translation>ফোল্ডার %1 থেকে আবার এনক্রিপশন করা</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1053"/>
-        <location filename="../src/imitatepass.cpp" line="1229"/>
+        <location filename="../src/imitatepass.cpp" line="1045"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Updating password-store</source>
         <translation>পাসওয়ার্ড-স্টোর অপডেট করা</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1066"/>
-        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1058"/>
+        <location filename="../src/imitatepass.cpp" line="1064"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1067"/>
+        <location filename="../src/imitatepass.cpp" line="1059"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull-এর পরে স্টোরে অমার্জ করা ফাইল আছে কিনা পরীক্ষা করা যায়নি। পুনরায় এনক্রিপ্ট করার আগে git দিয়ে এটি পরীক্ষা করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1073"/>
+        <location filename="../src/imitatepass.cpp" line="1065"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">পুলের পর স্টোরে অমিলিত (unmerged) ফাইল রয়ে গেছে। পুনরায় এনক্রিপ্ট করার আগে দ্বন্দ্বটি সমাধান করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1077"/>
+        <location filename="../src/imitatepass.cpp" line="1069"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git পুল ব্যর্থ হয়েছে, স্টোরটি যেমন আছে তেমনই পুনরায় এনক্রিপ্ট করা হচ্ছে</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1088"/>
+        <location filename="../src/imitatepass.cpp" line="1080"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%nটি এন্ট্রি এড়িয়ে যাওয়া হয়েছে: সিমলিংক, জাংশন বা বিশেষ ফাইল স্টোরের অংশ নয়।</numerusform>
@@ -1513,27 +1564,27 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1109"/>
+        <location filename="../src/imitatepass.cpp" line="1101"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID পরীক্ষা অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1110"/>
+        <location filename="../src/imitatepass.cpp" line="1102"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>ডিরেক্টরির জন্য .gpg-id যাচাই করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1130"/>
+        <location filename="../src/imitatepass.cpp" line="1122"/>
         <source>Not part of the store</source>
         <translation type="unfinished">স্টোরের অংশ নয়</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1131"/>
+        <location filename="../src/imitatepass.cpp" line="1123"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1200"/>
+        <location filename="../src/imitatepass.cpp" line="1192"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... এবং আরও %nটি</numerusform>
@@ -1541,7 +1592,7 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1203"/>
+        <location filename="../src/imitatepass.cpp" line="1195"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%nটি ফাইল পুনরায় এনক্রিপ্ট করা যায়নি:</numerusform>
@@ -1549,18 +1600,18 @@ You will not be able to change the user list!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1209"/>
+        <location filename="../src/imitatepass.cpp" line="1201"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">পুনরায় এনক্রিপশন বাতিল করা হয়েছে: %2টির মধ্যে %1টি ফাইল পরীক্ষা করা হয়েছে, %3টি পুনরায় এনক্রিপ্ট করা হয়েছে, %4টি ব্যর্থ</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1276"/>
-        <location filename="../src/imitatepass.cpp" line="1285"/>
+        <location filename="../src/imitatepass.cpp" line="1268"/>
+        <location filename="../src/imitatepass.cpp" line="1277"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">প্রাপকদের পরিবর্তন কমিট করা হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1269"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1573,7 +1624,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 পরিবর্তনটি এখনও কমিট বা পুশ করা হয়নি। Git সমস্যাটি ঠিক করুন, তারপর পরিবর্তনগুলো কমিট করুন, অথবা আবার প্রাপকদের সংরক্ষণ করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1286"/>
+        <location filename="../src/imitatepass.cpp" line="1278"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1586,12 +1637,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 পুনরায় এনক্রিপশন সম্পূর্ণ হয়নি, তাই কিছু বা সব এন্ট্রি এখনও আগের প্রাপকদের জন্য এনক্রিপ্ট করা আছে, যারা এখনও সেগুলো পড়তে পারে। কিছুই কমিট বা পুশ করা হয়নি। Git সমস্যাটি ঠিক করুন, তারপর আবার প্রাপকদের সংরক্ষণ করুন।</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1463"/>
+        <location filename="../src/imitatepass.cpp" line="1455"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git এক্সিকিউটেবল কনফিগার করা নেই, git এড়িয়ে যাওয়া হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1523"/>
+        <location filename="../src/imitatepass.cpp" line="1515"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg %1-এর জন্য কোনো সাইফারটেক্সট লেখেনি।</translation>
     </message>
@@ -1620,17 +1671,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 আবার এনক্রিপ্ট করতে অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1210"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>আবার এনক্রিপ্ট করা সমাপ্ত হয়েছে: %1 সফল, %2 অসফল</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1223"/>
+        <location filename="../src/imitatepass.cpp" line="1215"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>পুনরায় অ্যানক্রিপশন সম্পন্ন: %1 ফাইল পুনরায় অ্যানক্রিপ্ট করা হয়েছে</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1232"/>
+        <location filename="../src/imitatepass.cpp" line="1224"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>পুশ করা হচ্ছে না: %nটি ফাইল পুনরায় এনক্রিপ্ট করা যায়নি</numerusform>
@@ -1638,14 +1689,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1385"/>
-        <location filename="../src/imitatepass.cpp" line="1429"/>
+        <location filename="../src/imitatepass.cpp" line="1377"/>
+        <location filename="../src/imitatepass.cpp" line="1421"/>
         <source>Copy failed</source>
         <translation type="unfinished">কপি ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1386"/>
-        <location filename="../src/imitatepass.cpp" line="1430"/>
+        <location filename="../src/imitatepass.cpp" line="1378"/>
+        <location filename="../src/imitatepass.cpp" line="1422"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 কে %2 এ কপি করা যায়নি।</translation>
     </message>
@@ -1676,7 +1727,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="43"/>
+        <location filename="../src/importkeydialog.cpp" line="44"/>
         <source>Import GPG key</source>
         <translation>GPG কী আমদানি করুন</translation>
     </message>
@@ -1696,7 +1747,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>ইমপোর্ট</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="44"/>
+        <location filename="../src/importkeydialog.cpp" line="45"/>
         <source>ASCII-armored GPG key</source>
         <translation>এসি-আই আর্মোড়েড GPG কী</translation>
     </message>
@@ -1709,12 +1760,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">কী ইমপোর্ট</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="58"/>
+        <location filename="../src/importkeydialog.cpp" line="62"/>
         <source>Could not open file: %1</source>
         <translation>ফাইলটি খোলা হতে পারেনি: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="83"/>
+        <location filename="../src/importkeydialog.cpp" line="87"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 একটি ASCII-আর্মরড GPG কী-এর মতো দেখতে নয়। প্রথমে &lt;code&gt;gpg --armor --export&lt;/code&gt; দিয়ে এটিকে রূপান্তর করুন, অথবা &lt;b&gt;ক্লিপবোর্ড থেকে&lt;/b&gt; এর মাধ্যমে আর্মরড ব্লকটি পেস্ট করুন।</translation>
     </message>
@@ -1723,38 +1774,38 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 একটি ASCII-আর্মরড GPG কী-এর মতো দেখতে নয়। প্রথমে &lt;code&gt;gpg --armor --export&lt;/code&gt; দিয়ে এটিকে রূপান্তর করুন, অথবা &lt;b&gt;ক্লিপবোর্ড থেকে&lt;/b&gt; এর মাধ্যমে আর্মরড ব্লকটি পেস্ট করুন।</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="44"/>
+        <location filename="../src/importkeydialog.cpp" line="45"/>
         <source>All files</source>
         <translation>সকল ফাইল</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="57"/>
-        <location filename="../src/importkeydialog.cpp" line="70"/>
-        <location filename="../src/importkeydialog.cpp" line="82"/>
-        <location filename="../src/importkeydialog.cpp" line="182"/>
+        <location filename="../src/importkeydialog.cpp" line="61"/>
+        <location filename="../src/importkeydialog.cpp" line="74"/>
+        <location filename="../src/importkeydialog.cpp" line="86"/>
         <location filename="../src/importkeydialog.cpp" line="186"/>
+        <location filename="../src/importkeydialog.cpp" line="190"/>
         <source>Import key</source>
         <translation>কী ইমপোর্ট</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="71"/>
+        <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="130"/>
+        <location filename="../src/importkeydialog.cpp" line="134"/>
         <source>GPG import failed:
 %1</source>
         <translation>GPG ইমপর্ট সফল হয়নি:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="140"/>
+        <location filename="../src/importkeydialog.cpp" line="144"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>GPG আউটপুট থেকে আমদানিকৃত কী আইডি বিশ্লেষণ করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="187"/>
+        <location filename="../src/importkeydialog.cpp" line="191"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">পাবলিক কী %1 আমদানি করা হয়েছে। এটির জন্য এনক্রিপ্ট করার আগে এর মালিকের সাথে ফিঙ্গারপ্রিন্ট যাচাই করুন: কী আমদানি করা থেকে কে এটি ধরে রেখেছে তা জানা যায় না।</translation>
     </message>
@@ -1859,37 +1910,47 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>বিশেষজ্ঞ বিকল্পগুলির জন্য &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG ম্যানুয়াল&lt;/a&gt; দেখুন</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="161"/>
+        <location filename="../src/keygendialog.cpp" line="176"/>
+        <source>Invalid input</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.cpp" line="177"/>
+        <source>The name and the passphrase cannot contain line breaks.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/keygendialog.cpp" line="182"/>
         <source>Invalid name</source>
         <translation>অবৈধ নাম</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="162"/>
+        <location filename="../src/keygendialog.cpp" line="183"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>নামটি অবশ্যই কমপক্ষে ৫ অক্ষরের হতে হবে।</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="172"/>
+        <location filename="../src/keygendialog.cpp" line="193"/>
         <source>Invalid email</source>
         <translation>অবৈধ ইমেইল</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="173"/>
+        <location filename="../src/keygendialog.cpp" line="194"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>আপনি যে ইমেইল ঠিকানা লিখেছেন তা একটি বৈধ ইমেইল ঠিকানা নয়।</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="195"/>
+        <location filename="../src/keygendialog.cpp" line="216"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>এই প্রক্রিয়াটিতে কয়েক মিনিট সময় লাগতে পারে।&lt;br /&gt;আমাদের প্রচুর পরিমাণে র‍্যান্ডম বাইট তৈরি করতে হবে। প্রাইম তৈরির সময় অন্য কোনো কাজ (যেমন কিবোর্ডে টাইপ করা, মাউস নাড়ানো, ডিস্ক ব্যবহার করা) করা একটি ভালো উপায়; এতে র‍্যান্ডম নম্বর জেনারেটরের পর্যাপ্ত এনট্রপি অর্জনের সম্ভাবনা বেড়ে যায়।</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="216"/>
+        <location filename="../src/keygendialog.cpp" line="237"/>
         <source>No password store backend available</source>
         <translation type="unfinished">কোনো পাসওয়ার্ড স্টোর ব্যাকএন্ড উপলব্ধ নেই</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="250"/>
+        <location filename="../src/keygendialog.cpp" line="271"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">কী তৈরি ব্যর্থ হয়েছে: %1</translation>
     </message>
@@ -1912,8 +1973,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="702"/>
-        <location filename="../src/mainwindow.cpp" line="878"/>
+        <location filename="../src/mainwindow.cpp" line="713"/>
+        <location filename="../src/mainwindow.cpp" line="891"/>
         <source>Search password</source>
         <translation>পাসওয়ার্ড খুঁজুন</translation>
     </message>
@@ -2015,7 +2076,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1394"/>
+        <location filename="../src/mainwindow.cpp" line="1444"/>
         <source>Add password</source>
         <translation>পাসওয়ার্ড যোগ করুন</translation>
     </message>
@@ -2027,21 +2088,21 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1393"/>
+        <location filename="../src/mainwindow.cpp" line="1443"/>
         <source>Add folder</source>
         <translation>ফোল্ডার যুক্ত</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1401"/>
+        <location filename="../src/mainwindow.cpp" line="1451"/>
         <source>Edit</source>
         <translation>সম্পাদনা</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1413"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>Delete</source>
         <translation>পাতাটি মুছে ফেলুন</translation>
     </message>
@@ -2082,7 +2143,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1395"/>
+        <location filename="../src/mainwindow.cpp" line="1445"/>
         <source>Users</source>
         <translation>ব্যবহারকারীরা</translation>
     </message>
@@ -2195,7 +2256,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="unfinished">(&amp;Q) Qt সম্পর্কে</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="403"/>
+        <location filename="../src/mainwindow.cpp" line="406"/>
         <source>Welcome to QtPass %1</source>
         <translation>QtPass %1 এ আসুন</translation>
     </message>
@@ -2212,14 +2273,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">প্রক্রিয়ার আউটপুট</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="531"/>
-        <location filename="../src/mainwindow.cpp" line="541"/>
+        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="544"/>
         <source>Updating password-store</source>
         <translation>পাসওয়ার্ড-স্টোর আপডেট করা</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="621"/>
-        <location filename="../src/mainwindow.cpp" line="929"/>
+        <location filename="../src/mainwindow.cpp" line="632"/>
+        <location filename="../src/mainwindow.cpp" line="942"/>
         <source>Content hidden</source>
         <translation>বিষয়বস্তু লুকানো হয়েছে</translation>
     </message>
@@ -2237,20 +2298,20 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">OTP কোড</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="651"/>
+        <location filename="../src/mainwindow.cpp" line="662"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">এই পাসওয়ার্ড এন্ট্রি ডিক্রিপ্ট করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="662"/>
-        <location filename="../src/mainwindow.cpp" line="680"/>
-        <location filename="../src/mainwindow.cpp" line="1152"/>
+        <location filename="../src/mainwindow.cpp" line="673"/>
+        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="1165"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP কোড কলিপ্বোক্রেপিটে উন্নীত</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="682"/>
-        <location filename="../src/mainwindow.cpp" line="1140"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="1153"/>
         <source>No OTP code found in this password entry</source>
         <translation>এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
     </message>
@@ -2259,27 +2320,27 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">পাসওয়ার্ড এবং কনটেন্ট গোপন করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="771"/>
+        <location filename="../src/mainwindow.cpp" line="784"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass সম্পর্কে</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="772"/>
+        <location filename="../src/mainwindow.cpp" line="785"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;স্ট্যান্ডার্ড Unix পাসওয়ার্ড ম্যানেজার &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;-এর জন্য একটি মাল্টি-প্ল্যাটফর্ম GUI।&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;সোর্স ও ইস্যু&lt;/a&gt;&lt;/p&gt;&lt;p&gt;কপিরাইট &amp;copy; 2014&amp;ndash;%2 IJhack। &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL সংস্করণ 3&lt;/a&gt; বা পরবর্তী সংস্করণের অধীনে লাইসেন্সকৃত।&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="789"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>Looking for: %1</source>
         <translation>অনুসন্ধান করছে: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="834"/>
+        <location filename="../src/mainwindow.cpp" line="847"/>
         <source>Searching…</source>
         <translation>অনুসন্ধান করা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="860"/>
+        <location filename="../src/mainwindow.cpp" line="873"/>
         <source>Search content (regex)</source>
         <translation>অনুসন্ধান করুন (রেজেক্স)</translation>
     </message>
@@ -2288,17 +2349,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="obsolete">কন্টেন্ট অনুসন্ধান POSIX মৌলিক নিয়মিত এক্সপ্রেশন ব্যবহার করে (pass grep)।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="864"/>
+        <location filename="../src/mainwindow.cpp" line="877"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">কন্টেন্ট অনুসন্ধান Perl-সামঞ্জস্যপূর্ণ নিয়মিত এক্সপ্রেশন ব্যবহার করে (PCRE)।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="903"/>
+        <location filename="../src/mainwindow.cpp" line="916"/>
         <source>No matches found.</source>
         <translation>কোনো মিল পাওয়া যায়নি।</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>শেষে পাওয়া %nটি ম্যাচ</numerusform>
@@ -2306,7 +2367,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="962"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%nটি ইন্ট্রিতে।</numerusform>
@@ -2314,12 +2375,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1005"/>
+        <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>Invalid name</source>
         <translation type="unfinished">অবৈধ নাম</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1006"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">এই নামটি পাসওয়ার্ড স্টোরের বাইরে নির্দেশ করবে। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।</translation>
     </message>
@@ -2334,7 +2395,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1-এ স্থানান্তরিত হবে)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="706"/>
+        <location filename="../src/mainwindow.cpp" line="717"/>
         <source>Password and content hidden</source>
         <translation>পাসওয়ার্ড এবং কনটেন্ট গোপন করা হয়েছে</translation>
     </message>
@@ -2343,12 +2404,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> এবং যোগজীকরণ করা পৃষ্ঠাগুলি?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1085"/>
+        <location filename="../src/mainwindow.cpp" line="1098"/>
         <source>Delete link?</source>
         <translation type="unfinished">লিংকটি মুছে ফেলতে হবে?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1086"/>
+        <location filename="../src/mainwindow.cpp" line="1099"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 একটি সিম্বলিক লিংক বা জাংশন। লিংকটি সরিয়ে ফেলবেন? এটি যেখানে নির্দেশ করে তা অপরিবর্তিত থাকবে।</translation>
     </message>
@@ -2357,12 +2418,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished"> এবং পূর্ণাঙ্গ কনটেন্ট? &lt;br&gt;&lt;strong&gt;গ্রহণযোগ্য নির্দেশিত ফোল্ডারে অপসৌত থাকা ফাইল আছে, সেগুলো পরীক্ষা করে তবে চালু করুন।&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1091"/>
         <source>Delete folder?</source>
         <translation>ফোল্ডারটি মুছে ফেলতে হবে?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="1067"/>
         <source>Delete password?</source>
         <translation>পাসওয়ার্ডটি মুছে ফেলতে হবে?</translation>
     </message>
@@ -2371,43 +2432,43 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">আপনি %1%2 থেকে মুছে ফেলতে কি সত্যিই চান?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1135"/>
+        <location filename="../src/mainwindow.cpp" line="1148"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP তৈরির জন্য কোনো পাসওয়ার্ড নির্বাচিত হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1234"/>
+        <location filename="../src/mainwindow.cpp" line="1284"/>
         <source>Profile changed to %1</source>
         <translation>প্রফাইলটি %1-এ পরিবর্তিত হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1392"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Open folder with file manager</source>
         <translation>ফাইল ম্যানেজার দিয়ে ফোল্ডারটি খুলুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1407"/>
-        <location filename="../src/mainwindow.cpp" line="1488"/>
+        <location filename="../src/mainwindow.cpp" line="1457"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Rename folder</source>
         <translation>ফোল্ডারটি পরিবর্তন করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1410"/>
+        <location filename="../src/mainwindow.cpp" line="1460"/>
         <source>Rename password</source>
         <translation>পাসওয়ার্ড পুনরায় নামকরণ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1347"/>
+        <location filename="../src/mainwindow.cpp" line="1397"/>
         <source>Share</source>
         <translation>শেয়ার করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="942"/>
+        <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -2415,85 +2476,85 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/mainwindow.cpp" line="1068"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">আপনি কি সত্যিই %1 মুছে ফেলতে চান?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1062"/>
+        <location filename="../src/mainwindow.cpp" line="1075"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">আপনি কি সত্যিই %1 এবং এর সমস্ত বিষয়বস্তু মুছে ফেলতে চান?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1075"/>
+        <location filename="../src/mainwindow.cpp" line="1088"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">সতর্কতা: প্রদত্ত ফোল্ডারে অপ্রত্যাশিত ফাইল রয়েছে, এগিয়ে যাওয়ার আগে সেগুলো পরীক্ষা করুন।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1357"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
         <source>Re-encrypt all passwords</source>
         <translation>সব পাসওয়ার্ড পুনরায় এনক্রিপ্ট</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1362"/>
+        <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Export my public key...</source>
         <translation>আমার পাবলিক কী রপ্তানি করুন...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1366"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Add recipient...</source>
         <translation>প্রাক্ষেপক যোগ করুন...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
+        <location filename="../src/mainwindow.cpp" line="1421"/>
         <source>What is this?</source>
         <translation>এটি কী?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1445"/>
+        <location filename="../src/mainwindow.cpp" line="1495"/>
         <source>New folder</source>
         <translation type="unfinished">নতুন ফোল্ডার</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1446"/>
+        <location filename="../src/mainwindow.cpp" line="1496"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>নতুন ফোল্ডার:
 (%1-এ স্থানান্তরিত হবে)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1571"/>
         <source>Rename file to: </source>
         <translation>ফাইলটি নাম পরিবর্তন করুন: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1652"/>
-        <location filename="../src/mainwindow.cpp" line="1671"/>
+        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
         <source>Export public key</source>
         <translation>পাবলিক কী রপ্তানি করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1653"/>
+        <location filename="../src/mainwindow.cpp" line="1705"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;আপনার পাবলিক কী এক্সপোর্ট করুন&lt;/h3&gt;&lt;p&gt;কোনো সাইনিং কী কনফিগার করা নেই। QtPass সেটিংস &gt; GPG কী-তে একটি সেট করুন, অথবা টার্মিনালে এটি চালান:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;তারপর ফাইলটি আপনার সতীর্থদের কাছে পাঠান।&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1700"/>
+        <location filename="../src/mainwindow.cpp" line="1752"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">স্টোরের কোনো ফোল্ডার নয়</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1701"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 নিজেই একটি সিম্বলিক লিংক বা জাংশন, অথবা এমন একটির পেছনে রয়েছে। সেটি যেখানে নির্দেশ করে তা পাসওয়ার্ড স্টোরের অংশ নয় এবং অপরিবর্তিত থাকবে।</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1709"/>
+        <location filename="../src/mainwindow.cpp" line="1761"/>
         <source>Sharing passwords with GPG</source>
         <translation>GPG দিয়ে পাসওয়ার্ড শেয়ার করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1710"/>
+        <location filename="../src/mainwindow.cpp" line="1762"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG-এর মাধ্যমে পাসওয়ার্ড শেয়ার করা&lt;/h3&gt;&lt;p&gt;অন্যান্য ব্যবহারকারীদের সাথে পাসওয়ার্ড শেয়ার করতে:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;আপনার পাবলিক কী এক্সপোর্ট করুন&lt;/b&gt; এবং এটি টিমমেটদের কাছে পাঠান&lt;/li&gt;&lt;li&gt;&lt;b&gt;টিমমেটদের পাবলিক কী আপনার GPG কী-রিং-এ ইম্পোর্ট করুন&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;পাসওয়ার্ডগুলো পুনরায় এনক্রিপ্ট করুন&lt;/b&gt; যাতে সকল প্রাপক সেগুলো ডিক্রিপ্ট করতে পারে&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;শুধুমাত্র যাদের কাছে মিলে যাওয়া সিক্রেট কী আছে, তারাই পাসওয়ার্ডগুলো ডিক্রিপ্ট করতে পারবে।&lt;/p&gt;&lt;p&gt;&lt;b&gt;টিপস:&lt;/b&gt; সকল শেয়ার করা ফোল্ডারের জন্য একই GPG কী ব্যবহার করুন।&lt;/p&gt;&lt;p&gt;আরও বিস্তারিত জানতে FAQ দেখুন।&lt;/p&gt;</translation>
     </message>
@@ -2504,29 +2565,29 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1-এ স্থানান্তরিত হবে)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1461"/>
-        <location filename="../src/mainwindow.cpp" line="1476"/>
-        <location filename="../src/mainwindow.cpp" line="1573"/>
+        <location filename="../src/mainwindow.cpp" line="1511"/>
+        <location filename="../src/mainwindow.cpp" line="1526"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Error</source>
         <translation>ত্রুটি</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1462"/>
+        <location filename="../src/mainwindow.cpp" line="1512"/>
         <source>Failed to create folder: %1</source>
         <translation>একটি ফোল্ডার তৈরী করতে ব্যর্থ হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1477"/>
+        <location filename="../src/mainwindow.cpp" line="1527"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id ফাইল তৈরী করতে ব্যর্থ হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1488"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Rename folder to: </source>
         <translation>ফোল্ডারটি নতুন নামে পরিবর্তন করুন: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1571"/>
         <source>Rename file</source>
         <translation>ফাইলটি পরিবর্তন করুন</translation>
     </message>
@@ -2539,7 +2600,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">ফাইলটি নাম পরিবর্তন করুন: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="1610"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">এই এন্ট্রিতে একটি OTP সিক্রেট আছে, পাসওয়ার্ড নয়</translation>
     </message>
@@ -2548,18 +2609,18 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="obsolete">ব্রাউজারে %1 খুলুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1574"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Directory does not exist: %1</source>
         <translation>ডিরেক্টরিটির অস্তিত্ব নেই: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
-        <location filename="../src/mainwindow.cpp" line="1613"/>
+        <location filename="../src/mainwindow.cpp" line="1632"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>Re-encrypt passwords</source>
         <translation>সব পাসওয়ার্ডগুলো আবার এনক্রিপ্ট করুন</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1583"/>
+        <location filename="../src/mainwindow.cpp" line="1633"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2576,22 +2637,22 @@ Continue?</source>
 চালিয়ে যাবেন?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1611"/>
+        <location filename="../src/mainwindow.cpp" line="1663"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">পাসওয়ার্ড পুনরায় এনক্রিপ্ট করা হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1612"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
         <source>Cancel</source>
         <translation type="unfinished">বাতিল</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">পুনরায় এনক্রিপশন বাতিল করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1631"/>
+        <location filename="../src/mainwindow.cpp" line="1683"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">পাসওয়ার্ড পুনরায় এনক্রিপ্ট করা হচ্ছে: %2টির মধ্যে %1টি</translation>
     </message>
@@ -2604,7 +2665,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;আপনার পাবলিক কী এক্সপোর্ট করুন&lt;/h3&gt;&lt;p&gt;কোনো সাইনিং কী কনফিগার করা নেই। QtPass সেটিংস &gt; GPG কী-তে একটি সেট করুন, অথবা টার্মিনালে এটি চালান:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;তারপর ফাইলটি আপনার সতীর্থদের কাছে পাঠান।&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2613,7 +2674,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1726"/>
         <source>No output from gpg.</source>
         <translation>gpg থেকে কোনো ফাইল প্রতিবর্তন নেই।</translation>
     </message>
@@ -2637,107 +2698,124 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="171"/>
+        <location filename="../src/pass.cpp" line="181"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">কনফিগার করা GPG হোম %1 বিদ্যমান নেই, ডিফল্ট কী-রিং ব্যবহার করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="179"/>
+        <location filename="../src/pass.cpp" line="189"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">কনফিগার করা GPG হোম %1 বিদ্যমান নেই, এনভায়রনমেন্ট থেকে GNUPGHOME %2 ব্যবহার করা হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="192"/>
+        <location filename="../src/pass.cpp" line="202"/>
         <source>Invalid password length</source>
         <translation>পাসওয়ার্ডের দৈর্ঘ্য অবৈধ</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="193"/>
+        <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>শূন্য দৈর্ঘ্যের পাসওয়ার্ড তৈরি করা যায় না।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="228"/>
+        <location filename="../src/pass.cpp" line="238"/>
         <source>No characters chosen</source>
         <translation>কোনো অক্ষর নির্বাচিত হয়নি</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="229"/>
+        <location filename="../src/pass.cpp" line="239"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>পাসওয়ার্ড তৈরি করা যায় না, কনফিগারেশনে নির্বাচন করার মতো কোনো অক্ষর উপলব্ধ নেই!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="367"/>
-        <location filename="../src/pass.cpp" line="368"/>
+        <location filename="../src/pass.cpp" line="377"/>
+        <location filename="../src/pass.cpp" line="378"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">কোনো GPG এক্সিকিউটেবল কনফিগার করা নেই</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="438"/>
-        <location filename="../src/pass.cpp" line="457"/>
+        <location filename="../src/pass.cpp" line="448"/>
+        <location filename="../src/pass.cpp" line="467"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>এনক্রিপশন ব্যর্থ হয়েছে: GPG কী-এর মেয়াদ শেষ হয়ে গেছে। অনুগ্রহ করে এটি নবায়ন বা প্রতিস্থাপন করুন।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="443"/>
-        <location filename="../src/pass.cpp" line="462"/>
+        <location filename="../src/pass.cpp" line="453"/>
+        <location filename="../src/pass.cpp" line="472"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>এনক্রিপশন ব্যর্থ হয়েছে: GPG কী বাতিল করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="447"/>
-        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="457"/>
+        <location filename="../src/pass.cpp" line="486"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>এনক্রিপশন ব্যর্থ হয়েছে: প্রাপক GPG কী খুঁজে পাওয়া যায়নি বা অবৈধ। .gpg-id-এ কী ID টি সঠিক এবং ইমপোর্ট করা হয়েছে তা যাচাই করুন।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="451"/>
-        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="461"/>
+        <location filename="../src/pass.cpp" line="490"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>এনক্রিপশন ব্যর্থ হয়েছে। আপনার GPG কী সঠিক কিনা যাচাই করুন।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="470"/>
+        <location filename="../src/pass.cpp" line="480"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">এনক্রিপশন ব্যর্থ: একজন প্রাপকের GPG কী ব্যবহার করা যাচ্ছে না। এটির মেয়াদ শেষ হয়ে থাকতে পারে বা বাতিল করা হয়ে থাকতে পারে, এতে কোনো এনক্রিপশন সাবকী নেই, অথবা এটি বিশ্বস্ত নয়; নিচের gpg বার্তাটি বলে দেবে কোনটি।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="711"/>
+        <location filename="../src/pass.cpp" line="534"/>
+        <source>Saved, not committed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="535"/>
+        <source>The entry is saved in the store, but recording it in git failed. What was reported:
+
+%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="766"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 নিজেই একটি সিম্বলিক লিংক বা জাংশন, অথবা এমন একটির পেছনে রয়েছে। সেটি যেখানে নির্দেশ করে তা পাসওয়ার্ড স্টোরের অংশ নয় এবং অপরিবর্তিত থাকবে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="717"/>
+        <location filename="../src/pass.cpp" line="778"/>
+        <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="788"/>
         <source>Not part of the store</source>
         <translation type="unfinished">স্টোরের অংশ নয়</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="758"/>
+        <location filename="../src/pass.cpp" line="883"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">প্রাপক তালিকাগুলোর জেনারেশন রেকর্ড পড়া যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="839"/>
+        <location filename="../src/pass.cpp" line="964"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="860"/>
+        <location filename="../src/pass.cpp" line="985"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">প্রাপক তালিকা %1 অনুপস্থিত অথবা এটি একটি সাধারণ ফাইল নয়, তাই আগে থেকে কিছুই নির্বাচিত নেই: প্যারেন্ট ফোল্ডারের তালিকা এই ফোল্ডারের জন্য স্বাক্ষরিত হয়নি। এই ফোল্ডারের প্রাপকদের নিজেই নির্বাচন করুন; OK চাপলে একটি নতুন তালিকা লেখা ও স্বাক্ষর করা হবে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="865"/>
+        <location filename="../src/pass.cpp" line="990"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 আগে থেকে কিছুই নির্বাচিত নেই: %2 সরানো হয়েছে কি না তা বলা যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="880"/>
+        <location filename="../src/pass.cpp" line="1005"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">প্রাপক তালিকা %1 স্বাক্ষর কী দিয়ে যাচাই করা যায় না, তাই আগে থেকে কিছুই নির্বাচিত নেই: সংরক্ষণ করলে এতে যা আছে তা-ই স্বাক্ষরিত হয়ে যেত। প্রাপকদের নিজেই নির্বাচন করুন; OK চাপলে একটি নতুন তালিকা লেখা ও স্বাক্ষর করা হবে।</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="804"/>
+        <location filename="../src/pass.cpp" line="929"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 আগে থেকে কিছুই নির্বাচিত নেই: সংরক্ষণ করলে এতে যা আছে তা-ই স্বাক্ষরিত হয়ে যেত। প্রাপকদের নিজেই নির্বাচন করুন।</translation>
     </message>
@@ -2747,7 +2825,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="329"/>
+        <location filename="../src/passworddialog.cpp" line="331"/>
         <source>Password</source>
         <translation>পাসওয়ার্ড</translation>
     </message>
@@ -2850,72 +2928,72 @@ Continue?</source>
         <translation type="unfinished">সংরক্ষণ করা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="214"/>
+        <location filename="../src/passworddialog.cpp" line="216"/>
         <source>Still saving</source>
         <translation type="unfinished">এখনও সংরক্ষণ হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="215"/>
+        <location filename="../src/passworddialog.cpp" line="217"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">এন্ট্রিটি এখনও সংরক্ষণ করা হচ্ছে। তবুও ডায়ালগটি বন্ধ করবেন? যদি এরপর সংরক্ষণ ব্যর্থ হয়, আপনি যা টাইপ করেছেন তা হারিয়ে যাবে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="232"/>
+        <location filename="../src/passworddialog.cpp" line="234"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">সংরক্ষিত হয়নি: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="274"/>
+        <location filename="../src/passworddialog.cpp" line="276"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">এন্ট্রিটির একটি নাম দিন।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="278"/>
+        <location filename="../src/passworddialog.cpp" line="280"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">নাম / দিয়ে শেষ হতে পারে না।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="287"/>
+        <location filename="../src/passworddialog.cpp" line="289"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">ওই নামটি পাসওয়ার্ড স্টোরের বাইরে গিয়ে পড়বে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="291"/>
+        <location filename="../src/passworddialog.cpp" line="293"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 নামে একটি এন্ট্রি ইতিমধ্যে রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="295"/>
+        <location filename="../src/passworddialog.cpp" line="297"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 একটি ফোল্ডার।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="325"/>
+        <location filename="../src/passworddialog.cpp" line="327"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 ফোল্ডারটি তৈরি করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="381"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Remove field</source>
         <translation type="unfinished">ফিল্ড সরান</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="400"/>
+        <location filename="../src/passworddialog.cpp" line="402"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 নামে একটি ফিল্ড ইতিমধ্যে রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="481"/>
+        <location filename="../src/passworddialog.cpp" line="483"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI অথবা base32 সিক্রেট</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="518"/>
+        <location filename="../src/passworddialog.cpp" line="520"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">অবৈধ OTP সিক্রেট</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="718"/>
+        <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -2948,12 +3026,12 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="56"/>
+        <location filename="../src/profileinit.cpp" line="91"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 তৈরি করা যায়নি।</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="80"/>
+        <location filename="../src/profileinit.cpp" line="150"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1-এ ইতিমধ্যেই %nটি এনক্রিপ্ট করা ফাইল রয়েছে; সেগুলো পুনরায় এনক্রিপ্ট করা হয়নি। তা করতে প্রফাইলটিতে যান এবং ব্যবহারকারীরা খুলুন।</numerusform>
@@ -2961,12 +3039,12 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="98"/>
+        <location filename="../src/profileinit.cpp" line="168"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">কোনো প্রাপক নির্বাচন করা হয়নি; %1 লেখা হয়নি।</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="147"/>
+        <location filename="../src/profileinit.cpp" line="226"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">%2 দিয়ে %1 সাইন করা যায়নি।</translation>
     </message>
@@ -2975,13 +3053,18 @@ Continue?</source>
         <translation type="obsolete">%1 লেখা যায়নি: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="149"/>
+        <location filename="../src/profileinit.cpp" line="228"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%2 দিয়ে %1 সাইন করা যায়নি: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="170"/>
-        <location filename="../src/profileinit.cpp" line="200"/>
+        <location filename="../src/profileinit.cpp" line="238"/>
+        <source>The configured GPG home %1 does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/profileinit.cpp" line="260"/>
+        <location filename="../src/profileinit.cpp" line="292"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">%2-এ git %1 ব্যর্থ হয়েছে: %3</translation>
     </message>
@@ -3054,8 +3137,8 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="74"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="194"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="235"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="201"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="245"/>
         <source>Password</source>
         <translation type="unfinished">পাসওয়ার্ড</translation>
     </message>
@@ -3065,8 +3148,8 @@ Continue?</source>
         <translation type="unfinished">ব্রাউজারে %1 খুলুন</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="316"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="329"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="327"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="340"/>
         <source>OTP code</source>
         <translation>OTP কোড</translation>
     </message>
@@ -3075,7 +3158,7 @@ Continue?</source>
         <translation type="obsolete">OTP কোড</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="317"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="328"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">এই পাসওয়ার্ড ইনট্রির মধ্যে কোনো OTP কোড পাওয়া গেল না</translation>
     </message>
@@ -3216,27 +3299,38 @@ Continue?</source>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="93"/>
+        <location filename="../src/realpass.cpp" line="142"/>
+        <source>Checking the recipient lists under %1…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="249"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">লিংক %1 সরানো যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="94"/>
+        <location filename="../src/realpass.cpp" line="250"/>
         <source>Delete failed</source>
         <translation type="unfinished">মুছে ফেলা ব্যর্থ হয়েছে</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="125"/>
+        <location filename="../src/realpass.cpp" line="300"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">লিঙ্ক %1 সরানো হয়েছে, কিন্তু git এটি রেকর্ড করতে পারেনি: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="127"/>
+        <location filename="../src/realpass.cpp" line="302"/>
+        <location filename="../src/realpass.cpp" line="352"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">মুছে ফেলা অসম্পূর্ণ</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="229"/>
+        <location filename="../src/realpass.cpp" line="349"/>
+        <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/realpass.cpp" line="468"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">অনুসন্ধানের জন্য GPG এক্সিকিউটেবল কনফিগার করা থাকতে হবে।</translation>
     </message>
@@ -3417,42 +3511,42 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>ফাইল থেকে বা ক্লিপবোর্ড থেকে GPG কী ইমপোর্ট করুন</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="67"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
         <translation>কী তালিকা দেখা যাচ্ছে না</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="68"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>ব্যবহার্য GPG কী তালিকা পাওয়া সমর্থ নয়</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="177"/>
+        <location filename="../src/usersdialog.cpp" line="181"/>
         <source>Key not found in keyring</source>
         <translation>কী কী-রিং-এ পাওয়া যায়নি</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="315"/>
+        <location filename="../src/usersdialog.cpp" line="325"/>
         <source>created</source>
         <translation>তৈরি হওয়া</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="319"/>
+        <location filename="../src/usersdialog.cpp" line="329"/>
         <source>expires</source>
         <translation>মেয়াদ শেষ হবে</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="342"/>
+        <location filename="../src/usersdialog.cpp" line="352"/>
         <source>[INVALID] </source>
         <translation>[অবৈধ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="338"/>
+        <location filename="../src/usersdialog.cpp" line="348"/>
         <source>[EXPIRED] </source>
         <translation>[মেয়াদ উত্তীর্ণ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="346"/>
+        <location filename="../src/usersdialog.cpp" line="356"/>
         <source>[PARTIAL] </source>
         <translation>[আংশিক] </translation>
     </message>
@@ -3460,34 +3554,34 @@ Plain entries have a trusted encryption key, select these to allow other people 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="783"/>
+        <location filename="../src/util.cpp" line="851"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1-এর পাশে অস্থায়ী ফাইল তৈরি করা যাচ্ছে না: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="795"/>
-        <location filename="../src/util.cpp" line="874"/>
-        <location filename="../src/util.cpp" line="904"/>
+        <location filename="../src/util.cpp" line="863"/>
+        <location filename="../src/util.cpp" line="942"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 লেখা যাচ্ছে না: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="810"/>
+        <location filename="../src/util.cpp" line="878"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 প্রতিস্থাপন করতে ব্যর্থ।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="815"/>
+        <location filename="../src/util.cpp" line="883"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ইতিমধ্যে বিদ্যমান।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="817"/>
+        <location filename="../src/util.cpp" line="885"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 লিখতে ব্যর্থ।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="861"/>
+        <location filename="../src/util.cpp" line="929"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">লেখা চলাকালেই %1 অন্য একটি ফাইল দিয়ে বদলে দেওয়া হয়েছে।</translation>
     </message>
@@ -3496,12 +3590,12 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation type="obsolete">লেখা চলাকালেই %1 একটি লিংক দিয়ে প্রতিস্থাপিত হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="887"/>
+        <location filename="../src/util.cpp" line="955"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">%1 পড়া যাচ্ছে না।</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="897"/>
+        <location filename="../src/util.cpp" line="965"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">%1 পড়া যাচ্ছে না: %2</translation>
     </message>
