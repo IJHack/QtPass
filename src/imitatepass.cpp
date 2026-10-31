@@ -502,7 +502,12 @@ auto ImitatePass::settleSignature(const QString &gpgIdFile,
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   // The .gpg-id is written as path + ".gpg-id": without the trailing
   // separator (the context menu hands over a cleaned path) that would be a
-  // file beside the folder, not the folder's own list.
+  // file beside the folder, not the folder's own list. A relative path names
+  // a folder in the store, as it does for pass, not one in the working
+  // directory.
+  if (!QDir::isAbsolutePath(path)) {
+    path = QDir(m_settings.passStore).filePath(path);
+  }
   path = Util::normalizeFolderPath(path);
   if (refuseLinkedGpgIdFolder(path)) {
     return;

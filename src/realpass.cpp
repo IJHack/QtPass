@@ -356,21 +356,25 @@ void RealPass::finishLinkCommit(const LinkCommit &commit, const QString &out,
 }
 
 void RealPass::Init(QString path, const QList<UserInfo> &users) {
+  // A relative path names a folder in the store, as --path does for pass:
+  // resolved once, so the checks below look where pass writes, not in the
+  // working directory.
+  const QString folder = QDir::cleanPath(
+      QDir::isAbsolutePath(path) ? path
+                                 : QDir(m_settings.passStore).filePath(path));
   // pass init writes .gpg-id with a shell redirection and gpg writes the
   // signature with --output; both follow a link planted under those names.
-  const QString folder = QDir::cleanPath(path);
-  if (refuseLinkedPath(path) ||
+  if (refuseLinkedPath(folder) ||
       refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
       refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"))) {
     return;
   }
   // --path is store-relative, or pass creates passStore/passStore/dir. A
   // plain prefix test would take /home/me/store-other for /home/me/store.
-  const QString normalizedPath = QDir::cleanPath(path);
   const QString normalizedStore = QDir::cleanPath(m_settings.passStore);
-  QString dirWithoutPassdir = normalizedPath;
-  if (PathValidator::isPathInStore(normalizedStore, normalizedPath)) {
-    dirWithoutPassdir = QDir(normalizedStore).relativeFilePath(normalizedPath);
+  QString dirWithoutPassdir = folder;
+  if (PathValidator::isPathInStore(normalizedStore, folder)) {
+    dirWithoutPassdir = QDir(normalizedStore).relativeFilePath(folder);
     if (dirWithoutPassdir == QStringLiteral(".")) {
       dirWithoutPassdir.clear();
     }
