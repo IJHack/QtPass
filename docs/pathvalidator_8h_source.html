@@ -119,15 +119,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0">   63</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0">storeRelativePath</a>(<span class="keyword">const</span> QString &amp;storeRoot,</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                <span class="keyword">const</span> QString &amp;candidate)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      -&gt; std::optional&lt;QString&gt;;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  PathValidator() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_path_validator.html#a373941a0115bec639224335b4ede6994">   79</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_path_validator.html#a373941a0115bec639224335b4ede6994">isTargetSpelled</a>(<span class="keyword">const</span> QString &amp;storeRoot, <span class="keyword">const</span> QString &amp;path)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      -&gt; bool;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  PathValidator() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif </span><span class="comment">// SRC_PATHVALIDATOR_H_</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif </span><span class="comment">// SRC_PATHVALIDATOR_H_</span></div>
 <div class="ttc" id="aclass_path_validator_html_a10bc672c74cdd476c6f89df5ca8027d0"><div class="ttname"><a href="class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0">PathValidator::storeRelativePath</a></div><div class="ttdeci">static auto storeRelativePath(const QString &amp;storeRoot, const QString &amp;candidate) -&gt; std::optional&lt; QString &gt;</div><div class="ttdoc">Where candidate lies in the store, judged as isPathInStore() judges it.</div></div>
 <div class="ttc" id="aclass_path_validator_html_a15120558ca5dd41cdd9c485ae08030c7"><div class="ttname"><a href="class_path_validator.html#a15120558ca5dd41cdd9c485ae08030c7">PathValidator::isPathInStore</a></div><div class="ttdeci">static auto isPathInStore(const QString &amp;storeRoot, const QString &amp;candidate) -&gt; bool</div><div class="ttdoc">Check that a candidate path resolves inside the password store root, after following symlinks and res...</div></div>
+<div class="ttc" id="aclass_path_validator_html_a373941a0115bec639224335b4ede6994"><div class="ttname"><a href="class_path_validator.html#a373941a0115bec639224335b4ede6994">PathValidator::isTargetSpelled</a></div><div class="ttdeci">static auto isTargetSpelled(const QString &amp;storeRoot, const QString &amp;path) -&gt; bool</div><div class="ttdoc">Whether path is spelled through the target of a store root that is itself a link, rather than from th...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

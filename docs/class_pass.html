@@ -272,8 +272,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6097de48d30068d8a73f7dc80ff01de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
-<tr class="memitem:a9e4a43d75fb8f1dd3419a9d6c7e07b29" id="r_a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true) -&gt; bool</td></tr>
-<tr class="memdesc:a9e4a43d75fb8f1dd3419a9d6c7e07b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
+<tr class="memitem:a51c84b6c360208ade1e4159cce8c1e0b" id="r_a51c84b6c360208ade1e4159cce8c1e0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a51c84b6c360208ade1e4159cce8c1e0b">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true, bool placed=false) -&gt; bool</td></tr>
+<tr class="memdesc:a51c84b6c360208ade1e4159cce8c1e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:afea04fa657d65846e2772b0b25c96276" id="r_afea04fa657d65846e2772b0b25c96276"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a> (const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td></tr>
 <tr class="memdesc:afea04fa657d65846e2772b0b25c96276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse recipients for a folder outside the store, as pass refuses a path with <span class="tt">..</span> in it.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
@@ -2130,8 +2130,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9e4a43d75fb8f1dd3419a9d6c7e07b29" name="a9e4a43d75fb8f1dd3419a9d6c7e07b29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e4a43d75fb8f1dd3419a9d6c7e07b29">&#9670;&#160;</a></span>refuseLinkedPath()</h2>
+<a id="a51c84b6c360208ade1e4159cce8c1e0b" name="a51c84b6c360208ade1e4159cce8c1e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c84b6c360208ade1e4159cce8c1e0b">&#9670;&#160;</a></span>refuseLinkedPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2147,7 +2147,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>placed</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -2162,6 +2167,7 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">path</td><td>Store-relative (as Show/Insert/Remove get it, <span class="tt">.gpg</span> included where it applies) or absolute (as Move/Copy get it). </td></tr>
     <tr><td class="paramname">includeSelf</td><td>Whether the entry itself counts; false for a removal, which unlinks a link and touches nothing behind it. </td></tr>
+    <tr><td class="paramname">placed</td><td>Whether the caller places a path spelled through the target of a linked store root itself (<a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a> does); otherwise such a path, which breaks the class's path rule, is logged as a warning so tests catch a caller that hands one over. </td></tr>
   </table>
   </dd>
 </dl>

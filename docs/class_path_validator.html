@@ -113,6 +113,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a15120558ca5dd41cdd9c485ae08030c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that a candidate path resolves inside the password store root, after following symlinks and resolving <span class="tt">..</span> components.  <br /></td></tr>
 <tr class="memitem:a10bc672c74cdd476c6f89df5ca8027d0" id="r_a10bc672c74cdd476c6f89df5ca8027d0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a10bc672c74cdd476c6f89df5ca8027d0">storeRelativePath</a> (const QString &amp;storeRoot, const QString &amp;candidate) -&gt; std::optional&lt; QString &gt;</td></tr>
 <tr class="memdesc:a10bc672c74cdd476c6f89df5ca8027d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where <code class="param">candidate</code> lies in the store, judged as <a class="el" href="#a15120558ca5dd41cdd9c485ae08030c7" title="Check that a candidate path resolves inside the password store root, after following symlinks and res...">isPathInStore()</a> judges it.  <br /></td></tr>
+<tr class="memitem:a373941a0115bec639224335b4ede6994" id="r_a373941a0115bec639224335b4ede6994"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a373941a0115bec639224335b4ede6994">isTargetSpelled</a> (const QString &amp;storeRoot, const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a373941a0115bec639224335b4ede6994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> is spelled through the target of a store root that is itself a link, rather than from the root as configured.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Password-store path-boundary checks. </p>
@@ -158,6 +160,45 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if <span class="tt">candidate</span> resolves to a path equal to or strictly inside <span class="tt">storeRoot</span>; false otherwise (including when <span class="tt">storeRoot</span> itself does not exist). </dd></dl>
+
+</div>
+</div>
+<a id="a373941a0115bec639224335b4ede6994" name="a373941a0115bec639224335b4ede6994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373941a0115bec639224335b4ede6994">&#9670;&#160;</a></span>isTargetSpelled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto PathValidator::isTargetSpelled </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">path</code> is spelled through the target of a store root that is itself a link, rather than from the root as configured. </p>
+<p>The <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> operations take the configured spelling (see the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> class documentation); this names the one spelling that breaks that rule while still lying in the store. Nothing is resolved below the root. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storeRoot</td><td>Password store root, as configured. </td></tr>
+    <tr><td class="paramname">path</td><td>An absolute path; a relative one is never off-rule. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when <code class="param">path</code> lies under the root's canonical path but not under the root as configured, and the two differ. </dd></dl>
 
 </div>
 </div>

@@ -43,11 +43,12 @@ var searchData=
   ['isstoppedmarker_40',['isStoppedMarker',['../class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7',1,'NativeGrep']]],
   ['isstore_41',['isStore',['../class_first_run_wizard.html#afb93850960a89ed80e166fa1ee4fc124',1,'FirstRunWizard']]],
   ['issuer_42',['issuer',['../struct_totp_1_1_settings.html#a386ac12f560e143771320223c395dd9f',1,'Totp::Settings']]],
-  ['isunderlink_43',['isUnderLink',['../class_util.html#af4112ecd778ae8225a12fa96ce611425',1,'Util']]],
-  ['isusegit_44',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
-  ['isusegrepsearch_45',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
-  ['isuseotp_46',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
-  ['isvalid_47',['isValid',['../class_rnp_crypto.html#abcf881c3df59955359ec12f5cb794f1c',1,'RnpCrypto::isValid()'],['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
-  ['isvalidkeyid_48',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
-  ['itemkind_49',['ItemKind',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4',1,'StoreDragItem']]]
+  ['istargetspelled_43',['isTargetSpelled',['../class_path_validator.html#a373941a0115bec639224335b4ede6994',1,'PathValidator']]],
+  ['isunderlink_44',['isUnderLink',['../class_util.html#af4112ecd778ae8225a12fa96ce611425',1,'Util']]],
+  ['isusegit_45',['isUseGit',['../class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710',1,'QtPassSettings']]],
+  ['isusegrepsearch_46',['isUseGrepSearch',['../class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c',1,'QtPassSettings']]],
+  ['isuseotp_47',['isUseOtp',['../class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36',1,'QtPassSettings']]],
+  ['isvalid_48',['isValid',['../class_rnp_crypto.html#abcf881c3df59955359ec12f5cb794f1c',1,'RnpCrypto::isValid()'],['../class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2',1,'Totp::isValid()'],['../struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a',1,'UserInfo::isValid()']]],
+  ['isvalidkeyid_49',['isValidKeyId',['../class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1',1,'Util']]],
+  ['itemkind_50',['ItemKind',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4',1,'StoreDragItem']]]
 ];
