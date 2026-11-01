@@ -2603,8 +2603,9 @@ void tst_util::gitPinIsJudgedWhenGitRuns() {
  *        trusts it, as git's own ownership check would: from system, global
  *        or command-line config only, as `*`, the exact path (also through a
  *        link) or a prefix with a trailing slash and `*`; an empty value
- *        forgets what came before, and relative or local entries, or a file
- *        named by GIT_CONFIG, count for nothing (#2094).
+ *        forgets what came before, and relative or local entries, a file
+ *        named by GIT_CONFIG, or an includeIf on "gitdir:", count for
+ *        nothing (#2094).
  */
 void tst_util::gitPinHonoursSafeDirectory() {
 #ifndef Q_OS_UNIX
@@ -2713,6 +2714,27 @@ void tst_util::gitPinHonoursSafeDirectory() {
   QVERIFY(trust({real}));
   QVERIFY(pinned());
   qunsetenv("GIT_CONFIG");
+
+  // Includes as git's check takes them: an unconditional one counts; one
+  // on "gitdir:" never matches there, whichever folder it names, and
+  // another one's presence does not get in the way.
+  const auto writeGlobal = [&global](const QByteArray &text) {
+    QFile f(global);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(text) == text.size();
+  };
+  const QByteArray included = QFile::encodeName(file);
+  QVERIFY(writeGlobal("[include]\n\tpath = \"" + included + "\"\n"));
+  QVERIFY(pinned());
+  QVERIFY(writeGlobal("[safe]\n\tdirectory = \"" + QFile::encodeName(real) +
+                      "\"\n[includeIf \"gitdir:/elsewhere/\"]\n\tpath = \"" +
+                      included + "\"\n"));
+  QVERIFY(pinned());
+  QVERIFY(writeGlobal("[includeIf \"gitdir:" + QFile::encodeName(real) +
+                      "/\"]\n\tpath = \"" + included + "\"\n"));
+  QVERIFY(QDir::setCurrent(real));
+  QVERIFY(!pinned());
+  QVERIFY(QDir::setCurrent(cwd));
 
   // The command line counts.
   qputenv("GIT_CONFIG_COUNT", "1");

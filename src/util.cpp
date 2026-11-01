@@ -166,22 +166,30 @@ namespace {
  *         cannot be asked.
  */
 auto isSafeDirectory(const QString &root, const QString &git) -> bool {
+  // Outside any repository, as git reads its protected config: no
+  // repository's own config, and no includeIf "gitdir:" or "onbranch:"
+  // that matches (a GIT_DIR, even one that cannot exist, would be matched
+  // against them, and one that cannot exist makes git config fail). From
+  // "/", which a user cannot make a repository; a local scope is dropped
+  // below in any case.
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
-  // No repository, so no repository's own config: git's protected config
-  // is everything else.
-  env.insert(QStringLiteral("GIT_DIR"), QStringLiteral("/dev/null/.git"));
+  env.remove(QStringLiteral("GIT_DIR"));
   env.remove(QStringLiteral("GIT_WORK_TREE"));
+  env.remove(QStringLiteral("GIT_COMMON_DIR"));
   // git config alone reads GIT_CONFIG in place of the system and global
   // configuration (and reports it as "command"); the ownership check never
   // reads it.
   env.remove(QStringLiteral("GIT_CONFIG"));
+  QProcess process;
+  process.setProcessEnvironment(env);
+  process.setWorkingDirectory(QStringLiteral("/"));
   QString out;
   if (Executor::executeBlocking(
-          env, git.isEmpty() ? QStringLiteral("git") : git,
+          process, git.isEmpty() ? QStringLiteral("git") : git,
           {QStringLiteral("config"), QStringLiteral("--show-scope"),
            QStringLiteral("--type=path"), QStringLiteral("--get-all"),
            QStringLiteral("safe.directory")},
-          &out) != 0) {
+          QString(), &out) != 0) {
     return false;
   }
   bool safe = false;
