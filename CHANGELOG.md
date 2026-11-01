@@ -125,6 +125,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   then, for queued, blocking and re-encryption Git calls alike. On Windows
   (`;`) the pin does not repeat Git's SID-based owner check
   ([#2089](https://github.com/IJHack/QtPass/issues/2089)).
+- A pinned store another user owns gets Git again when `safe.directory`
+  trusts it, as Git itself would: read from system, global and command-line
+  configuration only (never the repository's own), as `*`, the store's
+  path or a parent's path followed by `/*`, an empty entry forgetting the
+  ones before it ([#2094](https://github.com/IJHack/QtPass/issues/2094)).
 - An entry saved into, or moved to, a folder that does not exist yet was
   encrypted to the store root's recipients, not to those of the nearest
   folder above it with a list of its own, as `pass` finds them: the lookup

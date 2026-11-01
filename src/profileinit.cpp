@@ -45,7 +45,8 @@ auto gitEnvironment(const QString &dir, const AppSettings &s)
   // patterns (see Pass::updateEnv()).
   env.insert(QStringLiteral("GIT_LITERAL_PATHSPECS"), QStringLiteral("1"));
   if (!s.gitUseParentRepository) {
-    for (const auto &[name, value] : Util::gitStoreVariables(dir)) {
+    for (const auto &[name, value] :
+         Util::gitStoreVariables(dir, s.gitExecutable)) {
       env.insert(name, value);
     }
   }
