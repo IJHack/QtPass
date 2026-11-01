@@ -310,6 +310,7 @@ private Q_SLOTS:
   void gitDoesNotClimbAboveTheStore();
   void gitStaysInTheStoreWhenItsParentHoldsTheSeparator();
   void gitPinIsJudgedWhenGitRuns();
+  void gitPinHonoursSafeDirectory();
   void readRegularFileIsBoundedAndRegular();
   void gitTakesStorePathsLiterally();
   void gpgErrorMessageKeyExpiredStatusToken();
@@ -469,7 +470,15 @@ void tst_util::cleanup() {
 /**
  * @brief tst_util::cleanupTestCase test case cleanup method
  */
-void tst_util::initTestCase() { isolateTestSettings(); }
+void tst_util::initTestCase() {
+  isolateTestSettings();
+  // None of the user's own git config: a safe.directory there would trust
+  // the stores the tests hand to another user.
+  qputenv("GIT_CONFIG_NOSYSTEM", "1");
+  qputenv("GIT_CONFIG_GLOBAL", "/dev/null");
+  qunsetenv("GIT_CONFIG_COUNT");
+  qunsetenv("GIT_CONFIG_PARAMETERS");
+}
 
 void tst_util::cleanupTestCase() {
   // No test case cleanup required; function intentionally left empty.
@@ -2590,6 +2599,114 @@ void tst_util::gitPinIsJudgedWhenGitRuns() {
 }
 
 /**
+ * @brief Another user's store is pinned after all when git's safe.directory
+ *        trusts it, as git's own ownership check would: from system, global
+ *        or command-line config only, as `*`, the exact path (also through a
+ *        link) or a prefix with a trailing slash and `*`; an empty value
+ *        forgets what came before, and relative or local entries count for
+ *        nothing (#2094).
+ */
+void tst_util::gitPinHonoursSafeDirectory() {
+#ifndef Q_OS_UNIX
+  QSKIP("the ownership check is Unix-only");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("git not found");
+  }
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  const QString store = QDir(home.path()).filePath(QStringLiteral("a:b/store"));
+  QVERIFY(QDir().mkpath(store));
+  QVERIFY(QProcess::execute(
+              git, {QStringLiteral("init"), QStringLiteral("-q"), store}) == 0);
+  const QString real = QFileInfo(store).canonicalFilePath();
+  const QString parent = QFileInfo(real).absolutePath();
+  const QString link = QDir(home.path()).filePath(QStringLiteral("link"));
+  QVERIFY(QFile::link(real, link));
+
+  const QString global = QDir(home.path()).filePath(QStringLiteral("global"));
+  qputenv("GIT_CONFIG_GLOBAL", QFile::encodeName(global));
+  const auto restore = qScopeGuard([] {
+    qputenv("GIT_CONFIG_GLOBAL", "/dev/null");
+    qunsetenv("GIT_CONFIG_COUNT");
+    qunsetenv("GIT_CONFIG_KEY_0");
+    qunsetenv("GIT_CONFIG_VALUE_0");
+  });
+  const auto trust = [&global](const QStringList &entries) {
+    QFile f(global);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+      return false;
+    }
+    f.write("[safe]\n");
+    for (const QString &entry : entries) {
+      f.write("\tdirectory = \"" + entry.toUtf8() + "\"\n");
+    }
+    return true;
+  };
+  const uint other = static_cast<uint>(::geteuid()) + 1;
+  const auto pinned = [&] {
+    for (const auto &[name, value] :
+         Util::gitStoreVariables(store, git, other)) {
+      if (name == QLatin1String("GIT_DIR")) {
+        return value == QDir(real).filePath(QStringLiteral(".git"));
+      }
+    }
+    return false;
+  };
+
+  QVERIFY(trust({}));
+  QVERIFY(!pinned());
+  QVERIFY(trust({real}));
+  QVERIFY(pinned());
+  QVERIFY(trust({link}));
+  QVERIFY(pinned());
+  QVERIFY(trust({QStringLiteral("*")}));
+  QVERIFY(pinned());
+  QVERIFY(trust({parent + QStringLiteral("/*")}));
+  QVERIFY(pinned());
+  // Below the store, not the store itself.
+  QVERIFY(trust({real + QStringLiteral("/*")}));
+  QVERIFY(!pinned());
+  // Forgotten by an empty entry, and trusted again after it.
+  QVERIFY(trust({QStringLiteral("*"), QString()}));
+  QVERIFY(!pinned());
+  QVERIFY(trust({QStringLiteral("*"), QString(), real}));
+  QVERIFY(pinned());
+  // Another folder, and one that does not exist.
+  QVERIFY(trust({home.path(), QStringLiteral("/nonexistent/*")}));
+  QVERIFY(!pinned());
+  // Relative entries, even where they would name the store.
+  const QString cwd = QDir::currentPath();
+  QVERIFY(QDir::setCurrent(parent));
+  const auto back = qScopeGuard([&cwd] { QDir::setCurrent(cwd); });
+  QVERIFY(trust({QStringLiteral("store"), QStringLiteral("./store")}));
+  QVERIFY(!pinned());
+  QVERIFY(QDir::setCurrent(real));
+  QVERIFY(trust({QStringLiteral(".")}));
+  QVERIFY(!pinned());
+  QVERIFY(QDir::setCurrent(cwd));
+
+  // The repository cannot vouch for itself, not even with QtPass started
+  // inside it.
+  QVERIFY(trust({}));
+  QVERIFY(QProcess::execute(
+              git, {QStringLiteral("-C"), store, QStringLiteral("config"),
+                    QStringLiteral("safe.directory"), QStringLiteral("*")}) ==
+          0);
+  QVERIFY(QDir::setCurrent(real));
+  QVERIFY(!pinned());
+  QVERIFY(QDir::setCurrent(cwd));
+
+  // The command line counts.
+  qputenv("GIT_CONFIG_COUNT", "1");
+  qputenv("GIT_CONFIG_KEY_0", "safe.directory");
+  qputenv("GIT_CONFIG_VALUE_0", QFile::encodeName(real));
+  QVERIFY(pinned());
+#endif
+}
+
+/**
  * @brief git splits GIT_CEILING_DIRECTORIES on ":" (";" on Windows): a store
  *        whose parent path holds one cannot be fenced by the ceiling, so
  *        GIT_DIR and GIT_WORK_TREE name the store's own repository instead
@@ -2668,7 +2785,7 @@ void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
   // neither the store's nor the one above.
   QHash<QString, QString> foreign;
   for (const auto &[name, value] :
-       Util::gitStoreVariables(store, static_cast<uint>(::geteuid()) + 1)) {
+       Util::gitStoreVariables(store, {}, static_cast<uint>(::geteuid()) + 1)) {
     foreign.insert(name, value);
   }
   QCOMPARE(foreign.value(QStringLiteral("GIT_DIR")),

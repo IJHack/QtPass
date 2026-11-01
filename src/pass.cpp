@@ -642,8 +642,8 @@ void Pass::updateEnv() {
     setEnvVar(QStringLiteral("GIT_CEILING_DIRECTORIES"),
               qEnvironmentVariable("GIT_CEILING_DIRECTORIES"));
   } else {
-    for (const auto &[name, value] :
-         Util::gitStoreVariables(m_settings.passStore)) {
+    for (const auto &[name, value] : Util::gitStoreVariables(
+             m_settings.passStore, m_settings.gitExecutable)) {
       setEnvVar(name, value);
     }
   }
@@ -658,8 +658,8 @@ auto Pass::withCurrentGitPin(QProcessEnvironment base) const
   }
   base.remove(QStringLiteral("GIT_DIR"));
   base.remove(QStringLiteral("GIT_WORK_TREE"));
-  for (const auto &[name, value] :
-       Util::gitStoreVariables(m_settings.passStore)) {
+  for (const auto &[name, value] : Util::gitStoreVariables(
+           m_settings.passStore, m_settings.gitExecutable)) {
     base.insert(name, value);
   }
   return base;

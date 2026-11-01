@@ -147,7 +147,81 @@ void Util::setGitOwnerForTests(std::optional<uint> user) {
   s_gitOwnerForTests = user;
 }
 
-auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
+#ifdef Q_OS_UNIX
+namespace {
+/**
+ * @brief Whether git's `safe.directory` trusts the repository at @p root,
+ * as git's ownership check would judge it in place of ownership.
+ *
+ * Read as git reads it: only from system, global and command-line
+ * configuration (a repository cannot vouch for itself), in order. `*`
+ * trusts every repository, an empty value forgets the entries before it,
+ * a path ending in a slash and `*` trusts what lies below it, and any other
+ * absolute path trusts that one folder, compared after resolving links.
+ * Relative entries (including git's ".") and paths that do not exist trust
+ * nothing.
+ * @param root The store's canonical path.
+ * @param git The git executable; "git" from PATH when empty.
+ * @return True when an entry names @p root; false when none does or git
+ *         cannot be asked.
+ */
+auto isSafeDirectory(const QString &root, const QString &git) -> bool {
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  // No repository, so no repository's own config: git's protected config
+  // is everything else.
+  env.insert(QStringLiteral("GIT_DIR"), QStringLiteral("/dev/null/.git"));
+  env.remove(QStringLiteral("GIT_WORK_TREE"));
+  QString out;
+  if (Executor::executeBlocking(
+          env, git.isEmpty() ? QStringLiteral("git") : git,
+          {QStringLiteral("config"), QStringLiteral("--show-scope"),
+           QStringLiteral("--type=path"), QStringLiteral("--get-all"),
+           QStringLiteral("safe.directory")},
+          &out) != 0) {
+    return false;
+  }
+  bool safe = false;
+  const QStringList lines = out.split(QLatin1Char('\n'));
+  for (const QString &line : lines) {
+    const qsizetype tab = line.indexOf(QLatin1Char('\t'));
+    if (tab < 0) {
+      continue;
+    }
+    const QString scope = line.left(tab);
+    if (scope != QLatin1String("system") && scope != QLatin1String("global") &&
+        scope != QLatin1String("command")) {
+      continue;
+    }
+    const QString value = line.mid(tab + 1);
+    if (value.isEmpty()) {
+      safe = false;
+    } else if (value == QLatin1String("*")) {
+      safe = true;
+    } else if (!QDir::isAbsolutePath(value)) {
+      continue;
+    } else if (value.endsWith(QLatin1String("/*"))) {
+      const QString base = value.chopped(2);
+      QString prefix = QFileInfo(base.isEmpty() ? QStringLiteral("/") : base)
+                           .canonicalFilePath();
+      if (prefix.isEmpty()) {
+        continue;
+      }
+      if (!prefix.endsWith(QLatin1Char('/'))) {
+        prefix += QLatin1Char('/');
+      }
+      safe = safe || root.startsWith(prefix);
+    } else {
+      const QString named = QFileInfo(value).canonicalFilePath();
+      safe = safe || (!named.isEmpty() && named == root);
+    }
+  }
+  return safe;
+}
+} // namespace
+#endif
+
+auto Util::gitStoreVariables(const QString &store, const QString &git,
+                             std::optional<uint> asUser)
     -> QList<std::pair<QString, QString>> {
   const QString ceiling = gitCeiling(store);
   if (ceiling.isEmpty()) {
@@ -191,13 +265,15 @@ auto Util::gitStoreVariables(const QString &store, std::optional<uint> asUser)
         }
       }
     }
-    if (!owned) {
+    // Or trusted as git would trust it in place of ownership.
+    if (!owned && !isSafeDirectory(root, git)) {
       gitDir = QStringLiteral("/dev/null/.git");
     }
 #else
     // Git for Windows runs the same ownership check during discovery, on
     // SIDs, with its own rules for the Administrators group; this pin skips
     // it there and does not repeat it (a known gap, #2089).
+    Q_UNUSED(git);
     Q_UNUSED(asUser);
 #endif
     vars.append({QStringLiteral("GIT_DIR"), gitDir});
