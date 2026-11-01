@@ -167,8 +167,8 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:acd16a6a2c0d0cb55406c99b72c9d299f" id="r_acd16a6a2c0d0cb55406c99b72c9d299f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acd16a6a2c0d0cb55406c99b72c9d299f">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:acd16a6a2c0d0cb55406c99b72c9d299f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously and return its exit code.  <br /></td></tr>
-<tr class="memitem:ad7f547c8721ba3dd2e3aa89492b4a8a1" id="r_ad7f547c8721ba3dd2e3aa89492b4a8a1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7f547c8721ba3dd2e3aa89492b4a8a1">executeBlocking</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr) -&gt; int</td></tr>
-<tr class="memdesc:ad7f547c8721ba3dd2e3aa89492b4a8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously on a caller-supplied QProcess, with optional cancellation.  <br /></td></tr>
+<tr class="memitem:a6b68c11023f1844048df6969600e200b" id="r_a6b68c11023f1844048df6969600e200b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6b68c11023f1844048df6969600e200b">executeBlocking</a> (QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td></tr>
+<tr class="memdesc:a6b68c11023f1844048df6969600e200b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously on a caller-supplied QProcess, with optional cancellation.  <br /></td></tr>
 <tr class="memitem:aec1ef83ae0df4b4a2773b5ad533c837e" id="r_aec1ef83ae0df4b4a2773b5ad533c837e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aec1ef83ae0df4b4a2773b5ad533c837e">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:aec1ef83ae0df4b4a2773b5ad533c837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
 <tr class="memitem:aa17378022bf90b96beb2a2ac0750751d" id="r_aa17378022bf90b96beb2a2ac0750751d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa17378022bf90b96beb2a2ac0750751d">executeBlocking</a> (const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
@@ -811,8 +811,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad7f547c8721ba3dd2e3aa89492b4a8a1" name="ad7f547c8721ba3dd2e3aa89492b4a8a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7f547c8721ba3dd2e3aa89492b4a8a1">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[4/4]</span></h2>
+<a id="a6b68c11023f1844048df6969600e200b" name="a6b68c11023f1844048df6969600e200b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b68c11023f1844048df6969600e200b">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -853,7 +853,12 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">-1</span>&#160;) -&gt;  int</td>
         </tr>
       </table>
   </td>
@@ -864,7 +869,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Run a command synchronously on a caller-supplied QProcess, with optional cancellation. </p>
-<p>The caller configures <code class="param">process</code> (environment, say) before the call; it must be a fresh, not yet started object. QProcess is not thread-safe, so <code class="param">process</code> belongs to the calling thread for the whole run: no other thread may call terminate(), kill() or anything else on it. To let a run be cancelled, pass <code class="param">cancel:</code> the wait then polls the flag, and once it is set the calling thread itself terminate()s the child, waits a short grace period, kill()s it if it is still running, and returns -1. Setting the flag is the only thing another thread does; it may do so at any time, before or during the run. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The caller configures <code class="param">process</code> (environment, say) before the call; it must be a fresh, not yet started object. QProcess is not thread-safe, so <code class="param">process</code> belongs to the calling thread for the whole run: no other thread may call terminate(), kill() or anything else on it. To let a run be cancelled, pass <code class="param">cancel:</code> the wait then polls the flag, and once it is set the calling thread itself terminate()s the child, waits a short grace period, kill()s it if it is still running, and returns -1. Setting the flag is the only thing another thread does; it may do so at any time, before or during the run. A run given <code class="param">timeoutMs</code> ends the same way once that time has passed, start included. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">process</td><td>Process object to run the command on. </td></tr>
     <tr><td class="paramname">app</td><td>Executable path. </td></tr>
@@ -873,10 +878,11 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">process_out</td><td>If non-null, receives stdout output. </td></tr>
     <tr><td class="paramname">process_err</td><td>If non-null, receives stderr output. </td></tr>
     <tr><td class="paramname">cancel</td><td>If non-null, a flag that ends the run when set. </td></tr>
+    <tr><td class="paramname">timeoutMs</td><td>Time for the whole run, start included; negative (the default) for none. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed or was cancelled. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code, or -1 if it failed to start, crashed, was cancelled or ran out of time. </dd></dl>
 
 </div>
 </div>
@@ -956,7 +962,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00391">391</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00397">397</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
