@@ -186,24 +186,15 @@ auto isSafeDirectory(const QString &root, const QString &git) -> bool {
   // Bounded: Git calls wait for this, and a git that never answers trusts
   // nothing.
   constexpr int kQueryTimeoutMs = 5000;
-  process.start(
-      Executor::resolveExecutable(git.isEmpty() ? QStringLiteral("git") : git),
-      {QStringLiteral("config"), QStringLiteral("--show-scope"),
-       QStringLiteral("--type=path"), QStringLiteral("--get-all"),
-       QStringLiteral("safe.directory")});
-  if (!process.waitForStarted(kQueryTimeoutMs)) {
+  QString out;
+  if (Executor::executeBlocking(
+          process, git.isEmpty() ? QStringLiteral("git") : git,
+          {QStringLiteral("config"), QStringLiteral("--show-scope"),
+           QStringLiteral("--type=path"), QStringLiteral("--get-all"),
+           QStringLiteral("safe.directory")},
+          QString(), &out, nullptr, nullptr, kQueryTimeoutMs) != 0) {
     return false;
   }
-  process.closeWriteChannel();
-  if (!process.waitForFinished(kQueryTimeoutMs)) {
-    process.kill();
-    process.waitForFinished(1000);
-    return false;
-  }
-  if (process.exitStatus() != QProcess::NormalExit || process.exitCode() != 0) {
-    return false;
-  }
-  const QString out = QString::fromUtf8(process.readAllStandardOutput());
   bool safe = false;
   const QStringList lines = out.split(QLatin1Char('\n'));
   for (const QString &line : lines) {

@@ -2,10 +2,12 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "executor.h"
 #include <QCoreApplication>
+#include <QDeadlineTimer>
 #include <QDir>
 #include <QFileInfo>
 #include <QStringDecoder>
 #include <algorithm>
+#include <climits>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -305,36 +307,61 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
 namespace {
 
 /**
- * @brief Wait for @p process to finish, stopping it when @p cancel is set.
+ * @brief Stop a running @p process from the thread that owns it:
+ * terminate(), then kill() if it is still running after a grace period.
+ * A console gpg ignores terminate() on Windows (WM_CLOSE), hence the kill.
+ */
+void stopBlocking(QProcess &process) {
+  process.terminate();
+  if (!process.waitForFinished(kBlockingKillGraceMs)) {
+    process.kill();
+    process.waitForFinished(-1);
+  }
+}
+
+/**
+ * @brief What is left of @p deadline, as QProcess's wait functions take it:
+ * -1 for none.
+ */
+auto msecsLeft(const QDeadlineTimer &deadline) -> int {
+  if (deadline.isForever()) {
+    return -1;
+  }
+  return static_cast<int>(
+      std::clamp<qint64>(deadline.remainingTime(), 0, INT_MAX));
+}
+
+/**
+ * @brief Wait for @p process to finish, stopping it when @p cancel is set
+ * or @p deadline passes.
  *
  * Polls the flag; every QProcess call, terminate()/kill() included, stays on
  * this thread, so another thread can never act on an exited process (or a
- * pid the OS has since reused). A console gpg ignores terminate() on
- * Windows (WM_CLOSE), hence the kill after a grace period.
- * @return false when it was cancelled.
+ * pid the OS has since reused).
+ * @return false when it was cancelled or ran out of time.
  */
-auto waitOrCancel(QProcess &process, const std::atomic_bool *cancel) -> bool {
+auto waitOrCancel(QProcess &process, const std::atomic_bool *cancel,
+                  const QDeadlineTimer &deadline) -> bool {
   if (cancel == nullptr) {
-    // waitForFinished(-1) can fail (a poll error) with the child still
-    // running; that is not completion. Stop it rather than report it done.
-    if (!process.waitForFinished(-1) &&
+    // waitForFinished() can also fail (a poll error) with the child still
+    // running; that is not completion either. Stop it rather than report
+    // it done.
+    if (!process.waitForFinished(msecsLeft(deadline)) &&
         process.state() != QProcess::NotRunning) {
-      process.kill();
-      process.waitForFinished(kBlockingKillGraceMs);
+      stopBlocking(process);
       return false;
     }
     return true;
   }
-  while (!process.waitForFinished(kBlockingCancelPollMs)) {
+  while (!process.waitForFinished(
+      deadline.isForever()
+          ? kBlockingCancelPollMs
+          : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {
     if (process.state() == QProcess::NotRunning) {
       return true;
     }
-    if (cancel->load()) {
-      process.terminate();
-      if (!process.waitForFinished(kBlockingKillGraceMs)) {
-        process.kill();
-        process.waitForFinished(-1);
-      }
+    if (cancel->load() || deadline.hasExpired()) {
+      stopBlocking(process);
       return false;
     }
   }
@@ -346,12 +373,19 @@ auto waitOrCancel(QProcess &process, const std::atomic_bool *cancel) -> bool {
 auto Executor::runBlocking(QProcess &process, const QString &app,
                            const QStringList &args, const QString &input,
                            QString *process_out, QString *process_err,
-                           const std::atomic_bool *cancel) -> int {
+                           const std::atomic_bool *cancel, int timeoutMs)
+    -> int {
   if (cancel != nullptr && cancel->load())
     return -1;
+  const QDeadlineTimer deadline = timeoutMs < 0
+                                      ? QDeadlineTimer(QDeadlineTimer::Forever)
+                                      : QDeadlineTimer(timeoutMs);
   startProcess(process, app, args);
-  if (!process.waitForStarted(-1)) {
+  if (!process.waitForStarted(msecsLeft(deadline))) {
     qCDebug(lcQtPass) << "Process failed to start:" << app;
+    if (process.state() != QProcess::NotRunning) {
+      stopBlocking(process);
+    }
     return -1;
   }
   if (!input.isEmpty()) {
@@ -362,7 +396,7 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
   }
   // Always close stdin so a child blocking on EOF doesn't hang.
   process.closeWriteChannel();
-  if (!waitOrCancel(process, cancel)) {
+  if (!waitOrCancel(process, cancel, deadline)) {
     return -1;
   }
   // Read before judging the exit: a process that crashed may have said why,
@@ -386,9 +420,10 @@ auto Executor::executeBlocking(const QString &app, const QStringList &args,
 auto Executor::executeBlocking(QProcess &process, const QString &app,
                                const QStringList &args, const QString &input,
                                QString *process_out, QString *process_err,
-                               const std::atomic_bool *cancel) -> int {
+                               const std::atomic_bool *cancel, int timeoutMs)
+    -> int {
   return runBlocking(process, app, args, input, process_out, process_err,
-                     cancel);
+                     cancel, timeoutMs);
 }
 
 auto Executor::executeBlocking(const QString &app, const QStringList &args,

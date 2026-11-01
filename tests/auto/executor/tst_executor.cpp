@@ -64,6 +64,10 @@ private Q_SLOTS:
   void executeBlockingCancelFlagEndsChild();
   void executeBlockingCancelFlagKillsChildIgnoringTerminate();
   void executeBlockingCancelFlagAlreadySetSkipsStart();
+  void executeBlockingTimeoutEndsChild();
+  void executeBlockingTimeoutKillsChildIgnoringTerminate();
+  void executeBlockingTimeoutWithCancelFlag();
+  void executeBlockingWithinTimeoutReturnsOutput();
   void wslPrefixBlockingUsesExec();
   void wslPrefixAsyncUsesExec();
   void everyWslSpellingReachesTheSameArgv();
@@ -1129,6 +1133,77 @@ void tst_executor::executeBlockingCancelFlagKillsChildIgnoringTerminate() {
   QVERIFY2(elapsedMs < 5000,
            qPrintable(QStringLiteral("cancel took %1 ms").arg(elapsedMs)));
   QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A run given a deadline ends once it has passed, as a cancelled one does,
+// and does not report success.
+void tst_executor::executeBlockingTimeoutEndsChild() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  QElapsedTimer timer;
+  timer.start();
+  const int rc = Executor::executeBlocking(
+      process, sh, {QStringLiteral("-c"), QStringLiteral("exec sleep 60")},
+      QString(), nullptr, nullptr, nullptr, 300);
+  const qint64 elapsedMs = timer.elapsed();
+  QCOMPARE(rc, -1);
+  QVERIFY2(elapsedMs >= 250 && elapsedMs < 3000,
+           qPrintable(QStringLiteral("timeout took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A child that ignores SIGTERM is kill()ed after the grace period.
+void tst_executor::executeBlockingTimeoutKillsChildIgnoringTerminate() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  QElapsedTimer timer;
+  timer.start();
+  const int rc = Executor::executeBlocking(
+      process, sh,
+      {QStringLiteral("-c"), QStringLiteral("trap '' TERM; sleep 60")},
+      QString(), nullptr, nullptr, nullptr, 300);
+  const qint64 elapsedMs = timer.elapsed();
+  QCOMPARE(rc, -1);
+  QVERIFY2(elapsedMs < 5000,
+           qPrintable(QStringLiteral("timeout took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// With a cancel flag that is never set, the deadline still ends the run.
+void tst_executor::executeBlockingTimeoutWithCancelFlag() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  const std::atomic_bool cancel{false};
+  QProcess process;
+  QElapsedTimer timer;
+  timer.start();
+  const int rc = Executor::executeBlocking(
+      process, sh, {QStringLiteral("-c"), QStringLiteral("exec sleep 60")},
+      QString(), nullptr, nullptr, &cancel, 300);
+  const qint64 elapsedMs = timer.elapsed();
+  QCOMPARE(rc, -1);
+  QVERIFY2(elapsedMs < 3000,
+           qPrintable(QStringLiteral("timeout took %1 ms").arg(elapsedMs)));
+  QCOMPARE(process.state(), QProcess::NotRunning);
+}
+
+// A run that finishes in time is not affected by its deadline.
+void tst_executor::executeBlockingWithinTimeoutReturnsOutput() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QProcess process;
+  QString out;
+  const int rc = Executor::executeBlocking(
+      process, sh, {QStringLiteral("-c"), QStringLiteral("echo hi; exit 3")},
+      QString(), &out, nullptr, nullptr, 10000);
+  QCOMPARE(rc, 3);
+  QCOMPARE(out.trimmed(), QStringLiteral("hi"));
 }
 
 // A flag that is already set must refuse the run without starting anything.
