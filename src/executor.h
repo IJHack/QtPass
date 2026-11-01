@@ -104,12 +104,16 @@ class Executor : public QObject {
    * @param process_out If non-null, receives stdout.
    * @param process_err If non-null, receives stderr.
    * @param cancel Optional flag another thread may set to end the run.
-   * @return Process exit code, or -1 on start/crash failure or cancel.
+   * @param timeoutMs Time for the whole run, start included; negative for
+   *        none.
+   * @return Process exit code, or -1 on start/crash failure, cancel or
+   *         timeout.
    */
   static auto runBlocking(QProcess &process, const QString &app,
                           const QStringList &args, const QString &input,
                           QString *process_out, QString *process_err,
-                          const std::atomic_bool *cancel = nullptr) -> int;
+                          const std::atomic_bool *cancel = nullptr,
+                          int timeoutMs = -1) -> int;
 
 public:
   /**
@@ -197,7 +201,8 @@ public:
    * is set the calling thread itself terminate()s the child, waits a short
    * grace period, kill()s it if it is still running, and returns -1. Setting
    * the flag is the only thing another thread does; it may do so at any time,
-   * before or during the run.
+   * before or during the run. A run given @p timeoutMs ends the same way
+   * once that time has passed, start included.
    * @param process Process object to run the command on.
    * @param app Executable path.
    * @param args Command arguments.
@@ -205,15 +210,16 @@ public:
    * @param process_out If non-null, receives stdout output.
    * @param process_err If non-null, receives stderr output.
    * @param cancel If non-null, a flag that ends the run when set.
-   * @return Process exit code, or -1 if it failed to start, crashed or was
-   * cancelled.
+   * @param timeoutMs Time for the whole run, start included; negative (the
+   *        default) for none.
+   * @return Process exit code, or -1 if it failed to start, crashed, was
+   * cancelled or ran out of time.
    */
-  [[nodiscard]] static auto
-  executeBlocking(QProcess &process, const QString &app,
-                  const QStringList &args, const QString &input = QString(),
-                  QString *process_out = nullptr,
-                  QString *process_err = nullptr,
-                  const std::atomic_bool *cancel = nullptr) -> int;
+  [[nodiscard]] static auto executeBlocking(
+      QProcess &process, const QString &app, const QStringList &args,
+      const QString &input = QString(), QString *process_out = nullptr,
+      QString *process_err = nullptr, const std::atomic_bool *cancel = nullptr,
+      int timeoutMs = -1) -> int;
 
   /**
    * @brief Run a command synchronously capturing stdout and stderr.
