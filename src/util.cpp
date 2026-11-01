@@ -171,6 +171,10 @@ auto isSafeDirectory(const QString &root, const QString &git) -> bool {
   // is everything else.
   env.insert(QStringLiteral("GIT_DIR"), QStringLiteral("/dev/null/.git"));
   env.remove(QStringLiteral("GIT_WORK_TREE"));
+  // git config alone reads GIT_CONFIG in place of the system and global
+  // configuration (and reports it as "command"); the ownership check never
+  // reads it.
+  env.remove(QStringLiteral("GIT_CONFIG"));
   QString out;
   if (Executor::executeBlocking(
           env, git.isEmpty() ? QStringLiteral("git") : git,

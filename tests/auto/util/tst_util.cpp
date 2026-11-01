@@ -2603,8 +2603,8 @@ void tst_util::gitPinIsJudgedWhenGitRuns() {
  *        trusts it, as git's own ownership check would: from system, global
  *        or command-line config only, as `*`, the exact path (also through a
  *        link) or a prefix with a trailing slash and `*`; an empty value
- *        forgets what came before, and relative or local entries count for
- *        nothing (#2094).
+ *        forgets what came before, and relative or local entries, or a file
+ *        named by GIT_CONFIG, count for nothing (#2094).
  */
 void tst_util::gitPinHonoursSafeDirectory() {
 #ifndef Q_OS_UNIX
@@ -2632,6 +2632,7 @@ void tst_util::gitPinHonoursSafeDirectory() {
     qunsetenv("GIT_CONFIG_COUNT");
     qunsetenv("GIT_CONFIG_KEY_0");
     qunsetenv("GIT_CONFIG_VALUE_0");
+    qunsetenv("GIT_CONFIG");
   });
   const auto trust = [&global](const QStringList &entries) {
     QFile f(global);
@@ -2697,6 +2698,21 @@ void tst_util::gitPinHonoursSafeDirectory() {
   QVERIFY(QDir::setCurrent(real));
   QVERIFY(!pinned());
   QVERIFY(QDir::setCurrent(cwd));
+
+  // GIT_CONFIG is git config's alone: the ownership check does not read
+  // it, and it hides neither the global entries nor stands in for them.
+  const QString file = QDir(home.path()).filePath(QStringLiteral("file"));
+  {
+    QFile f(file);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("[safe]\n\tdirectory = *\n");
+  }
+  qputenv("GIT_CONFIG", QFile::encodeName(file));
+  QVERIFY(trust({}));
+  QVERIFY(!pinned());
+  QVERIFY(trust({real}));
+  QVERIFY(pinned());
+  qunsetenv("GIT_CONFIG");
 
   // The command line counts.
   qputenv("GIT_CONFIG_COUNT", "1");
