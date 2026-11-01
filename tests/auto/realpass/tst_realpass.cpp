@@ -746,6 +746,15 @@ void tst_realpass::initWritesEnabledKeysRelativeToTheStore() {
     RealPass viaLink;
     viaLink.init(linked);
     viaLink.updateEnv();
+    // Any other operation handed that spelling breaks the path rule and
+    // says so; Init() places it itself, so it does not.
+    const QRegularExpression offRule(QStringLiteral("link target"));
+    QTest::ignoreMessage(QtWarningMsg, offRule);
+    QFile::remove(m_log);
+    viaLink.Show(QFileInfo(m_store).canonicalFilePath() +
+                 QStringLiteral("/folder/entry"));
+    QCOMPARE(waitForCall().args.value(0), QStringLiteral("show"));
+    QTest::failOnWarning(offRule);
     QFile::remove(m_log);
     viaLink.Init(QFileInfo(m_store).canonicalFilePath() +
                      QStringLiteral("/folder"),

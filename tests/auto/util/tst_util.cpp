@@ -347,6 +347,7 @@ private Q_SLOTS:
   void isPathInStoreAllowsNewChild();
   void isPathInStoreRejectsEmptyArgs();
   void storeRelativePathFollowsTheCheck();
+  void isTargetSpelledNamesOnlyTheTargetSpelling();
   // .gpg-id permission hardening (security)
   void writeGpgIdFileSetsOwnerOnlyPerms();
   void writeGpgIdFileCanBeWrittenAgainAfterLockingDown();
@@ -3539,6 +3540,32 @@ void tst_util::storeRelativePathFollowsTheCheck() {
            QStringLiteral("team"));
   QCOMPARE(PathValidator::storeRelativePath(root, linkedRoot + "/team"),
            QStringLiteral("team"));
+#endif
+}
+
+/**
+ * @brief isTargetSpelled() flags a path under a linked root's target that is
+ *        not under the root as configured; the configured spelling, a path
+ *        outside the store, a relative one, or a root that is no link are not.
+ */
+void tst_util::isTargetSpelledNamesOnlyTheTargetSpelling() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  QVERIFY(!PathValidator::isTargetSpelled(root, root + "/team/e.gpg"));
+  QVERIFY(!PathValidator::isTargetSpelled(root, QStringLiteral("team/e.gpg")));
+#ifndef Q_OS_WIN
+  QTemporaryDir links;
+  QVERIFY(links.isValid());
+  const QString linked = QDir(links.path()).filePath("store");
+  QVERIFY(QFile::link(root, linked));
+  const QString canonical = QFileInfo(root).canonicalFilePath();
+  QVERIFY(PathValidator::isTargetSpelled(linked, canonical + "/team/e.gpg"));
+  QVERIFY(PathValidator::isTargetSpelled(linked, canonical));
+  QVERIFY(!PathValidator::isTargetSpelled(linked, linked + "/team/e.gpg"));
+  QVERIFY(!PathValidator::isTargetSpelled(linked + "/", linked + "/team"));
+  QVERIFY(!PathValidator::isTargetSpelled(linked, canonical + "-other/x"));
+  QVERIFY(!PathValidator::isTargetSpelled(linked, QStringLiteral("team")));
 #endif
 }
 

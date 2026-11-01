@@ -68,3 +68,27 @@ auto PathValidator::storeRelativePath(const QString &storeRoot,
   }
   return resolved.mid(rootCanon.size() + 1);
 }
+
+auto PathValidator::isTargetSpelled(const QString &storeRoot,
+                                    const QString &path) -> bool {
+  if (storeRoot.isEmpty() || !QDir::isAbsolutePath(path)) {
+    return false;
+  }
+#ifdef Q_OS_WIN
+  constexpr auto cs = Qt::CaseInsensitive;
+#else
+  constexpr auto cs = Qt::CaseSensitive;
+#endif
+  const QString root = QDir::cleanPath(storeRoot);
+  const QString canonical = QDir(root).canonicalPath();
+  if (canonical.isEmpty() || canonical.compare(root, cs) == 0) {
+    return false;
+  }
+  const auto atOrUnder = [cs](const QString &p, const QString &dir) {
+    const QString prefix =
+        dir.endsWith(QLatin1Char('/')) ? dir : dir + QLatin1Char('/');
+    return p.compare(dir, cs) == 0 || p.startsWith(prefix, cs);
+  };
+  const QString cleaned = QDir::cleanPath(path);
+  return !atOrUnder(cleaned, root) && atOrUnder(cleaned, canonical);
+}

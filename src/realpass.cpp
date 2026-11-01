@@ -369,9 +369,9 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // through a link and a folder spelled through its target agree (a lexical
   // relativeFilePath() made that ../../target/dir, which pass refuses).
   QString dirWithoutPassdir;
-  if (refuseLinkedPath(folder) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id")) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig")) ||
+  if (refuseLinkedPath(folder, true, true) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id"), true, true) ||
+      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"), true, true) ||
       refuseFolderOutsideStore(folder, &dirWithoutPassdir)) {
     return;
   }

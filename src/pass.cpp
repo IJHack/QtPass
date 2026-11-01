@@ -755,10 +755,21 @@ auto nearestGpgId(const GpgIdLookup &lookup) -> std::optional<QString> {
 
 } // namespace
 
-auto Pass::refuseLinkedPath(const QString &path, bool includeSelf) -> bool {
+auto Pass::refuseLinkedPath(const QString &path, bool includeSelf, bool placed)
+    -> bool {
   const QString full = QDir::isAbsolutePath(path)
                            ? path
                            : QDir(m_settings.passStore).filePath(path);
+  // The link check below walks only under the store as configured: a path
+  // spelled through the root's link target would get no more than the
+  // entry itself judged. No caller makes one; say so if one starts to.
+  if (!placed && PathValidator::isTargetSpelled(m_settings.passStore, full)) {
+    qCWarning(lcQtPass)
+        << "Path spelled through the store root's link target, not as the "
+           "store is configured; Pass operations expect the configured "
+           "spelling:"
+        << full;
+  }
   if (!Util::isUnderLink(full, m_settings.passStore, includeSelf)) {
     return false;
   }
