@@ -2741,6 +2741,29 @@ void tst_util::gitPinHonoursSafeDirectory() {
   qputenv("GIT_CONFIG_KEY_0", "safe.directory");
   qputenv("GIT_CONFIG_VALUE_0", QFile::encodeName(real));
   QVERIFY(pinned());
+
+  // A git that never answers trusts nothing, and is not waited for.
+  const QString stuck = QDir(home.path()).filePath(QStringLiteral("stuck-git"));
+  {
+    QFile f(stuck);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("#!/bin/sh\nexec sleep 60\n");
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  QElapsedTimer waited;
+  waited.start();
+  bool stuckPinned = false;
+  for (const auto &[name, value] :
+       Util::gitStoreVariables(store, stuck, other)) {
+    if (name == QLatin1String("GIT_DIR")) {
+      stuckPinned = value != QLatin1String("/dev/null/.git");
+    }
+  }
+  QVERIFY(!stuckPinned);
+  QVERIFY2(waited.elapsed() < 20000,
+           qPrintable(QString::number(waited.elapsed())));
 #endif
 }
 
