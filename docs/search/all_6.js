@@ -57,7 +57,7 @@ var searchData=
   ['gitpull_5fb_54',['GitPull_b',['../class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2',1,'ImitatePass::GitPull_b()'],['../class_pass.html#a7a109d5c0a7f565398b7238c32bb6328',1,'Pass::GitPull_b()'],['../class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210',1,'RealPass::GitPull_b()']]],
   ['gitpush_55',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]],
   ['gitready_56',['gitReady',['../class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219',1,'ImitatePass']]],
-  ['gitstorevariables_57',['gitStoreVariables',['../class_util.html#af707d08c525092779706139369753d6b',1,'Util']]],
+  ['gitstorevariables_57',['gitStoreVariables',['../class_util.html#a5bf7bba1e7d38a370b41d9acb1204eea',1,'Util']]],
   ['gittracks_58',['gitTracks',['../class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3',1,'ImitatePass']]],
   ['gituseparentrepository_59',['gitUseParentRepository',['../struct_app_settings.html#a7cb6dcad3fce49e715f4d8873f98c3ed',1,'AppSettings']]],
   ['gpg_5fgenkeys_60',['GPG_GENKEYS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c',1,'Enums']]],
