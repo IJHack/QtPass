@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation>Schowek przywrócony</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -432,12 +432,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po wyczyszczeniu schowka przywracana jest jego poprzednia zawartość (sprzed operacji kopiowania) — podobnie jak w&#xa0;przypadku użycia polecenia `pass -c` — chyba że w&#xa0;międzyczasie do schowka skopiowano coś innego. Przywracany jest wyłącznie tekst; formatowanie nie zostaje odtworzone. Do tego momentu tekst pozostaje w&#xa0;pamięci. W&#xa0;środowiskach, w&#xa0;których odczyt zawartości schowka wymaga posiadania fokusu (niektóre środowiska graficzne oparte na protokole Wayland), schowek jest po prostu czyszczony.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Przywróć poprzednią zawartość schowka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -453,27 +453,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrywają również inne sekrety:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukrywaj również pola zawierające poufne informacje — nie tylko samo hasło; dotyczy to pól, których nazwa zawiera jedno z&#xa0;określonych słów. Opcja „Wyłączone”: ukrywane jest wyłącznie hasło.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z&#xa0;tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z&#xa0;listy.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation>Przywróć domyślne wartości: kody PIN, kody kart, klucze, tokeny, kody odzyskiwania i&#xa0;tym podobne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -682,7 +682,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="412"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 podpisuje dane tym samym kluczem dla innego magazynu. Lista odbiorców podpisana dla jednego z&#xa0;tych magazynów jest akceptowana w&#xa0;drugim: należy użyć osobnego klucza podpisywania dla każdego magazynu, którego lista odbiorców jest inna.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="434"/>
@@ -1320,7 +1320,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation>Element %1 nie znajduje się w&#xa0;magazynie haseł, albo nazwa folderu na ścieżce do niego zawiera znak podziału wiersza lub inny znak sterujący, których podpisana lista nie może zarejestrować.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1981,12 +1981,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowe dane wejściowe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa oraz hasło nie mogą zawierać znaków podziału wiersza.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2857,14 +2857,16 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zapisane, niezatwierdzone</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wpis został zapisany w&#xa0;magazynie, ale jego zapisanie w&#xa0;git nie powiodło się. Co zostało zgłoszone:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="766"/>
@@ -2874,7 +2876,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="778"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Element %1 nie znajduje się w&#xa0;magazynie haseł. Odbiorcy są określeni dla całego magazynu lub znajdującego się w&#xa0;nim folderu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="788"/>
@@ -3154,7 +3156,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="238"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skonfigurowany katalog domowy GPG %1 nie istnieje.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="260"/>
@@ -3395,7 +3397,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="142"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation>Sprawdzanie list odbiorców w&#xa0;%1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="249"/>
@@ -3421,7 +3423,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="349"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Dowiązanie %1 zostało usunięte i&#xa0;nie jest już śledzone przez git, jednak zatwierdzenie zmian zakończyło się niepowodzeniem: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="468"/>
