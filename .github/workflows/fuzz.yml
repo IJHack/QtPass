@@ -80,7 +80,7 @@ jobs:
 
       - name: Install Qt
         if: steps.need_fuzz.outputs.run_fuzz == 'true'
-        uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125 # v4.4.1
+        uses: jurplel/install-qt-action@b344308e4483fc892e0d27b3cd1b173ebdd95f06 # v4.5.0
         with:
           # The floor QtPass supports, as in the other workflows.
           version: "6.8"
