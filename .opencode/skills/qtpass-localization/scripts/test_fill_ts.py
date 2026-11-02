@@ -12,8 +12,8 @@ import os
 import subprocess
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
-from unittest import mock
 
 _PATH = Path(__file__).with_name("fill_ts.py")
 _SPEC = importlib.util.spec_from_file_location("fill_ts", _PATH)
@@ -211,7 +211,7 @@ class LlmTest(unittest.TestCase):
 
         with (
             tempfile.TemporaryDirectory() as tmp,
-            mock.patch.object(fill_ts.time, "sleep"),
+            unittest.mock.patch.object(fill_ts.time, "sleep"),
         ):
             cache = os.path.join(tmp, "cache.json")
             (data,) = self.run_llm(down, ["nl_NL"], cache)
@@ -381,7 +381,7 @@ class ReviewFileTest(unittest.TestCase):
         with (
             contextlib.chdir(self.tmp.name),
             contextlib.redirect_stdout(out),
-            mock.patch.dict(os.environ, self.env, clear=True),
+            unittest.mock.patch.dict(os.environ, self.env, clear=True),
         ):
             status = fill_ts.cmd_review(argparse.Namespace(**args), ask)
         return status, out.getvalue(), Path(self.path).read_text(encoding="utf-8")
