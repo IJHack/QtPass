@@ -56,8 +56,9 @@ public:
    * pass fences git in with GIT_CEILING_DIRECTORIES="$PREFIX/..", spelled
    * as the store path is given, and unsets GIT_DIR and GIT_WORK_TREE. git
    * splits that list on ":", so a colon anywhere in the path (above the
-   * store or in its own name) leaves no ceiling at the parent. A store
-   * without its own `.git` then finds a repository in a folder above it,
+   * store or in its own name) leaves no ceiling at the parent; a piece can
+   * still be a ceiling further up, which git keeps to, and so does this. A
+   * store without its own `.git` then finds a repository above it,
    * and pass adds and commits there on every change, whether or not QtPass
    * uses Git. QtPass cannot fence pass in from outside, so this is for a
    * warning. Always empty on Windows, where pass runs in WSL.

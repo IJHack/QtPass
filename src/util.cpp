@@ -152,8 +152,10 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   // string: QDir and QFileInfo clean a path by name, and "link/.." is the
   // parent of the link's target, not the folder the link is in. On macOS
   // the temporary folder is under /var, a link to /private/var.
+  // Absolute as git means it, a leading "/" (Qt would take ":name" for a
+  // resource path).
   QString path =
-      QDir::isRelativePath(store) ? QDir::currentPath() + u'/' + store : store;
+      store.startsWith(u'/') ? store : QDir::currentPath() + u'/' + store;
   while (path.size() > 1 && path.endsWith(u'/')) {
     path.chop(1);
   }
@@ -168,14 +170,34 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   }
   const QString real = QFileInfo(path).canonicalFilePath();
   const QString start = real.isEmpty() ? QDir::cleanPath(path) : real;
+  // The pieces of pass's ceiling as git takes them (setup.c): relative
+  // ones are dropped, the rest resolved, one that cannot be resolved is
+  // dropped. A piece can still be a real ceiling: "/repo/:vault/.." holds
+  // "/repo/". (git only cleans the pieces after an empty one, "::"; that
+  // differs only with a link in such a piece.)
+  QString ceiling;
+  for (const QString &piece :
+       (store + QStringLiteral("/..")).split(QLatin1Char(':'))) {
+    if (!piece.startsWith(u'/')) {
+      continue;
+    }
+    const QString entry = QFileInfo(piece).canonicalFilePath();
+    // git stops below the longest entry the start folder lies under.
+    const QString under = entry == u'/' ? entry : entry + u'/';
+    if (!entry.isEmpty() && start.startsWith(under) &&
+        entry.size() > ceiling.size()) {
+      ceiling = entry;
+    }
+  }
   // The store's own repository comes first; only without one does git look
-  // further up. By name from here: the real path holds no link or "..".
+  // further up, and never into the ceiling. By name from here: the real
+  // path holds no link or "..".
   for (QString dir = start;;) {
     if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral(".git")))) {
       return exists && dir == start ? QString() : dir;
     }
     const QString up = QFileInfo(dir).absolutePath();
-    if (up == dir) {
+    if (up == dir || up == ceiling) {
       return {};
     }
     dir = up;

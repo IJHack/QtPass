@@ -2848,10 +2848,51 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
     QCOMPARE(Util::repositoryPassClimbsTo(store), real);
   }
 
+  // The first piece of "home/:vault/.." is "home/", a ceiling git keeps.
+  // By string: QDir takes ":vault" for a resource path.
+  const QString vault = home + QStringLiteral("/:vault");
+  QVERIFY(QDir().mkpath(vault));
+  QVERIFY(passGit(vault).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(vault).isEmpty());
+  // Folders named ":" and ":x": the pieces are "home/" and "/", and the
+  // longer one stops git.
+  const QString twoCeilings = home + QStringLiteral("/:/:x");
+  QVERIFY(QDir().mkpath(twoCeilings));
+  QVERIFY(passGit(twoCeilings).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(twoCeilings).isEmpty());
+  // A piece naming a folder that is not above the store is no ceiling for
+  // it, however long.
+  const QString elsewhere = dir.filePath(QStringLiteral("elsewhere"));
+  QVERIFY(QDir().mkpath(elsewhere));
+  const QString notAbove =
+      home + QStringLiteral("/:") + elsewhere + QStringLiteral("/:y");
+  QVERIFY(QDir().mkpath(notAbove));
+  QVERIFY(passGit(notAbove).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(notAbove).isEmpty());
+  {
+    // Relative pieces are no ceiling, wherever QtPass runs from; a relative
+    // store is under the working folder, also one named ":w".
+    const QString cwd = QDir::currentPath();
+    const auto back = qScopeGuard([&cwd] { QDir::setCurrent(cwd); });
+    QVERIFY(QDir(home).mkpath(QStringLiteral("sub/q:.")));
+    QVERIFY(QDir::setCurrent(QDir(home).filePath(QStringLiteral("sub"))));
+    const QString relativePiece = home + QStringLiteral("/sub/q:.");
+    QCOMPARE(passGit(relativePiece), real);
+    QCOMPARE(Util::repositoryPassClimbsTo(relativePiece), real);
+    QVERIFY(QDir::setCurrent(home));
+    QVERIFY(QDir().mkpath(home + QStringLiteral("/:w")));
+    QCOMPARE(passGit(QStringLiteral(":w")), real);
+    QCOMPARE(Util::repositoryPassClimbsTo(QStringLiteral(":w")), real);
+  }
+
   const QString plain = QDir(home).filePath(QStringLiteral("plain/store"));
   QVERIFY(QDir().mkpath(plain));
   QVERIFY(passGit(plain).isEmpty());
   QVERIFY(Util::repositoryPassClimbsTo(plain).isEmpty());
+  // Not there yet, but pass creates it and then has its ceiling.
+  QVERIFY(Util::repositoryPassClimbsTo(
+              QDir(home).filePath(QStringLiteral("plain/new/store")))
+              .isEmpty());
 
   const QString own = QDir(home).filePath(QStringLiteral("c:d/own"));
   QVERIFY(QDir().mkpath(own));
