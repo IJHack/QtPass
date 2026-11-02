@@ -6262,7 +6262,11 @@ void tst_util::refuseLinkedPathWarnsOnlyOnAnUnplacedTargetSpelling() {
   AppSettings s;
   s.passStore = root;
   pass.init(s);
-  const QString spelled = QDir(target).filePath(QStringLiteral("entry.gpg"));
+  // Through the canonical target, as the link resolves: where the temporary
+  // directory itself lies behind a link (/var on macOS), the plain target
+  // path is under neither spelling of the root.
+  const QString spelled = QDir(QFileInfo(target).canonicalFilePath())
+                              .filePath(QStringLiteral("entry.gpg"));
   const QRegularExpression warning(QStringLiteral("spelled through"));
 
   QTest::failOnWarning(warning);
