@@ -13,4 +13,5 @@ skip = ./localization/*,./.git/*
 # unparseable — valid variant; used in a TOTP negative-test row label
 # intoto — in-toto, the SLSA provenance attestation format (*.intoto.jsonl)
 # te — Telugu locale code (localization audit script table)
-ignore-words-list = fpr,ue,tru,doubleclick,pre-selected,fo,unparseable,intoto,te
+# sie, deine, toi — German and French words of address (fill_ts.py register table)
+ignore-words-list = fpr,ue,tru,doubleclick,pre-selected,fo,unparseable,intoto,te,sie,deine,toi

@@ -344,7 +344,7 @@ class ReviewFileTest(unittest.TestCase):
     def run_review(self, ask=None, **options):
         """cmd_review on the file from inside the repository."""
         args = {"since": "HEAD", "back": False, "revert": "", "skip": ""}
-        args.update(cache=None, model="m", url="u", files=[self.path])
+        args.update(cache=None, model="m", fill_model="f", url="u", files=[self.path])
         args.update(options)
         out = io.StringIO()
         with (
@@ -387,6 +387,23 @@ class ReviewFileTest(unittest.TestCase):
         self.assertEqual(len(asked), 2)
         _, out, _ = self.run_review(ask)
         self.assertNotIn("alarm", out)
+
+    def test_back_refuses_the_fill_model(self) -> None:
+        """The model that wrote the text may not check it."""
+        ask, asked = answers("x")
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            status, _, _ = self.run_review(ask, back=True, model="f")
+        self.assertEqual((status, asked), (2, []))
+        self.assertIn("wrote the text", err.getvalue())
+        self.assertNotEqual(fill_ts.DEFAULT_REVIEW_MODEL, fill_ts.DEFAULT_MODEL)
+        argv = ["review", "--back", "--fill-model", fill_ts.DEFAULT_REVIEW_MODEL]
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(fill_ts.main([*argv, self.path]), 2)
+
+    def test_reply_text(self) -> None:
+        """A reasoning model's <think> block is not part of the answer."""
+        self.assertEqual(fill_ts.reply_text("<think>hmm\nok</think>\n Yes "), "Yes")
 
 
 if __name__ == "__main__":

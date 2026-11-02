@@ -37,7 +37,9 @@ localization/localization_*.ts):
       quotes, numbers, sentences and the ending of the source. With --back
       the model translates each one back to English, and a lost or added
       negation, words such as "error" or "wrong" the source lacks, and text
-      that drifted from the source are findings too. --revert empties the
+      that drifted from the source are findings too. The back-translation
+      uses another model than the fill (qwen3.5:9b; --fill-model names the
+      one that wrote the text, which review refuses). --revert empties the
       entries with a finding whose code starts with one of CODES (or all).
       Exit status 1 when anything is found.
 
@@ -59,6 +61,9 @@ from collections.abc import Callable, Iterator
 
 DEFAULT_URL = "http://localhost:52625/v1"
 DEFAULT_MODEL = "translategemma:4b"
+# review --back must not ask the model that wrote the text: it would read
+# its own mistakes back the way it meant them.
+DEFAULT_REVIEW_MODEL = "qwen3.5:9b"
 
 # English names the model understands, per locale file suffix.
 LANGUAGE = {
@@ -205,6 +210,7 @@ UNFINISHED = re.compile(
     re.DOTALL,
 )
 FORM = re.compile(r"<numerusform>(.*?)</numerusform>", re.DOTALL)
+THINK = re.compile(r"<think>.*?</think>", re.DOTALL)
 MESSAGE = re.compile(r"(<message(?: numerus=\"yes\")?>)(.*?)(</message>)", re.DOTALL)
 CONTEXT_BLOCK = re.compile(r"<context>\s*<name>(.*?)</name>(.*?)</context>", re.DOTALL)
 FINISHED = re.compile(r"<source>(.*?)</source>\s*<translation>(.*?)</translation>")
@@ -355,6 +361,11 @@ def prompt(locale: str, context: str, source: str, terms: Terms) -> str:
     return "\n".join(parts)
 
 
+def reply_text(content: str) -> str:
+    """A model's answer without the <think> block a reasoning model adds."""
+    return THINK.sub("", content).strip()
+
+
 def chat(url: str, model: str) -> Ask:
     """An Ask that sends a prompt to an OpenAI-compatible chat endpoint."""
 
@@ -372,7 +383,7 @@ def chat(url: str, model: str) -> Ask:
             {"Content-Type": "application/json"},
         )
         with urllib.request.urlopen(request, timeout=300) as reply:  # nosec B310
-            return json.load(reply)["choices"][0]["message"]["content"]
+            return reply_text(json.load(reply)["choices"][0]["message"]["content"])
 
     return ask
 
@@ -794,6 +805,13 @@ def cmd_review(args: argparse.Namespace, ask: Ask | None = None) -> int:
     """Review the unfinished translations of the files."""
     if not args.back:
         ask = None
+    elif args.model == args.fill_model:
+        print(
+            f"review: {args.model} wrote the text; back-translate with another "
+            "model (--model) or name the one that filled it (--fill-model)",
+            file=sys.stderr,
+        )
+        return 2
     elif ask is None:
         ask = chat(args.url, args.model)
     skip = set(filter(None, args.skip.split(","))) | {"en_US", "en_GB"}
@@ -828,7 +846,8 @@ def main(argv: list[str] | None = None) -> int:
     review.add_argument("--back", action="store_true", help="back-translate too")
     review.add_argument("--revert", default="", help="empty entries with these codes")
     review.add_argument("--url", default=DEFAULT_URL)
-    review.add_argument("--model", default=DEFAULT_MODEL)
+    review.add_argument("--model", default=DEFAULT_REVIEW_MODEL)
+    review.add_argument("--fill-model", default=DEFAULT_MODEL, help="who wrote it")
     review.add_argument("--cache", help="JSON file that keeps answers between runs")
     review.add_argument("--skip", default="", help="locales to leave alone (a,b,...)")
     review.add_argument("files", nargs="*")

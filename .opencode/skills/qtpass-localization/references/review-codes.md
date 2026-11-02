@@ -6,6 +6,13 @@ one line per entry with a finding, then the translation (`->`) and, with
 the entries with a finding that starts with one of the codes (`all` for every
 finding); the rest are only reported.
 
+`--back` asks a different model than the one that filled the text:
+`qwen3.5:9b` by default, about 3 s a string on FastFlowLM. The model that
+wrote a translation reads its own mistakes back the way it meant them, so
+review refuses it (`--fill-model` names the fill model, `translategemma:4b` by
+default). Even so, a clean review is a machine check, not a reading: in a PR,
+call only the locales a person read "read".
+
 | Code           | Fires when                                                                |
 | -------------- | ------------------------------------------------------------------------- |
 | `term`         | a glossary term of the source is missing (store is Opslag, not winkel)    |
@@ -21,7 +28,8 @@ finding); the rest are only reported.
 
 The fill checks (`placeholders`, `html`, `line breaks`, `shortcut`,
 `script`, `latin words`) are reported too. A back-translation is noisy on
-short strings ("Klembord hersteld" came back as "Whiteboard repaired"), so
+short strings ("Klembord hersteld" came back as "Whiteboard repaired"
+from both models), so
 read the `<-` line before you revert on `drift`. `alarm` is the one to trust:
 "That errs on the hidden side" became "That is an error" in three languages.
 

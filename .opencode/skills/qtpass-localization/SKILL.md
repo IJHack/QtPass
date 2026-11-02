@@ -152,7 +152,7 @@ Small models still get meaning wrong where the checks cannot see it (for example
 
    ```bash
    python3 "$T" review --since origin/main            # checks without a model
-   python3 "$T" review --since origin/main --back --cache /tmp/back.json
+   python3 "$T" review --since origin/main --back --cache /tmp/back.json  # qwen3.5:9b
    python3 "$T" review --since origin/main --revert alarm,negation
    ```
 
