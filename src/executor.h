@@ -95,8 +95,8 @@ class Executor : public QObject {
    * With a null @p cancel the wait is a plain waitForFinished(-1). With a
    * non-null one the wait polls the flag; once it is set this thread
    * terminate()s the child, gives it a short grace period, kill()s it if it
-   * is still running and returns -1. A flag that is already set skips the
-   * start altogether.
+   * is still running, waits one more grace period at most, and returns -1.
+   * A flag that is already set skips the start altogether.
    * @param process Pre-configured QProcess to run.
    * @param app Executable path.
    * @param args Command arguments.
@@ -199,10 +199,16 @@ public:
    * thread may call terminate(), kill() or anything else on it. To let a run
    * be cancelled, pass @p cancel: the wait then polls the flag, and once it
    * is set the calling thread itself terminate()s the child, waits a short
-   * grace period, kill()s it if it is still running, and returns -1. Setting
-   * the flag is the only thing another thread does; it may do so at any time,
-   * before or during the run. A run given @p timeoutMs ends the same way
-   * once that time has passed, start included.
+   * grace period, kill()s it if it is still running, waits one more grace
+   * period at most, and returns -1. Setting the flag is the only thing
+   * another thread does; it may do so at any time, before or during the run.
+   * A run given @p timeoutMs ends the same way once that time has passed,
+   * start included, so it returns within the timeout plus twice the grace
+   * even when a kill()ed child cannot exit yet (uninterruptible sleep on a
+   * hung mount). Not timed: QProcess::start() itself, which can block, for
+   * example opening a FIFO named by a redirected channel (no caller
+   * redirects one), and QProcess's destructor, which still waits for such a
+   * child, for up to 30 s.
    * @param process Process object to run the command on.
    * @param app Executable path.
    * @param args Command arguments.
