@@ -222,7 +222,7 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   // stops git with an error, and pass then commits nothing; a .git folder
   // that is no repository is passed by.
   enum class Found { Nothing, Repository, Refused };
-  const auto lookIn = [&isGitDirectory](const QString &dir) {
+  const auto repositoryAt = [&isGitDirectory](const QString &dir) {
     const QString dotGit = QDir(dir).filePath(QStringLiteral(".git"));
     const QFileInfo info(dotGit);
     if (info.isDir()) {
@@ -249,7 +249,7 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   // further up, and never into the ceiling. By name from here: the real
   // path holds no link or "..".
   for (QString dir = start;;) {
-    switch (lookIn(dir)) {
+    switch (repositoryAt(dir)) {
     case Found::Repository:
       return dir == start ? QString() : dir;
     case Found::Refused:
