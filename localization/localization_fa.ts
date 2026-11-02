@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">فعال کردن جستجوی محتوا</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -471,12 +471,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">هنگامی که کلیبرد پاک شود، محتوای قبلی آن را بازگردانید، همانطور که &quot;pass -c&quot; انجام می دهد، مگر اینکه در همین حین چیزی دیگری کپی شده باشد. فقط متن: قالب‌بندی بازیابی نمی‌شود. این متن تا آن زمان در حافظه باقی می‌ماند. جایی که بدون تمرکز روی کلیبرد امکان خواندن وجود ندارد (برخی از دسکتاپ‌های Wayland)، به جای آن پاک می شود.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">بازگرداندن کپی پیست قبلی</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">همچنین، سایر اسرار را پنهان کنید:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -502,12 +502,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">پیش‌فرض</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">دیکشنری پیش‌فرض را بازگردانید: رمز عبور، کد کارت، کلیدها، توکن‌ها و غیره.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -536,7 +536,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">از یک ریپازیتوری Git در پوشه‌ای بالاتر از محل ذخیره استفاده کنید</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -752,7 +752,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 با کلید امضای یکسان برای فروشگاه دیگری امضا می‌کند. لیست گیرندگان که برای یکی از این فروشگاه‌ها امضا شده، در فروشگاه دیگر پذیرفته می‌شود: از کلید امضای جداگانه برای هر فروشگاهی استفاده کنید که گیرنده‌های آن متفاوت باشند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1069,7 +1069,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... %n خط بیشتر نمایش داده نشده است</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1429,7 +1429,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 در مخزن رمز عبور ذخیره نشده است، یا نام یک پوشه حاوی خط جداکننده یا کاراکتر کنترلی دیگر است که لیست امضا شده نمی‌تواند ثبت کند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="570"/>
@@ -1439,7 +1439,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 نمی‌تواند به عنوان یک لیست گیرندگان تفسیر شود (یک فایل معمولی با حداکثر %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1789,7 +1789,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">حجم %1 از حجم یک فایل کلید بیشتر است.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1911,12 +1911,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">ورودی نامعتبر</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">نام و عبارت عبور نباید شامل خطوط جداکننده باشند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2039,7 +2039,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">جستجو در محتوای رمز عبور</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2474,13 +2474,13 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... تطابق‌های بیشتر در این بخش</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>نمایش اولین %n نتیجه؛ برای مشاهده نتایج بیشتر، جستجوی محدودی‌تر انجام دهید.</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -2776,9 +2776,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">این اطلاعات در مخزن ذخیره شده، اما ثبت آن در Git با موفقیت انجام نشد. گزارش شده:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2788,7 +2786,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 در مخزن رمز عبور قرار ندارد. گیرندگان برای مخزن یا پوشه ای که در آن قرار دارد، تعیین شده اند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -2803,7 +2801,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 نمی‌تواند به عنوان لیست گیرندگان خوانده شود (یک فایل معمولی با حداکثر %2)، بنابراین هیچ چیزی پیش‌انتخاب نشده است. قبل از انتخاب گیرندگان در اینجا، آن را بررسی کنید: &quot;OK&quot; یک لیست جدید بر روی آن ایجاد می‌کند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3002,7 +3000,7 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>این بخش %n خط دارد، که ویرایش آن در اینجا امکان‌پذیر نیست.</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3305,7 +3303,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">بررسی لیست‌های گیرنده تحت %1…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3331,7 +3329,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">لینک %1 حذف شد و گیت دیگر آن را ردیابی نمی‌کند، اما عملیات کمیت با موفقیت انجام نشد: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
