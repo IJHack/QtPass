@@ -9,7 +9,7 @@ var searchData=
   ['canencrypt_6',['canEncrypt',['../struct_rnp_crypto_1_1_key_info.html#a4b1cba6912f9edcbb4ef24ef74f83b5d',1,'RnpCrypto::KeyInfo']]],
   ['cansign_7',['canSign',['../struct_rnp_crypto_1_1_key_info.html#a4385215e8fe04c72597970bd64b4c864',1,'RnpCrypto::KeyInfo']]],
   ['centreoncursorscreen_8',['centreOnCursorScreen',['../namespace_window_state_store.html#a5297f0374c183534e9573d4cf06542b5',1,'WindowStateStore']]],
-  ['changeevent_9',['changeEvent',['../class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad',1,'MainWindow']]],
+  ['changeevent_9',['changeEvent',['../class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94',1,'ConfigDialog::changeEvent()'],['../class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad',1,'MainWindow::changeEvent()']]],
   ['characters_10',['Characters',['../struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0',1,'PasswordConfiguration']]],
   ['characterset_11',['CharacterSet',['../struct_password_configuration.html#a71920e2e29e1beca94502784de561a01',1,'PasswordConfiguration']]],
   ['childumask_12',['childUmask',['../class_executor.html#ab60903ccdf163f6f025f4bc857632887',1,'Executor']]],

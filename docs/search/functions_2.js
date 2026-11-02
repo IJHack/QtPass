@@ -7,7 +7,7 @@ var searchData=
   ['cancelsearch_4',['cancelSearch',['../class_grep_search_controller.html#a9b4bcb634eeca28f64afbd8232417ae7',1,'GrepSearchController']]],
   ['candropmimedata_5',['canDropMimeData',['../class_store_model.html#accf361cc9145306e3063f7b0be939476',1,'StoreModel']]],
   ['centreoncursorscreen_6',['centreOnCursorScreen',['../namespace_window_state_store.html#a5297f0374c183534e9573d4cf06542b5',1,'WindowStateStore']]],
-  ['changeevent_7',['changeEvent',['../class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad',1,'MainWindow']]],
+  ['changeevent_7',['changeEvent',['../class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94',1,'ConfigDialog::changeEvent()'],['../class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad',1,'MainWindow::changeEvent()']]],
   ['childumask_8',['childUmask',['../class_executor.html#ab60903ccdf163f6f025f4bc857632887',1,'Executor']]],
   ['ciphertextholds_9',['ciphertextHolds',['../class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab',1,'ImitatePass']]],
   ['clear_10',['clear',['../class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1',1,'ClipboardManager::clear()'],['../class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2',1,'PasswordDisplayPanel::clear()'],['../class_process_output_panel.html#a40eebd4f48de276cec251ffdfed97c15',1,'ProcessOutputPanel::clear()']]],
