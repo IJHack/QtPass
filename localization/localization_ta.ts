@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">கட்டாயத்தில் உள்ள உள்ளடக்கம் மீட்டமைக்கப்பட்டது</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">சேமிப்பகத்தை விட மேலே உள்ள ஒரு கோப்புறையில் Git களஞ்சியத்தைப் பயன்படுத்தவும்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">உள்ளடக்கத்தை தேடும் வசதியை இயக்கவும்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">களப்பீட்டை அழிக்கும்போது, நகலெடுப்பதற்கு முன்பு இருந்ததை திரும்ப வைக்கவும், அதுபோலவே &quot;pass -c&quot; செய்யும். வேறு எதையாவது நகலெடுத்திருந்தால், இந்த வழி வேலை செய்யாது. உரையை மட்டும்: வடிவமைப்பை மீட்டெடுக்க முடியாது. அந்த உரை நினைவகத்தில் இருக்கும் வரை அப்படியே இருக்கும். எந்த இடத்தில் கவனமின்றி (சில Wayland டெஸ்க்டாப்பில்) களப்பீட்டைப் படிக்க முடியாது என்றால், அதை அழித்துவிடும்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">முந்தைய கிளிப் போர்டை மீட்டமை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,22 +564,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">மேலும் மற்ற ரகசியங்களை மறைக்கவும்:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">கடவுச்சொல் மட்டுமல்ல, இரகசியங்களையும் மறைக்கும் புலங்களை மறைக்கவும்: பெயர் என்ற சொல்லைக் கொண்டிருக்கும் ஒரு புலம். அணைத்துவிடுதல்: கடவுச்சொல் மட்டுமே மறைக்கப்படும்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">இயல்புநிலை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">இயல்பு நிலைக்கு மீட்டமை: கடவுச்சொற்கள், கார்டு குறியீடுகள், விசைகள், டோக்கன்கள் மற்றும் பிற.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -698,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 வேறொரு ஸ்டோருக்கு அதே விசையைப் பயன்படுத்தி கையொப்பமிடுகிறார். இந்த ஸ்டோர்களில் ஒன்றுக்கு கையொப்பமிடப்பட்ட ஒரு பட்டியல், மற்றொன்றில் ஏற்றுக்கொள்ளப்படுகிறது: ஒவ்வொரு ஸ்டோருக்கும் வெவ்வேறு பெறுநர்களைக் கொண்டால், தனித்தனியான கையொப்பமிடும் விசையைப் பயன்படுத்தவும்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1367,7 +1367,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தில் %1 இல்லை, அல்லது பாதையில் உள்ள கோப்புறையின் பெயர் ஒரு புதிய வரியைக் கொண்டிருக்கலாம் அல்லது வேறு கட்டுப்பாட்டு எழுத்தை கொண்டிருக்கலாம். இது கையொப்பமிடப்பட்ட பட்டியலில் பதிவு செய்ய முடியாது.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1484,7 +1484,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ஐ பெறுநர் பட்டியலில் படிக்க முடியாது (இது அதிகபட்சமாக %2 அளவுள்ள ஒரு சாதாரண கோப்பு).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1629,7 +1629,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">இங்கு, &quot;%1&quot; என்பது ஒரு குறியீட்டு இணைப்பு அல்லது சந்திப்பைக் குறிக்கிறது. அதை மீட்டெடுத்த பிறகு, அது எதையேனும் சுட்டிக்காட்டலாம். ஆனால் அது கடவுச்சொல் சேமிப்பகத்தின் ஒரு பகுதியாக இல்லை. மேலும் இது அப்படியே விட்டுவிடப்படுகிறது.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -1838,7 +1838,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 என்பது ஒரு கீ கோப்பிற்கான அளவை விட பெரியது.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2024,12 +2024,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">தவறான உள்ளீடு</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">பெயர் மற்றும் கடவுச்சொற்றொடரில் புதிய வரி இருக்கக்கூடாது.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2218,7 +2218,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">கடவுச்சொல் உள்ளடக்கத்தில் தேடவும்</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2736,7 +2736,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… இந்த பதிவில் இன்னும் பல பொருத்தங்கள் உள்ளன</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -3035,16 +3035,14 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">சேமிக்கப்பட்டது, ஆனால் உறுதிப்படுத்தப்படவில்லை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">பதிவு சேமிக்கப்பட்டுள்ளது, ஆனால் அதை கிட்-ல் பதிவு செய்ய முடியவில்லை. இது தெரிவிக்கப்பட்டது:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -3054,7 +3052,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தில் %1 இல்லை. சேமிப்பகம் அல்லது அதில் உள்ள ஒரு கோப்புறையில் பெறுநர்கள் அமைக்கப்பட்டிருக்கிறார்கள்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -3069,7 +3067,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1-ஐ பெறுநர் பட்டியலில் படிக்க முடியாது (இது அதிகபட்சமாக %2 அளவுள்ள ஒரு சாதாரண கோப்பு), எனவே எந்த பெறுநரும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை. இங்கே பெறுநர்களைத் தேர்ந்தெடுக்கும் முன், இதைச் சரிபாருங்கள்: &quot;சரி&quot; என்பது புதிய பட்டியலை உருவாக்கும்.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3332,7 +3330,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">அமைக்கப்பட்ட GPG முகவரி %1 இல்லை.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3573,7 +3571,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">பெறநர் பட்டியல்களை %1-ல் சரிபார்க்கப்படுகிறது…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3599,7 +3597,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">%1 என்ற இணைப்பு நீக்கப்பட்டது, மேலும் இது git-ஆ கண்காணிக்கப்படவில்லை. ஆனால் கமிட் தோல்வியடைந்தது: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
