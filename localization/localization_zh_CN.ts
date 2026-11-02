@@ -3035,7 +3035,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 不能被识别为收件人列表（一个不超过 %2 个元素的普通文件），因此没有默认选择。 在这里选择收件人之前，请检查：OK 会覆盖它并创建一个新的列表。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>

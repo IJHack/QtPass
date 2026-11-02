@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">잘못된 클립보드 복구</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">잘못된 복사 내용을 지웠을 때, &quot;pass -c&quot;처럼 원래 내용대로 복원합니다. 단, 그 사이에 다른 내용이 복사되지 않았다면 말입니다. 텍스트만 표시됩니다. 서식은 복원되지 않습니다. 해당 텍스트는 메모리에 남아있습니다. 포커스가 없을 때 클립보드를 읽을 수 없는 경우 (일부 Wayland 데스크탑), 대신 클립보드가 지워집니다.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">기본 단어 (PIN, 카드 코드, 키, 토큰 등)를 다시 설정하세요.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>

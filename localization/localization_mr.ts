@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">पासवर्ड: फक्त पासवर्ड लपवा, इतरही काही क्षेत्रे आहेत जी गुप्त माहिती साठवतात.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -752,7 +752,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 एका विशिष्ट स्टोअरसाठी स्वाक्षरी करण्यासाठी समान की वापरतो. एका स्टोअरसाठी स्वाक्षरी केलेल्या यादीचा संदर्भ दुसऱ्या स्टोअरमध्ये स्वीकारला जातो: ज्यांच्या स्वाक्षरी वेगवेगळ्या स्टोअर्ससाठी आहेत, त्यांच्या प्रत्येक स्टोअरसाठी स्वतंत्र स्वाक्षरी की वापरा.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>

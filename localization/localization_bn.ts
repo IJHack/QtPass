@@ -1430,7 +1430,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">পাসওয়ার্ড সংরক্ষণে %1 এর অবস্থান ভুল, অথবা কোনো ফোল্ডারের নাম বা পথের মধ্যে যদি একটি লাইন ব্রেক বা অন্য কোনো কন্ট্রোল ক্যারেক্টার থাকে, যা একটি সাইন করা তালিকা দ্বারা সংরক্ষণ করা যায় না।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="570"/>

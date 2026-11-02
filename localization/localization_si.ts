@@ -2974,9 +2974,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">මෙය ගබඩා කර ඇත, නමුත් එය &quot;ජිට්&quot;-ට වාර්තා කිරීමට අසමර්ථ විය. වාර්තාවූයේ:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>

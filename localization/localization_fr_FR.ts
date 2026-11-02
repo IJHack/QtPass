@@ -2644,7 +2644,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… plus de correspondances dans cette entrée</translation>
+        <translation type="unfinished">… d&apos;autres correspondances dans cette entrée</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
