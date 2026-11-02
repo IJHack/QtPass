@@ -187,6 +187,8 @@ private:
   QString m_nameTip, m_pathTip, m_keyTip;
   /// Below the signing key: the profiles that share it, if any.
   QLabel *m_sharedKeyWarning = nullptr;
+  /// In the pass box: the stores pass would commit outside of, if any.
+  QLabel *m_passGitWarning = nullptr;
   /// Primary fingerprint per gpg and signing-key token (empty: gpg does
   /// not know it), so each key is looked up once, not on every keystroke.
   mutable QHash<QString, QString> m_primaryOf;
@@ -243,6 +245,9 @@ private:
 
   auto isQrencodeAvailable(const QString &configuredPath) -> bool;
   void validate();
+  /// Shows m_passGitWarning for the stores Util::repositoryPassClimbsTo()
+  /// names, while the pass backend is chosen.
+  void updatePassGitWarning();
   /**
    * @brief What is wrong with @p entry's name, store path and signing keys.
    * @param entry The profile to check.

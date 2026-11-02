@@ -138,6 +138,139 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
+#ifdef Q_OS_WIN
+  Q_UNUSED(store);
+  return {};
+#else
+  if (!store.contains(QLatin1Char(':'))) {
+    return {};
+  }
+  // git walks up from the real folder, so the real path is the one to walk,
+  // and for a store that does not exist yet the one it will have: its
+  // nearest existing folder resolved, the rest appended. By the raw string:
+  // QDir and QFileInfo clean a path by name, and "link/.." is the parent
+  // of the link's target, not the folder the link is in. On macOS the
+  // temporary folder is under /var, a link to /private/var.
+  // Absolute as git means it, a leading "/" (Qt would take ":name" for a
+  // resource path).
+  QString path =
+      store.startsWith(u'/') ? store : QDir::currentPath() + u'/' + store;
+  while (path.size() > 1 && path.endsWith(u'/')) {
+    path.chop(1);
+  }
+  QString rest;
+  while (!QFileInfo::exists(path)) {
+    const qsizetype slash = path.lastIndexOf(u'/');
+    if (slash < 0) {
+      return {};
+    }
+    const QString name = path.mid(slash + 1);
+    rest = rest.isEmpty() ? name : name + u'/' + rest;
+    path = slash == 0 ? QStringLiteral("/") : path.left(slash);
+  }
+  const QString real = QFileInfo(path).canonicalFilePath();
+  QString start = real.isEmpty() ? QDir::cleanPath(path) : real;
+  if (!rest.isEmpty()) {
+    start = QDir::cleanPath(start + u'/' + rest);
+  }
+  // The pieces of pass's ceiling as git takes them (setup.c,
+  // canonicalize_ceiling_entry): relative ones are dropped, the rest
+  // resolved, one that cannot be resolved is dropped; after an empty piece
+  // ("::") they are kept exactly as written. A piece can still be a real
+  // ceiling: "/repo/:vault/.." holds "/repo/".
+  QString ceiling;
+  bool afterEmpty = false;
+  for (const QString &piece :
+       (store + QStringLiteral("/..")).split(QLatin1Char(':'))) {
+    if (piece.isEmpty()) {
+      afterEmpty = true;
+      continue;
+    }
+    if (!piece.startsWith(u'/')) {
+      continue;
+    }
+    const QString entry =
+        afterEmpty ? piece : QFileInfo(piece).canonicalFilePath();
+    // git stops below the longest entry the store lies under
+    // (longest_ancestor_length: "/" is above everything).
+    const QString under = entry == u'/' ? entry : entry + u'/';
+    if (!entry.isEmpty() && start.startsWith(under) &&
+        entry.size() > ceiling.size()) {
+      ceiling = entry;
+    }
+  }
+  // What git takes for a repository (setup.c, is_git_directory()): HEAD
+  // naming a ref or an object, objects/ and refs/. An empty or broken .git
+  // is passed by, as git passes it by.
+  const auto isGitDirectory = [](const QString &candidate) {
+    const QDir dir(candidate);
+    if (!QFileInfo(dir.filePath(QStringLiteral("objects"))).isDir() ||
+        !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
+      return false;
+    }
+    QFile head(dir.filePath(QStringLiteral("HEAD")));
+    if (!head.open(QIODevice::ReadOnly)) {
+      return false;
+    }
+    static const QRegularExpression valid(
+        QStringLiteral("^(?:ref: refs/|[0-9a-f]{40}\\s*$|[0-9a-f]{64}\\s*$)"));
+    return valid.match(QString::fromUtf8(head.read(256))).hasMatch();
+  };
+  // At each folder, as git: a .git folder that is a repository, or a .git
+  // file naming one ("gitdir: ..."), is the repository. Any other .git file
+  // stops git with an error, and pass then commits nothing; a .git folder
+  // that is no repository is passed by.
+  enum class Found { Nothing, Repository, Refused };
+  const auto repositoryAt = [&isGitDirectory](const QString &dir) {
+    const QString dotGit = QDir(dir).filePath(QStringLiteral(".git"));
+    const QFileInfo info(dotGit);
+    if (info.isDir()) {
+      return isGitDirectory(dotGit) ? Found::Repository : Found::Nothing;
+    }
+    if (!info.exists()) {
+      return Found::Nothing;
+    }
+    QFile file(dotGit);
+    if (!file.open(QIODevice::ReadOnly)) {
+      return Found::Refused;
+    }
+    const QString line = QString::fromUtf8(file.readLine(4096)).trimmed();
+    if (!line.startsWith(QLatin1String("gitdir: "))) {
+      return Found::Refused;
+    }
+    const QString target = line.mid(8);
+    return isGitDirectory(target.startsWith(u'/') ? target
+                                                  : QDir(dir).filePath(target))
+               ? Found::Repository
+               : Found::Refused;
+  };
+  // The store's own repository comes first; only without one does git look
+  // further up, and never into the ceiling. By name from here: the real
+  // path holds no link or "..".
+  for (QString dir = start;;) {
+    switch (repositoryAt(dir)) {
+    case Found::Repository:
+      return dir == start ? QString() : dir;
+    case Found::Refused:
+      return {};
+    case Found::Nothing:
+      break;
+    }
+    // A bare repository: git stops there, and pass, finding no work tree,
+    // commits nothing.
+    if (isGitDirectory(dir)) {
+      return {};
+    }
+    const QString up = QFileInfo(dir).absolutePath();
+    if (up == dir || up == ceiling) {
+      return {};
+    }
+    dir = up;
+  }
+#endif
+}
+
 namespace {
 /// setGitOwnerForTests(): who owns "the user's own" store, when set.
 std::optional<uint> s_gitOwnerForTests;

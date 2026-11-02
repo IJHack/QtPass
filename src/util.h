@@ -50,6 +50,25 @@ public:
   static auto gitCeiling(const QString &store) -> QString;
 
   /**
+   * @brief The repository above @p store that `pass` itself would commit
+   * to, if any.
+   *
+   * pass fences git in with GIT_CEILING_DIRECTORIES="$PREFIX/..", spelled
+   * as the store path is given, and unsets GIT_DIR and GIT_WORK_TREE. git
+   * splits that list on ":", so a colon anywhere in the path (above the
+   * store or in its own name) leaves no ceiling at the parent; a piece can
+   * still be a ceiling further up, which git keeps to, and so does this. A
+   * store without its own `.git` then finds a repository above it,
+   * and pass adds and commits there on every change, whether or not QtPass
+   * uses Git. QtPass cannot fence pass in from outside, so this is for a
+   * warning. Always empty on Windows, where pass runs in WSL.
+   * @param store The store's path, as PASSWORD_STORE_DIR gets it.
+   * @return The folder holding that repository's `.git`; empty when pass
+   * keeps to the store.
+   */
+  static auto repositoryPassClimbsTo(const QString &store) -> QString;
+
+  /**
    * @brief The variables that keep git in @p store's own repository, never
    * one above it: GIT_CEILING_DIRECTORIES (gitCeiling()), and, when that
    * ceiling holds git's list separator (":", ";" on Windows) and so cannot
