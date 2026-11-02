@@ -32,6 +32,11 @@
         <translation>Konfiguráció</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1235"/>
         <source>Pass</source>
         <translation>Pass</translation>
@@ -572,11 +577,6 @@
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
         <translation type="unfinished">Elrejt olyan mezőket, amelyek titkos információt is tartalmaznak, nem csak a jelszó: egy olyan mező, amelynek neve ezekből az értékekből áll. Ki: Csak a jelszó van elrejtve.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

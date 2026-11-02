@@ -72,6 +72,11 @@
         <translation>비밀번호 숨기기</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Autoclear panel after:</source>
         <translation>다음시간 후 패널 자동 비우기:</translation>
@@ -566,11 +571,6 @@
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
         <translation type="unfinished">비밀번호뿐만 아니라, 비밀을 담고 있는 필드도 숨기기: 필드의 이름에 &quot;비밀&quot;, &quot;패스워드&quot; 등의 단어가 포함된 필드를 숨김. 켜져 있으면 비밀번호 외의 모든 정보가 숨겨짐.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

@@ -273,6 +273,11 @@ email</translation>
         <translation>Nie</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;Schlüssel&quot; versteckt &quot;API-Schlüssel&quot;, nicht &quot;Tastaturlayout&quot;. Im Zweifel wird also verborgen: &quot;Öffentlicher Schlüssel&quot; und &quot;Passwort-Hinweis&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="987"/>
         <location filename="../src/configdialog.ui" line="1545"/>
         <source>Automatically push</source>
@@ -389,9 +394,8 @@ email</translation>
         <translation type="unfinished">Felder verbergen, die ebenfalls Geheimnisse enthalten, nicht nur das Kennwort: ein Feld, dessen Name eines dieser Wörter enthält. Aus: Nur das Kennwort wird versteckt.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;Schlüssel&quot; versteckt &quot;API-Schlüssel&quot;, nicht &quot;Tastaturlayout&quot;. Im Zweifel wird also verborgen: &quot;Öffentlicher Schlüssel&quot; und &quot;Passwort-Hinweis&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
+        <translation type="obsolete">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;Schlüssel&quot; versteckt &quot;API-Schlüssel&quot;, nicht &quot;Tastaturlayout&quot;. Im Zweifel wird also verborgen: &quot;Öffentlicher Schlüssel&quot; und &quot;Passwort-Hinweis&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

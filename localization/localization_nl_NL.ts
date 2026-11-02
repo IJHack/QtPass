@@ -72,6 +72,11 @@
         <translation>Wachtwoord verbergen</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished">Woorden, gescheiden door komma&apos;s. Een veld telt mee als de naam er een als heel woord bevat, ongeacht hoofdletters: &quot;sleutel&quot; verbergt &quot;API-sleutel&quot;, niet &quot;toetsenbordindeling&quot;. Bij twijfel wordt dus verborgen: ook &quot;Publieke sleutel&quot; en &quot;Wachtwoordhint&quot;; haal een woord weg om ze te tonen.</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Autoclear panel after:</source>
         <translation>Automatisch wissen na:</translation>
@@ -568,9 +573,8 @@
         <translation type="unfinished">Velden die een geheim bevatten, niet alleen het wachtwoord: een veld waarvan de naam één van deze woorden bevat. Uit: alleen het wachtwoord is verborgen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Woorden, gescheiden door komma&apos;s. Een veld telt mee als de naam er een als heel woord bevat, ongeacht hoofdletters: &quot;sleutel&quot; verbergt &quot;API-sleutel&quot;, niet &quot;toetsenbordindeling&quot;. Bij twijfel wordt dus verborgen: ook &quot;Publieke sleutel&quot; en &quot;Wachtwoordhint&quot;; haal een woord weg om ze te tonen.</translation>
+        <translation type="obsolete">Woorden, gescheiden door komma&apos;s. Een veld telt mee als de naam er een als heel woord bevat, ongeacht hoofdletters: &quot;sleutel&quot; verbergt &quot;API-sleutel&quot;, niet &quot;toetsenbordindeling&quot;. Bij twijfel wordt dus verborgen: ook &quot;Publieke sleutel&quot; en &quot;Wachtwoordhint&quot;; haal een woord weg om ze te tonen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

@@ -248,6 +248,11 @@
         <translation>প্রোগ্রাম</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>পাসওয়ার্ড স্টোরেজ প্রোগ্রাম নির্বাচন করুন:</translation>
@@ -488,11 +493,6 @@
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
         <translation type="unfinished">পাসওয়ার্ডের পাশাপাশি, গোপনীয় তথ্য ধারণকারী ক্ষেত্রগুলোও লুকানো: এমন একটি ক্ষেত্র যার নাম এই শব্দগুলোর মধ্যে যেকোনো একটি ধারণ করে। বন্ধ: শুধুমাত্র পাসওয়ার্ডটি লুকানো হবে।</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

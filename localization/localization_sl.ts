@@ -248,6 +248,11 @@
         <translation>Programi</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Izberite program za shranjevanje gesel:</translation>
@@ -488,11 +493,6 @@
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
         <translation type="unfinished">Skrij polja, ki hranijo tudi skrivosti, ne le geslo: polje, kjer je ena od teh besed. Izklopljeno: samo geslo je skrito.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

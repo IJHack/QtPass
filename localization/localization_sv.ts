@@ -214,11 +214,6 @@
         <translation type="unfinished">Dölj fält som innehåller hemligheter, inte bara lösenordet: ett fält vars namn innehåller något av dessa ord. Av: endast lösenordet är dolt.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
         <translation type="unfinished">Som standard</translation>
@@ -655,6 +650,11 @@
         <location filename="../src/configdialog.ui" line="861"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Visa alla rader som börjar med ett ord följt av en kolon som fält i lösenordsfält, inte bara de listade</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1515"/>

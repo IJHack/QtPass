@@ -68,6 +68,11 @@
         <translation>Ukryj hasło</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished">Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z listy.</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Autoclear panel after:</source>
         <translation>Automatycznie wyczyść panel po:</translation>
@@ -461,9 +466,8 @@
         <translation>Ukrywaj również pola zawierające poufne informacje — nie tylko samo hasło; dotyczy to pól, których nazwa zawiera jedno z&#xa0;określonych słów. Opcja „Wyłączone”: ukrywane jest wyłącznie hasło.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation>Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z&#xa0;tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z&#xa0;listy.</translation>
+        <translation type="vanished">Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z&#xa0;tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z&#xa0;listy.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>

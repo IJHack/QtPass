@@ -72,6 +72,11 @@
         <translation>கடவுச்சொல்லை மறைக்கவும்</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="477"/>
+        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Autoclear panel after:</source>
         <translation>பலகம் தானாக அழிக்கப்படும் நேரம்:</translation>
@@ -566,11 +571,6 @@
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
         <translation type="unfinished">கடவுச்சொல் மட்டுமல்ல, இரகசியங்களையும் மறைக்கும் புலங்களை மறைக்கவும்: பெயர் என்ற சொல்லைக் கொண்டிருக்கும் ஒரு புலம். அணைத்துவிடுதல்: கடவுச்சொல் மட்டுமே மறைக்கப்படும்.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="477"/>
-        <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. That errs on the hidden side: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
