@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['wrongfolder_0',['WrongFolder',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9',1,'GpgIdGeneration']]]
+  ['verified_0',['Verified',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f',1,'Pass::RecipientsForEditing']]],
+  ['verifiedrollback_1',['VerifiedRollback',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a8a0f9d1cb7131a1031d38f0a7d9635bf',1,'Pass::RecipientsForEditing']]]
 ];

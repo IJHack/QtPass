@@ -250,6 +250,14 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
+<tr class="memitem:aef20faec56cbdf08fa1530f7bb7ba106" id="r_aef20faec56cbdf08fa1530f7bb7ba106"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106">LinkScope</a> { <a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d">EntryAndParents</a>
+, <a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106a0588f0c47720fb7c0f78e98ff6755ec0">ParentsOnly</a>
+ }</td></tr>
+<tr class="memdesc:aef20faec56cbdf08fa1530f7bb7ba106"><td class="mdescLeft">&#160;</td><td class="mdescRight">What <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a> judges.  <a href="#aef20faec56cbdf08fa1530f7bb7ba106">More...</a><br /></td></tr>
+<tr class="memitem:a4a2fc7833af61945b684295de61894cd" id="r_a4a2fc7833af61945b684295de61894cd"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a4a2fc7833af61945b684295de61894cd">PathSpelling</a> { <a class="el" href="#a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3">Configured</a>
+, <a class="el" href="#a4a2fc7833af61945b684295de61894cda5a2d11ad49ed473c2ca9f35f2af8539c">PlacedByCaller</a>
+ }</td></tr>
+<tr class="memdesc:a4a2fc7833af61945b684295de61894cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">How a path handed to <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a> is spelled.  <a href="#a4a2fc7833af61945b684295de61894cd">More...</a><br /></td></tr>
 <tr class="memitem:a2e71b5174b4ef25a1e91d8c56177b772" id="r_a2e71b5174b4ef25a1e91d8c56177b772"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a> = <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td></tr>
 <tr class="memdesc:a2e71b5174b4ef25a1e91d8c56177b772"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -272,8 +280,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6097de48d30068d8a73f7dc80ff01de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
-<tr class="memitem:a51c84b6c360208ade1e4159cce8c1e0b" id="r_a51c84b6c360208ade1e4159cce8c1e0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a51c84b6c360208ade1e4159cce8c1e0b">refuseLinkedPath</a> (const QString &amp;path, bool includeSelf=true, bool placed=false) -&gt; bool</td></tr>
-<tr class="memdesc:a51c84b6c360208ade1e4159cce8c1e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
+<tr class="memitem:a6cca7cd5646a752c16dac59df6e53581" id="r_a6cca7cd5646a752c16dac59df6e53581"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6cca7cd5646a752c16dac59df6e53581">refuseLinkedPath</a> (const QString &amp;path, <a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106">LinkScope</a> scope=<a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d">LinkScope::EntryAndParents</a>, <a class="el" href="#a4a2fc7833af61945b684295de61894cd">PathSpelling</a> spelling=<a class="el" href="#a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3">PathSpelling::Configured</a>) -&gt; bool</td></tr>
+<tr class="memdesc:a6cca7cd5646a752c16dac59df6e53581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:afea04fa657d65846e2772b0b25c96276" id="r_afea04fa657d65846e2772b0b25c96276"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a> (const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td></tr>
 <tr class="memdesc:afea04fa657d65846e2772b0b25c96276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse recipients for a folder outside the store, as pass refuses a path with <span class="tt">..</span> in it.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
@@ -332,6 +340,71 @@ Protected Attributes</h2></td></tr>
 <p>Alias for <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> used throughout this class. </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00112">112</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="aef20faec56cbdf08fa1530f7bb7ba106" name="aef20faec56cbdf08fa1530f7bb7ba106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef20faec56cbdf08fa1530f7bb7ba106">&#9670;&#160;</a></span>LinkScope</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106">Pass::LinkScope</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>What <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a> judges. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d" name="aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d"></a>EntryAndParents&#160;</td><td class="fielddoc"><p>The entry itself and every folder above it in the store. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aef20faec56cbdf08fa1530f7bb7ba106a0588f0c47720fb7c0f78e98ff6755ec0" name="aef20faec56cbdf08fa1530f7bb7ba106a0588f0c47720fb7c0f78e98ff6755ec0"></a>ParentsOnly&#160;</td><td class="fielddoc"><p>Only the folders above it: a removal unlinks a link and touches nothing behind it. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00451">451</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a2fc7833af61945b684295de61894cd" name="a4a2fc7833af61945b684295de61894cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a2fc7833af61945b684295de61894cd">&#9670;&#160;</a></span>PathSpelling</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a4a2fc7833af61945b684295de61894cd">Pass::PathSpelling</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How a path handed to <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a> is spelled. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3" name="a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3"></a>Configured&#160;</td><td class="fielddoc"><p>As the store is configured or relative to it, the class's path rule. A path spelled through the target of a linked store root is then logged as a warning, so tests catch a caller that hands one over. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4a2fc7833af61945b684295de61894cda5a2d11ad49ed473c2ca9f35f2af8539c" name="a4a2fc7833af61945b684295de61894cda5a2d11ad49ed473c2ca9f35f2af8539c"></a>PlacedByCaller&#160;</td><td class="fielddoc"><p>Through the target of a linked store root, by a caller that places such a folder itself (<a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a>): not logged. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00461">461</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2130,8 +2203,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a51c84b6c360208ade1e4159cce8c1e0b" name="a51c84b6c360208ade1e4159cce8c1e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51c84b6c360208ade1e4159cce8c1e0b">&#9670;&#160;</a></span>refuseLinkedPath()</h2>
+<a id="a6cca7cd5646a752c16dac59df6e53581" name="a6cca7cd5646a752c16dac59df6e53581"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cca7cd5646a752c16dac59df6e53581">&#9670;&#160;</a></span>refuseLinkedPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2147,12 +2220,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+          <td class="paramtype"><a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106">LinkScope</a></td>          <td class="paramname"><span class="paramname"><em>scope</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d">LinkScope::EntryAndParents</a></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>placed</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype"><a class="el" href="#a4a2fc7833af61945b684295de61894cd">PathSpelling</a></td>          <td class="paramname"><span class="paramname"><em>spelling</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3">PathSpelling::Configured</a></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -2166,8 +2239,8 @@ Protected Attributes</h2></td></tr>
 <p>The store tree shows a linked entry or folder like any other, and gpg, pass and QFile all follow links, so without this a planted link would have an entry shown, edited, copied or written outside the store, with the store's recipients. The configured store root itself may be a link (a synced folder); that is not judged. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Store-relative (as Show/Insert/Remove get it, <span class="tt">.gpg</span> included where it applies) or absolute (as Move/Copy get it). </td></tr>
-    <tr><td class="paramname">includeSelf</td><td>Whether the entry itself counts; false for a removal, which unlinks a link and touches nothing behind it. </td></tr>
-    <tr><td class="paramname">placed</td><td>Whether the caller places a path spelled through the target of a linked store root itself (<a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a> does); otherwise such a path, which breaks the class's path rule, is logged as a warning so tests catch a caller that hands one over. </td></tr>
+    <tr><td class="paramname">scope</td><td>Whether the entry itself counts, or only the folders it lies in (a removal). </td></tr>
+    <tr><td class="paramname">spelling</td><td>Whether <code class="param">path</code> follows the class's path rule, or the caller places a target-spelled path itself (<a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Init()</a>). </td></tr>
   </table>
   </dd>
 </dl>

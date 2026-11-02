@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['git_5fadd_0',['GIT_ADD',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189',1,'Enums']]],
-  ['git_5fcommit_1',['GIT_COMMIT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556',1,'Enums']]],
-  ['git_5fcopy_2',['GIT_COPY',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a',1,'Enums']]],
-  ['git_5finit_3',['GIT_INIT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48',1,'Enums']]],
-  ['git_5fmove_4',['GIT_MOVE',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376',1,'Enums']]],
-  ['git_5fpull_5',['GIT_PULL',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4',1,'Enums']]],
-  ['git_5fpush_6',['GIT_PUSH',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40',1,'Enums']]],
-  ['git_5frm_7',['GIT_RM',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36',1,'Enums']]],
-  ['gpg_5fgenkeys_8',['GPG_GENKEYS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c',1,'Enums']]]
+  ['file_0',['File',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4a0b27918290ff5323bea1e3b78a9cf04e',1,'StoreDragItem']]],
+  ['fromlist_1',['FromList',['../class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014',1,'UsersDialog']]]
 ];
