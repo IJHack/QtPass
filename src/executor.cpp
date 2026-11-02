@@ -308,14 +308,23 @@ namespace {
 
 /**
  * @brief Stop a running @p process from the thread that owns it:
- * terminate(), then kill() if it is still running after a grace period.
+ * terminate(), then kill() if it is still running after a grace period,
+ * then at most one more grace period for it to exit.
  * A console gpg ignores terminate() on Windows (WM_CLOSE), hence the kill.
  */
 void stopBlocking(QProcess &process) {
   process.terminate();
+  if (process.waitForFinished(kBlockingKillGraceMs)) {
+    return;
+  }
+  process.kill();
+  // SIGKILL cannot be ignored, but a child in uninterruptible sleep (a hung
+  // NFS or FUSE mount) dies only when the kernel lets it. Wait one more grace
+  // period, not forever: the run is reported as failed either way, and a
+  // blocking run then lasts at most its timeout plus twice the grace.
   if (!process.waitForFinished(kBlockingKillGraceMs)) {
-    process.kill();
-    process.waitForFinished(-1);
+    qCWarning(lcQtPass) << "Process still running after kill():"
+                        << process.program();
   }
 }
 
