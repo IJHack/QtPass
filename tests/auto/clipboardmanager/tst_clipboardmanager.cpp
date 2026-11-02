@@ -13,6 +13,7 @@
 #include "../../../src/clipboardmanager.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/secretlineedit.h"
+#include "../../../src/secretplaintextedit.h"
 #include "../../../src/secrettextbrowser.h"
 #include "../../../src/settingsserializer.h"
 #include "../testsettings.h"
@@ -44,6 +45,10 @@ private slots:
   void secretLineEditContextMenuCopyIsMarked();
   void secretLineEditMarksThePrimarySelection();
   void secretLineEditNeverPublishesAPlainSelection();
+  void editableSecretLineEditCutsMarked();
+  void editableSecretLineEditKeepsWordMovesAndUndo();
+  void editableSecretLineEditMarksThePrimarySelection();
+  void secretPlainTextEditMarksCopyAndCut();
 
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
@@ -496,6 +501,159 @@ void tst_clipboardmanager::secretLineEditNeverPublishesAPlainSelection() {
   QVERIFY2(unmarked.isEmpty(),
            qPrintable(QStringLiteral("unmarked in the selection: ") +
                       unmarked.join(QStringLiteral(" | "))));
+}
+
+namespace {
+/// The action named @p name in @p menu, or nullptr.
+auto menuAction(QMenu *menu, const QString &name) -> QAction * {
+  for (QAction *action : menu->actions()) {
+    if (action->objectName() == name) {
+      return action;
+    }
+  }
+  return nullptr;
+}
+} // namespace
+
+/**
+ * @brief In an editable field (the password editor), Ctrl+X and the context
+ * menu's Cut put the selection on the clipboard once, marked, report it,
+ * and delete it. While the field shows dots, a cut deletes and copies
+ * nothing, and in a read-only field it does nothing at all, as in QLineEdit.
+ */
+void tst_clipboardmanager::editableSecretLineEditCutsMarked() {
+  SecretLineEdit edit;
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.setText(QStringLiteral("hunter2 rest"));
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+
+  edit.setSelection(0, 7);
+  QSignalSpy changed(QApplication::clipboard(), &QClipboard::dataChanged);
+  QTest::keySequence(&edit, QKeySequence::Cut);
+  QCOMPARE(changed.count(), 1);
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("hunter2"));
+  QCOMPARE(edit.text(), QStringLiteral(" rest"));
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("hunter2"));
+  QVERIFY(hasSecretHints(mime));
+
+  edit.setSelection(1, 4);
+  const std::unique_ptr<QMenu> menu(edit.createSecretContextMenu());
+  QAction *cut = menuAction(menu.get(), QStringLiteral("edit-cut"));
+  QVERIFY2(cut != nullptr, "the standard menu has an edit-cut action");
+  changed.clear();
+  cut->trigger();
+  QCOMPARE(changed.count(), 1);
+  QCOMPARE(copied.count(), 2);
+  QCOMPARE(edit.text(), QStringLiteral(" "));
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("rest"));
+  QVERIFY(hasSecretHints(QApplication::clipboard()->mimeData()));
+
+  edit.setText(QStringLiteral("hidden"));
+  edit.setEchoMode(QLineEdit::Password);
+  edit.selectAll();
+  QApplication::clipboard()->setText(QStringLiteral("before"));
+  QTest::keySequence(&edit, QKeySequence::Cut);
+  QVERIFY(edit.text().isEmpty());
+  QCOMPARE(copied.count(), 2);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("before"));
+
+  // Read-only (the display panel), a cut does nothing at all.
+  edit.setText(QStringLiteral("shown"));
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.setReadOnly(true);
+  edit.selectAll();
+  QTest::keySequence(&edit, QKeySequence::Cut);
+  QCOMPARE(edit.text(), QStringLiteral("shown"));
+  QCOMPARE(copied.count(), 2);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("before"));
+}
+
+/**
+ * @brief An editable field keeps Normal mode for every key: in Password mode
+ * a word selection would run to the end of the line and undo would be off.
+ */
+void tst_clipboardmanager::editableSecretLineEditKeepsWordMovesAndUndo() {
+  SecretLineEdit edit;
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.setText(QStringLiteral("hunter2 secret"));
+  edit.end(false);
+  QTest::keySequence(&edit, QKeySequence::SelectPreviousWord);
+  QCOMPARE(edit.selectedText(), QStringLiteral("secret"));
+
+  edit.end(false);
+  QTest::keyClicks(&edit, QStringLiteral("x"));
+  QCOMPARE(edit.text(), QStringLiteral("hunter2 secretx"));
+  QTest::keySequence(&edit, QKeySequence::Undo);
+  QCOMPARE(edit.text(), QStringLiteral("hunter2 secret"));
+  QTest::keySequence(&edit, QKeySequence::Redo);
+  QCOMPARE(edit.text(), QStringLiteral("hunter2 secretx"));
+}
+
+/**
+ * @brief Where there is a primary selection (X11, Wayland), a selection in
+ * an editable field ends up there marked, by keyboard and by mouse.
+ */
+void tst_clipboardmanager::editableSecretLineEditMarksThePrimarySelection() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  SecretLineEdit edit;
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.setText(QStringLiteral("hunter2 secret"));
+  edit.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&edit));
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+
+  edit.setCursorPosition(0);
+  QTest::keyClick(&edit, Qt::Key_End, Qt::ShiftModifier);
+  QVERIFY(copied.count() >= 1);
+  const QMimeData *mime = clipboard->mimeData(QClipboard::Selection);
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("hunter2 secret"));
+  QVERIFY(hasSecretHints(mime));
+
+  edit.deselect();
+  clipboard->setText(QStringLiteral("before"), QClipboard::Selection);
+  const int y = edit.height() / 2;
+  QTest::mousePress(&edit, Qt::LeftButton, {}, QPoint(2, y));
+  QTest::mouseMove(&edit, QPoint(edit.width() - 2, y));
+  QTest::mouseRelease(&edit, Qt::LeftButton, {}, QPoint(edit.width() - 2, y));
+  mime = clipboard->mimeData(QClipboard::Selection);
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->text() != QStringLiteral("before"), "the mouse selected");
+  QVERIFY(hasSecretHints(mime));
+}
+
+/**
+ * @brief Copy and cut out of the entry body editor are marked, reported,
+ * and the cut text is gone from the body.
+ */
+void tst_clipboardmanager::secretPlainTextEditMarksCopyAndCut() {
+  SecretPlainTextEdit edit;
+  edit.setPlainText(QStringLiteral("pin: 1234\nnotes"));
+  QSignalSpy copied(&edit, &SecretPlainTextEdit::copied);
+  QTextCursor cursor = edit.textCursor();
+  cursor.setPosition(0);
+  cursor.setPosition(9, QTextCursor::KeepAnchor);
+  edit.setTextCursor(cursor);
+
+  edit.copy();
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("pin: 1234"));
+  const QMimeData *mime = QApplication::clipboard()->mimeData();
+  QVERIFY(mime != nullptr);
+  QCOMPARE(mime->text(), QStringLiteral("pin: 1234"));
+  QVERIFY2(!mime->hasHtml(), "a secret goes out as plain text only");
+  QVERIFY(hasSecretHints(mime));
+
+  edit.cut();
+  QCOMPARE(copied.count(), 2);
+  QCOMPARE(edit.toPlainText(), QStringLiteral("\nnotes"));
+  QVERIFY(hasSecretHints(QApplication::clipboard()->mimeData()));
 }
 
 QTEST_MAIN(tst_clipboardmanager)

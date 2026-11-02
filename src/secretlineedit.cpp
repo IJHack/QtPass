@@ -14,11 +14,15 @@ SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {}
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();
   for (QAction *action : menu->actions()) {
+    // The standard actions call QLineEdit::copy() and cut(), which are not
+    // virtual.
     if (action->objectName() == QLatin1String("edit-copy")) {
-      // The standard action calls QLineEdit::copy(), which is not virtual.
       disconnect(action, &QAction::triggered, this, nullptr);
       connect(action, &QAction::triggered, this,
               [this] { copySelection(QClipboard::Clipboard); });
+    } else if (action->objectName() == QLatin1String("edit-cut")) {
+      disconnect(action, &QAction::triggered, this, nullptr);
+      connect(action, &QAction::triggered, this, [this] { cutSelection(); });
     }
   }
   return menu;
@@ -27,6 +31,11 @@ auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
 void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
   if (event->matches(QKeySequence::Copy)) {
     copySelection(QClipboard::Clipboard);
+    event->accept();
+    return;
+  }
+  if (event->matches(QKeySequence::Cut)) {
+    cutSelection();
     event->accept();
     return;
   }
@@ -62,6 +71,15 @@ void SecretLineEdit::copySelection(QClipboard::Mode mode) {
   emit copied(text);
 }
 
+void SecretLineEdit::cutSelection() {
+  // As QLineEdit::cut(): a field that shows dots deletes without copying.
+  if (isReadOnly() || !hasSelectedText()) {
+    return;
+  }
+  copySelection(QClipboard::Clipboard);
+  del();
+}
+
 void SecretLineEdit::withoutPlainSelectionCopy(
     const std::function<void()> &handler) {
   // QLineEdit fills the primary selection with plain text itself, at the end
@@ -70,7 +88,9 @@ void SecretLineEdit::withoutPlainSelectionCopy(
   // leaves a moment in which a clipboard manager could take the unmarked
   // text, so the base handler runs in Password mode instead: same length,
   // so cursor and selection stay where they are, and no copy.
-  if (echoMode() != QLineEdit::Normal) {
+  // Editable, the field keeps Normal mode (see the class description) and
+  // publishSelection() replaces the plain copy.
+  if (echoMode() != QLineEdit::Normal || !isReadOnly()) {
     handler();
     return;
   }

@@ -7,6 +7,8 @@
 #include "passwordconfiguration.h"
 #include "pathvalidator.h"
 #include "qtpasssettings.h"
+#include "secretlineedit.h"
+#include "secretplaintextedit.h"
 #include "totp.h"
 #include "ui_passworddialog.h"
 #include "util.h"
@@ -50,6 +52,9 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   ui->setupUi(this);
   connect(ui->checkBoxShow, &QCheckBox::toggled, this,
           &PasswordDialog::setPasswordVisible);
+  reportCopies(ui->lineEditPassword);
+  connect(ui->plainTextEdit, &SecretPlainTextEdit::copied, this,
+          &PasswordDialog::copied);
   setupTemplateBox();
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
@@ -68,6 +73,9 @@ PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
   ui->setupUi(this);
   connect(ui->checkBoxShow, &QCheckBox::toggled, this,
           &PasswordDialog::setPasswordVisible);
+  reportCopies(ui->lineEditPassword);
+  connect(ui->plainTextEdit, &SecretPlainTextEdit::copied, this,
+          &PasswordDialog::copied);
   setupTemplateBox();
   // The name row only appears once setNewEntryLocation() says where a new
   // entry may go; an existing entry keeps its name.
@@ -357,7 +365,8 @@ void PasswordDialog::setPassword(const QString &password) {
   }
   m_otherLines.clear();
   for (const NamedValue &nv : std::as_const(namedValues)) {
-    auto *line = new QLineEdit();
+    auto *line = new SecretLineEdit();
+    reportCopies(line);
     line->setObjectName(nv.name);
     line->setText(nv.value);
     auto *label = new FieldLabel(nv.name);
@@ -591,7 +600,8 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       if (field.isEmpty()) {
         continue;
       }
-      auto *line = new QLineEdit();
+      auto *line = new SecretLineEdit();
+      reportCopies(line);
       // Plain text before the name is set: the template comes from the
       // store, and as rich text <img src="/dev/zero"> has Qt read that file
       // without end.
@@ -607,6 +617,10 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   }
 
   hookOtpField();
+}
+
+void PasswordDialog::reportCopies(SecretLineEdit *line) {
+  connect(line, &SecretLineEdit::copied, this, &PasswordDialog::copied);
 }
 
 void PasswordDialog::templateAll(bool templateAll) {

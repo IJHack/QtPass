@@ -134,6 +134,7 @@ private Q_SLOTS:
   void ctrlTCyclesTemplatesAndUpdatesBox();
   void fieldLabelRenamesTheField();
   void anEntryTooLongToEditIsNotLoaded();
+  void copiesOutOfTheEditorAreReported();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void templateFieldsKeepPlainLabels();
@@ -196,6 +197,44 @@ auto fieldLabel(PasswordDialog &d, const QString &name) -> FieldLabel * {
   return nullptr;
 }
 } // namespace
+
+/**
+ * @brief What is copied out of the password, a template field, another
+ * field or the body is put on the clipboard marked and reported through
+ * copied(), for autoclear. The entry name is no secret and is not reported.
+ */
+void tst_passworddialog::copiesOutOfTheEditorAreReported() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("hunter2\nlogin: alice\npin: 1234\nnotes\n"));
+  QSignalSpy copied(&d, &PasswordDialog::copied);
+  auto *show = d.findChild<QCheckBox *>(QStringLiteral("checkBoxShow"));
+  QVERIFY(show != nullptr);
+  show->setChecked(true);
+
+  for (const QString &name : {QStringLiteral("lineEditPassword"),
+                              QStringLiteral("login"), QStringLiteral("pin")}) {
+    auto *line = d.findChild<QLineEdit *>(name);
+    QVERIFY2(line != nullptr, qPrintable(name));
+    line->selectAll();
+    QTest::keySequence(line, QKeySequence::Copy);
+  }
+  auto *body = d.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  QVERIFY(body != nullptr);
+  body->selectAll();
+  body->copy();
+  QStringList texts;
+  for (const QList<QVariant> &call : std::as_const(copied)) {
+    texts << call.at(0).toString().trimmed();
+  }
+  QCOMPARE(texts,
+           (QStringList{QStringLiteral("hunter2"), QStringLiteral("alice"),
+                        QStringLiteral("1234"), QStringLiteral("notes")}));
+}
 
 /**
  * @brief An entry of millions of lines (a small compressed one in a shared
