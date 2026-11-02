@@ -919,7 +919,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>GPG সংস্করণের আधারে টেমপ্লেট অনুবাদ নির্ধারিত হবে।</translation>
+        <translation type="unfinished">জিপিজি সংস্করণ অনুসারে টেমপ্লেটের বিষয়বস্তু সেট করা হবে।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
