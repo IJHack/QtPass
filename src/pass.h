@@ -447,6 +447,30 @@ protected:
    * @param file The Show() argument.
    */
   void queueShow(const QString &file) { m_pendingShows.enqueue(file); }
+  /** @brief What refuseLinkedPath() judges. */
+  enum class LinkScope {
+    /** @brief The entry itself and every folder above it in the store. */
+    EntryAndParents,
+    /**
+     * @brief Only the folders above it: a removal unlinks a link and
+     * touches nothing behind it.
+     */
+    ParentsOnly,
+  };
+  /** @brief How a path handed to refuseLinkedPath() is spelled. */
+  enum class PathSpelling {
+    /**
+     * @brief As the store is configured or relative to it, the class's path
+     * rule. A path spelled through the target of a linked store root is
+     * then logged as a warning, so tests catch a caller that hands one over.
+     */
+    Configured,
+    /**
+     * @brief Through the target of a linked store root, by a caller that
+     * places such a folder itself (Init()): not logged.
+     */
+    PlacedByCaller,
+  };
   /**
    * @brief Refuse an operation on something that is, or lies behind, a
    * symbolic link or NTFS junction inside the store.
@@ -458,17 +482,17 @@ protected:
    * (a synced folder); that is not judged.
    * @param path Store-relative (as Show/Insert/Remove get it, `.gpg`
    *        included where it applies) or absolute (as Move/Copy get it).
-   * @param includeSelf Whether the entry itself counts; false for a removal,
-   *        which unlinks a link and touches nothing behind it.
-   * @param placed Whether the caller places a path spelled through the
-   *        target of a linked store root itself (Init() does); otherwise
-   *        such a path, which breaks the class's path rule, is logged as a
-   *        warning so tests catch a caller that hands one over.
+   * @param scope Whether the entry itself counts, or only the folders it
+   *        lies in (a removal).
+   * @param spelling Whether @p path follows the class's path rule, or the
+   *        caller places a target-spelled path itself (Init()).
    * @return true when critical() and processErrorExit() were emitted and
    *         the caller must stop.
    */
-  auto refuseLinkedPath(const QString &path, bool includeSelf = true,
-                        bool placed = false) -> bool;
+  auto refuseLinkedPath(const QString &path,
+                        LinkScope scope = LinkScope::EntryAndParents,
+                        PathSpelling spelling = PathSpelling::Configured)
+      -> bool;
   /**
    * @brief Refuse recipients for a folder outside the store, as pass
    * refuses a path with `..` in it.

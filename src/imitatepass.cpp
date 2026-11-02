@@ -260,7 +260,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
     file += ".gpg";
   }
   // A link itself may go; anything behind one is not the store's to delete.
-  if (refuseLinkedPath(file, false)) {
+  if (refuseLinkedPath(file, LinkScope::ParentsOnly)) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_REMOVE);
@@ -466,9 +466,13 @@ auto ImitatePass::refuseLinkedGpgIdFolder(const QString &path) -> bool {
   // and rename.
   const QString folder = QDir::cleanPath(path);
   // Init() places a folder spelled through a linked root's target itself.
-  return refuseLinkedPath(path, true, true) ||
-         refuseLinkedPath(folder + QStringLiteral("/.gpg-id"), true, true) ||
-         refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"), true, true);
+  const auto refusePlaced = [this](const QString &placed) {
+    return refuseLinkedPath(placed, LinkScope::EntryAndParents,
+                            PathSpelling::PlacedByCaller);
+  };
+  return refusePlaced(path) ||
+         refusePlaced(folder + QStringLiteral("/.gpg-id")) ||
+         refusePlaced(folder + QStringLiteral("/.gpg-id.sig"));
 }
 
 auto ImitatePass::settleSignature(const QString &gpgIdFile,

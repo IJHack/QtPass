@@ -136,6 +136,8 @@ private:
   // same test only when the keys don't overlap with PASSWORD_STORE_*.
   class TestPass : public ImitatePass {
   public:
+    using Pass::LinkScope;
+    using Pass::PathSpelling;
     void callSetEnvVar(const QString &key, const QString &value) {
       setEnvVar(key, value);
     }
@@ -167,8 +169,11 @@ private:
                             const QStringList &args) {
       executeWrapper(id, app, args);
     }
-    bool callRefuseLinkedPath(const QString &path, bool includeSelf = true) {
-      return refuseLinkedPath(path, includeSelf);
+    bool
+    callRefuseLinkedPath(const QString &path,
+                         LinkScope scope = LinkScope::EntryAndParents,
+                         PathSpelling spelling = PathSpelling::Configured) {
+      return refuseLinkedPath(path, scope, spelling);
     }
     QString callGenerateRandomPassword(const QString &charset,
                                        unsigned int length) {
@@ -422,6 +427,7 @@ private Q_SLOTS:
   void passFinishedGenkeysErrorEmitsFailed();
   void executeWrapperWithoutInputRunsTheCommand();
   void refuseLinkedPathRefusesAndReleasesTheUi();
+  void refuseLinkedPathWarnsOnlyOnAnUnplacedTargetSpelling();
   void recipientsForEditingSignedStoreWithoutListIsVerified();
   void recipientsForEditingRefusesAFolderWhoseListIsALink();
   void recipientsForEditingSaysWhenAnUnsignedListCannotBeRead();
@@ -6217,6 +6223,11 @@ void tst_util::refuseLinkedPathRefusesAndReleasesTheUi() {
   QCOMPARE(starting.count(), 0);
   QCOMPARE(critical.count(), 0);
 
+  QVERIFY2(!pass.callRefuseLinkedPath(QStringLiteral("linked"),
+                                      TestPass::LinkScope::ParentsOnly),
+           "a removal judges only the folders above the link");
+  QCOMPARE(critical.count(), 0);
+
   QVERIFY2(pass.callRefuseLinkedPath(QStringLiteral("linked/entry.gpg")),
            "an entry behind a link is refused");
   QCOMPARE(starting.count(), 1);
@@ -6229,6 +6240,43 @@ void tst_util::refuseLinkedPathRefusesAndReleasesTheUi() {
   QCOMPARE(errSpy.count(), 1);
   QCOMPARE(errSpy.at(0).at(0).toInt(), 1);
   QCOMPARE(errSpy.at(0).at(1).toString(), why);
+#endif
+}
+
+/**
+ * @brief A path spelled through a linked store root's target breaks the
+ *        class's path rule and is logged, unless the caller places it
+ *        itself (Init()); either way it is not refused for that alone.
+ */
+void tst_util::refuseLinkedPathWarnsOnlyOnAnUnplacedTargetSpelling() {
+#ifdef Q_OS_WIN
+  QSKIP("creating a symlink needs a privilege a CI runner may lack");
+#else
+  QTemporaryDir base;
+  QVERIFY(base.isValid());
+  const QString target = QDir(base.path()).filePath(QStringLiteral("target"));
+  const QString root = QDir(base.path()).filePath(QStringLiteral("root"));
+  QVERIFY(QDir().mkpath(target));
+  QVERIFY(QFile::link(target, root));
+  TestPass pass;
+  AppSettings s;
+  s.passStore = root;
+  pass.init(s);
+  // Through the canonical target, as the link resolves: where the temporary
+  // directory itself lies behind a link (/var on macOS), the plain target
+  // path is under neither spelling of the root.
+  const QString spelled = QDir(QFileInfo(target).canonicalFilePath())
+                              .filePath(QStringLiteral("entry.gpg"));
+  const QRegularExpression warning(QStringLiteral("spelled through"));
+
+  QTest::failOnWarning(warning);
+  QVERIFY(!pass.callRefuseLinkedPath(spelled,
+                                     TestPass::LinkScope::EntryAndParents,
+                                     TestPass::PathSpelling::PlacedByCaller));
+  // ignoreMessage() wins over failOnWarning(), and fails the test when the
+  // warning does not come.
+  QTest::ignoreMessage(QtWarningMsg, warning);
+  QVERIFY(!pass.callRefuseLinkedPath(spelled));
 #endif
 }
 

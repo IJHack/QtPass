@@ -238,7 +238,7 @@ auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
  */
 void RealPass::Remove(QString file, bool isDir) {
   // Nothing behind a link is the store's to delete.
-  if (refuseLinkedPath(isDir ? file : file + ".gpg", false)) {
+  if (refuseLinkedPath(isDir ? file : file + ".gpg", LinkScope::ParentsOnly)) {
     return;
   }
   // pass rm turns a folder into "<folder>/" and rm -rf then follows a link
@@ -369,9 +369,13 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // through a link and a folder spelled through its target agree (a lexical
   // relativeFilePath() made that ../../target/dir, which pass refuses).
   QString dirWithoutPassdir;
-  if (refuseLinkedPath(folder, true, true) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id"), true, true) ||
-      refuseLinkedPath(folder + QStringLiteral("/.gpg-id.sig"), true, true) ||
+  const auto refusePlaced = [this](const QString &placed) {
+    return refuseLinkedPath(placed, LinkScope::EntryAndParents,
+                            PathSpelling::PlacedByCaller);
+  };
+  if (refusePlaced(folder) ||
+      refusePlaced(folder + QStringLiteral("/.gpg-id")) ||
+      refusePlaced(folder + QStringLiteral("/.gpg-id.sig")) ||
       refuseFolderOutsideStore(folder, &dirWithoutPassdir)) {
     return;
   }
