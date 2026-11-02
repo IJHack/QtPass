@@ -19,17 +19,20 @@ localization/localization_*.ts):
 
   pending [FILE ...]
       Print the empty entries as JSON, with each locale's glossary terms,
-      for a human or an agent to translate.
+      for a human or an agent to translate. A plural entry has a list with
+      one text per plural form of the language.
   apply FILE TRANSLATIONS.json
       Fill FILE from a JSON object that maps source text to its
-      translation (the output of "pending", with translations added, also
-      works).
+      translation, or for a plural entry to a list of one text per form
+      (the output of "pending", with translations added, also works).
   llm [--url URL] [--model MODEL] [--cache CACHE.json] [--skip l1,l2] [FILE ...]
       Translate with a local model behind an OpenAI-compatible API, such as
       FastFlowLM on an NPU (the default, port 52625) or ollama. The prompt
       names the dialog the string comes from and lists the terms the
       locale's file already uses for words in it (store, clipboard, ...),
-      so the new text follows the file's own vocabulary.
+      so the new text follows the file's own vocabulary. Plural entries
+      with more than one form are left for a person: one answer cannot
+      carry every form.
   review [--since REF] [--back] [--revert CODES] [--skip l1,l2] [FILE ...]
       Pedantic review of every unfinished translation that has text (with
       --since, only those that were empty at git REF): the fill checks,
@@ -217,7 +220,10 @@ FINISHED = re.compile(r"<source>(.*?)</source>\s*<translation>(.*?)</translation
 
 Ask = Callable[[str, float], str]
 Terms = list[tuple[str, str]]
-Translate = Callable[[str, str], str | None]
+# One text, or one per plural form.
+Answer = str | list[str]
+# (context, source, plural forms or 0) -> the translation, or None.
+Translate = Callable[[str, str, int], Answer | None]
 
 
 def locale_of(path: str) -> str:
@@ -367,6 +373,18 @@ def reply_text(content: str) -> str:
     return THINK.sub("", content).strip()
 
 
+def answer_of(raw: bytes) -> str:
+    """The text of a chat completion; OSError when the reply is malformed, so
+    callers treat it as the backend failing, not as an answer."""
+    try:
+        content = json.loads(raw)["choices"][0]["message"]["content"]
+    except (ValueError, LookupError, TypeError) as error:
+        raise OSError(f"malformed reply: {error!r}") from error
+    if not isinstance(content, str):
+        raise OSError(f"malformed reply: content is {type(content).__name__}")
+    return reply_text(content)
+
+
 def chat(url: str, model: str) -> Ask:
     """An Ask that sends a prompt to an OpenAI-compatible chat endpoint."""
 
@@ -384,31 +402,32 @@ def chat(url: str, model: str) -> Ask:
             {"Content-Type": "application/json"},
         )
         with urllib.request.urlopen(request, timeout=300) as reply:  # nosec B310
-            return reply_text(json.load(reply)["choices"][0]["message"]["content"])
+            return answer_of(reply.read())
 
     return ask
 
 
-def entries(data: str) -> Iterator[tuple[str, str]]:
-    """(context, source) of every empty unfinished message in a file's text."""
+def entries(data: str) -> Iterator[tuple[str, str, int]]:
+    """(context, source, plural forms or 0) of every empty unfinished
+    message in a file's text."""
     for name, body in CONTEXT_BLOCK.findall(data):
         for message in MESSAGE.finditer(body):
-            if EMPTY.search(message.group(2)):
-                src = SOURCE.search(message.group(2))
-                if src:
-                    yield name, html.unescape(src.group(1))
+            empty = EMPTY.search(message.group(2))
+            src = SOURCE.search(message.group(2))
+            if empty and src:
+                forms = empty.group(1).count("<numerusform>")
+                yield name, html.unescape(src.group(1)), forms
 
 
-def translation_element(inner: str, out: str) -> str:
+def translation_element(inner: str, out: Answer) -> str:
     """The filled <translation> for an empty one whose content was inner:
-    every plural form gets out, in the file's own indentation."""
-    if "<numerusform>" not in inner:
+    one text, or one per plural form, in the file's own indentation."""
+    if isinstance(out, str):
         return f'<translation type="unfinished">{ts_escape(out)}</translation>'
     indent = re.search(r"\n([ \t]*)<numerusform>", inner)
     pad = indent.group(1) if indent else ""
     close = inner.rsplit("</numerusform>", 1)[1]
-    form = f"\n{pad}<numerusform>{ts_escape(out)}</numerusform>"
-    forms = form * inner.count("<numerusform>")
+    forms = "".join(f"\n{pad}<numerusform>{ts_escape(f)}</numerusform>" for f in out)
     return f'<translation type="unfinished">{forms}{close}</translation>'
 
 
@@ -427,10 +446,21 @@ def edit_messages(data: str, edit: Callable[[str, str], str]) -> str:
     return CONTEXT_BLOCK.sub(context, data)
 
 
+def fits(out: Answer | None, forms: int) -> bool:
+    """Whether out has the shape of the message: one text for a plain one,
+    one per form for a plural one (a single form takes either)."""
+    if out is None:
+        return False
+    if forms <= 1:
+        return isinstance(out, str) or len(out) == forms
+    return isinstance(out, list) and len(out) == forms
+
+
 def fill(data: str, translate: Translate) -> tuple[str, int, int]:
     """Fill each empty unfinished message of a file's text with
-    translate(context, source); None leaves it empty. Returns the new text
-    and the numbers filled and left."""
+    translate(context, source, forms); None, or an answer of the wrong
+    shape, leaves it empty. Returns the new text and the numbers filled and
+    left."""
     counts = [0, 0]
 
     def edit(context: str, body: str) -> str:
@@ -438,11 +468,14 @@ def fill(data: str, translate: Translate) -> tuple[str, int, int]:
         src = SOURCE.search(body)
         if not empty or not src:
             return body
-        out = translate(context, html.unescape(src.group(1)))
-        if out is None:
+        forms = empty.group(1).count("<numerusform>")
+        out = translate(context, html.unescape(src.group(1)), forms)
+        if not fits(out, forms) or out is None:
             counts[1] += 1
             return body
         counts[0] += 1
+        if forms and isinstance(out, str):
+            out = [out]  # a language with one plural form
         start, end = empty.span()
         return body[:start] + translation_element(empty.group(1), out) + body[end:]
 
@@ -474,6 +507,27 @@ def checked(locale: str, source: str, out: str | None) -> str | None:
     return None if problems(source, out, locale) else out
 
 
+def answer_problems(source: str, out: Answer, locale: str) -> list[str]:
+    """problems() for one text or each plural form. A form may spell the
+    number out instead of %n (\"one line\"), as long as some form has %n."""
+    if isinstance(out, str):
+        return problems(source, out, locale)
+    found = []
+    for form in out:
+        base = source if "%n" in form else source.replace("%n", "")
+        found += problems(base, form, locale)
+    if "%n" in source and not any("%n" in form for form in out):
+        found.append("placeholders")
+    return list(dict.fromkeys(found))
+
+
+def tidied(source: str, out: Answer, locale: str) -> Answer:
+    """tidy() for one text or each plural form."""
+    if isinstance(out, str):
+        return tidy(source, out, locale)
+    return [tidy(source, form, locale) for form in out]
+
+
 def cmd_pending(args: argparse.Namespace) -> int:
     """Print the empty entries of the files as JSON."""
     result = []
@@ -483,19 +537,25 @@ def cmd_pending(args: argparse.Namespace) -> int:
             continue
         data = read(path)
         terms = glossary(data)
-        for context, source in entries(data):
+        for context, source, forms in entries(data):
             result.append(
                 {
                     "locale": locale,
                     "context": context,
                     "source": source,
                     "glossary": dict(terms_in(source, terms)),
-                    "translation": "",
+                    # a plural message takes one text per form
+                    "translation": [""] * forms if forms > 1 else "",
                 }
             )
     json.dump(result, sys.stdout, ensure_ascii=False, indent=1)
     print()
     return 0
+
+
+def complete(value: Answer) -> bool:
+    """Whether a given translation has text in every form."""
+    return bool(value) and all(value if isinstance(value, list) else [value])
 
 
 def cmd_apply(args: argparse.Namespace) -> int:
@@ -505,14 +565,19 @@ def cmd_apply(args: argparse.Namespace) -> int:
         given = json.load(handle)
     if isinstance(given, list):
         mine = [e for e in given if e.get("locale", locale) == locale]
-        given = {e["source"]: e["translation"] for e in mine if e.get("translation")}
+        given = {e["source"]: e["translation"] for e in mine}
+    given = {k: v for k, v in given.items() if complete(v)}
     rejected = []
 
-    def translate(_context: str, source: str) -> str | None:
-        out = checked(locale, source, given.get(source))
-        if source in given and out is None:
-            why = problems(source, tidy(source, given[source], locale), locale)
+    def translate(_context: str, source: str, forms: int) -> Answer | None:
+        if source not in given:
+            return None
+        out = tidied(source, given[source], locale)
+        why = [] if fits(out, forms) else [f"{forms} plural forms wanted"]
+        why = why or answer_problems(source, out, locale)
+        if why:
             rejected.append(f"{', '.join(why)}: {source[:60]!r}")
+            return None
         return out
 
     data, filled, left = fill(read(args.file), translate)
@@ -571,9 +636,11 @@ def llm_file(
     data = read(path)
     terms = glossary(data)
 
-    def translate(context: str, source: str) -> str | None:
+    def translate(context: str, source: str, forms: int) -> Answer | None:
         if locale == "en_GB":
-            return source
+            return [source] * forms if forms > 1 else source
+        if forms > 1:
+            return None  # one text cannot carry every plural form: leave it
         key = f"{args.model}\x1f{locale}\x1f{context}\x1f{source}"
         if key not in cache:
             out, why = translate_one(ask, locale, context, source, terms)
@@ -739,7 +806,19 @@ def empty_since(path: str, ref: str) -> set[tuple[str, str]] | None:
         encoding="utf-8",
         check=False,
     )
-    return set(entries(old.stdout)) if old.returncode == 0 else None
+    if old.returncode:
+        return None
+    return {(context, source) for context, source, _forms in entries(old.stdout)}
+
+
+def ref_exists(ref: str) -> bool:
+    """Whether ref names a commit in the repository here."""
+    done = subprocess.run(  # nosec B603 B607
+        ["git", "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"],
+        capture_output=True,
+        check=False,
+    )
+    return done.returncode == 0
 
 
 def emptied(inner: str) -> str:
@@ -757,15 +836,16 @@ def review_file(
     ask: Ask | None,
     cache: dict[str, str | None],
     args: argparse.Namespace,
-) -> int:
+) -> tuple[int, int]:
     """Review one file, print the findings, empty the reverted entries;
-    returns the number of entries with a finding."""
+    returns the number of entries with a finding and of failed
+    back-translations."""
     data = read(path)
     terms = glossary(data)
     register = register_of(data, locale)
     fresh = empty_since(path, args.since) if args.since else None
     revert = set(filter(None, args.revert.split(",")))
-    count = [0, 0]
+    count = [0, 0, 0]  # with findings, emptied, back-translations that failed
 
     def edit(context: str, body: str) -> str:
         unfinished = UNFINISHED.search(body)
@@ -781,8 +861,13 @@ def review_file(
         found = []
         for form in forms:
             found += review_text(source, form, locale, terms, register)
-        back = back_translate(ask, locale, forms[0], cache, args) if ask else None
-        if back is not None:
+        backs = []
+        for form in dict.fromkeys(forms if ask else []):
+            back = back_translate(ask, locale, form, cache, args) if ask else None
+            if back is None:
+                count[2] += 1
+                continue
+            backs.append(back)
             found += meaning(source, back)
         if not found:
             return body
@@ -790,7 +875,7 @@ def review_file(
         count[0] += 1
         print(f"{locale}: [{'; '.join(found)}] {source[:70]!r}")
         print(f"    -> {forms[0][:110]!r}")
-        if back is not None:
+        for back in backs:
             print(f"    <- {back[:110]!r}")
         matched = {c for c in revert for f in found if f.startswith(c)}
         if "all" not in revert and not matched:
@@ -804,7 +889,7 @@ def review_file(
         write(path, new)
     if count[1]:
         print(f"{locale}: emptied {count[1]}")
-    return count[0]
+    return count[0], count[2]
 
 
 def cmd_review(args: argparse.Namespace, ask: Ask | None = None) -> int:
@@ -820,15 +905,24 @@ def cmd_review(args: argparse.Namespace, ask: Ask | None = None) -> int:
         return 2
     elif ask is None:
         ask = chat(args.url, args.model)
+    if args.since and not ref_exists(args.since):
+        # Never fall back to "every entry": with --revert that would empty
+        # translations that were there before.
+        print(f"review: --since {args.since} is not a commit", file=sys.stderr)
+        return 2
     skip = set(filter(None, args.skip.split(","))) | {"en_US", "en_GB"}
     cache = load_cache(args.cache)
-    total = 0
+    total = failed = 0
     for path in files(args.files):
         locale = locale_of(path)
         if locale in skip or locale not in LANGUAGE:
             continue
-        total += review_file(path, locale, ask, cache, args)
+        found, lost = review_file(path, locale, ask, cache, args)
+        total, failed = total + found, failed + lost
     print(f"total: {total} with findings" if total else "total: clean")
+    if failed:
+        print(f"incomplete: {failed} back-translations failed", file=sys.stderr)
+        return 2
     return 1 if total else 0
 
 

@@ -114,11 +114,11 @@ byte for byte. Before it writes a translation it checks:
 - the `%1`, `%2` and `%n` placeholders, the HTML tags and the line breaks match
   the source;
 - the `&` shortcut is kept (it is put back when a model drops it);
-- the text has only letters of the locale's own script, plus Latin words the
-  source has.
+- the text uses only the locale's own script, plus Latin words the source has.
 
 A translation that fails a check stays empty. `en_US` is never filled; `en_GB`
-gets the source text.
+gets the source text. A plural entry takes one text per form (a list in the
+JSON); `llm` leaves plurals with more than one form for a person.
 
 ```bash
 T=.opencode/skills/qtpass-localization/scripts/fill_ts.py

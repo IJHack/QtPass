@@ -77,20 +77,25 @@ class FillTest(unittest.TestCase):
         """Both empty messages are filled; every other line stays as it was."""
         seen = []
 
-        def translate(context: str, source: str) -> str:
-            seen.append((context, source))
-            return "Gebruik <b>&" if "%1" in source else "%n regel(s)"
+        def translate(context: str, source: str, forms: int):
+            seen.append((context, source, forms))
+            return "Gebruik <b>&" if "%1" in source else ["%n regel", "%n regels"]
 
         data, filled, left = fill_ts.fill(SAMPLE, translate)
         self.assertEqual((filled, left), (2, 0))
         self.assertEqual(
             seen,
-            [("ConfigDialog", 'Use the "%1" store'), ("ConfigDialog", "%n line(s)")],
+            [
+                ("ConfigDialog", 'Use the "%1" store', 0),
+                ("ConfigDialog", "%n line(s)", 2),
+            ],
         )
         want = "Gebruik &lt;b&gt;&amp;</translation>"
         self.assertIn(f'<translation type="unfinished">{want}', data)
-        form = "            <numerusform>%n regel(s)</numerusform>\n"
-        self.assertIn(form * 2 + "        </translation>", data)
+        pad = "            "
+        forms = f"{pad}<numerusform>%n regel</numerusform>\n"
+        forms += f"{pad}<numerusform>%n regels</numerusform>\n"
+        self.assertIn(forms + "        </translation>", data)
         old = [line for line in SAMPLE.splitlines() if "<translation" not in line]
         new = [line for line in data.splitlines() if "<translation" not in line]
         self.assertEqual(
@@ -100,8 +105,21 @@ class FillTest(unittest.TestCase):
 
     def test_none_leaves_the_message_empty(self) -> None:
         """A None answer keeps the file byte for byte and counts as left."""
-        data, filled, left = fill_ts.fill(SAMPLE, lambda _c, _s: None)
+        data, filled, left = fill_ts.fill(SAMPLE, lambda _c, _s, _f: None)
         self.assertEqual((data, filled, left), (SAMPLE, 0, 2))
+
+    def test_shape_must_fit(self) -> None:
+        """One text cannot fill two plural forms, nor a list a plain message."""
+
+        def one_text(_context: str, source: str, _forms: int):
+            return "x" if "%1" not in source else ["Gebruik %1"]
+
+        data, filled, left = fill_ts.fill(SAMPLE, one_text)
+        self.assertEqual((data, filled, left), (SAMPLE, 0, 2))
+        single = SAMPLE.replace("<numerusform></numerusform>\n", "", 1)
+        data, filled, _ = fill_ts.fill(single, lambda _c, _s, _f: "%n regels")
+        self.assertEqual(filled, 2)
+        self.assertIn("<numerusform>%n regels</numerusform>", data)
 
 
 class GlossaryTest(unittest.TestCase):
@@ -185,21 +203,21 @@ class LlmTest(unittest.TestCase):
 
     def test_retries_then_accepts(self) -> None:
         """A dropped %1 is asked again; the glossary and the dialog are in the prompt."""
-        replies = ("Gebruik de opslag", 'Gebruik de opslag "%1"', "%n regel(s)")
-        ask, asked = answers(*replies)
+        ask, asked = answers("Gebruik de opslag", 'Gebruik de opslag "%1"')
         (data,) = self.run_llm(ask, ["nl_NL"])
         self.assertIn("Gebruik de opslag &quot;%1&quot;</translation>", data)
-        self.assertEqual(len(asked), 3)
+        self.assertIn("<numerusform></numerusform>", data)
+        self.assertEqual(len(asked), 2)
         self.assertIn("store = Opslag", asked[0])
         self.assertIn("the settings dialog", asked[0])
         self.assertNotIn("password store = ", asked[0])
 
     def test_gives_up_after_three(self) -> None:
-        """Three bad answers leave the message empty."""
+        """Three bad answers leave the message empty; the plural is not asked."""
         ask, asked = answers("geen plaatshouder")
         (data,) = self.run_llm(ask, ["nl_NL"])
         self.assertEqual(data, SAMPLE)
-        self.assertEqual(len(asked), 6)
+        self.assertEqual(len(asked), 3)
 
     def test_backend_failure_is_not_cached(self) -> None:
         """A server that does not answer leaves the entry for the next run."""
@@ -216,53 +234,84 @@ class LlmTest(unittest.TestCase):
             cache = os.path.join(tmp, "cache.json")
             (data,) = self.run_llm(down, ["nl_NL"], cache)
             self.assertEqual(data, SAMPLE)
-            self.assertEqual(len(asked), 6)
+            self.assertEqual(len(asked), 3)
             self.assertFalse(os.path.exists(cache))
-            ask, _ = answers("Gebruik %1", "%n regels")
+            ask, _ = answers("Gebruik %1")
             self.run_llm(ask, ["nl_NL"], cache)
             stored = json.loads(Path(cache).read_text(encoding="utf-8"))
-            self.assertEqual(len(stored), 2)
+            self.assertEqual(len(stored), 1)
             self.assertFalse(os.path.exists(cache + ".tmp"))
 
     def test_english_locales_and_cache(self) -> None:
         """en_US is skipped, en_GB copies the source, and the cache answers a rerun."""
-        ask, asked = answers("Gebruik %1", "%n regels")
+        ask, asked = answers("Gebruik %1")
         with tempfile.TemporaryDirectory() as tmp:
             cache = os.path.join(tmp, "cache.json")
             us, gb, nl = self.run_llm(ask, ["en_US", "en_GB", "nl_NL"], cache)
             self.assertEqual(us, SAMPLE)
             self.assertIn("Use the &quot;%1&quot; store</translation>", gb)
+            self.assertEqual(gb.count("<numerusform>%n line(s)</numerusform>"), 2)
             self.assertIn("Gebruik %1</translation>", nl)
-            self.assertEqual(len(asked), 2)
+            self.assertEqual(len(asked), 1)
             stored = json.loads(Path(cache).read_text(encoding="utf-8"))
-            self.assertEqual(len(stored), 2)
+            self.assertEqual(len(stored), 1)
             (again,) = self.run_llm(ask, ["nl_NL"], cache)
             self.assertEqual(again, nl)
-            self.assertEqual(len(asked), 2)
+            self.assertEqual(len(asked), 1)
 
 
 class ApplyTest(unittest.TestCase):
     """apply fills from JSON and refuses a broken translation."""
 
-    def test_apply(self) -> None:
-        """A good entry is written, a bad one refused with exit status 1."""
+    def run_apply(self, given):
+        """cmd_apply on a copy of SAMPLE: (status, new text, stderr)."""
         with tempfile.TemporaryDirectory() as tmp:
             path = os.path.join(tmp, "localization_nl_NL.ts")
             Path(path).write_text(SAMPLE, encoding="utf-8")
-            given = os.path.join(tmp, "nl.json")
-            Path(given).write_text(
-                json.dumps({'Use the "%1" store': "Gebruik %1", "%n line(s)": "x"}),
-                encoding="utf-8",
-            )
-            args = argparse.Namespace(file=path, translations=given)
+            name = os.path.join(tmp, "nl.json")
+            Path(name).write_text(json.dumps(given), encoding="utf-8")
+            args = argparse.Namespace(file=path, translations=name)
             out, err = io.StringIO(), io.StringIO()
             with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
                 status = fill_ts.cmd_apply(args)
-            data = Path(path).read_text(encoding="utf-8")
+            return status, Path(path).read_text(encoding="utf-8"), err.getvalue()
+
+    def test_apply(self) -> None:
+        """A good entry is written, a bad one refused with exit status 1."""
+        given = {'Use the "%1" store': "Gebruik %1", "%n line(s)": "x"}
+        status, data, err = self.run_apply(given)
         self.assertEqual(status, 1)
         self.assertIn("Gebruik %1</translation>", data)
         self.assertIn("<numerusform></numerusform>", data)
-        self.assertIn("placeholders", err.getvalue())
+        self.assertIn("2 plural forms wanted", err)
+
+    def test_plural_forms(self) -> None:
+        """A plural takes one text per form; a singular may spell the number."""
+        status, data, _ = self.run_apply({"%n line(s)": ["één regel", "%n regels"]})
+        self.assertEqual(status, 0)
+        self.assertIn("<numerusform>één regel</numerusform>", data)
+        self.assertIn("<numerusform>%n regels</numerusform>", data)
+        status, data, err = self.run_apply({"%n line(s)": ["één", "twee"]})
+        self.assertEqual((status, data), (1, SAMPLE))
+        self.assertIn("placeholders", err)
+        half = self.run_apply({"%n line(s)": ["%n regel", ""]})
+        self.assertEqual(half, (0, SAMPLE, ""))
+
+    def test_pending_round_trip(self) -> None:
+        """pending gives a list for the plural; unanswered entries are skipped."""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "localization_nl_NL.ts")
+            Path(path).write_text(SAMPLE, encoding="utf-8")
+            out = io.StringIO()
+            with contextlib.redirect_stdout(out):
+                fill_ts.cmd_pending(argparse.Namespace(files=[path]))
+        pending = json.loads(out.getvalue())
+        self.assertEqual([e["translation"] for e in pending], ["", ["", ""]])
+        pending[1]["translation"] = ["%n regel", "%n regels"]
+        status, data, _ = self.run_apply(pending)
+        self.assertEqual(status, 0)
+        self.assertIn("<numerusform>%n regels</numerusform>", data)
+        self.assertIn('<translation type="unfinished"></translation>', data)
 
 
 class ReviewTextTest(unittest.TestCase):
@@ -339,6 +388,21 @@ class MeaningTest(unittest.TestCase):
         self.assertEqual(less, ["drift 2/5"])
         short = fill_ts.meaning("Clipboard restored", "Whiteboard repaired")
         self.assertEqual(short, [])
+
+
+class AnswerTest(unittest.TestCase):
+    """answer_of turns a malformed reply into a backend failure."""
+
+    def test_answer_of(self) -> None:
+        """A good reply gives its text; anything else raises OSError."""
+        good = {"choices": [{"message": {"content": "<think>x</think> Ja"}}]}
+        self.assertEqual(fill_ts.answer_of(json.dumps(good).encode()), "Ja")
+        for bad in (b"not json", b"{}", b'{"choices": []}', b"[1]"):
+            with self.assertRaises(OSError):
+                fill_ts.answer_of(bad)
+        null = {"choices": [{"message": {"content": None}}]}
+        with self.assertRaisesRegex(OSError, "NoneType"):
+            fill_ts.answer_of(json.dumps(null).encode())
 
 
 class ReviewFileTest(unittest.TestCase):
@@ -431,6 +495,42 @@ class ReviewFileTest(unittest.TestCase):
         argv = ["review", "--back", "--fill-model", fill_ts.DEFAULT_REVIEW_MODEL]
         with contextlib.redirect_stderr(io.StringIO()):
             self.assertEqual(fill_ts.main([*argv, self.path]), 2)
+
+    def test_unknown_since_is_refused(self) -> None:
+        """A bad --since stops before any file is read, even with --revert all."""
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            status, _, data = self.run_review(since="no-such-ref", revert="all")
+        self.assertEqual(status, 2)
+        self.assertIn("is not a commit", err.getvalue())
+        self.assertIn("Gebruik &quot;%1&quot;", data)
+        self.assertIn("Klembord?", data)
+
+    def test_back_failure_is_incomplete(self) -> None:
+        """A failed back-translation makes the review incomplete, not clean."""
+
+        def down(_text: str, _temperature: float) -> str:
+            raise OSError("connection refused")
+
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            status, _, _ = self.run_review(down, back=True)
+        self.assertEqual(status, 2)
+        self.assertIn("incomplete: 2 back-translations failed", err.getvalue())
+
+    def test_back_every_plural_form(self) -> None:
+        """Each distinct plural form is back-translated and checked."""
+        data = Path(self.path).read_text(encoding="utf-8")
+        second = "<numerusform>%n regels.</numerusform>"
+        data = data.replace(second, "<numerusform>%n regel.</numerusform>", 1)
+        Path(self.path).write_text(data, encoding="utf-8")
+
+        def ask(text: str, _temperature: float) -> str:
+            return "%n lines, an error" if "%n regels." in text else "%n lines."
+
+        _, out, _ = self.run_review(ask, back=True)
+        self.assertIn("alarm error", out)
+        self.assertIn("<- '%n lines.'", out)
 
     def test_reply_text(self) -> None:
         """A reasoning model's <think> block is not part of the answer."""
