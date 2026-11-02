@@ -2872,6 +2872,19 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
                QDir(linked).filePath(QStringLiteral("i:j/missing/store"))),
            real);
 
+  // "link/.." is the parent of the link's target, as the kernel and git
+  // resolve it, not the folder the link is in.
+  QVERIFY(QDir(home).mkpath(QStringLiteral("sub")));
+  QVERIFY(QDir(home).mkpath(QStringLiteral("k:l/store")));
+  const QString toSub = dir.filePath(QStringLiteral("to-sub"));
+  QVERIFY(QFile::link(QDir(home).filePath(QStringLiteral("sub")), toSub));
+  const QString throughLink = toSub + QStringLiteral("/../k:l/store");
+  QCOMPARE(passGit(throughLink), real);
+  QCOMPARE(Util::repositoryPassClimbsTo(throughLink), real);
+  QCOMPARE(Util::repositoryPassClimbsTo(
+               toSub + QStringLiteral("/../m:n/missing/store")),
+           real);
+
   // Nothing above at all.
   const QString lone = dir.filePath(QStringLiteral("g:h/store"));
   QVERIFY(QDir().mkpath(lone));

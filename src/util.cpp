@@ -146,34 +146,33 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   if (!store.contains(QLatin1Char(':'))) {
     return {};
   }
-  // git walks up from the real folder, so the real path is the one to walk.
-  // A store that does not exist yet is real from its nearest existing
-  // folder on (on macOS /var is a link to /private/var).
-  QString path = QDir::cleanPath(QDir(store).absolutePath());
-  QString rest;
+  // git walks up from the real folder, so the real path is the one to walk:
+  // from the store, or for a store that does not exist yet from its nearest
+  // existing folder (nothing below that can hold a repository). By the raw
+  // string: QDir and QFileInfo clean a path by name, and "link/.." is the
+  // parent of the link's target, not the folder the link is in. On macOS
+  // the temporary folder is under /var, a link to /private/var.
+  QString path =
+      QDir::isRelativePath(store) ? QDir::currentPath() + u'/' + store : store;
+  while (path.size() > 1 && path.endsWith(u'/')) {
+    path.chop(1);
+  }
+  bool exists = true;
   while (!QFileInfo::exists(path)) {
-    const QString up = QFileInfo(path).absolutePath();
-    if (up == path) {
-      break;
+    exists = false;
+    const qsizetype slash = path.lastIndexOf(u'/');
+    if (slash < 0) {
+      return {};
     }
-    rest =
-        QFileInfo(path).fileName() + (rest.isEmpty() ? QString() : u'/' + rest);
-    path = up;
+    path = slash == 0 ? QStringLiteral("/") : path.left(slash);
   }
   const QString real = QFileInfo(path).canonicalFilePath();
-  if (!real.isEmpty()) {
-    path = real;
-  }
-  if (!rest.isEmpty()) {
-    path = QDir(path).filePath(rest);
-  }
+  const QString start = real.isEmpty() ? QDir::cleanPath(path) : real;
   // The store's own repository comes first; only without one does git look
-  // further up.
-  // By name, not QDir::cdUp(): a store that does not exist yet still has
-  // folders above it.
-  for (QString dir = path;;) {
+  // further up. By name from here: the real path holds no link or "..".
+  for (QString dir = start;;) {
     if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral(".git")))) {
-      return dir == path ? QString() : dir;
+      return exists && dir == start ? QString() : dir;
     }
     const QString up = QFileInfo(dir).absolutePath();
     if (up == dir) {
