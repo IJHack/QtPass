@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">ਪਿਛਲੀ ਕਲਪਰਡ ਨੂੰ ਮੁੜ ਤੋਂ ਚਾਲ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -748,7 +748,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ਇੱਕ ਹੋਰ ਸਟੋਰ ਲਈ ਉਸੇ ਕੀ ਨਾਲ ਸਾਈਨ ਕਰਦਾ ਹੈ। ਇੱਕ ਪ੍ਰਾਪਤਕਰਤਾ ਦੀ ਸੂਚੀ ਜੋ ਕਿ ਇੱਕ ਇਸਤੇਮਾਲ ਲਈ ਦਸਤਖ਼ਤ ਕੀਤੀ ਗਈ ਹੈ, ਦੂਜੀ ਵਿੱਚ ਮਿਲਦੀ ਹੈ: ਹਰੇਕ ਸਟੋਰ ਲਈ ਇੱਕ ਵੱਖਰੀ ਸਾਈਨਿੰਗ ਕੀ ਵਰਤੋ ਜਿਸਦੇ ਪ੍ਰਾਪਤਕਰਤਾ ਵੱਖ-ਵੱਖ ਹਨ।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -2040,7 +2040,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">ਪਾਸਵਰਡ ਸਮਗਰੀ ਵਿੱਚ ਖੋਜ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2784,7 +2784,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ਪਾਸਵਰਡ ਸਟੋਰ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਸਟੋਰ ਜਾਂ ਇਸਦੇ ਅੰਦਰ ਇੱਕ ਫੋਲਡਰ ਲਈ ਪ੍ਰਾਪਤਕਰਤਾ ਨਿਰਧਾਰਤ ਕੀਤੇ ਗਏ ਹਨ।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
