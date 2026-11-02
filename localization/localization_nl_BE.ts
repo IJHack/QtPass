@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Klembord hersteld</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -236,12 +236,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan die in een map hoger in de structuur. Zoals bij &quot;pass&quot;, wordt er dus nooit per ongeluk een repository binnenin een andere (bijvoorbeeld dotfiles) toegevoegd of opgeslagen. Alleen native Git: &quot;pass&quot; stopt altijd bij de opslag zelf.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gebruik een Git-repository in een map boven de opslag</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -528,7 +528,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhoud zoeken activeren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -539,12 +539,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wanneer het klembord wordt gewist, plaats dan terug wat er daaraan zat voor de kopie, zoals pass -c doet, tenzij er ondertussen iets anders is gekopieerd. Alleen tekst: opmaak is niet hersteld. Die tekst blijft in het geheugen tot die tijd. Waar het klembord niet zonder focus (sommige Wayland desktops) kan worden gelezen, wordt het dan gewist.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vorige klembord herstellen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -560,12 +560,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ook andere geheimen verbergen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Velden die een geheim bevatten, niet alleen het wachtwoord: een veld waarvan de naam één van deze woorden bevat. Uit: alleen het wachtwoord is verborgen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
@@ -575,12 +575,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Standaard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stel de standaardwoorden terug: pincode, kaartcodes, sleutels, tokens, herstelcodes en dergelijke.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -661,63 +661,63 @@ email</translation>
         <translation type="vanished">Geen klembord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="133"/>
+        <location filename="../src/configdialog.cpp" line="135"/>
         <source>No clipboard</source>
         <translation>Geen klembord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="134"/>
+        <location filename="../src/configdialog.cpp" line="136"/>
         <source>Always copy to clipboard</source>
         <translation>Altijd naar klembord kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="135"/>
+        <location filename="../src/configdialog.cpp" line="137"/>
         <source>On-demand copy to clipboard</source>
         <translation>Wanneer gewenst kopiëren naar klembord</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
-        <location filename="../src/configdialog.cpp" line="332"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>This field is required</source>
         <translation>Dit veld is verplicht</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>Another profile already has this name</source>
         <translation>Een ander profiel heeft deze naam al</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="338"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation>Alleen volledige sleutelvingerafdrukken (40 of 64 hexadecimale tekens), gescheiden door spaties</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="412"/>
+        <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 gebruikt dezelfde sleutel voor een andere opslag. Een lijst met ontvangers die is ondertekend voor één van deze opslagen wordt geaccepteerd in de andere: gebruik een aparte ondertekeningssleutel voor elke opslag waarvan de ontvangers verschillen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="434"/>
+        <location filename="../src/configdialog.cpp" line="488"/>
         <source>The path does not exist.</source>
         <translation>Het pad bestaat niet.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="437"/>
+        <location filename="../src/configdialog.cpp" line="491"/>
         <source>The path is not readable.</source>
         <translation>Het pad is niet leesbaar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="440"/>
+        <location filename="../src/configdialog.cpp" line="494"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Het pad is geen Unix-domeinsocket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="444"/>
+        <location filename="../src/configdialog.cpp" line="498"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Mogelijk ongeldige SSH_AUTH_SOCK-overschrijving</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="445"/>
+        <location filename="../src/configdialog.cpp" line="499"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -730,37 +730,37 @@ The value will still be saved as entered.</source>
 De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Create profile directory?</source>
         <translation>Profielmap aanmaken?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="752"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Wilt u een wachtwoordopslag maken op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="759"/>
         <source>Could not create profile directory: %1</source>
         <translation>Kon profielmap niet aanmaken: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="783"/>
         <source>Select recipients for %1</source>
         <translation>Selecteer ontvangers voor %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="738"/>
+        <location filename="../src/configdialog.cpp" line="792"/>
         <source>Could not initialise profile %1</source>
         <translation>Kon profiel %1 niet initialiseren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="741"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Profile %1</source>
         <translation>Profiel %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="818"/>
         <source>New profile</source>
         <translation>Nieuw Profil</translation>
     </message>
@@ -769,12 +769,12 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <translation type="vanished">Nieuw Profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="785"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>No profile selected</source>
         <translation>Geen profiel geselecteerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="786"/>
+        <location filename="../src/configdialog.cpp" line="840"/>
         <source>No profile selected to delete</source>
         <translation>Geen profiel geselecteerd om te verwijderen</translation>
     </message>
@@ -795,12 +795,12 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <translation type="vanished">Wilt u een password-store maken op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="758"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation>Niet beschikbaar op Wayland; gebruik in plaats daarvan de vensterregel &quot;altijd boven&quot; van uw compositor</translation>
     </message>
@@ -817,17 +817,17 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <translation type="vanished">De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1005"/>
+        <location filename="../src/configdialog.cpp" line="1059"/>
         <source>New profile: %1 at %2</source>
         <translation>Nieuw profiel: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1007"/>
+        <location filename="../src/configdialog.cpp" line="1061"/>
         <source>Profile: %1 at %2</source>
         <translation>Profiel: %1 op %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1010"/>
+        <location filename="../src/configdialog.cpp" line="1064"/>
         <source>Fill in all required fields</source>
         <translation>Vul alle vereiste velden in</translation>
     </message>
@@ -841,7 +841,7 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="73"/>
+        <location filename="../src/configdialog.cpp" line="75"/>
         <source>System tray is not available</source>
         <translation>Systeembalk niet beschikbaar</translation>
     </message>
@@ -850,7 +850,7 @@ De waarde wordt nog steeds opgeslagen zoals ingevoerd.</translation>
         <translation type="vanished">Pass OTP extentie dient geïnstalleerd te zijn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="98"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode dient geïnstalleerd te zijn</translation>
     </message>
@@ -1003,17 +1003,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="213"/>
+        <location filename="../src/executor.cpp" line="215"/>
         <source>No executable configured for this command</source>
         <translation>Geen programma geconfigureerd voor deze opdracht</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="243"/>
+        <location filename="../src/executor.cpp" line="245"/>
         <source>Failed to start %1</source>
         <translation>Kon %1 niet starten</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="448"/>
+        <location filename="../src/executor.cpp" line="483"/>
         <source>%1 crashed or was killed</source>
         <translation>%1 is gecrasht of werd afgebroken</translation>
     </message>
@@ -1113,8 +1113,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n extra regel(s) niet weergegeven</numerusform>
+            <numerusform>… %n extra regel(s) niet weergegeven</numerusform>
         </translation>
     </message>
 </context>
@@ -1307,14 +1307,14 @@ e-mail</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="574"/>
-        <location filename="../src/realpass.cpp" line="86"/>
+        <location filename="../src/imitatepass.cpp" line="586"/>
+        <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>De ondertekening van %1 is ongeldig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="849"/>
+        <location filename="../src/imitatepass.cpp" line="861"/>
         <source>Can not edit</source>
         <translation>Kan niet bewerken</translation>
     </message>
@@ -1330,27 +1330,27 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="850"/>
+        <location filename="../src/imitatepass.cpp" line="862"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Geen idee waarvoor ik moet versleutelen, .gpg-id bestand mist of bevat onzin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="814"/>
+        <location filename="../src/pass.cpp" line="830"/>
         <source>Cannot check the recipient list</source>
         <translation>Kan de ontvangerslijst niet controleren</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="832"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation>%1 Of %2 verwijderd is, valt niet vast te stellen, dus er is niets versleuteld.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="823"/>
+        <location filename="../src/pass.cpp" line="839"/>
         <source>Recipient list missing</source>
         <translation>Ontvangerslijst ontbreekt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="824"/>
+        <location filename="../src/pass.cpp" line="840"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation>De ondertekende ontvangerslijst %1 ontbreekt of is geen gewoon bestand. QtPass valt hiervoor niet terug op de lijst van een bovenliggende map: die lijst is niet voor deze map ondertekend. Staat er een koppeling onder die naam, verwijder die dan. Open daarna het venster Gebruikers voor die map en sla de ontvangers op; dat schrijft en ondertekent een nieuwe lijst.</translation>
     </message>
@@ -1367,7 +1367,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 bevindt zich niet in de wachtwoordopslag, of een mapnaam bevat een regelbreuk of een ander controlekarakter, wat een ondertekende lijst niet kan vastleggen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1380,22 +1380,22 @@ e-mail</translation>
         <translation>Ondertekening mislukt %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="519"/>
+        <location filename="../src/imitatepass.cpp" line="531"/>
         <source>Recipients not changed</source>
         <translation>Ontvangers niet gewijzigd</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="520"/>
+        <location filename="../src/imitatepass.cpp" line="532"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation>Er is nog een herversleuteling bezig. Wacht tot die klaar is en sla de ontvangers daarna opnieuw op.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="526"/>
+        <location filename="../src/imitatepass.cpp" line="538"/>
         <source>No signing key!</source>
         <translation>Geen ondertekeningssleutel!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="539"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Geen van de geheime ondertekeningssleutels is beschikbaar.
@@ -1405,7 +1405,7 @@ U kunt de gebruikerslijst niet aanpassen!</translation>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="336"/>
         <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="492"/>
+        <location filename="../src/imitatepass.cpp" line="493"/>
         <source>Cannot update</source>
         <translation>Kan niet updaten</translation>
     </message>
@@ -1417,8 +1417,8 @@ U kunt de gebruikerslijst niet aanpassen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
         <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="729"/>
-        <location filename="../src/realpass.cpp" line="90"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Controleer de bestandsondertekening van het .gpg-id-bestand!</translation>
     </message>
@@ -1472,54 +1472,54 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
         <translation>Kon %1 niet ondertekenen: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="493"/>
+        <location filename="../src/imitatepass.cpp" line="494"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Kon de oude handtekening %1 niet verwijderen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="570"/>
         <source>Git exited with code %1.</source>
         <translation>Git is gestopt met code %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kan niet worden geïnterpreteerd als een lijst met ontvangers (een gewoon bestand van maximaal %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
-        <location filename="../src/imitatepass.cpp" line="639"/>
-        <location filename="../src/imitatepass.cpp" line="647"/>
+        <location filename="../src/imitatepass.cpp" line="623"/>
+        <location filename="../src/imitatepass.cpp" line="651"/>
+        <location filename="../src/imitatepass.cpp" line="659"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Overblijfsel van een eerdere herversleuteling</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="612"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 is geen gewoon bestand en is niet hersteld. Bekijk het en verwijder het, en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="640"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 bestaat naast %2. Beide zijn versleutelde kopieën van het item; controleer welke u wilt houden en verwijder de andere, en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="654"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 is hersteld uit de back-up die een onderbroken herversleuteling heeft achtergelaten.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="648"/>
+        <location filename="../src/imitatepass.cpp" line="660"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 ontbreekt en de back-up %2 kon niet worden teruggezet door ze te hernoemen. Hernoem ze handmatig en herversleutel daarna opnieuw.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="890"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>%1 kon niet opnieuw worden versleuteld: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1194"/>
+        <location filename="../src/imitatepass.cpp" line="1206"/>
         <source>Re-encryption failed</source>
         <translation>Herversleuteling mislukt</translation>
     </message>
@@ -1536,75 +1536,75 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
         <translation type="obsolete">Kon de back-up %1 na het herversleutelen niet verwijderen; die kan veilig worden verwijderd.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="901"/>
+        <location filename="../src/imitatepass.cpp" line="913"/>
         <source>Creating backup commit</source>
         <translation>Een back-up commit maken</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
-        <location filename="../src/imitatepass.cpp" line="925"/>
+        <location filename="../src/imitatepass.cpp" line="927"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>Backup commit failed</source>
         <translation>De back-up commit is mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="916"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Kon de git-status niet controleren. Herversleuteling is afgebroken.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
+        <location filename="../src/imitatepass.cpp" line="938"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Het herversleutelen is afgebroken omdat er geen Git-back-up kon worden gemaakt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="976"/>
         <source>A re-encryption is already running</source>
         <translation>Er is al een herversleuteling bezig</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="971"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Not a folder of the store</source>
         <translation>Geen map van de wachtwoordopslag</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 is een symbolische koppeling of junction, of ligt erachter. Waar die naar verwijst, maakt geen deel uit van de wachtwoordopslag en is niet herversleuteld.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="981"/>
+        <location filename="../src/imitatepass.cpp" line="993"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Her-encrypten vanaf map %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1057"/>
+        <location filename="../src/imitatepass.cpp" line="1233"/>
         <source>Updating password-store</source>
         <translation>Vernieuwen password-store</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1058"/>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1076"/>
         <source>Git pull failed</source>
         <translation>Git pull mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1059"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Kon na de pull niet controleren of de opslag niet-samengevoegde bestanden bevat. Controleer hem met git voordat je opnieuw versleutelt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1077"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Na de pull bevat de wachtwoordopslag niet-samengevoegde bestanden. Los het conflict op voordat u herversleutelt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1069"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull mislukt, de wachtwoordopslag wordt herversleuteld in de huidige staat</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>%n item overgeslagen: een symbolische koppeling, junction of speciaal bestand maakt geen deel uit van de wachtwoordopslag.</numerusform>
@@ -1612,27 +1612,27 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1101"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID-verificatie mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1102"/>
+        <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Kon het .gpg-id voor de map niet verifiëren.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Geen onderdeel van de wachtwoordopslag</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 is, of bevindt zich achter, een symbolische link of verbindingspunt na het ophalen. Waar dit naar verwijst maakt geen deel uit van de wachtwoordopslag en blijft ongemoeid.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1192"/>
+        <location filename="../src/imitatepass.cpp" line="1204"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... en %n meer</numerusform>
@@ -1640,7 +1640,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1195"/>
+        <location filename="../src/imitatepass.cpp" line="1207"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>%n bestand kon niet worden herversleuteld:</numerusform>
@@ -1648,18 +1648,18 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1213"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Herversleuteling geannuleerd: %1 van %2 bestanden gecontroleerd, %3 herversleuteld, %4 mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1280"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Recipients not committed</source>
         <translation>Ontvangers niet gecommit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1281"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1672,7 +1672,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 De wijziging is nog niet gecommit of gepusht. Los het Git-probleem op en commit daarna de wijzigingen, of sla de ontvangers opnieuw op.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1278"/>
+        <location filename="../src/imitatepass.cpp" line="1290"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1685,12 +1685,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 De herversleuteling is niet voltooid, dus sommige of alle items zijn nog versleuteld voor de vorige ontvangers, die ze nog steeds kunnen lezen. Er is niets gecommit of gepusht. Los het Git-probleem op en sla de ontvangers daarna opnieuw op.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1455"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Git-programma niet geconfigureerd, git wordt overgeslagen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1515"/>
+        <location filename="../src/imitatepass.cpp" line="1527"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg heeft geen versleutelde tekst voor %1 geschreven.</translation>
     </message>
@@ -1719,17 +1719,17 @@ De herversleuteling is niet voltooid, dus sommige of alle items zijn nog versleu
         <translation type="vanished">Het opnieuw versleutelen van %1 is mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Herversleuteling voltooid: %1 geslaagd, %2 mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
+        <location filename="../src/imitatepass.cpp" line="1227"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Herversleuteling voltooid: %1 bestanden opnieuw versleuteld</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1236"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Er wordt niet gepusht: %n bestand kon niet worden herversleuteld</numerusform>
@@ -1737,14 +1737,14 @@ De herversleuteling is niet voltooid, dus sommige of alle items zijn nog versleu
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1377"/>
-        <location filename="../src/imitatepass.cpp" line="1421"/>
+        <location filename="../src/imitatepass.cpp" line="1389"/>
+        <location filename="../src/imitatepass.cpp" line="1433"/>
         <source>Copy failed</source>
         <translation>Kopiëren mislukt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1378"/>
-        <location filename="../src/imitatepass.cpp" line="1422"/>
+        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1434"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Kon %1 niet kopiëren naar %2.</translation>
     </message>
@@ -1838,7 +1838,7 @@ De herversleuteling is niet voltooid, dus sommige of alle items zijn nog versleu
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 is groter dan een bestand met een sleutel kan zijn.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2024,12 +2024,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ongeldige invoer</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De Naam en het Wachtwoord mogen geen regelbreuken bevatten.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2212,7 +2212,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoeken binnen de wachtwoordinhoud</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2729,14 +2729,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">… meer overeenkomsten in deze vermelding</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>De eerste %n overeenkomsten worden weergegeven; voer een zoekopdracht in met een specifiekere term om de rest te zien.</numerusform>
+            <numerusform>De eerste %n overeenkomsten worden weergegeven; voer een zoekopdracht in met een specifiekere term om de rest te zien.</numerusform>
         </translation>
     </message>
     <message>
@@ -3053,57 +3053,59 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opgeslagen, maar niet toegevoegd</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De vermelding is opgeslagen, maar het opslaan in Git is mislukt. Wat er gerapporteerd werd:
+
+%1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="766"/>
+        <location filename="../src/pass.cpp" line="777"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 is een symbolische koppeling of junction, of ligt erachter. Waar die naar verwijst, maakt geen deel uit van de wachtwoordopslag en blijft ongemoeid.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="778"/>
+        <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 bevindt zich niet in de wachtwoordopslag. Ontvangers zijn ingesteld voor de opslag of een map daarin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="788"/>
+        <location filename="../src/pass.cpp" line="804"/>
         <source>Not part of the store</source>
         <translation>Geen onderdeel van de wachtwoordopslag</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="883"/>
+        <location filename="../src/pass.cpp" line="899"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation>Het generatieregister van de ontvangerslijsten kan niet worden gelezen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kan niet worden gelezen als een lijst met ontvangers (een gewone bestand van maximaal %2), dus er is niets vooraf geselecteerd. Controleer het voordat je hier de ontvangers kiest: OK schrijft een nieuwe lijst over het bestaande bestand.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="985"/>
+        <location filename="../src/pass.cpp" line="1001"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation>De ontvangerslijst %1 ontbreekt of is geen gewoon bestand, dus is er niets vooraf geselecteerd: de lijst van een bovenliggende map is niet voor deze map ondertekend. Selecteer zelf de ontvangers van deze map; OK schrijft en ondertekent een nieuwe lijst.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="990"/>
+        <location filename="../src/pass.cpp" line="1006"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation>%1 Er is niets vooraf geselecteerd: of %2 verwijderd is, valt niet vast te stellen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1005"/>
+        <location filename="../src/pass.cpp" line="1021"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>De ontvangerslijst %1 kan niet met de ondertekeningssleutel worden geverifieerd, dus is er niets vooraf geselecteerd: opslaan zou ondertekenen wat er ook in staat. Selecteer de ontvangers zelf; OK schrijft en ondertekent een nieuwe lijst.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="929"/>
+        <location filename="../src/pass.cpp" line="945"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Er is niets vooraf geselecteerd: opslaan zou ondertekenen wat er ook in staat. Selecteer de ontvangers zelf.</translation>
     </message>
@@ -3284,8 +3286,8 @@ Doorgaan?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Deze entry heeft %n regel(s), wat te veel is om hier te bewerken.</numerusform>
+            <numerusform>Deze entry heeft %n regel(s), wat te veel is om hier te bewerken.</numerusform>
         </translation>
     </message>
 </context>
@@ -3314,12 +3316,12 @@ Doorgaan?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="91"/>
+        <location filename="../src/profileinit.cpp" line="96"/>
         <source>Could not create %1.</source>
         <translation>Kon %1 niet aanmaken.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="150"/>
+        <location filename="../src/profileinit.cpp" line="155"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation>
             <numerusform>%1 bevat al %n versleuteld bestand; dit werd niet herversleuteld. Schakel over naar het profiel en open Gebruikers om dat te doen.</numerusform>
@@ -3327,12 +3329,12 @@ Doorgaan?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="168"/>
+        <location filename="../src/profileinit.cpp" line="173"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation>Geen ontvanger geselecteerd; %1 werd niet geschreven.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="226"/>
+        <location filename="../src/profileinit.cpp" line="231"/>
         <source>Could not sign %1 with %2.</source>
         <translation>Kon %1 niet ondertekenen met %2.</translation>
     </message>
@@ -3341,18 +3343,18 @@ Doorgaan?</translation>
         <translation type="obsolete">Kon %1 niet schrijven: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="228"/>
+        <location filename="../src/profileinit.cpp" line="233"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation>Kon %1 niet ondertekenen met %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="238"/>
+        <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De geconfigureerde GPG-home directory %1 bestaat niet.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="260"/>
-        <location filename="../src/profileinit.cpp" line="292"/>
+        <location filename="../src/profileinit.cpp" line="265"/>
+        <location filename="../src/profileinit.cpp" line="297"/>
         <source>git %1 failed in %2: %3</source>
         <translation>git %1 mislukt in %2: %3</translation>
     </message>
@@ -3587,38 +3589,38 @@ Doorgaan?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="142"/>
+        <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De ontvangerslijsten worden gecontroleerd onder %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="249"/>
+        <location filename="../src/realpass.cpp" line="250"/>
         <source>Could not remove the link %1.</source>
         <translation>Kon de koppeling %1 niet verwijderen.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="251"/>
         <source>Delete failed</source>
         <translation>Verwijderen mislukt</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="300"/>
+        <location filename="../src/realpass.cpp" line="301"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation>De koppeling %1 is verwijderd, maar git kon dat niet vastleggen: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="302"/>
-        <location filename="../src/realpass.cpp" line="352"/>
+        <location filename="../src/realpass.cpp" line="303"/>
+        <location filename="../src/realpass.cpp" line="353"/>
         <source>Delete incomplete</source>
         <translation>Verwijderen onvolledig</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
+        <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De link %1 is verwijderd en Git houdt het niet meer bij, maar de commit is mislukt: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="468"/>
+        <location filename="../src/realpass.cpp" line="473"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation>Om te zoeken moet het GPG-programma geconfigureerd zijn.</translation>
     </message>
@@ -3878,34 +3880,34 @@ Rode inzendingen zijn niet geldig, u zult niet in staat zijn om te coderen voor 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="851"/>
+        <location filename="../src/util.cpp" line="942"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="863"/>
-        <location filename="../src/util.cpp" line="942"/>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="954"/>
+        <location filename="../src/util.cpp" line="1033"/>
+        <location filename="../src/util.cpp" line="1063"/>
         <source>Cannot write %1: %2</source>
         <translation>Kan %1 niet schrijven: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="878"/>
+        <location filename="../src/util.cpp" line="969"/>
         <source>Failed to replace %1.</source>
         <translation>Kon %1 niet vervangen.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="883"/>
+        <location filename="../src/util.cpp" line="974"/>
         <source>%1 already exists.</source>
         <translation>%1 bestaat al.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="885"/>
+        <location filename="../src/util.cpp" line="976"/>
         <source>Failed to write %1.</source>
         <translation>Kon %1 niet schrijven.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="929"/>
+        <location filename="../src/util.cpp" line="1020"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>%1 werd tijdens het schrijven vervangen door een ander bestand.</translation>
     </message>
@@ -3914,12 +3916,12 @@ Rode inzendingen zijn niet geldig, u zult niet in staat zijn om te coderen voor 
         <translation type="obsolete">%1 werd tijdens het schrijven vervangen door een koppeling.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="955"/>
+        <location filename="../src/util.cpp" line="1046"/>
         <source>Cannot read %1.</source>
         <translation>Kan %1 niet lezen.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="965"/>
+        <location filename="../src/util.cpp" line="1056"/>
         <source>Cannot read %1: %2</source>
         <translation>Kan %1 niet lezen: %2</translation>
     </message>

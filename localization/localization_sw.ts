@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Washa utafutaji wa maudhui</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -466,7 +466,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rejesha nakali iliyoko kwenye kope</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -482,12 +482,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fichia pia siri zingine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fichia masanduku ambazo zina siri, sio tu nenosiri: sanduku ambalo jina lake linahifadhi moja ya maneno haya. Imefungwa: Nenosiri pekee limefichwa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
@@ -497,12 +497,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">chaguo la msingi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rudi kwenye nenosho zilizopo: PIN, nambari za kadi, vidole, alama, na kadhalika.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tumia &quot;Git repository&quot; katika folda inayofuatia eneo la kuhifadhia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -692,7 +692,7 @@ barua pepe</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; toleo </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="73"/>
+        <location filename="../src/configdialog.cpp" line="75"/>
         <source>System tray is not available</source>
         <translation>Trey ya mfumo haipo</translation>
     </message>
@@ -701,12 +701,12 @@ barua pepe</translation>
         <translation type="vanished">Kiendelezi cha Pass OTP kinahitaji kusanikishwa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Haipatikani kwenye Wayland; badala yake tumia kanuni ya dirisha ya &quot;weka juu&quot; ya compositor yako</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="98"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode inahitaji kusanikishwa</translation>
     </message>
@@ -715,63 +715,63 @@ barua pepe</translation>
         <translation type="vanished">Hakuna Ubao wa Kunakili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="133"/>
+        <location filename="../src/configdialog.cpp" line="135"/>
         <source>No clipboard</source>
         <translation type="unfinished">Hakuna ubao wa kunakili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="134"/>
+        <location filename="../src/configdialog.cpp" line="136"/>
         <source>Always copy to clipboard</source>
         <translation>Daima nakili kwenye ubao wa kunakili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="135"/>
+        <location filename="../src/configdialog.cpp" line="137"/>
         <source>On-demand copy to clipboard</source>
         <translation>Nakili kwenye ubao wa kunakili kwa mahitaji</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
-        <location filename="../src/configdialog.cpp" line="332"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>This field is required</source>
         <translation>Sehemu hii inahitajika</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Wasifu mwingine tayari una jina hili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="338"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Alama kamili za vidole za funguo pekee (herufi 40 au 64 za heksadesimali), zikitenganishwa kwa nafasi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="412"/>
+        <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 anaingiza kwa funguo sawa kwa duka lingine. Orodha ya watazuliwa ambaye alisaini kwa moja ya maduka haya, inaakiriwa katika duka lingine: tumia funguo tofauti za kusaini kwa kila duka ambalo watazuliwa wake ni tofauti.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="434"/>
+        <location filename="../src/configdialog.cpp" line="488"/>
         <source>The path does not exist.</source>
         <translation>Njia haipo.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="437"/>
+        <location filename="../src/configdialog.cpp" line="491"/>
         <source>The path is not readable.</source>
         <translation>Njia haisomiki.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="440"/>
+        <location filename="../src/configdialog.cpp" line="494"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Njia si tundiko la kikoa cha Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="444"/>
+        <location filename="../src/configdialog.cpp" line="498"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Ubadilishaji wa SSH_AUTH_SOCK unaowezekana kuwa batili</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="445"/>
+        <location filename="../src/configdialog.cpp" line="499"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -784,42 +784,42 @@ The value will still be saved as entered.</source>
 Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Create profile directory?</source>
         <translation>Unda saraka ya wasifu?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="752"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Je, ungependa kuunda hifadhi ya nenosiri katika %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="758"/>
         <source>Error</source>
         <translation>Kosa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="759"/>
         <source>Could not create profile directory: %1</source>
         <translation>Haikuweza kuunda saraka ya wasifu: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="783"/>
         <source>Select recipients for %1</source>
         <translation>Chagua wapokeaji kwa %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="738"/>
+        <location filename="../src/configdialog.cpp" line="792"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Haikuweza kuanzisha wasifu %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="741"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Profile %1</source>
         <translation type="unfinished">Wasifu %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="818"/>
         <source>New profile</source>
         <translation>Wasifu Mpya</translation>
     </message>
@@ -828,12 +828,12 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation type="vanished">Wasifu Mpya</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="785"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>No profile selected</source>
         <translation>Hakuna wasifu uliochaguliwa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="786"/>
+        <location filename="../src/configdialog.cpp" line="840"/>
         <source>No profile selected to delete</source>
         <translation>Hakuna wasifu uliochaguliwa kufutwa</translation>
     </message>
@@ -874,17 +874,17 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation type="vanished">Folda %1 haionekani kuwa hifadhi ya nenosiri au bado haijaanzishwa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1005"/>
+        <location filename="../src/configdialog.cpp" line="1059"/>
         <source>New profile: %1 at %2</source>
         <translation>Wasifu mpya: %1 katika %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1007"/>
+        <location filename="../src/configdialog.cpp" line="1061"/>
         <source>Profile: %1 at %2</source>
         <translation>Wasifu: %1 katika %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1010"/>
+        <location filename="../src/configdialog.cpp" line="1064"/>
         <source>Fill in all required fields</source>
         <translation>Jaza sehemu zote zinazohitajika</translation>
     </message>
@@ -955,17 +955,17 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="213"/>
+        <location filename="../src/executor.cpp" line="215"/>
         <source>No executable configured for this command</source>
         <translation type="unfinished">Hakuna faili tekelezi iliyosanidiwa kwa amri hii</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="243"/>
+        <location filename="../src/executor.cpp" line="245"/>
         <source>Failed to start %1</source>
         <translation type="unfinished">Imeshindwa kuanzisha %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="448"/>
+        <location filename="../src/executor.cpp" line="483"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 imeanguka au imeuawa</translation>
     </message>
@@ -1065,8 +1065,8 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n mistari zaidi hazionekani</numerusform>
+            <numerusform>… %n mistari zaidi hazionekani</numerusform>
         </translation>
     </message>
 </context>
@@ -1265,21 +1265,21 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
         <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="729"/>
-        <location filename="../src/realpass.cpp" line="90"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Angalia saini ya faili ya .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="574"/>
-        <location filename="../src/realpass.cpp" line="86"/>
+        <location filename="../src/imitatepass.cpp" line="586"/>
+        <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Saini kwa %1 si sahihi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="849"/>
+        <location filename="../src/imitatepass.cpp" line="861"/>
         <source>Can not edit</source>
         <translation>Haiwezi kuhariri</translation>
     </message>
@@ -1295,27 +1295,27 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="850"/>
+        <location filename="../src/imitatepass.cpp" line="862"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Haikuweza kusoma funguo ya usimbaji fiche kutumia, faili ya .gpg-id inakosekana au si sahihi.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="814"/>
+        <location filename="../src/pass.cpp" line="830"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Haiwezi kuangalia orodha ya wapokeaji</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="832"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Haiwezi kujulikana kama %2 iliondolewa, kwa hivyo hakuna kilichosimbwa fiche.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="823"/>
+        <location filename="../src/pass.cpp" line="839"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Orodha ya wapokeaji haipo</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="824"/>
+        <location filename="../src/pass.cpp" line="840"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 haipo au si faili ya kawaida. QtPass haitumii orodha ya folda mzazi badala yake: orodha hiyo haikusainiwa kwa folda hii. Ikiwa kuna kiungo kwa jina hilo, kiondoe. Kisha fungua Watumiaji kwa folda hiyo na uhifadhi wapokeaji wake, jambo ambalo huandika na kusaini orodha mpya.</translation>
     </message>
@@ -1343,7 +1343,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="336"/>
         <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="492"/>
+        <location filename="../src/imitatepass.cpp" line="493"/>
         <source>Cannot update</source>
         <translation>Haiwezi kusasisha</translation>
     </message>
@@ -1397,81 +1397,81 @@ Hutaweza kusimua nenosiri lolote lililoongezwa mpya!</translation>
         <translation type="unfinished">Imeshindwa kusaini %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="519"/>
+        <location filename="../src/imitatepass.cpp" line="531"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Wapokeaji hawakubadilishwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="520"/>
+        <location filename="../src/imitatepass.cpp" line="532"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Usimbaji fiche tena bado unaendelea. Subiri hadi ukamilike, kisha hifadhi wapokeaji tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="526"/>
+        <location filename="../src/imitatepass.cpp" line="538"/>
         <source>No signing key!</source>
         <translation>Hakuna funguo ya kusaini!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="539"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Hakuna funguo yoyote ya siri ya kusaini inayopatikana.
 Hutaweza kubadilisha orodha ya watumiaji!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="493"/>
+        <location filename="../src/imitatepass.cpp" line="494"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Imeshindwa kuondoa saini ya zamani %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sijiko kwenye kuhifadhia nenosiri, au jina la folda linalo ndani lilikuwa na tukio la kukata au ishara nyingine, ambayo orodha iliyoainishwa haiwezi kusajili.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="570"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git imetoka na msimbo %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 halingwi kama orodha ya mpokeaji (faili rahisi la hadi %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
-        <location filename="../src/imitatepass.cpp" line="639"/>
-        <location filename="../src/imitatepass.cpp" line="647"/>
+        <location filename="../src/imitatepass.cpp" line="623"/>
+        <location filename="../src/imitatepass.cpp" line="651"/>
+        <location filename="../src/imitatepass.cpp" line="659"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Mabaki ya usimbaji fiche tena wa awali</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="612"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 si faili ya kawaida na haikurejeshwa. Iangalie na uiondoe, kisha usimbe fiche tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="640"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 ipo kando ya %2. Zote mbili ni nakala zilizosimbwa fiche za kipengee hiki; angalia unayoitaka na ufute nyingine, kisha usimbe fiche tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="654"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 imerejeshwa kutoka nakala ya chelezo iliyoachwa na usimbaji fiche tena uliokatizwa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="648"/>
+        <location filename="../src/imitatepass.cpp" line="660"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 inakosekana na nakala yake ya chelezo %2 haikuweza kurudishiwa jina lake. Badilisha jina lake kwa mkono, kisha usimbe fiche tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="890"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 haikuweza kusimbwa fiche tena: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1194"/>
+        <location filename="../src/imitatepass.cpp" line="1206"/>
         <source>Re-encryption failed</source>
         <translation>Usimbaji fiche tena umeshindwa</translation>
     </message>
@@ -1488,75 +1488,75 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation type="obsolete">Haikuweza kuondoa nakala ya chelezo %1 baada ya kusimba fiche tena; ni salama kuifuta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="901"/>
+        <location filename="../src/imitatepass.cpp" line="913"/>
         <source>Creating backup commit</source>
         <translation>Inaunda hifadhi ya nakala ya chelezo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
-        <location filename="../src/imitatepass.cpp" line="925"/>
+        <location filename="../src/imitatepass.cpp" line="927"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>Backup commit failed</source>
         <translation>Hifadhi ya nakala ya chelezo imeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="916"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Haikuweza kukagua hali ya git. Usimbaji fiche tena umesitishwa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
+        <location filename="../src/imitatepass.cpp" line="938"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Usimbaji fiche tena umesitishwa kwa sababu hifadhi ya nakala ya git haikuweza kuundwa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="976"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Usimbaji fiche tena tayari unaendelea</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="971"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Si folda ya hifadhi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakikusimbwa fiche tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="981"/>
+        <location filename="../src/imitatepass.cpp" line="993"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Inasimba fiche tena kutoka folda %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1057"/>
+        <location filename="../src/imitatepass.cpp" line="1233"/>
         <source>Updating password-store</source>
         <translation>Inasasisha hifadhi ya nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1058"/>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1076"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull imeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1059"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Haikuweza kuangalia kama hifadhi ina faili ambazo hazijaunganishwa baada ya pull. Iangalie kwa git kabla ya kusimba upya.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1077"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull imeacha hifadhi ikiwa na faili zisizounganishwa. Tatua mgongano kabla ya kusimba fiche tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1069"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull imeshindwa, inasimba fiche tena hifadhi jinsi ilivyo</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Ingizo %n limerukwa: kiungo cha ishara, junction au faili maalum si sehemu ya hifadhi.</numerusform>
@@ -1564,27 +1564,27 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1101"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>GPG ID verification failed</source>
         <translation>Uthibitishaji wa GPG ID umeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1102"/>
+        <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Haikuweza kuthibitisha .gpg-id kwa saraka.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Si sehemu ya hifadhi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ni, au iko nyuma, eneo la kipeponi au mkutano baada ya kukamata. Kile kinachoelekeza si sehemu ya kuhifadhi nenosiri na hukimbwa.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1192"/>
+        <location filename="../src/imitatepass.cpp" line="1204"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... na %n zaidi</numerusform>
@@ -1592,7 +1592,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1195"/>
+        <location filename="../src/imitatepass.cpp" line="1207"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Faili %n haikuweza kusimbwa fiche tena:</numerusform>
@@ -1600,18 +1600,18 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1213"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Usimbaji fiche tena umeghairiwa: faili %1 kati ya %2 zimekaguliwa, %3 zimesimbwa fiche tena, %4 zimeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1280"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Wapokeaji hawajafanyiwa commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1281"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1624,7 +1624,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Mabadiliko bado hayajafanyiwa commit wala kusukumwa. Rekebisha tatizo la Git, kisha fanya commit ya mabadiliko, au hifadhi wapokeaji tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1278"/>
+        <location filename="../src/imitatepass.cpp" line="1290"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1637,12 +1637,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yamesimbwa fiche kwa wapokeaji wa awali, ambao bado wanaweza kuyasoma. Hakuna kilichofanyiwa commit wala kusukumwa. Rekebisha tatizo la Git, kisha hifadhi wapokeaji tena.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1455"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Faili tekelezi ya Git haijasanidiwa, inaruka git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1515"/>
+        <location filename="../src/imitatepass.cpp" line="1527"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg haikuandika maandishi yaliyosimbwa fiche kwa %1.</translation>
     </message>
@@ -1671,17 +1671,17 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Imeshindwa kusimba fiche tena %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Usimbaji fiche tena umekamilika: %1 imefanikiwa, %2 imeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
+        <location filename="../src/imitatepass.cpp" line="1227"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Usimbaji fiche tena umekamilika: faili %1 zimesimbwa fiche tena</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1236"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Haifanyi git push: faili %n imeshindwa kusimbwa fiche tena</numerusform>
@@ -1689,14 +1689,14 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1377"/>
-        <location filename="../src/imitatepass.cpp" line="1421"/>
+        <location filename="../src/imitatepass.cpp" line="1389"/>
+        <location filename="../src/imitatepass.cpp" line="1433"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kunakili kumeshindikana</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1378"/>
-        <location filename="../src/imitatepass.cpp" line="1422"/>
+        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1434"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Haikuweza kunakili %1 hadi %2.</translation>
     </message>
@@ -1912,12 +1912,12 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kiingilio kinachotolewa si sahihi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jina na nenosiri hazipaswi kuwa na hatua za kukata.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2477,14 +2477,14 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">… zaidi ya matanano katika kipengele hiki</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Zinaonyesha matanisho %n ya kwanza; tafuta kitu ambacho ni zaidi ili kuona mengine.</numerusform>
+            <numerusform>Zinaonyesha matanisho %n ya kwanza; tafuta kitu ambacho ni zaidi ili kuona mengine.</numerusform>
         </translation>
     </message>
     <message>
@@ -2773,57 +2773,59 @@ Endelea?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Imedhaminiwa, lakini hayajawasilishwa</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Huo kipelechemashan, lakini kuichangan kwenye git kilifanikiwa. Hii ndiyo iliyoripotiwa:
+
+%1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="766"/>
+        <location filename="../src/pass.cpp" line="777"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="778"/>
+        <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sijapatikana kwenye kuhifadhia nenosiri. Mshaji umewekwa kwa kuhifadhia au mapaka ndani yake.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="788"/>
+        <location filename="../src/pass.cpp" line="804"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Si sehemu ya hifadhi</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="883"/>
+        <location filename="../src/pass.cpp" line="899"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Rekodi ya vizazi ya orodha za wapokeaji haiwezi kusomwa.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 halingwiwe kama orodha ya mshiriki (faili la kawaida la hadi %2), kwa hivyo hakuna chochote ambacho kinachaguliwa. Angalia kabla ya kuchagua washiriki hapa: &quot;OK&quot; hukugawa orodha mpya.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="985"/>
+        <location filename="../src/pass.cpp" line="1001"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Orodha ya wapokeaji %1 haipo au si faili ya kawaida, kwa hivyo hakuna kilichoteuliwa awali: orodha ya folda mzazi haikusainiwa kwa folda hii. Chagua wapokeaji wa folda hii mwenyewe; OK huandika na kusaini orodha mpya.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="990"/>
+        <location filename="../src/pass.cpp" line="1006"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Hakuna kilichoteuliwa awali: haiwezi kujulikana kama %2 iliondolewa.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1005"/>
+        <location filename="../src/pass.cpp" line="1021"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Orodha ya wapokeaji %1 haithibitiki kwa funguo ya kusaini, kwa hivyo hakuna kilichoteuliwa awali: kuhifadhi kungesaini chochote kilichomo. Chagua wapokeaji mwenyewe; OK huandika na kusaini orodha mpya.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="929"/>
+        <location filename="../src/pass.cpp" line="945"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Hakuna kilichoteuliwa awali: kuhifadhi kungesaini chochote kilichomo. Chagua wapokeaji mwenyewe.</translation>
     </message>
@@ -3004,8 +3006,8 @@ Endelea?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Hili kiungo kina %n misto, ambayo ni nyingi sana ili kuandikwa hapa.</numerusform>
+            <numerusform>Hili kiungo kina %n misto, ambayo ni nyingi sana ili kuandikwa hapa.</numerusform>
         </translation>
     </message>
 </context>
@@ -3034,12 +3036,12 @@ Endelea?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="91"/>
+        <location filename="../src/profileinit.cpp" line="96"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">Haikuweza kuunda %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="150"/>
+        <location filename="../src/profileinit.cpp" line="155"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 tayari ina faili %n iliyosimbwa fiche; haikusimbwa fiche tena. Badilisha hadi wasifu huo na ufungue Watumiaji ili kufanya hivyo.</numerusform>
@@ -3047,12 +3049,12 @@ Endelea?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="168"/>
+        <location filename="../src/profileinit.cpp" line="173"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">Hakuna mpokeaji aliyechaguliwa; %1 haikuandikwa.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="226"/>
+        <location filename="../src/profileinit.cpp" line="231"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">Haikuweza kusaini %1 kwa %2.</translation>
     </message>
@@ -3061,18 +3063,18 @@ Endelea?</translation>
         <translation type="obsolete">Haikuweza kuandika %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="228"/>
+        <location filename="../src/profileinit.cpp" line="233"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Haikuweza kusaini %1 kwa %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="238"/>
+        <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG nyumbani lililoundwa %1 haliwe.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="260"/>
-        <location filename="../src/profileinit.cpp" line="292"/>
+        <location filename="../src/profileinit.cpp" line="265"/>
+        <location filename="../src/profileinit.cpp" line="297"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 imeshindwa katika %2: %3</translation>
     </message>
@@ -3307,38 +3309,38 @@ Endelea?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="142"/>
+        <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tunaangalia orodha za waliopewa huduma chini ya %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="249"/>
+        <location filename="../src/realpass.cpp" line="250"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Haikuweza kuondoa kiungo %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="251"/>
         <source>Delete failed</source>
         <translation type="unfinished">Kufuta kumeshindwa</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="300"/>
+        <location filename="../src/realpass.cpp" line="301"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">Kiungo %1 kimeondolewa, lakini git haikuweza kukirekodi: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="302"/>
-        <location filename="../src/realpass.cpp" line="352"/>
+        <location filename="../src/realpass.cpp" line="303"/>
+        <location filename="../src/realpass.cpp" line="353"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">Kufuta hakujakamilika</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
+        <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kiungo %1 kimeondolewa na Git siko kutumia, lakini operesheni ili kufanikiwa: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="468"/>
+        <location filename="../src/realpass.cpp" line="473"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Utafutaji unahitaji faili tekelezi ya GPG iwe imesanidiwa.</translation>
     </message>
@@ -3562,34 +3564,34 @@ Maingizo ya [INVALID] na [EXPIRED] hayawezi kusimbwa fiche kwayo; maingizo ya [P
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="851"/>
+        <location filename="../src/util.cpp" line="942"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Haiwezi kuunda faili ya muda kando ya %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="863"/>
-        <location filename="../src/util.cpp" line="942"/>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="954"/>
+        <location filename="../src/util.cpp" line="1033"/>
+        <location filename="../src/util.cpp" line="1063"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Haiwezi kuandika %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="878"/>
+        <location filename="../src/util.cpp" line="969"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Imeshindwa kubadilisha %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="883"/>
+        <location filename="../src/util.cpp" line="974"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 tayari ipo.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="885"/>
+        <location filename="../src/util.cpp" line="976"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Imeshindwa kuandika %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="929"/>
+        <location filename="../src/util.cpp" line="1020"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 ilibadilishwa na faili nyingine wakati ilipokuwa ikiandikwa.</translation>
     </message>
@@ -3598,12 +3600,12 @@ Maingizo ya [INVALID] na [EXPIRED] hayawezi kusimbwa fiche kwayo; maingizo ya [P
         <translation type="obsolete">%1 ilibadilishwa na kiungo wakati ilipokuwa ikiandikwa.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="955"/>
+        <location filename="../src/util.cpp" line="1046"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Haiwezi kusoma %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="965"/>
+        <location filename="../src/util.cpp" line="1056"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Haiwezi kusoma %1: %2</translation>
     </message>

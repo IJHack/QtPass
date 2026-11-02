@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kopilarsi i riinstaluar</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aktivoj kërsimin e përmet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -436,12 +436,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kur klipboardi është pastuar, rikrijo ato që ishin atje më parë, siç bën &quot;pass&quot; -c, ndonjëse midis se janë kopjuar sende të tjera. Vetëm tekst: formatimi nuk rikuperohet. Ky tekst mbetet në kujtesë deri në momentin e pastrimit. Kur klipboardi nuk mund të lexohet pa fokus (njerëz me desktop Wayland), ai shkatërsohet në vend.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rikthe klipboardin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -457,12 +457,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fsheh edhe sekretet tjera:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fsheh fushat që ruajnë edhe një sekret, jo vetëm fjalëkalimin: një fushe, emri e cila përmban ndonjë nga këto terme. Izgjyr: vetëm fjalëkalimi është i fshehur.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
@@ -472,12 +472,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dëfto përdorimin e fjalëve të parës: PIN, kodet e kartës, qenit, tokenët dhe të tjera.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -502,12 +502,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kur depoja nuk ka një repo Git të vet, përdojini ato që janë në dosjen e saj. Si dhe me &quot;pass&quot;, nuk do të &quot;depo&quot;si brenda një repo tjetër (p.sh., dosja me .dotfiles) nga rreziku se do të &quot;commit&quot; ose &quot;push&quot; si një gabim. Vetëm Git native: &quot;pass&quot; gjithmonë mbetet në depojë.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Duke përdorur një repo Git në dosjen e vendosur mbi depo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -635,7 +635,7 @@
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="73"/>
+        <location filename="../src/configdialog.cpp" line="75"/>
         <source>System tray is not available</source>
         <translation>Tabaka e sistemit nuk është në dispozicion</translation>
     </message>
@@ -644,7 +644,7 @@
         <translation type="vanished">Zgjatimi Pass OTP duhet të instalohet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="98"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode duhet të instalohet</translation>
     </message>
@@ -653,63 +653,63 @@
         <translation type="vanished">Asnjë Klipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="133"/>
+        <location filename="../src/configdialog.cpp" line="135"/>
         <source>No clipboard</source>
         <translation>Asnjë klipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="134"/>
+        <location filename="../src/configdialog.cpp" line="136"/>
         <source>Always copy to clipboard</source>
         <translation>Gjithmonë kopjoni në klipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="135"/>
+        <location filename="../src/configdialog.cpp" line="137"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopjoni në klipboard sipas kërkesës</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="327"/>
-        <location filename="../src/configdialog.cpp" line="332"/>
+        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="334"/>
         <source>This field is required</source>
         <translation>Kjo fushë është e detyrueshme</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
+        <location filename="../src/configdialog.cpp" line="331"/>
         <source>Another profile already has this name</source>
         <translation>Një profil tjetër e ka tashmë këtë emër</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="338"/>
+        <location filename="../src/configdialog.cpp" line="340"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation>Vetëm gjurma të plota çelësash (40 ose 64 karaktere heksadecimale), të ndara me hapësira</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="412"/>
+        <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 përdor të njëjtin çelësi për t&apos;i nënshkruar të tjera depo. Lista e marrësve që janë nënshkruar për një nga këto depo, pranohet në tjetrin: përdhosni një çelësi të ndryshëm për të gjitha depot, ku marrësit janë të ndryshuar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="434"/>
+        <location filename="../src/configdialog.cpp" line="488"/>
         <source>The path does not exist.</source>
         <translation>Shtegu nuk ekziston.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="437"/>
+        <location filename="../src/configdialog.cpp" line="491"/>
         <source>The path is not readable.</source>
         <translation>Shtegu nuk është i lexueshëm.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="440"/>
+        <location filename="../src/configdialog.cpp" line="494"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Shtegu nuk është një socket i domenit të Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="444"/>
+        <location filename="../src/configdialog.cpp" line="498"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Mbivendosje e mundshme e pavlefshme e SSH_AUTH_SOCK</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="445"/>
+        <location filename="../src/configdialog.cpp" line="499"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -722,37 +722,37 @@ The value will still be saved as entered.</source>
 Vlera do të ruhet ende siç është futur.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="751"/>
         <source>Create profile directory?</source>
         <translation>Të krijohet dosja e profilit?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="752"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Dëshiron të krijosh një magazinë fjalëkalimesh në %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="759"/>
         <source>Could not create profile directory: %1</source>
         <translation>Dosja e profilit nuk u krijua dot: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="783"/>
         <source>Select recipients for %1</source>
         <translation>Zgjidh marrësit për %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="738"/>
+        <location filename="../src/configdialog.cpp" line="792"/>
         <source>Could not initialise profile %1</source>
         <translation>Profili %1 nuk u inicializua dot</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="741"/>
+        <location filename="../src/configdialog.cpp" line="795"/>
         <source>Profile %1</source>
         <translation>Profili %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="764"/>
+        <location filename="../src/configdialog.cpp" line="818"/>
         <source>New profile</source>
         <translation>Profili i ri</translation>
     </message>
@@ -761,12 +761,12 @@ Vlera do të ruhet ende siç është futur.</translation>
         <translation type="vanished">Profili i ri</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="785"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>No profile selected</source>
         <translation>Asnjë profil i zgjedhur</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="786"/>
+        <location filename="../src/configdialog.cpp" line="840"/>
         <source>No profile selected to delete</source>
         <translation>Asnjë profil i zgjedhur për të fshirë</translation>
     </message>
@@ -795,12 +795,12 @@ Vlera do të ruhet ende siç është futur.</translation>
         <translation type="vanished">Dëshiron të krijosh një password-store në %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="758"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="86"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation>Nuk disponohet në Wayland; përdorni në vend të saj rregullin e dritares &quot;mbaj sipër&quot; të kompozitorit tuaj</translation>
     </message>
@@ -817,17 +817,17 @@ Vlera do të ruhet ende siç është futur.</translation>
         <translation type="vanished">Dosja %1 nuk duket të jetë një dyqan me fjalëkalime ose ende nuk është inicializuar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1005"/>
+        <location filename="../src/configdialog.cpp" line="1059"/>
         <source>New profile: %1 at %2</source>
         <translation>Profil i ri: %1 në %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1007"/>
+        <location filename="../src/configdialog.cpp" line="1061"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 në %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1010"/>
+        <location filename="../src/configdialog.cpp" line="1064"/>
         <source>Fill in all required fields</source>
         <translation>Plotëso të gjitha fushat e kërkuara</translation>
     </message>
@@ -959,17 +959,17 @@ e-mail</translation>
 <context>
     <name>Executor</name>
     <message>
-        <location filename="../src/executor.cpp" line="213"/>
+        <location filename="../src/executor.cpp" line="215"/>
         <source>No executable configured for this command</source>
         <translation>Nuk është konfiguruar asnjë skedar i ekzekutueshëm për këtë komandë</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="243"/>
+        <location filename="../src/executor.cpp" line="245"/>
         <source>Failed to start %1</source>
         <translation>Nisja e %1 dështoi</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="448"/>
+        <location filename="../src/executor.cpp" line="483"/>
         <source>%1 crashed or was killed</source>
         <translation>%1 u rrëzua ose u ndërpre me forcë</translation>
     </message>
@@ -1069,8 +1069,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n linja(t) e tjera nuk janë të shfaqura</numerusform>
+            <numerusform>… %n linja(t) e tjera nuk janë të shfaqura</numerusform>
         </translation>
     </message>
 </context>
@@ -1263,14 +1263,14 @@ e-mail</translation>
     <name>ImitatePass</name>
     <message>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="574"/>
-        <location filename="../src/realpass.cpp" line="86"/>
+        <location filename="../src/imitatepass.cpp" line="586"/>
+        <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Nënshkrimi për %1 është i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="849"/>
+        <location filename="../src/imitatepass.cpp" line="861"/>
         <source>Can not edit</source>
         <translation>Nuk mund të modifikoni</translation>
     </message>
@@ -1286,27 +1286,27 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="850"/>
+        <location filename="../src/imitatepass.cpp" line="862"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nuk mund të lexohet çelësi i enkriptimit për t’u përdorur, skedari .gpg-id mungon ose i pavlefshëm.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="814"/>
+        <location filename="../src/pass.cpp" line="830"/>
         <source>Cannot check the recipient list</source>
         <translation>Lista e marrësve nuk mund të kontrollohet</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="816"/>
+        <location filename="../src/pass.cpp" line="832"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation>%1 Nuk mund të përcaktohet nëse %2 u hoq, prandaj asgjë nuk u enkriptua.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="823"/>
+        <location filename="../src/pass.cpp" line="839"/>
         <source>Recipient list missing</source>
         <translation>Lista e marrësve mungon</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="824"/>
+        <location filename="../src/pass.cpp" line="840"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation>Lista e nënshkruar e marrësve %1 mungon ose nuk është skedar i zakonshëm. QtPass nuk përdor në vend të saj listën e një dosjeje mëmë: ajo listë nuk është nënshkruar për këtë dosje. Nëse nën këtë emër ndodhet një lidhje, hiqeni. Pastaj hapni Përdoruesit për atë dosje dhe ruani marrësit e saj, gjë që shkruan dhe nënshkruan një listë të re.</translation>
     </message>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nuk është brenda depojës së fjalëkalimeve, ose emri i një dosje në rrugë përmban një linjë ndarje ose një karakter të kontrollit tjetër, që një listë me firmë nuk mund ta regjistroj.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1336,22 +1336,22 @@ e-mail</translation>
         <translation>Dështoi në nënshkrimin e %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="519"/>
+        <location filename="../src/imitatepass.cpp" line="531"/>
         <source>Recipients not changed</source>
         <translation>Marrësit nuk u ndryshuan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="520"/>
+        <location filename="../src/imitatepass.cpp" line="532"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation>Një ri-enkriptim është ende në punë. Prisni derisa të përfundojë, pastaj ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="526"/>
+        <location filename="../src/imitatepass.cpp" line="538"/>
         <source>No signing key!</source>
         <translation>Pa çelës nënshkrimi!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="527"/>
+        <location filename="../src/imitatepass.cpp" line="539"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Asnjë nga çelësat sekretë të nënshkrimit nuk është i disponueshëm.
@@ -1361,7 +1361,7 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="336"/>
         <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="492"/>
+        <location filename="../src/imitatepass.cpp" line="493"/>
         <source>Cannot update</source>
         <translation>Nuk mund të modifikohet</translation>
     </message>
@@ -1373,8 +1373,8 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
         <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="729"/>
-        <location filename="../src/realpass.cpp" line="90"/>
+        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Kontrolloni nënshkrimin e skedarit .gpg-id!</translation>
     </message>
@@ -1428,54 +1428,54 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <translation>Dështoi në nënshkrimin e %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="493"/>
+        <location filename="../src/imitatepass.cpp" line="494"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Dështoi heqja e nënshkrimit të vjetër %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="558"/>
+        <location filename="../src/imitatepass.cpp" line="570"/>
         <source>Git exited with code %1.</source>
         <translation>Git doli me kodin %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="597"/>
+        <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nuk mund të lexohet si një listë adresash (një skedar që është në maksimum %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="611"/>
-        <location filename="../src/imitatepass.cpp" line="639"/>
-        <location filename="../src/imitatepass.cpp" line="647"/>
+        <location filename="../src/imitatepass.cpp" line="623"/>
+        <location filename="../src/imitatepass.cpp" line="651"/>
+        <location filename="../src/imitatepass.cpp" line="659"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Mbetje nga një ri-enkriptim i mëparshëm</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="612"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 nuk është skedar i zakonshëm dhe nuk u rikthye. Shikojeni dhe hiqeni, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="640"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 ekziston pranë %2. Të dyja janë kopje të enkriptuara të zërit; kontrolloni cilën doni dhe fshini tjetrën, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="654"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 u rikthye nga kopja rezervë që la pas një ri-enkriptim i ndërprerë.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="648"/>
+        <location filename="../src/imitatepass.cpp" line="660"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 mungon dhe kopja e tij rezervë %2 nuk u riemërtua dot mbrapsht. Riemërtojeni me dorë, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="890"/>
+        <location filename="../src/imitatepass.cpp" line="902"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>%1 nuk u rienkriptua dot: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1194"/>
+        <location filename="../src/imitatepass.cpp" line="1206"/>
         <source>Re-encryption failed</source>
         <translation>Ri-enkriptimi dështoi</translation>
     </message>
@@ -1492,75 +1492,75 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <translation type="obsolete">Kopja rezervë %1 nuk u hoq dot pas ri-enkriptimit; mund të fshihet pa rrezik.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="901"/>
+        <location filename="../src/imitatepass.cpp" line="913"/>
         <source>Creating backup commit</source>
         <translation>Krijimi i një kopje rezervë të kryer</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="915"/>
-        <location filename="../src/imitatepass.cpp" line="925"/>
+        <location filename="../src/imitatepass.cpp" line="927"/>
+        <location filename="../src/imitatepass.cpp" line="937"/>
         <source>Backup commit failed</source>
         <translation>Kryerja e kopjes rezervë dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="916"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nuk mund të inspektohej statusi i git. Ri-enkriptimi u ndërpre.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="926"/>
+        <location filename="../src/imitatepass.cpp" line="938"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Ri-enkriptimi u ndërpre sepse nuk mund të krijohej një kopje rezervë git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="964"/>
+        <location filename="../src/imitatepass.cpp" line="976"/>
         <source>A re-encryption is already running</source>
         <translation>Një ri-enkriptim po kryhet tashmë</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="971"/>
+        <location filename="../src/imitatepass.cpp" line="983"/>
         <source>Not a folder of the store</source>
         <translation>Nuk është dosje e depos</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="972"/>
+        <location filename="../src/imitatepass.cpp" line="984"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 është një lidhje simbolike ose junction, ose ndodhet pas një të tille. Ajo ku çon lidhja nuk është pjesë e depos së fjalëkalimeve dhe nuk u ri-enkriptua.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="981"/>
+        <location filename="../src/imitatepass.cpp" line="993"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ri-kriptimi nga dosja %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1045"/>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1057"/>
+        <location filename="../src/imitatepass.cpp" line="1233"/>
         <source>Updating password-store</source>
         <translation>Përditësimi i dyqanit me fjalëkalime</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1058"/>
-        <location filename="../src/imitatepass.cpp" line="1064"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1076"/>
         <source>Git pull failed</source>
         <translation>Git pull dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1059"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Nuk u arrit të kontrollohet nëse depoja ka skedarë të pabashkuar pas pull. Kontrollojeni me git para se ta rifshehtëzoni.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1065"/>
+        <location filename="../src/imitatepass.cpp" line="1077"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Pull-i e la depon me skedarë të pabashkuar. Zgjidhni konfliktin përpara ri-enkriptimit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1069"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull dështoi, depoja po rienkriptohet siç është</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>%n zë u anashkalua: një lidhje simbolike, junction ose skedar i veçantë nuk është pjesë e depos.</numerusform>
@@ -1568,27 +1568,27 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1101"/>
+        <location filename="../src/imitatepass.cpp" line="1113"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikimi i ID-së së GPG dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1102"/>
+        <location filename="../src/imitatepass.cpp" line="1114"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nuk mund të verifikohej .gpg-id për direktorinë.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1122"/>
+        <location filename="../src/imitatepass.cpp" line="1134"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nuk është pjesë e depos</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1123"/>
+        <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 është, ose gjendet pas, një lidhje simbolike ose bashkimi pas nxerrjes. Ajo nuk i referohet asgjë që është në deponin e fjalëkalimeve dhe mbetet siç është.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1192"/>
+        <location filename="../src/imitatepass.cpp" line="1204"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... dhe %n tjetër</numerusform>
@@ -1596,7 +1596,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1195"/>
+        <location filename="../src/imitatepass.cpp" line="1207"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>%n skedar nuk u rienkriptua dot:</numerusform>
@@ -1604,18 +1604,18 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1201"/>
+        <location filename="../src/imitatepass.cpp" line="1213"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Ri-enkriptimi u anulua: %1 nga %2 skedarë u kontrolluan, %3 u rienkriptuan, %4 dështuan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1268"/>
-        <location filename="../src/imitatepass.cpp" line="1277"/>
+        <location filename="../src/imitatepass.cpp" line="1280"/>
+        <location filename="../src/imitatepass.cpp" line="1289"/>
         <source>Recipients not committed</source>
         <translation>Marrësit nuk u bënë commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1269"/>
+        <location filename="../src/imitatepass.cpp" line="1281"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1628,7 +1628,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Ndryshimi ende nuk është bërë commit dhe as push. Ndreqni problemin me Git, pastaj bëni commit ndryshimet ose ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1278"/>
+        <location filename="../src/imitatepass.cpp" line="1290"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1641,12 +1641,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të enkriptuar për marrësit e mëparshëm, të cilët ende mund t&apos;i lexojnë. Asgjë nuk u bë commit apo push. Ndreqni problemin me Git, pastaj ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1455"/>
+        <location filename="../src/imitatepass.cpp" line="1467"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Skedari i ekzekutueshëm git nuk është konfiguruar, git po anashkalohet</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1515"/>
+        <location filename="../src/imitatepass.cpp" line="1527"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg nuk shkroi asnjë tekst të shifruar për %1.</translation>
     </message>
@@ -1675,17 +1675,17 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
         <translation type="vanished">Dështoi në rikriptimin e %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ri-enkriptimi përfundoi: %1 pati sukses, %2 dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1215"/>
+        <location filename="../src/imitatepass.cpp" line="1227"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ri-enkriptimi përfundoi: %1 skedarë u rienkriptuan</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1224"/>
+        <location filename="../src/imitatepass.cpp" line="1236"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Nuk po shtyhet: %n skedar nuk u rienkriptua dot</numerusform>
@@ -1693,14 +1693,14 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1377"/>
-        <location filename="../src/imitatepass.cpp" line="1421"/>
+        <location filename="../src/imitatepass.cpp" line="1389"/>
+        <location filename="../src/imitatepass.cpp" line="1433"/>
         <source>Copy failed</source>
         <translation>Kopjimi dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1378"/>
-        <location filename="../src/imitatepass.cpp" line="1422"/>
+        <location filename="../src/imitatepass.cpp" line="1390"/>
+        <location filename="../src/imitatepass.cpp" line="1434"/>
         <source>Could not copy %1 to %2.</source>
         <translation>%1 nuk u kopjua dot te %2.</translation>
     </message>
@@ -1794,7 +1794,7 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 është më i madh se sa një skedar.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1953,7 +1953,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emri dhe fraza kalimi nuk mund të përmbin ndreqje.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2021,7 +2021,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kërko brenda përmbinë e fjalëkalimit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2506,14 +2506,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">... më shumë përshtatje në këtë fletë</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Paraqet %n rezultat(a) të parat; për të shkuar në rezultatet tjera, kërkoni një term më specif.</numerusform>
+            <numerusform>Paraqet %n rezultat(a) të parat; për të shkuar në rezultatet tjera, kërkoni një term më specif.</numerusform>
         </translation>
     </message>
     <message>
@@ -2816,57 +2816,59 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ruajtur, nuk është përfunduar</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ky element është ruajtur në depozit, por regjistrimi i tij në Git u dështua. Ç&apos;u raportua:
+
+%1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="766"/>
+        <location filename="../src/pass.cpp" line="777"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 është një lidhje simbolike ose junction, ose ndodhet pas një të tille. Ajo ku çon lidhja nuk është pjesë e depos së fjalëkalimeve dhe nuk preket.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="778"/>
+        <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nuk është brenda depojës së fjalëkalimeve. Recipjentët janë vendosur për deponin ose një dosje brenda saj.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="788"/>
+        <location filename="../src/pass.cpp" line="804"/>
         <source>Not part of the store</source>
         <translation>Nuk është pjesë e depos</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="883"/>
+        <location filename="../src/pass.cpp" line="899"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve nuk mund të lexohet.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="964"/>
+        <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nuk mund të lexohet si një listë me adresat (një skedar i cili është në përgjithësi deri në %2), kështu që asgjë nuk është zgjedhur automatikisht. Kontrolloni atë para se të zgjidhni adresat këtu: OK shkruan një listë të re mbi të.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="985"/>
+        <location filename="../src/pass.cpp" line="1001"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista e marrësve %1 mungon ose nuk është skedar i zakonshëm, prandaj asgjë nuk është e parazgjedhur: lista e një dosjeje mëmë nuk është nënshkruar për këtë. Zgjidhni vetë marrësit e kësaj dosjeje; OK shkruan dhe nënshkruan një listë të re.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="990"/>
+        <location filename="../src/pass.cpp" line="1006"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation>%1 Asgjë nuk është e parazgjedhur: nuk mund të përcaktohet nëse %2 u hoq.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1005"/>
+        <location filename="../src/pass.cpp" line="1021"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista e marrësve %1 nuk verifikohet kundrejt çelësit të nënshkrimit, prandaj asgjë nuk është e parazgjedhur: ruajtja do të nënshkruante çfarëdo që ndodhet në të. Zgjidhni vetë marrësit; OK shkruan dhe nënshkruan një listë të re.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="929"/>
+        <location filename="../src/pass.cpp" line="945"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Asgjë nuk është e parazgjedhur: ruajtja do të nënshkruante çfarëdo që ndodhet në të. Zgjidhni vetë marrësit.</translation>
     </message>
@@ -3047,8 +3049,8 @@ Të vazhdohet?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ky element ka %n rreshta, të cilat janë shumë për të modifikuar këtu.</numerusform>
+            <numerusform>Ky element ka %n rreshta, të cilat janë shumë për të modifikuar këtu.</numerusform>
         </translation>
     </message>
 </context>
@@ -3077,12 +3079,12 @@ Të vazhdohet?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="91"/>
+        <location filename="../src/profileinit.cpp" line="96"/>
         <source>Could not create %1.</source>
         <translation>%1 nuk u krijua dot.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="150"/>
+        <location filename="../src/profileinit.cpp" line="155"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation>
             <numerusform>%1 përmban tashmë %n skedar të enkriptuar; ai nuk u rienkriptua. Kaloni te profili dhe hapni Përdoruesit për ta bërë këtë.</numerusform>
@@ -3090,12 +3092,12 @@ Të vazhdohet?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="168"/>
+        <location filename="../src/profileinit.cpp" line="173"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation>Asnjë marrës i zgjedhur; %1 nuk u shkrua.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="226"/>
+        <location filename="../src/profileinit.cpp" line="231"/>
         <source>Could not sign %1 with %2.</source>
         <translation>%1 nuk u nënshkrua dot me %2.</translation>
     </message>
@@ -3104,18 +3106,18 @@ Të vazhdohet?</translation>
         <translation type="obsolete">%1 nuk u shkrua dot: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="228"/>
+        <location filename="../src/profileinit.cpp" line="233"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation>%1 nuk u nënshkrua dot me %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="238"/>
+        <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG shtëpia e konfiguruar %1 nuk ekziston.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="260"/>
-        <location filename="../src/profileinit.cpp" line="292"/>
+        <location filename="../src/profileinit.cpp" line="265"/>
+        <location filename="../src/profileinit.cpp" line="297"/>
         <source>git %1 failed in %2: %3</source>
         <translation>git %1 dështoi në %2: %3</translation>
     </message>
@@ -3351,38 +3353,38 @@ Të vazhdohet?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="142"/>
+        <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontrollojm listat e adresuarit në %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="249"/>
+        <location filename="../src/realpass.cpp" line="250"/>
         <source>Could not remove the link %1.</source>
         <translation>Lidhja %1 nuk u hoq dot.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="251"/>
         <source>Delete failed</source>
         <translation>Fshirja dështoi</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="300"/>
+        <location filename="../src/realpass.cpp" line="301"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation>Lidhja %1 u hoq, por git nuk mundi ta regjistrojë: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="302"/>
-        <location filename="../src/realpass.cpp" line="352"/>
+        <location filename="../src/realpass.cpp" line="303"/>
+        <location filename="../src/realpass.cpp" line="353"/>
         <source>Delete incomplete</source>
         <translation>Fshirje e paplotë</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="349"/>
+        <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linku %1 është fshirë dhe Git nuk e monitoron më, por commit-i ka dështuar: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="468"/>
+        <location filename="../src/realpass.cpp" line="473"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation>Për kërkimin duhet të konfigurohet skedari i ekzekutueshëm GPG.</translation>
     </message>
@@ -3634,34 +3636,34 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="851"/>
+        <location filename="../src/util.cpp" line="942"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Nuk mund të krijohet një skedar i përkohshëm pranë %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="863"/>
-        <location filename="../src/util.cpp" line="942"/>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="954"/>
+        <location filename="../src/util.cpp" line="1033"/>
+        <location filename="../src/util.cpp" line="1063"/>
         <source>Cannot write %1: %2</source>
         <translation>%1 nuk mund të shkruhet: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="878"/>
+        <location filename="../src/util.cpp" line="969"/>
         <source>Failed to replace %1.</source>
         <translation>Dështoi zëvendësimi i %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="883"/>
+        <location filename="../src/util.cpp" line="974"/>
         <source>%1 already exists.</source>
         <translation>%1 ekziston tashmë.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="885"/>
+        <location filename="../src/util.cpp" line="976"/>
         <source>Failed to write %1.</source>
         <translation>Dështoi shkrimi i %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="929"/>
+        <location filename="../src/util.cpp" line="1020"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>%1 u ndërrua me një skedar tjetër ndërsa po shkruhej.</translation>
     </message>
@@ -3670,12 +3672,12 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation type="obsolete">%1 u zëvendësua nga një lidhje ndërsa po shkruhej.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="955"/>
+        <location filename="../src/util.cpp" line="1046"/>
         <source>Cannot read %1.</source>
         <translation>%1 nuk mund të lexohet.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="965"/>
+        <location filename="../src/util.cpp" line="1056"/>
         <source>Cannot read %1: %2</source>
         <translation>%1 nuk mund të lexohet: %2</translation>
     </message>
