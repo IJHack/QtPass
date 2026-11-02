@@ -2520,8 +2520,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Εμφανίζει το πρώτο %n αποτέλεσμα(τα); Για να δείτε τα υπόλοιπα, αναζητήστε κάτι πιο συγκεκριμένο.</numerusform>
-            <numerusform>Εμφανίζει το πρώτο %n αποτέλεσμα(τα); Για να δείτε τα υπόλοιπα, αναζητήστε κάτι πιο συγκεκριμένο.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3061,8 +3061,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Αυτή η καταχώρηση έχει %n γραμμές, πάρα πολλές για να επεξεργαστεί εδώ.</numerusform>
-            <numerusform>Αυτή η καταχώρηση έχει %n γραμμές, πάρα πολλές για να επεξεργαστεί εδώ.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

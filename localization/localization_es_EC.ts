@@ -2559,8 +2559,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Mostrando el primer %n resultado(s); busque algo más específico para ver los demás.</numerusform>
-            <numerusform>Mostrando el primer %n resultado(s); busque algo más específico para ver los demás.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3198,8 +3198,8 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Esta entrada tiene %n líneas, demasiadas para editar aquí.</numerusform>
-            <numerusform>Esta entrada tiene %n líneas, demasiadas para editar aquí.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

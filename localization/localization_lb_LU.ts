@@ -1073,8 +1073,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n lignes supplémentaires non affichées</numerusform>
-            <numerusform>… %n lignes supplémentaires non affichées</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2516,8 +2516,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Montrant la première correspondance (%n); pour voir les autres, effectuez une recherche plus précise.</numerusform>
-            <numerusform>Montrant la première correspondance (%n); pour voir les autres, effectuez une recherche plus précise.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3053,8 +3053,8 @@ Weider?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Dës Eintrag enthält %n Zeilen, zu vill fir hier ze Änneren.</numerusform>
-            <numerusform>Dës Eintrag enthält %n Zeilen, zu vill fir hier ze Änneren.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

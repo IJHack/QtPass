@@ -1113,9 +1113,9 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... %n linii suplimentare nu sunt afișate</numerusform>
-            <numerusform>... %n linii suplimentare nu sunt afișate</numerusform>
-            <numerusform>... %n linii suplimentare nu sunt afișate</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2717,9 +2717,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Afișează prima(le) %n potrivire(s); pentru a vedea restul, caută ceva mai specific.</numerusform>
-            <numerusform>Afișează prima(le) %n potrivire(s); pentru a vedea restul, caută ceva mai specific.</numerusform>
-            <numerusform>Afișează prima(le) %n potrivire(s); pentru a vedea restul, caută ceva mai specific.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3244,9 +3244,9 @@ Continuați?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Această intrare are %n rânduri, prea multe pentru a fi editate aici.</numerusform>
-            <numerusform>Această intrare are %n rânduri, prea multe pentru a fi editate aici.</numerusform>
-            <numerusform>Această intrare are %n rânduri, prea multe pentru a fi editate aici.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

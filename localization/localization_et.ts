@@ -1113,8 +1113,8 @@ e-posti aadress</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... veel %n rida, mis ei ole nähtav</numerusform>
-            <numerusform>... veel %n rida, mis ei ole nähtav</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2752,8 +2752,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Näitab esimeseid %n leidet; et leida rohkem, määrake kitsendav otsing.</numerusform>
-            <numerusform>Näitab esimeseid %n leidet; et leida rohkem, määrake kitsendav otsing.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3272,8 +3272,8 @@ Kas jätkame?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Selle sisu on %n rida, mis on liiga palju, et seda siin muuta.</numerusform>
-            <numerusform>Selle sisu on %n rida, mis on liiga palju, et seda siin muuta.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

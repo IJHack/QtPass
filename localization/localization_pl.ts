@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani przeniesiony tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
+        <translation type="unfinished">Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Domyślnie wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani wypchnięty tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1073"/>

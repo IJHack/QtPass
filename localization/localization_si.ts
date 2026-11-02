@@ -2673,8 +2673,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>පළමු %n ක්ෂණික ප්‍රතිඵල පෙන්වයි; වඩාත් සීමිත විමසීමක් කරන්නේ නම්, ඉතිරි ප්‍රතිඵල් ඔබට ලැබෙනු ඇත.</numerusform>
-            <numerusform>පළමු %n ක්ෂණික ප්‍රතිඵල පෙන්වයි; වඩාත් සීමිත විමසීමක් කරන්නේ නම්, ඉතිරි ප්‍රතිඵල් ඔබට ලැබෙනු ඇත.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

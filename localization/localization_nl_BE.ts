@@ -1117,8 +1117,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n extra regel(s) niet weergegeven</numerusform>
-            <numerusform>… %n extra regel(s) niet weergegeven</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2739,8 +2739,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>De eerste %n overeenkomsten worden weergegeven; voer een zoekopdracht in met een specifiekere term om de rest te zien.</numerusform>
-            <numerusform>De eerste %n overeenkomsten worden weergegeven; voer een zoekopdracht in met een specifiekere term om de rest te zien.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3290,8 +3290,8 @@ Doorgaan?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Deze entry heeft %n regel(s), wat te veel is om hier te bewerken.</numerusform>
-            <numerusform>Deze entry heeft %n regel(s), wat te veel is om hier te bewerken.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

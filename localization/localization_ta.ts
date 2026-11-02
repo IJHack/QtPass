@@ -1113,8 +1113,8 @@ e-mail</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... மேலும் %n வரி(கள்) காட்டப்படவில்லை</numerusform>
-            <numerusform>... மேலும் %n வரி(கள்) காட்டப்படவில்லை</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2742,8 +2742,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>முதல் %n பொருத்தங்களை காண்பிக்கிறது; மேலும் குறிப்பிட்ட ஒன்றை தேடினால், மற்ற பொருத்தங்கள் தெரியும்.</numerusform>
-            <numerusform>முதல் %n பொருத்தங்களை காண்பிக்கிறது; மேலும் குறிப்பிட்ட ஒன்றை தேடினால், மற்ற பொருத்தங்கள் தெரியும்.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3268,8 +3268,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>இந்த உள்ளே %n வரி உள்ளது, இதை இங்கு தொகு செய்ய முடியாது.</numerusform>
-            <numerusform>இந்த உள்ளே %n வரி உள்ளது, இதை இங்கு தொகு செய்ய முடியாது.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

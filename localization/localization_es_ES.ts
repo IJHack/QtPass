@@ -1085,8 +1085,8 @@ dirección de correo</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n líneas más no mostradas</numerusform>
-            <numerusform>… %n líneas más no mostradas</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3185,8 +3185,8 @@ Esto puede sobrescribir muchos ficheros y no se puede deshacer fácilmente.
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Esta entrada tiene %n líneas, demasiadas para editar aquí.</numerusform>
-            <numerusform>Esta entrada tiene %n líneas, demasiadas para editar aquí.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

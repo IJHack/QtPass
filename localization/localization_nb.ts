@@ -1073,8 +1073,8 @@ e-post</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n flere linjer ikke vist</numerusform>
-            <numerusform>… %n flere linjer ikke vist</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2511,8 +2511,8 @@ Utløpsdato: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Viser de første %n resultatene; for å se resten, søk etter noe mer spesifikt.</numerusform>
-            <numerusform>Viser de første %n resultatene; for å se resten, søk etter noe mer spesifikt.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3038,8 +3038,8 @@ Fortsette?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Dette feltet har %n linjer, for mange til å redigere her.</numerusform>
-            <numerusform>Dette feltet har %n linjer, for mange til å redigere her.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

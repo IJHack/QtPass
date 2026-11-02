@@ -1069,11 +1069,11 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n fell arall</numerusform>
-            <numerusform>… %n fell arall</numerusform>
-            <numerusform>… %n fell arall</numerusform>
-            <numerusform>… %n fell arall</numerusform>
-            <numerusform>… %n fell arall</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2570,11 +2570,11 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Gwydnodiad o&apos;r %n canlyniad cynt; ceinwch am un beth cynnydd i gwrdd â&apos;r rhai eraill.</numerusform>
-            <numerusform>Gwydnodiad o&apos;r %n canlyniad cynt; ceinwch am un beth cynnydd i gwrdd â&apos;r rhai eraill.</numerusform>
-            <numerusform>Gwydnodiad o&apos;r %n canlyniad cynt; ceinwch am un beth cynnydd i gwrdd â&apos;r rhai eraill.</numerusform>
-            <numerusform>Gwydnodiad o&apos;r %n canlyniad cynt; ceinwch am un beth cynnydd i gwrdd â&apos;r rhai eraill.</numerusform>
-            <numerusform>Gwydnodiad o&apos;r %n canlyniad cynt; ceinwch am un beth cynnydd i gwrdd â&apos;r rhai eraill.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3100,11 +3100,11 @@ Parhau?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Mae&apos;n cynnwys %n lliniau, yn fawr iawn i&apos;w golygu yma.</numerusform>
-            <numerusform>Mae&apos;n cynnwys %n lliniau, yn fawr iawn i&apos;w golygu yma.</numerusform>
-            <numerusform>Mae&apos;n cynnwys %n lliniau, yn fawr iawn i&apos;w golygu yma.</numerusform>
-            <numerusform>Mae&apos;n cynnwys %n lliniau, yn fawr iawn i&apos;w golygu yma.</numerusform>
-            <numerusform>Mae&apos;n cynnwys %n lliniau, yn fawr iawn i&apos;w golygu yma.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

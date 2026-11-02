@@ -2504,12 +2504,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
-            <numerusform>عرض أول %n تطابق؛ للبحث عن شيء أضيق لعرض النتائج الأخرى.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3049,12 +3049,12 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
-            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو أكثر من اللازم ليتم تحريره هنا.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

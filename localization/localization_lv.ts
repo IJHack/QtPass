@@ -1069,9 +1069,9 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... vēl %n rindas, kas nav redzamas</numerusform>
-            <numerusform>... vēl %n rindas, kas nav redzamas</numerusform>
-            <numerusform>... vēl %n rindas, kas nav redzamas</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2482,9 +2482,9 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Rādātie ir pirmie %n atbilsti; lai redzētu pārējos, meklējiet precizētus rezultātus.</numerusform>
-            <numerusform>Rādātie ir pirmie %n atbilsti; lai redzētu pārējos, meklējiet precizētus rezultātus.</numerusform>
-            <numerusform>Rādātie ir pirmie %n atbilsti; lai redzētu pārējos, meklējiet precizētus rezultātus.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3004,9 +3004,9 @@ Turpināt?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Šajā ierakstā ir %n rindas, kas pārāk daudz, lai to rediģētu šeit.</numerusform>
-            <numerusform>Šajā ierakstā ir %n rindas, kas pārāk daudz, lai to rediģētu šeit.</numerusform>
-            <numerusform>Šajā ierakstā ir %n rindas, kas pārāk daudz, lai to rediģētu šeit.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

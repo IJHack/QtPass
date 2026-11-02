@@ -1113,9 +1113,9 @@ e-pošta</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n dodat redova nije prikazan</numerusform>
-            <numerusform>… %n dodat redova nije prikazan</numerusform>
-            <numerusform>… %n dodat redova nije prikazan</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3244,9 +3244,9 @@ Nastaviti?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Ovo polje ima %n redova, što je previše za uređivanje ovde.</numerusform>
-            <numerusform>Ovo polje ima %n redova, što je previše za uređivanje ovde.</numerusform>
-            <numerusform>Ovo polje ima %n redova, što je previše za uređivanje ovde.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

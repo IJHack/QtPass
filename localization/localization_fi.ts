@@ -1113,8 +1113,8 @@ sähköposti</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n riviä ei näy</numerusform>
-            <numerusform>… %n riviä ei näy</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2710,8 +2710,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Näyttää ensimmäiset %n vastausta; etsi tarkemmin nähdäksesi loput.</numerusform>
-            <numerusform>Näyttää ensimmäiset %n vastausta; etsi tarkemmin nähdäksesi loput.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

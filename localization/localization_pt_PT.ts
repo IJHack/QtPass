@@ -1093,8 +1093,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n linhas adicionais não exibidas</numerusform>
-            <numerusform>… %n linhas adicionais não exibidas</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2652,8 +2652,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Mostrando o primeiro %n resultado(s); procure por algo mais específico para ver os restantes.</numerusform>
-            <numerusform>Mostrando o primeiro %n resultado(s); procure por algo mais específico para ver os restantes.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3183,8 +3183,8 @@ Continua?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Esta entrada tem %n linhas, o que é excessivo para editar aqui.</numerusform>
-            <numerusform>Esta entrada tem %n linhas, o que é excessivo para editar aqui.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

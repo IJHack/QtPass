@@ -1073,8 +1073,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n linja(t) e tjera nuk janë të shfaqura</numerusform>
-            <numerusform>… %n linja(t) e tjera nuk janë të shfaqura</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2516,8 +2516,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Paraqet %n rezultat(a) të parat; për të shkuar në rezultatet tjera, kërkoni një term më specif.</numerusform>
-            <numerusform>Paraqet %n rezultat(a) të parat; për të shkuar në rezultatet tjera, kërkoni një term më specif.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3053,8 +3053,8 @@ Të vazhdohet?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Ky element ka %n rreshta, të cilat janë shumë për të modifikuar këtu.</numerusform>
-            <numerusform>Ky element ka %n rreshta, të cilat janë shumë për të modifikuar këtu.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

@@ -1121,8 +1121,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n lignes supplémentaires non affichées</numerusform>
-            <numerusform>… %n lignes supplémentaires non affichées</numerusform>
+            <numerusform>… %n ligne de plus non affichée</numerusform>
+            <numerusform>… %n lignes de plus non affichées</numerusform>
         </translation>
     </message>
 </context>
@@ -2650,8 +2650,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Affiche les premiers %n résultats ; effectuez une recherche plus précise pour afficher le reste.</numerusform>
-            <numerusform>Affiche les premiers %n résultats ; effectuez une recherche plus précise pour afficher le reste.</numerusform>
+            <numerusform>Affichage de la première correspondance (%n) ; précisez la recherche pour voir le reste.</numerusform>
+            <numerusform>Affichage des %n premières correspondances ; précisez la recherche pour voir le reste.</numerusform>
         </translation>
     </message>
     <message>
@@ -3207,8 +3207,8 @@ Continuer&#x202f;?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Cette entrée contient %n lignes, ce qui est trop pour être modifié ici.</numerusform>
-            <numerusform>Cette entrée contient %n lignes, ce qui est trop pour être modifié ici.</numerusform>
+            <numerusform>Cette entrée a %n ligne, trop pour la modifier ici.</numerusform>
+            <numerusform>Cette entrée a %n lignes, trop pour la modifier ici.</numerusform>
         </translation>
     </message>
 </context>

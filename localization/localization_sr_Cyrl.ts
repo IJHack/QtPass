@@ -1101,9 +1101,9 @@ URL
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n додат ред(а) није(су) приказан/о</numerusform>
-            <numerusform>… %n додат ред(а) није(су) приказан/о</numerusform>
-            <numerusform>… %n додат ред(а) није(су) приказан/о</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3232,9 +3232,9 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Овај запис има %n линија, што је превише за уређивање овде.</numerusform>
-            <numerusform>Овај запис има %n линија, што је превише за уређивање овде.</numerusform>
-            <numerusform>Овај запис има %n линија, што је превише за уређивање овде.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

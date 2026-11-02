@@ -1069,9 +1069,9 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... dar %n eilutė(s), kurios neparodomos</numerusform>
-            <numerusform>... dar %n eilutė(s), kurios neparodomos</numerusform>
-            <numerusform>... dar %n eilutė(s), kurios neparodomos</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2482,9 +2482,9 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Rodytys pirmąsias %n atitikas; norint pamatyti kitas, paieškos nustatykite tiksliau.</numerusform>
-            <numerusform>Rodytys pirmąsias %n atitikas; norint pamatyti kitas, paieškos nustatykite tiksliau.</numerusform>
-            <numerusform>Rodytys pirmąsias %n atitikas; norint pamatyti kitas, paieškos nustatykite tiksliau.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3006,9 +3006,9 @@ Tęsti?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Ši įrašo turi %n eilutes, per daug norint redaguoti čia.</numerusform>
-            <numerusform>Ši įrašo turi %n eilutes, per daug norint redaguoti čia.</numerusform>
-            <numerusform>Ši įrašo turi %n eilutes, per daug norint redaguoti čia.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

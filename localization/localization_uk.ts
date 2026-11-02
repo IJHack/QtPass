@@ -1113,9 +1113,9 @@ URL
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... %n рядів не відображено</numerusform>
-            <numerusform>... %n рядів не відображено</numerusform>
-            <numerusform>... %n рядів не відображено</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2704,9 +2704,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Показано перші %n результатів; щоб побачити інші, виконайте пошук з більш вузькими критеріями.</numerusform>
-            <numerusform>Показано перші %n результатів; щоб побачити інші, виконайте пошук з більш вузькими критеріями.</numerusform>
-            <numerusform>Показано перші %n результатів; щоб побачити інші, виконайте пошук з більш вузькими критеріями.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3260,9 +3260,9 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Це запис містить %n рядків, що занадто багато для редагування тут.</numerusform>
-            <numerusform>Це запис містить %n рядків, що занадто багато для редагування тут.</numerusform>
-            <numerusform>Це запис містить %n рядків, що занадто багато для редагування тут.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

@@ -1069,10 +1069,10 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n dodatnih vrstic, ki niso prikazane</numerusform>
-            <numerusform>… %n dodatnih vrstic, ki niso prikazane</numerusform>
-            <numerusform>… %n dodatnih vrstic, ki niso prikazane</numerusform>
-            <numerusform>… %n dodatnih vrstic, ki niso prikazane</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3014,10 +3014,10 @@ Nadaljujem?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Ta vnos ima %n vrstic, kar je preveč za urejanje tukaj.</numerusform>
-            <numerusform>Ta vnos ima %n vrstic, kar je preveč za urejanje tukaj.</numerusform>
-            <numerusform>Ta vnos ima %n vrstic, kar je preveč za urejanje tukaj.</numerusform>
-            <numerusform>Ta vnos ima %n vrstic, kar je preveč za urejanje tukaj.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

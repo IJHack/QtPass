@@ -1065,8 +1065,8 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n mistari zaidi hazionekani</numerusform>
-            <numerusform>… %n mistari zaidi hazionekani</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2483,8 +2483,8 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Zinaonyesha matanisho %n ya kwanza; tafuta kitu ambacho ni zaidi ili kuona mengine.</numerusform>
-            <numerusform>Zinaonyesha matanisho %n ya kwanza; tafuta kitu ambacho ni zaidi ili kuona mengine.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3004,8 +3004,8 @@ Endelea?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Hili kiungo kina %n misto, ambayo ni nyingi sana ili kuandikwa hapa.</numerusform>
-            <numerusform>Hili kiungo kina %n misto, ambayo ni nyingi sana ili kuandikwa hapa.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

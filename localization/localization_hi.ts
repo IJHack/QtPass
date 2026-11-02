@@ -1069,8 +1069,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… और %n अतिरिक्त पंक्तियाँ प्रदर्शित नहीं की गई हैं।</numerusform>
-            <numerusform>… और %n अतिरिक्त पंक्तियाँ प्रदर्शित नहीं की गई हैं।</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2487,8 +2487,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>पहले %n मिलान दिखा रहे हैं; औरों को देखने के लिए, एक अधिक विशिष्ट खोज करें।</numerusform>
-            <numerusform>पहले %n मिलान दिखा रहे हैं; औरों को देखने के लिए, एक अधिक विशिष्ट खोज करें।</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3010,8 +3010,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>इस प्रविष्टि में %n पंक्ति(पंक्ति) हैं, जिन्हें यहां संपादित करना संभव नहीं है।</numerusform>
-            <numerusform>इस प्रविष्टि में %n पंक्ति(पंक्ति) हैं, जिन्हें यहां संपादित करना संभव नहीं है।</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

@@ -1113,8 +1113,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n weitere Zeilen nicht angezeigt</numerusform>
-            <numerusform>… %n weitere Zeilen nicht angezeigt</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -2603,8 +2603,8 @@ Die Wiederverschlüsselung wurde nicht abgeschlossen, daher sind einige oder all
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Anzeigen der ersten %n Übereinstimmungen; um die restlichen Ergebnisse anzuzeigen, eine spezifischere Suchanfrage verwenden.</numerusform>
-            <numerusform>Anzeigen der ersten %n Übereinstimmungen; um die restlichen Ergebnisse anzuzeigen, eine spezifischere Suchanfrage verwenden.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3168,8 +3168,8 @@ Fortfahren?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Dieser Eintrag hat %n Zeilen, zu viele, um ihn hier zu bearbeiten.</numerusform>
-            <numerusform>Dieser Eintrag hat %n Zeilen, zu viele, um ihn hier zu bearbeiten.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

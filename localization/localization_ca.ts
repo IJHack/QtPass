@@ -1113,8 +1113,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n línies més que no s&apos;estan mostrant</numerusform>
-            <numerusform>… %n línies més que no s&apos;estan mostrant</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3247,8 +3247,8 @@ Voleu continuar?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Aquesta entrada té %n línies, massa per editar-la aquí.</numerusform>
-            <numerusform>Aquesta entrada té %n línies, massa per editar-la aquí.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

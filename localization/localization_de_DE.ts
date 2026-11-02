@@ -1118,7 +1118,7 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n weitere Zeilen nicht angezeigt</numerusform>
+            <numerusform>… %n weitere Zeile nicht angezeigt</numerusform>
             <numerusform>… %n weitere Zeilen nicht angezeigt</numerusform>
         </translation>
     </message>
@@ -2400,8 +2400,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Anzeigen der ersten %n Übereinstimmungen; um die restlichen Ergebnisse anzuzeigen, eine spezifischere Suchanfrage verwenden.</numerusform>
-            <numerusform>Anzeigen der ersten %n Übereinstimmungen; um die restlichen Ergebnisse anzuzeigen, eine spezifischere Suchanfrage verwenden.</numerusform>
+            <numerusform>Die erste %n Übereinstimmung wird angezeigt; für den Rest genauer suchen.</numerusform>
+            <numerusform>Die ersten %n Übereinstimmungen werden angezeigt; für den Rest genauer suchen.</numerusform>
         </translation>
     </message>
     <message>
@@ -3210,7 +3210,7 @@ Fortfahren?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Dieser Eintrag hat %n Zeilen, zu viele, um ihn hier zu bearbeiten.</numerusform>
+            <numerusform>Dieser Eintrag hat %n Zeile, zu viele, um ihn hier zu bearbeiten.</numerusform>
             <numerusform>Dieser Eintrag hat %n Zeilen, zu viele, um ihn hier zu bearbeiten.</numerusform>
         </translation>
     </message>
