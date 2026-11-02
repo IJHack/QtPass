@@ -183,7 +183,7 @@ private:
   /// What gpg said about one signing-key token.
   struct KeyLookup {
     QString primary; ///< Its primary fingerprint; empty: gpg does not know it.
-    /// For an unknown key, the keyring as it was then (keyringStamp()):
+    /// For an unknown key, the keyring files as they were then:
     /// asked again once a key may have been imported.
     QString keyring;
   };

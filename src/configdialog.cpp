@@ -389,7 +389,8 @@ auto ConfigDialog::signingStores() const -> SigningStores {
 namespace {
 /**
  * @brief The public keyring in @p env's GPG home as it is now: size and
- * time of each keyring file, so a key imported meanwhile is noticed.
+ * time of each keyring file (pubring.kbx, pubring.gpg, keyboxd's
+ * database), so a key imported meanwhile is noticed.
  * @param env The environment gpg runs in.
  * @return A string that changes when the keyring does.
  */
@@ -404,8 +405,12 @@ auto keyringStamp(const QProcessEnvironment &env) -> QString {
 #endif
   }
   QString stamp;
+  // keyboxd (GnuPG 2.3 and later, the default in a new home since 2.4.1)
+  // keeps keys in an SQLite database, written to its WAL first.
   for (const QString &name :
-       {QStringLiteral("pubring.kbx"), QStringLiteral("pubring.gpg")}) {
+       {QStringLiteral("pubring.kbx"), QStringLiteral("pubring.gpg"),
+        QStringLiteral("public-keys.d/pubring.db"),
+        QStringLiteral("public-keys.d/pubring.db-wal")}) {
     const QFileInfo info(QDir(home).filePath(name));
     stamp += QString::number(info.size()) + QLatin1Char(':') +
              QString::number(info.lastModified().toMSecsSinceEpoch()) +

@@ -176,6 +176,7 @@ private Q_SLOTS:
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
   void sharedSigningKeyWarnsWithoutBlocking();
+  void signerLookupSeesAKeyImportedMeanwhile_data();
   void signerLookupSeesAKeyImportedMeanwhile();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
@@ -885,6 +886,19 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
 }
 
 /**
+ * @brief The keyring files an import can change: the keybox, the legacy
+ *        keyring, and keyboxd's database and its write-ahead log.
+ */
+void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile_data() {
+  QTest::addColumn<QString>("keyring");
+  QTest::newRow("keybox") << QStringLiteral("pubring.kbx");
+  QTest::newRow("legacy") << QStringLiteral("pubring.gpg");
+  QTest::newRow("keyboxd") << QStringLiteral("public-keys.d/pubring.db");
+  QTest::newRow("keyboxd wal")
+      << QStringLiteral("public-keys.d/pubring.db-wal");
+}
+
+/**
  * @brief A signing key gpg did not know is looked up again once the keyring
  *        changes (a key imported while the dialog is open), and not before:
  *        the subkey then signs as its primary, and the warning comes.
@@ -893,6 +907,7 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
 #ifdef Q_OS_WIN
   QSKIP("the stand-in gpg is a shell script");
 #else
+  QFETCH(QString, keyring);
   struct ProfileRestorer {
     Profiles saved;
     ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
@@ -962,9 +977,11 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
   QVERIFY(QFile(QDir(home.path()).filePath(QStringLiteral("imported")))
               .open(QIODevice::WriteOnly));
   {
-    QFile keyring(QDir(home.path()).filePath(QStringLiteral("pubring.kbx")));
-    QVERIFY(keyring.open(QIODevice::WriteOnly));
-    keyring.write("imported");
+    const QString changed = QDir(home.path()).filePath(keyring);
+    QVERIFY(QDir().mkpath(QFileInfo(changed).absolutePath()));
+    QFile file(changed);
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write("imported");
   }
   emit signingKey->textEdited(signingKey->text());
   QVERIFY2(runCount() > asked, "asked again after the keyring changed");
