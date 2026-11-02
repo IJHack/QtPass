@@ -33,6 +33,8 @@ private slots:
   void autoclearRemovesOnlyItsOwnText();
   void autoclearLeavesOtherContentAlone();
   void autoclearRestoresWhatWasThereBefore();
+  void autoclearPutsTheSelectionBack();
+  void autoclearClearsTheSelection();
   void restoreIsOnByDefault();
   void clearWithNothingTrackedIsSilent();
   void copyIfAlwaysOnlyCopiesInAlwaysMode();
@@ -54,14 +56,15 @@ private slots:
 private:
   static void saveClipboardSettings(bool autoclear, int seconds,
                                     Enums::ClipBoardType type,
-                                    bool restore = false);
+                                    bool restore = false,
+                                    bool selection = false);
 };
 
 void tst_clipboardmanager::saveClipboardSettings(bool autoclear, int seconds,
                                                  Enums::ClipBoardType type,
-                                                 bool restore) {
+                                                 bool restore, bool selection) {
   AppSettings s = QtPassSettings::load();
-  s.useSelection = false;
+  s.useSelection = selection;
   s.useAutoclear = autoclear;
   s.restoreClipboard = restore;
   s.autoclearSeconds = seconds;
@@ -107,6 +110,52 @@ void tst_clipboardmanager::autoclearLeavesOtherContentAlone() {
            QStringLiteral("Clipboard not cleared"));
   QVERIFY2(manager.trackedText().isEmpty(),
            "tracking ends with the timer even when nothing was removed");
+}
+
+/**
+ * @brief With "use selection" on where there is one (X11, Wayland), the
+ *        password goes to the primary selection, not the clipboard, and
+ *        autoclear puts back what the selection held before; the clipboard
+ *        is not touched.
+ */
+void tst_clipboardmanager::autoclearPutsTheSelectionBack() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND, true, true);
+  clipboard->setText(QStringLiteral("selected before"), QClipboard::Selection);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("hunter2"));
+  QCOMPARE(clipboard->text(QClipboard::Selection), QStringLiteral("hunter2"));
+  QCOMPARE(clipboard->text(), QStringLiteral("sentinel"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard restored"));
+  QCOMPARE(clipboard->text(QClipboard::Selection),
+           QStringLiteral("selected before"));
+  QCOMPARE(clipboard->text(), QStringLiteral("sentinel"));
+}
+
+/**
+ * @brief With restoring off, autoclear empties the primary selection the
+ *        password went to, and leaves the clipboard alone.
+ */
+void tst_clipboardmanager::autoclearClearsTheSelection() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("this platform has no primary selection");
+  }
+  saveClipboardSettings(true, 1, Enums::CLIPBOARD_ON_DEMAND, false, true);
+  clipboard->setText(QStringLiteral("selected before"), QClipboard::Selection);
+  ClipboardManager manager;
+  QSignalSpy status(&manager, &ClipboardManager::statusMessage);
+  manager.copyText(QStringLiteral("hunter2"));
+  QCOMPARE(clipboard->text(QClipboard::Selection), QStringLiteral("hunter2"));
+  QTRY_COMPARE_WITH_TIMEOUT(status.count(), 2, 3000);
+  QCOMPARE(status.at(1).at(0).toString(), QStringLiteral("Clipboard cleared"));
+  QVERIFY(clipboard->text(QClipboard::Selection).isEmpty());
+  QCOMPARE(clipboard->text(), QStringLiteral("sentinel"));
 }
 
 /**

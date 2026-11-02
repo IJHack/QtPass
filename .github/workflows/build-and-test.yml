@@ -158,6 +158,11 @@ jobs:
           sudo apt-get update
           # shellcheck disable=SC2086 # a space-separated package list
           sudo apt-get install -y pinentry-tty pass pass-extension-otp $EXTRA_PACKAGES
+          # An X11 display for the clipboard tests below, and what Qt's xcb
+          # plugin loads (libxcb-cursor0 since Qt 6.5).
+          sudo apt-get install -y --no-install-recommends xvfb \
+            libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
+            libxcb-keysyms1 libxcb-render-util0 libxcb-shape0
 
       - name: Configure Git for tests
         if: steps.need_build.outputs.run_build == 'true'
@@ -196,6 +201,23 @@ jobs:
         env:
           QT_FORCE_STDERR_LOGGING: ${{ runner.os == 'Windows' && '1' || '' }}
         run: ${{ runner.os == 'Windows' && 'nmake' || 'make' }} check TESTARGS="--platform offscreen"
+
+      - name: Clipboard tests on X11
+        if: runner.os == 'Linux' && steps.need_build.outputs.run_build == 'true'
+        # The offscreen platform has no primary selection and no X11 key
+        # bindings, so make check skips those clipboard tests. Here they run
+        # on a real X server, and a skip fails the step: it would mean the
+        # selection was missing after all.
+        env:
+          QT_QPA_PLATFORM: xcb
+        run: |
+          set -o pipefail
+          xvfb-run -a tests/auto/clipboardmanager/tst_clipboardmanager \
+            | tee clipboard-x11.log
+          if grep -q '^SKIP' clipboard-x11.log; then
+            echo "::error::clipboard tests skipped on X11"
+            exit 1
+          fi
 
   # The BSDs build in a VM (vmactions), from the system's Qt 6 packages
   # rather than a pinned Qt, so their jobs say "(Qt 6)". Same gate as the
