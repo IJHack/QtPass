@@ -9,9 +9,11 @@ import importlib.util
 import io
 import json
 import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 _PATH = Path(__file__).with_name("fill_ts.py")
 _SPEC = importlib.util.spec_from_file_location("fill_ts", _PATH)
@@ -230,6 +232,161 @@ class ApplyTest(unittest.TestCase):
         self.assertIn("Gebruik %1</translation>", data)
         self.assertIn("<numerusform></numerusform>", data)
         self.assertIn("placeholders", err.getvalue())
+
+
+class ReviewTextTest(unittest.TestCase):
+    """review_text is pedantic about what the fill checks let through."""
+
+    def review(self, source: str, out: str, register: str | None = None):
+        """The findings for out in a Dutch file with the SAMPLE glossary."""
+        terms = fill_ts.glossary(SAMPLE)
+        return fill_ts.review_text(source, out, "nl_NL", terms, register)
+
+    def test_clean(self) -> None:
+        """A faithful translation has no findings."""
+        self.assertEqual(self.review('Open "the store"?', 'Open "de opslagen"?'), [])
+
+    def test_each_finding(self) -> None:
+        """Each check fires on its own slip."""
+        want = ["term store=Opslag"]
+        self.assertEqual(self.review("Open the store", "Open de winkel"), want)
+        self.assertEqual(self.review('Use "x"', "Gebruik x"), ["quotes"])
+        self.assertEqual(self.review("Keep 10 lines", "Houd 12 regels"), ["numbers"])
+        self.assertEqual(self.review("Name:", "Naam"), ["ending"])
+        self.assertEqual(self.review("Wait…", "Wacht..."), [])
+        self.assertEqual(self.review("Wait…", "Wacht"), ["ending"])
+        self.assertEqual(self.review("One. Two.", "Een, twee."), ["sentences"])
+        self.assertEqual(self.review("Use this one", "Use this one"), ["untranslated"])
+        self.assertEqual(self.review("Pass", "Pass"), [])
+
+    def test_register(self) -> None:
+        """A formal word in an informal file is a finding, and the other way."""
+        self.assertEqual(
+            self.review("Check it", "Controleer uw lijst", "informal"),
+            ["register (the file is informal)"],
+        )
+        self.assertEqual(self.review("Check it", "Controleer je lijst", "informal"), [])
+        self.assertEqual(
+            self.review("Check it", "Controleer je lijst", "formal"),
+            ["register (the file is formal)"],
+        )
+
+    def test_register_of(self) -> None:
+        """The file's own finished text decides; German needs the capital."""
+        line = "<source>a</source>\n<translation>{}</translation>\n"
+        dutch = line.format("Kies je sleutel") * 3
+        self.assertEqual(fill_ts.register_of(dutch, "nl_NL"), "informal")
+        self.assertIsNone(fill_ts.register_of(dutch[: len(dutch) // 3], "nl_NL"))
+        self.assertIsNone(fill_ts.register_of(dutch, "sv"))
+        german = line.format("Wählen Sie, was sie sehen") * 3
+        self.assertEqual(fill_ts.register_of(german, "de_DE"), "formal")
+        casual, polite = fill_ts.register_words("sie sehen es", "de")
+        self.assertEqual((casual, polite), (0, 0))
+
+
+class MeaningTest(unittest.TestCase):
+    """meaning() compares the source with the back-translation."""
+
+    def test_findings(self) -> None:
+        """A lost negation, a new alarm word and drift are findings."""
+        hidden = "That errs on the hidden side"
+        self.assertEqual(fill_ts.meaning(hidden, "That errs to the hidden side"), [])
+        back = "That is an error on the hidden side"
+        self.assertEqual(fill_ts.meaning(hidden, back), ["alarm error"])
+        self.assertEqual(
+            fill_ts.meaning("Do not show it", "Show it"),
+            ["negation"],
+        )
+        long = "The name and the passphrase cannot contain line breaks"
+        back = "The name and password phrase should not contain any violations of the rules"
+        drift = fill_ts.meaning(long, back)
+        self.assertEqual(drift, ["drift 2/6"])
+        self.assertEqual(fill_ts.meaning("Show the error", "Show the error"), [])
+        half = fill_ts.meaning("alpha bravo charlie delta", "alpha bravo echo golf")
+        self.assertEqual(half, [])
+        less = fill_ts.meaning("alpha bravo charlie delta hotel", "alpha bravo xray")
+        self.assertEqual(less, ["drift 2/5"])
+        short = fill_ts.meaning("Clipboard restored", "Whiteboard repaired")
+        self.assertEqual(short, [])
+
+
+class ReviewFileTest(unittest.TestCase):
+    """review --since looks only at what was filled, --revert empties it."""
+
+    def setUp(self) -> None:
+        """A git repository holding SAMPLE, with no user or system config."""
+        self.tmp = tempfile.TemporaryDirectory()  # pylint: disable=consider-using-with
+        self.addCleanup(self.tmp.cleanup)
+        dialogs = {"SSH_ASKPASS", "GIT_ASKPASS", "DISPLAY", "WAYLAND_DISPLAY"}
+        self.env = {k: v for k, v in os.environ.items() if k not in dialogs}
+        self.env.update(
+            GIT_CONFIG_GLOBAL=os.devnull,
+            GIT_CONFIG_NOSYSTEM="1",
+            GIT_TERMINAL_PROMPT="0",
+        )
+        self.path = os.path.join(self.tmp.name, "localization_nl_NL.ts")
+        Path(self.path).write_text(SAMPLE, encoding="utf-8")
+        for command in (
+            ["init", "-q"],
+            ["add", "."],
+            ["-c", "user.name=t", "-c", "user.email=t@t", "commit", "-qm", "x"],
+        ):
+            git = ["git", *command]
+            subprocess.run(git, cwd=self.tmp.name, env=self.env, check=True)
+        filled = SAMPLE.replace(
+            '<translation type="unfinished"></translation>',
+            '<translation type="unfinished">Gebruik &quot;%1&quot;</translation>',
+        )
+        plural = "<numerusform>%n regels.</numerusform>"
+        filled = filled.replace("<numerusform></numerusform>", plural)
+        Path(self.path).write_text(filled, encoding="utf-8")
+
+    def run_review(self, ask=None, **options):
+        """cmd_review on the file from inside the repository."""
+        args = {"since": "HEAD", "back": False, "revert": "", "skip": ""}
+        args.update(cache=None, model="m", url="u", files=[self.path])
+        args.update(options)
+        out = io.StringIO()
+        with (
+            contextlib.chdir(self.tmp.name),
+            contextlib.redirect_stdout(out),
+            mock.patch.dict(os.environ, self.env, clear=True),
+        ):
+            status = fill_ts.cmd_review(argparse.Namespace(**args), ask)
+        return status, out.getvalue(), Path(self.path).read_text(encoding="utf-8")
+
+    def test_since_and_revert(self) -> None:
+        """Only the newly filled entry is reviewed, and only it is emptied."""
+        status, out, data = self.run_review()
+        self.assertEqual(status, 1)
+        self.assertIn("[term store=Opslag]", out)
+        self.assertNotIn("Klembord", out)
+        self.assertIn("Gebruik &quot;%1&quot;", data)
+        _, everything, _ = self.run_review(since=None)
+        self.assertIn("Klembord", everything)
+        _, out, data = self.run_review(revert="numbers")
+        self.assertIn("Gebruik &quot;%1&quot;", data)
+        _, out, data = self.run_review(revert="term")
+        self.assertIn("emptied 1", out)
+        self.assertNotIn("Gebruik", data)
+        self.assertIn("[sentences]", out)
+        _, out, data = self.run_review(revert="all")
+        self.assertIn("emptied 1", out)
+        self.assertEqual(data, SAMPLE)
+
+    def test_back(self) -> None:
+        """--back asks once per entry, through the cache, and its findings count."""
+        ask, asked = answers('Use the "%1" error')
+        cache = os.path.join(self.tmp.name, "cache.json")
+        _, out, _ = self.run_review(ask, back=True, cache=cache)
+        self.assertIn("alarm error", out)
+        self.assertIn("<- 'Use the \"%1\" error'", out)
+        self.assertEqual(len(asked), 2)
+        self.assertIn("Dutch (nl) to English (en)", asked[0])
+        self.run_review(ask, back=True, cache=cache)
+        self.assertEqual(len(asked), 2)
+        _, out, _ = self.run_review(ask)
+        self.assertNotIn("alarm", out)
 
 
 if __name__ == "__main__":

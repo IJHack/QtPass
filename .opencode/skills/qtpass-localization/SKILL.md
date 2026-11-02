@@ -1,11 +1,11 @@
 ---
 name: qtpass-localization
-description: Refreshes QtPass translation sources with make lupdate, edits and verifies localization/*.ts files, bootstraps new languages in src/src.pro, fills empty entries with scripts/fill_ts.py (by hand, by an agent or with a local model), and handles reviewer fixes alongside Weblate. Use when working on translations, i18n, a locale or .ts file, Weblate, adding a language, lupdate, lrelease, unfinished or empty strings, or machine translation.
+description: Refreshes QtPass translation sources with make lupdate, edits and verifies localization/*.ts files, bootstraps new languages in src/src.pro, fills and reviews empty entries with scripts/fill_ts.py (by hand, by an agent or with a local model), and handles reviewer fixes alongside Weblate. Use when working on translations, i18n, a locale or .ts file, Weblate, adding a language, lupdate, lrelease, unfinished or empty strings, or machine translation.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: localization
-  version: "1.2"
+  version: "1.3"
 ---
 
 # QtPass Localization
@@ -23,11 +23,13 @@ Reference files (one level deep, read only when needed):
   adding a new locale (code choice, skeleton, `src/src.pro` registration).
 - [references/mnemonics.md](references/mnemonics.md): read when a string has an
   `&` accelerator or a reviewer flags a missing or clashing shortcut.
+- [references/review-codes.md](references/review-codes.md): read when
+  `fill_ts.py review` reports a finding and you decide whether to revert it.
 - [references/status-and-runtime.md](references/status-and-runtime.md): read
   when you need per-locale completion stats or want to see a translation in the
   running app.
-- [scripts/fill_ts.py](scripts/fill_ts.py): fills empty entries and refuses
-  broken ones (Workflow 4). Its tests are `scripts/test_fill_ts.py`.
+- [scripts/fill_ts.py](scripts/fill_ts.py): fills empty entries, refuses
+  broken ones and reviews the result (Workflow 4). Its tests are `scripts/test_fill_ts.py`.
 - Structural checks (placeholders, HTML balance, mnemonics, mixed-script MT
   artifacts) live in the sibling skill
   [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md). Use it
@@ -145,7 +147,18 @@ Small models still get meaning wrong where the checks cannot see it (for example
 1. Run the [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md)
    loop. Its `SCRIPT` check catches a locale written in the wrong script (a
    Punjabi file in Devanagari instead of Gurmukhi).
-2. Read the result for the languages you know, and empty any locale that is
+2. Review what the run filled. `review` is pedantic on purpose: it reports, and
+   empties only what `--revert` names.
+
+   ```bash
+   python3 "$T" review --since origin/main            # checks without a model
+   python3 "$T" review --since origin/main --back --cache /tmp/back.json
+   python3 "$T" review --since origin/main --revert alarm,negation
+   ```
+
+   [references/review-codes.md](references/review-codes.md) explains each code.
+
+3. Read the result for the languages you know, and empty any locale that is
    mostly wrong. Say in the PR which locales were read and which were not.
 
 ## Verify loop

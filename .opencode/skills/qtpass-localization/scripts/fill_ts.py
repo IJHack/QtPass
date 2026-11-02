@@ -30,6 +30,16 @@ localization/localization_*.ts):
       names the dialog the string comes from and lists the terms the
       locale's file already uses for words in it (store, clipboard, ...),
       so the new text follows the file's own vocabulary.
+  review [--since REF] [--back] [--revert CODES] [--skip l1,l2] [FILE ...]
+      Pedantic review of every unfinished translation that has text (with
+      --since, only those that were empty at git REF): the fill checks,
+      plus the glossary term, the file's formal or informal address,
+      quotes, numbers, sentences and the ending of the source. With --back
+      the model translates each one back to English, and a lost or added
+      negation, words such as "error" or "wrong" the source lacks, and text
+      that drifted from the source are findings too. --revert empties the
+      entries with a finding whose code starts with one of CODES (or all).
+      Exit status 1 when anything is found.
 
 en_US is never filled (it falls back to the source); en_GB gets the source.
 """
@@ -40,6 +50,7 @@ import html
 import json
 import os
 import re
+import subprocess  # nosec B404
 import sys
 import time
 import unicodedata
@@ -158,14 +169,42 @@ CONTEXT = {
     "ProcessOutputPanel": "the process output panel",
 }
 
+# Words that address the reader, informal then formal. German formal words
+# only count with their capital, which tells "Sie" (you) from "sie" (they).
+REGISTER = {
+    "nl": ({"je", "jij", "jou", "jouw", "jullie"}, {"u", "uw"}),
+    "de": (
+        {"du", "dich", "dir", "dein", "deine", "deinen", "deinem", "deiner"},
+        {"Sie", "Ihnen", "Ihr", "Ihre", "Ihren", "Ihrem", "Ihrer"},
+    ),
+    "fr": ({"tu", "toi", "ton", "ta", "tes"}, {"vous", "votre", "vos"}),
+    "es": ({"tú", "tus", "ti"}, {"usted", "ustedes"}),
+}
+
+# In a back-translation but not in the source, these say the text now
+# reports a fault: "That errs on the hidden side" came back as "That is an
+# error" in three languages.
+ALARM = ("error", "bug", "wrong", "fault", "problem", "broken", "mistake", "incorrect")
+NEGATIONS = r"\b(?:not|no|never|none|nothing|cannot|without|unless)\b|n't\b"
+NEGATION = re.compile(NEGATIONS, re.IGNORECASE)
+QUOTES = '"“”„«»「」『』‘’‚‹›'
+SENTENCE_END = re.compile(r"[.!?。！？।۔](?=\s|$)")
+DIGITS = re.compile(r"\d+")
+
 PLACEHOLDER = re.compile(r"%(?:\d+|n)")
 TAG = re.compile(r"</?[A-Za-z][^>]*>")
 MNEMONIC = re.compile(r"&(?=[^&\s])")
 WORD = re.compile(r"[^\W\d_]+")
+SOURCE = re.compile(r"<source>(.*?)</source>", re.DOTALL)
 EMPTY = re.compile(
     r'<translation type="unfinished">((?:\s*<numerusform></numerusform>)*\s*)'
     r"</translation>"
 )
+UNFINISHED = re.compile(
+    r'<translation type="unfinished">(.*?)</translation>',
+    re.DOTALL,
+)
+FORM = re.compile(r"<numerusform>(.*?)</numerusform>", re.DOTALL)
 MESSAGE = re.compile(r"(<message(?: numerus=\"yes\")?>)(.*?)(</message>)", re.DOTALL)
 CONTEXT_BLOCK = re.compile(r"<context>\s*<name>(.*?)</name>(.*?)</context>", re.DOTALL)
 FINISHED = re.compile(r"<source>(.*?)</source>\s*<translation>(.*?)</translation>")
@@ -343,7 +382,7 @@ def entries(data: str) -> Iterator[tuple[str, str]]:
     for name, body in CONTEXT_BLOCK.findall(data):
         for message in MESSAGE.finditer(body):
             if EMPTY.search(message.group(2)):
-                src = re.search(r"<source>(.*?)</source>", message.group(2), re.DOTALL)
+                src = SOURCE.search(message.group(2))
                 if src:
                     yield name, html.unescape(src.group(1))
 
@@ -361,26 +400,11 @@ def translation_element(inner: str, out: str) -> str:
     return f'<translation type="unfinished">{forms}{close}</translation>'
 
 
-def fill(data: str, translate: Translate) -> tuple[str, int, int]:
-    """Fill each empty unfinished message of a file's text with
-    translate(context, source); None leaves it empty. Returns the new text
-    and the numbers filled and left."""
-    counts = [0, 0]
+def edit_messages(data: str, edit: Callable[[str, str], str]) -> str:
+    """data with each <message> body replaced by edit(context, body)."""
 
     def message(context: str, match: "re.Match[str]") -> str:
-        body = match.group(2)
-        empty = EMPTY.search(body)
-        src = re.search(r"<source>(.*?)</source>", body, re.DOTALL)
-        if not empty or not src:
-            return match.group(0)
-        out = translate(context, html.unescape(src.group(1)))
-        if out is None:
-            counts[1] += 1
-            return match.group(0)
-        counts[0] += 1
-        start, end = empty.span()
-        filled = translation_element(empty.group(1), out)
-        return match.group(1) + body[:start] + filled + body[end:] + match.group(3)
+        return match.group(1) + edit(context, match.group(2)) + match.group(3)
 
     def context(block: "re.Match[str]") -> str:
         name = block.group(1)
@@ -388,7 +412,29 @@ def fill(data: str, translate: Translate) -> tuple[str, int, int]:
         start, end = block.start(2) - block.start(), block.end(2) - block.start()
         return block.group(0)[:start] + body + block.group(0)[end:]
 
-    return CONTEXT_BLOCK.sub(context, data), counts[0], counts[1]
+    return CONTEXT_BLOCK.sub(context, data)
+
+
+def fill(data: str, translate: Translate) -> tuple[str, int, int]:
+    """Fill each empty unfinished message of a file's text with
+    translate(context, source); None leaves it empty. Returns the new text
+    and the numbers filled and left."""
+    counts = [0, 0]
+
+    def edit(context: str, body: str) -> str:
+        empty = EMPTY.search(body)
+        src = SOURCE.search(body)
+        if not empty or not src:
+            return body
+        out = translate(context, html.unescape(src.group(1)))
+        if out is None:
+            counts[1] += 1
+            return body
+        counts[0] += 1
+        start, end = empty.span()
+        return body[:start] + translation_element(empty.group(1), out) + body[end:]
+
+    return edit_messages(data, edit), counts[0], counts[1]
 
 
 def files(names: list[str]) -> list[str]:
@@ -465,6 +511,21 @@ def cmd_apply(args: argparse.Namespace) -> int:
     return 1 if rejected else 0
 
 
+def load_cache(path: str | None) -> dict[str, str | None]:
+    """The answers kept in a cache file, or none."""
+    if not path or not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def save_cache(path: str | None, cache: dict[str, str | None]) -> None:
+    """Keep the answers for the next run."""
+    if path:
+        with open(path, "w", encoding="utf-8") as handle:
+            json.dump(cache, handle, ensure_ascii=False, indent=0)
+
+
 def translate_one(
     ask: Ask, locale: str, context: str, source: str, terms: dict[str, str]
 ) -> tuple[str | None, list[str]]:
@@ -504,9 +565,7 @@ def llm_file(
             cache[key], why = translate_one(ask, locale, context, source, terms)
             if why:
                 print(f"  {locale}: left empty ({', '.join(why)}): {source[:60]!r}")
-            if args.cache:
-                with open(args.cache, "w", encoding="utf-8") as handle:
-                    json.dump(cache, handle, ensure_ascii=False, indent=0)
+            save_cache(args.cache, cache)
         return checked(locale, source, cache[key])
 
     data, filled, left = fill(data, translate)
@@ -518,10 +577,7 @@ def cmd_llm(args: argparse.Namespace, ask: Ask | None = None) -> int:
     """Fill the files with a local model."""
     ask = ask or chat(args.url, args.model)
     skip = set(filter(None, args.skip.split(",")))
-    cache: dict[str, str | None] = {}
-    if args.cache and os.path.exists(args.cache):
-        with open(args.cache, encoding="utf-8") as handle:
-            cache = json.load(handle)
+    cache = load_cache(args.cache)
     for path in files(args.files):
         locale = locale_of(path)
         if locale in skip or (locale not in LANGUAGE and locale != "en_GB"):
@@ -529,6 +585,227 @@ def cmd_llm(args: argparse.Namespace, ask: Ask | None = None) -> int:
             continue
         llm_file(path, locale, ask, cache, args)
     return 0
+
+
+def stem(word: str) -> str:
+    """The first two thirds of a word, enough to survive an inflection."""
+    return word.lower()[: max(3, len(word) * 2 // 3)]
+
+
+def register_words(text: str, language: str) -> tuple[int, int]:
+    """How many informal and formal words of address text has."""
+    informal, formal = REGISTER[language]
+    words = WORD.findall(text)
+    casual = sum(w.lower() in informal for w in words)
+    polite = sum((w if language == "de" else w.lower()) in formal for w in words)
+    return casual, polite
+
+
+def register_of(data: str, locale: str) -> str | None:
+    """How a file's finished translations address the reader: "informal",
+    "formal", or None when the language has no table or too few hits."""
+    language = locale.split("_")[0]
+    if language not in REGISTER:
+        return None
+    casual = polite = 0
+    for _src, tr in FINISHED.findall(data):
+        more_casual, more_polite = register_words(html.unescape(tr), language)
+        casual, polite = casual + more_casual, polite + more_polite
+    if max(casual, polite) < 3:
+        return None
+    return "informal" if casual > polite else "formal"
+
+
+def ending(text: str) -> str:
+    """The colon, ellipsis or question mark text ends with, in any script."""
+    text = text.rstrip().replace("...", "…").replace("：", ":")
+    text = text.replace("？", "?").replace("؟", "?")
+    return text[-1:] if text[-1:] in (":", "…", "?") else ""
+
+
+def numbers(text: str) -> list[int]:
+    """The numbers in text, in any script's digits."""
+    return sorted(int(d) for d in DIGITS.findall(text))
+
+
+def review_text(
+    source: str,
+    out: str,
+    locale: str,
+    terms: dict[str, str],
+    register: str | None,
+) -> list[str]:
+    """Pedantic findings on one translation: the fill checks and more."""
+    found = problems(source, out, locale)
+    text = without_mnemonic(out).lower()
+    for key, value in terms_in(source, terms):
+        if not all(stem(w) in text for w in WORD.findall(value)):
+            found.append(f"term {key}={value}")
+    if sum(out.count(q) for q in QUOTES) < source.count('"'):
+        found.append("quotes")
+    if numbers(source) != numbers(out):
+        found.append("numbers")
+    if ending(source) != ending(out):
+        found.append("ending")
+    # "..." is an ellipsis, not three sentence ends.
+    ends = [SENTENCE_END.findall(t.replace("...", "…")) for t in (source, out)]
+    if locale != "th" and len(ends[0]) != len(ends[1]):
+        found.append("sentences")
+    if register:
+        casual, polite = register_words(out, locale.split("_")[0])
+        if (polite if register == "informal" else casual) > 0:
+            found.append(f"register (the file is {register})")
+    if out.strip() == source.strip() and len(WORD.findall(source)) > 2:
+        found.append("untranslated")
+    return found
+
+
+def meaning(source: str, back: str) -> list[str]:
+    """Findings from comparing the source with a back-translation."""
+    found = []
+    src, bck = source.lower(), back.lower()
+    if bool(NEGATION.search(src)) != bool(NEGATION.search(bck)):
+        found.append("negation")
+    alarm = [w for w in ALARM if w in bck and w not in src]
+    if alarm:
+        found.append("alarm " + ",".join(alarm))
+    words = {w[:5] for w in WORD.findall(src) if len(w) >= 4}
+    kept = words & {w[:5] for w in WORD.findall(bck)}
+    # Short strings come back as synonyms ("Default" -> "Standard"), so
+    # only a longer one that lost half its words counts.
+    if len(words) >= 4 and len(kept) < len(words) / 2:
+        found.append(f"drift {len(kept)}/{len(words)}")
+    return found
+
+
+def back_prompt(locale: str, text: str) -> str:
+    """TranslateGemma's request, the other way round: into English."""
+    lang = LANGUAGE[locale]
+    code = locale.split("_")[0]
+    return (
+        f"You are a professional {lang} ({code}) to English (en) translator. "
+        f"Your goal is to accurately convey the meaning and nuances of the "
+        f"original {lang} text while adhering to English grammar, vocabulary, "
+        f"and cultural sensitivities. Produce only the English translation, "
+        f"without any additional explanations or commentary. Please translate "
+        f"the following {lang} text into English:\n\n\n{text}"
+    )
+
+
+def back_translate(
+    ask: Ask,
+    locale: str,
+    text: str,
+    cache: dict[str, str | None],
+    args: argparse.Namespace,
+) -> str | None:
+    """text in English, through the cache; None when the backend fails."""
+    key = f"back\x1f{args.model}\x1f{locale}\x1f{text}"
+    if key not in cache:
+        try:
+            cache[key] = ask(back_prompt(locale, without_mnemonic(text)), 0.0).strip()
+        except OSError as error:
+            print(f"  {locale}: no back-translation ({error})", file=sys.stderr)
+            return None
+        save_cache(args.cache, cache)
+    return cache[key]
+
+
+def empty_since(path: str, ref: str) -> set[tuple[str, str]] | None:
+    """(context, source) of the messages that were empty at git ref, or None
+    when the file did not exist there."""
+    spec = f"{ref}:./{os.path.relpath(path)}"
+    old = subprocess.run(  # nosec B603 B607
+        ["git", "show", spec],
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=False,
+    )
+    return set(entries(old.stdout)) if old.returncode == 0 else None
+
+
+def emptied(inner: str) -> str:
+    """The empty unfinished <translation> for one whose content was inner."""
+    if "<numerusform>" in inner:
+        inner = FORM.sub("<numerusform></numerusform>", inner)
+    else:
+        inner = ""
+    return f'<translation type="unfinished">{inner}</translation>'
+
+
+def review_file(
+    path: str,
+    locale: str,
+    ask: Ask | None,
+    cache: dict[str, str | None],
+    args: argparse.Namespace,
+) -> int:
+    """Review one file, print the findings, empty the reverted entries;
+    returns the number of entries with a finding."""
+    data = read(path)
+    terms = glossary(data)
+    register = register_of(data, locale)
+    fresh = empty_since(path, args.since) if args.since else None
+    revert = set(filter(None, args.revert.split(",")))
+    count = [0, 0]
+
+    def edit(context: str, body: str) -> str:
+        unfinished = UNFINISHED.search(body)
+        src = SOURCE.search(body)
+        if not unfinished or not src:
+            return body
+        source = html.unescape(src.group(1))
+        inner = unfinished.group(1)
+        forms = [f for f in FORM.findall(inner) or [inner] if f.strip()]
+        forms = [html.unescape(f) for f in forms]
+        if not forms or (fresh is not None and (context, source) not in fresh):
+            return body
+        found = []
+        for form in forms:
+            found += review_text(source, form, locale, terms, register)
+        back = back_translate(ask, locale, forms[0], cache, args) if ask else None
+        if back is not None:
+            found += meaning(source, back)
+        if not found:
+            return body
+        found = list(dict.fromkeys(found))
+        count[0] += 1
+        print(f"{locale}: [{'; '.join(found)}] {source[:70]!r}")
+        print(f"    -> {forms[0][:110]!r}")
+        if back is not None:
+            print(f"    <- {back[:110]!r}")
+        matched = {c for c in revert for f in found if f.startswith(c)}
+        if "all" not in revert and not matched:
+            return body
+        count[1] += 1
+        start, end = unfinished.span()
+        return body[:start] + emptied(inner) + body[end:]
+
+    new = edit_messages(data, edit)
+    if new != data:
+        write(path, new)
+    if count[1]:
+        print(f"{locale}: emptied {count[1]}")
+    return count[0]
+
+
+def cmd_review(args: argparse.Namespace, ask: Ask | None = None) -> int:
+    """Review the unfinished translations of the files."""
+    if not args.back:
+        ask = None
+    elif ask is None:
+        ask = chat(args.url, args.model)
+    skip = set(filter(None, args.skip.split(","))) | {"en_US", "en_GB"}
+    cache = load_cache(args.cache)
+    total = 0
+    for path in files(args.files):
+        locale = locale_of(path)
+        if locale in skip or locale not in LANGUAGE:
+            continue
+        total += review_file(path, locale, ask, cache, args)
+    print(f"total: {total} with findings" if total else "total: clean")
+    return 1 if total else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -546,11 +823,22 @@ def main(argv: list[str] | None = None) -> int:
     llm.add_argument("--cache", help="JSON file that keeps answers between runs")
     llm.add_argument("--skip", default="", help="locales to leave alone (a,b,...)")
     llm.add_argument("files", nargs="*")
+    review = sub.add_parser("review", help="pedantic review of unfinished text")
+    review.add_argument("--since", help="only entries that were empty at this git ref")
+    review.add_argument("--back", action="store_true", help="back-translate too")
+    review.add_argument("--revert", default="", help="empty entries with these codes")
+    review.add_argument("--url", default=DEFAULT_URL)
+    review.add_argument("--model", default=DEFAULT_MODEL)
+    review.add_argument("--cache", help="JSON file that keeps answers between runs")
+    review.add_argument("--skip", default="", help="locales to leave alone (a,b,...)")
+    review.add_argument("files", nargs="*")
     args = parser.parse_args(argv)
     if args.command == "pending":
         return cmd_pending(args)
     if args.command == "apply":
         return cmd_apply(args)
+    if args.command == "review":
+        return cmd_review(args)
     return cmd_llm(args)
 
 
