@@ -869,7 +869,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Run a command synchronously on a caller-supplied QProcess, with optional cancellation. </p>
-<p>The caller configures <code class="param">process</code> (environment, say) before the call; it must be a fresh, not yet started object. QProcess is not thread-safe, so <code class="param">process</code> belongs to the calling thread for the whole run: no other thread may call terminate(), kill() or anything else on it. To let a run be cancelled, pass <code class="param">cancel:</code> the wait then polls the flag, and once it is set the calling thread itself terminate()s the child, waits a short grace period, kill()s it if it is still running, and returns -1. Setting the flag is the only thing another thread does; it may do so at any time, before or during the run. A run given <code class="param">timeoutMs</code> ends the same way once that time has passed, start included. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The caller configures <code class="param">process</code> (environment, say) before the call; it must be a fresh, not yet started object. QProcess is not thread-safe, so <code class="param">process</code> belongs to the calling thread for the whole run: no other thread may call terminate(), kill() or anything else on it. To let a run be cancelled, pass <code class="param">cancel:</code> the wait then polls the flag, and once it is set the calling thread itself terminate()s the child, waits a short grace period, kill()s it if it is still running, waits one more grace period at most, and returns -1. Setting the flag is the only thing another thread does; it may do so at any time, before or during the run. A run given <code class="param">timeoutMs</code> ends the same way once that time has passed, start included, so it returns within the timeout plus twice the grace even when a kill()ed child cannot exit yet (uninterruptible sleep on a hung mount). Not timed: QProcess::start() itself, which can block, for example opening a FIFO named by a redirected channel (no caller redirects one), and QProcess's destructor, which still waits for such a child, for up to 30 s. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">process</td><td>Process object to run the command on. </td></tr>
     <tr><td class="paramname">app</td><td>Executable path. </td></tr>
@@ -962,7 +962,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Whether no command is running and nothing is queued. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when the executor has nothing in flight. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00397">397</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00403">403</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
