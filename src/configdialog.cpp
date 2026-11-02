@@ -390,7 +390,8 @@ namespace {
 /**
  * @brief The public keyring in @p env's GPG home as it is now: size and
  * time of each keyring file (pubring.kbx, pubring.gpg, keyboxd's
- * database), so a key imported meanwhile is noticed.
+ * database, any keyring gpg.conf names), so a key imported meanwhile is
+ * noticed.
  * @param env The environment gpg runs in.
  * @return A string that changes when the keyring does.
  */
@@ -404,14 +405,46 @@ auto keyringStamp(const QProcessEnvironment &env) -> QString {
     home = QDir::home().filePath(QStringLiteral(".gnupg"));
 #endif
   }
-  QString stamp;
+  const QDir dir(home);
+  QStringList files;
   // keyboxd (GnuPG 2.3 and later, the default in a new home since 2.4.1)
   // keeps keys in an SQLite database, written to its WAL first.
   for (const QString &name :
        {QStringLiteral("pubring.kbx"), QStringLiteral("pubring.gpg"),
         QStringLiteral("public-keys.d/pubring.db"),
         QStringLiteral("public-keys.d/pubring.db-wal")}) {
-    const QFileInfo info(QDir(home).filePath(name));
+    files.append(dir.filePath(name));
+  }
+  // gpg.conf can name other keyrings, and primary-keyring is where an
+  // import goes. Like gpg: "~/" is the home directory, a bare name is in
+  // the GnuPG home, any other path is taken as it is.
+  QFile conf(dir.filePath(QStringLiteral("gpg.conf")));
+  if (conf.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    static const QRegularExpression option(
+        QStringLiteral("^\\s*(?:primary-)?keyring\\s+(.+?)\\s*$"));
+    while (!conf.atEnd()) {
+      const auto match = option.match(QString::fromUtf8(conf.readLine()));
+      if (!match.hasMatch()) {
+        continue;
+      }
+      QString name = match.captured(1);
+      if (name.size() > 1 && name.startsWith(QLatin1Char('"')) &&
+          name.endsWith(QLatin1Char('"'))) {
+        name = name.mid(1, name.size() - 2);
+      }
+      if (name.startsWith(QLatin1String("~/"))) {
+        files.append(QDir::home().filePath(name.mid(2)));
+      } else if (name.contains(QLatin1Char('/')) ||
+                 name.contains(QLatin1Char('\\'))) {
+        files.append(name);
+      } else {
+        files.append(dir.filePath(name));
+      }
+    }
+  }
+  QString stamp;
+  for (const QString &file : std::as_const(files)) {
+    const QFileInfo info(file);
     stamp += QString::number(info.size()) + QLatin1Char(':') +
              QString::number(info.lastModified().toMSecsSinceEpoch()) +
              QLatin1Char(';');

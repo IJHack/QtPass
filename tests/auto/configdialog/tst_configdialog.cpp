@@ -890,12 +890,21 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
  *        keyring, and keyboxd's database and its write-ahead log.
  */
 void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile_data() {
+  QTest::addColumn<QString>("conf");
   QTest::addColumn<QString>("keyring");
-  QTest::newRow("keybox") << QStringLiteral("pubring.kbx");
-  QTest::newRow("legacy") << QStringLiteral("pubring.gpg");
-  QTest::newRow("keyboxd") << QStringLiteral("public-keys.d/pubring.db");
+  QTest::newRow("keybox") << QString() << QStringLiteral("pubring.kbx");
+  QTest::newRow("legacy") << QString() << QStringLiteral("pubring.gpg");
+  QTest::newRow("keyboxd") << QString()
+                           << QStringLiteral("public-keys.d/pubring.db");
   QTest::newRow("keyboxd wal")
-      << QStringLiteral("public-keys.d/pubring.db-wal");
+      << QString() << QStringLiteral("public-keys.d/pubring.db-wal");
+  // %1 is the GnuPG home.
+  QTest::newRow("primary-keyring")
+      << QStringLiteral("# imports go here\nprimary-keyring  mine.gpg \n")
+      << QStringLiteral("mine.gpg");
+  QTest::newRow("keyring path")
+      << QStringLiteral("keyring \"%1/rings/other.gpg\"\n")
+      << QStringLiteral("rings/other.gpg");
 }
 
 /**
@@ -907,6 +916,7 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
 #ifdef Q_OS_WIN
   QSKIP("the stand-in gpg is a shell script");
 #else
+  QFETCH(QString, conf);
   QFETCH(QString, keyring);
   struct ProfileRestorer {
     Profiles saved;
@@ -934,6 +944,12 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
   QTemporaryDir bin;
   QTemporaryDir home;
   QVERIFY(bin.isValid() && home.isValid());
+  if (!conf.isEmpty()) {
+    QFile file(QDir(home.path()).filePath(QStringLiteral("gpg.conf")));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.write(
+        QString(conf).replace(QStringLiteral("%1"), home.path()).toUtf8());
+  }
   const QString gpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
   const QString runs = QDir(bin.path()).filePath(QStringLiteral("runs"));
   // Knows the key once it is "imported"; counts every run.
