@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">คลิปบอร์ดถูกกู้คืนแล้ว</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">เปิดใช้งานการค้นหาเนื้อหา</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -471,12 +471,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">เมื่อคลิปบอร์ดถูกล้าง, ให้ใส่ข้อมูลเดิมกลับเข้าไปเหมือนตอนก่อนคัดลอก, ยกเว้นว่ามีการคัดลอกข้อมูลอื่นในช่วงนั้น ข้อมูลเท่านั้น: การจัดรูปแบบจะไม่ได้รับการกู้คืน ข้อมูลนั้นจะยังคงอยู่ในหน่วยความจำจนถึงจุดนั้น ในสถานการณ์ที่คลิปบอร์ดไม่สามารถอ่านได้โดยไม่มีการโฟกัส (บางเดสก์ท็อป Wayland), จะมีการล้างคลิปบอร์ดแทน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">คืนค่าจากคลิปบอร์ดก่อนหน้า</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -492,22 +492,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">ซ่อนข้อมูลลับอื่นๆ:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">ซ่อนช่องเก็บข้อมูลที่เป็นความลับ, ไม่เพียงแค่รหัสผ่าน: ช่องที่มีชื่อที่ประกอบด้วยคำเหล่านี้ ช่องเปิด: จะซ่อนเฉพาะรหัสผ่าน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">ค่าเริ่มต้น</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">ใส่คำ/รหัสเริ่มต้นกลับคืน: รหัส PIN, รหัสบัตร, คีย์, โทเค็น, รหัสกู้คืน และอื่นๆ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">ใช้ Git repository ในโฟลเดอร์ที่อยู่เหนือตำแหน่งการจัดเก็บ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -748,7 +748,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ลงนามด้วยกุญแจเดียวกันสำหรับร้านค้าอื่น: รายชื่อผู้รับที่ลงนามสำหรับร้านค้าหนึ่งจะได้รับการยอมรับในอีกร้านหนึ่ง: ใช้วันละกุญแจลงนามแยกกัน สำหรับแต่ละร้านค้าที่มีผู้รับที่แตกต่างกัน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1065,7 +1065,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>... ยังมีบรรทัดอื่นๆ อีก %n บรรทัดที่ไม่ได้แสดง</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1425,7 +1425,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">เนื่องจาก %1 ไม่ได้อยู่ในที่เก็บรหัสผ่าน หรือชื่อโฟลเดอร์ใดๆ ที่มีบรรทัดใหม่หรือตัวควบคุมอื่นๆ ซึ่งไม่สามารถบันทึกได้</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="570"/>
@@ -1435,7 +1435,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ไม่สามารถอ่านเป็นรายชื่อผู้รับได้ (ซึ่งเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1579,7 +1579,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 คือ หรือซ่อนอยู่ภายใต้ ลิงก์เชิงสัญลักษณ์ หรือจุดเชื่อมต่อ หลังจากดึงข้อมูลออกมา สิ่งที่ลิงก์นั้นชี้ไปไม่ได้เป็นส่วนหนึ่งของฐานข้อมูลรหัสผ่าน และจะถูกปล่อยทิ้งไว้ตามเดิม</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -1785,7 +1785,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">ขนาดไฟล์ที่ %1 นั้นใหญ่เกินไปสำหรับใช้เป็นคีย์</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1907,12 +1907,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">ข้อมูลที่ป้อนไม่ถูกต้อง</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">ชื่อ และวลีรหัสผ่านไม่สามารถมีเครื่องหมายใหม่ได้</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2035,7 +2035,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">ค้นหาภายในเนื้อหารหัสผ่าน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2470,13 +2470,13 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… ยังมีผลลัพธ์อื่นๆ ในรายการนี้</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>แสดงผลการค้นหา %n รายการแรก; หากต้องการดูผลที่เหลือ ให้ทำการค้นหาด้วยคำหรือเงื่อนไขที่เฉพาะเจาะจงมากขึ้น</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -2765,16 +2765,14 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">บันทึกแล้ว, แต่ยังไม่ได้ยืนยัน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">ข้อมูลถูกบันทึกไว้ในที่เก็บ แต่การบันทึกลงใน Git ล้มเหลว รายงาน:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2784,7 +2782,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ไม่ได้อยู่ในที่เก็บรหัสผ่าน ผู้รับถูกตั้งค่าสำหรับที่เก็บ หรือโฟลเดอร์ใดๆ ภายใน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -2799,7 +2797,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">เนื่องจาก %1 ไม่สามารถอ่านเป็นรายชื่อผู้รับ (ซึ่งเป็นไฟล์ปกติที่มีขนาดไม่เกิน %2) ดังนั้นจึงไม่มีการเลือกผู้รับใดๆ ล่วงหน้า ตรวจสอบและยืนยันรายชื่อผู้รับก่อนที่จะเลือกที่นี่: OK จะเขียนรายการใหม่แทนรายการเดิม</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -2998,7 +2996,7 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>รายการนี้มี %n แถว ซึ่งมากกว่าที่จะแก้ไขได้ที่นี่</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -3060,7 +3058,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">ที่ตั้ง GPG ที่มีการกำหนดค่า %1 ไม่พบ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3301,7 +3299,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">ตรวจสอบรายชื่อผู้รับภายใต้ %1…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3327,7 +3325,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">ลิงก์ %1 ถูกลบออก และ Git ไม่ได้ติดตามลิงก์นั้นอีกต่อไป แต่การคอมมิตกลับไม่สำเร็จ: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
