@@ -47,6 +47,7 @@ private slots:
   void secretLineEditNeverPublishesAPlainSelection();
   void editableSecretLineEditCutsMarked();
   void editableSecretLineEditKeepsWordMovesAndUndo();
+  void editableSecretLineEditMarksWhatLineDeletesCopy();
   void editableSecretLineEditMarksThePrimarySelection();
   void secretPlainTextEditMarksCopyAndCut();
 
@@ -590,6 +591,45 @@ void tst_clipboardmanager::editableSecretLineEditKeepsWordMovesAndUndo() {
   QCOMPARE(edit.text(), QStringLiteral("hunter2 secret"));
   QTest::keySequence(&edit, QKeySequence::Redo);
   QCOMPARE(edit.text(), QStringLiteral("hunter2 secretx"));
+}
+
+/**
+ * @brief Deleting to the end of the line or the whole line (Ctrl+K and
+ * Ctrl+U with the X11 key bindings) copies the deleted text as a cut does:
+ * marked and reported. Read-only, the keys do nothing, not even select.
+ */
+void tst_clipboardmanager::editableSecretLineEditMarksWhatLineDeletesCopy() {
+  if (QKeySequence::keyBindings(QKeySequence::DeleteEndOfLine).isEmpty() ||
+      QKeySequence::keyBindings(QKeySequence::DeleteCompleteLine).isEmpty()) {
+    QSKIP("these keys are bound only with the X11 key bindings");
+  }
+  SecretLineEdit edit;
+  edit.setEchoMode(QLineEdit::Normal);
+  edit.setText(QStringLiteral("hunter2 secret"));
+  QSignalSpy copied(&edit, &SecretLineEdit::copied);
+
+  edit.setCursorPosition(8);
+  QSignalSpy changed(QApplication::clipboard(), &QClipboard::dataChanged);
+  QTest::keySequence(&edit, QKeySequence::DeleteEndOfLine);
+  QCOMPARE(edit.text(), QStringLiteral("hunter2 "));
+  QCOMPARE(changed.count(), 1);
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("secret"));
+  QVERIFY(hasSecretHints(QApplication::clipboard()->mimeData()));
+
+  QTest::keySequence(&edit, QKeySequence::DeleteCompleteLine);
+  QVERIFY(edit.text().isEmpty());
+  QCOMPARE(copied.count(), 2);
+  QCOMPARE(QApplication::clipboard()->text(), QStringLiteral("hunter2 "));
+  QVERIFY(hasSecretHints(QApplication::clipboard()->mimeData()));
+
+  edit.setText(QStringLiteral("shown"));
+  edit.setReadOnly(true);
+  edit.setCursorPosition(0);
+  QTest::keySequence(&edit, QKeySequence::DeleteCompleteLine);
+  QCOMPARE(edit.text(), QStringLiteral("shown"));
+  QVERIFY2(!edit.hasSelectedText(), "nor does the selection change");
+  QCOMPARE(copied.count(), 2);
 }
 
 /**

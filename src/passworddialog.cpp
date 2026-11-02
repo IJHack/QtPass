@@ -481,9 +481,14 @@ void PasswordDialog::hookOtpField() {
   QLineEdit *otp = otpLineEdit();
   // The field that was the OTP one may not be any more (renamed away, or
   // another one now comes first): it stops being validated and normalised
-  // here, so its hooks go with the role.
+  // here, so its OTP hooks go with the role. Its copies are still reported.
   if (!m_otpLine.isNull() && m_otpLine != otp) {
-    disconnect(m_otpLine, nullptr, this, nullptr);
+    disconnect(m_otpLine, &QLineEdit::textChanged, this,
+               &PasswordDialog::validateOtpField);
+    disconnect(m_otpLine, &QLineEdit::textEdited, this,
+               &PasswordDialog::markOtpFieldEdited);
+    disconnect(m_otpLine, &QLineEdit::editingFinished, this,
+               &PasswordDialog::normalizeOtpField);
   }
   m_otpLine = otp;
   if (otp == nullptr) {

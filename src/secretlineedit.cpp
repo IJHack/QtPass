@@ -39,6 +39,18 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
     event->accept();
     return;
   }
+  // QLineEdit copies what these delete (Ctrl+K and Ctrl+U with the X11 key
+  // bindings), as a cut.
+  const bool toEnd = event->matches(QKeySequence::DeleteEndOfLine);
+  if (toEnd || event->matches(QKeySequence::DeleteCompleteLine)) {
+    if (!isReadOnly()) {
+      const int from = toEnd ? cursorPosition() : 0;
+      setSelection(from, static_cast<int>(text().size()) - from);
+      cutSelection();
+    }
+    event->accept();
+    return;
+  }
   withoutPlainSelectionCopy([this, event] { QLineEdit::keyPressEvent(event); });
   // Where QLineEdit would have copied: after a key it handled, not after a
   // lone modifier or another key it ignores.

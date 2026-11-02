@@ -135,6 +135,7 @@ private Q_SLOTS:
   void fieldLabelRenamesTheField();
   void anEntryTooLongToEditIsNotLoaded();
   void copiesOutOfTheEditorAreReported();
+  void aFieldRenamedAwayFromOtpStillReportsCopies();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void templateFieldsKeepPlainLabels();
@@ -234,6 +235,35 @@ void tst_passworddialog::copiesOutOfTheEditorAreReported() {
   QCOMPARE(texts,
            (QStringList{QStringLiteral("hunter2"), QStringLiteral("alice"),
                         QStringLiteral("1234"), QStringLiteral("notes")}));
+}
+
+/**
+ * @brief The OTP field loses its OTP hooks when a rename takes the role
+ * away, but not its copy reporting: copies out of it still reach copied().
+ */
+void tst_passworddialog::aFieldRenamedAwayFromOtpStillReportsCopies() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\notp: JBSWY3DPEHPK3PXP\n"));
+  FieldLabel *label = fieldLabel(d, QStringLiteral("otp"));
+  QVERIFY(label != nullptr);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("code"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(label->text(), QStringLiteral("code"));
+
+  auto *line = qobject_cast<QLineEdit *>(label->buddy());
+  QVERIFY(line != nullptr);
+  QSignalSpy copied(&d, &PasswordDialog::copied);
+  line->selectAll();
+  QTest::keySequence(line, QKeySequence::Copy);
+  QCOMPARE(copied.count(), 1);
+  QCOMPARE(copied.first().at(0).toString(), QStringLiteral("JBSWY3DPEHPK3PXP"));
 }
 
 /**

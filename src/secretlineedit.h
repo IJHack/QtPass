@@ -26,8 +26,9 @@ class QMenu;
  * so the text is cleared with the rest when the autoclear timer runs. Dragging
  * is off, as QLineEdit has it by default.
  *
- * In an editable field (the password editor) Ctrl+X and Cut copy the same
- * way before they delete. Password mode would turn off undo, make Ctrl+arrow
+ * In an editable field (the password editor) Ctrl+X, Cut, and the keys
+ * that delete to the end of the line or the whole line copy the same way
+ * before they delete. Password mode would turn off undo, make Ctrl+arrow
  * jump to the ends and change the input method hints there, so the base
  * handlers run as they are and the marked selection replaces QLineEdit's
  * plain one at once, in the same event: X11 and Wayland hand selection data
