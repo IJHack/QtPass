@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Klamboerd wersteld</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Weromsette de oerige klamboerd</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,22 +564,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Ekso ferstopje oare geheime:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Ferstopje fjilden dy&apos;t in geheime holden, net allin wat: in fjel dat ien fan disse wurden hat. Off: it wachtwurd is allin ferstopt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Standaard</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Plak de standaardwoorden werom: PIN, kaartkodes, sleutel, tokens, herstelkodes en dergelike.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -1367,7 +1367,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 is net yn &apos;t wachtwurdopslach, of in map namme hat in regelbrek of noch ien kontrole karaktere, dy&apos;t in gesigne list net kin opsjitten.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1484,7 +1484,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 kin net lêse wurde as in list fan ontvangers (in gewoane bestan mei maksimal %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1629,7 +1629,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 is, of leit achter, in symbolysk link of knooppunt netten. Wat dat pointet, is net part fan it wachtwurdopslach en bliuwt los.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -1838,7 +1838,7 @@ De opnij fersifering is net foltôge, dus guon of alle yngongen binne noch fersi
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 is groter dan in keybestand kin wêze.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2024,12 +2024,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Ongeldige ynvoer</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">De namme en de wachtwurdfrase kinne net yn linebrekken komme.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2218,7 +2218,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Search binnen de wachtwoordinhâld</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2712,7 +2712,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… mear match yn dit entry</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -3042,16 +3042,14 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Bewaarje, net commit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">De oerset is yn opslach, mar it yn te jaan yn Git wie mislukke. Wat rapporteare waard:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -3061,7 +3059,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 is net yn &apos;e wachtwurdopslach. De ontvangers binne set foar de opslag of in map dêryn.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -3580,7 +3578,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kontrolearje de lyst fan destinatysjes ûnder %1…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3606,7 +3604,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">De link %1 waard ferheve en git folget der net mear, mar de commit misle: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
