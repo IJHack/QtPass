@@ -240,9 +240,8 @@
         <translation>Поља шаблона и сваки ред „key: value“</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Када складиште нема сопствени репозиторијум на Git-у, користите онај у фасцикли изнад њега. Искључено, као и код pass-а, тако да складиште унутар другог репозиторијума (на пример, .dotfiles) никад неће бити погрешно коммитовано или &quot;пушено&quot;. Само Git: pass увек стаје на нивоу складишта.</translation>
+        <translation type="obsolete">Када складиште нема сопствени репозиторијум на Git-у, користите онај у фасцикли изнад њега. Искључено, као и код pass-а, тако да складиште унутар другог репозиторијума (на пример, .dotfiles) никад неће бити погрешно коммитовано или &quot;пушено&quot;. Само Git: pass увек стаје на нивоу складишта.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -532,7 +531,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Када се клипборд очисти, вратите оно што је било на њему пре копирања, као и што то ради опција &quot;pass -c&quot;, освен ако ништа друго није копирано у међувремену. Текст само: форматирање није враћено. То је остало у меморији до тада. Где клипборд не може да се прочита без фокуса (неки Wayland десктопи), он се очисти уместо тога.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -558,7 +557,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Скриј поља која чувају и други тајни подаци, а не само лозинку: поље чије име садржи један од ових речи. Истина: само лозинка је скривена.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,6 +578,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Генерисање лозинке</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1352,7 +1356,7 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 није у складу са лозинком, или име фасцикле на пути садржи кратку линију или други управљачки карактер, које потписана листа не може да региструје.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1986,7 +1990,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Име и лозинка не сме да садрже размачке.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2701,9 +2705,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Приказ првих %n резултата; за да видите остале, претресните са почетним критеријем.</numerusform>
-            <numerusform>Приказ првих %n резултата; за да видите остале, претресните са почетним критеријем.</numerusform>
-            <numerusform>Приказ првих %n резултата; за да видите остале, претресните са почетним критеријем.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

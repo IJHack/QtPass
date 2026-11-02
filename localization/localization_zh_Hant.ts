@@ -239,9 +239,8 @@
         <translation type="unfinished">範本欄位及所有「key: value」行</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">當商店沒有自己的 Git 儲存庫時，請使用其上一層的儲存庫。 就像 pass 一樣，這樣即使在另一個儲存庫 (例如 dotfiles) 內部也有商店，也不會不小心被提交或推送。僅限原生 Git: pass 會一直停留在商店處。</translation>
+        <translation type="obsolete">當商店沒有自己的 Git 儲存庫時，請使用其上一層的儲存庫。 就像 pass 一樣，這樣即使在另一個儲存庫 (例如 dotfiles) 內部也有商店，也不會不小心被提交或推送。僅限原生 Git: pass 會一直停留在商店處。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -593,6 +592,11 @@
         <translation type="unfinished">密碼產生</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1295"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">覆寫 SSH_AUTH_SOCK 的可選路徑。留空透過 gpgconf 自動偵測。</translation>
@@ -694,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 使用相同的金鑰簽署另一儲存位置。 接受其中一個儲存位置的簽名者列表，在另一個儲存位置中有效：為每個不同簽名者的儲存位置使用不同的金鑰。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1479,7 +1483,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 無法被解析為收件者列表（最多僅包含 %2 個普通檔案）。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1956,7 +1960,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">名稱和口令，都不能包含行尾。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

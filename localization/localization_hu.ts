@@ -249,9 +249,8 @@
         <translation type="unfinished">Sablonmezők és minden „kulcs: érték” sor</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Amikor a tárolónak nincs saját Git adattárcája, akkor használja az azt, amely egy főtárcában található. Ki, mint a pass esetében: így egy tároló, amely egy másik adattárca (pl. dotfile-ok) belül helyezkedik el, soha nem kerül automatikusan beillesztésre vagy frissítésre. Csak natív Git használat: a pass mindig a tárolónál áll meg.</translation>
+        <translation type="obsolete">Amikor a tárolónak nincs saját Git adattárcája, akkor használja az azt, amely egy főtárcában található. Ki, mint a pass esetében: így egy tároló, amely egy másik adattárca (pl. dotfile-ok) belül helyezkedik el, soha nem kerül automatikusan beillesztésre vagy frissítésre. Csak natív Git használat: a pass mindig a tárolónál áll meg.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -550,7 +549,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Amikor a pej-t lemondjuk, akkor helyreállítjuk az előző tartalmát, ahogy a &quot;pass -c&quot; parancsa teszi, hacsak nem más tartalmat nem másoltunk. Csak szöveg: formázás nem helyreállítva. Ez a szöveg addig emlékezetben marad. Amikor a pej-t nincs lehetőség az olvashatóságra (pl. egyes Wayland asztalokon), akkor azt lemondjuk, és helyreállítjuk az előző tartalomát, ahogy a &quot;pass -c&quot; parancsa teszi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -597,6 +596,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">Jelszó generáló</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -714,7 +718,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ugyanazon kulccsal aláír egy másik üzletet. Egy olyan lista, amelyen egy adott üzlet kapói szerepelnek, elfogadva van a másikban: használjon külön aláíró kulcsot minden olyan üzlethez, ahol a kapók eltérőek.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -2886,9 +2890,7 @@ Folytatja?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Az bejegyzés a tárolón kaydedett, de a Git-hez való rögzítés nem sikerült. Az alábbiakban jelentették:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2913,7 +2915,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">A %1-t nem lehet címzett listának értelmezni (ez egy átlagos fájl, amely maximum %2 méretű), így a lista üzenetek előre kiválasztott. Ellenőrizze ezt itt, mielőtt címzeteket választ: &quot;OK&quot; egy új listát ír rá.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>

@@ -337,6 +337,11 @@
         <translation type="unfinished">ਟੈਂਪਲੇਟ ਫੀਲਡ ਅਤੇ ਹਰ &quot;key: value&quot; ਲਾਈਨ</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -466,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">ਜਦੋਂ ਕਲਪੋਰਡ ਸਾਫ਼ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਅਸਲ ਮੁੱਢਲੀ ਜਾਣਕਾਰੀ ਨੂੰ ਮੁੜ ਤੋਂ ਲਗਾਓ ਜਿਸਦੀ ਪਹਿਲਾਂ ਕਾਪੀ ਕੀਤੀ ਗਈ ਸੀ, ਜਿਵੇਂ ਕਿ `-c` ਕਮਾਂ ਕਰਦੀ ਹੈ, ਸਿਰਫ ਇਹ ਉਤਾਰਨਾ ਸਦਕਿ ਦੌਰਾਨ ਕੁਝ ਹੋਰ ਨਹੀਂ ਕੀਤੀ ਗਈ। ਸਿਰਫ਼ ਟੈਕਸਟ: ਫਾਰਮੇਟਿੰਗ ਮੁੜ ਤੋਂ ਪ੍ਰਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ। ਇਹ ਟੈਕਸਟ ਅਜਿਹੇ ਤੌਰ ਤੇ ਯਾਦ ਵਿੱਚ ਰਹਿ ਜਾਂਦਾ ਹੈ ਜਿਸ ਤੱਕ ਉਹ ਉੱਥੇ ਰਹਿੰਦਾ ਹੈ। ਜਿੱਥੋਂ ਕਲਪੋਰਡ ਨੂੰ ਧਿਆਨ ਦੇ ਬਿਨਾਂ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ (ਜਾਂ ਕੁਝ ਵੇਲੈਂਡ ਡੈਸਕਟੌਪ), ਉੱਥੋਂ ਇਹ ਸਾਫ਼ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -523,11 +528,6 @@
         <location filename="../src/configdialog.ui" line="788"/>
         <source>Use pwgen</source>
         <translation type="unfinished">pwgen ਵਰਤੋਂ ਕਰੋ</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
-        <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -2998,8 +2998,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>ਇਹ ਸੂਤਰ %n ਲਾਈਨਾਂ ਦਾ ਹੈ, ਜੋ ਇੱਥੇ ਸੰਪਾਦਿਤ ਕਰਨ ਲਈ ਬਹੁਤ ਸ਼ਾਮਲ ਹਨ।</numerusform>
-            <numerusform>ਇਹ ਸੂਤਰ %n ਲਾਈਨਾਂ ਦਾ ਹੈ, ਜੋ ਇੱਥੇ ਸੰਪਾਦਿਤ ਕਰਨ ਲਈ ਬਹੁਤ ਸ਼ਾਮਲ ਹਨ।</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

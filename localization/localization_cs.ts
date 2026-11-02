@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Obrazovka obnovena</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -199,6 +199,11 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -653,9 +658,8 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
         <translation type="unfinished">znaků</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Pokud obchod nemá vlastní repozitář Git, použijte ten v nadřazeném adresáři. Vypnuté, stejně jako u pass, takže obsah uvnitř jiného repozitáře (například souborů) nikdy není chybně odeslán nebo &quot;commitován&quot;. Pouze Git: pass vždy zastavuje na obchodu.</translation>
+        <translation type="obsolete">Pokud obchod nemá vlastní repozitář Git, použijte ten v nadřazeném adresáři. Vypnuté, stejně jako u pass, takže obsah uvnitř jiného repozitáře (například souborů) nikdy není chybně odeslán nebo &quot;commitován&quot;. Pouze Git: pass vždy zastavuje na obchodu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -2004,7 +2008,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Jméno a Bezpečnostní heslo nesmějí obsahovat mezery.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="183"/>
@@ -2971,7 +2975,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Uloženo, ne odesláno</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

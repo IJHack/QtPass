@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Vietējā atslēgšana atjaunota</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -337,6 +337,11 @@
         <translation type="unfinished">Veidnes lauki un katra &quot;key: value&quot; rinda</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation type="unfinished">Lietot pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kad veikals nav savs Git repozitārijs, izmantojiet to, kas atrodas virslē. Izslēgt, tāpat kā ar &quot;pass&quot;, lai veikals iekšā citā repozitājī (piemēram, dotfiles) nekļūtu parādīts vai netērkts. Vietējais Git tikai: &quot;pass&quot; vienmēr apstiprinās veikalā.</translation>
+        <translation type="obsolete">Kad veikals nav savs Git repozitārijs, izmantojiet to, kas atrodas virslē. Izslēgt, tāpat kā ar &quot;pass&quot;, lai veikals iekšā citā repozitājī (piemēram, dotfiles) nekļūtu parādīts vai netērkts. Vietējais Git tikai: &quot;pass&quot; vienmēr apstiprinās veikalā.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1437,7 +1441,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 nevar interpretēt kā saņēmēju saraksts (parastais fails, kas satur līdz %2 elementus).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -2776,9 +2780,7 @@ Turpināt?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Rekonizēšana ir saglabāta, bet reģistrācija Gitā izdevās. Informācijas saturs:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>

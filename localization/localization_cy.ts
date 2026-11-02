@@ -337,6 +337,11 @@
         <translation>Meysydd templed a phob llinell &quot;allwedd: gwerth&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation>Defnyddio pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Os neu&apos;n bod, mae&apos;r storfa heb repo Git ei hun, ychwanegwch y un yn plygell ar ei chyn. Mae’n angenrheidiol, fel ‘pass’, fel bod storfa o fewn repo arall (fel .dotfiles) byth peidio’i comit neu’i push am wahân. Git nativa neu: mae&apos;r &apos;pass&apos; yn parhau i&apos;w defnyddio ar y storfa.</translation>
+        <translation type="obsolete">Os neu&apos;n bod, mae&apos;r storfa heb repo Git ei hun, ychwanegwch y un yn plygell ar ei chyn. Mae’n angenrheidiol, fel ‘pass’, fel bod storfa o fewn repo arall (fel .dotfiles) byth peidio’i comit neu’i push am wahân. Git nativa neu: mae&apos;r &apos;pass&apos; yn parhau i&apos;w defnyddio ar y storfa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -743,7 +747,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 Allwedd Lofnodi sy&apos;n cael ei ddefnyddio ar store arall. Mae rhestr cyfarwyddwyr wedi bod yn llawn allwedd sy&apos;n cael ei ddefnyddio ar store, a phrofiadwyd un o henau, yn cael ei gynnwys y llydan: defnyddiwch allwedd lofnodi gwirioneddol ar pob store lle mae&apos;r rhestr cyfarwyddwyr yn anghywid.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>

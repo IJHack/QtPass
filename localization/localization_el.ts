@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Επαναφορά αντιγραφής στα επιτραπέζια</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -315,6 +315,11 @@
         <translation type="unfinished">Πεδία προτύπου και κάθε γραμμή «κλειδί: τιμή»</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Επιλέξτε πρόγραμμα αποθήκευσης κωδικού πρόσβασης:</translation>
@@ -462,7 +467,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Κρυπτογραφήστε και άλλα μυστικά:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -500,9 +505,8 @@
         <translation type="unfinished">Χρησιμοποιήστε pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Όταν το κατάστημα δεν έχει δικό του αποθετήριο Git, χρησιμοποιήστε αυτό που βρίσκεται σε έναν φάκελο πάνω από αυτό. Σβήστε, όπως και με το pass, έτσι ώστε ένα κατάστημα μέσα σε άλλο αποθετήριο (π.χ., dotfiles) να μην &quot;κλειδώνει&quot; ή να δεν &quot;pushάρει&quot; εκεί κατά λάθος. Μόνο Git: Το pass πάντα σταματά στο κατάστημα.</translation>
+        <translation type="obsolete">Όταν το κατάστημα δεν έχει δικό του αποθετήριο Git, χρησιμοποιήστε αυτό που βρίσκεται σε έναν φάκελο πάνω από αυτό. Σβήστε, όπως και με το pass, έτσι ώστε ένα κατάστημα μέσα σε άλλο αποθετήριο (π.χ., dotfiles) να μην &quot;κλειδώνει&quot; ή να δεν &quot;pushάρει&quot; εκεί κατά λάθος. Μόνο Git: Το pass πάντα σταματά στο κατάστημα.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1069,8 +1073,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n επιπλέον γραμμές δεν εμφανίζονται</numerusform>
-            <numerusform>… %n επιπλέον γραμμές δεν εμφανίζονται</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1440,7 +1444,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα αποστολέων (ένα κανονικό αρχείο με μέγιστο μέγεθος %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>

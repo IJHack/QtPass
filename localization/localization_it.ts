@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Copia in cache ripristinata</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -240,9 +240,8 @@
         <translation type="unfinished">Campi del modello e ogni riga &quot;chiave: valore&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando il repository non è presente localmente, utilizzare quello situato nella cartella superiore. Disattivare, proprio come con &quot;pass&quot;, per evitare che un repository interno (ad esempio, uno contenente file di configurazione) venga involontariamente aggiunto o caricato. Solo Git nativo: &quot;pass&quot; si ferma sempre al livello del repository principale.</translation>
+        <translation type="obsolete">Quando il repository non è presente localmente, utilizzare quello situato nella cartella superiore. Disattivare, proprio come con &quot;pass&quot;, per evitare che un repository interno (ad esempio, uno contenente file di configurazione) venga involontariamente aggiunto o caricato. Solo Git nativo: &quot;pass&quot; si ferma sempre al livello del repository principale.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -592,6 +591,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">Generazione password</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>

@@ -337,6 +337,11 @@
         <translation type="unfinished">Šablono laukai ir kiekviena „key: value“ eilutė</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -471,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Atkurti ankstesnį siųstą</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -525,9 +530,8 @@
         <translation type="unfinished">Naudoti pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kai parduotuvė neturi savo Git repozitorijos, naudokite tą, kuris yra viršuje esančiame sąraše. IŠJUNGTI, kaip ir su pass – taip parduotuvė, esanti kitame repozitorijoje (pvz., „dotfiles“), niekada neatspaus arba neturi būti perkelta ten klaidingai. Tiesiog Git: &quot;pass&quot; visada sustoja ant parduotuvės.</translation>
+        <translation type="obsolete">Kai parduotuvė neturi savo Git repozitorijos, naudokite tą, kuris yra viršuje esančiame sąraše. IŠJUNGTI, kaip ir su pass – taip parduotuvė, esanti kitame repozitorijoje (pvz., „dotfiles“), niekada neatspaus arba neturi būti perkelta ten klaidingai. Tiesiog Git: &quot;pass&quot; visada sustoja ant parduotuvės.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -748,7 +752,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 pasirenka tą patį raktą, norėdamas pasirašyti duomenis iš kitos vietos. Vietoje, kur vieno iš šių vartotuvų duomenys yra pasirašyti, galima pasirinkti kitą: naudokite atskirą pasirašymo raktą kiekvienai vietai, kurios gavėjai skiriasi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1427,7 +1431,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nėra slaptažodžių saugykloje arba sąvadoje, kurią jungia kableliai ar kita kontrolinė charakterė, kurį pasižymota sąrašas negali įrašyti.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="570"/>
@@ -1437,7 +1441,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">Failas &quot;%1&quot; negali būti interpretuojamas kaip gavėjų sąrašas (reikalingas failas, turintis bent %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>

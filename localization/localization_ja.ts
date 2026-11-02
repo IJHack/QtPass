@@ -239,9 +239,8 @@
         <translation type="unfinished">テンプレートのフィールドとすべての「key: value」行</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">自身のGitリポジトリを持たない場合、上位のフォルダにあるものを使用します。 passと同様に、別のリポジトリ内に存在するストアは、意図せずコミットまたはプッシュされることはありません。 ネイティブGitのみ: passは常にストアに停止します。</translation>
+        <translation type="obsolete">自身のGitリポジトリを持たない場合、上位のフォルダにあるものを使用します。 passと同様に、別のリポジトリ内に存在するストアは、意図せずコミットまたはプッシュされることはありません。 ネイティブGitのみ: passは常にストアに停止します。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -580,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">デフォルトのパスワードを復元する: PIN、カードコード、キー、トークン、リカバリーコードなど。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">パスワード生成</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1479,7 +1483,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 は、宛先リストとして読み取ることができません（通常のファイルで、最大 %2 バイト）。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>

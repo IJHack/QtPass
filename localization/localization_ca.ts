@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Historial de còpies d&apos;escriptori restaurat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -239,9 +239,8 @@
         <translation type="unfinished">Camps de la plantilla i cada línia «clau: valor»</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quan la botiga no té un repositori Git propi, utilitzeu-ne un que estigui a una carpeta superior. Desactivat, tal com passa amb pass: així, una botiga dins d&apos;un altre repositori (per exemple, els fitxers .dotfiles) mai s&apos;commitarà ni es pujarà per error. Només Git natiu: &quot;pass&quot; sempre s&apos;atura a la botiga.</translation>
+        <translation type="obsolete">Quan la botiga no té un repositori Git propi, utilitzeu-ne un que estigui a una carpeta superior. Desactivat, tal com passa amb pass: així, una botiga dins d&apos;un altre repositori (per exemple, els fitxers .dotfiles) mai s&apos;commitarà ni es pujarà per error. Només Git natiu: &quot;pass&quot; sempre s&apos;atura a la botiga.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">Generació de contrasenyes</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1363,7 +1367,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">El %1 no està dins del dipòsit de contrasenyes, ni un nom de carpeta conté una ruptura de línia o un altre caràcter de control, que una llista signada no pot registrar.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -2692,8 +2696,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Mostrant la primera coincidència (%n); per veure les restants, busca un terme més específic.</numerusform>
-            <numerusform>Mostrant la primera coincidència (%n); per veure les restants, busca un terme més específic.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

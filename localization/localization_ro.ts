@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Istoricul de copiere a fost restabilit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -239,9 +239,8 @@
         <translation type="unfinished">Câmpurile șablonului și fiecare linie &quot;cheie: valoare&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Când depozitul nu are propriul său depozit Git, folosiți cel din folderul de mai sus. Oprește-te, la fel ca și cu &quot;pass&quot;, astfel încât un depozit aflat în interiorul altui (de exemplu, un set de fișiere) să nu fie niciodată commitat sau împins acolo accidental. Doar Git nativ: &quot;pass&quot; se oprește întotdeauna la depozitul respectiv.</translation>
+        <translation type="obsolete">Când depozitul nu are propriul său depozit Git, folosiți cel din folderul de mai sus. Oprește-te, la fel ca și cu &quot;pass&quot;, astfel încât un depozit aflat în interiorul altui (de exemplu, un set de fișiere) să nu fie niciodată commitat sau împins acolo accidental. Doar Git nativ: &quot;pass&quot; se oprește întotdeauna la depozitul respectiv.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -580,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restabiliți parolele implicite: PIN, coduri de card, chei, token-uri și altele.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">Generarea parolei</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -3306,7 +3310,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Configurația GPG pentru utilizatorul %1 nu există.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>

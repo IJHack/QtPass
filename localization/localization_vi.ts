@@ -337,6 +337,11 @@
         <translation type="unfinished">Trường mẫu và mọi dòng &quot;key: value&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,14 +530,13 @@
         <translation type="unfinished">Sử dụng pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Khi cửa hàng không có kho Git riêng, hãy sử dụng kho Git ở thư mục mẹ. Tắt, tương tự như pass, để tránh tình huống một cửa hàng nằm trong một kho khác (ví dụ: các file cấu hình) bị commit hoặc đẩy vô tình. Chỉ sử dụng Git gốc: pass luôn dừng lại ở cửa hàng.</translation>
+        <translation type="obsolete">Khi cửa hàng không có kho Git riêng, hãy sử dụng kho Git ở thư mục mẹ. Tắt, tương tự như pass, để tránh tình huống một cửa hàng nằm trong một kho khác (ví dụ: các file cấu hình) bị commit hoặc đẩy vô tình. Chỉ sử dụng Git gốc: pass luôn dừng lại ở cửa hàng.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Sử dụng một kho Git nằm trong một thư mục ở trên thư mục chứa ứng dụng</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -1912,7 +1916,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Tên và cụm mật khẩu không được chứa dấu gạch ngang.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

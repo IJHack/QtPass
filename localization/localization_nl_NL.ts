@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Woorden, gescheiden door komma&apos;s. Een veld telt mee als de naam er een als heel woord bevat, ongeacht hoofdletters: &quot;sleutel&quot; verbergt &quot;API-sleutel&quot;, niet &quot;toetsenbordindeling&quot;. Bij twijfel wordt dus verborgen: ook &quot;Publieke sleutel&quot; en &quot;Wachtwoordhint&quot;; haal een woord weg om ze te tonen.</translation>
+        <translation type="unfinished">Woorden, gescheiden door komma&apos;s. Een veld telt mee als de naam er een als heel woord bevat, ongeacht hoofdletters: &quot;key&quot; verbergt &quot;API key&quot;, niet &quot;keyboard layout&quot;. Bij twijfel wordt dus verborgen: ook &quot;Public key&quot; en &quot;Password hint&quot;; haal een woord weg om ze te tonen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
@@ -239,9 +239,8 @@
         <translation>Sjabloonvelden en elke &quot;key: value&quot;-regel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan de repository in een map hoger in de structuur. Zoals bij &quot;pass&quot;, wordt er dus nooit per ongeluk een repository binnenin een andere (bijvoorbeeld dotfiles) toegevoegd of opgeslagen. Alleen native Git: &quot;pass&quot; stopt altijd bij de opslag.</translation>
+        <translation type="obsolete">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan de repository in een map hoger in de structuur. Zoals bij &quot;pass&quot;, wordt er dus nooit per ongeluk een repository binnenin een andere (bijvoorbeeld dotfiles) toegevoegd of opgeslagen. Alleen native Git: &quot;pass&quot; stopt altijd bij de opslag.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -595,6 +594,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Wachtwoordgenerator</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan die in een map erboven. Standaard uit, net als bij pass, zodat een opslag binnen een andere repository (bijvoorbeeld dotfiles) daar nooit per ongeluk wordt gecommit of gepusht. Alleen native Git: pass stopt altijd bij de opslag.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>

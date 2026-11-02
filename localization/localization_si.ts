@@ -239,9 +239,8 @@
         <translation type="unfinished">සැකිලි ක්ෂේත්‍ර සහ සෑම &quot;යතුර: අගය&quot; පේළියක්ම</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">&quot;කැරවුම් හි තමන්ගේ Git ගබඩා නොමැති විට, ඉහළ ඇති එකක් භාවිතා කරන්න. &apos;pass&apos; මෙන්ම, එවැනි ගබඩා වෙනත් ගබඩා තුළ (උදා: dotfiles) වීම නිවැරදිව සිදු නොවී, එහි ඇත්තේ සැඳිහිටු Git පමණි।</translation>
+        <translation type="obsolete">&quot;කැරවුම් හි තමන්ගේ Git ගබඩා නොමැති විට, ඉහළ ඇති එකක් භාවිතා කරන්න. &apos;pass&apos; මෙන්ම, එවැනි ගබඩා වෙනත් ගබඩා තුළ (උදා: dotfiles) වීම නිවැරදිව සිදු නොවී, එහි ඇත්තේ සැඳිහිටු Git පමණි।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -549,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">අපදාන කර ඇති පෙර පිටපතට යට}((restore))</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">මුරපද ජනනය</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1109,8 +1113,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n ක් පමණ තවත් රිට්‍</numerusform>
-            <numerusform>… %n ක් පමණ තවත් රිට්‍</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1625,7 +1629,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1, මුරපදය හෝ අනෙකුත් තොරතුරු, මුල් කරගත් පසු එහි ඇති සංකේතාත්මක ඊට සම්බන්ධතාවය හෝ කලාපය। එය යම් දෙසටද සලනය වන්නේ නැත. එමඟින් ලැබෙන තොරතුරු මුරපදය සඳහා වූ ගබඩා කොටස නොව, ඒ ආකාරයෙන්ම හැදී වැඩනු ලැබේ.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -3196,8 +3200,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>මෙය %n පංචයක් පමණ ඇත, මෙහි සංස්කරණය කිරීමට තරම් ප්‍රමාණයක් නැත.</numerusform>
-            <numerusform>මෙය %n පංචයක් පමණ ඇත, මෙහි සංස්කරණය කිරීමට තරම් ප්‍රමාණයක් නැත.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

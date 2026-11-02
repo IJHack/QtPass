@@ -305,6 +305,11 @@
         <translation>حقول القالب وكل سطر &quot;مفتاح: قيمة&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>برنامج تخزين كلمة السر المختارة:</translation>
@@ -473,7 +478,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">أعد إدخال كلمات المرور الافتراضية: رموز بطاقات الدخول، مفاتيح، رموز استعادة، وما إلى ذلك.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -496,9 +501,8 @@
         <translation>استخدم pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">عندما لا يحتوي المخزن على مستودع Git خاص به، استخدم المستودع الموجود في المجلد أعلاه. إيقاف التشغيل، تمامًا مثل &quot;pass&quot;، بحيث لا يتم تخزين أي شيء داخل مستودع آخر (مثل ملفات dotfiles) عن طريق الخطأ. استخدام Git الأصلي فقط: &quot;pass&quot; يتوقف دائمًا عند المخزن.</translation>
+        <translation type="obsolete">عندما لا يحتوي المخزن على مستودع Git خاص به، استخدم المستودع الموجود في المجلد أعلاه. إيقاف التشغيل، تمامًا مثل &quot;pass&quot;، بحيث لا يتم تخزين أي شيء داخل مستودع آخر (مثل ملفات dotfiles) عن طريق الخطأ. استخدام Git الأصلي فقط: &quot;pass&quot; يتوقف دائمًا عند المخزن.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1065,12 +1069,12 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
-            <numerusform>… %n سطر(س) إضافي(ين) غير معروض</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

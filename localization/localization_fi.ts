@@ -239,9 +239,8 @@
         <translation type="unfinished">Pohjan kentät ja jokainen ”avain: arvo” -rivi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kun kauppassa ei ole omaa Git-repositorioa, käytä sitä yläpuolella olevassa kansiossa. Pois, kuten passin kanssa, jotta kauppa toisessa repositoriossa (esimerkiksi dotfiles) ei vahingossa pääty siihen. Vain natiivi Git: pass pysähtyy aina kauppaan.</translation>
+        <translation type="obsolete">Kun kauppassa ei ole omaa Git-repositorioa, käytä sitä yläpuolella olevassa kansiossa. Pois, kuten passin kanssa, jotta kauppa toisessa repositoriossa (esimerkiksi dotfiles) ei vahingossa pääty siihen. Vain natiivi Git: pass pysähtyy aina kauppaan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">Salasanan luonti</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1625,7 +1629,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 on, tai piiloutuu symbolisen linkin tai solmun jälkeen. Se osoittaa ei ole osa salasanojen tallennusta ja jätetään sellaisenaan.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -1993,7 +1997,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Nimi ja salasana eivät saa sisältää rivivälejä.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -3232,8 +3236,8 @@ Jatketaanko?</translation>
         <location filename="../src/passworddialog.cpp" line="724"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Tämä rivi sisältää %n riviä, liian monta muokkausta varten.</numerusform>
-            <numerusform>Tämä rivi sisältää %n riviä, liian monta muokkausta varten.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

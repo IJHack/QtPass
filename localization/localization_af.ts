@@ -239,9 +239,8 @@
         <translation>Sjabloonvelde en elke &quot;sleutel: waarde&quot;-reël</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wanneer die opsending geen eie Git-repositoriem het, gebruik dan die een in &apos;n lêergids bo-oor. Af, soos met &quot;pass&quot;, dus is &apos;n opsending binne &apos;n ander repositoriem (soos .dotfiles) nooit foutief gecommit of daarheen gedruk nie. Slegs &quot;native&quot; Git: &quot;pass&quot; stop altyd by die opsending.</translation>
+        <translation type="obsolete">Wanneer die opsending geen eie Git-repositoriem het, gebruik dan die een in &apos;n lêergids bo-oor. Af, soos met &quot;pass&quot;, dus is &apos;n opsending binne &apos;n ander repositoriem (soos .dotfiles) nooit foutief gecommit of daarheen gedruk nie. Slegs &quot;native&quot; Git: &quot;pass&quot; stop altyd by die opsending.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -544,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Wanneer die knipbord grens, plaas dit weer wat daar voor was, soos pass -c doen, tensy iets anders intussen gekopieer is. Tekst slegs: vormatering word nie herstel nie. Hierdie teks bly in geheue tot dan. Waar die knipbord sonder fokus nie leesbaar is (sommige Wayland skriveoppervelle), word dit intoe grens.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Wagwoordgenerering</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -694,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 teken met dieselfde sleutel vir &apos;n ander opsie. &apos;n Lys van ontvangers wat een van hierdie opsies geteken het, word in die ander ontvang: gebruik &apos;n aparte ondertekeningsleutel vir elke opsie waarvan die ontvangers verskil.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -3010,7 +3014,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Gestoor, nie opgespeicher nie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

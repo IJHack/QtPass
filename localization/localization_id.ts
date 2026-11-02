@@ -337,6 +337,11 @@
         <translation type="unfinished">Kolom templat dan setiap baris &quot;kunci: nilai&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation type="unfinished">Gunakan pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Saat toko tidak memiliki repositori Git sendiri, gunakan repositori di folder di atasnya. Sama seperti menggunakan pass, sehingga sebuah toko yang berada di dalam repositori lain (misalnya, dotfiles) tidak pernah secara keliru dikomit atau didorong ke sana. Hanya menggunakan Git asli: pass selalu berhenti pada toko tersebut.</translation>
+        <translation type="obsolete">Saat toko tidak memiliki repositori Git sendiri, gunakan repositori di folder di atasnya. Sama seperti menggunakan pass, sehingga sebuah toko yang berada di dalam repositori lain (misalnya, dotfiles) tidak pernah secara keliru dikomit atau didorong ke sana. Hanya menggunakan Git asli: pass selalu berhenti pada toko tersebut.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -2753,7 +2757,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Disimpan, belum dikirim</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

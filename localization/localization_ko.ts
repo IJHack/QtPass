@@ -239,9 +239,8 @@
         <translation type="unfinished">템플릿 필드 및 모든 &quot;key: value&quot; 줄</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">자신의 Git 저장소가 없는 경우, 상위 폴더에 있는 것을 사용하십시오. pass처럼, 다른 저장소 내부에 있는 앱은 실수로 커밋되거나 푸시되지 않습니다. 단, 네이티브 Git만 지원합니다: pass는 항상 앱 자체를 멈춥니다.</translation>
+        <translation type="obsolete">자신의 Git 저장소가 없는 경우, 상위 폴더에 있는 것을 사용하십시오. pass처럼, 다른 저장소 내부에 있는 앱은 실수로 커밋되거나 푸시되지 않습니다. 단, 네이티브 Git만 지원합니다: pass는 항상 앱 자체를 멈춥니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -570,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">비밀번호뿐만 아니라, 비밀을 담고 있는 필드도 숨기기: 필드의 이름에 &quot;비밀&quot;, &quot;패스워드&quot; 등의 단어가 포함된 필드를 숨김. 켜져 있으면 비밀번호 외의 모든 정보가 숨겨짐.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">비밀번호 생성</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1623,7 +1627,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1은, 또는 그 뒤에 숨겨진 것은, 비밀번호 저장소의 일부가 아닌 것을 가리키는 심볼릭 링크나 자인데.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -3025,7 +3029,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1은 수신자 목록으로 읽을 수 없으며 (최대 %2개의 일반 파일), 따라서 미리 선택된 항목이 없습니다. 여기서 수신자를 선택하기 전에 확인하십시오. &quot;OK&quot;는 이 목록을 덮어씁니다.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>

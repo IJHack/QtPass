@@ -337,6 +337,11 @@
         <translation type="unfinished">Sehemu za kiolezo na kila mstari wa &quot;key: value&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -523,11 +528,6 @@
         <location filename="../src/configdialog.ui" line="788"/>
         <source>Use pwgen</source>
         <translation type="unfinished">Tumia pwgen</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
-        <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -748,7 +748,7 @@ barua pepe</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 anaingiza kwa funguo sawa kwa duka lingine. Orodha ya watazuliwa ambaye alisaini kwa moja ya maduka haya, inaakiriwa katika duka lingine: tumia funguo tofauti za kusaini kwa kila duka ambalo watazuliwa wake ni tofauti.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -2780,9 +2780,7 @@ Endelea?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Huo kipelechemashan, lakini kuichangan kwenye git kilifanikiwa. Hii ndiyo iliyoripotiwa:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -3337,7 +3335,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Kiungo %1 kimeondolewa na Git siko kutumia, lakini operesheni ili kufanikiwa: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>

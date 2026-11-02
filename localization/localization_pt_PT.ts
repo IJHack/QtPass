@@ -225,9 +225,8 @@
         <translation>Campos do modelo e todas as linhas &quot;chave: valor&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando o armazém não tem um repositório Git próprio, utilize aquele que se encontra numa pasta acima. Desativado, tal como com o pass, de forma que um armazém dentro de outro repositório (por exemplo, os ficheiros .dotfiles) nunca seja acidentalmente commitado ou enviado para lá. Git nativo apenas: o pass sempre termina no armazém.</translation>
+        <translation type="obsolete">Quando o armazém não tem um repositório Git próprio, utilize aquele que se encontra numa pasta acima. Desativado, tal como com o pass, de forma que um armazém dentro de outro repositório (por exemplo, os ficheiros .dotfiles) nunca seja acidentalmente commitado ou enviado para lá. Git nativo apenas: o pass sempre termina no armazém.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -550,6 +549,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Geração da palavra-passe</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -3243,7 +3247,7 @@ Continua?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">A configuração GPG definida em %1 não existe.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>

@@ -239,9 +239,8 @@
         <translation>Malli väljad ja iga „võti: väärtus“ rida</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kui hoidlas pole oma Git&apos;i repositorit, siis kasuta seda kaustas, mis asub selle kohal. &quot;Väljal&quot; - nii nagu passiga, et hoidla sees (nt failidokumendis) ei saa tekitada vabandatavat vea. Native Git ainult: pass alati peatub hoidlas.</translation>
+        <translation type="obsolete">Kui hoidlas pole oma Git&apos;i repositorit, siis kasuta seda kaustas, mis asub selle kohal. &quot;Väljal&quot; - nii nagu passiga, et hoidla sees (nt failidokumendis) ei saa tekitada vabandatavat vea. Native Git ainult: pass alati peatub hoidlas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -533,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Sisselugude otsingule lubamine</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Salasõna loomine</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -3069,7 +3073,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ei ole võimalik lugeda saaja nime nimega failina (mis on maksimaalselt %2 suurune tavaline fail), seega pole ühtegi vaikselt valitud. Kontrolli seda enne saajate valikut siin: &quot;OK&quot; kirjutab selle kohale uue nime.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>

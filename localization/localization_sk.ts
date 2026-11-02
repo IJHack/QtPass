@@ -239,9 +239,8 @@
         <translation type="unfinished">Polia šablóny a každý riadok &quot;kľúč: hodnota&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Keď obchod nemá vlastný Git repozitár, použite ten v priečnom adresári. Vypnuté, rovnako ako pri &quot;pass&quot;, takže obsah obsahu (napríklad súbory dotfiles) nikdy nebude nesprávne odoberaný alebo nahrávaný do iného repozitára. Používajte iba Git: &quot;pass&quot; vždy končí na obsahu.</translation>
+        <translation type="obsolete">Keď obchod nemá vlastný Git repozitár, použite ten v priečnom adresári. Vypnuté, rovnako ako pri &quot;pass&quot;, takže obsah obsahu (napríklad súbory dotfiles) nikdy nebude nesprávne odoberaný alebo nahrávaný do iného repozitára. Používajte iba Git: &quot;pass&quot; vždy končí na obsahu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -593,6 +592,11 @@
         <translation type="unfinished">Generovanie hesiel</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1295"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">Voliteľná cesta na prepísanie SSH_AUTH_SOCK. Ak chcete automaticky zisťovať cez gpgconf, nechajte prázdne.</translation>
@@ -694,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 podepisuje pomocou rovnakého kľúča pre inú úlohu. Zoznam prijímateľov, ktorí boli podpísaní pre jednu z týchto úloh, je akceptovaný v druhej: použite samostatný podpísovací kľúč pre každú úlohu, u ktorej sú prijímatelia rôzni.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>

@@ -341,6 +341,11 @@
         <translation>Şablon alanları ve her &quot;key: value&quot; satırı</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -470,7 +475,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Pano temizlendiğinde, kopyalanan önceki içeriği geri yükle, ancak başka bir şey kopyalanamazsa. Sadece metin: biçimlendirme geri yüklenmiyor. Bu metin hafızada kalır ve klavye odaklanmadığı durumlarda (bazı Wayland masa üstü ortamlarında) temizlenir.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -529,9 +534,8 @@
         <translation>pwgen&apos;i kullan</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kendi Git deposu olmayan bir depoyu kullanırken, üstteki klasördeki depoyu kullanın. &quot;Pass&quot; gibi, bu da yanlışlıkla başka bir depoya (örneğin, dotfiles) dahil edilmesini önler. Sadece yerel Git: &quot;Pass&quot;, her zaman yalnızca depoya erişir.</translation>
+        <translation type="obsolete">Kendi Git deposu olmayan bir depoyu kullanırken, üstteki klasördeki depoyu kullanın. &quot;Pass&quot; gibi, bu da yanlışlıkla başka bir depoya (örneğin, dotfiles) dahil edilmesini önler. Sadece yerel Git: &quot;Pass&quot;, her zaman yalnızca depoya erişir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1322,7 +1326,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1, parola deposunda veya yol üzerindeki klasör adında bir satır sonu veya başka kontrol karakteri bulunmamaktadır; bu nedenle imzalanmış bir liste bunu kaydetemez.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>

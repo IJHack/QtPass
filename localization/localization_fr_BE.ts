@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Lorsque le presse-papiers est effacé, rétablissez ce qui s&apos;y trouvait avant la copie, comme le fait &quot;pass -c&quot;, sauf si autre chose a été copié en même temps. Texte uniquement : la mise en forme n&apos;est pas restaurée. Ce texte reste dans la mémoire jusqu&apos;à ce que... Dans les cas où le presse-papiers ne peut être lu sans focus (certains bureaux Wayland), il est effacé à la place.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -293,9 +293,8 @@
         <translation type="unfinished">Caractères</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utilisez celui situé dans un dossier au-dessus. Désactivé, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers de configuration) ne soit jamais accidentellement commité ou poussé vers ce dernier. Git natif uniquement : &quot;pass&quot; s&apos;arrête toujours au niveau du magasin.</translation>
+        <translation type="obsolete">Lorsque le magasin n&apos;a pas de dépôt Git propre, utilisez celui situé dans un dossier au-dessus. Désactivé, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers de configuration) ne soit jamais accidentellement commité ou poussé vers ce dernier. Git natif uniquement : &quot;pass&quot; s&apos;arrête toujours au niveau du magasin.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -808,6 +807,11 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation type="unfinished">Champs du modèle et chaque ligne « clé: valeur »</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -2959,7 +2963,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sauvé, mais pas enregistré</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

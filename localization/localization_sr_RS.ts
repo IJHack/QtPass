@@ -239,9 +239,8 @@
         <translation>Polja šablona i svaki red „key: value“</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kada skladište nema vlastitu Git repozitoriju, koristite onu koja se nalazi u fascikli iznad njega. Isključeno, kao i za pass, tako da skladište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno komitovano ili premešteno. Samo Git: pass uvijek staje na skladištu.</translation>
+        <translation type="obsolete">Kada skladište nema vlastitu Git repozitoriju, koristite onu koja se nalazi u fascikli iznad njega. Isključeno, kao i za pass, tako da skladište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno komitovano ili premešteno. Samo Git: pass uvijek staje na skladištu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -544,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kada je međuspremnik očišćen, vraćajte ono što je bilo na njemu pre kopiranja, kao što to čini pass -c, osim ako nešto drugo nije bilo kopirano u međivotk. Tekst: formatiranje nije vraćeno. Taj tekst ostaje u memoriji do tada. Gde međuspremnik ne može biti pročitan bez fokusa (neke Wayland desktop-ove), on se umesto toga briše.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Generisanje lozinke</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>

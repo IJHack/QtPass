@@ -239,9 +239,8 @@
         <translation>Tecken</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation>När lagringsplatsen inte har något eget Git-arkiv; använd istället det som finns i mappen ovanför. Detta är avstängt som standard – precis som i *pass* – för att förhindra att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
+        <translation type="vanished">När lagringsplatsen inte har något eget Git-arkiv; använd istället det som finns i mappen ovanför. Detta är avstängt som standard – precis som i *pass* – för att förhindra att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -513,6 +512,11 @@
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation>Mallfält och varje rad med ”key: value”</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished">När lagringsplatsen inte har något eget Git-arkiv; använd istället det som finns i mappen ovanför. Detta är avstängt som standard – precis som i *pass* – för att förhindra att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -2932,7 +2936,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sparat, men inte skickat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

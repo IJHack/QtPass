@@ -239,9 +239,8 @@
         <translation>Polja predloška i svaki redak „ključ: vrijednost”</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kada spremište nema vlastitu Git repozitoriju, koristi onu koja se nalazi u mapi iznad njega. Isključen, isto kao i za pass, tako da spremište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno dodato ili preneseno. Samo Git: pass uvijek staje na spremištu.</translation>
+        <translation type="obsolete">Kada spremište nema vlastitu Git repozitoriju, koristi onu koja se nalazi u mapi iznad njega. Isključen, isto kao i za pass, tako da spremište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno dodato ili preneseno. Samo Git: pass uvijek staje na spremištu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -544,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kada se međuspremnik izbriše, vratite ono što je bilo na njemu prije kopiranja, kao što to čini pass -c, osim ako nije ništa drugo kopirano u međuvremenu. Tekst samo: formatiranje nije vraćeno. Taj tekst ostaje u memoriji do tada. Gde se međuspremnik ne može pročitati bez fokusa (neke Wayland desktop), on se umjesto toga briše.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Generiranje lozinke</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -2030,7 +2034,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Ime i lozinka ne smiju sadržavati razmake.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -3039,7 +3043,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sačuvano, ali još nije vraćeno</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

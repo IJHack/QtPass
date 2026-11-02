@@ -275,7 +275,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;Schlüssel&quot; versteckt &quot;API-Schlüssel&quot;, nicht &quot;Tastaturlayout&quot;. Im Zweifel wird also verborgen: &quot;Öffentlicher Schlüssel&quot; und &quot;Passwort-Hinweis&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
+        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines dieser Wörter als vollständiges Wort enthält: &quot;key&quot; versteckt &quot;API key&quot;, nicht &quot;keyboard layout&quot;. Im Zweifel wird also verborgen: &quot;Public key&quot; und &quot;Password hint&quot; sind ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="987"/>
@@ -423,9 +423,8 @@ email</translation>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wenn der Kennwortspeicher kein eigenes Git-Repository hat, wird das Repository in einem übergeordneten Ordner verwendet. Wie bei &quot;pass&quot; sollte also ein Kennwortspeicher innerhalb eines anderen Repositories (z.B. für Dotfiles) niemals versehentlich dort gespeichert oder gepusht werden. Nur native Git-Funktionalität: &quot;pass&quot; bleibt immer beim Kennwortspeicher stehen.</translation>
+        <translation type="obsolete">Wenn der Kennwortspeicher kein eigenes Git-Repository hat, wird das Repository in einem übergeordneten Ordner verwendet. Wie bei &quot;pass&quot; sollte also ein Kennwortspeicher innerhalb eines anderen Repositories (z.B. für Dotfiles) niemals versehentlich dort gespeichert oder gepusht werden. Nur native Git-Funktionalität: &quot;pass&quot; bleibt immer beim Kennwortspeicher stehen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -809,6 +808,11 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation>Template-Felder und jede Zeile im Format „Schlüssel: Wert“</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished">Wenn der Kennwortspeicher kein eigenes Git-Repository hat, das in einem übergeordneten Ordner verwenden. Standardmäßig aus, wie bei pass, damit ein Kennwortspeicher in einem anderen Repository (etwa Dotfiles) dort nie versehentlich committet oder gepusht wird. Nur natives Git: pass hält immer beim Kennwortspeicher an.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>

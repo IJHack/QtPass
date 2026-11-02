@@ -207,6 +207,11 @@
         <translation type="unfinished">Generación de contraseñas</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1295"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation type="unfinished">Ruta opcional para sobrescribir SSH_AUTH_SOCK. Deja vacío para detectarlo automáticamente vía gpgconf.</translation>
@@ -519,9 +524,8 @@
         <translation type="unfinished">Campos de plantilla y cada línea &quot;clave: valor&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cuando la tienda no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para que una tienda dentro de otro repositorio (por ejemplo, archivos de configuración) nunca se commite ni se empuje accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en la tienda.</translation>
+        <translation type="obsolete">Cuando la tienda no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para que una tienda dentro de otro repositorio (por ejemplo, archivos de configuración) nunca se commite ni se empuje accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en la tienda.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

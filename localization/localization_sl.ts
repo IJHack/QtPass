@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Seveda, urejeno je</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -337,6 +337,11 @@
         <translation type="unfinished">Polja predloge in vsaka vrstica &quot;ključ: vrednost&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -466,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Ko je seveda posneta, vračajte v njeno stanje, kot to počne &quot;pass&quot; -c, razen če ste medtem kopirali kaj drugega. Samo besedilo: formatiranje ni obnovljeno. To besedilo ostaja v spominu do takrat. Tam, kjer seveda posneta ne more biti brana brez usmeritve (nekatera Wayland okolja), je namesto tega posneta izbrisana.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -525,9 +530,8 @@
         <translation type="unfinished">Uporabi pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Ko trgovina nima lastnega Git repozitorija, uporabite tistega v nadležni mapi. Izklopljeno, tako kot pri passu, zato da se trgovina znotraj drugega repozitorija (npr. .dotfiles) nikoli ne posodobi ali ne prenese tam nenamerno. Samo lastni Git: pass vedno konča na trgovini.</translation>
+        <translation type="obsolete">Ko trgovina nima lastnega Git repozitorija, uporabite tistega v nadležni mapi. Izklopljeno, tako kot pri passu, zato da se trgovina znotraj drugega repozitorija (npr. .dotfiles) nikoli ne posodobi ali ne prenese tam nenamerno. Samo lastni Git: pass vedno konča na trgovini.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1438,7 +1442,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ne more biti brana kot seznam prejemnikov (običajen datotek, ki je daljši od %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -2485,10 +2489,10 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Prikaže prvih %n rezultatov; za prikaz ostalih, izvedite iskanje s širšimi možnostmi.</numerusform>
-            <numerusform>Prikaže prvih %n rezultatov; za prikaz ostalih, izvedite iskanje s širšimi možnostmi.</numerusform>
-            <numerusform>Prikaže prvih %n rezultatov; za prikaz ostalih, izvedite iskanje s širšimi možnostmi.</numerusform>
-            <numerusform>Prikaže prvih %n rezultatov; za prikaz ostalih, izvedite iskanje s širšimi možnostmi.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

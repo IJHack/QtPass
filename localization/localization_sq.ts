@@ -315,6 +315,11 @@
         <translation>Fushat e shabllonit dhe çdo rresht &quot;çelës: vlerë&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Zgjidhni programin e ruajtjes së fjalëkalimit:</translation>
@@ -441,7 +446,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kur klipboardi është pastuar, rikrijo ato që ishin atje më parë, siç bën &quot;pass&quot; -c, ndonjëse midis se janë kopjuar sende të tjera. Vetëm tekst: formatimi nuk rikuperohet. Ky tekst mbetet në kujtesë deri në momentin e pastrimit. Kur klipboardi nuk mund të lexohet pa fokus (njerëz me desktop Wayland), ai shkatërsohet në vend.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -477,7 +482,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Dëfto përdorimin e fjalëve të parës: PIN, kodet e kartës, qenit, tokenët dhe të tjera.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -500,9 +505,8 @@
         <translation>Përdorni pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kur depoja nuk ka një repo Git të vet, përdojini ato që janë në dosjen e saj. Si dhe me &quot;pass&quot;, nuk do të &quot;depo&quot;si brenda një repo tjetër (p.sh., dosja me .dotfiles) nga rreziku se do të &quot;commit&quot; ose &quot;push&quot; si një gabim. Vetëm Git native: &quot;pass&quot; gjithmonë mbetet në depojë.</translation>
+        <translation type="obsolete">Kur depoja nuk ka një repo Git të vet, përdojini ato që janë në dosjen e saj. Si dhe me &quot;pass&quot;, nuk do të &quot;depo&quot;si brenda një repo tjetër (p.sh., dosja me .dotfiles) nga rreziku se do të &quot;commit&quot; ose &quot;push&quot; si një gabim. Vetëm Git native: &quot;pass&quot; gjithmonë mbetet në depojë.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1953,7 +1957,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Emri dhe fraza kalimi nuk mund të përmbin ndreqje.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

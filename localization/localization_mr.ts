@@ -337,6 +337,11 @@
         <translation type="unfinished">टेम्पलेट फील्ड आणि प्रत्येक &quot;key: value&quot; ओळ</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation type="unfinished">pwgen वापरा</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">जेव्हा स्टोअरकडे स्वतःचा Git रिपॉजिटरी नसेल, तेव्हा वरच्या फोल्डरमधील रिपॉजिटरी वापरा. &apos;पास&apos; प्रमाणे, त्यामुळे एका रिपॉजिटरीमध्ये (उदाहरणार्थ, डॉटफाईल्स) असलेले स्टोअर चुकून कधीही कमिट किंवा पुश केले जाणार नाही. फक्त नेटिव्ह Git: &apos;पास&apos; नेहमीच स्टोअरवर थांबते.</translation>
+        <translation type="obsolete">जेव्हा स्टोअरकडे स्वतःचा Git रिपॉजिटरी नसेल, तेव्हा वरच्या फोल्डरमधील रिपॉजिटरी वापरा. &apos;पास&apos; प्रमाणे, त्यामुळे एका रिपॉजिटरीमध्ये (उदाहरणार्थ, डॉटफाईल्स) असलेले स्टोअर चुकून कधीही कमिट किंवा पुश केले जाणार नाही. फक्त नेटिव्ह Git: &apos;पास&apos; नेहमीच स्टोअरवर थांबते.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

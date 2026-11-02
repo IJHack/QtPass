@@ -337,6 +337,11 @@
         <translation type="unfinished">سانچے کی فیلڈز اور ہر &quot;key: value&quot; لائن</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -466,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">جب کہ کلیب بورڈ صاف کیا جاتا ہے، تو اس پر پہلے جو کچھ تھا وہ واپس کر دیا جائے، جیسے pass -c کرتا ہے۔ اگر اس کے درمیان میں کوئی اور چیز کاپی کی گئی ہو، تو اسے نظر انداز کیا جائے۔ صرف متن: فارمیٹنگ بحال نہیں کی جاتی۔ یہ متن تک یاد رہتا ہے یہاں تک کہ۔ جہاں کلیب بورڈ کو فوکس کے بغیر پڑھا نہیں جا سکتا (بعض Wayland ڈیسک ٹاپ)، وہاں اسے صاف کر دیا جاتا ہے۔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -492,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">جب کہ پاس ورڈ سے متعلق کیفیوں کو بھی پوشیدہ کریں: ایک پرانی، جس کا نام ان میں سے کوئی ایک لفظ رکھتا ہے۔ بند: صرف پاس ورڈ پوشیدہ ہے۔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -525,9 +530,8 @@
         <translation type="unfinished">pwgen استعمال کریں</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">جب کہ اسٹور کے پاس اپنی گٹ ریپازٹری نہ ہو، تو اس سے اوپر موجود ایک کو استعمال کریں۔ جیسا کہ pass کی صورت میں، اس طرح یہ یقینی بنایا جاتا ہے کہ کسی ایک ریپازٹری (جیسے ڈاٹ فائیلز) کے اندر کا اسٹور کبھی غلطی سے شامل یا منتقل نہ ہو۔ صرف مقامی گٹ: pass ہمیشہ اسٹور پر ہی رکتا ہے۔</translation>
+        <translation type="obsolete">جب کہ اسٹور کے پاس اپنی گٹ ریپازٹری نہ ہو، تو اس سے اوپر موجود ایک کو استعمال کریں۔ جیسا کہ pass کی صورت میں، اس طرح یہ یقینی بنایا جاتا ہے کہ کسی ایک ریپازٹری (جیسے ڈاٹ فائیلز) کے اندر کا اسٹور کبھی غلطی سے شامل یا منتقل نہ ہو۔ صرف مقامی گٹ: pass ہمیشہ اسٹور پر ہی رکتا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1581,7 +1585,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">اس کے بعد، %1 ایک پرتعار یا ملحق نقطہ ہو سکتا ہے، جو کہ ایک علامتیکی لنک کی طرف اشارہ کرتا ہے۔ جو کہ پرتعار یا ملحق نقطہ ہے، اس میں پاس ورڈ کی معلومات موجود نہیں ہوتی اور اسے غیر ملوث رکھا جاتا ہے۔</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>

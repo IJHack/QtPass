@@ -158,7 +158,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Cuando se borra el portapapeles, se vuelve a colocar lo que había antes de la copia, tal como lo hace &quot;pass&quot; -c, a menos que algo más haya sido copiado en ese momento. Solo texto: no se restaura el formato. Ese texto permanece en memoria hasta entonces. Donde el portapapeles no puede ser leído sin foco (algunas escritorias Wayland), este es borrado en su lugar.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -205,6 +205,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Generación de contraseñas</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -519,9 +524,8 @@
         <translation>Campos de plantilla y cada línea &quot;clave: valor&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cuando el almacén no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para evitar que un almacén dentro de otro repositorio (por ejemplo, uno de archivos .dotfiles) se commite o envíe accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en el almacén.</translation>
+        <translation type="obsolete">Cuando el almacén no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para evitar que un almacén dentro de otro repositorio (por ejemplo, uno de archivos .dotfiles) se commite o envíe accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en el almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1081,8 +1085,8 @@ dirección de correo</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n líneas más no mostradas</numerusform>
-            <numerusform>… %n líneas más no mostradas</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>

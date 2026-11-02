@@ -337,6 +337,11 @@
         <translation type="unfinished">మూస ఫీల్డ్‌లు మరియు ప్రతి &quot;key: value&quot; పంక్తి</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation type="unfinished">pwgen ఉపయోగించండి</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">స్టోర్ కు స్వంతంగా గిట్ రిపోజిటరీ లేనప్పుడు, దాని పైన ఉన్న ఒకదాన్ని ఉపయోగించండి. ఇది &apos;పాస్&apos; లాగే పనిచేస్తుంది, కాబట్టి ఒక స్టోర్ మరొక రిపోజిటరీలో (ఉదాహరణకు, డాట్‌ఫైల్స్) ఉంటే అది పొరపాటున కమిట్ చేయబడదు లేదా అక్కడకు పంపబడదు.&quot; &quot;స్థానిక గిట్ మాత్రమే: &apos;పాస్&apos; ఎల్లప్పుడూ స్టోర్ వద్ద ఆగుతుంది.</translation>
+        <translation type="obsolete">స్టోర్ కు స్వంతంగా గిట్ రిపోజిటరీ లేనప్పుడు, దాని పైన ఉన్న ఒకదాన్ని ఉపయోగించండి. ఇది &apos;పాస్&apos; లాగే పనిచేస్తుంది, కాబట్టి ఒక స్టోర్ మరొక రిపోజిటరీలో (ఉదాహరణకు, డాట్‌ఫైల్స్) ఉంటే అది పొరపాటున కమిట్ చేయబడదు లేదా అక్కడకు పంపబడదు.&quot; &quot;స్థానిక గిట్ మాత్రమే: &apos;పాస్&apos; ఎల్లప్పుడూ స్టోర్ వద్ద ఆగుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

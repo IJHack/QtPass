@@ -337,6 +337,11 @@
         <translation type="unfinished">টেমপ্লেট ফিল্ড এবং প্রতিটি &quot;কী: মান&quot; লাইন</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -466,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">ক্লিপবোর্ড পরিষ্কার করার পরে, যদি অন্য কিছু কপি করা না হয়ে থাকে, তাহলে পূর্বের লেখাটি ফিরিয়ে আনুন, যেমন &quot;pass -c&quot; করে। টেক্সট: ফরম্যাটিং পুনরুদ্ধার করা হয়নি। এই টেক্সট মেমরিতে ততক্ষণ পর্যন্ত থাকবে যতক্ষণ না আপনি এটি মুছে ফেলেন। যেখানে ক্লিপবোর্ডকে ফোকাস ছাড়া পড়া সম্ভব নয় (কিছু Wayland ডেস্কটপ), সেখানে সেটি পরিষ্কার করে দেওয়া হয়।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -525,9 +530,8 @@
         <translation type="unfinished">pwgen ব্যবহার</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">যখন স্টোরটির নিজস্ব কোনো গিট রিপোজিটরি থাকে না, তখন এর উপরের ফোল্ডারের রিপোজিটরি ব্যবহার করুন। &quot;পাস&quot;-এর মতো, তাই অন্য রিপোজিটরির মধ্যে থাকা স্টোরটিকে ভুল করে কমিট বা পুশ করা হবে না। শুধুমাত্র স্থানীয় গিট: &quot;পাস&quot; সবসময় স্টোরের মধ্যেই থেমে যায়।</translation>
+        <translation type="obsolete">যখন স্টোরটির নিজস্ব কোনো গিট রিপোজিটরি থাকে না, তখন এর উপরের ফোল্ডারের রিপোজিটরি ব্যবহার করুন। &quot;পাস&quot;-এর মতো, তাই অন্য রিপোজিটরির মধ্যে থাকা স্টোরটিকে ভুল করে কমিট বা পুশ করা হবে না। শুধুমাত্র স্থানীয় গিট: &quot;পাস&quot; সবসময় স্টোরের মধ্যেই থেমে যায়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

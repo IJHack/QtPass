@@ -315,6 +315,11 @@
         <translation>Schablounfelder an all &quot;key: value&quot;-Linn</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Wielt Passwuert Späicher Programm:</translation>
@@ -500,9 +505,8 @@
         <translation>Benotzt pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wann de Späicher kee eigein Git-Repository huet, benutze dat een am Dossier ier. Ausgeschalt, wéi mat pass, also ass et ni sou fir e Späicher an einem andere Repository (zimm.es .dotfiles) versehentlich committet oder pushed. Nur native Git: Pass stoppt immer beim Späicher.</translation>
+        <translation type="obsolete">Wann de Späicher kee eigein Git-Repository huet, benutze dat een am Dossier ier. Ausgeschalt, wéi mat pass, also ass et ni sou fir e Späicher an einem andere Repository (zimm.es .dotfiles) versehentlich committet oder pushed. Nur native Git: Pass stoppt immer beim Späicher.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -686,7 +690,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 mat dem selwe Schlüssel fir en aner Späicher ënnerschrifft. En Lëscht vun de Muej, déi fir een vun dës Späicher ënnerschriift sinn, ass am aner akzeptéiert: benotze fir all Späicher, bei deenen d&apos;Muej differéieren, en separat Ënnerschrëftsschlëssel.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>

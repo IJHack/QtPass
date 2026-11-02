@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">دست‌کاری، بازیابی شد</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -337,6 +337,11 @@
         <translation type="unfinished">فیلدهای قالب و هر خط «کلید: مقدار»</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -492,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">فیلدهایی که رازها را نیز نگهداری می‌کنند، نه فقط رمز عبور: فیلدی که نام آن یکی از این کلمات است. خاموش: فقط رمز عبور پنهان می‌شود.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -525,9 +530,8 @@
         <translation type="unfinished">استفاده از pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">هنگامی که فروشگاه هیچ مخزن گیت اختصاصی نداشته باشد، از مخزن موجود در پوشه بالایی آن استفاده کنید. همانطور که pass هم کار می‌کند، بنابراین یک فروشگاه داخل یک مخزن دیگر (مانند دات‌فایل‌ها) هرگز به اشتباه در آن قرار داده نمی‌شود و توسط سیستم جمع‌آوری نشده یا ارسال نمی‌گردد. فقط از Git بومی: برنامه همیشه روی فروشگاه متوقف می‌شود.</translation>
+        <translation type="obsolete">هنگامی که فروشگاه هیچ مخزن گیت اختصاصی نداشته باشد، از مخزن موجود در پوشه بالایی آن استفاده کنید. همانطور که pass هم کار می‌کند، بنابراین یک فروشگاه داخل یک مخزن دیگر (مانند دات‌فایل‌ها) هرگز به اشتباه در آن قرار داده نمی‌شود و توسط سیستم جمع‌آوری نشده یا ارسال نمی‌گردد. فقط از Git بومی: برنامه همیشه روی فروشگاه متوقف می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1579,7 +1583,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1، یا یک پیوند نمادین یا اتصال است که پس از کشیدن ایجاد می‌شود. این پیوند به چه چیزی اشاره دارد، بخشی از ذخیره رمز عبور نیست و بدون هیچ تغییری رها می‌شود.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>

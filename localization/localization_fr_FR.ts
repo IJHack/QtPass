@@ -65,7 +65,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;clé&quot; cache &quot;clé API&quot;, pas &quot;clavier&quot;. Dans le doute, le champ est donc caché : &quot;Clé publique&quot; et &quot;Indice de mot de passe&quot; le sont aussi ; retirez un mot pour les afficher.</translation>
+        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;key&quot; cache &quot;API key&quot;, pas &quot;keyboard layout&quot;. Dans le doute, le champ est donc caché : &quot;Public key&quot; et &quot;Password hint&quot; le sont aussi ; retirez un mot pour les afficher.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
@@ -297,9 +297,8 @@
         <translation type="unfinished">Caractères</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utiliser celui situé dans un dossier au-dessus. Désactivé, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers de configuration) ne soit jamais accidentellement commité ou poussé vers ce dernier. Git natif uniquement : &quot;pass&quot; s&apos;arrête toujours au niveau du magasin.</translation>
+        <translation type="obsolete">Lorsque le magasin n&apos;a pas de dépôt Git propre, utiliser celui situé dans un dossier au-dessus. Désactivé, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers de configuration) ne soit jamais accidentellement commité ou poussé vers ce dernier. Git natif uniquement : &quot;pass&quot; s&apos;arrête toujours au niveau du magasin.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -812,6 +811,11 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation type="unfinished">Champs du modèle et chaque ligne « clé: valeur »</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utiliser celui d&apos;un dossier au-dessus. Désactivé par défaut, comme pour pass, afin qu&apos;un magasin situé dans un autre dépôt (des dotfiles, par exemple) n&apos;y soit jamais commité ou poussé par erreur. Git natif uniquement : pass s&apos;arrête toujours au magasin.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>

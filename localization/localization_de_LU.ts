@@ -392,7 +392,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Stellen Sie die Standardpasswörter wieder her: PIN, Karten-Codes, Schlüssel, Token, Wiederherstellungs-Codes und ähnliche.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -410,9 +410,8 @@ email</translation>
         <translation>Zeichen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wenn der Passwortspeicher kein eigenes Git-Repository hat, verwenden Sie das Repository im übergeordneten Ordner. Deaktiviert, wie bei &quot;pass&quot;, so wird ein Passwortspeicher innerhalb eines anderen Repositories (z.B. für Dotfiles) nie versehentlich dort gespeichert oder gepusht. Nur native Git-Funktionalität: &quot;pass&quot; bleibt immer beim Passwortspeicher stehen.</translation>
+        <translation type="obsolete">Wenn der Passwortspeicher kein eigenes Git-Repository hat, verwenden Sie das Repository im übergeordneten Ordner. Deaktiviert, wie bei &quot;pass&quot;, so wird ein Passwortspeicher innerhalb eines anderen Repositories (z.B. für Dotfiles) nie versehentlich dort gespeichert oder gepusht. Nur native Git-Funktionalität: &quot;pass&quot; bleibt immer beim Passwortspeicher stehen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -804,6 +803,11 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
         <location filename="../src/configdialog.ui" line="875"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
         <translation>Vorlagenfelder und jede Zeile im Format „Schlüssel: Wert“</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>

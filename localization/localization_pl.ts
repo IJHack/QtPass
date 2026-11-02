@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z listy.</translation>
+        <translation type="unfinished">Słowa rozdzielone przecinkami. Pole jest uwzględniane, jeśli jego nazwa zawiera jedno z&#xa0;tych słów (jako pełny wyraz, niezależnie od wielkości liter): na przykład „key” spowoduje ukrycie pola „API key”, ale nie „keyboard layout”. Mechanizm ten działa w stronę ukrywania elementów: pola takie jak „Public key” czy „Password hint” również zostaną ukryte — aby je wyświetlić, należy usunąć odpowiednie słowo z&#xa0;listy.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
@@ -305,6 +305,11 @@
         <translation>Pola szablonu i każdy wiersz &quot;klucz: wartość&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished">Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani przeniesiony tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Wybierz program do przechowywania haseł:</translation>
@@ -500,9 +505,8 @@
         <translation>Użyj pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation>Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani przeniesiony tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
+        <translation type="vanished">Jeśli magazyn nie ma własnego repozytorium Git, użyj tego w folderze nad nim. Wyłączone, jak w przypadku pass, więc magazyn w innym repozytorium (np. dotfiles) nigdy nie zostanie zatwierdzony ani przeniesiony tam przez pomyłkę. Tylko natywny Git: pass zawsze zatrzymuje się na magazynie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

@@ -230,9 +230,8 @@
         <translation type="unfinished">模板字段及所有“key: value”行</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">当密码库没有自己的 Git 仓库时，使用位于其上一级的仓库。与“pass”类似，因此一个位于另一个仓库（例如，dotfiles）中的密码库永远不会被错误地提交或推送到那里。仅限原生 Git： “pass”始终停留在密码库上。</translation>
+        <translation type="obsolete">当密码库没有自己的 Git 仓库时，使用位于其上一级的仓库。与“pass”类似，因此一个位于另一个仓库（例如，dotfiles）中的密码库永远不会被错误地提交或推送到那里。仅限原生 Git： “pass”始终停留在密码库上。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -563,7 +562,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">恢复默认的密码：PIN码、卡片代码、钥匙、令牌、恢复代码等。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -574,6 +573,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">密码生成选项</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -1113,7 +1117,7 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… 显示的行数还不足 %n 行</numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
 </context>
@@ -1483,7 +1487,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 无法被识别为收件人列表（最多 %2 个元素的普通文件）。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>

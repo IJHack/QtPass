@@ -337,6 +337,11 @@
         <translation type="unfinished">टेम्पलेट फ़ील्ड और हर &quot;key: value&quot; पंक्ति</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1151"/>
         <location filename="../src/configdialog.ui" line="1154"/>
         <source>Choose the gpg executable</source>
@@ -525,9 +530,8 @@
         <translation type="unfinished">pwgen का उपयोग करें</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">जब स्टोर के पास अपना कोई Git रिपॉजिटरी न हो, तो ऊपर वाले फ़ोल्डर में मौजूद एक का उपयोग करें। &quot;पास&quot; की तरह, इसलिए यह सुनिश्चित होगा कि किसी अन्य रिपॉजिटरी (जैसे डॉटर) के अंदर स्थित कोई स्टोर गलती से कभी भी कमिट या पुश न किया जाए। केवल नेटिव Git: &quot;पास&quot; हमेशा स्टोर पर ही रुकता है।</translation>
+        <translation type="obsolete">जब स्टोर के पास अपना कोई Git रिपॉजिटरी न हो, तो ऊपर वाले फ़ोल्डर में मौजूद एक का उपयोग करें। &quot;पास&quot; की तरह, इसलिए यह सुनिश्चित होगा कि किसी अन्य रिपॉजिटरी (जैसे डॉटर) के अंदर स्थित कोई स्टोर गलती से कभी भी कमिट या पुश न किया जाए। केवल नेटिव Git: &quot;पास&quot; हमेशा स्टोर पर ही रुकता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>

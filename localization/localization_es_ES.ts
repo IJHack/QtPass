@@ -207,6 +207,11 @@
         <translation>Generación de contraseñas</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1295"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf.</source>
         <translation>Ruta opcional para sustituir SSH_AUTH_SOCK. Dejar en blanco para detección automática vía gpgconf.</translation>
@@ -519,9 +524,8 @@
         <translation>Campos de plantilla y cada línea &quot;clave: valor&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cuando el almacén no tiene su propio repositorio de Git, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para evitar que un almacén dentro de otro repositorio (por ejemplo, uno de &quot;dotfiles&quot;) se commite o envíe accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en el almacén.</translation>
+        <translation type="obsolete">Cuando el almacén no tiene su propio repositorio de Git, utilice el que esté en una carpeta superior. Desactivado, al igual que con &quot;pass&quot;, para evitar que un almacén dentro de otro repositorio (por ejemplo, uno de &quot;dotfiles&quot;) se commite o envíe accidentalmente. Solo Git nativo: &quot;pass&quot; siempre termina en el almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1592,7 +1596,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 es, o se encuentra detrás de, un enlace simbólico o conexión después de haber sido extraído. Lo que apunta a no forma parte del almacén de contraseñas y permanece sin tocar.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -2649,8 +2653,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="955"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Mostrando el primer %n resultado(s); busque algo más específico para ver los demás.</numerusform>
-            <numerusform>Mostrando el primer %n resultado(s); busque algo más específico para ver los demás.</numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

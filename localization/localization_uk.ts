@@ -239,9 +239,8 @@
         <translation>Поля шаблону та кожен рядок «key: value»</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Коли сховище не має власного репозиторію Git, використовуйте той, що знаходиться в папці вище. Вимкнено, як і для pass: таким чином, сховище всередині іншого репозиторію (наприклад, dotfiles) ніколи випадково не буде комітоване або відправлене туди. Тільки Git: pass завжди зупиняється на рівні сховища.</translation>
+        <translation type="obsolete">Коли сховище не має власного репозиторію Git, використовуйте той, що знаходиться в папці вище. Вимкнено, як і для pass: таким чином, сховище всередині іншого репозиторію (наприклад, dotfiles) ніколи випадково не буде комітоване або відправлене туди. Тільки Git: pass завжди зупиняється на рівні сховища.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Генерація пароля</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -3023,7 +3027,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Збережено, але не відправлено</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

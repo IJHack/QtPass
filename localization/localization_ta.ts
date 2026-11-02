@@ -239,9 +239,8 @@
         <translation type="unfinished">வார்ப்புரு புலங்கள் மற்றும் ஒவ்வொரு &quot;key: value&quot; வரியும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">ஒரு ஸ்டோர் தனது சொந்த கிட் களஞ்சியத்தை வைத்திருக்காதபோது, அதை மேலே உள்ள ஒரு களஞ்சியத்தைப் பயன்படுத்தவும். இது &quot;கணவாய்&quot; போன்றது, எனவே ஒரு ஸ்டோர் மற்றொரு களஞ்சியத்திற்குள் (உதாரணமாக, டாட்ஃபைல்ஸ்) இருக்கும்போது, அது தவறுதலாக கமிட் செய்யப்படவோ அல்லது அனுப்பப்படவோ இல்லை. கிட் மட்டுமே: &quot;கணவாய்&quot; எப்போதும் ஸ்டோரில் முடிவடைகிறது.</translation>
+        <translation type="obsolete">ஒரு ஸ்டோர் தனது சொந்த கிட் களஞ்சியத்தை வைத்திருக்காதபோது, அதை மேலே உள்ள ஒரு களஞ்சியத்தைப் பயன்படுத்தவும். இது &quot;கணவாய்&quot; போன்றது, எனவே ஒரு ஸ்டோர் மற்றொரு களஞ்சியத்திற்குள் (உதாரணமாக, டாட்ஃபைல்ஸ்) இருக்கும்போது, அது தவறுதலாக கமிட் செய்யப்படவோ அல்லது அனுப்பப்படவோ இல்லை. கிட் மட்டுமே: &quot;கணவாய்&quot; எப்போதும் ஸ்டோரில் முடிவடைகிறது.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation type="unfinished">கடவுச்சொல் செனரேட்டர்</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>

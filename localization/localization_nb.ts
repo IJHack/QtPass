@@ -315,6 +315,11 @@
         <translation type="unfinished">Malfelt og alle «key: value»-linjer</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Velg passordslagringsprogram:</translation>
@@ -500,9 +505,8 @@
         <translation type="unfinished">Bruk pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Når butikken ikke har et eget Git-repository, bruk det som finnes i en mappe over den. Slått av, slik som med pass, så butikker inne i andre repositoryer (f.eks., dotfiles) aldri blir commitert eller pusha dit ved et uhell. Kun native Git: pass stopper alltid ved butikken.</translation>
+        <translation type="obsolete">Når butikken ikke har et eget Git-repository, bruk det som finnes i en mappe over den. Slått av, slik som med pass, så butikker inne i andre repositoryer (f.eks., dotfiles) aldri blir commitert eller pusha dit ved et uhell. Kun native Git: pass stopper alltid ved butikken.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -1585,7 +1589,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller samlingspunkt etter at den er trukket opp. Hva dette peker på, er ikke en del av passordlagringen og blir derfor ikke berørt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>

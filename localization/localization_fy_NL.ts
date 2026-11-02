@@ -239,14 +239,13 @@
         <translation>Sjabloanfjilden en elke rigel &quot;kaai: wearde&quot;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">As de opslach net in eigne Git repository hat, brûk dan dy yn &apos;e map boppe. Off, as mei pass, sa is in opslach binnenin in oandere repository (dotfiles, byleaf) noa en nea committen of pushje dêr. Ynlânske Git: pass stopt allin net by de opslach.</translation>
+        <translation type="obsolete">As de opslach net in eigne Git repository hat, brûk dan dy yn &apos;e map boppe. Off, as mei pass, sa is in opslach binnenin in oandere repository (dotfiles, byleaf) noa en nea committen of pushje dêr. Ynlânske Git: pass stopt allin net by de opslach.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Gebruik in map yn &apos;e opslach, dy&apos;t boppe de repo zit</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -533,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Inneholderônderwiining aktivite</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -544,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">As it de klamboerd leeg is, set dan wer wat der foard waard, as pass -c dat dogget, oarspronje net. Tinksten: formatting is net fersteld. Dy tekst bliuwt yn &apos;e minne oant dan. Wa&apos;t de klamboerd net kin lêze sûnder fokus (summe Wayland desktoppen), dan wurdt dy leeg gemaak.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -591,6 +590,11 @@
         <location filename="../src/configdialog.ui" line="619"/>
         <source>Password generation</source>
         <translation>Wachtwurdgenerator</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1295"/>
@@ -694,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 brûkt de likee undertekeningskaai foar in oare opslach. In lys mei recipiënten dy&apos;t ferunderd bin fan ien fan disse opslach, wurdt aksepteert yn it oare: brûk in heule undertekeningskaai foar elk opslach, sadat de recipiënten der oars binne.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -3072,7 +3076,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 kin net lêse wurde as in lys fan ontvangers (in gewoane bestan mei maksimal %2), dus is ni&apos;t oanklikke. Kontrolear dit neidat jo de ontvangers keazen hawwe hjir: OK skriuwt in nij lys op it.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3335,7 +3339,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">De ynstallearre GPG-homewoenskipe %1 is net bestaande.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>

@@ -319,6 +319,11 @@
         <translation>Campos do modelo e cada liña &quot;chave: valor&quot;</translation>
     </message>
     <message>
+        <location filename="../src/configdialog.ui" line="1001"/>
+        <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog.ui" line="1073"/>
         <source>Select password storage program:</source>
         <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
@@ -500,9 +505,8 @@
         <translation>Usar pwgen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cando a tendencia non ten un repositorio Git propio, utiliza aquel que se atope nunha carpeta superior. Desactivado, tal como con &quot;pass&quot;, polo que unha tendencia dentro doutro repositorio (por exemplo, arquivos .dotfiles) nunca será commitada nin enviada por error. Git nativo só: &quot;pass&quot; sempre remata na tendencia.</translation>
+        <translation type="obsolete">Cando a tendencia non ten un repositorio Git propio, utiliza aquel que se atope nunha carpeta superior. Desactivado, tal como con &quot;pass&quot;, polo que unha tendencia dentro doutro repositorio (por exemplo, arquivos .dotfiles) nunca será commitada nin enviada por error. Git nativo só: &quot;pass&quot; sempre remata na tendencia.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
@@ -686,7 +690,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 asina coa mesma clave para outro servizo. Unha lista de destinatarios asinada para un destes servizos é aceptada no outro: usa unha clave de sinatura diferente para cada servizo, cuxos destinatarios sexan diferentes.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
