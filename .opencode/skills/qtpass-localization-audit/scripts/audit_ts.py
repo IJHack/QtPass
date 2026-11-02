@@ -8,6 +8,9 @@ Default checks (exit status 1 if any fire):
   MN    source has a mnemonic (&X) but the translation has none
   HTML  per-tag open/close counts differ between source and translation
   MIX   Latin letters glued to a word in the locale's own script
+  SCRIPT letters of another script than Latin or the locale's own (a
+        Devanagari Punjabi, Arabic letters inside Sinhala), unless the
+        source has them
   ALPHA password generator character set lost a source character or
         gained a separator (appending local letters is fine)
 
@@ -27,6 +30,7 @@ import glob
 import os
 import re
 import sys
+import unicodedata
 
 # .ts files arrive from contributors (Weblate, PRs), so parse them as
 # untrusted XML: defusedxml when installed; otherwise the standard library,
@@ -95,6 +99,9 @@ VERBATIM_OK = {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
     "login\nURL\ne-mail",
 }
+
+# Codes that make the run fail; SAME and LEAK only report.
+FAILING = ("PH", "MN", "HTML", "MIX", "SCRIPT", "ALPHA", "XML")
 
 ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 PH_RE = re.compile(r"%\d+")
@@ -179,6 +186,20 @@ def check_mixed_script(src, forms, script):
     return first(forms, foreign_latin)
 
 
+def check_foreign_script(src, forms, script):
+    """Letters that are neither Latin nor the locale's own script."""
+    native = re.compile(f"[{script}]") if script else None
+
+    def foreign(c):
+        if not c.isalpha() or c in src or c in "ªºµ":
+            return False
+        if "LATIN" in unicodedata.name(c, ""):
+            return False
+        return not (native and native.match(c))
+
+    return first(forms, lambda t: any(foreign(c) for c in t))
+
+
 def check(src, forms, script):
     """Yield (code, detail) for each structural problem."""
     for code, found in (
@@ -187,6 +208,7 @@ def check(src, forms, script):
         ("ALPHA", check_alphabet(src, forms)),
         ("HTML", check_html(src, forms)),
         ("MIX", check_mixed_script(src, forms, script)),
+        ("SCRIPT", check_foreign_script(src, forms, script)),
     ):
         if found is not None:
             yield code, found
@@ -226,8 +248,11 @@ def audit(path, args):
         print(f"{path}: XML: declares entities, refused unparsed")
         return os.path.basename(path)[13:-3], Counter({"XML": 1})
     root = ET.fromstring(data)  # nosec B314
-    locale = root.get("language") or os.path.basename(path)[13:-3]
-    script = SCRIPT.get(locale) or SCRIPT.get(locale.split("_")[0])
+    name = os.path.basename(path)[13:-3]
+    locale = root.get("language") or name
+    # The file name decides the script: localization_sr_Cyrl.ts says
+    # language="sr_RS", which is the Latin-script file's locale.
+    script = SCRIPT.get(name) or SCRIPT.get(name.split("_")[0])
     counts = Counter()
     for msg in root.iter("message"):
         src = msg.findtext("source") or ""
@@ -274,7 +299,7 @@ def main():
         total += counts
     line = " ".join(f"{k}={v}" for k, v in sorted(total.items()))
     print("total: " + (line or "clean"))
-    failed = any(total[k] for k in ("PH", "MN", "HTML", "MIX", "ALPHA", "XML"))
+    failed = any(total[k] for k in FAILING)
     sys.exit(1 if failed else 0)
 
 

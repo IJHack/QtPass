@@ -36,5 +36,9 @@ jobs:
           persist-credentials: false
       - name: Test the checker
         run: python3 scripts/test_check_skill_sanity.py
+      - name: Test the localization scripts
+        run: |
+          python3 .opencode/skills/qtpass-localization/scripts/test_fill_ts.py
+          python3 .opencode/skills/qtpass-localization-audit/scripts/test_audit_ts.py
       - name: Check skill structure
         run: scripts/check_skill_sanity.py
