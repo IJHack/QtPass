@@ -193,6 +193,10 @@ REGISTER = {
 # reports a fault: "That errs on the hidden side" came back as "That is an
 # error" in three languages.
 ALARM = ("error", "bug", "wrong", "fault", "problem", "broken", "mistake", "incorrect")
+ALARM_WORD = re.compile(r"\b(?:" + "|".join(ALARM) + r")\w*", re.IGNORECASE)
+# A source that already reports a failure may come back with "error".
+FAILURES = r"\b(?:fail|invalid|cannot|unable|refuse|error|wrong|problem)\w*"
+FAILURE = re.compile(FAILURES, re.IGNORECASE)
 NEGATIONS = r"\b(?:not|no|never|none|nothing|cannot|without|unless)\b|n't\b"
 NEGATION = re.compile(NEGATIONS, re.IGNORECASE)
 QUOTES = '"“”„«»「」『』‘’‚‹›'
@@ -750,9 +754,10 @@ def meaning(source: str, back: str) -> list[str]:
     src, bck = source.lower(), back.lower()
     if bool(NEGATION.search(src)) != bool(NEGATION.search(bck)):
         found.append("negation")
-    alarm = [w for w in ALARM if w in bck and w not in src]
-    if alarm:
-        found.append("alarm " + ",".join(alarm))
+    if not FAILURE.search(src):
+        alarm = sorted({w.lower() for w in ALARM_WORD.findall(bck)})
+        if alarm:
+            found.append("alarm " + ",".join(alarm))
     words = {w[:5] for w in WORD.findall(src) if len(w) >= 4}
     kept = words & {w[:5] for w in WORD.findall(bck)}
     # Short strings come back as synonyms ("Default" -> "Standard"), so

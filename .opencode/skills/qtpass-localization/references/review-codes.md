@@ -13,18 +13,18 @@ review refuses it (`--fill-model` names the fill model, `translategemma:4b` by
 default). Even so, a clean review is a machine check, not a reading: in a PR,
 call only the locales a person read "read".
 
-| Code           | Fires when                                                                |
-| -------------- | ------------------------------------------------------------------------- |
-| `term`         | a glossary term of the source is missing (store is Opslag, not winkel)    |
-| `register`     | formal address in an informal file, or the other way (nl, de, fr, es)     |
-| `quotes`       | fewer quotation marks than the source has                                 |
-| `numbers`      | other numbers than the source has                                         |
-| `ending`       | the source ends with `:`, `…` or `?` and the translation does not, or so  |
-| `sentences`    | another number of sentences                                               |
-| `untranslated` | the source copied, three words or more                                    |
-| `negation`     | `--back`: the back-translation lost or gained a "not"                     |
-| `alarm`        | `--back`: it says "error", "wrong" or "problem" where the source does not |
-| `drift`        | `--back`: a source of four words or more kept less than half of them      |
+| Code           | Fires when                                                                        |
+| -------------- | --------------------------------------------------------------------------------- |
+| `term`         | a glossary term of the source is missing (store is Opslag, not winkel)            |
+| `register`     | formal address in an informal file, or the other way (nl, de, fr, es)             |
+| `quotes`       | fewer quotation marks than the source has                                         |
+| `numbers`      | other numbers than the source has                                                 |
+| `ending`       | the source ends with `:`, `…` or `?` and the translation does not, or so          |
+| `sentences`    | another number of sentences                                                       |
+| `untranslated` | the source copied, three words or more                                            |
+| `negation`     | `--back`: the back-translation lost or gained a "not"                             |
+| `alarm`        | `--back`: it says "error", "wrong" or "problem" and the source reports no failure |
+| `drift`        | `--back`: a source of four words or more kept less than half of them              |
 
 The fill checks (`placeholders`, `html`, `line breaks`, `shortcut`,
 `script`, `latin words`) are reported too. A back-translation is noisy on
