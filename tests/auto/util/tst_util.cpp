@@ -2806,8 +2806,14 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
     QProcessEnvironment e = QProcessEnvironment::systemEnvironment();
     e.insert(QStringLiteral("GIT_CONFIG_NOSYSTEM"), QStringLiteral("1"));
     e.insert(QStringLiteral("GIT_CONFIG_GLOBAL"), QStringLiteral("/dev/null"));
-    e.remove(QStringLiteral("GIT_DIR"));
-    e.remove(QStringLiteral("GIT_WORK_TREE"));
+    // What pass unsets, so an inherited repository (a Git hook, an IDE)
+    // cannot stand in for the temporary ones.
+    for (const char *name :
+         {"GIT_DIR", "GIT_WORK_TREE", "GIT_NAMESPACE", "GIT_INDEX_FILE",
+          "GIT_INDEX_VERSION", "GIT_OBJECT_DIRECTORY", "GIT_COMMON_DIR",
+          "GIT_ALTERNATE_OBJECT_DIRECTORIES", "GIT_CEILING_DIRECTORIES"}) {
+      e.remove(QString::fromLatin1(name));
+    }
     return e;
   }();
   const auto gitInit = [&git, &env](const QString &where) {
@@ -2854,9 +2860,16 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
   QVERIFY2(Util::repositoryPassClimbsTo(own).isEmpty(),
            "the store's own repository is found first");
 
-  // Not created yet: the folders above it still count.
+  // Not created yet: the folders above it still count, by their real path
+  // also when the store is spelled through a link (on macOS the temporary
+  // folder is under /var, a link to /private/var).
   QCOMPARE(Util::repositoryPassClimbsTo(
                QDir(home).filePath(QStringLiteral("e:f/missing/store"))),
+           real);
+  const QString linked = dir.filePath(QStringLiteral("linked"));
+  QVERIFY(QFile::link(home, linked));
+  QCOMPARE(Util::repositoryPassClimbsTo(
+               QDir(linked).filePath(QStringLiteral("i:j/missing/store"))),
            real);
 
   // Nothing above at all.

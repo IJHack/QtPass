@@ -147,9 +147,25 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
     return {};
   }
   // git walks up from the real folder, so the real path is the one to walk.
-  QString path = QFileInfo(store).canonicalFilePath();
-  if (path.isEmpty()) {
-    path = QDir::cleanPath(QDir(store).absolutePath());
+  // A store that does not exist yet is real from its nearest existing
+  // folder on (on macOS /var is a link to /private/var).
+  QString path = QDir::cleanPath(QDir(store).absolutePath());
+  QString rest;
+  while (!QFileInfo::exists(path)) {
+    const QString up = QFileInfo(path).absolutePath();
+    if (up == path) {
+      break;
+    }
+    rest =
+        QFileInfo(path).fileName() + (rest.isEmpty() ? QString() : u'/' + rest);
+    path = up;
+  }
+  const QString real = QFileInfo(path).canonicalFilePath();
+  if (!real.isEmpty()) {
+    path = real;
+  }
+  if (!rest.isEmpty()) {
+    path = QDir(path).filePath(rest);
   }
   // The store's own repository comes first; only without one does git look
   // further up.
