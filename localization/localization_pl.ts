@@ -695,7 +695,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="525"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation>Polecenie pass zatwierdza zmiany w&#xa0;%1 w&#xa0;repozytorium Git w&#xa0;%2: z&#xa0;dwukropkiem w&#xa0;ścieżce do repozytorium, polecenie pass nie może zatrzymać Git w&#xa0;repozytorium. Uruchom polecenie „git init” w&#xa0;repozytorium lub użyj natywnego Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="548"/>
