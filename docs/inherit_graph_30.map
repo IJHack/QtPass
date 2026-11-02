@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,96,31"/>
-<area shape="rect" id="Node000001" href="$class_deselectable_tree_view.html" title=" " alt="" coords="144,5,311,31"/>
-<area shape="poly" id="edge30_Node000000_Node000001" title=" " alt="" coords="110,15,144,15,144,21,110,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,117,31"/>
+<area shape="rect" id="Node000001" href="$class_secret_text_browser.html" title="A QTextBrowser for decrypted entry text: whatever is copied out of it is marked as a secret and repor..." alt="" coords="165,5,308,31"/>
+<area shape="poly" id="edge30_Node000000_Node000001" title=" " alt="" coords="131,15,165,15,165,21,131,21"/>
 </map>
