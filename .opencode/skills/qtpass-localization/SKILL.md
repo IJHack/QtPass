@@ -1,11 +1,11 @@
 ---
 name: qtpass-localization
-description: Refreshes QtPass translation sources with make lupdate, edits and verifies localization/*.ts files, bootstraps new languages in src/src.pro, and handles reviewer fixes alongside Weblate. Use when working on translations, i18n, a locale or .ts file, Weblate, adding a language, lupdate, lrelease, or unfinished strings.
+description: Refreshes QtPass translation sources with make lupdate, edits and verifies localization/*.ts files, bootstraps new languages in src/src.pro, fills and reviews empty entries with scripts/fill_ts.py (by hand, by an agent or with a local model), and handles reviewer fixes alongside Weblate. Use when working on translations, i18n, a locale or .ts file, Weblate, adding a language, lupdate, lrelease, unfinished or empty strings, or machine translation.
 license: GPL-3.0-or-later
 metadata:
   audience: developers
   workflow: localization
-  version: "1.1"
+  version: "1.3"
 ---
 
 # QtPass Localization
@@ -23,9 +23,13 @@ Reference files (one level deep, read only when needed):
   adding a new locale (code choice, skeleton, `src/src.pro` registration).
 - [references/mnemonics.md](references/mnemonics.md): read when a string has an
   `&` accelerator or a reviewer flags a missing or clashing shortcut.
+- [references/review-codes.md](references/review-codes.md): read when
+  `fill_ts.py review` reports a finding and you decide whether to revert it.
 - [references/status-and-runtime.md](references/status-and-runtime.md): read
   when you need per-locale completion stats or want to see a translation in the
   running app.
+- [scripts/fill_ts.py](scripts/fill_ts.py): fills empty entries, refuses
+  broken ones and reviews the result (Workflow 4). Its tests are `scripts/test_fill_ts.py`.
 - Structural checks (placeholders, HTML balance, mnemonics, mixed-script MT
   artifacts) live in the sibling skill
   [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md). Use it
@@ -98,6 +102,64 @@ Short form (details and a worked example in
    `src/src.pro`.
 4. `qmake6 && make lupdate`, confirm the file was populated.
 5. Commit with all entries `type="unfinished"`; Weblate translators fill them.
+
+## Workflow 4: fill empty entries
+
+After `make lupdate` adds strings, every locale has empty
+`<translation type="unfinished"></translation>` entries. `scripts/fill_ts.py`
+fills them and leaves them `type="unfinished"` for Weblate reviewers. It writes
+only those elements; `<source>` lines, locations and finished translations stay
+byte for byte. Before it writes a translation it checks:
+
+- the `%1`, `%2` and `%n` placeholders, the HTML tags and the line breaks match
+  the source;
+- the `&` shortcut is kept (it is put back when a model drops it);
+- the text uses only the locale's own script, plus Latin words the source has.
+
+A translation that fails a check stays empty. `en_US` is never filled; `en_GB`
+gets the source text. A plural entry takes one text per form (a list in the
+JSON); `llm` leaves plurals with more than one form for a person.
+
+```bash
+T=.opencode/skills/qtpass-localization/scripts/fill_ts.py
+
+# 1. What is empty, with each locale's glossary terms, as JSON
+python3 "$T" pending localization/localization_de_DE.ts > de.json
+
+# 2a. Translate by hand or with an agent: fill the "translation" fields, then
+python3 "$T" apply localization/localization_de_DE.ts de.json
+
+# 2b. Or with a local model behind an OpenAI-compatible API
+python3 "$T" llm --skip ru,he --cache /tmp/fill-cache.json
+```
+
+`llm` defaults to FastFlowLM on an NPU (`http://localhost:52625/v1`, model
+`translategemma:4b`); for ollama pass `--url http://localhost:11434/v1 --model
+<name>`. Each request names the dialog the string comes from and lists the terms
+the locale's file already uses for words in it. For example, it tells the model
+that "store" is "Opslag" in Dutch, so a 4B model does not write "winkel" (a
+shop). Each string gets three tries; `--cache` keeps the answers, so a rerun
+asks only for what is new.
+
+Small models still get meaning wrong where the checks cannot see it (for example
+"Clipboard restored" as "copy restored from the bin"). After a run:
+
+1. Run the [qtpass-localization-audit](../qtpass-localization-audit/SKILL.md)
+   loop. Its `SCRIPT` check catches a locale written in the wrong script (a
+   Punjabi file in Devanagari instead of Gurmukhi).
+2. Review what the run filled. `review` is pedantic on purpose: it reports, and
+   empties only what `--revert` names.
+
+   ```bash
+   python3 "$T" review --since origin/main            # checks without a model
+   python3 "$T" review --since origin/main --back --cache /tmp/back.json  # qwen3.5:9b
+   python3 "$T" review --since origin/main --revert alarm,negation
+   ```
+
+   [references/review-codes.md](references/review-codes.md) explains each code.
+
+3. Read the result for the languages you know, and empty any locale that is
+   mostly wrong. Say in the PR which locales were read and which were not.
 
 ## Verify loop
 

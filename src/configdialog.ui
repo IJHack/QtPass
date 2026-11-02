@@ -474,7 +474,7 @@
                   <item>
                    <widget class="QLineEdit" name="lineEditSecretFields">
                     <property name="toolTip">
-                     <string>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: "key" hides "API key", not "keyboard layout". That errs on the hidden side: "Public key" and "Password hint" are hidden too; take a word out to show them.</string>
+                     <string>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: "key" hides "API key", not "keyboard layout". So it would rather hide too much: "Public key" and "Password hint" are hidden too; take a word out to show them.</string>
                     </property>
                    </widget>
                   </item>
@@ -998,7 +998,7 @@ e-mail</string>
                   <item>
                    <widget class="QCheckBox" name="checkBoxGitUseParentRepository">
                     <property name="toolTip">
-                     <string>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</string>
+                     <string>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</string>
                     </property>
                     <property name="text">
                      <string>Use a Git repository in a folder above the store</string>
