@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">క్లిప్‌బోర్డ్ పునరుద్ధరించబడింది</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">కంటెంట్ సెర్చ్‌ను ప్రారంభించండి</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -471,12 +471,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">కాపీ చేసిన తర్వాత, క్లిప్‌బోర్డ్‌ను క్లియర్ చేసినప్పుడు, తిరిగి ఉంచడానికి ప్రయత్నించండి. అయితే, ఇంతకు ముందు కాపీ చేయకపోతేనే ఇది పనిచేస్తుంది. టెక్స్ట్ మాత్రమే: ఫార్మాటింగ్ పునరుద్ధరించబడదు. ఆ టెక్స్ట్ మెమరీలో నిల్వ ఉంటుంది, ఫోకస్ లేకుండా చదవలేని క్లిప్‌బోర్డ్ కోసం, దీనిని క్లియర్ చేస్తారు (కొన్ని వేలాండ్ డెస్క్‌టాప్‌లు).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">మునుపటి క్లిప్‌బోర్డ్‌ను పునరుద్ధరించు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -492,22 +492,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">ఇతర రహస్యాలను కూడా దాచండి:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ మాత్రమే కాకుండా, రహస్య సమాచారం ఉన్న ఫీల్డ్‌లను కూడా దాచండి: పేరులో ఈ పదాలలో ఒకటి ఉండే ఫీల్డ్. ఆఫ్: పాస్‌వర్డ్ మాత్రమే దాచబడుతుంది.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">డిఫాల్ట్</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">డిఫాల్ట్ పదాలను తిరిగి సెట్ చేయండి: పిన్, కార్డ్ కోడ్‌లు, కీలు, టోకెన్‌లు మరియు ఇలాంటివి.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -536,7 +536,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">స్టోర్ ఉన్న ఫోల్డర్‌కు పైన ఉన్న గిట్ రిపోజిటరీని ఉపయోగించండి</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -752,7 +752,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 వేరే స్టోర్ కోసం అదే కీతో సంతకం చేస్తుంది. ఈ స్టోర్లలో ఒకదానికి సంతకం చేసిన జాబితా మరొకదానికి ఆమోదించబడుతుంది: వేర్వేరు గ్రహీతల ఉన్న ప్రతి స్టోర్ కోసం, ప్రత్యేక సంతకం కీని ఉపయోగించండి.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1430,7 +1430,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 పాస్‌వర్డ్ నిల్వలో లేదు, లేదా మార్గంలో ఉన్న ఫోల్డర్ పేరులో ఒక లైన్ బ్రేక్ లేదా మరొక కంట్రోల్ క్యారెక్టర్ ఉంది, దీనిని సంతకం చేసిన జాబితా రికార్డ్ చేయలేదు.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="570"/>
@@ -1440,7 +1440,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (ఇది సాధారణంగా %2 కంటే ఎక్కువ లేని ఫైల్).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1916,12 +1916,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">చెల్లని ఇన్‌పుట్</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">పేరు మరియు పాస్‌ఫ్రేజ్ రెండింటిలో లైన్ బ్రేక్స్ ఉండకూడదు.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2044,7 +2044,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">పాస్‌వర్డ్ కంటెంట్ లో వెతకండి</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2486,7 +2486,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">... ఈ ఎంట్రీలో మరిన్ని సరిపోలే</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -2777,16 +2777,14 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">సేవ్ చేయబడింది, కమిట్ చేయబడలేదు</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">డేటా నిల్వ చేయబడింది, కానీ గిట్‌లో నమోదు చేయడం విఫలమైంది. ఇది నివేదించబడింది:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2796,7 +2794,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ నిల్వలో %1 లేదు. ఈ నిల్వ లేదా దానిలోని ఫోల్డర్ కోసం గ్రహీతలు సెట్ చేయబడ్డారు.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -2811,7 +2809,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ను గ్రహీతల జాబితాగా చదవలేము (ఇది సాధారణంగా %2 వరకు ఉండే ఫైల్), కాబట్టి ఏదీ ముందే ఎంపిక చేయబడలేదు. ఇక్కడ గ్రహీతలను ఎంచుకునే ముందు, దాన్ని తనిఖీ చేయండి: &quot;సరే&quot; అనేది దానిపై కొత్త జాబితాను సృష్టిస్తుంది.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3074,7 +3072,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">కాన్ఫిగర్ చేసిన GPG హోమ్ డైరెక్టరీ %1 లేదు.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3315,7 +3313,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">రిసీవర్ల జాబితాలను %1 కింద తనిఖీ చేయడం…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3341,7 +3339,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">%1 లింక్ తొలగించబడింది మరియు గిట్ ఇప్పుడు దానిని ట్రాక్ చేయడం లేదు, కానీ కమిట్ విఫలం అయింది: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
