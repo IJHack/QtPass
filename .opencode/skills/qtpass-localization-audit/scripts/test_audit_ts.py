@@ -58,6 +58,8 @@ class ScriptTest(unittest.TestCase):
         """Accented Latin, ordinals and letters the source has are fine."""
         self.assertEqual(audit("es_ES", "es_ES", "1st", "1º sí"), {})
         self.assertEqual(audit("nl_NL", "nl_NL", "Ελληνικά", "Ελληνικά"), {})
+        self.assertEqual(audit("ja", "ja", "Each", "各々"), {})
+        self.assertEqual(audit("ko", "ko", "Security", "보안(保安)"), {})
 
     def test_file_name_picks_the_script(self) -> None:
         """localization_sr_Cyrl.ts says sr_RS but is Cyrillic."""

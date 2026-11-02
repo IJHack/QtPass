@@ -146,6 +146,14 @@ class CheckTest(unittest.TestCase):
         self.assertEqual(fill_ts.problems("Use Git", "Git ਵਰਤੋ", "pa_IN"), [])
         glued = fill_ts.problems("Use Git", "nativer ਵਰਤੋ", "pa_IN")
         self.assertIn("latin words", glued)
+        self.assertEqual(fill_ts.problems("Each one", "各々", "ja"), [])
+
+    def test_locale_of(self) -> None:
+        """Only a locale code counts as the suffix."""
+        self.assertEqual(fill_ts.locale_of("x/localization_sr_Cyrl.ts"), "sr_Cyrl")
+        self.assertEqual(fill_ts.locale_of("localization_fy_NL.ts"), "fy_NL")
+        with self.assertRaises(ValueError):
+            fill_ts.locale_of("localization/localization_backup.ts")
 
     def test_tidy(self) -> None:
         """Quotes and an extra full stop go; a dropped shortcut comes back."""
@@ -192,6 +200,29 @@ class LlmTest(unittest.TestCase):
         (data,) = self.run_llm(ask, ["nl_NL"])
         self.assertEqual(data, SAMPLE)
         self.assertEqual(len(asked), 6)
+
+    def test_backend_failure_is_not_cached(self) -> None:
+        """A server that does not answer leaves the entry for the next run."""
+        asked = []
+
+        def down(text: str, _temperature: float) -> str:
+            asked.append(text)
+            raise OSError("connection refused")
+
+        with (
+            tempfile.TemporaryDirectory() as tmp,
+            mock.patch.object(fill_ts.time, "sleep"),
+        ):
+            cache = os.path.join(tmp, "cache.json")
+            (data,) = self.run_llm(down, ["nl_NL"], cache)
+            self.assertEqual(data, SAMPLE)
+            self.assertEqual(len(asked), 6)
+            self.assertFalse(os.path.exists(cache))
+            ask, _ = answers("Gebruik %1", "%n regels")
+            self.run_llm(ask, ["nl_NL"], cache)
+            stored = json.loads(Path(cache).read_text(encoding="utf-8"))
+            self.assertEqual(len(stored), 2)
+            self.assertFalse(os.path.exists(cache + ".tmp"))
 
     def test_english_locales_and_cache(self) -> None:
         """en_US is skipped, en_GB copies the source, and the cache answers a rerun."""

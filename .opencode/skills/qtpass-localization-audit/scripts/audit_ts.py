@@ -62,8 +62,8 @@ SCRIPT = {
     "te": "ఀ-౿",
     "si": "඀-෿",
     "th": "฀-๿",
-    "ko": "가-힯",
-    "ja": "぀-ヿ一-鿿",
+    "ko": "가-힯ㄱ-ㆎ一-鿿",  # Hangul, its jamo, and Hanja
+    "ja": "぀-ヿ一-鿿々〆",  # kana, kanji, and the iteration and closing marks
     "zh": "一-鿿",
 }
 

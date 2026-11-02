@@ -152,7 +152,7 @@ SCRIPTS = {
     "si": {"SINHALA"},
     "th": {"THAI"},
     "ko": {"HANGUL", "CJK"},
-    "ja": {"CJK", "HIRAGANA", "KATAKANA", "KATAKANA-HIRAGANA"},
+    "ja": {"CJK", "HIRAGANA", "KATAKANA", "KATAKANA-HIRAGANA", "IDEOGRAPHIC"},
     "zh": {"CJK"},
 }
 
@@ -222,7 +222,8 @@ Translate = Callable[[str, str], str | None]
 
 def locale_of(path: str) -> str:
     """The locale suffix of a localization_<locale>.ts path."""
-    match = re.match(r"localization_(.+)\.ts$", os.path.basename(path))
+    name = os.path.basename(path)
+    match = re.match(r"localization_([a-z]{2,3}(?:_[A-Za-z]{2,4})?)\.ts$", name)
     if not match:
         raise ValueError(f"not a localization file: {path}")
     return match.group(1)
@@ -533,8 +534,10 @@ def load_cache(path: str | None) -> dict[str, str | None]:
 def save_cache(path: str | None, cache: dict[str, str | None]) -> None:
     """Keep the answers for the next run."""
     if path:
-        with open(path, "w", encoding="utf-8") as handle:
+        # Write aside and rename, so an interrupted run keeps the old file.
+        with open(path + ".tmp", "w", encoding="utf-8") as handle:
             json.dump(cache, handle, ensure_ascii=False, indent=0)
+        os.replace(path + ".tmp", path)
 
 
 def translate_one(
@@ -573,9 +576,12 @@ def llm_file(
             return source
         key = f"{args.model}\x1f{locale}\x1f{context}\x1f{source}"
         if key not in cache:
-            cache[key], why = translate_one(ask, locale, context, source, terms)
+            out, why = translate_one(ask, locale, context, source, terms)
             if why:
                 print(f"  {locale}: left empty ({', '.join(why)}): {source[:60]!r}")
+            if why[-1:] and why[-1].startswith("backend"):
+                return None  # not an answer: ask again on the next run
+            cache[key] = out
             save_cache(args.cache, cache)
         return checked(locale, source, cache[key])
 
