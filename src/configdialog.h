@@ -180,9 +180,16 @@ private:
   QString m_nameTip, m_pathTip, m_keyTip;
   /// Below the signing key: the profiles that share it, if any.
   QLabel *m_sharedKeyWarning = nullptr;
-  /// Primary fingerprint per gpg and signing-key token (empty: gpg does
-  /// not know it), so each key is looked up once, not on every keystroke.
-  mutable QHash<QString, QString> m_primaryOf;
+  /// What gpg said about one signing-key token.
+  struct KeyLookup {
+    QString primary; ///< Its primary fingerprint; empty: gpg does not know it.
+    /// For an unknown key, the keyring as it was then (keyringStamp()):
+    /// asked again once a key may have been imported.
+    QString keyring;
+  };
+  /// Per gpg, GPG home and signing-key token, so each key is looked up
+  /// once, not on every keystroke.
+  mutable QHash<QString, KeyLookup> m_primaryOf;
   /// The settings naming the GPG home those lookups run in, read on first
   /// use.
   mutable std::optional<AppSettings> m_gpgSettings;

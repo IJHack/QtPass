@@ -13,6 +13,7 @@
 #include "util.h"
 #include "windowstatestore.h"
 #include <QClipboard>
+#include <QDateTime>
 #include <QDir>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -385,6 +386,35 @@ auto ConfigDialog::signingStores() const -> SigningStores {
   return resolved;
 }
 
+namespace {
+/**
+ * @brief The public keyring in @p env's GPG home as it is now: size and
+ * time of each keyring file, so a key imported meanwhile is noticed.
+ * @param env The environment gpg runs in.
+ * @return A string that changes when the keyring does.
+ */
+auto keyringStamp(const QProcessEnvironment &env) -> QString {
+  QString home = env.value(QStringLiteral("GNUPGHOME"));
+  if (home.isEmpty()) {
+#ifdef Q_OS_WIN
+    home =
+        QDir(qEnvironmentVariable("APPDATA")).filePath(QStringLiteral("gnupg"));
+#else
+    home = QDir::home().filePath(QStringLiteral(".gnupg"));
+#endif
+  }
+  QString stamp;
+  for (const QString &name :
+       {QStringLiteral("pubring.kbx"), QStringLiteral("pubring.gpg")}) {
+    const QFileInfo info(QDir(home).filePath(name));
+    stamp += QString::number(info.size()) + QLatin1Char(':') +
+             QString::number(info.lastModified().toMSecsSinceEpoch()) +
+             QLatin1Char(';');
+  }
+  return stamp;
+}
+} // namespace
+
 auto ConfigDialog::signerKeys(const QString &signingKey,
                               const QProcessEnvironment &env) const
     -> QSet<QString> {
@@ -407,7 +437,16 @@ auto ConfigDialog::signerKeys(const QString &signingKey,
                              env.value(QStringLiteral("GNUPGHOME")) +
                              QLatin1Char('\n') + key;
     auto cached = m_primaryOf.constFind(cacheKey);
+    // An unknown key is asked about again once the keyring has changed (a
+    // key imported while the dialog is open); one stat per check, not one
+    // gpg run.
+    if (cached != m_primaryOf.cend() && cached->primary.isEmpty() &&
+        cached->keyring != keyringStamp(env)) {
+      cached = m_primaryOf.cend();
+    }
     if (cached == m_primaryOf.cend()) {
+      // Before gpg runs: a key imported while it does is looked up again.
+      const QString keyring = keyringStamp(env);
       QString out;
       // Blocking, once per key: no trustdb check, which a large keyring
       // would make slow.
@@ -420,11 +459,14 @@ auto ConfigDialog::signerKeys(const QString &signingKey,
            QStringLiteral("--with-subkey-fingerprint"),
            QStringLiteral("--list-keys"), QStringLiteral("--"), key},
           &out);
+      const QString primary =
+          rc == 0 ? primaryFingerprintOf(out, key) : QString();
       cached = m_primaryOf.insert(
-          cacheKey, rc == 0 ? primaryFingerprintOf(out, key) : QString());
+          cacheKey,
+          KeyLookup{primary, primary.isEmpty() ? keyring : QString()});
     }
-    if (!cached->isEmpty()) {
-      keys.insert(*cached);
+    if (!cached->primary.isEmpty()) {
+      keys.insert(cached->primary);
     }
   }
   return keys;
