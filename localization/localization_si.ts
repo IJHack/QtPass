@@ -3212,7 +3212,7 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="13"/>
         <source>Process output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ක්‍රියාවලි ප්‍රතිදානය</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
