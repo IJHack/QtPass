@@ -574,7 +574,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">සාමාන්‍ය</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -1838,7 +1838,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1, යම් ගණනයක පැත්තේ තබා ගත හැකි ප්‍රමාණයට වඩා විශාල වේ.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2967,7 +2967,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">සාකරි කර, යටිතල ක්‍රියාත්මක නොකිරීම</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
@@ -3212,7 +3212,7 @@ Continue?</source>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="13"/>
         <source>Process output</source>
-        <translation type="unfinished"></translation>
+        <translation>පروسේස් එක්සොර්ටු</translation>
     </message>
     <message>
         <location filename="../src/processoutputpanel.cpp" line="26"/>
@@ -3262,7 +3262,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">සාකරි කර ඇති GPG නිජ %1 ස්ථානය නොමැති।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3503,7 +3503,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">%1 යටතල ගවේශනය කරමින්…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
