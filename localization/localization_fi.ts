@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Leikepöydän sisältö palautettu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Käytä Git-tietovarastoa kansiossa, joka sijaitsee kaupan yläpuolella</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Ota sisällön haku käyttöön</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kun leikepöydä tyhjennetään, palauta siihen sen sisältö ennen kopiointia, aivan kuten pass -c tekee, ellei muuta ole kopioitu samalla. Teksti vain: muotoilua ei palauteta. Tämä teksti pysyy muistissa siihen asti. Siinä tapauksessa, että leikepöytä ei ole luettavissa ilman keskitystä (jotkin Wayland-työpöydät), se tyhjennetään sen sijaan.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Palauta edellinen leikepöydän sisältö</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,22 +564,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Piilota myös muut salaisuudet:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Piilota kentät, jotka sisältävät myös salaisuuksia, ei vain salasanaa: kenttä, jonka nimi sisältää jonkin seuraavista sanoista. Pois käytöstä: vain salasana piilotetaan.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Oletusarvot</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Aseta oletusarvot takaisin: PIN-koodit, korttien koodit, avaimet, tokenit ja muut.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -698,7 +698,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 käyttää samaa avainta toiselle varastolle. Toinen varasto hyväksyy vastaanottajaluettelon, joka on allekirjoitettu yhdellä näistä varastoista: käytä erillistä allekairjoitusavainta jokaiselle varastolle, joiden vastaanottajat ovat erilaiset.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1484,7 +1484,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalitiedosto, jonka koko on enintään %2).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1838,7 +1838,7 @@ Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät o
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 on suurempi kuin avaimen tiedoston pitäisi olla.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1992,7 +1992,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Virheellinen syöte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
@@ -2186,7 +2186,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Hae sisällön sisältä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2704,7 +2704,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… lisää vastaavia löydettäessä</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -3003,16 +3003,14 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Tallennettu, mutta ei commitattu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Tiedot on tallennettu, mutta sen tallentaminen Git-repositorioon epäonnistui. Seuraavat tiedot ovat raportoitu:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -3022,7 +3020,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ei ole salasanarekisterissä. Vastaanottajat on määritetty rekisterille tai sen sisällä olevalle kansiolle.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -3037,7 +3035,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalikokoinen tiedosto, jonka koko on enintään %2), joten mitään ei ole valittu automaattisesti. Tarkista se ennen vastaanottajien valitsemista tässä: &quot;OK&quot; korvaa sen uudella luettelolla.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3300,7 +3298,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Konfiguroitu GPG-kotihakemisto %1 ei ole olemassa.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3567,7 +3565,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Linkki %1 poistettiin ja Git ei enää seuraa sitä, mutta commit epäonnistui: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
