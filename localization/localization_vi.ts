@@ -696,7 +696,7 @@ e-mail</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; phiên bản </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="75"/>
+        <location filename="../src/configdialog.cpp" line="76"/>
         <source>System tray is not available</source>
         <translation>Khay hệ thống không khả dụng</translation>
     </message>
@@ -705,12 +705,12 @@ e-mail</translation>
         <translation type="vanished">Cần cài đặt tiện ích mở rộng Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="86"/>
+        <location filename="../src/configdialog.cpp" line="87"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Không khả dụng trên Wayland; thay vào đó hãy dùng quy tắc cửa sổ &quot;luôn ở trên&quot; của compositor</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="98"/>
+        <location filename="../src/configdialog.cpp" line="99"/>
         <source>qrencode needs to be installed</source>
         <translation>Cần cài đặt qrencode</translation>
     </message>
@@ -719,63 +719,68 @@ e-mail</translation>
         <translation type="vanished">Không có Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="135"/>
+        <location filename="../src/configdialog.cpp" line="145"/>
         <source>No clipboard</source>
         <translation type="unfinished">Không dùng clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="136"/>
+        <location filename="../src/configdialog.cpp" line="146"/>
         <source>Always copy to clipboard</source>
         <translation>Luôn sao chép vào clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="137"/>
+        <location filename="../src/configdialog.cpp" line="147"/>
         <source>On-demand copy to clipboard</source>
         <translation>Sao chép vào clipboard theo yêu cầu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="329"/>
-        <location filename="../src/configdialog.cpp" line="334"/>
+        <location filename="../src/configdialog.cpp" line="339"/>
+        <location filename="../src/configdialog.cpp" line="344"/>
         <source>This field is required</source>
         <translation>Trường này là bắt buộc</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="331"/>
+        <location filename="../src/configdialog.cpp" line="341"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Một hồ sơ khác đã có tên này</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="340"/>
+        <location filename="../src/configdialog.cpp" line="350"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Chỉ chấp nhận dấu vân tay khóa đầy đủ (40 hoặc 64 ký tự thập lục phân), phân cách bằng dấu cách</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="466"/>
+        <location filename="../src/configdialog.cpp" line="497"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 sử dụng cùng một khóa để ký cho cửa hàng khác. Danh sách người nhận đã ký cho một trong các cửa hàng này được chấp nhận ở cửa hàng kia: hãy sử dụng một khóa ký riêng cho mỗi cửa hàng, đặc biệt khi danh sách người nhận của các cửa hàng khác nhau.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="488"/>
+        <location filename="../src/configdialog.cpp" line="525"/>
+        <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="548"/>
         <source>The path does not exist.</source>
         <translation>Đường dẫn không tồn tại.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="491"/>
+        <location filename="../src/configdialog.cpp" line="551"/>
         <source>The path is not readable.</source>
         <translation>Đường dẫn không thể đọc được.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="494"/>
+        <location filename="../src/configdialog.cpp" line="554"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Đường dẫn không phải là socket miền Unix.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="498"/>
+        <location filename="../src/configdialog.cpp" line="558"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Ghi đè SSH_AUTH_SOCK có khả năng không hợp lệ</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="499"/>
+        <location filename="../src/configdialog.cpp" line="559"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -788,42 +793,42 @@ The value will still be saved as entered.</source>
 Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="751"/>
+        <location filename="../src/configdialog.cpp" line="812"/>
         <source>Create profile directory?</source>
         <translation>Tạo thư mục hồ sơ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="752"/>
+        <location filename="../src/configdialog.cpp" line="813"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Bạn có muốn tạo kho mật khẩu tại %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="758"/>
+        <location filename="../src/configdialog.cpp" line="819"/>
         <source>Error</source>
         <translation>Lỗi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="759"/>
+        <location filename="../src/configdialog.cpp" line="820"/>
         <source>Could not create profile directory: %1</source>
         <translation>Không thể tạo thư mục hồ sơ: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="783"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>Select recipients for %1</source>
         <translation>Chọn người nhận cho %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="792"/>
+        <location filename="../src/configdialog.cpp" line="853"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Không thể khởi tạo hồ sơ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="795"/>
+        <location filename="../src/configdialog.cpp" line="856"/>
         <source>Profile %1</source>
         <translation type="unfinished">Hồ sơ %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="818"/>
+        <location filename="../src/configdialog.cpp" line="879"/>
         <source>New profile</source>
         <translation>Hồ sơ mới</translation>
     </message>
@@ -832,12 +837,12 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <translation type="vanished">Hồ sơ mới</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="839"/>
+        <location filename="../src/configdialog.cpp" line="900"/>
         <source>No profile selected</source>
         <translation>Không có hồ sơ nào được chọn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="840"/>
+        <location filename="../src/configdialog.cpp" line="901"/>
         <source>No profile selected to delete</source>
         <translation>Không có hồ sơ nào được chọn để xóa</translation>
     </message>
@@ -878,17 +883,17 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <translation type="vanished">Thư mục %1 dường như không phải là kho mật khẩu hoặc chưa được khởi tạo.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1059"/>
+        <location filename="../src/configdialog.cpp" line="1120"/>
         <source>New profile: %1 at %2</source>
         <translation>Hồ sơ mới: %1 tại %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1061"/>
+        <location filename="../src/configdialog.cpp" line="1122"/>
         <source>Profile: %1 at %2</source>
         <translation>Hồ sơ: %1 tại %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1064"/>
+        <location filename="../src/configdialog.cpp" line="1125"/>
         <source>Fill in all required fields</source>
         <translation>Điền vào tất cả các trường bắt buộc</translation>
     </message>
@@ -969,7 +974,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <translation type="unfinished">Không thể khởi động %1</translation>
     </message>
     <message>
-        <location filename="../src/executor.cpp" line="483"/>
+        <location filename="../src/executor.cpp" line="492"/>
         <source>%1 crashed or was killed</source>
         <translation type="unfinished">%1 đã gặp sự cố hoặc bị buộc dừng</translation>
     </message>
@@ -1268,21 +1273,21 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
         <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="741"/>
+        <location filename="../src/imitatepass.cpp" line="745"/>
         <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Kiểm tra chữ ký tệp .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="586"/>
+        <location filename="../src/imitatepass.cpp" line="590"/>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Chữ ký cho %1 không hợp lệ.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="861"/>
+        <location filename="../src/imitatepass.cpp" line="865"/>
         <source>Can not edit</source>
         <translation>Không thể chỉnh sửa</translation>
     </message>
@@ -1298,27 +1303,27 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="862"/>
+        <location filename="../src/imitatepass.cpp" line="866"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Không thể đọc khóa mã hóa để sử dụng, tệp .gpg-id bị thiếu hoặc không hợp lệ.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="830"/>
+        <location filename="../src/pass.cpp" line="832"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Không thể kiểm tra danh sách người nhận</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="832"/>
+        <location filename="../src/pass.cpp" line="834"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Không thể xác định %2 có bị xóa hay không, nên không có gì được mã hóa.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="839"/>
+        <location filename="../src/pass.cpp" line="841"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Thiếu danh sách người nhận</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="840"/>
+        <location filename="../src/pass.cpp" line="842"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 bị thiếu hoặc không phải là tệp thông thường. QtPass không dùng danh sách của thư mục cha thay cho nó: danh sách đó không được ký cho thư mục này. Nếu có một liên kết mang tên đó, hãy xóa nó. Sau đó mở Người dùng cho thư mục đó và lưu người nhận của nó; việc này sẽ ghi và ký một danh sách mới.</translation>
     </message>
@@ -1346,7 +1351,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="336"/>
         <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="493"/>
+        <location filename="../src/imitatepass.cpp" line="497"/>
         <source>Cannot update</source>
         <translation>Không thể cập nhật</translation>
     </message>
@@ -1400,29 +1405,29 @@ Bạn sẽ không thể giải mã bất kỳ mật khẩu mới được thêm 
         <translation type="unfinished">Không thể ký %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="531"/>
+        <location filename="../src/imitatepass.cpp" line="535"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Người nhận chưa được thay đổi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="532"/>
+        <location filename="../src/imitatepass.cpp" line="536"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Một quá trình mã hóa lại vẫn đang chạy. Hãy đợi đến khi nó hoàn tất, rồi lưu lại người nhận.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="538"/>
+        <location filename="../src/imitatepass.cpp" line="542"/>
         <source>No signing key!</source>
         <translation>Không có khóa ký!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="539"/>
+        <location filename="../src/imitatepass.cpp" line="543"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Không có khóa ký bí mật nào khả dụng.
 Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="494"/>
+        <location filename="../src/imitatepass.cpp" line="498"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Không thể xóa chữ ký cũ %1.</translation>
     </message>
@@ -1432,49 +1437,49 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <translation type="unfinished">%1 không nằm trong kho mật khẩu, hoặc tên một thư mục chứa dấu xuống dòng hoặc các ký tự điều khiển khác, mà danh sách đã được ký không thể ghi lại.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="570"/>
+        <location filename="../src/imitatepass.cpp" line="574"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git đã thoát với mã %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="609"/>
+        <location filename="../src/imitatepass.cpp" line="613"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">Không thể đọc %1 như một danh sách người nhận (một file thông thường với tối đa %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="623"/>
-        <location filename="../src/imitatepass.cpp" line="651"/>
-        <location filename="../src/imitatepass.cpp" line="659"/>
+        <location filename="../src/imitatepass.cpp" line="627"/>
+        <location filename="../src/imitatepass.cpp" line="655"/>
+        <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Còn sót lại từ một lần mã hóa lại trước đó</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="624"/>
+        <location filename="../src/imitatepass.cpp" line="628"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 không phải là tệp thông thường và chưa được khôi phục. Hãy kiểm tra và xóa nó, rồi mã hóa lại lần nữa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="652"/>
+        <location filename="../src/imitatepass.cpp" line="656"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 tồn tại bên cạnh %2. Cả hai đều là bản sao đã mã hóa của mục này; hãy kiểm tra xem bạn muốn giữ bản nào và xóa bản còn lại, rồi mã hóa lại lần nữa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="670"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Đã khôi phục %1 từ bản sao lưu do một lần mã hóa lại bị gián đoạn để lại.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="660"/>
+        <location filename="../src/imitatepass.cpp" line="664"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 bị thiếu và không thể đổi tên bản sao lưu %2 trở lại. Hãy đổi tên thủ công, rồi mã hóa lại lần nữa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="902"/>
+        <location filename="../src/imitatepass.cpp" line="906"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">Không thể mã hóa lại %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1206"/>
+        <location filename="../src/imitatepass.cpp" line="1210"/>
         <source>Re-encryption failed</source>
         <translation>Mã hóa lại thất bại</translation>
     </message>
@@ -1491,127 +1496,127 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <translation type="obsolete">Không thể xóa bản sao lưu %1 sau khi mã hóa lại; bạn có thể xóa nó một cách an toàn.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="913"/>
+        <location filename="../src/imitatepass.cpp" line="917"/>
         <source>Creating backup commit</source>
         <translation>Đang tạo commit sao lưu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="927"/>
-        <location filename="../src/imitatepass.cpp" line="937"/>
+        <location filename="../src/imitatepass.cpp" line="931"/>
+        <location filename="../src/imitatepass.cpp" line="941"/>
         <source>Backup commit failed</source>
         <translation>Commit sao lưu thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="928"/>
+        <location filename="../src/imitatepass.cpp" line="932"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Không thể kiểm tra trạng thái git. Mã hóa lại đã bị hủy.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="938"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Mã hóa lại đã bị hủy vì không thể tạo bản sao lưu git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="976"/>
+        <location filename="../src/imitatepass.cpp" line="980"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Một quá trình mã hóa lại đang chạy</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="983"/>
+        <location filename="../src/imitatepass.cpp" line="987"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Không phải thư mục của kho</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="984"/>
+        <location filename="../src/imitatepass.cpp" line="988"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc junction. Nơi liên kết đó trỏ tới không thuộc kho mật khẩu và chưa được mã hóa lại.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="993"/>
+        <location filename="../src/imitatepass.cpp" line="997"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Đang mã hóa lại từ thư mục %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1057"/>
-        <location filename="../src/imitatepass.cpp" line="1233"/>
+        <location filename="../src/imitatepass.cpp" line="1061"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Updating password-store</source>
         <translation>Đang cập nhật kho mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1070"/>
-        <location filename="../src/imitatepass.cpp" line="1076"/>
+        <location filename="../src/imitatepass.cpp" line="1074"/>
+        <location filename="../src/imitatepass.cpp" line="1080"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1071"/>
+        <location filename="../src/imitatepass.cpp" line="1075"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Không thể kiểm tra kho có tệp chưa hợp nhất sau khi pull hay không. Hãy kiểm tra bằng git trước khi mã hóa lại.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1077"/>
+        <location filename="../src/imitatepass.cpp" line="1081"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Lệnh pull để lại các tệp chưa được hợp nhất trong kho. Hãy giải quyết xung đột trước khi mã hóa lại.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull thất bại, đang mã hóa lại kho ở trạng thái hiện tại</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1092"/>
+        <location filename="../src/imitatepass.cpp" line="1096"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>Đã bỏ qua %n mục: liên kết tượng trưng, junction hoặc tệp đặc biệt không thuộc kho.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1113"/>
+        <location filename="../src/imitatepass.cpp" line="1117"/>
         <source>GPG ID verification failed</source>
         <translation>Xác minh GPG ID thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1114"/>
+        <location filename="../src/imitatepass.cpp" line="1118"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Không thể xác minh .gpg-id cho thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1134"/>
+        <location filename="../src/imitatepass.cpp" line="1138"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Không thuộc kho</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1135"/>
+        <location filename="../src/imitatepass.cpp" line="1139"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc nút nối sau khi được kéo. Cái đó không phải là phần lưu trữ mật khẩu và sẽ không được tác động.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1204"/>
+        <location filename="../src/imitatepass.cpp" line="1208"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... và %n tệp khác</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1207"/>
+        <location filename="../src/imitatepass.cpp" line="1211"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>Không thể mã hóa lại %n tệp:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1213"/>
+        <location filename="../src/imitatepass.cpp" line="1217"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Mã hóa lại đã bị hủy: đã kiểm tra %1 trên %2 tệp, %3 đã mã hóa lại, %4 thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1280"/>
-        <location filename="../src/imitatepass.cpp" line="1289"/>
+        <location filename="../src/imitatepass.cpp" line="1284"/>
+        <location filename="../src/imitatepass.cpp" line="1293"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Người nhận chưa được commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1281"/>
+        <location filename="../src/imitatepass.cpp" line="1285"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1624,7 +1629,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Thay đổi chưa được commit hay push. Hãy khắc phục sự cố Git, rồi commit các thay đổi, hoặc lưu lại người nhận.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1290"/>
+        <location filename="../src/imitatepass.cpp" line="1294"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1637,12 +1642,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các mục vẫn được mã hóa cho những người nhận trước đó, và họ vẫn có thể đọc chúng. Chưa có gì được commit hay push. Hãy khắc phục sự cố Git, rồi lưu lại người nhận.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1467"/>
+        <location filename="../src/imitatepass.cpp" line="1471"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Chưa cấu hình tệp thực thi Git, bỏ qua git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1527"/>
+        <location filename="../src/imitatepass.cpp" line="1531"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg không ghi ra dữ liệu đã mã hóa nào cho %1.</translation>
     </message>
@@ -1671,31 +1676,31 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished">Không thể mã hóa lại %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1226"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Mã hóa lại hoàn tất: %1 thành công, %2 thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1227"/>
+        <location filename="../src/imitatepass.cpp" line="1231"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Mã hóa lại hoàn tất: %1 tệp đã được mã hóa lại</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1236"/>
+        <location filename="../src/imitatepass.cpp" line="1240"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Không push: %n tệp mã hóa lại thất bại</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1389"/>
-        <location filename="../src/imitatepass.cpp" line="1433"/>
+        <location filename="../src/imitatepass.cpp" line="1393"/>
+        <location filename="../src/imitatepass.cpp" line="1437"/>
         <source>Copy failed</source>
         <translation type="unfinished">Sao chép thất bại</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1390"/>
-        <location filename="../src/imitatepass.cpp" line="1434"/>
+        <location filename="../src/imitatepass.cpp" line="1394"/>
+        <location filename="../src/imitatepass.cpp" line="1438"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Không thể sao chép %1 sang %2.</translation>
     </message>
@@ -2075,7 +2080,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1444"/>
+        <location filename="../src/mainwindow.cpp" line="1447"/>
         <source>Add password</source>
         <translation>Thêm mật khẩu</translation>
     </message>
@@ -2087,21 +2092,21 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1443"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>Add folder</source>
         <translation>Thêm thư mục</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1451"/>
+        <location filename="../src/mainwindow.cpp" line="1454"/>
         <source>Edit</source>
         <translation>Chỉnh sửa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1463"/>
+        <location filename="../src/mainwindow.cpp" line="1466"/>
         <source>Delete</source>
         <translation>Xóa</translation>
     </message>
@@ -2142,7 +2147,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1445"/>
+        <location filename="../src/mainwindow.cpp" line="1448"/>
         <source>Users</source>
         <translation>Người dùng</translation>
     </message>
@@ -2294,13 +2299,13 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/mainwindow.cpp" line="673"/>
         <location filename="../src/mainwindow.cpp" line="691"/>
-        <location filename="../src/mainwindow.cpp" line="1165"/>
+        <location filename="../src/mainwindow.cpp" line="1168"/>
         <source>OTP code copied to clipboard</source>
         <translation>Đã sao chép mã OTP vào clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="693"/>
-        <location filename="../src/mainwindow.cpp" line="1153"/>
+        <location filename="../src/mainwindow.cpp" line="1156"/>
         <source>No OTP code found in this password entry</source>
         <translation>Không tìm thấy mã OTP trong mục mật khẩu này</translation>
     </message>
@@ -2413,12 +2418,12 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished"> và toàn bộ nội dung?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Delete link?</source>
         <translation type="unfinished">Xóa liên kết?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1099"/>
+        <location filename="../src/mainwindow.cpp" line="1102"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 là một liên kết tượng trưng hoặc junction. Xóa liên kết này? Nơi nó trỏ tới sẽ được giữ nguyên.</translation>
     </message>
@@ -2427,12 +2432,12 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished"> và toàn bộ nội dung? &lt;br&gt;&lt;strong&gt;Chú ý: có các tệp không mong đợi trong thư mục đã cho, hãy kiểm tra chúng trước khi tiếp tục.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1091"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Delete folder?</source>
         <translation>Xóa thư mục?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1067"/>
+        <location filename="../src/mainwindow.cpp" line="1070"/>
         <source>Delete password?</source>
         <translation>Xóa mật khẩu?</translation>
     </message>
@@ -2441,33 +2446,33 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished">Bạn có chắc chắn muốn xóa %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1148"/>
+        <location filename="../src/mainwindow.cpp" line="1151"/>
         <source>No password selected for OTP generation</source>
         <translation>Không có mật khẩu nào được chọn để tạo OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1284"/>
+        <location filename="../src/mainwindow.cpp" line="1287"/>
         <source>Profile changed to %1</source>
         <translation>Đã chuyển hồ sơ sang %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1442"/>
+        <location filename="../src/mainwindow.cpp" line="1445"/>
         <source>Open folder with file manager</source>
         <translation>Mở thư mục bằng trình quản lý tệp</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1457"/>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1460"/>
+        <location filename="../src/mainwindow.cpp" line="1541"/>
         <source>Rename folder</source>
         <translation>Đổi tên thư mục</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1460"/>
+        <location filename="../src/mainwindow.cpp" line="1463"/>
         <source>Rename password</source>
         <translation>Đổi tên mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1397"/>
+        <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
         <translation>Chia sẻ</translation>
     </message>
@@ -2484,85 +2489,85 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1068"/>
+        <location filename="../src/mainwindow.cpp" line="1071"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Bạn có chắc chắn muốn xóa %1 không?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1075"/>
+        <location filename="../src/mainwindow.cpp" line="1078"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Bạn có chắc chắn muốn xóa %1 cùng toàn bộ nội dung không?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1088"/>
+        <location filename="../src/mainwindow.cpp" line="1091"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Chú ý: có các tệp không mong đợi trong thư mục đã chọn, hãy kiểm tra chúng trước khi tiếp tục.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Re-encrypt all passwords</source>
         <translation>Mã hóa lại tất cả mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1412"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Export my public key...</source>
         <translation>Xuất khóa công khai của tôi...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1419"/>
         <source>Add recipient...</source>
         <translation>Thêm người nhận...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1421"/>
+        <location filename="../src/mainwindow.cpp" line="1424"/>
         <source>What is this?</source>
         <translation>Đây là gì?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1495"/>
+        <location filename="../src/mainwindow.cpp" line="1498"/>
         <source>New folder</source>
         <translation type="unfinished">Thư mục mới</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1496"/>
+        <location filename="../src/mainwindow.cpp" line="1499"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Thư mục mới:
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1571"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Rename file to: </source>
         <translation>Đổi tên tệp thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
-        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1707"/>
+        <location filename="../src/mainwindow.cpp" line="1726"/>
         <source>Export public key</source>
         <translation>Xuất khóa công khai</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1705"/>
+        <location filename="../src/mainwindow.cpp" line="1708"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1752"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Không phải thư mục của kho</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc junction. Nơi liên kết đó trỏ tới không thuộc kho mật khẩu và sẽ được giữ nguyên.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1761"/>
+        <location filename="../src/mainwindow.cpp" line="1764"/>
         <source>Sharing passwords with GPG</source>
         <translation>Chia sẻ mật khẩu với GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1765"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Chia sẻ mật khẩu với GPG&lt;/h3&gt;&lt;p&gt;Để chia sẻ mật khẩu với người dùng khác:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Xuất khóa công khai của bạn&lt;/b&gt; và gửi cho đồng đội&lt;/li&gt;&lt;li&gt;&lt;b&gt;Nhập khóa công khai của đồng đội&lt;/b&gt; vào kho khóa GPG của bạn&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mã hóa lại mật khẩu&lt;/b&gt; để tất cả người nhận có thể giải mã chúng&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Chỉ những người có khóa bí mật khớp mới có thể giải mã mật khẩu.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Mẹo:&lt;/b&gt; Sử dụng cùng một khóa GPG cho tất cả các thư mục được chia sẻ.&lt;/p&gt;&lt;p&gt;Xem FAQ để biết thêm chi tiết.&lt;/p&gt;</translation>
     </message>
@@ -2573,29 +2578,29 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1511"/>
-        <location filename="../src/mainwindow.cpp" line="1526"/>
-        <location filename="../src/mainwindow.cpp" line="1623"/>
+        <location filename="../src/mainwindow.cpp" line="1514"/>
+        <location filename="../src/mainwindow.cpp" line="1529"/>
+        <location filename="../src/mainwindow.cpp" line="1626"/>
         <source>Error</source>
         <translation>Lỗi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1512"/>
+        <location filename="../src/mainwindow.cpp" line="1515"/>
         <source>Failed to create folder: %1</source>
         <translation>Không thể tạo thư mục: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1527"/>
+        <location filename="../src/mainwindow.cpp" line="1530"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Không thể tạo tệp .gpg-id trong: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1541"/>
         <source>Rename folder to: </source>
         <translation>Đổi tên thư mục thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1571"/>
+        <location filename="../src/mainwindow.cpp" line="1574"/>
         <source>Rename file</source>
         <translation>Đổi tên tệp</translation>
     </message>
@@ -2608,23 +2613,23 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished">Đổi tên tệp thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1610"/>
+        <location filename="../src/mainwindow.cpp" line="1613"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Mục này chứa bí mật OTP, không phải mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1624"/>
+        <location filename="../src/mainwindow.cpp" line="1627"/>
         <source>Directory does not exist: %1</source>
         <translation>Thư mục không tồn tại: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1632"/>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1635"/>
+        <location filename="../src/mainwindow.cpp" line="1668"/>
         <source>Re-encrypt passwords</source>
         <translation>Mã hóa lại mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.cpp" line="1636"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2641,22 +2646,22 @@ Continue?</source>
 Tiếp tục?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1663"/>
+        <location filename="../src/mainwindow.cpp" line="1666"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Đang mã hóa lại mật khẩu...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
+        <location filename="../src/mainwindow.cpp" line="1667"/>
         <source>Cancel</source>
         <translation type="unfinished">Hủy</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Đang hủy mã hóa lại</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1683"/>
+        <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Đang mã hóa lại mật khẩu: %1 trên %2</translation>
     </message>
@@ -2669,7 +2674,7 @@ Tiếp tục?</translation>
         <translation type="vanished">&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1724"/>
+        <location filename="../src/mainwindow.cpp" line="1727"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2678,7 +2683,7 @@ Tiếp tục?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1726"/>
+        <location filename="../src/mainwindow.cpp" line="1729"/>
         <source>No output from gpg.</source>
         <translation>Không có đầu ra từ gpg.</translation>
     </message>
@@ -2781,47 +2786,47 @@ Tiếp tục?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="777"/>
+        <location filename="../src/pass.cpp" line="779"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc junction. Nơi liên kết đó trỏ tới không thuộc kho mật khẩu và sẽ được giữ nguyên.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="794"/>
+        <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 không nằm trong kho mật khẩu. Người nhận đã được thiết lập cho kho hoặc một thư mục bên trong.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="804"/>
+        <location filename="../src/pass.cpp" line="806"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Không thuộc kho</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="899"/>
+        <location filename="../src/pass.cpp" line="901"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Không thể đọc bản ghi thế hệ của các danh sách người nhận.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="980"/>
+        <location filename="../src/pass.cpp" line="982"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">Không thể đọc %1 như một danh sách người nhận (một file thông thường với tối đa %2), vì vậy không có ai được chọn sẵn. Hãy kiểm tra nó trước khi chọn người nhận ở đây: &quot;OK&quot; sẽ ghi đè lên danh sách hiện tại.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1001"/>
+        <location filename="../src/pass.cpp" line="1003"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Danh sách người nhận %1 bị thiếu hoặc không phải là tệp thông thường, nên không có gì được chọn sẵn: danh sách của thư mục cha không được ký cho thư mục này. Hãy tự chọn người nhận cho thư mục này; nhấn OK sẽ ghi và ký một danh sách mới.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1006"/>
+        <location filename="../src/pass.cpp" line="1008"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Không có gì được chọn sẵn: không thể xác định %2 có bị xóa hay không.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1021"/>
+        <location filename="../src/pass.cpp" line="1023"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Danh sách người nhận %1 không xác minh được với khóa ký, nên không có gì được chọn sẵn: việc lưu sẽ ký bất cứ nội dung nào đang có trong đó. Hãy tự chọn người nhận; nhấn OK sẽ ghi và ký một danh sách mới.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="945"/>
+        <location filename="../src/pass.cpp" line="947"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Không có gì được chọn sẵn: việc lưu sẽ ký bất cứ nội dung nào đang có trong đó. Hãy tự chọn người nhận.</translation>
     </message>
@@ -2831,7 +2836,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="339"/>
         <source>Password</source>
         <translation>Mật khẩu</translation>
     </message>
@@ -2919,87 +2924,87 @@ Tiếp tục?</translation>
         <translation type="unfinished">Mẫu trường từ tệp .templates của kho. Ctrl+T chuyển sang mẫu tiếp theo.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="77"/>
+        <location filename="../src/passworddialog.cpp" line="85"/>
         <source>New password</source>
         <translation type="unfinished">Mật khẩu mới</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="98"/>
+        <location filename="../src/passworddialog.cpp" line="106"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Đang giải mã…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="183"/>
+        <location filename="../src/passworddialog.cpp" line="191"/>
         <source>Saving…</source>
         <translation type="unfinished">Đang lưu…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="216"/>
+        <location filename="../src/passworddialog.cpp" line="224"/>
         <source>Still saving</source>
         <translation type="unfinished">Vẫn đang lưu</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="217"/>
+        <location filename="../src/passworddialog.cpp" line="225"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">Mục vẫn đang được lưu. Vẫn đóng hộp thoại? Nếu sau đó việc lưu thất bại, những gì bạn đã nhập sẽ bị mất.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="234"/>
+        <location filename="../src/passworddialog.cpp" line="242"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Chưa lưu: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="276"/>
+        <location filename="../src/passworddialog.cpp" line="284"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Hãy đặt tên cho mục này.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="280"/>
+        <location filename="../src/passworddialog.cpp" line="288"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Tên không được kết thúc bằng /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="289"/>
+        <location filename="../src/passworddialog.cpp" line="297"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Tên đó sẽ trỏ ra ngoài kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="293"/>
+        <location filename="../src/passworddialog.cpp" line="301"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một mục có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="297"/>
+        <location filename="../src/passworddialog.cpp" line="305"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 là một thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Không thể tạo thư mục %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="383"/>
+        <location filename="../src/passworddialog.cpp" line="392"/>
         <source>Remove field</source>
         <translation type="unfinished">Xóa trường</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="402"/>
+        <location filename="../src/passworddialog.cpp" line="411"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một trường có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="483"/>
+        <location filename="../src/passworddialog.cpp" line="497"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// hoặc bí mật base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="520"/>
+        <location filename="../src/passworddialog.cpp" line="534"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Bí mật OTP không hợp lệ</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="724"/>
+        <location filename="../src/passworddialog.cpp" line="743"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Cột này có %n dòng, quá nhiều để chỉnh sửa ở đây.</numerusform>
@@ -3334,7 +3339,7 @@ Tiếp tục?</translation>
         <translation type="unfinished">Liên kết %1 đã bị xóa và Git không còn theo dõi nó nữa, nhưng quá trình commit lại thất bại: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="473"/>
+        <location filename="../src/realpass.cpp" line="477"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Cần cấu hình tệp thực thi GPG để có thể tìm kiếm.</translation>
     </message>
@@ -3557,34 +3562,34 @@ Không thể mã hóa cho các mục [KHÔNG HỢP LỆ] và [HẾT HẠN]; các
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="942"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Không thể tạo tệp tạm bên cạnh %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="954"/>
-        <location filename="../src/util.cpp" line="1033"/>
+        <location filename="../src/util.cpp" line="984"/>
         <location filename="../src/util.cpp" line="1063"/>
+        <location filename="../src/util.cpp" line="1093"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Không thể ghi %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="969"/>
+        <location filename="../src/util.cpp" line="999"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Không thể thay thế %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="974"/>
+        <location filename="../src/util.cpp" line="1004"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 đã tồn tại.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="976"/>
+        <location filename="../src/util.cpp" line="1006"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Không thể ghi %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1020"/>
+        <location filename="../src/util.cpp" line="1050"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 đã bị thay thế bằng một tệp khác trong khi đang được ghi.</translation>
     </message>
@@ -3593,12 +3598,12 @@ Không thể mã hóa cho các mục [KHÔNG HỢP LỆ] và [HẾT HẠN]; các
         <translation type="obsolete">%1 đã bị thay thế bằng một liên kết trong khi đang được ghi.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1046"/>
+        <location filename="../src/util.cpp" line="1076"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Không thể đọc %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1056"/>
+        <location filename="../src/util.cpp" line="1086"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Không thể đọc %1: %2</translation>
     </message>
