@@ -216,12 +216,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Som standard</translation>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Återställ standardord: PIN-koder, kortkoder, nycklar, tokens och liknande.</translation>
+        <translation>Återställ standardord: PIN, kortkoder, nycklar, tokens, återställningskoder och liknande.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -516,7 +516,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">När lagringsplatsen inte har något eget Git-arkiv; använd istället det som finns i mappen ovanför. Detta är avstängt som standard – precis som i *pass* – för att förhindra att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
+        <translation>När lagringsplatsen inte har ett eget Git-arkiv används det som finns i en överliggande mapp. Funktionen är avstängd som standard – precis som i *pass* – vilket förhindrar att en lagringsplats inuti ett annat arkiv (till exempel för *dotfiles*) av misstag inkluderas i en commit eller push. Gäller endast inbyggd Git-funktionalitet: *pass* stannar alltid vid själva lagringsplatsen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ord, separerade med kommatecken. Ett fält räknas med om dess namn innehåller ett av dessa ord (som ett helt ord, oavsett skiftläge): &quot;nyckel&quot; döljer &quot;API nyckel&quot;, men inte &quot;tangentbordslayout&quot;. Det innebär dock en risk att för mycket döljs: även &quot;Publik nyckel&quot; och &quot;Lösenordsledtråd&quot; döljs – ta bort ett ord för att visa dem.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1515"/>
@@ -732,7 +732,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="497"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 använder samma nyckel för en annan lagring. En lista över mottagare som är signerad för en av dessa lagringar accepteras i den andra: använd en separat signeringsnyckel för varje lagring vars mottagare skiljer sig åt.</translation>
+        <translation>%1 signerar med samma nyckel för en annan lagring. En mottagarlista som har signerats för en av dessa lagringar godtas för de andra: använd en separat signeringsnyckel för varje lagring som har en annan uppsättning mottagare.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="525"/>
@@ -1344,7 +1344,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 finns inte inom lösenordsutrymmet, eller ett mappnamn på vägen innehåller en radbrytning eller något annat kontrolltecken, vilket en signerad lista inte kan registrera.</translation>
+        <translation>%1 finns inte i lösenordsutrymmet, eller så innehåller ett mappnamn på vägen en radbrytning eller ett annat kontrolltecken, vilket en signerad lista inte kan registrera.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -2002,12 +2002,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Ogiltig inmatning</translation>
+        <translation>Ogiltig inmatning</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Namnet och lösenfrasen får inte innehålla radbrytningar.</translation>
+        <translation>Namnet och lösenfrasen får inte innehålla radbrytningar.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2941,14 +2941,14 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparad, inte incheckat</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Inmatningen har sparats, men att spara den i Git misslyckades. Följande rapporterades:
+        <translation>Inmatningen har sparats i lösenordslagringen, men att spara den i Git misslyckades. Följande rapporterades:
 
 %1</translation>
     </message>
@@ -2960,7 +2960,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 finns inte i lösenordsutrymmet. Mottagare är inställda för utrymmet eller en mapp däri.</translation>
+        <translation>%1 finns inte inuti lösenordsutrymmet. Mottagare anges för lagringsplatsen eller en mapp i den.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="806"/>
@@ -3238,7 +3238,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Den konfigurerade GPG-hemma katalogen %1 finns inte.</translation>
+        <translation>Det konfigurerade GPG hem %1 existerar inte.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3479,7 +3479,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Kontrollerar mottagarelistorna under %1…</translation>
+        <translation>Kontrollerar mottagarlistorna under %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3505,7 +3505,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Länken %1 har tagits bort och Git spårar den inte längre, men commit-operationen misslyckades: %2</translation>
+        <translation>Länken %1 har tagits bort och git spårar den inte längre, men incheckningen misslyckades: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>
