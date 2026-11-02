@@ -435,7 +435,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Ενεργοποίηση αναζήτησης περιεχομένων</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -446,12 +446,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Όταν το πρόχειρο κοπύ είναι κενό, επαναφέρετε το περιεχόμενο που ήταν εκεί πριν την αντιγραφή, όπως κάνει το pass -c, εκτός αν κάτι άλλο αντιγραφεί στην ενδιάμεση φάση. Μόνο κείμενο: η μορφοποίηση δεν ανακτάται. Το κείμενο παραμένει στη μνήμη μέχρι τότε. Όπου το πρόχειρο κοπύ δεν μπορεί να διαβαστεί χωρίς εστίαση (σε ορισμένα Wayland desktops), αντί αυτού, γίνεται κενό.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Επαναφορά από το προηγούμενο πρόχειρο</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -472,17 +472,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Απόκρυψη πεδίων που περιέχουν ένα μυστικό, όχι μόνο του κωδικού πρόσβασης: ενός πεδίου όπου το όνομα περιέχει μία από αυτές τις λέξεις. Σβήσιμο: μόνο ο κωδικός πρόσβασης είναι κρυπτογραφημένος.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Προεπιλογή</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Επαναφέρετε τις προεπιλεγμένες λέξεις: κωδικούς PIN, κωδικούς καρτών, κλειδιά, tokens και τα λοιπά.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -511,7 +511,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Χρησιμοποιήστε ένα αποθετήριο Git σε έναν φάκελο πάνω από το σημείο αποθήκευσης</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -690,7 +690,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 υπογράφει με το ίδιο κλειδί για ένα άλλο κατάστημα. Μια λίστα παραλήπτων που έχει υπογραφεί για ένα από αυτά τα καταστήματα, γίνεται αποδεκτή στο άλλο: χρησιμοποιήστε ξεχωριστό κλειδί υπογραφής για κάθε κατάστημα, όπου οι παραλήπτες διαφέρουν.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1327,7 +1327,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">Το %1 δεν βρίσκεται στο αποθετήριο κωδικών πρόσβασης, ή το όνομα ενός φακέλου περιέχει μια απόσπαση γραμμής ή άλλο ειδικό χαρακτήρα, που ένα υπογεγραμμένο αρχείο δεν μπορεί να καταγράψει.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="396"/>
@@ -1589,7 +1589,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1135"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 είναι, ή βρίσκεται πίσω, ενός συμβολικού συνδέσμου ή διακλάδωσης μετά την εξαγωγή. Αυτό που δείχνει δεν αποτελεί μέρος του αποθετηρίου κωδικών πρόσβασης και αφήνεται ανέπαφο.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1204"/>
@@ -1798,7 +1798,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">Το μέγεθος του %1 είναι μεγαλύτερο από αυτό που επιτρέπεται για ένα αρχείο κλειδιού.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1952,12 +1952,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished">Μη έγκυρη είσοδος</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Το όνομα και η κωδική φράση δεν πρέπει να περιέχουν διακοπές γραμμών.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2029,7 +2029,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Αναζήτηση μέσα στο περιεχόμενο του κωδικού πρόσβασης</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2514,7 +2514,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… περισσότερες αντιστοιχίες σε αυτή την καταχώρηση</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -2828,16 +2828,14 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Αποθηκευμένο, όχι σταθεροποιημένο</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Η καταχώρηση αποθηκεύτηκε, αλλά η καταγραφή της στο Git απέτυχε. Αυτό που αναφέρθηκε:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2847,7 +2845,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">Το %1 δεν βρίσκεται στο αποθετήριο κωδικών πρόσβασης. Οι παραλήπτες έχουν ρυθμιστεί για το αποθετήριο ή έναν φάκελο μέσα σε αυτό.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -2862,7 +2860,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα αποστολέων (ένα απλό αρχείο με μέγιστο μέγεθος %2), επομένως κανένας δεν έχει επιλεγεί προκαταρκτικά. Ελέγξτε το πριν επιλέξετε αποστολείς εδώ: Το &quot;OK&quot; θα αντικαταστήσει το υπάρχον αρχείο με μια νέα λίστα.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3125,7 +3123,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="243"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Το ρυθμισμένο αρχείο GPG στο %1 δεν υπάρχει.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="265"/>
@@ -3366,7 +3364,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Έλεγχος των λιστών αποστολής υπό %1…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3392,7 +3390,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Ο σύνδεσμος %1 αφαιρέθηκε και το git δεν τον παρακολουθεί πλέον, αλλά η πραγματοποίηση του commit απέτυχε: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
