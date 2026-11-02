@@ -14,6 +14,7 @@
 #include "windowstatestore.h"
 #include <QClipboard>
 #include <QDir>
+#include <QEvent>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
@@ -428,6 +429,27 @@ auto ConfigDialog::signerKeys(const QString &signingKey,
     }
   }
   return keys;
+}
+
+void ConfigDialog::changeEvent(QEvent *event) {
+  QDialog::changeEvent(event);
+  if (event->type() != QEvent::ActivationChange) {
+    return;
+  }
+  // A key is imported somewhere else: a terminal, a key manager, or the
+  // key generator this dialog opens. Whatever keyring gpg uses, the dialog
+  // is in the background meanwhile, so a key gpg did not know is asked
+  // about again on return.
+  if (!isActiveWindow()) {
+    const auto forgotten = m_primaryOf.removeIf(
+        [](const std::pair<const QString &, QString &> &lookup) {
+          return lookup.second.isEmpty();
+        });
+    m_recheckSigners = m_recheckSigners || forgotten > 0;
+  } else if (m_recheckSigners) {
+    m_recheckSigners = false;
+    validate();
+  }
 }
 
 auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const

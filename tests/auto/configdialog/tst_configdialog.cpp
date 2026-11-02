@@ -176,6 +176,7 @@ private Q_SLOTS:
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
   void sharedSigningKeyWarnsWithoutBlocking();
+  void signerLookupSeesAKeyImportedMeanwhile();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
   void fieldLabelsHaveBuddies();
@@ -880,6 +881,99 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
       second.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
   QVERIFY(secondWarning != nullptr);
   QVERIFY2(secondWarning->isHidden(), qPrintable(secondWarning->text()));
+#endif
+}
+
+/**
+ * @brief A signing key gpg did not know is looked up again once the dialog
+ *        comes back from the background (a key imported meanwhile), and not
+ *        before: the subkey then signs as its primary, and the warning comes.
+ */
+void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
+#ifdef Q_OS_WIN
+  QSKIP("the stand-in gpg is a shell script");
+#else
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  const AppSettings saved = QtPassSettings::load();
+  const auto restoreGpg = qScopeGuard([&saved] {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = saved.gpgExecutable;
+    s.gpgHome = saved.gpgHome;
+    QtPassSettings::save(s);
+  });
+  const QString primary =
+      QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9");
+  const QString subkey =
+      QStringLiteral("FEDCBA9876543210FEDCBA980123456789ABCDEF");
+  const QByteArray listing =
+      "pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u::::\n"
+      "fpr:::::::::" +
+      primary.toLatin1() +
+      ":\n"
+      "sub:u:4096:1:0123456789ABCDEF:1774947438::::::s:\n"
+      "fpr:::::::::" +
+      subkey.toLatin1() + ":\n";
+  QTemporaryDir bin;
+  QTemporaryDir home;
+  QVERIFY(bin.isValid() && home.isValid());
+  const QString gpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
+  const QString runs = QDir(bin.path()).filePath(QStringLiteral("runs"));
+  // Knows the key once it is "imported"; counts every run.
+  QVERIFY(writeScript(gpg, "echo run >> '" + runs.toLocal8Bit() +
+                               "'\n[ -f \"$GNUPGHOME/imported\" ] || exit 2\n"
+                               "cat <<'LISTING'\n" +
+                               listing + "LISTING\n"));
+  const auto runCount = [&runs] {
+    QFile f(runs);
+    return f.open(QIODevice::ReadOnly) ? f.readAll().count('\n') : 0;
+  };
+  Profiles split;
+  Profile byPrimary;
+  byPrimary.path = QStringLiteral("/store/primary");
+  byPrimary.signingKey = primary;
+  split.insert(QStringLiteral("primary"), byPrimary);
+  Profile bySubkey;
+  bySubkey.path = QStringLiteral("/store/subkey");
+  bySubkey.signingKey = subkey;
+  split.insert(QStringLiteral("subkey"), bySubkey);
+  QtPassSettings::setProfiles(split);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("primary");
+    s.gpgExecutable = gpg;
+    s.gpgHome = home.path();
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *warning =
+      dialog.findChild<QLabel *>(QStringLiteral("profileSharedKeyWarning"));
+  QVERIFY(warning != nullptr);
+  QVERIFY2(warning->isHidden(), "gpg knows neither key yet");
+  const auto asked = runCount();
+  QVERIFY2(asked > 0, "the complete keys were looked up");
+  dialog.show();
+  dialog.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&dialog));
+  QCOMPARE(runCount(), asked);
+  auto *signingKey = child<QLineEdit>(dialog, "profileSigningKey");
+  emit signingKey->textEdited(signingKey->text());
+  QCOMPARE(runCount(), asked);
+
+  // The key is imported in another window.
+  QWidget elsewhere;
+  elsewhere.show();
+  elsewhere.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&elsewhere));
+  QVERIFY(QFile(QDir(home.path()).filePath(QStringLiteral("imported")))
+              .open(QIODevice::WriteOnly));
+  QCOMPARE(runCount(), asked);
+  dialog.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&dialog));
+  QVERIFY2(runCount() > asked, "asked again on return");
+  QVERIFY2(!warning->isHidden(), "the subkey signs as its primary key");
 #endif
 }
 
