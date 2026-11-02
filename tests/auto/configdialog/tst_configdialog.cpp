@@ -177,6 +177,7 @@ private Q_SLOTS:
   void okWaitsForValidProfiles();
   void sharedSigningKeyWarnsWithoutBlocking();
   void signerLookupSeesAKeyImportedMeanwhile();
+  void passBackendWarnsOfARepositoryAboveTheStore();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
   void fieldLabelsHaveBuddies();
@@ -974,6 +975,86 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
   QVERIFY(QTest::qWaitForWindowActive(&dialog));
   QVERIFY2(runCount() > asked, "asked again on return");
   QVERIFY2(!warning->isHidden(), "the subkey signs as its primary key");
+#endif
+}
+
+/**
+ * @brief With the pass backend, a store whose path holds a colon and that
+ *        has no repository of its own is named in a warning, with the
+ *        repository above it that pass would commit to: for the active store
+ *        and for a profile's. Not with native Git/GPG, and not for a plain
+ *        path.
+ */
+void tst_configdialog::passBackendWarnsOfARepositoryAboveTheStore() {
+#ifdef Q_OS_WIN
+  QSKIP("pass runs in WSL on Windows; there is no check");
+#else
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+  const AppSettings saved = QtPassSettings::load();
+  const auto restore = qScopeGuard([&saved] {
+    AppSettings s = QtPassSettings::load();
+    s.usePass = saved.usePass;
+    s.passStore = saved.passStore;
+    QtPassSettings::save(s);
+  });
+  QTemporaryDir home;
+  QVERIFY(home.isValid());
+  const QDir dir(home.path());
+  QVERIFY(dir.mkpath(QStringLiteral(".git")));
+  QVERIFY(dir.mkpath(QStringLiteral("a:b/store")));
+  QVERIFY(dir.mkpath(QStringLiteral("plain/store")));
+  QVERIFY(dir.mkpath(QStringLiteral("c:d/team")));
+  const QString climbing = dir.filePath(QStringLiteral("a:b/store"));
+  const QString plain = dir.filePath(QStringLiteral("plain/store"));
+  const QString team = dir.filePath(QStringLiteral("c:d/team"));
+  QtPassSettings::setProfiles({});
+  {
+    AppSettings s = QtPassSettings::load();
+    s.usePass = true;
+    s.passStore = climbing;
+    QtPassSettings::save(s);
+  }
+  ConfigDialog dialog(nullptr);
+  auto *warning = dialog.findChild<QLabel *>(QStringLiteral("passGitWarning"));
+  QVERIFY(warning != nullptr);
+  QVERIFY2(!warning->isHidden(), "the active store climbs");
+  QVERIFY2(warning->text().contains(QDir::toNativeSeparators(climbing)),
+           qPrintable(warning->text()));
+  QVERIFY2(warning->text().contains(QDir::toNativeSeparators(
+               QFileInfo(home.path()).canonicalFilePath())),
+           qPrintable(warning->text()));
+
+  child<QRadioButton>(dialog, "radioButtonNative")->click();
+  QVERIFY2(warning->isHidden(), "native Git keeps to the store itself");
+  child<QRadioButton>(dialog, "radioButtonPass")->click();
+  QVERIFY(!warning->isHidden());
+
+  child<QLineEdit>(dialog, "storePath")->setText(plain);
+  QVERIFY2(warning->isHidden(), "a plain path keeps pass to the store");
+
+  // A profile's store counts as well.
+  Profiles profiles;
+  Profile profile;
+  profile.path = team;
+  profiles.insert(QStringLiteral("team"), profile);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passStore = plain;
+    QtPassSettings::save(s);
+  }
+  ConfigDialog withProfile(nullptr);
+  auto *profileWarning =
+      withProfile.findChild<QLabel *>(QStringLiteral("passGitWarning"));
+  QVERIFY(profileWarning != nullptr);
+  QVERIFY2(!profileWarning->isHidden(), "the team profile's store climbs");
+  QVERIFY2(profileWarning->text().contains(QDir::toNativeSeparators(team)),
+           qPrintable(profileWarning->text()));
+  QVERIFY2(!profileWarning->text().contains(QDir::toNativeSeparators(plain)),
+           qPrintable(profileWarning->text()));
 #endif
 }
 

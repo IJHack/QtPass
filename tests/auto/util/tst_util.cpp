@@ -314,6 +314,7 @@ private Q_SLOTS:
   void mkpathForStoreFollowsTheStoreUmask();
   void gitDoesNotClimbAboveTheStore();
   void gitStaysInTheStoreWhenItsParentHoldsTheSeparator();
+  void repositoryPassClimbsToMatchesGit();
   void gitPinIsJudgedWhenGitRuns();
   void gitPinHonoursSafeDirectory();
   void readRegularFileIsBoundedAndRegular();
@@ -2780,6 +2781,92 @@ void tst_util::gitPinHonoursSafeDirectory() {
  *        (#2076). Without one git finds none, not the one above; with one
  *        it finds that. An ordinary path keeps the ceiling alone.
  */
+/**
+ * @brief Util::repositoryPassClimbsTo() names the repository git finds from
+ *        the store under pass's own ceiling ("$PREFIX/.."), and nothing
+ *        where git finds none or the store's own: a colon above the store
+ *        or in its own name, a plain path, a store with its own `.git`, and
+ *        a store that does not exist yet.
+ */
+void tst_util::repositoryPassClimbsToMatchesGit() {
+#ifdef Q_OS_WIN
+  QSKIP("pass runs in WSL on Windows; there is no check");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("git not found");
+  }
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  const QDir dir(scratch.path());
+  const QString home =
+      QFileInfo(dir.filePath(QStringLiteral("home"))).absoluteFilePath();
+  QVERIFY(dir.mkpath(QStringLiteral("home")));
+  const QProcessEnvironment env = [] {
+    QProcessEnvironment e = QProcessEnvironment::systemEnvironment();
+    e.insert(QStringLiteral("GIT_CONFIG_NOSYSTEM"), QStringLiteral("1"));
+    e.insert(QStringLiteral("GIT_CONFIG_GLOBAL"), QStringLiteral("/dev/null"));
+    e.remove(QStringLiteral("GIT_DIR"));
+    e.remove(QStringLiteral("GIT_WORK_TREE"));
+    return e;
+  }();
+  const auto gitInit = [&git, &env](const QString &where) {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(git, {QStringLiteral("init"), QStringLiteral("-q"), where});
+    return p.waitForFinished(10000) && p.exitCode() == 0;
+  };
+  QVERIFY(gitInit(home));
+  const QString real = QFileInfo(home).canonicalFilePath();
+
+  // What pass's git would use, run as pass runs it.
+  const auto passGit = [&git, &env](const QString &store) {
+    QProcessEnvironment withCeiling = env;
+    withCeiling.insert(QStringLiteral("GIT_CEILING_DIRECTORIES"),
+                       store + QStringLiteral("/.."));
+    QProcess p;
+    p.setProcessEnvironment(withCeiling);
+    p.start(git, {QStringLiteral("-C"), store, QStringLiteral("rev-parse"),
+                  QStringLiteral("--show-toplevel")});
+    p.waitForFinished(10000);
+    return p.exitCode() == 0
+               ? QString::fromUtf8(p.readAllStandardOutput()).trimmed()
+               : QString();
+  };
+
+  for (const QString &name :
+       {QStringLiteral("a:b/store"), QStringLiteral("x/pass:store")}) {
+    const QString store = QDir(home).filePath(name);
+    QVERIFY(QDir().mkpath(store));
+    QCOMPARE(passGit(store), real);
+    QCOMPARE(Util::repositoryPassClimbsTo(store), real);
+  }
+
+  const QString plain = QDir(home).filePath(QStringLiteral("plain/store"));
+  QVERIFY(QDir().mkpath(plain));
+  QVERIFY(passGit(plain).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(plain).isEmpty());
+
+  const QString own = QDir(home).filePath(QStringLiteral("c:d/own"));
+  QVERIFY(QDir().mkpath(own));
+  QVERIFY(gitInit(own));
+  QCOMPARE(passGit(own), QFileInfo(own).canonicalFilePath());
+  QVERIFY2(Util::repositoryPassClimbsTo(own).isEmpty(),
+           "the store's own repository is found first");
+
+  // Not created yet: the folders above it still count.
+  QCOMPARE(Util::repositoryPassClimbsTo(
+               QDir(home).filePath(QStringLiteral("e:f/missing/store"))),
+           real);
+
+  // Nothing above at all.
+  const QString lone = dir.filePath(QStringLiteral("g:h/store"));
+  QVERIFY(QDir().mkpath(lone));
+  QVERIFY(passGit(lone).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(lone).isEmpty());
+#endif
+}
+
 void tst_util::gitStaysInTheStoreWhenItsParentHoldsTheSeparator() {
   const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
   if (git.isEmpty()) {

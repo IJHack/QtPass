@@ -128,6 +128,15 @@ ConfigDialog::ConfigDialog(QWidget *parent)
                                              &role);
     ui->profileFormLayout->insertRow(row + 1, QString(), m_sharedKeyWarning);
   }
+  // Under the pass settings: a store pass would commit outside of.
+  m_passGitWarning = new QLabel(this);
+  m_passGitWarning->setObjectName(QStringLiteral("passGitWarning"));
+  m_passGitWarning->setTextFormat(Qt::PlainText);
+  m_passGitWarning->setWordWrap(true);
+  m_passGitWarning->hide();
+  ui->groupBoxPass->layout()->addWidget(m_passGitWarning);
+  connect(ui->storePath, &QLineEdit::textChanged, this,
+          [this] { updatePassGitWarning(); });
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
 
   ui->label->setText(ui->label->text() + VERSION);
@@ -495,6 +504,35 @@ void ConfigDialog::validate() {
     status = status && problems.none();
   }
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
+  updatePassGitWarning();
+}
+
+void ConfigDialog::updatePassGitWarning() {
+  // Built after the first applySettings(); setProfiles() fills it then.
+  if (m_passGitWarning == nullptr) {
+    return;
+  }
+  QStringList warnings;
+  if (ui->radioButtonPass->isChecked()) {
+    QStringList stores{ui->storePath->text()};
+    for (const ProfileEntry &entry : std::as_const(m_entries)) {
+      stores << entry.profile.path;
+    }
+    stores.removeDuplicates();
+    for (const QString &store : std::as_const(stores)) {
+      const QString repository = Util::repositoryPassClimbsTo(store);
+      if (!repository.isEmpty()) {
+        warnings << tr("pass commits changes in %1 to the Git repository in "
+                       "%2: with a colon in the store's path, pass cannot "
+                       "keep Git to the store. Run \"git init\" in the store, "
+                       "or use native Git/GPG.")
+                        .arg(QDir::toNativeSeparators(store),
+                             QDir::toNativeSeparators(repository));
+      }
+    }
+  }
+  m_passGitWarning->setText(warnings.join(QStringLiteral("\n\n")));
+  m_passGitWarning->setVisible(!warnings.isEmpty());
 }
 
 void ConfigDialog::warnAboutSshAuthSockOverride() {
@@ -587,6 +625,7 @@ void ConfigDialog::setGroupBoxState() {
   bool state = ui->radioButtonPass->isChecked();
   ui->groupBoxNative->setEnabled(!state);
   ui->groupBoxPass->setEnabled(state);
+  updatePassGitWarning();
   on_checkBoxUseGit_clicked();
   if (state) {
     ui->spinBoxPasswordLength->setEnabled(false);

@@ -158,6 +158,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   The `pass` backend's Git steps are `pass`'s own, which sets the same
   ceiling and has the same limit
   ([#2076](https://github.com/IJHack/QtPass/issues/2076)).
+- `pass` cannot be kept to the store that way: with a `:` anywhere in the
+  store's path and no repository of its own, it adds and commits every
+  change to a repository in a folder above it, also with QtPass's Git
+  off. Settings now says so under the `pass` options, for the active
+  store and each profile's, with the repository it would use
+  ([#2094](https://github.com/IJHack/QtPass/issues/2094)).
 - Re-encrypting with the `pass` backend active used the recipients and
   signing key of the profile QtPass had last re-encrypted under, not the
   current one: the native backend that does it was not refreshed on a

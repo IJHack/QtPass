@@ -138,6 +138,36 @@ auto Util::gitCeiling(const QString &store) -> QString {
   return QFileInfo(path).absolutePath();
 }
 
+auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
+#ifdef Q_OS_WIN
+  Q_UNUSED(store);
+  return {};
+#else
+  if (!store.contains(QLatin1Char(':'))) {
+    return {};
+  }
+  // git walks up from the real folder, so the real path is the one to walk.
+  QString path = QFileInfo(store).canonicalFilePath();
+  if (path.isEmpty()) {
+    path = QDir::cleanPath(QDir(store).absolutePath());
+  }
+  // The store's own repository comes first; only without one does git look
+  // further up.
+  // By name, not QDir::cdUp(): a store that does not exist yet still has
+  // folders above it.
+  for (QString dir = path;;) {
+    if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral(".git")))) {
+      return dir == path ? QString() : dir;
+    }
+    const QString up = QFileInfo(dir).absolutePath();
+    if (up == dir) {
+      return {};
+    }
+    dir = up;
+  }
+#endif
+}
+
 namespace {
 /// setGitOwnerForTests(): who owns "the user's own" store, when set.
 std::optional<uint> s_gitOwnerForTests;
