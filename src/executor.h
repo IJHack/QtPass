@@ -205,8 +205,10 @@ public:
    * A run given @p timeoutMs ends the same way once that time has passed,
    * start included, so it returns within the timeout plus twice the grace
    * even when a kill()ed child cannot exit yet (uninterruptible sleep on a
-   * hung mount). QProcess's destructor still waits for such a child, for up
-   * to 30 s.
+   * hung mount). Not timed: QProcess::start() itself, which can block, for
+   * example opening a FIFO a redirected channel names (no caller redirects
+   * one), and QProcess's destructor, which still waits for such a child,
+   * for up to 30 s.
    * @param process Process object to run the command on.
    * @param app Executable path.
    * @param args Command arguments.
