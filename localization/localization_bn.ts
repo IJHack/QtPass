@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">ক্লিপবোর্ড পুনরুদ্ধার করা হয়েছে</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">আগের ক্লিপবোর্ডটি পুনরুদ্ধার করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,17 +497,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">পাসওয়ার্ডের পাশাপাশি, গোপনীয় তথ্য ধারণকারী ক্ষেত্রগুলোও লুকানো: এমন একটি ক্ষেত্র যার নাম এই শব্দগুলোর মধ্যে যেকোনো একটি ধারণ করে। বন্ধ: শুধুমাত্র পাসওয়ার্ডটি লুকানো হবে।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">ডিফল্ট</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">ডিফল্ট শব্দগুলো পুনরুদ্ধার করুন: পিন, কার্ড কোড, কী, টোকেন এবং অন্যান্য।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="547"/>
@@ -536,7 +536,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1004"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">একটি স্টোর ফোল্ডারের উপরে থাকা কোনো ফোল্ডারে একটি গিট রিপোজিটরি ব্যবহার করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1087"/>
@@ -752,7 +752,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="466"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 অন্য স্টোরের জন্য একই কী ব্যবহার করে সাইন করে। একটি স্টোরের সাইন করা তালিকা অন্যটিতে গ্রহণ করা হয়: প্রতিটি স্টোরের প্রাপকদের ভিন্ন হলে, আলাদা সাইনিং কী ব্যবহার করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="488"/>
@@ -1440,7 +1440,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="609"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (এটি একটি সাধারণ ফাইল, যার আকার সর্বোচ্চ %2)।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="623"/>
@@ -1794,7 +1794,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">একটি কী ফাইলের আকারের থেকে %1 এর আকার অনেক বড়।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1921,7 +1921,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">নাম এবং পাসফ্রাজ-এ কোনো লাইন ভাঙা থাকা উচিত না।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2044,7 +2044,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">পাসওয়ার্ডের মধ্যে অনুসন্ধান করুন</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2469,7 +2469,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="940"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… এই এন্ট্রিতে আরও মিল খুঁজে পাওয়া যায়</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="955"/>
@@ -2769,16 +2769,14 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">সংরক্ষিত, কিন্তু কমিট করা হয়নি।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">এই তথ্যটি সংরক্ষণ করা হয়েছে, কিন্তু এটিকে গিট-এ যুক্ত করতে ব্যর্থ। যে সমস্যাটি রিপোর্ট করা হয়েছে:
-
-%1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="777"/>
@@ -2788,7 +2786,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="794"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">পাসওয়ার্ড সংরক্ষণের মধ্যে %1 অন্তর্ভুক্ত নয়। প্রাপকদের জন্য স্টোর অথবা এর মধ্যে থাকা ফোল্ডার সেট করা আছে।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="804"/>
@@ -2803,7 +2801,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="980"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 কে প্রাপক তালিকা হিসেবে পড়া সম্ভব নয় (এটি একটি সাধারণ ফাইল, যার আকার %2 এর বেশি নয়), তাই এখানে কোনো তালিকা আগে থেকে নির্বাচিত করা হয়নি। এখানে প্রাপকদের নির্বাচন করার আগে এটি পরীক্ষা করুন: &quot;ঠিক আছে&quot; এই অপশনটি একটি নতুন তালিকা তৈরি করে সেটি প্রতিস্থাপন করবে।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1001"/>
@@ -3307,7 +3305,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">%1-এর অধীনে প্রাপকের তালিকা পরীক্ষা করা হচ্ছে…</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3333,7 +3331,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">লিঙ্ক %1টি সরানো হয়েছে এবং গিট এখন আর এটি ট্র্যাক করে না, কিন্তু কমিট ব্যর্থ হয়েছে: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="473"/>
