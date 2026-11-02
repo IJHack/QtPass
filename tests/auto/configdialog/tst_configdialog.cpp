@@ -176,7 +176,6 @@ private Q_SLOTS:
   void profileFormEditsTheSelectedProfile();
   void okWaitsForValidProfiles();
   void sharedSigningKeyWarnsWithoutBlocking();
-  void signerLookupSeesAKeyImportedMeanwhile_data();
   void signerLookupSeesAKeyImportedMeanwhile();
   void signingKeyMustBeAFullFingerprint();
   void activeProfileFollowsRenameAndDeletion();
@@ -886,38 +885,14 @@ void tst_configdialog::sharedSigningKeyWarnsWithoutBlocking() {
 }
 
 /**
- * @brief The keyring files an import can change: the keybox, the legacy
- *        keyring, and keyboxd's database and its write-ahead log.
- */
-void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile_data() {
-  QTest::addColumn<QString>("conf");
-  QTest::addColumn<QString>("keyring");
-  QTest::newRow("keybox") << QString() << QStringLiteral("pubring.kbx");
-  QTest::newRow("legacy") << QString() << QStringLiteral("pubring.gpg");
-  QTest::newRow("keyboxd") << QString()
-                           << QStringLiteral("public-keys.d/pubring.db");
-  QTest::newRow("keyboxd wal")
-      << QString() << QStringLiteral("public-keys.d/pubring.db-wal");
-  // %1 is the GnuPG home.
-  QTest::newRow("primary-keyring")
-      << QStringLiteral("# imports go here\nprimary-keyring  mine.gpg \n")
-      << QStringLiteral("mine.gpg");
-  QTest::newRow("keyring path")
-      << QStringLiteral("keyring \"%1/rings/other.gpg\"\n")
-      << QStringLiteral("rings/other.gpg");
-}
-
-/**
- * @brief A signing key gpg did not know is looked up again once the keyring
- *        changes (a key imported while the dialog is open), and not before:
- *        the subkey then signs as its primary, and the warning comes.
+ * @brief A signing key gpg did not know is looked up again once the dialog
+ *        comes back from the background (a key imported meanwhile), and not
+ *        before: the subkey then signs as its primary, and the warning comes.
  */
 void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
 #ifdef Q_OS_WIN
   QSKIP("the stand-in gpg is a shell script");
 #else
-  QFETCH(QString, conf);
-  QFETCH(QString, keyring);
   struct ProfileRestorer {
     Profiles saved;
     ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
@@ -944,12 +919,6 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
   QTemporaryDir bin;
   QTemporaryDir home;
   QVERIFY(bin.isValid() && home.isValid());
-  if (!conf.isEmpty()) {
-    QFile file(QDir(home.path()).filePath(QStringLiteral("gpg.conf")));
-    QVERIFY(file.open(QIODevice::WriteOnly));
-    file.write(
-        QString(conf).replace(QStringLiteral("%1"), home.path()).toUtf8());
-  }
   const QString gpg = QDir(bin.path()).filePath(QStringLiteral("gpg"));
   const QString runs = QDir(bin.path()).filePath(QStringLiteral("runs"));
   // Knows the key once it is "imported"; counts every run.
@@ -985,22 +954,25 @@ void tst_configdialog::signerLookupSeesAKeyImportedMeanwhile() {
   QVERIFY2(warning->isHidden(), "gpg knows neither key yet");
   const auto asked = runCount();
   QVERIFY2(asked > 0, "the complete keys were looked up");
+  dialog.show();
+  dialog.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&dialog));
+  QCOMPARE(runCount(), asked);
   auto *signingKey = child<QLineEdit>(dialog, "profileSigningKey");
   emit signingKey->textEdited(signingKey->text());
   QCOMPARE(runCount(), asked);
 
-  // The key is imported: the keyring file changes.
+  // The key is imported in another window.
+  QWidget elsewhere;
+  elsewhere.show();
+  elsewhere.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&elsewhere));
   QVERIFY(QFile(QDir(home.path()).filePath(QStringLiteral("imported")))
               .open(QIODevice::WriteOnly));
-  {
-    const QString changed = QDir(home.path()).filePath(keyring);
-    QVERIFY(QDir().mkpath(QFileInfo(changed).absolutePath()));
-    QFile file(changed);
-    QVERIFY(file.open(QIODevice::WriteOnly));
-    file.write("imported");
-  }
-  emit signingKey->textEdited(signingKey->text());
-  QVERIFY2(runCount() > asked, "asked again after the keyring changed");
+  QCOMPARE(runCount(), asked);
+  dialog.activateWindow();
+  QVERIFY(QTest::qWaitForWindowActive(&dialog));
+  QVERIFY2(runCount() > asked, "asked again on return");
   QVERIFY2(!warning->isHidden(), "the subkey signs as its primary key");
 #endif
 }

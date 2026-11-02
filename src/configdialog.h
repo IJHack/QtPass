@@ -116,6 +116,13 @@ public:
   auto getPasswordConfiguration() -> PasswordConfiguration;
 
 protected:
+  /**
+   * @brief Forget the signing keys gpg did not know while the dialog is in
+   * the background, and check them again once it is back in front.
+   * @param event The change; only activation changes matter here.
+   */
+  void changeEvent(QEvent *event) override;
+
 private slots:
   void on_accepted();
   void on_autodetectButton_clicked();
@@ -180,16 +187,12 @@ private:
   QString m_nameTip, m_pathTip, m_keyTip;
   /// Below the signing key: the profiles that share it, if any.
   QLabel *m_sharedKeyWarning = nullptr;
-  /// What gpg said about one signing-key token.
-  struct KeyLookup {
-    QString primary; ///< Its primary fingerprint; empty: gpg does not know it.
-    /// For an unknown key, the keyring files as they were then:
-    /// asked again once a key may have been imported.
-    QString keyring;
-  };
-  /// Per gpg, GPG home and signing-key token, so each key is looked up
-  /// once, not on every keystroke.
-  mutable QHash<QString, KeyLookup> m_primaryOf;
+  /// Primary fingerprint per gpg and signing-key token (empty: gpg does
+  /// not know it), so each key is looked up once, not on every keystroke.
+  mutable QHash<QString, QString> m_primaryOf;
+  /// An unknown key was forgotten in the background: validate() again on
+  /// return.
+  bool m_recheckSigners = false;
   /// The settings naming the GPG home those lookups run in, read on first
   /// use.
   mutable std::optional<AppSettings> m_gpgSettings;

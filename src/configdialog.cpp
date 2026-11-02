@@ -13,8 +13,8 @@
 #include "util.h"
 #include "windowstatestore.h"
 #include <QClipboard>
-#include <QDateTime>
 #include <QDir>
+#include <QEvent>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QFormLayout>
@@ -386,73 +386,6 @@ auto ConfigDialog::signingStores() const -> SigningStores {
   return resolved;
 }
 
-namespace {
-/**
- * @brief The public keyring in @p env's GPG home as it is now: size and
- * time of each keyring file (pubring.kbx, pubring.gpg, keyboxd's
- * database, any keyring gpg.conf names), so a key imported meanwhile is
- * noticed.
- * @param env The environment gpg runs in.
- * @return A string that changes when the keyring does.
- */
-auto keyringStamp(const QProcessEnvironment &env) -> QString {
-  QString home = env.value(QStringLiteral("GNUPGHOME"));
-  if (home.isEmpty()) {
-#ifdef Q_OS_WIN
-    home =
-        QDir(qEnvironmentVariable("APPDATA")).filePath(QStringLiteral("gnupg"));
-#else
-    home = QDir::home().filePath(QStringLiteral(".gnupg"));
-#endif
-  }
-  const QDir dir(home);
-  QStringList files;
-  // keyboxd (GnuPG 2.3 and later, the default in a new home since 2.4.1)
-  // keeps keys in an SQLite database, written to its WAL first.
-  for (const QString &name :
-       {QStringLiteral("pubring.kbx"), QStringLiteral("pubring.gpg"),
-        QStringLiteral("public-keys.d/pubring.db"),
-        QStringLiteral("public-keys.d/pubring.db-wal")}) {
-    files.append(dir.filePath(name));
-  }
-  // gpg.conf can name other keyrings, and primary-keyring is where an
-  // import goes. Like gpg: "~/" is the home directory, a bare name is in
-  // the GnuPG home, any other path is taken as it is.
-  QFile conf(dir.filePath(QStringLiteral("gpg.conf")));
-  if (conf.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    static const QRegularExpression option(
-        QStringLiteral("^\\s*(?:primary-)?keyring\\s+(.+?)\\s*$"));
-    while (!conf.atEnd()) {
-      const auto match = option.match(QString::fromUtf8(conf.readLine()));
-      if (!match.hasMatch()) {
-        continue;
-      }
-      QString name = match.captured(1);
-      if (name.size() > 1 && name.startsWith(QLatin1Char('"')) &&
-          name.endsWith(QLatin1Char('"'))) {
-        name = name.mid(1, name.size() - 2);
-      }
-      if (name.startsWith(QLatin1String("~/"))) {
-        files.append(QDir::home().filePath(name.mid(2)));
-      } else if (name.contains(QLatin1Char('/')) ||
-                 name.contains(QLatin1Char('\\'))) {
-        files.append(name);
-      } else {
-        files.append(dir.filePath(name));
-      }
-    }
-  }
-  QString stamp;
-  for (const QString &file : std::as_const(files)) {
-    const QFileInfo info(file);
-    stamp += QString::number(info.size()) + QLatin1Char(':') +
-             QString::number(info.lastModified().toMSecsSinceEpoch()) +
-             QLatin1Char(';');
-  }
-  return stamp;
-}
-} // namespace
-
 auto ConfigDialog::signerKeys(const QString &signingKey,
                               const QProcessEnvironment &env) const
     -> QSet<QString> {
@@ -475,16 +408,7 @@ auto ConfigDialog::signerKeys(const QString &signingKey,
                              env.value(QStringLiteral("GNUPGHOME")) +
                              QLatin1Char('\n') + key;
     auto cached = m_primaryOf.constFind(cacheKey);
-    // An unknown key is asked about again once the keyring has changed (a
-    // key imported while the dialog is open); one stat per check, not one
-    // gpg run.
-    if (cached != m_primaryOf.cend() && cached->primary.isEmpty() &&
-        cached->keyring != keyringStamp(env)) {
-      cached = m_primaryOf.cend();
-    }
     if (cached == m_primaryOf.cend()) {
-      // Before gpg runs: a key imported while it does is looked up again.
-      const QString keyring = keyringStamp(env);
       QString out;
       // Blocking, once per key: no trustdb check, which a large keyring
       // would make slow.
@@ -497,17 +421,35 @@ auto ConfigDialog::signerKeys(const QString &signingKey,
            QStringLiteral("--with-subkey-fingerprint"),
            QStringLiteral("--list-keys"), QStringLiteral("--"), key},
           &out);
-      const QString primary =
-          rc == 0 ? primaryFingerprintOf(out, key) : QString();
       cached = m_primaryOf.insert(
-          cacheKey,
-          KeyLookup{primary, primary.isEmpty() ? keyring : QString()});
+          cacheKey, rc == 0 ? primaryFingerprintOf(out, key) : QString());
     }
-    if (!cached->primary.isEmpty()) {
-      keys.insert(cached->primary);
+    if (!cached->isEmpty()) {
+      keys.insert(*cached);
     }
   }
   return keys;
+}
+
+void ConfigDialog::changeEvent(QEvent *event) {
+  QDialog::changeEvent(event);
+  if (event->type() != QEvent::ActivationChange) {
+    return;
+  }
+  // A key is imported somewhere else: a terminal, a key manager, or the
+  // key generator this dialog opens. Whatever keyring gpg uses, the dialog
+  // is in the background meanwhile, so a key gpg did not know is asked
+  // about again on return.
+  if (!isActiveWindow()) {
+    const auto forgotten = m_primaryOf.removeIf(
+        [](const std::pair<const QString &, QString &> &lookup) {
+          return lookup.second.isEmpty();
+        });
+    m_recheckSigners = m_recheckSigners || forgotten > 0;
+  } else if (m_recheckSigners) {
+    m_recheckSigners = false;
+    validate();
+  }
 }
 
 auto ConfigDialog::sharingTheKey(int row, const SigningStores &resolved) const
