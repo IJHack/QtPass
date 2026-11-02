@@ -146,12 +146,12 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   if (!store.contains(QLatin1Char(':'))) {
     return {};
   }
-  // git walks up from the real folder, so the real path is the one to walk:
-  // from the store, or for a store that does not exist yet from its nearest
-  // existing folder (nothing below that can hold a repository). By the raw
-  // string: QDir and QFileInfo clean a path by name, and "link/.." is the
-  // parent of the link's target, not the folder the link is in. On macOS
-  // the temporary folder is under /var, a link to /private/var.
+  // git walks up from the real folder, so the real path is the one to walk,
+  // and for a store that does not exist yet the one it will have: its
+  // nearest existing folder resolved, the rest appended. By the raw string:
+  // QDir and QFileInfo clean a path by name, and "link/.." is the parent
+  // of the link's target, not the folder the link is in. On macOS the
+  // temporary folder is under /var, a link to /private/var.
   // Absolute as git means it, a leading "/" (Qt would take ":name" for a
   // resource path).
   QString path =
@@ -159,30 +159,41 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   while (path.size() > 1 && path.endsWith(u'/')) {
     path.chop(1);
   }
-  bool exists = true;
+  QString rest;
   while (!QFileInfo::exists(path)) {
-    exists = false;
     const qsizetype slash = path.lastIndexOf(u'/');
     if (slash < 0) {
       return {};
     }
+    const QString name = path.mid(slash + 1);
+    rest = rest.isEmpty() ? name : name + u'/' + rest;
     path = slash == 0 ? QStringLiteral("/") : path.left(slash);
   }
   const QString real = QFileInfo(path).canonicalFilePath();
-  const QString start = real.isEmpty() ? QDir::cleanPath(path) : real;
-  // The pieces of pass's ceiling as git takes them (setup.c): relative
-  // ones are dropped, the rest resolved, one that cannot be resolved is
-  // dropped. A piece can still be a real ceiling: "/repo/:vault/.." holds
-  // "/repo/". (git only cleans the pieces after an empty one, "::"; that
-  // differs only with a link in such a piece.)
+  QString start = real.isEmpty() ? QDir::cleanPath(path) : real;
+  if (!rest.isEmpty()) {
+    start = QDir::cleanPath(start + u'/' + rest);
+  }
+  // The pieces of pass's ceiling as git takes them (setup.c,
+  // canonicalize_ceiling_entry): relative ones are dropped, the rest
+  // resolved, one that cannot be resolved is dropped; after an empty piece
+  // ("::") they are kept exactly as written. A piece can still be a real
+  // ceiling: "/repo/:vault/.." holds "/repo/".
   QString ceiling;
+  bool afterEmpty = false;
   for (const QString &piece :
        (store + QStringLiteral("/..")).split(QLatin1Char(':'))) {
+    if (piece.isEmpty()) {
+      afterEmpty = true;
+      continue;
+    }
     if (!piece.startsWith(u'/')) {
       continue;
     }
-    const QString entry = QFileInfo(piece).canonicalFilePath();
-    // git stops below the longest entry the start folder lies under.
+    const QString entry =
+        afterEmpty ? piece : QFileInfo(piece).canonicalFilePath();
+    // git stops below the longest entry the store lies under
+    // (longest_ancestor_length: "/" is above everything).
     const QString under = entry == u'/' ? entry : entry + u'/';
     if (!entry.isEmpty() && start.startsWith(under) &&
         entry.size() > ceiling.size()) {
@@ -194,7 +205,7 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
   // path holds no link or "..".
   for (QString dir = start;;) {
     if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral(".git")))) {
-      return exists && dir == start ? QString() : dir;
+      return dir == start ? QString() : dir;
     }
     const QString up = QFileInfo(dir).absolutePath();
     if (up == dir || up == ceiling) {

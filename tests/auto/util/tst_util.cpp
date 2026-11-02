@@ -2854,6 +2854,20 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
   QVERIFY(QDir().mkpath(vault));
   QVERIFY(passGit(vault).isEmpty());
   QVERIFY(Util::repositoryPassClimbsTo(vault).isEmpty());
+  // Not created yet, its nearest folder is that ceiling itself: once pass
+  // creates it, git stops there too.
+  const QString newVault = home + QStringLiteral("/:new");
+  QVERIFY(Util::repositoryPassClimbsTo(newVault).isEmpty());
+  QVERIFY(QDir().mkpath(newVault));
+  QVERIFY(passGit(newVault).isEmpty());
+  // After "::" git keeps a piece as written: "<home>/x/.." is no ceiling
+  // then, although it resolves to the folder holding the repository.
+  QVERIFY(QDir(home).mkpath(QStringLiteral("x")));
+  const QString afterEmpty =
+      home + QStringLiteral("/q::") + home + QStringLiteral("/x");
+  QVERIFY(QDir().mkpath(afterEmpty));
+  QCOMPARE(passGit(afterEmpty), real);
+  QCOMPARE(Util::repositoryPassClimbsTo(afterEmpty), real);
   // Folders named ":" and ":x": the pieces are "home/" and "/", and the
   // longer one stops git.
   const QString twoCeilings = home + QStringLiteral("/:/:x");
