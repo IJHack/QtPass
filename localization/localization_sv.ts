@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Urklipp återställt</translation>
+        <translation>Urklipp återställt</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -185,12 +185,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">När urklippet rensas, återställ det som fanns där innan kopian, precis som pass -c gör, om inget annat kopierats under tiden. Text endast: formatering återställs inte. Denna text förblir i minnet tills dess. Där urklippet inte kan läsas utan fokus (vissa Wayland-skärmar), rensas det istället.</translation>
+        <translation>När urklipp är rensat, återställer det innehåll som fanns där före kopieringen, på samma sätt som `pass -c` gör – förutsatt att inget annat har kopierats under tiden. Endast text: formateringen återställs inte. Texten ligger kvar i minnet fram till dess. I miljöer där urklippshanteraren inte kan läsas utan fokus (vilket gäller vissa Wayland-skrivbordsmiljöer) rensas det istället.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Återställ från tidigare urklipp</translation>
+        <translation>Återställ det föregående urklippet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -206,12 +206,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Dölj även andra hemligheter:</translation>
+        <translation>Dölj även andra hemligheter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Dölj fält som innehåller hemligheter, inte bara lösenordet: ett fält vars namn innehåller något av dessa ord. Av: endast lösenordet är dolt.</translation>
+        <translation>Dölj även fält som innehåller en hemlighet – inte bara lösenordet: fält vars namn innehåller något av dessa ord. Av: endast lösenordet döljs.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
