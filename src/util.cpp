@@ -200,12 +200,67 @@ auto Util::repositoryPassClimbsTo(const QString &store) -> QString {
       ceiling = entry;
     }
   }
+  // What git takes for a repository (setup.c, is_git_directory()): HEAD
+  // naming a ref or an object, objects/ and refs/. An empty or broken .git
+  // is passed by, as git passes it by.
+  const auto isGitDirectory = [](const QString &candidate) {
+    const QDir dir(candidate);
+    if (!QFileInfo(dir.filePath(QStringLiteral("objects"))).isDir() ||
+        !QFileInfo(dir.filePath(QStringLiteral("refs"))).isDir()) {
+      return false;
+    }
+    QFile head(dir.filePath(QStringLiteral("HEAD")));
+    if (!head.open(QIODevice::ReadOnly)) {
+      return false;
+    }
+    static const QRegularExpression valid(
+        QStringLiteral("^(?:ref: refs/|[0-9a-f]{40}\\s*$|[0-9a-f]{64}\\s*$)"));
+    return valid.match(QString::fromUtf8(head.read(256))).hasMatch();
+  };
+  // At each folder, as git: a .git folder that is a repository, or a .git
+  // file naming one ("gitdir: ..."), is the repository. Any other .git file
+  // stops git with an error, and pass then commits nothing; a .git folder
+  // that is no repository is passed by.
+  enum class Found { Nothing, Repository, Refused };
+  const auto lookIn = [&isGitDirectory](const QString &dir) {
+    const QString dotGit = QDir(dir).filePath(QStringLiteral(".git"));
+    const QFileInfo info(dotGit);
+    if (info.isDir()) {
+      return isGitDirectory(dotGit) ? Found::Repository : Found::Nothing;
+    }
+    if (!info.exists()) {
+      return Found::Nothing;
+    }
+    QFile file(dotGit);
+    if (!file.open(QIODevice::ReadOnly)) {
+      return Found::Refused;
+    }
+    const QString line = QString::fromUtf8(file.readLine(4096)).trimmed();
+    if (!line.startsWith(QLatin1String("gitdir: "))) {
+      return Found::Refused;
+    }
+    const QString target = line.mid(8);
+    return isGitDirectory(target.startsWith(u'/') ? target
+                                                  : QDir(dir).filePath(target))
+               ? Found::Repository
+               : Found::Refused;
+  };
   // The store's own repository comes first; only without one does git look
   // further up, and never into the ceiling. By name from here: the real
   // path holds no link or "..".
   for (QString dir = start;;) {
-    if (QFileInfo::exists(QDir(dir).filePath(QStringLiteral(".git")))) {
+    switch (lookIn(dir)) {
+    case Found::Repository:
       return dir == start ? QString() : dir;
+    case Found::Refused:
+      return {};
+    case Found::Nothing:
+      break;
+    }
+    // A bare repository: git stops there, and pass, finding no work tree,
+    // commits nothing.
+    if (isGitDirectory(dir)) {
+      return {};
     }
     const QString up = QFileInfo(dir).absolutePath();
     if (up == dir || up == ceiling) {

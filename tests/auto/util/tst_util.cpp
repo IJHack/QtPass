@@ -2915,6 +2915,89 @@ void tst_util::repositoryPassClimbsToMatchesGit() {
   QVERIFY2(Util::repositoryPassClimbsTo(own).isEmpty(),
            "the store's own repository is found first");
 
+  // An empty .git is no repository: git passes it by.
+  const QString emptyDotGit = QDir(home).filePath(QStringLiteral("e:g/store"));
+  QVERIFY(QDir(emptyDotGit).mkpath(QStringLiteral(".git")));
+  QCOMPARE(passGit(emptyDotGit), real);
+  QCOMPARE(Util::repositoryPassClimbsTo(emptyDotGit), real);
+  // Nor is a .git folder missing objects/, or with a HEAD naming nothing.
+  const auto halfRepository = [&](const QString &name, bool objects,
+                                  const QByteArray &head) {
+    const QString store = QDir(home).filePath(name);
+    const QDir dotGit(QDir(store).filePath(QStringLiteral(".git")));
+    if (!dotGit.mkpath(QStringLiteral("refs")) ||
+        (objects && !dotGit.mkpath(QStringLiteral("objects")))) {
+      return false;
+    }
+    QFile file(dotGit.filePath(QStringLiteral("HEAD")));
+    if (!file.open(QIODevice::WriteOnly)) {
+      return false;
+    }
+    file.write(head);
+    file.close();
+    return passGit(store) == real &&
+           Util::repositoryPassClimbsTo(store) == real;
+  };
+  QVERIFY(halfRepository(QStringLiteral("m:o/store"), false,
+                         "ref: refs/heads/main\n"));
+  QVERIFY(halfRepository(QStringLiteral("m:p/store"), true, "garbage\n"));
+  // A .git file naming a repository elsewhere is the store's own, a
+  // relative one as well; one naming nothing is passed by.
+  const QString linkedRepo = dir.filePath(QStringLiteral("linked-repo"));
+  QVERIFY(gitInit(linkedRepo));
+  for (const QString &gitdir :
+       {QFileInfo(linkedRepo).canonicalFilePath() + QStringLiteral("/.git"),
+        QStringLiteral("../../../linked-repo/.git")}) {
+    const QString withFile = QDir(home).filePath(QStringLiteral("f:h/store"));
+    QVERIFY(QDir().mkpath(withFile));
+    QFile dotGit(QDir(withFile).filePath(QStringLiteral(".git")));
+    QVERIFY(dotGit.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    dotGit.write("gitdir: " + gitdir.toUtf8() + "\n");
+    dotGit.close();
+    QCOMPARE(passGit(withFile), QFileInfo(withFile).canonicalFilePath());
+    QVERIFY2(Util::repositoryPassClimbsTo(withFile).isEmpty(),
+             qPrintable(gitdir));
+  }
+  // A relative .git file above the store is read from its own folder: pass
+  // commits to the work tree there.
+  const QString aboveFile = QDir(home).filePath(QStringLiteral("rel:x"));
+  QVERIFY(QDir(aboveFile).mkpath(QStringLiteral("store")));
+  {
+    QFile dotGit(QDir(aboveFile).filePath(QStringLiteral(".git")));
+    QVERIFY(dotGit.open(QIODevice::WriteOnly));
+    dotGit.write("gitdir: ../../linked-repo/.git\n");
+  }
+  const QString underFile = QDir(aboveFile).filePath(QStringLiteral("store"));
+  const QString aboveReal = QFileInfo(aboveFile).canonicalFilePath();
+  QCOMPARE(passGit(underFile), aboveReal);
+  QCOMPARE(Util::repositoryPassClimbsTo(underFile), aboveReal);
+  // Any other .git file stops git with an error: pass commits nothing.
+  for (const QByteArray &content : {QByteArray("gitdir: nowhere\n"),
+                                    QByteArray("garbage\n"), QByteArray()}) {
+    const QString brokenFile = QDir(home).filePath(QStringLiteral("i:k/store"));
+    QVERIFY(QDir().mkpath(brokenFile));
+    QFile dotGit(QDir(brokenFile).filePath(QStringLiteral(".git")));
+    QVERIFY(dotGit.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    dotGit.write(content);
+    dotGit.close();
+    QVERIFY(passGit(brokenFile).isEmpty());
+    QVERIFY2(Util::repositoryPassClimbsTo(brokenFile).isEmpty(),
+             content.constData());
+  }
+  // Inside a bare repository git stops, and pass finds no work tree.
+  const QString bare = QDir(home).filePath(QStringLiteral("bare:r"));
+  {
+    QProcess p;
+    p.setProcessEnvironment(env);
+    p.start(git, {QStringLiteral("init"), QStringLiteral("-q"),
+                  QStringLiteral("--bare"), bare});
+    QVERIFY(p.waitForFinished(10000) && p.exitCode() == 0);
+  }
+  const QString inBare = QDir(bare).filePath(QStringLiteral("store"));
+  QVERIFY(QDir().mkpath(inBare));
+  QVERIFY(passGit(inBare).isEmpty());
+  QVERIFY(Util::repositoryPassClimbsTo(inBare).isEmpty());
+
   // Not created yet: the folders above it still count, by their real path
   // also when the store is spelled through a link (on macOS the temporary
   // folder is under /var, a link to /private/var).

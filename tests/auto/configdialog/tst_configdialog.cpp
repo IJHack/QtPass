@@ -1003,7 +1003,14 @@ void tst_configdialog::passBackendWarnsOfARepositoryAboveTheStore() {
   QTemporaryDir home;
   QVERIFY(home.isValid());
   const QDir dir(home.path());
-  QVERIFY(dir.mkpath(QStringLiteral(".git")));
+  // A repository as git sees one: HEAD, objects/ and refs/.
+  QVERIFY(dir.mkpath(QStringLiteral(".git/objects")));
+  QVERIFY(dir.mkpath(QStringLiteral(".git/refs")));
+  {
+    QFile head(dir.filePath(QStringLiteral(".git/HEAD")));
+    QVERIFY(head.open(QIODevice::WriteOnly));
+    head.write("ref: refs/heads/main\n");
+  }
   QVERIFY(dir.mkpath(QStringLiteral("a:b/store")));
   QVERIFY(dir.mkpath(QStringLiteral("plain/store")));
   QVERIFY(dir.mkpath(QStringLiteral("c:d/team")));
