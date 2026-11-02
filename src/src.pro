@@ -119,6 +119,7 @@ SOURCES   += mainwindow.cpp \
              clipboardmanager.cpp \
              secrettextbrowser.cpp \
              secretlineedit.cpp \
+             secretplaintextedit.cpp \
              processoutputpanel.cpp \
              qtpass.cpp \
              qtpasslogging.cpp \
@@ -175,6 +176,7 @@ HEADERS   += mainwindow.h \
              clipboardmanager.h \
              secrettextbrowser.h \
              secretlineedit.h \
+             secretplaintextedit.h \
              processoutputpanel.h \
              profile.h \
              qtpass.h \

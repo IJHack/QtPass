@@ -17,6 +17,7 @@ class Pass;
 class FieldLabel;
 class QAction;
 class QLineEdit;
+class SecretLineEdit;
 class QShortcut;
 class QWidget;
 
@@ -151,6 +152,14 @@ public:
   void setAvailableTemplates(const QHash<QString, QStringList> &templates,
                              const QString &defaultTemplate);
 
+signals:
+  /**
+   * @brief Text was copied out of the password, a field or the body, marked
+   * as a secret: for ClipboardManager::trackCopied(), so autoclear clears it.
+   * @param text The text copied.
+   */
+  void copied(const QString &text);
+
 public slots:
   /**
    * @brief Cycle to next template (Ctrl+T).
@@ -200,6 +209,8 @@ private slots:
   void onShowError(int exitCode, const QString &err);
 
 private:
+  /// Reports what is copied out of @p line through copied().
+  void reportCopies(SecretLineEdit *line);
   /**
    * @brief Locate the field that holds the one-time password configuration.
    * @return The matching QLineEdit, or nullptr when the entry has no OTP field.

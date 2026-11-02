@@ -25,6 +25,15 @@ class QMenu;
  * plain text never gets there, not even for a moment. Each copy emits copied()
  * so the text is cleared with the rest when the autoclear timer runs. Dragging
  * is off, as QLineEdit has it by default.
+ *
+ * In an editable field (the password editor) Ctrl+X, Cut, and the keys
+ * that delete to the end of the line or the whole line copy the same way
+ * before they delete. Password mode would turn off undo, make Ctrl+arrow
+ * jump to the ends and change the input method hints there, so the base
+ * handlers run as they are and the marked selection replaces QLineEdit's
+ * plain one at once, in the same event: X11 and Wayland hand selection data
+ * over only when another program asks for it, which reaches QtPass through
+ * its event loop, after the replacement.
  */
 class SecretLineEdit : public QLineEdit {
   Q_OBJECT
@@ -37,7 +46,8 @@ public:
   explicit SecretLineEdit(QWidget *parent = nullptr);
 
   /**
-   * @brief The standard context menu, with Copy going through the secret copy.
+   * @brief The standard context menu, with Copy and Cut going through the
+   * secret copy.
    * @return A new menu; the caller owns it.
    */
   [[nodiscard]] auto createSecretContextMenu() -> QMenu *;
@@ -51,9 +61,9 @@ signals:
 
 protected:
   /**
-   * @brief Ctrl+C copies with the hints; any other key is handled without
-   * QLineEdit's plain-text copy to the primary selection, which then gets
-   * the marked selection.
+   * @brief Ctrl+C copies with the hints, Ctrl+X as well before it deletes;
+   * after any other key the primary selection gets the marked selection, not
+   * QLineEdit's plain-text copy.
    * @param event The key event.
    */
   void keyPressEvent(QKeyEvent *event) override;
@@ -73,6 +83,7 @@ protected:
 
 private:
   void copySelection(QClipboard::Mode mode);
+  void cutSelection();
   void withoutPlainSelectionCopy(const std::function<void()> &handler);
   void publishSelection();
 };

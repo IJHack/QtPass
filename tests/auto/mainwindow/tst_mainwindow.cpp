@@ -446,6 +446,7 @@ private Q_SLOTS:
   void editRequestIsIgnoredWhileEditIsDisabled();
   void editPullsFirstWhenAutoPullIsOn();
   void doubleClickEditsAnEntryButNotAFolder();
+  void aCopyOutOfTheEditorIsAutocleared();
   void pullAndPushRunGitInTheStore();
   void grepModeChangesTheSearchBox();
   void grepFindsContentAndNavigatesToTheEntry();
@@ -2745,6 +2746,42 @@ void tst_mainwindow::doubleClickEditsAnEntryButNotAFolder() {
   QVERIFY2(shown.count() == 1 || shown.wait(5000),
            "the dialog's decrypt must have been asked for");
   QCOMPARE(shown.first().at(1).toString(), QStringLiteral("dbl-entry"));
+#endif
+}
+
+/**
+ * @brief A copy made in the edit dialog is tracked like one from the
+ *        display: autoclear clears it after the dialog has closed.
+ */
+void tst_mainwindow::aCopyOutOfTheEditorIsAutocleared() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  ClipboardManager *clipboard = armAutoclear(m_window.data());
+  QVERIFY(clipboard != nullptr);
+  QVERIFY(selectEntry(m_window.data(), m_storeDir.path(),
+                      QStringLiteral("copy-entry")));
+  QClipboard *clip = QApplication::clipboard();
+  bool seen = false;
+  ModalDriver driver([&](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      seen = true;
+      clip->setText(QStringLiteral("pin: 1234"));
+      emit dialog->copied(QStringLiteral("pin: 1234"));
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_doubleClicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QVERIFY(seen);
+  QCOMPARE(clip->text(), QStringLiteral("pin: 1234"));
+  QTRY_VERIFY_WITH_TIMEOUT(clip->text() != QStringLiteral("pin: 1234"), 3000);
 #endif
 }
 

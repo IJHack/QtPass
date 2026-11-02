@@ -506,6 +506,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - The same for a hidden password shown with the eye button: copied out of
   its field it carries the hints and is cleared by autoclear, where it went
   out as plain text before
+- And in the password editor: what is copied or cut out of the password,
+  the fields or the notes (Ctrl+C, Ctrl+X, the context menu, or the X11
+  selection) carries the hints and is cleared by autoclear
 - With the `pass` backend in WSL, the signing key reaches `pass`, so it
   checks `.gpg-id.sig` there as well; see the upgrade notes
 

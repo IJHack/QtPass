@@ -1024,6 +1024,9 @@ auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
 void MainWindow::setPassword(const QString &file, bool isNew) {
   const AppSettings s = QtPassSettings::load();
   PasswordDialog d(QtPassSettings::getPass(), s, file, isNew, this);
+  // A copy out of the editor is autocleared like one from the display.
+  connect(&d, &PasswordDialog::copied, &m_qtPass->clipboard(),
+          &ClipboardManager::trackCopied);
 
   if (isNew) {
     const QString storePath = s.passStore;
