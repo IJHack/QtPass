@@ -1386,28 +1386,29 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
     return frames;
   };
   const QList<QFrame *> before = fieldFrames();
-  QVERIFY2(!before.isEmpty(), "displayFields() must create a field frame");
+  QVERIFY2(before.size() >= 2, "a password and a url frame");
   // QPointer: the panel deletes its frames when it is cleared.
-  const QPointer<QFrame> frame = before.first();
-  // Every field frame carries @p mid, and the one captured above is
-  // still there (restyled, not replaced); otherwise the reason.
-  const auto problem = [&](const QColor &mid) -> QString {
-    QStringList sheets;
-    bool all = true;
-    for (QFrame *candidate : fieldFrames()) {
-      sheets << candidate->styleSheet();
-      all = all && candidate->styleSheet().contains(mid.name());
+  QList<QPointer<QFrame>> frames;
+  for (QFrame *candidate : before) {
+    frames << candidate;
+  }
+  // Every frame on screen before the change is still there (restyled, not
+  // replaced or dropped) and carries @p mid; otherwise the reason.
+  const auto problem = [&frames](const QColor &mid) -> QString {
+    QStringList wrong;
+    for (qsizetype i = 0; i < frames.size(); ++i) {
+      if (frames.at(i).isNull()) {
+        wrong << QStringLiteral("frame %1 deleted").arg(i);
+      } else if (!frames.at(i)->styleSheet().contains(mid.name())) {
+        wrong << QStringLiteral("frame %1: \"%2\"")
+                     .arg(i)
+                     .arg(frames.at(i)->styleSheet());
+      }
     }
-    if (all && !sheets.isEmpty() && !frame.isNull()) {
-      return {};
-    }
-    return QStringLiteral("not every field frame took %1. first frame: %2; "
-                          "field frames now: %3 [%4]")
-        .arg(mid.name(), frame.isNull() ? QStringLiteral("deleted")
-                                        : QStringLiteral("alive, \"") +
-                                              frame->styleSheet() + u'"')
-        .arg(sheets.size())
-        .arg(sheets.join(QStringLiteral(" | ")));
+    return wrong.isEmpty()
+               ? QString()
+               : QStringLiteral("not every field frame took %1: %2")
+                     .arg(mid.name(), wrong.join(QStringLiteral("; ")));
   };
 
   // A desktop theme switch: the application palette. Qt applies it to the
