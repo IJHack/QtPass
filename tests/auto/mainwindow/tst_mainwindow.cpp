@@ -1364,9 +1364,6 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
  * the application palette changes while an entry is displayed.
  */
 void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
-  const QPalette original = QApplication::palette();
-  auto restore =
-      qScopeGuard([&original] { QApplication::setPalette(original); });
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
 
@@ -1375,40 +1372,50 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
   panel->displayFields(QStringLiteral("secret"),
                        NamedValues{{"url", "https://example.org"}},
                        QtPassSettings::load());
-  // findChild<QFrame*>() would also match QMainWindow internals; take the
-  // frame that actually carries the panel border stylesheet.
-  QFrame *frame = nullptr;
-  for (QFrame *candidate : m_window->findChildren<QFrame *>()) {
-    if (candidate->styleSheet().contains(QStringLiteral("border-radius"))) {
-      frame = candidate;
-      break;
-    }
-  }
-  QVERIFY2(frame != nullptr, "displayFields() must create a field frame");
-
-  QPalette changed = original;
-  const QColor mid(0x12, 0x34, 0x56);
-  changed.setColor(QPalette::Mid, mid);
-  QApplication::setPalette(changed);
-
-  // PaletteChange reaches the window through the event loop, and on some
-  // platforms (Windows, seen on CI) not within a single processEvents(); the
-  // frame may also have been rebuilt by then. Wait for any field frame to
-  // carry the new colour rather than the one pointer to carry it at once.
-  const auto frameWithColour = [this, &mid]() -> QFrame * {
+  // The field frames: those carrying the panel's border stylesheet.
+  const auto fieldFrames = [this] {
+    QList<QFrame *> frames;
     for (QFrame *candidate : m_window->findChildren<QFrame *>()) {
-      if (candidate->styleSheet().contains(mid.name())) {
-        return candidate;
+      if (candidate->styleSheet().contains(QStringLiteral("border-radius"))) {
+        frames << candidate;
       }
     }
-    return nullptr;
+    return frames;
   };
-  QTRY_VERIFY2_WITH_TIMEOUT(
-      frameWithColour() != nullptr,
-      qPrintable(QStringLiteral("no field frame took the palette's mid "
-                                "colour; first frame has: ") +
-                 frame->styleSheet()),
-      3000);
+  const QList<QFrame *> before = fieldFrames();
+  QVERIFY2(!before.isEmpty(), "displayFields() must create a field frame");
+  // QPointer: the panel deletes its frames when it is cleared.
+  const QPointer<QFrame> frame = before.first();
+
+  // On the window, not the application: QWidget::setPalette() sends the
+  // window its PaletteChange before it returns, on every platform. A desktop
+  // theme switch reaches the same changeEvent() through QApplication, but
+  // that delivery is Qt's and goes through the event loop (on Windows not
+  // within one processEvents()); waiting for it left time for something to
+  // clear the panel, and the test failed on Windows CI now and then (#1866,
+  // #1869, #2119) with the frame gone.
+  QPalette changed = m_window->palette();
+  const QColor mid(0x12, 0x34, 0x56);
+  changed.setColor(QPalette::Mid, mid);
+  m_window->setPalette(changed);
+
+  QStringList sheets;
+  bool coloured = false;
+  for (QFrame *candidate : fieldFrames()) {
+    sheets << candidate->styleSheet();
+    coloured = coloured || candidate->styleSheet().contains(mid.name());
+  }
+  QVERIFY2(coloured,
+           qPrintable(QStringLiteral("no field frame took the window's mid "
+                                     "colour. first frame: %1; field frames "
+                                     "now: %2 [%3]")
+                          .arg(frame.isNull() ? QStringLiteral("deleted")
+                                              : QStringLiteral("alive, \"") +
+                                                    frame->styleSheet() + u'"')
+                          .arg(sheets.size())
+                          .arg(sheets.join(QStringLiteral(" | ")))));
+  QVERIFY2(!frame.isNull() && frame->styleSheet().contains(mid.name()),
+           "the frame on screen is restyled, not replaced");
 }
 
 /**
