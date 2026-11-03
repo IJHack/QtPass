@@ -1364,6 +1364,9 @@ void tst_mainwindow::textBrowserFollowsRuntimePaletteChange() {
  * the application palette changes while an entry is displayed.
  */
 void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
+  const QPalette original = QApplication::palette();
+  const auto restore =
+      qScopeGuard([&original] { QApplication::setPalette(original); });
   m_window->show();
   QVERIFY(QTest::qWaitForWindowExposed(m_window.data()));
 
@@ -1386,36 +1389,50 @@ void tst_mainwindow::fieldFrameBorderFollowsRuntimePaletteChange() {
   QVERIFY2(!before.isEmpty(), "displayFields() must create a field frame");
   // QPointer: the panel deletes its frames when it is cleared.
   const QPointer<QFrame> frame = before.first();
+  // Every field frame carries @p mid, and the one captured above is
+  // still there (restyled, not replaced); otherwise the reason.
+  const auto problem = [&](const QColor &mid) -> QString {
+    QStringList sheets;
+    bool all = true;
+    for (QFrame *candidate : fieldFrames()) {
+      sheets << candidate->styleSheet();
+      all = all && candidate->styleSheet().contains(mid.name());
+    }
+    if (all && !sheets.isEmpty() && !frame.isNull()) {
+      return {};
+    }
+    return QStringLiteral("not every field frame took %1. first frame: %2; "
+                          "field frames now: %3 [%4]")
+        .arg(mid.name(), frame.isNull() ? QStringLiteral("deleted")
+                                        : QStringLiteral("alive, \"") +
+                                              frame->styleSheet() + u'"')
+        .arg(sheets.size())
+        .arg(sheets.join(QStringLiteral(" | ")));
+  };
 
-  // On the window, not the application: QWidget::setPalette() sends the
-  // window its PaletteChange before it returns, on every platform. A desktop
-  // theme switch reaches the same changeEvent() through QApplication, but
-  // that delivery is Qt's and goes through the event loop (on Windows not
-  // within one processEvents()); waiting for it left time for something to
-  // clear the panel, and the test failed on Windows CI now and then (#1866,
-  // #1869, #2119) with the frame gone.
-  QPalette changed = m_window->palette();
-  const QColor mid(0x12, 0x34, 0x56);
-  changed.setColor(QPalette::Mid, mid);
-  m_window->setPalette(changed);
+  // A desktop theme switch: the application palette. Qt applies it to the
+  // child widgets at once but posts the top-level window's
+  // ApplicationPaletteChange; delivering just those posted events, rather
+  // than spinning the event loop, gets the window its PaletteChange with
+  // nothing else run meanwhile. Waiting on the event loop left time for
+  // something to clear the panel, and the test failed on Windows CI now and
+  // then (#1866, #1869, #2119) with the frame gone.
+  QPalette changed = original;
+  const QColor appMid(0x12, 0x34, 0x56);
+  changed.setColor(QPalette::Mid, appMid);
+  QApplication::setPalette(changed);
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::ApplicationPaletteChange);
+  QString why = problem(appMid);
+  QVERIFY2(why.isEmpty(), qPrintable(why));
 
-  QStringList sheets;
-  bool coloured = false;
-  for (QFrame *candidate : fieldFrames()) {
-    sheets << candidate->styleSheet();
-    coloured = coloured || candidate->styleSheet().contains(mid.name());
-  }
-  QVERIFY2(coloured,
-           qPrintable(QStringLiteral("no field frame took the window's mid "
-                                     "colour. first frame: %1; field frames "
-                                     "now: %2 [%3]")
-                          .arg(frame.isNull() ? QStringLiteral("deleted")
-                                              : QStringLiteral("alive, \"") +
-                                                    frame->styleSheet() + u'"')
-                          .arg(sheets.size())
-                          .arg(sheets.join(QStringLiteral(" | ")))));
-  QVERIFY2(!frame.isNull() && frame->styleSheet().contains(mid.name()),
-           "the frame on screen is restyled, not replaced");
+  // A palette set on the window itself, delivered before setPalette()
+  // returns.
+  QPalette own = m_window->palette();
+  const QColor windowMid(0x65, 0x43, 0x21);
+  own.setColor(QPalette::Mid, windowMid);
+  m_window->setPalette(own);
+  why = problem(windowMid);
+  QVERIFY2(why.isEmpty(), qPrintable(why));
 }
 
 /**
