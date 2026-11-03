@@ -737,7 +737,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="525"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation>pass checkar in ändringar i %1 i Git-arkivet i %2: eftersom lagringsplatsens sökväg innehåller ett kolon kan pass inte hantera Git-arkivet. Kör ”git init” i lagringsplatsen, eller använd Git/GPG direkt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="548"/>
