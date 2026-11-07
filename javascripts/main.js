@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.4-1";
+      script.src = "/javascripts/unlock.js?v=1.8.4-2";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -249,8 +249,30 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.closest && event.target.closest("input, textarea")) {
       return;
     }
-    typed = (typed + event.key.toLowerCase()).slice(-7);
-    if (typed !== "hunter2" || document.querySelector(".hunter2")) {
+    if (document.querySelector(".admin")) {
+      return;
+    }
+    typed = (typed + event.key).slice(-9);
+    // Welkom01, Welcome02 and the rest of the whiteboard log you in, see
+    // javascripts/admin.js.
+    var office = /(?:welkom|welcome)\d\d$/i.exec(typed);
+    if (office) {
+      if (window.qtpassAdmin) {
+        window.qtpassAdmin(office[0]);
+        return;
+      }
+      var script = document.createElement("script");
+      script.src = "/javascripts/admin.js?v=1.8.4-2";
+      script.onload = function () {
+        window.qtpassAdmin(office[0]);
+      };
+      document.head.appendChild(script);
+      return;
+    }
+    if (
+      typed.slice(-7).toLowerCase() !== "hunter2" ||
+      document.querySelector(".hunter2")
+    ) {
       return;
     }
     var toast = document.createElement("p");

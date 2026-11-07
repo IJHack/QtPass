@@ -1,0 +1,271 @@
+/* The fake admin panel and its password audit (javascripts/admin.js). One
+   visual world, on purpose: a CMS from 2003, whatever the page's theme. */
+.admin {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #c9d3de;
+  color: #1a2430;
+  font:
+    14px/1.45 Tahoma,
+    Verdana,
+    "DejaVu Sans",
+    sans-serif;
+}
+.admin::backdrop {
+  background: #c9d3de;
+}
+.admin strong,
+.admin b,
+.admin em,
+.admin span {
+  color: inherit;
+}
+.admin h2 {
+  margin: 0 0 0.75rem;
+  border: 0;
+  color: #123c66;
+  font:
+    700 20px/1.2 Tahoma,
+    Verdana,
+    "DejaVu Sans",
+    sans-serif;
+}
+.admin p {
+  margin: 0.6rem 0;
+  color: inherit;
+  font-size: 14px;
+}
+.admin button {
+  padding: 0.3rem 0.9rem;
+  border: 2px outset #e8edf3;
+  border-radius: 0;
+  background: #dfe5ec;
+  color: #1a2430;
+  font: inherit;
+  cursor: pointer;
+}
+.admin button:active {
+  border-style: inset;
+}
+.admin button:focus-visible {
+  outline: 2px dotted #123c66;
+  outline-offset: 1px;
+}
+.admin table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+.admin th,
+.admin td {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #93a3b5;
+  color: #1a2430;
+  background: transparent;
+  text-align: left;
+}
+.admin th {
+  background: #123c66;
+  color: #fff;
+}
+.admin pre {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.8rem;
+  overflow: auto;
+  border: 2px inset #e8edf3;
+  background: #0d1218;
+  color: #74e0a8;
+  font:
+    13px/1.4 ui-monospace,
+    "SFMono-Regular",
+    Menlo,
+    Consolas,
+    monospace;
+  white-space: pre-wrap;
+}
+.admin .admin-log {
+  min-height: 16rem;
+}
+
+.admin-login {
+  display: grid;
+  gap: 0.3rem;
+  width: min(22rem, calc(100vw - 2rem));
+  margin: 18vh auto 0;
+  padding: 1.25rem 1.5rem;
+  border: 2px outset #e8edf3;
+  background: #dfe5ec;
+}
+.admin-login label {
+  margin-top: 0.4rem;
+  font-weight: 700;
+}
+.admin-field {
+  display: block;
+  min-height: 1.9rem;
+  padding: 0.2rem 0.4rem;
+  border: 2px inset #e8edf3;
+  background: #fff;
+}
+.admin-login button {
+  justify-self: start;
+  margin-top: 0.8rem;
+}
+.admin .admin-status {
+  min-height: 1.4rem;
+  color: #123c66;
+}
+
+.admin-panel {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+.admin-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(90deg, #123c66, #3a7bbf);
+  color: #fff;
+}
+.admin .admin-bar strong {
+  color: #fff;
+  font-size: 16px;
+}
+.admin-body {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  min-height: 0;
+}
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: #b2c0cf;
+}
+.admin-nav button {
+  text-align: left;
+}
+.admin-nav button.on {
+  border-style: inset;
+  background: #c9d3de;
+  font-weight: 700;
+}
+.admin-main {
+  max-width: 54rem;
+  padding: 1rem 1.25rem;
+  overflow: auto;
+}
+.admin-foot {
+  padding: 0.35rem 1rem;
+  background: #b2c0cf;
+  color: #1a2430;
+  font-size: 12px;
+}
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+.admin-stat {
+  display: grid;
+  padding: 0.5rem 0.7rem;
+  border: 2px outset #e8edf3;
+  background: #dfe5ec;
+}
+.admin-stat b {
+  font-size: 22px;
+}
+.admin-stat em {
+  font-size: 12px;
+}
+.admin-alert {
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border: 2px solid #b3261e;
+  background: #ffe9e6;
+}
+.admin .admin-audit {
+  padding: 0.5rem 1.4rem;
+  background: #b3261e;
+  color: #fff;
+  font-weight: 700;
+}
+.admin-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.admin-falling {
+  animation: admin-fall 0.75s ease-in var(--wait, 0s) forwards;
+}
+@keyframes admin-fall {
+  to {
+    transform: translate(var(--drift, 0), 110vh) rotate(var(--spin, 20deg));
+  }
+}
+
+.admin-game {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #0b1420;
+}
+.admin-game canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.admin .admin-mute {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.admin-report {
+  position: absolute;
+  inset: 0;
+  width: min(30rem, calc(100vw - 2rem));
+  height: fit-content;
+  max-height: calc(100vh - 2rem);
+  margin: auto;
+  padding: 1rem 1.25rem;
+  overflow: auto;
+  border: 2px outset #e8edf3;
+  background: #dfe5ec;
+}
+.admin .admin-grade {
+  margin: 0;
+  color: #b3261e;
+  font:
+    700 54px/1 Tahoma,
+    Verdana,
+    "DejaVu Sans",
+    sans-serif;
+}
+@media (max-width: 40rem) {
+  .admin-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .admin-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* The page behind stays put, scrollbar and all. */
+html:has(.admin) {
+  overflow: hidden;
+}
