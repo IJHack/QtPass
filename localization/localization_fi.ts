@@ -1186,88 +1186,108 @@ sähköposti</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="132"/>
+        <location filename="../src/gpgidgeneration.cpp" line="194"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoon, tiedostoon %1, ei pääse käsiksi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="141"/>
+        <location filename="../src/gpgidgeneration.cpp" line="203"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpito, tiedosto %1, ei ole luettavissa. Allekirjoitettuja vastaanottajaluetteloita ei hyväksytä, ennen kuin se on korjattu tai poistettu (jolloin unohtuu, mitä on aiemmin hyväksytty).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="172"/>
-        <location filename="../src/gpgidgeneration.cpp" line="185"/>
+        <location filename="../src/gpgidgeneration.cpp" line="225"/>
+        <location filename="../src/gpgidgeneration.cpp" line="238"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoa, tiedostoa %1, ei voi kirjoittaa.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="212"/>
+        <location filename="../src/gpgidgeneration.cpp" line="292"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoa, tiedostoa %1, ei voitu lukita: toinen QtPass saattaa käyttää sitä, tai sen kansioon ei voi kirjoittaa.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="333"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <source>The list carries more than one store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The store line is malformed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Luettelossa on useampi kuin yksi sukupolvirivi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="341"/>
+        <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Sukupolvirivi on muodoltaan virheellinen: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="347"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Luettelossa on useampi kuin yksi kansiorivi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="358"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Kansiorivi on muodoltaan virheellinen: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="362"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Otsikkorivi on muodoltaan virheellinen: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="394"/>
+        <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Luettelossa on sukupolvirivi mutta ei kansioriviä.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="527"/>
+        <source>The list carries a store line but no generation line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Allekirjoitettuun vastaanottajaluetteloon %1 ei voi luottaa: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="468"/>
+        <location filename="../src/gpgidgeneration.cpp" line="609"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 on kirjoitettu varaston kansiolle &quot;%2&quot;, ei kansiolle &quot;%3&quot;, eikä sitä käytetä. Joku muu on saattanut kopioida sen tähän; jos kansio sen sijaan siirrettiin tai nimettiin uudelleen, allekirjoitusavaimen haltija avaa sille Käyttäjät-ikkunan ja tallentaa vastaanottajat, mikä sitoo luettelon sen nykyiseen sijaintiin.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="481"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Sukupolvi %1 on korkein mahdollinen, joten tähän ei voi kirjoittaa uudempaa luetteloa: jos tiedosto %2 poistetaan, tämä laite unohtaa, mitä se on aiemmin hyväksynyt, minkä jälkeen allekirjoitusavaimen haltija pääsee eteenpäin avaamalla Käyttäjät-ikkunan ja %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="629"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Allekirjoitusavaimen haltija pääsee eteenpäin avaamalla Käyttäjät-ikkunan ja %1, mikä kirjoittaa sukupolven %2. Jos tiedosto %3 poistetaan, tämä laite unohtaa, mitä se on aiemmin hyväksynyt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="505"/>
+        <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Allekirjoitetussa vastaanottajaluettelossa %1 ei ole sukupolviriviä, vaikka sukupolvi %2 on aiemmin hyväksytty tällä laitteella. pass ei kirjoita sukupolviriviä (ei myöskään QtPassin pass-taustaosan kautta), eikä QtPass kirjoittanut sitä ennen versiota 2.0; ilman sitä luettelo on myös voitu kirjoittaa varaston toiselle kansiolle ja kopioida tähän. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="514"/>
+        <location filename="../src/gpgidgeneration.cpp" line="655"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">valitsemalla vastaanottajat uudelleen ja tallentamalla</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="639"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="856"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpito, tiedosto %1, on siirtynyt sukupolveen %2 sillä aikaa, kun sukupolvea %3 kirjoitettiin.</translation>
     </message>
@@ -1280,27 +1300,32 @@ sähköposti</translation>
         <translation type="obsolete">Allekirjoitetussa vastaanottajaluettelossa %1 ei ole sukupolviriviä, vaikka sukupolvi %2 on aiemmin hyväksytty tällä laitteella. pass ei kirjoita sukupolviriviä (ei myöskään QtPassin pass-taustaosan kautta), eikä QtPass kirjoittanut sitä ennen versiota 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 on sukupolvea %2, vanhempi kuin QtPassin tällä laitteella viimeksi hyväksymä sukupolvi %3. Joku muu on saattanut palauttaa sen. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="667"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">tallentamalla vastaanottajat: siellä esivalittuina ovat tämän luettelon vastaanottajat, joten poista ensin kaikki, joilla ei enää pitäisi olla pääsyä</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="574"/>
+        <location filename="../src/gpgidgeneration.cpp" line="732"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 on sukupolvea %2, samaa sukupolvea kuin eri luettelo, jonka tämä laite on aiemmin hyväksynyt. Joko kaksi laitetta tallensi vastaanottajat samaan aikaan (Git on tällöin näyttänyt ristiriidan), tai tilalle on vaihdettu aito, kyseistä sukupolvea oleva luettelo. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="582"/>
+        <location filename="../src/gpgidgeneration.cpp" line="740"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">tarkistamalla vastaanottajat ja tallentamalla</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="607"/>
+        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="824"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Vastaanottajaluettelo %1 on saavuttanut sukupolven %2, joka on korkein mahdollinen; luetteloa ei voi kirjoittaa.</translation>
     </message>
@@ -1326,15 +1351,15 @@ sähköposti</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="590"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="601"/>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Kohteen %1 allekirjoitus on virheellinen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="865"/>
+        <location filename="../src/imitatepass.cpp" line="876"/>
         <source>Can not edit</source>
         <translation>Ei muokattavissa</translation>
     </message>
@@ -1350,7 +1375,7 @@ sähköposti</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="866"/>
+        <location filename="../src/imitatepass.cpp" line="877"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Salausavainta ei voitu lukea käyttöä varten, .gpg-id tiedosto puuttuu tai on virheellinen.</translation>
     </message>
@@ -1390,32 +1415,32 @@ sähköposti</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="396"/>
+        <location filename="../src/imitatepass.cpp" line="407"/>
         <source>GPG signing failed!</source>
         <translation>GPG-allekirjoitus epäonnistui!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Failed to sign %1.</source>
         <translation>%1:n allekirjoittaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="535"/>
+        <location filename="../src/imitatepass.cpp" line="546"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Vastaanottajia ei muutettu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="536"/>
+        <location filename="../src/imitatepass.cpp" line="547"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Uudelleensalaus on yhä käynnissä. Odota, kunnes se on valmis, ja tallenna sitten vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="553"/>
         <source>No signing key!</source>
         <translation>Ei allekirjoitusavainta!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="554"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Mitään salaisista allekirjoitusavaimista ei ole saatavilla.
@@ -1423,9 +1448,10 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
-        <location filename="../src/imitatepass.cpp" line="336"/>
-        <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="497"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="508"/>
         <source>Cannot update</source>
         <translation>Ei päivitettävissä</translation>
     </message>
@@ -1436,8 +1462,8 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
         <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Tarkista .gpg-id-tiedoston allekirjoitus!</translation>
@@ -1465,81 +1491,81 @@ Et voi muuttaa käyttäjäluetteloa!</translation>
         <translation type="obsolete">Kohteen %1 kirjoittaminen epäonnistui: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Vastaanottajaluettelo kirjoitettiin, mutta sitä ei kirjattu</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Tallenna vastaanottajat vielä kerran päästäksesi eteenpäin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
         <source>Check selected users!</source>
         <translation>Tarkista valitut käyttäjät!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Millään valituista avaimista ei ole salaista avainta saatavilla.
 Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1:n allekirjoittaminen epäonnistui: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="509"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Vanhan allekirjoituksen %1 poistaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git päättyi koodilla %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalitiedosto, jonka koko on enintään %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="627"/>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="663"/>
+        <location filename="../src/imitatepass.cpp" line="638"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="674"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Aiemman uudelleensalauksen jäänne</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="628"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ei ole tavallinen tiedosto, eikä sitä palautettu. Tarkista ja poista se, ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 on olemassa kohteen %2 rinnalla. Molemmat ovat merkinnän salattuja kopioita; tarkista, kumman haluat säilyttää, poista toinen ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="670"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 palautettiin varmuuskopiosta, jonka keskeytynyt uudelleensalaus jätti jälkeensä.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="664"/>
+        <location filename="../src/imitatepass.cpp" line="675"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 puuttuu, eikä sen varmuuskopiota %2 voitu nimetä takaisin. Nimeä se uudelleen käsin ja salaa sitten uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="917"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">Kohdetta %1 ei voitu salata uudelleen: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Re-encryption failed</source>
         <translation>Uudelleensalaus epäonnistui</translation>
     </message>
@@ -1556,75 +1582,75 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <translation type="obsolete">Varmuuskopiota %1 ei voitu poistaa uudelleensalauksen jälkeen; sen voi turvallisesti poistaa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Creating backup commit</source>
         <translation>Varmuuskopion commitin luonti</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="941"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Backup commit failed</source>
         <translation>Varmuuskopion commit epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Gitin tilan tarkistaminen epäonnistui. Uudelleensalaus keskeytettiin.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Uudelleensalaus keskeytettiin, koska git-varmuuskopiota ei voitu luoda.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="991"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Uudelleensalaus on jo käynnissä</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="998"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Kansio ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="999"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 on symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä sitä salattu uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="997"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Uudelleensalaus kansiosta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Updating password-store</source>
         <translation>Päivitetään salasanasäilöä</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1091"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1075"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Pullin jälkeen ei voitu tarkistaa, onko säilössä yhdistämättömiä tiedostoja. Tarkista se gitillä ennen uudelleensalausta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull jätti säilöön yhdistämättömiä tiedostoja. Ratkaise ristiriita ennen uudelleensalausta.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1096"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull epäonnistui, varasto salataan uudelleen sellaisenaan</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1107"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n merkintä ohitettiin: symbolinen linkki, liitospiste tai erikoistiedosto ei ole osa varastoa.</numerusform>
@@ -1632,27 +1658,27 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
         <source>GPG ID verification failed</source>
         <translation>GPG-tunnuksen vahvistus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Hakemiston .gpg-id-tiedoston vahvistaminen epäonnistui.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1138"/>
+        <location filename="../src/imitatepass.cpp" line="1149"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ei kuulu varastoon</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1208"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... ja %n muu</numerusform>
@@ -1660,7 +1686,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1211"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n tiedostoa ei voitu salata uudelleen:</numerusform>
@@ -1668,18 +1694,18 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Uudelleensalaus peruutettu: %1/%2 tiedostoa tarkistettu, %3 salattu uudelleen, %4 epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1284"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1295"/>
+        <location filename="../src/imitatepass.cpp" line="1304"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Vastaanottajien muutosta ei viety Gitiin</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1285"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1692,7 +1718,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Muutosta ei ole vielä viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tee sitten muutoksista commit tai tallenna vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1705,12 +1731,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät on yhä salattu aiemmille vastaanottajille, jotka voivat edelleen lukea ne. Mitään ei viety Gitiin eikä lähetetty etävarastoon. Korjaa Git-ongelma ja tallenna sitten vastaanottajat uudelleen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1482"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git-ohjelmaa ei ole määritetty, git ohitetaan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1531"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg ei kirjoittanut salatekstiä kohteelle %1.</translation>
     </message>
@@ -1739,17 +1765,17 @@ Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät o
         <translation type="vanished">%1:n uudelleensalaus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Uudelleensalaus valmis: %1 onnistui, %2 epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1231"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Uudelleensalaus valmis: %1 tiedostoa salattu uudelleen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1240"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Git push ohitetaan: %n tiedostoa ei voitu salata uudelleen</numerusform>
@@ -1757,14 +1783,14 @@ Uudelleensalaus ei valmistunut, joten osa merkinnöistä tai kaikki merkinnät o
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1393"/>
-        <location filename="../src/imitatepass.cpp" line="1437"/>
+        <location filename="../src/imitatepass.cpp" line="1404"/>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopiointi epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1394"/>
-        <location filename="../src/imitatepass.cpp" line="1438"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1449"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Kohteen %1 kopiointi kohteeseen %2 epäonnistui.</translation>
     </message>
@@ -3055,27 +3081,27 @@ Jatketaanko?</translation>
         <translation type="unfinished">Vastaanottajaluetteloiden sukupolvikirjanpitoa ei voi lukea.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="982"/>
+        <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1:ta ei voida lukea vastaanottajaluettelona (normaalikokoinen tiedosto, jonka koko on enintään %2), joten mitään ei ole valittu automaattisesti. Tarkista se ennen vastaanottajien valitsemista tässä: &quot;OK&quot; korvaa sen uudella luettelolla.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1003"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Vastaanottajaluettelo %1 puuttuu tai ei ole tavallinen tiedosto, joten mitään ei ole esivalittu: yläkansion luetteloa ei ole allekirjoitettu tälle kansiolle. Valitse tämän kansion vastaanottajat itse; OK kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1008"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Mitään ei ole esivalittu: ei voida päätellä, onko %2 poistettu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1023"/>
+        <location filename="../src/pass.cpp" line="1024"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Vastaanottajaluettelon %1 allekirjoitusta ei voi varmentaa allekirjoitusavaimella, joten mitään ei ole esivalittu: tallentaminen allekirjoittaisi kaiken, mitä luettelossa nyt on. Valitse vastaanottajat itse; OK kirjoittaa ja allekirjoittaa uuden luettelon.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="947"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Mitään ei ole esivalittu: tallentaminen allekirjoittaisi kaiken, mitä luettelossa nyt on. Valitse vastaanottajat itse.</translation>
     </message>
@@ -3304,7 +3330,7 @@ Jatketaanko?</translation>
         <translation type="unfinished">Vastaanottajaa ei valittu; tiedostoa %1 ei kirjoitettu.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="231"/>
+        <location filename="../src/profileinit.cpp" line="237"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">Tiedostoa %1 ei voitu allekirjoittaa avaimella %2.</translation>
     </message>
@@ -3313,18 +3339,18 @@ Jatketaanko?</translation>
         <translation type="obsolete">Tiedostoa %1 ei voitu kirjoittaa: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="233"/>
+        <location filename="../src/profileinit.cpp" line="239"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Tiedostoa %1 ei voitu allekirjoittaa avaimella %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="243"/>
+        <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">Konfiguroitu GPG-kotihakemisto %1 ei ole olemassa.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="265"/>
-        <location filename="../src/profileinit.cpp" line="297"/>
+        <location filename="../src/profileinit.cpp" line="271"/>
+        <location filename="../src/profileinit.cpp" line="303"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 epäonnistui hakemistossa %2: %3</translation>
     </message>

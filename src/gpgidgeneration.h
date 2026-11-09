@@ -17,16 +17,21 @@
  * copy such a pair into a folder that never had a list of its own, and every
  * later encryption there would include them again.
  *
- * So a `.gpg-id` QtPass writes for a store with a signing key starts with two
- * comment lines, `# QtPass-GpgId-Generation: N` and
- * `# QtPass-GpgId-Folder: <store-relative folder>`, which `pass` (1.7.4 and
- * later), QtPass (1.8 and later) and QtPass's own recipient parser ignore
- * and the signature covers. QtPass remembers, per `.gpg-id` file, the
- * highest generation it has accepted or written, and refuses a signed list
- * whose generation is lower or whose folder is not the one it sits in.
- * Stores without a signing key get plain lists, as before: nothing checks
- * their freshness, and older clients (pass up to 1.7.3, Android Password
- * Store) take a comment for a recipient.
+ * So a `.gpg-id` QtPass writes for a store with a signing key starts with
+ * three comment lines, `# QtPass-GpgId-Generation: N`,
+ * `# QtPass-GpgId-Folder: <store-relative folder>` and
+ * `# QtPass-GpgId-Store: <store id>`, which `pass` (1.7.4 and later),
+ * QtPass (1.8 and later) and QtPass's own recipient parser ignore and the
+ * signature covers. The store id binds the list to its store, as the folder
+ * line binds it to its folder: one signing key may sign several stores, and
+ * a list of one copied into another at the same folder would verify there
+ * too (#2050). Each device remembers the id it first saw per store and
+ * refuses a list of another store, or a new list without the line. QtPass
+ * remembers, per `.gpg-id` file, the highest generation it has accepted or
+ * written, and refuses a signed list whose generation is lower or whose folder
+ * is not the one it sits in. Stores without a signing key get plain lists, as
+ * before: nothing checks their freshness, and older clients (pass up to 1.7.3,
+ * Android Password Store) take a comment for a recipient.
  *
  * What this is and is not: rollback detection on a device that has seen the
  * newer list. A device seeing a store for the first time, or one that was
@@ -51,6 +56,10 @@ public:
   /// The folder line: this prefix and the store-relative folder the list was
   /// written for, `.` for the store root, `/`-separated.
   static const QByteArray kFolderPrefix;
+  /// The store line: this prefix and the store's id, 32 lowercase hex
+  /// digits (a random 128-bit number given when the store's first signed
+  /// list is written).
+  static const QByteArray kStorePrefix;
   /// The largest generation the grammar admits (18 nines). reserveNext()
   /// never goes above it: a header QtPass writes must be one it reads back.
   static const qint64 kMaxGeneration;
@@ -61,6 +70,8 @@ public:
     qint64 generation = 0;
     /// Nothing when the list carries no folder line.
     std::optional<QString> folder;
+    /// Nothing when the list carries no store line.
+    std::optional<QString> store;
   };
 
   /**
@@ -69,29 +80,49 @@ public:
    * @param error Receives why the metadata is unusable, if not null.
    * @return The header (generation 0 and no folder for a list written
    *         before generations existed, or by `pass`); nothing when a line
-   *         is malformed, appears twice, or a generation line comes without
-   *         a folder line, which is not a list to trust.
+   *         is malformed, appears twice, a generation line comes without a
+   *         folder line or a store line without a generation line, which is
+   *         not a list to trust.
    */
   static auto parse(const QByteArray &contents, QString *error = nullptr)
       -> std::optional<Header>;
 
   /**
-   * @brief The two header lines for a list.
+   * @brief The header lines for a list.
    * @param generation The generation to declare.
    * @param folder The store-relative folder the list is written for.
-   * @return Both lines, newlines included.
+   * @param store The store's id (storeIdFor()); empty writes no store line.
+   * @return The lines, newlines included.
    */
-  static auto header(qint64 generation, const QString &folder) -> QByteArray;
+  static auto header(qint64 generation, const QString &folder,
+                     const QString &store = {}) -> QByteArray;
 
   /**
    * @brief A complete list: the header in front of the recipients.
    * @param generation The generation to declare.
    * @param folder The store-relative folder the list is written for.
    * @param recipients The recipient lines, one per line, no header.
+   * @param store The store's id (storeIdFor()); empty writes no store line.
    * @return The bytes to write.
    */
   static auto withHeader(qint64 generation, const QString &folder,
-                         const QByteArray &recipients) -> QByteArray;
+                         const QByteArray &recipients,
+                         const QString &store = {}) -> QByteArray;
+
+  /**
+   * @brief The store id to write into a list of @p storeRoot: the one this
+   * device knows the store by; else @p onDisk, the store line of the
+   * verified list being replaced, so a device joining a store takes its id
+   * over; else a new random one. Remembered before it is returned.
+   * @param storeRoot The configured store.
+   * @param onDisk The store line of the verified list on disk, if any.
+   * @param error Receives why the record could not be read or written.
+   * @return The id, or nothing when the record is unavailable; the caller
+   *         must not write the list then.
+   */
+  static auto storeIdFor(const QString &storeRoot,
+                         const std::optional<QString> &onDisk,
+                         QString *error = nullptr) -> std::optional<QString>;
 
   /**
    * @brief The store-relative folder of @p gpgIdFile, as written in and
@@ -146,6 +177,12 @@ public:
     Conflict,
     /** @brief Written for another folder of the store. */
     WrongFolder,
+    /**
+     * @brief Written for another store (its store line names another id
+     * than this device knows the store by), or new to this device and
+     * without a store line while the store has an id.
+     */
+    WrongStore,
     /** @brief A header line malformed or duplicated. */
     Malformed,
     /** @brief The record could not be read or written. */
@@ -237,6 +274,14 @@ public:
    */
   static auto recordFile() -> QString;
 
+  /**
+   * @brief The file the store IDs are kept in, next to recordFile() and
+   * under its lock, so a QtPass from before store IDs, rewriting the record,
+   * cannot drop them. Removing it forgets the IDs.
+   * @return The file's path.
+   */
+  static auto storeRecordFile() -> QString;
+
 private:
   /**
    * @brief Whether @p header's folder line, if it has one, names the folder
@@ -251,6 +296,23 @@ private:
   static auto boundToItsFolder(const QString &gpgIdFile, const Header &header,
                                const QString &storeRoot, QString *error)
       -> bool;
+
+  /**
+   * @brief Whether @p header fits the store this device knows by @p pinned:
+   * its store line names that id, or it has none and is either generation 0
+   * (`pass`) or a list this device accepted before it knew the id.
+   * @param gpgIdFile The `.gpg-id` the bytes came from.
+   * @param header What its header says.
+   * @param pinned The store id this device knows the store by.
+   * @param alreadyAccepted Whether these exact bytes are the generation
+   *        this device accepted last for the file.
+   * @param recordPath The store IDs' file, which the refusal names.
+   * @param error Receives why not, if not null.
+   * @return Whether the list is this store's.
+   */
+  static auto ofThisStore(const QString &gpgIdFile, const Header &header,
+                          const QString &pinned, bool alreadyAccepted,
+                          const QString &recordPath, QString *error) -> bool;
 
   /**
    * @brief How a holder of the signing key gets through a refusal, in words:

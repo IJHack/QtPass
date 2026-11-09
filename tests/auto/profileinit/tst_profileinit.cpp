@@ -350,19 +350,26 @@ void tst_profileinit::initialiseWithASigningKeyWritesTheGenerationHeader() {
   QFile gpgId(gpgIdFile);
   QVERIFY(gpgId.open(QIODevice::ReadOnly));
   const QByteArray written = gpgId.readAll();
+  // A new store gets a new id, which this device now knows it by.
+  const std::optional<QString> storeId =
+      GpgIdGeneration::storeIdFor(dir.path(), std::nullopt);
+  QVERIFY(storeId.has_value());
   QCOMPARE(QString::fromUtf8(written),
            QStringLiteral("# QtPass-GpgId-Generation: 1\n"
                           "# QtPass-GpgId-Folder: .\n"
-                          "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n"));
+                          "# QtPass-GpgId-Store: %1\n"
+                          "AAAA1111AAAA1111AAAA1111AAAA1111AAAA1111\n")
+               .arg(*storeId));
   // The bytes written are the ones this device knows for generation 1:
   // another list of that generation is a conflict, not the same list.
   QCOMPARE(GpgIdGeneration::accept(gpgIdFile, written, dir.path()),
            GpgIdGeneration::Verdict::Accepted);
-  QCOMPARE(GpgIdGeneration::accept(
-               gpgIdFile,
-               GpgIdGeneration::withHeader(1, QStringLiteral("."), "BBBB\n"),
-               dir.path()),
-           GpgIdGeneration::Verdict::Conflict);
+  QCOMPARE(
+      GpgIdGeneration::accept(gpgIdFile,
+                              GpgIdGeneration::withHeader(
+                                  1, QStringLiteral("."), "BBBB\n", *storeId),
+                              dir.path()),
+      GpgIdGeneration::Verdict::Conflict);
 }
 
 void tst_profileinit::initialiseRefusesWithoutRecipients() {

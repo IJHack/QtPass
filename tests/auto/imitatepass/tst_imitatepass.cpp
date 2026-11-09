@@ -605,6 +605,7 @@ private Q_SLOTS:
   void copyWritesTheBytesThroughAStagedFileAndKeepsAnUnforcedTarget();
   void anOlderSignedGpgIdIsRefusedUntilSavedAgain();
   void aDifferentListOfTheSameGenerationIsAConflict();
+  void aListOfAnotherStoreIsRefused();
   void aSignedGpgIdCopiedIntoAnotherFolderIsRefused();
   void aPlantedGenerationDoesNotMoveTheCounter();
   void reencryptUsesTheRecipientsWhoseSignatureWasChecked();
@@ -1794,6 +1795,86 @@ void tst_imitatepass::anOlderSignedGpgIdIsRefusedUntilSavedAgain() {
  *        is encrypted to it until a holder of the signing key saves again,
  *        which writes generation 3.
  */
+/**
+ * @brief #2050 end to end: saving the recipients of a store whose lists
+ *        carry a store id takes that id over and writes it; a list of
+ *        another store, signed with the same key and copied over the root,
+ *        is then refused and nothing is encrypted to it, even with a higher
+ *        generation.
+ */
+void tst_imitatepass::aListOfAnotherStoreIsRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString gpgIdFile = QDir(storeDir.path()).filePath(".gpg-id");
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeSigningGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  const QString ours = QStringLiteral("0123456789abcdef0123456789abcdef");
+  const QString theirs = QStringLiteral("fedcba9876543210fedcba9876543210");
+  // Another device's list of this store, already on disk with its id.
+  {
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    g.write(GpgIdGeneration::withHeader(1, QStringLiteral("."),
+                                        (kSigner + "\n").toUtf8(), ours));
+    QFile sig(gpgIdFile + QStringLiteral(".sig"));
+    QVERIFY(sig.open(QIODevice::WriteOnly));
+    sig.write("sig");
+  }
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.passSigningKey = kSigner;
+  pass.init(s);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  UserInfo alice;
+  alice.key_id = kSigner;
+  alice.enabled = true;
+  alice.have_secret = true;
+  const QString store = QDir(storeDir.path()).path() + QLatin1Char('/');
+
+  pass.Init(store, {alice});
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCOMPARE(criticalSpy.count(), 0);
+  {
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::ReadOnly));
+    const QByteArray saved = g.readAll();
+    QVERIFY2(
+        saved.contains("\n# QtPass-GpgId-Store: " + ours.toLatin1() + "\n"),
+        saved.constData());
+  }
+
+  // Store A's list, same key and folder, generation 9, Bob included.
+  const QString bob =
+      QStringLiteral("89ABCDEF0123456789ABCDEF0123456789ABCDEF");
+  {
+    QFile g(gpgIdFile);
+    QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
+    g.write(GpgIdGeneration::withHeader(9, QStringLiteral("."),
+                                        (kSigner + "\n" + bob + "\n").toUtf8(),
+                                        theirs));
+  }
+  QFile::remove(logPath);
+  pass.Insert(QDir(storeDir.path()).filePath("entry"),
+              QStringLiteral("secret\n"), false);
+  QTest::qWait(500);
+  QCOMPARE(insertSpy.count(), 0);
+  QCOMPARE(criticalSpy.count(), 1);
+  const QString why = criticalSpy.takeFirst().at(1).toString();
+  QVERIFY2(why.contains(QStringLiteral("another password store")) &&
+               why.contains(theirs),
+           qPrintable(why));
+  QVERIFY2(encryptCalls(loggedCalls(logPath)).isEmpty(),
+           "nothing may be encrypted to another store's list");
+#endif
+}
+
 void tst_imitatepass::aDifferentListOfTheSameGenerationIsAConflict() {
 #ifdef Q_OS_WIN
   QSKIP("uses a shell script as a fake gpg");
@@ -1835,12 +1916,17 @@ void tst_imitatepass::aDifferentListOfTheSameGenerationIsAConflict() {
   QCOMPARE(criticalSpy.count(), 0);
 
   // The other device's generation 2, Bob included, arrives with the pull
-  // (the fake gpg verifies it, as the real one would: it is signed).
+  // (the fake gpg verifies it, as the real one would: it is signed). It is
+  // this store's, so it carries the store's id.
+  const std::optional<QString> storeId =
+      GpgIdGeneration::storeIdFor(storeDir.path(), std::nullopt);
+  QVERIFY(storeId.has_value());
   {
     QFile g(gpgIdFile);
     QVERIFY(g.open(QIODevice::WriteOnly | QIODevice::Truncate));
-    g.write(GpgIdGeneration::withHeader(
-        2, QStringLiteral("."), (kSigner + "\n" + bob + "\n").toUtf8()));
+    g.write(GpgIdGeneration::withHeader(2, QStringLiteral("."),
+                                        (kSigner + "\n" + bob + "\n").toUtf8(),
+                                        *storeId));
   }
   QFile::remove(logPath);
   pass.Insert(QDir(storeDir.path()).filePath("entry"),
