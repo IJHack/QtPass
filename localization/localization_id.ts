@@ -1141,88 +1141,113 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="132"/>
+        <location filename="../src/gpgidgeneration.cpp" line="168"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">Catatan generasi daftar penerima, %1, tidak dapat diakses.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="141"/>
+        <location filename="../src/gpgidgeneration.cpp" line="177"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">Catatan generasi daftar penerima, %1, tidak dapat dibaca. Daftar penerima bertanda tangan tidak akan diterima sampai catatan itu diperbaiki atau dihapus (yang membuat apa yang pernah diterima sebelumnya terlupakan).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="172"/>
-        <location filename="../src/gpgidgeneration.cpp" line="185"/>
+        <location filename="../src/gpgidgeneration.cpp" line="219"/>
+        <location filename="../src/gpgidgeneration.cpp" line="232"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">Catatan generasi daftar penerima, %1, tidak dapat ditulis.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="212"/>
+        <location filename="../src/gpgidgeneration.cpp" line="259"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">Catatan generasi daftar penerima, %1, tidak dapat dikunci: QtPass lain mungkin sedang menggunakannya, atau foldernya tidak dapat ditulis.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="333"/>
+        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <source>The list carries more than one store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <source>The store line is malformed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="416"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Daftar ini memuat lebih dari satu baris generasi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="341"/>
+        <location filename="../src/gpgidgeneration.cpp" line="424"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Baris generasi salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="347"/>
+        <location filename="../src/gpgidgeneration.cpp" line="430"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Daftar ini memuat lebih dari satu baris folder.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="358"/>
+        <location filename="../src/gpgidgeneration.cpp" line="441"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Baris folder salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="362"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Baris tajuk salah bentuk: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="394"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Daftar ini memuat baris generasi tetapi tidak memuat baris folder.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <source>The list carries a store line but no generation line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="637"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak dapat dipercaya: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="468"/>
+        <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 ditulis untuk folder &quot;%2&quot; di penyimpanan, bukan untuk &quot;%3&quot;, dan tidak digunakan. Daftar itu mungkin disalin ke sini oleh orang lain; jika foldernya justru dipindahkan atau diubah namanya, pemegang kunci penandatangan dapat membuka Pengguna pada folder tersebut dan menyimpan penerima, yang akan mengikat daftar itu ke lokasinya sekarang.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="481"/>
+        <location filename="../src/gpgidgeneration.cpp" line="577"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Generasi %1 adalah generasi tertinggi yang ada, sehingga tidak ada daftar yang lebih baru yang dapat ditulis di sini: menghapus %2 membuat perangkat ini melupakan apa yang pernah diterimanya sebelumnya, setelah itu pemegang kunci penandatangan dapat melanjutkan dengan membuka Pengguna dan %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="584"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Pemegang kunci penandatangan dapat melanjutkan dengan membuka Pengguna dan %1, yang akan menulis generasi %2. Menghapus %3 membuat perangkat ini melupakan apa yang pernah diterimanya sebelumnya.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="505"/>
+        <location filename="../src/gpgidgeneration.cpp" line="601"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak memuat baris generasi, padahal generasi %2 pernah diterima di sini sebelumnya. pass tidak menulis baris generasi (juga melalui backend pass milik QtPass), begitu pula QtPass sebelum versi 2.0; tanpa baris itu, daftar tersebut mungkin juga ditulis untuk folder lain di penyimpanan dan disalin ke sini. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="514"/>
+        <location filename="../src/gpgidgeneration.cpp" line="610"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">memilih ulang penerima dari awal lalu menyimpannya</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="639"/>
+        <location filename="../src/gpgidgeneration.cpp" line="719"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="812"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Catatan generasi daftar penerima, %1, telah beralih ke generasi %2 sementara generasi %3 sedang ditulis.</translation>
     </message>
@@ -1235,27 +1260,27 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation type="obsolete">Daftar penerima bertanda tangan %1 tidak memuat baris generasi, padahal generasi %2 pernah diterima di sini sebelumnya. pass tidak menulis baris generasi (juga melalui backend pass milik QtPass), begitu pula QtPass sebelum versi 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="615"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 adalah generasi %2, lebih lama daripada generasi %3, yang terakhir diterima QtPass di sini. Daftar itu mungkin dikembalikan oleh orang lain. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">menyimpan penerima: penerima yang sudah terpilih di sana adalah penerima dari daftar ini, jadi hapus dulu siapa pun yang seharusnya tidak lagi memiliki akses</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="574"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Daftar penerima bertanda tangan %1 adalah generasi %2, generasi yang sama dengan daftar lain yang pernah diterima perangkat ini sebelumnya. Entah dua perangkat menyimpan penerima pada saat yang sama (Git tentu sudah menampilkan konfliknya), atau sebuah daftar autentik dari generasi itu ditukar ke sini. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="582"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">memeriksa penerima lalu menyimpannya</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="607"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Daftar penerima %1 telah mencapai generasi %2, generasi tertinggi yang ada; daftar itu tidak dapat ditulis.</translation>
     </message>
@@ -1287,22 +1312,22 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
         <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Periksa tanda tangan berkas .gpg-id!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="590"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="601"/>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Tanda tangan untuk %1 tidak valid.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="865"/>
+        <location filename="../src/imitatepass.cpp" line="876"/>
         <source>Can not edit</source>
         <translation>Tidak dapat mengedit</translation>
     </message>
@@ -1318,7 +1343,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="866"/>
+        <location filename="../src/imitatepass.cpp" line="877"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Tidak dapat membaca kunci enkripsi yang akan digunakan, berkas .gpg-id hilang atau tidak valid.</translation>
     </message>
@@ -1364,9 +1389,10 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
-        <location filename="../src/imitatepass.cpp" line="336"/>
-        <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="497"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="508"/>
         <source>Cannot update</source>
         <translation>Tidak dapat memperbarui</translation>
     </message>
@@ -1383,66 +1409,66 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <translation type="obsolete">Gagal menulis %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Daftar penerima ditulis, tetapi tidak tercatat</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Simpan penerima sekali lagi untuk melanjutkan.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
         <source>Check selected users!</source>
         <translation>Periksa pengguna yang dipilih!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Tidak ada kunci yang dipilih memiliki kunci rahasia yang tersedia.
 Anda tidak akan dapat mendekripsi kata sandi yang baru ditambahkan!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="396"/>
+        <location filename="../src/imitatepass.cpp" line="407"/>
         <source>GPG signing failed!</source>
         <translation>Penandatanganan GPG gagal!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Failed to sign %1.</source>
         <translation>Gagal menandatangani %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Gagal menandatangani %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="535"/>
+        <location filename="../src/imitatepass.cpp" line="546"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Penerima tidak diubah</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="536"/>
+        <location filename="../src/imitatepass.cpp" line="547"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Enkripsi ulang masih berjalan. Tunggu hingga selesai, lalu simpan penerima lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="553"/>
         <source>No signing key!</source>
         <translation>Tidak ada kunci penandatangan!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="554"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Tidak ada kunci penandatangan rahasia yang tersedia.
 Anda tidak akan dapat mengubah daftar pengguna!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="509"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Gagal menghapus tanda tangan lama %1.</translation>
     </message>
@@ -1452,49 +1478,49 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="unfinished">%1 tidak berada di dalam penyimpanan kata sandi, atau nama folder yang berisi karakter baris baru atau karakter kontrol lainnya, yang tidak dapat direkam oleh daftar yang ditandatangani.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git berhenti dengan kode %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (file biasa dengan maksimal %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="627"/>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="663"/>
+        <location filename="../src/imitatepass.cpp" line="638"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="674"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Sisa dari enkripsi ulang sebelumnya</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="628"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 bukan berkas biasa dan tidak dipulihkan. Periksa berkas tersebut dan hapus, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 ada di samping %2. Keduanya adalah salinan terenkripsi dari entri ini; periksa mana yang Anda inginkan dan hapus yang lain, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="670"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">%1 dipulihkan dari cadangan yang ditinggalkan oleh enkripsi ulang yang terputus.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="664"/>
+        <location filename="../src/imitatepass.cpp" line="675"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 hilang dan cadangannya %2 tidak dapat dikembalikan namanya. Ubah namanya secara manual, lalu enkripsi ulang lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="917"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 tidak dapat dienkripsi ulang: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Re-encryption failed</source>
         <translation>Enkripsi ulang gagal</translation>
     </message>
@@ -1511,127 +1537,127 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <translation type="obsolete">Tidak dapat menghapus cadangan %1 setelah enkripsi ulang; berkas ini aman untuk dihapus.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Creating backup commit</source>
         <translation>Membuat commit cadangan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="941"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Backup commit failed</source>
         <translation>Commit cadangan gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Tidak dapat memeriksa status git. Enkripsi ulang dibatalkan.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Enkripsi ulang dibatalkan karena cadangan git tidak dapat dibuat.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="991"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Enkripsi ulang sedang berjalan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="998"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Bukan folder dari penyimpanan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="999"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 adalah, atau berada di balik, tautan simbolik atau junction. Tujuan yang ditunjuknya bukan bagian dari penyimpanan kata sandi dan tidak dienkripsi ulang.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="997"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Mengenkripsi ulang dari folder %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Updating password-store</source>
         <translation>Memperbarui penyimpanan kata sandi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1091"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1075"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Tidak dapat memeriksa apakah penyimpanan memiliki berkas yang belum digabung setelah pull. Periksa dengan git sebelum mengenkripsi ulang.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Pull tersebut meninggalkan berkas yang belum digabungkan di penyimpanan. Selesaikan konflik tersebut sebelum mengenkripsi ulang.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1096"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull gagal, mengenkripsi ulang penyimpanan apa adanya</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1107"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n entri dilewati: tautan simbolik, junction, atau berkas khusus bukan bagian dari penyimpanan.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikasi GPG ID gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Tidak dapat memverifikasi .gpg-id untuk direktori.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1138"/>
+        <location filename="../src/imitatepass.cpp" line="1149"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Bukan bagian dari penyimpanan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 adalah, atau terletak di balik, sebuah tautan simbolis atau persimpangan setelah ditarik. Apa yang ditunjuk olehnya bukanlah bagian dari penyimpanan kata sandi dan dibiarkan begitu saja.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1208"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... dan %n lainnya</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1211"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n berkas tidak dapat dienkripsi ulang:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Enkripsi ulang dibatalkan: %1 dari %2 berkas diperiksa, %3 dienkripsi ulang, %4 gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1284"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1295"/>
+        <location filename="../src/imitatepass.cpp" line="1304"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Penerima tidak di-commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1285"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1644,7 +1670,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Perubahan tersebut belum di-commit atau di-push. Perbaiki masalah Git, lalu commit perubahannya, atau simpan penerima lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1657,12 +1683,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkripsi untuk penerima sebelumnya, yang masih dapat membacanya. Tidak ada yang di-commit atau di-push. Perbaiki masalah Git, lalu simpan penerima lagi.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1482"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Berkas eksekusi Git tidak dikonfigurasi, melewati git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1531"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg tidak menulis ciphertext apa pun untuk %1.</translation>
     </message>
@@ -1691,31 +1717,31 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
         <translation type="vanished">Gagal mengenkripsi ulang %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Enkripsi ulang selesai: %1 berhasil, %2 gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1231"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Enkripsi ulang selesai: %1 berkas dienkripsi ulang</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1240"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Tidak melakukan push: %n berkas gagal dienkripsi ulang</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1393"/>
-        <location filename="../src/imitatepass.cpp" line="1437"/>
+        <location filename="../src/imitatepass.cpp" line="1404"/>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
         <source>Copy failed</source>
         <translation type="unfinished">Penyalinan gagal</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1394"/>
-        <location filename="../src/imitatepass.cpp" line="1438"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1449"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Tidak dapat menyalin %1 ke %2.</translation>
     </message>
@@ -2809,27 +2835,27 @@ Lanjutkan?</translation>
         <translation type="unfinished">Catatan generasi daftar penerima tidak dapat dibaca.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="982"/>
+        <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 tidak dapat dibaca sebagai daftar penerima (file biasa dengan maksimal %2), jadi tidak ada yang dipilih secara otomatis. Periksa dulu sebelum memilih penerima di sini: &quot;OK&quot; akan menulis ulang daftar tersebut.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1003"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Daftar penerima %1 tidak ada atau bukan berkas biasa, sehingga tidak ada yang terpilih sebelumnya: daftar milik folder induk tidak ditandatangani untuk folder ini. Pilih sendiri penerima folder ini; OK akan menulis dan menandatangani daftar yang baru.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1008"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Tidak ada yang terpilih sebelumnya: tidak dapat dipastikan apakah %2 telah dihapus.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1023"/>
+        <location filename="../src/pass.cpp" line="1024"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Daftar penerima %1 tidak terverifikasi terhadap kunci penandatangan, sehingga tidak ada yang terpilih sebelumnya: menyimpan akan menandatangani apa pun isinya. Pilih penerimanya sendiri; OK akan menulis dan menandatangani daftar yang baru.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="947"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Tidak ada yang terpilih sebelumnya: menyimpan akan menandatangani apa pun isinya. Pilih penerimanya sendiri.</translation>
     </message>
@@ -3056,7 +3082,7 @@ Lanjutkan?</translation>
         <translation type="unfinished">Tidak ada penerima yang dipilih; %1 tidak ditulis.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="231"/>
+        <location filename="../src/profileinit.cpp" line="237"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">Tidak dapat menandatangani %1 dengan %2.</translation>
     </message>
@@ -3065,18 +3091,18 @@ Lanjutkan?</translation>
         <translation type="obsolete">Tidak dapat menulis %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="233"/>
+        <location filename="../src/profileinit.cpp" line="239"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Tidak dapat menandatangani %1 dengan %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="243"/>
+        <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">Konfigurasi GPG home %1 tidak ditemukan.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="265"/>
-        <location filename="../src/profileinit.cpp" line="297"/>
+        <location filename="../src/profileinit.cpp" line="271"/>
+        <location filename="../src/profileinit.cpp" line="303"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 gagal di %2: %3</translation>
     </message>

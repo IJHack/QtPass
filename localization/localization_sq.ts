@@ -1146,88 +1146,113 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="132"/>
+        <location filename="../src/gpgidgeneration.cpp" line="168"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, nuk mund të aksesohet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="141"/>
+        <location filename="../src/gpgidgeneration.cpp" line="177"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, nuk është i lexueshëm. Listat e nënshkruara të marrësve nuk pranohen derisa ai të riparohet ose të hiqet (gjë që harron atë që ishte pranuar më parë).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="172"/>
-        <location filename="../src/gpgidgeneration.cpp" line="185"/>
+        <location filename="../src/gpgidgeneration.cpp" line="219"/>
+        <location filename="../src/gpgidgeneration.cpp" line="232"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, nuk mund të shkruhet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="212"/>
+        <location filename="../src/gpgidgeneration.cpp" line="259"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, nuk u bllokua dot: mund të jetë duke e përdorur një QtPass tjetër, ose dosja e tij nuk mund të shkruhet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="333"/>
+        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <source>The list carries more than one store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <source>The store line is malformed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="416"/>
         <source>The list carries more than one generation line.</source>
         <translation>Lista përmban më shumë se një rresht gjenerate.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="341"/>
+        <location filename="../src/gpgidgeneration.cpp" line="424"/>
         <source>The generation line is malformed: %1</source>
         <translation>Rreshti i gjeneratës është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="347"/>
+        <location filename="../src/gpgidgeneration.cpp" line="430"/>
         <source>The list carries more than one folder line.</source>
         <translation>Lista përmban më shumë se një rresht dosjeje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="358"/>
+        <location filename="../src/gpgidgeneration.cpp" line="441"/>
         <source>The folder line is malformed: %1</source>
         <translation>Rreshti i dosjes është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="362"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The header line is malformed: %1</source>
         <translation>Rreshti i kokës është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="394"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Lista përmban një rresht gjenerate, por asnjë rresht dosjeje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <source>The list carries a store line but no generation line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="637"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Lista e nënshkruar e marrësve %1 nuk është për t&apos;u besuar: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="468"/>
+        <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Lista e nënshkruar e marrësve %1 u shkrua për dosjen &quot;%2&quot; të depos, jo për &quot;%3&quot;, dhe nuk përdoret. Mund të jetë kopjuar këtu nga dikush tjetër; nëse dosja përkundrazi u zhvendos ose u riemërtua, një mbajtës i çelësit të nënshkrimit hap Përdoruesit në të dhe ruan marrësit, gjë që e lidh listën me vendin ku ndodhet tani.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="481"/>
+        <location filename="../src/gpgidgeneration.cpp" line="577"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Gjenerata %1 është më e larta që ekziston, prandaj këtu nuk mund të shkruhet asnjë listë më e re: heqja e %2 harron atë që kjo pajisje pranoi më parë, pas së cilës një mbajtës i çelësit të nënshkrimit e kalon këtë pengesë duke hapur Përdoruesit dhe %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="584"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Një mbajtës i çelësit të nënshkrimit e kalon këtë pengesë duke hapur Përdoruesit dhe %1, gjë që shkruan gjeneratën %2. Heqja e %3 harron atë që kjo pajisje pranoi më parë.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="505"/>
+        <location filename="../src/gpgidgeneration.cpp" line="601"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Lista e nënshkruar e marrësve %1 nuk përmban rresht gjenerate, ndërsa këtu më parë ishte pranuar gjenerata %2. pass nuk shkruan rresht gjenerate (as përmes backend-it pass të QtPass), dhe as QtPass para versionit 2.0; pa një të tillë, lista mund të jetë shkruar edhe për një dosje tjetër të depos dhe të jetë kopjuar këtu. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="514"/>
+        <location filename="../src/gpgidgeneration.cpp" line="610"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>duke zgjedhur marrësit nga e para dhe duke ruajtur</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="639"/>
+        <location filename="../src/gpgidgeneration.cpp" line="719"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="812"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, ka kaluar në gjeneratën %2 ndërsa po shkruhej gjenerata %3.</translation>
     </message>
@@ -1240,27 +1265,27 @@ e-mail</translation>
         <translation type="obsolete">Lista e nënshkruar e marrësve %1 nuk përmban rresht gjenerate, ndërsa këtu më parë ishte pranuar gjenerata %2. pass nuk shkruan rresht gjenerate (as përmes backend-it pass të QtPass), dhe as QtPass para versionit 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="615"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Lista e nënshkruar e marrësve %1 është gjenerata %2, më e vjetër se gjenerata %3, e fundit që QtPass pranoi këtu. Mund të jetë rikthyer nga dikush tjetër. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>duke ruajtur marrësit: marrësit e parazgjedhur atje janë ata të kësaj liste, prandaj hiqni më parë këdo që nuk duhet të ketë më qasje</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="574"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Lista e nënshkruar e marrësve %1 është gjenerata %2, e njëjta gjeneratë si një listë tjetër që kjo pajisje pranoi më parë. Ose dy pajisje ruajtën marrësit në të njëjtën kohë (Git do ta ketë shfaqur konfliktin), ose në vend të saj u fut një listë autentike e asaj gjenerate. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="582"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>checking the recipients and saving</source>
         <translation>duke kontrolluar marrësit dhe duke ruajtur</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="607"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Lista e marrësve %1 ka arritur gjeneratën %2, më të lartën që ekziston; lista nuk mund të shkruhet.</translation>
     </message>
@@ -1286,15 +1311,15 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="590"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="601"/>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Nënshkrimi për %1 është i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="865"/>
+        <location filename="../src/imitatepass.cpp" line="876"/>
         <source>Can not edit</source>
         <translation>Nuk mund të modifikoni</translation>
     </message>
@@ -1310,7 +1335,7 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="866"/>
+        <location filename="../src/imitatepass.cpp" line="877"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nuk mund të lexohet çelësi i enkriptimit për t’u përdorur, skedari .gpg-id mungon ose i pavlefshëm.</translation>
     </message>
@@ -1350,32 +1375,32 @@ e-mail</translation>
         <translation type="unfinished">%1 nuk është brenda depojës së fjalëkalimeve, ose emri i një dosje në rrugë përmban një linjë ndarje ose një karakter të kontrollit tjetër, që një listë me firmë nuk mund ta regjistroj.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="396"/>
+        <location filename="../src/imitatepass.cpp" line="407"/>
         <source>GPG signing failed!</source>
         <translation>Nënshkrimi i GPG dështoi!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Failed to sign %1.</source>
         <translation>Dështoi në nënshkrimin e %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="535"/>
+        <location filename="../src/imitatepass.cpp" line="546"/>
         <source>Recipients not changed</source>
         <translation>Marrësit nuk u ndryshuan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="536"/>
+        <location filename="../src/imitatepass.cpp" line="547"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation>Një ri-enkriptim është ende në punë. Prisni derisa të përfundojë, pastaj ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="553"/>
         <source>No signing key!</source>
         <translation>Pa çelës nënshkrimi!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="554"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Asnjë nga çelësat sekretë të nënshkrimit nuk është i disponueshëm.
@@ -1383,9 +1408,10 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
-        <location filename="../src/imitatepass.cpp" line="336"/>
-        <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="497"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="508"/>
         <source>Cannot update</source>
         <translation>Nuk mund të modifikohet</translation>
     </message>
@@ -1396,8 +1422,8 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
         <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Kontrolloni nënshkrimin e skedarit .gpg-id!</translation>
@@ -1425,81 +1451,81 @@ Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
         <translation type="obsolete">Dështoi shkrimi i %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Recipient list written, but not recorded</source>
         <translation>Lista e marrësve u shkrua, por nuk u regjistrua</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation>%1 Ruajini marrësit edhe një herë për ta kaluar këtë pengesë.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
         <source>Check selected users!</source>
         <translation>Kontrolloni përdoruesit e zgjedhur!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Asnjë nga çelësat e zgjedhur nuk ka një çelës sekret në dispozicion.
 Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar rishtazi!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1: %2</source>
         <translation>Dështoi në nënshkrimin e %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="509"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Dështoi heqja e nënshkrimit të vjetër %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Git exited with code %1.</source>
         <translation>Git doli me kodin %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 nuk mund të lexohet si një listë adresash (një skedar që është në maksimum %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="627"/>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="663"/>
+        <location filename="../src/imitatepass.cpp" line="638"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="674"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Mbetje nga një ri-enkriptim i mëparshëm</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="628"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 nuk është skedar i zakonshëm dhe nuk u rikthye. Shikojeni dhe hiqeni, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 ekziston pranë %2. Të dyja janë kopje të enkriptuara të zërit; kontrolloni cilën doni dhe fshini tjetrën, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="670"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 u rikthye nga kopja rezervë që la pas një ri-enkriptim i ndërprerë.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="664"/>
+        <location filename="../src/imitatepass.cpp" line="675"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 mungon dhe kopja e tij rezervë %2 nuk u riemërtua dot mbrapsht. Riemërtojeni me dorë, pastaj ri-enkriptoni sërish.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="917"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>%1 nuk u rienkriptua dot: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Re-encryption failed</source>
         <translation>Ri-enkriptimi dështoi</translation>
     </message>
@@ -1516,75 +1542,75 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <translation type="obsolete">Kopja rezervë %1 nuk u hoq dot pas ri-enkriptimit; mund të fshihet pa rrezik.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Creating backup commit</source>
         <translation>Krijimi i një kopje rezervë të kryer</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="941"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Backup commit failed</source>
         <translation>Kryerja e kopjes rezervë dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nuk mund të inspektohej statusi i git. Ri-enkriptimi u ndërpre.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Ri-enkriptimi u ndërpre sepse nuk mund të krijohej një kopje rezervë git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="991"/>
         <source>A re-encryption is already running</source>
         <translation>Një ri-enkriptim po kryhet tashmë</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="998"/>
         <source>Not a folder of the store</source>
         <translation>Nuk është dosje e depos</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="999"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 është një lidhje simbolike ose junction, ose ndodhet pas një të tille. Ajo ku çon lidhja nuk është pjesë e depos së fjalëkalimeve dhe nuk u ri-enkriptua.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="997"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ri-kriptimi nga dosja %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Updating password-store</source>
         <translation>Përditësimi i dyqanit me fjalëkalime</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1091"/>
         <source>Git pull failed</source>
         <translation>Git pull dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1075"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Nuk u arrit të kontrollohet nëse depoja ka skedarë të pabashkuar pas pull. Kontrollojeni me git para se ta rifshehtëzoni.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Pull-i e la depon me skedarë të pabashkuar. Zgjidhni konfliktin përpara ri-enkriptimit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1096"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull dështoi, depoja po rienkriptohet siç është</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1107"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>%n zë u anashkalua: një lidhje simbolike, junction ose skedar i veçantë nuk është pjesë e depos.</numerusform>
@@ -1592,27 +1618,27 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikimi i ID-së së GPG dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nuk mund të verifikohej .gpg-id për direktorinë.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1138"/>
+        <location filename="../src/imitatepass.cpp" line="1149"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nuk është pjesë e depos</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 është, ose gjendet pas, një lidhje simbolike ose bashkimi pas nxerrjes. Ajo nuk i referohet asgjë që është në deponin e fjalëkalimeve dhe mbetet siç është.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1208"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... dhe %n tjetër</numerusform>
@@ -1620,7 +1646,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1211"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>%n skedar nuk u rienkriptua dot:</numerusform>
@@ -1628,18 +1654,18 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Ri-enkriptimi u anulua: %1 nga %2 skedarë u kontrolluan, %3 u rienkriptuan, %4 dështuan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1284"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1295"/>
+        <location filename="../src/imitatepass.cpp" line="1304"/>
         <source>Recipients not committed</source>
         <translation>Marrësit nuk u bënë commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1285"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1652,7 +1678,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Ndryshimi ende nuk është bërë commit dhe as push. Ndreqni problemin me Git, pastaj bëni commit ndryshimet ose ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1665,12 +1691,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të enkriptuar për marrësit e mëparshëm, të cilët ende mund t&apos;i lexojnë. Asgjë nuk u bë commit apo push. Ndreqni problemin me Git, pastaj ruani sërish marrësit.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1482"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Skedari i ekzekutueshëm git nuk është konfiguruar, git po anashkalohet</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1531"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg nuk shkroi asnjë tekst të shifruar për %1.</translation>
     </message>
@@ -1699,17 +1725,17 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
         <translation type="vanished">Dështoi në rikriptimin e %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ri-enkriptimi përfundoi: %1 pati sukses, %2 dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1231"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ri-enkriptimi përfundoi: %1 skedarë u rienkriptuan</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1240"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Nuk po shtyhet: %n skedar nuk u rienkriptua dot</numerusform>
@@ -1717,14 +1743,14 @@ Ri-enkriptimi nuk përfundoi, prandaj disa ose të gjithë zërat janë ende të
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1393"/>
-        <location filename="../src/imitatepass.cpp" line="1437"/>
+        <location filename="../src/imitatepass.cpp" line="1404"/>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
         <source>Copy failed</source>
         <translation>Kopjimi dështoi</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1394"/>
-        <location filename="../src/imitatepass.cpp" line="1438"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1449"/>
         <source>Could not copy %1 to %2.</source>
         <translation>%1 nuk u kopjua dot te %2.</translation>
     </message>
@@ -2872,27 +2898,27 @@ Të vazhdohet?</translation>
         <translation>Regjistri i gjeneratave të listave të marrësve nuk mund të lexohet.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="982"/>
+        <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 nuk mund të lexohet si një listë me adresat (një skedar i cili është në përgjithësi deri në %2), kështu që asgjë nuk është zgjedhur automatikisht. Kontrolloni atë para se të zgjidhni adresat këtu: OK shkruan një listë të re mbi të.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1003"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista e marrësve %1 mungon ose nuk është skedar i zakonshëm, prandaj asgjë nuk është e parazgjedhur: lista e një dosjeje mëmë nuk është nënshkruar për këtë. Zgjidhni vetë marrësit e kësaj dosjeje; OK shkruan dhe nënshkruan një listë të re.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1008"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation>%1 Asgjë nuk është e parazgjedhur: nuk mund të përcaktohet nëse %2 u hoq.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1023"/>
+        <location filename="../src/pass.cpp" line="1024"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista e marrësve %1 nuk verifikohet kundrejt çelësit të nënshkrimit, prandaj asgjë nuk është e parazgjedhur: ruajtja do të nënshkruante çfarëdo që ndodhet në të. Zgjidhni vetë marrësit; OK shkruan dhe nënshkruan një listë të re.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="947"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Asgjë nuk është e parazgjedhur: ruajtja do të nënshkruante çfarëdo që ndodhet në të. Zgjidhni vetë marrësit.</translation>
     </message>
@@ -3121,7 +3147,7 @@ Të vazhdohet?</translation>
         <translation>Asnjë marrës i zgjedhur; %1 nuk u shkrua.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="231"/>
+        <location filename="../src/profileinit.cpp" line="237"/>
         <source>Could not sign %1 with %2.</source>
         <translation>%1 nuk u nënshkrua dot me %2.</translation>
     </message>
@@ -3130,18 +3156,18 @@ Të vazhdohet?</translation>
         <translation type="obsolete">%1 nuk u shkrua dot: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="233"/>
+        <location filename="../src/profileinit.cpp" line="239"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation>%1 nuk u nënshkrua dot me %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="243"/>
+        <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">GPG shtëpia e konfiguruar %1 nuk ekziston.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="265"/>
-        <location filename="../src/profileinit.cpp" line="297"/>
+        <location filename="../src/profileinit.cpp" line="271"/>
+        <location filename="../src/profileinit.cpp" line="303"/>
         <source>git %1 failed in %2: %3</source>
         <translation>git %1 dështoi në %2: %3</translation>
     </message>

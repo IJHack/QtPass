@@ -1187,88 +1187,113 @@ e-pošta</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="132"/>
+        <location filename="../src/gpgidgeneration.cpp" line="168"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation>Evidenciji generacija za liste primalaca, %1, ne može se pristupiti.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="141"/>
+        <location filename="../src/gpgidgeneration.cpp" line="177"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation>Evidencija generacija za liste primalaca, %1, ne može se pročitati. Potpisane liste primalaca se ne prihvataju dok se ona ne popravi ili ukloni (čime se zaboravlja šta je ranije prihvaćeno).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="172"/>
-        <location filename="../src/gpgidgeneration.cpp" line="185"/>
+        <location filename="../src/gpgidgeneration.cpp" line="219"/>
+        <location filename="../src/gpgidgeneration.cpp" line="232"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation>Evidencija generacija za liste primalaca, %1, ne može se upisati.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="212"/>
+        <location filename="../src/gpgidgeneration.cpp" line="259"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation>Evidencija generacija za liste primalaca, %1, nije mogla da se zaključa: možda je koristi druga instanca QtPass-a, ili se u njenu fasciklu ne može upisivati.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="333"/>
+        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <source>The list carries more than one store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <source>The store line is malformed: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="416"/>
         <source>The list carries more than one generation line.</source>
         <translation>Lista sadrži više od jednog reda generacije.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="341"/>
+        <location filename="../src/gpgidgeneration.cpp" line="424"/>
         <source>The generation line is malformed: %1</source>
         <translation>Red generacije je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="347"/>
+        <location filename="../src/gpgidgeneration.cpp" line="430"/>
         <source>The list carries more than one folder line.</source>
         <translation>Lista sadrži više od jednog reda fascikle.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="358"/>
+        <location filename="../src/gpgidgeneration.cpp" line="441"/>
         <source>The folder line is malformed: %1</source>
         <translation>Red fascikle je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="362"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The header line is malformed: %1</source>
         <translation>Red zaglavlja je neispravno oblikovan: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="394"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Lista sadrži red generacije, ali ne i red fascikle.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="541"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <source>The list carries a store line but no generation line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="637"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Potpisana lista primalaca %1 nije od poverenja: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="468"/>
+        <location filename="../src/gpgidgeneration.cpp" line="564"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Potpisana lista primalaca %1 napisana je za fasciklu &quot;%2&quot; u skladištu, a ne za &quot;%3&quot;, i ne koristi se. Moguće je da ju je ovde kopirao neko drugi; ako je fascikla umesto toga premeštena ili preimenovana, vlasnik ključa za potpisivanje otvara na njoj Korisnike i čuva primaoce, čime se lista vezuje za mesto na kome se sada nalazi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="481"/>
+        <location filename="../src/gpgidgeneration.cpp" line="577"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Generacija %1 je najviša moguća, pa se ovde ne može upisati novija lista: uklanjanjem datoteke %2 ovaj uređaj zaboravlja šta je ranije prihvatio, a nakon toga vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike i %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="584"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike i %1, čime se upisuje generacija %2. Uklanjanjem datoteke %3 ovaj uređaj zaboravlja šta je ranije prihvatio.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="505"/>
+        <location filename="../src/gpgidgeneration.cpp" line="601"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Potpisana lista primalaca %1 ne sadrži red generacije, dok je ovde ranije prihvaćena generacija %2. pass ne upisuje red generacije (ni kroz QtPass-ov pozadinski program pass), a nije ga upisivao ni QtPass pre verzije 2.0; bez njega je lista mogla biti napisana i za drugu fasciklu u skladištu i kopirana ovde. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="514"/>
+        <location filename="../src/gpgidgeneration.cpp" line="610"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>iznova izabere primaoce pa ih sačuva</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="639"/>
+        <location filename="../src/gpgidgeneration.cpp" line="719"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="812"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Evidencija generacija za liste primalaca, %1, prešla je na generaciju %2 dok se upisivala generacija %3.</translation>
     </message>
@@ -1281,27 +1306,27 @@ e-pošta</translation>
         <translation type="obsolete">Potpisana lista primalaca %1 ne sadrži red generacije, dok je ovde ranije prihvaćena generacija %2. pass ne upisuje red generacije (ni kroz QtPass-ov pozadinski program pass), a nije ga upisivao ni QtPass pre verzije 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="519"/>
+        <location filename="../src/gpgidgeneration.cpp" line="615"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Potpisana lista primalaca %1 je generacija %2, starija od generacije %3, poslednje koju je QtPass ovde prihvatio. Moguće je da ju je neko drugi vratio. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>sačuva primaoce: primaoci koji su tamo unapred izabrani jesu oni sa ove liste, pa prvo uklonite svakoga ko više ne bi trebalo da ima pristup</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="574"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Potpisana lista primalaca %1 je generacija %2, ista generacija kao i neka druga lista koju je ovaj uređaj ranije prihvatio. Ili su dva uređaja sačuvala primaoce u isto vreme (Git je u tom slučaju prikazao konflikt), ili je podmetnuta autentična lista te generacije. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="582"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>checking the recipients and saving</source>
         <translation>proveri primaoce pa ih sačuva</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="607"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Lista primalaca %1 dostigla je generaciju %2, najvišu moguću; lista se ne može upisati.</translation>
     </message>
@@ -1327,15 +1352,15 @@ e-pošta</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="405"/>
-        <location filename="../src/imitatepass.cpp" line="590"/>
+        <location filename="../src/imitatepass.cpp" line="416"/>
+        <location filename="../src/imitatepass.cpp" line="601"/>
         <location filename="../src/realpass.cpp" line="87"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Potpis za %1 nije ispravan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="865"/>
+        <location filename="../src/imitatepass.cpp" line="876"/>
         <source>Can not edit</source>
         <translation>Nije moguće menjati</translation>
     </message>
@@ -1351,7 +1376,7 @@ e-pošta</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="866"/>
+        <location filename="../src/imitatepass.cpp" line="877"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nije moguće pročitati ključ za kripciju, .gpg-id datoteka ne postoji ili nije ispravna.</translation>
     </message>
@@ -1391,32 +1416,32 @@ e-pošta</translation>
         <translation type="unfinished">%1 nije unutar skladišta lozinki, ili ime fascikle sadrži prelom linije ili neki drugi kontrolni karakter, koje potpisana lista ne može da zapisa.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="396"/>
+        <location filename="../src/imitatepass.cpp" line="407"/>
         <source>GPG signing failed!</source>
         <translation>GPG potpisivanje nije uspjelo!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="398"/>
+        <location filename="../src/imitatepass.cpp" line="409"/>
         <source>Failed to sign %1.</source>
         <translation>Nije uspjelo potpisivanje %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="535"/>
+        <location filename="../src/imitatepass.cpp" line="546"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Primaoci nisu promenjeni</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="536"/>
+        <location filename="../src/imitatepass.cpp" line="547"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Ponovno šifrovanje je još u toku. Sačekajte da se završi, a zatim ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="542"/>
+        <location filename="../src/imitatepass.cpp" line="553"/>
         <source>No signing key!</source>
         <translation>Nema ključa za potpisivanje!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="543"/>
+        <location filename="../src/imitatepass.cpp" line="554"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nijedan od tajnih ključeva za potpisivanje nije dostupan.
@@ -1424,9 +1449,10 @@ Nećete moći da menjate listu korisnika!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
-        <location filename="../src/imitatepass.cpp" line="336"/>
-        <location filename="../src/imitatepass.cpp" line="363"/>
-        <location filename="../src/imitatepass.cpp" line="497"/>
+        <location filename="../src/imitatepass.cpp" line="340"/>
+        <location filename="../src/imitatepass.cpp" line="346"/>
+        <location filename="../src/imitatepass.cpp" line="374"/>
+        <location filename="../src/imitatepass.cpp" line="508"/>
         <source>Cannot update</source>
         <translation>Nije moguće nadograditi</translation>
     </message>
@@ -1437,8 +1463,8 @@ Nećete moći da menjate listu korisnika!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="404"/>
-        <location filename="../src/imitatepass.cpp" line="745"/>
+        <location filename="../src/imitatepass.cpp" line="415"/>
+        <location filename="../src/imitatepass.cpp" line="756"/>
         <location filename="../src/realpass.cpp" line="91"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Proveri potpis .gpg-id datoteke!</translation>
@@ -1466,81 +1492,81 @@ Nećete moći da menjate listu korisnika!</translation>
         <translation type="obsolete">Nije uspelo upisivanje %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="377"/>
+        <location filename="../src/imitatepass.cpp" line="388"/>
         <source>Recipient list written, but not recorded</source>
         <translation>Lista primalaca je upisana, ali nije evidentirana</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="378"/>
+        <location filename="../src/imitatepass.cpp" line="389"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation>%1 Sačuvajte primaoce još jednom da biste ovo prevazišli.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="383"/>
+        <location filename="../src/imitatepass.cpp" line="394"/>
         <source>Check selected users!</source>
         <translation>Proverite odabrane korisnike!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="384"/>
+        <location filename="../src/imitatepass.cpp" line="395"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nijedan od odabranih ključeva nema dostupan tajni ključ.
 Nećete moći da dekriptujete nove dodate lozinke!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="410"/>
         <source>Failed to sign %1: %2</source>
         <translation>Nije uspelo potpisivanje %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="498"/>
+        <location filename="../src/imitatepass.cpp" line="509"/>
         <source>Failed to remove the old signature %1.</source>
         <translation>Nije uspelo uklanjanje starog potpisa %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="574"/>
+        <location filename="../src/imitatepass.cpp" line="585"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git je završio rad sa kodom %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="613"/>
+        <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 ne može biti pročitao kao lista primatelja (obična datoteka, veličine do %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="627"/>
-        <location filename="../src/imitatepass.cpp" line="655"/>
-        <location filename="../src/imitatepass.cpp" line="663"/>
+        <location filename="../src/imitatepass.cpp" line="638"/>
+        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="674"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation>Ostatak ranijeg ponovnog šifrovanja</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="628"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation>%1 nije obična datoteka pa nije vraćeno. Proverite šta je to i uklonite ga, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="656"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation>%1 postoji pored %2. Obe su šifrovane kopije stavke; proverite koju želite i obrišite drugu, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="670"/>
+        <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation>%1 je vraćeno iz rezervne kopije koju je ostavilo prekinuto ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="664"/>
+        <location filename="../src/imitatepass.cpp" line="675"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation>%1 nedostaje, a njegova rezervna kopija %2 nije mogla da se vrati preimenovanjem. Preimenujte je ručno, a zatim ponovo pokrenite ponovno šifrovanje.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="906"/>
+        <location filename="../src/imitatepass.cpp" line="917"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation>%1 nije moguće ponovo šifrirati: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1210"/>
+        <location filename="../src/imitatepass.cpp" line="1221"/>
         <source>Re-encryption failed</source>
         <translation>Neuspešno je ponovo šifriranje</translation>
     </message>
@@ -1557,75 +1583,75 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         <translation type="obsolete">Nije moguće ukloniti rezervnu kopiju %1 nakon ponovnog šifrovanja; bezbedno je obrisati je.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="928"/>
         <source>Creating backup commit</source>
         <translation>Kreiranje sačuvanog komiteta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="931"/>
-        <location filename="../src/imitatepass.cpp" line="941"/>
+        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="952"/>
         <source>Backup commit failed</source>
         <translation>Sačuvanje komiteta nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="932"/>
+        <location filename="../src/imitatepass.cpp" line="943"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Ne mogu da proverim stanje Git-a. Ponovo šifriranje je prekinuto.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
+        <location filename="../src/imitatepass.cpp" line="953"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Ponovo šifriranje je prekinuto jer se sačuvanje Git-a nije moglo kreirati.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="980"/>
+        <location filename="../src/imitatepass.cpp" line="991"/>
         <source>A re-encryption is already running</source>
         <translation>Ponovno šifrovanje je već u toku</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="987"/>
+        <location filename="../src/imitatepass.cpp" line="998"/>
         <source>Not a folder of the store</source>
         <translation>Nije fascikla skladišta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="988"/>
+        <location filename="../src/imitatepass.cpp" line="999"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 je simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i nije ponovo šifrovano.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="997"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ponovo se kriptuje iz fascikle %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1061"/>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1072"/>
+        <location filename="../src/imitatepass.cpp" line="1248"/>
         <source>Updating password-store</source>
         <translation>Nadograđuje se skladište lozinki</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1074"/>
-        <location filename="../src/imitatepass.cpp" line="1080"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1091"/>
         <source>Git pull failed</source>
         <translation>Git pull nije uspeo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1075"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Nije bilo moguće proveriti da li skladište ima nespojene datoteke nakon pull. Proverite ga pomoću git pre ponovnog šifrovanja.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1081"/>
+        <location filename="../src/imitatepass.cpp" line="1092"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Nakon pull-a u skladištu su ostale nespojene datoteke. Rešite konflikt pre ponovnog šifrovanja.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1096"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull nije uspeo, skladište se ponovo šifruje u trenutnom stanju</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1107"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>Preskočen je %n unos: simbolička veza, tačka spajanja ili specijalna datoteka nije deo skladišta.</numerusform>
@@ -1634,27 +1660,27 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1117"/>
+        <location filename="../src/imitatepass.cpp" line="1128"/>
         <source>GPG ID verification failed</source>
         <translation>Verifikacija GPG ID-a nije uspešna</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1118"/>
+        <location filename="../src/imitatepass.cpp" line="1129"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Ne mogu da verificiram .gpg-id za direktorijum.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1138"/>
+        <location filename="../src/imitatepass.cpp" line="1149"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nije deo skladišta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1139"/>
+        <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 je, ili se nalazi iza, simbolskog linka ili veze nakon izvlačenja. Ono čemu to pokazuje nije deo skladišta lozinki i ostaje neotkriveno.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1208"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... i još %n</numerusform>
@@ -1663,7 +1689,7 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1211"/>
+        <location filename="../src/imitatepass.cpp" line="1222"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>Nije bilo moguće ponovo šifrovati %n datoteku:</numerusform>
@@ -1672,18 +1698,18 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1228"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Ponovno šifrovanje je otkazano: provereno %1 od %2 datoteka, %3 ponovo šifrovano, %4 neuspešno</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1284"/>
-        <location filename="../src/imitatepass.cpp" line="1293"/>
+        <location filename="../src/imitatepass.cpp" line="1295"/>
+        <location filename="../src/imitatepass.cpp" line="1304"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Primaoci nisu komitovani</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1285"/>
+        <location filename="../src/imitatepass.cpp" line="1296"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1696,7 +1722,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Izmena još nije komitovana niti poslata. Rešite problem sa Git-om, a zatim komitujte izmene ili ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1294"/>
+        <location filename="../src/imitatepass.cpp" line="1305"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1709,12 +1735,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani za prethodne primaoce, koji ih i dalje mogu pročitati. Ništa nije komitovano niti poslato. Rešite problem sa Git-om, a zatim ponovo sačuvajte primaoce.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1471"/>
+        <location filename="../src/imitatepass.cpp" line="1482"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Izvršna datoteka Git-a nije konfigurisana, git se preskače</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1531"/>
+        <location filename="../src/imitatepass.cpp" line="1542"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg nije upisao šifrovani tekst za %1.</translation>
     </message>
@@ -1743,17 +1769,17 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         <translation type="vanished">Neuspešno je ponovo šifriranje %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1226"/>
+        <location filename="../src/imitatepass.cpp" line="1237"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Ponovo šifriranje je završeno: %1 uspešno, %2 neuspešno</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1231"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Ponovo šifriranje je završeno: %1 datoteka ponovo šifrirana</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1240"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Push se ne izvršava: nije uspelo ponovno šifrovanje %n datoteke</numerusform>
@@ -1762,14 +1788,14 @@ Ponovno šifrovanje nije završeno, pa su neki ili svi unosi i dalje šifrovani 
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1393"/>
-        <location filename="../src/imitatepass.cpp" line="1437"/>
+        <location filename="../src/imitatepass.cpp" line="1404"/>
+        <location filename="../src/imitatepass.cpp" line="1448"/>
         <source>Copy failed</source>
         <translation>Kopiranje nije uspelo</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1394"/>
-        <location filename="../src/imitatepass.cpp" line="1438"/>
+        <location filename="../src/imitatepass.cpp" line="1405"/>
+        <location filename="../src/imitatepass.cpp" line="1449"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Nije moguće kopirati %1 u %2.</translation>
     </message>
@@ -3063,27 +3089,27 @@ Nastaviti?</translation>
         <translation type="unfinished">Evidencija generacija za liste primalaca ne može se pročitati.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="982"/>
+        <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 ne može biti pročitao kao lista primatelja (obična datoteka, maksimalno %2), tako da ništa nije unapred odabrano. Proverite to pre nego što izaberete primatelje ovde: &quot;OK&quot; piše novu listu nad njom.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1003"/>
+        <location filename="../src/pass.cpp" line="1004"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Lista primalaca %1 nedostaje ili nije obična datoteka, pa ništa nije unapred izabrano: lista nadređene fascikle nije potpisana za ovu. Sami izaberite primaoce ove fascikle; OK upisuje i potpisuje novu listu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1008"/>
+        <location filename="../src/pass.cpp" line="1009"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Ništa nije unapred izabrano: ne može se utvrditi da li je datoteka %2 uklonjena.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1023"/>
+        <location filename="../src/pass.cpp" line="1024"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Lista primalaca %1 ne prolazi proveru ključem za potpisivanje, pa ništa nije unapred izabrano: čuvanjem bi se potpisalo šta god da je u njoj. Sami izaberite primaoce; OK upisuje i potpisuje novu listu.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="947"/>
+        <location filename="../src/pass.cpp" line="948"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Ništa nije unapred izabrano: čuvanjem bi se potpisalo šta god da je u njoj. Sami izaberite primaoce.</translation>
     </message>
@@ -3314,7 +3340,7 @@ Nastaviti?</translation>
         <translation>Nijedan primalac nije izabran; datoteka %1 nije upisana.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="231"/>
+        <location filename="../src/profileinit.cpp" line="237"/>
         <source>Could not sign %1 with %2.</source>
         <translation>Nije moguće potpisati %1 ključem %2.</translation>
     </message>
@@ -3323,18 +3349,18 @@ Nastaviti?</translation>
         <translation type="obsolete">Nije moguće upisati %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="233"/>
+        <location filename="../src/profileinit.cpp" line="239"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation>Nije moguće potpisati %1 ključem %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="243"/>
+        <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">Konfigurisana GPG lokacija %1 ne postoji.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="265"/>
-        <location filename="../src/profileinit.cpp" line="297"/>
+        <location filename="../src/profileinit.cpp" line="271"/>
+        <location filename="../src/profileinit.cpp" line="303"/>
         <source>git %1 failed in %2: %3</source>
         <translation>git %1 nije uspeo u %2: %3</translation>
     </message>
