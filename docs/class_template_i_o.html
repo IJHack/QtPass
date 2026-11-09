@@ -115,6 +115,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a7eb718028cf367e72b431341a2c916a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write templates to .templates file in password store.  <br /></td></tr>
 <tr class="memitem:add783a19b718e10eb8a5cc02681fd87f" id="r_add783a19b718e10eb8a5cc02681fd87f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#add783a19b718e10eb8a5cc02681fd87f">getFolderTemplate</a> (const QString &amp;folderPath, const QString &amp;storePath) -&gt; QString</td></tr>
 <tr class="memdesc:add783a19b718e10eb8a5cc02681fd87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default template for a folder. Looks in folder, then parent folders up to root.  <br /></td></tr>
+<tr class="memitem:ab4e9c06b39890ee564d14895c7c9d160" id="r_ab4e9c06b39890ee564d14895c7c9d160"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4e9c06b39890ee564d14895c7c9d160">secretFieldsIn</a> (const QString &amp;templateText) -&gt; QStringList</td></tr>
+<tr class="memdesc:ab4e9c06b39890ee564d14895c7c9d160"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names a template marks as secret.  <br /></td></tr>
+<tr class="memitem:a6a506878c3fc1f1d91c8a2dcdaba4170" id="r_a6a506878c3fc1f1d91c8a2dcdaba4170"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6a506878c3fc1f1d91c8a2dcdaba4170">readSecretFields</a> (const QString &amp;storePath) -&gt; QStringList</td></tr>
+<tr class="memdesc:a6a506878c3fc1f1d91c8a2dcdaba4170"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names the store's <span class="tt">.templates</span> file marks as secret, in any of its sections (see <a class="el" href="#ab4e9c06b39890ee564d14895c7c9d160" title="The field names a template marks as secret.">secretFieldsIn()</a>).  <br /></td></tr>
+<tr class="memitem:ac5332f90883657224c0444c930c7c150" id="r_ac5332f90883657224c0444c930c7c150"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac5332f90883657224c0444c930c7c150">fieldsIn</a> (const QString &amp;templateText) -&gt; QStringList</td></tr>
+<tr class="memdesc:ac5332f90883657224c0444c930c7c150"><td class="mdescLeft">&#160;</td><td class="mdescRight">The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Read and write password-store template configuration. </p>
@@ -122,6 +128,40 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="templateio_8h_source.html#l00018">18</a> of file <a class="el" href="templateio_8h_source.html">templateio.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ac5332f90883657224c0444c930c7c150" name="ac5332f90883657224c0444c930c7c150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5332f90883657224c0444c930c7c150">&#9670;&#160;</a></span>fieldsIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TemplateIO::fieldsIn </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>templateText</em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field names of the template in the settings: one per line, with comment lines (starting with <span class="tt">#</span>, such as a <span class="tt"># secret:</span> line) left out. Other lines are kept as they are, empty ones too. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">templateText</td><td>The template's text, newline-separated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The field names. </dd></dl>
+
+</div>
+</div>
 <a id="add783a19b718e10eb8a5cc02681fd87f" name="add783a19b718e10eb8a5cc02681fd87f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add783a19b718e10eb8a5cc02681fd87f">&#9670;&#160;</a></span>getFolderTemplate()</h2>
 
@@ -161,6 +201,40 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6a506878c3fc1f1d91c8a2dcdaba4170" name="a6a506878c3fc1f1d91c8a2dcdaba4170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a506878c3fc1f1d91c8a2dcdaba4170">&#9670;&#160;</a></span>readSecretFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TemplateIO::readSecretFields </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storePath</em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field names the store's <span class="tt">.templates</span> file marks as secret, in any of its sections (see <a class="el" href="#ab4e9c06b39890ee564d14895c7c9d160" title="The field names a template marks as secret.">secretFieldsIn()</a>). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storePath</td><td>Path to password store root. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The marked names; empty when there is no readable file. </dd></dl>
+
+</div>
+</div>
 <a id="a3693dca9289ecd9c7d8fd941d110f489" name="a3693dca9289ecd9c7d8fd941d110f489"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3693dca9289ecd9c7d8fd941d110f489">&#9670;&#160;</a></span>readTemplates()</h2>
 
@@ -192,6 +266,40 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Hash of template name to field list. </dd></dl>
+
+</div>
+</div>
+<a id="ab4e9c06b39890ee564d14895c7c9d160" name="ab4e9c06b39890ee564d14895c7c9d160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e9c06b39890ee564d14895c7c9d160">&#9670;&#160;</a></span>secretFieldsIn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto TemplateIO::secretFieldsIn </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>templateText</em></span></td><td>)</td>
+          <td> -&gt;  QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The field names a template marks as secret. </p>
+<p>A line <span class="tt"># secret: pin, cvv</span> names them, separated by commas; "secret" may be written in any case. It is a comment line, so <span class="tt">pass</span>, <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> 1.8 and the field list skip it. Names are trimmed and empty ones dropped; every other line is ignored. A marked field is hidden like the password (<a class="el" href="class_password_display_panel.html" title="Renders decrypted password-file fields into MainWindow&#39;s grid.">PasswordDisplayPanel</a>), matched by its whole name in any case. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">templateText</td><td>The text of a template: the store's <span class="tt">.templates</span> file or the template in the settings. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The marked names in the order they appear. </dd></dl>
 
 </div>
 </div>

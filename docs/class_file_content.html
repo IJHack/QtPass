@@ -127,8 +127,8 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad19ad6d4d081ae47e5206e675cb7dd54" id="r_ad19ad6d4d081ae47e5206e675cb7dd54"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad19ad6d4d081ae47e5206e675cb7dd54">boundedForDisplay</a> (const QString &amp;text) -&gt; QString</td></tr>
 <tr class="memdesc:ad19ad6d4d081ae47e5206e675cb7dd54"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">text</code> cut to kMaxDisplayLines lines, as <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> is: for showing an entry as it is (displayAsIs).  <br /></td></tr>
-<tr class="memitem:af8c5c3b19e2f1244c5e83aa40521ebde" id="r_af8c5c3b19e2f1244c5e83aa40521ebde"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
-<tr class="memdesc:af8c5c3b19e2f1244c5e83aa40521ebde"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depending on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
+<tr class="memitem:ae159088c8d0baf049de2d596a8bfb523" id="r_ae159088c8d0baf049de2d596a8bfb523"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae159088c8d0baf049de2d596a8bfb523">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields, const std::function&lt; bool(const QString &amp;)&gt; &amp;alsoField={}) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
+<tr class="memdesc:ae159088c8d0baf049de2d596a8bfb523"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depending on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
 <tr class="memitem:affff8612aceb9006d8b7117e2a6ef70a" id="r_affff8612aceb9006d8b7117e2a6ef70a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a> (const QString &amp;name) -&gt; bool</td></tr>
 <tr class="memdesc:affff8612aceb9006d8b7117e2a6ef70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a field name designates the one-time password field.  <br /></td></tr>
 <tr class="memitem:a18a02db7e70b10aaf86f76345418fd00" id="r_a18a02db7e70b10aaf86f76345418fd00"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a18a02db7e70b10aaf86f76345418fd00">isSecretFieldName</a> (const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</td></tr>
@@ -139,15 +139,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8f40336c23a584d3429013f4e16fe1b8" id="r_a8f40336c23a584d3429013f4e16fe1b8"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a> = 1000</td></tr>
-<tr class="memdesc:a8f40336c23a584d3429013f4e16fe1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most named fields <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry.  <br /></td></tr>
+<tr class="memdesc:a8f40336c23a584d3429013f4e16fe1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most named fields <a class="el" href="#ae159088c8d0baf049de2d596a8bfb523" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry.  <br /></td></tr>
 <tr class="memitem:a803a9d95b4a7575124f3ed141c7d6365" id="r_a803a9d95b4a7575124f3ed141c7d6365"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a> = 10000</td></tr>
 <tr class="memdesc:a803a9d95b4a7575124f3ed141c7d6365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most lines of remaining text <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> gives.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents the parsed contents of a password file. </p>
-<p>Splits the file into a password line, named key/value fields, and remaining data. Use <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">FileContent::parse</a> to construct an instance. </p>
+<p>Splits the file into a password line, named key/value fields, and remaining data. Use <a class="el" href="#ae159088c8d0baf049de2d596a8bfb523" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">FileContent::parse</a> to construct an instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00057">57</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00058">58</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="ad19ad6d4d081ae47e5206e675cb7dd54" name="ad19ad6d4d081ae47e5206e675cb7dd54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad19ad6d4d081ae47e5206e675cb7dd54">&#9670;&#160;</a></span>boundedForDisplay()</h2>
@@ -593,8 +593,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af8c5c3b19e2f1244c5e83aa40521ebde" name="af8c5c3b19e2f1244c5e83aa40521ebde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c5c3b19e2f1244c5e83aa40521ebde">&#9670;&#160;</a></span>parse()</h2>
+<a id="ae159088c8d0baf049de2d596a8bfb523" name="ae159088c8d0baf049de2d596a8bfb523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae159088c8d0baf049de2d596a8bfb523">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -615,7 +615,12 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>allFields</em></span>&#160;) -&gt;  <a class="el" href="class_file_content.html">FileContent</a></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>allFields</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; bool(const QString &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>alsoField</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) -&gt;  <a class="el" href="class_file_content.html">FileContent</a></td>
         </tr>
       </table>
   </td>
@@ -631,6 +636,7 @@ Static Public Attributes</h2></td></tr>
     <tr><td class="paramname">fileContent</td><td>the file content to parse.</td></tr>
     <tr><td class="paramname">templateFields</td><td>the fields in the template. Fields in the template will always be in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a> at the beginning of the list in the same order.</td></tr>
     <tr><td class="paramname">allFields</td><td>whether all fields should be considered as named values. If set to false only templateFields are returned in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a>.</td></tr>
+    <tr><td class="paramname">alsoField</td><td>a field besides those, by its trimmed name: a secret the panel hides, which must not be left in the remaining text in plain view. Empty: none.</td></tr>
   </table>
   </dd>
 </dl>
@@ -662,7 +668,7 @@ Static Public Attributes</h2></td></tr>
 <p>Most lines of remaining text <a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret).">getRemainingDataForDisplay()</a> gives. </p>
 <p>The text browser makes a block, with its layout, per line. Past this many the display text ends with one line saying how many more there are; <a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData()</a> keeps them all, so saving loses nothing. The edit dialog uses the same number for the whole entry (password and fields included) and does not load one with more lines. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00079">79</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00080">80</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
@@ -686,10 +692,10 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Most named fields <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry. </p>
+<p>Most named fields <a class="el" href="#ae159088c8d0baf049de2d596a8bfb523" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">parse()</a> takes from one entry. </p>
 <p>Every field becomes a row of widgets in the display panel. An entry is compressed before it is encrypted, so a small one in a shared store could decompress into millions of "a: b" lines within the plaintext limit; lines past this many fields stay in the remaining text. They are still looked at for an OTP configuration, as fields would be. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00068">68</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00069">69</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 
 </div>
 </div>
