@@ -139,7 +139,9 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 - A signed `.gpg-id` is bound to its store, not only to its folder: a
   third signed comment line, `# QtPass-GpgId-Store: <id>`, names the store,
-  each device remembers the ID it first saw per store, and a list of
+  each device remembers the ID it first saw per store (in
+  `QtPass-gpgid-stores.json`, which an older QtPass sharing the generation
+  record leaves alone), and a list of
   another store signed with the same key and copied in at the same folder
   is refused, however high its generation, before the Users dialog could
   preselect it as a rollback. `pass` reads the line as a comment

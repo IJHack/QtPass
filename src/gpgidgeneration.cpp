@@ -73,6 +73,10 @@ auto isStoreId(const QByteArray &id) -> bool {
 }
 
 const QString kRecordName = QStringLiteral("QtPass-gpgid-generations.json");
+/// The store ids live in a file of their own, under the record's lock: a
+/// QtPass from before store ids rewrites the record whole, and would drop
+/// anything it does not know from it.
+const QString kStoresName = QStringLiteral("QtPass-gpgid-stores.json");
 constexpr int kRecordFormat = 1;
 
 /// A file QtPass reads and writes itself, not QSettings: no cache between
@@ -87,6 +91,12 @@ auto recordPath() -> QString {
                         QStringLiteral("QtPass-gpgid-generations"));
   return QFileInfo(probe.fileName()).absolutePath() + QLatin1Char('/') +
          kRecordName;
+}
+
+/// The store ids' file, next to the record.
+auto storesPath() -> QString {
+  return QFileInfo(recordPath()).absolutePath() + QLatin1Char('/') +
+         kStoresName;
 }
 
 /// One list's entry in the record, or nothing when it is malformed. The
@@ -112,55 +122,71 @@ auto recordEntry(const QJsonValue &value) -> std::optional<Entry> {
   return entry;
 }
 
-/// The record from its bytes, or nothing when any part of it is not what
-/// QtPass writes. `stores` is optional: a record from before store ids has
-/// none, and one without pins writes none.
-auto parseRecord(const QByteArray &bytes) -> std::optional<Record> {
+/// The JSON object a record file holds, when it is one of @p format and
+/// carries an object under @p name.
+auto recordObject(const QByteArray &bytes, const QString &name)
+    -> std::optional<QJsonObject> {
   QJsonParseError parse{};
   const QJsonDocument doc = QJsonDocument::fromJson(bytes, &parse);
   if (parse.error != QJsonParseError::NoError || !doc.isObject()) {
     return std::nullopt;
   }
   const QJsonObject root = doc.object();
-  const QJsonValue lists = root.value(QLatin1String("lists"));
+  const QJsonValue inner = root.value(name);
   if (root.value(QLatin1String("format")).toInt() != kRecordFormat ||
-      !lists.isObject()) {
+      !inner.isObject()) {
     return std::nullopt;
   }
-  Record record;
-  const QJsonObject byKey = lists.toObject();
-  for (auto it = byKey.constBegin(); it != byKey.constEnd(); ++it) {
+  return inner.toObject();
+}
+
+/// The record's entries from its bytes, or nothing when any part of it is
+/// not what QtPass writes.
+auto parseRecord(const QByteArray &bytes) -> std::optional<Entries> {
+  const std::optional<QJsonObject> byKey =
+      recordObject(bytes, QStringLiteral("lists"));
+  if (!byKey) {
+    return std::nullopt;
+  }
+  Entries entries;
+  for (auto it = byKey->constBegin(); it != byKey->constEnd(); ++it) {
     const std::optional<Entry> entry = recordEntry(it.value());
     if (!entry) {
       return std::nullopt;
     }
-    record.lists.insert(it.key(), *entry);
+    entries.insert(it.key(), *entry);
   }
-  const QJsonValue stores = root.value(QLatin1String("stores"));
-  if (stores.isUndefined()) {
-    return record;
-  }
-  if (!stores.isObject()) {
+  return entries;
+}
+
+/// The store ids from their file's bytes, or nothing when any part of it is
+/// not what QtPass writes.
+auto parseStores(const QByteArray &bytes) -> std::optional<Stores> {
+  const std::optional<QJsonObject> byKey =
+      recordObject(bytes, QStringLiteral("stores"));
+  if (!byKey) {
     return std::nullopt;
   }
-  const QJsonObject storesByKey = stores.toObject();
-  for (auto it = storesByKey.constBegin(); it != storesByKey.constEnd(); ++it) {
+  Stores stores;
+  for (auto it = byKey->constBegin(); it != byKey->constEnd(); ++it) {
     const QString id =
         it.value().toObject().value(QLatin1String("id")).toString();
     if (!it.value().isObject() || !isStoreId(id.toLatin1())) {
       return std::nullopt;
     }
-    record.stores.insert(it.key(), id);
+    stores.insert(it.key(), id);
   }
-  return record;
+  return stores;
 }
 
-/// The record as on disk: nothing where there is no file yet, the entries
-/// otherwise; nothing with @p error set when the file cannot be read or is
-/// not a record ("unknown", never "never seen").
-auto loadRecord(const QString &path, QString *error) -> std::optional<Record> {
+/// A record file as on disk, parsed by @p parse: empty where there is no
+/// file yet; nothing with @p error set when the file cannot be read or does
+/// not parse ("unknown", never "never seen").
+template <typename T, typename Parse>
+auto loadFile(const QString &path, Parse parse, QString *error)
+    -> std::optional<T> {
   if (!QFileInfo::exists(path)) {
-    return Record{};
+    return T{};
   }
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly)) {
@@ -172,8 +198,8 @@ auto loadRecord(const QString &path, QString *error) -> std::optional<Record> {
                    .arg(path);
     return std::nullopt;
   }
-  std::optional<Record> entries = parseRecord(file.readAll());
-  if (!entries && error) {
+  std::optional<T> value = parse(file.readAll());
+  if (!value && error) {
     *error = QCoreApplication::translate(
                  "GpgIdGeneration",
                  "The generation record of the recipient lists, %1, is not "
@@ -182,37 +208,17 @@ auto loadRecord(const QString &path, QString *error) -> std::optional<Record> {
                  "before).")
                  .arg(path);
   }
-  return entries;
+  return value;
 }
 
-/// The record written through, whole, in place. Nothing is cached: a
-/// failed write leaves the next transaction reading what is on disk.
-auto saveRecord(const QString &path, const Record &record, QString *error)
-    -> bool {
-  QJsonObject lists;
-  const Entries &entries = record.lists;
-  for (auto it = entries.constBegin(); it != entries.constEnd(); ++it) {
-    QJsonObject item;
-    item.insert(QLatin1String("generation"),
-                QString::number(it.value().generation));
-    if (!it.value().digest.isEmpty()) {
-      item.insert(QLatin1String("sha256"), it.value().digest);
-    }
-    lists.insert(it.key(), item);
-  }
+/// A record file written through, whole, in place: `format` and @p inner
+/// under @p name. Nothing is cached: a failed write leaves the next
+/// transaction reading what is on disk.
+auto saveFile(const QString &path, const QString &name,
+              const QJsonObject &inner, QString *error) -> bool {
   QJsonObject root;
   root.insert(QLatin1String("format"), kRecordFormat);
-  root.insert(QLatin1String("lists"), lists);
-  if (!record.stores.isEmpty()) {
-    QJsonObject stores;
-    for (auto it = record.stores.constBegin(); it != record.stores.constEnd();
-         ++it) {
-      QJsonObject item;
-      item.insert(QLatin1String("id"), it.value());
-      stores.insert(it.key(), item);
-    }
-    root.insert(QLatin1String("stores"), stores);
-  }
+  root.insert(name, inner);
   QSaveFile file(path);
   if (!file.open(QIODevice::WriteOnly)) {
     if (error)
@@ -239,10 +245,36 @@ auto saveRecord(const QString &path, const Record &record, QString *error)
   return true;
 }
 
+auto saveRecord(const QString &path, const Entries &entries, QString *error)
+    -> bool {
+  QJsonObject lists;
+  for (auto it = entries.constBegin(); it != entries.constEnd(); ++it) {
+    QJsonObject item;
+    item.insert(QLatin1String("generation"),
+                QString::number(it.value().generation));
+    if (!it.value().digest.isEmpty()) {
+      item.insert(QLatin1String("sha256"), it.value().digest);
+    }
+    lists.insert(it.key(), item);
+  }
+  return saveFile(path, QStringLiteral("lists"), lists, error);
+}
+
+auto saveStores(const QString &path, const Stores &stores, QString *error)
+    -> bool {
+  QJsonObject byKey;
+  for (auto it = stores.constBegin(); it != stores.constEnd(); ++it) {
+    QJsonObject item;
+    item.insert(QLatin1String("id"), it.value());
+    byKey.insert(it.key(), item);
+  }
+  return saveFile(path, QStringLiteral("stores"), byKey, error);
+}
+
 /// Process mutex, then a lock file against a second QtPass (no single-instance
-/// guard, a Flatpak next to a native one), then a fresh read. When `ok()` is
-/// false (no lock, or a record that does not parse) the caller neither uses
-/// nor writes the record: RecordUnavailable.
+/// guard, a Flatpak next to a native one), then a fresh read of the record and
+/// the store ids. When `ok()` is false (no lock, or a file that does not
+/// parse) the caller neither uses nor writes them: RecordUnavailable.
 struct Transaction {
   QMutexLocker<QMutex> mutex{&recordLock()};
   QString path{recordPath()};
@@ -252,6 +284,7 @@ struct Transaction {
   QLockFile lock{path + QStringLiteral(".lock")};
   bool locked{haveFolder && lock.tryLock(kRecordLockTimeoutMs)};
   QString problem;
+  QString storesFile{storesPath()};
   std::optional<Record> entries;
 
   Transaction() {
@@ -264,7 +297,17 @@ struct Transaction {
                     .arg(path);
       return;
     }
-    entries = loadRecord(path, &problem);
+    std::optional<Entries> lists =
+        loadFile<Entries>(path, parseRecord, &problem);
+    if (!lists) {
+      return;
+    }
+    std::optional<Stores> stores =
+        loadFile<Stores>(storesFile, parseStores, &problem);
+    if (!stores) {
+      return;
+    }
+    entries = Record{std::move(*lists), std::move(*stores)};
   }
 
   [[nodiscard]] auto ok(QString *error) const -> bool {
@@ -293,12 +336,12 @@ struct Transaction {
 
   /// Remember @p id for the store with @p key, through to disk.
   auto pinStore(const QString &key, const QString &id, QString *error) -> bool {
-    Record updated = *entries;
-    updated.stores.insert(key, id);
-    if (!saveRecord(path, updated, error)) {
+    Stores updated = entries->stores;
+    updated.insert(key, id);
+    if (!saveStores(storesFile, updated, error)) {
       return false;
     }
-    entries = std::move(updated);
+    entries->stores = std::move(updated);
     return true;
   }
 
@@ -317,12 +360,12 @@ struct Transaction {
   /// to disk.
   auto remember(const QString &key, qint64 generation, const QString &digest,
                 QString *error) -> bool {
-    Record updated = *entries;
-    updated.lists[key] = Entry{generation, digest};
+    Entries updated = entries->lists;
+    updated[key] = Entry{generation, digest};
     if (!saveRecord(path, updated, error)) {
       return false;
     }
-    entries = std::move(updated);
+    entries->lists = std::move(updated);
     return true;
   }
 };
@@ -534,6 +577,8 @@ auto GpgIdGeneration::key(const QString &gpgIdFile) -> QString {
 
 auto GpgIdGeneration::recordFile() -> QString { return recordPath(); }
 
+auto GpgIdGeneration::storeRecordFile() -> QString { return storesPath(); }
+
 auto GpgIdGeneration::digest(const QByteArray &contents) -> QString {
   return QString::fromLatin1(
       QCryptographicHash::hash(contents, QCryptographicHash::Sha256).toHex());
@@ -656,9 +701,9 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
   // history of this one.
   const QString storeKey = key(storeRoot);
   const std::optional<QString> pinned = t.store(storeKey);
-  if (pinned &&
-      !ofThisStore(gpgIdFile, *header, *pinned,
-                   generation == last && t.digest(k) == bytes, t.path, error)) {
+  if (pinned && !ofThisStore(gpgIdFile, *header, *pinned,
+                             generation == last && t.digest(k) == bytes,
+                             t.storesFile, error)) {
     return Verdict::WrongStore;
   }
   // First sight of the store's id, on a list that is otherwise accepted.
@@ -720,8 +765,7 @@ auto GpgIdGeneration::ofThisStore(const QString &gpgIdFile,
              "store (store ID %2; this device knows this store as %3) and is "
              "not used. It may have been copied here from a store signed "
              "with the same key. If this store was set up again instead, "
-             "removing %4 forgets the store ids and generations this device "
-             "accepted.")
+             "removing %4 forgets the store IDs this device knows.")
               .arg(gpgIdFile, *header.store, pinned, recordPath);
     return false;
   }

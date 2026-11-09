@@ -50,6 +50,7 @@ private slots:
   void aNewListWithoutAStoreLineIsRefusedOnceTheStoreHasAnId();
   void storeIdForKeepsTakesOverOrMakesAnId();
   void malformedStorePinsFailClosed();
+  void storeIdsSurviveAnOlderQtPassRewritingTheRecord();
 };
 
 /**
@@ -801,27 +802,68 @@ void tst_gpgidgeneration::malformedStorePinsFailClosed() {
   QTemporaryDir dir;
   QVERIFY(dir.isValid());
   QVERIFY(GpgIdGeneration::storeIdFor(dir.path(), std::nullopt).has_value());
-  const QString recordFile = GpgIdGeneration::recordFile();
-  QFile in(recordFile);
+  const QString storesFile = GpgIdGeneration::storeRecordFile();
+  QFile in(storesFile);
   QVERIFY(in.open(QIODevice::ReadOnly));
   const QByteArray before = in.readAll();
   in.close();
-  const auto restore = qScopeGuard([&] { write(recordFile, before); });
+  const auto restore = qScopeGuard([&] { write(storesFile, before); });
   QJsonObject root = QJsonDocument::fromJson(before).object();
-  QVERIFY(root.contains(QStringLiteral("stores")));
   QJsonObject stores = root.value(QStringLiteral("stores")).toObject();
+  QVERIFY(!stores.isEmpty());
   QJsonObject bad;
   bad.insert(QStringLiteral("id"), QStringLiteral("NOT-AN-ID"));
   stores.insert(QStringLiteral("x"), bad);
   root.insert(QStringLiteral("stores"), stores);
-  write(recordFile, QJsonDocument(root).toJson());
+  write(storesFile, QJsonDocument(root).toJson());
   QString why;
   const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
   QCOMPARE(GpgIdGeneration::accept(
                file, GpgIdGeneration::withHeader(1, QStringLiteral("."), "A\n"),
                dir.path(), &why),
            GpgIdGeneration::Verdict::RecordUnavailable);
+  QVERIFY2(why.contains(storesFile), qPrintable(why));
   QVERIFY(!GpgIdGeneration::storeIdFor(dir.path(), std::nullopt).has_value());
+}
+
+/**
+ * @brief A QtPass from before store IDs rewrites the generation record whole
+ *        when it accepts or writes a list; the store IDs are in a file of
+ *        their own, so they survive it, and another store's list stays
+ *        refused.
+ */
+void tst_gpgidgeneration::storeIdsSurviveAnOlderQtPassRewritingTheRecord() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
+  const QString ours = QStringLiteral("0123456789abcdef0123456789abcdef");
+  const QByteArray own =
+      GpgIdGeneration::withHeader(2, QStringLiteral("."), "ALICE\n", ours);
+  QCOMPARE(GpgIdGeneration::accept(file, own, dir.path()),
+           GpgIdGeneration::Verdict::Accepted);
+
+  // What an older QtPass writes: format 1, its lists, nothing else.
+  const QString recordFile = GpgIdGeneration::recordFile();
+  QFile in(recordFile);
+  QVERIFY(in.open(QIODevice::ReadOnly));
+  const QJsonObject lists = QJsonDocument::fromJson(in.readAll())
+                                .object()
+                                .value(QStringLiteral("lists"))
+                                .toObject();
+  in.close();
+  QVERIFY(!lists.isEmpty());
+  QJsonObject older;
+  older.insert(QStringLiteral("format"), 1);
+  older.insert(QStringLiteral("lists"), lists);
+  write(recordFile, QJsonDocument(older).toJson());
+
+  const QByteArray theirs = GpgIdGeneration::withHeader(
+      9, QStringLiteral("."), "MALLORY\n",
+      QStringLiteral("fedcba9876543210fedcba9876543210"));
+  QCOMPARE(GpgIdGeneration::accept(file, theirs, dir.path()),
+           GpgIdGeneration::Verdict::WrongStore);
+  QCOMPARE(GpgIdGeneration::storeIdFor(dir.path(), std::nullopt),
+           std::optional<QString>(ours));
 }
 
 QTEST_MAIN(tst_gpgidgeneration)

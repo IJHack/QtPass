@@ -274,6 +274,14 @@ public:
    */
   static auto recordFile() -> QString;
 
+  /**
+   * @brief The file the store IDs are kept in, next to recordFile() and
+   * under its lock, so a QtPass from before store IDs, rewriting the record,
+   * cannot drop them. Removing it forgets the IDs.
+   * @return The file's path.
+   */
+  static auto storeRecordFile() -> QString;
+
 private:
   /**
    * @brief Whether @p header's folder line, if it has one, names the folder
@@ -298,7 +306,7 @@ private:
    * @param pinned The store id this device knows the store by.
    * @param alreadyAccepted Whether these exact bytes are the generation
    *        this device accepted last for the file.
-   * @param recordPath The record file, which the refusal names.
+   * @param recordPath The store IDs' file, which the refusal names.
    * @param error Receives why not, if not null.
    * @return Whether the list is this store's.
    */
