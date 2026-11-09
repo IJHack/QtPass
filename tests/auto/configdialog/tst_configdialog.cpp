@@ -1439,6 +1439,7 @@ void tst_configdialog::secretFieldsFollowHidePassword() {
     seed.hidePassword = false;
     seed.hideSecretFields = true;
     seed.secretFieldNames = AppSettings::defaultSecretFieldNames();
+    seed.hideAllFields = false;
     seed.clipBoardType = Enums::CLIPBOARD_ON_DEMAND;
     QtPassSettings::save(seed);
   }
@@ -1447,14 +1448,22 @@ void tst_configdialog::secretFieldsFollowHidePassword() {
   auto *secrets = child<QCheckBox>(dialog, "checkBoxHideSecretFields");
   auto *names = child<QLineEdit>(dialog, "lineEditSecretFields");
   auto *reset = child<QPushButton>(dialog, "buttonDefaultSecretFields");
+  auto *every = child<QCheckBox>(dialog, "checkBoxHideAllFields");
   const QString defaults =
       AppSettings::defaultSecretFieldNames().join(QStringLiteral(", "));
   QCOMPARE(names->text(), defaults);
   QVERIFY(secrets->isChecked());
-  QVERIFY2(!secrets->isEnabled() && !names->isEnabled() && !reset->isEnabled(),
+  QVERIFY2(!secrets->isEnabled() && !names->isEnabled() &&
+               !reset->isEnabled() && !every->isEnabled(),
            "nothing to hide while passwords show");
   hide->setChecked(true);
-  QVERIFY(secrets->isEnabled() && names->isEnabled() && reset->isEnabled());
+  QVERIFY(secrets->isEnabled() && names->isEnabled() && reset->isEnabled() &&
+          every->isEnabled());
+  every->setChecked(true);
+  QVERIFY2(!secrets->isEnabled() && !names->isEnabled() && !reset->isEnabled(),
+           "no words to pick while every field is hidden");
+  every->setChecked(false);
+  QVERIFY(secrets->isEnabled() && names->isEnabled());
   secrets->setChecked(false);
   QVERIFY2(secrets->isEnabled() && !names->isEnabled() && !reset->isEnabled(),
            "the words only while other secrets are hidden");
@@ -1501,7 +1510,7 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
         "checkBoxDisplayAsIs", "checkBoxNoLineWrapping", "checkBoxAddGPGId",
         "checkBoxUseGit", "checkBoxUseOtp", "checkBoxUseGrepSearch",
         "checkBoxUsePwgen", "checkBoxAvoidCapitals", "checkBoxAvoidNumbers",
-        "checkBoxLessRandom", "checkBoxUseSymbols"}) {
+        "checkBoxLessRandom", "checkBoxUseSymbols", "checkBoxHideAllFields"}) {
     child<QCheckBox>(dialog, box)->setChecked(true);
   }
   child<QComboBox>(dialog, "comboBoxFields")->setCurrentIndex(2);
@@ -1514,6 +1523,7 @@ void tst_configdialog::acceptRoundTripsEveryOwnedSetting() {
   QCOMPARE(s.secretFieldNames,
            (QStringList{QStringLiteral("iban"), QStringLiteral("cvv")}));
   QVERIFY(!s.hideSecretFields);
+  QVERIFY(s.hideAllFields);
   QCOMPARE(s.passExecutable, QStringLiteral("/opt/pass"));
   QCOMPARE(s.gitExecutable, QStringLiteral("/opt/git"));
   QCOMPARE(s.gpgExecutable, QStringLiteral("/opt/gpg"));

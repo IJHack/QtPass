@@ -29,6 +29,7 @@ public:
   static const QString hidePassword;
   static const QString secretFieldNames;
   static const QString hideSecretFields;
+  static const QString hideAllFields;
   static const QString hideContent;
   static const QString useMonospace;
   static const QString displayAsIs;

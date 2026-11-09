@@ -612,7 +612,7 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
   }
   const AppSettings s = QtPassSettings::load();
   QStringList templ =
-      s.useTemplate ? s.passTemplate.split("\n") : QStringList();
+      s.useTemplate ? TemplateIO::fieldsIn(s.passTemplate) : QStringList();
   bool allFields = s.useTemplate && s.templateAllFields;
   FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
@@ -634,6 +634,13 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     // As it is, but not a block per line of millions.
     output = FileContent::boundedForDisplay(p_output);
   } else {
+    // What a template marks secret, in the settings or the store's
+    // .templates; read per entry shown, so an edit there counts at once.
+    if (s.hidePassword) {
+      m_displayPanel->setMarkedSecrets(
+          TemplateIO::secretFieldsIn(s.passTemplate) +
+          TemplateIO::readSecretFields(s.passStore));
+    }
     m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
                                   s.useOtp ? fileContent.getOtpUri()
                                            : QString());
@@ -679,7 +686,7 @@ void MainWindow::otpFromFileToClipboard(const QString &p_output,
   // Parse with the same template settings passShowHandler uses, so an OTP
   // field is recognised identically in both paths.
   const QStringList templ =
-      s.useTemplate ? s.passTemplate.split("\n") : QStringList();
+      s.useTemplate ? TemplateIO::fieldsIn(s.passTemplate) : QStringList();
   const bool allFields = s.useTemplate && s.templateAllFields;
   const FileContent fileContent =
       FileContent::parse(p_output, templ, allFields);

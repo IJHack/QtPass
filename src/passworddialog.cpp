@@ -9,6 +9,7 @@
 #include "qtpasssettings.h"
 #include "secretlineedit.h"
 #include "secretplaintextedit.h"
+#include "templateio.h"
 #include "totp.h"
 #include "ui_passworddialog.h"
 #include "util.h"
@@ -584,7 +585,7 @@ auto PasswordDialog::getPassword() -> QString {
 }
 
 void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
-  m_fields = rawFields.split('\n');
+  m_fields = TemplateIO::fieldsIn(rawFields);
   m_templating = useTemplate;
 
   for (QLineEdit *line : std::as_const(m_templateLines)) {

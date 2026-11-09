@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QRegularExpression>
 #include <QSaveFile>
 #include <QStringConverter>
 #include <QTextStream>
@@ -108,6 +109,42 @@ auto TemplateIO::readTemplates(const QString &storePath)
   }
   flush();
   return result;
+}
+
+auto TemplateIO::secretFieldsIn(const QString &templateText) -> QStringList {
+  static const QRegularExpression marker(
+      QStringLiteral("^#\\s*secret\\s*:(.*)$"),
+      QRegularExpression::CaseInsensitiveOption);
+  QStringList names;
+  const QStringList lines = templateText.split(QLatin1Char('\n'));
+  for (const QString &line : lines) {
+    const QRegularExpressionMatch match = marker.match(line.trimmed());
+    if (!match.hasMatch()) {
+      continue;
+    }
+    const QStringList listed = match.captured(1).split(QLatin1Char(','));
+    for (const QString &name : listed) {
+      const QString trimmed = name.trimmed();
+      if (!trimmed.isEmpty()) {
+        names << trimmed;
+      }
+    }
+  }
+  return names;
+}
+
+auto TemplateIO::readSecretFields(const QString &storePath) -> QStringList {
+  const std::optional<QString> contents =
+      readTemplateFile(QDir(storePath).filePath(".templates"));
+  return contents ? secretFieldsIn(*contents) : QStringList();
+}
+
+auto TemplateIO::fieldsIn(const QString &templateText) -> QStringList {
+  QStringList fields = templateText.split(QLatin1Char('\n'));
+  fields.removeIf([](const QString &line) {
+    return line.trimmed().startsWith(QLatin1Char('#'));
+  });
+  return fields;
 }
 
 auto TemplateIO::writeTemplates(const QString &storePath,

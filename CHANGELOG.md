@@ -81,6 +81,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   "API key" but not "keyboard layout". "Also hide other secrets" switches
   it off
   ([#2054](https://github.com/IJHack/QtPass/issues/2054)).
+- Templates can mark secret fields: a comment line `# secret: pin, tan` in
+  a section of the store's `.templates` file, or in the template in the
+  settings, hides those fields like the password while "Hide password" is
+  on. A mark counts for every entry of the store, since QtPass can't tell
+  which template an entry was made with; `pass` and QtPass 1.8 read the line
+  as a comment. And "Hide every field" puts all fields behind the eye button,
+  for shared screens; the notes and the OTP code stay visible
+  ([#2054](https://github.com/IJHack/QtPass/issues/2054)).
 - Restore the previous clipboard after autoclear, on by default, as
   `pass -c` does: text only, for the clipboard and the primary selection
   each, and only when QtPass's own copy is still there

@@ -84,6 +84,9 @@ struct AppSettings {
   /// The field names hideSecretFields hides, as whole words in any case
   /// ("key" hides "API key", not "keyboard"). May be empty.
   QStringList secretFieldNames{defaultSecretFieldNames()};
+  /// With hidePassword: hide every field, not only the secrets (shared
+  /// screens, presenting). The notes and the OTP code stay visible.
+  bool hideAllFields{false};
   bool hideContent{false};    ///< Hide the entire content panel.
   bool useMonospace{false};   ///< Render content in a monospace font.
   bool displayAsIs{false};    ///< Show file content unmodified.

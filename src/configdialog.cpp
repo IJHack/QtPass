@@ -51,6 +51,8 @@ ConfigDialog::ConfigDialog(QWidget *parent)
           [this] { updateSecretFieldsEnabled(); });
   connect(ui->checkBoxHideSecretFields, &QCheckBox::toggled, this,
           [this] { updateSecretFieldsEnabled(); });
+  connect(ui->checkBoxHideAllFields, &QCheckBox::toggled, this,
+          [this] { updateSecretFieldsEnabled(); });
   connect(ui->buttonDefaultSecretFields, &QPushButton::clicked, this, [this] {
     ui->lineEditSecretFields->setText(
         AppSettings::defaultSecretFieldNames().join(QStringLiteral(", ")));
@@ -189,6 +191,7 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
                                     0);
   ui->checkBoxHidePassword->setChecked(settings.hidePassword);
   ui->checkBoxHideSecretFields->setChecked(settings.hideSecretFields);
+  ui->checkBoxHideAllFields->setChecked(settings.hideAllFields);
   ui->lineEditSecretFields->setText(
       settings.secretFieldNames.join(QStringLiteral(", ")));
   updateSecretFieldsEnabled();
@@ -252,6 +255,7 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.useAutoclearPanel = settings.autoclearPanelSeconds > 0;
   settings.hidePassword = ui->checkBoxHidePassword->isChecked();
   settings.hideSecretFields = ui->checkBoxHideSecretFields->isChecked();
+  settings.hideAllFields = ui->checkBoxHideAllFields->isChecked();
   // As written, an empty list included ("Default" puts the set back).
   settings.secretFieldNames.clear();
   for (const QString &name :
@@ -721,12 +725,16 @@ void ConfigDialog::on_comboBoxClipboard_activated(int index) {
 }
 
 void ConfigDialog::updateSecretFieldsEnabled() {
-  // Each control only while the one it depends on is on: other secrets
-  // only while passwords are hidden, their words only while those are.
+  // Each control only while the one it depends on is on: other secrets and
+  // every field only while passwords are hidden; the secret words only while
+  // other secrets are, and not when every field is hidden anyway.
   const bool hiding = ui->checkBoxHidePassword->isEnabled() &&
                       ui->checkBoxHidePassword->isChecked();
-  ui->checkBoxHideSecretFields->setEnabled(hiding);
-  const bool words = hiding && ui->checkBoxHideSecretFields->isChecked();
+  ui->checkBoxHideAllFields->setEnabled(hiding);
+  const bool all = hiding && ui->checkBoxHideAllFields->isChecked();
+  ui->checkBoxHideSecretFields->setEnabled(hiding && !all);
+  const bool words =
+      hiding && !all && ui->checkBoxHideSecretFields->isChecked();
   ui->lineEditSecretFields->setEnabled(words);
   ui->buttonDefaultSecretFields->setEnabled(words);
 }

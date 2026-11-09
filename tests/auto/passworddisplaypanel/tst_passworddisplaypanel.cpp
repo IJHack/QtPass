@@ -33,6 +33,8 @@ private Q_SLOTS:
   void cleanup();
   void displayFieldsAddsRows();
   void secretFieldsHideWithThePassword();
+  void templateMarkedFieldsHideWithThePassword();
+  void hideEveryFieldHidesThemAll();
   void fieldNamesArePlainText();
   void doubleClickOnARowAsksForEdit();
   void displayFieldsSkipsEmptyPassword();
@@ -146,6 +148,78 @@ void tst_passworddisplaypanel::secretFieldsHideWithThePassword() {
   QVERIFY(!hidden(QStringLiteral("pin")));
   QVERIFY(!hidden(QStringLiteral("API key")));
   QCOMPARE(countUrlButtons(), 2);
+}
+
+/**
+ * @brief A field a template marks secret is hidden with the password, by its
+ *        whole name in any case, also with "Also hide other secrets" off;
+ *        a name that only holds it is not. Without "Hide password" the mark
+ *        does nothing.
+ */
+void tst_passworddisplaypanel::templateMarkedFieldsHideWithThePassword() {
+  const NamedValues fields{
+      {QStringLiteral("iban"), QStringLiteral("NL00BANK0123456789")},
+      {QStringLiteral("iban owner"), QStringLiteral("A. Jansen")},
+      {QStringLiteral("login"), QStringLiteral("ajansen")}};
+  const auto hidden = [this](const QString &name) {
+    const auto *edit = m_parent->findChild<QLineEdit *>(name);
+    return edit != nullptr && edit->echoMode() == QLineEdit::Password;
+  };
+  m_panel->setMarkedSecrets({QStringLiteral("IBAN")});
+  AppSettings s;
+  s.hidePassword = true;
+  s.hideSecretFields = false;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(hidden(QStringLiteral("Password")));
+  QVERIFY2(hidden(QStringLiteral("iban")), "marked, in another case");
+  QVERIFY2(!hidden(QStringLiteral("iban owner")), "a whole name, not a word");
+  QVERIFY(!hidden(QStringLiteral("login")));
+
+  m_panel->clear();
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(!hidden(QStringLiteral("iban")));
+}
+
+/**
+ * @brief "Hide every field" puts every field behind the eye button, with no
+ *        link button, the url's included; only with "Hide password". An
+ *        unusable OTP configuration's message stays readable.
+ */
+void tst_passworddisplaypanel::hideEveryFieldHidesThemAll() {
+  const NamedValues fields{
+      {QStringLiteral("login"), QStringLiteral("ajansen")},
+      {QStringLiteral("url"), QStringLiteral("https://example.org")},
+      {QStringLiteral("OTP"), QStringLiteral("not base32!")}};
+  const auto hidden = [this](const QString &name) {
+    const auto *edit = m_parent->findChild<QLineEdit *>(name);
+    return edit != nullptr && edit->echoMode() == QLineEdit::Password;
+  };
+  const auto urlButtons = [this]() {
+    int buttons = 0;
+    for (int row = 0; row < m_grid->rowCount(); ++row) {
+      buttons += urlButtonAt(row) != nullptr ? 1 : 0;
+    }
+    return buttons;
+  };
+  AppSettings s;
+  s.hidePassword = true;
+  s.hideSecretFields = false;
+  s.hideAllFields = true;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s,
+                         QStringLiteral("not base32!"));
+  QVERIFY(hidden(QStringLiteral("Password")));
+  QVERIFY(hidden(QStringLiteral("login")));
+  QVERIFY(hidden(QStringLiteral("url")));
+  QCOMPARE(urlButtons(), 0);
+  QVERIFY2(!hidden(QStringLiteral("OTP code")),
+           "the OTP message is not a value to hide");
+
+  m_panel->clear();
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("secret"), fields, s);
+  QVERIFY(!hidden(QStringLiteral("login")));
+  QCOMPARE(urlButtons(), 1);
 }
 
 /**

@@ -43,6 +43,37 @@ public:
   static auto getFolderTemplate(const QString &folderPath,
                                 const QString &storePath) -> QString;
 
+  /**
+   * @brief The field names a template marks as secret.
+   *
+   * A line `# secret: pin, cvv` names them, separated by commas; "secret"
+   * may be written in any case. It is a comment line, so `pass`, QtPass 1.8
+   * and the field list skip it. Names are trimmed and empty ones dropped;
+   * every other line is ignored. A marked field is hidden like the password
+   * (PasswordDisplayPanel), matched by its whole name in any case.
+   * @param templateText The text of a template: the store's `.templates`
+   *        file or the template in the settings.
+   * @return The marked names in the order they appear.
+   */
+  static auto secretFieldsIn(const QString &templateText) -> QStringList;
+
+  /**
+   * @brief The field names the store's `.templates` file marks as secret,
+   * in any of its sections (see secretFieldsIn()).
+   * @param storePath Path to password store root.
+   * @return The marked names; empty when there is no readable file.
+   */
+  static auto readSecretFields(const QString &storePath) -> QStringList;
+
+  /**
+   * @brief The field names of the template in the settings: one per line,
+   * with comment lines (starting with `#`, such as a `# secret:` line) left
+   * out. Other lines are kept as they are, empty ones too.
+   * @param templateText The template's text, newline-separated.
+   * @return The field names.
+   */
+  static auto fieldsIn(const QString &templateText) -> QStringList;
+
 private:
   TemplateIO() = default;
 };
