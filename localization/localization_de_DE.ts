@@ -3824,34 +3824,34 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1075"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Temporäre Datei neben %1 kann nicht erstellt werden: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1087"/>
-        <location filename="../src/util.cpp" line="1166"/>
-        <location filename="../src/util.cpp" line="1196"/>
+        <location filename="../src/util.cpp" line="984"/>
+        <location filename="../src/util.cpp" line="1063"/>
+        <location filename="../src/util.cpp" line="1093"/>
         <source>Cannot write %1: %2</source>
         <translation>%1 kann nicht geschrieben werden: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1102"/>
+        <location filename="../src/util.cpp" line="999"/>
         <source>Failed to replace %1.</source>
         <translation>%1 konnte nicht ersetzt werden.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1107"/>
+        <location filename="../src/util.cpp" line="1004"/>
         <source>%1 already exists.</source>
         <translation>%1 existiert bereits.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1109"/>
+        <location filename="../src/util.cpp" line="1006"/>
         <source>Failed to write %1.</source>
         <translation>%1 konnte nicht geschrieben werden.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1153"/>
+        <location filename="../src/util.cpp" line="1050"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>%1 wurde während des Schreibens gegen eine andere Datei ausgetauscht.</translation>
     </message>
@@ -3860,12 +3860,12 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
         <translation type="obsolete">%1 wurde während des Schreibens durch eine Verknüpfung ersetzt.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1179"/>
+        <location filename="../src/util.cpp" line="1076"/>
         <source>Cannot read %1.</source>
         <translation>%1 kann nicht gelesen werden.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1189"/>
+        <location filename="../src/util.cpp" line="1086"/>
         <source>Cannot read %1: %2</source>
         <translation>%1 kann nicht gelesen werden: %2</translation>
     </message>

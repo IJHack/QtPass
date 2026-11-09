@@ -3585,34 +3585,34 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1075"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Nevar izveidot pagaidu failu līdzās %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1087"/>
-        <location filename="../src/util.cpp" line="1166"/>
-        <location filename="../src/util.cpp" line="1196"/>
+        <location filename="../src/util.cpp" line="984"/>
+        <location filename="../src/util.cpp" line="1063"/>
+        <location filename="../src/util.cpp" line="1093"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Nevar ierakstīt %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1102"/>
+        <location filename="../src/util.cpp" line="999"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Neizdevās aizstāt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1107"/>
+        <location filename="../src/util.cpp" line="1004"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 jau eksistē.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1109"/>
+        <location filename="../src/util.cpp" line="1006"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Neizdevās ierakstīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1153"/>
+        <location filename="../src/util.cpp" line="1050"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 rakstīšanas laikā tika aizstāts ar citu failu.</translation>
     </message>
@@ -3621,12 +3621,12 @@ Parastajiem ierakstiem ir uzticama šifrēšanas atslēga; atlasiet tos, lai ļa
         <translation type="obsolete">%1 rakstīšanas laikā tika aizstāts ar saiti.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1179"/>
+        <location filename="../src/util.cpp" line="1076"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Nevar nolasīt %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1189"/>
+        <location filename="../src/util.cpp" line="1086"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Nevar nolasīt %1: %2</translation>
     </message>

@@ -3912,34 +3912,34 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1075"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Kan geen tijdelijk bestand naast %1 aanmaken: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1087"/>
-        <location filename="../src/util.cpp" line="1166"/>
-        <location filename="../src/util.cpp" line="1196"/>
+        <location filename="../src/util.cpp" line="984"/>
+        <location filename="../src/util.cpp" line="1063"/>
+        <location filename="../src/util.cpp" line="1093"/>
         <source>Cannot write %1: %2</source>
         <translation>Kan %1 niet schrijven: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1102"/>
+        <location filename="../src/util.cpp" line="999"/>
         <source>Failed to replace %1.</source>
         <translation>Vervanging van %1 is mislukt.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1107"/>
+        <location filename="../src/util.cpp" line="1004"/>
         <source>%1 already exists.</source>
         <translation>%1 bestaat al.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1109"/>
+        <location filename="../src/util.cpp" line="1006"/>
         <source>Failed to write %1.</source>
         <translation>Kon %1 niet schrijven.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1153"/>
+        <location filename="../src/util.cpp" line="1050"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>%1 is door een ander bestand vervangen terwijl het werd geschreven.</translation>
     </message>
@@ -3948,12 +3948,12 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <translation type="vanished">%1 is door een link vervangen terwijl het werd geschreven.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1179"/>
+        <location filename="../src/util.cpp" line="1076"/>
         <source>Cannot read %1.</source>
         <translation>Kan %1 niet lezen.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1189"/>
+        <location filename="../src/util.cpp" line="1086"/>
         <source>Cannot read %1: %2</source>
         <translation>Kan %1 niet lezen: %2</translation>
     </message>

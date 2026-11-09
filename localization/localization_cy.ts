@@ -3699,34 +3699,34 @@ Ni ellir amgryptio i gofnodion [ANNILYS] a [WEDI DOD I BEN]; mae gan gofnodion [
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="1075"/>
+        <location filename="../src/util.cpp" line="972"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation>Ni ellir creu ffeil dros dro wrth ymyl %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1087"/>
-        <location filename="../src/util.cpp" line="1166"/>
-        <location filename="../src/util.cpp" line="1196"/>
+        <location filename="../src/util.cpp" line="984"/>
+        <location filename="../src/util.cpp" line="1063"/>
+        <location filename="../src/util.cpp" line="1093"/>
         <source>Cannot write %1: %2</source>
         <translation>Ni ellir ysgrifennu %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1102"/>
+        <location filename="../src/util.cpp" line="999"/>
         <source>Failed to replace %1.</source>
         <translation>Methwyd disodli %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1107"/>
+        <location filename="../src/util.cpp" line="1004"/>
         <source>%1 already exists.</source>
         <translation>Mae %1 yn bodoli eisoes.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1109"/>
+        <location filename="../src/util.cpp" line="1006"/>
         <source>Failed to write %1.</source>
         <translation>Methwyd ysgrifennu %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1153"/>
+        <location filename="../src/util.cpp" line="1050"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation>Cyfnewidiwyd %1 am ffeil arall tra oedd yn cael ei hysgrifennu.</translation>
     </message>
@@ -3735,12 +3735,12 @@ Ni ellir amgryptio i gofnodion [ANNILYS] a [WEDI DOD I BEN]; mae gan gofnodion [
         <translation type="obsolete">Disodlwyd %1 gan ddolen tra oedd yn cael ei hysgrifennu.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1179"/>
+        <location filename="../src/util.cpp" line="1076"/>
         <source>Cannot read %1.</source>
         <translation>Ni ellir darllen %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1189"/>
+        <location filename="../src/util.cpp" line="1086"/>
         <source>Cannot read %1: %2</source>
         <translation>Ni ellir darllen %1: %2</translation>
     </message>
