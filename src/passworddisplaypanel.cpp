@@ -177,11 +177,15 @@ void PasswordDisplayPanel::setMarkedSecrets(const QStringList &names) {
 
 auto PasswordDisplayPanel::hides(const QString &field,
                                  const AppSettings &s) const -> bool {
+  return s.hidePassword &&
+         (s.hideAllFields || field == QObject::tr("Password") ||
+          isSecret(field, s));
+}
+
+auto PasswordDisplayPanel::isSecret(const QString &field,
+                                    const AppSettings &s) const -> bool {
   if (!s.hidePassword) {
     return false;
-  }
-  if (s.hideAllFields || field == QObject::tr("Password")) {
-    return true;
   }
   const bool marked =
       std::any_of(m_markedSecrets.cbegin(), m_markedSecrets.cend(),

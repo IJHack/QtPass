@@ -944,6 +944,22 @@ void tst_mainwindow::templateMarkedSecretsAreHidden() {
     QVERIFY2(!label->text().contains(QLatin1Char('#')),
              "the marker line is no field");
   }
+
+  // Not a field of the template (nor in its case): a marked line is still
+  // taken out of the text below the fields, into a hidden row.
+  s.templateAllFields = false;
+  QtPassSettings::save(s);
+  m_window->passShowHandler(
+      QStringLiteral("hunter2\nlogin: ajansen\nPIN: 1234\ntan: 987654\n"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  QVERIFY2(!browser->toPlainText().contains(QStringLiteral("1234")),
+           "a marked line in another case stays out of the notes");
+  QVERIFY2(!browser->toPlainText().contains(QStringLiteral("987654")),
+           "a line marked in .templates stays out of the notes");
+  QVERIFY(hidden(QStringLiteral("PIN")));
+  QVERIFY(hidden(QStringLiteral("tan")));
 }
 
 void tst_mainwindow::otpRequestAnswersOnlyItsOwnEntry() {

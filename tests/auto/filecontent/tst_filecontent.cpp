@@ -12,6 +12,7 @@ class tst_filecontent : public QObject {
 private Q_SLOTS:
   void parsePlainPassword();
   void parseTakesABoundedNumberOfFields();
+  void parseTakesTheFieldsItIsAskedFor();
   void parseFindsOtpPastTheFieldCap();
   void parseShowsABoundedNumberOfLines();
   void boundedForDisplayCutsAtTheLineLimit();
@@ -75,6 +76,31 @@ private Q_SLOTS:
  * a shared store can expand into millions of "a: b" lines within the
  * plaintext limit: past kMaxNamedFields they stay text.
  */
+/**
+ * @brief A line whose name the caller asks for is a field even when the
+ *        template doesn't list it, so a secret never stays in the text
+ *        below the fields; other lines stay text, and without a callback
+ *        nothing changes.
+ */
+void tst_filecontent::parseTakesTheFieldsItIsAskedFor() {
+  const QString entry = QStringLiteral("pw\nPIN: 1234\nnote: hello\nfree text");
+  const auto pin = [](const QString &name) {
+    return name.compare(QStringLiteral("pin"), Qt::CaseInsensitive) == 0;
+  };
+  const FileContent asked =
+      FileContent::parse(entry, {QStringLiteral("pin")}, false, pin);
+  QCOMPARE(asked.getNamedValues().size(), 1);
+  QCOMPARE(asked.getNamedValues().first().name, QStringLiteral("PIN"));
+  QCOMPARE(asked.getNamedValues().first().value, QStringLiteral("1234"));
+  QVERIFY(!asked.getRemainingDataForDisplay().contains(QStringLiteral("1234")));
+  QVERIFY(asked.getRemainingDataForDisplay().contains(QStringLiteral("hello")));
+
+  const FileContent plain =
+      FileContent::parse(entry, {QStringLiteral("pin")}, false);
+  QVERIFY2(plain.getNamedValues().isEmpty(), "a template name is exact");
+  QVERIFY(plain.getRemainingDataForDisplay().contains(QStringLiteral("1234")));
+}
+
 void tst_filecontent::parseTakesABoundedNumberOfFields() {
   QString content = QStringLiteral("pw");
   const int lines = FileContent::kMaxNamedFields + 5;

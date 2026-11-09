@@ -100,6 +100,19 @@ public:
    */
   void setMarkedSecrets(const QStringList &names);
 
+  /**
+   * @brief Whether a field is a secret "Hide password" hides: one a
+   * template marks (setMarkedSecrets()), or, with "Also hide other
+   * secrets", one whose name holds a secret word. Not the password itself,
+   * nor every field under "Hide every field". False with "Hide password"
+   * off.
+   * @param field The field's name, trimmed.
+   * @param s The display settings.
+   * @return true for a secret to hide.
+   */
+  [[nodiscard]] auto isSecret(const QString &field, const AppSettings &s) const
+      -> bool;
+
 signals:
   /**
    * @brief Emitted when a field's copy button is clicked.

@@ -611,10 +611,22 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     return;
   }
   const AppSettings s = QtPassSettings::load();
+  // What a template marks secret, in the settings or the store's
+  // .templates; read per entry shown, so an edit there counts at once.
+  if (s.hidePassword) {
+    m_displayPanel->setMarkedSecrets(
+        TemplateIO::secretFieldsIn(s.passTemplate) +
+        TemplateIO::readSecretFields(s.passStore));
+  }
   QStringList templ =
       s.useTemplate ? TemplateIO::fieldsIn(s.passTemplate) : QStringList();
   bool allFields = s.useTemplate && s.templateAllFields;
-  FileContent fileContent = FileContent::parse(p_output, templ, allFields);
+  // A secret the panel hides is a field even when the template doesn't list
+  // it: left in the text below the fields, it would show in plain view.
+  FileContent fileContent = FileContent::parse(
+      p_output, templ, allFields, [this, &s](const QString &name) {
+        return m_displayPanel->isSecret(name, s);
+      });
   QString output = p_output;
   // Display variant: empty when the password line is itself an otpauth URI, so
   // the shared secret is neither rendered nor copied to the clipboard.
@@ -634,13 +646,6 @@ void MainWindow::passShowHandler(const QString &p_output, const QString &file) {
     // As it is, but not a block per line of millions.
     output = FileContent::boundedForDisplay(p_output);
   } else {
-    // What a template marks secret, in the settings or the store's
-    // .templates; read per entry shown, so an edit there counts at once.
-    if (s.hidePassword) {
-      m_displayPanel->setMarkedSecrets(
-          TemplateIO::secretFieldsIn(s.passTemplate) +
-          TemplateIO::readSecretFields(s.passStore));
-    }
     m_displayPanel->displayFields(password, fileContent.getNamedValues(), s,
                                   s.useOtp ? fileContent.getOtpUri()
                                            : QString());

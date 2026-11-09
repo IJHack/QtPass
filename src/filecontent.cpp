@@ -53,11 +53,13 @@ struct OtpCandidates {
   }
 };
 
-// Takes `line` as a field when the template lists it, or "Template all fields"
-// is on and the value is not a URL; records any OTP configuration in `otp`.
+// Takes `line` as a field when the template lists it, "Template all fields"
+// is on and the value is not a URL, or `alsoField` asks for its name;
+// records any OTP configuration in `otp`.
 auto takeNamedValue(const QString &line, const QStringList &templateFields,
-                    bool allFields, NamedValues &namedValues,
-                    OtpCandidates &otp) -> bool {
+                    bool allFields,
+                    const std::function<bool(const QString &)> &alsoField,
+                    NamedValues &namedValues, OtpCandidates &otp) -> bool {
   const qsizetype colon = line.indexOf(u':');
   if (colon < 0) {
     return false;
@@ -66,7 +68,8 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
   const QString value = line.right(line.length() - colon - 1);
   // A value starting with // means the colon is probably from a URL.
   if (!templateFields.contains(name) &&
-      !(allFields && !value.startsWith(QStringLiteral("//")))) {
+      !(allFields && !value.startsWith(QStringLiteral("//"))) &&
+      !(alsoField && alsoField(name.trimmed()))) {
     // An `OTP:` line the template did not promote to a field.
     if (otp.remainingField.isEmpty() && FileContent::isOtpFieldName(name)) {
       otp.remainingField = value.trimmed();
@@ -97,7 +100,8 @@ auto moreLinesNotShown(qsizetype count) -> QString {
 } // namespace
 
 auto FileContent::parse(const QString &fileContent,
-                        const QStringList &templateFields, bool allFields)
+                        const QStringList &templateFields, bool allFields,
+                        const std::function<bool(const QString &)> &alsoField)
     -> FileContent {
   // Line by line over the text, never a list of every line: a compressed
   // entry can expand into tens of millions of lines within the plaintext
@@ -132,11 +136,13 @@ auto FileContent::parse(const QString &fileContent,
     // kMaxNamedFields, lines stay text.
     if (!isOtpUri(line)) {
       if (namedValues.size() < kMaxNamedFields) {
-        if (takeNamedValue(line, templateFields, allFields, namedValues, otp)) {
+        if (takeNamedValue(line, templateFields, allFields, alsoField,
+                           namedValues, otp)) {
           continue;
         }
       } else {
-        takeNamedValue(line, templateFields, allFields, pastTheCap, otp);
+        takeNamedValue(line, templateFields, allFields, alsoField, pastTheCap,
+                       otp);
         pastTheCap.clear();
       }
     }
