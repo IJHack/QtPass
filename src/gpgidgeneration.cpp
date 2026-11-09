@@ -744,7 +744,9 @@ auto GpgIdGeneration::accept(const QString &gpgIdFile,
       return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;
     }
   }
-  if (!t.remember(k, generation, bytes, error) || !pinHere()) {
+  // The pin first: a generation recorded with the pin's write failing would
+  // leave the store unpinned for the next list, another store's included.
+  if (!pinHere() || !t.remember(k, generation, bytes, error)) {
     return Verdict::RecordUnavailable;
   }
   return Verdict::Accepted;
