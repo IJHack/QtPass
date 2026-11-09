@@ -805,11 +805,14 @@ void tst_settings::secretFieldNamesDefaultWhenMissingOrEmpty() {
   QVERIFY(dir.isValid());
   QSettings old(dir.filePath(QStringLiteral("old.ini")), QSettings::IniFormat);
   QVERIFY(SettingsSerializer::load(old).hideSecretFields);
+  QVERIFY2(!SettingsSerializer::load(old).hideAllFields,
+           "every field hidden is a choice, never a default");
   QCOMPARE(SettingsSerializer::load(old).secretFieldNames,
            AppSettings::defaultSecretFieldNames());
   AppSettings cleared = SettingsSerializer::load(old);
   cleared.secretFieldNames.clear();
   cleared.hideSecretFields = false;
+  cleared.hideAllFields = true;
   SettingsSerializer::save(old, cleared);
   old.sync();
   QSettings reread(dir.filePath(QStringLiteral("old.ini")),
@@ -817,6 +820,7 @@ void tst_settings::secretFieldNamesDefaultWhenMissingOrEmpty() {
   QVERIFY2(SettingsSerializer::load(reread).secretFieldNames.isEmpty(),
            "a list saved empty stays empty");
   QVERIFY(!SettingsSerializer::load(reread).hideSecretFields);
+  QVERIFY(SettingsSerializer::load(reread).hideAllFields);
   old.setValue(QStringLiteral("secretFieldNames"),
                QStringList{QStringLiteral(" iban "), QString()});
   QCOMPARE(SettingsSerializer::load(old).secretFieldNames,

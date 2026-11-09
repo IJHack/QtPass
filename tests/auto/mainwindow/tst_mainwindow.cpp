@@ -398,6 +398,7 @@ private Q_SLOTS:
   void passwordFromFileToClipboardCopiesFirstLine();
   void passwordFromFileToClipboardSkipsOtpSecret();
   void copyRequestAnswersOnlyItsOwnEntry();
+  void templateMarkedSecretsAreHidden();
   void otpRequestAnswersOnlyItsOwnEntry();
   void otpRequestKeepsThePasswordOffTheClipboard();
   void otpFastPathCopiesTheVisibleCodeWithoutDecrypting();
@@ -898,6 +899,69 @@ auto looksLikeOtpCode(const QString &s) -> bool {
  * @brief Ctrl+G on an entry with no code on screen decrypts it; only that
  *        entry's decrypt yields a code, and only once.
  */
+/**
+ * @brief The marks reach the panel: a field marked secret in the template in
+ *        the settings or in the store's .templates is hidden like the
+ *        password, with the name list switched off; the marker line is no
+ *        field of the template; an unmarked field shows.
+ */
+void tst_mainwindow::templateMarkedSecretsAreHidden() {
+  const AppSettings before = QtPassSettings::load();
+  const QString templates =
+      QDir(m_storeDir.path()).filePath(QStringLiteral(".templates"));
+  const auto restore = qScopeGuard([&before, &templates] {
+    QtPassSettings::save(before);
+    QFile::remove(templates);
+  });
+  {
+    QFile f(templates);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write("[bank]\nlogin\ntan\n# secret: tan\n");
+  }
+  AppSettings s = before;
+  s.hidePassword = true;
+  s.hideSecretFields = false;
+  s.hideAllFields = false;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.useTemplate = true;
+  s.templateAllFields = true;
+  s.passTemplate = QStringLiteral("login\n# secret: pin");
+  QtPassSettings::save(s);
+
+  m_window->passShowHandler(
+      QStringLiteral("hunter2\nlogin: ajansen\npin: 1234\ntan: 987654\n"));
+  const auto hidden = [this](const QString &name) {
+    const auto *edit = m_window->findChild<QLineEdit *>(name);
+    return edit != nullptr && edit->echoMode() == QLineEdit::Password;
+  };
+  QVERIFY(hidden(QStringLiteral("Password")));
+  QVERIFY2(hidden(QStringLiteral("pin")), "marked in the settings");
+  QVERIFY2(hidden(QStringLiteral("tan")), "marked in .templates");
+  QVERIFY(!hidden(QStringLiteral("login")));
+  QVERIFY2(m_window->findChild<QLabel *>() != nullptr, "the panel has rows");
+  for (const QLabel *label : m_window->findChildren<QLabel *>()) {
+    QVERIFY2(!label->text().contains(QLatin1Char('#')),
+             "the marker line is no field");
+  }
+
+  // Not a field of the template (nor in its case): a marked line is still
+  // taken out of the text below the fields, into a hidden row.
+  s.templateAllFields = false;
+  QtPassSettings::save(s);
+  m_window->passShowHandler(
+      QStringLiteral("hunter2\nlogin: ajansen\nPIN: 1234\ntan: 987654\n"));
+  auto *browser =
+      m_window->findChild<QTextBrowser *>(QStringLiteral("textBrowser"));
+  QVERIFY(browser != nullptr);
+  QVERIFY2(!browser->toPlainText().contains(QStringLiteral("1234")),
+           "a marked line in another case stays out of the notes");
+  QVERIFY2(!browser->toPlainText().contains(QStringLiteral("987654")),
+           "a line marked in .templates stays out of the notes");
+  QVERIFY(hidden(QStringLiteral("PIN")));
+  QVERIFY(hidden(QStringLiteral("tan")));
+}
+
 void tst_mainwindow::otpRequestAnswersOnlyItsOwnEntry() {
   AppSettings s = QtPassSettings::load();
   s.useSelection = false;

@@ -367,6 +367,9 @@ private Q_SLOTS:
   void readTemplatesNoFile();
   void readTemplatesSingleSection();
   void readTemplatesMultipleSections();
+  void templateSecretMarkerLines();
+  void readSecretFieldsFromEverySection();
+  void templateFieldsSkipCommentLines();
   void readTemplatesEmptySectionIgnored();
   void readTemplatesCommentsIgnored();
   void writeTemplatesRoundTrip();
@@ -4271,6 +4274,64 @@ void tst_util::readTemplatesMultipleSections() {
   QVERIFY2(result.size() == 2, "two sections expected");
   QCOMPARE(result.value("web"), QStringList({"url", "username"}));
   QCOMPARE(result.value("ssh"), QStringList({"host", "port"}));
+}
+
+/**
+ * @brief A "# secret:" line names the fields a template marks secret: comma
+ *        separated, trimmed, "secret" in any case and spacing; empty names,
+ *        field lines and other comments name nothing.
+ */
+void tst_util::templateSecretMarkerLines() {
+  const QString text = QStringLiteral("login\n"
+                                      "# secret: pin, cvv\n"
+                                      "#SECRET:tan\n"
+                                      "  #  Secret :  , iban ,\n"
+                                      "# secrets: notamarker\n"
+                                      "# a comment: about secrets\n"
+                                      "secret: notacomment\n"
+                                      "#secret:\n");
+  QCOMPARE(TemplateIO::secretFieldsIn(text),
+           (QStringList{QStringLiteral("pin"), QStringLiteral("cvv"),
+                        QStringLiteral("tan"), QStringLiteral("iban")}));
+  QVERIFY(TemplateIO::secretFieldsIn(QString()).isEmpty());
+}
+
+/**
+ * @brief The store's .templates marks secrets in any of its sections, and
+ *        the marker line is a comment there: no field of its section, as for
+ *        QtPass 1.8. No file, no marks.
+ */
+void tst_util::readSecretFieldsFromEverySection() {
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "tmp dir must be valid");
+  QVERIFY(TemplateIO::readSecretFields(tmp.path()).isEmpty());
+  QFile f(QDir(tmp.path()).filePath(".templates"));
+  QVERIFY2(f.open(QIODevice::WriteOnly | QIODevice::Text),
+           ".templates must open");
+  QTextStream out(&f);
+  out << "[bank]\nlogin\npin\n# secret: pin\n\n[server]\nhost\n"
+         "# secret: root password, recovery code\n";
+  f.close();
+
+  QCOMPARE(TemplateIO::readSecretFields(tmp.path()),
+           (QStringList{QStringLiteral("pin"), QStringLiteral("root password"),
+                        QStringLiteral("recovery code")}));
+  const auto templates = TemplateIO::readTemplates(tmp.path());
+  QCOMPARE(templates.value(QStringLiteral("bank")),
+           (QStringList{QStringLiteral("login"), QStringLiteral("pin")}));
+  QCOMPARE(templates.value(QStringLiteral("server")),
+           QStringList{QStringLiteral("host")});
+}
+
+/**
+ * @brief The template in the settings gives its fields without its comment
+ *        lines, a "# secret:" line included; other lines stay as written.
+ */
+void tst_util::templateFieldsSkipCommentLines() {
+  QCOMPARE(TemplateIO::fieldsIn(QStringLiteral("login\n# secret: pin\nurl\n"
+                                               "\n  # note\npin")),
+           (QStringList{QStringLiteral("login"), QStringLiteral("url"),
+                        QString(), QStringLiteral("pin")}));
 }
 
 void tst_util::readTemplatesEmptySectionIgnored() {

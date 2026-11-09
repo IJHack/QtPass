@@ -153,6 +153,36 @@ one-time password (OTP) support** on the **Settings** tab of the configuration
 dialog. The choice is remembered. Your entries are unchanged: the `otpauth://`
 secret stays in the file and QtPass simply stops rendering a code for it.
 
+### How do I hide a PIN or other fields, like the password?
+
+Turn on **Hide password** on the **Display** page of the settings. The
+password is then behind an eye button, and so is:
+
+- **Also hide other secrets**: every field whose name holds one of the words
+  next to it (PIN, CVV, key, token, recovery and the like), as whole words in
+  any case. On by default; "Default" puts the words back.
+- **Hide every field**: all fields, for shared screens and presenting. The
+  notes below the fields and the OTP code stay visible; **Hide content** hides
+  everything.
+- A field a template marks as secret, with a comment line in the template:
+
+  ```ini
+  [bank]
+  login
+  iban
+  pin
+  # secret: pin, tan
+  ```
+
+  The line goes in a section of the store's `.templates` file, or in the
+  template on the **Passwords** page of the settings. Names count whole and in
+  any case. `pass` and QtPass 1.8 read the line as a comment.
+
+  **A mark counts for the whole store.** QtPass can't tell which template an
+  entry was made with, so a name marked in one section is hidden in every
+  entry of the store: marking `login` in `[bank]` hides the login of your
+  email entries too. Mark only names that are secret wherever they appear.
+
 ### OTP QR codes don't work on macOS
 
 Applications launched from Finder don't inherit the shell PATH. Install QtPass via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching QtPass, for example:

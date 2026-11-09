@@ -41,6 +41,7 @@ class tst_ui : public QObject {
 private Q_SLOTS:
   void initTestCase();
   void contentRemainsSame();
+  void templateCommentLinesAreNoFields();
   void keyValueLinesFollowTemplateSettings();
   void emptyPassword();
   void multilineRemainingData();
@@ -166,6 +167,25 @@ void tst_ui::contentRemainsSame() {
   d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
   d->setTemplate("name", true);
   d->templateAll(true);
+  d->setPass(input);
+  QCOMPARE(d->getPassword(), input);
+}
+
+/**
+ * @brief A comment line in the template, such as a "# secret:" line that
+ * marks fields to hide, is no field: the editor shows no row for it and
+ * writes none.
+ */
+void tst_ui::templateCommentLinesAreNoFields() {
+  QScopedPointer<PasswordDialog> d(
+      new PasswordDialog(PasswordConfiguration{}, nullptr));
+  d->setTemplate(QStringLiteral("name\n# secret: pin\npin"), true);
+  QVERIFY(d->findChild<QLineEdit *>(QStringLiteral("name")) != nullptr);
+  QVERIFY(d->findChild<QLineEdit *>(QStringLiteral("pin")) != nullptr);
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("# secret: pin")) ==
+               nullptr,
+           "the marker line must not become a field");
+  const QString input = QStringLiteral("pw\nname: value\npin: 1234\n");
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
 }

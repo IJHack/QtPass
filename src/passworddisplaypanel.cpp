@@ -26,6 +26,7 @@
 #include <QPushButton>
 #include <QTextBrowser>
 #include <QUrl>
+#include <algorithm>
 
 PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
                                            QBoxLayout *container,
@@ -168,13 +169,32 @@ auto urlButton(const QString &url, QWidget *parent) -> QPushButton * {
   return button;
 }
 
-/// Whether @p field is one of the other secrets "Hide password" hides with
-/// the password ("Also hide other secrets", AppSettings::secretFieldNames).
-auto hidesAsSecret(const QString &field, const AppSettings &s) -> bool {
-  return s.hidePassword && s.hideSecretFields &&
-         FileContent::isSecretFieldName(field, s.secretFieldNames);
-}
 } // namespace
+
+void PasswordDisplayPanel::setMarkedSecrets(const QStringList &names) {
+  m_markedSecrets = names;
+}
+
+auto PasswordDisplayPanel::hides(const QString &field,
+                                 const AppSettings &s) const -> bool {
+  return s.hidePassword &&
+         (s.hideAllFields || field == QObject::tr("Password") ||
+          isSecret(field, s));
+}
+
+auto PasswordDisplayPanel::isSecret(const QString &field,
+                                    const AppSettings &s) const -> bool {
+  if (!s.hidePassword) {
+    return false;
+  }
+  const bool marked =
+      std::any_of(m_markedSecrets.cbegin(), m_markedSecrets.cend(),
+                  [&field](const QString &name) {
+                    return field.compare(name, Qt::CaseInsensitive) == 0;
+                  });
+  return marked || (s.hideSecretFields &&
+                    FileContent::isSecretFieldName(field, s.secretFieldNames));
+}
 
 void PasswordDisplayPanel::addActionButtons(QLayout *layout,
                                             const QString &field,
@@ -195,10 +215,10 @@ void PasswordDisplayPanel::addActionButtons(QLayout *layout,
     qr->setStyleSheet(buttonStyle);
     layout->addWidget(qr);
   }
-  // Never on the password field, nor on a secret field hidden like it: its
-  // secret must not reach a tooltip or the browser. A secret field shown in
-  // plain view keeps its link.
-  if (field != QObject::tr("Password") && !hidesAsSecret(field, s) &&
+  // Never on the password field, nor on any field hidden like it: its value
+  // must not reach a tooltip or the browser. A field shown in plain view
+  // keeps its link.
+  if (field != QObject::tr("Password") && !hides(field, s) &&
       Util::isLaunchableWebUrl(value)) {
     layout->addWidget(urlButton(value, m_widgetParent));
   }
@@ -241,9 +261,8 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
           : "QLineEdit, QTextBrowser { border-style: none; background: "
             "transparent; }";
   // The password, and with it the other secrets an entry holds (a PIN, a
-  // CVV, an API key): behind the eye button too.
-  if ((s.hidePassword && trimmedField == QObject::tr("Password")) ||
-      hidesAsSecret(trimmedField, s)) {
+  // CVV, an API key, what a template marks): behind the eye button too.
+  if (hides(trimmedField, s)) {
     addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
   } else {
     SecretTextBrowser *browser =
@@ -324,6 +343,7 @@ void PasswordDisplayPanel::addOtpField(int position, const QString &otpConfig,
     AppSettings inert = s;
     inert.clipBoardType = Enums::CLIPBOARD_NEVER;
     inert.useQrencode = false;
+    inert.hidePassword = false; // a message, never behind the eye button
     addField(position, QObject::tr("OTP code"),
              QObject::tr("No OTP code found in this password entry"), inert);
     return;

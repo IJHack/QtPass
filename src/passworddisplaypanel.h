@@ -89,6 +89,30 @@ public:
    */
   [[nodiscard]] auto currentOtpCode() const -> QString;
 
+  /**
+   * @brief Set the field names a template marks as secret.
+   *
+   * With "Hide password" on, a field with one of these names, whole and in
+   * any case, is hidden like the password, whatever "Also hide other
+   * secrets" says: the template's writer asked for it. Kept until set again.
+   * @param names The names from TemplateIO::secretFieldsIn() and
+   *        TemplateIO::readSecretFields().
+   */
+  void setMarkedSecrets(const QStringList &names);
+
+  /**
+   * @brief Whether a field is a secret "Hide password" hides: one a
+   * template marks (setMarkedSecrets()), or, with "Also hide other
+   * secrets", one whose name holds a secret word. Not the password itself,
+   * nor every field under "Hide every field". False with "Hide password"
+   * off.
+   * @param field The field's name, trimmed.
+   * @param s The display settings.
+   * @return true for a secret to hide.
+   */
+  [[nodiscard]] auto isSecret(const QString &field, const AppSettings &s) const
+      -> bool;
+
 signals:
   /**
    * @brief Emitted when a field's copy button is clicked.
@@ -154,7 +178,19 @@ private:
   void addHiddenPassword(QLayout *layout, const QString &field,
                          const QString &value, const QString &lineStyle);
   void applyFrameStyle(QFrame *frame) const;
+  /**
+   * @brief Whether a field is shown behind the eye button: the password,
+   * a field a template marks, every field with "Hide every field", or one
+   * whose name holds a secret word with "Also hide other secrets". Only
+   * with "Hide password" on.
+   * @param field The field's name, trimmed.
+   * @param s The display settings.
+   * @return true to hide the value.
+   */
+  [[nodiscard]] auto hides(const QString &field, const AppSettings &s) const
+      -> bool;
 
+  QStringList m_markedSecrets;
   QGridLayout *m_grid;
   QBoxLayout *m_container;
   QWidget *m_widgetParent;

@@ -6,6 +6,7 @@
 #include <QList>
 #include <QString>
 #include <QStringList>
+#include <functional>
 
 /**
  * @struct NamedValue
@@ -104,11 +105,16 @@ public:
    * @param allFields whether all fields should be considered as named values.
    * If set to false only templateFields are returned in getNamedValues().
    *
+   * @param alsoField a field besides those, by its trimmed name: a secret
+   * the panel hides, which must not be left in the remaining text in plain
+   * view. Empty: none.
+   *
    * @return A FileContent instance with password, named values, and remaining
    *         data populated from the parsed input.
    */
   static auto parse(const QString &fileContent,
-                    const QStringList &templateFields, bool allFields)
+                    const QStringList &templateFields, bool allFields,
+                    const std::function<bool(const QString &)> &alsoField = {})
       -> FileContent;
 
   /**

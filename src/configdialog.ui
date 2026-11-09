@@ -491,6 +491,16 @@
                  </layout>
                 </item>
                 <item>
+                 <widget class="QCheckBox" name="checkBoxHideAllFields">
+                  <property name="text">
+                   <string>Hide every field</string>
+                  </property>
+                  <property name="toolTip">
+                   <string>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; "Hide content" hides those too.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_7">
                   <item>
                    <widget class="QLabel" name="labelAutoclearPanel">
@@ -881,6 +891,9 @@
                 </item>
                 <item>
                  <widget class="QPlainTextEdit" name="plainTextEditTemplate">
+                  <property name="toolTip">
+                   <string>One field name per line. A line such as "# secret: pin, cvv" marks fields to hide like the password while "Hide password" is on. The same line works in the store's .templates file, where it counts for every entry of the store, not only those made with that template.</string>
+                  </property>
                   <property name="frameShadow">
                    <enum>QFrame::Plain</enum>
                   </property>
