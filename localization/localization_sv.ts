@@ -1158,113 +1158,108 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="168"/>
+        <location filename="../src/gpgidgeneration.cpp" line="194"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation>Genereringsposten för mottagarlistorna, %1, kan inte nås.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="177"/>
+        <location filename="../src/gpgidgeneration.cpp" line="203"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation>Generationsregistret för mottagarlistorna, %1, är inte läsbart. Signerade mottagarlistor godtas inte förrän det har reparerats eller tagits bort, vilket gör att informationen om vad som tidigare godtagits går förlorad.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="219"/>
-        <location filename="../src/gpgidgeneration.cpp" line="232"/>
+        <location filename="../src/gpgidgeneration.cpp" line="225"/>
+        <location filename="../src/gpgidgeneration.cpp" line="238"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation>Generationsregistret för mottagarlistorna, %1, går inte att skriva till.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="259"/>
+        <location filename="../src/gpgidgeneration.cpp" line="292"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation>Generationsregistret för mottagarlistorna, %1, kunde inte låsas: ett annat QtPass kan använda det, eller så går det inte att skriva i dess mapp.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="416"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
         <translation>Listan innehåller mer än en generationsrad.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="424"/>
+        <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
         <translation>Generationsraden är felformaterad: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="430"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
         <translation>Listan innehåller mer än en mapprad.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="441"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
         <translation>Mappraden är felformaterad: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
         <translation>Huvudraden är felformaterad: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Listan innehåller en generationsrad men ingen mapprad.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="637"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Den signerade mottagarlistan %1 går inte att lita på: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="564"/>
+        <location filename="../src/gpgidgeneration.cpp" line="609"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Den signerade mottagarlistan %1 skrevs för mappen &quot;%2&quot; i lösenordsutrymmet, inte för &quot;%3&quot;, och används inte. Den kan ha kopierats hit av någon annan; om mappen i stället har flyttats eller bytt namn öppnar en innehavare av signeringsnyckeln Användare för den och sparar mottagarna, vilket binder listan till platsen där den nu ligger.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="577"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Generation %1 är den högsta som finns, så ingen nyare lista kan skrivas här: om %2 tas bort glöms det bort vad den här enheten tidigare accepterade, varpå innehavaren av signeringsnyckeln kan ta sig in genom att öppna Användare och %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="584"/>
+        <location filename="../src/gpgidgeneration.cpp" line="629"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Den som innehar signeringsnyckeln kommer vidare genom att öppna Användare och %1, vilket skriver generation %2. Genom att ta bort %3 raderas informationen om vad denna enhet tidigare har accepterat.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="601"/>
+        <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller via QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller; utan en sådan kan listan också ha skrivits för en annan mapp i lösenordsutrymmet och kopierats hit. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="610"/>
+        <location filename="../src/gpgidgeneration.cpp" line="655"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>välja mottagarna på nytt och spara</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="719"/>
-        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="812"/>
+        <location filename="../src/gpgidgeneration.cpp" line="856"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Generationsregistret för mottagarlistorna, %1, har gått vidare till generation %2 medan generation %3 skrevs.</translation>
     </message>
@@ -1277,27 +1272,32 @@ e-mail</translation>
         <translation type="vanished">Den signerade mottagarlistan %1 har ingen generationsrad, medan generation %2 tidigare har accepterats här. pass skriver ingen generationsrad (inte heller genom QtPass pass-backend), och det gjorde inte QtPass före 2.0 heller. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="615"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Den signerade mottagarlistan %1 är generation %2, äldre än generation %3, den senaste som QtPass accepterade här. Den kan ha lagts tillbaka av någon annan. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="667"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>spara mottagarna: de förvalda mottagarna där är den här listans, så ta först bort alla som inte längre ska ha åtkomst först</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="732"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Den signerade mottagarlistan %1 är generation %2, samma generation som en annan lista som den här enheten tidigare har accepterat. Antingen sparade två enheter mottagare samtidigt (Git har i så fall visat konflikten), eller så har en äkta lista av den generationen bytts in. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="740"/>
         <source>checking the recipients and saving</source>
         <translation>kontrollera mottagarna och spara</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="824"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Mottagarlistan %1 har nått generation %2, den högsta som finns; listan kan inte skrivas.</translation>
     </message>

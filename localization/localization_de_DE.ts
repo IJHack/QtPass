@@ -1191,113 +1191,108 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="168"/>
+        <location filename="../src/gpgidgeneration.cpp" line="194"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation>Auf das Generationsprotokoll der Empfängerlisten, %1, kann nicht zugegriffen werden.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="177"/>
+        <location filename="../src/gpgidgeneration.cpp" line="203"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation>Das Generationsprotokoll der Empfängerlisten, %1, ist nicht lesbar. Signierte Empfängerlisten werden nicht akzeptiert, bis es repariert oder entfernt wird (wodurch vergessen wird, was zuvor akzeptiert wurde).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="219"/>
-        <location filename="../src/gpgidgeneration.cpp" line="232"/>
+        <location filename="../src/gpgidgeneration.cpp" line="225"/>
+        <location filename="../src/gpgidgeneration.cpp" line="238"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation>Das Generationsprotokoll der Empfängerlisten, %1, kann nicht geschrieben werden.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="259"/>
+        <location filename="../src/gpgidgeneration.cpp" line="292"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation>Das Generationsprotokoll der Empfängerlisten, %1, konnte nicht gesperrt werden: Möglicherweise verwendet es eine andere QtPass-Instanz, oder in seinen Ordner kann nicht geschrieben werden.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="416"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
         <translation>Die Liste enthält mehr als eine Generationszeile.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="424"/>
+        <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
         <translation>Die Generationszeile ist fehlerhaft: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="430"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
         <translation>Die Liste enthält mehr als eine Ordnerzeile.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="441"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
         <translation>Die Ordnerzeile ist fehlerhaft: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
         <translation>Die Kopfzeile ist fehlerhaft: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Die Liste enthält eine Generationszeile, aber keine Ordnerzeile.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="637"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Die signierte Empfängerliste %1 ist nicht vertrauenswürdig: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="564"/>
+        <location filename="../src/gpgidgeneration.cpp" line="609"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Die signierte Empfängerliste %1 wurde für den Ordner „%2“ des Kennwortspeichers geschrieben, nicht für „%3“, und wird nicht verwendet. Möglicherweise hat jemand anderes sie hierher kopiert; wurde der Ordner stattdessen verschoben oder umbenannt, öffnet ein Inhaber des Signierschlüssels dort „Benutzer“ und speichert die Empfänger, was die Liste an ihren jetzigen Ort bindet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="577"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Generation %1 ist die höchstmögliche, hier kann also keine neuere Liste geschrieben werden: Wird %2 entfernt, vergisst dieses Gerät, was es zuvor akzeptiert hat; danach kommt ein Inhaber des Signierschlüssels weiter, indem er „Benutzer“ öffnet und %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="584"/>
+        <location filename="../src/gpgidgeneration.cpp" line="629"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Ein Inhaber des Signierschlüssels kommt weiter, indem er „Benutzer“ öffnet und %1. Das Speichern schreibt Generation %2. Wird %3 entfernt, vergisst dieses Gerät, was es zuvor akzeptiert hat.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="601"/>
+        <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Die signierte Empfängerliste %1 enthält keine Generationszeile, obwohl hier zuvor Generation %2 akzeptiert wurde. pass schreibt keine Generationszeile (auch nicht über das pass-Backend von QtPass), und QtPass vor 2.0 ebenso wenig; ohne eine solche kann die Liste auch für einen anderen Ordner des Kennwortspeichers geschrieben und hierher kopiert worden sein. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="610"/>
+        <location filename="../src/gpgidgeneration.cpp" line="655"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>die Empfänger neu auswählt und speichert</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="719"/>
-        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="812"/>
+        <location filename="../src/gpgidgeneration.cpp" line="856"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Das Generationsprotokoll der Empfängerlisten, %1, ist auf Generation %2 weitergerückt, während Generation %3 geschrieben wurde.</translation>
     </message>
@@ -1310,27 +1305,32 @@ e-mail</translation>
         <translation type="obsolete">Die signierte Empfängerliste %1 enthält keine Generationszeile, obwohl hier zuvor Generation %2 akzeptiert wurde. pass schreibt keine Generationszeile (auch nicht über das pass-Backend von QtPass), und QtPass vor 2.0 ebenso wenig. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="615"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Die signierte Empfängerliste %1 ist Generation %2 und damit älter als Generation %3, die letzte, die QtPass hier akzeptiert hat. Möglicherweise hat jemand anderes sie wieder eingespielt. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="667"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>die Empfänger speichert: Die dort vorausgewählten Empfänger sind die dieser Liste, entfernen Sie also zuerst alle, die keinen Zugriff mehr haben sollen</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="732"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Die signierte Empfängerliste %1 ist Generation %2, dieselbe Generation wie eine andere Liste, die dieses Gerät zuvor akzeptiert hat. Entweder haben zwei Geräte gleichzeitig Empfänger gespeichert (Git wird den Konflikt angezeigt haben), oder es wurde eine authentische Liste dieser Generation eingetauscht. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="740"/>
         <source>checking the recipients and saving</source>
         <translation>die Empfänger prüft und speichert</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="824"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Die Empfängerliste %1 hat Generation %2 erreicht, die höchstmögliche; die Liste kann nicht geschrieben werden.</translation>
     </message>

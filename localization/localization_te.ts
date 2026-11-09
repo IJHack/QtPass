@@ -1142,113 +1142,108 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="168"/>
+        <location filename="../src/gpgidgeneration.cpp" line="194"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1 ను యాక్సెస్ చేయలేము.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="177"/>
+        <location filename="../src/gpgidgeneration.cpp" line="203"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1 చదవలేని స్థితిలో ఉంది. అది సరిచేయబడే లేదా తొలగించబడే వరకు సంతకం చేసిన గ్రహీతల జాబితాలు ఆమోదించబడవు (తొలగిస్తే ఇంతకు ముందు ఆమోదించినది మరచిపోతుంది).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="219"/>
-        <location filename="../src/gpgidgeneration.cpp" line="232"/>
+        <location filename="../src/gpgidgeneration.cpp" line="225"/>
+        <location filename="../src/gpgidgeneration.cpp" line="238"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1 ను వ్రాయలేము.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="259"/>
+        <location filename="../src/gpgidgeneration.cpp" line="292"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1 ను లాక్ చేయలేకపోయింది: మరొక QtPass దాన్ని ఉపయోగిస్తూ ఉండవచ్చు, లేదా దాని ఫోల్డర్‌లో వ్రాయలేము.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="416"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">జాబితాలో ఒకటి కంటే ఎక్కువ జనరేషన్ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="424"/>
+        <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">జనరేషన్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="430"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">జాబితాలో ఒకటి కంటే ఎక్కువ ఫోల్డర్ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="441"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">ఫోల్డర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">హెడర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">జాబితాలో జనరేషన్ పంక్తి ఉంది కానీ ఫోల్డర్ పంక్తి లేదు.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="637"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 నమ్మదగినది కాదు: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="564"/>
+        <location filename="../src/gpgidgeneration.cpp" line="609"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 స్టోర్‌లోని &quot;%2&quot; ఫోల్డర్ కోసం వ్రాయబడింది, &quot;%3&quot; కోసం కాదు, అందువల్ల ఇది ఉపయోగించబడదు. దీన్ని వేరొకరు ఇక్కడకు కాపీ చేసి ఉండవచ్చు; బదులుగా ఫోల్డర్ తరలించబడి లేదా పేరు మార్చబడి ఉంటే, సంతకం కీ కలిగిన వ్యక్తి దానిపై వినియోగదారులు తెరిచి గ్రహీతలను సేవ్ చేయాలి; అది జాబితాను ఇప్పుడు ఉన్న స్థానానికి బంధిస్తుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="577"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">జనరేషన్ %1 సాధ్యమైన అత్యధికం, అందువల్ల ఇక్కడ దీని కంటే కొత్త జాబితాను వ్రాయలేము: %2 ను తొలగిస్తే ఈ పరికరం ఇంతకు ముందు ఆమోదించినది మరచిపోతుంది, ఆ తరువాత సంతకం కీ కలిగిన వ్యక్తి వినియోగదారులు తెరిచి %3 ద్వారా ముందుకు సాగవచ్చు.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="584"/>
+        <location filename="../src/gpgidgeneration.cpp" line="629"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">సంతకం కీ కలిగిన వ్యక్తి వినియోగదారులు తెరిచి %1 ద్వారా ముందుకు సాగవచ్చు; అది జనరేషన్ %2 ను వ్రాస్తుంది. %3 ను తొలగిస్తే ఈ పరికరం ఇంతకు ముందు ఆమోదించినది మరచిపోతుంది.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="601"/>
+        <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లో జనరేషన్ పంక్తి లేదు, అయితే ఇంతకు ముందు ఇక్కడ జనరేషన్ %2 ఆమోదించబడింది. pass జనరేషన్ పంక్తిని వ్రాయదు (QtPass యొక్క pass బ్యాకెండ్ ద్వారా కూడా), 2.0 కు ముందు QtPass కూడా వ్రాయలేదు; అది లేకుండా ఈ జాబితా స్టోర్‌లోని మరొక ఫోల్డర్ కోసం వ్రాయబడి ఇక్కడకు కాపీ చేయబడి ఉండవచ్చు కూడా. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="610"/>
+        <location filename="../src/gpgidgeneration.cpp" line="655"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">గ్రహీతలను కొత్తగా ఎంచుకొని సేవ్ చేయడం</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="719"/>
-        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="812"/>
+        <location filename="../src/gpgidgeneration.cpp" line="856"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">గ్రహీతల జాబితాల జనరేషన్ రికార్డ్ అయిన %1, జనరేషన్ %3 వ్రాయబడుతున్న సమయంలో జనరేషన్ %2 కు మారిపోయింది.</translation>
     </message>
@@ -1261,27 +1256,32 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">సంతకం చేసిన గ్రహీతల జాబితా %1 లో జనరేషన్ పంక్తి లేదు, అయితే ఇంతకు ముందు ఇక్కడ జనరేషన్ %2 ఆమోదించబడింది. pass జనరేషన్ పంక్తిని వ్రాయదు (QtPass యొక్క pass బ్యాకెండ్ ద్వారా కూడా), 2.0 కు ముందు QtPass కూడా వ్రాయలేదు. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="615"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 జనరేషన్ %2, ఇది QtPass ఇక్కడ చివరిగా ఆమోదించిన జనరేషన్ %3 కంటే పాతది. దీన్ని వేరొకరు తిరిగి ఉంచి ఉండవచ్చు. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="667"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">గ్రహీతలను సేవ్ చేయడం (అక్కడ ముందుగా ఎంచుకున్న గ్రహీతలు ఈ జాబితాలోని వారే, కాబట్టి ఇకపై యాక్సెస్ ఉండకూడని వారిని ముందుగా తీసివేయండి)</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="732"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 జనరేషన్ %2, ఇది ఈ పరికరం ఇంతకు ముందు ఆమోదించిన వేరొక జాబితాకు ఉన్న జనరేషనే. రెండు పరికరాలు ఒకే సమయంలో గ్రహీతలను సేవ్ చేసి ఉండాలి (గిట్ వైరుధ్యాన్ని చూపించి ఉంటుంది), లేదా ఆ జనరేషన్‌కు చెందిన ఒక అసలైన జాబితా దాని స్థానంలో ఉంచబడి ఉండాలి. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="740"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">గ్రహీతలను తనిఖీ చేసి సేవ్ చేయడం</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="824"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">గ్రహీతల జాబితా %1 జనరేషన్ %2 కు చేరుకుంది, అది సాధ్యమైన అత్యధికం; జాబితాను వ్రాయలేము.</translation>
     </message>

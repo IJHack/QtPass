@@ -1142,113 +1142,108 @@ The value will still be saved as entered.</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="168"/>
+        <location filename="../src/gpgidgeneration.cpp" line="194"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">وصول کنندگان کی فہرستوں کا جنریشن ریکارڈ، %1، قابل رسائی نہیں ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="177"/>
+        <location filename="../src/gpgidgeneration.cpp" line="203"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">وصول کنندگان کی فہرستوں کا جنریشن ریکارڈ، %1، پڑھا نہیں جا سکتا۔ دستخط شدہ وصول کنندگان کی فہرستیں اس وقت تک قبول نہیں کی جائیں گی جب تک اسے درست نہ کر لیا جائے یا ہٹا نہ دیا جائے (جس سے یہ یاد نہیں رہتا کہ پہلے کیا قبول کیا گیا تھا)۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="219"/>
-        <location filename="../src/gpgidgeneration.cpp" line="232"/>
+        <location filename="../src/gpgidgeneration.cpp" line="225"/>
+        <location filename="../src/gpgidgeneration.cpp" line="238"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">وصول کنندگان کی فہرستوں کا جنریشن ریکارڈ، %1، لکھا نہیں جا سکتا۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="259"/>
+        <location filename="../src/gpgidgeneration.cpp" line="292"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">وصول کنندگان کی فہرستوں کا جنریشن ریکارڈ، %1، لاک نہیں کیا جا سکا: ہو سکتا ہے کوئی دوسرا QtPass اسے استعمال کر رہا ہو، یا اس کے فولڈر میں لکھا نہیں جا سکتا۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="402"/>
+        <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="410"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="416"/>
+        <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">فہرست میں ایک سے زیادہ جنریشن لائنیں ہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="424"/>
+        <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">جنریشن لائن کی ساخت غلط ہے: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="430"/>
+        <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">فہرست میں ایک سے زیادہ فولڈر لائنیں ہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="441"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">فولڈر لائن کی ساخت غلط ہے: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">ہیڈر لائن کی ساخت غلط ہے: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">فہرست میں جنریشن لائن تو ہے مگر فولڈر لائن نہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="637"/>
+        <location filename="../src/gpgidgeneration.cpp" line="682"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 بھروسے کے قابل نہیں: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="564"/>
+        <location filename="../src/gpgidgeneration.cpp" line="609"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 اسٹور کے فولڈر &quot;%2&quot; کے لیے لکھی گئی تھی، &quot;%3&quot; کے لیے نہیں، اور استعمال نہیں کی جاتی۔ ہو سکتا ہے کسی اور نے اسے یہاں کاپی کیا ہو؛ اگر اس کے بجائے فولڈر منتقل کیا گیا یا اس کا نام تبدیل کیا گیا تھا، تو دستخطی کلید رکھنے والا اس پر &quot;صارفین&quot; کھول کر وصول کنندگان محفوظ کر لے، جس سے فہرست اپنی موجودہ جگہ سے منسلک ہو جاتی ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="577"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">جنریشن %1 سب سے زیادہ ممکنہ ہے، اس لیے یہاں کوئی نئی فہرست نہیں لکھی جا سکتی: %2 کو ہٹانے سے یہ ڈیوائس بھول جاتی ہے کہ اس نے پہلے کیا قبول کیا تھا، جس کے بعد دستخطی کلید رکھنے والا اس طرح آگے بڑھ سکتا ہے کہ وہ &quot;صارفین&quot; کھولے اور %3۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="584"/>
+        <location filename="../src/gpgidgeneration.cpp" line="629"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">دستخطی کلید رکھنے والا اس طرح آگے بڑھ سکتا ہے کہ وہ &quot;صارفین&quot; کھولے اور %1؛ محفوظ کرنے پر جنریشن %2 لکھی جاتی ہے۔ %3 کو ہٹانے سے یہ ڈیوائس بھول جاتی ہے کہ اس نے پہلے کیا قبول کیا تھا۔</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="601"/>
+        <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 میں کوئی جنریشن لائن نہیں، جبکہ یہاں پہلے جنریشن %2 قبول کی گئی تھی۔ pass کوئی جنریشن لائن نہیں لکھتا (QtPass کے pass بیک اینڈ کے ذریعے بھی نہیں)، اور 2.0 سے پہلے QtPass بھی نہیں لکھتا تھا؛ اس کے بغیر یہ بھی ممکن ہے کہ فہرست اسٹور کے کسی اور فولڈر کے لیے لکھی گئی ہو اور یہاں کاپی کی گئی ہو۔ %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="610"/>
+        <location filename="../src/gpgidgeneration.cpp" line="655"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">وصول کنندگان کو نئے سرے سے منتخب کر کے محفوظ کرے</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="719"/>
-        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store ids and generations this device accepted.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/gpgidgeneration.cpp" line="736"/>
+        <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="812"/>
+        <location filename="../src/gpgidgeneration.cpp" line="856"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">وصول کنندگان کی فہرستوں کا جنریشن ریکارڈ، %1، جنریشن %3 لکھے جانے کے دوران آگے بڑھ کر جنریشن %2 تک پہنچ گیا ہے۔</translation>
     </message>
@@ -1261,27 +1256,32 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">دستخط شدہ وصول کنندگان کی فہرست %1 میں کوئی جنریشن لائن نہیں، جبکہ یہاں پہلے جنریشن %2 قبول کی گئی تھی۔ pass کوئی جنریشن لائن نہیں لکھتا (QtPass کے pass بیک اینڈ کے ذریعے بھی نہیں)، اور 2.0 سے پہلے QtPass بھی نہیں لکھتا تھا۔ %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="615"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 جنریشن %2 ہے، جو جنریشن %3 سے پرانی ہے، یعنی آخری جنریشن جو QtPass نے یہاں قبول کی تھی۔ ہو سکتا ہے کسی اور نے اسے واپس رکھ دیا ہو۔ %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="667"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">وصول کنندگان محفوظ کرے: وہاں پہلے سے منتخب وصول کنندگان اسی فہرست کے ہیں، اس لیے پہلے ان لوگوں کو ہٹا دیں جنہیں اب رسائی نہیں ہونی چاہیے</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="732"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 جنریشن %2 ہے، یعنی وہی جنریشن جس کی ایک مختلف فہرست یہ ڈیوائس پہلے قبول کر چکی ہے۔ یا تو دو ڈیوائسز نے ایک ہی وقت میں وصول کنندگان محفوظ کیے (Git نے تنازع دکھایا ہو گا)، یا اس جنریشن کی کوئی مستند فہرست اس کی جگہ رکھ دی گئی۔ %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="695"/>
+        <location filename="../src/gpgidgeneration.cpp" line="740"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">وصول کنندگان کی جانچ کر کے محفوظ کرے</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="824"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">وصول کنندگان کی فہرست %1 جنریشن %2 تک پہنچ گئی ہے، جو سب سے زیادہ ممکنہ ہے؛ فہرست لکھی نہیں جا سکتی۔</translation>
     </message>
