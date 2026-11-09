@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jedna nazwa pola w każdym wierszu. Wiersz taki jak „# secret: pin, cvv” oznacza pola do ukrycia, takie jak hasło, gdy opcja „Ukryj hasło” jest włączona. Ten sam wiersz działa w pliku .templates sklepu, gdzie zlicza każdy wpis w sklepie, a nie tylko te utworzone za pomocą tego szablonu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -492,12 +492,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj każde pole</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation>Każde pole za przyciskiem oka, nie tylko sekrety: do udostępniania ekranów i prezentacji. Notatki pod polami i kod OTP pozostają widoczne; opcja „Ukryj zawartość” również je ukrywa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
