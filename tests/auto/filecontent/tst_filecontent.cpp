@@ -99,6 +99,23 @@ void tst_filecontent::parseTakesTheFieldsItIsAskedFor() {
       FileContent::parse(entry, {QStringLiteral("pin")}, false);
   QVERIFY2(plain.getNamedValues().isEmpty(), "a template name is exact");
   QVERIFY(plain.getRemainingDataForDisplay().contains(QStringLiteral("1234")));
+
+  // Past the field cap such a line stays text, kept in the entry but not
+  // shown; an ordinary line there is shown, and OTP is still found.
+  QString many = QStringLiteral("pw\n");
+  for (int i = 0; i < FileContent::kMaxNamedFields; ++i) {
+    many += QStringLiteral("f%1: v\n").arg(i);
+  }
+  many += QStringLiteral("PIN: 1234\nnote: hello\nOTP: JBSWY3DPEHPK3PXP\n");
+  const FileContent capped = FileContent::parse(many, {}, true, pin);
+  QCOMPARE(capped.getNamedValues().size(), FileContent::kMaxNamedFields);
+  QVERIFY2(
+      !capped.getRemainingDataForDisplay().contains(QStringLiteral("1234")),
+      "a secret past the cap is not shown");
+  QVERIFY(capped.getRemainingData().contains(QStringLiteral("PIN: 1234")));
+  QVERIFY(
+      capped.getRemainingDataForDisplay().contains(QStringLiteral("hello")));
+  QCOMPARE(capped.getOtpUri(), QStringLiteral("JBSWY3DPEHPK3PXP"));
 }
 
 void tst_filecontent::parseTakesABoundedNumberOfFields() {

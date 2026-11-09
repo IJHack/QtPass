@@ -130,6 +130,7 @@ auto FileContent::parse(const QString &fileContent,
   }
   for (; it != tokens.end(); ++it) {
     const QString line = it->toString();
+    bool secretPastTheCap = false;
     // A bare otpauth:// line is never a field, also not when the template
     // lists "otpauth": split at its colon, the value would lose the scheme
     // that marks it as a shared secret and be shown seed and all. Past
@@ -143,6 +144,10 @@ auto FileContent::parse(const QString &fileContent,
       } else {
         takeNamedValue(line, templateFields, allFields, alsoField, pastTheCap,
                        otp);
+        // A secret past the cap stays text, but not on screen: the panel
+        // would have hidden it.
+        secretPastTheCap = !pastTheCap.isEmpty() && alsoField &&
+                           alsoField(pastTheCap.first().name);
         pastTheCap.clear();
       }
     }
@@ -156,7 +161,7 @@ auto FileContent::parse(const QString &fileContent,
       // A bare otpauth:// line, the convention the pass-otp extension uses.
       otp.bareLine = line.trimmed();
     }
-    if (!isLineHidden(line)) {
+    if (!isLineHidden(line) && !secretPastTheCap) {
       if (displayedLines == kMaxDisplayLines) {
         ++notShown;
         continue;
