@@ -45,6 +45,11 @@ private slots:
   void reserveNextNeverExceedsWhatParseAccepts();
   void reservationIsWrittenThrough();
   void unreadableRecordFailsClosed();
+  void storeLineIsStrictAndRoundTrips();
+  void acceptRefusesAListOfAnotherStore();
+  void aNewListWithoutAStoreLineIsRefusedOnceTheStoreHasAnId();
+  void storeIdForKeepsTakesOverOrMakesAnId();
+  void malformedStorePinsFailClosed();
 };
 
 /**
@@ -580,6 +585,8 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   QVERIFY(QFile::setPermissions(recordDir, QFile::ReadOwner | QFile::ExeOwner));
   const auto restore =
       qScopeGuard([&] { QFile::setPermissions(recordDir, was); });
+  // The garbage written below is not left for the tests after this one.
+  const auto forget = qScopeGuard([&] { QFile::remove(recordFile); });
   QString why;
   QVERIFY2(!GpgIdGeneration::reserveNext(file, std::nullopt, &why).has_value(),
            "no record, no generation to write");
@@ -629,6 +636,192 @@ void tst_gpgidgeneration::unreadableRecordFailsClosed() {
   QVERIFY(!why.isEmpty());
   QVERIFY(!GpgIdGeneration::reserveNext(file, std::nullopt).has_value());
 #endif
+}
+
+/**
+ * @brief A store line is 32 lowercase hex digits, once, and only with a
+ *        generation line; the header QtPass writes with one parses back.
+ */
+void tst_gpgidgeneration::storeLineIsStrictAndRoundTrips() {
+  const QString id = QStringLiteral("0123456789abcdef0123456789abcdef");
+  const QByteArray list =
+      GpgIdGeneration::withHeader(4, QStringLiteral("team"), "ALICE\n", id);
+  QVERIFY(list.contains("\n# QtPass-GpgId-Store: " + id.toLatin1() + "\n"));
+  const auto parsed = GpgIdGeneration::parse(list);
+  QVERIFY(parsed.has_value());
+  QCOMPARE(parsed->generation, 4);
+  QCOMPARE(parsed->store, std::optional<QString>(id));
+  QCOMPARE(Pass::parseRecipients(list, QStringLiteral("test")),
+           QStringList{QStringLiteral("ALICE")});
+  QVERIFY2(!GpgIdGeneration::withHeader(4, QStringLiteral("."), "A\n")
+                .contains("Store"),
+           "no id, no line");
+  const char *bad[] = {
+      // upper case, short, long, not hex, empty, twice, without generation
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: 0123456789ABCDEF0123456789ABCDEF\n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: 0123\n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: 0123456789abcdef0123456789abcdef0\n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: 0123456789abcdef0123456789abcdeg\n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: \n",
+      "# QtPass-GpgId-Generation: 1\n# QtPass-GpgId-Folder: .\n"
+      "# QtPass-GpgId-Store: 0123456789abcdef0123456789abcdef\n"
+      "# QtPass-GpgId-Store: 0123456789abcdef0123456789abcdef\n",
+      "# QtPass-GpgId-Store: 0123456789abcdef0123456789abcdef\n",
+  };
+  for (const char *b : bad) {
+    QString err;
+    QVERIFY2(!GpgIdGeneration::parse(b, &err).has_value(), b);
+    QVERIFY2(!err.isEmpty(), b);
+  }
+}
+
+/**
+ * @brief #2050: a list of another store, signed with the same key and for
+ *        the same folder, copied in, is refused once this device knows the
+ *        store, whatever its generation: higher would have passed before,
+ *        lower must not reach the Users dialog as this folder's rollback.
+ *        The first store line seen is the one the store is known by.
+ */
+void tst_gpgidgeneration::acceptRefusesAListOfAnotherStore() {
+  QTemporaryDir a;
+  QTemporaryDir b;
+  QVERIFY(a.isValid() && b.isValid());
+  const QString idA = QStringLiteral("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  const QString idB = QStringLiteral("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+  const QString fileB = QDir(b.path()).filePath(QStringLiteral(".gpg-id"));
+  const QByteArray ownB =
+      GpgIdGeneration::withHeader(5, QStringLiteral("."), "BOB\n", idB);
+  write(fileB, ownB);
+  QCOMPARE(GpgIdGeneration::accept(fileB, ownB, b.path()),
+           GpgIdGeneration::Verdict::Accepted);
+  QCOMPARE(GpgIdGeneration::storeIdFor(b.path(), std::nullopt),
+           std::optional<QString>(idB));
+
+  QString why;
+  const QByteArray fromA =
+      GpgIdGeneration::withHeader(9, QStringLiteral("."), "MALLORY\n", idA);
+  write(fileB, fromA);
+  QCOMPARE(GpgIdGeneration::accept(fileB, fromA, b.path(), &why),
+           GpgIdGeneration::Verdict::WrongStore);
+  QVERIFY2(why.contains(idA) && why.contains(idB), qPrintable(why));
+  QCOMPARE(GpgIdGeneration::remembered(fileB), std::optional<qint64>(5));
+  const QByteArray olderFromA =
+      GpgIdGeneration::withHeader(2, QStringLiteral("."), "MALLORY\n", idA);
+  QCOMPARE(GpgIdGeneration::accept(fileB, olderFromA, b.path()),
+           GpgIdGeneration::Verdict::WrongStore);
+  // B's own next list still passes.
+  const QByteArray nextB =
+      GpgIdGeneration::withHeader(6, QStringLiteral("."), "BOB\n", idB);
+  QCOMPARE(GpgIdGeneration::accept(fileB, nextB, b.path()),
+           GpgIdGeneration::Verdict::Accepted);
+}
+
+/**
+ * @brief Once the store has an id, a new list without a store line is
+ *        refused (it may be another store's, from before store lines); a
+ *        list this device accepted before stays accepted, and a headerless
+ *        list (pass) is as before. Before the store has an id, a list
+ *        without one is accepted as before.
+ */
+void tst_gpgidgeneration::
+    aNewListWithoutAStoreLineIsRefusedOnceTheStoreHasAnId() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  const QString store = dir.path();
+  QVERIFY(QDir(store).mkpath(QStringLiteral("team")));
+  QVERIFY(QDir(store).mkpath(QStringLiteral("plain")));
+  const QString root = QDir(store).filePath(QStringLiteral(".gpg-id"));
+  const QString team = QDir(store).filePath(QStringLiteral("team/.gpg-id"));
+  const QString plain = QDir(store).filePath(QStringLiteral("plain/.gpg-id"));
+  const QString id = QStringLiteral("0123456789abcdef0123456789abcdef");
+
+  const QByteArray oldRoot =
+      GpgIdGeneration::withHeader(3, QStringLiteral("."), "ALICE\n");
+  QCOMPARE(GpgIdGeneration::accept(root, oldRoot, store),
+           GpgIdGeneration::Verdict::Accepted);
+  const QByteArray teamList =
+      GpgIdGeneration::withHeader(1, QStringLiteral("team"), "ALICE\n", id);
+  QCOMPARE(GpgIdGeneration::accept(team, teamList, store),
+           GpgIdGeneration::Verdict::Accepted);
+
+  QCOMPARE(GpgIdGeneration::accept(root, oldRoot, store),
+           GpgIdGeneration::Verdict::Accepted);
+  QString why;
+  const QByteArray newRoot =
+      GpgIdGeneration::withHeader(4, QStringLiteral("."), "MALLORY\n");
+  QCOMPARE(GpgIdGeneration::accept(root, newRoot, store, &why),
+           GpgIdGeneration::Verdict::WrongStore);
+  QVERIFY2(why.contains(QStringLiteral("no store line")) && why.contains(id),
+           qPrintable(why));
+  QCOMPARE(GpgIdGeneration::accept(plain, "ALICE\n", store),
+           GpgIdGeneration::Verdict::Accepted);
+}
+
+/**
+ * @brief The id to write: the one the store is known by; else the verified
+ *        one on disk, taken over; else a new random one; each remembered.
+ *        Two stores get two ids.
+ */
+void tst_gpgidgeneration::storeIdForKeepsTakesOverOrMakesAnId() {
+  QTemporaryDir joined;
+  QTemporaryDir fresh;
+  QTemporaryDir other;
+  QVERIFY(joined.isValid() && fresh.isValid() && other.isValid());
+  const QString onDisk = QStringLiteral("0123456789abcdef0123456789abcdef");
+  QCOMPARE(GpgIdGeneration::storeIdFor(joined.path(), onDisk),
+           std::optional<QString>(onDisk));
+  QCOMPARE(
+      GpgIdGeneration::storeIdFor(
+          joined.path(), QStringLiteral("ffffffffffffffffffffffffffffffff")),
+      std::optional<QString>(onDisk));
+
+  const std::optional<QString> made =
+      GpgIdGeneration::storeIdFor(fresh.path(), QStringLiteral("not an id"));
+  QVERIFY(made.has_value());
+  QVERIFY2(GpgIdGeneration::parse(GpgIdGeneration::withHeader(
+                                      1, QStringLiteral("."), "A\n", *made))
+               .has_value(),
+           qPrintable(*made));
+  QCOMPARE(GpgIdGeneration::storeIdFor(fresh.path(), std::nullopt), made);
+  const std::optional<QString> second =
+      GpgIdGeneration::storeIdFor(other.path(), std::nullopt);
+  QVERIFY(second.has_value() && *second != *made);
+}
+
+/**
+ * @brief A record whose store ids are not what QtPass writes is unreadable:
+ *        nothing is accepted against it, as for its lists.
+ */
+void tst_gpgidgeneration::malformedStorePinsFailClosed() {
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QVERIFY(GpgIdGeneration::storeIdFor(dir.path(), std::nullopt).has_value());
+  const QString recordFile = GpgIdGeneration::recordFile();
+  QFile in(recordFile);
+  QVERIFY(in.open(QIODevice::ReadOnly));
+  const QByteArray before = in.readAll();
+  in.close();
+  const auto restore = qScopeGuard([&] { write(recordFile, before); });
+  QJsonObject root = QJsonDocument::fromJson(before).object();
+  QVERIFY(root.contains(QStringLiteral("stores")));
+  QJsonObject stores = root.value(QStringLiteral("stores")).toObject();
+  QJsonObject bad;
+  bad.insert(QStringLiteral("id"), QStringLiteral("NOT-AN-ID"));
+  stores.insert(QStringLiteral("x"), bad);
+  root.insert(QStringLiteral("stores"), stores);
+  write(recordFile, QJsonDocument(root).toJson());
+  QString why;
+  const QString file = QDir(dir.path()).filePath(QStringLiteral(".gpg-id"));
+  QCOMPARE(GpgIdGeneration::accept(
+               file, GpgIdGeneration::withHeader(1, QStringLiteral("."), "A\n"),
+               dir.path(), &why),
+           GpgIdGeneration::Verdict::RecordUnavailable);
+  QVERIFY(!GpgIdGeneration::storeIdFor(dir.path(), std::nullopt).has_value());
 }
 
 QTEST_MAIN(tst_gpgidgeneration)

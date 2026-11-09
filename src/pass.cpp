@@ -938,6 +938,7 @@ auto judgedRecipients(GpgIdGeneration::Verdict verdict,
   case GpgIdGeneration::Verdict::Unbound:
   case GpgIdGeneration::Verdict::Conflict:
   case GpgIdGeneration::Verdict::WrongFolder:
+  case GpgIdGeneration::Verdict::WrongStore:
   case GpgIdGeneration::Verdict::Malformed:
   case GpgIdGeneration::Verdict::RecordUnavailable:
     // Signed, but not shown to be this folder's list, not a list to trust,

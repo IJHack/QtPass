@@ -183,14 +183,20 @@ auto ProfileInit::writeGpgId(const QString &gpgIdFile,
     // before the write, bound to the store root (GpgIdGeneration). A new
     // profile has no list on disk to take a generation from.
     QString why;
+    const std::optional<QString> store = GpgIdGeneration::storeIdFor(
+        QFileInfo(gpgIdFile).absolutePath(), std::nullopt, &why);
+    if (!store) {
+      *note = why;
+      return false;
+    }
     const std::optional<qint64> generation =
         GpgIdGeneration::reserveNext(gpgIdFile, std::nullopt, &why);
     if (!generation) {
       *note = why;
       return false;
     }
-    contents =
-        GpgIdGeneration::withHeader(*generation, QStringLiteral("."), contents);
+    contents = GpgIdGeneration::withHeader(*generation, QStringLiteral("."),
+                                           contents, *store);
   }
   QString why;
   if (!Util::writeFileReplacing(gpgIdFile, contents, true, &why)) {

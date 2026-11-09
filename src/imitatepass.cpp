@@ -322,21 +322,32 @@ auto ImitatePass::addGenerationHeader(const QString &gpgIdFile,
   // The list on disk counts only if it is this folder's own, verified list:
   // a signature vouches for the bytes, the folder line for the place.
   std::optional<qint64> verifiedOnDisk;
+  std::optional<QString> storeOnDisk;
   QByteArray current;
   if (signer.verifyFile(gpgIdFile, &current)) {
     const auto header = GpgIdGeneration::parse(current);
     if (header && (!header->folder || *header->folder == *folder)) {
       verifiedOnDisk = header->generation;
+      storeOnDisk = header->store;
     }
   }
   QString why;
+  // The store's id: the one this device knows, else the one this store's
+  // lists already carry (#2050).
+  const std::optional<QString> store =
+      GpgIdGeneration::storeIdFor(m_settings.passStore, storeOnDisk, &why);
+  if (!store) {
+    emit critical(tr("Cannot update"), why);
+    return false;
+  }
   const std::optional<qint64> generation =
       GpgIdGeneration::reserveNext(gpgIdFile, verifiedOnDisk, &why);
   if (!generation) {
     emit critical(tr("Cannot update"), why);
     return false;
   }
-  *contents = GpgIdGeneration::withHeader(*generation, *folder, *contents);
+  *contents =
+      GpgIdGeneration::withHeader(*generation, *folder, *contents, *store);
   return true;
 }
 

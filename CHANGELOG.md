@@ -8,6 +8,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Upgrade Notes
 
+- **Signed stores: update together.** A recipient list QtPass writes for
+  a store with a signing key now names the store it is for, and a device
+  that has seen a store's ID refuses a newly saved list without one. So a
+  list saved by a teammate still on 2.0-rc3 or older is refused by an
+  updated QtPass until someone on the new version saves those recipients
+  once more. Lists already accepted keep working, and lists written by
+  plain `pass` are not affected
+  ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
 - **"Hide password" hides more.** With it on, fields that name a secret
   (PIN, PIN code, PUK, CVV, CVC, secret, token, key, passphrase, password,
   recovery, answer, seed, mnemonic, as whole words) are behind the eye
@@ -129,6 +137,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- A signed `.gpg-id` is bound to its store, not only to its folder: a
+  third signed comment line, `# QtPass-GpgId-Store: <id>`, names the store,
+  each device remembers the ID it first saw per store, and a list of
+  another store signed with the same key and copied in at the same folder
+  is refused, however high its generation, before the Users dialog could
+  preselect it as a rollback. `pass` reads the line as a comment
+  ([#2050](https://github.com/IJHack/QtPass/issues/2050)).
 - When the store's own repository is pinned (a parent path holding `:`),
   its owner is checked each time Git runs on Unix, not only when the store
   is set up: a `.git` that appeared later and is another user's is refused
