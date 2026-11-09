@@ -15,5 +15,6 @@ var searchData=
   ['kmaxnamedfields_12',['kMaxNamedFields',['../class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8',1,'FileContent']]],
   ['kmaxplaintextbytes_13',['kMaxPlaintextBytes',['../class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72',1,'Pass::kMaxPlaintextBytes'],['../class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35',1,'RnpCrypto::kMaxPlaintextBytes']]],
   ['kmaxpreviewlength_14',['kMaxPreviewLength',['../class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d',1,'NativeGrep']]],
-  ['kmaxsignaturebytes_15',['kMaxSignatureBytes',['../class_gpg_id_signer.html#aa88d2f58405a056d72bba32958fdd77a',1,'GpgIdSigner']]]
+  ['kmaxsignaturebytes_15',['kMaxSignatureBytes',['../class_gpg_id_signer.html#aa88d2f58405a056d72bba32958fdd77a',1,'GpgIdSigner']]],
+  ['kstoreprefix_16',['kStorePrefix',['../class_gpg_id_generation.html#ab6b0f551215df432adf31c4ad1e701e9',1,'GpgIdGeneration']]]
 ];

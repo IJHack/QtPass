@@ -12,5 +12,6 @@ var searchData=
   ['startminimized_9',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
   ['state_10',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
   ['steam_5fdigits_11',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
-  ['step_12',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]]
+  ['step_12',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
+  ['store_13',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header']]]
 ];
