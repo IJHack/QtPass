@@ -317,6 +317,54 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
+### QtPass flashes dark at start, or ignores my light or dark theme
+
+QtPass uses whatever theme your desktop gives Qt applications; it sets no
+colours of its own. Qt picks its platform theme plugin from the desktop
+session. KDE Plasma and LXQt bring their own, but on GTK desktops such as
+Cinnamon, MATE or Xfce Qt needs to be told, or it may start with its default
+colours and repaint once it reads your theme: a dark flash at start, or the
+wrong light or dark palette.
+
+Set the platform theme in your session environment, for example in
+`~/.profile`, then log out and in again:
+
+```sh
+export QT_QPA_PLATFORMTHEME=gtk3
+```
+
+On Gentoo you can also set it system-wide: put the line
+`QT_QPA_PLATFORMTHEME=gtk3` (without `export`) in a file such as
+`/etc/env.d/99qt-platformtheme`, run `env-update`, then log in again.
+
+This needs Qt's GTK 3 platform theme plugin (`libqgtk3.so`), which some
+distributions package separately; others, such as Linux Mint, set a platform
+theme for you. Instead of `gtk3` you can use `xdgdesktopportal`, or `qt6ct`
+once you have installed and configured qt6ct (`qt5ct` for Qt 5 builds of
+QtPass 1.8).
+
+The variable applies to every Qt application started from that session (and,
+from `/etc/env.d`, to every user). To change it for QtPass only, start it with
+`env QT_QPA_PLATFORMTHEME=gtk3 qtpass` instead: copy `qtpass.desktop` to
+`~/.local/share/applications` and change its `Exec=` line to that.
+
+The AppImage bundles Qt's `xdgdesktopportal` theme but not `gtk3`, and its
+start-up hook overwrites `QT_QPA_PLATFORMTHEME` on GNOME and Xfce, so pass the
+theme as an option instead:
+`./QtPass-*.AppImage -platformtheme xdgdesktopportal`. That theme reads your
+light or dark preference from the desktop's settings portal, so it needs
+`xdg-desktop-portal` with a backend for your desktop (such as
+`xdg-desktop-portal-gtk`, or `xdg-desktop-portal-xapp` on Cinnamon, MATE and
+Xfce); without one Qt keeps its default colours.
+
+Whichever way you set it, quit QtPass completely first (it may still be
+running in the tray): starting it again only hands over to the running
+instance, which keeps the theme it started with.
+
+QtPass does not set the variable itself, because that would override the
+platform integration of desktops that have their own. See
+[#2126](https://github.com/IJHack/QtPass/issues/2126).
+
 ### Can not find either qmake or qmake6
 
 QtPass uses Qt6 by default. Use:
