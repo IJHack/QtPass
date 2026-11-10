@@ -340,8 +340,7 @@ On Gentoo you can also set it system-wide: put the line
 This needs Qt's GTK 3 platform theme plugin (`libqgtk3.so`), which some
 distributions package separately; others, such as Linux Mint, set a platform
 theme for you. Instead of `gtk3` you can use `xdgdesktopportal`, or `qt6ct`
-once you have installed and configured qt6ct (`qt5ct` for Qt 5 builds of
-QtPass 1.8).
+once you have installed and configured qt6ct.
 
 The variable applies to every Qt application started from that session (and,
 from `/etc/env.d`, to every user). To change it for QtPass only, start it with
