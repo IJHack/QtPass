@@ -348,6 +348,13 @@ from `/etc/env.d`, to every user). To change it for QtPass only, start it with
 `env QT_QPA_PLATFORMTHEME=gtk3 qtpass` instead: copy `qtpass.desktop` to
 `~/.local/share/applications` and change its `Exec=` line to that.
 
+The AppImage bundles Qt's `xdgdesktopportal` theme but not `gtk3`, so start it
+with `QT_QPA_PLATFORMTHEME=xdgdesktopportal ./QtPass-*.AppImage`.
+
+Whichever way you set it, quit QtPass completely first (it may still be
+running in the tray): starting it again only hands over to the running
+instance, which keeps the theme it started with.
+
 QtPass does not set the variable itself, because that would override the
 platform integration of desktops that have their own. See
 [#2126](https://github.com/IJHack/QtPass/issues/2126).
