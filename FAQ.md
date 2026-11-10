@@ -317,6 +317,29 @@ Please install using your favorite package manager.
 export DESKTOP_SESSION=gnome
 ```
 
+### QtPass flashes dark at start, or ignores my light or dark theme
+
+QtPass uses whatever theme your desktop gives Qt applications; it sets no
+colours of its own. Qt picks its platform theme plugin from the desktop
+session. KDE Plasma and LXQt bring their own, but on GTK desktops such as
+Cinnamon, MATE or Xfce Qt needs to be told, or it may start with its default
+colours and repaint once it reads your theme: a dark flash at start, or the
+wrong light or dark palette.
+
+Set the platform theme in your session environment (for example in
+`~/.profile`, or `/etc/env.d` on Gentoo), then log out and in again:
+
+```sh
+export QT_QPA_PLATFORMTHEME=gtk3
+```
+
+This needs Qt's GTK 3 platform theme plugin (`libqgtk3.so`), which some
+distributions package separately; others, such as Linux Mint, set a platform
+theme for you. `xdgdesktopportal` or `qt6ct` work too, if you prefer those.
+QtPass does not set the variable itself, because that would override the
+platform integration of desktops that have their own. See
+[#2126](https://github.com/IJHack/QtPass/issues/2126).
+
 ### Can not find either qmake or qmake6
 
 QtPass uses Qt6 by default. Use:
