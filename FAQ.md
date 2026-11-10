@@ -326,16 +326,28 @@ Cinnamon, MATE or Xfce Qt needs to be told, or it may start with its default
 colours and repaint once it reads your theme: a dark flash at start, or the
 wrong light or dark palette.
 
-Set the platform theme in your session environment (for example in
-`~/.profile`, or `/etc/env.d` on Gentoo), then log out and in again:
+Set the platform theme in your session environment, for example in
+`~/.profile`, then log out and in again:
 
 ```sh
 export QT_QPA_PLATFORMTHEME=gtk3
 ```
 
+On Gentoo you can also set it system-wide: put the line
+`QT_QPA_PLATFORMTHEME=gtk3` (without `export`) in a file such as
+`/etc/env.d/99qt-platformtheme`, run `env-update`, then log in again.
+
 This needs Qt's GTK 3 platform theme plugin (`libqgtk3.so`), which some
 distributions package separately; others, such as Linux Mint, set a platform
-theme for you. `xdgdesktopportal` or `qt6ct` work too, if you prefer those.
+theme for you. Instead of `gtk3` you can use `xdgdesktopportal`, or `qt6ct`
+once you have installed and configured qt6ct (`qt5ct` for Qt 5 builds of
+QtPass 1.8).
+
+The variable applies to every Qt application started from that session (and,
+from `/etc/env.d`, to every user). To change it for QtPass only, start it with
+`env QT_QPA_PLATFORMTHEME=gtk3 qtpass` instead: copy `qtpass.desktop` to
+`~/.local/share/applications` and change its `Exec=` line to that.
+
 QtPass does not set the variable itself, because that would override the
 platform integration of desktops that have their own. See
 [#2126](https://github.com/IJHack/QtPass/issues/2126).
