@@ -348,8 +348,14 @@ from `/etc/env.d`, to every user). To change it for QtPass only, start it with
 `env QT_QPA_PLATFORMTHEME=gtk3 qtpass` instead: copy `qtpass.desktop` to
 `~/.local/share/applications` and change its `Exec=` line to that.
 
-The AppImage bundles Qt's `xdgdesktopportal` theme but not `gtk3`, so start it
-with `QT_QPA_PLATFORMTHEME=xdgdesktopportal ./QtPass-*.AppImage`.
+The AppImage bundles Qt's `xdgdesktopportal` theme but not `gtk3`, and its
+start-up hook overwrites `QT_QPA_PLATFORMTHEME` on GNOME and Xfce, so pass the
+theme as an option instead:
+`./QtPass-*.AppImage -platformtheme xdgdesktopportal`. That theme reads your
+light or dark preference from the desktop's settings portal, so it needs
+`xdg-desktop-portal` with a backend for your desktop (such as
+`xdg-desktop-portal-gtk`, or `xdg-desktop-portal-xapp` on Cinnamon, MATE and
+Xfce); without one Qt keeps its default colours.
 
 Whichever way you set it, quit QtPass completely first (it may still be
 running in the tray): starting it again only hands over to the running
