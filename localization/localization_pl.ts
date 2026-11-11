@@ -337,7 +337,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Pokaż wszystkie linie zaczynające się słowem i kończące dwukropkiem jako pola w polach haseł, zamiast listy</translation>
+        <translation>Pokaż wszystkie linie zaczynające się słowem i&#xa0;kończące dwukropkiem jako pola w&#xa0;polach haseł, zamiast listy</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
