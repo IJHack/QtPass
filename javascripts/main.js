@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.4-3";
+      script.src = "/javascripts/unlock.js?v=1.8.4-4";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/admin.js?v=1.8.4-3";
+      script.src = "/javascripts/admin.js?v=1.8.4-4";
       script.onload = function () {
         window.qtpassAdmin(office[0]);
       };
@@ -480,6 +480,35 @@ document.addEventListener("DOMContentLoaded", function () {
     adNarrow.addEventListener("change", refitAd);
     fitAdPoster();
   }
+
+  // The film and the clip get one large play button over the poster. The
+  // native controls stay off until play starts, so a browser that draws its
+  // own large button does not show two; without this script they stay on.
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".player"),
+    function (player) {
+      var video = player.querySelector("video");
+      if (!video) {
+        return;
+      }
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "play";
+      button.setAttribute("aria-label", "Play");
+      var started = function () {
+        button.remove();
+        video.controls = true;
+      };
+      button.addEventListener("click", function () {
+        started();
+        video.play();
+        video.focus();
+      });
+      video.addEventListener("play", started);
+      video.controls = false;
+      player.appendChild(button);
+    },
+  );
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js");

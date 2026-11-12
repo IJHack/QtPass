@@ -4,7 +4,7 @@
 // storage, no field that takes input. The panel's password audit is a typing
 // game: encrypt the passwords before they reach the store.
 (function () {
-  var CSS = "/stylesheets/admin.css?v=1.8.4-3";
+  var CSS = "/stylesheets/admin.css?v=1.8.4-4";
   var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var dialog = null;
   var game = null;

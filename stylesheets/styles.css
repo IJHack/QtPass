@@ -982,6 +982,55 @@ header ul a:active {
   }
 }
 
+/* The film and the clip: one large play button over the poster. Desktop
+   Chrome shows none of its own; main.js adds this one and holds the native
+   controls back until play starts, so no browser shows two. */
+.player {
+  position: relative;
+}
+.player .play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  cursor: pointer;
+}
+.player .play::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: auto;
+  border-radius: 50%;
+  background: color-mix(in srgb, #10161c 72%, transparent);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+.player .play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 1.5rem;
+  height: 1.7rem;
+  margin: auto;
+  translate: 0.18rem 0;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.player .play:hover::before,
+.player .play:focus-visible::before {
+  background: var(--accent);
+}
+.player .play:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* Home: one line per platform to install from, and the apps around pass. */
 .installs {
   display: grid;
