@@ -34,6 +34,13 @@
 
 ### Security
 
+- Re-encryption no longer lets a file in a shared store write a file of its
+  own choosing. QtPass asked gpg which keys an entry was encrypted to
+  without telling it what to do with the data, so gpg guessed: a `.gpg`
+  file that holds OpenPGP data but is not encrypted was written out under
+  its name without `.gpg`, also through a link under that name, over a file
+  outside the store. gpg is now told to decrypt and only list the keys, and
+  nothing it would write is kept (scan finding ANT-2026-YG619YO8).
 - Decrypting an entry cannot fill QtPass's memory any more: gpg stops at
   64 MiB of plaintext (`--max-output`, also for the `pass` backend through
   `PASSWORD_STORE_GPG_OPTS`). An OpenPGP message is compressed, so a small
