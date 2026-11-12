@@ -37,6 +37,13 @@ precedence = "override"
 SPDX-FileCopyrightText = "IJHack"
 SPDX-License-Identifier = "CC0-1.0"
 
+# Stills of the film "QtPass, one world" (https://github.com/annejan/qtpass-world).
+[[annotations]]
+path = "images/history/**"
+precedence = "override"
+SPDX-FileCopyrightText = "Anne Jan Brouwer"
+SPDX-License-Identifier = "CC-BY-4.0"
+
 # Platform logos: Tux under Larry Ewing's own terms, the rest are the
 # platforms' trademarks, used to name the platform (see the LicenseRef texts).
 [[annotations]]

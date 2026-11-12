@@ -25,6 +25,7 @@ const PRECACHE_URLS = [
   "/downloads",
   "/faq",
   "/getting-started",
+  "/history",
   "/license",
   "/macos",
   "/privacy",

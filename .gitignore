@@ -20,5 +20,8 @@ tests
 # gzip twins written by scripts/precompress.sh before deploy
 *.gz
 
+# The history film: too big for the branch, uploaded apart (see README.md)
+video/history/*.mp4
+
 # Doxygen XML output (GENERATE_XML is off; kept out of the branch)
 xml

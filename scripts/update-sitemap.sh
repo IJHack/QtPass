@@ -17,7 +17,7 @@ priority() {
     index) echo 1.0 ;;
     downloads|getting-started) echo 0.9 ;;
     advanced|macos|changelog|faq) echo 0.8 ;;
-    screenshots) echo 0.7 ;;
+    screenshots|history) echo 0.7 ;;
     security) echo 0.6 ;;
     privacy|contributing|license) echo 0.5 ;;
     changelog.*|old) echo 0.3 ;;
