@@ -955,6 +955,33 @@ header ul a:active {
   color: var(--muted);
 }
 
+/* Home: the 20-second clip under the hero. It comes in a light and a dark
+   cut, wide and square; the box takes the shape of the cut the reader gets,
+   so the page does not jump when the poster loads. */
+.ad {
+  margin: 0 0 2.5rem;
+}
+.ad video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--panel);
+}
+.ad figcaption {
+  margin-block-start: 0.5rem;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+@media (max-width: 40rem) {
+  .ad video {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 /* Home: one line per platform to install from, and the apps around pass. */
 .installs {
   display: grid;

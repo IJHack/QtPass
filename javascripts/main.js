@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/unlock.js?v=1.8.4-2";
+      script.src = "/javascripts/unlock.js?v=1.8.4-3";
       script.onload = function () {
         window.qtpassUnlock();
       };
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       var script = document.createElement("script");
-      script.src = "/javascripts/admin.js?v=1.8.4-2";
+      script.src = "/javascripts/admin.js?v=1.8.4-3";
       script.onload = function () {
         window.qtpassAdmin(office[0]);
       };
@@ -448,6 +448,37 @@ document.addEventListener("DOMContentLoaded", function () {
         closeButton.focus();
       });
     });
+  }
+
+  // Home: the clip has a light and a dark cut, wide and square. The
+  // <source>s pick the film; a poster cannot carry a media query, so it is
+  // set here, and both follow a change of scheme or width until play starts.
+  var adVideo = document.querySelector(".ad video");
+  if (adVideo && window.matchMedia) {
+    var adDark = window.matchMedia("(prefers-color-scheme: dark)");
+    var adNarrow = window.matchMedia("(max-width: 40rem)");
+    var adStarted = false;
+    var fitAdPoster = function () {
+      adVideo.poster =
+        "images/ad/poster-" +
+        (adDark.matches ? "dark" : "light") +
+        "-" +
+        (adNarrow.matches ? "1x1" : "16x9") +
+        ".jpg";
+    };
+    var refitAd = function () {
+      if (adStarted) {
+        return;
+      }
+      fitAdPoster();
+      adVideo.load();
+    };
+    adVideo.addEventListener("play", function () {
+      adStarted = true;
+    });
+    adDark.addEventListener("change", refitAd);
+    adNarrow.addEventListener("change", refitAd);
+    fitAdPoster();
   }
 
   if ("serviceWorker" in navigator) {

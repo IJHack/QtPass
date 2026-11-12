@@ -37,9 +37,10 @@ precedence = "override"
 SPDX-FileCopyrightText = "IJHack"
 SPDX-License-Identifier = "CC0-1.0"
 
-# Stills of the film "QtPass, one world" (https://github.com/annejan/qtpass-world).
+# Stills of the film "QtPass, one world" (https://github.com/annejan/qtpass-world)
+# and the 20-second clip made with its footage.
 [[annotations]]
-path = "images/history/**"
+path = ["images/history/**", "images/ad/**", "video/ad/**"]
 precedence = "override"
 SPDX-FileCopyrightText = "Anne Jan Brouwer"
 SPDX-License-Identifier = "CC-BY-4.0"
