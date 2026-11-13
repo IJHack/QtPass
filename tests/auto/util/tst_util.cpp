@@ -412,6 +412,7 @@ private Q_SLOTS:
   // Pass::generatePassword
   void generatePasswordPwgenPassesTheConfiguredFlags();
   void generatePasswordPwgenNegatedFlags();
+  void generatePasswordPwgenFailureIsReported();
   void generatePasswordPwgenFailureYieldsEmpty();
   void generatePasswordNoCharactersAtAllIsCritical();
   void generateRandomPasswordEmptyInputsYieldEmpty();
@@ -6068,6 +6069,30 @@ void tst_util::generatePasswordPwgenNegatedFlags() {
   pass.init(s);
   QCOMPARE(pass.generatePassword(8, QString()),
            QStringLiteral("-1,--no-capitalize,--no-numerals,--symbols,8,"));
+#endif
+}
+
+void tst_util::generatePasswordPwgenFailureIsReported() {
+#ifdef Q_OS_WIN
+  QSKIP("fake pwgen is a POSIX shell script");
+#else
+  // When the configured pwgen cannot run, generatePassword() must report it
+  // (like its other failures), not return an empty password silently: Generate
+  // would then do nothing and OK save an empty or the old password.
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  const QString pwgen =
+      writeScript(tmp.filePath(QStringLiteral("pwgen")), "exit 1\n");
+  QVERIFY(!pwgen.isEmpty());
+  TestPass pass;
+  QSignalSpy critical(&pass, &Pass::critical);
+  AppSettings s;
+  s.usePwgen = true;
+  s.pwgenExecutable = pwgen;
+  pass.init(s);
+  const QString result = pass.generatePassword(12, QStringLiteral("abc"));
+  QVERIFY2(result.isEmpty(), "a failed pwgen must not produce a password");
+  QCOMPARE(critical.count(), 1);
 #endif
 }
 
