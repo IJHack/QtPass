@@ -221,6 +221,19 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   valid keys are still listed; tick them by hand, as you now also do for a key
   of your own imported from another machine unless you gave it ultimate trust
   (scan finding ANT-2026-SYHZRWC3).
+- Git no longer reads the config of a repository pushed into the store.
+  Someone who can push to a shared store could push a folder laid out as a
+  bare repository, with a config that names a command (`core.fsmonitor`);
+  saving an entry in that folder ran it. QtPass now sets
+  `safe.bareRepository=explicit` for every Git it runs, and for the Git that
+  `pass` runs (Git 2.38 or newer; scan finding ANT-2026-HJOPH9D4).
+- A pushed `.gitattributes` can no longer make Git rewrite encrypted
+  entries. Someone who can push to a shared store could add a line such as
+  `*.gpg text`; Git then changed the ciphertext on commit or checkout, and
+  the entry no longer decrypted while the save looked fine. QtPass now pins
+  `*.gpg`, `.gpg-id` and `.gpg-id.sig` as byte-for-byte in the store's own
+  `.git/info/attributes`, which outranks the pushed file (scan finding
+  ANT-2026-JWPWADT4).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
