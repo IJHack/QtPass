@@ -46,6 +46,13 @@
   ignored, uncommitted file, which a later pull could delete. QtPass now
   stages the files it writes with `git add -f` (scan finding
   ANT-2026-L2LXMCPM).
+- A pushed `.gitattributes` can no longer make Git rewrite encrypted
+  entries. Someone who can push to a shared store could add a line such as
+  `*.gpg text`; Git then changed the ciphertext on commit or checkout, and
+  the entry no longer decrypted while the save looked fine. QtPass now pins
+  `*.gpg`, `.gpg-id` and `.gpg-id.sig` as byte-for-byte in the store's own
+  `.git/info/attributes`, which outranks the pushed file (scan finding
+  ANT-2026-JWPWADT4).
 - Re-encryption no longer lets a file in a shared store write a file of its
   own choosing. QtPass asked gpg which keys an entry was encrypted to
   without telling it what to do with the data, so gpg guessed: a `.gpg`

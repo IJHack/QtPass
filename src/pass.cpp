@@ -908,6 +908,89 @@ void Pass::updateEnv() {
             gpgOpts.join(QLatin1Char(' ')));
 
   exec.setEnvironment(env);
+
+  pinStoreGitAttributes();
+}
+
+void Pass::pinStoreGitAttributes() {
+  if (m_settings.passStore.isEmpty()) {
+    return;
+  }
+  // Only the common layout, where the store is its own repository, is handled
+  // by writing directly: a ".git" directory. A worktree ".git" file or a store
+  // nested in a larger repository is left as-is rather than risk touching
+  // another repository's attributes.
+  const QString gitDir =
+      QDir(m_settings.passStore).absoluteFilePath(QStringLiteral(".git"));
+  if (!QFileInfo(gitDir).isDir()) {
+    return;
+  }
+
+  // The marker lets us recognise and refresh our own block without disturbing
+  // anything a user put in info/attributes by hand. Disabling text/eol,
+  // working-tree-encoding, filter, ident and diff keeps Git from rewriting the
+  // bytes gpg produced for these paths.
+  static const QString marker =
+      QStringLiteral("# QtPass: keep encrypted store files byte-for-byte");
+  const QString block =
+      marker + QStringLiteral("\n") +
+      QStringLiteral(
+          "*.gpg -text -diff -filter -ident -working-tree-encoding\n"
+          ".gpg-id -text -diff -filter -ident -working-tree-encoding\n"
+          ".gpg-id.sig -text -diff -filter -ident -working-tree-encoding\n");
+
+  const QString infoDir = gitDir + QStringLiteral("/info");
+  const QString attrPath = infoDir + QStringLiteral("/attributes");
+
+  QString existing;
+  QFile attr(attrPath);
+  if (attr.exists() && attr.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    existing = QString::fromUtf8(attr.readAll());
+    attr.close();
+    if (existing.contains(block)) {
+      return; // already pinned and unchanged
+    }
+  }
+
+  if (!QDir().mkpath(infoDir)) {
+    return;
+  }
+
+  // Keep any lines the user added themselves (outside our block), then append a
+  // fresh copy of our block. A previous QtPass block is dropped so an updated
+  // set of lines replaces an older one.
+  QString preserved;
+  if (!existing.isEmpty()) {
+    const QStringList lines = existing.split(QLatin1Char('\n'));
+    bool inBlock = false;
+    for (const QString &line : lines) {
+      if (line == marker) {
+        inBlock = true;
+        continue;
+      }
+      if (inBlock) {
+        if (line.startsWith(QStringLiteral("*.gpg ")) ||
+            line.startsWith(QStringLiteral(".gpg-id ")) ||
+            line.startsWith(QStringLiteral(".gpg-id.sig "))) {
+          continue;
+        }
+        inBlock = false;
+      }
+      preserved += line + QLatin1Char('\n');
+    }
+    while (preserved.endsWith(QStringLiteral("\n\n"))) {
+      preserved.chop(1);
+    }
+  }
+
+  QSaveFile out(attrPath);
+  if (!out.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    return;
+  }
+  const QByteArray payload = (preserved + block).toUtf8();
+  if (out.write(payload) == payload.size()) {
+    out.commit();
+  }
 }
 
 auto Pass::maxOutputArgs() -> QStringList {
