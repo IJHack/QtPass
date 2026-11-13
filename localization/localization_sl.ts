@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Odložišče obnovljeno</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Besede, ločene z vejicami. Polje šteje, kadar njegovo ime vsebuje katero od njih kot celo besedo, ne glede na velike in male črke: &quot;key&quot; skrije &quot;API key&quot;, ne pa &quot;keyboard layout&quot;. Zato raje skrije preveč: skrita sta tudi &quot;Public key&quot; in &quot;Password hint&quot;; odstranite besedo, da ju prikažete.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eno ime polja na vrstico. Vrstica, kot je &quot;# secret: pin, cvv&quot;, označi polja, ki se skrijejo enako kot geslo, dokler je vklopljeno &quot;Skrij geslo&quot;. Ista vrstica deluje tudi v datoteki .templates v shrambi, kjer velja za vsak vnos v shrambi, ne le za tiste, ustvarjene s to predlogo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ko shramba nima lastnega repozitorija Git, se uporabi tisti v mapi nad njo. Privzeto izklopljeno, tako kot pri pass, da se shramba znotraj drugega repozitorija (na primer dotfiles) tja nikoli pomotoma ne zapiše ali potisne. Samo domorodni Git: pass se vedno ustavi pri shrambi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ko se odložišče počisti, se vanj vrne, kar je bilo v njem pred kopiranjem, kot to počne pass -c, razen če je bilo medtem kopirano kaj drugega. Samo besedilo: oblikovanje se ne obnovi. To besedilo do takrat ostane v pomnilniku. Kjer odložišča ni mogoče brati brez fokusa (nekatera namizja Wayland), se namesto tega počisti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrij vsak polje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vsako polje za gumbom z očesom, ne samo skrivnosti: za deljenje zaslona in predstavitve. Opombe pod polji in koda OTP ostanejo vidne; &quot;Skrij vsebino&quot; skrije tudi te.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass zapiše spremembe v %1 v repozitorij Git v %2: z dvopičjem v poti shrambe pass ne more omejiti Gita na shrambo. V shrambi zaženite &quot;git init&quot; ali uporabite domorodni Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,10 +1089,10 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… še %n vrstica ni prikazana</numerusform>
+            <numerusform>… še %n vrstici nista prikazani</numerusform>
+            <numerusform>… še %n vrstice niso prikazane</numerusform>
+            <numerusform>… še %n vrstic ni prikazanih</numerusform>
         </translation>
     </message>
 </context>
@@ -1167,12 +1167,12 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam vsebuje več kot eno vrstico shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vrstica shrambe je napačno oblikovana: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1207,7 +1207,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam vsebuje vrstico shrambe, ne pa tudi vrstice generacije.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1242,7 +1242,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podpisani seznam prejemnikov %1 ne vsebuje vrstice shrambe, ta naprava pa pozna to shrambo po ID-ju %2: morda je bil zapisan za drugo shrambo in kopiran sem ali pa ga je zapisal starejši QtPass. Imetnik podpisnega ključa to reši tako, da odpre Uporabniki, znova izbere prejemnike in shrani, s čimer se zapiše vrstica shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1280,7 +1280,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podpisani seznam prejemnikov %1 je bil zapisan za drugo shrambo gesel (ID shrambe %2; ta naprava pozna to shrambo kot %3) in se ne uporablja. Morda je bil sem kopiran iz shrambe, podpisane z istim ključem. Če pa je bila ta shramba znova nastavljena, se z odstranitvijo %4 pozabijo ID-ji shramb, ki jih ta naprava pozna.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1488,7 +1488,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ni mogoče prebrati kot seznam prejemnikov (navadna datoteka velikosti največ %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2535,10 +2535,10 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Prikazan je prvi %n zadetek; za ostale poiščite kaj bolj določenega.</numerusform>
+            <numerusform>Prikazana sta prva %n zadetka; za ostale poiščite kaj bolj določenega.</numerusform>
+            <numerusform>Prikazani so prvi %n zadetki; za ostale poiščite kaj bolj določenega.</numerusform>
+            <numerusform>Prikazanih je prvih %n zadetkov; za ostale poiščite kaj bolj določenega.</numerusform>
         </translation>
     </message>
     <message>
@@ -3060,10 +3060,10 @@ Nadaljujem?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ta vnos ima %n vrstico, preveč za urejanje tukaj.</numerusform>
+            <numerusform>Ta vnos ima %n vrstici, preveč za urejanje tukaj.</numerusform>
+            <numerusform>Ta vnos ima %n vrstice, preveč za urejanje tukaj.</numerusform>
+            <numerusform>Ta vnos ima %n vrstic, preveč za urejanje tukaj.</numerusform>
         </translation>
     </message>
 </context>

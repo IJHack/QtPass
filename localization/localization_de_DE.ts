@@ -280,12 +280,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle Felder ausblenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle Felder hinter der Augen-Schaltfläche, nicht nur die Geheimnisse: für geteilte Bildschirme und Präsentationen. Die Notizen unter den Feldern und der OTP-Code bleiben sichtbar; &quot;Inhalt ausblenden&quot; blendet auch diese aus.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1000"/>
@@ -613,7 +613,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass committet Änderungen in %1 in das Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Kennwortspeichers kann pass Git nicht auf den Kennwortspeicher beschränken. Führe &quot;git init&quot; im Kennwortspeicher aus, oder verwende natives Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -827,7 +827,7 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ein Feldname pro Zeile. Eine Zeile wie &quot;# secret: pin, cvv&quot; kennzeichnet Felder, die wie das Kennwort ausgeblendet werden, solange &quot;Kennwort ausblenden&quot; aktiviert ist. Dieselbe Zeile funktioniert auch in der Datei .templates des Kennwortspeichers; dort gilt sie für jeden Eintrag im Speicher, nicht nur für solche, die mit diesem Template erstellt wurden.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -1214,12 +1214,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Liste enthält mehr als eine Speicherzeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Speicherzeile ist fehlerhaft: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1254,7 +1254,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Liste enthält eine Speicherzeile, aber keine Generationszeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1289,7 +1289,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicherzeile, während dieses Gerät diesen Kennwortspeicher unter seiner ID %2 kennt: Sie wurde möglicherweise für einen anderen Kennwortspeicher geschrieben und hierher kopiert, oder von einem älteren QtPass. Wer den Signaturschlüssel besitzt, kommt weiter, indem er &quot;Benutzer&quot; öffnet, die Empfänger neu auswählt und speichert; dabei wird die Speicherzeile geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1327,7 +1327,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 wurde für einen anderen Kennwortspeicher geschrieben (Speicher-ID %2; dieses Gerät kennt diesen Speicher als %3) und wird nicht verwendet. Möglicherweise wurde sie aus einem Speicher hierher kopiert, der mit demselben Schlüssel signiert ist. Wurde dieser Speicher stattdessen neu eingerichtet, vergisst das Entfernen von %4 die Speicher-IDs, die dieses Gerät kennt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

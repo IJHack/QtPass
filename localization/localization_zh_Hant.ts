@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">以逗號分隔的詞語。當欄位名稱包含其中某個完整單詞時（不區分大小寫），該欄位即被計入：「key」會隱藏「API key」，但不會隱藏「keyboard layout」。因此它寧可多隱藏一些：「Public key」和「Password hint」也會被隱藏；移除一個詞即可顯示它們。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -579,17 +579,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">恢復預設詞語：PIN、卡片驗證碼、金鑰、權杖、復原碼等。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">隱藏所有欄位</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">眼睛圖示按鈕後的所有欄位，而不僅是機密：適用於共享螢幕和簡報。欄位下方的備註和 OTP 碼仍然可見；「隱藏內容」也會隱藏它們。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">每行一個欄位名稱。像 &quot;# secret: pin, cvv&quot; 這樣的一行，會標示在「隱藏密碼」開啟時要像密碼一樣隱藏的欄位。同樣的一行也可用於儲存庫的 .templates 檔案，在那裡它適用於儲存庫中的每個項目，而不僅是使用該範本建立的項目。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">當密碼儲存庫沒有自己的 Git 儲存庫時，使用其上層資料夾中的 Git 儲存庫。預設關閉，與 pass 相同，因此位於另一個 Git 儲存庫（例如 dotfiles）內的密碼儲存庫絕不會被誤提交或推送到那裡。僅限原生 Git：pass 一律止於密碼儲存庫。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 使用相同的金鑰為另一個儲存庫簽署。為其中一個儲存庫簽署的接收者清單，在另一個儲存庫中也會被接受：請為接收者不同的每個儲存庫使用各自的簽署金鑰。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass 會將 %1 中的變更提交到位於 %2 的 Git 儲存庫：密碼儲存庫的路徑含有冒號時，pass 無法將 Git 限制在密碼儲存庫內。請在密碼儲存庫中執行 &quot;git init&quot;，或使用原生 Git/GPG。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1208,12 +1208,12 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此清單含有不止一個儲存庫行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">儲存庫行格式錯誤：%1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1248,7 +1248,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">此清單含有儲存庫行，但沒有世代行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1283,7 +1283,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">已簽署的接收者清單 %1 沒有儲存庫行，而這台裝置是以 ID %2 識別此儲存庫：它可能是為另一個儲存庫所寫再複製到這裡，或是由舊版 QtPass 所寫。簽署金鑰的持有者可開啟「使用者」、重新選取接收者並儲存來解決，這樣就會寫入儲存庫行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1321,7 +1321,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">已簽署的接收者清單 %1 是為另一個密碼儲存庫所寫（儲存庫 ID %2；這台裝置將此儲存庫識別為 %3），因此不予使用。它可能是從使用相同金鑰簽署的儲存庫複製過來的。如果其實是此儲存庫被重新設定過，移除 %4 會讓這台裝置忘記它所知的儲存庫 ID。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1529,7 +1529,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 無法作為接收者清單讀取（大小不超過 %2 的一般檔案）。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2006,7 +2006,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">名稱和口令不能包含換行。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -3545,7 +3545,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">正在檢查 %1 下的接收者清單…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>

@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Palabras, separadas por comas. Un campo cuenta cuando su nombre contiene alguna de ellas como palabras completas, sin distinguir mayúsculas de minúsculas: &quot;key&quot; oculta &quot;API key&quot;, pero no &quot;keyboard layout&quot;. Así que tiende a ocultar de más: &quot;Public key&quot; y &quot;Password hint&quot; también se ocultan; basta con quitar una palabra para mostrarlos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1206"/>
@@ -158,7 +158,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuando se borra el portapapeles, se vuelve a colocar lo que había antes de la copia, como hace pass -c, a menos que entretanto se haya copiado otra cosa. Solo texto: el formato no se restaura. Ese texto permanece en memoria hasta entonces. Donde el portapapeles no se puede leer sin foco (algunos escritorios Wayland), se borra en su lugar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -199,12 +199,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ocultar cada campo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Todos los campos detrás del botón &quot;Ocultar&quot;, no solo los secretos: para compartir pantallas y presentaciones. Las notas debajo de los campos y el código OTP permanecen visibles; &quot;Ocultar contenido&quot; también oculta esos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -219,12 +219,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nombre de campo por línea. Una línea como &quot;# secret: pin, cvv&quot; marca los campos que se ocultan igual que la contraseña mientras &quot;Ocultar contraseña&quot; esté activado. La misma línea funciona en el archivo .templates del almacén, donde se aplica a todas las entradas del almacén, no solo a las creadas con esa plantilla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuando el almacén no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado por defecto, al igual que con &quot;pass&quot;, así que un almacén dentro de otro repositorio (por ejemplo, archivos .dotfiles) nunca se comprometerá ni subirá accidentalmente. Solo para Git nativo: &quot;pass&quot; siempre termina en el almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -770,7 +770,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass confirma los cambios de %1 en el repositorio Git de %2: con dos puntos en la ruta del almacén, pass no puede limitar Git al almacén. Ejecuta &quot;git init&quot; en el almacén, o usa Git/GPG nativos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1105,8 +1105,8 @@ dirección de correo</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n línea más no mostrada</numerusform>
+            <numerusform>… %n líneas más no mostradas</numerusform>
         </translation>
     </message>
 </context>
@@ -1181,12 +1181,12 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista contiene más de una línea para el almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La línea &quot;Almacén&quot; está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1221,7 +1221,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista incluye una línea de &quot;Almacén&quot;, pero no una línea de &quot;Generación&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1256,7 +1256,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista de destinatarios firmados %1 no contiene ninguna línea para el almacén, mientras que este dispositivo conoce ese almacén por su ID %2: podría haber sido escrita para otro almacén y copiada aquí, o por una versión anterior de QtPass. Alguien que posea la clave de firma puede acceder abriendo &quot;Usuarios&quot;, seleccionando los destinatarios nuevamente y guardando, lo cual escribe la línea del almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1294,7 +1294,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista de destinatarios firmados %1 fue escrita para otro almacén (ID del almacén %2; este dispositivo lo conoce como %3) y no se utiliza. Es posible que haya sido copiada aquí desde un almacén firmado con la misma clave. Si este almacén se configurara nuevamente, al eliminar %4, el dispositivo olvidará los IDs de los almacenes que conoce.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1856,7 +1856,7 @@ El recifrado no se completó, así que algunas entradas o todas siguen cifradas 
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 es más grande de lo que puede ser un archivo de clave.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2605,8 +2605,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Se muestra la primera coincidencia (%n); una búsqueda más específica muestra el resto.</numerusform>
+            <numerusform>Se muestran las primeras %n coincidencias; una búsqueda más específica muestra el resto.</numerusform>
         </translation>
     </message>
     <message>
@@ -3244,8 +3244,8 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Esta entrada tiene %n línea, demasiadas para editarla aquí.</numerusform>
+            <numerusform>Esta entrada tiene %n líneas, demasiadas para editarla aquí.</numerusform>
         </translation>
     </message>
 </context>

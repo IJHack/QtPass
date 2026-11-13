@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Starpliktuve atjaunota</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vārdi, atdalīti ar komatiem. Lauks tiek ņemts vērā, ja tā nosaukumā kāds no tiem ir kā vesels vārds, neatkarīgi no lielajiem un mazajiem burtiem: &quot;key&quot; slēpj &quot;API key&quot;, bet ne &quot;keyboard layout&quot;. Tātad drīzāk tiek slēpts par daudz: arī &quot;Public key&quot; un &quot;Password hint&quot; tiek slēpti; izņemiet vārdu, lai tos rādītu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Viens lauka nosaukums katrā rindā. Rinda, piemēram, &quot;# secret: pin, cvv&quot;, atzīmē laukus, kas tiek slēpti tāpat kā parole, kamēr ir ieslēgts &quot;Slēpt paroli&quot;. Tā pati rinda darbojas arī glabātuves failā .templates, kur tā attiecas uz katru glabātuves ierakstu, ne tikai uz tiem, kas izveidoti ar šo veidni.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja glabātuvei nav sava Git repozitorija, izmantot to, kas atrodas mapē virs tās. Pēc noklusējuma izslēgts, tāpat kā pass, lai glabātuve, kas atrodas citā repozitorijā (piemēram, dotfiles), nekad kļūdas dēļ netiktu tur ierakstīta vai nosūtīta. Tikai vietējam Git: pass vienmēr apstājas pie glabātuves.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slēpt visus laukus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Katrs lauks aiz acs pogas, ne tikai noslēpumi: koplietotiem ekrāniem un prezentācijām. Piezīmes zem laukiem un OTP kods paliek redzami; &quot;Slēpt saturu&quot; paslēpj arī tos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass ieraksta %1 izmaiņas Git repozitorijā, kas atrodas %2: ja paroļu glabātuves ceļā ir kols, pass nevar ierobežot Git ar glabātuvi. Glabātuvē izpildiet &quot;git init&quot; vai izmantojiet vietējo Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,9 +1089,9 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… vēl %n rinda nav parādīta</numerusform>
+            <numerusform>… vēl %n rindas nav parādītas</numerusform>
+            <numerusform>… vēl %n rindu nav parādīts</numerusform>
         </translation>
     </message>
 </context>
@@ -1166,12 +1166,12 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sarakstā ir vairāk nekā viena glabātuves rinda.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Glabātuves rinda ir nepareizi veidota: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1206,7 +1206,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sarakstā ir glabātuves rinda, bet nav ģenerācijas rindas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1241,7 +1241,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parakstītajā saņēmēju sarakstā %1 nav glabātuves rindas, lai gan šī ierīce pazīst šo glabātuvi pēc tās ID %2: iespējams, tas rakstīts citai glabātuvei un pārkopēts šeit, vai arī to rakstījis vecāks QtPass. Parakstīšanas atslēgas turētājs tiek tālāk, atverot &quot;Lietotāji&quot;, no jauna izvēloties saņēmējus un saglabājot, kas ieraksta glabātuves rindu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1279,7 +1279,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parakstītais saņēmēju saraksts %1 ir rakstīts citai paroļu glabātuvei (glabātuves ID %2; šī ierīce pazīst šo glabātuvi kā %3) un netiek izmantots. Iespējams, tas pārkopēts šeit no glabātuves, kas parakstīta ar to pašu atslēgu. Ja tā vietā šī glabātuve ir iestatīta no jauna, %4 noņemšana liek aizmirst glabātuvju ID, ko šī ierīce zina.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1487,7 +1487,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nevar nolasīt kā saņēmēju sarakstu (parasts fails, kura izmērs nepārsniedz %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2528,9 +2528,9 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Rāda pirmo %n atbilstību; meklējiet ko konkrētāku, lai redzētu pārējās.</numerusform>
+            <numerusform>Rāda pirmās %n atbilstības; meklējiet ko konkrētāku, lai redzētu pārējās.</numerusform>
+            <numerusform>Rāda pirmās %n atbilstības; meklējiet ko konkrētāku, lai redzētu pārējās.</numerusform>
         </translation>
     </message>
     <message>
@@ -2826,7 +2826,9 @@ Turpināt?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ieraksts ir saglabāts glabātuvē, bet tā ierakstīšana Git neizdevās. Tika ziņots:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="779"/>
@@ -3050,9 +3052,9 @@ Turpināt?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Šajā ierakstā ir %n rinda, pārāk daudz, lai rediģētu šeit.</numerusform>
+            <numerusform>Šajā ierakstā ir %n rindas, pārāk daudz, lai rediģētu šeit.</numerusform>
+            <numerusform>Šajā ierakstā ir %n rindu, pārāk daudz, lai rediģētu šeit.</numerusform>
         </translation>
     </message>
 </context>

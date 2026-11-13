@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slová oddelené čiarkami. Pole sa počíta, ak jeho názov obsahuje niektoré z nich ako celé slová, bez ohľadu na veľkosť písmen: &quot;key&quot; skryje &quot;API key&quot;, ale nie &quot;keyboard layout&quot;. Radšej teda skryje priveľa: skryjú sa aj &quot;Public key&quot; a &quot;Password hint&quot;; ak ich chcete zobraziť, niektoré slovo odstráňte.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skryť každé pole</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Všetky polia za tlačidlom &quot;Oko&quot;, nielen tajné informácie: pre zdieľané obrazovky a prezentácie. Poznámky pod jednotlivými poliami a kód OTP zostávajú viditeľné; funkcia &quot;Skryť obsah&quot; ich tiež skrýva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jeden názov poľa na riadok. Riadok ako &quot;# secret: pin, cvv&quot; označuje polia, ktoré sa skrývajú rovnako ako heslo, kým je zapnuté &quot;Skryť heslo&quot;. Rovnaký riadok funguje aj v súbore .templates v úložisku, kde platí pre každú položku úložiska, nielen pre tie vytvorené s danou šablónou.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keď úložisko nemá vlastný repozitár Git, použije sa ten v adresári nad ním. Predvolene vypnuté, rovnako ako pri pass, takže úložisko vnútri iného repozitára (napríklad dotfiles) sa tam nikdy omylom necommitne ani neodošle. Len natívny Git: pass sa vždy zastaví pri úložisku.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 podpisuje rovnakým kľúčom aj pre iné úložisko. Zoznam príjemcov podpísaný pre jedno z týchto úložísk je prijatý aj v druhom: pre každé úložisko, ktorého príjemcovia sa líšia, použite samostatný podpisový kľúč.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass zapisuje zmeny v %1 do repozitára Git v %2: s dvojbodkou v ceste k úložisku nedokáže pass obmedziť Git na úložisko. Spustite v úložisku &quot;git init&quot;, alebo použite natívny Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,9 +1133,9 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n ďalší riadok nie je zobrazený</numerusform>
+            <numerusform>… %n ďalšie riadky nie sú zobrazené</numerusform>
+            <numerusform>… %n ďalších riadkov nie je zobrazených</numerusform>
         </translation>
     </message>
 </context>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam obsahuje viac ako jeden riadok úložiska.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Riadok úložiska má nesprávny formát: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam obsahuje riadok úložiska, ale žiadny riadok generácie.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 neobsahuje riadok úložiska, hoci toto zariadenie pozná toto úložisko podľa jeho ID %2: mohol byť zapísaný pre iné úložisko a skopírovaný sem, alebo ho zapísala staršia verzia QtPass. Držiteľ podpisového kľúča to vyrieši tak, že otvorí Uživatelia, znova vyberie príjemcov a uloží, čím sa riadok úložiska zapíše.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 bol zapísaný pre iné úložisko hesiel (ID úložiska %2; toto zariadenie pozná toto úložisko ako %3) a nepoužíva sa. Mohol sem byť skopírovaný z úložiska podpísaného rovnakým kľúčom. Ak bolo naopak toto úložisko nastavené nanovo, odstránením %4 sa zabudnú ID úložísk, ktoré toto zariadenie pozná.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2795,9 +2795,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Zobrazená prvá %n zhoda; ak chcete vidieť ostatné, hľadajte niečo konkrétnejšie.</numerusform>
+            <numerusform>Zobrazené prvé %n zhody; ak chcete vidieť ostatné, hľadajte niečo konkrétnejšie.</numerusform>
+            <numerusform>Zobrazených prvých %n zhôd; ak chcete vidieť ostatné, hľadajte niečo konkrétnejšie.</numerusform>
         </translation>
     </message>
     <message>
@@ -3322,9 +3322,9 @@ Pokračovať?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Táto položka má %n riadok, príliš veľa na úpravu tu.</numerusform>
+            <numerusform>Táto položka má %n riadky, príliš veľa na úpravu tu.</numerusform>
+            <numerusform>Táto položka má %n riadkov, príliš veľa na úpravu tu.</numerusform>
         </translation>
     </message>
 </context>

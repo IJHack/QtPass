@@ -70,12 +70,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cacher tous les champs</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chaque champ derrière le bouton &quot;Ocul&quot;, et non seulement les secrets : pour les écrans partagés et la présentation. Les notes sous les champs, ainsi que le code OTP restent visibles ; &quot;Cacher&quot; cache également ces éléments.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -512,7 +512,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass effectue des commits dans %1 vers le dépôt Git en %2 : avec un point-virgule dans le chemin, pass ne peut pas accéder au dépôt Git. Exécutez &quot;git init&quot; dans le dossier, ou utilisez Git/GPG Native.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -830,7 +830,7 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nom de champ par ligne. Une ligne comme &quot;# secret: pin, cvv&quot; indique les champs à cacher, comme le mot de passe, lorsque &quot;Masquer le mot de passe&quot; est activé. La même ligne fonctionne dans le fichier .templates du magasin, où elle s&apos;applique à chaque entrée du magasin, et non seulement à celles créées avec ce modèle.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -1217,12 +1217,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La liste contient plus d&apos;une ligne de magasin.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ligne de commande est malformée : %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1257,7 +1257,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La liste contient une ligne &quot;magasin&quot;, mais aucune ligne &quot;génération&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1292,7 +1292,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La liste des destinataires signés %1 ne contient aucune ligne de stockage, tandis que cet appareil connaît cette ligne par son ID %2 : elle a peut-être été écrite pour un autre endroit et copiée ici, ou par une ancienne version du QtPass. La personne possédant la clé de signature peut accéder à cette information en ouvrant &quot;Utilisateurs&quot;, en sélectionnant les destinataires manuellement et en enregistrant, ce qui écrit la ligne de stockage.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1330,7 +1330,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La liste des destinataires signés %1 a été créée pour un autre gestionnaire de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous le nom %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici à partir d&apos;un magasin signé avec la même clé. Si ce magasin était réinstallé, supprimer %4 effacerait les ID des magasins que cet appareil connaît.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1420,7 +1420,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ne se trouve pas dans le magasin de mots de passe, ou un nom de dossier sur le chemin contient un saut de ligne ou un autre caractère de contrôle, qu&apos;une liste signée ne peut pas enregistrer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1892,7 +1892,7 @@ Le re-chiffrement ne s&apos;est pas terminé : certaines entrées, voire toutes,
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La taille de %1 est supérieure à celle d&apos;un fichier de clé.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>

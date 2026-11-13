@@ -34,7 +34,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Szavak, vesszővel elválasztva. Egy mező akkor számít, ha a neve egész szóként tartalmazza valamelyiket, kis- és nagybetűtől függetlenül: a &quot;key&quot; elrejti az &quot;API key&quot; mezőt, de a &quot;keyboard layout&quot; mezőt nem. Így inkább túl sokat rejt el: a &quot;Public key&quot; és a &quot;Password hint&quot; is rejtve lesz; a megjelenítésükhöz vegyen ki egy szót.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1248"/>
@@ -549,7 +549,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Amikor a vágólap törlődik, visszakerül rá az, ami a másolás előtt volt rajta, ahogy a pass -c teszi, hacsak közben mást nem másoltak. Csak szöveg: a formázás nem áll vissza. Ez a szöveg addig a memóriában marad. Ahol a vágólap fókusz nélkül nem olvasható (egyes Wayland asztalokon), ott ehelyett törlődik.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -590,12 +590,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Minden mező elrejtése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A szem gomb mögötti minden mező, nem csak a titkok: megosztott képernyőhöz és bemutatáshoz. A mezők alatti megjegyzések és az OTP-kód láthatók maradnak; az &quot;Oldal elrejtése&quot; azokat is elrejti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -610,12 +610,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Soronként egy mezőnév. Egy olyan sor, mint a &quot;# secret: pin, cvv&quot;, azokat a mezőket jelöli meg, amelyek a jelszóhoz hasonlóan rejtve maradnak, amíg a &quot;Jelszó elrejtése&quot; be van kapcsolva. Ugyanez a sor a tároló .templates fájljában is működik, ahol a tároló minden bejegyzésére vonatkozik, nem csak az adott sablonnal készültekre.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ha a jelszótárolónak nincs saját Git-tárolója, a felette lévő mappában találhatót használja. Alapértelmezés szerint kikapcsolva, ahogy a pass esetében is, így egy másik Git-tárolóban (például dotfiles) lévő jelszótároló soha nem kerül oda tévedésből véglegesítésre vagy feltöltésre. Csak natív Git esetén: a pass mindig megáll a jelszótárolónál.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -733,12 +733,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ugyanazzal a kulccsal ír alá egy másik tárolóhoz. Az e tárolók egyikéhez aláírt címzettlistát a másik is elfogadja: használjon külön aláírókulcsot minden olyan tárolóhoz, amelynek címzettjei eltérnek.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A pass a(z) %1 változásait a(z) %2 helyen lévő Git-tárolóba véglegesíti: ha a jelszótároló útvonalában kettőspont van, a pass nem tudja a Gitet a jelszótárolóra korlátozni. Futtassa a &quot;git init&quot; parancsot a jelszótárolóban, vagy használja a natív Git/GPG-t.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1204,12 +1204,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista egynél több tárolósort tartalmaz.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A tárolósor hibás formátumú: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista tartalmaz tárolósort, de generációs sort nem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1279,7 +1279,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz tárolósort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóján ismeri: lehet, hogy egy másik tárolóhoz készült és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy jut tovább, hogy megnyitja a &quot;Felhasználók&quot; ablakot, újra kiválasztja a címzetteket, és ment, ami beírja a tárolósort.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1317,7 +1317,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 aláírt címzettlista egy másik jelszótárolóhoz készült (tárolóazonosító: %2; ez az eszköz ezt a tárolót %3 néven ismeri), ezért nincs használatban. Lehet, hogy egy ugyanazzal a kulccsal aláírt tárolóból másolták ide. Ha viszont ezt a tárolót újra beállították, a(z) %4 eltávolítása elfelejteti az eszköz által ismert tárolóazonosítókat.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2936,7 +2936,9 @@ Folytatja?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A bejegyzés mentve van a tárolóban, de a Gitben való rögzítése nem sikerült. A jelentett hiba:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="779"/>
@@ -2961,7 +2963,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A(z) %1 nem olvasható címzettlistaként (legfeljebb %2 méretű szabályos fájl), ezért semmi sincs előre kijelölve. Ellenőrizze, mielőtt itt címzetteket választ: az OK új listát ír a helyére.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>

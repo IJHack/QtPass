@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காற்புள்ளிகளால் பிரிக்கப்பட்ட சொற்கள். ஒரு புலத்தின் பெயரில் இவற்றில் ஒன்று முழுச் சொல்லாக இருந்தால், பெரிய அல்லது சிறிய எழுத்து எதுவாயினும், அந்தப் புலம் கணக்கில் கொள்ளப்படும்: &quot;key&quot; என்பது &quot;API key&quot; ஐ மறைக்கும், &quot;keyboard layout&quot; ஐ அல்ல. எனவே இது தேவைக்கு அதிகமாகவே மறைக்க முனையும்: &quot;Public key&quot;, &quot;Password hint&quot; ஆகியவையும் மறைக்கப்படும்; அவற்றைக் காட்ட ஒரு சொல்லை நீக்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒவ்வொரு புலத்தையும் மறை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கண் பொத்தானுக்குப் பின்னால் உள்ள ஒவ்வொரு புலமும், ரகசியங்கள் மட்டுமல்ல: பகிரப்பட்ட திரைகள் மற்றும் விளக்கங்களுக்கு. புலங்களுக்குக் கீழே உள்ள குறிப்புகள் மற்றும் OTP குறியீடு தெரியும்; &quot;உள்ளடக்கத்தை மறை&quot; என்பது அவற்றையும் மறைக்கும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒவ்வொரு வரியிலும் ஒரு புலத்தின் பெயர். &quot;# secret: pin, cvv&quot; போன்ற வரி, &quot;கடவுச்சொல்லை மறைக்கவும்&quot; இயக்கத்தில் இருக்கும்போது கடவுச்சொல்லைப் போலவே மறைக்கப்பட வேண்டிய புலங்களைக் குறிக்கிறது. அதே வரி சேமிப்பகத்தின் .templates கோப்பிலும் செயல்படும்; அங்கு அது அந்த வார்ப்புருவால் உருவாக்கப்பட்ட உள்ளீடுகளுக்கு மட்டுமல்லாமல், சேமிப்பகத்தின் ஒவ்வொரு உள்ளீட்டிற்கும் பொருந்தும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சேமிப்பகத்திற்குச் சொந்தமான Git களஞ்சியம் இல்லாதபோது, அதற்கு மேலே உள்ள கோப்புறையில் உள்ளதைப் பயன்படுத்தவும். pass இல் உள்ளதைப் போலவே இயல்பாக முடக்கப்பட்டுள்ளது; எனவே வேறொரு களஞ்சியத்திற்குள் (எடுத்துக்காட்டாக dotfiles) இருக்கும் சேமிப்பகம் தவறுதலாக அங்கே ஒருபோதும் கமிட் செய்யப்படாது, புஷ் செய்யப்படாது. சொந்த Git க்கு மட்டும்: pass எப்போதும் சேமிப்பகத்திலேயே நின்றுவிடும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass ஆனது %1 இல் உள்ள மாற்றங்களை %2 இல் உள்ள Git களஞ்சியத்தில் கமிட் செய்கிறது: சேமிப்பகத்தின் பாதையில் முக்காற்புள்ளி இருந்தால், pass ஆல் Git ஐ சேமிப்பகத்திற்குள் மட்டுப்படுத்த முடியாது. சேமிப்பகத்தில் &quot;git init&quot; ஐ இயக்கவும், அல்லது சொந்த Git/GPG ஐப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… மேலும் %n வரி காட்டப்படவில்லை</numerusform>
+            <numerusform>… மேலும் %n வரிகள் காட்டப்படவில்லை</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பட்டியலில் ஒன்றுக்கு மேற்பட்ட சேமிப்பக வரிகள் உள்ளன.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சேமிப்பக வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பட்டியலில் சேமிப்பக வரி உள்ளது, ஆனால் தலைமுறை வரி இல்லை.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 இல் சேமிப்பக வரி இல்லை, ஆனால் இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை அதன் ஐடி %2 மூலம் அறிந்துள்ளது: இது வேறொரு சேமிப்பகத்திற்காக எழுதப்பட்டு இங்கே நகலெடுக்கப்பட்டிருக்கலாம், அல்லது பழைய QtPass ஆல் எழுதப்பட்டிருக்கலாம். கையொப்ப விசையை வைத்திருப்பவர் பயனர்கள் என்பதைத் திறந்து, பெறுநர்களைப் புதிதாகத் தேர்ந்தெடுத்துச் சேமிப்பதன் மூலம் இதைத் தீர்க்கலாம்; அது சேமிப்பக வரியை எழுதும்.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 வேறொரு கடவுச்சொல் சேமிப்பகத்திற்காக எழுதப்பட்டது (சேமிப்பக ஐடி %2; இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை %3 என அறிந்துள்ளது), எனவே அது பயன்படுத்தப்படவில்லை. அதே விசையால் கையொப்பமிடப்பட்ட சேமிப்பகத்திலிருந்து அது இங்கே நகலெடுக்கப்பட்டிருக்கலாம். மாறாக இந்தச் சேமிப்பகம் மீண்டும் அமைக்கப்பட்டிருந்தால், %4 ஐ நீக்குவது இந்தச் சாதனம் அறிந்துள்ள சேமிப்பக ஐடிகளை மறக்கச் செய்யும்.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2788,8 +2788,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>முதல் %n பொருத்தம் காட்டப்படுகிறது; மீதியைக் காண இன்னும் குறிப்பாகத் தேடவும்.</numerusform>
+            <numerusform>முதல் %n பொருத்தங்கள் காட்டப்படுகின்றன; மீதியைக் காண இன்னும் குறிப்பாகத் தேடவும்.</numerusform>
         </translation>
     </message>
     <message>
@@ -3314,8 +3314,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>இந்த உள்ளீட்டில் %n வரி உள்ளது, இங்கே தொகுக்க மிக அதிகம்.</numerusform>
+            <numerusform>இந்த உள்ளீட்டில் %n வரிகள் உள்ளன, இங்கே தொகுக்க மிக அதிகம்.</numerusform>
         </translation>
     </message>
 </context>

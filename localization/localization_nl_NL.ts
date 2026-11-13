@@ -588,12 +588,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle velden verbergen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle velden achter de knop &quot;Oog&quot;, niet alleen de geheimen: voor gedeelde schermen en presentaties. De aantekeningen onder de velden en de OTP-code blijven zichtbaar; &quot;Inhoud verbergen&quot; verbergt ook deze.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -608,7 +608,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eén veldnaam per regel. Een regel zoals &quot;# secret: pin, cvv&quot; markeert velden die net als het wachtwoord worden verborgen zolang &quot;Wachtwoord verbergen&quot; aan staat. Dezelfde regel werkt ook in het bestand .templates van de opslag, waar hij voor elk item in de opslag geldt, niet alleen voor items die met dat sjabloon zijn gemaakt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -722,7 +722,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass committet wijzigingen in %1 naar de Git repository in %2: met een dubbele punt in het pad van de opslag kan pass Git niet tot de opslag beperken. Voer &quot;git init&quot; uit binnen de opslag, of gebruik native Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1217,12 +1217,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De lijst bevat meer dan één opslagregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De regel &quot;Opslag&quot; is incorrect: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1257,7 +1257,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De lijst bevat een opslagregel, maar geen regel voor het genereren.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1292,7 +1292,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 bevat geen opslagregel, terwijl dit apparaat deze opslag kent onder ID %2: de lijst is mogelijk voor een andere opslag geschreven en hierheen gekopieerd, of door een oudere QtPass geschreven. Een houder van de ondertekeningssleutel lost dit op door Gebruikers te openen, de ontvangers opnieuw te selecteren en op te slaan, waardoor de opslagregel wordt geschreven.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1330,7 +1330,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 is geschreven voor een andere wachtwoordopslag (opslag-ID %2; dit apparaat kent deze opslag als %3) en wordt niet gebruikt. De lijst is mogelijk hierheen gekopieerd vanuit een opslag die met dezelfde sleutel is ondertekend. Als deze opslag in plaats daarvan opnieuw is ingesteld, dan vergeet het verwijderen van %4 de opslag-ID&apos;s die dit apparaat kent.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

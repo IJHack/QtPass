@@ -48,7 +48,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Palabras, separadas por comas. Un campo conta cando o seu nome contén algunha delas como palabras completas, sen distinguir maiúsculas de minúsculas: &quot;key&quot; oculta &quot;API key&quot;, pero non &quot;keyboard layout&quot;. Así que tende a ocultar de máis: &quot;Public key&quot; e &quot;Password hint&quot; tamén se ocultan; quite unha palabra para mostralos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
@@ -321,12 +321,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nome de campo por liña. Unha liña como &quot;# secret: pin, cvv&quot; marca os campos que se ocultan igual que o contrasinal mentres &quot;Ocultar contrasinal&quot; estea activado. A mesma liña funciona no ficheiro .templates do almacén, onde se aplica a todas as entradas do almacén, non só ás creadas con ese modelo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cando o almacén non ten un repositorio Git propio, usar o que estea nunha carpeta superior. Desactivado por defecto, como en pass, para que un almacén dentro doutro repositorio (por exemplo, dotfiles) nunca se confirme nin se envíe alí por erro. Só Git nativo: pass sempre se detén no almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -492,12 +492,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agochar cada campo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Todos os campos detrás do botón do ollo, non só os segredos: para pantallas compartidas e presentacións. As notas baixo os campos e o código OTP quedan visibles; &quot;Ocultar contido&quot; tamén os oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 asina coa mesma clave para outro almacén. Unha lista de destinatarios asinada para un destes almacéns acéptase no outro: use unha clave de sinatura distinta para cada almacén cuxos destinatarios sexan diferentes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass confirma os cambios de %1 no repositorio Git de %2: con dous puntos na ruta do almacén, pass non pode limitar Git ao almacén. Execute &quot;git init&quot; no almacén, ou use Git/GPG nativos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1160,8 +1160,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n liña máis non mostrada</numerusform>
+            <numerusform>… %n liñas máis non mostradas</numerusform>
         </translation>
     </message>
 </context>
@@ -1236,12 +1236,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista contén máis dunha liña de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A liña de almacén está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1276,7 +1276,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista ten unha liña de almacén, pero non unha liña de xeración.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1311,7 +1311,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatarios asinada %1 non ten liña de almacén, mentres que este dispositivo coñece este almacén polo seu ID %2: puido escribirse para outro almacén e copiarse aquí, ou escribiuna un QtPass máis antigo. Un titular da clave de sinatura resólveo abrindo Usuarios, seleccionando de novo os destinatarios e gardando, o que escribe a liña de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1349,7 +1349,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatarios asinada %1 escribiuse para outro almacén de contrasinais (ID do almacén %2; este dispositivo coñece este almacén como %3) e non se usa. Puido copiarse aquí desde un almacén asinado coa mesma clave. Se en cambio este almacén se configurou de novo, eliminar %4 esquece os ID de almacén que este dispositivo coñece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2722,8 +2722,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Móstrase a primeira coincidencia (%n); unha busca máis específica mostra o resto.</numerusform>
+            <numerusform>Móstranse as primeiras %n coincidencias; unha busca máis específica mostra o resto.</numerusform>
         </translation>
     </message>
     <message>
@@ -3259,8 +3259,8 @@ Continuar?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Esta entrada ten %n liña, demasiadas para editala aquí.</numerusform>
+            <numerusform>Esta entrada ten %n liñas, demasiadas para editala aquí.</numerusform>
         </translation>
     </message>
 </context>

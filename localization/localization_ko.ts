@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">클립보드 복원됨</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">쉼표로 구분한 단어. 필드 이름에 이 단어 중 하나가 대소문자와 관계없이 온전한 단어로 들어 있으면 해당됩니다: &quot;key&quot;는 &quot;API key&quot;를 숨기지만 &quot;keyboard layout&quot;은 숨기지 않습니다. 따라서 차라리 너무 많이 숨기는 쪽입니다: &quot;Public key&quot;와 &quot;Password hint&quot;도 숨겨집니다. 표시하려면 단어를 빼십시오.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">클립보드를 지울 때, 그 사이에 다른 내용이 복사되지 않았다면 pass -c처럼 복사 전에 있던 내용을 되돌려 놓습니다. 텍스트만 해당: 서식은 복원되지 않습니다. 그 텍스트는 그때까지 메모리에 남아 있습니다. 포커스 없이 클립보드를 읽을 수 없는 곳(일부 Wayland 데스크톱)에서는 대신 지워집니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀번호뿐만 아니라 비밀을 담고 있는 필드도 숨깁니다: 이름에 이 단어 중 하나가 들어 있는 필드입니다. 꺼져 있으면 비밀번호만 숨겨집니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,17 +579,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">기본 단어를 되돌립니다: PIN, 카드 코드, 키, 토큰, 복구 코드 등.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">모든 필드 숨기기</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀 정보뿐만 아니라 눈 버튼 뒤에 있는 모든 필드: 화면 공유 및 프레젠테이션용입니다. 필드 아래의 메모와 OTP 코드는 계속 표시됩니다. &quot;내용 숨기기&quot;는 그것들도 숨깁니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">한 줄에 필드 이름 하나. &quot;# secret: pin, cvv&quot;와 같은 줄은 &quot;비밀번호 숨기기&quot;가 켜져 있는 동안 비밀번호처럼 숨길 필드를 지정합니다. 같은 줄을 저장소의 .templates 파일에도 쓸 수 있으며, 그 경우 해당 템플릿으로 만든 항목뿐 아니라 저장소의 모든 항목에 적용됩니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">스토어에 자체 Git 저장소가 없으면 상위 폴더에 있는 Git 저장소를 사용합니다. pass와 마찬가지로 기본적으로 꺼져 있어서, 다른 저장소(예: dotfiles) 안에 있는 스토어가 실수로 그곳에 커밋되거나 푸시되는 일이 없습니다. 네이티브 Git 전용: pass는 항상 스토어에서 멈춥니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass가 %1의 변경 사항을 %2에 있는 Git 저장소에 커밋합니다: 스토어 경로에 콜론이 있으면 pass가 Git을 스토어 안으로 제한할 수 없습니다. 스토어에서 &quot;git init&quot;을 실행하거나 네이티브 Git/GPG를 사용하세요.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,7 +1133,7 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>… %n줄 더 표시되지 않음</numerusform>
         </translation>
     </message>
 </context>
@@ -1208,12 +1208,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">목록에 저장소 줄이 두 개 이상 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">저장소 줄의 형식이 잘못되었습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1248,7 +1248,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">목록에 저장소 줄은 있지만 세대 줄이 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1283,7 +1283,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">서명된 수신자 목록 %1에는 저장소 줄이 없지만, 이 장치는 이 저장소를 ID %2(으)로 알고 있습니다. 다른 저장소용으로 작성되어 여기로 복사되었거나, 이전 버전의 QtPass가 작성했을 수 있습니다. 서명 키를 가진 사람은 &quot;사용자&quot;를 열고 수신자를 새로 선택한 뒤 저장하면 저장소 줄이 기록되어 계속 진행할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1321,7 +1321,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">서명된 수신자 목록 %1은(는) 다른 비밀번호 저장소(저장소 ID %2; 이 장치는 이 저장소를 %3(으)로 알고 있음)를 위해 작성되었으므로 사용되지 않습니다. 동일한 키로 서명된 저장소에서 여기로 복사되었을 수 있습니다. 그게 아니라 이 저장소가 다시 설정된 것이라면, %4을(를) 삭제하면 이 장치가 알고 있는 저장소 ID를 잊습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1673,7 +1673,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1은(는) 풀(pull) 이후 심볼릭 링크 또는 정션이거나 그 뒤에 있습니다. 링크가 가리키는 대상은 비밀번호 저장소의 일부가 아니므로 그대로 둡니다.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -3075,7 +3075,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1은(는) 수신자 목록(최대 %2 크기의 일반 파일)으로 읽을 수 없으므로 미리 선택된 항목이 없습니다. 여기서 수신자를 선택하기 전에 확인하십시오. OK를 누르면 그 위에 새 목록을 씁니다.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>

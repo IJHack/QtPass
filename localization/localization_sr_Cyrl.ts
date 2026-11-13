@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Речи, раздвојене зарезима. Поље се рачуна када његов назив садржи неку од њих као целу реч, без обзира на велика и мала слова: &quot;key&quot; сакрива &quot;API key&quot;, али не и &quot;keyboard layout&quot;. Зато радије сакрива превише: сакривају се и &quot;Public key&quot; и &quot;Password hint&quot;; уклоните реч да бисте их приказали.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -531,7 +531,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Када се клипборд очисти, враћа се оно што је било на њему пре копирања, као што то ради pass -c, осим ако је у међувремену копирано нешто друго. Само текст: форматирање се не враћа. Тај текст до тада остаје у меморији. Тамо где клипборд не може да се прочита без фокуса (неке Wayland радне површине), он се уместо тога само чисти.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -557,7 +557,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сакриј и поља која садрже тајну, а не само лозинку: поље чији назив садржи једну од ових речи. Искључено: сакрива се само лозинка.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -572,12 +572,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сакриј сва поља</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Сва поља иза дугмета са оком, а не само тајне: за дељене екране и презентације. Белешке испод поља и OTP код остају видљиви; &quot;Сакриј садржај&quot; сакрива и њих.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -592,12 +592,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Један назив поља по реду. Ред попут &quot;# secret: pin, cvv&quot; означава поља која се сакривају као лозинка док је укључено &quot;Сакриј лозинку&quot;. Исти ред ради и у датотеци .templates складишта, где важи за сваки унос у складишту, а не само за оне направљене тим шаблоном.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Када складиште нема сопствени Git репозиторијум, користи се онај у фасцикли изнад њега. Подразумевано искључено, као и код програма pass, тако да складиште унутар другог репозиторијума (на пример dotfiles) никада грешком не буде тамо уписано или послато. Само изворни Git: pass се увек зауставља на складишту.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -706,7 +706,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass уписује измене у %1 у Git репозиторијум у %2: са двотачком у путањи складишта, pass не може да ограничи Git на складиште. Покрените &quot;git init&quot; у складишту, или користите изворни Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1121,9 +1121,9 @@ URL
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… још %n ред није приказан</numerusform>
+            <numerusform>… још %n реда нису приказана</numerusform>
+            <numerusform>… још %n редова није приказано</numerusform>
         </translation>
     </message>
 </context>
@@ -1198,12 +1198,12 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Листа садржи више од једног реда складишта.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ред складишта је неисправан: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1238,7 +1238,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Листа садржи ред складишта, али не и ред генерације.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1273,7 +1273,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Потписана листа прималаца %1 не садржи ред складишта, док овај уређај познаје ово складиште по његовом ИД-у %2: можда је написана за друго складиште и копирана овде, или ју је написао старији QtPass. Власник кључа за потписивање може да настави тако што отвори &quot;Корисници&quot;, поново изабере примаоце и сачува, чиме се уписује ред складишта.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1311,7 +1311,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Потписана листа прималаца %1 написана је за друго складиште лозинки (ИД складишта %2; овај уређај познаје ово складиште као %3) и не користи се. Можда је копирана овде из складишта потписаног истим кључем. Ако је уместо тога ово складиште поново подешено, уклањање %4 брише ИД-ове складишта које овај уређај познаје.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1401,7 +1401,7 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 није унутар складишта лозинки, или назив фасцикле на путањи садржи прелом реда или други контролни знак, који потписана листа не може да забележи.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -2036,7 +2036,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Име и лозинка не смеју да садрже преломе редова.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2751,9 +2751,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Приказује се први %n резултат; потражите нешто одређеније да бисте видели остале.</numerusform>
+            <numerusform>Приказују се прва %n резултата; потражите нешто одређеније да бисте видели остале.</numerusform>
+            <numerusform>Приказује се првих %n резултата; потражите нешто одређеније да бисте видели остале.</numerusform>
         </translation>
     </message>
     <message>
@@ -3278,9 +3278,9 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Овај унос има %n ред, превише за уређивање овде.</numerusform>
+            <numerusform>Овај унос има %n реда, превише за уређивање овде.</numerusform>
+            <numerusform>Овај унос има %n редова, превише за уређивање овде.</numerusform>
         </translation>
     </message>
 </context>

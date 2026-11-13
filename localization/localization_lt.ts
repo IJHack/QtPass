@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Žodžiai, atskirti kableliais. Laukas įskaitomas, kai jo pavadinime yra kuris nors iš jų kaip atskiras žodis, nepaisant didžiųjų ir mažųjų raidžių: &quot;key&quot; slepia &quot;API key&quot;, bet ne &quot;keyboard layout&quot;. Taigi verčiau slepiama per daug: &quot;Public key&quot; ir &quot;Password hint&quot; taip pat slepiami; pašalinkite žodį, kad jie būtų rodomi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vienas lauko pavadinimas eilutėje. Eilutė, pavyzdžiui, &quot;# secret: pin, cvv&quot;, pažymi laukus, kurie slepiami kaip slaptažodis, kol įjungta &quot;Slėpti slaptažodį&quot;. Ta pati eilutė veikia ir saugyklos faile .templates, kur ji taikoma kiekvienam saugyklos įrašui, o ne tik sukurtiems pagal tą šabloną.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kai slaptažodžių saugykla neturi savo Git saugyklos, naudoti tą, kuri yra aukščiau esančiame aplanke. Pagal numatytuosius nustatymus išjungta, kaip ir pass, todėl slaptažodžių saugyklos, esančios kitoje Git saugykloje (pavyzdžiui, dotfiles), pakeitimai niekada per klaidą nebus ten įrašyti (commit) ar išsiųsti (push). Tik vietiniam Git: pass visada sustoja ties slaptažodžių saugykla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atkurti ankstesnį iškarpinės turinį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slėpti visus laukus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visi laukai, slepiami akies mygtuku, ne tik paslaptys: bendrinamiems ekranams ir pristatymams. Pastabos po laukais ir OTP kodas lieka matomi; &quot;Slėpti turinį&quot; paslepia ir juos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -767,12 +767,12 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 tuo pačiu raktu pasirašo ir kitai slaptažodžių saugyklai. Vienai iš šių saugyklų pasirašytas gavėjų sąrašas priimamas ir kitoje: kiekvienai saugyklai, kurios gavėjai skiriasi, naudokite atskirą pasirašymo raktą.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass įrašo %1 pakeitimus į Git saugyklą, esančią %2: kai slaptažodžių saugyklos kelyje yra dvitaškis, pass negali apriboti Git šia saugykla. Slaptažodžių saugykloje paleiskite &quot;git init&quot; arba naudokite vietinį Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,9 +1089,9 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… dar %n eilutė nerodoma</numerusform>
+            <numerusform>… dar %n eilutės nerodomos</numerusform>
+            <numerusform>… dar %n eilučių nerodoma</numerusform>
         </translation>
     </message>
 </context>
@@ -1166,12 +1166,12 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sąraše yra daugiau nei viena saugyklos eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saugyklos eilutė netaisyklinga: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1206,7 +1206,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sąraše yra saugyklos eilutė, bet nėra kartos eilutės.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1241,7 +1241,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirašytame gavėjų sąraše %1 nėra saugyklos eilutės, nors šis įrenginys šią saugyklą žino pagal jos ID %2: galbūt sąrašas buvo parašytas kitai saugyklai ir nukopijuotas čia arba jį parašė senesnė QtPass versija. Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“, iš naujo pasirinkęs gavėjus ir išsaugojęs – taip įrašoma saugyklos eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1279,7 +1279,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 buvo parašytas kitai slaptažodžių saugyklai (saugyklos ID %2; šis įrenginys šią saugyklą žino kaip %3) ir nenaudojamas. Galbūt jis buvo nukopijuotas čia iš saugyklos, pasirašytos tuo pačiu raktu. Jei vietoj to ši saugykla buvo sukurta iš naujo, pašalinus %4 pamirštami šiam įrenginiui žinomi saugyklų ID.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1477,7 +1477,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nėra slaptažodžių saugykloje, arba failo pavadinimas turi nutraukimo ar kitą kontrolės simbolį, kuriuo pasižymota sąrašas negali užrašyti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1487,7 +1487,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 negalima perskaityti kaip gavėjų sąrašo (įprastas failas, ne didesnis kaip %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -1845,7 +1845,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 yra didesnis, nei gali būti rakto failas.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2528,9 +2528,9 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Rodomas pirmasis %n atitikmuo; ieškokite ko nors tikslesnio, kad pamatytumėte likusius.</numerusform>
+            <numerusform>Rodomi pirmieji %n atitikmenys; ieškokite ko nors tikslesnio, kad pamatytumėte likusius.</numerusform>
+            <numerusform>Rodoma pirmųjų %n atitikmenų; ieškokite ko nors tikslesnio, kad pamatytumėte likusius.</numerusform>
         </translation>
     </message>
     <message>
@@ -2838,7 +2838,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nėra slaptažodžių saugykloje. Gavėjai nustatomi saugyklai arba joje esančiam aplankui.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="806"/>
@@ -3052,9 +3052,9 @@ Tęsti?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Šiame įraše yra %n eilutė, per daug, kad būtų galima redaguoti čia.</numerusform>
+            <numerusform>Šiame įraše yra %n eilutės, per daug, kad būtų galima redaguoti čia.</numerusform>
+            <numerusform>Šiame įraše yra %n eilučių, per daug, kad būtų galima redaguoti čia.</numerusform>
         </translation>
     </message>
 </context>

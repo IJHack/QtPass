@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Área de transferência restaurada</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ocultar todos os campos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Todos os campos atrás do botão do olho, não apenas os segredos: para telas compartilhadas e apresentações. As notas abaixo dos campos e o código OTP permanecem visíveis; &quot;Ocultar conteúdo&quot; também os oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -563,12 +563,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Um nome de campo por linha. Uma linha como &quot;# secret: pin, cvv&quot; marca os campos que são ocultados como a senha enquanto &quot;Ocultar senha&quot; estiver ativado. A mesma linha funciona no arquivo .templates do repositório de senhas, onde se aplica a todas as entradas do repositório, e não apenas às criadas com esse modelo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quando o repositório de senhas não tem um repositório Git próprio, usar o que está em uma pasta acima dele. Desativado por padrão, como no pass, para que um repositório de senhas dentro de outro repositório Git (dotfiles, por exemplo) nunca receba commit ou push lá por engano. Apenas Git nativo: o pass sempre para no repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -664,7 +664,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O pass faz commit das alterações de %1 no repositório Git em %2: com dois-pontos no caminho do repositório de senhas, o pass não consegue restringir o Git a ele. Execute &quot;git init&quot; no repositório de senhas, ou use o Git/GPG nativo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -823,7 +823,7 @@ O valor ainda será salvo conforme inserido.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Palavras, separadas por vírgulas. Um campo conta quando seu nome contém uma delas como palavra inteira, sem diferenciar maiúsculas de minúsculas: &quot;key&quot; oculta &quot;API key&quot;, mas não &quot;keyboard layout&quot;. Assim, a tendência é ocultar demais: &quot;Public key&quot; e &quot;Password hint&quot; também são ocultados; retire uma palavra para mostrá-los.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1528"/>
@@ -1113,8 +1113,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… mais %n linha não mostrada</numerusform>
+            <numerusform>… mais %n linhas não mostradas</numerusform>
         </translation>
     </message>
 </context>
@@ -1189,12 +1189,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista contém mais de uma linha do repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A linha do repositório de senhas está malformada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1229,7 +1229,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista contém uma linha do repositório de senhas, mas nenhuma linha de geração.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1264,7 +1264,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha do repositório de senhas, embora este dispositivo conheça este repositório pelo ID %2: ela pode ter sido escrita para outro repositório e copiada para cá, ou por um QtPass mais antigo. Quem possui a chave de assinatura resolve isso abrindo &quot;Usuários&quot;, selecionando os destinatários novamente e salvando, o que grava a linha do repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro repositório de senhas (ID do repositório %2; este dispositivo conhece este repositório como %3) e não é utilizada. Talvez tenha sido copiada para cá a partir de um repositório assinado com a mesma chave. Se, em vez disso, este repositório tiver sido configurado novamente, remover %4 faz o dispositivo esquecer os IDs de repositórios que ele conhece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1864,7 +1864,7 @@ A recriptografia não foi concluída, por isso algumas ou todas as entradas aind
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 é maior do que um arquivo de chave pode ser.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2803,8 +2803,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mostrando a primeira correspondência (%n); uma pesquisa mais específica mostra o restante.</numerusform>
+            <numerusform>Mostrando as primeiras %n correspondências; uma pesquisa mais específica mostra o restante.</numerusform>
         </translation>
     </message>
     <message>
@@ -3236,8 +3236,8 @@ Continua?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Esta entrada tem %n linha, o que é demais para editar aqui.</numerusform>
+            <numerusform>Esta entrada tem %n linhas, o que é demais para editar aqui.</numerusform>
         </translation>
     </message>
 </context>

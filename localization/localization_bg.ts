@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Думи, разделени със запетаи. Полето се брои, когато името му съдържа някоя от тях като цели думи, без значение от главни и малки букви: &quot;key&quot; скрива &quot;API key&quot;, но не и &quot;keyboard layout&quot;. Така че по-скоро скрива твърде много: &quot;Public key&quot; и &quot;Password hint&quot; също се скриват; махнете дума, за да ги покажете.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Възстановяване на предишното съдържание на буфера</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скрий всяко поле</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Всяко поле зад бутона с око, а не само тайните: за споделени екрани и презентации. Бележките под полетата и OTP кодът остават видими; &quot;Скриване на съдържанието&quot; скрива и тях.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Едно име на поле на ред. Ред като &quot;# secret: pin, cvv&quot; отбелязва полета, които се скриват като паролата, докато &quot;Скриване на паролата&quot; е включено. Същият ред работи и във файла .templates на хранилището, където важи за всеки запис в хранилището, а не само за създадените с този шаблон.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Когато хранилището за пароли няма собствено Git хранилище, да се използва това в папка над него. Изключено по подразбиране, както при pass, така че хранилище за пароли, намиращо се в друго Git хранилище (например dotfiles), никога да не бъде записано в къмит или изпратено там по погрешка. Само за нативен Git: pass винаги спира при хранилището за пароли.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass записва промените в %1 в Git хранилището в %2: при двоеточие в пътя на хранилището за пароли pass не може да ограничи Git до него. Изпълнете &quot;git init&quot; в хранилището за пароли или използвайте нативен Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… още %n ред не е показан</numerusform>
+            <numerusform>… още %n реда не са показани</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът съдържа повече от един ред за хранилище.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редът за хранилище е неправилно оформен: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът съдържа ред за хранилище, но не и ред за поколение.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 не съдържа ред за хранилище, а това устройство познава това хранилище по неговия идентификатор %2: възможно е да е бил написан за друго хранилище и копиран тук, или да е написан от по-стар QtPass. Притежател на ключа за подписване решава това, като отвори Потребители, избере получателите наново и запази, което записва реда за хранилище.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 е написан за друго хранилище за пароли (идентификатор на хранилището %2; това устройство познава това хранилище като %3) и не се използва. Възможно е да е копиран тук от хранилище, подписано със същия ключ. Ако вместо това хранилището е било настроено наново, премахването на %4 кара устройството да забрави идентификаторите на хранилищата, които познава.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не се намира в хранилището за пароли или име на папка по пътя съдържа нов ред или друг управляващ знак, който подписан списък не може да запише.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1530,7 +1530,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не може да бъде прочетен като списък с получатели (обикновен файл с размер най-много %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2011,7 +2011,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Името и фразата за достъп не трябва да съдържат знаци за нов ред.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2734,8 +2734,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Показано е първото %n съвпадение; потърсете нещо по-конкретно, за да видите останалите.</numerusform>
+            <numerusform>Показани са първите %n съвпадения; потърсете нещо по-конкретно, за да видите останалите.</numerusform>
         </translation>
     </message>
     <message>
@@ -3040,7 +3040,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не се намира в хранилището за пароли. Получателите се задават за хранилището или за папка в него.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="806"/>
@@ -3254,8 +3254,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Този запис има %n ред, твърде много за редактиране тук.</numerusform>
+            <numerusform>Този запис има %n реда, твърде много за редактиране тук.</numerusform>
         </translation>
     </message>
 </context>

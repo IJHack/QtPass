@@ -280,7 +280,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines davon als ganze Wörter enthält, unabhängig von Groß- und Kleinschreibung: &quot;key&quot; versteckt &quot;API key&quot;, nicht &quot;keyboard layout&quot;. Im Zweifel wird also eher zu viel versteckt: &quot;Public key&quot; und &quot;Password hint&quot; werden ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1000"/>
@@ -392,17 +392,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stellt die Standardwörter wieder her: PIN, Kartencodes, Schlüssel, Token, Wiederherstellungscodes und Ähnliches.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle Felder ausblenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle Felder hinter der Augen-Schaltfläche, nicht nur die Geheimnisse: für geteilte Bildschirme und Präsentationen. Die Notizen unter den Feldern und der OTP-Code bleiben sichtbar; &quot;Inhalt ausblenden&quot; blendet auch diese aus.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -600,7 +600,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass committet Änderungen in %1 in das Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Passwortspeichers kann pass Git nicht auf den Passwortspeicher beschränken. Führen Sie &quot;git init&quot; im Passwortspeicher aus, oder verwenden Sie natives Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -822,12 +822,12 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ein Feldname pro Zeile. Eine Zeile wie &quot;# secret: pin, cvv&quot; kennzeichnet Felder, die wie das Passwort ausgeblendet werden, solange &quot;Passwort ausblenden&quot; aktiviert ist. Dieselbe Zeile funktioniert auch in der Datei .templates des Passwortspeichers; dort gilt sie für jeden Eintrag im Speicher, nicht nur für solche, die mit dieser Vorlage erstellt wurden.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wenn der Passwortspeicher kein eigenes Git-Repository hat, das in einem Ordner darüber verwenden. Standardmäßig deaktiviert, wie bei pass, damit ein Passwortspeicher innerhalb eines anderen Repositorys (etwa Dotfiles) dort nie versehentlich committet oder gepusht wird. Nur natives Git: pass bleibt immer beim Passwortspeicher stehen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n weitere Zeile nicht angezeigt</numerusform>
+            <numerusform>… %n weitere Zeilen nicht angezeigt</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Liste enthält mehr als eine Speicherzeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Speicherzeile ist fehlerhaft: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die Liste enthält eine Speicherzeile, aber keine Generationszeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicherzeile, während dieses Gerät diesen Passwortspeicher unter seiner ID %2 kennt: Sie wurde möglicherweise für einen anderen Passwortspeicher geschrieben und hierher kopiert, oder von einem älteren QtPass. Wer den Signaturschlüssel besitzt, kommt weiter, indem er &quot;Benutzer&quot; öffnet, die Empfänger neu auswählt und speichert; dabei wird die Speicherzeile geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 wurde für einen anderen Passwortspeicher geschrieben (Speicher-ID %2; dieses Gerät kennt diesen Speicher als %3) und wird nicht verwendet. Möglicherweise wurde sie aus einem Speicher hierher kopiert, der mit demselben Schlüssel signiert ist. Wurde dieser Speicher stattdessen neu eingerichtet, vergisst das Entfernen von %4 die Speicher-IDs, die dieses Gerät kennt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2649,8 +2649,8 @@ Die Wiederverschlüsselung wurde nicht abgeschlossen, daher sind einige oder all
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Die erste %n Übereinstimmung wird angezeigt; für den Rest genauer suchen.</numerusform>
+            <numerusform>Die ersten %n Übereinstimmungen werden angezeigt; für den Rest genauer suchen.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3214,8 +3214,8 @@ Fortfahren?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Dieser Eintrag hat %n Zeile, zu viele, um ihn hier zu bearbeiten.</numerusform>
+            <numerusform>Dieser Eintrag hat %n Zeilen, zu viele, um ihn hier zu bearbeiten.</numerusform>
         </translation>
     </message>
 </context>

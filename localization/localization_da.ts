@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ord, adskilt med kommaer. Et felt tæller, når dets navn indeholder et af dem som hele ord, uanset store og små bogstaver: &quot;key&quot; skjuler &quot;API key&quot;, ikke &quot;keyboard layout&quot;. Der skjules altså hellere for meget: &quot;Public key&quot; og &quot;Password hint&quot; skjules også; fjern et ord for at vise dem.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skjul hvert felt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alle felter bag &quot;Vis/Skjul&quot;-knappen, ikke kun hemmelighederne: for delte skærme og præsentationer. Noterne under felterne og OTP-koden forbliver synlige; &quot;Skjul indhold&quot; skjuler dem også.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ét feltnavn pr. linje. En linje som &quot;# secret: pin, cvv&quot; markerer felter, der skjules ligesom kodeordet, mens &quot;Skjul kodeord&quot; er slået til. Samme linje virker også i lagerets .templates-fil, hvor den gælder for alle poster i lageret, ikke kun dem der er oprettet med den pågældende skabelon.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Når lageret ikke har sit eget Git-repository, bruges det i en mappe over det. Slået fra som standard, ligesom med pass, så et lager inde i et andet repository (f.eks. dotfiles) aldrig ved en fejl bliver committet eller pushet dertil. Kun native Git: pass stopper altid ved lageret.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass committer ændringer i %1 til Git-repositoryet i %2: med et kolon i lagerets sti kan pass ikke begrænse Git til lageret. Kør &quot;git init&quot; i lageret, eller brug Git/GPG direkte.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n linje mere vises ikke</numerusform>
+            <numerusform>… %n linjer mere vises ikke</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listen indeholder mere end én lagerlinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lagerlinjen er forkert udformet: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listen indeholder en lagerlinje, men ingen generationslinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Den signerede modtagerliste %1 indeholder ingen lagerlinje, mens denne enhed kender dette lager på dets ID %2: den kan være skrevet til et andet lager og kopieret hertil, eller af en ældre QtPass. En indehaver af signeringsnøglen kommer videre ved at åbne Brugere, vælge modtagerne på ny og gemme, hvilket skriver lagerlinjen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Den signerede modtagerliste %1 er skrevet til en anden password-opbevaring (opbevarings-ID %2; dette enhed kender denne opbevaring som %3) og bruges ikke. Den kan være kopieret herfra fra en opbevaring, der er signeret med samme nøgle. Hvis denne opbevaring blev opsat igen, vil sletning af %4 glemme de opbevarings-ID&apos;er, som denne enhed kender.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1675,7 +1675,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 er, eller ligger bag, et symbolsk link eller en junction efter pull. Det, der peges på, er ikke en del af kodeordslageret og bliver ikke rørt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2732,8 +2732,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Viser det første %n resultat; søg efter noget mere specifikt for at se resten.</numerusform>
+            <numerusform>Viser de første %n resultater; søg efter noget mere specifikt for at se resten.</numerusform>
         </translation>
     </message>
     <message>
@@ -3293,8 +3293,8 @@ Fortsætte?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Denne post har %n linje, for mange til at redigere her.</numerusform>
+            <numerusform>Denne post har %n linjer, for mange til at redigere her.</numerusform>
         </translation>
     </message>
 </context>

@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adferwyd y clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Geiriau, wedi&apos;u gwahanu ag atalnodau. Mae maes yn cyfrif pan fo ei enw&apos;n cynnwys un ohonynt fel geiriau cyfan, boed mewn priflythrennau neu lythrennau bach: mae &quot;key&quot; yn cuddio &quot;API key&quot;, nid &quot;keyboard layout&quot;. Felly mae&apos;n well ganddo guddio gormod: mae &quot;Public key&quot; a &quot;Password hint&quot; yn cael eu cuddio hefyd; tynnwch air allan i&apos;w dangos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un enw maes fesul llinell. Mae llinell fel &quot;# secret: pin, cvv&quot; yn nodi meysydd i&apos;w cuddio fel y cyfrinair tra bo &quot;Cuddio&apos;r cyfrinair&quot; ymlaen. Mae&apos;r un llinell yn gweithio yn ffeil .templates y storfa, lle mae&apos;n cyfrif ar gyfer pob cofnod yn y storfa, nid dim ond y rhai a wnaed gyda&apos;r templed hwnnw.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pan nad oes gan y storfa ystorfa Git ei hun, defnyddio&apos;r un mewn plygell uwch ei phen. Wedi&apos;i ddiffodd yn ddiofyn, fel gyda pass, fel nad yw storfa y tu mewn i ystorfa arall (dotfiles, er enghraifft) byth yn cael ei hymrwymo na&apos;i gwthio yno trwy gamgymeriad. Git brodorol yn unig: mae pass bob amser yn stopio wrth y storfa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -465,7 +465,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Galluogi chwilio cynnwys</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -476,12 +476,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pan gaiff y clipfwrdd ei glirio, rhoi yn ôl yr hyn oedd arno cyn y copïo, fel y gwna pass -c, oni bai bod rhywbeth arall wedi&apos;i gopïo yn y cyfamser. Testun yn unig: nid yw fformatio&apos;n cael ei adfer. Mae&apos;r testun hwnnw&apos;n aros yn y cof tan hynny. Lle na ellir darllen y clipfwrdd heb ffocws (rhai byrddau gwaith Wayland), caiff ei glirio yn lle hynny.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adfer y clipfwrdd blaenorol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,32 +497,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuddio cyfrinachau eraill hefyd:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuddio meysydd sy&apos;n dal cyfrinach hefyd, nid y cyfrinair yn unig: maes y mae ei enw&apos;n cynnwys un o&apos;r geiriau hyn. Wedi&apos;i ddiffodd: dim ond y cyfrinair a guddir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Diofyn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rhoi&apos;r geiriau diofyn yn ôl: pin, codau cerdyn, allweddi, tocynnau, codau adfer a&apos;u tebyg.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuddio pob maes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pob maes y tu ôl i&apos;r botwm llygad, nid y cyfrinachau yn unig: ar gyfer sgriniau a rennir a chyflwyno. Mae&apos;r nodiadau o dan y meysydd a&apos;r cod OTP yn aros yn weladwy; mae &quot;Cuddio&apos;r cynnwys&quot; yn cuddio&apos;r rheini hefyd.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Defnyddio ystorfa Git mewn plygell uwchben y storfa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -762,12 +762,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae %1 yn llofnodi â&apos;r un allwedd ar gyfer storfa arall. Mae rhestr derbynwyr a lofnodwyd ar gyfer un o&apos;r storfeydd hyn yn cael ei derbyn yn y llall: defnyddiwch allwedd lofnodi ar wahân ar gyfer pob storfa y mae ei derbynwyr yn wahanol.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae pass yn ymrwymo newidiadau yn %1 i&apos;r ystorfa Git yn %2: gyda cholon yn llwybr y storfa, ni all pass gadw Git o fewn y storfa. Rhedwch &quot;git init&quot; yn y storfa, neu defnyddiwch Git/GPG brodorol.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,11 +1089,11 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n llinell arall heb ei dangos</numerusform>
+            <numerusform>… %n llinell arall heb ei dangos</numerusform>
+            <numerusform>… %n linell arall heb eu dangos</numerusform>
+            <numerusform>… %n llinell arall heb eu dangos</numerusform>
+            <numerusform>… %n o linellau eraill heb eu dangos</numerusform>
         </translation>
     </message>
 </context>
@@ -1168,12 +1168,12 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae&apos;r rhestr yn cynnwys mwy nag un llinell storfa.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae&apos;r llinell storfa wedi&apos;i chamffurfio: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1208,7 +1208,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae&apos;r rhestr yn cynnwys llinell storfa ond dim llinell genhedlaeth.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1243,7 +1243,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw&apos;r rhestr derbynwyr wedi&apos;i llofnodi %1 yn cynnwys llinell storfa, tra bod y ddyfais hon yn adnabod y storfa hon wrth ei ID %2: efallai iddi gael ei hysgrifennu ar gyfer storfa arall a&apos;i chopïo yma, neu gan QtPass hŷn. Gall deiliad yr allwedd lofnodi fynd heibio i hyn drwy agor Defnyddwyr, dewis y derbynwyr o&apos;r newydd a chadw, sy&apos;n ysgrifennu&apos;r llinell storfa.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1281,7 +1281,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ysgrifennwyd y rhestr derbynwyr wedi&apos;i llofnodi %1 ar gyfer storfa gyfrineiriau arall (ID storfa %2; mae&apos;r ddyfais hon yn adnabod y storfa hon fel %3) ac nid yw&apos;n cael ei defnyddio. Efallai iddi gael ei chopïo yma o storfa a lofnodwyd â&apos;r un allwedd. Os cafodd y storfa hon ei sefydlu o&apos;r newydd yn lle hynny, mae dileu %4 yn anghofio&apos;r IDau storfa y mae&apos;r ddyfais hon yn eu hadnabod.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1371,7 +1371,7 @@ Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw %1 y tu mewn i&apos;r storfa gyfrineiriau, neu mae enw plygell ar y ffordd yn cynnwys toriad llinell neu nod rheoli arall, na all rhestr wedi&apos;i llofnodi ei gofnodi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1489,7 +1489,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ni ellir darllen %1 fel rhestr derbynwyr (ffeil gyffredin o %2 ar y mwyaf).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -1637,7 +1637,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae %1 yn ddolen symbolaidd neu gyffordd, neu&apos;n gorwedd y tu ôl i un, ar ôl tynnu. Nid yw&apos;r hyn y mae honno&apos;n pwyntio ato yn rhan o&apos;r storfa gyfrineiriau ac ni chyffyrddir ag ef.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -1855,7 +1855,7 @@ Ni chwblhawyd yr ail-amgryptio, felly mae rhai cofnodion, neu bob un, yn dal wed
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae %1 yn fwy nag y gall ffeil allwedd fod.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2041,12 +2041,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mewnbwn annilys</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ni all yr enw na&apos;r ymadrodd cyfrin gynnwys toriadau llinell.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2177,7 +2177,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chwilio y tu mewn i gynnwys cyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2610,17 +2610,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="947"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">… rhagor o ganlyniadau yn y cofnod hwn</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Yn dangos y %n canlyniad cyntaf; chwiliwch am rywbeth mwy penodol i weld y gweddill.</numerusform>
+            <numerusform>Yn dangos y %n canlyniad cyntaf; chwiliwch am rywbeth mwy penodol i weld y gweddill.</numerusform>
+            <numerusform>Yn dangos y %n ganlyniad cyntaf; chwiliwch am rywbeth mwy penodol i weld y gweddill.</numerusform>
+            <numerusform>Yn dangos y %n chanlyniad cyntaf; chwiliwch am rywbeth mwy penodol i weld y gweddill.</numerusform>
+            <numerusform>Yn dangos y %n o ganlyniadau cyntaf; chwiliwch am rywbeth mwy penodol i weld y gweddill.</numerusform>
         </translation>
     </message>
     <message>
@@ -2913,14 +2913,16 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wedi&apos;i gadw, heb ei ymrwymo</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mae&apos;r cofnod wedi&apos;i gadw yn y storfa, ond methodd ei gofnodi yn git. Yr hyn a adroddwyd:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="779"/>
@@ -2930,7 +2932,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw %1 y tu mewn i&apos;r storfa gyfrineiriau. Gosodir derbynwyr ar gyfer y storfa neu blygell ynddi.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="806"/>
@@ -2945,7 +2947,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ni ellir darllen %1 fel rhestr derbynwyr (ffeil gyffredin o %2 ar y mwyaf), felly nid oes dim wedi&apos;i ragddewis. Gwiriwch hi cyn dewis derbynwyr yma: mae Iawn yn ysgrifennu rhestr newydd drosti.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>
@@ -3144,11 +3146,11 @@ Parhau?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mae gan y cofnod hwn %n llinell, gormod i&apos;w golygu yma.</numerusform>
+            <numerusform>Mae gan y cofnod hwn %n llinell, gormod i&apos;w golygu yma.</numerusform>
+            <numerusform>Mae gan y cofnod hwn %n linell, gormod i&apos;w golygu yma.</numerusform>
+            <numerusform>Mae gan y cofnod hwn %n llinell, gormod i&apos;w golygu yma.</numerusform>
+            <numerusform>Mae gan y cofnod hwn %n o linellau, gormod i&apos;w golygu yma.</numerusform>
         </translation>
     </message>
 </context>
@@ -3214,7 +3216,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw&apos;r cartref GPG a ffurfweddwyd, %1, yn bodoli.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>
@@ -3455,7 +3457,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wrthi&apos;n gwirio&apos;r rhestrau derbynwyr o dan %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3481,7 +3483,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tynnwyd y ddolen %1 ac nid yw git yn ei holrhain mwyach, ond methodd yr ymrwymiad: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>

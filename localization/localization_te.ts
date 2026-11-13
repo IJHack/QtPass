@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">కామాలతో వేరు చేసిన పదాలు. ఒక ఫీల్డ్ పేరులో వీటిలో ఏదైనా ఒకటి పూర్తి పదంగా ఉంటే, పెద్ద అక్షరాలైనా చిన్న అక్షరాలైనా, ఆ ఫీల్డ్ లెక్కలోకి వస్తుంది: &quot;key&quot; అనేది &quot;API key&quot; ని దాస్తుంది, &quot;keyboard layout&quot; ని కాదు. కాబట్టి ఇది అవసరానికి మించి దాచడానికే మొగ్గు చూపుతుంది: &quot;Public key&quot;, &quot;Password hint&quot; కూడా దాచబడతాయి; వాటిని చూపించడానికి ఒక పదాన్ని తీసివేయండి.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఒక్కో లైన్‌కు ఒక ఫీల్డ్ పేరు. &quot;# secret: pin, cvv&quot; వంటి లైన్, &quot;పాస్‌వర్డ్ దాచు&quot; ఆన్‌లో ఉన్నప్పుడు పాస్‌వర్డ్ లాగే దాచాల్సిన ఫీల్డ్‌లను గుర్తిస్తుంది. అదే లైన్ స్టోర్ యొక్క .templates ఫైల్‌లో కూడా పనిచేస్తుంది; అక్కడ అది ఆ మూసతో సృష్టించిన ఎంట్రీలకు మాత్రమే కాకుండా, స్టోర్‌లోని ప్రతి ఎంట్రీకి వర్తిస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">స్టోర్‌కు సొంత Git రిపోజిటరీ లేనప్పుడు, దాని పైన ఉన్న ఫోల్డర్‌లోని రిపోజిటరీని ఉపయోగించండి. pass లో లాగే డిఫాల్ట్‌గా ఆఫ్‌లో ఉంటుంది, కాబట్టి మరొక రిపోజిటరీ (ఉదాహరణకు dotfiles) లోపల ఉన్న స్టోర్ పొరపాటున అక్కడ కమిట్ లేదా పుష్ చేయబడదు. స్థానిక Git మాత్రమే: pass ఎల్లప్పుడూ స్టోర్ వద్దే ఆగుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ప్రతి ఫీల్డ్‌ను దాచు</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">కన్ను బటన్ వెనుక ఉన్న ప్రతి ఫీల్డ్, రహస్యాలు మాత్రమే కాదు: స్క్రీన్ షేరింగ్ మరియు ప్రెజెంటేషన్‌ల కోసం. ఫీల్డ్‌ల కింద ఉన్న గమనికలు మరియు OTP కోడ్ కనిపిస్తూనే ఉంటాయి; &quot;కంటెంట్ దాచు&quot; వాటిని కూడా దాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass %1 లోని మార్పులను %2 లోని Git రిపోజిటరీకి కమిట్ చేస్తుంది: స్టోర్ మార్గంలో కోలన్ ఉంటే, pass Git ను స్టోర్‌కు పరిమితం చేయలేదు. స్టోర్‌లో &quot;git init&quot; ను అమలు చేయండి, లేదా స్థానిక Git/GPG ని ఉపయోగించండి.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,8 +1089,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… మరో %n పంక్తి చూపబడలేదు</numerusform>
+            <numerusform>… మరో %n పంక్తులు చూపబడలేదు</numerusform>
         </translation>
     </message>
 </context>
@@ -1165,12 +1165,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">జాబితాలో ఒకటి కంటే ఎక్కువ స్టోర్ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">స్టోర్ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1205,7 +1205,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">జాబితాలో స్టోర్ పంక్తి ఉంది కానీ జనరేషన్ పంక్తి లేదు.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లో స్టోర్ పంక్తి లేదు, కానీ ఈ పరికరానికి ఈ స్టోర్ దాని ID %2 ద్వారా తెలుసు: ఇది వేరే స్టోర్ కోసం వ్రాయబడి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass ద్వారా వ్రాయబడి ఉండవచ్చు. సంతకం కీ ఉన్న వ్యక్తి వినియోగదారులు తెరిచి, గ్రహీతలను మళ్లీ ఎంచుకుని, సేవ్ చేయడం ద్వారా దీన్ని పరిష్కరించవచ్చు; అది స్టోర్ పంక్తిని వ్రాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 మరొక పాస్‌వర్డ్ స్టోర్ కోసం వ్రాయబడింది (స్టోర్ ID %2; ఈ పరికరానికి ఈ స్టోర్ %3 గా తెలుసు), కాబట్టి ఉపయోగించబడదు. ఇది అదే కీతో సంతకం చేయబడిన స్టోర్ నుండి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు. అలా కాకుండా ఈ స్టోర్ మళ్లీ సెటప్ చేయబడి ఉంటే, %4 ను తీసివేయడం వలన ఈ పరికరానికి తెలిసిన స్టోర్ ID లు మరచిపోబడతాయి.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1631,7 +1631,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పుల్ చేసిన తర్వాత %1 ఒక సింబాలిక్ లింక్ లేదా జంక్షన్, లేదా అటువంటిదాని వెనుక ఉంది. అది సూచించేది పాస్‌వర్డ్ స్టోర్‌లో భాగం కాదు, కాబట్టి అలాగే ఉంచబడుతుంది.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -1840,7 +1840,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ఒక కీ ఫైల్ ఉండగలిగే పరిమాణం కంటే పెద్దది.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2538,8 +2538,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>మొదటి %n సరిపోలిక చూపబడుతోంది; మిగిలినవి చూడటానికి మరింత నిర్దిష్టంగా వెతకండి.</numerusform>
+            <numerusform>మొదటి %n సరిపోలికలు చూపబడుతున్నాయి; మిగిలినవి చూడటానికి మరింత నిర్దిష్టంగా వెతకండి.</numerusform>
         </translation>
     </message>
     <message>
@@ -3056,8 +3056,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>ఈ ఎంట్రీలో %n పంక్తి ఉంది, ఇక్కడ సవరించడానికి చాలా ఎక్కువ.</numerusform>
+            <numerusform>ఈ ఎంట్రీలో %n పంక్తులు ఉన్నాయి, ఇక్కడ సవరించడానికి చాలా ఎక్కువ.</numerusform>
         </translation>
     </message>
 </context>
