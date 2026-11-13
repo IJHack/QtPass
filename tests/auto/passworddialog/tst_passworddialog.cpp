@@ -114,6 +114,7 @@ private Q_SLOTS:
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
   void okKeepsNoBreakSpacesInUntouchedNotes();
+  void okWritesUntouchedFieldLinesVerbatim();
 };
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
@@ -371,6 +372,44 @@ void tst_passworddialog::okKeepsNoBreakSpacesInUntouchedNotes() {
   QVERIFY2(!pass.insertedContent.contains(QChar(QChar::ParagraphSeparator)) &&
                !pass.insertedContent.contains(QChar(QChar::LineSeparator)),
            "the notes' lines must be separated by '\\n', not U+2028/U+2029");
+}
+
+void tst_passworddialog::okWritesUntouchedFieldLinesVerbatim() {
+  // A field the user did not touch must be written back exactly as it was
+  // read. Reserialising every row as "name: value" dropped a field with an
+  // empty value, trimmed a value's own spacing, and turned "key:value" into
+  // "key: value" — all silent edits to lines the user never opened.
+  FakePass pass;
+  AppSettings s = QtPassSettings::load();
+  s.useTemplate = true;
+  s.passTemplate.clear();
+  s.templateAllFields = true;
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  const QString body = QStringLiteral(
+      "secret\nurl:example.com\nrecovery:\nspaced:   padded   \nlogin: bob\n");
+  pass.deliverShow(body);
+
+  QString written = d.getPassword();
+  QVERIFY2(written.contains(QStringLiteral("\nurl:example.com\n")),
+           qPrintable("a tight colon must not gain a space:\n" + written));
+  QVERIFY2(written.contains(QStringLiteral("\nrecovery:\n")),
+           qPrintable("an empty-value field must not be dropped:\n" + written));
+  QVERIFY2(written.contains(QStringLiteral("\nspaced:   padded   \n")),
+           qPrintable("a value's own spacing must survive:\n" + written));
+  QVERIFY2(written.contains(QStringLiteral("\nlogin: bob\n")),
+           qPrintable("an already-canonical line is unchanged:\n" + written));
+
+  // Editing a field's value reserialises that one row to "name: value"; the
+  // others still come back verbatim.
+  auto *url = d.findChild<QLineEdit *>(QStringLiteral("url"));
+  QVERIFY(url != nullptr);
+  url->setText(QStringLiteral("changed.example"));
+  written = d.getPassword();
+  QVERIFY2(written.contains(QStringLiteral("\nurl: changed.example\n")),
+           qPrintable("an edited field is written canonically:\n" + written));
+  QVERIFY2(written.contains(QStringLiteral("\nrecovery:\n")),
+           qPrintable("an untouched field stays verbatim after an edit:\n" +
+                      written));
 }
 
 QTEST_MAIN(tst_passworddialog)
