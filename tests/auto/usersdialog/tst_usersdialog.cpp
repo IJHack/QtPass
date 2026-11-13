@@ -1257,10 +1257,10 @@ void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
   QVERIFY(list != nullptr && filter != nullptr);
   QCOMPARE(list->count(), 1);
   QVERIFY(list->item(0)->text().startsWith(QStringLiteral("Alice")));
-  // The reload after an import rebuilds m_userList from gpg, so ticks made
-  // before importing do not survive it. Alice is left unticked here so the
-  // test pins the #1167 behaviour (refresh, cleared filter, current row) and
-  // not that loss.
+  // Tick Alice before importing: the reload rebuilds m_userList from gpg, but
+  // the selection made before the import must survive it, so an import does not
+  // silently drop the other recipients.
+  list->item(0)->setCheckState(Qt::Checked);
   filter->setText(QStringLiteral("nobody"));
   QCOMPARE(list->count(), 0);
 
@@ -1276,8 +1276,18 @@ void tst_usersdialog::importingAKeyRefreshesTheListAndSelectsIt() {
            qPrintable(list->currentItem()->text()));
   QVERIFY2(list->currentItem()->checkState() == Qt::Unchecked,
            "importing does not tick the key; the user decides");
-  QVERIFY2(enabledIds(dialog.selectedUsers()).isEmpty(),
-           qPrintable(enabledIds(dialog.selectedUsers()).join(", ")));
+
+  // Alice's tick survived the import; Bob was not ticked by it.
+  QListWidgetItem *alice = nullptr;
+  for (int i = 0; i < list->count(); ++i) {
+    if (list->item(i)->text().startsWith(QStringLiteral("Alice"))) {
+      alice = list->item(i);
+    }
+  }
+  QVERIFY2(alice != nullptr, "Alice must still be listed after the import");
+  QVERIFY2(alice->checkState() == Qt::Checked,
+           "Alice's selection must survive importing another key");
+  QCOMPARE(enabledIds(dialog.selectedUsers()).size(), 1);
   QCOMPARE(dialog.selectedUsers().size(), 2);
   QVERIFY2(QFile::exists(s.gpgExecutable + QStringLiteral(".imported")),
            "gpg --import must have run");

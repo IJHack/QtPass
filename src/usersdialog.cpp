@@ -408,8 +408,40 @@ void UsersDialog::on_importKeyButton_clicked() {
     return;
   }
 
+  // loadGpgKeys() rebuilds the key list from the keyring and drops every tick.
+  // Remember which recipients were selected (the .gpg-id list and the user's
+  // own ticks, including any "key not found" rows) and re-apply them after, so
+  // importing a key does not silently remove the other recipients.
+  QStringList selected;
+  for (const UserInfo &user : std::as_const(m_userList)) {
+    if (user.enabled) {
+      selected.append(user.key_id);
+    }
+  }
+
   if (!loadGpgKeys()) {
     return;
+  }
+
+  // Re-apply the remembered selection by exact key ID - the keys are already
+  // resolved, so no gpg lookup is needed - and re-add any that are no longer in
+  // the rebuilt list as a "key not found" row, the way the initial load does.
+  for (UserInfo &user : m_userList) {
+    if (selected.contains(user.key_id)) {
+      user.enabled = true;
+    }
+  }
+  for (const QString &keyId : std::as_const(selected)) {
+    const bool present =
+        std::any_of(m_userList.cbegin(), m_userList.cend(),
+                    [&keyId](const UserInfo &u) { return u.key_id == keyId; });
+    if (!present) {
+      UserInfo missing;
+      missing.enabled = true;
+      missing.key_id = keyId;
+      missing.name = " ?? " + tr("Key not found in keyring");
+      m_userList.append(missing);
+    }
   }
 
   // Clear the filter so the just-imported key is visible. setText("") still
