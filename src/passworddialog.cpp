@@ -31,6 +31,7 @@
 #include <QPushButton>
 #include <QShortcut>
 #include <QSignalBlocker>
+#include <QTextDocument>
 #include <utility>
 
 #include "qtpasslogging.h"
@@ -580,7 +581,15 @@ auto PasswordDialog::getPassword() -> QString {
     }
     passFile += line->objectName() + ": " + text + "\n";
   }
-  passFile += ui->plainTextEdit->toPlainText();
+  // Not toPlainText(): it saves a blank for every no-break space (U+00A0) in
+  // the notes, so any OK rewrites even lines the user never touched and a
+  // passphrase or recovery code with no-break spaces is corrupted. The raw
+  // document text keeps the no-break spaces; only the block and line
+  // separators it uses are normalised back to '\n'.
+  QString notes = ui->plainTextEdit->document()->toRawText();
+  notes.replace(QChar(QChar::ParagraphSeparator), QLatin1Char('\n'));
+  notes.replace(QChar(QChar::LineSeparator), QLatin1Char('\n'));
+  passFile += notes;
   return passFile;
 }
 

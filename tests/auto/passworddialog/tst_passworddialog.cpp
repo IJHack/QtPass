@@ -146,6 +146,7 @@ private Q_SLOTS:
   void generateButtonIgnoresAnUnknownCharset();
   void okBeforeTheContentLoadedWritesNothing();
   void okWritesTheEntryBackWithATrailingNewline();
+  void okKeepsNoBreakSpacesInUntouchedNotes();
   void failedInsertKeepsWhatWasTyped();
   void refusedInsertKeepsWhatWasTyped();
   void savingLocksTheDialogUntilTheResult();
@@ -992,6 +993,24 @@ void tst_passworddialog::okWritesTheEntryBackWithATrailingNewline() {
   QCOMPARE(pass.inserted, QStringLiteral("entry.gpg"));
   QVERIFY2(pass.insertedOverwrite, "an existing entry is overwritten");
   QCOMPARE(pass.insertedContent, QStringLiteral("secret\nnote\n"));
+}
+
+void tst_passworddialog::okKeepsNoBreakSpacesInUntouchedNotes() {
+  // A no-break space (U+00A0) in the notes must survive an OK the user did not
+  // use to change that line. toPlainText() would save it as a plain space,
+  // silently corrupting a passphrase or recovery code.
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString body = QStringLiteral("orange bleu vert");
+  pass.deliverShow(QStringLiteral("secret\n") + body);
+  auto *notes = d.findChild<QPlainTextEdit *>();
+  QVERIFY(notes != nullptr);
+
+  okButton(d)->click();
+  QCOMPARE(pass.insertedContent, QStringLiteral("secret\n") + body + "\n");
+  QVERIFY2(pass.insertedContent.contains(QChar(0x00A0)),
+           "the no-break spaces must be kept, not turned into plain spaces");
 }
 
 namespace {
