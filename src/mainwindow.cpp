@@ -813,6 +813,11 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
     return;
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
   ui->treeView->expandAll();
+  // Drop any decrypt still pending for the entry that was shown: otherwise it
+  // keeps its right to the panel and, with "Always copy", the clipboard, and
+  // when it lands late it shows that entry's password under the new heading.
+  m_shownFile.clear();
+  cancelOtpRequest();
   clearPanel(false);
   ui->passwordName->setText("");
   ui->actionEdit->setEnabled(false);
