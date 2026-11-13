@@ -241,6 +241,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   named `--` beside a `.gpg` link at the store root; showing it decrypted
   the file the link points to outside the store (scan finding
   ANT-2026-BQMURTO3).
+- A signed Git commit or tag is no longer accepted as a signed `.gpg-id`.
+  Git signs a commit the same way a `.gpg-id` is signed, so with signed
+  commits someone who can push to a shared store, but has no key, could
+  push one of QtPass's own signed commits as `.gpg-id` with its signature;
+  its lines then became recipients (scan finding ANT-2026-NOWX23I7).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its

@@ -115,6 +115,7 @@ private slots:
   void signPassesTheFilePathThroughTheWslTranslation();
   void signReplacesALinkUnderTheSignatureNameAsAnEntry();
   void verifyPassesArgsAndAcceptsEitherFingerprint();
+  void verifyRefusesACommitOrTagObject();
   void verifyFileHandsBackTheBytesItVerified();
   void verifyFileReadsOnlyARegularFileOfBoundedSize();
   void linkedGpgIdOrSignatureIsNotVerified();
@@ -447,6 +448,39 @@ void tst_gpgidsigner::verifyPassesArgsAndAcceptsEitherFingerprint() {
     QVERIFY2(byPrimary.verify(kGpgId, sigPath()),
              "the primary key's fingerprint is accepted too");
   }
+}
+
+void tst_gpgidsigner::verifyRefusesACommitOrTagObject() {
+  FakeGpg gpg;
+  // gpg would report a good signature by the signing key: the refusal below
+  // must be the content check, not a gpg failure.
+  gpg.out = validSig(kFpr, kPrimary);
+  const GpgIdSigner signer(QStringLiteral("gpg"), {kFpr}, gpg.exec());
+
+  // Control: an ordinary recipient list still verifies.
+  QVERIFY(signer.verify(kGpgId, sigPath()));
+
+  // A git commit object, validly signed through pass.signcommits, replayed as
+  // a .gpg-id. Its message quotes a pushed entry name that looks like a key.
+  const QByteArray commit =
+      QByteArrayLiteral("tree ") + QByteArray(40, 'a') +
+      QByteArrayLiteral("\nauthor A <a@b> 1 +0000\ncommitter A <a@b> 1 +0000\n"
+                        "\nRename old to new\n") +
+      kFpr.toUtf8() + QByteArrayLiteral("\n");
+  const int callsBefore = gpg.calls.size();
+  QVERIFY2(!signer.verify(commit, sigPath()),
+           "a signed git commit must not verify as a .gpg-id");
+  QCOMPARE(gpg.calls.size(), callsBefore); // refused before gpg is asked
+
+  // A SHA-256 commit (64-hex tree) and a tag object ("object <hash>") too.
+  const QByteArray commit256 = QByteArrayLiteral("tree ") +
+                               QByteArray(64, 'f') + QByteArrayLiteral("\n") +
+                               kFpr.toUtf8() + QByteArrayLiteral("\n");
+  QVERIFY(!signer.verify(commit256, sigPath()));
+  const QByteArray tag = QByteArrayLiteral("object ") + QByteArray(40, 'c') +
+                         QByteArrayLiteral("\ntype commit\n") + kFpr.toUtf8() +
+                         QByteArrayLiteral("\n");
+  QVERIFY(!signer.verify(tag, sigPath()));
 }
 
 void tst_gpgidsigner::verifyRejectsUnknownSignerAndGpgFailure() {
