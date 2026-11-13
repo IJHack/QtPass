@@ -167,6 +167,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- A signing key set in Settings for the profile in use now takes effect on
+  OK. It was saved with the profile but only applied when switching
+  profiles, so the `.gpg-id` signature checks stayed off until then (scan
+  finding ANT-2026-9HYDKS8N).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its

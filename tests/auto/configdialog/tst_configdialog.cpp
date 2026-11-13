@@ -181,6 +181,7 @@ private Q_SLOTS:
   void signerLookupSeesAKeyImportedMeanwhile();
   void passBackendWarnsOfARepositoryAboveTheStore();
   void signingKeyMustBeAFullFingerprint();
+  void activeProfileSigningKeyAppliedOnOk();
   void activeProfileFollowsRenameAndDeletion();
   void deleteLeavesTheFormOnTheHighlightedProfile();
   void fieldLabelsHaveBuddies();
@@ -1480,6 +1481,41 @@ void tst_configdialog::signingKeyMustBeAFullFingerprint() {
   QVERIFY(
       !ConfigDialog::isFingerprintList(QStringLiteral("alice@example.org")));
   QVERIFY(ConfigDialog::isFingerprintList(QString(64, QLatin1Char('a'))));
+}
+
+/**
+ * @brief A signing key set on the profile that is in use must become the live
+ *        passSigningKey when Settings is accepted, so the backends check
+ *        .gpg-id signatures against it. Without this a key shown in Settings is
+ *        saved with the profile but never applied, and QtPass keeps accepting
+ *        unsigned .gpg-id lists.
+ */
+void tst_configdialog::activeProfileSigningKeyAppliedOnOk() {
+  struct ProfileRestorer {
+    Profiles saved;
+    ~ProfileRestorer() { QtPassSettings::setProfiles(saved); }
+  } restorer{QtPassSettings::getProfiles()};
+
+  const QString key =
+      QStringLiteral("ABCDEF0123456789ABCDEF0123456789ABCDEF01");
+  Profiles profiles;
+  Profile team;
+  team.path = QStringLiteral("/store/team");
+  team.signingKey = key;
+  profiles.insert(QStringLiteral("team"), team);
+  QtPassSettings::setProfiles(profiles);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = QStringLiteral("team");
+    s.passSigningKey = QString(); // the store had no live signing key yet
+    QtPassSettings::save(s);
+  }
+  QVERIFY(QtPassSettings::load().passSigningKey.isEmpty());
+
+  ConfigDialog dialog(nullptr);
+  dialog.accept(); // runs followActiveProfile via on_accepted
+
+  QCOMPARE(QtPassSettings::load().passSigningKey, key);
 }
 
 /**

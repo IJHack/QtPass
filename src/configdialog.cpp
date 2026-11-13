@@ -607,6 +607,12 @@ void ConfigDialog::followActiveProfile(const Profiles &profiles) {
     s.useGit = active->useGit.value_or(s.useGit);
     s.autoPush = active->autoPush.value_or(s.autoPush);
     s.autoPull = active->autoPull.value_or(s.autoPull);
+    // The signing key the active profile carries must become the live setting
+    // the backends check .gpg-id signatures against, as
+    // MainWindow::on_profileBox_currentTextChanged does when switching. Without
+    // this, a key entered for the profile in use is saved but never applied, so
+    // QtPass keeps accepting unsigned (or badly signed) .gpg-id lists.
+    s.passSigningKey = active->signingKey;
   }
   QtPassSettings::save(s);
 }
