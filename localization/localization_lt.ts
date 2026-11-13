@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kai parduotuvė neturi savo Git repozitorijos, naudokite tą, kuris yra viršuje esančiame sąlyne. Išjungta pagal numatytą nustatymą, kaip ir „pass“, todėl parduotuvė, esanti kitame repozitorijoje (pvz., „dotfiles“), niekada neatspaus arba neturės būti perkelta ten klaidingai. Tiesiog Git: „pass“ visada sustoja prie parduotuvės.</translation>
+        <translation type="unfinished">Kai slaptažodžių saugykla neturi savo Git saugyklos, naudoti tą, kuri yra aukščiau esančiame aplanke. Pagal numatytuosius nustatymus išjungta, kaip ir pass, todėl slaptažodžių saugyklos, esančios kitoje Git saugykloje (pavyzdžiui, dotfiles), pakeitimai niekada per klaidą nebus ten įrašyti (commit) ar išsiųsti (push). Tik vietiniam Git: pass visada sustoja ties slaptažodžių saugykla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Atkurti ankstesnį siųstą</translation>
+        <translation type="unfinished">Atkurti ankstesnį iškarpinės turinį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Slėpti kiekį</translation>
+        <translation type="unfinished">Slėpti visus laukus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Visos sritys, esančios po &quot;Akis&quot; mygtuku, ne tik paslaptys: bendram ekranams ir pristatymams. Pastabos srityse ir OTP kodas išliks matomi; &quot;Slėpti turinį&quot; taip pat juos slėps.</translation>
+        <translation type="unfinished">Visi laukai, slepiami akies mygtuku, ne tik paslaptys: bendrinamiems ekranams ir pristatymams. Pastabos po laukais ir OTP kodas lieka matomi; &quot;Slėpti turinį&quot; paslepia ir juos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -767,7 +767,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 pasirenka tą patį raktą, norėdamas pasirašyti duomenis iš kitos vietos. Vietoje, kur vieno iš šių vartotuvų duomenys yra pasirašyti, galima pasirinkti kitą: naudokite atskirą pasirašymo raktą kiekvienai vietai, kurios gavėjai skiriasi.</translation>
+        <translation type="unfinished">%1 tuo pačiu raktu pasirašo ir kitai slaptažodžių saugyklai. Vienai iš šių saugyklų pasirašytas gavėjų sąrašas priimamas ir kitoje: kiekvienai saugyklai, kurios gavėjai skiriasi, naudokite atskirą pasirašymo raktą.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1166,12 +1166,12 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Ši sąrašas turi daugiau nei vieną parduotuvės įrašą.</translation>
+        <translation type="unfinished">Sąraše yra daugiau nei viena saugyklos eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Prekybos eilė yra netinkamai suformuota: %1</translation>
+        <translation type="unfinished">Saugyklos eilutė netaisyklinga: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1206,7 +1206,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Ši sąrašas turi pardavimo eilę, bet ne generavimo eilę.</translation>
+        <translation type="unfinished">Sąraše yra saugyklos eilutė, bet nėra kartos eilutės.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1241,7 +1241,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Pasirašyto gavėjų sąrašas %1 neturi &quot;saugojimo&quot; eilės, tačiau šis įrenginys žino šį &quot;saugojimą&quot; pagal jo ID %2: galbūt jis buvo sukurtas kitam &quot;saugojimui&quot; ir kopijuotas čia, arba senesnio qtPass. Pasirašymo rakto savininkas gali pasiekti duomenis atidarydamas &quot;Vartotojai&quot;, pasirinkus gavėjus iš naujo ir išsaugodamas, kuris rašo &quot;saugojimo&quot; eilę.</translation>
+        <translation type="unfinished">Pasirašytame gavėjų sąraše %1 nėra saugyklos eilutės, nors šis įrenginys šią saugyklą žino pagal jos ID %2: galbūt sąrašas buvo parašytas kitai saugyklai ir nukopijuotas čia arba jį parašė senesnė QtPass versija. Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“, iš naujo pasirinkęs gavėjus ir išsaugojęs – taip įrašoma saugyklos eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1279,7 +1279,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Parašyta gavėjų sąrašo %1, skirtos kitam slaptažodžių saugojimui (saugojimo ID %2; šis įrenginys žino šį saugojimą kaip %3), ir jo nereikia. Galbūt jis buvo kopijuotas čia iš to, kuris buvo parašytas su tos pačios rašymo užmojo. Jei vietoj to būtų sukurtas naujas, tuomet pašalinus %4, įrenginys pamiršta visus saugojimo ID, kuriuos jis žino.</translation>
+        <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 buvo parašytas kitai slaptažodžių saugyklai (saugyklos ID %2; šis įrenginys šią saugyklą žino kaip %3) ir nenaudojamas. Galbūt jis buvo nukopijuotas čia iš saugyklos, pasirašytos tuo pačiu raktu. Jei vietoj to ši saugykla buvo sukurta iš naujo, pašalinus %4 pamirštami šiam įrenginiui žinomi saugyklų ID.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1487,7 +1487,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">Failas &quot;%1&quot; negali būti interpretuojamas kaip gavėjų sąrašas (reikalingas failas, turintis bent %2).</translation>
+        <translation type="unfinished">%1 negalima perskaityti kaip gavėjų sąrašo (įprastas failas, ne didesnis kaip %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>

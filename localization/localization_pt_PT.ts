@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Todos os campos atrás do botão &quot;Olhar&quot;, não apenas os segredos: para ecrãs partilhados e apresentações. As notas abaixo dos campos e o código OTP permanecem visíveis; &quot;Ocultar conteúdo&quot; também os esconde.</translation>
+        <translation type="unfinished">Todos os campos atrás do botão do olho, não apenas os segredos: para ecrãs partilhados e apresentações. As notas abaixo dos campos e o código OTP permanecem visíveis; &quot;Ocultar conteúdo&quot; também os oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -568,7 +568,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando o armazém não tem um repositório Git próprio, utilize aquele que se encontra numa pasta acima. Desativado por defeito, tal como no pass, de forma que um armazém dentro de outro repositório (por exemplo, ficheiros) nunca é commitado ou enviado para lá por engano. Git nativo apenas: o pass sempre termina no armazém.</translation>
+        <translation type="unfinished">Quando o armazém não tem um repositório Git próprio, utilizar o que se encontra numa pasta acima. Desativado por omissão, tal como no pass, para que um armazém dentro de outro repositório (dotfiles, por exemplo) nunca seja submetido ou enviado para lá por engano. Apenas Git nativo: o pass para sempre no armazém.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro armazém (ID do armazém %2; este dispositivo reconhece este armazém como %3) e não é utilizada. Poderá ter sido copiada aqui de um armazém assinado com a mesma chave. Se este armazém for configurado novamente, remover %4 esquecerá os IDs dos armazéns que este dispositivo conhece.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro armazém de palavras-passe (ID do armazém %2; este dispositivo conhece este armazém como %3) e não é utilizada. Poderá ter sido copiada para aqui de um armazém assinado com a mesma chave. Se, em vez disso, este armazém tiver sido configurado novamente, remover %4 esquece os IDs de armazém que este dispositivo conhece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -3293,7 +3293,7 @@ Continua?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">A configuração GPG definida em %1 não existe.</translation>
+        <translation type="unfinished">O diretório GPG configurado %1 não existe.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>

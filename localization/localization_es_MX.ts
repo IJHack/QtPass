@@ -204,7 +204,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Cada campo detrás del botón &quot;Ocultar&quot;, no solo los secretos: para compartir pantallas y presentaciones. Las notas debajo de los campos y el código OTP permanecen visibles; &quot;Ocultar contenido&quot; también oculta esos.</translation>
+        <translation type="unfinished">Cada campo detrás del botón con el icono de un ojo, no solo los secretos: para pantallas compartidas y presentaciones. Las notas debajo de los campos y el código OTP siguen visibles; &quot;Ocultar contenido&quot; también los oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cuando la tienda no tiene un repositorio Git propio, utilice el que esté en una carpeta superior. Desactivado por defecto, al igual que con &quot;pass&quot;, así que una tienda dentro de otro repositorio (por ejemplo, archivos dot) nunca se comprometerá ni se subirá accidentalmente. Solo para Git nativo: &quot;pass&quot; siempre termina en la tienda.</translation>
+        <translation type="unfinished">Cuando el almacén no tiene un repositorio Git propio, usar el de una carpeta superior. Desactivado por defecto, igual que en pass, para que un almacén dentro de otro repositorio (dotfiles, por ejemplo) nunca se confirme ni se suba ahí por error. Solo Git nativo: pass siempre se detiene en el almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1181,12 +1181,12 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">La lista incluye más de una tienda.</translation>
+        <translation type="unfinished">La lista contiene más de una línea de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">La cola de la tienda está mal formada: %1</translation>
+        <translation type="unfinished">La línea de almacén está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1221,7 +1221,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">La lista incluye una línea de &quot;guardar&quot;, pero no una línea de &quot;generar&quot;.</translation>
+        <translation type="unfinished">La lista contiene una línea de almacén, pero ninguna línea de generación.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1256,7 +1256,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">La lista de destinatarios firmados %1 no contiene ninguna línea de almacenamiento, mientras que este dispositivo conoce esa línea mediante su ID %2: podría haber sido escrita para otro almacenamiento y copiada aquí, o por una versión anterior de QtPass. Alguien que posea la clave de firma puede acceder abriendo &quot;Usuarios&quot;, seleccionando los destinatarios nuevamente y guardando, lo cual escribe la línea de almacenamiento.</translation>
+        <translation type="unfinished">La lista de destinatarios firmada %1 no contiene ninguna línea de almacén, mientras que este dispositivo conoce este almacén por su ID %2: puede haber sido escrita para otro almacén y copiada aquí, o por un QtPass más antiguo. Quien tenga la clave de firma lo resuelve abriendo &quot;Usuarios&quot;, seleccionando de nuevo los destinatarios y guardando, lo que escribe la línea de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1294,7 +1294,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La lista de destinatarios firmada %1 fue creada para otro gestor de contraseñas (ID del gestor: %2; este dispositivo lo reconoce como %3) y no se utiliza. Es posible que haya sido copiada aquí desde un gestor firmado con la misma clave. Si este gestor se configurara nuevamente, al eliminar %4, el dispositivo olvidará los IDs de los gestores que conoce.</translation>
+        <translation type="unfinished">La lista de destinatarios firmada %1 fue escrita para otro almacén de contraseñas (ID del almacén %2; este dispositivo conoce este almacén como %3) y no se usa. Es posible que haya sido copiada aquí desde un almacén firmado con la misma clave. Si, en cambio, este almacén fue configurado de nuevo, eliminar %4 hace que se olviden los ID de almacén que este dispositivo conoce.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

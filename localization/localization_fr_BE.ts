@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Lorsque le presse-papiers est effacé, rétablissez ce qui s&apos;y trouvait avant la copie, comme le fait &quot;pass -c&quot;, sauf si autre chose a été copié en même temps. Texte uniquement : la mise en forme n&apos;est pas restaurée. Ce texte reste dans la mémoire jusqu&apos;à ce que... Dans les cas où le presse-papiers ne peut être lu sans focus (certains bureaux Wayland), il est effacé à la place.</translation>
+        <translation type="unfinished">Lorsque le presse-papiers est effacé, rétablissez ce qui s&apos;y trouvait avant la copie, comme le fait &quot;pass -c&quot;, sauf si autre chose a été copié entre-temps. Texte uniquement : la mise en forme n&apos;est pas restaurée. Ce texte reste en mémoire jusque-là. Dans les cas où le presse-papiers ne peut être lu sans focus (certains bureaux Wayland), il est effacé à la place.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -285,7 +285,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Chaque champ derrière le bouton &quot;Ocul&quot;, et non seulement les secrets : pour les écrans partagés et la présentation. Les notes sous les champs, ainsi que le code OTP restent visibles ; &quot;Cacher&quot; cache également ces éléments.</translation>
+        <translation type="unfinished">Tous les champs derrière le bouton en forme d&apos;œil, et pas seulement les secrets : pour les écrans partagés et les présentations. Les notes sous les champs et le code OTP restent visibles ; &quot;Cacher le contenu&quot; les cache aussi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -508,7 +508,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass effectue des commits dans %1 vers le dépôt Git en %2 : avec un point-virgule dans le chemin, pass ne peut pas accéder au dépôt Git. Exécutez &quot;git init&quot; dans le dossier, ou utilisez Git/GPG Native.</translation>
+        <translation type="unfinished">pass commite les modifications de %1 dans le dépôt Git de %2 : avec un deux-points dans le chemin du magasin, pass ne peut pas limiter Git au magasin. Exécutez &quot;git init&quot; dans le magasin, ou utilisez Git/GPG natif.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1218,7 +1218,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">La ligne de commande est malformée : %1</translation>
+        <translation type="unfinished">La ligne de magasin est mal formée : %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1253,7 +1253,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">La liste contient une ligne &quot;magasin&quot;, mais aucune ligne &quot;génération&quot;.</translation>
+        <translation type="unfinished">La liste contient une ligne de magasin mais aucune ligne de génération.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1288,7 +1288,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">La liste des destinataires signés %1 ne contient aucune ligne de stockage, tandis que cet appareil connaît cette ligne par son ID %2 : elle a peut-être été écrite pour un autre endroit et copiée ici, ou par une ancienne version du QtPass. La personne possédant la clé de signature peut accéder à cette information en ouvrant &quot;Utilisateurs&quot;, en sélectionnant les destinataires manuellement et en enregistrant, ce qui écrit la ligne de stockage.</translation>
+        <translation type="unfinished">La liste de destinataires signée %1 ne contient aucune ligne de magasin, alors que cet appareil connaît ce magasin par son ID %2 : elle a peut-être été écrite pour un autre magasin et copiée ici, ou par une ancienne version de QtPass. Un détenteur de la clé de signature règle cela en ouvrant Utilisateurs, en sélectionnant à nouveau les destinataires et en enregistrant, ce qui écrit la ligne de magasin.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1326,7 +1326,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La liste des destinataires signés %1 a été créée pour un autre gestionnaire de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous le nom %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici à partir d&apos;un magasin signé avec la même clé. Si ce magasin était réinstallé, supprimer %4 effacerait les ID des magasins que cet appareil connaît.</translation>
+        <translation type="unfinished">La liste de destinataires signée %1 a été écrite pour un autre magasin de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici depuis un magasin signé avec la même clé. Si ce magasin a plutôt été configuré à nouveau, supprimer %4 fait oublier les ID de magasin que cet appareil connaît.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -3009,7 +3009,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sauvé, mais pas enregistré</translation>
+        <translation type="unfinished">Enregistré, mais pas commité</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

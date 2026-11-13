@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">جب اسٹور کے پاس اپنا گٹ ریپازٹری نہ ہو، تو اس سے اوپر موجود ایک کو استعمال کریں۔ پیش فرض طور پر، جیسے کہ pass کی صورت میں، کسی اسٹور کو دوسری ریپازٹری (جیسے ڈاٹ فائیلز) کے اندر سے کبھی غلطی سے شامل یا منتقل نہیں کیا جاتا۔ صرف مقامی گٹ: pass ہمیشہ اسٹور تک ہی محدود رہتا ہے۔</translation>
+        <translation type="unfinished">جب اسٹور کی اپنی Git ریپازٹری نہ ہو تو اس سے اوپر کے فولڈر والی ریپازٹری استعمال کریں۔ طے شدہ طور پر بند، جیسا کہ pass میں ہے، تاکہ کسی دوسری ریپازٹری (مثلاً dotfiles) کے اندر موجود اسٹور کبھی غلطی سے وہاں کمٹ یا پش نہ ہو۔ صرف مقامی Git: pass ہمیشہ اسٹور پر رک جاتا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">جب کہ کلیب بورڈ صاف کیا جاتا ہے، تو اس پر پہلے جو کچھ تھا وہ واپس کر دیا جائے، جیسے pass -c کرتا ہے۔ اگر اس کے درمیان میں کوئی اور چیز کاپی کی گئی ہو، تو اسے نظر انداز کیا جائے۔ صرف متن: فارمیٹنگ بحال نہیں کی جاتی۔ یہ متن تک یاد رہتا ہے یہاں تک کہ۔ جہاں کلیب بورڈ کو فوکس کے بغیر پڑھا نہیں جا سکتا (بعض Wayland ڈیسک ٹاپ)، وہاں اسے صاف کر دیا جاتا ہے۔</translation>
+        <translation type="unfinished">جب کلپ بورڈ صاف کیا جائے تو اس پر کاپی سے پہلے جو کچھ تھا وہ واپس رکھ دیں، جیسے pass -c کرتا ہے، الا یہ کہ اس دوران کوئی اور چیز کاپی کی گئی ہو۔ صرف متن: فارمیٹنگ بحال نہیں ہوتی۔ وہ متن تب تک میموری میں رہتا ہے۔ جہاں کلپ بورڈ کو فوکس کے بغیر پڑھا نہیں جا سکتا (بعض Wayland ڈیسک ٹاپ)، وہاں اس کے بجائے اسے صاف کر دیا جاتا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">جب کہ پاس ورڈ سے متعلق کیفیوں کو بھی پوشیدہ کریں: ایک پرانی، جس کا نام ان میں سے کوئی ایک لفظ رکھتا ہے۔ بند: صرف پاس ورڈ پوشیدہ ہے۔</translation>
+        <translation type="unfinished">صرف پاس ورڈ ہی نہیں، وہ فیلڈز بھی چھپائیں جن میں کوئی راز ہو: یعنی وہ فیلڈ جس کے نام میں ان الفاظ میں سے کوئی ایک ہو۔ بند: صرف پاس ورڈ چھپایا جاتا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">ہر ایک پرانی</translation>
+        <translation type="unfinished">ہر فیلڈ چھپائیں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -1165,12 +1165,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">یہ فہرست ایک سے زیادہ دکانوں کی معلومات رکھتی ہے۔</translation>
+        <translation type="unfinished">فہرست میں ایک سے زیادہ اسٹور لائنیں ہیں۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">اس خط کی شکل درست نہیں ہے: %1</translation>
+        <translation type="unfinished">اسٹور لائن کی ساخت غلط ہے: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1205,7 +1205,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">یہ فہرست ایک ذخیرہ کا نشان رکھتی ہے، لیکن کوئی نیا ترتیب کا نشان نہیں۔</translation>
+        <translation type="unfinished">فہرست میں اسٹور لائن تو ہے مگر جنریشن لائن نہیں۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">دستخطی کلید سے تصدیق شدہ وصول کنندگان کی فہرست %1 میں کوئی ذخیرہ لائن نہیں ہے، جبکہ یہ ڈیوائس اس ID %2 کے ذریعے اسے جانتا ہے۔ ممکن ہے کہ یہ کسی اور ذخیرہ کے لیے بنائی گئی ہو اور یہاں کپی کردی گئی ہو، یا ایک پرانی qtpass کی طرف سے۔ دستخطی کلید کا مالک صارفین کو منتخب کر کے، نیا ترتیب بچا کر اور ذخیرہ لائن لکھ کر تک رسائی حاصل کرتا ہے۔</translation>
+        <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 میں کوئی اسٹور لائن نہیں ہے، جبکہ یہ ڈیوائس اس اسٹور کو اس کی ID %2 سے جانتی ہے: ہو سکتا ہے یہ کسی دوسرے اسٹور کے لیے لکھی گئی ہو اور یہاں کاپی کی گئی ہو، یا کسی پرانے QtPass نے لکھی ہو۔ دستخطی کلید کا حامل صارفین کھول کر، وصول کنندگان کو نئے سرے سے منتخب کر کے اور محفوظ کر کے یہ مسئلہ حل کر سکتا ہے، جس سے اسٹور لائن لکھ دی جاتی ہے۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>

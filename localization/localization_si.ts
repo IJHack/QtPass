@@ -569,7 +569,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">මුරපදය පමණක් නොව, රහස සහිත ක්ෂණික දත්ත අන්‍ය තබා ගන්න: එහි නමින් එකෙකු හෝ මෙම වදනයන් ඇත. ක්‍රියාත්මක නොකිරීම: මුරපදය පමණක් සඟවයි।</translation>
+        <translation type="unfinished">මුරපදය පමණක් නොව, රහසක් අඩංගු ක්ෂේත්‍ර ද සඟවන්න: නමෙහි මෙම වචනවලින් එකක් ඇති ක්ෂේත්‍රයක්. අක්‍රිය: මුරපදය පමණක් සැඟවේ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -584,7 +584,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">පහළින් ඇති සෑම ක්ෂණික තැනම සැඟවන්න</translation>
+        <translation type="unfinished">සෑම ක්ෂේත්‍රයක්ම සඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -1214,7 +1214,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">මෙය අසම්මිත ආකාරයෙන් දැක්වේ: %1</translation>
+        <translation type="unfinished">ගබඩා පේළියේ ආකෘතිය වැරදියි: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1675,7 +1675,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1, මුරපදය හෝ අනෙකුත් තොරතුරු, මුල් කරගත් පසු එහි ඇති සංකේතාත්මක ඊට සම්බන්ධතාවය හෝ කලාපය। එය යම් දෙසටද සලනය වන්නේ නැත. එමඟින් ලැබෙන තොරතුරු මුරපදය සඳහා වූ ගබඩා කොටස නොව, ඒ ආකාරයෙන්ම හැදී වැඩනු ලැබේ.</translation>
+        <translation type="unfinished">pull එකෙන් පසු %1 සංකේතාත්මක සබැඳියක් හෝ ජංක්ෂනයක් වේ, නැතහොත් එවැන්නක් පිටුපස පිහිටා ඇත. එය යොමු කරන දෙය මුරපද ගබඩාවේ කොටසක් නොවන අතර එලෙසම තබනු ලැබේ.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -3020,7 +3020,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">මෙය ගබඩා කර ඇත, නමුත් එය &quot;ජිට්&quot;-ට වාර්තා කිරීමට අසමර්ථ විය. වාර්තාවූයේ:
+        <translation type="unfinished">ඇතුළත් කිරීම ගබඩාවේ සුරැකී ඇත, නමුත් එය git හි සටහන් කිරීම අසාර්ථක විය. වාර්තා වූ දෙය:
 
 %1</translation>
     </message>

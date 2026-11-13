@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quan la botiga no té un repositori Git propi, utilitzeu-ne un que estigui a una carpeta superior. Desactivat per defecte, tal com passa amb pass, de manera que una botiga dins d&apos;un altre repositori (per exemple, els fitxers .dotfiles) mai s&apos;commitarà ni es pujarà accidentalment. Només Git nativa: pass sempre s&apos;atura a la botiga.</translation>
+        <translation type="unfinished">Quan el magatzem no té un repositori Git propi, s&apos;utilitza el d&apos;una carpeta superior. Desactivat per defecte, com amb pass, de manera que un magatzem dins d&apos;un altre repositori (dotfiles, per exemple) mai no s&apos;hi confirma ni s&apos;hi puja per error. Només Git natiu: pass sempre s&apos;atura al magatzem.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">La llista inclou més d&apos;una entrada de botiga.</translation>
+        <translation type="unfinished">La llista conté més d&apos;una línia de magatzem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">La línia de la botiga està malformada: %1</translation>
+        <translation type="unfinished">La línia de magatzem té un format incorrecte: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">La llista inclou una opció per guardar, però no per generar.</translation>
+        <translation type="unfinished">La llista conté una línia de magatzem però cap línia de generació.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">La llista de destinataris signats %1 no inclou cap línia d&apos;emmagatzemat, mentre que aquest dispositiu la coneix per la seva ID %2: pot ser que s&apos;hagi creat per un altre emmagatzemat i es hagi copiat aquí, o per una versió anterior de QtPass. Un usuari amb la clau de signatura accedeix obrint Usuaris, seleccionant els destinataris de nou i guardant, cosa que escriu la línia d&apos;emmagatzemat.</translation>
+        <translation type="unfinished">La llista de destinataris signada %1 no conté cap línia de magatzem, mentre que aquest dispositiu coneix aquest magatzem pel seu ID %2: pot ser que s&apos;hagi escrit per a un altre magatzem i s&apos;hagi copiat aquí, o que l&apos;hagi escrit un QtPass més antic. Un posseïdor de la clau de signatura ho resol obrint Usuaris, seleccionant de nou els destinataris i desant, cosa que escriu la línia de magatzem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">El %1 no està dins del dipòsit de contrasenyes, ni un nom de carpeta conté una ruptura de línia o un altre caràcter de control, que una llista signada no pot registrar.</translation>
+        <translation type="unfinished">%1 no és dins del magatzem de contrasenyes, o bé un nom de carpeta del camí conté un salt de línia o un altre caràcter de control, que una llista signada no pot registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>

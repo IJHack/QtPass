@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">যখন স্টোরটির নিজস্ব কোনো গিট রিপোজিটরি থাকে না, তখন এর উপরের ফোল্ডারের রিপোজিটরি ব্যবহার করুন। ডিফল্টভাবে বন্ধ করা থাকবে, কারণ pass-এর মতো, তাই অন্য রিপোজিটরির (যেমন ডটফাইল) মধ্যে থাকা স্টোরটিকে ভুল করে কমিট বা পুশ করা হবে না। শুধুমাত্র স্থানীয় গিট: pass সবসময় স্টোরের মধ্যেই থেমে থাকে।</translation>
+        <translation type="unfinished">যখন স্টোরটির নিজস্ব কোনো Git রিপোজিটরি থাকে না, তখন এর উপরের ফোল্ডারের রিপোজিটরিটি ব্যবহার করুন। pass-এর মতোই ডিফল্টভাবে বন্ধ, যাতে অন্য রিপোজিটরির (যেমন dotfiles) মধ্যে থাকা স্টোর কখনো ভুল করে সেখানে কমিট বা পুশ না হয়। শুধুমাত্র নেটিভ Git: pass সবসময় স্টোরেই থেমে যায়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">ক্লিপবোর্ড পরিষ্কার করার পরে, যদি অন্য কিছু কপি করা না হয়ে থাকে, তাহলে পূর্বের লেখাটি ফিরিয়ে আনুন, যেমন &quot;pass -c&quot; করে। টেক্সট: ফরম্যাটিং পুনরুদ্ধার করা হয়নি। এই টেক্সট মেমরিতে ততক্ষণ পর্যন্ত থাকবে যতক্ষণ না আপনি এটি মুছে ফেলেন। যেখানে ক্লিপবোর্ডকে ফোকাস ছাড়া পড়া সম্ভব নয় (কিছু Wayland ডেস্কটপ), সেখানে সেটি পরিষ্কার করে দেওয়া হয়।</translation>
+        <translation type="unfinished">ক্লিপবোর্ড পরিষ্কার করার সময়, কপি করার আগে তাতে যা ছিল তা ফিরিয়ে আনুন, যেমন pass -c করে, যদি না এর মধ্যে অন্য কিছু কপি করা হয়ে থাকে। শুধুমাত্র টেক্সট: ফরম্যাটিং পুনরুদ্ধার করা হয় না। সেই সময় পর্যন্ত এই টেক্সট মেমরিতে থাকে। যেখানে ফোকাস ছাড়া ক্লিপবোর্ড পড়া যায় না (কিছু Wayland ডেস্কটপ), সেখানে এর বদলে সেটি পরিষ্কার করা হয়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -1165,12 +1165,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">এই তালিকায় একাধিক স্টোরের তথ্য রয়েছে।</translation>
+        <translation type="unfinished">এই তালিকায় একাধিক স্টোর লাইন রয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">দোকানের লাইনটি ভুলভাবে গঠিত: %1</translation>
+        <translation type="unfinished">স্টোর লাইনটি ভুলভাবে গঠিত: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">স্বাক্ষরকৃত প্রাপকদের তালিকা %1-এ কোনো স্টোর লাইন নেই, যেখানে এই ডিভাইসটি এটির আইডি %2 দিয়ে স্টোরটি সনাক্ত করে। এটি অন্য কোনো স্থানে লেখা হয়ে এখানে কপি করা হয়েছে, অথবা পুরোনো ক্যাটপস দ্বারা। যার কাছে স্বাক্ষর কী আছে, সে ব্যবহারকারীদের নির্বাচন করে পুনরায় সংরক্ষণ করার মাধ্যমে প্রবেশ করতে পারে, যা স্টোর লাইন লিখতে পারে।</translation>
+        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো স্টোর লাইন নেই, অথচ এই ডিভাইসটি এই স্টোরকে এর আইডি %2 দিয়ে চেনে: এটি হয়তো অন্য কোনো স্টোরের জন্য লেখা হয়ে এখানে কপি করা হয়েছে, অথবা পুরোনো QtPass দিয়ে লেখা। স্বাক্ষর কী-র ধারক &quot;ব্যবহারকারীরা&quot; খুলে, প্রাপকদের নতুন করে নির্বাচন করে এবং সংরক্ষণ করে এগিয়ে যেতে পারেন, যা স্টোর লাইনটি লিখে দেয়।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 অন্য কোনো পাসওয়ার্ড সংরক্ষণের জন্য লেখা হয়েছে (সংরক্ষণ আইডি %2; এই ডিভাইসটি এটিকে %3 নামে জানে) এবং এটি ব্যবহার করা হচ্ছে না। এটি সম্ভবত একই কী দিয়ে সাইন করা অন্য কোনো স্থান থেকে এখানে কপি করা হয়েছে। যদি এই সংরক্ষণটি পুনরায় সেট করা হয়, তাহলে মুছে ফেলা %4 এর ফলে এই ডিভাইসটি যে সংরক্ষণ আইডিগুলি জানে সেগুলি ভুলে যাবে।</translation>
+        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 অন্য একটি পাসওয়ার্ড স্টোরের জন্য লেখা হয়েছে (স্টোর আইডি %2; এই ডিভাইসটি এই স্টোরকে %3 নামে জানে) এবং এটি ব্যবহার করা হচ্ছে না। এটি হয়তো একই কী দিয়ে স্বাক্ষরিত কোনো স্টোর থেকে এখানে কপি করা হয়েছে। যদি এর বদলে এই স্টোরটি নতুন করে সেট আপ করা হয়ে থাকে, তাহলে %4 সরিয়ে দিলে এই ডিভাইসের জানা স্টোর আইডিগুলি মুছে যায়।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1476,7 +1476,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">পাসওয়ার্ড সংরক্ষণে %1 এর অবস্থান ভুল, অথবা কোনো ফোল্ডারের নাম বা পথের মধ্যে যদি একটি লাইন ব্রেক বা অন্য কোনো কন্ট্রোল ক্যারেক্টার থাকে, যা একটি সাইন করা তালিকা দ্বারা সংরক্ষণ করা যায় না।</translation>
+        <translation type="unfinished">%1 পাসওয়ার্ড স্টোরের ভিতরে নেই, অথবা পথের কোনো ফোল্ডারের নামে একটি লাইন ব্রেক বা অন্য কোনো কন্ট্রোল ক্যারেক্টার রয়েছে, যা একটি স্বাক্ষরিত তালিকা ধারণ করতে পারে না।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>

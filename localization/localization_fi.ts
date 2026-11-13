@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Kaikki kentät silmäpainen takana, ei vain salaisuudet: jaettujen näyttöjen ja esittelyjen käyttöön. Kenttien alla olevat muistiinpanot ja OTP-koodi pysyvät näkyvillä; &quot;Piilota sisältö&quot; piilottaa myös ne.</translation>
+        <translation type="unfinished">Kaikki kentät silmäpainikkeen takana, ei vain salaisuudet: jaettujen näyttöjen ja esittelyjen käyttöön. Kenttien alla olevat muistiinpanot ja OTP-koodi pysyvät näkyvillä; &quot;Piilota sisältö&quot; piilottaa myös ne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kun myymälällä ei ole omaa Git-repositoriota, käytä sitä yläpuolella olevassa kansiossa. Oletuksena pois päältä, kuten passin kanssa, joten myymälä toisessa repositoriossa (esimerkiksi dotfiles) ei vahingossa koskaan commitoida tai pushata sinne. Vain natiivi Git: pass pysähtyy aina myymälään.</translation>
+        <translation type="unfinished">Kun salasanavarastolla ei ole omaa Git-tietovarastoa, käytetään sen yläpuolella olevan kansion Git-tietovarastoa. Oletuksena pois päältä, kuten passissa, jotta toisen tietovaraston (esimerkiksi dotfiles) sisällä olevaa salasanavarastoa ei koskaan vahingossa commitoida tai viedä sinne. Vain natiivi Git: pass pysähtyy aina salasanavarastoon.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1209,12 +1209,12 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Luettelossa on useampi kuin yksi myymälä.</translation>
+        <translation type="unfinished">Luettelossa on useampi kuin yksi varastorivi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Kaupan rivi on virheellinen: %1</translation>
+        <translation type="unfinished">Varastorivi on muodoltaan virheellinen: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Luettelossa on kauppalinja, mutta ei luontilinja.</translation>
+        <translation type="unfinished">Luettelossa on varastorivi mutta ei sukupolviriviä.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Allekirjoitetun vastaanottajien luettelo %1 ei sisällä säilytysriviä, kun taas tämä laite tunnistaa sen ID:n avulla %2: se on voinut olla kirjoitettu toiselle säilytykselle ja kopioitu tänne, tai vanhemmalle qtPass-versiolle. Allekirjoitusavaimen haltija pääsee käsiksi avaamalla Käyttäjät, valitsemalla vastaanottajat uudelleen ja tallentamalla, mikä luo säilytysrivin.</translation>
+        <translation type="unfinished">Allekirjoitetussa vastaanottajaluettelossa %1 ei ole varastoriviä, vaikka tämä laite tuntee tämän varaston tunnisteella %2: luettelo on voitu kirjoittaa toista varastoa varten ja kopioida tänne, tai sen on kirjoittanut vanhempi QtPass. Allekirjoitusavaimen haltija pääsee eteenpäin avaamalla Käyttäjät, valitsemalla vastaanottajat uudelleen ja tallentamalla, jolloin varastorivi kirjoitetaan.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Alkuperäisen vastaanottajan luettelo %1 on kirjoitettu toiselle salasanan tallennuspaikalle (tallennuspaikan ID %2; tämä laite tunnistaa tämän tallennuspaikan nimellä %3) ja sitä ei käytetä. Se on voitu kopioida tänne samalla avaimella allekirjoitetusta tallennuspaikalta. Jos tämä tallennuspaikka asetetaan uudelleen, poistamalla %4, laite unohtaa kaikki sen tunnisteet.</translation>
+        <translation type="unfinished">Allekirjoitettu vastaanottajaluettelo %1 on kirjoitettu toista salasanavarastoa varten (varaston tunniste %2; tämä laite tuntee tämän varaston tunnisteella %3), eikä sitä käytetä. Se on voitu kopioida tänne samalla avaimella allekirjoitetusta varastosta. Jos tämä varasto on sen sijaan luotu uudelleen, kohteen %4 poistaminen unohtaa tämän laitteen tuntemat varastotunnisteet.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1675,7 +1675,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 on, tai piiloutuu symbolisen linkin tai solmun jälkeen. Se osoittaa ei ole osa salasanojen tallennusta ja jätetään sellaisenaan.</translation>
+        <translation type="unfinished">%1 on pullin jälkeen symbolinen linkki tai liitospiste tai sijaitsee sellaisen takana. Sen kohde ei ole osa salasanavarastoa, eikä siihen kosketa.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2043,7 +2043,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Nimi ja salasana eivät saa sisältää rivivälejä.</translation>
+        <translation type="unfinished">Nimi ja salasana eivät saa sisältää rivinvaihtoja.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

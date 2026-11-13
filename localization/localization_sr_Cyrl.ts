@@ -531,7 +531,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Када се клипборд очисти, вратите оно што је било на њему пре копирања, као и што то ради опција &quot;pass -c&quot;, освен ако ништа друго није копирано у међувремену. Текст само: форматирање није враћено. То је остало у меморији до тада. Где клипборд не може да се прочита без фокуса (неки Wayland десктопи), он се очисти уместо тога.</translation>
+        <translation type="unfinished">Када се клипборд очисти, враћа се оно што је било на њему пре копирања, као што то ради pass -c, осим ако је у међувремену копирано нешто друго. Само текст: форматирање се не враћа. Тај текст до тада остаје у меморији. Тамо где клипборд не може да се прочита без фокуса (неке Wayland радне површине), он се уместо тога само чисти.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -557,7 +557,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Скриј поља која чувају и други тајни подаци, а не само лозинку: поље чије име садржи један од ових речи. Истина: само лозинка је скривена.</translation>
+        <translation type="unfinished">Сакриј и поља која садрже тајну, а не само лозинку: поље чији назив садржи једну од ових речи. Искључено: сакрива се само лозинка.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -572,12 +572,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Скриј сва поља</translation>
+        <translation type="unfinished">Сакриј сва поља</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Сва поља иза дугмета &quot;око&quot;, а не само тајне: за сподељене екране и презентације. Белешке испод поља, као и ОТП код остају видљиве; опција &quot;Скриј садржај&quot; такође скрива оне.</translation>
+        <translation type="unfinished">Сва поља иза дугмета са оком, а не само тајне: за дељене екране и презентације. Белешке испод поља и OTP код остају видљиви; &quot;Сакриј садржај&quot; сакрива и њих.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -597,7 +597,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Када складиште нема сопствени Git репозиторијум, користите онај у фасцикли изнад њега. Неактивирано по подрему, као и код pass-а, тако да складиште унутар другог репозиторијума (нпр., .dotfiles) никад неће бити погрешно коммитовано или &quot;пушено&quot;. Само Git: pass увек стаје на нивоу складишта.</translation>
+        <translation type="unfinished">Када складиште нема сопствени Git репозиторијум, користи се онај у фасцикли изнад њега. Подразумевано искључено, као и код програма pass, тако да складиште унутар другог репозиторијума (на пример dotfiles) никада грешком не буде тамо уписано или послато. Само изворни Git: pass се увек зауставља на складишту.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -706,7 +706,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass уписује измене у %1 у Git репозиторијум у %2: са двотачком у путањи складишта, pass не може да ограничи Git на складиште. Покрените &quot;git init&quot; у складишту, или користите Изворни Гит/ГПГ.</translation>
+        <translation type="unfinished">pass уписује измене у %1 у Git репозиторијум у %2: са двотачком у путањи складишта, pass не може да ограничи Git на складиште. Покрените &quot;git init&quot; у складишту, или користите изворни Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1198,12 +1198,12 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Списак садржи више од једног елемента.</translation>
+        <translation type="unfinished">Листа садржи више од једног реда складишта.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Линија &quot;Складиште&quot; је неправилна: %1</translation>
+        <translation type="unfinished">Ред складишта је неисправан: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1238,7 +1238,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Листа садржи ред са информацијом о складишту, али не и ред за генерисање.</translation>
+        <translation type="unfinished">Листа садржи ред складишта, али не и ред генерације.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1273,7 +1273,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Листа потписаних прималаца %1 нема ред за чување, док ова уређај познаје ово складиште преко његовог ИД-а %2: можда је била записана за друго складиште и копирана овде, или од стране старије верзије qtPass. Корисник који поседује кључ за потписивање може да приступи тако што ће отворити Кориснике, поново бирати примаоце и чувати, што ће записати ред за складиште.</translation>
+        <translation type="unfinished">Потписана листа прималаца %1 не садржи ред складишта, док овај уређај познаје ово складиште по његовом ИД-у %2: можда је написана за друго складиште и копирана овде, или ју је написао старији QtPass. Власник кључа за потписивање може да настави тако што отвори &quot;Корисници&quot;, поново изабере примаоце и сачува, чиме се уписује ред складишта.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1311,7 +1311,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Списак потписаних прималаца %1 је писан за друго складиште лозинки (ИД складишта %2; овај уређај зна ово складиште као %3) и није у употреби. Можда је копиран овде из складишта које је потписано истим кључем. Ако ово складиште буде поново креирано, брисање %4 ће заборавити ИД-ове који овај уређај зна.</translation>
+        <translation type="unfinished">Потписана листа прималаца %1 написана је за друго складиште лозинки (ИД складишта %2; овај уређај познаје ово складиште као %3) и не користи се. Можда је копирана овде из складишта потписаног истим кључем. Ако је уместо тога ово складиште поново подешено, уклањање %4 брише ИД-ове складишта које овај уређај познаје.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1401,7 +1401,7 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 није у складу са лозинком, или име фасцикле на пути садржи кратку линију или други управљачки карактер, које потписана листа не може да региструје.</translation>
+        <translation type="unfinished">%1 није унутар складишта лозинки, или назив фасцикле на путањи садржи прелом реда или други контролни знак, који потписана листа не може да забележи.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -2036,7 +2036,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Име и лозинка не сме да садрже размачке.</translation>
+        <translation type="unfinished">Име и лозинка не смеју да садрже преломе редова.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

@@ -1274,7 +1274,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">ਸਹੀ ਕੀਤੇ ਗਏ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਇੱਕ ਹੋਰ ਪਾਸਵਰਡ ਸਟੋਰ ਲਈ ਲਿਖਿਆ ਗਿਆ ਸੀ (ਸਟੋਰ ID %2; ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ %3 ਵਜੋਂ ਜਾਣਦਾ ਹੈ) ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਇਹ ਸੰਭਵ ਹੈ ਕਿ ਇਹ ਇੱਕੋ ਛੋਲ ਨਾਲ ਦਬਾਏ ਗਏ ਸਟੋਰ ਤੋਂ ਅੱਥੀਆ ਕੀਤਾ ਗਿਆ ਸੀ। ਜੇਕਰ ਇਸ ਸਟੋਰ ਨੂੰ ਮੁੜ ਤੋਂ ਲਾਇਆ ਗਿਆ, ਤਾਂ %4 ਨੂੰ ਹਟਾਉਣ ਨਾਲ, ਇਹ ਡਿਵਾਈਸ ਜਾਣਦਾ ਹੋਇਆ ਸਟੋਰ ID ਖੁੰਝ ਜਾਂਦੇ ਹਨ।</translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਕਿਸੇ ਹੋਰ ਪਾਸਵਰਡ ਸਟੋਰ ਲਈ ਲਿਖੀ ਗਈ ਸੀ (ਸਟੋਰ ID %2; ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ %3 ਵਜੋਂ ਜਾਣਦਾ ਹੈ) ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਸਨੂੰ ਉਸੇ ਕੁੰਜੀ ਨਾਲ ਦਸਤਖਤ ਕੀਤੇ ਕਿਸੇ ਸਟੋਰ ਤੋਂ ਇੱਥੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ ਹੋਵੇ। ਜੇਕਰ ਇਸਦੀ ਬਜਾਏ ਇਹ ਸਟੋਰ ਮੁੜ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਸੀ, ਤਾਂ %4 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਸਟੋਰ ID ਭੁੱਲ ਜਾਂਦੇ ਹਨ ਜੋ ਇਹ ਡਿਵਾਈਸ ਜਾਣਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

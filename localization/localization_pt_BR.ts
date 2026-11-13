@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Lixeira restaurada</translation>
+        <translation type="unfinished">Área de transferência restaurada</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Todos os campos atrás do botão &quot;Olhar&quot;, não apenas os segredos: para telas compartilhadas e apresentações. As notas abaixo dos campos e o código OTP permanecem visíveis; &quot;Ocultar conteúdo&quot; também os esconde.</translation>
+        <translation type="unfinished">Todos os campos atrás do botão do olho, não apenas os segredos: para telas compartilhadas e apresentações. As notas abaixo dos campos e o código OTP permanecem visíveis; &quot;Ocultar conteúdo&quot; também os oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -568,7 +568,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando a loja não possui um repositório Git próprio, utilize o repositório de uma pasta acima. Desativado por padrão, assim como o pass, para que uma loja dentro de outro repositório (por exemplo, dotfiles) nunca seja commitada ou enviada para lá acidentalmente. Apenas Git nativo: o pass sempre termina na loja.</translation>
+        <translation type="unfinished">Quando o repositório de senhas não tem um repositório Git próprio, usar o que está em uma pasta acima dele. Desativado por padrão, como no pass, para que um repositório de senhas dentro de outro repositório Git (dotfiles, por exemplo) nunca receba commit ou push lá por engano. Apenas Git nativo: o pass sempre para no repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1189,12 +1189,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">A lista contém mais de uma entrada de loja.</translation>
+        <translation type="unfinished">A lista contém mais de uma linha do repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">A linha de compra está mal formatada: %1</translation>
+        <translation type="unfinished">A linha do repositório de senhas está malformada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1229,7 +1229,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">A lista inclui uma linha de &quot;loja&quot;, mas não uma linha de &quot;geração&quot;.</translation>
+        <translation type="unfinished">A lista contém uma linha do repositório de senhas, mas nenhuma linha de geração.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1264,7 +1264,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">A lista de destinatários assinados %1 não contém nenhuma linha de armazenamento, enquanto este dispositivo reconhece essa linha pelo seu ID %2: pode ter sido escrita para outro local e copiada aqui, ou por uma versão mais antiga do QtPass. Quem possui a chave de assinatura consegue acessar abrindo &quot;Usuários&quot;, selecionando os destinatários novamente e salvando, o que escreve a linha de armazenamento.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha do repositório de senhas, embora este dispositivo conheça este repositório pelo ID %2: ela pode ter sido escrita para outro repositório e copiada para cá, ou por um QtPass mais antigo. Quem possui a chave de assinatura resolve isso abrindo &quot;Usuários&quot;, selecionando os destinatários novamente e salvando, o que grava a linha do repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro gerenciador de senhas (ID do armazenamento %2; este dispositivo reconhece este armazenamento como %3) e não está sendo utilizada. Talvez tenha sido copiada aqui a partir de um armazenamento assinado com a mesma chave. Se este armazenamento for configurado novamente, remover %4 fará com que o dispositivo esqueça os IDs de armazenamentos que ele conhece.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro repositório de senhas (ID do repositório %2; este dispositivo conhece este repositório como %3) e não é utilizada. Talvez tenha sido copiada para cá a partir de um repositório assinado com a mesma chave. Se, em vez disso, este repositório tiver sido configurado novamente, remover %4 faz o dispositivo esquecer os IDs de repositórios que ele conhece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

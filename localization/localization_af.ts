@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Wanneer die knipbord grens, plaas dit weer wat daar voor was, soos pass -c doen, tensy iets anders intussen gekopieer is. Tekst slegs: vormatering word nie herstel nie. Hierdie teks bly in geheue tot dan. Waar die knipbord sonder fokus nie leesbaar is (sommige Wayland skriveoppervelle), word dit intoe grens.</translation>
+        <translation type="unfinished">Wanneer die knipbord leeggemaak word, plaas terug wat voor die kopiëring daarop was, soos pass -c doen, tensy iets anders intussen gekopieer is. Slegs teks: formatering word nie herstel nie. Daardie teks bly tot dan in die geheue. Waar die knipbord nie sonder fokus gelees kan word nie (sommige Wayland-werkskerms), word dit eerder leeggemaak.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wanneer die opslag geen eie Git-repositorie het, gebruik dan die een in &apos;n lêergids bo-oor. Uit as standaard, soos met pass, wat beteken dat &apos;n opslag binne &apos;n ander repositorie (soos .dotfiles) nooit per ongeluk daar opgespoor of na gedruk word nie. Slegs Inheemse Git: pass stop altyd by die opslag.</translation>
+        <translation type="unfinished">Wanneer die stoor geen eie Git-repositorie het nie, gebruik die een in &apos;n lêergids daarbo. By verstek af, soos met pass, sodat &apos;n stoor binne &apos;n ander repositorie (byvoorbeeld dotfiles) nooit per ongeluk daar gecommit of gepush word nie. Slegs inheemse Git: pass stop altyd by die stoor.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 teken met dieselfde sleutel vir &apos;n ander opsie. &apos;n Lys van ontvangers wat een van hierdie opsies geteken het, word in die ander ontvang: gebruik &apos;n aparte ondertekeningsleutel vir elke opsie waarvan die ontvangers verskil.</translation>
+        <translation type="unfinished">%1 teken met dieselfde sleutel vir &apos;n ander wagwoordstoor. &apos;n Ontvangerslys wat vir een van hierdie store geteken is, word in die ander aanvaar: gebruik &apos;n aparte ondertekeningsleutel vir elke stoor waarvan die ontvangers verskil.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1209,12 +1209,12 @@ e-pos</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Die lys bevat meer as een opsie.</translation>
+        <translation type="unfinished">Die lys bevat meer as een stoorreël.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Die &quot;Stoor&quot;-lyn is foutief: %1</translation>
+        <translation type="unfinished">Die stoorreël is misvorm: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-pos</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Die lys bevat &apos;n &quot;Stoor&quot;-lyn, maar geen &quot;Genereer&quot;-lyn nie.</translation>
+        <translation type="unfinished">Die lys bevat &apos;n stoorreël, maar geen generasiereël nie.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-pos</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Die lys met die ondertekenende ontvanger, %1, bevat geen &quot;Stoor&quot;-lyn, terwyl hierdie toestel dit ken deur sy ID %2: dit is moontlik dat dit vir &apos;n ander &quot;Stoor&quot; geskep is en hier kopieer is, of deur &apos;n ouer QtPass. Die persoon wat die ondertekeningsleutel besit, kan voortgaan deur &quot;Gebruikers&quot; oop te maak, die ontvangers nuut te kies en te &quot;Stoor&quot;, wat die &quot;Stoor&quot;-lyn skryf.</translation>
+        <translation type="unfinished">Die ondertekende ontvangerslys %1 bevat geen stoorreël nie, terwyl hierdie toestel hierdie stoor aan sy ID %2 ken: dit is moontlik vir &apos;n ander stoor geskryf en hierheen gekopieer, of deur &apos;n ouer QtPass geskryf. &apos;n Houer van die ondertekeningsleutel kom verby deur Gebruikers oop te maak, die ontvangers opnuut te kies en te stoor, wat die stoorreël skryf.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-pos</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Die lys met die ondertekenende ontvanger %1 is geskep vir &apos;n ander wagwoordstoor (ID van die toor: %2; hierdie toestel ken hierdie toor as %3) en word nie gebruik nie. Dit kan kopieer van &apos;n toor gewees wat met dieselfde sleutel onderteken is. As hierdie toor intoe gestel word, sal verwydering van %4 die ID&apos;s wat hierdie toestel ken, vergeet.</translation>
+        <translation type="unfinished">Die ondertekende ontvangerslys %1 is vir &apos;n ander wagwoordstoor geskryf (stoor-ID %2; hierdie toestel ken hierdie stoor as %3) en word nie gebruik nie. Dit is moontlik hierheen gekopieer uit &apos;n stoor wat met dieselfde sleutel onderteken is. As hierdie stoor eerder opnuut opgestel is, laat die verwydering van %4 hierdie toestel die stoor-ID&apos;s vergeet wat dit ken.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -3060,7 +3060,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Gestoor, nie opgespeicher nie</translation>
+        <translation type="unfinished">Gestoor, nie gecommit nie</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

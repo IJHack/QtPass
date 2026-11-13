@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cando a tendencia non ten un repositorio Git propio, utiliza aquel que se atope nunha carpeta superior. Desactivado por defecto, tal como pasa co &quot;pass&quot;, polo que unha tendencia dentro doutro repositorio (por exemplo, os arquivos .dotfiles) nunca será commiteada ou enviada por error. Git nativo só: o &quot;pass&quot; sempre remata na tendencia.</translation>
+        <translation type="unfinished">Cando o almacén non ten un repositorio Git propio, usar o que estea nunha carpeta superior. Desactivado por defecto, como en pass, para que un almacén dentro doutro repositorio (por exemplo, dotfiles) nunca se confirme nin se envíe alí por erro. Só Git nativo: pass sempre se detén no almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Todos os campos detrás do botón &quot;Ocultar&quot;, non só os segredos: para pantallas compartidas e presentacións. As notas baixo os campos e o código OTP quedan visibles; &quot;Ocultar contido&quot; tamén oculta estes.</translation>
+        <translation type="unfinished">Todos os campos detrás do botón do ollo, non só os segredos: para pantallas compartidas e presentacións. As notas baixo os campos e o código OTP quedan visibles; &quot;Ocultar contido&quot; tamén os oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 asina coa mesma clave para outro servizo. Unha lista de destinatarios asinada para un destes servizos é aceptada no outro: usa unha clave de sinatura diferente para cada servizo, cuxos destinatarios sexan diferentes.</translation>
+        <translation type="unfinished">%1 asina coa mesma clave para outro almacén. Unha lista de destinatarios asinada para un destes almacéns acéptase no outro: use unha clave de sinatura distinta para cada almacén cuxos destinatarios sexan diferentes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1236,12 +1236,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">A lista ten máis dunha entrada de tenda.</translation>
+        <translation type="unfinished">A lista contén máis dunha liña de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">A liña de almacenamento está mal formada: %1</translation>
+        <translation type="unfinished">A liña de almacén está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1276,7 +1276,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">A lista ten unha liña de &quot;comprar&quot;, pero non unha liña de &quot;xerar&quot;.</translation>
+        <translation type="unfinished">A lista ten unha liña de almacén, pero non unha liña de xeración.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1311,7 +1311,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">A lista de destinatarios asinados %1 non ten unha liña de almacenamento, mentres que este dispositivo coñece esta almacenaxe polas súas ID %2: pode ser que se escribira para outra almacenaxe e copiara aquí, ou por un QtPass máis antigo. Un titular da clave de sinatura accede abrindo Usuarios, seleccionando os destinatarios de novo e guardando, o que escribe a liña de almacenamento.</translation>
+        <translation type="unfinished">A lista de destinatarios asinada %1 non ten liña de almacén, mentres que este dispositivo coñece este almacén polo seu ID %2: puido escribirse para outro almacén e copiarse aquí, ou escribiuna un QtPass máis antigo. Un titular da clave de sinatura resólveo abrindo Usuarios, seleccionando de novo os destinatarios e gardando, o que escribe a liña de almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1349,7 +1349,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">A lista de destinatarios asinados %1 foi escrita para outro sistema de almacenamento (ID do sistema %2; este dispositivo coñece este sistema como %3) e non se utiliza. Podería ter sido copiada aquí desde un sistema asinado con a mesma clave. Se este sistema for configurado novamente, eliminar %4 esquecerá os IDs dos sistemas que este dispositivo coñece.</translation>
+        <translation type="unfinished">A lista de destinatarios asinada %1 escribiuse para outro almacén de contrasinais (ID do almacén %2; este dispositivo coñece este almacén como %3) e non se usa. Puido copiarse aquí desde un almacén asinado coa mesma clave. Se en cambio este almacén se configurou de novo, eliminar %4 esquece os ID de almacén que este dispositivo coñece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

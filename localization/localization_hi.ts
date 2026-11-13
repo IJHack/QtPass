@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">जब स्टोर के पास अपना कोई Git रिपॉजिटरी न हो, तो ऊपर वाले फ़ोल्डर में मौजूद एक का उपयोग करें। डिफ़ॉल्ट रूप से बंद, क्योंकि pass की तरह, इसलिए किसी दूसरे रिपॉजिटरी (जैसे डॉटर) के अंदर का स्टोर गलती से कभी कमिट या पुश नहीं होता है। केवल नेटिव Git: pass हमेशा स्टोर पर ही रुकता है।</translation>
+        <translation type="unfinished">जब स्टोर के पास अपनी कोई Git रिपॉजिटरी न हो, तो उसके ऊपर वाले फ़ोल्डर में मौजूद रिपॉजिटरी का उपयोग करें। pass की तरह ही डिफ़ॉल्ट रूप से बंद, ताकि किसी दूसरी रिपॉजिटरी (जैसे dotfiles) के अंदर का स्टोर गलती से कभी वहाँ कमिट या पुश न हो। केवल नेटिव Git: pass हमेशा स्टोर पर ही रुकता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass %1 में किए गए बदलावों को %2 की Git रिपॉजिटरी में कमिट करता है: स्टोर के पथ में कोलन होने पर pass, Git को स्टोर तक सीमित नहीं रख सकता। स्टोर में &quot;git init&quot; चलाएँ, या नेटिव गिट/जीपीजी का उपयोग करें।</translation>
+        <translation type="unfinished">pass %1 में किए गए बदलावों को %2 की Git रिपॉजिटरी में कमिट करता है: स्टोर के पथ में कोलन होने पर pass, Git को स्टोर तक सीमित नहीं रख सकता। स्टोर में &quot;git init&quot; चलाएँ, या नेटिव Git/GPG का उपयोग करें।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">हस्ताक्षरकर्ता की सूची %1 में कोई स्टोर लाइन नहीं है, जबकि यह डिवाइस इस स्टोर को उसके आईडी %2 से पहचानता है: संभवतः इसे किसी अन्य स्टोर के लिए लिखा गया था और यहां कॉपी किया गया था, या किसी पुराने QtPass द्वारा। हस्ताक्षर कुंजी धारक &quot;उपयोगकर्ता&quot; खोलकर, फिर नए रूप से प्राप्तकर्ताओं का चयन करके और सहेजकर काम पूरा करता है, जिससे स्टोर लाइन लिखी जाती है।</translation>
+        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 में कोई स्टोर लाइन नहीं है, जबकि यह डिवाइस इस स्टोर को उसकी आईडी %2 से पहचानता है: संभवतः इसे किसी अन्य स्टोर के लिए लिखा गया था और यहाँ कॉपी किया गया था, या किसी पुराने QtPass द्वारा लिखा गया था। हस्ताक्षर कुंजी का धारक &quot;उपयोगकर्ता&quot; खोलकर, प्राप्तकर्ताओं को नए सिरे से चुनकर और सहेजकर आगे बढ़ सकता है, जिससे स्टोर लाइन लिखी जाती है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 किसी अन्य पासवर्ड भंडार के लिए लिखी गई थी (भंडार आईडी %2; यह डिवाइस इस भंडार को %3 के रूप में जानता है) और इसका उपयोग नहीं किया जा रहा है। संभवतः इसे उसी कुंजी से हस्ताक्षरित एक भंडार से कॉपी किया गया था। यदि इस भंडार को फिर से स्थापित करने के बजाय, हटाकर %4, तो यह डिवाइस उन भंडार आईडी को भूल जाएगा जिन्हें यह जानता है।</translation>
+        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 किसी अन्य पासवर्ड स्टोर के लिए लिखी गई थी (स्टोर आईडी %2; यह डिवाइस इस स्टोर को %3 के रूप में जानता है) और इसका उपयोग नहीं किया जा रहा है। संभवतः इसे उसी कुंजी से हस्ताक्षरित किसी स्टोर से यहाँ कॉपी किया गया था। यदि इसके बजाय इस स्टोर को दोबारा स्थापित किया गया था, तो %4 को हटाने से वे स्टोर आईडी भूल जाती हैं जिन्हें यह डिवाइस जानता है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

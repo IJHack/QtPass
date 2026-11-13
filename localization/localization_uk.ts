@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Коли сховище не має власного репозиторію Git, використовуйте той, що знаходиться в папці вище. За замовчуванням вимкнено, як і для pass: таким чином, сховище всередині іншого репозиторію (наприклад, dotfiles) ніколи випадково не буде комітоване або відправлене туди. Тільки Git: pass завжди зупиняється на рівні сховища.</translation>
+        <translation type="unfinished">Коли сховище не має власного репозиторію Git, використовуйте той, що знаходиться в папці вище. За замовчуванням вимкнено, як і для pass: таким чином, сховище всередині іншого репозиторію (наприклад, dotfiles) ніколи випадково не буде комітоване або відправлене туди. Лише вбудований Git: pass завжди зупиняється на рівні сховища.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1210,12 +1210,12 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Список містить більше одного рядка.</translation>
+        <translation type="unfinished">Список містить більше ніж один рядок сховища.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Поле &quot;Сховище&quot; має неправильний формат: %1</translation>
+        <translation type="unfinished">Рядок сховища має неправильний формат: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Список містить рядок &quot;Сховище&quot;, але немає рядка &quot;Генерація&quot;.</translation>
+        <translation type="unfinished">Список містить рядок сховища, але не містить рядка покоління.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Список одержувачів, підписаних ключем %1, не містить рядка &quot;Сховище&quot;, тоді як це пристрій знає це сховище за його ID %2: можливо, він був створений для іншого сховища та скопійований сюди, або ж за допомогою попередньої версії qtpass. Той, хто володіє ключем підписання, може отримати доступ до списку користувачів, відновивши список одержувачів та збереженим ним.</translation>
+        <translation type="unfinished">Підписаний список одержувачів %1 не містить рядка сховища, тоді як цей пристрій знає це сховище за його ID %2: можливо, його було записано для іншого сховища та скопійовано сюди, або його записала старіша версія QtPass. Власник ключа підписання може виправити це, відкривши &quot;Користувачі&quot;, заново вибравши одержувачів і зберігши зміни, після чого рядок сховища буде записано.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Список підписаних отримувачів %1 був створений для іншого сховища паролів (ID сховища %2; це пристрій знає це сховище як %3) і не використовується. Ймовірно, його було скопійовано сюди зі сховища, яке було підписане тим самим ключем. Якщо замість цього буде створено нове сховище, видалення %4 призведе до забуття ID сховищ, які це пристрій знає.</translation>
+        <translation type="unfinished">Підписаний список одержувачів %1 було записано для іншого сховища паролів (ID сховища %2; цей пристрій знає це сховище як %3), і він не використовується. Можливо, його скопійовано сюди зі сховища, підписаного тим самим ключем. Якщо ж це сховище було налаштовано заново, вилучення %4 змусить цей пристрій забути відомі йому ID сховищ.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -3073,7 +3073,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Збережено, але не відправлено</translation>
+        <translation type="unfinished">Збережено, але коміт не створено</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

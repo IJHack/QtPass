@@ -317,12 +317,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Een Feld-Numm pro Linii. Eine Linii, wie zum Beispill &quot;# secret: pin, cvv&quot;, markiert Felder zum Verstoppen, wie das Passwuert, während &quot;Passwuert verstoppen&quot; aktiviert ist. Die gleiche Linii funktioniert in der Datei .templates im Speicher und zählt für jede Eingabe im Speicher, nicht nur die mit dieser Schabloun erstellt wurden.</translation>
+        <translation type="unfinished">Ee Feldnumm pro Zeil. Eng Zeil wéi &quot;# secret: pin, cvv&quot; markéiert Felder, déi wéi d&apos;Passwuert verstoppt ginn, soulaang &quot;Passwuert verstoppen&quot; un ass. Déiselwecht Zeil funktionéiert och an der .templates-Datei vum Späicher, wou se fir all Entrag vum Späicher gëllt, net nëmme fir déi, déi mat där Schabloun erstallt goufen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wann de Späicher kee Git Repository huet, benotzt dat een am Dossier. Standardmässig ausgeschaltet, wie bei pass, also ass e Späicher an einem andere Repository (z.B. dotfiles) ni versehentlich committet oder dort gepusht. Nur native Git: Pass stoppt immer beim Späicher.</translation>
+        <translation type="unfinished">Wann de Späicher keen eegene Git-Repository huet, gëtt deen aus engem Dossier driwwer benotzt. Standardméisseg aus, wéi bei pass, sou datt e Späicher an engem anere Repository (z. B. dotfiles) ni aus Verséien do committéiert oder gepusht gëtt. Nëmmen natiivt Git: pass hält ëmmer beim Späicher op.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -492,12 +492,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Versteppen all déi Felder</translation>
+        <translation type="unfinished">All Felder verstoppen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Alle Felder hinter dem &quot;Augen&quot;-Button, nicht nur die Geheimnisse: für gemeinsame Bildschirme und Präsentationen. Die Notizen unter den Feldern und der OTP-Code bleiben sichtbar; &quot;Inhalt verstecken&quot; versteckt auch diese.</translation>
+        <translation type="unfinished">All Felder hannert dem Knäppchen mam A, net nëmmen d&apos;Geheimnisser: fir gedeelte Schiermer a Presentatiounen. D&apos;Notizen ënner de Felder an den OTP-Code bleiwe siichtbar; &quot;Inhalt verstoppen&quot; verstoppt déi och.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 mat dem selwe Schlüssel fir en aner Späicher ënnerschrifft. En Lëscht vun de Muej, déi fir een vun dës Späicher ënnerschriift sinn, ass am aner akzeptéiert: benotze fir all Späicher, bei deenen d&apos;Muej differéieren, en separat Ënnerschrëftsschlëssel.</translation>
+        <translation type="unfinished">%1 ënnerschreift mam selwechte Schlëssel fir en anere Späicher. Eng Empfängerlëscht, déi fir ee vun dëse Späicheren ënnerschriwwe gouf, gëtt am aneren akzeptéiert: benotzt en separaten Ënnerschrëftsschlëssel fir all Späicher, deem seng Empfänger anescht sinn.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Liste enthält mehr als eine Speicherung.</translation>
+        <translation type="unfinished">D&apos;Lëscht enthält méi wéi eng Späicherzeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Die Zeile &quot;Späicher&quot; ist fehlerhaft: %1</translation>
+        <translation type="unfinished">D&apos;Späicherzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Dës Liste enthält eine Zeile zum Speichern, aber keine zur Generierung.</translation>
+        <translation type="unfinished">D&apos;Lëscht enthält eng Späicherzeil, awer keng Generatiounszeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">D&apos;Liste mat deenen, déi Ënnerschrëft kräite %1, enthält kei Zeil fir ze spähere, während dës Apparat déi Opférdung duerf vu sengen ID %2: et ass méiglech datt se op aner Opférdungen geschriift gouw an do kopiert gouwwen, oder vun enger alter QtPass. De Besëtter vum Ënnerschrëttsschlëssel kann d&apos;Benotzer opmaachen, déi Opférdunge nei auszeelege a spähere, deeswege ginn dës Opférdung angedeckt.</translation>
+        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Späicherzeil, obwuel dësen Apparat dëse Späicher ënner senger ID %2 kennt: si kéint fir en anere Späicher geschriwwen an heihi kopéiert gi sinn, oder vun engem eelere QtPass stamen. Wien den Ënnerschrëftsschlëssel huet, léist dat, andeems e Benotzer opmécht, d&apos;Empfänger nei auswielt a späichert, wouduerch d&apos;Späicherzeil geschriwwe gëtt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1282,7 +1282,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Die Liste der signierten Empfänger %1 wurde für einen anderen Passwortspeicher (ID des Speichers %2; dieses Gerät kennt diesen Speicher als %3) erstellt und wird nicht verwendet. Sie könnte hier von einem Speicher kopiert worden sein, der mit demselben Schlüssel signiert wurde. Wenn dieser Speicher stattdessen neu eingerichtet würde, würde das Entfernen von %4 dazu führen, dass die Speicherkennungen, die dieses Gerät kennt, vergessen werden.</translation>
+        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 gouf fir en anere Passwuertspäicher geschriwwen (Späicher-ID %2; dësen Apparat kennt dëse Späicher als %3) a gëtt net benotzt. Si kéint vun engem Späicher heihi kopéiert gi sinn, dee mam selwechte Schlëssel ënnerschriwwe gouf. Wann dëse Späicher amplaz nei ageriicht gouf, da gi mam Läsche vun %4 d&apos;Späicher-IDe vergiess, déi dësen Apparat kennt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

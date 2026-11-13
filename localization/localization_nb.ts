@@ -322,7 +322,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Når butikken ikke har et eget Git-repository, bruk det som finnes i en mappe over. Standardinnstillingen er å bruke det egen repository, slik at butikker inne i andre repositories (f.eks., dotfiles) aldri blir feilaktig commitet eller pusha dit. Kun native Git: pass stopper alltid ved butikken.</translation>
+        <translation type="unfinished">Når lageret ikke har et eget Git-repository, brukes det som ligger i en mappe over. Av som standard, som med pass, slik at et lager inne i et annet repository (for eksempel dotfiles) aldri blir committet eller dyttet dit ved en feil. Kun innebygd Git: pass stopper alltid ved lageret.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass lagrer endringer i %1 i Git-repositoriet i %2: med et kolon i stien til lageret kan ikke pass begrense Git til lageret. Kjør &quot;git init&quot; i lageret, eller bruk innfødt Git/GPG.</translation>
+        <translation type="unfinished">pass committer endringer i %1 til Git-repositoriet i %2: med et kolon i stien til lageret kan ikke pass begrense Git til lageret. Kjør &quot;git init&quot; i lageret, eller bruk innebygd Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1169,12 +1169,12 @@ e-post</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Listen inneholder flere forskjellige elementer.</translation>
+        <translation type="unfinished">Listen inneholder mer enn én lagerlinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Linjen er feilformert: %1</translation>
+        <translation type="unfinished">Lagerlinjen er feilformatert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-post</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Listen inneholder en lang linje, men ingen linje for å generere noe.</translation>
+        <translation type="unfinished">Listen inneholder en lagerlinje, men ingen generasjonslinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-post</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Listen over signerte mottakere %1 inneholder ingen lagringslinje, mens denne enheten kjenner lagringen via ID %2: den kan ha blitt skrevet for et annet lager og kopiert hit, eller av et eldre qtpass. En som har signeringsnøkkelen, får tilgang ved å åpne Brukere, velge mottakerne på nytt og lagre, noe som skriver lagringslinjen.</translation>
+        <translation type="unfinished">Den signerte mottakerlisten %1 inneholder ingen lagerlinje, mens denne enheten kjenner dette lageret ved ID-en %2: den kan ha blitt skrevet for et annet lager og kopiert hit, eller av en eldre QtPass. En som har signeringsnøkkelen, løser dette ved å åpne Brukere, velge mottakerne på nytt og lagre, noe som skriver lagerlinjen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1282,7 +1282,7 @@ e-post</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Den signerte mottakerlisten %1 ble opprettet for en annen passordlagring (ID %2; dette enheten kjenner denne lagringen som %3) og brukes ikke. Den kan ha blitt kopiert her fra en lagring som er signert med samme nøkkel. Hvis denne lagringen settes opp på nytt, vil sletting av %4 føre til at enheten glemmer ID-ene for de lagringene den kjenner.</translation>
+        <translation type="unfinished">Den signerte mottakerlisten %1 ble skrevet for et annet passordlager (lager-ID %2; denne enheten kjenner dette lageret som %3) og brukes ikke. Den kan ha blitt kopiert hit fra et lager som er signert med samme nøkkel. Hvis dette lageret i stedet ble satt opp på nytt, vil fjerning av %4 få enheten til å glemme lager-ID-ene den kjenner.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1635,7 +1635,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller samlingspunkt etter at den er trukket opp. Hva dette peker på, er ikke en del av passordlagringen og blir derfor ikke berørt.</translation>
+        <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller et koblingspunkt etter Git pull. Det den peker til, er ikke en del av passordlageret og blir ikke rørt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>

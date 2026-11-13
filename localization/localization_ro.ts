@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Istoricul de copiere a fost restabilit</translation>
+        <translation type="unfinished">Clipboard restaurat</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restabiliți parolele implicite: PIN, coduri de card, chei, token-uri și altele.</translation>
+        <translation type="unfinished">Restabiliți cuvintele implicite: pin, coduri de card, chei, token-uri, coduri de recuperare și altele asemenea.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Când depozitul nu are propriul său depozit Git, folosiți cel din folderul de mai sus. Dezactivat implicit, la fel ca și pentru pass, astfel încât un depozit aflat în interiorul altui (de exemplu, un set de fișiere), să nu fie niciodată commitat sau împins acolo accidental. Doar Git nativ: &quot;pass&quot; se oprește întotdeauna la depozitul principal.</translation>
+        <translation type="unfinished">Când depozitul de parole nu are propriul său depozit Git, se folosește cel dintr-un folder de deasupra lui. Dezactivat implicit, la fel ca la pass, astfel încât un depozit de parole aflat în interiorul altui depozit Git (dotfiles, de exemplu) să nu fie niciodată commitat sau împins acolo din greșeală. Doar Git nativ: pass se oprește întotdeauna la depozitul de parole.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Lista conține mai multe intrări pentru magazine diferite.</translation>
+        <translation type="unfinished">Lista conține mai mult de o linie de depozit.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Linia de comandă este incorect formatată: %1</translation>
+        <translation type="unfinished">Linia de depozit are un format greșit: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Lista conține o intrare pentru stocare, dar nu una pentru generare.</translation>
+        <translation type="unfinished">Lista conține o linie de depozit, dar nicio linie de generație.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Lista de destinatari semnați %1 nu conține nicio linie de stocare, în timp ce acest dispozitiv este familiarizat cu această locație prin ID-ul său %2: aceasta ar fi putut fi creată pentru o altă locație și copiată aici, sau de către o versiune mai veche a QtPass. Persoana care deține cheia de semnare poate accesa lista deschizând secțiunea Utilizatori, selectând destinatorii din nou și salvând, ceea ce va introduce linia de stocare.</translation>
+        <translation type="unfinished">Lista de destinatari semnată %1 nu conține nicio linie de depozit, deși acest dispozitiv cunoaște acest depozit după ID-ul său %2: este posibil să fi fost scrisă pentru un alt depozit și copiată aici, sau de un QtPass mai vechi. Un deținător al cheii de semnare rezolvă acest lucru deschizând Utilizatori, selectând din nou destinatarii și salvând, ceea ce scrie linia de depozit.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1413,7 +1413,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nu se află în baza de date a parolelor, sau numele unui folder conține un caracter de linie nouă sau alt caracter de control, pe care o listă semnată nu poate înregistra.</translation>
+        <translation type="unfinished">%1 nu se află în depozitul de parole, sau numele unui folder de pe parcurs conține un sfârșit de linie sau alt caracter de control, pe care o listă semnată nu îl poate înregistra.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -3356,7 +3356,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">Configurația GPG pentru utilizatorul %1 nu există.</translation>
+        <translation type="unfinished">Directorul GPG configurat %1 nu există.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>

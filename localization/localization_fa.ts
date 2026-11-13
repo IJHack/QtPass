@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">دست‌کاری، بازیابی شد</translation>
+        <translation type="unfinished">کلیپ‌بورد بازیابی شد</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">هنگامی که فروشگاه، یک مخزن Git اختصاصی نداشته باشد، از مخزنی که در پوشه‌ای بالاتر قرار دارد استفاده کنید. به طور پیش‌فرض غیرفعال است، درست مانند pass، بنابراین یک فروشگاه داخل یک مخزن دیگر (مانند فایل‌های متمرکز) هرگز تصادفیً کپی یا منتشر نمی‌شود. فقط Git بومی: برنامه همیشه در فروشگاه متوقف می‌شود.</translation>
+        <translation type="unfinished">هنگامی که مخزن رمز عبور مخزن Git خودش را ندارد، از مخزن Git موجود در پوشه‌ای بالاتر از آن استفاده شود. به‌طور پیش‌فرض خاموش است، مانند pass، تا مخزن رمز عبوری که درون مخزن Git دیگری (مثلاً dotfiles) قرار دارد هرگز به‌اشتباه در آنجا ثبت یا ارسال نشود. فقط Git بومی: pass همیشه در مخزن رمز عبور متوقف می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1164,12 +1164,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">این لیست شامل بیش از یک آیتم مربوط به یک فروشگاه است.</translation>
+        <translation type="unfinished">این لیست بیش از یک خط مخزن دارد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">خط خرید نادرست است: %1</translation>
+        <translation type="unfinished">خط مخزن ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1204,7 +1204,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">این لیست شامل یک خط &quot;ذخیره&quot; اما هیچ خط &quot;تولید&quot; نیست.</translation>
+        <translation type="unfinished">این لیست خط مخزن دارد اما خط نسل ندارد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1239,7 +1239,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">لیست گیرندگان امضا شده %1، هیچ خط ذخیره‌سازی ندارد، در حالی که این دستگاه با استفاده از شناسه %2، این ذخیره‌سازی را می‌شناسد: ممکن است برای یک ذخیره‌سازی دیگر نوشته شده و اینجا کپی شده باشد، یا توسط نسخه قدیمی‌تر QtPass. فردی که کلید امضا را دارد، با باز کردن بخش کاربران، انتخاب مجدد گیرندگان و ذخیره سازی، خط ذخیره‌سازی را ایجاد می‌کند.</translation>
+        <translation type="unfinished">لیست امضاشده گیرندگان %1 خط مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسه %2 می‌شناسد: ممکن است برای مخزن دیگری نوشته و به اینجا کپی شده باشد، یا QtPass قدیمی‌تری آن را نوشته باشد. دارنده کلید امضا با باز کردن کاربران، انتخاب دوباره گیرندگان و ذخیره کردن از این وضعیت عبور می‌کند؛ این کار خط مخزن را می‌نویسد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1629,7 +1629,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1، یا یک پیوند نمادین یا اتصال است که پس از کشیدن ایجاد می‌شود. این پیوند به چه چیزی اشاره دارد، بخشی از ذخیره رمز عبور نیست و بدون هیچ تغییری رها می‌شود.</translation>
+        <translation type="unfinished">%1 پس از pull یک پیوند نمادین یا junction است یا پشت یکی از آن‌ها قرار دارد. مقصد آن پیوند بخشی از مخزن رمز عبور نیست و دست‌نخورده می‌ماند.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2815,7 +2815,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">ذخیره شده، اما اعمال نشده</translation>
+        <translation type="unfinished">ذخیره شد، اما در Git ثبت نشد</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

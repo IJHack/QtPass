@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">ทุกช่องด้านหลังปุ่ม &quot;แสดง&quot;, ไม่เพียงแต่ข้อมูลส่วนตัว: สำหรับการแชร์หน้าจอและการนำเสนอ ข้อมูลและรหัส OTP จะยังคงมองเห็นได้; ฟังก์ชัน &quot;ซ่อน&quot; ก็จะซ่อนสิ่งเหล่านั้นด้วย</translation>
+        <translation type="unfinished">ทุกช่องที่อยู่หลังปุ่มรูปตา ไม่ใช่เฉพาะข้อมูลลับ: สำหรับการแชร์หน้าจอและการนำเสนอ หมายเหตุใต้ช่องต่างๆ และรหัส OTP จะยังคงมองเห็นได้ &quot;ซ่อนเนื้อหา&quot; จะซ่อนสิ่งเหล่านั้นด้วย</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1160,12 +1160,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">รายการนี้มีมากกว่าหนึ่งรายการ</translation>
+        <translation type="unfinished">รายชื่อนี้มีบรรทัดที่เก็บมากกว่าหนึ่งบรรทัด</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">รูปแบบของข้อมูลที่เก็บไว้ไม่ถูกต้อง: %1</translation>
+        <translation type="unfinished">บรรทัดที่เก็บมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1200,7 +1200,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">รายการนี้มีช่องสำหรับใส่ชื่อร้าน แต่ไม่มีช่องสำหรับสร้างรหัสผ่าน</translation>
+        <translation type="unfinished">รายชื่อนี้มีบรรทัดที่เก็บ แต่ไม่มีบรรทัดรุ่น</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1235,7 +1235,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">รายการผู้รับที่ลงนาม %1 ไม่มีข้อมูลการจัดเก็บ, ในขณะที่อุปกรณ์นี้ทราบข้อมูลนั้นผ่าน ID %2: อาจมีการบันทึกไว้สำหรับระบบอื่นและคัดลอกมา, หรือจากเวอร์ชันเก่าของ QtPass การมีกุญแจลงนาม ทำให้สามารถเข้าถึงได้โดยการเปิด &quot;ผู้ใช้&quot;, เลือกผู้รับใหม่ และบันทึก ซึ่งจะทำการบันทึกข้อมูลการจัดเก็บ</translation>
+        <translation type="unfinished">รายชื่อผู้รับที่ลงนาม %1 ไม่มีบรรทัดที่เก็บ ในขณะที่อุปกรณ์นี้รู้จักที่เก็บนี้ด้วย ID %2: รายชื่อนี้อาจถูกเขียนสำหรับที่เก็บอื่นแล้วคัดลอกมาไว้ที่นี่ หรือเขียนโดย QtPass รุ่นเก่ากว่า ผู้ถือกุญแจลงนามแก้ไขได้โดยเปิด &quot;ผู้ใช้&quot; เลือกผู้รับใหม่อีกครั้ง แล้วบันทึก ซึ่งจะเขียนบรรทัดที่เก็บ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>

@@ -549,7 +549,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Amikor a pej-t lemondjuk, akkor helyreállítjuk az előző tartalmát, ahogy a &quot;pass -c&quot; parancsa teszi, hacsak nem más tartalmat nem másoltunk. Csak szöveg: formázás nem helyreállítva. Ez a szöveg addig emlékezetben marad. Amikor a pej-t nincs lehetőség az olvashatóságra (pl. egyes Wayland asztalokon), akkor azt lemondjuk, és helyreállítjuk az előző tartalomát, ahogy a &quot;pass -c&quot; parancsa teszi.</translation>
+        <translation type="unfinished">Amikor a vágólap törlődik, visszakerül rá az, ami a másolás előtt volt rajta, ahogy a pass -c teszi, hacsak közben mást nem másoltak. Csak szöveg: a formázás nem áll vissza. Ez a szöveg addig a memóriában marad. Ahol a vágólap fókusz nélkül nem olvasható (egyes Wayland asztalokon), ott ehelyett törlődik.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -590,12 +590,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Rejt el minden mezőt</translation>
+        <translation type="unfinished">Minden mező elrejtése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">A &quot;Rejt el&quot; gomb mögötti minden mező, nem csak a titkok: közös használatra és bemutatásra. A mezők alatt található megjegyzések és az OTP kód továbbra is láthatók; a &quot;Rejt el&quot; funkció ezeket is elreti.</translation>
+        <translation type="unfinished">A szem gomb mögötti minden mező, nem csak a titkok: megosztott képernyőhöz és bemutatáshoz. A mezők alatti megjegyzések és az OTP-kód láthatók maradnak; az &quot;Oldal elrejtése&quot; azokat is elrejti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -615,7 +615,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Amikor a tárolónak nincs saját Git adattárcája, akkor használja az azt, amely egy főtárcában található. Alapértelmezett beállításként, mint a pass esetében, így egy tároló (pl. dotfiles) nem kerül véletlenül más adattárba. Csak natív Git: A pass mindig a tárolónál áll meg.</translation>
+        <translation type="unfinished">Ha a jelszótárolónak nincs saját Git-tárolója, a felette lévő mappában találhatót használja. Alapértelmezés szerint kikapcsolva, ahogy a pass esetében is, így egy másik Git-tárolóban (például dotfiles) lévő jelszótároló soha nem kerül oda tévedésből véglegesítésre vagy feltöltésre. Csak natív Git esetén: a pass mindig megáll a jelszótárolónál.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -733,7 +733,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ugyanazon kulccsal aláír egy másik üzletet. Egy olyan lista, amelyen egy adott üzlet kapói szerepelnek, elfogadva van a másikban: használjon külön aláíró kulcsot minden olyan üzlethez, ahol a kapók eltérőek.</translation>
+        <translation type="unfinished">%1 ugyanazzal a kulccsal ír alá egy másik tárolóhoz. Az e tárolók egyikéhez aláírt címzettlistát a másik is elfogadja: használjon külön aláírókulcsot minden olyan tárolóhoz, amelynek címzettjei eltérnek.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1204,12 +1204,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">A lista több, különböző üzletek adatait tartalmaz.</translation>
+        <translation type="unfinished">A lista egynél több tárolósort tartalmaz.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">A tárolási sor rosszul formálva: %1</translation>
+        <translation type="unfinished">A tárolósor hibás formátumú: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">A lista tartalmaz egy &quot;megerősítés&quot; sort, de nem generálja a megadott jelszót.</translation>
+        <translation type="unfinished">A lista tartalmaz tárolósort, de generációs sort nem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1279,7 +1279,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Az aláírt fogadólista %1 nem tartalmaz tárolási információt, míg ez a eszköz azonosítja ezt a tárolást az ID-jével %2: talán egy másik alkalmazás számára lett létrehozva és másolja ide, vagy egy régebbi qtpass által. Az aláírókulcs birtokló felhasználó az alábbi lépésekkel jut el a kívánt eredményhez: nyissa meg a Felhasználók menüt, válassza ki újra a fogadókat, és mentse el az adatokat, amelyikben a tárolási információt rögzíti.</translation>
+        <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz tárolósort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóján ismeri: lehet, hogy egy másik tárolóhoz készült és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy jut tovább, hogy megnyitja a &quot;Felhasználók&quot; ablakot, újra kiválasztja a címzetteket, és ment, ami beírja a tárolósort.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -2936,7 +2936,7 @@ Folytatja?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Az bejegyzés a tárolón kaydedett, de a Git-hez való rögzítés nem sikerült. Az alábbiakban jelentették:
+        <translation type="unfinished">A bejegyzés mentve van a tárolóban, de a Gitben való rögzítése nem sikerült. A jelentett hiba:
 
 %1</translation>
     </message>
@@ -2963,7 +2963,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">A %1-t nem lehet címzett listának értelmezni (ez egy átlagos fájl, amely maximum %2 méretű), így a lista üzenetek előre kiválasztott. Ellenőrizze ezt itt, mielőtt címzeteket választ: &quot;OK&quot; egy új listát ír rá.</translation>
+        <translation type="unfinished">A(z) %1 nem olvasható címzettlistaként (legfeljebb %2 méretű szabályos fájl), ezért semmi sincs előre kijelölve. Ellenőrizze, mielőtt itt címzetteket választ: az OK új listát ír a helyére.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>

@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kada je međuspremnik očišćen, vraćajte ono što je bilo na njemu pre kopiranja, kao što to čini pass -c, osim ako nešto drugo nije bilo kopirano u međivotk. Tekst: formatiranje nije vraćeno. Taj tekst ostaje u memoriji do tada. Gde međuspremnik ne može biti pročitan bez fokusa (neke Wayland desktop-ove), on se umesto toga briše.</translation>
+        <translation type="unfinished">Kada se međuspremnik očisti, vrati ono što je bilo u njemu pre kopiranja, kao što to radi pass -c, osim ako je u međuvremenu kopirano nešto drugo. Samo tekst: formatiranje se ne vraća. Taj tekst do tada ostaje u memoriji. Tamo gde međuspremnik ne može da se pročita bez fokusa (neka Wayland okruženja), on se umesto toga briše.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Svaka polja iza dugmeta &quot;Oko&quot;, a ne samo tajne: za zajedničke ekrane i prezentacije. Beleške ispod polja i OTP kôd ostaju vidljivi; &quot;Sakrij sadržaj&quot; takođe sakriva.</translation>
+        <translation type="unfinished">Sva polja iza dugmeta sa okom, a ne samo tajne: za deljene ekrane i prezentacije. Beleške ispod polja i OTP kôd ostaju vidljivi; &quot;Sakrij sadržaj&quot; sakriva i njih.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kada skladište nema vlastitu Git repozitoriju, koristite onu koja se nalazi u fascikli iznad njega. Izlazi kao standardno, isto kao i pass, tako da skladište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno komitovano ili premešteno. Samo Git: pass uvijek staje na skladištu.</translation>
+        <translation type="unfinished">Kada skladište nema sopstveni Git repozitorijum, koristi onaj u fascikli iznad njega. Podrazumevano je isključeno, kao i kod pass, tako da skladište unutar drugog repozitorijuma (recimo dotfiles) nikada ne bude tamo greškom komitovano ili poslato (push). Samo nativni Git: pass se uvek zaustavlja na skladištu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1215,7 +1215,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Linija &quot;Skladište&quot; je neispravna: %1</translation>
+        <translation type="unfinished">Red skladišta je neispravno oblikovan: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1285,7 +1285,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Lista primatelja sa potpisom %1 ne sadrži liniju za skladištenje, dok ovo uređaje poznaje skladište po ID-u %2: možda je bilo namenski napisano za drugo skladište i kopirano ovde, ili od starijeg qtPass. Osoba koja poseduje ključ za potpisivanje može da pristupi tako što će otvoriti korisnike, izabrati primatelje novim putem i sačuvati, što će dodati liniju za skladištenje.</translation>
+        <translation type="unfinished">Potpisana lista primalaca %1 ne sadrži red skladišta, dok ovaj uređaj poznaje ovo skladište po ID-u %2: možda je napisana za drugo skladište i kopirana ovde, ili ju je napisao stariji QtPass. Vlasnik ključa za potpisivanje to rešava tako što otvori Korisnici, iznova izabere primaoce i sačuva, čime se upisuje red skladišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -2048,7 +2048,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Ime i lozinka ne sme da sadrže linije prelom.</translation>
+        <translation type="unfinished">Ime i lozinka ne smeju da sadrže prelome linija.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

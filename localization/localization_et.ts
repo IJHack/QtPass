@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Sisselugude otsingule lubamine</translation>
+        <translation type="unfinished">Lülita sisse sisuotsing</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Peida iga väljal</translation>
+        <translation type="unfinished">Peida kõik väljad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Kõik väljad silma nuppu taga, mitte ainult saladused: jagatud ekraamide ja esitluside jaoks. Märkud väljade all ja ühekordse salasõna kood jäävad nähtavaks; &quot;Peida sisu&quot; peidab ka need.</translation>
+        <translation type="unfinished">Kõik väljad silmanupu taga, mitte ainult saladused: jagatud ekraanide ja esitluste jaoks. Märkmed väljade all ja OTP-kood jäävad nähtavaks; &quot;Peida sisu&quot; peidab ka need.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kui hoidlas pole oma Git&apos;i repositorit, siis kasuta seda kaustas, mis asub selle kohal. Vaikeliselt välja lülitatud, nagu passiga, nii et hoidla teises repositoris (nt dotfiles) ei saa ta teadmatult salvestada või pushida. Native Git ainult: pass alati peatub hoidlas.</translation>
+        <translation type="unfinished">Kui hoidlal pole oma Giti repositooriumi, kasuta selle kohal olevas kaustas asuvat. Vaikimisi välja lülitatud, nagu passi puhul, et teise repositooriumi (näiteks dotfiles) sees asuvat hoidlat ei kantaks sinna kunagi kogemata sisse (commit) ega tõugataks (push). Ainult oma Git-lahenduse korral: pass peatub alati hoidla juures.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1209,12 +1209,12 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Loendis on rohkem kui üks hoidla.</translation>
+        <translation type="unfinished">Loendis on rohkem kui üks hoidlarida.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Hoidla rida on vigast: %1</translation>
+        <translation type="unfinished">Hoidlarida on vigane: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Loendis on hoidla, kuid mitte genereerimise rida.</translation>
+        <translation type="unfinished">Loendis on hoidlarida, kuid põlvkonnarida puudub.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-posti aadress</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Allkirjastatud saajatena loend %1 ei sisalda hoidla rida, samas kui see seade teab selle hoidla ID-ga %2: seda võis olla kirjutatud mõnele muule, ja kopeeritud siia, või vanemale qtpassile. Allkirjastamise võtme omanik saab saajate nime lisama avades Kasutajad, valides saajat uuesti ja salvestades, mis siis hoidla rida kirjutab.</translation>
+        <translation type="unfinished">Allkirjastatud saajate loend %1 ei sisalda hoidlarida, kuigi see seade tunneb seda hoidlat ID %2 järgi: loend võidi kirjutada teise hoidla jaoks ja siia kopeerida või kirjutas selle vanem QtPass. Allkirjastamisvõtme omanik saab edasi, kui avab Kasutajad, valib saajad uuesti ja salvestab, mis kirjutab hoidlarea.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -3119,7 +3119,7 @@ Kas jätkame?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ei ole võimalik lugeda saaja nime nimega failina (mis on maksimaalselt %2 suurune tavaline fail), seega pole ühtegi vaikselt valitud. Kontrolli seda enne saajate valikut siin: &quot;OK&quot; kirjutab selle kohale uue nime.</translation>
+        <translation type="unfinished">%1 ei ole loetav saajate loendina (tavaline fail suurusega kuni %2), seega pole midagi eelvalitud. Kontrolli seda enne siin saajate valimist: OK kirjutab selle üle uue loendiga.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>

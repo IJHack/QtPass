@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Vietējā atslēgšana atjaunota</translation>
+        <translation type="unfinished">Starpliktuve atjaunota</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kad veikals nav iegādājies savu Git repozitoriju, izmantojiet to, kas atrodas iepriekšējā folderē. Izslēgts pēc nokrāsas, tāpat kā ar pass, tādējādi veikals iekšā citā repozitorijā (piemēram, dotfiles) nekad netiks nejauši pievienots vai izvietots. Vietējais Git tikai: &quot;pass&quot; vienmēr apstiprinās veikala vietā.</translation>
+        <translation type="unfinished">Ja glabātuvei nav sava Git repozitorija, izmantot to, kas atrodas mapē virs tās. Pēc noklusējuma izslēgts, tāpat kā pass, lai glabātuve, kas atrodas citā repozitorijā (piemēram, dotfiles), nekad kļūdas dēļ netiktu tur ierakstīta vai nosūtīta. Tikai vietējam Git: pass vienmēr apstājas pie glabātuves.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Katrs lauks aiz &quot;Aizslēgt&quot; pogas, ne tikai noslēpumi: dalītu ekrānu un prezentāciju gadījums. Piezīmes zem laukiem un OTP kods paliek redzamas; &quot;Slēpt saturu&quot; arī slēdz tos.</translation>
+        <translation type="unfinished">Katrs lauks aiz acs pogas, ne tikai noslēpumi: koplietotiem ekrāniem un prezentācijām. Piezīmes zem laukiem un OTP kods paliek redzami; &quot;Slēpt saturu&quot; paslēpj arī tos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1166,12 +1166,12 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Sarakstā ir iekļauti vairāki veikali.</translation>
+        <translation type="unfinished">Sarakstā ir vairāk nekā viena glabātuves rinda.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Pirkumu rindas formāts ir nepareizs: %1</translation>
+        <translation type="unfinished">Glabātuves rinda ir nepareizi veidota: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1206,7 +1206,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Sarakstā ir norādīts veikala, bet ne ģenerēšanas lauciņš.</translation>
+        <translation type="unfinished">Sarakstā ir glabātuves rinda, bet nav ģenerācijas rindas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1241,7 +1241,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Parakstīto saņēmēju saraksts %1 neatbalsta glabāšanas funkciju, savukārt šis ierīcis atceras to pēc ID %2: tā varēja būt rakstīta citai glabātnei un kopēta šeit, vai arī veciem QtPass. Parakstīšanas atslēgas īpašnieks iegūst piekļuvi, izmantojot &quot;Lietotāji&quot;, izvēlot saņēmējus jauni un saglabājot, kas raksta glabātnes informāciju.</translation>
+        <translation type="unfinished">Parakstītajā saņēmēju sarakstā %1 nav glabātuves rindas, lai gan šī ierīce pazīst šo glabātuvi pēc tās ID %2: iespējams, tas rakstīts citai glabātuvei un pārkopēts šeit, vai arī to rakstījis vecāks QtPass. Parakstīšanas atslēgas turētājs tiek tālāk, atverot &quot;Lietotāji&quot;, no jauna izvēloties saņēmējus un saglabājot, kas ieraksta glabātuves rindu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1279,7 +1279,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Parakstīto saņēmēju saraksts %1 tika sagatavots citai paroles glabāšanas vietai (glabāšanas ID %2; šis ierīces zināt, ka šī vieta ir %3) un nav izmantots. Tas varēja būt kopēts šeit no vietas, kas parakstīta ar to pašu atslēgu. Ja tagad būtu jāizveido jauna vieta, tad dzēšanā %4 tiks aizmirsti visi glabāšanas ID, ko šī ierīce zina.</translation>
+        <translation type="unfinished">Parakstītais saņēmēju saraksts %1 ir rakstīts citai paroļu glabātuvei (glabātuves ID %2; šī ierīce pazīst šo glabātuvi kā %3) un netiek izmantots. Iespējams, tas pārkopēts šeit no glabātuves, kas parakstīta ar to pašu atslēgu. Ja tā vietā šī glabātuve ir iestatīta no jauna, %4 noņemšana liek aizmirst glabātuvju ID, ko šī ierīce zina.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1487,7 +1487,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 nevar interpretēt kā saņēmēju saraksts (parastais fails, kas satur līdz %2 elementus).</translation>
+        <translation type="unfinished">%1 nevar nolasīt kā saņēmēju sarakstu (parasts fails, kura izmērs nepārsniedz %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2826,7 +2826,7 @@ Turpināt?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Rekonizēšana ir saglabāta, bet reģistrācija Gitā izdevās. Informācijas saturs:
+        <translation type="unfinished">Ieraksts ir saglabāts glabātuvē, bet tā ierakstīšana Git neizdevās. Tika ziņots:
 
 %1</translation>
     </message>

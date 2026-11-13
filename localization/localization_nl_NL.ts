@@ -722,7 +722,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass committet wijzigingen in %1 naar de Git repository in %2: met een dubbele punt in het pad, kan pass niet de Git repository opslaan. Voer &quot;git init&quot; uit binnen de opslag, of gebruik native Git/GPG.</translation>
+        <translation type="unfinished">pass committet wijzigingen in %1 naar de Git repository in %2: met een dubbele punt in het pad van de opslag kan pass Git niet tot de opslag beperken. Voer &quot;git init&quot; uit binnen de opslag, of gebruik native Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1330,7 +1330,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">De lijst met geautoriseerde ontvangers %1 is bedoeld voor een andere wachtwoordopslag (ID %2; dit apparaat kent deze opslag als %3) en wordt niet gebruikt. Het kan hier zijn gekopieerd van een opslag die met dezelfde sleutel is ondertekend. Als deze opslag opnieuw zou worden ingesteld, waarbij %4 wordt verwijderd, vergeten we de ID&apos;s van de opslagen die dit apparaat kent.</translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 is geschreven voor een andere wachtwoordopslag (opslag-ID %2; dit apparaat kent deze opslag als %3) en wordt niet gebruikt. De lijst is mogelijk hierheen gekopieerd vanuit een opslag die met dezelfde sleutel is ondertekend. Als deze opslag in plaats daarvan opnieuw is ingesteld, dan vergeet het verwijderen van %4 de opslag-ID&apos;s die dit apparaat kent.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

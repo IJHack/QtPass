@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Επαναφορά αντιγραφής στα επιτραπέζια</translation>
+        <translation type="unfinished">Το πρόχειρο αποκαταστάθηκε</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -322,7 +322,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Όταν το κατάστημα δεν έχει δικό του αποθετήριο Git, χρησιμοποιήστε αυτό που βρίσκεται σε έναν φάκελο πάνω από αυτό. Απενεργοποιημένο από προεπιλογή, όπως και με το pass, έτσι ώστε ένα κατάστημα μέσα σε ένα άλλο αποθετήριο (π.χ., dotfiles) να μην &quot;κλειδώνει&quot; ή να μεταφέρεται εκεί κατά λάθος. Μόνο Git: Το pass πάντα σταματά στο κατάστημα.</translation>
+        <translation type="unfinished">Όταν ο χώρος αποθήκευσης δεν έχει δικό του αποθετήριο Git, χρησιμοποιείται αυτό που βρίσκεται σε φάκελο πάνω από αυτόν. Απενεργοποιημένο από προεπιλογή, όπως και με το pass, ώστε ένας χώρος αποθήκευσης μέσα σε άλλο αποθετήριο (π.χ. dotfiles) να μην υποβάλλεται ούτε να προωθείται ποτέ εκεί κατά λάθος. Μόνο με εγγενές Git: το pass σταματά πάντα στον χώρο αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Κρυπτογραφήστε και άλλα μυστικά:</translation>
+        <translation type="unfinished">Απόκρυψη και άλλων μυστικών:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Η λίστα περιλαμβάνει περισσότερες από μία καταχωρίσεις.</translation>
+        <translation type="unfinished">Η λίστα περιέχει περισσότερες από μία γραμμές χώρου αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Η γραμμή αποθήκευσης είναι εσφαλμένη: %1</translation>
+        <translation type="unfinished">Η γραμμή χώρου αποθήκευσης έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Η λίστα περιέχει μια γραμμή αποθήκευσης, αλλά όχι μια γραμμή δημιουργίας.</translation>
+        <translation type="unfinished">Η λίστα περιέχει γραμμή χώρου αποθήκευσης, αλλά όχι γραμμή γενιάς.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Η λίστα με τους υπογεγραμμένους αποδέκτες %1 δεν περιέχει γραμμή αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει την αποθήκευση μέσω του ID της %2: ίσως να έχει προοριστεί για άλλη αποθήκευση και αντιγραφεί εδώ, ή από παλαιότερη έκδοση του QtPass. Ένας κάτοχος του κλειδιού υπογραφής μπορεί να εισέλθει ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους αποδέκτες και αποθηκεύοντας, κάτι που θα γράψει την γραμμή αποθήκευσης.</translation>
+        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: ίσως γράφτηκε για άλλον χώρο αποθήκευσης και αντιγράφηκε εδώ, ή γράφτηκε από παλαιότερο QtPass. Ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους παραλήπτες και αποθηκεύοντας, οπότε γράφεται η γραμμή χώρου αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1490,7 +1490,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα αποστολέων (ένα κανονικό αρχείο με μέγιστο μέγεθος %2).</translation>
+        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα παραληπτών (ένα κανονικό αρχείο με μέγιστο μέγεθος %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>

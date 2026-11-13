@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Възстанови предишната папка</translation>
+        <translation type="unfinished">Възстановяване на предишното съдържание на буфера</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Всяко поле зад бутона &quot;Око&quot;, а не само тайните: за споделени екрани и презентации. Бележките под полетата и OTP кодът остават видими; &quot;Скрий&quot; също ги скрива.</translation>
+        <translation type="unfinished">Всяко поле зад бутона с око, а не само тайните: за споделени екрани и презентации. Бележките под полетата и OTP кодът остават видими; &quot;Скриване на съдържанието&quot; скрива и тях.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Когато магазина няма собствен Git репозиторий, използвайте този в папката над него. Изключен по подразбиране, както и при pass, така че магазин вътре в друг репозиторий (например dotfiles) никога не се коммитва или изпраща там случайно. Само с native Git: pass винаги спира на магазина.</translation>
+        <translation type="unfinished">Когато хранилището за пароли няма собствено Git хранилище, да се използва това в папка над него. Изключено по подразбиране, както при pass, така че хранилище за пароли, намиращо се в друго Git хранилище (например dotfiles), никога да не бъде записано в къмит или изпратено там по погрешка. Само за нативен Git: pass винаги спира при хранилището за пароли.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Списъкът съдържа повече от една информация за конкретен магазин.</translation>
+        <translation type="unfinished">Списъкът съдържа повече от един ред за хранилище.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Редът за покупка е неправилен: %1</translation>
+        <translation type="unfinished">Редът за хранилище е неправилно оформен: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Списъкът съдържа ред за пазаруване, но не и ред за генериране.</translation>
+        <translation type="unfinished">Списъкът съдържа ред за хранилище, но не и ред за поколение.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Списъкът с подписани получатели %1 не съдържа ред за съхранение, докато това устройство го познава по неговия ID %2: може би е бил записан в друго място и копиран тук, или от по-стара версия на QtPass. Притежателят на ключа за подписи се придвижва чрез отваряне на Потребители, избиране на получателите отново и запазване, което записва реда за съхранение.</translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 не съдържа ред за хранилище, а това устройство познава това хранилище по неговия идентификатор %2: възможно е да е бил написан за друго хранилище и копиран тук, или да е написан от по-стар QtPass. Притежател на ключа за подписване решава това, като отвори Потребители, избере получателите наново и запази, което записва реда за хранилище.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Списъкът с удостоверени получатели %1 е създаден за друг хранилище (ID на хранилището %2; това устройство го познава като %3) и не се използва. Възможно е да е копиран тук от хранилище, подписано със същия ключ. Ако вместо това се създаде ново хранилище, изтриването на %4 ще забрави ID-тата на хранилищата, които устройството познава.</translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 е написан за друго хранилище за пароли (идентификатор на хранилището %2; това устройство познава това хранилище като %3) и не се използва. Възможно е да е копиран тук от хранилище, подписано със същия ключ. Ако вместо това хранилището е било настроено наново, премахването на %4 кара устройството да забрави идентификаторите на хранилищата, които познава.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1530,7 +1530,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 не може да бъде разчет като списък с получатели (обикновен файл, който съдържа най-много %2 елемента).</translation>
+        <translation type="unfinished">%1 не може да бъде прочетен като списък с получатели (обикновен файл с размер най-много %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2011,7 +2011,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Името и фразата за достъп не трябва да съдържат разстояния между редовете.</translation>
+        <translation type="unfinished">Името и фразата за достъп не трябва да съдържат знаци за нов ред.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

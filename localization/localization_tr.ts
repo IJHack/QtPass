@@ -348,7 +348,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kendi Git deposuna sahip olmadığında, üstteki klasördeki depoyu kullanın. Varsayılan olarak devre dışı, olduğu gibi &quot;pass&quot; da. Bu nedenle, başka bir depoda (örneğin, dotfiles) bulunan ve yanlışlıkla commit edilmeyen veya push edilmeyen bir depo asla oluşmaz. Sadece yerel Git: &quot;pass&quot; her zaman depoya ulaşır.</translation>
+        <translation type="unfinished">Parola deposunun kendi Git deposu yoksa, üstündeki bir klasörde bulunan depoyu kullanır. pass&apos;te olduğu gibi varsayılan olarak kapalıdır; böylece başka bir Git deposunun (örneğin dotfiles) içindeki bir parola deposu yanlışlıkla oraya asla commit edilmez veya push edilmez. Yalnızca Yerel Git: pass her zaman parola deposunda durur.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1208,7 +1208,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Bu liste, bir &quot;Depo&quot; satırı içeriyor ancak herhangi bir &quot;Oluştur&quot; satırı bulunmuyor.</translation>
+        <translation type="unfinished">Bu liste bir depo satırı içeriyor ancak nesil satırı içermiyor.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1243,7 +1243,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">İmzalayan alıcı listesi %1, herhangi bir &quot;depo&quot; satırı içermezken, bu cihaz bu &quot;depoyu&quot; ID&apos;si %2 ile tanır: Belki de başka bir &quot;depoya&quot; yazılmış ve buraya kopyalanmış veya eski bir qtPass tarafından oluşturulmuş olabilir. İmzalama anahtarına sahip kişi, Kullanıcılar bölümünü açarak, alıcıları yeniden seçip kaydetmek suretiyle bu satırı ekler.</translation>
+        <translation type="unfinished">İmzalı alıcı listesi %1 depo satırı içermiyor, oysa bu cihaz bu depoyu %2 kimliğiyle tanıyor: liste başka bir depo için yazılıp buraya kopyalanmış ya da daha eski bir QtPass tarafından yazılmış olabilir. İmzalama anahtarının sahibi, Kullanıcılar&apos;ı açıp alıcıları yeniden seçerek ve kaydederek bunu aşar; bu işlem depo satırını yazar.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1371,7 +1371,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1, parola deposunda veya yol üzerindeki klasör adında bir satır sonu veya başka kontrol karakteri bulunmamaktadır; bu nedenle imzalanmış bir liste bunu kaydetemez.</translation>
+        <translation type="unfinished">%1 parola deposunun içinde değil ya da yol üzerindeki bir klasör adı, imzalı bir listenin kaydedemeyeceği bir satır sonu veya başka bir kontrol karakteri içeriyor.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>

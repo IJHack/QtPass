@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">पासवर्ड: फक्त पासवर्ड लपवा, इतरही काही क्षेत्रे आहेत जी गुप्त माहिती साठवतात.</translation>
+        <translation type="unfinished">फक्त पासवर्डच नव्हे, तर गुप्त माहिती असलेली फील्डही लपवा: ज्या फील्डच्या नावात यांपैकी एखादा शब्द आहे असे फील्ड. बंद: फक्त पासवर्ड लपवला जातो.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -1165,7 +1165,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">या यादीमध्ये एकापेक्षा जास्त दुकानांची माहिती आहे.</translation>
+        <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त स्टोअर ओळी आहेत.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
@@ -1205,7 +1205,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">या यादीमध्ये साठवलेल्या नोंदींची यादी आहे, परंतु नवीन नोंदी तयार करण्याचा पर्याय नाही.</translation>
+        <translation type="unfinished">सूचीमध्ये स्टोअर ओळ आहे, पण पिढी ओळ नाही.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">सिग्नेटेड प्राप्तकर्त्यांची यादी %1 दुसऱ्या पासवर्ड स्टोरेजसाठी (स्टोअर आयडी %2; हे डिव्हाइस या स्टोअरला %3 म्हणून ओळखते) लिहिलेली आहे आणि ती वापरली जात नाही. हे डिव्हाइस त्याच कीने साइन केलेले असलेल्या स्टोअरमधून कॉपी केले गेले असण्याची शक्यता आहे. जर हे स्टोअर पुन्हा सेट केले, तर हटवलेले %4 या स्टोरेज आयडीज त्या डिव्हाइसला माहीत नसतील.</translation>
+        <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 दुसऱ्या पासवर्ड स्टोअरसाठी लिहिली गेली होती (स्टोअर ID %2; हे डिव्हाइस या स्टोअरला %3 म्हणून ओळखते) आणि ती वापरली जात नाही. ती कदाचित त्याच कीने स्वाक्षरी केलेल्या स्टोअरमधून येथे कॉपी केली गेली असेल. त्याऐवजी हे स्टोअर पुन्हा सेट केले गेले असेल, तर %4 काढून टाकल्यास या डिव्हाइसला माहीत असलेले स्टोअर ID विसरले जातात.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

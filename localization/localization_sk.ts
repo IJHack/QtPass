@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Keď obchod nemá vlastný Git repozitár, použite ten v priečnom adresári. Výrobok je vypnutý ako výmä, takže sa obsah uložený v inom repozitári (napríklad súbor .pass) nikdy nekomituje ani nahráva. Používanie len lokálneho Git: &quot;pass&quot; vždy končí na obchode.</translation>
+        <translation type="unfinished">Keď úložisko nemá vlastný repozitár Git, použije sa ten v adresári nad ním. Predvolene vypnuté, rovnako ako pri pass, takže úložisko vnútri iného repozitára (napríklad dotfiles) sa tam nikdy omylom necommitne ani neodošle. Len natívny Git: pass sa vždy zastaví pri úložisku.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 podepisuje pomocou rovnakého kľúča pre inú úlohu. Zoznam prijímateľov, ktorí boli podpísaní pre jednu z týchto úloh, je akceptovaný v druhej: použite samostatný podpísovací kľúč pre každú úlohu, u ktorej sú prijímatelia rôzni.</translation>
+        <translation type="unfinished">%1 podpisuje rovnakým kľúčom aj pre iné úložisko. Zoznam príjemcov podpísaný pre jedno z týchto úložísk je prijatý aj v druhom: pre každé úložisko, ktorého príjemcovia sa líšia, použite samostatný podpisový kľúč.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Zoznam obsahuje viacero položiek pre rôzne obchody.</translation>
+        <translation type="unfinished">Zoznam obsahuje viac ako jeden riadok úložiska.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Reťazec pre ukladanie je nesprávny: %1</translation>
+        <translation type="unfinished">Riadok úložiska má nesprávny formát: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Zoznam obsahuje položku pre obchod, ale nie položku pre generovanie.</translation>
+        <translation type="unfinished">Zoznam obsahuje riadok úložiska, ale žiadny riadok generácie.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Zoznam overených osôb %1 neobsahuje riadok s ukladacími údajami, zatiaľ čo toto zariadenie tento riadok pozná podľa jeho ID %2: mohlo ísť o údaje uložené pre inú osobu a skopírované tu, alebo o staršiu verziu qtpass. Osoba držiaca podpisový kľúč sa dostane do systému otvorením sekcie Uživatelia, vybratím osôb a ich uloženie, čo vytvorí riadok s ukladacími údajami.</translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 neobsahuje riadok úložiska, hoci toto zariadenie pozná toto úložisko podľa jeho ID %2: mohol byť zapísaný pre iné úložisko a skopírovaný sem, alebo ho zapísala staršia verzia QtPass. Držiteľ podpisového kľúča to vyrieši tak, že otvorí Uživatelia, znova vyberie príjemcov a uloží, čím sa riadok úložiska zapíše.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Zoznam overených prijímateľov %1 bol vytvorený pre iný správca hesiel (ID správcu %2; toto zariadenie tento správcovský systém pozná ako %3) a nie je používaný. Mohol byť skopírovaný sem z iného, ktorý bol overený rovnakým kľúčom. Ak by bol tento systém vytvorený znovu, odstránenie %4 zapomenie ID správcovských systémov, ktoré toto zariadenie pozná.</translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 bol zapísaný pre iné úložisko hesiel (ID úložiska %2; toto zariadenie pozná toto úložisko ako %3) a nepoužíva sa. Mohol sem byť skopírovaný z úložiska podpísaného rovnakým kľúčom. Ak bolo naopak toto úložisko nastavené nanovo, odstránením %4 sa zabudnú ID úložísk, ktoré toto zariadenie pozná.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

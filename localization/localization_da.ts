@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Listen over godkendte modtagere %1 indeholder ingen oplysninger om, hvor de er gemt, mens dette enhed kender placeringen via dens ID %2: den kan være blevet skrevet til et andet sted og kopieret her, eller af et ældre qtpass. En person med signeringsnøglen får adgang ved at åbne Brugere, vælge modtagerne igen og gemme, hvilket skriver oplysninger om placeringen.</translation>
+        <translation type="unfinished">Den signerede modtagerliste %1 indeholder ingen lagerlinje, mens denne enhed kender dette lager på dets ID %2: den kan være skrevet til et andet lager og kopieret hertil, eller af en ældre QtPass. En indehaver af signeringsnøglen kommer videre ved at åbne Brugere, vælge modtagerne på ny og gemme, hvilket skriver lagerlinjen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1675,7 +1675,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 er, eller gemmer sig bag, et symbolsk link eller en forbindelse efter at have trukket. Hvad det peger på er ikke en del af adgangskoden og bliver derfor uforstyrret.</translation>
+        <translation type="unfinished">%1 er, eller ligger bag, et symbolsk link eller en junction efter pull. Det, der peges på, er ikke en del af kodeordslageret og bliver ikke rørt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>

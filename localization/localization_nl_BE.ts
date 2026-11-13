@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Alle velden achter de knop &quot;Oog&quot;, niet alleen de geheimen: voor gedeelde schermen en presentaties. De aantekeningen onder de velden en het OTP-code blijven zichtbaar; &quot;Inhoud verbergen&quot; verbergt ook deze.</translation>
+        <translation type="unfinished">Alle velden achter de oogknop, niet alleen de geheimen: voor gedeelde schermen en presentaties. De aantekeningen onder de velden en de OTP-code blijven zichtbaar; &quot;Verberg inhoud&quot; verbergt ook die.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan de repository in een map hoger in de structuur. Standaard uitgeschakeld, net als bij pass, zodat een opslag binnenin een andere repository (zoals bijvoorbeeld dotfiles) nooit per ongeluk wordt toegevoegd of verplaatst. Alleen native Git: pass stopt altijd bij de opslag.</translation>
+        <translation type="unfinished">Wanneer de opslag geen eigen Git-repository heeft, gebruik dan de repository in een map erboven. Standaard uitgeschakeld, net als bij pass, zodat een opslag binnen een andere repository (bijvoorbeeld dotfiles) nooit per ongeluk daar wordt gecommit of gepusht. Alleen systeemeigen Git: pass stopt altijd bij de opslag.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass commits wijzigingen in %1 naar het Git-repository in %2: met een dubbele punt in het pad, kan pass niet de Git-versie opslaan. Voer &quot;git init&quot; uit binnen de opslag, of gebruik native Git/GPG.</translation>
+        <translation type="unfinished">pass commit wijzigingen in %1 naar de Git-repository in %2: met een dubbele punt in het pad van de opslag kan pass Git niet tot de opslag beperken. Voer &quot;git init&quot; uit in de opslag, of gebruik systeemeigen Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1218,7 +1218,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">De regel &quot;Opslag&quot; is niet correct: %1</translation>
+        <translation type="unfinished">De opslagregel is onjuist gevormd: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1253,7 +1253,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">De lijst bevat een regel voor opslag, maar geen regel voor generatie.</translation>
+        <translation type="unfinished">De lijst bevat een opslagregel maar geen generatieregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1288,7 +1288,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">De lijst met geadresseerden met een ondertekening, %1, bevat geen opslagregel, terwijl dit apparaat de opslag kent via zijn ID %2: het is mogelijk dat het voor een andere opslag is geschreven en hier gekopieerd is, of door een oudere QtPass. Een houder van de ondertekeningssleutel komt erbij door Gebruikers te openen, de geadresseerden opnieuw te selecteren en op te slaan, wat de opslagregel toevoegt.</translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 bevat geen opslagregel, terwijl dit apparaat deze opslag kent via zijn ID %2: mogelijk is ze voor een andere opslag geschreven en hierheen gekopieerd, of door een oudere QtPass geschreven. Een houder van de ondertekeningssleutel lost dit op door Gebruikers te openen, de ontvangers opnieuw te selecteren en op te slaan, waardoor de opslagregel wordt geschreven.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1326,7 +1326,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">De lijst met geautoriseerde ontvangers %1 is bedoeld voor een andere wachtwoordopslag (ID van de opslag %2; dit apparaat kent deze opslag als %3) en wordt niet gebruikt. Het kan hier zijn gekopieerd vanuit een opslag die is ondertekend met dezelfde sleutel. Als deze opslag opnieuw zou worden ingesteld, waarbij %4 wordt verwijderd, dan vergeten we de ID&apos;s van de opslagen die dit apparaat kent.</translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 is geschreven voor een andere wachtwoordopslag (opslag-ID %2; dit apparaat kent deze opslag als %3) en wordt niet gebruikt. Mogelijk is ze hierheen gekopieerd vanuit een opslag die met dezelfde sleutel is ondertekend. Als deze opslag in plaats daarvan opnieuw is ingesteld, vergeet dit apparaat door %4 te verwijderen de opslag-ID&apos;s die het kent.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

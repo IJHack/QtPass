@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Pale, ikiwa chupa (store) hakuna orodha (repository) inayohusika, tumia ile kwenye folda iliyo juu yake. Ikiwa imekwisha, itakuwa &quot;off&quot; kwa chaguo-msingi, kama pia &quot;pass&quot;, hivyo chupa kilicho ndani ya orodha nyingine (kama vile faili za asili), halitafanyika kamwe au kupelekwa huko kwa mara. Tu orodha ya asili: &quot;pass&quot; daima itamalizika kwenye chupa.</translation>
+        <translation type="unfinished">Hifadhi isipokuwa na hazina yake yenyewe ya Git, tumia ile iliyo kwenye folda iliyo juu yake. Imezimwa kwa chaguo-msingi, kama ilivyo kwa pass, ili hifadhi iliyo ndani ya hazina nyingine (kwa mfano dotfiles) isifanyiwe commit wala kusukumwa huko kimakosa. Kwa Git Asili pekee: pass husimama kwenye hifadhi kila mara.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -507,17 +507,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Rudi kwenye nenosho zilizopo: PIN, nambari za kadi, vidole, alama, na kadhalika.</translation>
+        <translation type="unfinished">Rejesha maneno chaguo-msingi: PIN, misimbo ya kadi, funguo, tokeni, misimbo ya urejeshaji na mengine kama hayo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Fichia kila moja</translation>
+        <translation type="unfinished">Ficha kila sehemu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Kila sehemu nyuma ya kifungo cha &quot;Eye&quot;, sio tu siri: kwa skrini za pamoja na maonyesho. Noti chini ya majina na msimbo wa OTP, pia zinaonekana; &quot;Ficha maudhui&quot; pia hufichua hizo.</translation>
+        <translation type="unfinished">Kila sehemu nyuma ya kitufe cha jicho, si siri pekee: kwa skrini zinazoshirikiwa na mawasilisho. Maelezo yaliyo chini ya sehemu na msimbo wa OTP hubaki yakionekana; &quot;Ficha maudhui&quot; huficha hayo pia.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -763,7 +763,7 @@ barua pepe</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 anaingiza kwa funguo sawa kwa duka lingine. Orodha ya watazuliwa ambaye alisaini kwa moja ya maduka haya, inaakiriwa katika duka lingine: tumia funguo tofauti za kusaini kwa kila duka ambalo watazuliwa wake ni tofauti.</translation>
+        <translation type="unfinished">%1 husaini kwa ufunguo uleule kwa ajili ya hifadhi nyingine. Orodha ya wapokeaji iliyotiwa saini kwa ajili ya mojawapo ya hifadhi hizi hukubaliwa katika nyingine: tumia ufunguo tofauti wa kusaini kwa kila hifadhi ambayo wapokeaji wake ni tofauti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1161,12 +1161,12 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Orodha ina zaidi ya moja.</translation>
+        <translation type="unfinished">Orodha ina zaidi ya mstari mmoja wa hifadhi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Sera la kuhifadhi imepangwa kwa njia isiyofaa: %1</translation>
+        <translation type="unfinished">Mstari wa hifadhi una muundo usio sahihi: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1201,7 +1201,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Orodha ina orodha ya bidhaa, lakini si orodha ya utengenezaji.</translation>
+        <translation type="unfinished">Orodha ina mstari wa hifadhi lakini haina mstari wa kizazi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1236,7 +1236,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Listo ya mpokeaji waliosaini %1, isiyo na mstari wa kuhifadhi, huku kifaa hiki akiifahamu kwa ID yake %2: inaweza kuwa iliyoandikwa kwa mahifadhi nyingine na kukopwa hapa, au na QtPass za zamani. Mteja wa funguo la kusaini anaweza kupata kwa kufungua Watumiaji, kuchagua mpokeaji mara moja na kuhifadhi, ambapo mstari wa kuhifadhi unaoandikwa.</translation>
+        <translation type="unfinished">Orodha ya wapokeaji iliyotiwa saini %1 haina mstari wa hifadhi, ilhali kifaa hiki kinaijua hifadhi hii kwa kitambulisho chake %2: huenda iliandikwa kwa ajili ya hifadhi nyingine na kunakiliwa hapa, au iliandikwa na QtPass ya zamani. Mwenye ufunguo wa kusaini hutatua hili kwa kufungua Watumiaji, kuchagua wapokeaji upya na kuhifadhi, jambo linaloandika mstari wa hifadhi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1274,7 +1274,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">List ya mpokeaji aliyesaini %1 ilikuwa kwa maduka nyingine (ID ya maduka %2; kifaa hiki anajua maduka hili kama %3) na haitumiki. Inaweza kuwa imechapishwa hapa kutoka kwa maduka aliyesaini kwa chombo sawa. Ikiwa maduka huu utatengwa upya, kuondoa %4 huleta matokeo ya ID za maduka ambazo kifaa hiki anajua.</translation>
+        <translation type="unfinished">Orodha ya wapokeaji iliyotiwa saini %1 iliandikwa kwa ajili ya hifadhi nyingine ya nenosiri (kitambulisho cha hifadhi %2; kifaa hiki kinaijua hifadhi hii kama %3) na haitumiki. Huenda ilinakiliwa hapa kutoka kwenye hifadhi iliyotiwa saini kwa ufunguo uleule. Ikiwa badala yake hifadhi hii ilisanidiwa upya, kuondoa %4 kunafanya kifaa hiki kisahau vitambulisho vya hifadhi kinavyovijua.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1963,7 +1963,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Jina na nenosiri hazipaswi kuwa na hatua za kukata.</translation>
+        <translation type="unfinished">Jina na nenosiri haviwezi kuwa na mivunjo ya mstari.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2826,7 +2826,7 @@ Endelea?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Huo kipelechemashan, lakini kuichangan kwenye git kilifanikiwa. Hii ndiyo iliyoripotiwa:
+        <translation type="unfinished">Ingizo limehifadhiwa kwenye hifadhi, lakini kulirekodi katika git kumeshindwa. Yaliyoripotiwa:
 
 %1</translation>
     </message>
@@ -3383,7 +3383,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Kiungo %1 kimeondolewa na Git siko kutumia, lakini operesheni ili kufanikiwa: %2</translation>
+        <translation type="unfinished">Kiungo %1 kimeondolewa na git haikifuatilii tena, lakini commit imeshindwa: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>

@@ -579,7 +579,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">恢復預設密碼：PIN、卡片密碼、鑰匙、標記、恢復密碼等等。</translation>
+        <translation type="unfinished">恢復預設詞語：PIN、卡片驗證碼、金鑰、權杖、復原碼等。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">所有位於「隱藏」按鈕後的欄位，不僅僅是秘密：適用於共享螢幕和演示。 欄位下方以及 OTP 密碼仍然可見；「隱藏內容」也會隱藏它們。</translation>
+        <translation type="unfinished">眼睛圖示按鈕後的所有欄位，而不僅是機密：適用於共享螢幕和簡報。欄位下方的備註和 OTP 碼仍然可見；「隱藏內容」也會隱藏它們。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">當儲存庫沒有自己的 Git 儲存庫時，請使用其父資料夾中的 Git 儲存庫。預設關閉，如同 pass 一樣，因此在一個儲存庫 (例如 dotfiles) 內部建立的儲存庫永遠不會被不小心地提交或推送。僅支援原生 Git: pass 會一直停留在第一個儲存庫上。</translation>
+        <translation type="unfinished">當密碼儲存庫沒有自己的 Git 儲存庫時，使用其上層資料夾中的 Git 儲存庫。預設關閉，與 pass 相同，因此位於另一個 Git 儲存庫（例如 dotfiles）內的密碼儲存庫絕不會被誤提交或推送到那裡。僅限原生 Git：pass 一律止於密碼儲存庫。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 使用相同的金鑰簽署另一儲存位置。 接受其中一個儲存位置的簽名者列表，在另一個儲存位置中有效：為每個不同簽名者的儲存位置使用不同的金鑰。</translation>
+        <translation type="unfinished">%1 使用相同的金鑰為另一個儲存庫簽署。為其中一個儲存庫簽署的接收者清單，在另一個儲存庫中也會被接受：請為接收者不同的每個儲存庫使用各自的簽署金鑰。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1208,12 +1208,12 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">此列表包含多個商店的資訊。</translation>
+        <translation type="unfinished">此清單含有不止一個儲存庫行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">商店資訊格式錯誤：%1</translation>
+        <translation type="unfinished">儲存庫行格式錯誤：%1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1248,7 +1248,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">這個列表包含商店資訊，但沒有生成資訊。</translation>
+        <translation type="unfinished">此清單含有儲存庫行，但沒有世代行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1283,7 +1283,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">簽名收件者列表 %1 沒有任何儲存資訊，而這台裝置知道該儲存資訊的 ID 為 %2：它可能是寫入到另一個儲存位置後再複製過來，或是由舊版的 QtPass 撰寫。持有簽名金鑰的人員，透過開啟「使用者」選項、重新選擇收件者並儲存，就可以將儲存資訊填入。</translation>
+        <translation type="unfinished">已簽署的接收者清單 %1 沒有儲存庫行，而這台裝置是以 ID %2 識別此儲存庫：它可能是為另一個儲存庫所寫再複製到這裡，或是由舊版 QtPass 所寫。簽署金鑰的持有者可開啟「使用者」、重新選取接收者並儲存來解決，這樣就會寫入儲存庫行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1321,7 +1321,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">簽署的收件者列表 %1 針對的是另一個密碼儲存庫 (儲存庫 ID %2；這個裝置將其識別為 %3)，因此沒有被使用。 它可能從使用相同金鑰簽署的儲存庫中複製過來。 如果這次重新設定該儲存庫，則刪除 %4 會讓這個裝置忘記它所知的儲存庫 ID。</translation>
+        <translation type="unfinished">已簽署的接收者清單 %1 是為另一個密碼儲存庫所寫（儲存庫 ID %2；這台裝置將此儲存庫識別為 %3），因此不予使用。它可能是從使用相同金鑰簽署的儲存庫複製過來的。如果其實是此儲存庫被重新設定過，移除 %4 會讓這台裝置忘記它所知的儲存庫 ID。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1529,7 +1529,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 無法被解析為收件者列表（最多僅包含 %2 個普通檔案）。</translation>
+        <translation type="unfinished">%1 無法作為接收者清單讀取（大小不超過 %2 的一般檔案）。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>

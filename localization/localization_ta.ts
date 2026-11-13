@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">ஒரு ஸ்டோர் தனது சொந்த கிட் களஞ்சியத்தை வைத்திருக்காதபோது, அதை மேலே உள்ள ஒரு களஞ்சியத்தைப் பயன்படுத்தவும். இயல்பாக முடக்கப்பட்டுள்ளது, எனவே ஒரு களஞ்சியத்திற்குள் (உதாரணமாக, டாட்ஃபைல்கள்) இருக்கும் ஸ்டோர் வேண்டுமென்றே அல்லாமல் எந்த நேரத்திலும் கமிட் செய்யப்படவோ அல்லது அனுப்பப்படவோ இல்லை. கிட் மட்டுமே: இது எப்போதும் ஸ்டோரில் முடிவடையும்.</translation>
+        <translation type="unfinished">சேமிப்பகத்திற்குச் சொந்தமான Git களஞ்சியம் இல்லாதபோது, அதற்கு மேலே உள்ள கோப்புறையில் உள்ளதைப் பயன்படுத்தவும். pass இல் உள்ளதைப் போலவே இயல்பாக முடக்கப்பட்டுள்ளது; எனவே வேறொரு களஞ்சியத்திற்குள் (எடுத்துக்காட்டாக dotfiles) இருக்கும் சேமிப்பகம் தவறுதலாக அங்கே ஒருபோதும் கமிட் செய்யப்படாது, புஷ் செய்யப்படாது. சொந்த Git க்கு மட்டும்: pass எப்போதும் சேமிப்பகத்திலேயே நின்றுவிடும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1209,12 +1209,12 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">இந்த பட்டியலில் ஒன்றுக்கும் மேற்பட்ட கடைகள் உள்ளன.</translation>
+        <translation type="unfinished">பட்டியலில் ஒன்றுக்கு மேற்பட்ட சேமிப்பக வரிகள் உள்ளன.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">கடை வரி தவறான வடிவமைப்பைக் கொண்டுள்ளது: %1</translation>
+        <translation type="unfinished">சேமிப்பக வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">இந்த பட்டியலில் ஒரு சேமிப்பு வரி உள்ளது, ஆனால் எந்த உருவாக்க வரி இல்லை.</translation>
+        <translation type="unfinished">பட்டியலில் சேமிப்பக வரி உள்ளது, ஆனால் தலைமுறை வரி இல்லை.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">கையொப்பமிடும் பெறுநர் பட்டியல் %1 எந்த சேமிக்கும் வரியையும் கொண்டிருக்கவில்லை, ஆனால் இந்த சாதனம் அதன் ஐடி %2 மூலம் அதை அடையாளம் காணும்: இது வேறொரு சேமிக்கும் இடத்திற்கு எழுதப்பட்டு இங்கே நகலெடுக்கப்பட்டிருக்கலாம், அல்லது பழைய QtPass மூலம். கையொப்பமிடல் விசையை வைத்திருப்பவர் பயனர்களைத் தேர்ந்தெடுத்துச் சேமிப்பதன் மூலம் அணுக முடியும், இதன் விளைவாக சேமிக்கும் வரி உருவாக்கப்படும்.</translation>
+        <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 இல் சேமிப்பக வரி இல்லை, ஆனால் இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை அதன் ஐடி %2 மூலம் அறிந்துள்ளது: இது வேறொரு சேமிப்பகத்திற்காக எழுதப்பட்டு இங்கே நகலெடுக்கப்பட்டிருக்கலாம், அல்லது பழைய QtPass ஆல் எழுதப்பட்டிருக்கலாம். கையொப்ப விசையை வைத்திருப்பவர் பயனர்கள் என்பதைத் திறந்து, பெறுநர்களைப் புதிதாகத் தேர்ந்தெடுத்துச் சேமிப்பதன் மூலம் இதைத் தீர்க்கலாம்; அது சேமிப்பக வரியை எழுதும்.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">கையெழுத்திட்ட பெறுநர் பட்டியல் %1 வேறொரு கடவுச்சொல் சேமிப்பிற்காக (சேமிப்பு ஐடி %2; இந்த சாதனம் இதை %3 என்று அறிந்திருக்கிறது) எழுதப்பட்டது, மேலும் இது பயன்படுத்தப்படவில்லை. இது ஒரே விசையுடன் கையெழுத்திடப்பட்ட சேமிப்பிலிருந்து நகலெடுக்கப்பட்டிருக்கலாம். இந்த சேமிப்பை மீண்டும் அமைத்தால், %4ஐ நீக்குவது, இந்த சாதனம் அறிந்திருக்கும் சேமிப்பு ஐடிகளை மறக்கச் செய்யும்.</translation>
+        <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 வேறொரு கடவுச்சொல் சேமிப்பகத்திற்காக எழுதப்பட்டது (சேமிப்பக ஐடி %2; இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை %3 என அறிந்துள்ளது), எனவே அது பயன்படுத்தப்படவில்லை. அதே விசையால் கையொப்பமிடப்பட்ட சேமிப்பகத்திலிருந்து அது இங்கே நகலெடுக்கப்பட்டிருக்கலாம். மாறாக இந்தச் சேமிப்பகம் மீண்டும் அமைக்கப்பட்டிருந்தால், %4 ஐ நீக்குவது இந்தச் சாதனம் அறிந்துள்ள சேமிப்பக ஐடிகளை மறக்கச் செய்யும்.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

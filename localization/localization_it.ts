@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Copia in cache ripristinata</translation>
+        <translation type="unfinished">Appunti ripristinati</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -610,7 +610,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando il repository non è presente localmente, utilizzare quello situato nella cartella superiore. Disattivato per impostazione predefinita, come con &quot;pass&quot;, quindi un archivio all&apos;interno di un altro repository (ad esempio, i file dot) non verrà mai committato o caricato accidentalmente. Solo Git nativo: &quot;pass&quot; si ferma sempre all&apos;archivio principale.</translation>
+        <translation type="unfinished">Quando l&apos;archivio non ha un proprio repository Git, usa quello in una cartella superiore. Disattivato per impostazione predefinita, come con pass, così un archivio all&apos;interno di un altro repository (ad esempio dotfiles) non viene mai sottoposto a commit o push lì per errore. Solo Git nativo: pass si ferma sempre all&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">La lista contiene più di una voce relativa a un determinato negozio.</translation>
+        <translation type="unfinished">L&apos;elenco contiene più di una riga dell&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">La riga del negozio è malformata: %1</translation>
+        <translation type="unfinished">La riga dell&apos;archivio è malformata: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">L&apos;elenco contiene una riga per lo &quot;store&quot;, ma non una per la generazione.</translation>
+        <translation type="unfinished">L&apos;elenco contiene una riga dell&apos;archivio ma nessuna riga di generazione.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Lista dei destinatari firmati %1 non contiene alcuna riga di memorizzazione, mentre questo dispositivo conosce tale memorizzazione tramite il suo ID %2: potrebbe essere stata scritta per un altro archivio e copiata qui, oppure da una versione precedente del QtPass. Chi possiede la chiave di firma accede aprendo gli Utenti, selezionando nuovamente i destinatari e salvando, che scrive la riga dell&apos;archivio.</translation>
+        <translation type="unfinished">L&apos;elenco dei destinatari firmato %1 non contiene alcuna riga dell&apos;archivio, mentre questo dispositivo conosce questo archivio tramite il suo ID %2: potrebbe essere stato scritto per un altro archivio e copiato qui, oppure da un QtPass più vecchio. Chi possiede la chiave di firma risolve aprendo Utenti, selezionando di nuovo i destinatari e salvando, il che scrive la riga dell&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Elenco dei destinatari firmati %1 è stato creato per un altro gestore di password (ID del negozio %2; questo dispositivo riconosce questo negozio come %3) e non viene utilizzato. Potrebbe essere stato copiato qui da un negozio firmato con la stessa chiave. Se invece, al posto di quello, si creasse un nuovo negozio, rimuovere %4 cancellerebbe gli ID dei negozi che questo dispositivo conosce.</translation>
+        <translation type="unfinished">L&apos;elenco dei destinatari firmato %1 è stato scritto per un altro archivio password (ID dell&apos;archivio %2; questo dispositivo conosce questo archivio come %3) e non viene usato. Potrebbe essere stato copiato qui da un archivio firmato con la stessa chiave. Se invece questo archivio è stato configurato di nuovo, rimuovere %4 fa dimenticare gli ID degli archivi che questo dispositivo conosce.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

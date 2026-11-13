@@ -285,7 +285,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Alle Felder hinter dem &quot;Augen&quot;-Button, nicht nur die Geheimnisse: für gemeinsame Bildschirme und Präsentationen. Die Notizen unter den Feldern und der OTP-Code bleiben sichtbar; „Inhalt ausblenden“ versteckt diese ebenfalls.</translation>
+        <translation type="unfinished">Alle Felder hinter der Augen-Schaltfläche, nicht nur die Geheimnisse: für geteilte Bildschirme und Präsentationen. Die Notizen unter den Feldern und der OTP-Code bleiben sichtbar; &quot;Inhalt ausblenden&quot; blendet auch diese aus.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1000"/>
@@ -613,7 +613,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass Commits Änderungen in %1 zum Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Kennwortspeichers kann pass nicht auf Git zugreifen. Führe &quot;git init&quot; im Kennwortspeicher aus, oder verwende native Git/GPG.</translation>
+        <translation type="unfinished">pass committet Änderungen in %1 in das Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Kennwortspeichers kann pass Git nicht auf den Kennwortspeicher beschränken. Führe &quot;git init&quot; im Kennwortspeicher aus, oder verwende natives Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1214,12 +1214,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Die Liste enthält mehr als eine Zeile mit Kennwortspeichern.</translation>
+        <translation type="unfinished">Die Liste enthält mehr als eine Speicherzeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Die Zeile &quot;Store&quot; ist fehlerhaft: %1</translation>
+        <translation type="unfinished">Die Speicherzeile ist fehlerhaft: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1254,7 +1254,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Die Liste enthält eine Zeile mit dem Eintrag &quot;Kennwortspeicher&quot;, aber keine Zeile zur Generierung.</translation>
+        <translation type="unfinished">Die Liste enthält eine Speicherzeile, aber keine Generationszeile.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1289,7 +1289,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Die Liste der signierten Empfänger %1 enthält keine Zeile zum Kennwortspeicher, während dieses Gerät den Kennwortspeicher anhand seiner ID %2 kennt: Es könnte für einen anderen Kennwortspeicher erstellt und hier kopiert worden sein, oder von einer älteren Version von QtPass. Ein Inhaber des Signierschlüssels kann durch Öffnen der Benutzer, die Auswahl der Empfänger erneut und Speichern, eine Zeile zum Kennwortspeicher hinzufügen.</translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicherzeile, während dieses Gerät diesen Kennwortspeicher unter seiner ID %2 kennt: Sie wurde möglicherweise für einen anderen Kennwortspeicher geschrieben und hierher kopiert, oder von einem älteren QtPass. Wer den Signaturschlüssel besitzt, kommt weiter, indem er &quot;Benutzer&quot; öffnet, die Empfänger neu auswählt und speichert; dabei wird die Speicherzeile geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1327,7 +1327,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Die Liste der signierten Empfänger %1 wurde für einen anderen Kennwortspeicher (ID %2; dieses Gerät kennt diesen Speichers als %3) erstellt und wird nicht verwendet. Sie könnte hier von einem mit demselben Schlüssel signierten Speichers kopiert worden sein. Wenn dieser Speicher stattdessen neu eingerichtet würde, würde das Entfernen von %4 dazu führen, dass die Speichern-IDs, die dieses Gerät kennt, vergessen werden.</translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 wurde für einen anderen Kennwortspeicher geschrieben (Speicher-ID %2; dieses Gerät kennt diesen Speicher als %3) und wird nicht verwendet. Möglicherweise wurde sie aus einem Speicher hierher kopiert, der mit demselben Schlüssel signiert ist. Wurde dieser Speicher stattdessen neu eingerichtet, vergisst das Entfernen von %4 die Speicher-IDs, die dieses Gerät kennt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

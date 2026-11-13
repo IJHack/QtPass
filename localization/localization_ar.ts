@@ -483,7 +483,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">أعد إدخال كلمات المرور الافتراضية: رموز بطاقات الدخول، مفاتيح، رموز استعادة، وما إلى ذلك.</translation>
+        <translation type="unfinished">استعد الكلمات الافتراضية: رمز PIN، رموز البطاقات، المفاتيح، الرموز المميزة، رموز الاسترداد وما شابه ذلك.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">القائمة تحتوي على أكثر من سطر واحد.</translation>
+        <translation type="unfinished">القائمة تحتوي على أكثر من سطر &quot;مخزن&quot; واحد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">عبارة &quot;المخزن&quot; غير صحيحة: %1</translation>
+        <translation type="unfinished">صيغة سطر &quot;مخزن&quot; غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">القائمة تحتوي على سطر &quot;مخزن&quot;، ولكنها لا تحتوي على سطر &quot;توليد&quot;.</translation>
+        <translation type="unfinished">القائمة تحتوي على سطر &quot;مخزن&quot;، ولكنها لا تحتوي على سطر الجيل.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>

@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Gebruik in map yn &apos;e opslach, dy&apos;t boppe de repo zit</translation>
+        <translation type="unfinished">Brûk in Git-repository yn in map boppe de opslach</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Inneholderônderwiining aktivite</translation>
+        <translation type="unfinished">Ynhâldssykjen ynskeakelje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">As it de klamboerd leeg is, set dan wer wat der foard waard, as pass -c dat dogget, oarspronje net. Tinksten: formatting is net fersteld. Dy tekst bliuwt yn &apos;e minne oant dan. Wa&apos;t de klamboerd net kin lêze sûnder fokus (summe Wayland desktoppen), dan wurdt dy leeg gemaak.</translation>
+        <translation type="unfinished">As it klamboerd wiske wurdt, set dan werom wat der foar it kopiearjen op stie, lykas pass -c docht, útsein as der yntusken wat oars kopiearre is. Allinnich tekst: opmaak wurdt net wersteld. Dy tekst bliuwt oant dan yn it ûnthâld. Wêr&apos;t it klamboerd net sûnder fokus lêzen wurde kin (guon Wayland-buroblêden), wurdt it ynstee wiske.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Elke foerdy ferstopje</translation>
+        <translation type="unfinished">Alle fjilden ferbergje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Elle fjild achter it oog-knop, net allin waardich: foar duorre skermen en presentearjen. De noaten ûnder de fjilden en de OTP-koade bliuwe sjen; &quot;Ynhâld ferbergje&quot; ferbergje dy ek.</translation>
+        <translation type="unfinished">Alle fjilden efter de eachknop, net allinnich de geheimen: foar dielde skermen en presintaasjes. De notysjes ûnder de fjilden en de OTP-koade bliuwe sichtber; &quot;Ynhâld ferbergje&quot; ferberget dy ek.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">As de opslach net in eigne Git repository hat, brûk dat yn in map boppe. Off as default, sa ek by pass, dus in opslach binnen it oanderoare repository (dotfiles, ferstann) wurdt der net fout committen of pushen. Ynlânske Git: pass stopt altyd by de opslach.</translation>
+        <translation type="unfinished">As de opslach gjin eigen Git-repository hat, brûk dan dy yn in map derboppe. Standert út, lykas by pass, sadat in opslach binnen in oar repository (dotfiles, bygelyks) dêr nea by fersin commit of pusht wurdt. Allinnich Ynboude Git: pass stopt altyd by de opslach.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 brûkt de likee undertekeningskaai foar in oare opslach. In lys mei recipiënten dy&apos;t ferunderd bin fan ien fan disse opslach, wurdt aksepteert yn it oare: brûk in heule undertekeningskaai foar elk opslach, sadat de recipiënten der oars binne.</translation>
+        <translation type="unfinished">%1 ûndertekenet mei deselde kaai foar in oare opslach. In ûntfangerslist dy&apos;t foar ien fan dizze opslaggen ûndertekene is, wurdt yn de oare akseptearre: brûk in aparte undertekeningskaai foar elke opslach wêrfan de ûntfangers ferskille.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">De list bevat mear as ien opslachlyn.</translation>
+        <translation type="unfinished">De list befettet mear as ien opslachrigel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">De &quot;Opslach&quot;-lyn is net korrekt: %1</translation>
+        <translation type="unfinished">De opslachrigel is ferkeard opmakke: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">De list hat in opslach-lyn, mar net in generatie-lyn.</translation>
+        <translation type="unfinished">De list hat in opslachrigel, mar gjin generaasjerigel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">De lyst fan de oenthe, dy&apos;t ûnderteken is, %1 hat net in regel foar opslach, mar dit apparaat kent it troch syn ID %2: it kin oarsdan ferstien en hier kopieert waard, of troch &apos;e âldere QtPass. De eigner fan de undertekeningskaai komt by troch te opnijjen fan de brûkers, te keazen en te bewarje, wat de regel foar opslach skriuwt.</translation>
+        <translation type="unfinished">De ûndertekene ûntfangerslist %1 hat gjin opslachrigel, wylst dit apparaat dizze opslach ken ûnder syn ID %2: de list is mooglik foar in oare opslach skreaun en hjirhinne kopiearre, of troch in âldere QtPass skreaun. In hâlder fan de undertekeningskaai lost dit op troch Brûkers te iepenjen, de ûntfangers op &apos;e nij te selektearjen en op te slaan, wêrtroch&apos;t de opslachrigel skreaun wurdt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -3122,7 +3122,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 kin net lêse wurde as in lys fan ontvangers (in gewoane bestan mei maksimal %2), dus is ni&apos;t oanklikke. Kontrolear dit neidat jo de ontvangers keazen hawwe hjir: OK skriuwt in nij lys op it.</translation>
+        <translation type="unfinished">%1 kin net lêzen wurde as ûntfangerslist (in gewoan bestân fan op syn heechst %2), dus is der neat foarselektearre. Kontrolearje it foardat jo hjir ûntfangers kieze: OK skriuwt der in nije list oerhinne.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>
@@ -3385,7 +3385,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">De ynstallearre GPG-homewoenskipe %1 is net bestaande.</translation>
+        <translation type="unfinished">De konfigurearre GPG-thúsmap %1 bestiet net.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>

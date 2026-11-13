@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Ko trgovina nima lastnega Git repozitorija, uporabite tistega v nadležni mapi. Privzeto izklopljeno, tako kot pri passu, zato da se trgovina znotraj drugega repozitorija (npr. .dotfiles) nikoli ne posodobi ali ne prenese tam nenamerno. Samo za native Git: pass vedno konča na trgovini.</translation>
+        <translation type="unfinished">Ko shramba nima lastnega repozitorija Git, se uporabi tisti v mapi nad njo. Privzeto izklopljeno, tako kot pri pass, da se shramba znotraj drugega repozitorija (na primer dotfiles) tja nikoli pomotoma ne zapiše ali potisne. Samo domorodni Git: pass se vedno ustavi pri shrambi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1167,12 +1167,12 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Seznam vsebuje več kot samo eno postavko.</translation>
+        <translation type="unfinished">Seznam vsebuje več kot eno vrstico shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Redni niz je nepoplosen: %1</translation>
+        <translation type="unfinished">Vrstica shrambe je napačno oblikovana: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1207,7 +1207,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Seznam vsebuje vrstico za shranjevanje, vendar ne generiranje.</translation>
+        <translation type="unfinished">Seznam vsebuje vrstico shrambe, ne pa tudi vrstice generacije.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1242,7 +1242,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Seznam prejemnikov, ki so bili podpisani, %1 ne vsebuje nobenega vnosnega reda, medtem ko to naprave pozna ta vnos po ID-ju %2: mogoče je bil shranjen za drugo lokacijo in kopiran tukaj, ali pa je bil ustvarjen z uporabo starejšega qtpass. Oseb, ki poseduje podpisni ključ, lahko nadaljuje tako, da odpre Uporabnike, izbere prejemnike spet in shrani, kar ustvari vnosni red.</translation>
+        <translation type="unfinished">Podpisani seznam prejemnikov %1 ne vsebuje vrstice shrambe, ta naprava pa pozna to shrambo po ID-ju %2: morda je bil zapisan za drugo shrambo in kopiran sem ali pa ga je zapisal starejši QtPass. Imetnik podpisnega ključa to reši tako, da odpre Uporabniki, znova izbere prejemnike in shrani, s čimer se zapiše vrstica shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1280,7 +1280,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Seznam prejemnikov, ki so bili podpisani %1, je bil shranjen v drugi varnostni napravi (ID: %2; ta naprava to pozna kot %3) in ni uporabljan. Lahko ga je kdo kopiral tukaj iz shranjevalne naprave, ki je bila podpisana z isto ključem. Če bi se ta shranjevalna naprava ponovno ustvarila, odstranjevanje %4 bo pozabilo ID-je, ki jih ta naprava pozna.</translation>
+        <translation type="unfinished">Podpisani seznam prejemnikov %1 je bil zapisan za drugo shrambo gesel (ID shrambe %2; ta naprava pozna to shrambo kot %3) in se ne uporablja. Morda je bil sem kopiran iz shrambe, podpisane z istim ključem. Če pa je bila ta shramba znova nastavljena, se z odstranitvijo %4 pozabijo ID-ji shramb, ki jih ta naprava pozna.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1488,7 +1488,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ne more biti brana kot seznam prejemnikov (običajen datotek, ki je daljši od %2).</translation>
+        <translation type="unfinished">%1 ni mogoče prebrati kot seznam prejemnikov (navadna datoteka velikosti največ %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
