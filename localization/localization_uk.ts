@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Слова, розділені комами. Поле враховується, коли його назва містить одне з них як ціле слово, незалежно від регістру: &quot;key&quot; приховує &quot;API key&quot;, але не &quot;keyboard layout&quot;. Тож радше приховується забагато: &quot;Public key&quot; і &quot;Password hint&quot; також приховуються; приберіть слово, щоб їх показати.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Приховати всі поля</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Усі поля, що знаходяться за кнопкою &quot;Око&quot;, а не тільки секрети: для спільного використання та презентацій. Нотатки під полями та код OTP залишаються видимими; функція &quot;Приховати вміст&quot; також їх приховує.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Одна назва поля на рядок. Рядок на кшталт &quot;# secret: pin, cvv&quot; позначає поля, які приховуються так само, як пароль, поки ввімкнено &quot;Сховати пароль&quot;. Такий самий рядок діє і у файлі .templates сховища, де він застосовується до кожного запису сховища, а не лише до створених за цим шаблоном.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Коли сховище не має власного репозиторію Git, використовуйте той, що знаходиться в папці вище. За замовчуванням вимкнено, як і для pass: таким чином, сховище всередині іншого репозиторію (наприклад, dotfiles) ніколи випадково не буде комітоване або відправлене туди. Тільки Git: pass завжди зупиняється на рівні сховища.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass фіксує зміни в %1 у репозиторії Git у %2: якщо шлях до сховища містить двокрапку, pass не може обмежити Git сховищем. Виконайте &quot;git init&quot; у сховищі або використовуйте вбудований Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,9 +1133,9 @@ URL
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… ще %n рядок не показано</numerusform>
+            <numerusform>… ще %n рядки не показано</numerusform>
+            <numerusform>… ще %n рядків не показано</numerusform>
         </translation>
     </message>
 </context>
@@ -1210,12 +1210,12 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Список містить більше одного рядка.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Поле &quot;Сховище&quot; має неправильний формат: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Список містить рядок &quot;Сховище&quot;, але немає рядка &quot;Генерація&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Список одержувачів, підписаних ключем %1, не містить рядка &quot;Сховище&quot;, тоді як це пристрій знає це сховище за його ID %2: можливо, він був створений для іншого сховища та скопійований сюди, або ж за допомогою попередньої версії qtpass. Той, хто володіє ключем підписання, може отримати доступ до списку користувачів, відновивши список одержувачів та збереженим ним.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Список підписаних отримувачів %1 був створений для іншого сховища паролів (ID сховища %2; це пристрій знає це сховище як %3) і не використовується. Ймовірно, його було скопійовано сюди зі сховища, яке було підписане тим самим ключем. Якщо замість цього буде створено нове сховище, видалення %4 призведе до забуття ID сховищ, які це пристрій знає.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2750,9 +2750,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Показано перший %n збіг; шукайте щось конкретніше, щоб побачити решту.</numerusform>
+            <numerusform>Показано перші %n збіги; шукайте щось конкретніше, щоб побачити решту.</numerusform>
+            <numerusform>Показано перших %n збігів; шукайте щось конкретніше, щоб побачити решту.</numerusform>
         </translation>
     </message>
     <message>
@@ -3073,7 +3073,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Збережено, але не відправлено</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
@@ -3306,9 +3306,9 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Цей запис має %n рядок, забагато для редагування тут.</numerusform>
+            <numerusform>Цей запис має %n рядки, забагато для редагування тут.</numerusform>
+            <numerusform>Цей запис має %n рядків, забагато для редагування тут.</numerusform>
         </translation>
     </message>
 </context>

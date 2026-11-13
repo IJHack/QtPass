@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kata-kata, dipisahkan dengan koma. Sebuah kolom dihitung jika namanya memuat salah satu kata itu sebagai kata utuh, tanpa membedakan huruf besar dan kecil: &quot;key&quot; menyembunyikan &quot;API key&quot;, bukan &quot;keyboard layout&quot;. Jadi lebih baik menyembunyikan terlalu banyak: &quot;Public key&quot; dan &quot;Password hint&quot; juga disembunyikan; hapus sebuah kata untuk menampilkannya.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Satu nama kolom per baris. Baris seperti &quot;# secret: pin, cvv&quot; menandai kolom yang disembunyikan seperti kata sandi selama &quot;Sembunyikan kata sandi&quot; aktif. Baris yang sama berfungsi di file .templates milik penyimpanan, dan di sana berlaku untuk setiap entri dalam penyimpanan, bukan hanya yang dibuat dengan templat tersebut.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saat toko tidak memiliki repositori Git sendiri, gunakan repositori yang berada di folder di atasnya. Secara default dinonaktifkan, seperti pada pass, sehingga sebuah toko yang berada di dalam repositori lain (misalnya dotfiles) tidak pernah secara keliru dikomit atau didorong ke sana. Hanya menggunakan Git asli: pass selalu berhenti pada toko tersebut.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sembunyikan setiap bidang</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Setiap bidang di balik tombol &quot;mata&quot;, tidak hanya rahasia: untuk layar bersama dan presentasi. Catatan di bawah setiap bidang dan kode OTP tetap terlihat; &quot;Sembunyikan konten&quot; juga menyembunyikannya.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass meng-commit perubahan di %1 ke repositori Git di %2: dengan titik dua pada jalur penyimpanan, pass tidak dapat membatasi Git pada penyimpanan tersebut. Jalankan &quot;git init&quot; di dalam penyimpanan, atau gunakan Asli Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1164,12 +1164,12 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar ini berisi lebih dari satu item toko.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Format baris toko tidak valid: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1204,7 +1204,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar ini berisi baris untuk menyimpan, tetapi tidak ada baris untuk menghasilkan.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1239,7 +1239,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima yang ditandatangani %1 tidak memiliki bar penyimpanan, sementara perangkat ini mengetahui bar tersebut berdasarkan ID-nya %2: mungkin saja itu ditulis untuk penyimpanan lain dan disalin di sini, atau oleh versi QtPass sebelumnya. Pemegang kunci penandaan dapat mengakses dengan membuka Pengguna, memilih penerima secara manual dan menyimpan, yang akan menulis bar penyimpanan.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1277,7 +1277,7 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima yang ditandatangani %1 ditulis untuk penyimpanan kata sandi lain (ID penyimpanan %2; perangkat ini mengenal penyimpanan ini sebagai %3) dan tidak digunakan. Mungkin saja daftar ini disalin ke sini dari penyimpanan yang ditandatangani dengan kunci yang sama. Jika, alih-alih, kita menghapus %4, maka perangkat akan lupa ID penyimpanan yang diketahui olehnya.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2803,7 +2803,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Disimpan, belum dikirim</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>

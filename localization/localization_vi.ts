@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Các từ, phân tách bằng dấu phẩy. Một trường được tính khi tên của nó chứa một trong các từ đó dưới dạng từ nguyên vẹn, không phân biệt chữ hoa chữ thường: &quot;key&quot; sẽ ẩn &quot;API key&quot;, nhưng không ẩn &quot;keyboard layout&quot;. Vì vậy nó thà ẩn thừa còn hơn: &quot;Public key&quot; và &quot;Password hint&quot; cũng bị ẩn; hãy bỏ một từ đi để hiển thị chúng.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mỗi dòng một tên trường. Một dòng như &quot;# secret: pin, cvv&quot; đánh dấu các trường sẽ được ẩn giống như mật khẩu khi &quot;Ẩn mật khẩu&quot; đang bật. Dòng đó cũng dùng được trong tệp .templates của kho, nơi nó áp dụng cho mọi mục trong kho, chứ không chỉ những mục được tạo bằng mẫu đó.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Khi cửa hàng không có kho Git riêng, hãy sử dụng kho Git ở thư mục mẹ. Tắt theo mặc định, tương tự như pass, vì vậy một cửa hàng nằm trong một kho khác (ví dụ: các tệp cấu hình) sẽ không bao giờ bị commit hoặc đẩy lên vô tình. Chỉ hỗ trợ Git gốc: pass luôn dừng lại ở cửa hàng.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ẩn tất cả các trường</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mọi trường nằm sau nút &quot;Mắt&quot;, không chỉ là các bí mật: cho màn hình chia sẻ và trình bày. Các ghi chú dưới các trường và mã OTP vẫn hiển thị; chức năng &quot;Ẩn nội dung&quot; cũng ẩn chúng.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sử dụng một kho Git nằm trong một thư mục ở trên thư mục chứa ứng dụng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -772,7 +772,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass commit các thay đổi trong %1 vào kho Git tại %2: khi đường dẫn của kho mật khẩu có dấu hai chấm, pass không thể giới hạn Git trong kho mật khẩu. Hãy chạy &quot;git init&quot; trong kho mật khẩu, hoặc dùng Git/GPG gốc.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1164,12 +1164,12 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách này bao gồm nhiều cửa hàng.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dòng cửa hàng bị lỗi: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1204,7 +1204,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách này hiển thị một cửa hàng, nhưng không hiển thị một dòng tạo.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1239,7 +1239,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách người nhận đã ký %1 không có dòng lưu trữ, trong khi thiết bị này biết thông tin lưu trữ bằng ID %2: có thể là nó đã được ghi vào một nơi khác và sao chép ở đây, hoặc do một phiên bản QtPass cũ hơn. Người giữ Khóa ký có thể truy cập bằng cách mở phần &quot;Người dùng&quot;, chọn lại danh sách người nhận và lưu, điều này sẽ thêm dòng lưu trữ.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1277,7 +1277,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách người nhận đã ký %1 được tạo ra cho một trình quản lý mật khẩu khác (ID trình quản lý %2; thiết bị này biết ID này là %3) và không được sử dụng. Có thể nó đã được sao chép ở đây từ một trình quản lý mật khẩu đã ký bằng cùng một khóa. Nếu chúng ta thiết lập lại trình quản lý mật khẩu này, việc xóa %4 sẽ làm mất các ID trình quản lý mà thiết bị này biết.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1962,7 +1962,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tên và cụm mật khẩu không được chứa dấu gạch ngang.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>

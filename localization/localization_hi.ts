@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">शब्द, अल्पविराम से अलग किए हुए। कोई फ़ील्ड तब गिना जाता है जब उसके नाम में इनमें से कोई एक पूरे शब्द के रूप में हो, अक्षर बड़े हों या छोटे: &quot;key&quot; से &quot;API key&quot; छिपता है, &quot;keyboard layout&quot; नहीं। इसलिए यह ज़रूरत से ज़्यादा ही छिपाता है: &quot;Public key&quot; और &quot;Password hint&quot; भी छिप जाते हैं; उन्हें दिखाने के लिए कोई शब्द हटा दें।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रति पंक्ति एक फ़ील्ड नाम। &quot;# secret: pin, cvv&quot; जैसी पंक्ति उन फ़ील्ड को चिह्नित करती है जिन्हें &quot;पासवर्ड छिपाएं&quot; चालू रहने पर पासवर्ड की तरह छिपाया जाता है। यही पंक्ति स्टोर की .templates फ़ाइल में भी काम करती है, जहाँ यह केवल उस टेम्पलेट से बनी प्रविष्टियों पर नहीं, बल्कि स्टोर की हर प्रविष्टि पर लागू होती है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">जब स्टोर के पास अपना कोई Git रिपॉजिटरी न हो, तो ऊपर वाले फ़ोल्डर में मौजूद एक का उपयोग करें। डिफ़ॉल्ट रूप से बंद, क्योंकि pass की तरह, इसलिए किसी दूसरे रिपॉजिटरी (जैसे डॉटर) के अंदर का स्टोर गलती से कभी कमिट या पुश नहीं होता है। केवल नेटिव Git: pass हमेशा स्टोर पर ही रुकता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">हर फ़ील्ड को छिपाएं</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">आँख के बटन के पीछे का हर फ़ील्ड, केवल गुप्त जानकारी ही नहीं: साझा स्क्रीन और प्रस्तुतियों के लिए। फ़ील्ड के नीचे के नोट्स और OTP कोड दिखाई देते रहते हैं; &quot;सामग्री छिपाएं&quot; उन्हें भी छिपा देता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass %1 में किए गए बदलावों को %2 की Git रिपॉजिटरी में कमिट करता है: स्टोर के पथ में कोलन होने पर pass, Git को स्टोर तक सीमित नहीं रख सकता। स्टोर में &quot;git init&quot; चलाएँ, या नेटिव गिट/जीपीजी का उपयोग करें।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,8 +1089,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n और पंक्ति नहीं दिखाई गई</numerusform>
+            <numerusform>… %n और पंक्तियाँ नहीं दिखाई गईं</numerusform>
         </translation>
     </message>
 </context>
@@ -1165,12 +1165,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">इस सूची में एक से अधिक स्टोर लाइनें शामिल हैं।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्टोर लाइन गलत रूप से दी गई है: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1205,7 +1205,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">सूची में एक स्टोर लाइन है, लेकिन कोई जनरेशन लाइन नहीं।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">हस्ताक्षरकर्ता की सूची %1 में कोई स्टोर लाइन नहीं है, जबकि यह डिवाइस इस स्टोर को उसके आईडी %2 से पहचानता है: संभवतः इसे किसी अन्य स्टोर के लिए लिखा गया था और यहां कॉपी किया गया था, या किसी पुराने QtPass द्वारा। हस्ताक्षर कुंजी धारक &quot;उपयोगकर्ता&quot; खोलकर, फिर नए रूप से प्राप्तकर्ताओं का चयन करके और सहेजकर काम पूरा करता है, जिससे स्टोर लाइन लिखी जाती है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 किसी अन्य पासवर्ड भंडार के लिए लिखी गई थी (भंडार आईडी %2; यह डिवाइस इस भंडार को %3 के रूप में जानता है) और इसका उपयोग नहीं किया जा रहा है। संभवतः इसे उसी कुंजी से हस्ताक्षरित एक भंडार से कॉपी किया गया था। यदि इस भंडार को फिर से स्थापित करने के बजाय, हटाकर %4, तो यह डिवाइस उन भंडार आईडी को भूल जाएगा जिन्हें यह जानता है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2533,8 +2533,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>पहला %n मिलान दिखाया जा रहा है; बाकी देखने के लिए कुछ और विशिष्ट खोजें।</numerusform>
+            <numerusform>पहले %n मिलान दिखाए जा रहे हैं; बाकी देखने के लिए कुछ और विशिष्ट खोजें।</numerusform>
         </translation>
     </message>
     <message>
@@ -3056,8 +3056,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>इस प्रविष्टि में %n पंक्ति है, यहाँ संपादित करने के लिए बहुत अधिक।</numerusform>
+            <numerusform>इस प्रविष्टि में %n पंक्तियाँ हैं, यहाँ संपादित करने के लिए बहुत अधिक।</numerusform>
         </translation>
     </message>
 </context>

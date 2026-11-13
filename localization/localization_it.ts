@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copia in cache ripristinata</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parole, separate da virgole. Un campo conta quando il suo nome contiene una di esse come parola intera, senza distinzione tra maiuscole e minuscole: &quot;key&quot; nasconde &quot;API key&quot;, non &quot;keyboard layout&quot;. Quindi tende a nascondere troppo: anche &quot;Public key&quot; e &quot;Password hint&quot; vengono nascosti; togli una parola per mostrarli.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -585,12 +585,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nascondi ogni campo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ogni campo dietro il pulsante &quot;Occhio&quot;, non solo i segreti: per condivisione dello schermo e presentazioni. Le note sotto i campi e il codice OTP rimangono visibili; la funzione &quot;Nascondi contenuto&quot; li nasconde anch&apos;essa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -605,12 +605,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nome di campo per riga. Una riga come &quot;# secret: pin, cvv&quot; indica i campi da nascondere come la password finché &quot;Nascondi password&quot; è attivo. La stessa riga funziona nel file .templates dell&apos;archivio, dove vale per ogni voce dell&apos;archivio, non solo per quelle create con quel modello.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quando il repository non è presente localmente, utilizzare quello situato nella cartella superiore. Disattivato per impostazione predefinita, come con &quot;pass&quot;, quindi un archivio all&apos;interno di un altro repository (ad esempio, i file dot) non verrà mai committato o caricato accidentalmente. Solo Git nativo: &quot;pass&quot; si ferma sempre all&apos;archivio principale.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -728,7 +728,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass registra le modifiche di %1 nel repository Git in %2: con i due punti nel percorso dell&apos;archivio, pass non può limitare Git all&apos;archivio. Esegui &quot;git init&quot; nell&apos;archivio, oppure usa Git/GPG nativa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1134,8 +1134,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n altra riga non mostrata</numerusform>
+            <numerusform>… altre %n righe non mostrate</numerusform>
         </translation>
     </message>
 </context>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista contiene più di una voce relativa a un determinato negozio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La riga del negozio è malformata: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;elenco contiene una riga per lo &quot;store&quot;, ma non una per la generazione.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista dei destinatari firmati %1 non contiene alcuna riga di memorizzazione, mentre questo dispositivo conosce tale memorizzazione tramite il suo ID %2: potrebbe essere stata scritta per un altro archivio e copiata qui, oppure da una versione precedente del QtPass. Chi possiede la chiave di firma accede aprendo gli Utenti, selezionando nuovamente i destinatari e salvando, che scrive la riga dell&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elenco dei destinatari firmati %1 è stato creato per un altro gestore di password (ID del negozio %2; questo dispositivo riconosce questo negozio come %3) e non viene utilizzato. Potrebbe essere stato copiato qui da un negozio firmato con la stessa chiave. Se invece, al posto di quello, si creasse un nuovo negozio, rimuovere %4 cancellerebbe gli ID dei negozi che questo dispositivo conosce.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2799,8 +2799,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Viene mostrata la prima corrispondenza (%n); una ricerca più specifica mostra il resto.</numerusform>
+            <numerusform>Vengono mostrate le prime %n corrispondenze; una ricerca più specifica mostra il resto.</numerusform>
         </translation>
     </message>
     <message>
@@ -3325,8 +3325,8 @@ Continuare?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Questa voce ha %n riga, troppe per modificarla qui.</numerusform>
+            <numerusform>Questa voce ha %n righe, troppe per modificarla qui.</numerusform>
         </translation>
     </message>
 </context>

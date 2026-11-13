@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Obrazovka obnovena</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -199,17 +199,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slova oddělená čárkami. Pole se počítá, pokud jeho název obsahuje některé z nich jako celá slova, bez ohledu na velikost písmen: &quot;key&quot; skryje &quot;API key&quot;, ale ne &quot;keyboard layout&quot;. Raději tedy skryje příliš mnoho: skryjí se i &quot;Public key&quot; a &quot;Password hint&quot;; chcete-li je zobrazit, některé slovo odeberte.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jeden název pole na řádek. Řádek jako &quot;# secret: pin, cvv&quot; označuje pole, která se mají skrývat stejně jako heslo, dokud je zapnuto &quot;Skrýt heslo&quot;. Stejný řádek funguje i v souboru .templates v úložišti, kde platí pro každou položku úložiště, nejen pro ty vytvořené s danou šablonou.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pokud obchod nemá vlastní repozitář Git, použijte ten v nadřazeném adresáři. Výchozí nastavení, stejně jako u pass, takže obsah uložený uvnitř jiného repozitáře (například soubory dotfiles) nikdy není chybně odeslán nebo &quot;commitován&quot;. Pouze Git: pass vždy zastaví na obchodu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -393,7 +393,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass zapisuje změny v %1 do repozitáře Git v %2: s dvojtečkou v cestě k úložišti nedokáže pass omezit Git na úložiště. Spusťte v úložišti &quot;git init&quot;, nebo použijte nativní Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -655,12 +655,12 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrýt všechna pole</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Každé pole za tlačítkem &quot;Oko&quot;, nejen tajné informace: pro sdílená obrazovka a prezentace. Poznámky pod poli a kód OTP zůstávají viditelné; funkce &quot;Skrýt obsah&quot; skrývá i je.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1129,9 +1129,9 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n další řádek není zobrazen</numerusform>
+            <numerusform>… %n další řádky nejsou zobrazeny</numerusform>
+            <numerusform>… %n dalších řádků není zobrazeno</numerusform>
         </translation>
     </message>
 </context>
@@ -1206,12 +1206,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam obsahuje více položek z různých obchodů.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Řádek s obchody je nesprávný: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1246,7 +1246,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam obsahuje položku &quot;Obchod&quot;, ale ne položku &quot;Generování&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1281,7 +1281,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam autorizovaných příjemců %1 neobsahuje řádek pro uložení, zatímco toto zařízení zná tento uložení podle jeho ID %2: mohlo být zapsáno pro jiné uložení a zkopírováno sem, nebo pomocí starší verze qtpass. Osoba s podpisovým klíčem se dostane tím, že otevře Uživatelé, vybere příjemce znovu a uloží, což zapíše řádek pro uložení.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1319,7 +1319,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam autorizovaných příjemců %1 byl vytvořen pro jiný úložiště hesel (ID úložiště %2; toto zařízení zná toto úložiště jako %3) a není používáno. Může jít o kopii, kterou bylo zkopírováno sem z úložiště, které bylo autorizováno stejným klíčem. Pokud by se toto úložiště znovu nastavilo, smazání %4 zapomene ID úložišť, která toto zařízení zná.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2054,7 +2054,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jméno a Bezpečnostní heslo nesmějí obsahovat mezery.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="183"/>
@@ -2702,9 +2702,9 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Zobrazena první %n shoda; pro zobrazení ostatních hledejte něco konkrétnějšího.</numerusform>
+            <numerusform>Zobrazeny první %n shody; pro zobrazení ostatních hledejte něco konkrétnějšího.</numerusform>
+            <numerusform>Zobrazeno prvních %n shod; pro zobrazení ostatních hledejte něco konkrétnějšího.</numerusform>
         </translation>
     </message>
     <message>
@@ -3021,7 +3021,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uloženo, ne odesláno</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
@@ -3254,9 +3254,9 @@ Pokračovat?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tato položka má %n řádek, příliš mnoho na úpravu zde.</numerusform>
+            <numerusform>Tato položka má %n řádky, příliš mnoho na úpravu zde.</numerusform>
+            <numerusform>Tato položka má %n řádků, příliš mnoho na úpravu zde.</numerusform>
         </translation>
     </message>
 </context>

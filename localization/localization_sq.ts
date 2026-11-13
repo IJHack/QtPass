@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fjalë, të ndara me presje. Një fushë merret parasysh kur emri i saj përmban njërën prej tyre si fjalë të plotë, pavarësisht nga shkronjat e mëdha ose të vogla: &quot;key&quot; fsheh &quot;API key&quot;, por jo &quot;keyboard layout&quot;. Pra, më mirë fsheh më shumë se sa duhet: fshihen edhe &quot;Public key&quot; dhe &quot;Password hint&quot;; hiqni një fjalë për t&apos;i shfaqur.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -317,12 +317,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Një emër fushe për rresht. Një rresht si &quot;# secret: pin, cvv&quot; shënon fushat që fshihen njësoj si fjalëkalimi për sa kohë që &quot;Fshih fjalëkalimin&quot; është aktiv. I njëjti rresht funksionon edhe në skedarin .templates të depos, ku vlen për çdo zë të depos, jo vetëm për ata të krijuar me atë shabllon.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kur depoi nuk ka një repo Git të vet, përdojini ato që janë në dosja më lart. Nuk është aktivuar nga default, si dhe me &quot;pass&quot;, kështu që një depo brendë jashtë (si për shembull, dosja e .dotfiles) kurrë nuk do të &quot;commit&quot; ose &quot;push&quot; nga rrjedha. Vetëm Git native: &quot;pass&quot; gjithmonë ndalet në depo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -451,7 +451,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kur klipboardi pastrohet, rikthe atë që ishte në të para kopjimit, siç bën pass -c, përveç nëse ndërkohë është kopjuar diçka tjetër. Vetëm tekst: formatimi nuk rikthehet. Ai tekst mbetet në kujtesë deri atëherë. Aty ku klipboardi nuk mund të lexohet pa fokus (disa desktopë Wayland), ai pastrohet në vend të kësaj.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -487,17 +487,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dëfto përdorimin e fjalëve të parës: PIN, kodet e kartës, qenit, tokenët dhe të tjera.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fsheh çdo fushë</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secili fushë pas butonit &quot;eye&quot;, jo vetëm sekretet: për ekranet të përbashkëta dhe prezantime. Notat dhe Kodi OTP do të jen të dukshme; &quot;Fshih përmbajtjen&quot; do ta fsheh edhe ato.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass i regjistron ndryshimet në %1 te depoja Git në %2: me dy pika në shtegun e depos së fjalëkalimeve, pass nuk mund ta kufizojë Git-in te kjo depo. Ekzekutoni &quot;git init&quot; në depon e fjalëkalimeve, ose përdorni Git/GPG vendas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1093,8 +1093,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n rresht tjetër nuk shfaqet</numerusform>
+            <numerusform>… %n rreshta të tjerë nuk shfaqen</numerusform>
         </translation>
     </message>
 </context>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista përmban më shumë se një linjë depo.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linja &quot;Depo&quot; është e formatuare gabim: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista përfshin një linjë &quot;Depo&quot;, por nuk ka asnjë linjë për krijimin.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista e marrcës me nënshkrim %1 nuk përfshin linjën &quot;Depo&quot;, ndërsa ky dispozitive njeh Depon sipas ID-së %2: ajo mund të jetë shkruar për një Depo tjetër dhe kopjuar këtu, ose nga një version më i vjetër i QtPass. Një pronar i çelësit të nënshkrimit, duke hapur &quot;Përdorues&quot;, duke zgjedhur marrcat sër shkon dhe duke ruajtur, e shkruan linjën &quot;Depo&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1282,7 +1282,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista e marrësve me sinyr %1 u shkrua për një depozitë tjetër të fjalëkalimeve (ID-ja e depozitës %2; ky dispozitive e njeh si %3) dhe nuk po naudojet. Ajo mund të ishte kopjuar këtu nga një depo me sinyr me ta vet, Me te same key. Nëse kjo depo do të konfigurohej përsëri, duke fshirë %4, dispozitivi do të harrojë ID-t e depozitave që ai e njeh.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1998,12 +1998,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hyrje e pavlefshme</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emri dhe fraza kalimi nuk mund të përmbin ndreqje.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2562,8 +2562,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Po shfaqet përputhja e parë (%n); kërkoni diçka më specifike për të parë pjesën tjetër.</numerusform>
+            <numerusform>Po shfaqen %n përputhjet e para; kërkoni diçka më specifike për të parë pjesën tjetër.</numerusform>
         </translation>
     </message>
     <message>
@@ -3099,8 +3099,8 @@ Të vazhdohet?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ky zë ka %n rresht, tepër për t&apos;u modifikuar këtu.</numerusform>
+            <numerusform>Ky zë ka %n rreshta, tepër për t&apos;u modifikuar këtu.</numerusform>
         </translation>
     </message>
 </context>

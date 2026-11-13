@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">คำ คั่นด้วยเครื่องหมายจุลภาค ฟิลด์จะถูกนับเมื่อชื่อของฟิลด์มีคำใดคำหนึ่งเป็นคำเต็ม ไม่ว่าจะเป็นตัวพิมพ์ใหญ่หรือตัวพิมพ์เล็ก: &quot;key&quot; จะซ่อน &quot;API key&quot; แต่ไม่ซ่อน &quot;keyboard layout&quot; ดังนั้นจึงมักซ่อนมากเกินไป: &quot;Public key&quot; และ &quot;Password hint&quot; จะถูกซ่อนด้วย ให้เอาคำออกเพื่อแสดงฟิลด์เหล่านั้น</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">เมื่อที่เก็บรหัสผ่านไม่มี Git repository ของตัวเอง ให้ใช้ repository ในโฟลเดอร์ที่อยู่เหนือขึ้นไป ปิดไว้เป็นค่าเริ่มต้นเช่นเดียวกับ pass เพื่อไม่ให้ที่เก็บรหัสผ่านที่อยู่ภายใน repository อื่น (เช่น dotfiles) ถูกคอมมิตหรือพุชไปที่นั่นโดยไม่ตั้งใจ เฉพาะ Git แบบเนทีฟเท่านั้น: pass จะหยุดที่ที่เก็บรหัสผ่านเสมอ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -512,12 +512,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ซ่อนทุกช่อง</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ทุกช่องด้านหลังปุ่ม &quot;แสดง&quot;, ไม่เพียงแต่ข้อมูลส่วนตัว: สำหรับการแชร์หน้าจอและการนำเสนอ ข้อมูลและรหัส OTP จะยังคงมองเห็นได้; ฟังก์ชัน &quot;ซ่อน&quot; ก็จะซ่อนสิ่งเหล่านั้นด้วย</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -542,7 +542,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">หนึ่งชื่อฟิลด์ต่อหนึ่งบรรทัด บรรทัดเช่น &quot;# secret: pin, cvv&quot; ใช้ระบุฟิลด์ที่จะถูกซ่อนเช่นเดียวกับรหัสผ่านขณะที่ &quot;ซ่อนรหัสผ่าน&quot; เปิดอยู่ บรรทัดเดียวกันนี้ใช้ได้ในไฟล์ .templates ของที่เก็บรหัสผ่านด้วย ซึ่งจะมีผลกับทุกรายการในที่เก็บรหัสผ่าน ไม่ใช่เฉพาะรายการที่สร้างด้วยแม่แบบนั้น</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
@@ -768,7 +768,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass คอมมิตการเปลี่ยนแปลงใน %1 ไปยังที่เก็บ Git ใน %2: เมื่อมีเครื่องหมายทวิภาค (:) ในเส้นทางของที่เก็บรหัสผ่าน pass จะไม่สามารถจำกัด Git ให้อยู่ในที่เก็บรหัสผ่านได้ ให้รัน &quot;git init&quot; ในที่เก็บรหัสผ่าน หรือใช้ Git/GPG แบบเนทีฟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1160,12 +1160,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายการนี้มีมากกว่าหนึ่งรายการ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รูปแบบของข้อมูลที่เก็บไว้ไม่ถูกต้อง: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1200,7 +1200,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายการนี้มีช่องสำหรับใส่ชื่อร้าน แต่ไม่มีช่องสำหรับสร้างรหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1235,7 +1235,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายการผู้รับที่ลงนาม %1 ไม่มีข้อมูลการจัดเก็บ, ในขณะที่อุปกรณ์นี้ทราบข้อมูลนั้นผ่าน ID %2: อาจมีการบันทึกไว้สำหรับระบบอื่นและคัดลอกมา, หรือจากเวอร์ชันเก่าของ QtPass การมีกุญแจลงนาม ทำให้สามารถเข้าถึงได้โดยการเปิด &quot;ผู้ใช้&quot;, เลือกผู้รับใหม่ และบันทึก ซึ่งจะทำการบันทึกข้อมูลการจัดเก็บ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1273,7 +1273,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายการผู้รับที่ลงลายเซ็น %1 ถูกเขียนขึ้นสำหรับที่เก็บรหัสผ่านอื่น (ID ที่เก็บ %2; อุปกรณ์นี้รู้จักที่เก็บนี้ว่าเป็น %3) และไม่ได้ใช้งาน การคัดลอกข้อมูลนี้อาจเกิดขึ้นจากที่เก็บซึ่งลงลายเซ็นด้วยกุญแจเดียวกัน หากเราตั้งค่าที่เก็บใหม่แทน การลบ %4 จะทำให้อุปกรณ์ลืม ID ที่เก็บ ซึ่งอุปกรณ์นี้รู้จัก</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>

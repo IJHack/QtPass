@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Istoricul de copiere a fost restabilit</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cuvinte, separate prin virgule. Un câmp contează atunci când numele său conține unul dintre ele ca cuvânt întreg, indiferent de majuscule sau minuscule: &quot;key&quot; ascunde &quot;API key&quot;, dar nu &quot;keyboard layout&quot;. Așadar, mai degrabă ascunde prea mult: &quot;Public key&quot; și &quot;Password hint&quot; sunt ascunse și ele; scoateți un cuvânt pentru a le afișa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -579,17 +579,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Restabiliți parolele implicite: PIN, coduri de card, chei, token-uri și altele.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ascunde fiecare câmp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Fiecare câmp din spatele butonului &quot;Ochi&quot;, nu doar secretele: pentru ecrane partajate și prezentări. Notele de sub câmpuri și codul OTP rămân vizibile; funcția &quot;Ascunde&quot; le ascunde, de asemenea.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nume de câmp pe linie. O linie precum &quot;# secret: pin, cvv&quot; marchează câmpurile care se ascund la fel ca parola cât timp opțiunea &quot;Maschează parola&quot; este activată. Aceeași linie funcționează și în fișierul .templates al depozitului, unde se aplică fiecărei intrări din depozit, nu doar celor create cu acel șablon.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Când depozitul nu are propriul său depozit Git, folosiți cel din folderul de mai sus. Dezactivat implicit, la fel ca și pentru pass, astfel încât un depozit aflat în interiorul altui (de exemplu, un set de fișiere), să nu fie niciodată commitat sau împins acolo accidental. Doar Git nativ: &quot;pass&quot; se oprește întotdeauna la depozitul principal.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass înregistrează modificările din %1 în depozitul Git din %2: cu două puncte în calea depozitului de parole, pass nu poate limita Git la acesta. Rulați &quot;git init&quot; în depozitul de parole, sau folosiți Git/GPG nativ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,9 +1133,9 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… încă %n linie neafișată</numerusform>
+            <numerusform>… încă %n linii neafișate</numerusform>
+            <numerusform>… încă %n de linii neafișate</numerusform>
         </translation>
     </message>
 </context>
@@ -1210,12 +1210,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista conține mai multe intrări pentru magazine diferite.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linia de comandă este incorect formatată: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista conține o intrare pentru stocare, dar nu una pentru generare.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista de destinatari semnați %1 nu conține nicio linie de stocare, în timp ce acest dispozitiv este familiarizat cu această locație prin ID-ul său %2: aceasta ar fi putut fi creată pentru o altă locație și copiată aici, sau de către o versiune mai veche a QtPass. Persoana care deține cheia de semnare poate accesa lista deschizând secțiunea Utilizatori, selectând destinatorii din nou și salvând, ceea ce va introduce linia de stocare.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista de destinatari semată %1 a fost creată pentru un alt manager de parole (ID-ul depozitului %2; acest dispozitiv îl recunoaște ca pe %3) și nu este utilizată. Poate fi fost copiată aici dintr-un depozit semat cu aceeași cheie. Dacă, în schimb, acest depozit ar fi fost recreat, eliminarea lui %4 va face uitare ID-urile de depozite pe care acest dispozitiv le cunoaște.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1413,7 +1413,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nu se află în baza de date a parolelor, sau numele unui folder conține un caracter de linie nouă sau alt caracter de control, pe care o listă semnată nu poate înregistra.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -2763,9 +2763,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Se afișează prima potrivire (%n); căutați ceva mai specific pentru a vedea restul.</numerusform>
+            <numerusform>Se afișează primele %n potriviri; căutați ceva mai specific pentru a vedea restul.</numerusform>
+            <numerusform>Se afișează primele %n de potriviri; căutați ceva mai specific pentru a vedea restul.</numerusform>
         </translation>
     </message>
     <message>
@@ -3290,9 +3290,9 @@ Continuați?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Această intrare are %n linie, prea multe pentru a fi editată aici.</numerusform>
+            <numerusform>Această intrare are %n linii, prea multe pentru a fi editată aici.</numerusform>
+            <numerusform>Această intrare are %n de linii, prea multe pentru a fi editată aici.</numerusform>
         </translation>
     </message>
 </context>
@@ -3356,7 +3356,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Configurația GPG pentru utilizatorul %1 nu există.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>

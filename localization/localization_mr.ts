@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्वल्पविरामांनी वेगळे केलेले शब्द. एखाद्या फील्डच्या नावात यांपैकी एखादा शब्द पूर्ण शब्द म्हणून असेल, अक्षरे मोठी असोत वा लहान, तर ते फील्ड गणले जाते: &quot;key&quot; मुळे &quot;API key&quot; लपते, &quot;keyboard layout&quot; नाही. त्यामुळे ते गरजेपेक्षा जास्तच लपवते: &quot;Public key&quot; आणि &quot;Password hint&quot; देखील लपतात; ते दाखवण्यासाठी एखादा शब्द काढून टाका.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रत्येक ओळीत एक फील्ड नाव. &quot;# secret: pin, cvv&quot; सारखी ओळ अशी फील्ड चिन्हांकित करते जी &quot;पासवर्ड लपवा&quot; चालू असताना पासवर्डप्रमाणे लपवली जातात. तीच ओळ स्टोअरच्या .templates फाईलमध्येही चालते; तिथे ती फक्त त्या टेम्पलेटने बनवलेल्या नोंदींनाच नव्हे, तर स्टोअरमधील प्रत्येक नोंदीला लागू होते.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">जेव्हा स्टोअरकडे स्वतःचा Git रिपॉजिटरी नसेल, तेव्हा त्याच्या वरच्या फोल्डरमधील रिपॉजिटरी वापरा. डीफॉल्टनुसार बंद केलेले, त्यामुळे एका रिपॉजिटरीमध्ये (उदाहरणार्थ, डॉटफाईल्स) असलेले स्टोअर चुकून कधीही कमिट किंवा पुश केले जात नाही. फक्त नेटिव्ह Git: pass नेहमीच स्टोअरवर थांबते.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">क्लिपबोर्ड साफ केल्यावर, कॉपी करण्यापूर्वी त्यावर जे होते ते परत ठेवा, pass -c प्रमाणेच, जोपर्यंत दरम्यान दुसरे काही कॉपी केले गेले नाही. फक्त मजकूर: स्वरूपण परत मिळत नाही. तो मजकूर तोपर्यंत मेमरीमध्ये राहतो. जेथे फोकसशिवाय क्लिपबोर्ड वाचता येत नाही (काही Wayland डेस्कटॉप), तेथे त्याऐवजी तो साफ केला जातो.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">पासवर्ड: फक्त पासवर्ड लपवा, इतरही काही क्षेत्रे आहेत जी गुप्त माहिती साठवतात.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रत्येक फील्ड लपवा</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">डोळ्याच्या बटणाच्या मागे असलेले प्रत्येक क्षेत्र, केवळ रहस्येच नव्हे: सामायिक स्क्रीन आणि सादरीकरणासाठी. क्षेत्रांच्या खालील नोट्स आणि OTP कोड दृश्यमान राहतील; &quot;सामग्री लपवा&quot; हे देखील लपवेल.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -767,12 +767,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 दुसऱ्या स्टोअरसाठीही त्याच कीने स्वाक्षरी करतो. यांपैकी एका स्टोअरसाठी स्वाक्षरी केलेली प्राप्तकर्ता सूची दुसऱ्या स्टोअरमध्ये स्वीकारली जाते: ज्या स्टोअर्सचे प्राप्तकर्ते वेगळे आहेत, त्या प्रत्येक स्टोअरसाठी स्वतंत्र स्वाक्षरी की वापरा.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass %1 मधील बदल %2 मधील Git रिपॉजिटरीमध्ये कमिट करते: स्टोअरच्या मार्गात कोलन असल्यास pass, Git ला स्टोअरपुरते मर्यादित ठेवू शकत नाही. स्टोअरमध्ये &quot;git init&quot; चालवा, किंवा नेटिव्ह गिट/जीपीजी वापरा.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,8 +1089,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… आणखी %n ओळ दाखवलेली नाही</numerusform>
+            <numerusform>… आणखी %n ओळी दाखवलेल्या नाहीत</numerusform>
         </translation>
     </message>
 </context>
@@ -1165,12 +1165,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">या यादीमध्ये एकापेक्षा जास्त दुकानांची माहिती आहे.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्टोअर ओळीमध्ये त्रुटी आहे: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1205,7 +1205,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">या यादीमध्ये साठवलेल्या नोंदींची यादी आहे, परंतु नवीन नोंदी तयार करण्याचा पर्याय नाही.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1240,7 +1240,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये स्टोअर ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या ID %2 ने ओळखते: ती कदाचित दुसऱ्या स्टोअरसाठी लिहून येथे कॉपी केली गेली असेल, किंवा जुन्या QtPass ने लिहिली असेल. स्वाक्षरी की धारक वापरकर्ते उघडून, प्राप्तकर्ते नव्याने निवडून आणि जतन करून यातून मार्ग काढतो; त्यामुळे स्टोअर ओळ लिहिली जाते.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1278,7 +1278,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">सिग्नेटेड प्राप्तकर्त्यांची यादी %1 दुसऱ्या पासवर्ड स्टोरेजसाठी (स्टोअर आयडी %2; हे डिव्हाइस या स्टोअरला %3 म्हणून ओळखते) लिहिलेली आहे आणि ती वापरली जात नाही. हे डिव्हाइस त्याच कीने साइन केलेले असलेल्या स्टोअरमधून कॉपी केले गेले असण्याची शक्यता आहे. जर हे स्टोअर पुन्हा सेट केले, तर हटवलेले %4 या स्टोरेज आयडीज त्या डिव्हाइसला माहीत नसतील.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2538,8 +2538,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>पहिली %n जुळणी दाखवत आहे; उर्वरित पाहण्यासाठी अधिक नेमके शोधा.</numerusform>
+            <numerusform>पहिल्या %n जुळण्या दाखवत आहे; उर्वरित पाहण्यासाठी अधिक नेमके शोधा.</numerusform>
         </translation>
     </message>
     <message>
@@ -3056,8 +3056,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>या नोंदीत %n ओळ आहे, येथे संपादित करण्यासाठी खूप जास्त.</numerusform>
+            <numerusform>या नोंदीत %n ओळी आहेत, येथे संपादित करण्यासाठी खूप जास्त.</numerusform>
         </translation>
     </message>
 </context>

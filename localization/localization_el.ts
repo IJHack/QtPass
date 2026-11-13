@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επαναφορά αντιγραφής στα επιτραπέζια</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Λέξεις, χωρισμένες με κόμματα. Ένα πεδίο μετράει όταν το όνομά του περιέχει μία από αυτές ως ολόκληρες λέξεις, ανεξαρτήτως πεζών ή κεφαλαίων: το &quot;key&quot; κρύβει το &quot;API key&quot;, όχι το &quot;keyboard layout&quot;. Έτσι προτιμά να κρύβει περισσότερα: τα &quot;Public key&quot; και &quot;Password hint&quot; κρύβονται επίσης· αφαιρέστε μια λέξη για να εμφανιστούν.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -317,12 +317,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα όνομα πεδίου ανά γραμμή. Μια γραμμή όπως &quot;# secret: pin, cvv&quot; επισημαίνει πεδία που αποκρύπτονται όπως ο κωδικός πρόσβασης, όσο είναι ενεργή η επιλογή &quot;Απόκρυψη κωδικού&quot;. Η ίδια γραμμή λειτουργεί και στο αρχείο .templates του χώρου αποθήκευσης, όπου ισχύει για κάθε καταχώριση του χώρου αποθήκευσης, όχι μόνο για όσες δημιουργήθηκαν με αυτό το πρότυπο.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όταν το κατάστημα δεν έχει δικό του αποθετήριο Git, χρησιμοποιήστε αυτό που βρίσκεται σε έναν φάκελο πάνω από αυτό. Απενεργοποιημένο από προεπιλογή, όπως και με το pass, έτσι ώστε ένα κατάστημα μέσα σε ένα άλλο αποθετήριο (π.χ., dotfiles) να μην &quot;κλειδώνει&quot; ή να μεταφέρεται εκεί κατά λάθος. Μόνο Git: Το pass πάντα σταματά στο κατάστημα.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κρυπτογραφήστε και άλλα μυστικά:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -492,12 +492,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόκρυψη κάθε πεδίου</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κάθε πεδίο πίσω από το κουμπί &quot;Οπτική Προβολή&quot;, όχι μόνο τα μυστικά: για κοινές οθόνες και παρουσιάσεις. Οι σημειώσεις κάτω από τα πεδία και ο κωδικός OTP παραμένουν ορατοί, ενώ η επιλογή &quot;Απόκρυψη περιεχομένου&quot; τους κρύβει επίσης.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το pass καταχωρίζει τις αλλαγές του %1 στο αποθετήριο Git στο %2: με άνω και κάτω τελεία στη διαδρομή του χώρου αποθήκευσης, το pass δεν μπορεί να περιορίσει το Git στον χώρο αποθήκευσης. Εκτελέστε &quot;git init&quot; στον χώρο αποθήκευσης ή χρησιμοποιήστε το εγγενές Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1093,8 +1093,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n ακόμη γραμμή δεν εμφανίζεται</numerusform>
+            <numerusform>… %n ακόμη γραμμές δεν εμφανίζονται</numerusform>
         </translation>
     </message>
 </context>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα περιλαμβάνει περισσότερες από μία καταχωρίσεις.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η γραμμή αποθήκευσης είναι εσφαλμένη: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα περιέχει μια γραμμή αποθήκευσης, αλλά όχι μια γραμμή δημιουργίας.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα με τους υπογεγραμμένους αποδέκτες %1 δεν περιέχει γραμμή αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει την αποθήκευση μέσω του ID της %2: ίσως να έχει προοριστεί για άλλη αποθήκευση και αντιγραφεί εδώ, ή από παλαιότερη έκδοση του QtPass. Ένας κάτοχος του κλειδιού υπογραφής μπορεί να εισέλθει ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους αποδέκτες και αποθηκεύοντας, κάτι που θα γράψει την γραμμή αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1282,7 +1282,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα με τους υπογεγραμμένους αποδέκτες %1 έχει καταχωρηθεί σε άλλο αποθηκευτικό χώρο (ID αποθηκευτικού χώρου %2, το οποίο γνωρίζει αυτόν τον αποθηκευτικό χώρο ως %3) και δεν χρησιμοποιείται. Ίσως να έχει αντιγραφεί εδώ από έναν αποθηκευτικό χώρο που υπογράφτηκε με το ίδιο κλειδί. Εάν ο αποθηκευτικός χώρος αυτός επαναρυθμιστεί, η αφαίρεση του %4 θα ξεχάσει τα ID αποθηκευτικών χώρων που γνωρίζει αυτή η συσκευή.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1490,7 +1490,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 δεν μπορεί να διαβαστεί ως λίστα αποστολέων (ένα κανονικό αρχείο με μέγιστο μέγεθος %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -2566,8 +2566,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Εμφανίζεται το πρώτο %n αποτέλεσμα· αναζητήστε κάτι πιο συγκεκριμένο για να δείτε τα υπόλοιπα.</numerusform>
+            <numerusform>Εμφανίζονται τα πρώτα %n αποτελέσματα· αναζητήστε κάτι πιο συγκεκριμένο για να δείτε τα υπόλοιπα.</numerusform>
         </translation>
     </message>
     <message>
@@ -3107,8 +3107,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Αυτή η καταχώριση έχει %n γραμμή, πάρα πολλές για επεξεργασία εδώ.</numerusform>
+            <numerusform>Αυτή η καταχώριση έχει %n γραμμές, πάρα πολλές για επεξεργασία εδώ.</numerusform>
         </translation>
     </message>
 </context>

@@ -254,7 +254,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Virgülle ayrılmış sözcükler. Bir alan, adı bunlardan birini büyük/küçük harf fark etmeksizin tam sözcük olarak içerdiğinde sayılır: &quot;key&quot;, &quot;API key&quot; alanını gizler, &quot;keyboard layout&quot; alanını gizlemez. Yani fazlasını gizlemeyi yeğler: &quot;Public key&quot; ve &quot;Password hint&quot; de gizlenir; bunları göstermek için bir sözcüğü çıkarın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -343,12 +343,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Her satırda bir alan adı. &quot;# secret: pin, cvv&quot; gibi bir satır, &quot;Parolayı gizle&quot; açıkken parola gibi gizlenecek alanları işaretler. Aynı satır deponun .templates dosyasında da çalışır; orada yalnızca o şablonla oluşturulan girdiler için değil, depodaki tüm girdiler için geçerlidir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kendi Git deposuna sahip olmadığında, üstteki klasördeki depoyu kullanın. Varsayılan olarak devre dışı, olduğu gibi &quot;pass&quot; da. Bu nedenle, başka bir depoda (örneğin, dotfiles) bulunan ve yanlışlıkla commit edilmeyen veya push edilmeyen bir depo asla oluşmaz. Sadece yerel Git: &quot;pass&quot; her zaman depoya ulaşır.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -480,7 +480,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pano temizlendiğinde, pass -c gibi, kopyalamadan önce panoda olanı geri koy; arada başka bir şey kopyalanmışsa koyma. Yalnızca metin: biçimlendirme geri yüklenmez. Bu metin o zamana kadar bellekte kalır. Panonun odak olmadan okunamadığı yerlerde (bazı Wayland masaüstleri) bunun yerine pano temizlenir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -521,12 +521,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Her alanı gizle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Göz simgesinin arkasındaki tüm alanlar, sırlarla sınırlı değil: paylaşılan ekranlar ve sunum için. Alanların altındaki notlar ve OTP kodu görünür kalır; &quot;İçeriği gizle&quot; de onları gizler.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -771,7 +771,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass, %1 içindeki değişiklikleri %2 konumundaki Git deposuna işler: parola deposunun yolunda iki nokta üst üste varsa pass, Git&apos;i parola deposuyla sınırlayamaz. Parola deposunda &quot;git init&quot; çalıştırın veya Yerel Git/GPG kullanın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1168,12 +1168,12 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu liste, birden fazla depo satırı içeriyor.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Depo satırı hatalı: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1208,7 +1208,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu liste, bir &quot;Depo&quot; satırı içeriyor ancak herhangi bir &quot;Oluştur&quot; satırı bulunmuyor.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1243,7 +1243,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">İmzalayan alıcı listesi %1, herhangi bir &quot;depo&quot; satırı içermezken, bu cihaz bu &quot;depoyu&quot; ID&apos;si %2 ile tanır: Belki de başka bir &quot;depoya&quot; yazılmış ve buraya kopyalanmış veya eski bir qtPass tarafından oluşturulmuş olabilir. İmzalama anahtarına sahip kişi, Kullanıcılar bölümünü açarak, alıcıları yeniden seçip kaydetmek suretiyle bu satırı ekler.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1281,7 +1281,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">İmzalayanların listesi %1, başka bir parola deposu (depo ID %2; bu cihazı bu depoyu %3 olarak biliyor) için yazılmıştır ve kullanılmamaktadır. Aynı anahtar ile imzalanmış bir yerden kopyalanmış olabilir. Eğer bu depo yeniden yapılandırılırsa, %4&apos;ü kaldırmak, cihazın bildiği depo ID&apos;lerini unutmasına neden olur.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1371,7 +1371,7 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1, parola deposunda veya yol üzerindeki klasör adında bir satır sonu veya başka kontrol karakteri bulunmamaktadır; bu nedenle imzalanmış bir liste bunu kaydetemez.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>

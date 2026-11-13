@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පසුරු පුවරුව ප්‍රතිසාධනය කරන ලදී</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">කොමා වලින් වෙන් කළ වචන. ක්ෂේත්‍රයක නමේ මේවායින් එකක් සම්පූර්ණ වචනයක් ලෙස තිබේ නම්, ලොකු හෝ කුඩා අකුරු කුමක් වුවත්, එය ගණන් ගැනේ: &quot;key&quot; මගින් &quot;API key&quot; සැඟවේ, &quot;keyboard layout&quot; නොවේ. එබැවින් එය ඕනෑවට වඩා සැඟවීමට නැඹුරු වේ: &quot;Public key&quot; සහ &quot;Password hint&quot; ද සැඟවේ; ඒවා පෙන්වීමට වචනයක් ඉවත් කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ගබඩාවට ඉහළින් ඇති ෆෝල්ඩරයක Git රිපොසිටරියක් භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">අන්තර්ගත සෙවුම සක්‍රීය කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පසුරු පුවරුව හිස් කරන විට, පිටපත් කිරීමට පෙර එහි තිබූ දේ නැවත තබන්න, pass -c කරන ආකාරයටම, ඒ අතරතුර වෙනත් දෙයක් පිටපත් කර නොමැති නම්. පෙළ පමණි: හැඩතල ගැන්වීම ප්‍රතිසාධනය නොවේ. ඒ දක්වා එම පෙළ මතකයේ රැඳේ. නාභිගත වීමකින් තොරව පසුරු පුවරුව කියවිය නොහැකි තැන්වල (සමහර Wayland ඩෙස්ක්ටොප්), ඒ වෙනුවට එය හිස් කෙරේ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පෙර පසුරු පුවරුව ප්‍රතිසාධනය කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,12 +564,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">වෙනත් රහස් ද සඟවන්න:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මුරපදය පමණක් නොව, රහස සහිත ක්ෂණික දත්ත අන්‍ය තබා ගන්න: එහි නමින් එකෙකු හෝ මෙම වදනයන් ඇත. ක්‍රියාත්මක නොකිරීම: මුරපදය පමණක් සඟවයි।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -579,17 +579,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පෙරනිමි වචන නැවත තබන්න: pin, කාඩ්පත් කේත, යතුරු, ටෝකන, ප්‍රතිසාධන කේත සහ ඒ හා සමාන දේ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පහළින් ඇති සෑම ක්ෂණික තැනම සැඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ඇස් බොත්තම පිටුපස සෑම ක්ෂේත්‍රයක්ම, රහස් පමණක් නොව: බෙදාගත් තිර සහ ඉදිරිපත් කිරීම් සඳහා. ක්ෂේත්‍රවලට පහළින් ඇති සටහන් සහ OTP කේතය දෘශ්‍යමානව පවතී; &quot;අන්තර්ගතය සඟවන්න&quot; ඒවා ද සඟවයි.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">පේළියකට එක් ක්ෂේත්‍ර නමක්. &quot;# secret: pin, cvv&quot; වැනි පේළියක් මගින්, &quot;මුරපදය සඟවන්න&quot; සක්‍රීයව ඇති විට මුරපදය මෙන් සැඟවිය යුතු ක්ෂේත්‍ර සලකුණු කෙරේ. එම පේළියම ගබඩාවේ .templates ගොනුවේ ද ක්‍රියා කරයි; එහිදී එය එම සැකිල්ලෙන් සෑදූ ඒවාට පමණක් නොව, ගබඩාවේ සෑම ඇතුළත් කිරීමකටම අදාළ වේ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ගබඩාවට තමන්ගේම Git රිපොසිටරියක් නොමැති විට, ඊට ඉහළින් ඇති ෆෝල්ඩරයක ඇති එක භාවිතා කරන්න. pass හි මෙන් පෙරනිමියෙන් අක්‍රියයි, එවිට වෙනත් රිපොසිටරියක් (dotfiles වැනි) තුළ ඇති ගබඩාවක් වැරදීමකින් එහි කිසි විටෙක කමිට් හෝ පුෂ් නොවේ. ස්වදේශීය Git පමණි: pass සැමවිටම ගබඩාවෙන් නතර වේ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 වෙනත් ගබඩාවක් සඳහා ද එම යතුරෙන්ම අත්සන් කරයි. මෙම ගබඩාවලින් එකක් සඳහා අත්සන් කළ ලබන්නන් ලැයිස්තුවක් අනෙකෙහි ද පිළිගැනේ: ලබන්නන් වෙනස් වන සෑම ගබඩාවක් සඳහාම වෙනම අත්සන් කිරීමේ යතුරක් භාවිතා කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass මගින් %1 හි වෙනස්කම් %2 හි ඇති Git රිපොසිටරියට කමිට් කෙරේ: ගබඩාවේ මාර්ගයේ කොලනයක් ඇති විට, pass හට Git ගබඩාවට සීමා කළ නොහැක. ගබඩාව තුළ &quot;git init&quot; ධාවනය කරන්න, නැතහොත් ස්වදේශීය Git/GPG භාවිතා කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… තවත් පේළි %nක් පෙන්වා නැත</numerusform>
+            <numerusform>… තවත් පේළි %nක් පෙන්වා නැත</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ලැයිස්තුවේ ගබඩා පේළි එකකට වැඩි ගණනක් ඇත.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මෙය අසම්මිත ආකාරයෙන් දැක්වේ: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ලැයිස්තුවේ ගබඩා පේළියක් ඇතත් පරම්පරා පේළියක් නැත.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">අත්සන් කළ ලබන්නන් ලැයිස්තුව %1 හි ගබඩා පේළියක් නැත, නමුත් මෙම උපාංගය මෙම ගබඩාව එහි ID %2 මගින් දනී: එය වෙනත් ගබඩාවක් සඳහා ලියා මෙහි පිටපත් කර තිබිය හැක, නැතහොත් පැරණි QtPass එකකින් ලියා තිබිය හැක. අත්සන් කිරීමේ යතුර දරන්නෙකුට පරිශීලකයින් විවෘත කර, ලබන්නන් අලුතින් තෝරා සුරැකීමෙන් මෙය විසඳිය හැක; එමගින් ගබඩා පේළිය ලියැවේ.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">අත්සන් කළ ලබන්නන් ලැයිස්තුව %1 වෙනත් මුරපද ගබඩාවක් සඳහා ලියා ඇත (ගබඩා ID %2; මෙම උපාංගය මෙම ගබඩාව %3 ලෙස දනී) සහ එය භාවිතා නොකෙරේ. එය එම යතුරෙන්ම අත්සන් කළ ගබඩාවකින් මෙහි පිටපත් කර තිබිය හැක. ඒ වෙනුවට මෙම ගබඩාව නැවත පිහිටුවා ඇත්නම්, %4 ඉවත් කිරීමෙන් මෙම උපාංගය දන්නා ගබඩා ID අමතක කෙරේ.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 මුරපද ගබඩාව තුළ නොමැත, නැතහොත් මාර්ගයේ ඇති ෆෝල්ඩර නමක පේළි බිඳුමක් හෝ වෙනත් පාලන අක්ෂරයක් ඇත; අත්සන් කළ ලැයිස්තුවකට එය සටහන් කළ නොහැක.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1530,7 +1530,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ලබන්නන් ලැයිස්තුවක් ලෙස කියවිය නොහැක (උපරිම %2 ක සාමාන්‍ය ගොනුවක්).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -1675,7 +1675,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1, මුරපදය හෝ අනෙකුත් තොරතුරු, මුල් කරගත් පසු එහි ඇති සංකේතාත්මක ඊට සම්බන්ධතාවය හෝ කලාපය। එය යම් දෙසටද සලනය වන්නේ නැත. එමඟින් ලැබෙන තොරතුරු මුරපදය සඳහා වූ ගබඩා කොටස නොව, ඒ ආකාරයෙන්ම හැදී වැඩනු ලැබේ.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2006,12 +2006,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">වලංගු නොවන ආදානයකි</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">නමෙහි සහ මුරවදනෙහි පේළි බිඳුම් අඩංගු විය නොහැක.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2200,7 +2200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මුරපද අන්තර්ගතය තුළ සොයන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2713,14 +2713,14 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="947"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">… මෙම ඇතුළත් කිරීමේ තවත් ගැළපීම්</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>පළමු ගැළපීම් %n පෙන්වයි; ඉතිරිය බැලීමට වඩා නිශ්චිත දෙයක් සොයන්න.</numerusform>
+            <numerusform>පළමු ගැළපීම් %n පෙන්වයි; ඉතිරිය බැලීමට වඩා නිශ්චිත දෙයක් සොයන්න.</numerusform>
         </translation>
     </message>
     <message>
@@ -3020,7 +3020,9 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">මෙය ගබඩා කර ඇත, නමුත් එය &quot;ජිට්&quot;-ට වාර්තා කිරීමට අසමර්ථ විය. වාර්තාවූයේ:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="779"/>
@@ -3030,7 +3032,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="796"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 මුරපද ගබඩාව තුළ නොමැත. ලබන්නන් සකසනු ලබන්නේ ගබඩාව සඳහා හෝ එහි ඇති ෆෝල්ඩරයක් සඳහාය.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="806"/>
@@ -3045,7 +3047,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ලබන්නන් ලැයිස්තුවක් ලෙස කියවිය නොහැක (උපරිම %2 ක සාමාන්‍ය ගොනුවක්), එබැවින් කිසිවක් පෙර-තෝරා නැත. මෙහි ලබන්නන් තේරීමට පෙර එය පරීක්ෂා කරන්න: OK මගින් එය මත නව ලැයිස්තුවක් ලියැවේ.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>
@@ -3244,8 +3246,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>මෙම ඇතුළත් කිරීමේ පේළි %nක් ඇත, මෙහි සංස්කරණය කිරීමට වැඩියි.</numerusform>
+            <numerusform>මෙම ඇතුළත් කිරීමේ පේළි %nක් ඇත, මෙහි සංස්කරණය කිරීමට වැඩියි.</numerusform>
         </translation>
     </message>
 </context>
@@ -3575,7 +3577,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 සබැඳිය ඉවත් කරන ලද අතර git තවදුරටත් එය ලුහුබඳින්නේ නැත, නමුත් commit කිරීම අසාර්ථක විය: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>

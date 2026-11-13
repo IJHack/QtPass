@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">カンマで区切った単語。フィールド名にいずれかの単語が、大文字・小文字を問わず単語単位で含まれていると対象になります: &quot;key&quot; は &quot;API key&quot; を隠しますが、&quot;keyboard layout&quot; は隠しません。そのため隠しすぎる傾向があります: &quot;Public key&quot; や &quot;Password hint&quot; も隠されます。表示するには単語を取り除いてください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -579,17 +579,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">デフォルトのパスワードを復元する: PIN、カードコード、キー、トークン、リカバリーコードなど。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">すべてのフィールドを非表示にする</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">目のアイコンの背後にあるすべての項目：秘密情報だけでなく、共有画面やプレゼンテーションにも使用。項目の下とOTPコードは表示され、「コンテンツを非表示」もそれらを隠します。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">1行に1つのフィールド名。例えば、「# secret: pin, cvv」という行は、パスワードを非表示にする設定が有効になっている場合に、パスワードのようなフィールドを隠すように指定します。この形式は、ストアの.templatesファイルにも適用され、特定のテンプレートで作成されたエントリだけでなく、すべてのエントリに適用されます。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gitリポジトリが自分たちのものではない場合、上の階層にあるリポジトリを使用します。デフォルトでは無効化されており、passと同様に、別のリポジトリ内に存在するストアは、意図せずコミットまたはプッシュされることはありません。ネイティブGitのみ: passは常にストアで停止します。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ url
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass は %1 の変更を %2 の Git リポジトリにコミットします: ストアのパスにコロンが含まれていると、pass は Git をストア内に限定できません。ストアで &quot;git init&quot; を実行するか、ネイティブ Git/GPG を使用してください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1208,12 +1208,12 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">このリストには、複数の店舗の情報が含まれています。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ストアラインの形式が正しくありません: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1248,7 +1248,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">このリストには、商品に関する情報が含まれていますが、生成に関する情報は含まれていません。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1283,7 +1283,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">署名された受信者リスト %1 には、保存に関する行がありません。しかし、このデバイスは ID %2 でその保存を認識しています。これは、別の場所に保存されていたデータがコピーされてきたか、古いバージョンの QtPass によって作成された可能性があります。署名キーの所有者は、「ユーザー」を開き、受信者を再度選択して保存することで、保存に関する行を追加できます。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1321,7 +1321,7 @@ URL
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">署名された受信者リスト %1 は、別のパスワード保管場所 (保管場所 ID %2; このデバイスはこれを %3 として認識) 向けに作成され、使用されていません。同じキーで署名された場所にコピーされた可能性があります。もしこの保管場所を再度設定した場合、%4 を削除すると、このデバイスが認識している保管場所のIDが失われます。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1529,7 +1529,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 は、宛先リストとして読み取ることができません（通常のファイルで、最大 %2 バイト）。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -3576,7 +3576,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 以下の受信者リストを確認しています…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>

@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wurden, skieden troch komma&apos;s. In fjild telt mei as de namme ien derfan as hiele wurden befettet, mei haad- of lytse letters: &quot;key&quot; ferberget &quot;API key&quot;, net &quot;keyboard layout&quot;. Der wurdt dus leaver tefolle ferburgen: ek &quot;Public key&quot; en &quot;Password hint&quot; wurde ferburgen; helje in wurd fuort om se te toanen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Gebruik in map yn &apos;e opslach, dy&apos;t boppe de repo zit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inneholderônderwiining aktivite</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">As it de klamboerd leeg is, set dan wer wat der foard waard, as pass -c dat dogget, oarspronje net. Tinksten: formatting is net fersteld. Dy tekst bliuwt yn &apos;e minne oant dan. Wa&apos;t de klamboerd net kin lêze sûnder fokus (summe Wayland desktoppen), dan wurdt dy leeg gemaak.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elke foerdy ferstopje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Elle fjild achter it oog-knop, net allin waardich: foar duorre skermen en presentearjen. De noaten ûnder de fjilden en de OTP-koade bliuwe sjen; &quot;Ynhâld ferbergje&quot; ferbergje dy ek.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ien fjildnamme per rigel. In rigel lykas &quot;# secret: pin, cvv&quot; markearret fjilden dy&apos;t krekt as it wachtwurd ferburgen wurde, salang&apos;t &quot;Wachtwurd ferbergje&quot; oan stiet. Deselde rigel wurket ek yn it .templates-bestân fan de opslach, dêr&apos;t er foar elke yngong fan de opslach jildt, net allinnich foar dy&apos;t mei dat sjabloan makke binne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">As de opslach net in eigne Git repository hat, brûk dat yn in map boppe. Off as default, sa ek by pass, dus in opslach binnen it oanderoare repository (dotfiles, ferstann) wurdt der net fout committen of pushen. Ynlânske Git: pass stopt altyd by de opslach.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="501"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 brûkt de likee undertekeningskaai foar in oare opslach. In lys mei recipiënten dy&apos;t ferunderd bin fan ien fan disse opslach, wurdt aksepteert yn it oare: brûk in heule undertekeningskaai foar elk opslach, sadat de recipiënten der oars binne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass commit feroarings yn %1 nei it Git-repository yn %2: mei in dûbele punt yn it paad fan de opslach kin pass Git net ta de opslach beheine. Fier &quot;git init&quot; út yn de opslach, of brûk Ynboude Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… noch %n rigel net werjûn</numerusform>
+            <numerusform>… noch %n rigels net werjûn</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De list bevat mear as ien opslachlyn.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De &quot;Opslach&quot;-lyn is net korrekt: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De list hat in opslach-lyn, mar net in generatie-lyn.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De lyst fan de oenthe, dy&apos;t ûnderteken is, %1 hat net in regel foar opslach, mar dit apparaat kent it troch syn ID %2: it kin oarsdan ferstien en hier kopieert waard, of troch &apos;e âldere QtPass. De eigner fan de undertekeningskaai komt by troch te opnijjen fan de brûkers, te keazen en te bewarje, wat de regel foar opslach skriuwt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De lyst fan de oantekende ontvanger %1 wie skreaan foar in oare wachtwurdopslach (opslag-ID %2; dit apparaat kent it as %3) en wurdt net brûwd. It kin hier kopiearre wurde út in opslag dy&apos;t mei dezelfde key is ûnderteken. As it dêrmei wer ynstallearre waard, dan fergets fjerjen fan %4 de opslag-ID&apos;s dy&apos;t dit apparaat kent.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2764,8 +2764,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>De earste %n oerienkomst wurdt toand; sykje krekter om de rest te sjen.</numerusform>
+            <numerusform>De earste %n oerienkomsten wurde toand; sykje krekter om de rest te sjen.</numerusform>
         </translation>
     </message>
     <message>
@@ -3122,7 +3122,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 kin net lêse wurde as in lys fan ontvangers (in gewoane bestan mei maksimal %2), dus is ni&apos;t oanklikke. Kontrolear dit neidat jo de ontvangers keazen hawwe hjir: OK skriuwt in nij lys op it.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>
@@ -3321,8 +3321,8 @@ Trochgean?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Dit item hat %n rigel, te folle om hjir te bewurkjen.</numerusform>
+            <numerusform>Dit item hat %n rigels, te folle om hjir te bewurkjen.</numerusform>
         </translation>
     </message>
 </context>
@@ -3385,7 +3385,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De ynstallearre GPG-homewoenskipe %1 is net bestaande.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>

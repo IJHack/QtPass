@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Historial de còpies d&apos;escriptori restaurat</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paraules, separades per comes. Un camp compta quan el seu nom conté alguna d&apos;elles com a paraules senceres, sense distingir majúscules de minúscules: &quot;key&quot; oculta &quot;API key&quot;, però no &quot;keyboard layout&quot;. Per tant, tendeix a ocultar massa: &quot;Public key&quot; i &quot;Password hint&quot; també s&apos;oculten; treu una paraula per mostrar-los.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ocultar cada camp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tots els camps que hi ha darrere del botó &quot;Ocultar&quot;, no només els secrets: per a pantalles compartides i presentacions. Les notes que hi ha sota els camps i el codi OTP romanen visibles; &quot;Ocultar contingut&quot; també les oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nom de camp per línia. Una línia com &quot;# secret: pin, cvv&quot; marca els camps que s&apos;han d&apos;amagar com la contrasenya mentre &quot;Oculta la contrasenya&quot; està activat. La mateixa línia funciona al fitxer .templates del magatzem, on afecta cada entrada del magatzem, no només les creades amb aquesta plantilla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quan la botiga no té un repositori Git propi, utilitzeu-ne un que estigui a una carpeta superior. Desactivat per defecte, tal com passa amb pass, de manera que una botiga dins d&apos;un altre repositori (per exemple, els fitxers .dotfiles) mai s&apos;commitarà ni es pujarà accidentalment. Només Git nativa: pass sempre s&apos;atura a la botiga.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass confirma els canvis de %1 al repositori Git de %2: amb dos punts al camí del magatzem, pass no pot limitar Git al magatzem. Executeu &quot;git init&quot; al magatzem, o utilitzeu Git/GPG natius.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n línia més no mostrada</numerusform>
+            <numerusform>… %n línies més no mostrades</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista inclou més d&apos;una entrada de botiga.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La línia de la botiga està malformada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista inclou una opció per guardar, però no per generar.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista de destinataris signats %1 no inclou cap línia d&apos;emmagatzemat, mentre que aquest dispositiu la coneix per la seva ID %2: pot ser que s&apos;hagi creat per un altre emmagatzemat i es hagi copiat aquí, o per una versió anterior de QtPass. Un usuari amb la clau de signatura accedeix obrint Usuaris, seleccionant els destinataris de nou i guardant, cosa que escriu la línia d&apos;emmagatzemat.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista de destinataris signats %1 va ser escrita per a un altre gestor de contrasenyes (ID del gestor: %2; aquest dispositiu el coneix com a %3) i no s&apos;utilitza. Pot haver estat copiada aquí des d&apos;un gestor que estigui signat amb la mateixa clau. Si en comptes, es configurés de nou, eliminar %4 oblidaria els ID del gestor que aquest dispositiu coneix.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">El %1 no està dins del dipòsit de contrasenyes, ni un nom de carpeta conté una ruptura de línia o un altre caràcter de control, que una llista signada no pot registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1884,7 +1884,7 @@ El rexifratge no s&apos;ha completat, així que algunes entrades, o totes, encar
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 és més gran del que pot ser un fitxer de clau.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -2742,8 +2742,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Es mostra la primera coincidència (%n); una cerca més concreta mostra la resta.</numerusform>
+            <numerusform>Es mostren les primeres %n coincidències; una cerca més concreta mostra la resta.</numerusform>
         </translation>
     </message>
     <message>
@@ -3293,8 +3293,8 @@ Voleu continuar?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Aquesta entrada té %n línia, massa per editar-la aquí.</numerusform>
+            <numerusform>Aquesta entrada té %n línies, massa per editar-la aquí.</numerusform>
         </translation>
     </message>
 </context>

@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">كلمات مفصولة بفواصل. يُحتسب الحقل عندما يحتوي اسمه على إحداها ككلمات كاملة، بأحرف كبيرة أو صغيرة: &quot;key&quot; تخفي &quot;API key&quot;، وليس &quot;keyboard layout&quot;. لذا يميل إلى إخفاء أكثر من اللازم: &quot;Public key&quot; و &quot;Password hint&quot; يُخفيان أيضًا؛ احذف كلمة لإظهارهما.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -307,12 +307,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">اسم حقل واحد في كل سطر. سطر مثل &quot;# secret: pin, cvv&quot; يحدد الحقول التي تُخفى مثل كلمة المرور ما دام خيار &quot;اخفاء كلمة المرور&quot; مفعّلاً. يعمل السطر نفسه في ملف .templates الخاص بالمخزن، حيث ينطبق على كل إدخال في المخزن، وليس فقط على الإدخالات المنشأة بذلك النموذج.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عندما لا يحتوي المخزن على مستودع Git خاص به، استخدم المستودع الموجود في المجلد أعلاه. الوضع الافتراضي: كما هو الحال مع &quot;pass&quot;، فإن أي مخزن موجود داخل مستودع آخر (مثل ملفات النظام) لن يتم الالتزام به أو دفعه عن طريق الخطأ. استخدام Git الأصلي فقط: &quot;pass&quot; يتوقف دائمًا عند المخزن.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -483,17 +483,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">أعد إدخال كلمات المرور الافتراضية: رموز بطاقات الدخول، مفاتيح، رموز استعادة، وما إلى ذلك.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">إخفاء كل حقل</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">كل الحقول الموجودة خلف زر &quot;العين&quot;، وليس فقط الأسرار: للمشاركة وعرض المحتوى. الملاحظات أسفل الحقول ورمز التحقق لمرة واحدة تظل مرئية؛ &quot;إخفاء المحتوى&quot; يخفيها أيضًا.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -706,7 +706,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يودِع pass التغييرات في %1 في مستودع Git الموجود في %2: عند وجود نقطتين رأسيتين (:) في مسار المخزن، لا يستطيع pass حصر Git في المخزن. شغّل &quot;git init&quot; داخل المخزن، أو استخدم Git/GPG الأصلي.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1089,12 +1089,12 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n سطر إضافي غير معروض</numerusform>
+            <numerusform>… سطر إضافي واحد (%n) غير معروض</numerusform>
+            <numerusform>… سطران إضافيان (%n) غير معروض</numerusform>
+            <numerusform>… %n أسطر إضافية غير معروض</numerusform>
+            <numerusform>… %n سطرًا إضافيًا غير معروض</numerusform>
+            <numerusform>… %n سطر إضافي غير معروض</numerusform>
         </translation>
     </message>
 </context>
@@ -1169,12 +1169,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">القائمة تحتوي على أكثر من سطر واحد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عبارة &quot;المخزن&quot; غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1209,7 +1209,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">القائمة تحتوي على سطر &quot;مخزن&quot;، ولكنها لا تحتوي على سطر &quot;توليد&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1244,7 +1244,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين الموقعة %1 لا تحتوي على سطر &quot;مخزن&quot;، بينما يعرف هذا الجهاز المخزن من خلال معرّفه %2: قد يكون قد تم كتابته لمكان تخزين آخر ثم نسخه هنا، أو بواسطة نسخة أقدم من QtPass. الشخص الذي يمتلك مفتاح التوقيع يمكنه الوصول إلى قائمة المستخدمين، واختيار المستلمين مرة أخرى وحفظها، مما يؤدي إلى إضافة سطر &quot;مخزن&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1282,7 +1282,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين الموقعة %1 كتبت لمكان تخزين كلمات المرور آخر (معرف المكان %2؛ هذا الجهاز يعرف هذا المكان باسم %3) وهي غير مستخدمة. قد تكون تم نسخها هنا من مكان مخزن موقع باستخدام نفس المفتاح. إذا تم إعادة إعداد هذا المكان بدلاً من ذلك، فإن حذف %4 سيفقد معرفات الأماكن التي يعرفها هذا الجهاز.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2550,12 +2550,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>عرض أول %n نتيجة؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
+            <numerusform>عرض أول نتيجة (%n)؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
+            <numerusform>عرض أول نتيجتين (%n)؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
+            <numerusform>عرض أول %n نتائج؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
+            <numerusform>عرض أول %n نتيجةً؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
+            <numerusform>عرض أول %n نتيجة؛ ابحث عن شيء أكثر تحديدًا لرؤية البقية.</numerusform>
         </translation>
     </message>
     <message>
@@ -3095,12 +3095,12 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>يحتوي هذا الإدخال على %n سطر، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
+            <numerusform>يحتوي هذا الإدخال على سطر واحد (%n)، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
+            <numerusform>يحتوي هذا الإدخال على سطرين (%n)، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
+            <numerusform>يحتوي هذا الإدخال على %n أسطر، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
+            <numerusform>يحتوي هذا الإدخال على %n سطرًا، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
+            <numerusform>يحتوي هذا الإدخال على %n سطر، وهو عدد كبير جدًا للتحرير هنا.</numerusform>
         </translation>
     </message>
 </context>

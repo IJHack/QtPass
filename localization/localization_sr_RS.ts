@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Reči, razdvojene zarezima. Polje se računa kada njegov naziv sadrži neku od njih kao celu reč, bez obzira na velika i mala slova: &quot;key&quot; sakriva &quot;API key&quot;, ali ne i &quot;keyboard layout&quot;. Zato radije sakriva previše: sakrivaju se i &quot;Public key&quot; i &quot;Password hint&quot;; uklonite reč da biste ih prikazali.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -543,7 +543,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kada je međuspremnik očišćen, vraćajte ono što je bilo na njemu pre kopiranja, kao što to čini pass -c, osim ako nešto drugo nije bilo kopirano u međivotk. Tekst: formatiranje nije vraćeno. Taj tekst ostaje u memoriji do tada. Gde međuspremnik ne može biti pročitan bez fokusa (neke Wayland desktop-ove), on se umesto toga briše.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -564,7 +564,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sakrij i druge tajne:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -574,22 +574,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podrazumevano</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vrati podrazumevane reči: pin, kodove kartica, ključeve, tokene, kodove za oporavak i slično.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sakrij sva polja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Svaka polja iza dugmeta &quot;Oko&quot;, a ne samo tajne: za zajedničke ekrane i prezentacije. Beleške ispod polja i OTP kôd ostaju vidljivi; &quot;Sakrij sadržaj&quot; takođe sakriva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jedan naziv polja po redu. Red poput &quot;# secret: pin, cvv&quot; označava polja koja se sakrivaju kao lozinka dok je uključeno &quot;Sakrij lozinku&quot;. Isti red radi i u datoteci .templates skladišta, gde važi za svaki unos u skladištu, a ne samo za one napravljene tim šablonom.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kada skladište nema vlastitu Git repozitoriju, koristite onu koja se nalazi u fascikli iznad njega. Izlazi kao standardno, isto kao i pass, tako da skladište unutar drugog repozitorija (npr., dotfiles) nikad neće biti pogrešno komitovano ili premešteno. Samo Git: pass uvijek staje na skladištu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass komituje izmene u %1 u Git repozitorijum u %2: sa dvotačkom u putanji skladišta, pass ne može da ograniči Git na skladište. Pokrenite &quot;git init&quot; u skladištu ili koristite nativni Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,9 +1133,9 @@ e-pošta</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… još %n red nije prikazan</numerusform>
+            <numerusform>… još %n reda nisu prikazana</numerusform>
+            <numerusform>… još %n redova nije prikazano</numerusform>
         </translation>
     </message>
 </context>
@@ -1210,12 +1210,12 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista sadrži više od jednog reda skladišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linija &quot;Skladište&quot; je neispravna: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1250,7 +1250,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista sadrži red skladišta, ali ne i red generacije.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1285,7 +1285,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista primatelja sa potpisom %1 ne sadrži liniju za skladištenje, dok ovo uređaje poznaje skladište po ID-u %2: možda je bilo namenski napisano za drugo skladište i kopirano ovde, ili od starijeg qtPass. Osoba koja poseduje ključ za potpisivanje može da pristupi tako što će otvoriti korisnike, izabrati primatelje novim putem i sačuvati, što će dodati liniju za skladištenje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1323,7 +1323,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Potpisana lista primalaca %1 napisana je za drugo skladište lozinki (ID skladišta %2; ovaj uređaj poznaje ovo skladište kao %3) i ne koristi se. Možda je ovamo kopirana iz skladišta potpisanog istim ključem. Ako je umesto toga ovo skladište ponovo podešeno, uklanjanje %4 briše ID-ove skladišta koje ovaj uređaj poznaje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -2048,7 +2048,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime i lozinka ne sme da sadrže linije prelom.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2763,9 +2763,9 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Prikazuje se prvi %n rezultat; potražite nešto određenije da biste videli ostale.</numerusform>
+            <numerusform>Prikazuju se prva %n rezultata; potražite nešto određenije da biste videli ostale.</numerusform>
+            <numerusform>Prikazuje se prvih %n rezultata; potražite nešto određenije da biste videli ostale.</numerusform>
         </translation>
     </message>
     <message>
@@ -3057,7 +3057,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sačuvano, nije komitovano</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
@@ -3290,9 +3290,9 @@ Nastaviti?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ovaj unos ima %n red, previše za uređivanje ovde.</numerusform>
+            <numerusform>Ovaj unos ima %n reda, previše za uređivanje ovde.</numerusform>
+            <numerusform>Ovaj unos ima %n redova, previše za uređivanje ovde.</numerusform>
         </translation>
     </message>
 </context>
@@ -3597,7 +3597,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Provera lista primalaca pod %1…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3623,7 +3623,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veza %1 je uklonjena i git je više ne prati, ali komit nije uspeo: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>

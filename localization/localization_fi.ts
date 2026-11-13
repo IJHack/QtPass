@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sanat pilkuilla erotettuina. Kenttä lasketaan mukaan, kun sen nimessä on jokin niistä kokonaisina sanoina, kirjainkoosta riippumatta: &quot;key&quot; piilottaa kentän &quot;API key&quot;, ei kenttää &quot;keyboard layout&quot;. Mieluummin siis piilotetaan liikaa: myös &quot;Public key&quot; ja &quot;Password hint&quot; piilotetaan; poista sana, jos haluat näyttää ne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Piilota kaikki kentät</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kaikki kentät silmäpainen takana, ei vain salaisuudet: jaettujen näyttöjen ja esittelyjen käyttöön. Kenttien alla olevat muistiinpanot ja OTP-koodi pysyvät näkyvillä; &quot;Piilota sisältö&quot; piilottaa myös ne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yksi kentän nimi riviä kohden. Rivi kuten &quot;# secret: pin, cvv&quot; merkitsee kentät, jotka piilotetaan salasanan tavoin, kun &quot;Piilota salasana&quot; on käytössä. Sama rivi toimii myös varaston .templates-tiedostossa, jossa se koskee varaston jokaista merkintää, ei vain kyseisellä pohjalla tehtyjä.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kun myymälällä ei ole omaa Git-repositoriota, käytä sitä yläpuolella olevassa kansiossa. Oletuksena pois päältä, kuten passin kanssa, joten myymälä toisessa repositoriossa (esimerkiksi dotfiles) ei vahingossa koskaan commitoida tai pushata sinne. Vain natiivi Git: pass pysähtyy aina myymälään.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass tallentaa kohteen %1 muutokset Git-tietovarastoon kohteessa %2: kun säilön polussa on kaksoispiste, pass ei voi rajata Gitiä säilöön. Suorita säilössä &quot;git init&quot; tai käytä natiivia Git/GPG:tä.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1133,8 +1133,8 @@ sähköposti</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n rivi lisää ei näy</numerusform>
+            <numerusform>… %n riviä lisää ei näy</numerusform>
         </translation>
     </message>
 </context>
@@ -1209,12 +1209,12 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Luettelossa on useampi kuin yksi myymälä.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kaupan rivi on virheellinen: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1249,7 +1249,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Luettelossa on kauppalinja, mutta ei luontilinja.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1284,7 +1284,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Allekirjoitetun vastaanottajien luettelo %1 ei sisällä säilytysriviä, kun taas tämä laite tunnistaa sen ID:n avulla %2: se on voinut olla kirjoitettu toiselle säilytykselle ja kopioitu tänne, tai vanhemmalle qtPass-versiolle. Allekirjoitusavaimen haltija pääsee käsiksi avaamalla Käyttäjät, valitsemalla vastaanottajat uudelleen ja tallentamalla, mikä luo säilytysrivin.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1322,7 +1322,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alkuperäisen vastaanottajan luettelo %1 on kirjoitettu toiselle salasanan tallennuspaikalle (tallennuspaikan ID %2; tämä laite tunnistaa tämän tallennuspaikan nimellä %3) ja sitä ei käytetä. Se on voitu kopioida tänne samalla avaimella allekirjoitetusta tallennuspaikalta. Jos tämä tallennuspaikka asetetaan uudelleen, poistamalla %4, laite unohtaa kaikki sen tunnisteet.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1412,7 +1412,7 @@ sähköposti</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ei ole salasanavaraston sisällä, tai matkan varrella olevan kansion nimessä on rivinvaihto tai muu ohjausmerkki, jota allekirjoitettuun luetteloon ei voi tallentaa.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -1675,7 +1675,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 on, tai piiloutuu symbolisen linkin tai solmun jälkeen. Se osoittaa ei ole osa salasanojen tallennusta ja jätetään sellaisenaan.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2043,7 +2043,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nimi ja salasana eivät saa sisältää rivivälejä.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2756,8 +2756,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Näytetään ensimmäinen %n osuma; hae tarkemmin nähdäksesi loput.</numerusform>
+            <numerusform>Näytetään ensimmäiset %n osumaa; hae tarkemmin nähdäksesi loput.</numerusform>
         </translation>
     </message>
     <message>
@@ -3282,8 +3282,8 @@ Jatketaanko?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tässä merkinnässä on %n rivi, liian monta muokattavaksi tässä.</numerusform>
+            <numerusform>Tässä merkinnässä on %n riviä, liian monta muokattavaksi tässä.</numerusform>
         </translation>
     </message>
 </context>
@@ -3587,7 +3587,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tarkistetaan vastaanottajaluetteloita kohteen %1 alla…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>

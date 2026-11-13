@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਬਹਾਲ ਕੀਤਾ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਾਮਿਆਂ ਨਾਲ ਵੱਖ ਕੀਤੇ ਸ਼ਬਦ। ਕੋਈ ਫੀਲਡ ਉਦੋਂ ਗਿਣਿਆ ਜਾਂਦਾ ਹੈ ਜਦੋਂ ਉਸਦੇ ਨਾਮ ਵਿੱਚ ਇਨ੍ਹਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਪੂਰੇ ਸ਼ਬਦ ਵਜੋਂ ਹੋਵੇ, ਅੱਖਰ ਵੱਡੇ ਹੋਣ ਜਾਂ ਛੋਟੇ: &quot;key&quot; ਨਾਲ &quot;API key&quot; ਲੁਕਦਾ ਹੈ, &quot;keyboard layout&quot; ਨਹੀਂ। ਇਸ ਲਈ ਇਹ ਲੋੜ ਤੋਂ ਵੱਧ ਹੀ ਲੁਕਾਉਂਦਾ ਹੈ: &quot;Public key&quot; ਅਤੇ &quot;Password hint&quot; ਵੀ ਲੁਕ ਜਾਂਦੇ ਹਨ; ਉਨ੍ਹਾਂ ਨੂੰ ਦਿਖਾਉਣ ਲਈ ਕੋਈ ਸ਼ਬਦ ਹਟਾ ਦਿਓ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਜਦੋਂ ਸਟੋਰ ਦੀ ਆਪਣੀ ਕੋਈ Git ਰਿਪੋਜ਼ਟਰੀ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਾਲੀ ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ। ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ, pass ਵਾਂਗ, ਤਾਂ ਜੋ ਕਿਸੇ ਹੋਰ ਰਿਪੋਜ਼ਟਰੀ (ਜਿਵੇਂ dotfiles) ਦੇ ਅੰਦਰਲਾ ਸਟੋਰ ਗਲਤੀ ਨਾਲ ਕਦੇ ਉੱਥੇ ਕਮਿੱਟ ਜਾਂ ਪੁਸ਼ ਨਾ ਹੋਵੇ। ਸਿਰਫ਼ ਨੇਟਿਵ Git: pass ਹਮੇਸ਼ਾ ਸਟੋਰ &apos;ਤੇ ਰੁਕ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਮੱਗਰੀ ਖੋਜ ਚਾਲੂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -471,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਜਦੋਂ ਕਲਿੱਪਬੋਰਡ ਸਾਫ਼ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਤਾਂ ਕਾਪੀ ਤੋਂ ਪਹਿਲਾਂ ਇਸ &apos;ਤੇ ਜੋ ਸੀ ਉਹ ਵਾਪਸ ਰੱਖੋ, ਜਿਵੇਂ pass -c ਕਰਦਾ ਹੈ, ਜਦੋਂ ਤੱਕ ਇਸ ਦੌਰਾਨ ਕੁਝ ਹੋਰ ਕਾਪੀ ਨਾ ਕੀਤਾ ਗਿਆ ਹੋਵੇ। ਸਿਰਫ਼ ਟੈਕਸਟ: ਫਾਰਮੈਟਿੰਗ ਬਹਾਲ ਨਹੀਂ ਹੁੰਦੀ। ਉਹ ਟੈਕਸਟ ਉਦੋਂ ਤੱਕ ਮੈਮੋਰੀ ਵਿੱਚ ਰਹਿੰਦਾ ਹੈ। ਜਿੱਥੇ ਫੋਕਸ ਤੋਂ ਬਿਨਾਂ ਕਲਿੱਪਬੋਰਡ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ (ਕੁਝ Wayland ਡੈਸਕਟਾਪ), ਉੱਥੇ ਇਸ ਦੀ ਬਜਾਏ ਇਸਨੂੰ ਸਾਫ਼ ਕਰ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -492,32 +492,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਹੋਰ ਗੁਪਤ ਜਾਣਕਾਰੀ ਵੀ ਲੁਕਾਓ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਿਰਫ਼ ਪਾਸਵਰਡ ਹੀ ਨਹੀਂ, ਉਹ ਫੀਲਡ ਵੀ ਲੁਕਾਓ ਜਿਨ੍ਹਾਂ ਵਿੱਚ ਕੋਈ ਗੁਪਤ ਜਾਣਕਾਰੀ ਹੈ: ਅਜਿਹਾ ਫੀਲਡ ਜਿਸਦੇ ਨਾਮ ਵਿੱਚ ਇਨ੍ਹਾਂ ਸ਼ਬਦਾਂ ਵਿੱਚੋਂ ਕੋਈ ਇੱਕ ਹੋਵੇ। ਬੰਦ: ਸਿਰਫ਼ ਪਾਸਵਰਡ ਹੀ ਲੁਕਾਇਆ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਡਿਫੌਲਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਡਿਫੌਲਟ ਸ਼ਬਦ ਵਾਪਸ ਰੱਖੋ: ਪਿੰਨ, ਕਾਰਡ ਕੋਡ, ਕੁੰਜੀਆਂ, ਟੋਕਨ, ਰਿਕਵਰੀ ਕੋਡ ਅਤੇ ਇਸ ਤਰ੍ਹਾਂ ਦੇ ਹੋਰ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਾਰੀਆਂ ਖਾਣਿਆਂ ਨੂੰ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਅੱਖ ਵਾਲੇ ਬਟਨ ਦੇ ਪਿੱਛੇ ਹਰ ਖੇਤਰ, ਸਿਰਫ਼ ਗੁਪਤ ਜਾਣਕਾਰੀ ਹੀ ਨਹੀਂ: ਸਾਂਝੀਆਂ ਸਕ੍ਰੀਨਾਂ ਅਤੇ ਪੇਸ਼ਕਾਰੀ ਲਈ। ਖੇਤਰਾਂ ਦੇ ਹੇਠਾਂ ਵਾਲੇ ਨੋਟ ਅਤੇ OTP ਕੋਡ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿੰਦੇ ਹਨ; &quot;ਸਮੱਗਰੀ ਲੁਕਾਓ&quot; ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਲੁਕਾ ਦਿੰਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -542,12 +542,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਹਰ ਲਾਈਨ ਵਿੱਚ ਇੱਕ ਫੀਲਡ ਦਾ ਨਾਮ। &quot;# secret: pin, cvv&quot; ਵਰਗੀ ਲਾਈਨ ਉਨ੍ਹਾਂ ਫੀਲਡਾਂ ਨੂੰ ਨਿਸ਼ਾਨਬੱਧ ਕਰਦੀ ਹੈ ਜੋ &quot;ਪੱਸਵਰਡ ਦੀ ਗੋਪਨੀਯਤਾ ਰੱਖੋ&quot; ਚਾਲੂ ਹੋਣ ਦੌਰਾਨ ਪਾਸਵਰਡ ਵਾਂਗ ਲੁਕਾਏ ਜਾਂਦੇ ਹਨ। ਇਹੀ ਲਾਈਨ ਸਟੋਰ ਦੀ .templates ਫਾਈਲ ਵਿੱਚ ਵੀ ਕੰਮ ਕਰਦੀ ਹੈ, ਜਿੱਥੇ ਇਹ ਸਿਰਫ਼ ਉਸ ਟੈਂਪਲੇਟ ਨਾਲ ਬਣਾਈਆਂ ਐਂਟਰੀਆਂ ਉੱਤੇ ਹੀ ਨਹੀਂ, ਸਗੋਂ ਸਟੋਰ ਦੀ ਹਰ ਐਂਟਰੀ ਉੱਤੇ ਲਾਗੂ ਹੁੰਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਟੋਰ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਿੱਚ Git ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -768,7 +768,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass %1 ਵਿਚਲੀਆਂ ਤਬਦੀਲੀਆਂ ਨੂੰ %2 ਵਿਚਲੀ Git ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਕਮਿੱਟ ਕਰਦਾ ਹੈ: ਸਟੋਰ ਦੇ ਮਾਰਗ ਵਿੱਚ ਕੋਲਨ ਹੋਣ &apos;ਤੇ pass, Git ਨੂੰ ਸਟੋਰ ਤੱਕ ਸੀਮਤ ਨਹੀਂ ਰੱਖ ਸਕਦਾ। ਸਟੋਰ ਵਿੱਚ &quot;git init&quot; ਚਲਾਓ, ਜਾਂ ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ ਵਰਤੋ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1085,8 +1085,8 @@ The value will still be saved as entered.</source>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>… %n ਹੋਰ ਲਾਈਨ ਨਹੀਂ ਦਿਖਾਈ ਗਈ</numerusform>
+            <numerusform>… %n ਹੋਰ ਲਾਈਨਾਂ ਨਹੀਂ ਦਿਖਾਈਆਂ ਗਈਆਂ</numerusform>
         </translation>
     </message>
 </context>
@@ -1161,12 +1161,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸੂਚੀ ਵਿੱਚ ਇੱਕ ਤੋਂ ਵੱਧ ਸਟੋਰ ਲਾਈਨਾਂ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਟੋਰ ਲਾਈਨ ਦੀ ਬਣਤਰ ਗਲਤ ਹੈ: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1201,7 +1201,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸੂਚੀ ਵਿੱਚ ਸਟੋਰ ਲਾਈਨ ਤਾਂ ਹੈ, ਪਰ ਜਨਰੇਸ਼ਨ ਲਾਈਨ ਨਹੀਂ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1236,7 +1236,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਵਿੱਚ ਕੋਈ ਸਟੋਰ ਲਾਈਨ ਨਹੀਂ ਹੈ, ਜਦਕਿ ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ ਇਸਦੀ ID %2 ਨਾਲ ਜਾਣਦਾ ਹੈ: ਹੋ ਸਕਦਾ ਹੈ ਇਹ ਕਿਸੇ ਹੋਰ ਸਟੋਰ ਲਈ ਲਿਖੀ ਗਈ ਹੋਵੇ ਅਤੇ ਇੱਥੇ ਕਾਪੀ ਕੀਤੀ ਗਈ ਹੋਵੇ, ਜਾਂ ਕਿਸੇ ਪੁਰਾਣੇ QtPass ਨੇ ਲਿਖੀ ਹੋਵੇ। ਸਾਈਨਿੰਗ ਕੀ ਦਾ ਧਾਰਕ ਵਿਸ਼ਵਾਸੀ ਖੋਲ੍ਹ ਕੇ, ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਸਿਰਿਓਂ ਚੁਣ ਕੇ ਅਤੇ ਸੇਵ ਕਰ ਕੇ ਇਸ ਵਿੱਚੋਂ ਲੰਘ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਸਟੋਰ ਲਾਈਨ ਲਿਖੀ ਜਾਂਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1274,7 +1274,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਹੀ ਕੀਤੇ ਗਏ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਇੱਕ ਹੋਰ ਪਾਸਵਰਡ ਸਟੋਰ ਲਈ ਲਿਖਿਆ ਗਿਆ ਸੀ (ਸਟੋਰ ID %2; ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ %3 ਵਜੋਂ ਜਾਣਦਾ ਹੈ) ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਇਹ ਸੰਭਵ ਹੈ ਕਿ ਇਹ ਇੱਕੋ ਛੋਲ ਨਾਲ ਦਬਾਏ ਗਏ ਸਟੋਰ ਤੋਂ ਅੱਥੀਆ ਕੀਤਾ ਗਿਆ ਸੀ। ਜੇਕਰ ਇਸ ਸਟੋਰ ਨੂੰ ਮੁੜ ਤੋਂ ਲਾਇਆ ਗਿਆ, ਤਾਂ %4 ਨੂੰ ਹਟਾਉਣ ਨਾਲ, ਇਹ ਡਿਵਾਈਸ ਜਾਣਦਾ ਹੋਇਆ ਸਟੋਰ ID ਖੁੰਝ ਜਾਂਦੇ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1472,7 +1472,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਪਾਸਵਰਡ ਸਟੋਰ ਦੇ ਅੰਦਰ ਨਹੀਂ ਹੈ, ਜਾਂ ਰਸਤੇ ਵਿਚਲੇ ਕਿਸੇ ਫੋਲਡਰ ਦੇ ਨਾਮ ਵਿੱਚ ਲਾਈਨ ਬ੍ਰੇਕ ਜਾਂ ਕੋਈ ਹੋਰ ਕੰਟਰੋਲ ਅੱਖਰ ਹੈ, ਜਿਸਨੂੰ ਦਸਤਖਤ ਕੀਤੀ ਸੂਚੀ ਦਰਜ ਨਹੀਂ ਕਰ ਸਕਦੀ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="585"/>
@@ -1482,7 +1482,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="624"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਨੂੰ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ ਵਜੋਂ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ (ਵੱਧ ਤੋਂ ਵੱਧ %2 ਦੀ ਇੱਕ ਆਮ ਫਾਈਲ)।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="638"/>
@@ -1627,7 +1627,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪੁੱਲ ਕਰਨ ਤੋਂ ਬਾਅਦ %1 ਇੱਕ ਸਿੰਬੋਲਿਕ ਲਿੰਕ ਜਾਂ ਜੰਕਸ਼ਨ ਹੈ, ਜਾਂ ਅਜਿਹੇ ਕਿਸੇ ਦੇ ਪਿੱਛੇ ਹੈ। ਇਹ ਜਿਸ ਵੱਲ ਇਸ਼ਾਰਾ ਕਰਦਾ ਹੈ, ਉਹ ਪਾਸਵਰਡ ਸਟੋਰ ਦਾ ਹਿੱਸਾ ਨਹੀਂ ਹੈ ਅਤੇ ਉਸਨੂੰ ਜਿਵੇਂ ਹੈ ਉਵੇਂ ਹੀ ਛੱਡ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -1836,7 +1836,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/importkeydialog.cpp" line="75"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਇੱਕ ਕੀ ਫਾਈਲ ਦੇ ਵੱਧ ਤੋਂ ਵੱਧ ਆਕਾਰ ਨਾਲੋਂ ਵੱਡੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="134"/>
@@ -1958,12 +1958,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="176"/>
         <source>Invalid input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਅਵੈਧ ਇਨਪੁੱਟ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਾਮ ਅਤੇ ਪੱਸਫਰੇਜ਼ ਵਿੱਚ ਲਾਈਨ ਬ੍ਰੇਕ ਨਹੀਂ ਹੋ ਸਕਦੇ।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -2517,14 +2517,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="947"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">… ਇਸ ਐਂਟਰੀ ਵਿੱਚ ਹੋਰ ਮੇਲ</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="962"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>ਪਹਿਲਾ %n ਮੇਲ ਦਿਖਾਇਆ ਜਾ ਰਿਹਾ ਹੈ; ਬਾਕੀ ਦੇਖਣ ਲਈ ਕੁਝ ਹੋਰ ਖਾਸ ਖੋਜੋ।</numerusform>
+            <numerusform>ਪਹਿਲੇ %n ਮੇਲ ਦਿਖਾਏ ਜਾ ਰਹੇ ਹਨ; ਬਾਕੀ ਦੇਖਣ ਲਈ ਕੁਝ ਹੋਰ ਖਾਸ ਖੋਜੋ।</numerusform>
         </translation>
     </message>
     <message>
@@ -2813,14 +2813,16 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸੇਵ ਹੋਇਆ, ਕਮਿੱਟ ਨਹੀਂ ਹੋਇਆ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਐਂਟਰੀ ਸਟੋਰ ਵਿੱਚ ਸੇਵ ਹੋ ਗਈ ਹੈ, ਪਰ ਇਸਨੂੰ git ਵਿੱਚ ਦਰਜ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ। ਜੋ ਰਿਪੋਰਟ ਕੀਤਾ ਗਿਆ:
+
+%1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="779"/>
@@ -2845,7 +2847,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="983"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਨੂੰ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ ਵਜੋਂ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ (ਵੱਧ ਤੋਂ ਵੱਧ %2 ਦੀ ਇੱਕ ਆਮ ਫਾਈਲ), ਇਸ ਲਈ ਕੁਝ ਵੀ ਪਹਿਲਾਂ ਤੋਂ ਚੁਣਿਆ ਨਹੀਂ ਗਿਆ। ਇੱਥੇ ਪ੍ਰਾਪਤਕਰਤਾ ਚੁਣਨ ਤੋਂ ਪਹਿਲਾਂ ਇਸਦੀ ਜਾਂਚ ਕਰੋ: OK ਇਸਦੇ ਉੱਪਰ ਨਵੀਂ ਸੂਚੀ ਲਿਖ ਦਿੰਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1004"/>
@@ -3044,8 +3046,8 @@ Continue?</source>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>ਇਸ ਐਂਟਰੀ ਵਿੱਚ %n ਲਾਈਨ ਹੈ, ਇੱਥੇ ਸੰਪਾਦਿਤ ਕਰਨ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ।</numerusform>
+            <numerusform>ਇਸ ਐਂਟਰੀ ਵਿੱਚ %n ਲਾਈਨਾਂ ਹਨ, ਇੱਥੇ ਸੰਪਾਦਿਤ ਕਰਨ ਲਈ ਬਹੁਤ ਜ਼ਿਆਦਾ।</numerusform>
         </translation>
     </message>
 </context>
@@ -3108,7 +3110,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸੰਰਚਿਤ GPG ਹੋਮ %1 ਮੌਜੂਦ ਨਹੀਂ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>
@@ -3349,7 +3351,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="143"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਹੇਠਲੀਆਂ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀਆਂ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="250"/>
@@ -3375,7 +3377,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="350"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਲਿੰਕ %1 ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਅਤੇ git ਹੁਣ ਇਸਨੂੰ ਟ੍ਰੈਕ ਨਹੀਂ ਕਰਦਾ, ਪਰ ਕਮਿੱਟ ਅਸਫਲ ਰਿਹਾ: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="477"/>

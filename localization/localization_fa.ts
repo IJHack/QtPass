@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="178"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">دست‌کاری، بازیابی شد</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="179"/>
@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کلمات، جداشده با ویرگول. یک فیلد وقتی به حساب می‌آید که نامش یکی از آن‌ها را به‌صورت کلمه کامل داشته باشد، با حروف بزرگ یا کوچک: &quot;key&quot; فیلد &quot;API key&quot; را مخفی می‌کند، نه &quot;keyboard layout&quot; را. بنابراین ترجیحاً بیش از حد مخفی می‌کند: &quot;Public key&quot; و &quot;Password hint&quot; هم مخفی می‌شوند؛ برای نمایش آن‌ها یک کلمه را حذف کنید.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,12 +339,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">در هر خط یک نام فیلد. خطی مانند &quot;# secret: pin, cvv&quot; فیلدهایی را مشخص می‌کند که تا وقتی &quot;مخفی کردن رمز عبور&quot; روشن است، مانند رمز عبور مخفی می‌شوند. همین خط در فایل .templates مخزن نیز کار می‌کند و آنجا برای همه ورودی‌های مخزن اعمال می‌شود، نه فقط آن‌هایی که با آن قالب ساخته شده‌اند.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هنگامی که فروشگاه، یک مخزن Git اختصاصی نداشته باشد، از مخزنی که در پوشه‌ای بالاتر قرار دارد استفاده کنید. به طور پیش‌فرض غیرفعال است، درست مانند pass، بنابراین یک فروشگاه داخل یک مخزن دیگر (مانند فایل‌های متمرکز) هرگز تصادفیً کپی یا منتشر نمی‌شود. فقط Git بومی: برنامه همیشه در فروشگاه متوقف می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فیلدهایی که رازها را نیز نگهداری می‌کنند، نه فقط رمز عبور: فیلدی که نام آن یکی از این کلمات است. خاموش: فقط رمز عبور پنهان می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پنهان کردن هر فیلد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">هر فیلدی که پشت دکمه چشم است، نه فقط رازها: برای صفحه‌های اشتراکی و ارائه. یادداشت‌های زیر فیلدها و کد OTP همچنان قابل مشاهده می‌مانند؛ &quot;مخفی کردن محتوا&quot; آن‌ها را هم پنهان می‌کند.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="529"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pass تغییرات %1 را در مخزن Git واقع در %2 ثبت می‌کند: با وجود دونقطه در مسیر مخزن رمز عبور، pass نمی‌تواند Git را به آن محدود کند. در مخزن رمز عبور &quot;git init&quot; را اجرا کنید، یا از بومی Git/GPG استفاده کنید.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="552"/>
@@ -1164,12 +1164,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این لیست شامل بیش از یک آیتم مربوط به یک فروشگاه است.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">خط خرید نادرست است: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
@@ -1204,7 +1204,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این لیست شامل یک خط &quot;ذخیره&quot; اما هیچ خط &quot;تولید&quot; نیست.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1239,7 +1239,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لیست گیرندگان امضا شده %1، هیچ خط ذخیره‌سازی ندارد، در حالی که این دستگاه با استفاده از شناسه %2، این ذخیره‌سازی را می‌شناسد: ممکن است برای یک ذخیره‌سازی دیگر نوشته شده و اینجا کپی شده باشد، یا توسط نسخه قدیمی‌تر QtPass. فردی که کلید امضا را دارد، با باز کردن بخش کاربران، انتخاب مجدد گیرندگان و ذخیره سازی، خط ذخیره‌سازی را ایجاد می‌کند.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1277,7 +1277,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">لیست امضاشده گیرندگان %1 برای مخزن رمز عبور دیگری نوشته شده است (شناسه مخزن %2؛ این دستگاه این مخزن را با %3 می‌شناسد) و استفاده نمی‌شود. ممکن است از مخزنی که با همان کلید امضا شده به اینجا کپی شده باشد. اگر در عوض این مخزن دوباره راه‌اندازی شده است، حذف %4 باعث می‌شود شناسه‌های مخزنی که این دستگاه می‌شناسد فراموش شوند.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1629,7 +1629,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1150"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1، یا یک پیوند نمادین یا اتصال است که پس از کشیدن ایجاد می‌شود. این پیوند به چه چیزی اشاره دارد، بخشی از ذخیره رمز عبور نیست و بدون هیچ تغییری رها می‌شود.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1219"/>
@@ -2815,7 +2815,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="534"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ذخیره شده، اما اعمال نشده</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="535"/>
@@ -3110,7 +3110,7 @@ Continue?</source>
     <message>
         <location filename="../src/profileinit.cpp" line="249"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">پوشه خانگی GPG پیکربندی‌شده %1 وجود ندارد.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="271"/>
