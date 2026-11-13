@@ -184,6 +184,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   and encrypted to the root's recipients. Someone who can push to a shared
   store could plant such a link and read the new entry (scan finding
   ANT-2026-CSMGGZLE).
+- A new entry saved with the native backend and Git is committed even when
+  the store's `.gitignore` matches it. Someone who can push to a shared
+  store could push a rule such as `*.gpg`; the entry then stayed an
+  ignored, uncommitted file, which a later pull could delete. QtPass now
+  stages the files it writes with `git add -f` (scan finding
+  ANT-2026-L2LXMCPM).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
