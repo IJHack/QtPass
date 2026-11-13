@@ -317,18 +317,27 @@ void ImitatePass::gitCommit(const QString &file, const QString &msg) {
 void ImitatePass::Remove(QString file, bool isDir) {
   file = m_settings.passStore + file;
   transactionHelper trans(this, PASS_REMOVE);
+  // A symbolic link found inside the store (one a `git pull` may have brought
+  // in) is not a folder of the store. Never recurse through it: that would
+  // empty whatever it points to outside the store. Remove the link itself only.
+  // A folder comes with a trailing separator, through which lstat() follows
+  // the link: look at the name without it, and remove that name.
+  const bool isLink = QFileInfo(QDir::cleanPath(file)).isSymLink();
+  if (isLink) {
+    file = QDir::cleanPath(file);
+  }
   if (!isDir) {
     file += ".gpg";
   }
   if (gitReady()) {
-    executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
+    executeGit(GIT_RM, {"rm", (isDir && !isLink ? "-rf" : "-f"), pgit(file)});
     // Normalize path the same way as add/edit operations
     QString path = QDir(m_settings.passStore).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
     gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
     // Without Git nothing else reports a failure: git rm would print its own.
-    if (isDir) {
+    if (isDir && !isLink) {
       QDir dir(file);
       if (!dir.removeRecursively()) {
         // As rm -rf, it went on past what it could not remove: the folder
