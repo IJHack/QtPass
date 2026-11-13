@@ -14,6 +14,7 @@
 
 #include <QBoxLayout>
 #include <QDesktopServices>
+#include <QDrag>
 #include <QFrame>
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -39,7 +40,22 @@ void PasswordDisplayPanel::clear() {
   while (m_grid->count() > 0) {
     QLayoutItem *item = m_grid->takeAt(0);
     if (QWidget *widget = item->widget()) {
-      delete widget;
+      // A drag out of a field value runs QDrag::exec() inside the value
+      // widget's own mouse handler, and clear() can be reached from that
+      // nested event loop (a drop on the search box, the panel autoclear
+      // timer, a second "qtpass NAME"). Deleting the row then - even with
+      // deleteLater(), which the drag's loop would deliver - frees it under
+      // its own handler and crashes. A row that has a QDrag among its children
+      // is hidden now and deleted once that QDrag is gone, which Qt does after
+      // the drag ends; rows without a drag are deleted at once as before.
+      const QList<QDrag *> drags = widget->findChildren<QDrag *>();
+      if (drags.isEmpty()) {
+        delete widget;
+      } else {
+        widget->hide();
+        connect(drags.last(), &QObject::destroyed, widget,
+                [widget]() { widget->deleteLater(); });
+      }
     }
     delete item;
   }
