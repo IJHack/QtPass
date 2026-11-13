@@ -1331,7 +1331,11 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
       destFile = dest;
     }
 
-    if (destFile.endsWith(".gpg", Qt::CaseInsensitive)) {
+    // Case-sensitive: only an actual ".gpg" entry already carries the suffix.
+    // A neighbouring file like "login.GPG" is a different name, so it must not
+    // be chopped to "login" and re-suffixed to the real "login.gpg" entry,
+    // which the forced move would then overwrite.
+    if (destFile.endsWith(QLatin1String(".gpg"))) {
       destFile.chop(4);
     }
     destFile.append(".gpg");
