@@ -76,7 +76,10 @@ void RealPass::GitPush() { executePass(GIT_PUSH, {"git", "push"}); }
  *          otherwise returns QProcess::NormalExit
  */
 void RealPass::Show(QString file) {
-  executePass(PASS_SHOW, {"show", file}, "", true);
+  // "--" ends the options so an entry whose name begins with "-" (for example
+  // "--" or "-c", which a co-writer can push) is read as a path, not a `pass
+  // show` option that could decrypt a file outside the store or run a clip.
+  executePass(PASS_SHOW, {"show", "--", file}, "", true);
 }
 
 /**
@@ -84,7 +87,7 @@ void RealPass::Show(QString file) {
  * @param file      file containing OTP uri
  */
 void RealPass::OtpGenerate(QString file) {
-  executePass(PASS_OTP_GENERATE, {"otp", file}, "", true);
+  executePass(PASS_OTP_GENERATE, {"otp", "--", file}, "", true);
 }
 
 /**
@@ -106,6 +109,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (overwrite) {
     args.append("-f");
   }
+  args.append("--");
   args.append(file);
   executePass(PASS_INSERT, args, newValue);
 }
@@ -205,7 +209,7 @@ void RealPass::Remove(QString file, bool isDir) {
     emit finishedRemove(QString(), QString());
     return;
   }
-  executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), file});
+  executePass(PASS_REMOVE, {"rm", (isDir ? "-rf" : "-f"), "--", file});
 }
 
 /**
@@ -406,6 +410,7 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   if (force) {
     args << "-f";
   }
+  args << "--";
   args << passSrc;
   args << passDest;
   executePass(id, args);

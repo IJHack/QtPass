@@ -78,6 +78,12 @@
   shared store could push such a commit and its signature as `.gpg-id` and
   `.gpg-id.sig`; its lines then became the recipients (scan finding
   ANT-2026-NOWX23I7).
+- The pass backend ends the options with `--` before an entry's path. An
+  entry name that begins with `-` was read as an option to `pass show`,
+  `otp`, `insert`, `rm`, `mv` and `cp`. Someone who can push to a shared
+  store could push an entry named `--` beside a `.gpg` link at the store
+  root; showing it decrypted the file the link points to outside the store
+  (scan finding ANT-2026-BQMURTO3).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and
