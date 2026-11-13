@@ -76,7 +76,7 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
     }
     return false;
   }
-  namedValues.append({name.trimmed(), value.trimmed()});
+  namedValues.append({name.trimmed(), value.trimmed(), line});
   // Keyed on the value as well as the name: a field called anything at all
   // whose value is an otpauth URI is still a shared secret.
   if (otp.field.isEmpty() && (FileContent::isOtpFieldName(name) ||
@@ -288,9 +288,13 @@ NamedValues::NamedValues(std::initializer_list<NamedValue> values)
     : QList(values) {}
 
 auto NamedValues::takeValue(const QString &name) -> QString {
+  return takeNamedValue(name).value;
+}
+
+auto NamedValues::takeNamedValue(const QString &name) -> NamedValue {
   for (int i = 0; i < length(); ++i) {
     if (at(i).name == name) {
-      return takeAt(i).value;
+      return takeAt(i);
     }
   }
   return {};
