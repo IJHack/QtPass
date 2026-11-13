@@ -536,6 +536,7 @@ private Q_SLOTS:
   void savingANewEntryDoesNotShowTheSelectedOneAgain();
   void typingInSearchDropsAPendingDecrypt();
   void editDoesNotClobberClipboardWithAlwaysCopy();
+  void addPasswordOnLinkedFolderRefused();
   void reencryptCancelIsReportedInTheStatusBar();
 
 private:
@@ -6800,6 +6801,45 @@ void tst_mainwindow::typingInSearchDropsAPendingDecrypt() {
            qPrintable("the late decrypt must not paint: " +
                       browser()->toPlainText()));
   QCOMPARE(clip->text(), QStringLiteral("sentinel"));
+}
+
+// Adding a password while a symbolic-link folder is selected must be refused,
+// not fall back to the store root. A co-writer who planted the link, on the
+// root's .gpg-id but not the real folder's, could otherwise read the new entry
+// (it would be encrypted to the root recipients). The dialog must never open.
+void tst_mainwindow::addPasswordOnLinkedFolderRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QDir store(m_storeDir.path());
+  QVERIFY(store.mkpath(QStringLiteral(".realfinance")));
+  const QString link = store.filePath(QStringLiteral("finance"));
+  QVERIFY(QFile::link(store.filePath(QStringLiteral(".realfinance")), link));
+  const auto cleanup = qScopeGuard([&link] { QFile::remove(link); });
+
+  QVERIFY(selectPath(link));
+
+  bool dialogOpened = false;
+  bool refused = false;
+  ModalDriver driver([&](QWidget *w) {
+    if (qobject_cast<PasswordDialog *>(w)) {
+      dialogOpened = true;
+      qobject_cast<QDialog *>(w)->reject();
+      return;
+    }
+    refused = true;
+    answerBox(QMessageBox::Ok)(w);
+  });
+  auto *add =
+      m_window->findChild<QAction *>(QStringLiteral("actionAddPassword"));
+  QVERIFY(add != nullptr);
+  add->trigger();
+
+  QCOMPARE(driver.seen, 1);
+  QVERIFY2(refused, "a linked folder must raise the refusal message box");
+  QVERIFY2(!dialogOpened,
+           "the new-entry dialog must not open for a linked folder");
+#endif
 }
 
 /**

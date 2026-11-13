@@ -178,6 +178,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   dangling link there and have QtPass create a file outside the store. The
   backup now goes back by a rename of the name itself (scan finding
   ANT-2026-C9L3KHDU).
+- **Add password** on a folder that is, or lies behind, a symbolic link is
+  refused, as Users and re-encryption already refuse it. The new-entry
+  dialog opened with the store root selected, so the entry was saved there
+  and encrypted to the root's recipients. Someone who can push to a shared
+  store could plant such a link and read the new entry (scan finding
+  ANT-2026-CSMGGZLE).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its

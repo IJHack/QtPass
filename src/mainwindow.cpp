@@ -1428,6 +1428,14 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     if (folder.isEmpty()) {
       folder = storePath;
     }
+    // A tree folder that is, or lies behind, a symbolic link is not part of the
+    // store (Users and re-encryption refuse it the same way). Adding here would
+    // silently fall back to the store root and encrypt the new entry to the
+    // root's recipients - which a co-writer who planted the link, and is on the
+    // root list but not the real folder's, can then read. Refuse instead.
+    if (refuseLinkedFolder(folder)) {
+      return;
+    }
     // Folders to pick from, the tree's current one preselected. Real folders
     // only: a linked or junctioned one would write the entry outside the store.
     QStringList folders{QString()};
