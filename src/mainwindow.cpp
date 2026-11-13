@@ -1574,6 +1574,12 @@ void MainWindow::editPassword(const QString &file) {
     if (s.useGit && s.autoPull) {
       onUpdate(true);
     }
+    // The dialog decrypts the entry itself to fill its fields. That decrypt
+    // lands on the same finishedShow the panel uses, so drop the panel's claim
+    // to it: otherwise passShowHandler() repaints and, with "Always copy",
+    // puts the entry's old password on the clipboard - replacing whatever the
+    // user copied to paste into the dialog.
+    m_shownFile.clear();
     setPassword(file, false);
   }
 }

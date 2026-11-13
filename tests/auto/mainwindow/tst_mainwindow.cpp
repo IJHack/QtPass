@@ -482,6 +482,7 @@ private Q_SLOTS:
   void usersDialogOpensForTheStoreButNotForALink();
   void addPasswordOffersTheStoreFolders();
   void typingInSearchDropsAPendingDecrypt();
+  void editDoesNotClobberClipboardWithAlwaysCopy();
   void reencryptCancelIsReportedInTheStatusBar();
 
 private:
@@ -4651,6 +4652,64 @@ void tst_mainwindow::reencryptCancelIsReportedInTheStatusBar() {
            QStringLiteral("Cancelling re-encryption"));
   m_window->endReencryptPath();
   QVERIFY(treeView()->isEnabled());
+}
+
+// With "Always copy to clipboard", opening Edit decrypts the entry to fill the
+// dialog; that decrypt must not reach the clipboard - it would replace what the
+// user copied to paste into the dialog with the entry's old password.
+void tst_mainwindow::editDoesNotClobberClipboardWithAlwaysCopy() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  // A gpg stand-in that "decrypts" an entry to its own bytes, so showing and
+  // editing succeed deterministically, with "Always copy" on.
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch, [](AppSettings &s) {
+             s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+             s.useOtp = false;
+           }).isEmpty());
+  const auto restore = qScopeGuard([] {
+    AppSettings s = QtPassSettings::load();
+    s.clipBoardType = Enums::CLIPBOARD_NEVER;
+    QtPassSettings::save(s);
+  });
+
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  // Show the entry: with "Always copy" this copies its password and records it
+  // as the shown entry.
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::backendsIdle(), 20000);
+
+  // The user copies a new password elsewhere, to paste into the edit dialog.
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("NEW-password"));
+
+  // Re-select the entry (showing it re-resolves the file-system node, which
+  // leaves the tree's current index stale) without showing it again, then open
+  // Edit and close it; the dialog's decrypt must not touch the clipboard.
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  m_window->setUiElementsEnabled(true);
+  auto *panel = m_window->findChild<PasswordDisplayPanel *>();
+  QVERIFY(panel != nullptr);
+  ModalDriver driver([](QWidget *w) {
+    if (auto *dialog = qobject_cast<PasswordDialog *>(w)) {
+      dialog->reject();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  emit panel->editRequested();
+  QCOMPARE(driver.seen, 1);
+
+  // Let the dialog's own decrypt land (it is dropped, not copied).
+  QTRY_VERIFY_WITH_TIMEOUT(QtPassSettings::backendsIdle(), 20000);
+  QCOMPARE(clip->text(), QStringLiteral("NEW-password"));
+#endif
 }
 
 QTEST_MAIN(tst_mainwindow)
