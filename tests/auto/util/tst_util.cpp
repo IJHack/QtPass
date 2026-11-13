@@ -265,6 +265,7 @@ private Q_SLOTS:
   void imitatePassResolveMoveDestinationDestExistsNoForce();
   void imitatePassResolveMoveDestinationDir();
   void imitatePassResolveMoveDestinationNonExistent();
+  void imitatePassResolveMoveDestinationUppercaseGpgNeighbour();
   void getRecipientListBasic();
   void getRecipientListEmpty();
   void getRecipientListWithComments();
@@ -1269,6 +1270,32 @@ void tst_util::imitatePassResolveMoveDestinationNonExistent() {
   QString result =
       pass.resolveMoveDestination("/non/existent/path.gpg", destPath, false);
   QVERIFY2(result.isEmpty(), "Should return empty for non-existent source");
+}
+
+// A neighbouring file whose name ends in ".GPG" (another case) is a different
+// name, not the ".gpg" entry. A forced drop onto it must not be respelled to
+// the real ".gpg" entry, which the move would then overwrite.
+void tst_util::imitatePassResolveMoveDestinationUppercaseGpgNeighbour() {
+  ImitatePass pass;
+  QTemporaryDir tmpDir;
+  const QString srcPath = tmpDir.path() + "/second.gpg";
+  {
+    QFile src(srcPath);
+    QVERIFY(src.open(QFile::WriteOnly));
+    src.write("src");
+  }
+  const QString neighbour = tmpDir.path() + "/login.GPG";
+  {
+    QFile n(neighbour);
+    QVERIFY(n.open(QFile::WriteOnly));
+    n.write("neighbour");
+  }
+
+  // The user confirmed overwriting login.GPG (force=true).
+  const QString result = pass.resolveMoveDestination(srcPath, neighbour, true);
+  QVERIFY2(result != tmpDir.path() + "/login.gpg",
+           "a drop onto login.GPG must not target the real login.gpg entry");
+  QCOMPARE(result, neighbour + ".gpg");
 }
 
 void tst_util::getRecipientListBasic() {
