@@ -47,8 +47,9 @@ public:
   void GitPush() override {}
   void Show(QString) override {}
   void OtpGenerate(QString) override {}
-  void Insert(QString file, QString, bool) override {
+  void Insert(QString file, QString value, bool) override {
     inserted = file;
+    insertedContent = value;
     // The backends refuse before starting anything through critical(),
     // and report a started insert asynchronously.
     if (!refuseWith.isEmpty()) {
@@ -67,6 +68,8 @@ public:
     emit finishedInsert(QString(), QString());
   }
   QString inserted;
+  /// The content the last Insert() was called with.
+  QString insertedContent;
   /// Refuse the next Insert() synchronously with this reason.
   QString refuseWith;
   /// Fail the next Insert() asynchronously with this reason.
@@ -110,6 +113,7 @@ private Q_SLOTS:
   void decryptErrorKeepsDialogOpenWithReason();
   void lateErrorAfterContentLoadIsIgnored();
   void newEntryStartsEditable();
+  void okKeepsNoBreakSpacesInUntouchedNotes();
 };
 
 void tst_passworddialog::existingEntryLocksEditorUntilContentLoads() {
@@ -343,6 +347,30 @@ void tst_passworddialog::newEntryWrittenBeforeAFailedGitStepCloses() {
 
   okButton(d)->click();
   QTRY_COMPARE(accepted.size(), 1);
+}
+
+void tst_passworddialog::okKeepsNoBreakSpacesInUntouchedNotes() {
+  // A no-break space (U+00A0) in multiline notes must survive an OK the user
+  // did not use to change those lines: toPlainText() would save it as a plain
+  // space, silently corrupting a passphrase or recovery code. The lines must
+  // also come back separated by "\n", not the paragraph/line separators the
+  // document uses internally.
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  const QChar nbsp(0x00A0);
+  const QString body = QStringLiteral("orange") + nbsp +
+                       QStringLiteral("bleu\nsecond") + nbsp +
+                       QStringLiteral("line\nthird");
+  pass.deliverShow(QStringLiteral("secret\n") + body);
+
+  okButton(d)->click();
+  QCOMPARE(pass.insertedContent, QStringLiteral("secret\n") + body + "\n");
+  QVERIFY2(pass.insertedContent.contains(nbsp),
+           "the no-break spaces must be kept, not turned into plain spaces");
+  QVERIFY2(!pass.insertedContent.contains(QChar(QChar::ParagraphSeparator)) &&
+               !pass.insertedContent.contains(QChar(QChar::LineSeparator)),
+           "the notes' lines must be separated by '\\n', not U+2028/U+2029");
 }
 
 QTEST_MAIN(tst_passworddialog)
