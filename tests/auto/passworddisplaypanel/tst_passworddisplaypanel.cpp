@@ -670,6 +670,8 @@ void tst_passworddisplaypanel::visiblePasswordRendersHtmlSpecialsVerbatim() {
 void tst_passworddisplaypanel::passwordRowKeepsSurroundingWhitespace() {
   AppSettings s;
   s.hidePassword = false;
+  // The copy button only exists when the clipboard is enabled.
+  s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
   m_panel->displayFields(QStringLiteral(" hunter2 "),
                          NamedValues{{"url", " x "}}, s);
   QTextBrowser *pw = browserAt(0);
@@ -678,9 +680,9 @@ void tst_passworddisplaypanel::passwordRowKeepsSurroundingWhitespace() {
   QTextBrowser *url = browserAt(1);
   QVERIFY2(url != nullptr, "the named field renders into a QTextBrowser");
   QCOMPARE(url->toPlainText(), QStringLiteral("x"));
-  const QString copied = renderedText(m_grid);
-  QVERIFY2(copied.contains(QStringLiteral(" hunter2 ")),
-           qPrintable("the copy payload must keep the spaces: " + copied));
+  auto *copy = m_parent->findChild<QPushButtonWithClipboard *>();
+  QVERIFY2(copy != nullptr, "the password row renders a copy button");
+  QCOMPARE(copy->getTextToCopy(), QStringLiteral(" hunter2 "));
 
   // Behind the eye button the value must be exact too.
   m_panel->clear();
