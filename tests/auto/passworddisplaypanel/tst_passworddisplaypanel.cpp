@@ -62,6 +62,7 @@ private Q_SLOTS:
   void fieldValueRendersHtmlSpecialsVerbatim_data();
   void fieldValueRendersHtmlSpecialsVerbatim();
   void visiblePasswordRendersHtmlSpecialsVerbatim();
+  void passwordRowKeepsSurroundingWhitespace();
   void fieldValueWithUrlStillLinksAndEscapes();
   void fieldValueWithNonWebUrlGetsNoAnchor_data();
   void fieldValueWithNonWebUrlGetsNoAnchor();
@@ -660,6 +661,41 @@ void tst_passworddisplaypanel::visiblePasswordRendersHtmlSpecialsVerbatim() {
   QVERIFY2(browser != nullptr,
            "an unhidden password renders into a QTextBrowser");
   QCOMPARE(browser->toPlainText(), password);
+}
+
+// A leading or trailing space is part of the password; the panel's copy
+// button, QR code and shown text must return the stored value, as Ctrl+C on
+// the tree and the edit dialog do. Only a named `key: value` field has its
+// surrounding whitespace trimmed as layout.
+void tst_passworddisplaypanel::passwordRowKeepsSurroundingWhitespace() {
+  AppSettings s;
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral(" hunter2 "),
+                         NamedValues{{"url", " x "}}, s);
+  QTextBrowser *pw = browserAt(0);
+  QVERIFY2(pw != nullptr, "the password renders into a QTextBrowser");
+  QCOMPARE(pw->toPlainText(), QStringLiteral(" hunter2 "));
+  QTextBrowser *url = browserAt(1);
+  QVERIFY2(url != nullptr, "the named field renders into a QTextBrowser");
+  QCOMPARE(url->toPlainText(), QStringLiteral("x"));
+  const QString copied = renderedText(m_grid);
+  QVERIFY2(copied.contains(QStringLiteral(" hunter2 ")),
+           qPrintable("the copy payload must keep the spaces: " + copied));
+
+  // Behind the eye button the value must be exact too.
+  m_panel->clear();
+  s.hidePassword = true;
+  m_panel->displayFields(QStringLiteral(" hunter2 "), NamedValues{}, s);
+  auto *edit = m_parent->findChild<QLineEdit *>(QStringLiteral("Password"));
+  QVERIFY2(edit != nullptr, "the hidden password renders into a QLineEdit");
+  QCOMPARE(edit->text(), QStringLiteral(" hunter2 "));
+
+  // A trailing CR from a CRLF-stored entry is a line ending, not part of the
+  // secret, and is the one thing dropped.
+  m_panel->clear();
+  s.hidePassword = false;
+  m_panel->displayFields(QStringLiteral("hunter2\r"), NamedValues{}, s);
+  QCOMPARE(browserAt(0)->toPlainText(), QStringLiteral("hunter2"));
 }
 
 /**
