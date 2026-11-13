@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj varje fält</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>

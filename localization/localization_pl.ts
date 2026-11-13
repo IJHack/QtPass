@@ -302,12 +302,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="885"/>
         <source>Template fields and every &quot;key: value&quot; line</source>
-        <translation>Pola szablonu i każdy wiersz &quot;klucz: wartość&quot;</translation>
+        <translation>Pola szablonu i&#xa0;każdy linia &quot;klucz: wartość&quot;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation>Jedna nazwa pola w każdym wierszu. Wiersz taki jak „# secret: pin, cvv” oznacza pola do ukrycia, takie jak hasło, gdy opcja „Ukryj hasło” jest włączona. Ten sam wiersz działa w pliku .templates sklepu, gdzie zlicza każdy wpis w sklepie, a nie tylko te utworzone za pomocą tego szablonu.</translation>
+        <translation>Jedna nazwa pola w&#xa0;każdej linii. Linia taka jak „# secret: pin, cvv” oznacza pola do ukrycia, takie jak hasło, gdy opcja „Ukryj hasło” jest włączona. Ta sama linia działa w&#xa0;pliku .templates magazynu, gdzie zlicza każdy wpis w&#xa0;magazynie, a&#xa0;nie tylko te utworzone za pomocą tego szablonu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation>Każde pole za przyciskiem oka, nie tylko sekrety: do udostępniania ekranów i prezentacji. Notatki pod polami i kod OTP pozostają widoczne; opcja „Ukryj zawartość” również je ukrywa.</translation>
+        <translation>Każde pole za przyciskiem oka, nie tylko sekrety: do udostępniania ekranów i&#xa0;prezentacji. Notatki pod polami i&#xa0;kod OTP pozostają widoczne; opcja „Ukryj zawartość” również je ukrywa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -642,7 +642,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="871"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Pokaż wszystkie linie zaczynające się słowem i kończące dwukropkiem jako pola w polach haseł, zamiast listy</translation>
+        <translation>Pokaż wszystkie linie zaczynające się słowem i&#xa0;kończące dwukropkiem jako pola w&#xa0;polach haseł, zamiast listy</translation>
     </message>
     <message>
         <source>Show all fields templated</source>
@@ -942,7 +942,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="476"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation>Wyświetlaj wiersz z hasłem jako kropki; opcja Pokaż hasło go odsłania</translation>
+        <translation>Wyświetlaj linię z&#xa0;hasłem jako kropki; opcja „Pokaż hasło” go odsłania</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="487"/>
@@ -1093,9 +1093,9 @@ e-mail</translation>
         <location filename="../src/filecontent.cpp" line="93"/>
         <source>… %n more line(s) not shown</source>
         <translation>
-            <numerusform>… %n kolejny wiersz nie został pokazany</numerusform>
-            <numerusform>… %n kolejne wiersze nie zostały pokazane</numerusform>
-            <numerusform>… %n kolejnych wierszy nie zostało pokazanych</numerusform>
+            <numerusform>… %n kolejna linia nie została pokazana</numerusform>
+            <numerusform>… %n kolejne linie nie zostały pokazane</numerusform>
+            <numerusform>… %n kolejnych linii nie zostało pokazanych</numerusform>
         </translation>
     </message>
 </context>
@@ -1170,47 +1170,47 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="445"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista zawiera więcej niż jedną linię magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Linia magazynu jest nieprawidłowa: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="459"/>
         <source>The list carries more than one generation line.</source>
-        <translation>Lista zawiera więcej niż jeden wiersz generacji.</translation>
+        <translation>Lista zawiera więcej niż jedną linię generacji.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="467"/>
         <source>The generation line is malformed: %1</source>
-        <translation>Wiersz generacji ma nieprawidłowy format: %1</translation>
+        <translation>Linia generacji ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="473"/>
         <source>The list carries more than one folder line.</source>
-        <translation>Lista zawiera więcej niż jeden wiersz folderu.</translation>
+        <translation>Lista zawiera więcej niż jedną linię folderu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The folder line is malformed: %1</source>
-        <translation>Wiersz folderu ma nieprawidłowy format: %1</translation>
+        <translation>Linia folderu ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="488"/>
         <source>The header line is malformed: %1</source>
-        <translation>Wiersz nagłówka ma nieprawidłowy format: %1</translation>
+        <translation>Linia nagłówka ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="521"/>
         <source>The list carries a generation line but no folder line.</source>
-        <translation>Lista zawiera wiersz generacji, ale nie zawiera wiersza folderu.</translation>
+        <translation>Lista zawiera linię generacji, ale nie zawiera linii folderu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="527"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista zawiera linię magazynu, ale nie zawiera linii generacji.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="682"/>
@@ -1235,7 +1235,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="646"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation>Podpisana lista odbiorców %1 nie zawiera wiersza generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje wiersza generacji (także przez backend pass w QtPass), nie robił tego też QtPass przed wersją 2.0; bez niego lista mogła też zostać zapisana dla innego folderu magazynu i skopiowana tutaj. %3</translation>
+        <translation>Podpisana lista odbiorców %1 nie zawiera linii generacji, choć wcześniej zaakceptowano tu generację %2. pass nie zapisuje linii generacji (także przez backend pass w&#xa0;QtPass), nie robił tego też QtPass przed wersją 2.0; bez niego lista mogła też zostać zapisana dla innego folderu magazynu i&#xa0;skopiowana tutaj. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="655"/>
@@ -1245,7 +1245,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="780"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpisana lista odbiorców %1 nie zawiera linii magazynu, mimo że urządzenie to rozpoznaje dany magazyn po jego identyfikatorze %2. Może to oznaczać, że lista została utworzona dla innego magazynu i&#xa0;skopiowana tutaj lub wygenerowana przez starszą wersję programu QtPass. Osoba mająca klucz służący do składania podpisów może rozwiązać ten problem, otwierając sekcję „Użytkownicy”, ponownie wybierając odbiorców i&#xa0;zapisując zmiany – co spowoduje dodanie linii magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="856"/>
@@ -1283,7 +1283,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="764"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpisana lista odbiorców %1 została utworzona dla innego magazynu haseł (identyfikator magazynu %2; na tym urządzeniu magazyn ten figuruje pod nazwą %3) i&#xa0;nie jest używana. Być może została skopiowana w&#xa0;to miejsce z&#xa0;magazynu podpisanego tym samym kluczem. Jeśli natomiast magazyn ten został skonfigurowany ponownie, usunięcie elementu %4 spowoduje, że urządzenie „zapomni” znane mu identyfikatory magazynów.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="824"/>
@@ -1373,7 +1373,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="316"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation>Element %1 nie znajduje się w&#xa0;magazynie haseł, albo nazwa folderu na ścieżce do niego zawiera znak podziału wiersza lub inny znak sterujący, których podpisana lista nie może zarejestrować.</translation>
+        <translation>Element %1 nie znajduje się w&#xa0;magazynie haseł, albo nazwa folderu na ścieżce do niego zawiera znak podziału linii lub inny znak sterujący, których podpisana lista nie może zarejestrować.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="407"/>
@@ -2040,7 +2040,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="177"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation>Nazwa oraz hasło nie mogą zawierać znaków podziału wiersza.</translation>
+        <translation>Nazwa oraz hasło nie mogą zawierać znaków podziału linii.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="182"/>
@@ -3144,9 +3144,9 @@ Kontynuować?</translation>
         <location filename="../src/passworddialog.cpp" line="744"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation>
-            <numerusform>Ten wpis zawiera %n wiersz — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
-            <numerusform>Ten wpis zawiera %n wiersze — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
-            <numerusform>Ten wpis zawiera %n wierszy — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
+            <numerusform>Ten wpis zawiera %n linię — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
+            <numerusform>Ten wpis zawiera %n linie — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
+            <numerusform>Ten wpis zawiera %n linii — to zbyt wiele, by edytować go w&#xa0;tym miejscu.</numerusform>
         </translation>
     </message>
 </context>
