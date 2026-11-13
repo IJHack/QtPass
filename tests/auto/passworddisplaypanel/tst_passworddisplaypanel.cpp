@@ -2,9 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
 
+#include <QDrag>
 #include <QGridLayout>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPointer>
 #include <QProgressBar>
 #include <QPushButton>
 #include <QTextBrowser>
@@ -19,6 +21,7 @@
 #include "../../../src/qpushbuttonasqrcode.h"
 #include "../../../src/qpushbuttonshowpassword.h"
 #include "../../../src/qpushbuttonwithclipboard.h"
+#include "../../../src/secrettextbrowser.h"
 
 class tst_passworddisplaypanel : public QObject {
   Q_OBJECT
@@ -39,6 +42,7 @@ private Q_SLOTS:
   void doubleClickOnARowAsksForEdit();
   void displayFieldsSkipsEmptyPassword();
   void clearRemovesAllRows();
+  void clearDefersARowWhileADragIsInProgress();
   void otpFieldRendersLiveCodeInPlace();
   void otpFieldNeverShowsTheSecret();
   void otpFieldSuppressedWhenSupportDisabled();
@@ -281,6 +285,45 @@ void tst_passworddisplaypanel::clearRemovesAllRows() {
   QVERIFY2(m_grid->count() > 0, "precondition: grid populated");
   m_panel->clear();
   QVERIFY2(m_grid->count() == 0, "clear() must remove every grid row");
+}
+
+// A field value can be dragged out of the panel; the drag runs QDrag::exec()
+// inside the value widget's own mouse handler, and clear() can be reached from
+// that nested loop. Deleting the row then frees it under its own handler and
+// crashes. clear() must keep such a row alive (hidden) until its QDrag is gone.
+void tst_passworddisplaypanel::clearDefersARowWhileADragIsInProgress() {
+  AppSettings s;
+  m_panel->displayFields(QStringLiteral("secret"), NamedValues{}, s);
+  QVERIFY2(m_grid->count() > 0, "precondition: grid populated");
+
+  // The row that holds the password value, and its value widget.
+  QPointer<QWidget> row;
+  SecretTextBrowser *value = nullptr;
+  for (int i = 0; i < m_grid->count() && !value; ++i) {
+    QWidget *w = m_grid->itemAt(i)->widget();
+    if (w == nullptr) {
+      continue;
+    }
+    if (auto *b = w->findChild<SecretTextBrowser *>()) {
+      row = w;
+      value = b;
+    }
+  }
+  QVERIFY2(value != nullptr, "a value widget to drag must exist");
+
+  // A drag in progress: Qt parents the QDrag to its source widget.
+  QPointer<QDrag> drag = new QDrag(value);
+
+  m_panel->clear();
+
+  QVERIFY2(m_grid->count() == 0, "clear() still empties the grid");
+  QVERIFY2(!row.isNull(),
+           "a row with a drag in progress must not be deleted under the drag");
+  QVERIFY2(row->isHidden(), "the deferred row must be hidden");
+
+  // The drag ends: Qt destroys the QDrag, and the row is then deleted.
+  delete drag;
+  QTRY_VERIFY2(row.isNull(), "the row must be deleted once its drag is gone");
 }
 
 /// RFC 6238 appendix B seed, so a pinned time has a published expected code.
