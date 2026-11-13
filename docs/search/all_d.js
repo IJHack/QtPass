@@ -10,9 +10,10 @@ var searchData=
   ['operator_21_3d_7',['operator!=',['../struct_profile.html#a61ce06694c6c8e7dab43504a29e80db2',1,'Profile']]],
   ['operator_3d_3d_8',['operator==',['../struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06',1,'Profile']]],
   ['options_9',['options',['../struct_executor_1_1_wsl_command.html#a940314bd002f5f843b5d0b5358fb0e50',1,'Executor::WslCommand']]],
-  ['otpcodewidget_10',['OtpCodeWidget',['../class_otp_code_widget.html',1,'OtpCodeWidget'],['../class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd',1,'OtpCodeWidget::OtpCodeWidget()']]],
-  ['otpfromfiletoclipboard_11',['otpFromFileToClipboard',['../class_main_window.html#ab7a805923a61f2441932d8d358fb040e',1,'MainWindow']]],
-  ['outputready_12',['outputReady',['../class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6',1,'QtPass']]],
-  ['overridestatus_13',['OverrideStatus',['../class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2',1,'SshAuthSock']]],
-  ['overridestatus_14',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
+  ['originalline_10',['originalLine',['../struct_named_value.html#a6fe60f7b7f43af03ac3a00e0a8d1b1e8',1,'NamedValue']]],
+  ['otpcodewidget_11',['OtpCodeWidget',['../class_otp_code_widget.html',1,'OtpCodeWidget'],['../class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd',1,'OtpCodeWidget::OtpCodeWidget()']]],
+  ['otpfromfiletoclipboard_12',['otpFromFileToClipboard',['../class_main_window.html#ab7a805923a61f2441932d8d358fb040e',1,'MainWindow']]],
+  ['outputready_13',['outputReady',['../class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6',1,'QtPass']]],
+  ['overridestatus_14',['OverrideStatus',['../class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2',1,'SshAuthSock']]],
+  ['overridestatus_15',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
 ];

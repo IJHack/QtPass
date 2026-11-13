@@ -125,11 +125,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae05206d5b3c53ee4545089e8f7997b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> list from an initializer list.  <br /></td></tr>
 <tr class="memitem:a427d280bd24b10d9a5b627b1fa4b5f4b" id="r_a427d280bd24b10d9a5b627b1fa4b5f4b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a427d280bd24b10d9a5b627b1fa4b5f4b">takeValue</a> (const QString &amp;name) -&gt; QString</td></tr>
 <tr class="memdesc:a427d280bd24b10d9a5b627b1fa4b5f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the value for the named field.  <br /></td></tr>
+<tr class="memitem:a937ebcae4118431af19990a4a1e0bef7" id="r_a937ebcae4118431af19990a4a1e0bef7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a937ebcae4118431af19990a4a1e0bef7">takeNamedValue</a> (const QString &amp;name) -&gt; <a class="el" href="struct_named_value.html">NamedValue</a></td></tr>
+<tr class="memdesc:a937ebcae4118431af19990a4a1e0bef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the named field, its original line included.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> class is mostly a list of <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> but also has a method to take a specific <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> pair out of the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00034">34</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00043">43</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae05206d5b3c53ee4545089e8f7997b4f" name="ae05206d5b3c53ee4545089e8f7997b4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae05206d5b3c53ee4545089e8f7997b4f">&#9670;&#160;</a></span>NamedValues()</h2>
@@ -157,6 +159,32 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a937ebcae4118431af19990a4a1e0bef7" name="a937ebcae4118431af19990a4a1e0bef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a937ebcae4118431af19990a4a1e0bef7">&#9670;&#160;</a></span>takeNamedValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto NamedValues::takeNamedValue </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="struct_named_value.html">NamedValue</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove and return the named field, its original line included. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Field name to look up and remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The removed <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a>, or a default-constructed one (empty name) if not found. </dd></dl>
+
+</div>
+</div>
 <a id="a427d280bd24b10d9a5b627b1fa4b5f4b" name="a427d280bd24b10d9a5b627b1fa4b5f4b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a427d280bd24b10d9a5b627b1fa4b5f4b">&#9670;&#160;</a></span>takeValue()</h2>
 
