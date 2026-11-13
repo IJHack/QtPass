@@ -224,6 +224,14 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     } else {
       passwd.clear();
       qCDebug(lcQtPass) << "pwgen fail";
+      // Report it, as the other generation failures do: otherwise Generate
+      // does nothing silently and OK then saves an empty (or, on Edit, the
+      // old) password.
+      emit critical(
+          tr("Password generation failed"),
+          tr("Could not run pwgen (\"%1\"). Check the pwgen program in the "
+             "settings, or turn \"Use pwgen\" off.")
+              .arg(m_settings.pwgenExecutable));
     }
   } else {
     // An empty CUSTOM charset falls back to ALLCHARS, not a weak password

@@ -6092,7 +6092,9 @@ void tst_util::generatePasswordPwgenFailureYieldsEmpty() {
   pass.init(s);
   QVERIFY2(pass.generatePassword(16, QString()).isEmpty(),
            "a failing pwgen must not hand out its output as a password");
-  QCOMPARE(critical.count(), 0);
+  // The failure is reported (not silent), as a zero length or empty charset
+  // is, so Generate does not quietly do nothing and OK save an empty password.
+  QCOMPARE(critical.count(), 1);
 #endif
 }
 
