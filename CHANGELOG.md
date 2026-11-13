@@ -167,6 +167,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Security
 
+- Re-encryption no longer lets a pushed file write a file of its own. QtPass
+  asked gpg for an entry's keys without a command, so gpg guessed one, and a
+  `.gpg` file holding OpenPGP data that is not encrypted was saved under its
+  name without `.gpg`, also through a link. Someone who can push to a shared
+  store could use that to overwrite a file outside it. gpg is now told to
+  decrypt and only list the keys (scan finding ANT-2026-YG619YO8).
 - Saving a new entry no longer shows the selected entry again. After
   **Add password**, QtPass decrypted the entry that was selected before
   and, with **Always copy**, put that entry's password on the clipboard. A
