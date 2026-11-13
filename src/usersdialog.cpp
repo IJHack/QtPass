@@ -423,25 +423,29 @@ void UsersDialog::on_importKeyButton_clicked() {
     return;
   }
 
-  // Re-apply the remembered selection by exact key ID - the keys are already
-  // resolved, so no gpg lookup is needed - and re-add any that are no longer in
-  // the rebuilt list as a "key not found" row, the way the initial load does.
-  for (UserInfo &user : m_userList) {
-    if (selected.contains(user.key_id)) {
-      user.enabled = true;
+  // Re-apply the remembered selection. Most saved identifiers are a key ID that
+  // is in the rebuilt list, so match those exactly first (no gpg lookup). An
+  // identifier that does not match a row is one that was listed as "key not
+  // found" - a short ID or email that gpg could not resolve, or whose key has
+  // just been imported and now shows under its fingerprint. Hand those to
+  // selectRecipients(), which resolves each against the refreshed keyring,
+  // ticks the matching row, and re-adds a "key not found" row for any that
+  // still does not resolve.
+  QStringList unresolved;
+  for (const QString &keyId : std::as_const(selected)) {
+    bool matched = false;
+    for (UserInfo &user : m_userList) {
+      if (user.key_id == keyId) {
+        user.enabled = true;
+        matched = true;
+      }
+    }
+    if (!matched) {
+      unresolved.append(keyId);
     }
   }
-  for (const QString &keyId : std::as_const(selected)) {
-    const bool present =
-        std::any_of(m_userList.cbegin(), m_userList.cend(),
-                    [&keyId](const UserInfo &u) { return u.key_id == keyId; });
-    if (!present) {
-      UserInfo missing;
-      missing.enabled = true;
-      missing.key_id = keyId;
-      missing.name = " ?? " + tr("Key not found in keyring");
-      m_userList.append(missing);
-    }
+  if (!unresolved.isEmpty()) {
+    selectRecipients(unresolved);
   }
 
   // Clear the filter so the just-imported key is visible. setText("") still
