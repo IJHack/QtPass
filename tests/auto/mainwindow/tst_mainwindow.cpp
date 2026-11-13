@@ -23,6 +23,7 @@
 #include <QCheckBox>
 #include <QClipboard>
 #include <QComboBox>
+#include <QDeadlineTimer>
 #include <QDesktopServices>
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -560,7 +561,19 @@ void tst_mainwindow::init() {
   m_window.reset(new MainWindow);
 }
 
-void tst_mainwindow::cleanup() { m_window.reset(); }
+void tst_mainwindow::cleanup() {
+  // A test may leave a decrypt running: a tree click starts gpg asynchronously
+  // and the test does not always wait for it to land. Destroying the window
+  // then tears the running QProcess down mid-run, which prints "QProcess:
+  // Destroyed while process is still running" and can corrupt the heap and
+  // abort the whole suite. Let the backend go idle first (best effort, bounded)
+  // so nothing is still running when the window is destroyed.
+  QDeadlineTimer deadline(10000);
+  while (!QtPassSettings::backendsIdle() && !deadline.hasExpired()) {
+    QTest::qWait(20);
+  }
+  m_window.reset();
+}
 
 void tst_mainwindow::cleanupTestCase() {
   // Settings live in the isolated directory from isolateTestSettings();
