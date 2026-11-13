@@ -408,8 +408,44 @@ void UsersDialog::on_importKeyButton_clicked() {
     return;
   }
 
+  // loadGpgKeys() rebuilds the key list from the keyring and drops every tick.
+  // Remember which recipients were selected (the .gpg-id list and the user's
+  // own ticks, including any "key not found" rows) and re-apply them after, so
+  // importing a key does not silently remove the other recipients.
+  QStringList selected;
+  for (const UserInfo &user : std::as_const(m_userList)) {
+    if (user.enabled) {
+      selected.append(user.key_id);
+    }
+  }
+
   if (!loadGpgKeys()) {
     return;
+  }
+
+  // Re-apply the remembered selection. Most saved identifiers are a key ID that
+  // is in the rebuilt list, so match those exactly first (no gpg lookup). An
+  // identifier that does not match a row is one that was listed as "key not
+  // found" - a short ID or email that gpg could not resolve, or whose key has
+  // just been imported and now shows under its fingerprint. Hand those to
+  // selectRecipients(), which resolves each against the refreshed keyring,
+  // ticks the matching row, and re-adds a "key not found" row for any that
+  // still does not resolve.
+  QStringList unresolved;
+  for (const QString &keyId : std::as_const(selected)) {
+    bool matched = false;
+    for (UserInfo &user : m_userList) {
+      if (user.key_id == keyId) {
+        user.enabled = true;
+        matched = true;
+      }
+    }
+    if (!matched) {
+      unresolved.append(keyId);
+    }
+  }
+  if (!unresolved.isEmpty()) {
+    selectRecipients(unresolved);
   }
 
   // Clear the filter so the just-imported key is visible. setText("") still
