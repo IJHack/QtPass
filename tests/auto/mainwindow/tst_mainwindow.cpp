@@ -480,6 +480,7 @@ private Q_SLOTS:
   void deleteLinkedFolderRemovesOnlyTheLink();
   void usersDialogOpensForTheStoreButNotForALink();
   void addPasswordOffersTheStoreFolders();
+  void typingInSearchDropsAPendingDecrypt();
   void reencryptCancelIsReportedInTheStatusBar();
 
 private:
@@ -4579,6 +4580,46 @@ void tst_mainwindow::addPasswordOffersTheStoreFolders() {
            (QStringList{QStringLiteral("home"), QStringLiteral("work")}));
   QCOMPARE(chosenTemplate, QStringLiteral("home"));
   QCOMPARE(m_window->focusWidget(), treeView());
+}
+
+// A decrypt still pending for the entry that was shown must be dropped when the
+// user types in the search box. Otherwise it lands late and paints that entry's
+// password under the new heading, and with "Always copy" puts it on the
+// clipboard.
+void tst_mainwindow::typingInSearchDropsAPendingDecrypt() {
+  AppSettings s = QtPassSettings::load();
+  s.useSelection = false;
+  s.useAutoclear = false;
+  s.useOtp = false;
+  s.hideContent = false;
+  s.displayAsIs = false;
+  s.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+  QtPassSettings::save(s);
+
+  QClipboard *clip = QApplication::clipboard();
+  clip->setText(QStringLiteral("sentinel"));
+
+  // Select an entry: on_treeView_clicked records it as the one being shown and
+  // asks for its decrypt (not delivered yet here).
+  QVERIFY(
+      selectEntry(m_window.data(), m_storeDir.path(), QStringLiteral("forum")));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_treeView_clicked", Qt::DirectConnection,
+      Q_ARG(QModelIndex, treeView()->currentIndex())));
+
+  // The user types another name into the search box before that decrypt lands.
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "on_lineEdit_textChanged",
+                                    Qt::DirectConnection,
+                                    Q_ARG(QString, QStringLiteral("d"))));
+
+  // The pending decrypt of "forum" finally arrives: it must be dropped.
+  m_window->passShowHandler(QStringLiteral("forum-secret\n"),
+                            QStringLiteral("forum"));
+
+  QVERIFY2(browser()->toPlainText().isEmpty(),
+           qPrintable("the late decrypt must not paint: " +
+                      browser()->toPlainText()));
+  QCOMPARE(clip->text(), QStringLiteral("sentinel"));
 }
 
 /**
