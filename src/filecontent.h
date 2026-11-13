@@ -21,6 +21,15 @@ struct NamedValue {
    * @brief Field value (the part after the colon in "name: value").
    */
   QString value;
+  /**
+   * @brief The field's verbatim source line, colon and spacing intact.
+   *
+   * The edit dialog writes an untouched field back from this, so saving
+   * does not reformat `key:value` to `key: value`, trim the value, or drop
+   * a field whose value is empty. Empty when the field has no source line
+   * (a template field the file did not fill).
+   */
+  QString originalLine;
 };
 
 inline bool operator==(const NamedValue &a, const NamedValue &b) {
@@ -46,6 +55,14 @@ public:
    * @return The value of the removed field, or an empty string if not found.
    */
   auto takeValue(const QString &name) -> QString;
+
+  /**
+   * @brief Remove and return the named field, its original line included.
+   * @param name Field name to look up and remove.
+   * @return The removed NamedValue, or a default-constructed one (empty name)
+   *         if not found.
+   */
+  auto takeNamedValue(const QString &name) -> NamedValue;
 };
 
 /**

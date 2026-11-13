@@ -40,6 +40,9 @@ namespace {
 /// Dynamic property markOtpFieldEdited() sets on the line edit the user typed
 /// in; normalizeOtpField() reads it from the field that is the OTP one.
 const char kOtpEditedProperty[] = "qtpassOtpEdited";
+/// Dynamic property holding a field row's verbatim source line, so
+/// getPassword() can write an untouched field back exactly as it was read.
+const char kOriginalLineProperty[] = "qtpassOriginalLine";
 } // namespace
 
 PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
@@ -355,7 +358,9 @@ void PasswordDialog::setPassword(const QString &password) {
   QWidget *previous = ui->checkBoxShow;
   NamedValues namedValues = fileContent.getNamedValues();
   for (QLineEdit *line : std::as_const(m_templateLines)) {
-    line->setText(namedValues.takeValue(line->objectName()));
+    const NamedValue nv = namedValues.takeNamedValue(line->objectName());
+    line->setText(nv.value);
+    line->setProperty(kOriginalLineProperty, nv.originalLine);
     // The value is the entry's again, whatever the user typed before this
     // reload: not a value normalizeOtpField() may rewrite.
     line->setProperty(kOtpEditedProperty, QVariant());
@@ -371,6 +376,7 @@ void PasswordDialog::setPassword(const QString &password) {
     reportCopies(line);
     line->setObjectName(nv.name);
     line->setText(nv.value);
+    line->setProperty(kOriginalLineProperty, nv.originalLine);
     auto *label = new FieldLabel(nv.name);
     label->setBuddy(line);
     ui->formLayout->addRow(label, line);
@@ -575,11 +581,26 @@ auto PasswordDialog::getPassword() -> QString {
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
   for (QLineEdit *line : std::as_const(allLines)) {
-    QString text = line->text();
+    const QString text = line->text();
+    const QString name = line->objectName();
+    const QString original = line->property(kOriginalLineProperty).toString();
+    // A field whose name and value are still exactly what was parsed keeps its
+    // source line verbatim: reserialising would turn `key:value` into
+    // `key: value`, trim whitespace the value carried, and drop a field with an
+    // empty value (`recovery:`) entirely. The widget holds trimmed name/value,
+    // so compare against the original line split and trimmed the same way.
+    if (!original.isEmpty()) {
+      const qsizetype colon = original.indexOf(QLatin1Char(':'));
+      if (colon >= 0 && original.left(colon).trimmed() == name &&
+          original.right(original.length() - colon - 1).trimmed() == text) {
+        passFile += original + "\n";
+        continue;
+      }
+    }
     if (text.isEmpty()) {
       continue;
     }
-    passFile += line->objectName() + ": " + text + "\n";
+    passFile += name + ": " + text + "\n";
   }
   // Not toPlainText(): it saves a blank for every no-break space (U+00A0) in
   // the notes, so any OK rewrites even lines the user never touched and a
