@@ -1952,7 +1952,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.ui" line="256"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">জিপিজি সংস্করণ অনুসারে টেমপ্লেটের বিষয়বস্তু সেট করা হবে।</translation>
+        <translation>জিপিজি সংস্করণ অনুসারে টেমপ্লেটের বিষয়বস্তু সেট করা হবে।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="269"/>
