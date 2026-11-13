@@ -317,6 +317,10 @@ void tst_passworddisplaypanel::clearDefersARowWhileADragIsInProgress() {
   m_panel->clear();
 
   QVERIFY2(m_grid->count() == 0, "clear() still empties the grid");
+  // Deliver any deferred deletions now, while the drag is still alive: a plain
+  // hide()+deleteLater() would drop the row here, so this proves the row is
+  // held by the drag-destruction connection, not merely deferred.
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
   QVERIFY2(!row.isNull(),
            "a row with a drag in progress must not be deleted under the drag");
   QVERIFY2(row->isHidden(), "the deferred row must be hidden");
