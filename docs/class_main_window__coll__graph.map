@@ -1,5 +1,5 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="Node000001" title="Main application window orchestrating UI, user interactions, and external process handlers." alt="" coords="10,79,117,104"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,121,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,44,66,79,61,79,61,44"/>
+<area shape="rect" id="Node000001" title="Main application window orchestrating UI, user interactions, and external process handlers." alt="" coords="10,81,116,109"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,121,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,47,66,81,60,80,61,51"/>
 </map>

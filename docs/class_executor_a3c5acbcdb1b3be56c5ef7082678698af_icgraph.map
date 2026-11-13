@@ -1,6 +1,6 @@
 <map id="Executor::isIdle" name="Executor::isIdle">
-<area shape="rect" id="Node000001" title="Whether no command is running and nothing is queued." alt="" coords="148,29,269,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="235,19,228,11,209,8,193,10,184,15,182,20,187,28,183,31,177,21,180,11,191,5,209,3,230,6,239,15"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a66d554f693ae3069381483cb229bb193" title="Whether no gpg, git or pass of this backend runs or waits." alt="" coords="5,29,100,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="134,45,100,45,100,39,134,39"/>
+<area shape="rect" id="Node000001" title="Whether no command is running and nothing is queued." alt="" coords="147,29,267,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="231,13,223,10,207,8,191,10,183,14,180,20,184,30,179,28,175,20,179,11,189,5,207,3,225,5,236,14"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a66d554f693ae3069381483cb229bb193" title="Whether no gpg, git or pass of this backend runs or waits." alt="" coords="5,29,99,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="128,43,99,46,99,41,134,43"/>
 </map>

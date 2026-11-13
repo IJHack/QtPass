@@ -1,9 +1,9 @@
 <map id="StoreModel::data" name="StoreModel::data">
-<area shape="rect" id="Node000001" title="Get display data for index." alt="" coords="280,67,413,92"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="5,29,232,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="265,69,196,57,197,52,266,64"/>
-<area shape="rect" id="Node000003" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="18,103,219,128"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="267,95,200,105,199,100,266,89"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,20,149,11,119,8,94,10,82,15,79,20,86,27,82,31,74,21,78,11,93,5,119,3,151,7,163,16"/>
-<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="159,93,149,85,119,81,94,83,82,88,79,94,86,101,82,104,74,94,78,84,93,78,119,76,151,80,163,89"/>
+<area shape="rect" id="Node000001" title="Get display data for index." alt="" coords="279,68,411,96"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="5,29,231,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,69,203,60,203,55,266,68"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="18,105,218,133"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="266,95,207,107,206,102,261,96"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="155,15,143,10,118,8,94,10,81,15,78,20,84,29,79,29,73,20,78,11,93,5,118,3,145,5,161,14"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="155,90,143,86,118,84,94,86,81,91,78,96,84,105,79,104,73,96,78,87,93,81,118,79,145,81,161,90"/>
 </map>

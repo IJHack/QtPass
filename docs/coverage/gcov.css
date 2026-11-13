@@ -36,6 +36,20 @@ td.title
   font-style: italic;
   font-weight: bold;
 }
+/* table footnote */
+td.footnote
+{
+  text-align: left;
+  padding-left: 100px;
+  padding-right: 10px;
+  background-color: #dae7fe; /* light blue table background color */
+  /* dark blue table header color
+  background-color: #6688d4; */
+  white-space: nowrap;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size:70%;
+}
 /* "Line coverage date bins" leader */
 td.subTableHeader
 {
@@ -184,6 +198,17 @@ td.coverFile
   padding-right: 20px;
   color: #284fa8;
   background-color: #dae7fe;
+  font-family: monospace;
+}
+
+/* Directory view/File view (all): directory name entry format */
+td.coverDirectory
+{
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 20px;
+  color: #284fa8;
+  background-color: #b8d0ff;
   font-family: monospace;
 }
 
@@ -528,10 +553,27 @@ pre.source
   margin-top: 2px;
 }
 
+/* elided/removed code */
+span.elidedSource
+{
+  font-family: sans-serif;
+  /*font-size: 8pt; */
+  font-style: italic;
+  background-color: lightgrey;
+}
+
 /* Source code view: line number format */
 span.lineNum
 {
   background-color: #efe383;
+}
+
+/* Source code view: line number format when there are deleted
+   lines in the corresponding location */
+span.lineNumWithDelete
+{
+  foreground-color: #efe383;
+  background-color: lightgrey;
 }
 
 /* Source code view: format for Cov legend */
@@ -634,7 +676,17 @@ a.branchTla:visited
   color: #000000;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered New Code (+ => 0):
+a.mcdcTla:link
+{
+  color: #000000;
+}
+
+a.mcdcTla:visited
+{
+  color: #000000;
+}
+
+/* Source code view/table entry background: format for lines classified as "Uncovered New Code (+ => 0):
 Newly added code is not tested" */
 td.tlaUNC
 {
@@ -645,7 +697,7 @@ td.tlaBgUNC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered New Code (+ => 0):
+/* Source code view/table entry background: format for lines classified as "Uncovered New Code (+ => 0):
 Newly added code is not tested" */
 span.tlaUNC
 {
@@ -670,7 +722,7 @@ td.headerCovTableHeadUNC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Lost Baseline Coverage (1 => 0):
+/* Source code view/table entry background: format for lines classified as "Lost Baseline Coverage (1 => 0):
 Unchanged code is no longer tested" */
 td.tlaLBC
 {
@@ -681,7 +733,7 @@ td.tlaBgLBC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Lost Baseline Coverage (1 => 0):
+/* Source code view/table entry background: format for lines classified as "Lost Baseline Coverage (1 => 0):
 Unchanged code is no longer tested" */
 span.tlaLBC
 {
@@ -706,7 +758,7 @@ td.headerCovTableHeadLBC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered Included Code (# => 0):
+/* Source code view/table entry background: format for lines classified as "Uncovered Included Code (# => 0):
 Previously unused code is untested" */
 td.tlaUIC
 {
@@ -717,7 +769,7 @@ td.tlaBgUIC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered Included Code (# => 0):
+/* Source code view/table entry background: format for lines classified as "Uncovered Included Code (# => 0):
 Previously unused code is untested" */
 span.tlaUIC
 {
@@ -742,7 +794,7 @@ td.headerCovTableHeadUIC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered Baseline Code (0 => 0):
+/* Source code view/table entry background: format for lines classified as "Uncovered Baseline Code (0 => 0):
 Unchanged code was untested before, is untested now" */
 td.tlaUBC
 {
@@ -753,7 +805,7 @@ td.tlaBgUBC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Uncovered Baseline Code (0 => 0):
+/* Source code view/table entry background: format for lines classified as "Uncovered Baseline Code (0 => 0):
 Unchanged code was untested before, is untested now" */
 span.tlaUBC
 {
@@ -778,7 +830,7 @@ td.headerCovTableHeadUBC {
   background-color: #FF6230;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained Baseline Coverage (0 => 1):
+/* Source code view/table entry background: format for lines classified as "Gained Baseline Coverage (0 => 1):
 Unchanged code is tested now" */
 td.tlaGBC
 {
@@ -789,7 +841,7 @@ td.tlaBgGBC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained Baseline Coverage (0 => 1):
+/* Source code view/table entry background: format for lines classified as "Gained Baseline Coverage (0 => 1):
 Unchanged code is tested now" */
 span.tlaGBC
 {
@@ -814,7 +866,7 @@ td.headerCovTableHeadGBC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained Included Coverage (# => 1):
+/* Source code view/table entry background: format for lines classified as "Gained Included Coverage (# => 1):
 Previously unused code is tested now" */
 td.tlaGIC
 {
@@ -825,7 +877,7 @@ td.tlaBgGIC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained Included Coverage (# => 1):
+/* Source code view/table entry background: format for lines classified as "Gained Included Coverage (# => 1):
 Previously unused code is tested now" */
 span.tlaGIC
 {
@@ -850,7 +902,7 @@ td.headerCovTableHeadGIC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained New Coverage (+ => 1):
+/* Source code view/table entry background: format for lines classified as "Gained New Coverage (+ => 1):
 Newly added code is tested" */
 td.tlaGNC
 {
@@ -861,7 +913,7 @@ td.tlaBgGNC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Gained New Coverage (+ => 1):
+/* Source code view/table entry background: format for lines classified as "Gained New Coverage (+ => 1):
 Newly added code is tested" */
 span.tlaGNC
 {
@@ -886,7 +938,7 @@ td.headerCovTableHeadGNC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Covered Baseline Code (1 => 1):
+/* Source code view/table entry background: format for lines classified as "Covered Baseline Code (1 => 1):
 Unchanged code was tested before and is still tested" */
 td.tlaCBC
 {
@@ -897,7 +949,7 @@ td.tlaBgCBC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Covered Baseline Code (1 => 1):
+/* Source code view/table entry background: format for lines classified as "Covered Baseline Code (1 => 1):
 Unchanged code was tested before and is still tested" */
 span.tlaCBC
 {
@@ -922,7 +974,7 @@ td.headerCovTableHeadCBC {
   background-color: #CAD7FE;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Excluded Uncovered Baseline (0 => #):
+/* Source code view/table entry background: format for lines classified as "Excluded Uncovered Baseline (0 => #):
 Previously untested code is unused now" */
 td.tlaEUB
 {
@@ -933,7 +985,7 @@ td.tlaBgEUB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Excluded Uncovered Baseline (0 => #):
+/* Source code view/table entry background: format for lines classified as "Excluded Uncovered Baseline (0 => #):
 Previously untested code is unused now" */
 span.tlaEUB
 {
@@ -958,7 +1010,7 @@ td.headerCovTableHeadEUB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Excluded Covered Baseline (1 => #):
+/* Source code view/table entry background: format for lines classified as "Excluded Covered Baseline (1 => #):
 Previously tested code is unused now" */
 td.tlaECB
 {
@@ -969,7 +1021,7 @@ td.tlaBgECB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Excluded Covered Baseline (1 => #):
+/* Source code view/table entry background: format for lines classified as "Excluded Covered Baseline (1 => #):
 Previously tested code is unused now" */
 span.tlaECB
 {
@@ -994,7 +1046,7 @@ td.headerCovTableHeadECB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Deleted Uncovered Baseline (0 => -):
+/* Source code view/table entry background: format for lines classified as "Deleted Uncovered Baseline (0 => -):
 Previously untested code has been deleted" */
 td.tlaDUB
 {
@@ -1005,7 +1057,7 @@ td.tlaBgDUB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Deleted Uncovered Baseline (0 => -):
+/* Source code view/table entry background: format for lines classified as "Deleted Uncovered Baseline (0 => -):
 Previously untested code has been deleted" */
 span.tlaDUB
 {
@@ -1030,7 +1082,7 @@ td.headerCovTableHeadDUB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Deleted Covered Baseline (1 => -):
+/* Source code view/table entry background: format for lines classified as "Deleted Covered Baseline (1 => -):
 Previously tested code has been deleted" */
 td.tlaDCB
 {
@@ -1041,7 +1093,7 @@ td.tlaBgDCB {
   background-color: #FFFFFF;
 }
 
-/* Source code view/table entry backround: format for lines classified as "Deleted Covered Baseline (1 => -):
+/* Source code view/table entry background: format for lines classified as "Deleted Covered Baseline (1 => -):
 Previously tested code has been deleted" */
 span.tlaDCB
 {

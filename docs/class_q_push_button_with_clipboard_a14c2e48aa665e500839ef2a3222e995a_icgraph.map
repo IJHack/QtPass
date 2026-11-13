@@ -1,4 +1,4 @@
 <map id="QPushButtonWithClipboard::clicked" name="QPushButtonWithClipboard::clicked">
-<area shape="rect" id="Node000001" title="Emitted when the button is activated with the stored text." alt="" coords="5,29,204,69"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="138,18,126,11,105,8,86,10,75,15,70,21,73,28,67,30,65,20,71,11,84,5,105,3,128,6,141,13"/>
+<area shape="rect" id="Node000001" title="Emitted when the button is activated with the stored text." alt="" coords="5,29,203,74"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="134,14,124,10,104,8,86,10,75,15,70,21,71,30,66,28,65,19,71,10,84,5,104,3,125,5,139,14"/>
 </map>
