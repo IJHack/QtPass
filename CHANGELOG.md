@@ -57,6 +57,12 @@
   proposes (the key's fingerprint) into a store folder; saving there wrote
   the key to the file the link points to, outside the store. QtPass now
   refuses a link at the chosen name (scan finding ANT-2026-T5AWA17S).
+- Git no longer reads the config of a repository pushed into the store.
+  Someone who can push to a shared store could push a folder laid out as a
+  bare repository, with a config that names a command (`core.fsmonitor`);
+  saving an entry in that folder ran it. QtPass now sets
+  `safe.bareRepository=explicit` for every Git it runs, and for the Git that
+  `pass` runs (Git 2.38 or newer; scan finding ANT-2026-HJOPH9D4).
 - A pushed `.gitattributes` can no longer make Git rewrite encrypted
   entries. Someone who can push to a shared store could add a line such as
   `*.gpg text`; Git then changed the ciphertext on commit or checkout, and

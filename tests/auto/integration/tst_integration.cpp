@@ -354,6 +354,7 @@ private Q_SLOTS:
   void realPass_insertAndGrep();
   void realPass_removeLinkedFolderRefusedKeepsTarget();
   void realPass_copyThroughLinkRefused();
+  void realPass_pushedBareRepoDoesNotRunCommand();
   void realPass_moveJudgedWherePassWrites();
 
   // pass-otp (skipped if extension not installed)
@@ -2730,6 +2731,88 @@ void tst_integration::imitatePass_multilineContent() {
                          "expected:\n%1\ngot:\n%2")
                      .arg(multilinePw)
                      .arg(decrypted)));
+}
+
+// A co-writer can push a folder laid out as a bare git repository (HEAD,
+// objects/, refs/, and a config with core.worktree=. and a core.fsmonitor
+// command). git started in it would run that command. updateEnv() sets
+// safe.bareRepository=explicit for every git QtPass runs, so the pushed repo is
+// refused and the command never runs.
+void tst_integration::realPass_pushedBareRepoDoesNotRunCommand() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX / core.fsmonitor shell semantics; Windows differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping bare-repo test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+
+  QProcess initProc;
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert("GNUPGHOME", m_gnupgHome.path());
+  env.insert("PASSWORD_STORE_DIR", storeDir.path());
+  initProc.setProcessEnvironment(env);
+  initProc.start(passExe, {"init", m_keyFingerprint});
+  QVERIFY2(initProc.waitForFinished(15000), "pass init timed out");
+  QVERIFY2(initProc.exitCode() == 0, "pass init should succeed");
+
+  // The marker the pushed core.fsmonitor command would create if it ran.
+  QTemporaryDir markerDir;
+  QVERIFY(markerDir.isValid());
+  const QString marker = markerDir.path() + "/ran";
+
+  // Plant the bare-repo-shaped folder "work" inside the store.
+  const QString work = storeDir.path() + "/work";
+  QVERIFY(QDir().mkpath(work + "/objects"));
+  QVERIFY(QDir().mkpath(work + "/refs"));
+  auto writeFile = [](const QString &path, const QByteArray &data) -> bool {
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly | QIODevice::Text))
+      return false;
+    return f.write(data) == data.size();
+  };
+  QVERIFY(writeFile(work + "/HEAD", "ref: refs/heads/master\n"));
+  QVERIFY(writeFile(work + "/objects/keep", ""));
+  QVERIFY(writeFile(work + "/refs/keep", ""));
+  QVERIFY(writeFile(work + "/config",
+                    QStringLiteral("[core]\n\trepositoryformatversion = 0\n\t"
+                                   "worktree = .\n\tfsmonitor = \"id > %1; "
+                                   "false\"\n")
+                        .arg(marker)
+                        .toUtf8()));
+
+  RealPass pass;
+  setupPass(pass);
+
+  // Saving an entry in the planted folder is what would let git in "work" run
+  // the command; with the guard the pushed repo is refused instead.
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("work/vpn"), QStringLiteral("secret\n"), false);
+  // Either outcome is fine for the entry; the point is the command must not
+  // run.
+  const bool done =
+      waitForSignal(insertSpy, 20000) || insertErrorSpy.count() > 0;
+  QVERIFY2(done, "RealPass insert neither finished nor errored");
+
+  QVERIFY2(!QFile::exists(marker),
+           "a git command from the pushed bare repo must not run");
+
+  QtPassSettings::setUsePass(false);
+#endif
 }
 
 QTEST_MAIN(tst_integration)

@@ -907,6 +907,32 @@ void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_GPG_OPTS="),
             gpgOpts.join(QLatin1Char(' ')));
 
+  // Harden every git QtPass runs, natively and the ones `pass` runs below it,
+  // against a repository pushed into the store. With safe.bareRepository set to
+  // "explicit", git refuses a folder that is merely laid out as a bare
+  // repository, so a config of its own that a co-writer pushed (core.fsmonitor
+  // and the like, which git would run as a command) is never read. The value is
+  // appended at the next free GIT_CONFIG index so any the user set is kept, and
+  // only when it is not already present, so repeated calls do not pile up.
+  const int gitConfigCount =
+      env.value(QStringLiteral("GIT_CONFIG_COUNT")).toInt();
+  bool bareRepoGuarded = false;
+  for (int i = 0; i < gitConfigCount; ++i) {
+    if (env.value(QStringLiteral("GIT_CONFIG_KEY_%1").arg(i)) ==
+        QStringLiteral("safe.bareRepository")) {
+      bareRepoGuarded = true;
+      break;
+    }
+  }
+  if (!bareRepoGuarded) {
+    env.insert(QStringLiteral("GIT_CONFIG_KEY_%1").arg(gitConfigCount),
+               QStringLiteral("safe.bareRepository"));
+    env.insert(QStringLiteral("GIT_CONFIG_VALUE_%1").arg(gitConfigCount),
+               QStringLiteral("explicit"));
+    env.insert(QStringLiteral("GIT_CONFIG_COUNT"),
+               QString::number(gitConfigCount + 1));
+  }
+
   exec.setEnvironment(env);
 
   pinStoreGitAttributes();
