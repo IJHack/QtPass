@@ -235,6 +235,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   `*.gpg`, `.gpg-id` and `.gpg-id.sig` as byte-for-byte in the store's own
   `.git/info/attributes`, which outranks the pushed file (scan finding
   ANT-2026-JWPWADT4).
+- The pass backend ends the options with `--` before an entry's path. An
+  entry name that begins with `-` was read as an option to `pass show`, `rm`,
+  `mv` and `cp`. Someone who can push to a shared store could push an entry
+  named `--` beside a `.gpg` link at the store root; showing it decrypted
+  the file the link points to outside the store (scan finding
+  ANT-2026-BQMURTO3).
 - Re-encryption no longer lets a pushed file write a file of its own. QtPass
   asked gpg for an entry's keys without a command, so gpg guessed one, and a
   `.gpg` file holding OpenPGP data that is not encrypted was saved under its
