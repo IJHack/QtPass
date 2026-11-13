@@ -347,6 +347,7 @@ private Q_SLOTS:
   void realPass_insertAndShow();
   void realPass_insertAndGrep();
   void realPass_removeLinkedFolderRefusedKeepsTarget();
+  void realPass_copyThroughLinkRefused();
 
   // pass-otp (skipped if extension not installed)
   void imitatePass_otpGenerate();
@@ -2099,6 +2100,91 @@ void tst_integration::realPass_removeLinkedFolderRefusedKeepsTarget() {
            "a folder under the link must not be emptied in the target");
   QVERIFY2(QFile::exists(outsideEntry),
            "an entry under the link must not be deleted in the target");
+
+  QtPassSettings::setUsePass(false);
+#endif
+}
+
+// Move/copy checks must be made on what pass will actually operate on. A
+// co-writer can push an entry that is a symbolic link to a file outside the
+// store; copying or renaming it would make pass follow the link and carry
+// ciphertext out of the store. Such an operation must be refused.
+void tst_integration::realPass_copyThroughLinkRefused() {
+#ifdef Q_OS_WIN
+  QSKIP("POSIX symlink semantics; Windows junction handling differs");
+#else
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping RealPass integration test");
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QtPassSettings::setPassStore(storeDir.path());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
+  QtPassSettings::setUsePass(true);
+  {
+    QFile gpgId(storeDir.path() + "/.gpg-id");
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    QVERIFY(gpgId.write((m_keyFingerprint + "\n").toUtf8()) > 0);
+  }
+
+  // A secret outside the store, and an entry inside the store that is really a
+  // link to it (as a git pull could introduce).
+  QTemporaryDir outsideDir;
+  QVERIFY(outsideDir.isValid());
+  const QString outsideSecret = outsideDir.path() + "/bank.gpg";
+  {
+    QFile f(outsideSecret);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("ciphertext") > 0);
+  }
+  QVERIFY(QFile::link(outsideSecret, storeDir.path() + "/escape.gpg"));
+
+  RealPass pass;
+  setupPass(pass);
+
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy copySpy(&pass, &Pass::finishedCopy);
+  pass.Copy(storeDir.path() + "/escape.gpg", storeDir.path() + "/stolen", true);
+
+  QVERIFY2(criticalSpy.count() == 1,
+           "copying a link that resolves outside the store must be refused");
+  QVERIFY2(
+      !QFile::exists(storeDir.path() + "/stolen.gpg"),
+      "the refused copy must not create a new entry from the outside file");
+
+  // The other way round: a real entry copied onto a name that is a link to a
+  // file outside. pass writes to "<dest>.gpg", or into "<dest>/" when that is
+  // a folder, and cp follows a link found there.
+  const QString realEntry = storeDir.path() + "/real.gpg";
+  {
+    QFile f(realEntry);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("store ciphertext") > 0);
+  }
+  const QString outsideFile = outsideDir.path() + "/precious.gpg";
+  {
+    QFile f(outsideFile);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.write("precious") > 0);
+  }
+  QVERIFY(QFile::link(outsideFile, storeDir.path() + "/target.gpg"));
+  QVERIFY(QDir(storeDir.path()).mkpath(QStringLiteral("folder")));
+  QVERIFY(QFile::link(outsideFile, storeDir.path() + "/folder/real.gpg"));
+  for (const QString &dest : {QString(storeDir.path() + "/target"),
+                              QString(storeDir.path() + "/folder")}) {
+    criticalSpy.clear();
+    pass.Copy(realEntry, dest, true);
+    QVERIFY2(criticalSpy.count() == 1,
+             qPrintable(dest + ": copying onto a link must be refused"));
+    QTest::qWait(500); // nothing should be queued; give a stray pass a chance
+    QCOMPARE(readFileBytes(outsideFile), QByteArray("precious"));
+  }
 
   QtPassSettings::setUsePass(false);
 #endif

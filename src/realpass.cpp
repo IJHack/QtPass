@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
 #include "debughelper.h"
+#include "pathvalidator.h"
 #include "util.h"
 
 #include <QDir>
@@ -213,6 +214,40 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
   QString normalizedStore = QDir::cleanPath(m_settings.passStore);
   QString normalizedSrc = QDir::cleanPath(QDir(src).absolutePath());
   QString normalizedDest = QDir::cleanPath(QDir(dest).absolutePath());
+
+  // Refuse a move or copy whose source or destination resolves, after any
+  // symbolic links are followed, to a path outside the store. QtPass checks the
+  // name as given, but pass resolves what is under it; a co-writer can push a
+  // link that pass would follow, moving ciphertext out of the store or over a
+  // file outside it. Guard the resolved paths before handing them to pass.
+  // pass writes an entry to <dest>.gpg, and anything into <dest>/ when that
+  // is a folder; cp follows a link it finds there and writes over the file
+  // it points to. Check that name too.
+  QString written = normalizedDest;
+  const bool srcIsDir = QFileInfo(normalizedSrc).isDir();
+  if (QFileInfo(normalizedDest).isDir()) {
+    QString name = QFileInfo(normalizedSrc).fileName();
+    if (!srcIsDir && !name.endsWith(QLatin1String(".gpg"))) {
+      name += QLatin1String(".gpg");
+    }
+    written += QLatin1Char('/') + name;
+  } else if (!srcIsDir && !written.endsWith(QLatin1String(".gpg"))) {
+    written += QLatin1String(".gpg");
+  }
+  if (!PathValidator::isPathInStore(normalizedStore, normalizedSrc) ||
+      !PathValidator::isPathInStore(normalizedStore, normalizedDest) ||
+      QFileInfo(written).isSymLink() ||
+      !PathValidator::isPathInStore(normalizedStore, written)) {
+    emit critical(tr("Refusing to move or copy through a link"),
+                  tr("The source or destination lies outside the store, or "
+                     "behind a symbolic link that points outside it, so the "
+                     "operation was not carried out."));
+    if (subcommand == QStringLiteral("mv"))
+      emit finishedMove(QString(), QString());
+    else
+      emit finishedCopy(QString(), QString());
+    return;
+  }
 
   QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
   QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
