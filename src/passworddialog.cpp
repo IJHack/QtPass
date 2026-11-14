@@ -650,9 +650,11 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   const auto holdAndRemove = [this, &held,
                               &otpTyped](QList<QLineEdit *> &lines) {
     for (QLineEdit *line : std::as_const(lines)) {
-      if (!line->text().isEmpty()) {
-        held.append({line->objectName(), line->text(),
-                     line->property(kOriginalLineProperty).toString()});
+      const QString original = line->property(kOriginalLineProperty).toString();
+      // A stored field with no value ("recovery:") has an empty row but a
+      // source line, which getPassword() writes back as it was: keep it too.
+      if (!line->text().isEmpty() || !original.isEmpty()) {
+        held.append({line->objectName(), line->text(), original});
         if (line->property(kOtpEditedProperty).toBool()) {
           otpTyped.insert(line->objectName());
         }
