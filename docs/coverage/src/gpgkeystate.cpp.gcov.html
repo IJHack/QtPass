@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:08:17</td>
+            <td class="headerValue">2026-11-14 15:20:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -104,17 +104,17 @@
 <span id="L31"><span class="lineNum">      31</span>              :  */</span>
 <span id="L32"><span class="lineNum">      32</span>              : constexpr int GPG_FIELD_FINGERPRINT = 9;</span>
 <span id="L33"><span class="lineNum">      33</span>              : </span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         624 : auto classifyRecord(const QString &amp;record_type) -&gt; GpgRecordType {</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         624 :   if (record_type == &quot;pub&quot;) {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         669 : auto classifyRecord(const QString &amp;record_type) -&gt; GpgRecordType {</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         669 :   if (record_type == &quot;pub&quot;) {</span></span>
 <span id="L36"><span class="lineNum">      36</span>              :     return GpgRecordType::Pub;</span>
 <span id="L37"><span class="lineNum">      37</span>              :   }</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         452 :   if (record_type == &quot;sec&quot;) {</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         482 :   if (record_type == &quot;sec&quot;) {</span></span>
 <span id="L39"><span class="lineNum">      39</span>              :     return GpgRecordType::Sec;</span>
 <span id="L40"><span class="lineNum">      40</span>              :   }</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         427 :   if (record_type == &quot;uid&quot;) {</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         457 :   if (record_type == &quot;uid&quot;) {</span></span>
 <span id="L42"><span class="lineNum">      42</span>              :     return GpgRecordType::Uid;</span>
 <span id="L43"><span class="lineNum">      43</span>              :   }</span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         240 :   if (record_type == &quot;fpr&quot;) {</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">         255 :   if (record_type == &quot;fpr&quot;) {</span></span>
 <span id="L45"><span class="lineNum">      45</span>              :     return GpgRecordType::Fpr;</span>
 <span id="L46"><span class="lineNum">      46</span>              :   }</span>
 <span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          41 :   if (record_type == &quot;sub&quot;) {</span></span>
@@ -129,32 +129,32 @@
 <span id="L56"><span class="lineNum">      56</span>              :   return GpgRecordType::Unknown;</span>
 <span id="L57"><span class="lineNum">      57</span>              : }</span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         165 : void handlePubSecRecord(const QStringList &amp;props, bool secret,</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">         180 : void handlePubSecRecord(const QStringList &amp;props, bool secret,</span></span>
 <span id="L60"><span class="lineNum">      60</span>              :                         UserInfo &amp;current_user) {</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">         165 :   if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">         180 :   if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
 <span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">           2 :     return;</span></span>
 <span id="L63"><span class="lineNum">      63</span>              :   }</span>
-<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">         163 :   current_user.key_id = props[GPG_FIELD_KEY_ID];</span></span>
-<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">         163 :   current_user.name = props[GPG_FIELD_USERID];</span></span>
-<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">         163 :   if (!props[GPG_FIELD_VALIDITY].isEmpty()) {</span></span>
-<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">         162 :     current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();</span></span>
+<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">         178 :   current_user.key_id = props[GPG_FIELD_KEY_ID];</span></span>
+<span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">         178 :   current_user.name = props[GPG_FIELD_USERID];</span></span>
+<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">         178 :   if (!props[GPG_FIELD_VALIDITY].isEmpty()) {</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">         177 :     current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();</span></span>
 <span id="L68"><span class="lineNum">      68</span>              :   }</span>
 <span id="L69"><span class="lineNum">      69</span>              : </span>
 <span id="L70"><span class="lineNum">      70</span>              :   // An empty field (GnuPG's &quot;no expiry&quot;) leaves the QDateTime null, so</span>
 <span id="L71"><span class="lineNum">      71</span>              :   // callers distinguish &quot;unset&quot; from &quot;set&quot; with isValid() alone.</span>
-<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         163 :   bool okCreated = false;</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         178 :   bool okCreated = false;</span></span>
 <span id="L73"><span class="lineNum">      73</span>              :   const qint64 createdSecs = props[GPG_FIELD_CREATED].toLongLong(&amp;okCreated);</span>
-<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">         163 :   if (okCreated) {</span></span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">         162 :     current_user.created = QDateTime::fromSecsSinceEpoch(createdSecs);</span></span>
+<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">         178 :   if (okCreated) {</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">         177 :     current_user.created = QDateTime::fromSecsSinceEpoch(createdSecs);</span></span>
 <span id="L76"><span class="lineNum">      76</span>              :   }</span>
 <span id="L77"><span class="lineNum">      77</span>              : </span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         163 :   bool okExpiry = false;</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         178 :   bool okExpiry = false;</span></span>
 <span id="L79"><span class="lineNum">      79</span>              :   const qint64 expirySecs = props[GPG_FIELD_EXPIRY].toLongLong(&amp;okExpiry);</span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         163 :   if (okExpiry) {</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         178 :   if (okExpiry) {</span></span>
 <span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">           9 :     current_user.expiry = QDateTime::fromSecsSinceEpoch(expirySecs);</span></span>
 <span id="L82"><span class="lineNum">      82</span>              :   }</span>
 <span id="L83"><span class="lineNum">      83</span>              : </span>
-<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">         163 :   current_user.have_secret = secret;</span></span>
+<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">         178 :   current_user.have_secret = secret;</span></span>
 <span id="L85"><span class="lineNum">      85</span>              : }</span>
 <span id="L86"><span class="lineNum">      86</span>              : </span>
 <span id="L87"><span class="lineNum">      87</span>              : /**</span>
@@ -162,73 +162,73 @@
 <span id="L89"><span class="lineNum">      89</span>              :  * @param props The colon-split fields of the record</span>
 <span id="L90"><span class="lineNum">      90</span>              :  * @param current_user UserInfo to populate with user name</span>
 <span id="L91"><span class="lineNum">      91</span>              :  */</span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         159 : void handleUidRecord(const QStringList &amp;props, UserInfo &amp;current_user) {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         159 :   current_user.name = props[GPG_FIELD_USERID];</span></span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         159 : }</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         174 : void handleUidRecord(const QStringList &amp;props, UserInfo &amp;current_user) {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         174 :   current_user.name = props[GPG_FIELD_USERID];</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         174 : }</span></span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         160 : void handleFprRecord(const QStringList &amp;props, UserInfo &amp;current_user) {</span></span>
-<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">         160 :   if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         175 : void handleFprRecord(const QStringList &amp;props, UserInfo &amp;current_user) {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">         175 :   if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
 <span id="L98"><span class="lineNum">      98</span>              :     return;</span>
 <span id="L99"><span class="lineNum">      99</span>              :   }</span>
 <span id="L100"><span class="lineNum">     100</span>              :   // The key ID from the pub/sec record is the fingerprint's tail; take the</span>
 <span id="L101"><span class="lineNum">     101</span>              :   // whole fingerprint, but only something shaped like one (40 hex for v4,</span>
 <span id="L102"><span class="lineNum">     102</span>              :   // 64 for v5/v6): it becomes a recipient and a signing identity later.</span>
 <span id="L103"><span class="lineNum">     103</span>              :   static const QRegularExpression shape(</span>
-<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">         166 :       QStringLiteral(&quot;^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$&quot;));</span></span>
+<span id="L104"><span class="lineNum">     104</span> <span class="tlaGNC">         181 :       QStringLiteral(&quot;^(?:[0-9A-Fa-f]{40}|[0-9A-Fa-f]{64})$&quot;));</span></span>
 <span id="L105"><span class="lineNum">     105</span>              :   const QString &amp;fingerprint = props[GPG_FIELD_FINGERPRINT];</span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         326 :   if (!current_user.key_id.isEmpty() &amp;&amp; shape.match(fingerprint).hasMatch() &amp;&amp;</span></span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">         149 :       fingerprint.endsWith(current_user.key_id, Qt::CaseInsensitive)) {</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">         371 :   if (!current_user.key_id.isEmpty() &amp;&amp; shape.match(fingerprint).hasMatch() &amp;&amp;</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">         164 :       fingerprint.endsWith(current_user.key_id, Qt::CaseInsensitive)) {</span></span>
 <span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">         142 :     current_user.key_id = fingerprint;</span></span>
 <span id="L109"><span class="lineNum">     109</span>              :   }</span>
 <span id="L110"><span class="lineNum">     110</span>              : }</span>
 <span id="L111"><span class="lineNum">     111</span>              : </span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">         159 : auto parseGpgColonOutput(const QString &amp;output, bool secret)</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">         165 : auto parseGpgColonOutput(const QString &amp;output, bool secret)</span></span>
 <span id="L113"><span class="lineNum">     113</span>              :     -&gt; QList&lt;UserInfo&gt; {</span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">         159 :   QList&lt;UserInfo&gt; users;</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">         165 :   QList&lt;UserInfo&gt; users;</span></span>
 <span id="L115"><span class="lineNum">     115</span>              : </span>
 <span id="L116"><span class="lineNum">     116</span>              :   const QStringList lines =</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         159 :       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         165 :       output.split(Util::newLinesRegex(), Qt::SkipEmptyParts);</span></span>
 <span id="L118"><span class="lineNum">     118</span>              : </span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         159 :   UserInfo current_user;</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         165 :   UserInfo current_user;</span></span>
 <span id="L120"><span class="lineNum">     120</span>              : </span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         656 :   for (const QString &amp;key : lines) {</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         497 :     QStringList props = key.split(':');</span></span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         497 :     if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         707 :   for (const QString &amp;key : lines) {</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">         542 :     QStringList props = key.split(':');</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         542 :     if (props.size() &lt; GPG_MIN_FIELDS) {</span></span>
 <span id="L124"><span class="lineNum">     124</span>              :       continue;</span>
 <span id="L125"><span class="lineNum">     125</span>              :     }</span>
 <span id="L126"><span class="lineNum">     126</span>              : </span>
 <span id="L127"><span class="lineNum">     127</span>              :     const QString &amp;record_type = props[0];</span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">         492 :     const GpgRecordType type = classifyRecord(record_type);</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">         537 :     const GpgRecordType type = classifyRecord(record_type);</span></span>
 <span id="L129"><span class="lineNum">     129</span>              : </span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         492 :     switch (type) {</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         537 :     switch (type) {</span></span>
 <span id="L131"><span class="lineNum">     131</span>              :     case GpgRecordType::Pub:</span>
 <span id="L132"><span class="lineNum">     132</span>              :     case GpgRecordType::Sec:</span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">         162 :       if (!current_user.key_id.isEmpty()) {</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">         177 :       if (!current_user.key_id.isEmpty()) {</span></span>
 <span id="L134"><span class="lineNum">     134</span>              :         users.append(current_user);</span>
 <span id="L135"><span class="lineNum">     135</span>              :       }</span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         162 :       current_user = UserInfo();</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         162 :       handlePubSecRecord(props, secret &amp;&amp; (type == GpgRecordType::Sec),</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         177 :       current_user = UserInfo();</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">         177 :       handlePubSecRecord(props, secret &amp;&amp; (type == GpgRecordType::Sec),</span></span>
 <span id="L138"><span class="lineNum">     138</span>              :                          current_user);</span>
 <span id="L139"><span class="lineNum">     139</span>              :       break;</span>
 <span id="L140"><span class="lineNum">     140</span>              :     case GpgRecordType::Uid:</span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">         160 :       if (current_user.name.isEmpty()) {</span></span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         159 :         handleUidRecord(props, current_user);</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">         175 :       if (current_user.name.isEmpty()) {</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         174 :         handleUidRecord(props, current_user);</span></span>
 <span id="L143"><span class="lineNum">     143</span>              :       }</span>
 <span id="L144"><span class="lineNum">     144</span>              :       break;</span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         153 :     case GpgRecordType::Fpr:</span></span>
-<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">         153 :       handleFprRecord(props, current_user);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         168 :     case GpgRecordType::Fpr:</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">         168 :       handleFprRecord(props, current_user);</span></span>
 <span id="L147"><span class="lineNum">     147</span>              :       break;</span>
 <span id="L148"><span class="lineNum">     148</span>              :     default:</span>
 <span id="L149"><span class="lineNum">     149</span>              :       break;</span>
 <span id="L150"><span class="lineNum">     150</span>              :     }</span>
 <span id="L151"><span class="lineNum">     151</span>              :   }</span>
 <span id="L152"><span class="lineNum">     152</span>              : </span>
-<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">         159 :   if (!current_user.key_id.isEmpty()) {</span></span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">         165 :   if (!current_user.key_id.isEmpty()) {</span></span>
 <span id="L154"><span class="lineNum">     154</span>              :     users.append(current_user);</span>
 <span id="L155"><span class="lineNum">     155</span>              :   }</span>
 <span id="L156"><span class="lineNum">     156</span>              : </span>
-<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">         159 :   return users;</span></span>
-<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">         159 : }</span></span>
+<span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">         165 :   return users;</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">         165 : }</span></span>
 <span id="L159"><span class="lineNum">     159</span>              : </span>
 <span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">          21 : auto primaryFingerprintOf(const QString &amp;output, const QString &amp;key)</span></span>
 <span id="L161"><span class="lineNum">     161</span>              :     -&gt; QString {</span>

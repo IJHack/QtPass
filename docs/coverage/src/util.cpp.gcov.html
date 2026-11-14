@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:08:17</td>
+            <td class="headerValue">2026-11-14 15:20:55</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -652,9 +652,9 @@
 <span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">         138 :   return QFile(executable).exists();</span></span>
 <span id="L580"><span class="lineNum">     580</span>              : }</span>
 <span id="L581"><span class="lineNum">     581</span>              : </span>
-<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">        7566 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">        7573 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
-<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">        7566 :   return expr;</span></span>
+<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">        7582 : auto Util::endsWithGpg() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">        7589 :   static const QRegularExpression expr{R&quot;(\.gpg$)&quot;};</span></span>
+<span id="L584"><span class="lineNum">     584</span> <span class="tlaGNC">        7582 :   return expr;</span></span>
 <span id="L585"><span class="lineNum">     585</span>              : }</span>
 <span id="L586"><span class="lineNum">     586</span>              : </span>
 <span id="L587"><span class="lineNum">     587</span>              : // Stops at whitespace, quotes and brackets so a URL on its own line keeps no</span>
@@ -726,16 +726,16 @@
 <span id="L653"><span class="lineNum">     653</span> <span class="tlaGNC">         164 :   return html;</span></span>
 <span id="L654"><span class="lineNum">     654</span> <span class="tlaGNC">         164 : }</span></span>
 <span id="L655"><span class="lineNum">     655</span>              : </span>
-<span id="L656"><span class="lineNum">     656</span> <span class="tlaGNC">         280 : auto Util::newLinesRegex() -&gt; const QRegularExpression &amp; {</span></span>
-<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">         289 :   static const QRegularExpression regex{&quot;[\r\n]&quot;};</span></span>
-<span id="L658"><span class="lineNum">     658</span> <span class="tlaGNC">         280 :   return regex;</span></span>
+<span id="L656"><span class="lineNum">     656</span> <span class="tlaGNC">         286 : auto Util::newLinesRegex() -&gt; const QRegularExpression &amp; {</span></span>
+<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">         295 :   static const QRegularExpression regex{&quot;[\r\n]&quot;};</span></span>
+<span id="L658"><span class="lineNum">     658</span> <span class="tlaGNC">         286 :   return regex;</span></span>
 <span id="L659"><span class="lineNum">     659</span>              : }</span>
 <span id="L660"><span class="lineNum">     660</span>              : </span>
 <span id="L661"><span class="lineNum">     661</span>              : // No content heuristics: a line rejected here is erased the next time .gpg-id</span>
 <span id="L662"><span class="lineNum">     662</span>              : // is rewritten. A leading `-` is refused because the recipients also go</span>
 <span id="L663"><span class="lineNum">     663</span>              : // positionally to `gpg --list-keys`, where it would parse as an option.</span>
-<span id="L664"><span class="lineNum">     664</span> <span class="tlaGNC">         222 : auto Util::isValidKeyId(const QString &amp;keyId) -&gt; bool {</span></span>
-<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">         222 :   return !keyId.isEmpty() &amp;&amp; !keyId.startsWith('-');</span></span>
+<span id="L664"><span class="lineNum">     664</span> <span class="tlaGNC">         225 : auto Util::isValidKeyId(const QString &amp;keyId) -&gt; bool {</span></span>
+<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">         225 :   return !keyId.isEmpty() &amp;&amp; !keyId.startsWith('-');</span></span>
 <span id="L666"><span class="lineNum">     666</span>              : }</span>
 <span id="L667"><span class="lineNum">     667</span>              : </span>
 <span id="L668"><span class="lineNum">     668</span>              : namespace {</span>
@@ -983,7 +983,7 @@
 <span id="L910"><span class="lineNum">     910</span>              : #endif</span>
 <span id="L911"><span class="lineNum">     911</span>              : }</span>
 <span id="L912"><span class="lineNum">     912</span>              : </span>
-<span id="L913"><span class="lineNum">     913</span> <span class="tlaGNC">         767 : auto Util::openRegularFile(const QString &amp;path, QFile &amp;file) -&gt; bool {</span></span>
+<span id="L913"><span class="lineNum">     913</span> <span class="tlaGNC">         768 : auto Util::openRegularFile(const QString &amp;path, QFile &amp;file) -&gt; bool {</span></span>
 <span id="L914"><span class="lineNum">     914</span>              : #ifdef Q_OS_WIN</span>
 <span id="L915"><span class="lineNum">     915</span>              :   // FILE_FLAG_OPEN_REPARSE_POINT opens a symbolic link or junction itself</span>
 <span id="L916"><span class="lineNum">     916</span>              :   // rather than its target, so the handle's attributes say what the name</span>
@@ -1021,20 +1021,20 @@
 <span id="L948"><span class="lineNum">     948</span>              : #else</span>
 <span id="L949"><span class="lineNum">     949</span>              :   // O_NOFOLLOW fails with ELOOP on a symbolic link; O_NONBLOCK keeps a FIFO</span>
 <span id="L950"><span class="lineNum">     950</span>              :   // from blocking the open until fstat() can refuse it.</span>
-<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">         767 :   const int fd = ::open(QFile::encodeName(path).constData(),</span></span>
+<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">         768 :   const int fd = ::open(QFile::encodeName(path).constData(),</span></span>
 <span id="L952"><span class="lineNum">     952</span>              :                         O_RDONLY | O_NOFOLLOW | O_NONBLOCK | O_CLOEXEC);</span>
-<span id="L953"><span class="lineNum">     953</span> <span class="tlaGNC">         767 :   if (fd &lt; 0) {</span></span>
+<span id="L953"><span class="lineNum">     953</span> <span class="tlaGNC">         768 :   if (fd &lt; 0) {</span></span>
 <span id="L954"><span class="lineNum">     954</span>              :     return false;</span>
 <span id="L955"><span class="lineNum">     955</span>              :   }</span>
-<span id="L956"><span class="lineNum">     956</span> <span class="tlaGNC">         714 :   struct stat st{};</span></span>
-<span id="L957"><span class="lineNum">     957</span> <span class="tlaGNC">         714 :   if (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</span></span>
+<span id="L956"><span class="lineNum">     956</span> <span class="tlaGNC">         715 :   struct stat st{};</span></span>
+<span id="L957"><span class="lineNum">     957</span> <span class="tlaGNC">         715 :   if (::fstat(fd, &amp;st) != 0 || !S_ISREG(st.st_mode)) {</span></span>
 <span id="L958"><span class="lineNum">     958</span> <span class="tlaGNC">           7 :     ::close(fd);</span></span>
 <span id="L959"><span class="lineNum">     959</span> <span class="tlaGNC">           7 :     return false;</span></span>
 <span id="L960"><span class="lineNum">     960</span>              :   }</span>
 <span id="L961"><span class="lineNum">     961</span>              :   // The descriptor, not the name, is what QFile opens here: the object</span>
 <span id="L962"><span class="lineNum">     962</span>              :   // fstat() judged is the object read. CodeQL's check-then-use pattern</span>
 <span id="L963"><span class="lineNum">     963</span>              :   // matcher sees an open after a check and cannot tell.</span>
-<span id="L964"><span class="lineNum">     964</span> <span class="tlaGNC">         707 :   if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]</span></span>
+<span id="L964"><span class="lineNum">     964</span> <span class="tlaGNC">         708 :   if (!file.open(fd, QIODevice::ReadOnly, // codeql[cpp/toctou-race-condition]</span></span>
 <span id="L965"><span class="lineNum">     965</span>              :                  QFileDevice::AutoCloseHandle)) {</span>
 <span id="L966"><span class="lineNum">     966</span> <span class="tlaUNC">           0 :     ::close(fd);</span></span>
 <span id="L967"><span class="lineNum">     967</span> <span class="tlaUNC">           0 :     return false;</span></span>
@@ -1043,24 +1043,24 @@
 <span id="L970"><span class="lineNum">     970</span>              : #endif</span>
 <span id="L971"><span class="lineNum">     971</span>              : }</span>
 <span id="L972"><span class="lineNum">     972</span>              : </span>
-<span id="L973"><span class="lineNum">     973</span> <span class="tlaGNC">         245 : auto Util::readRegularFile(const QString &amp;path, qint64 maxBytes)</span></span>
+<span id="L973"><span class="lineNum">     973</span> <span class="tlaGNC">         246 : auto Util::readRegularFile(const QString &amp;path, qint64 maxBytes)</span></span>
 <span id="L974"><span class="lineNum">     974</span>              :     -&gt; std::optional&lt;QByteArray&gt; {</span>
-<span id="L975"><span class="lineNum">     975</span> <span class="tlaGNC">         245 :   QFile file;</span></span>
-<span id="L976"><span class="lineNum">     976</span> <span class="tlaGNC">         245 :   if (!openRegularFile(path, file)) {</span></span>
+<span id="L975"><span class="lineNum">     975</span> <span class="tlaGNC">         246 :   QFile file;</span></span>
+<span id="L976"><span class="lineNum">     976</span> <span class="tlaGNC">         246 :   if (!openRegularFile(path, file)) {</span></span>
 <span id="L977"><span class="lineNum">     977</span> <span class="tlaGNC">          11 :     return std::nullopt;</span></span>
 <span id="L978"><span class="lineNum">     978</span>              :   }</span>
 <span id="L979"><span class="lineNum">     979</span>              :   // A regular file's size is reliable, also when sparse: refuse a large one</span>
 <span id="L980"><span class="lineNum">     980</span>              :   // before reading anything. One byte past the limit still guards a file</span>
 <span id="L981"><span class="lineNum">     981</span>              :   // that grows meanwhile.</span>
-<span id="L982"><span class="lineNum">     982</span> <span class="tlaGNC">         234 :   if (file.size() &gt; maxBytes) {</span></span>
+<span id="L982"><span class="lineNum">     982</span> <span class="tlaGNC">         235 :   if (file.size() &gt; maxBytes) {</span></span>
 <span id="L983"><span class="lineNum">     983</span> <span class="tlaGNC">           3 :     return std::nullopt;</span></span>
 <span id="L984"><span class="lineNum">     984</span>              :   }</span>
-<span id="L985"><span class="lineNum">     985</span> <span class="tlaGNC">         231 :   QByteArray bytes = file.read(maxBytes + 1);</span></span>
-<span id="L986"><span class="lineNum">     986</span> <span class="tlaGNC">         231 :   if (bytes.size() &gt; maxBytes || file.error() != QFileDevice::NoError) {</span></span>
+<span id="L985"><span class="lineNum">     985</span> <span class="tlaGNC">         232 :   QByteArray bytes = file.read(maxBytes + 1);</span></span>
+<span id="L986"><span class="lineNum">     986</span> <span class="tlaGNC">         232 :   if (bytes.size() &gt; maxBytes || file.error() != QFileDevice::NoError) {</span></span>
 <span id="L987"><span class="lineNum">     987</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
 <span id="L988"><span class="lineNum">     988</span>              :   }</span>
 <span id="L989"><span class="lineNum">     989</span>              :   return bytes;</span>
-<span id="L990"><span class="lineNum">     990</span> <span class="tlaGNC">         245 : }</span></span>
+<span id="L990"><span class="lineNum">     990</span> <span class="tlaGNC">         246 : }</span></span>
 <span id="L991"><span class="lineNum">     991</span>              : </span>
 <span id="L992"><span class="lineNum">     992</span> <span class="tlaGNC">         219 : auto Util::syncToDisk(QFileDevice &amp;file) -&gt; bool {</span></span>
 <span id="L993"><span class="lineNum">     993</span> <span class="tlaGNC">         219 :   if (!file.flush()) {</span></span>
