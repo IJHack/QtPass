@@ -70,6 +70,9 @@ private slots:
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
+  void unreadableRecipientLineLeavesTheOthersTicked();
+  void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
+  void fallbackPerLineLookupIsCappedAndReused();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
   void unusableRecipientsAreShownAndCanBeRemoved();
@@ -917,6 +920,194 @@ void tst_usersdialog::unknownRecipientIsListedAsNotFoundAndTicked() {
   QCOMPARE(
       enabledIds(dialog.selectedUsers()),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+/**
+ * @brief One line gpg cannot read as a key search ("0x", a fingerprint one
+ *        digit short) aborts the batched --list-keys call, so none of the
+ *        other recipients' keys resolve from it. The dialog must still tick
+ *        the keyring keys the other lines name, from a per-line fallback, and
+ *        report only the unreadable line as missing. Otherwise OK writes the
+ *        bad line alone over .gpg-id and re-encryption drops every recipient.
+ */
+void tst_usersdialog::unreadableRecipientLineLeavesTheOthersTicked() {
+  // Real gpg exits 2 and lists nothing for the whole call when any one term
+  // is unreadable, wherever it stands. The stand-in does the same: exit 2 for
+  // any argument list that contains "0x", otherwise list by substring as the
+  // default stand-in gpg does.
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-unreadable"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "case \"$*\" in *0x*) echo 'gpg: error reading key: "
+                     "Invalid user ID' >&2; exit 2 ;; esac\n"
+                     "all() { cat <<'LISTING'\n") +
+          QString::fromLatin1(kColonListing) +
+          QStringLiteral("LISTING\n}\n"
+                         "case \"$*\" in\n"
+                         "*31850CF72D9CDDE9*) all | head -3 ;;\n"
+                         "*693A0AF3FA364E76*) all | tail -3 ;;\n"
+                         "*) all ;;\nesac\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9\n"
+              "4EF2550F79F4E9E68B09F71D693A0AF3FA364E76\n"
+              "0x\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+
+  // Both keyring recipients stay ticked although the batched lookup failed;
+  // only "0x" is reported missing, as an unknown key already is. OK writes the
+  // same three lines back rather than dropping the two keys.
+  const QStringList enabled = enabledIds(dialog.selectedUsers());
+  QVERIFY2(enabled.contains(
+               QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")),
+           qPrintable(enabled.join(QLatin1Char(','))));
+  QVERIFY2(enabled.contains(
+               QStringLiteral("4EF2550F79F4E9E68B09F71D693A0AF3FA364E76")),
+           qPrintable(enabled.join(QLatin1Char(','))));
+  QListWidgetItem *placeholder = itemWithText(list, QStringLiteral("0x"));
+  QVERIFY2(placeholder != nullptr, "the unreadable line must be listed");
+  QVERIFY2(
+      placeholder->text().contains(QStringLiteral("Key not found in keyring")),
+      qPrintable(placeholder->text()));
+  QCOMPARE(placeholder->checkState(), Qt::Checked);
+}
+
+/**
+ * @brief The cached per-line gpg verdict decides a line even when the
+ *        heuristic answersTo() would match it. An unreadable "0x" line stays
+ *        reported missing although a resolved key's UID contains "0x".
+ */
+void tst_usersdialog::unreadableLineStaysMissingWhenAResolvedUidContainsIt() {
+  // A key whose UID contains "0x", listed for its fingerprint; the whole call
+  // and a bare "0x" both abort with exit 2, as real gpg does.
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:AAAABBBBCCCCDDDD:1700000000:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB:\n"
+      "uid:u::::1700000000::HASH::Max 0xface <max@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-uid-0x"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "case \"$*\" in *0x*) echo 'gpg: error reading key: "
+                     "Invalid user ID' >&2; exit 2 ;; esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB\n0x\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+
+  // Both the placeholder and the "Max 0xface" row carry "0x", so the
+  // placeholder is found by the text only it has.
+  QListWidgetItem *placeholder =
+      itemWithText(list, QStringLiteral("Key not found in keyring"));
+  QVERIFY2(placeholder != nullptr,
+           "the unreadable 0x line must still be reported missing");
+  QVERIFY2(placeholder->text().contains(QStringLiteral("0x")),
+           qPrintable(placeholder->text()));
+  QCOMPARE(placeholder->checkState(), Qt::Checked);
+}
+
+/**
+ * @brief The per-line fallback must stay bounded. A fresh clone or a team
+ *        store can have every recipient's key missing from the keyring; with
+ *        one unreadable line the batched gpg call fails and the fallback asks
+ *        per line. It is capped at kMaxLookups and shares that budget and its
+ *        results with the missing-key loop, which must not ask gpg about the
+ *        same line a second time.
+ */
+void tst_usersdialog::fallbackPerLineLookupIsCappedAndReused() {
+  // Build a store whose .gpg-id holds @p missing unknown fingerprints and one
+  // unreadable "0x" line, open the Users dialog on it, and count the gpg calls
+  // that carried a recipient (a fingerprint or "0x"); the whole-keyring and
+  // secret-key calls carry neither and are not counted.
+  const auto callsFor = [this](int missing) -> int {
+    const QString counter =
+        QDir(m_dir.path()).filePath(QStringLiteral("lookups-%1").arg(missing));
+    QFile::remove(counter);
+    AppSettings s = m_settings;
+    s.gpgExecutable = writeGpg(
+        QStringLiteral("gpg-counting-%1").arg(missing),
+        QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                       "case \"$*\" in *FACE*|*0x*) echo x >> '") +
+            counter +
+            QStringLiteral(
+                "' ;; esac\n"
+                "case \"$*\" in *0x*) echo 'gpg: error reading key: Invalid "
+                "user ID' >&2; exit 2 ;; esac\n"
+                // An unknown fingerprint: gpg lists nothing and exits 0.
+                "case \"$*\" in *FACE*) exit 0 ;; esac\n"
+                "cat <<'LISTING'\n") +
+            QString::fromLatin1(kColonListing) +
+            QStringLiteral("LISTING\nexit 0\n"));
+    if (s.gpgExecutable.isEmpty()) {
+      return -1;
+    }
+    QTemporaryDir store;
+    if (!store.isValid()) {
+      return -1;
+    }
+    QByteArray body;
+    for (int i = 1; i <= missing; ++i) {
+      // "FACE" + 36 hex digits = a 40-char fingerprint not in the keyring.
+      body += QStringLiteral("FACE%1\n")
+                  .arg(i, 36, 16, QLatin1Char('0'))
+                  .toLatin1();
+    }
+    body += "0x\n";
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      return -1;
+    }
+    gpgId.write(body);
+    gpgId.close();
+    s.passStore = store.path() + QLatin1Char('/');
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    QFile log(counter);
+    if (!log.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      return 0;
+    }
+    return static_cast<int>(log.readAll().count('x'));
+  };
+
+  // Five missing lines plus "0x" is six recipients, all looked up under the
+  // cap: 1 batched call (fails on "0x") + 6 per-line. The missing-key loop
+  // reuses those six results, so it adds nothing; without the reuse it would
+  // ask gpg about them again until the shared budget runs out (1 + 6 + 4 = 11).
+  const int few = callsFor(5);
+  QVERIFY2(few >= 0, "fallback harness failed to run");
+  QVERIFY2(few <= 7, qPrintable(QStringLiteral("gpg calls for 5 lines: %1 "
+                                               "(reuse missing?)")
+                                    .arg(few)));
+
+  // Fifteen missing lines: the per-line budget stops the fallback at
+  // kMaxLookups = 10, so 1 batched + 10 per-line at most. Uncapped it would be
+  // 1 + 15 + 10 = 26.
+  const int many = callsFor(15);
+  QVERIFY2(many >= 0, "fallback harness failed to run");
+  QVERIFY2(many <= 11, qPrintable(QStringLiteral("gpg calls for 15 lines: %1 "
+                                                 "(cap missing?)")
+                                      .arg(many)));
 }
 
 namespace {

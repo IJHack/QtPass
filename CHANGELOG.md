@@ -683,6 +683,14 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- One line in a folder's `.gpg-id` that `gpg` cannot read as a key search
+  (a bare `0x`, a mistyped key ID, a fingerprint one digit short) no longer
+  makes the Users dialog open with none of the folder's real recipients
+  ticked. `gpg` aborts the single listing call over all lines, so none
+  resolved; the dialog now falls back to a per-line lookup and ticks the
+  keys the readable lines name, reporting only the unreadable line as
+  missing. Pressing OK then keeps the recipients instead of writing the bad
+  line alone over the list and dropping everyone on re-encryption.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

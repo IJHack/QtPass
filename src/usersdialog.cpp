@@ -10,6 +10,7 @@
 #include <QDateTime>
 #include <QDialogButtonBox>
 #include <QFont>
+#include <QHash>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
@@ -150,8 +151,33 @@ auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
 } // namespace
 
 void UsersDialog::selectRecipients(const QStringList &recipients) {
+  // Each per-line gpg lookup is a blocking call on the dialog's way up, so a
+  // store with many keys missing from the keyring (a fresh clone, a team
+  // store) is capped at this many across both the fallback below and the
+  // missing-key check; the rest resolve by the batched call or stay unchecked.
+  constexpr int kMaxLookups = 10;
+  int lookups = 0;
+  // Remembers the per-line lookups the fallback already ran, so the
+  // missing-key loop below reuses them instead of asking gpg a second time.
+  QHash<QString, bool> perLineHasKey;
+
   // One gpg call resolves every recipient, by key ID or by email/UID.
-  const QList<UserInfo> resolved = m_pass->listKeys(recipients);
+  QList<UserInfo> resolved = m_pass->listKeys(recipients);
+  if (resolved.isEmpty() && recipients.size() > 1) {
+    // One line gpg cannot read as a key search ("0x", a fingerprint one
+    // digit short) aborts that whole call with exit code 2, so nothing is
+    // listed for the other lines, whose keys are in the keyring all the same.
+    // Asked for one by one they still resolve; only the unreadable line is
+    // reported missing by the loop below, as an unknown key already is.
+    for (const QString &recipient : recipients) {
+      if (lookups++ >= kMaxLookups) {
+        break;
+      }
+      const QList<UserInfo> keys = m_pass->listKeys(recipient);
+      perLineHasKey.insert(recipient, !keys.isEmpty());
+      resolved += keys;
+    }
+  }
   for (UserInfo &user : m_userList) {
     if (std::any_of(resolved.cbegin(), resolved.cend(),
                     [&user](const UserInfo &key) {
@@ -160,20 +186,28 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
       user.enabled = true;
     }
   }
-  // The match is a fast path, not gpg's resolution: a secondary UID or a
-  // subkey ID resolves in gpg without showing in what it lists. Only what gpg
-  // itself cannot find is reported missing. Each such check is a blocking gpg
-  // call on the dialog's way up, so a store with many keys missing from the
-  // keyring gets a few, and the rest are reported missing unchecked.
-  constexpr int kMaxLookups = 10;
-  int lookups = 0;
+  // Only what gpg itself cannot find is reported missing. The fallback's
+  // per-line answer, when it has one, is gpg's own verdict for that line and
+  // decides it outright. Otherwise the heuristic match is a fast path (a
+  // secondary UID or a subkey ID resolves in gpg without showing in what it
+  // lists), and a per-line gpg call settles anything it does not catch. Taking
+  // the cached answer first also keeps a genuinely unreadable line ("0x")
+  // reported missing even when a resolved key's UID happens to contain it, so
+  // the heuristic answersTo() would otherwise match.
   for (const QString &recipient : recipients) {
-    const bool found =
-        std::any_of(resolved.cbegin(), resolved.cend(),
-                    [&recipient](const UserInfo &key) {
-                      return answersTo(key, recipient);
-                    }) ||
-        (lookups++ < kMaxLookups && !m_pass->listKeys(recipient).isEmpty());
+    bool found = false;
+    const auto cached = perLineHasKey.constFind(recipient);
+    if (cached != perLineHasKey.constEnd()) {
+      found = cached.value();
+    } else {
+      found = std::any_of(resolved.cbegin(), resolved.cend(),
+                          [&recipient](const UserInfo &key) {
+                            return answersTo(key, recipient);
+                          });
+      if (!found && lookups++ < kMaxLookups) {
+        found = !m_pass->listKeys(recipient).isEmpty();
+      }
+    }
     if (!found) {
       UserInfo missing;
       missing.enabled = true;
