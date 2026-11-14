@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief StoreTree: owns the QFileSystemModel and StoreModel behind the
+ *        password tree view and maps view indexes to store paths.
+ */
 #ifndef SRC_STORETREE_H_
 #define SRC_STORETREE_H_
 
@@ -15,6 +20,7 @@ class QTreeView;
 
 /**
  * @class StoreTree
+ * @ingroup store
  * @brief The password store as shown in the tree: the QFileSystemModel, the
  *        StoreModel proxy on top of it and the QTreeView they drive, with
  *        the path questions the main window keeps asking.
@@ -130,9 +136,19 @@ public:
   [[nodiscard]] auto view() const -> QTreeView * { return m_view; }
 
 private:
+  /** @brief The tree view this object drives; owned by the main window. */
   QTreeView *m_view;
+  /**
+   * @brief Source model over the store directory, filtered to `*.gpg`;
+   *        re-rooted by setStore().
+   */
   QFileSystemModel m_fs;
+  /**
+   * @brief Proxy the view shows: hides `.git`, strips `.gpg`, applies the
+   *        search filter and handles drag and drop.
+   */
   StoreModel m_proxy;
+  /** @brief Absolute store directory last passed to setStore(). */
   QString m_store;
 };
 

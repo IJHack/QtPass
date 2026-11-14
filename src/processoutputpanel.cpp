@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ProcessOutputPanel; the sticky auto-scroll hysteresis is
+ *        set up in the constructor, the line cap in limitLines().
+ */
 #include "processoutputpanel.h"
 #include "processinfo.h"
 #include <QHBoxLayout>

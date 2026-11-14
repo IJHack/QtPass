@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements SingleApplication; stale-segment and takeover-race
+ *        recovery lives in the constructor and becomePrimary().
+ */
 #include "singleapplication.h"
 #include "qtpasslogging.h"
 #include <QDebug>
@@ -8,13 +13,6 @@
 #include <QThread>
 #include <utility>
 
-/**
- * @brief SingleApplication::SingleApplication this replaces the QApplication
- * allowing for local socket based communications.
- * @param argc
- * @param argv
- * @param uniqueKey
- */
 SingleApplication::SingleApplication(
     int &argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
     QString uniqueKey)
@@ -37,14 +35,6 @@ SingleApplication::SingleApplication(
 
 // public slots.
 
-/**
- * @brief SingleApplication::receiveMessage we have received (a command line)
- * message.
- *
- * Each accepted socket is read asynchronously so a peer that connects without
- * sending anything cannot stall the GUI thread; the message is delivered once
- * the peer disconnects and the socket is then deleted.
- */
 void SingleApplication::receiveMessage() {
   while (QLocalSocket *localSocket = localServer->nextPendingConnection()) {
     auto buffer = QSharedPointer<QByteArray>::create();
@@ -69,19 +59,8 @@ void SingleApplication::receiveMessage() {
 }
 
 // public functions.
-/**
- * @brief SingleApplication::isRunning is there already a QtPass instance
- * running, to check whether to be server or client.
- * @return
- */
 auto SingleApplication::isRunning() -> bool { return _isRunning; }
 
-/**
- * @brief SingleApplication::sendMessage send a message (from commandline) to an
- * already running QtPass instance.
- * @param message
- * @return
- */
 auto SingleApplication::sendMessage(const QString &message) -> bool {
   if (!_isRunning) {
     return false;
@@ -100,13 +79,6 @@ auto SingleApplication::sendMessage(const QString &message) -> bool {
 }
 
 // private functions.
-/**
- * @brief SingleApplication::becomePrimary claim the shared-memory segment and
- * start listening for messages from later launches.
- *
- * Does nothing (and leaves isRunning() false) when another instance holds the
- * segment; the caller then runs without IPC rather than not at all.
- */
 void SingleApplication::becomePrimary() {
   // create shared memory.
   if (!sharedMemory.create(1)) {
@@ -147,12 +119,6 @@ void SingleApplication::becomePrimary() {
   }
 }
 
-/**
- * @brief SingleApplication::forwardMessage deliver a message to the instance
- * listening on the local socket.
- * @param message
- * @return true if the peer accepted the whole payload.
- */
 auto SingleApplication::forwardMessage(const QString &message) -> bool {
   QLocalSocket localSocket(this);
   localSocket.connectToServer(_uniqueKey, QIODevice::WriteOnly);
@@ -173,11 +139,6 @@ auto SingleApplication::forwardMessage(const QString &message) -> bool {
   return true;
 }
 
-/**
- * @brief SingleApplication::peerIsListening probe whether an instance is
- * actually accepting connections on the local socket.
- * @return true if a connection to the unique key succeeded.
- */
 auto SingleApplication::peerIsListening() -> bool {
   QLocalSocket probe;
   probe.connectToServer(_uniqueKey, QIODevice::WriteOnly);

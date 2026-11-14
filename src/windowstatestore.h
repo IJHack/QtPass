@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief WindowStateStore: saves and restores top-level window geometry
+ *        through QtPassSettings, for the main window and every dialog.
+ */
 #ifndef SRC_WINDOWSTATESTORE_H_
 #define SRC_WINDOWSTATESTORE_H_
 
@@ -9,6 +14,7 @@ class QDialog;
 class QWidget;
 
 /**
+ * @ingroup settings
  * @brief Persist and restore a top-level window's geometry, one way for the
  *        main window and every dialog.
  *

@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief PasswordDisplayPanel: renders the decrypted fields of an entry
+ *        (password, template fields, live OTP code) into the main window's
+ *        grid, with copy/QR/open buttons and secret hiding.
+ */
 #ifndef SRC_PASSWORDDISPLAYPANEL_H_
 #define SRC_PASSWORDDISPLAYPANEL_H_
 
@@ -19,6 +25,7 @@ class QWidget;
 
 /**
  * @class PasswordDisplayPanel
+ * @ingroup ui
  * @brief Renders decrypted password-file fields into MainWindow's grid.
  *
  * Extracted from MainWindow, where the field-rendering and grid-clearing
@@ -148,15 +155,46 @@ protected:
   auto eventFilter(QObject *watched, QEvent *event) -> bool override;
 
 private:
+  /**
+   * @brief Render one `name: value` row: action buttons, then the value
+   *        either behind the eye button (see hides()) or in a read-only
+   *        browser that links http(s) URLs, then the name label.
+   *
+   * The password row keeps its value verbatim (only a trailing CR is
+   * dropped); every other value is trimmed.
+   * @param position Grid row to fill.
+   * @param field The field's name; trimmed here.
+   * @param value The raw value.
+   * @param s Display settings (clipboard, qrencode, monospace, hiding).
+   */
   void addField(int position, const QString &field, const QString &value,
                 const AppSettings &s);
   /**
    * @brief Put a row's label and value frame into the grid, listening for a
-   *        double-click on either.
+   *        double-click on either (and on the frame's children, which swallow
+   *        mouse events first).
+   * @param position Grid row.
+   * @param label The name label for column 0.
+   * @param frame The value frame for column 1.
    */
   void addRow(int position, QLabel *label, QFrame *frame);
+  /**
+   * @brief Render the live OTP row: an OtpCodeWidget in a field frame under
+   *        an "OTP code" label. A configuration Totp::parse() rejects becomes
+   *        an inert message row with no copy or QR button. The code is never
+   *        hidden and never offered as a QR code.
+   * @param position Grid row to fill.
+   * @param otpConfig Raw OTP configuration from the entry.
+   * @param s Display settings (clipboard, monospace).
+   */
   void addOtpField(int position, const QString &otpConfig,
                    const AppSettings &s);
+  /**
+   * @brief New bordered frame with a tight horizontal layout, styled by
+   *        applyFrameStyle(); shared by addField() and addOtpField() so the
+   *        rows cannot drift apart.
+   * @return The frame; the caller adds it to the grid.
+   */
   auto createFieldFrame() -> QFrame *;
   /**
    * @brief Add the copy, QR and open-in-browser buttons a field gets, per
@@ -177,6 +215,12 @@ private:
    */
   void addHiddenPassword(QLayout *layout, const QString &field,
                          const QString &value, const QString &lineStyle);
+  /**
+   * @brief Give a field frame its rounded border in the current
+   *        QPalette::Mid colour. The colour is baked into the stylesheet, so
+   *        refreshPalette() re-runs this after a theme change.
+   * @param frame The frame to style.
+   */
   void applyFrameStyle(QFrame *frame) const;
   /**
    * @brief Whether a field is shown behind the eye button: the password,
@@ -190,9 +234,22 @@ private:
   [[nodiscard]] auto hides(const QString &field, const AppSettings &s) const
       -> bool;
 
+  /**
+   * @brief Field names the current template marks as secret, compared
+   *        case-insensitively in isSecret(); set by setMarkedSecrets().
+   */
   QStringList m_markedSecrets;
+  /** @brief The grid the rows go into; owned by MainWindow's .ui. */
   QGridLayout *m_grid;
+  /**
+   * @brief Layout around the grid whose spacing is 0 while empty and 6 once
+   *        rows are shown; owned by MainWindow's .ui.
+   */
   QBoxLayout *m_container;
+  /**
+   * @brief Parent for the buttons the panel creates and source of the
+   *        palette used by applyFrameStyle(); not owned.
+   */
   QWidget *m_widgetParent;
 };
 

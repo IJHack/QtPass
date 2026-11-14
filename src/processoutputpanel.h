@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief ProcessOutputPanel: the dockable console that shows numbered,
+ *        colour-coded git/pass/gpg output.
+ */
 #ifndef SRC_PROCESSOUTPUTPANEL_H_
 #define SRC_PROCESSOUTPUTPANEL_H_
 
@@ -12,6 +17,7 @@ class QToolButton;
 
 /**
  * @class ProcessOutputPanel
+ * @ingroup ui
  * @brief The dockable "Process output" console: numbered, colour-coded
  *        lines of git/pass/gpg output with a line cap and sticky
  *        auto-scroll.
@@ -84,11 +90,26 @@ public slots:
   void clear();
 
 private:
+  /**
+   * @brief Drop the oldest text blocks once the document holds more than
+   *        MaxLines; called after every append().
+   */
   void limitLines();
 
+  /** @brief Read-only text edit holding the output; child of the dock. */
   QTextEdit *m_edit = nullptr;
+  /** @brief The "Clear" button wired to clear(). */
   QToolButton *m_clearButton = nullptr;
+  /**
+   * @brief Running line number shown in front of each line; reset by
+   *        clear(). Keeps counting past MaxLines.
+   */
   int m_counter = 0;
+  /**
+   * @brief Whether append() scrolls to the bottom: cleared when the user
+   *        scrolls up, set again when the scroll bar reaches its maximum or
+   *        on clear(). Only updated on slider release while dragging.
+   */
   bool m_autoScroll = true;
 };
 

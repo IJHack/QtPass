@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements WindowStateStore on top of QWidget::saveGeometry() /
+ *        restoreGeometry(); the Wayland check lives in the local onWayland().
+ */
 #include "windowstatestore.h"
 #include "qtpasssettings.h"
 
@@ -11,6 +16,11 @@
 
 namespace {
 
+/**
+ * @brief Whether the application runs on a Wayland platform plugin, where
+ *        client-side window placement is ignored by the compositor.
+ * @return true for any platform name starting with "wayland".
+ */
 auto onWayland() -> bool {
   return QGuiApplication::platformName().startsWith(QLatin1String("wayland"));
 }

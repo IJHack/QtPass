@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief FieldLabel: the in-place renamable, removable name label of a
+ *        `key: value` field in PasswordDialog.
+ */
 #ifndef FIELDLABEL_H_
 #define FIELDLABEL_H_
 
@@ -10,6 +15,7 @@ class QLineEdit;
 
 /**
  * @class FieldLabel
+ * @ingroup secrets
  * @brief The name of a `key: value` field in PasswordDialog, editable in
  *        place: double-click or the context menu renames it, the context
  *        menu can also remove the field (#132).
@@ -78,6 +84,11 @@ private:
    */
   void finishEdit(bool commit);
 
+  /**
+   * @brief The line edit open over the label while a rename is in progress;
+   *        null otherwise. A sibling in the parent's form layout rather than
+   *        a child, so the destructor deletes it explicitly.
+   */
   QPointer<QLineEdit> m_editor;
 };
 

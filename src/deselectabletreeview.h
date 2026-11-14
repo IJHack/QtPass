@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief DeselectableTreeView: a QTreeView that clears its selection when
+ *        empty space or an already-selected row is clicked.
+ */
 #ifndef SRC_DESELECTABLETREEVIEW_H_
 #define SRC_DESELECTABLETREEVIEW_H_
 
@@ -10,50 +15,24 @@
 #include <QTreeView>
 
 /**
- * A QTreeView subclass that clears selection and emits a signal when the user
- * clicks an empty area or clicks a selected item in empty space.
+ * @class DeselectableTreeView
+ * @ingroup ui
+ * @brief A QTreeView that clears its selection, and emits emptyClicked(),
+ *        when the user clicks empty space or an already-selected item.
  *
- * The view tracks press/release sequences to distinguish single- from
- * double-clicks and only clears selection for qualifying single-clicks.
- */
-
-/**
- * Construct a DeselectableTreeView.
- * @param parent Parent widget forwarded to QTreeView.
- */
-
-/**
- * Default destructor.
- */
-
-/**
- * Emitted after the view clears its selection in response to a qualifying
- * click on empty space or on an already-selected item.
- */
-
-/**
- * Record whether the item under the press position was selected.
- * @param event Mouse press event containing the press position.
- */
-
-/**
- * Clear selection and emit emptyClicked() when a qualifying single-click
- * releases over empty space or over a selected item; otherwise, handle the
- * release normally.
- * @param event Mouse release event containing the release position.
- */
-
-/**
- * Mark that a double-click occurred and handle the double-click normally.
- * @param event Mouse double-click event.
+ * The press records whether the row under the pointer was selected, the
+ * release handles selection immediately and arms a single-shot timer for the
+ * platform's double-click interval, and only when no double-click arrives in
+ * that time does deselect() clear the selection. Opening an entry by
+ * double-click therefore always wins over deselecting it.
  */
 class DeselectableTreeView : public QTreeView {
   Q_OBJECT
 
 public:
   /**
-   * @brief DeselectableTreeView standard constructor
-   * @param parent
+   * @brief Construct the view and arm the single-shot deselect timer.
+   * @param parent Parent widget forwarded to QTreeView.
    */
   explicit DeselectableTreeView(QWidget *parent) : QTreeView(parent) {
     deselectTimer.setSingleShot(true);
@@ -61,24 +40,39 @@ public:
             &DeselectableTreeView::deselect);
   }
   /**
-   * @brief ~DeselectableTreeView standard destructor
+   * @brief Default destructor.
    */
   ~DeselectableTreeView() override = default;
 
 signals:
   /**
-   * @brief emptyClicked event
+   * @brief Emitted after deselect() has cleared the selection because of a
+   *        single click on empty space or on a selected row; MainWindow
+   *        clears the password panel in response.
    */
   void emptyClicked();
 
 private:
+  /**
+   * @brief Set by mouseDoubleClickEvent() so a deselect() that fires after a
+   *        double-click's first release does nothing.
+   */
   bool doubleClickHappened = false;
+  /**
+   * @brief Whether the row under the last press was already selected; read
+   *        and reset by the matching release.
+   */
   bool clickSelected = false;
+  /**
+   * @brief Single-shot timer, started by a qualifying release for one
+   *        double-click interval; its timeout runs deselect().
+   */
   QTimer deselectTimer;
 
   /**
-   * @brief mousePressEvent registers if the field was preselected
-   * @param event
+   * @brief Remember whether the pressed row was already selected and cancel
+   *        any pending deselect from the previous click.
+   * @param event The mouse press; forwarded to QTreeView.
    */
   void mousePressEvent(QMouseEvent *event) override {
     // A new press belongs to a new click: whatever the previous release left
@@ -90,8 +84,10 @@ private:
   }
 
   /**
-   * @brief mouseReleaseEvent now deselects on click on empty space
-   * @param event
+   * @brief Let QTreeView handle the release at once, then, if the press was
+   *        on a selected row and the release is over empty space or a still
+   *        selected row, start deselectTimer.
+   * @param event The mouse release; forwarded to QTreeView first.
    */
   void mouseReleaseEvent(QMouseEvent *event) override {
     const QModelIndex item = indexAt(event->position().toPoint());
@@ -116,6 +112,10 @@ private:
         QGuiApplication::styleHints()->mouseDoubleClickInterval());
   }
 
+  /**
+   * @brief Timer slot: clear the selection and current index and emit
+   *        emptyClicked(), unless a double-click happened in the meantime.
+   */
   void deselect() {
     if (doubleClickHappened)
       return;
@@ -126,8 +126,9 @@ private:
   }
 
   /**
-   * @brief mouseDoubleClickEvent
-   * @param event
+   * @brief Cancel the pending deselect so the double-click opens the entry
+   *        instead of clearing the selection.
+   * @param event The double-click; forwarded to QTreeView.
    */
   void mouseDoubleClickEvent(QMouseEvent *event) override {
     doubleClickHappened = true;

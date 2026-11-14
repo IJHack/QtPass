@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements FieldLabel; startEdit() and finishEdit() swap the label
+ *        and its editor in and out of the parent's QFormLayout cell.
+ */
 #include "fieldlabel.h"
 
 #include <QContextMenuEvent>

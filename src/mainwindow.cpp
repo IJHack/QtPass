@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements MainWindow; the backend signal wiring lives in
+ *        connectBackends() and connectPassSignals(), the decrypted-entry
+ *        rendering in passShowHandler().
+ */
 #include "mainwindow.h"
 
 #include "qtpasslogging.h"

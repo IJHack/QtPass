@@ -1,6 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
+/**
+ * @file
+ * @brief Implements PasswordDisplayPanel; the value browser and
+ *        open-in-browser button are built by file-local helpers.
+ */
 #include "passworddisplaypanel.h"
 #include "appsettings.h"
 #include "otpcodewidget.h"

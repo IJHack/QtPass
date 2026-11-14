@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QtPass: UI-neutral glue that turns backend completion signals into
+ *        formatted output, status messages and clipboard handling.
+ */
 #ifndef SRC_QTPASS_H_
 #define SRC_QTPASS_H_
 
@@ -12,6 +17,7 @@ class Pass;
 
 /**
  * @class QtPass
+ * @ingroup support
  * @brief Application-level glue between the pass backends and whatever shows
  * their results: turns the backends' completion signals into UI-neutral
  * signals (formatted output, status messages, "the operation is over"), owns
@@ -60,9 +66,12 @@ public:
                            const QString &postfix = QString()) -> QString;
 
   /**
-   * @brief Create a modal dialog configured to display the given QR code.
+   * @brief Create a frameless popup dialog, placed at the cursor, showing the
+   *        given QR code. Split out of showTextAsQRCode() so tests can inspect
+   *        the dialog without running qrencode.
    * @param image Pixmap containing the rendered QR code.
-   * @return Pointer to a QDialog showing the image; caller takes ownership.
+   * @return Pointer to a QDialog showing the image; it deletes itself on
+   *         close, the caller shows it.
    */
   static QDialog *createQRCodePopup(const QPixmap &image);
 
@@ -102,19 +111,75 @@ signals:
   void entryInserted();
 
 private:
+  /**
+   * @brief The clipboard handling for this application instance, exposed
+   *        through clipboard(); parented to this object.
+   */
   ClipboardManager m_clipboard;
 
+  /**
+   * @brief Connect the completion signals of one backend to the slots that
+   *        turn them into output, status and "finished" signals. Both
+   *        backends are wired up at construction because the active one can
+   *        change through the configuration dialog.
+   * @param pass The backend to listen to.
+   */
   void connectPassSignalHandlers(Pass *pass);
+
+  /**
+   * @brief Show a process' stderr in colour through outputReady(): red for a
+   *        failure, dark grey for the chatter a successful command prints
+   *        (see issue #111). Nothing is shown for empty output.
+   * @param exitCode The process exit code; 0 selects grey.
+   * @param error The stderr text.
+   */
   void reportError(int exitCode, const QString &error);
 
 private slots:
+  /**
+   * @brief Slot for Pass::processErrorExit: report the error in red and emit
+   *        operationFinished().
+   * @param exitCode The exit code of the failed process.
+   * @param error Its stderr.
+   */
   void processErrorExit(int exitCode, const QString &error);
+
+  /**
+   * @brief Slot for Pass::finishedGitPull / finishedGitPush and the common
+   *        tail of the other slots: emit the stdout as formatted output (if
+   *        any), the stderr as grey chatter, then operationFinished().
+   * @param output stdout of the process.
+   * @param errout stderr of the process.
+   */
   void processFinished(const QString &output, const QString &errout);
 
+  /**
+   * @brief Slot for the backend signals that change the store on disk (git
+   *        init, remove, init, move, copy): processFinished() followed by
+   *        doGitPush().
+   * @param output stdout of the process.
+   * @param errout stderr of the process.
+   */
   void passStoreChanged(const QString &output, const QString &errout);
 
+  /** @brief Emit pushRequested() when the settings ask for automatic push. */
   void doGitPush();
+
+  /**
+   * @brief Slot for Pass::finishedInsert: like passStoreChanged(), then emit
+   *        entryInserted() so the window refreshes the shown entry.
+   * @param output stdout of the process.
+   * @param errout stderr of the process.
+   */
   void finishedInsert(const QString &output, const QString &errout);
+
+  /**
+   * @brief Slot for Pass::finishedGenerateGPGKeys: a status message followed
+   *        by processFinished(). The KeygenDialog listens to the same signal
+   *        and closes itself.
+   * @param output stdout of the key generation process.
+   * @param errout stderr of the key generation process.
+   */
   void onKeyGenerationComplete(const QString &output, const QString &errout);
 };
 

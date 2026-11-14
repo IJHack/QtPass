@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief MainWindow: the main application window (tree, toolbar, search,
+ *        status bar, process output dock) and the glue between the password
+ *        store backends and the widgets.
+ */
 #ifndef SRC_MAINWINDOW_H_
 #define SRC_MAINWINDOW_H_
 
@@ -15,7 +21,13 @@
 #include <QTimer>
 
 #ifdef __APPLE__
-// https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
+/**
+ * @brief Qt-internal switch, declared here because Qt does not export it in
+ *        a header: enables the automatic `&` mnemonics in menu titles that
+ *        are off by default on macOS. Called once in the constructor.
+ * @param b true to enable auto-mnemonics.
+ * @see https://doc.qt.io/qt-6/qkeysequence.html#qt_set_sequence_auto_mnemonic
+ */
 void qt_set_sequence_auto_mnemonic(bool b);
 #endif
 
@@ -34,6 +46,7 @@ class TrayIcon;
 
 /**
  * @class MainWindow
+ * @ingroup ui
  * @brief Main application window orchestrating UI, user interactions, and
  * external process handlers.
  *
@@ -54,6 +67,10 @@ public:
    */
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
+  /**
+   * @brief Save the window state (a quit from the tray menu or a SIGTERM
+   *        never delivers closeEvent()) and delete the QtPass glue.
+   */
   ~MainWindow() override;
 
   /**
@@ -184,8 +201,13 @@ public slots:
   void showStatusMessage(const QString &msg, int timeout = 2000);
 
   /**
-   * @brief Handle output from the pass show command.
+   * @brief Render a decrypted entry: fields into the display panel, the rest
+   *        into the text browser, and the password onto the clipboard when
+   *        "Always copy" is set. Decrypts of any entry but the one the panel
+   *        last asked to show (m_shownFile) are dropped.
    * @param output Decrypted password file content.
+   * @param file Entry the content belongs to; empty for legacy callers that
+   *        do not name it, which always repaints.
    */
   void passShowHandler(const QString &output, const QString &file = QString());
 
@@ -280,25 +302,104 @@ private slots:
    * the interface is enabled and the backend is idle.
    */
   void updateProfileBoxEnabled();
+  /**
+   * @brief The content-search toggle changed: switch the search box between
+   *        name filtering and regex content search, clearing the query, the
+   *        tree filter and any results; leaving while a search runs cancels
+   *        it.
+   * @param checked true when content search was switched on.
+   */
   void on_grepButton_toggled(bool checked);
+  /**
+   * @brief A content-search result was clicked: select the entry in the
+   *        tree, show it, and go back to the tree (clearing the results when
+   *        content is hidden or the panel autoclears).
+   * @param item The clicked entry or match line; its UserRole holds the
+   *        entry name.
+   * @param column Unused.
+   */
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
+  /** @brief Toolbar/context-menu "Add password": open PasswordDialog for a
+   *         new entry in the current folder. */
   void addPassword();
+  /**
+   * @brief Toolbar/context-menu "Add folder": ask for a name, create the
+   *        folder under the current one (refusing paths that escape the
+   *        store) and seed its `.gpg-id` from the parent when configured.
+   */
   void addFolder();
+  /** @brief Toolbar "Edit" or a double-click: editPassword() on the current
+   *         entry. */
   void onEdit();
+  /**
+   * @brief Toolbar "Delete" or the Delete key: confirm, then remove the
+   *        current entry or folder. Nothing selected is a no-op (#556); a
+   *        linked folder only loses its link, a folder behind a link is
+   *        refused.
+   */
   void onDelete();
+  /**
+   * @brief Toolbar "OTP": copy the current entry's one-time code. Uses the
+   *        code the panel already shows for this entry; otherwise decrypts
+   *        once and lets otpFromFileToClipboard() finish.
+   */
   void onOtp();
+  /**
+   * @brief Toolbar "Update": git pull.
+   * @param block true to pull synchronously (before opening an edit dialog
+   *        with auto-pull on).
+   */
   void onUpdate(bool block = false);
+  /**
+   * @brief Toolbar/context-menu "Users": open UsersDialog for the current
+   *        folder, unless it lies behind a link.
+   */
   void onUsers();
+  /** @brief Toolbar "Config": config(), ignoring its result. */
   void onConfig();
   /**
    * @brief Show the About box: version, project link, licence.
    */
   void showAbout();
+  /**
+   * @brief A double-click on a tree entry opens it for editing; folders are
+   *        left to the view.
+   * @param index The double-clicked proxy index.
+   */
   void on_treeView_doubleClicked(const QModelIndex &index);
+  /**
+   * @brief Empty the display panel and the text browser, and leave content
+   *        search if its results were showing. Runs on the autoclear timer.
+   * @param notify true to show "Password and content hidden" in the browser,
+   *        false to leave it blank.
+   */
   void clearPanel(bool notify = true);
+  /**
+   * @brief The search box changed (name filtering only): drop the pending
+   *        decrypt and the panel, expand the tree and restart searchTimer.
+   * @param arg1 The new text.
+   */
   void on_lineEdit_textChanged(const QString &arg1);
+  /**
+   * @brief Enter in the search box: in content-search mode start (or, for an
+   *        empty query, cancel) the grep; otherwise select and show the first
+   *        matching entry.
+   */
   void on_lineEdit_returnPressed();
-  void on_profileBox_currentTextChanged(const QString &);
+  /**
+   * @brief The user picked another profile: save its store, key and Git
+   *        flags as the active settings, re-root the tree and clear the
+   *        selection. Ignored during the fresh start and reverted while an
+   *        operation runs.
+   * @param name The chosen profile name.
+   */
+  void on_profileBox_currentTextChanged(const QString &name);
+  /**
+   * @brief Build and show the tree's context menu for the item under the
+   *        cursor: folder actions (open, add, users, rename, Share) or entry
+   *        actions (edit, rename), plus Delete.
+   * @param pos Viewport position of the right-click.
+   */
   void showContextMenu(const QPoint &pos);
   /**
    * @brief Add the Share submenu for the folder under the cursor: the
@@ -323,20 +424,72 @@ private slots:
    * @return Whether the user said yes.
    */
   auto confirmLinkRemoval(const QString &file) -> bool;
+  /**
+   * @brief Show the text browser's standard context menu, reparented to the
+   *        window so the browser's stylesheet does not bleed into it.
+   * @param pos Viewport position of the right-click.
+   */
   void showBrowserContextMenu(const QPoint &pos);
+  /** @brief Context menu "Open folder with file manager" on the current
+   *         folder. */
   void openFolder();
+  /**
+   * @brief Context menu "Rename folder": ask for a new name and Move the
+   *        current folder, refusing a target outside the store.
+   */
   void renameFolder();
-  void editPassword(const QString &);
+  /**
+   * @brief Open PasswordDialog on an existing entry, after a blocking pull
+   *        when auto-pull is on. Releases the panel's claim on the next
+   *        decrypt so the dialog's own Show does not repaint or copy.
+   * @param file Store-relative entry name; empty is a no-op.
+   */
+  void editPassword(const QString &file);
+  /**
+   * @brief Context menu "Rename password": ask for a new name and Move the
+   *        current entry within its folder, refusing a target outside the
+   *        store.
+   */
   void renamePassword();
+  /**
+   * @brief Select-all and focus the search box once the window is visible;
+   *        sets m_firstShowCompleted only on success so showEvent() retries.
+   *        Looks the widget up by name because setWindowFlags() can rebuild
+   *        it under `ui->lineEdit` (Qt 6.11).
+   */
   void focusInput();
+  /**
+   * @brief Ctrl+C on the tree: decrypt the current entry and let
+   *        passwordFromFileToClipboard() copy its first line. The newest
+   *        request wins (m_copyRequestFile).
+   */
   void copyPasswordFromTreeview();
+  /**
+   * @brief searchTimer fired: filter the tree on the typed words (matched
+   *        literally, in order, case-insensitively) and select the first
+   *        match; an empty query collapses the tree and deselects.
+   */
   void onTimeoutSearch();
 
 private:
+  /**
+   * @brief The UI-neutral glue to the backends (output, status, clipboard,
+   *        QR codes); created in the constructor, deleted in the destructor.
+   */
   QtPass *m_qtPass;
+  /** @brief The widgets generated from mainwindow.ui. */
   QScopedPointer<Ui::MainWindow> ui;
+  /** @brief Mode/busy/cancelled state of the content search. */
   GrepSearchController m_grep;
+  /**
+   * @brief Renders decrypted fields into the grid; created in
+   *        initDisplayPanel(), parented to this window.
+   */
   PasswordDisplayPanel *m_displayPanel = nullptr;
+  /**
+   * @brief Set once focusInput() has actually focused the search box, so
+   *        later show events leave the focus alone.
+   */
   bool m_firstShowCompleted = false;
   /// Whether the application palette changed in this window's lifetime. A
   /// header palette a style stamps on the bars is only suspect after that:
@@ -356,19 +509,25 @@ private:
   /// finishedShow is matched to it by file, so a second Ctrl+C on another
   /// entry just replaces the request instead of racing it.
   QString m_copyRequestFile;
-  // The process output console is a QDockWidget at the bottom dock area,
-  // created programmatically. It isn't part of the .ui because uic places
-  // its QMainWindow children in centralWidget / statusBar / menuBar /
-  // toolBars / dock-widget slots only — a sibling widget at the
-  // QMainWindow level isn't laid out and ends up obscuring the
-  // centralWidget. See #1192 for the symptom.
+  /// The process output console, a QDockWidget at the bottom dock area
+  /// created in initProcessOutput(). It isn't part of the .ui because uic
+  /// places its QMainWindow children in centralWidget / statusBar / menuBar /
+  /// toolBars / dock-widget slots only — a sibling widget at the QMainWindow
+  /// level isn't laid out and ends up obscuring the centralWidget. See #1192
+  /// for the symptom.
   ProcessOutputPanel *m_processOutput = nullptr;
   /// The store as shown in the tree: models, view setup, path mapping.
   StoreTree *m_tree = nullptr;
-  QTimer clearPanelTimer, searchTimer;
-  // Re-enables the UI if a backend operation disables it but never reports
-  // completion (see setUiElementsEnabled).
+  /// Single-shot timer that runs clearPanel() "Autoclear panel" seconds
+  /// after an entry was shown.
+  QTimer clearPanelTimer, searchTimer; ///< searchTimer: single-shot 350 ms
+                                       ///< debounce between typing in the
+                                       ///< search box and onTimeoutSearch().
+  /// Re-enables the UI if a backend operation disables it but never reports
+  /// completion (see setUiElementsEnabled); armed whenever the UI is
+  /// disabled, stopped when it is enabled again.
   QTimer m_uiWatchdog;
+  /// Interval of m_uiWatchdog in milliseconds.
   static constexpr int UiWatchdogMs = 30000;
   /// Progress/cancel dialog shown between startReencryptPath() and
   /// endReencryptPath(); QPointer so a closed dialog reads back as null.
@@ -381,6 +540,9 @@ private:
   /// What setUiElementsEnabled() last set: updateProfileBox() keeps the
   /// profile box disabled while an operation runs.
   bool m_uiEnabled = true;
+  /// The system tray icon; null until initTrayIcon() creates it when the
+  /// setting is on, deleted again by destroyTrayIcon() when it is turned off
+  /// or no tray is available.
   TrayIcon *m_tray{};
   /// Whether the constructor ended with a usable configuration; main()
   /// consults it via initSucceeded() to decide whether the application should
@@ -390,7 +552,10 @@ private:
   /// first-run wizard and defaults to pass when it is installed.
   bool m_freshStart = true;
 
+  /// Wire the toolbar and menu actions to their slots, set their icons, and
+  /// set up the "Show menu bar" toggle with its MenuBarPeek (not on macOS).
   void initToolBarButtons();
+  /// Welcome message and the permanent logo in the status bar.
   void initStatusBar();
   /// Connect QtPass's and both backends' signals (the active backend can
   /// change through the configuration dialog without a restart).
@@ -405,24 +570,92 @@ private:
   /// The Process Output dock, its Settings-menu toggle, and the feed of
   /// non-secret process output into it.
   void initProcessOutput();
+  /**
+   * @brief Connect the signals of one backend that the window answers
+   *        itself: errors, critical messages, wrapper start, idle, status,
+   *        finishedShow (panel, OTP and Ctrl+C handlers) and finishedGrep.
+   * @param pass The backend; both are connected, see connectBackends().
+   */
   void connectPassSignals(Pass *pass);
 
+  /// Make the first entry (depth first) under the store root current.
   void selectFirstFile();
+  /**
+   * @brief Depth-first search for the first entry under a folder.
+   * @param parentIndex Proxy index of the folder to search.
+   * @return Proxy index of the first file, or invalid when there is none.
+   */
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
-  auto getFile(const QModelIndex &, bool) -> QString;
-  void setPassword(const QString &, bool isNew = true);
+  /**
+   * @brief StoreTree::fileFor() on the tree.
+   * @param index Proxy index.
+   * @param forPass true for the store-relative entry name, false for the
+   *        absolute .gpg path.
+   * @return Entry name or path; empty for a folder or invalid index.
+   */
+  auto getFile(const QModelIndex &index, bool forPass) -> QString;
+  /**
+   * @brief Run PasswordDialog for a new or existing entry. For a new one the
+   *        dialog gets the store's real folders (current one preselected) and
+   *        the `.templates`, if any.
+   * @param file Store-relative entry name; empty when creating.
+   * @param isNew true to create, false to edit @p file.
+   */
+  void setPassword(const QString &file, bool isNew = true);
+  /**
+   * @brief Guard the input dialogs (create, move, rename) against names like
+   *        `../../etc/passwd` or absolute paths escaping the store root; warns
+   *        the user when refusing.
+   * @param candidate Path the user asked for.
+   * @return true when it resolves inside the store.
+   */
   auto confirmPathInStore(const QString &candidate) -> bool;
 
+  /**
+   * @brief Create m_tray and add the menu bar toggle to its menu; gives up
+   *        (m_tray stays null) when no system tray is available.
+   */
   void initTrayIcon();
+  /// Delete m_tray and reset it to null.
   void destroyTrayIcon();
+  /**
+   * @brief Share menu "Re-encrypt all passwords": confirm, lock the UI via
+   *        startReencryptPath() and have ImitatePass rewrite every entry
+   *        under @p dir for the recipients in its `.gpg-id`.
+   * @param dir Absolute folder; refused when missing or behind a link.
+   */
   void reencryptPath(const QString &dir);
+  /**
+   * @brief Share menu "Export my public key": run `gpg --armor --export` for
+   *        the configured signing key and show the result in
+   *        ExportPublicKeyDialog; explains what to do when no key is set.
+   */
   void exportPublicKey();
+  /**
+   * @brief Share menu "Add recipient": open UsersDialog for @p dir (keys
+   *        already in the keyring only).
+   * @param dir Absolute folder; refused when behind a link.
+   */
   void addRecipient(const QString &dir);
+  /**
+   * @brief Refuse, with a message, a tree-picked folder that is or lies
+   *        behind a symlink or junction: what it points to is not part of the
+   *        store. The store root itself may be a link.
+   * @param dir Absolute folder path.
+   * @return true when the folder was refused and the caller must stop.
+   */
   auto refuseLinkedFolder(const QString &dir) -> bool;
+  /// Share menu "What is this?": the explanation of sharing with GPG.
   void showShareHelp();
 
+  /// Re-apply the monospace and line-wrapping settings to the text browser
+  /// after the configuration dialog.
   void applyTextBrowserSettings();
+  /// Toggle Qt::WindowStaysOnTopHint to match the "always on top" setting,
+  /// skipping the native-window rebuild when nothing changes.
   void applyWindowFlagsSettings();
+  /// Store geometry and dock/toolbar state in the settings; idempotent,
+  /// called from closeEvent() and the destructor.
   void saveWindowState();
 
   /**
@@ -437,9 +670,17 @@ private:
    *        action is disabled along with the rest of the UI.
    */
   void updateOtpButtonVisibility(bool uiEnabled = true);
+  /// Show the content-search buttons only when the setting is on; turning
+  /// it off while in content-search mode leaves that mode.
   void updateGrepButtonVisibility();
-  void enableGitButtons(const bool &);
+  /**
+   * @brief Enable or disable the Push and Pull actions together.
+   * @param state true to enable.
+   */
+  void enableGitButtons(const bool &state);
 
+  /// Sync the Process Output dock and its menu toggle with the setting
+  /// after the configuration dialog.
   void updateProcessOutputVisibility();
 };
 

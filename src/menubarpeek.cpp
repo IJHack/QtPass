@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements MenuBarPeek; an application-wide event filter installed
+ *        in the constructor feeds onKeyPress() and onKeyRelease().
+ */
 #include "menubarpeek.h"
 #include <QAction>
 #include <QApplication>

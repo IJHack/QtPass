@@ -7,6 +7,7 @@
 
 /**
  * @file qtpasslogging.h
+ * @ingroup support
  * @brief The "qtpass" logging category.
  *
  * Debug output is off by default in every build; switch it on at run time
