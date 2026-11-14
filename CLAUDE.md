@@ -109,7 +109,12 @@ When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with 
 
 ## Doxygen
 
-CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). The docs are for contributors, not an API reference: `EXTRACT_PRIVATE` is on and `.cpp` files are parsed, so every symbol, private members, slots, member variables and enum values included, must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable. Each file starts with a `@file` block and each class carries an `@ingroup` for one of the topics in `doxygen/groups.dox`. The header block is the contract; a block on the definition in the `.cpp` is plain prose about the implementation, without `@brief`/`@param`/`@return` (repeating them is a warning). The landing page is `doxygen/mainpage.md`.
+CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). The docs are for contributors, not an API reference: `EXTRACT_PRIVATE` is on and `.cpp` files are parsed.
+
+- Every symbol must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable: private members, slots, member variables and enum values included.
+- Each file starts with a `@file` block, and each class carries an `@ingroup` for one of the topics in `doxygen/groups.dox`.
+- The header block is the contract. A block on the definition in the `.cpp` is plain prose about the implementation, without `@brief`/`@param`/`@return` (repeating them is a warning).
+- The landing page is `doxygen/mainpage.md`.
 
 ```bash
 # Check locally: progress goes to stdout, warnings to stderr, and any
