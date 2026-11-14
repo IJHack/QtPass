@@ -1270,19 +1270,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">De lijst bevat meer dan één opslag-ID-regel.</translation>
+        <translation>De lijst bevat meer dan één opslag-ID-regel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">De opslag-ID-regel is ongeldig: %1</translation>
+        <translation>De opslag-ID-regel is ongeldig: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">De lijst bevat wel een opslag-ID-regel, maar geen generatieregel.</translation>
+        <translation>De lijst bevat wel een opslag-ID-regel, maar geen generatieregel.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -3361,7 +3361,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation type="unfinished">Veldsjabloon uit het .templates-bestand van de opslag. Met Ctrl+T schakel je over naar het volgende sjabloon.</translation>
+        <translation>Veldsjabloon uit het .templates-bestand van de opslag. Met Ctrl+T schakel je over naar het volgende sjabloon.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
