@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief The first-run wizard and its four pages: programs, key, store and
+ * summary.
+ */
 #ifndef SRC_FIRSTRUNWIZARD_H_
 #define SRC_FIRSTRUNWIZARD_H_
 
@@ -59,7 +64,13 @@ public:
   static auto isStore(const QString &path) -> bool;
 
   /// Page ids, in order.
-  enum Page { IntroPage, ProgramsPage, KeyPage, StorePage, DonePage };
+  enum Page {
+    IntroPage,    ///< What QtPass is and what the wizard will do.
+    ProgramsPage, ///< ProgramsWizardPage: where gpg, pass and git are.
+    KeyPage,      ///< KeyWizardPage: the secret keys, with generation.
+    StorePage,    ///< StoreWizardPage: the store folder and the Git choice.
+    DonePage      ///< DoneWizardPage: summary and two preferences.
+  };
 
   /**
    * @brief Write the settings and, when the chosen store has no `.gpg-id`
@@ -89,6 +100,8 @@ private:
   friend class StoreWizardPage;
   friend class DoneWizardPage;
 
+  /// The pages' working copy of the settings, loaded in the constructor and
+  /// saved by accept(); the pages edit it through their friend access.
   AppSettings m_settings;
   /// The secret keys as listed on the key page; the enabled ones become the
   /// recipients of a new store.
@@ -125,13 +138,18 @@ public:
   auto validatePage() -> bool override;
 
 private:
-  FirstRunWizard *m_wizard;
-  QLineEdit *m_gpg;
-  QLineEdit *m_git;
-  QLineEdit *m_pass;
-  QCheckBox *m_usePass;
-  QLabel *m_gpgStatus;
+  FirstRunWizard *m_wizard; ///< Owner; its settings are what the page edits.
+  QLineEdit *m_gpg;         ///< The gpg executable; required.
+  QLineEdit *m_git;         ///< The git executable; optional.
+  QLineEdit *m_pass;        ///< The pass executable; optional.
+  QCheckBox *m_usePass;     ///< Run pass instead of gpg/git; needs m_pass.
+  QLabel *m_gpgStatus;      ///< Under the gpg field: why it cannot be used.
 
+  /**
+   * @brief After an edit: say under the gpg field when it is missing or not
+   * executable, allow "use pass" only for a runnable pass (unticking it
+   * otherwise), and re-evaluate isComplete().
+   */
   void updateStatus();
 };
 
@@ -168,12 +186,21 @@ public:
   auto validatePage() -> bool override;
 
 private:
-  FirstRunWizard *m_wizard;
-  QListWidget *m_list;
-  QPushButton *m_generate;
-  QLabel *m_status;
+  FirstRunWizard *m_wizard; ///< Owner; holds the key list this page fills.
+  QListWidget *m_list;      ///< One checkable row per secret key.
+  QPushButton *m_generate;  ///< Opens KeygenDialog.
+  QLabel *m_status;         ///< Says so when gpg has no secret key yet.
 
+  /**
+   * @brief List the secret keys of the chosen gpg into the wizard and the
+   * widget, ticking every usable key and greying out expired or invalid
+   * ones.
+   */
   void reload();
+  /**
+   * @brief Run KeygenDialog on a private ImitatePass built from the wizard's
+   * settings, so the chosen gpg is used and nothing is saved, then reload().
+   */
   void generate();
 };
 
@@ -211,12 +238,21 @@ public:
   auto validatePage() -> bool override;
 
 private:
-  FirstRunWizard *m_wizard;
-  QLineEdit *m_path;
-  QCheckBox *m_useGit;
-  QLabel *m_status;
+  FirstRunWizard *m_wizard; ///< Owner; its settings get the path and flag.
+  QLineEdit *m_path;        ///< The store folder, in native separators.
+  QCheckBox *m_useGit;      ///< Keep the store under Git; off without git.
+  QLabel *m_status;         ///< What Finish will do with the folder.
 
+  /**
+   * @brief How many keys are ticked on the key page.
+   * @return The number of enabled entries in the wizard's key list.
+   */
   auto recipients() const -> int;
+  /**
+   * @brief After an edit: describe the folder (existing store with its
+   * entry count, empty folder, not a store yet, missing) and ask for a
+   * ticked key when it has to be initialised, then re-evaluate isComplete().
+   */
   void updateStatus();
 };
 
@@ -244,10 +280,10 @@ public:
   auto validatePage() -> bool override;
 
 private:
-  FirstRunWizard *m_wizard;
-  QLabel *m_summary;
-  QCheckBox *m_hidePassword;
-  QCheckBox *m_trayIcon;
+  FirstRunWizard *m_wizard;  ///< Owner; its settings get the preferences.
+  QLabel *m_summary;         ///< Store, what Finish does with it, gpg, mode.
+  QCheckBox *m_hidePassword; ///< Show the password line as dots; on.
+  QCheckBox *m_trayIcon;     ///< Tray icon; hidden when there is no tray.
 };
 
 #endif // SRC_FIRSTRUNWIZARD_H_

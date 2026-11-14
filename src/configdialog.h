@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Settings dialog: every page of the configuration window and the
+ * profile table, with the validation that gates OK.
+ */
 #ifndef SRC_CONFIGDIALOG_H_
 #define SRC_CONFIGDIALOG_H_
 
@@ -124,29 +129,106 @@ protected:
   void changeEvent(QEvent *event) override;
 
 private slots:
+  /**
+   * @brief On OK: warn about a dubious SSH_AUTH_SOCK override, save the
+   * settings and the profiles, let the active profile follow a rename, and
+   * create and initialise the stores of profiles added in this session.
+   */
   void on_accepted();
+  /**
+   * @brief Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH,
+   * keeping a field as it is when nothing is found, and choose the pass
+   * backend when pass was found.
+   */
   void on_autodetectButton_clicked();
+  /// Native (gpg/git) backend chosen: enable its group box, disable pass's.
   void on_radioButtonNative_clicked();
+  /// pass backend chosen: enable its group box, disable the native one.
   void on_radioButtonPass_clicked();
+  /**
+   * @brief Pick the git executable in a file dialog; a cancelled dialog
+   * turns Git off and disables its checkbox, as a missing git does.
+   */
   void on_toolButtonGit_clicked();
+  /// Pick the gpg executable in a file dialog; cancel keeps the field.
   void on_toolButtonGpg_clicked();
+  /// Open KeygenDialog for the gpg shown in the dialog.
   void on_pushButtonGenerateKey_clicked();
+  /**
+   * @brief Pick the pwgen executable; a choice enables "use pwgen", a
+   * cancelled dialog unticks and disables it.
+   */
   void on_toolButtonPwgen_clicked();
+  /// Pick the pass executable in a file dialog; cancel keeps the field.
   void on_toolButtonPass_clicked();
+  /// Pick the password store folder for the pass backend's store path.
   void on_toolButtonStore_clicked();
-  void on_comboBoxClipboard_activated(int);
-  void on_passwordCharTemplateSelector_activated(int);
+  /**
+   * @brief Enable the controls that only mean something with a clipboard
+   * (selection, hiding, autoclear) unless "No clipboard" is chosen.
+   * @param index The combo box row; 0 is "No clipboard".
+   */
+  void on_comboBoxClipboard_activated(int index);
+  /**
+   * @brief Show the chosen character set's characters in the line edit,
+   * editable only for the custom set.
+   * @param index A PasswordConfiguration::CharacterSet value.
+   */
+  void on_passwordCharTemplateSelector_activated(int index);
+  /// Re-apply the clipboard gating for the current clipboard mode.
   void on_checkBoxSelection_clicked();
+  /**
+   * @brief Append a "New profile" row pointing at the global store path,
+   * select it and put the cursor in the name field.
+   */
   void on_addButton_clicked();
+  /**
+   * @brief Remove the selected profile row (a message when none is); the
+   * list's currentRowChanged re-points the form at a neighbour.
+   */
   void on_deleteButton_clicked();
+  /// Pick the selected profile's store folder and store it in its entry.
   void on_profilePathBrowse_clicked();
+  /// Hide-on-close and start-minimised are only offered with a tray icon.
   void on_checkBoxUseTrayIcon_clicked();
+  /**
+   * @brief Enable the Git-dependent boxes (add .gpg-id, auto pull/push, and
+   * in native mode the parent-repository switch) with "use Git".
+   */
   void on_checkBoxUseGit_clicked();
+  /**
+   * @brief Enable pwgen's flags or the character-set controls, whichever
+   * the "use pwgen" box selects; nothing in pass mode, where pass generates.
+   */
   void on_checkBoxUsePwgen_clicked();
+  /**
+   * @brief The profile list's current row changed: show that profile.
+   * @param row The new row, -1 for none.
+   */
   void onProfileSelected(int row);
+  /**
+   * @brief The name field was typed in: store it in the entry and the list
+   * item, then validate (duplicates, empty).
+   * @param name The text as typed.
+   */
   void onProfileNameEdited(const QString &name);
+  /**
+   * @brief The path field was typed in: store it in the entry, validate and
+   * refresh the status line.
+   * @param path The text as typed.
+   */
   void onProfilePathEdited(const QString &path);
+  /**
+   * @brief The signing-key field was typed in: store it in the entry and
+   * validate (fingerprints only, shared keys).
+   * @param key The text as typed.
+   */
   void onProfileSigningKeyEdited(const QString &key);
+  /**
+   * @brief One of the profile's Git boxes was clicked: all three flags
+   * become the profile's own (no longer following the globals), and push
+   * and pull are enabled only with Git.
+   */
   void onProfileGitToggled();
 
 private:
@@ -160,32 +242,44 @@ private:
    * duplicate name while it is being typed; getProfiles() builds the map.
    */
   struct ProfileEntry {
-    QString name;
-    Profile profile;
+    QString name;    ///< The name as typed; may be empty or a duplicate.
+    Profile profile; ///< Path, signing key and Git flags as edited.
     /// The name the profile had when the dialog opened (empty for one added
     /// here), so a rename of the active profile can follow it.
     QString originalName;
   };
   /// What is wrong with one profile's fields; empty strings where nothing is.
   struct ProfileProblems {
-    QString name;
-    QString path;
-    QString key;
+    QString name; ///< Empty or duplicate name; empty when fine.
+    QString path; ///< Missing store path; empty when fine.
+    QString key;  ///< Signing key that is no fingerprint list; empty when fine.
     /// Not a problem, a warning: other profiles sign with the same key.
     /// It neither blocks OK nor marks the row.
     QString sharedKey;
-    /// Whether all three fields are fine.
+    /**
+     * @brief Whether all three fields are fine.
+     * @return true when name, path and key have no complaint.
+     */
     [[nodiscard]] auto none() const -> bool {
       return name.isEmpty() && path.isEmpty() && key.isEmpty();
     }
-    /// The first complaint, for a tooltip on the profile's row.
+    /**
+     * @brief The first complaint, for a tooltip on the profile's row.
+     * @return The name, path or key complaint, in that order; empty if none.
+     */
     [[nodiscard]] auto first() const -> QString {
       return !name.isEmpty() ? name : !path.isEmpty() ? path : key;
     }
   };
-  /// Designer tooltips of the form fields, put back when validate() has no
-  /// complaint about them.
-  QString m_nameTip, m_pathTip, m_keyTip;
+  /// Designer tooltip of the profile-name field, put back when validate()
+  /// has no complaint about it.
+  QString m_nameTip;
+  /// Designer tooltip of the store-path field, put back when validate() has
+  /// no complaint about it.
+  QString m_pathTip;
+  /// Designer tooltip of the signing-key field, put back when validate() has
+  /// no complaint about it.
+  QString m_keyTip;
   /// Below the signing key: the profiles that share it, if any.
   QLabel *m_sharedKeyWarning = nullptr;
   /// In the pass box: the stores pass would commit outside of, if any.
@@ -207,13 +301,47 @@ private:
   /// do not write back.
   bool m_loadingForm = false;
 
+  /**
+   * @brief Show row @p row's profile in the form (or clear and disable it
+   * for -1), with m_loadingForm set so the fields' edited-signals do not
+   * write back. The Git boxes show the profile's own flags, else the
+   * global ones.
+   * @param row Row in m_entries, or -1 for none.
+   */
   void loadProfileForm(int row);
+  /**
+   * @brief The entry the form is editing.
+   * @return A pointer into m_entries, or nullptr when no row is current.
+   */
   auto currentEntry() -> ProfileEntry *;
+  /**
+   * @brief Refresh the status line under the form: the profile's name and
+   * cleaned path, marked "New" while the folder does not exist, or a
+   * reminder to fill in the required fields.
+   */
   void updateProfileStatus();
+  /// The widgets from configdialog.ui.
   QScopedPointer<Ui::ConfigDialog> ui;
 
-  void setGitPath(const QString &);
-  void setProfiles(Profiles, const QString &);
+  /**
+   * @brief Show @p path as the git executable; an empty path disables and
+   * turns off "use Git".
+   * @param path The git executable, or empty for none.
+   */
+  void setGitPath(const QString &path);
+  /**
+   * @brief Fill the profile list and m_entries from @p profiles, dropping
+   * the empty-named leftover older versions wrote, select
+   * @p currentProfile and validate.
+   * @param profiles The saved profiles.
+   * @param currentProfile The active profile's name, to select its row.
+   */
+  void setProfiles(Profiles profiles, const QString &currentProfile);
+  /**
+   * @brief Tick the pass or the native radio button and enable the matching
+   * group box.
+   * @param usePass true for the pass backend.
+   */
   void usePass(bool usePass);
 
   /**
@@ -237,14 +365,43 @@ private:
    */
   auto readSettings() -> AppSettings;
 
+  /**
+   * @brief Enable the group box of the chosen backend and, in pass mode,
+   * disable the password-generation controls pass takes care of; in native
+   * mode hand them back to on_checkBoxUsePwgen_clicked().
+   */
   void setGroupBoxState();
+  /**
+   * @brief Ask for an existing file in a read-only file dialog.
+   * @return The chosen file, empty when cancelled.
+   */
   auto selectExecutable() -> QString;
+  /**
+   * @brief Ask for a directory in a directories-only file dialog.
+   * @return The chosen folder, empty when cancelled.
+   */
   auto selectFolder() -> QString;
-  // QMessageBox::critical with hack to avoid crashes with
-  // Qt 5.4.1 when QApplication::exec was not yet called
+  /**
+   * @brief QMessageBox::critical with a single OK button. Once a workaround
+   * for crashes in Qt 5.4.1 before QApplication::exec(); no caller today.
+   * @param title The box's title.
+   * @param text The message.
+   */
   void criticalMessage(const QString &title, const QString &text);
 
+  /**
+   * @brief Whether qrencode can run: @p configuredPath when it is an
+   * executable file, else a `qrencode` on Util's PATH, which is then saved
+   * as the qrencode executable. Always false on Windows.
+   * @param configuredPath The saved qrencode executable, possibly empty.
+   * @return true when QR codes can be shown.
+   */
   auto isQrencodeAvailable(const QString &configuredPath) -> bool;
+  /**
+   * @brief Check every profile (problemsOf(), sharingTheKey()), mark the
+   * rows and the form, enable OK only when no profile has a problem, and
+   * refresh the pass Git warning.
+   */
   void validate();
   /// Shows m_passGitWarning for the stores Util::repositoryPassClimbsTo()
   /// names, while the pass backend is chosen.
@@ -296,6 +453,12 @@ private:
   [[nodiscard]] auto sharingTheKey(int row, const SigningStores &resolved) const
       -> QStringList;
 
+  /**
+   * @brief For every saved profile whose store was not a profile's store
+   * when the dialog opened: offer to create the folder and, when it has no
+   * `.gpg-id`, ask for recipients and initialise it.
+   * @param existingProfiles The profiles as they were when the dialog opened.
+   */
   void initializeNewProfiles(const Profiles &existingProfiles);
   /**
    * @brief Offer to create a new profile's store folder when it is missing.

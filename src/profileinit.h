@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Initialising a new profile's store (.gpg-id, signature, Git) with
+ * blocking processes, apart from the active store's backend.
+ */
 #ifndef SRC_PROFILEINIT_H_
 #define SRC_PROFILEINIT_H_
 
@@ -111,6 +116,17 @@ private:
    */
   static auto signGpgId(const QString &gpgIdFile, const QByteArray &contents,
                         const AppSettings &s, QString *note) -> bool;
+  /**
+   * @brief `git init` in @p dir, stage the `.gpg-id` and its signature, and
+   * commit them (signed when `pass.signcommits` is set), with a QProcess of
+   * its own in the store's Git environment.
+   * @param dir The store, absolute.
+   * @param gpgIdFile The `.gpg-id` just written.
+   * @param sigFile Its `.sig`, or empty when the store is not signed.
+   * @param s Settings for the git executable and the GPG home.
+   * @param note Receives a translated error naming the failed git command.
+   * @return Whether the commit was made.
+   */
   static auto commitGpgId(const QString &dir, const QString &gpgIdFile,
                           const QString &sigFile, const AppSettings &s,
                           QString *note) -> bool;

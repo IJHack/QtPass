@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief SshAuthSock: finding an SSH agent socket for child processes and
+ * judging a configured override.
+ */
 #ifndef SRC_SSHAUTHSOCK_H_
 #define SRC_SSHAUTHSOCK_H_
 
@@ -21,19 +26,14 @@ public:
    *        user.
    *
    * Empty / unset input is handled by the caller (no warning when the field
-   * is blank). For a non-empty path, this returns one of:
-   *
-   * - `Valid` — exists, readable, and on Unix is a Unix domain socket.
-   * - `DoesNotExist` — `QFileInfo::exists()` returned false.
-   * - `NotReadable` — exists but `QFileInfo::isReadable()` returned false.
-   * - `NotUnixDomainSocket` — Unix-only: `stat()` says it's not `S_ISSOCK`.
-   *
-   * On Windows the socket check is skipped — ssh-agent uses a named pipe.
+   * is blank). On Windows the socket check is skipped — ssh-agent uses a
+   * named pipe there.
    */
   enum class OverrideStatus : std::uint8_t {
-    Valid,
-    DoesNotExist,
-    NotReadable,
+    Valid,        ///< Exists, readable, and on Unix a Unix domain socket.
+    DoesNotExist, ///< `QFileInfo::exists()` returned false.
+    NotReadable,  ///< Exists, but `QFileInfo::isReadable()` returned false.
+    /// Unix only: `stat()` says the path is not `S_ISSOCK`.
     NotUnixDomainSocket,
   };
   /**

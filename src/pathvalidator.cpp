@@ -1,13 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 /**
- * @class PathValidator
- * @brief Password-store path-boundary checks implementation.
- *
- * @see pathvalidator.h
+ * @file
+ * @brief Implements PathValidator; storeRelativePath() does the canonical
+ * comparison the other checks build on.
  */
-
 #include "pathvalidator.h"
 #include <QDir>
 #include <QFileInfo>

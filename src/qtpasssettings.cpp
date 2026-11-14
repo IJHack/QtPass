@@ -1,6 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
+/**
+ * @file
+ * @brief Implements QtPassSettings; getInstance() picks the portable
+ * `qtpass.ini` over the platform store, and getProfiles()/setProfiles()
+ * read and write the `profile/<name>/` groups.
+ */
 #include "qtpasssettings.h"
 #include "pass.h"
 #include "passbackendfactory.h"

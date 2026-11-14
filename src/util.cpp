@@ -1,6 +1,11 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
+/**
+ * @file
+ * @brief Implements Util; the staged, link-safe store writes
+ * (stageFileReplacing() and its helpers) and the store walk (walkStore())
+ * live here.
+ */
 #include "util.h"
 #include "appsettings.h"
 #include "executor.h"

@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Util: static helpers for the process environment, binary discovery,
+ * store paths, URL safety and the link-safe file operations every write into
+ * a store goes through.
+ */
 #ifndef SRC_UTIL_H_
 #define SRC_UTIL_H_
 
@@ -15,6 +21,7 @@
 class QFile;
 class QFileDevice;
 
+/// Milliseconds in a second, for timers set from a setting in seconds.
 constexpr int MS_PER_SECOND = 1000;
 
 /*!
@@ -452,8 +459,16 @@ public:
   static auto syncToDisk(QFileDevice &file) -> bool;
 
 private:
+  /**
+   * @brief Fill _env once: the process environment with the usual GPG
+   * install directories appended to PATH (MacGPG2 and `/usr/local/bin` on
+   * macOS, WinGPG and GnuPG on Windows) when they exist.
+   */
   static void initialiseEnvironment();
+  /// The environment findBinaryInPath() and findPasswordStore() read, as
+  /// initialiseEnvironment() built it.
   static QProcessEnvironment _env;
+  /// Whether initialiseEnvironment() has run.
   static bool _envInitialised;
 };
 

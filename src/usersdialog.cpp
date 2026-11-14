@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements UsersDialog; selectRecipients() matches the `.gpg-id`
+ * lines against the keyring and lists the ones no key answers to.
+ */
 #include "usersdialog.h"
 #include "importkeydialog.h"
 #include "pass.h"

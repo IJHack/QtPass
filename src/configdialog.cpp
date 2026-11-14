@@ -1,5 +1,12 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ConfigDialog: loading and reading the widgets
+ * (applySettings(), readSettings()), the profile table with its validation
+ * (validate(), problemsOf(), sharingTheKey()) and the initialisation of
+ * stores for profiles added in the dialog (initializeNewProfiles()).
+ */
 #include "configdialog.h"
 #include "appsettings.h"
 #include "executor.h"

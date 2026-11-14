@@ -1,13 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 /**
- * @class SshAuthSock
- * @brief SSH_AUTH_SOCK discovery and validation implementation.
- *
- * @see sshauthsock.h
+ * @file
+ * @brief Implements SshAuthSock; a probed socket is adopted only after
+ * `ssh-add -l` answers on it (isSshAgentReachable()).
  */
-
 #include "sshauthsock.h"
 #include "executor.h"
 #include <QFileInfo>
@@ -106,22 +103,9 @@ auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
   return OverrideStatus::Valid;
 }
 
-/**
- * @brief Probe and set SSH_AUTH_SOCK if missing — see header for full rules.
- *
- * Implementation notes:
- * - Receives the manual override path as the @p override parameter; if
- *   non-empty, uses it verbatim (no validation — explicit override).
- * - Otherwise runs `gpgconf --list-dirs agent-ssh-socket` (gpg-agent's
- *   canonical socket reporter). On macOS, additionally tries `launchctl
- *   getenv SSH_AUTH_SOCK`.
- * - Auto-probed candidates are validated via `ssh-add -l` before adoption,
- *   so users with a different external SSH agent aren't silently switched
- *   to an empty gpg-agent SSH socket.
- * - All probes go through Executor::executeBlocking with short, bounded
- *   subprocess executions; any failure is silently absorbed (the user just
- *   doesn't get the auto-fix).
- */
+// The rules are in the header. All probes go through
+// Executor::executeBlocking with short, bounded subprocess executions; any
+// failure is silently absorbed (the user just doesn't get the auto-fix).
 void SshAuthSock::initialise(const QString &override) {
   // Honour any value already in the environment — terminal launches,
   // explicit `.desktop` Exec= overrides, and parent-process exports must win.

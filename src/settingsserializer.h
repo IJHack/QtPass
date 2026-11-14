@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief SettingsSerializer: the flat AppSettings fields to and from their
+ * QSettings keys, without side effects.
+ */
 #ifndef SRC_SETTINGSSERIALIZER_H_
 #define SRC_SETTINGSSERIALIZER_H_
 
