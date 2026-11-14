@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Uporabi ikono v sistemski vrstici</translation>
+        <translation type="unfinished">Prikaži ikono v sistemski vrstici</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -465,13 +465,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Omogočiti iskanje</translation>
+        <translation type="unfinished">Omogoči iskanje po vsebini</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunde</translation>
+        <translation type="unfinished">sekundah</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Ponovno uporabite predhodno kopirano</translation>
+        <translation type="unfinished">Obnovi prejšnjo vsebino odložišča</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Privzeti</translation>
+        <translation type="unfinished">Privzeto</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Znaki</translation>
+        <translation type="unfinished">znakov</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Uporabite repozitorij Git, ki se nahaja v mapi nad sproti</translation>
+        <translation type="unfinished">Uporabi repozitorij Git v mapi nad shrambo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -815,7 +815,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Ali želite ustvariti varnostni magazin na %1?</translation>
+        <translation type="unfinished">Ali želite ustvariti shrambo gesel v %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="834"/>
@@ -1122,7 +1122,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Niste uspel/a ustvariti geslo-zaporedja na: %1</translation>
+        <translation type="unfinished">Shrambe gesel ni bilo mogoče ustvariti v: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
@@ -1498,7 +1498,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 ni shranjen v upravniku gesel, ali pa je ime mape, ki vsebuje prelomni znak ali drug kontrolni simbol, kar podpisana lista ne more zabeležit.</translation>
+        <translation type="unfinished">%1 ni v shrambi gesel ali pa ime mape na poti vsebuje prelom vrstice ali drug kontrolni znak, ki ga podpisani seznam ne more zabeležiti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -2131,7 +2131,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Iskanje vsebine gesla</translation>
+        <translation type="unfinished">Iskanje po vsebini gesel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2885,7 +2885,7 @@ Nadaljujem?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Vnos je shranjen, vendar ga ni bilo uspešno zabeležit v Git. To je prijavljeno:
+        <translation type="unfinished">Vnos je shranjen v shrambi, vendar ga ni bilo mogoče zabeležiti v Git. Sporočeno je bilo:
 
 %1</translation>
     </message>
@@ -2897,7 +2897,7 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ni shranjen v upravniku gesel. Recipienti so nastavljeni za upravnik ali mapo znotraj njega.</translation>
+        <translation type="unfinished">%1 ni v shrambi gesel. Prejemniki se nastavijo za shrambo ali mapo v njej.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

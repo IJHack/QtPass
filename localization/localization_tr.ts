@@ -454,7 +454,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation>Sistem Tepsisi Simgesini Kullan</translation>
+        <translation type="unfinished">Sistem tepsisi simgesini göster</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -469,7 +469,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">İçerik aramasını etkinleştirin</translation>
+        <translation type="unfinished">İçerik aramasını etkinleştir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -485,7 +485,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Önceki panoyu geri yükle</translation>
+        <translation type="unfinished">Panonun önceki içeriğini geri yükle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -766,7 +766,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1, aynı anahtarla başka bir depoyu imzalar. Bu depolardan biri için imzalanmış bir alıcı listesi diğerinde kabul edilir: Her depodaki farklı alıcılara sahip olan her depo için ayrı bir imzalama anahtarı kullanın.</translation>
+        <translation type="unfinished">%1, aynı anahtarla başka bir depoyu imzalar. Bu depolardan biri için imzalanmış bir alıcı listesi diğerinde kabul edilir: alıcıları farklı olan her depo için ayrı bir imzalama anahtarı kullanın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>

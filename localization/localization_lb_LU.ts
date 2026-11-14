@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Le &quot;Clipboard&quot; wurde wiederhergestellt</translation>
+        <translation type="unfinished">Clipboard restauréiert</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -337,7 +337,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>Naturheem</translation>
+        <translation type="unfinished">Direkt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Aktiveren Sie die Suche nach Inhalten</translation>
+        <translation type="unfinished">Inhaltssich aktivéieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -451,12 +451,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Wenn das Clipboard gelöscht wird, füge wieder den Inhalt ein, der vorher darauf war, wie es „pass -c“ tut, es sei denn, etwas anderes wurde inzwischen kopiert. Nur Text: die Formatierung ist nicht wiederhergestellt. Dieser Text bleibt bis dahin im Speicher. Wo das Clipboard ohne Fokus (einige Wayland-Desktops) nicht gelesen werden kann, wird es stattdessen gelöscht.</translation>
+        <translation type="unfinished">Wann de Clipboard geläscht gëtt, gëtt dat drop zeréckgesat, wat virun der Kopie drop war, sou wéi pass -c et mécht, ausser wann zwëschenzäitlech eppes anescht kopéiert gouf. Nëmmen Text: d&apos;Formatéierung gëtt net restauréiert. Dësen Text bleift bis dohin am Aarbechtsspäicher. Wou de Clipboard ouni Fokus net gelies ka ginn (e puer Wayland-Desktoppen), gëtt e amplaz geläscht.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restauréieren aus dem Clipboard</translation>
+        <translation type="unfinished">Fréiere Clipboard-Inhalt restauréieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -472,22 +472,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Versteck andere Geheimnisse:</translation>
+        <translation type="unfinished">Och aner Geheimnisser verstoppen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Verstecken Sie Felder, die ein Geheimnis enthalten, nicht nur das Passwort: ein Feld, dessen Name eines dieser Wörter enthält. Aus: Nur das Passwort wird versteckt.</translation>
+        <translation type="unfinished">Och Felder verstoppen, déi e Geheimnis enthalen, net nëmmen d&apos;Passwuert: e Feld mat engem vun dëse Wierder am Numm. Aus: nëmmen d&apos;Passwuert gëtt verstoppt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Par défaut</translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restez les mots par défaut : PIN, codes de carte, clés, jetons et autres.</translation>
+        <translation type="unfinished">D&apos;Standardwierder zerécksetzen: PIN, Kaartecoden, Schlësselen, Tokens, Recovery-Coden an esou weider.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Benutze ein Git-Repository in einem Ordner oberhalb des Speichers</translation>
+        <translation type="unfinished">Git-Repository aus engem Dossier iwwer dem Späicher benotzen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -876,7 +876,7 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1114"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Ge&amp;bierteg Git/GPG</translation>
+        <translation type="unfinished">&amp;Direkt Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
@@ -1130,7 +1130,7 @@ e-mail</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation>Passwuertgeschäft net initialiséiert</translation>
+        <translation type="unfinished">Passwuertspäicher net initialiséiert</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1392,7 +1392,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 sinn net an dem Passwuertspäicher, oder de Numm vun einem Dossier enthält eine Zeilenumbruch oder ein andeerts Kontrollzeichen, welche eine signierte Liste nicht aufzeichnen kann.</translation>
+        <translation type="unfinished">%1 ass net am Passwuertspäicher, oder en Dossiersnumm um Wee dohin enthält en Zeilenëmbroch oder en anert Kontrollzeechen, dat eng ënnerschriwwe Lëscht net ophuele kann.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1510,7 +1510,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 kann nicht als Empfängerliste gelesen werden (eine normale Datei von höchstens %2).</translation>
+        <translation type="unfinished">%1 kann net als Empfängerlëscht gelies ginn (eng normal Datei vu maximal %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1617,7 +1617,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Aktualiséiert Passwuertgeschäft</translation>
+        <translation type="unfinished">Passwuertspäicher gëtt aktualiséiert</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -1666,7 +1666,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ass, oder befindet sich hinter, einem symbolesche Link oder einer Verknüpfung nach dem Ziehen. Was dat zeiget, gehört nicht zum Passwuertspäicher und wird unverändert gelassen.</translation>
+        <translation type="unfinished">%1 ass nom Pull e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1875,7 +1875,7 @@ D&apos;Nei-Verschlësselung ass net fäerdeg ginn, dofir sinn e puer oder all An
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 ist grösser als eine Passwortdatei sein kann.</translation>
+        <translation type="unfinished">%1 ass méi grouss, wéi eng Schlësseldatei ka sinn.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2034,7 +2034,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">D&apos;Numm an d&apos;Passwuert dürfen keine Zeilenumbrüche enthalten.</translation>
+        <translation type="unfinished">Den Numm an d&apos;Passphrase kënne keng Zeilenëmbréch enthalen.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2102,7 +2102,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Suche am Inhalt vom Passwuert</translation>
+        <translation type="unfinished">Am Passwuertinhalt sichen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2391,7 +2391,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>Aktualiséiert Passwuertgeschäft</translation>
+        <translation type="unfinished">Passwuertspäicher gëtt aktualiséiert</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="650"/>
@@ -2587,7 +2587,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="963"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… davantage de correspondances dans cette entrée</translation>
+        <translation type="unfinished">… weider Iwwereneestëmmungen an dësem Entrag</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="978"/>
@@ -2917,7 +2917,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sauvé, mais pas commité</translation>
+        <translation type="unfinished">Gespäichert, net committ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2936,7 +2936,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ass net am Passwuertspäicher. Empfänger sinn für den Späicher oder ein Dossier darin festgelegt.</translation>
+        <translation type="unfinished">%1 ass net am Passwuertspäicher. Empfänger gi fir de Späicher oder fir en Dossier dran agestallt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3003,7 +3003,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 kann nicht als Empfängerliste gelesen werden (eine normale Datei von höchstens %2), daher wird nichts vordefiniert. Überprüfen Sie es, bevor Sie hier Empfänger auswählen: &quot;OK&quot; schreibt eine neue Liste darüber.</translation>
+        <translation type="unfinished">%1 kann net als Empfängerlëscht gelies ginn (eng normal Datei vu maximal %2), dofir ass näischt virausgewielt. Kontrolléiert se, ier Dir hei Empfänger auswielt: OK schreift eng nei Lëscht driwwer.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3068,7 +3068,7 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>Show Passwuert</translation>
+        <translation type="unfinished">Passwuert weisen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
@@ -3276,7 +3276,7 @@ Weider?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">La configuration GPG à la maison %1 n&apos;existe pas.</translation>
+        <translation type="unfinished">De konfiguréierte GPG-Home %1 existéiert net.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3397,7 +3397,7 @@ Weider?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation>Show Passwuert</translation>
+        <translation type="unfinished">Passwuert weisen</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
@@ -3518,7 +3518,7 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Vérification des listes de destinataires sous %1…</translation>
+        <translation type="unfinished">D&apos;Empfängerlëschten ënner %1 ginn iwwerpréift…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3544,7 +3544,7 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Le lien %1 a ete retire, et git ne le suit plus, mais la commit a echoué: %2</translation>
+        <translation type="unfinished">De Link %1 gouf geläscht a git verfollegt en net méi, mä de Commit ass feelgeschloen: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

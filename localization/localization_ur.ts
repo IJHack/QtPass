@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">کوپی پیس کی حالت بحال</translation>
+        <translation type="unfinished">کلپ بورڈ بحال کر دیا گیا</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ٹرے آئیکن استعمال کریں</translation>
+        <translation type="unfinished">ٹرے آئیکن دکھائیں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -465,7 +465,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">محتوی کی تلاش کو فعال کریں۔</translation>
+        <translation type="unfinished">مواد کی تلاش فعال کریں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">پچھلی کلپ بورڈ کو بحال کریں۔</translation>
+        <translation type="unfinished">پچھلا کلپ بورڈ بحال کریں</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">اسی طرح، دیگر رازات بھی پوشیدہ کریں۔</translation>
+        <translation type="unfinished">دیگر راز بھی چھپائیں:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">پیش فرض</translation>
+        <translation type="unfinished">طے شدہ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -2121,7 +2121,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">پاس ورڈ کی محتویات کے اندر تلاش کریں۔</translation>
+        <translation type="unfinished">پاس ورڈز کے مواد کے اندر تلاش کریں</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2314,7 +2314,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation type="unfinished">عمومی سوالات (&amp;F)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>

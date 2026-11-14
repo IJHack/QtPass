@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation>%1 підписує інший запис, використовуючи той самий ключ. Список отримувачів, який був підписаний для одного з цих &quot;сховищ&quot;, приймається в іншому: використовуйте окремий ключ підписання для кожного &quot;сховища&quot;, у якого різні отримувачі.</translation>
+        <translation type="unfinished">%1 підписує тим самим ключем і для іншого сховища. Список отримувачів, підписаний для одного з цих сховищ, приймається в іншому: використовуйте окремий ключ підписання для кожного сховища, отримувачі якого відрізняються.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1708,7 +1708,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation>%1 є, або знаходиться за символічним посиланням чи з&apos;єднанням після витягування. Те, на що воно вказує, не є частиною сховища паролів і залишається без змін.</translation>
+        <translation type="unfinished">Після pull %1 є символічним посиланням чи точкою з&apos;єднання або лежить за ними. Те, на що вказує посилання, не є частиною сховища паролів і залишається без змін.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>

@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Gunakan TrayIcon</translation>
+        <translation type="unfinished">Tampilkan ikon tray</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -471,7 +471,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Detik</translation>
+        <translation type="unfinished">detik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Karakter</translation>
+        <translation type="unfinished">karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -2861,7 +2861,7 @@ Lanjutkan?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Entri ini disimpan, tetapi pencatatan ke dalam Git gagal. Informasi yang diberikan:
+        <translation type="unfinished">Entri ini disimpan di penyimpanan, tetapi pencatatannya di git gagal. Yang dilaporkan:
 
 %1</translation>
     </message>

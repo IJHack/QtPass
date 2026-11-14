@@ -469,7 +469,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>Inheemse program</translation>
+        <translation type="unfinished">Direk</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -908,7 +908,7 @@ Die waarde sal steeds gestoor word soos ingevoer.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1114"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>&amp;Inheems Git/GPG</translation>
+        <translation type="unfinished">&amp;Direkte Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
@@ -1668,7 +1668,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation>Kon nie ná die pull nagaan of die winkel onsamegevoegde lêers het nie. Kontroleer dit met git voordat jy herenkripteer.</translation>
+        <translation type="unfinished">Kon nie ná die pull nagaan of die stoor onsamegevoegde lêers het nie. Kontroleer dit met git voordat jy herenkripteer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>

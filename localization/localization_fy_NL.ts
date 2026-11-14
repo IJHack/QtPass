@@ -469,7 +469,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>Ynlânske</translation>
+        <translation type="unfinished">Direkt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1151"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Weromsette de oerige klamboerd</translation>
+        <translation type="unfinished">It foarige klamboerd werstelle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,17 +564,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Ekso ferstopje oare geheime:</translation>
+        <translation type="unfinished">Ek oare geheimen ferbergje:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Ferstopje fjilden dy&apos;t in geheime holden, net allin wat: in fjel dat ien fan disse wurden hat. Off: it wachtwurd is allin ferstopt.</translation>
+        <translation type="unfinished">Ferbergje ek fjilden dy&apos;t in geheim befetsje, net allinnich it wachtwurd: in fjild mei ien fan dizze wurden yn de namme. Út: allinnich it wachtwurd wurdt ferburgen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Standaard</translation>
+        <translation type="unfinished">Standert</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -2295,7 +2295,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Search binnen de wachtwoordinhâld</translation>
+        <translation type="unfinished">Sykje yn wachtwurdynhâld</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>

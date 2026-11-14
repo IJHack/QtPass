@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Caratteri</translation>
+        <translation type="unfinished">caratteri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utilizza un repository Git in una cartella situata sopra la posizione di memorizzazione</translation>
+        <translation type="unfinished">Usa un repository Git in una cartella sopra l&apos;archivio</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -518,7 +518,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Usa l&apos;icona sulla barra delle applicazioni</translation>
+        <translation type="unfinished">Mostra l&apos;icona nel vassoio di sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -539,17 +539,17 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Secondi</translation>
+        <translation type="unfinished">secondi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Quando la clipboard viene svuotata, ripristina il contenuto che era presente prima della copia, come fa &quot;pass -c&quot;, a meno che non sia stato copiato qualcosa di diverso nel frattempo. Solo testo: la formattazione non viene ripristinata. Quel testo rimane nella memoria fino a quando. Dove la clipboard non può essere letta senza aver acquisito il focus (alcuni desktop Wayland), invece, viene svuotata.</translation>
+        <translation type="unfinished">Quando gli appunti vengono svuotati, ripristina il contenuto presente prima della copia, come fa pass -c, a meno che nel frattempo non sia stato copiato qualcos&apos;altro. Solo testo: la formattazione non viene ripristinata. Fino ad allora quel testo resta in memoria. Dove gli appunti non possono essere letti senza il focus (alcuni desktop Wayland), vengono invece svuotati.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Ripristina il contenuto precedente della clipboard</translation>
+        <translation type="unfinished">Ripristina il contenuto precedente degli appunti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -575,7 +575,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Impostazioni predefinite</translation>
+        <translation type="unfinished">Predefiniti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -1433,7 +1433,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">L&apos;elemento %1 non si trova all&apos;interno del database delle password, o un nome di cartella contiene un carattere di interruzione di riga o un altro carattere di controllo, che una lista firmata non può registrare.</translation>
+        <translation type="unfinished">%1 non si trova all&apos;interno dell&apos;archivio password, oppure un nome di cartella lungo il percorso contiene un&apos;interruzione di riga o un altro carattere di controllo, che un elenco firmato non può registrare.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1707,7 +1707,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 è, o si trova dietro, un collegamento simbolico o una &quot;giunzione&quot; dopo il recupero. Ciò a cui punta non fa parte del database dei password e viene lasciato intatto.</translation>
+        <translation type="unfinished">%1 è, o si trova dietro, un collegamento simbolico o una junction dopo il pull. Ciò a cui punta non fa parte dell&apos;archivio password e non viene toccato.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2448,7 +2448,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Cerca all&apos;interno del contenuto della password</translation>
+        <translation type="unfinished">Cerca nel contenuto delle password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="266"/>
@@ -3150,7 +3150,7 @@ Continuare?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">L&apos;inserimento è stato salvato, ma la registrazione su Git non è riuscita. L&apos;errore segnalato:
+        <translation type="unfinished">La voce è stata salvata nell&apos;archivio, ma la registrazione in Git non è riuscita. Errore segnalato:
 
 %1</translation>
     </message>
@@ -3162,7 +3162,7 @@ Continuare?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 non si trova all&apos;interno del gestore di password. I destinatari sono impostati per lo store o una cartella al suo interno.</translation>
+        <translation type="unfinished">%1 non si trova all&apos;interno dell&apos;archivio password. I destinatari si impostano per l&apos;archivio o per una sua cartella.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

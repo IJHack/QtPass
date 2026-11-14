@@ -163,7 +163,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurar desde el portapapeles anterior</translation>
+        <translation type="unfinished">Restaurar el portapapeles anterior</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -179,7 +179,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Ocultar otros secretos:</translation>
+        <translation type="unfinished">Ocultar también otros secretos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -340,7 +340,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
         <source>Use a monospace font</source>
-        <translation>Utilice un tipo de letra monoespaciado</translation>
+        <translation type="unfinished">Usar un tipo de letra monoespaciado</translation>
     </message>
     <message>
         <source>Display the files content as-is</source>
@@ -1121,7 +1121,7 @@ dirección de correo</translation>
         <location filename="../src/firstrunwizard.cpp" line="72"/>
         <location filename="../src/firstrunwizard.cpp" line="78"/>
         <source>Welcome to QtPass</source>
-        <translation>Le damos la bienvenida a QtPass</translation>
+        <translation type="unfinished">Te damos la bienvenida a QtPass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="81"/>
@@ -1984,7 +1984,7 @@ El recifrado no se completó, así que algunas entradas o todas siguen cifradas 
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegido con cuidado. Desde la perspectiva de la seguridad, la contraseña para desbloquear la clave privada es uno de los puntos más débiles en GnuPG (y otros sistemas de clave pública de cifrado también), ya que es la única protección que tiene si otro individuo obtiene su clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y se debe mezclar los caracteres alfabéticos con caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegida con cuidado. Desde la perspectiva de la seguridad, la frase de contraseña para desbloquear la clave privada es uno de los puntos más débiles de GnuPG (y también de otros sistemas de cifrado de clave pública), ya que es la única protección que tienes si otra persona obtiene tu clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y debe combinar mayúsculas y minúsculas, además de usar caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
@@ -2278,7 +2278,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="412"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Le damos la bienvenida a QtPass %1</translation>
+        <translation type="unfinished">Te damos la bienvenida a QtPass %1</translation>
     </message>
     <message>
         <source>Process Output</source>
@@ -2305,7 +2305,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Está seguro que quiere borrar %1?</translation>
+        <translation type="unfinished">¿Seguro que quieres eliminar %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -2359,7 +2359,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="266"/>
         <source>Welcome to QtPass</source>
-        <translation>Le damos la bienvenida a QtPass</translation>
+        <translation type="unfinished">Te damos la bienvenida a QtPass</translation>
     </message>
     <message>
         <source>Clear output</source>
@@ -2470,7 +2470,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Ese nombre apuntaría fuera del almacén de contraseñas. Por favor, elija un nombre diferente.</translation>
+        <translation type="unfinished">Ese nombre apuntaría fuera del almacén de contraseñas. Por favor, elige un nombre diferente.</translation>
     </message>
     <message>
         <source>New password file:

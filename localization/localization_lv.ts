@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Lietot paplātes ikonu</translation>
+        <translation type="unfinished">Rādīt paplātes ikonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -465,13 +465,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Ievērojiet satura meklēšanu</translation>
+        <translation type="unfinished">Iespējot satura meklēšanu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekundes</translation>
+        <translation type="unfinished">sekundes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Atgūt iecienītāko</translation>
+        <translation type="unfinished">Atjaunot iepriekšējo starpliktuves saturu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Tur arī jāslēpj citi noslēpumi:</translation>
+        <translation type="unfinished">Slēpt arī citus noslēpumus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Pēc noklus</translation>
+        <translation type="unfinished">Noklusējums</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Rakstzīmes</translation>
+        <translation type="unfinished">rakstzīmes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -1625,7 +1625,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai krātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
+        <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai glabātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -2126,7 +2126,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Meklēt ievietotajā paroles satīnos</translation>
+        <translation type="unfinished">Meklēt paroļu saturā</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2470,7 +2470,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu krātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
+        <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu glabātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -3001,7 +3001,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Vārds</translation>
+        <translation type="unfinished">Nosaukums</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
@@ -3572,8 +3572,8 @@ un pēc tam ieslēdziet Git sadaļā Iestatījumi.</translation>
         <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
             <numerusform>Esoša paroļu glabātuve ar %n ierakstu.</numerusform>
+            <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
             <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
         </translation>
     </message>

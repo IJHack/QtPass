@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Obrazovú pamäť obnovená</translation>
+        <translation type="unfinished">Schránka obnovená</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Použite repozitár Git v priečnom adresári</translation>
+        <translation type="unfinished">Použiť repozitár Git v adresári nad úložiskom</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Zobraziť ikonu</translation>
+        <translation type="unfinished">Zobraziť ikonu v systémovej lište</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -1181,7 +1181,7 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 už obsahuje zašifrované súbory; neboli znovu zašifrované pre zaškrtnuté kľúče. Urobíte tak po spustení v časti Uživatelia.</translation>
+        <translation type="unfinished">%1 už obsahuje zašifrované súbory; neboli znovu zašifrované pre zaškrtnuté kľúče. Urobíte tak po spustení v časti Používatelia.</translation>
     </message>
 </context>
 <context>
@@ -1257,7 +1257,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">Podpísaný zoznam príjemcov %1 bol zapísaný pre adresár „%2“ úložiska, nie pre „%3“, a nepoužije sa. Možno ho sem skopíroval niekto iný; ak bol adresár namiesto toho presunutý alebo premenovaný, držiteľ podpisového kľúča pre neho otvorí Uživatelia a uloží príjemcov, čím sa zoznam zviaže s miestom, kde sa teraz nachádza.</translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 bol zapísaný pre adresár „%2“ úložiska, nie pre „%3“, a nepoužije sa. Možno ho sem skopíroval niekto iný; ak bol adresár namiesto toho presunutý alebo premenovaný, držiteľ podpisového kľúča pre neho otvorí Používatelia a uloží príjemcov, čím sa zoznam zviaže s miestom, kde sa teraz nachádza.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
@@ -1280,12 +1280,12 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">Generácia %1 je najvyššia možná, takže sem už nie je možné zapísať novší zoznam: odstránením %2 sa zabudne, čo toto zariadenie predtým prijalo, a potom to držiteľ podpisového kľúča prekoná tak, že otvorí Uživatelia a %3.</translation>
+        <translation type="unfinished">Generácia %1 je najvyššia možná, takže sem už nie je možné zapísať novší zoznam: odstránením %2 sa zabudne, čo toto zariadenie predtým prijalo, a potom to držiteľ podpisového kľúča prekoná tak, že otvorí Používatelia a %3.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">Držiteľ podpisového kľúča to prekoná zápisom generácie %2, teda tak, že otvorí Uživatelia a %1. Odstránením %3 sa zabudne, čo toto zariadenie predtým prijalo.</translation>
+        <translation type="unfinished">Držiteľ podpisového kľúča to prekoná zápisom generácie %2, teda tak, že otvorí Používatelia a %1. Odstránením %3 sa zabudne, čo toto zariadenie predtým prijalo.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="659"/>
@@ -1343,7 +1343,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Podpísaný zoznam príjemcov %1 neobsahuje riadok s ID úložiska, hoci toto zariadenie pozná toto úložisko podľa jeho ID %2: zoznam mohol byť zapísaný pre iné úložisko a skopírovaný sem, alebo ho zapísal starší QtPass. Držiteľ podpisového kľúča to prekoná tak, že otvorí Uživatelia, nanovo vyberie príjemcov a uloží ich, čím sa zapíše riadok s ID úložiska.</translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 neobsahuje riadok s ID úložiska, hoci toto zariadenie pozná toto úložisko podľa jeho ID %2: zoznam mohol byť zapísaný pre iné úložisko a skopírovaný sem, alebo ho zapísal starší QtPass. Držiteľ podpisového kľúča to prekoná tak, že otvorí Používatelia, nanovo vyberie príjemcov a uloží ich, čím sa zapíše riadok s ID úložiska.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1418,7 +1418,7 @@ e-mail</translation>
     <message>
         <location filename="../src/pass.cpp" line="968"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
-        <translation type="unfinished">Podpísaný zoznam príjemcov %1 chýba alebo nie je bežný súbor. QtPass namiesto neho nepoužije zoznam nadradeného adresára: ten zoznam nebol podpísaný pre tento adresár. Ak je pod týmto názvom odkaz, odstráňte ho. Potom pre tento adresár otvorte Uživatelia a uložte jeho príjemcov, čím sa zapíše a podpíše nový zoznam.</translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 chýba alebo nie je bežný súbor. QtPass namiesto neho nepoužije zoznam nadradeného adresára: ten zoznam nebol podpísaný pre tento adresár. Ak je pod týmto názvom odkaz, odstráňte ho. Potom pre tento adresár otvorte Používatelia a uložte jeho príjemcov, čím sa zapíše a podpíše nový zoznam.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="230"/>
@@ -1433,7 +1433,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nie je uložený v správnom mieste, alebo meno priečkov obsahuje znaky, ktoré nemôže zaznamenať podpísaný zoznam.</translation>
+        <translation type="unfinished">%1 nie je v úložisku hesiel alebo názov niektorého adresára na ceste obsahuje zalomenie riadka či iný riadiaci znak, ktorý podpísaný zoznam nedokáže zaznamenať.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -2260,7 +2260,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="489"/>
         <location filename="../src/mainwindow.cpp" line="1471"/>
         <source>Users</source>
-        <translation>Uživatelia</translation>
+        <translation type="unfinished">Používatelia</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2300,7 +2300,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Vyhľadávanie v obsahu hesla</translation>
+        <translation type="unfinished">Vyhľadávať v obsahu hesiel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3147,7 +3147,7 @@ Pokračovať?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Zaznam bol uložený, ale jeho uloženie do git nebolo úspešné. Zaznamenaný údaj:
+        <translation type="unfinished">Záznam bol uložený do úložiska, ale jeho zaznamenanie do Gitu zlyhalo. Hlásenie:
 
 %1</translation>
     </message>
@@ -3159,7 +3159,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 nie je uložený v správnom priestore. Adresáti sú nastavené pre daný priestor alebo priečinok.</translation>
+        <translation type="unfinished">%1 nie je v úložisku hesiel. Príjemcovia sa nastavujú pre úložisko alebo pre adresár v ňom.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3271,7 +3271,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Meno</translation>
+        <translation type="unfinished">Názov</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
@@ -3474,9 +3474,9 @@ Pokračovať?</translation>
         <location filename="../src/profileinit.cpp" line="160"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform>%1 už obsahuje %n zašifrovaný súbor; nebol prešifrovaný. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Uživatelia“.</numerusform>
-            <numerusform>%1 už obsahuje %n zašifrované súbory; neboli prešifrované. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Uživatelia“.</numerusform>
-            <numerusform>%1 už obsahuje %n zašifrovaných súborov; neboli prešifrované. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Uživatelia“.</numerusform>
+            <numerusform>%1 už obsahuje %n zašifrovaný súbor; nebol prešifrovaný. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Používatelia“.</numerusform>
+            <numerusform>%1 už obsahuje %n zašifrované súbory; neboli prešifrované. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Používatelia“.</numerusform>
+            <numerusform>%1 už obsahuje %n zašifrovaných súborov; neboli prešifrované. Ak to chcete urobiť, prepnite sa na tento profil a otvorte „Používatelia“.</numerusform>
         </translation>
     </message>
     <message>
@@ -3910,7 +3910,7 @@ a potom zapnite Git v Nastaveniach.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Uživatelia s právami na čítanie</translation>
+        <translation type="unfinished">Používatelia s právami na čítanie</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -3960,7 +3960,7 @@ Modré záznamy majú k dispozícii tajný kľúč. Vyberte jeden z nich, ktorý
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Hľadať uživateľov</translation>
+        <translation type="unfinished">Hľadať používateľov</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

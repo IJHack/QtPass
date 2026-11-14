@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Kopiert tekst gjenopprettet</translation>
+        <translation type="unfinished">Utklippstavlen er gjenopprettet</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Bruk systemkurv</translation>
+        <translation type="unfinished">Vis ikon i systemkurven</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -446,7 +446,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunder</translation>
+        <translation type="unfinished">sekunder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Tegn</translation>
+        <translation type="unfinished">tegn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>

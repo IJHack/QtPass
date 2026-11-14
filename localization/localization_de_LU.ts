@@ -345,7 +345,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Inhaltsuche aktivieren</translation>
+        <translation type="unfinished">Inhaltssuche aktivieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -387,7 +387,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Standardeinstellungen</translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -2139,7 +2139,7 @@ Die Wiederverschlüsselung wurde nicht abgeschlossen, daher sind einige oder all
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Inhalt des Passworts durchsuchen</translation>
+        <translation type="unfinished">Im Inhalt der Passwörter suchen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>

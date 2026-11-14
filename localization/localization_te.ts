@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ట్రే ఐకాన్ ఉపయోగించండి</translation>
+        <translation type="unfinished">ట్రే ఐకాన్ చూపించు</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>

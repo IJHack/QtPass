@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ट्रे आइकन का उपयोग करें</translation>
+        <translation type="unfinished">ट्रे आइकन दिखाएं</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">पिछली क्लिपबोर्ड सामग्री को पुनर्स्थापित करें।</translation>
+        <translation type="unfinished">पिछली क्लिपबोर्ड सामग्री पुनर्स्थापित करें</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>

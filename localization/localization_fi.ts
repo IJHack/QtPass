@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Käytä järjestelmäpalkkikuvaketta</translation>
+        <translation type="unfinished">Näytä järjestelmäpalkkikuvake</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -895,7 +895,7 @@ Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
         <location filename="../src/configdialog.ui" line="979"/>
         <location filename="../src/configdialog.ui" line="1551"/>
         <source>Use Git</source>
-        <translation>Käytä Git</translation>
+        <translation type="unfinished">Käytä Gitiä</translation>
     </message>
     <message>
         <source>Use QRencode</source>
@@ -2263,7 +2263,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Hae sisällön sisältä</translation>
+        <translation type="unfinished">Hae salasanojen sisällöstä</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>

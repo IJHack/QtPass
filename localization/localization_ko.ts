@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">트레이 아이콘 사용</translation>
+        <translation type="unfinished">트레이 아이콘 표시</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -574,7 +574,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">기본 설정</translation>
+        <translation type="unfinished">기본값</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>

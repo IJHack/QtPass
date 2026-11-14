@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">A másolás/bemásolás visszaállítva</translation>
+        <translation type="unfinished">Vágólap visszaállítva</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="445"/>
         <source>Hide content</source>
-        <translation>Oldal elrejtése</translation>
+        <translation type="unfinished">Tartalom elrejtése</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -221,7 +221,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Karakterek</translation>
+        <translation type="unfinished">karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -523,7 +523,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Használja a Rendszertálca ikont</translation>
+        <translation type="unfinished">Ikon megjelenítése a rendszertálcán</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -538,13 +538,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Engeld a tartalom keresést</translation>
+        <translation type="unfinished">Tartalomkeresés engedélyezése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Másodperc</translation>
+        <translation type="unfinished">másodperc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -554,7 +554,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Visszaállítás a korábbi másolásról</translation>
+        <translation type="unfinished">Korábbi vágólaptartalom visszaállítása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -570,7 +570,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Rejt el más titkokat is:</translation>
+        <translation type="unfinished">Egyéb titkok elrejtése is:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -605,7 +605,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">Jelszó generáló</translation>
+        <translation type="unfinished">Jelszógenerálás</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
@@ -2409,7 +2409,7 @@ Lejárat-dátum: 0
         <location filename="../src/mainwindow.ui" line="449"/>
         <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Edit</source>
-        <translation>Szerkesztése</translation>
+        <translation type="unfinished">Szerkesztés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>

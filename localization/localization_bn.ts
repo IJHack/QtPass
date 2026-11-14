@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ট্রে ইকন ব্যবহার</translation>
+        <translation type="unfinished">ট্রে আইকন দেখান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">আগের ক্লিপবোর্ডটি পুনরুদ্ধার করুন।</translation>
+        <translation type="unfinished">আগের ক্লিপবোর্ড পুনরুদ্ধার করুন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -2121,7 +2121,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">পাসওয়ার্ডের মধ্যে অনুসন্ধান করুন</translation>
+        <translation type="unfinished">পাসওয়ার্ডের কনটেন্টে অনুসন্ধান করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2185,7 +2185,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.ui" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
-        <translation>পাতাটি মুছে ফেলুন</translation>
+        <translation type="unfinished">মুছে ফেলুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="462"/>

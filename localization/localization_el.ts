@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Χρησιμοποιήστε το εικονίδιο Τρέης</translation>
+        <translation type="unfinished">Εμφάνιση εικονιδίου στο πλαίσιο συστήματος</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -446,7 +446,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Δευτερόλεπτα</translation>
+        <translation type="unfinished">δευτερόλεπτα</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Επαναφορά από το προηγούμενο πρόχειρο</translation>
+        <translation type="unfinished">Επαναφορά του προηγούμενου προχείρου</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Χαρακτήρες</translation>
+        <translation type="unfinished">χαρακτήρες</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -1392,7 +1392,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">Το %1 δεν βρίσκεται στο αποθετήριο κωδικών πρόσβασης, ή το όνομα ενός φακέλου περιέχει μια απόσπαση γραμμής ή άλλο ειδικό χαρακτήρα, που ένα υπογεγραμμένο αρχείο δεν μπορεί να καταγράψει.</translation>
+        <translation type="unfinished">Το %1 δεν βρίσκεται μέσα στον χώρο αποθήκευσης κωδικών πρόσβασης, ή ένα όνομα φακέλου στη διαδρομή περιέχει αλλαγή γραμμής ή άλλο χαρακτήρα ελέγχου, τον οποίο μια υπογεγραμμένη λίστα δεν μπορεί να καταγράψει.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1617,7 +1617,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
+        <translation type="unfinished">Ενημέρωση χώρου αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -2395,7 +2395,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>Ενημέρωση καταστήματος κωδικών πρόσβασης</translation>
+        <translation type="unfinished">Ενημέρωση χώρου αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="650"/>
@@ -2513,7 +2513,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Αυτό το όνομα θα επιλυόταν έξω από το αποθετήριο κωδικών πρόσβασης. Επιλέξτε διαφορετικό όνομα.</translation>
+        <translation type="unfinished">Αυτό το όνομα θα οδηγούσε έξω από τον χώρο αποθήκευσης κωδικών πρόσβασης. Επιλέξτε διαφορετικό όνομα.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2932,7 +2932,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Η καταχώρηση αποθηκεύτηκε, αλλά η καταγραφή της στο Git απέτυχε. Αυτό που αναφέρθηκε:
+        <translation type="unfinished">Η καταχώρηση αποθηκεύτηκε στον χώρο αποθήκευσης, αλλά η καταγραφή της στο Git απέτυχε. Αυτό που αναφέρθηκε:
 
 %1</translation>
     </message>
@@ -2944,7 +2944,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">Το %1 δεν βρίσκεται στο αποθετήριο κωδικών πρόσβασης. Οι παραλήπτες έχουν ρυθμιστεί για το αποθετήριο ή έναν φάκελο μέσα σε αυτό.</translation>
+        <translation type="unfinished">Το %1 δεν βρίσκεται μέσα στον χώρο αποθήκευσης κωδικών πρόσβασης. Οι παραλήπτες ορίζονται για τον χώρο αποθήκευσης ή για έναν φάκελο μέσα σε αυτόν.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

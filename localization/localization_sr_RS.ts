@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Aktivirati pretraživanje sadržaja</translation>
+        <translation type="unfinished">Omogući pretraživanje sadržaja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Vrati prethodni međuspremnik</translation>
+        <translation type="unfinished">Vrati prethodni sadržaj međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 potpisuje sa istim ključem za drugo skladište. Lista primatelja koja je potpisana za jedno od ovih skladišta se prihvaća u drugom: koristite zaseban ključ za potpisivanje za svako skladište čije primatelji su različiti.</translation>
+        <translation type="unfinished">%1 potpisuje istim ključem i za drugo skladište. Lista primalaca potpisana za jedno od ovih skladišta prihvata se i u drugom: koristite poseban ključ za potpisivanje za svako skladište čiji se primaoci razlikuju.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1433,7 +1433,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nije unutar skladišta lozinki, ili ime fascikle sadrži prelom linije ili neki drugi kontrolni karakter, koje potpisana lista ne može da zapisa.</translation>
+        <translation type="unfinished">%1 nije unutar skladišta lozinki ili naziv fascikle na putanji sadrži prelom reda ili drugi kontrolni znak, koji potpisana lista ne može da zabeleži.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1551,7 +1551,7 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 ne može biti pročitao kao lista primatelja (obična datoteka, veličine do %2).</translation>
+        <translation type="unfinished">%1 ne može da se pročita kao lista primalaca (obična datoteka od najviše %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -2268,7 +2268,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Pretražite unutrašnjost sadržaja lozinke</translation>
+        <translation type="unfinished">Pretražite sadržaj lozinki</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3001,11 +3001,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Ponovno šifrirati sve lozinke u %1?
+        <translation type="unfinished">Ponovo šifrovati sve lozinke u %1?
 
-Ovim će se ponovno šifrirati SVE datoteke lozinki u ovoj mapi koristeći trenutne primatelje definirane u .gpg-id.
+Ovo će ponovo šifrovati SVE datoteke lozinki u ovoj fascikli koristeći trenutne primaoce definisane u .gpg-id.
 
-Ovo može prepisati mnoge datoteke i ne može se lako poništiti.
+Ovo može da prepiše mnogo datoteka i ne može se lako poništiti.
 
 Nastaviti?</translation>
     </message>
@@ -3115,7 +3115,7 @@ Nastaviti?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Unos je spremljen u skladište, ali snimanje u Git nije uspešno. To što je prijavljeno:
+        <translation type="unfinished">Unos je sačuvan u skladištu, ali njegovo beleženje u Git-u nije uspelo. Prijavljeno je:
 
 %1</translation>
     </message>
@@ -3194,7 +3194,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 ne može biti pročitao kao lista primatelja (obična datoteka, maksimalno %2), tako da ništa nije unapred odabrano. Proverite to pre nego što izaberete primatelje ovde: &quot;OK&quot; piše novu listu nad njom.</translation>
+        <translation type="unfinished">%1 ne može da se pročita kao lista primalaca (obična datoteka od najviše %2), pa ništa nije unapred izabrano. Proverite to pre nego što ovde izaberete primaoce: OK upisuje novu listu preko nje.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>

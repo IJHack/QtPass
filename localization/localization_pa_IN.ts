@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="455"/>
         <source>Hide password</source>
-        <translation>ਪੱਸਵਰਡ ਦੀ ਗੋਪਨੀਯਤਾ ਰੱਖੋ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -185,13 +185,13 @@
         <location filename="../src/configdialog.ui" line="1000"/>
         <location filename="../src/configdialog.ui" line="1558"/>
         <source>Automatically push</source>
-        <translation>ਆਵਾਗੰਨ ਸਿੰਕਰਾਈਜ਼ ਕਰੋ</translation>
+        <translation type="unfinished">ਆਪਣੇ ਆਪ ਪੁਸ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1007"/>
         <location filename="../src/configdialog.ui" line="1565"/>
         <source>Automatically pull</source>
-        <translation>ਆਵਾਗੰਨ ਪਲੱਗਿੰਗ ਕਰੋ</translation>
+        <translation type="unfinished">ਆਪਣੇ ਆਪ ਪੁੱਲ ਕਰੋ</translation>
     </message>
     <message>
         <source>Extensions:</source>
@@ -445,12 +445,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਆਈਕਨ ਵਰਤੋ</translation>
+        <translation type="unfinished">ਟਰੇ ਆਈਕਨ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">ਇੰਟਰਫੇਸਜ਼</translation>
+        <translation type="unfinished">ਐਕਸਟੈਂਸ਼ਨ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">ਪਿਛਲੀ ਕਲਪਰਡ ਨੂੰ ਮੁੜ ਤੋਂ ਚਾਲ</translation>
+        <translation type="unfinished">ਪਿਛਲਾ ਕਲਿੱਪਬੋਰਡ ਮੁੜ ਬਹਾਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -527,12 +527,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">ਪਾਸਵਰਡ ਤਿਆਰ ਕਰਨ ਦੀ ਪ੍ਰਕਿਰਿਆ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਬਣਾਉਣਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">ਚਰਿੱਤਰਾਂ</translation>
+        <translation type="unfinished">ਅੱਖਰ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -1132,7 +1132,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
-        <translation type="unfinished">%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਐਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਦੁਬਾਰਾ ਐਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਅਜਿਹਾ ਕਰਨ ਲਈ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਬਾਅਦ &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹੋ।</translation>
+        <translation type="unfinished">%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਐਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਚੁਣੀਆਂ ਕੁੰਜੀਆਂ ਲਈ ਦੁਬਾਰਾ ਐਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਅਜਿਹਾ ਕਰਨ ਲਈ ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਬਾਅਦ &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹੋ।</translation>
     </message>
 </context>
 <context>
@@ -1208,7 +1208,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਸਟੋਰ ਦੇ ਫੋਲਡਰ &quot;%2&quot; ਲਈ ਲਿਖੀ ਗਈ ਸੀ, &quot;%3&quot; ਲਈ ਨਹੀਂ, ਅਤੇ ਇਸਨੂੰ ਵਰਤਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕਿਸੇ ਹੋਰ ਨੇ ਇਸਨੂੰ ਇੱਥੇ ਕਾਪੀ ਕੀਤਾ ਹੋਵੇ; ਜੇ ਇਸਦੀ ਬਜਾਏ ਫੋਲਡਰ ਮੂਵ ਕੀਤਾ ਗਿਆ ਸੀ ਜਾਂ ਉਸਦਾ ਨਾਂ ਬਦਲਿਆ ਗਿਆ ਸੀ, ਤਾਂ ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਉੱਤੇ &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹ ਕੇ ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਸੰਭਾਲਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਸੂਚੀ ਉਸ ਥਾਂ ਨਾਲ ਬੰਨ੍ਹ ਜਾਂਦੀ ਹੈ ਜਿੱਥੇ ਇਹ ਹੁਣ ਹੈ।</translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਸਟੋਰ ਦੇ ਫੋਲਡਰ &quot;%2&quot; ਲਈ ਲਿਖੀ ਗਈ ਸੀ, &quot;%3&quot; ਲਈ ਨਹੀਂ, ਅਤੇ ਇਸਨੂੰ ਵਰਤਿਆ ਨਹੀਂ ਜਾਂਦਾ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਕਿਸੇ ਹੋਰ ਨੇ ਇਸਨੂੰ ਇੱਥੇ ਕਾਪੀ ਕੀਤਾ ਹੋਵੇ; ਜੇ ਇਸਦੀ ਬਜਾਏ ਫੋਲਡਰ ਮੂਵ ਕੀਤਾ ਗਿਆ ਸੀ ਜਾਂ ਉਸਦਾ ਨਾਂ ਬਦਲਿਆ ਗਿਆ ਸੀ, ਤਾਂ ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਉੱਤੇ &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹ ਕੇ ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਸੰਭਾਲਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਸੂਚੀ ਉਸ ਥਾਂ ਨਾਲ ਬੰਨ੍ਹ ਜਾਂਦੀ ਹੈ ਜਿੱਥੇ ਇਹ ਹੁਣ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
@@ -1231,12 +1231,12 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
-        <translation type="unfinished">ਜਨਰੇਸ਼ਨ %1 ਸਭ ਤੋਂ ਵੱਧ ਸੰਭਵ ਹੈ, ਇਸ ਲਈ ਇੱਥੇ ਇਸ ਤੋਂ ਨਵੀਂ ਕੋਈ ਸੂਚੀ ਲਿਖੀ ਨਹੀਂ ਜਾ ਸਕਦੀ: %2 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਭੁੱਲ ਜਾਂਦਾ ਹੈ ਜੋ ਇਸ ਡਿਵਾਈਸ ਨੇ ਪਹਿਲਾਂ ਸਵੀਕਾਰ ਕੀਤਾ ਸੀ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਤਰ੍ਹਾਂ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ — &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹ ਕੇ %3।</translation>
+        <translation type="unfinished">ਜਨਰੇਸ਼ਨ %1 ਸਭ ਤੋਂ ਵੱਧ ਸੰਭਵ ਹੈ, ਇਸ ਲਈ ਇੱਥੇ ਇਸ ਤੋਂ ਨਵੀਂ ਕੋਈ ਸੂਚੀ ਲਿਖੀ ਨਹੀਂ ਜਾ ਸਕਦੀ: %2 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਭੁੱਲ ਜਾਂਦਾ ਹੈ ਜੋ ਇਸ ਡਿਵਾਈਸ ਨੇ ਪਹਿਲਾਂ ਸਵੀਕਾਰ ਕੀਤਾ ਸੀ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਤਰ੍ਹਾਂ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ — &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹ ਕੇ %3।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
-        <translation type="unfinished">ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਤਰ੍ਹਾਂ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਜਨਰੇਸ਼ਨ %2 ਲਿਖੀ ਜਾਂਦੀ ਹੈ — &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹ ਕੇ %1। %3 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਭੁੱਲ ਜਾਂਦਾ ਹੈ ਜੋ ਇਸ ਡਿਵਾਈਸ ਨੇ ਪਹਿਲਾਂ ਸਵੀਕਾਰ ਕੀਤਾ ਸੀ।</translation>
+        <translation type="unfinished">ਸਾਈਨਿੰਗ ਕੁੰਜੀ ਦਾ ਧਾਰਕ ਇਸ ਤਰ੍ਹਾਂ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਜਨਰੇਸ਼ਨ %2 ਲਿਖੀ ਜਾਂਦੀ ਹੈ — &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹ ਕੇ %1। %3 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਭੁੱਲ ਜਾਂਦਾ ਹੈ ਜੋ ਇਸ ਡਿਵਾਈਸ ਨੇ ਪਹਿਲਾਂ ਸਵੀਕਾਰ ਕੀਤਾ ਸੀ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="659"/>
@@ -1294,7 +1294,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਵਿੱਚ ਕੋਈ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਨਹੀਂ ਹੈ, ਜਦਕਿ ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ ਇਸਦੀ ਆਈਡੀ %2 ਨਾਲ ਜਾਣਦਾ ਹੈ: ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਹ ਕਿਸੇ ਹੋਰ ਸਟੋਰ ਲਈ ਲਿਖ ਕੇ ਇੱਥੇ ਕਾਪੀ ਕੀਤੀ ਗਈ ਹੋਵੇ, ਜਾਂ ਕਿਸੇ ਪੁਰਾਣੇ QtPass ਨੇ ਲਿਖੀ ਹੋਵੇ। ਦਸਤਖਤ ਕੁੰਜੀ ਵਾਲਾ ਵਿਅਕਤੀ &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹ ਕੇ, ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਸਿਰਿਓਂ ਚੁਣ ਕੇ ਅਤੇ ਸੇਵ ਕਰਕੇ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ; ਇਸ ਨਾਲ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਲਿਖੀ ਜਾਂਦੀ ਹੈ।</translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਵਿੱਚ ਕੋਈ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਨਹੀਂ ਹੈ, ਜਦਕਿ ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ ਇਸਦੀ ਆਈਡੀ %2 ਨਾਲ ਜਾਣਦਾ ਹੈ: ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਹ ਕਿਸੇ ਹੋਰ ਸਟੋਰ ਲਈ ਲਿਖ ਕੇ ਇੱਥੇ ਕਾਪੀ ਕੀਤੀ ਗਈ ਹੋਵੇ, ਜਾਂ ਕਿਸੇ ਪੁਰਾਣੇ QtPass ਨੇ ਲਿਖੀ ਹੋਵੇ। ਦਸਤਖਤ ਕੁੰਜੀ ਵਾਲਾ ਵਿਅਕਤੀ &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹ ਕੇ, ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਸਿਰਿਓਂ ਚੁਣ ਕੇ ਅਤੇ ਸੇਵ ਕਰਕੇ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ; ਇਸ ਨਾਲ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਲਿਖੀ ਜਾਂਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1438,7 +1438,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
-        <translation>ਚੁਣੀਆਂ ਜਾਂਦੀਆਂ ਵਰਤਕਾਰਾਂ ਨੂੰ ਜਾਂਚਣਾ!</translation>
+        <translation type="unfinished">ਚੁਣੇ ਹੋਏ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="420"/>
@@ -2077,7 +2077,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>ਮਾਤਰਾ-ਅਹਿਲੀਤਾ ਵਿਸ਼ਲੇਂ ਖੋਜ</translation>
+        <translation type="unfinished">ਵੱਡੇ-ਛੋਟੇ ਅੱਖਰਾਂ ਦਾ ਫ਼ਰਕ ਨਾ ਕਰਨ ਵਾਲੀ ਖੋਜ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -2087,12 +2087,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>ਕੇਸ ਅਨੁਰੂਪ ਟਿਗਲ ਚੱਲਣਾ</translation>
+        <translation type="unfinished">ਵੱਡੇ-ਛੋਟੇ ਅੱਖਰਾਂ ਦਾ ਫ਼ਰਕ ਨਾ ਕਰਨ ਵਾਲਾ ਚਾਲੂ/ਬੰਦ ਬਟਨ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>ਕੇਸ ਅਨੁਰੂਪ ਸਾਂਝੀ ਵਿਸ਼ਵਾਸਯੋਗ ਖੋਜ ਟਿਗਲ ਚੱਲਣਾ</translation>
+        <translation type="unfinished">ਵੱਡੇ-ਛੋਟੇ ਅੱਖਰਾਂ ਦਾ ਫ਼ਰਕ ਨਾ ਕਰਨ ਵਾਲੀ ਸਮੱਗਰੀ ਖੋਜ ਚਾਲੂ/ਬੰਦ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
@@ -2117,7 +2117,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">ਪਾਸਵਰਡ ਸਮਗਰੀ ਵਿੱਚ ਖੋਜ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਮੱਗਰੀ ਵਿੱਚ ਖੋਜੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2167,7 +2167,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
-        <translation>ਜੋੜ ਫੋਲਡਰ</translation>
+        <translation type="unfinished">ਫੋਲਡਰ ਜੋੜੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
@@ -2181,7 +2181,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.ui" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
-        <translation>ਮਾਰੋ</translation>
+        <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="462"/>
@@ -2201,12 +2201,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="473"/>
         <source>Push</source>
-        <translation>ਟਸੈਂਡ ਕਰੋ</translation>
+        <translation type="unfinished">ਪੁਸ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
-        <translation>ਜ਼ਿਲ ਟਸੈਂਡ ਕਰੋ</translation>
+        <translation type="unfinished">ਗਿਟ ਪੁਸ਼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="481"/>
@@ -2216,13 +2216,13 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>ਜੀਟ ਨਾਲ ਪਲਾਫ ਕਰੋ</translation>
+        <translation type="unfinished">ਗਿਟ ਪੁੱਲ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
         <location filename="../src/mainwindow.cpp" line="1471"/>
         <source>Users</source>
-        <translation>ਵਿਸ਼ਵਾਸੀ</translation>
+        <translation type="unfinished">ਵਰਤੋਂਕਾਰ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="492"/>
@@ -3015,7 +3015,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>ਪੈਸਵਰਡ ਦਿਖਾਉਣਾ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
@@ -3197,8 +3197,8 @@ Continue?</source>
         <location filename="../src/profileinit.cpp" line="160"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
-            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀ ਫਾਈਲ ਹੈ; ਇਸਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਿਸ਼ਵਾਸੀ ਖੋਲ੍ਹੋ।</numerusform>
-            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ ਵਿਸ਼ਵਾਸੀ ਖੋਲ੍ਹੋ।</numerusform>
+            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀ ਫਾਈਲ ਹੈ; ਇਸਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹੋ।</numerusform>
+            <numerusform>%1 ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ %n ਏਨਕ੍ਰਿਪਟ ਕੀਤੀਆਂ ਫਾਈਲਾਂ ਹਨ; ਉਹਨਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕੀਤਾ ਗਿਆ। ਇਹ ਕਰਨ ਲਈ ਪ੍ਰੋਫਾਈਲ &apos;ਤੇ ਜਾਓ ਅਤੇ &quot;ਵਰਤੋਂਕਾਰ&quot; ਖੋਲ੍ਹੋ।</numerusform>
         </translation>
     </message>
     <message>
@@ -3344,13 +3344,13 @@ Continue?</source>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation type="unfinished">ਪੈਸਵਰਡ ਦਿਖਾਉਣਾ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="32"/>
         <source>Hide password</source>
-        <translation type="unfinished">ਪੱਸਵਰਡ ਦੀ ਗੋਪਨੀਯਤਾ ਰੱਖੋ</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਲੁਕਾਓ</translation>
     </message>
 </context>
 <context>
@@ -3627,7 +3627,7 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>ਪੜ੍ਹ ਅਸਰ ਵਿੱਚ ਉਪਭੋਗਤਾ ਵਰਗੇ ਵਰਕਰਾਂ ਨੂੰ ਦੇਖੋ</translation>
+        <translation type="unfinished">ਪੜ੍ਹਨ ਦੀ ਪਹੁੰਚ ਵਾਲੇ ਵਰਤੋਂਕਾਰ</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

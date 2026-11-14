@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ใช้ไอคอนถาด</translation>
+        <translation type="unfinished">แสดงไอคอนในถาดระบบ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">คืนค่าจากคลิปบอร์ดก่อนหน้า</translation>
+        <translation type="unfinished">คืนค่าคลิปบอร์ดก่อนหน้า</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>

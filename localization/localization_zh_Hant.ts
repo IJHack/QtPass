@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">使用托盤圖標</translation>
+        <translation type="unfinished">顯示系統匣圖示</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -564,7 +564,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">此外，請隱藏其他秘密：</translation>
+        <translation type="unfinished">同時隱藏其他機密資訊：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>

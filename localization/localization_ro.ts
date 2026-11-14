@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Caractere</translation>
+        <translation type="unfinished">caractere</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -512,17 +512,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">sistem</translation>
+        <translation type="unfinished">Sistem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">utilizați pictograma în bară</translation>
+        <translation type="unfinished">Afișează pictograma în bara de sistem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">extensii</translation>
+        <translation type="unfinished">Extensii</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
@@ -538,7 +538,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Secunde</translation>
+        <translation type="unfinished">secunde</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurați clipboardul anterior</translation>
+        <translation type="unfinished">Restaurează conținutul anterior al clipboardului</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,7 +564,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">De asemenea, ascunde și alte secrete:</translation>
+        <translation type="unfinished">Ascunde și alte secrete:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -574,7 +574,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Setări implicite</translation>
+        <translation type="unfinished">Implicite</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -599,7 +599,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">Generarea parolei</translation>
+        <translation type="unfinished">Generarea parolelor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
@@ -1708,7 +1708,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 este, sau se află în spatele unui link simbolic sau punct de legătură după extragere. A ceea ce indică nu face parte din stocarea parolelor și este lăsat așa cum este.</translation>
+        <translation type="unfinished">%1 este sau se află în spatele unei legături simbolice sau joncțiuni după pull. Ceea ce indică aceasta nu face parte din depozitul de parole și rămâne neatins.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2268,7 +2268,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Caută în conținutul parolei</translation>
+        <translation type="unfinished">Caută în conținutul parolelor</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2379,7 +2379,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="528"/>
         <source>Settings</source>
-        <translation type="unfinished">setări</translation>
+        <translation type="unfinished">Setări</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="531"/>
@@ -2409,7 +2409,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Renunță</translation>
+        <translation type="unfinished">&amp;Ieșire</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="556"/>
@@ -3115,7 +3115,7 @@ Continuați?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Înregistrarea a fost salvată, dar înregistrarea în Git a eșuat. Informațiile raportate:
+        <translation type="unfinished">Intrarea a fost salvată în depozit, dar înregistrarea ei în Git a eșuat. Informațiile raportate:
 
 %1</translation>
     </message>
@@ -3870,7 +3870,7 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/trayicon.cpp" line="55"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Renunță</translation>
+        <translation type="unfinished">&amp;Ieșire</translation>
     </message>
 </context>
 <context>

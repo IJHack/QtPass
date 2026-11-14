@@ -294,7 +294,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1548"/>
         <source>Git settings for this profile; they replace the ones on the Git page while it is active</source>
-        <translation type="unfinished">මෙම පැතිකඩ සඳහා ගිත් සැකසුම්; එය සක්‍රිය වන අතරතුර ඒවා ගිත් පිටුවේ සැකසුම් ප්‍රතිස්ථාපනය කරයි</translation>
+        <translation type="unfinished">මෙම පැතිකඩ සඳහා Git සැකසුම්; එය සක්‍රිය වන අතරතුර ඒවා Git පිටුවේ සැකසුම් ප්‍රතිස්ථාපනය කරයි</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1594"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">පද්ධති තැටි අයිකනය භාවිත කරන්න</translation>
+        <translation type="unfinished">තැටි අයිකනය පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
         <source>Extensions</source>
-        <translation type="unfinished">විස්තාරක</translation>
+        <translation type="unfinished">දිගු</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="198"/>
@@ -574,7 +574,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">සාමාන්‍ය</translation>
+        <translation type="unfinished">පෙරනිමි</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -643,7 +643,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>Template</source>
-        <translation>මූලික පාත්වය</translation>
+        <translation type="unfinished">සැකිල්ල</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -914,7 +914,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/configdialog.ui" line="80"/>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Git</source>
-        <translation>ගිත්</translation>
+        <translation type="unfinished">Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1170"/>
@@ -1620,7 +1620,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="997"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>ගිත් තත්ත්වය පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීම අත්හිටුවන ලදී.</translation>
+        <translation type="unfinished">Git තත්ත්වය පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීම අත්හිටුවන ලදී.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1008"/>
@@ -1809,8 +1809,8 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/imitatepass.cpp" line="1354"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
-            <numerusform>Push කරන්නේ නැත: ගොනු %n ක් නැවත සංකේතනය කිරීමට අසමත් විය</numerusform>
-            <numerusform>Push කරන්නේ නැත: ගොනු %n ක් නැවත සංකේතනය කිරීමට අසමත් විය</numerusform>
+            <numerusform>තල්ලු කරන්නේ නැත: ගොනු %n ක් නැවත සංකේතනය කිරීමට අසමත් විය</numerusform>
+            <numerusform>තල්ලු කරන්නේ නැත: ගොනු %n ක් නැවත සංකේතනය කිරීමට අසමත් විය</numerusform>
         </translation>
     </message>
     <message>
@@ -2112,7 +2112,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="473"/>
         <source>Push</source>
-        <translation>හරහා</translation>
+        <translation type="unfinished">තල්ලු කරන්න</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -2155,12 +2155,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="476"/>
         <source>Git push</source>
-        <translation>ගිත් පළස්</translation>
+        <translation type="unfinished">Git තල්ලු කරන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="484"/>
         <source>Git pull</source>
-        <translation>ගිත් කුල්</translation>
+        <translation type="unfinished">Git ලබා ගන්න</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -2372,7 +2372,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;ඉවත් වන්න</translation>
+        <translation type="unfinished">(&amp;Q) ඉවත් වන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="556"/>
@@ -2612,14 +2612,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
-        <translation>මුරපද ඇත්තුන්</translation>
+        <translation type="unfinished">ෆෝල්ඩරයක් එක් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
         <location filename="../src/mainwindow.cpp" line="1470"/>
         <source>Add password</source>
-        <translation>විසිත්ව කළ පහලය</translation>
+        <translation type="unfinished">මුරපදයක් එක් කරන්න</translation>
     </message>
     <message>
         <source>New Folder: 
@@ -3215,7 +3215,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>පවුල කණගම</translation>
+        <translation type="unfinished">මුරපදය පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
@@ -3467,7 +3467,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="220"/>
         <source>Git</source>
-        <translation type="unfinished">ගිත්</translation>
+        <translation type="unfinished">Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
@@ -3544,7 +3544,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation type="unfinished">පවුල කණගම</translation>
+        <translation type="unfinished">මුරපදය පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>

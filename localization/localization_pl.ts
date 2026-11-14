@@ -1668,7 +1668,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation>%1 jest dowiązaniem symbolicznym lub skrzyżowaniem po pobraniu lub znajduje się za nim. To, na co ono wskazuje, nie jest częścią magazynu haseł i&#xa0;pozostaje nietknięte.</translation>
+        <translation type="unfinished">Po pobraniu zmian (pull) %1 jest dowiązaniem symbolicznym lub punktem połączenia (junction) albo znajduje się za takim dowiązaniem. To, na co wskazuje, nie należy do magazynu haseł i&#xa0;pozostaje nietknięte.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>

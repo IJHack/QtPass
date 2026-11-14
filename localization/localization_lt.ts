@@ -11,12 +11,12 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Veiksmas &quot;Panaudoti iš kopijos&quot;</translation>
+        <translation type="unfinished">Iškarpinė atkurta</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
-        <translation>Iškurto kopijavimo langelio turinį</translation>
+        <translation type="unfinished">Iškarpinė išvalyta</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="185"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Naudoti dėklo piktogramą</translation>
+        <translation type="unfinished">Rodyti piktogramą sistemos dėkle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -465,18 +465,18 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Įgalinti turinio paieškojimą</translation>
+        <translation type="unfinished">Įjungti paiešką turinyje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekundės</translation>
+        <translation type="unfinished">sek.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Kai kopijavimo siužė išvaloma, atstatykite tai, kas buvo ten anksčiau, kaip ir „pass -c“, jeigu tuo tarpu nebuvo kopijuota kita informacija. Tik tekstas: formatavimas neatstatomas. Šis tekstas išlieka atmintyje iki tol. Kai kopijavimo siužę negalima skaityti be dėmesio (kai kurie Wayland kompiuteriniai terminalai), ji vietoj to išvaloma.</translation>
+        <translation type="unfinished">Kai iškarpinė išvaloma, į ją grąžinama tai, kas joje buvo prieš kopijavimą, kaip tai daro pass -c, nebent tuo metu buvo nukopijuota kas nors kita. Tik tekstas: formatavimas neatkuriamas. Iki tol tas tekstas lieka atmintyje. Kur iškarpinės negalima nuskaityti be fokuso (kai kuriuose Wayland darbalaukiuose), ji vietoj to išvaloma.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Taip pat, paslėpk kitus duomenis:</translation>
+        <translation type="unfinished">Taip pat slėpti kitas paslaptis:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Simboliai</translation>
+        <translation type="unfinished">simbolių</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -2309,7 +2309,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Uždaryti</translation>
+        <translation type="unfinished">&amp;Išeiti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="556"/>
@@ -2877,7 +2877,7 @@ Tęsti?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Įrašas buvo išsaugotas, tačiau įrašymas į &quot;Git&quot; nepavyko. Pranešta:
+        <translation type="unfinished">Įrašas išsaugotas saugykloje, tačiau jo įrašyti į Git nepavyko. Pranešta:
 
 %1</translation>
     </message>
@@ -3001,7 +3001,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Vardas</translation>
+        <translation type="unfinished">Pavadinimas</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>

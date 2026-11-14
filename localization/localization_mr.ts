@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ट्रे आयकॉन वापरा</translation>
+        <translation type="unfinished">ट्रे आयकॉन दाखवा</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">इतर गुपिते लपवा:</translation>
+        <translation type="unfinished">इतर गुपितेही लपवा:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>

@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Omogućiti pretraživanje sadržaja</translation>
+        <translation type="unfinished">Omogući pretraživanje sadržaja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Obnovi prethodni međuspremnik</translation>
+        <translation type="unfinished">Vrati prethodni sadržaj međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -574,12 +574,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Podrazumijevano</translation>
+        <translation type="unfinished">Zadano</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Vratite zadane vrijednosti: PIN, šifre za kartice, ključi, tokeni, kodovi za oporavak i slično.</translation>
+        <translation type="unfinished">Vratite zadane riječi: PIN, kodove kartica, ključeve, tokene, kodove za oporavak i slično.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1433,7 +1433,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nije unutar spremišta lozinki, ili ime mape sadrži redni prekid ili drugi kontrolni znak, koji potpisana lista ne može snimiti.</translation>
+        <translation type="unfinished">%1 nije unutar spremišta lozinki ili ime mape na putu sadrži prijelom retka ili drugi kontrolni znak, koji potpisana lista ne može zabilježiti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -2300,7 +2300,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Pretražite sadržaj lozinke</translation>
+        <translation type="unfinished">Pretražite sadržaj lozinki</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3147,7 +3147,7 @@ Nastaviti?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Ulazak je spremljen u spremište, ali snimanje u Git-u nije uspjelo. To što je prijavljeno:
+        <translation type="unfinished">Unos je spremljen u spremište, ali bilježenje u Git nije uspjelo. Prijavljeno je:
 
 %1</translation>
     </message>
@@ -3159,7 +3159,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 nije u spremištu lozinki. Primaoci su postavljeni za spremište ili mapu unutar njega.</translation>
+        <translation type="unfinished">%1 nije u spremištu lozinki. Primatelji se postavljaju za spremište ili mapu u njemu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

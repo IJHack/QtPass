@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Utiliser l&apos;icône dans la barre des tâches</translation>
+        <translation type="unfinished">Afficher l&apos;icône dans la zone de notification</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -244,7 +244,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Secondes</translation>
+        <translation type="unfinished">secondes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Cacher d&apos;autres informations confidentielles :</translation>
+        <translation type="unfinished">Cacher aussi d&apos;autres informations confidentielles :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Paramètres par défaut</translation>
+        <translation type="unfinished">Par défaut</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -304,7 +304,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Caractères</translation>
+        <translation type="unfinished">caractères</translation>
     </message>
     <message>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
@@ -2112,7 +2112,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="251"/>
         <source>No password store backend available</source>
-        <translation type="unfinished">Aucun programme de stockage des mots de passe disponible</translation>
+        <translation type="unfinished">Aucun backend de magasin de mots de passe disponible</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="285"/>
@@ -2177,7 +2177,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Rechercher à l&apos;intérieur du contenu du mot de passe</translation>
+        <translation type="unfinished">Rechercher dans le contenu des mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -2739,7 +2739,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Ce nom pointerait en dehors du coffre de mots de passe. Veuillez choisir un autre nom.</translation>
+        <translation type="unfinished">Ce nom pointerait en dehors du magasin de mots de passe. Veuillez choisir un autre nom.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -3078,7 +3078,7 @@ Continuer&#x202f;?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">L&apos;entrée est enregistrée, mais son ajout à Git a échoué. Les informations suivantes ont été signalées :
+        <translation type="unfinished">L&apos;entrée est enregistrée dans le magasin, mais son ajout à Git a échoué. Les informations suivantes ont été signalées :
 
 %1</translation>
     </message>

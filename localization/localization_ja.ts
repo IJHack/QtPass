@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">システムトレイを使用する</translation>
+        <translation type="unfinished">トレイアイコンを表示する</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -2258,7 +2258,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">パスワードの内容内を検索</translation>
+        <translation type="unfinished">パスワードの内容を検索</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3222,7 +3222,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation type="unfinished">名前</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>

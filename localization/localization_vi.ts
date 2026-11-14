@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Sao chép/dán đã được khôi phục</translation>
+        <translation type="unfinished">Đã khôi phục clipboard</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Sử dụng biểu tượng khay</translation>
+        <translation type="unfinished">Hiển thị biểu tượng khay hệ thống</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -471,7 +471,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Giây</translation>
+        <translation type="unfinished">giây</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Ký tự</translation>
+        <translation type="unfinished">ký tự</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>

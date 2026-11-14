@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Tegn</translation>
+        <translation type="unfinished">tegn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -538,7 +538,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunder</translation>
+        <translation type="unfinished">sekunder</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>

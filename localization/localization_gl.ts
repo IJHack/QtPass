@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Agochar outros segredos:</translation>
+        <translation type="unfinished">Agochar tamén outros segredos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -628,7 +628,7 @@
         <location filename="../src/configdialog.ui" line="1604"/>
         <location filename="../src/configdialog.ui" line="1607"/>
         <source>Choose the password store folder</source>
-        <translation>Elixe o cartafol para password store</translation>
+        <translation type="unfinished">Elixe o cartafol do almacén de contrasinais</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -1191,13 +1191,13 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Fallo ao crear password-store en: %1</translation>
+        <translation type="unfinished">Non se puido crear o almacén de contrasinais en: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Password-store non inicializada</translation>
+        <translation type="unfinished">O almacén de contrasinais non está inicializado</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1401,7 +1401,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Actualizando password-store</translation>
+        <translation type="unfinished">Actualizando o almacén de contrasinais</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -2039,7 +2039,7 @@ A re-cifraxe non rematou, así que algunhas ou todas as entradas seguen cifradas
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Non existe límite para a lonxitude da frase de apso, e debes elexila poñendo coidado. Desde o plano da seguridade, a frase de paso desbloquea a chave privada e é un dos puntos máis febles en GnuPG (e outros sistemas de cifrado con chave pública) porque é a única protección que tes se outra persoa obtén a túa chave privada.&lt;br/&gt;Idealmente, a frase de paso debería non usar palabras de diccionario e misturar maiúsculas e minúsculas con caracteres non alfabéticos.&lt;br/&gt;Unha boa frase de paso é crítica para un uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Non existe límite para a lonxitude da frase de paso, e debes elexila poñendo coidado. Desde o plano da seguridade, a frase de paso desbloquea a chave privada e é un dos puntos máis febles en GnuPG (e outros sistemas de cifrado con chave pública) porque é a única protección que tes se outra persoa obtén a túa chave privada.&lt;br/&gt;Idealmente, a frase de paso debería non usar palabras de diccionario e misturar maiúsculas e minúsculas con caracteres non alfabéticos.&lt;br/&gt;Unha boa frase de paso é crítica para un uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
@@ -2277,7 +2277,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>Actualizando password-store</translation>
+        <translation type="unfinished">Actualizando o almacén de contrasinais</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -2463,7 +2463,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="564"/>
         <source>&amp;FAQ</source>
-        <translation type="unfinished">&amp;FAQ</translation>
+        <translation type="unfinished">Preguntas &amp;frecuentes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
@@ -3754,7 +3754,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
-        <translation type="unfinished">Elixe o cartafol para password store</translation>
+        <translation type="unfinished">Elixe o cartafol do almacén de contrasinais</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="403"/>

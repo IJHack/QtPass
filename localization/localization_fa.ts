@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">استفاده از آیکون سینی</translation>
+        <translation type="unfinished">نمایش آیکون سینی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -476,12 +476,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">هنگامی که کلیبرد پاک شود، محتوای قبلی آن را بازگردانید، همانطور که &quot;pass -c&quot; انجام می دهد، مگر اینکه در همین حین چیزی دیگری کپی شده باشد. فقط متن: قالب‌بندی بازیابی نمی‌شود. این متن تا آن زمان در حافظه باقی می‌ماند. جایی که بدون تمرکز روی کلیبرد امکان خواندن وجود ندارد (برخی از دسکتاپ‌های Wayland)، به جای آن پاک می شود.</translation>
+        <translation type="unfinished">هنگامی که کلیپ‌بورد پاک می‌شود، آنچه پیش از کپی روی آن بود بازگردانده می‌شود، همان‌طور که pass -c انجام می‌دهد، مگر اینکه در این میان چیز دیگری کپی شده باشد. فقط متن: قالب‌بندی بازیابی نمی‌شود. آن متن تا آن زمان در حافظه می‌ماند. جایی که کلیپ‌بورد بدون فوکوس خوانده نمی‌شود (برخی دسکتاپ‌های Wayland)، به‌جای آن پاک می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">بازگرداندن کپی پیست قبلی</translation>
+        <translation type="unfinished">بازگرداندن کلیپ‌بورد قبلی</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">همچنین، سایر اسرار را پنهان کنید:</translation>
+        <translation type="unfinished">مخفی کردن رازهای دیگر نیز:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">کاراکترها</translation>
+        <translation type="unfinished">کاراکتر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">از یک ریپازیتوری Git در پوشه‌ای بالاتر از محل ذخیره استفاده کنید</translation>
+        <translation type="unfinished">استفاده از مخزن Git در پوشه‌ای بالاتر از مخزن رمز عبور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>

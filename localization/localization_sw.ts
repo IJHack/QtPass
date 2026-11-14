@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Tumia Ikoni ya Trey</translation>
+        <translation type="unfinished">Onyesha ikoni ya trey</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -466,7 +466,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunde</translation>
+        <translation type="unfinished">sekunde</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Fichia pia siri zingine:</translation>
+        <translation type="unfinished">Ficha pia siri nyingine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">chaguo la msingi</translation>
+        <translation type="unfinished">Chaguo-msingi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -527,12 +527,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">Uundaji wa Nenosiri</translation>
+        <translation type="unfinished">Uundaji wa nenosiri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Herufi</translation>
+        <translation type="unfinished">herufi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>

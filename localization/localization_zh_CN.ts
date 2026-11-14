@@ -547,7 +547,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">此外，隐藏其他秘密：</translation>
+        <translation type="unfinished">同时隐藏其他机密信息：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>

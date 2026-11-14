@@ -197,7 +197,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Carateres</translation>
+        <translation type="unfinished">caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1506"/>
         <source>Path to the password store directory</source>
-        <translation>Caminho para o diretório de loja de senhas</translation>
+        <translation type="unfinished">Caminho para o diretório do repositório de senhas</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Utilizar Ícone da Bandeja</translation>
+        <translation type="unfinished">Mostrar ícone na bandeja do sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -497,7 +497,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Segundos</translation>
+        <translation type="unfinished">segundos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurar a área de transferência anterior</translation>
+        <translation type="unfinished">Restaurar o conteúdo anterior da área de transferência</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -523,7 +523,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Esconder outros segredos:</translation>
+        <translation type="unfinished">Ocultar também outros segredos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -558,7 +558,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">Geração da senha</translation>
+        <translation type="unfinished">Geração de senhas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 não está armazenado na lista de senhas, ou o nome de uma pasta contém um caractere de controle ou quebra de linha, o que impede a gravação por uma lista assinada.</translation>
+        <translation type="unfinished">%1 não está dentro do repositório de senhas, ou o nome de uma pasta no caminho contém uma quebra de linha ou outro caractere de controle, que uma lista assinada não consegue registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1637,7 +1637,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Atualizando a loja de senhas</translation>
+        <translation type="unfinished">Atualizando o repositório de senhas</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -2133,7 +2133,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
-        <translation>Gerir quem pode ler a password na pasta</translation>
+        <translation type="unfinished">Gerenciar quem pode ler as senhas na pasta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
@@ -2144,7 +2144,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Pesquisar dentro do conteúdo da senha</translation>
+        <translation type="unfinished">Pesquisar no conteúdo das senhas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -2255,7 +2255,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>A atualizar a password-store</translation>
+        <translation type="unfinished">Atualizando o repositório de senhas</translation>
     </message>
     <message>
         <source>Password hidden</source>
@@ -2383,7 +2383,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Remover password?</translation>
+        <translation type="unfinished">Remover senha?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -2449,7 +2449,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="731"/>
         <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Search password</source>
-        <translation>Procurar password</translation>
+        <translation type="unfinished">Procurar senha</translation>
     </message>
     <message>
         <source>Search inside password content (pass grep)</source>
@@ -2649,7 +2649,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Password and content hidden</source>
-        <translation>Password e conteúdo ocultos</translation>
+        <translation type="unfinished">Senha e conteúdo ocultos</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="870"/>
@@ -3014,7 +3014,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Não foi possível gerar password. Não existe nenhum caracter para escolher do grupo especificado na configuração!</translation>
+        <translation type="unfinished">Não foi possível gerar a senha. Não há nenhum caractere para escolher no conjunto definido na configuração!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="404"/>
@@ -3061,7 +3061,7 @@ Continua?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">A entrada foi salva, mas a gravação no Git falhou. O que foi relatado:
+        <translation type="unfinished">A entrada foi salva no repositório, mas o registro no Git falhou. O que foi relatado:
 
 %1</translation>
     </message>
@@ -3073,7 +3073,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 não está armazenado na área de senhas. Os destinatários estão definidos para a área ou uma pasta dentro dela.</translation>
+        <translation type="unfinished">%1 não está dentro do repositório de senhas. Os destinatários são definidos para o repositório ou para uma pasta dentro dele.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3205,7 +3205,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>Mostrar password</translation>
+        <translation type="unfinished">Mostrar senha</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>

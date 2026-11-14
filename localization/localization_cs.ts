@@ -179,7 +179,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Zobrazit ikonu</translation>
+        <translation type="unfinished">Zobrazit ikonu v oznamovací oblasti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -619,7 +619,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Obnovit předchozí schránku</translation>
+        <translation type="unfinished">Obnovit předchozí obsah schránky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -635,7 +635,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Skryté jsou i další tajemství:</translation>
+        <translation type="unfinished">Skrýt i další tajné údaje:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -684,7 +684,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Použijte repozitář Git v adresáři nad uložením</translation>
+        <translation type="unfinished">Použít repozitář Git v adresáři nad úložištěm</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -2170,7 +2170,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Vyhledávání uvnitř obsahu hesla</translation>
+        <translation type="unfinished">Vyhledávat v obsahu hesel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -3203,7 +3203,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Jméno</translation>
+        <translation type="unfinished">Název</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>

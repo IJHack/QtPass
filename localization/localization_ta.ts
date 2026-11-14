@@ -512,12 +512,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="139"/>
         <source>System</source>
-        <translation type="unfinished">அமைப்பு</translation>
+        <translation type="unfinished">கணினி</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">ட்ராயிகானைப் பயன்படுத்தவும்</translation>
+        <translation type="unfinished">தட்டுச் சின்னத்தைக் காட்டு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -548,7 +548,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">முந்தைய கிளிப் போர்டை மீட்டமை</translation>
+        <translation type="unfinished">முந்தைய இடைநிலைப்பலகையை மீட்டமை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -599,7 +599,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">கடவுச்சொல் செனரேட்டர்</translation>
+        <translation type="unfinished">கடவுச்சொல் உருவாக்கம்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
@@ -1657,7 +1657,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
+        <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தைப் புதுப்பித்தல்</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -2527,7 +2527,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
+        <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தைப் புதுப்பித்தல்</translation>
     </message>
     <message>
         <source>Can not edit</source>

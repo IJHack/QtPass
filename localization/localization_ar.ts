@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
-        <translation>مركب على لوح مشبك</translation>
+        <translation type="unfinished">تم النسخ إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
@@ -163,7 +163,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="564"/>
         <source>No line wrapping</source>
-        <translation>لا غلاف</translation>
+        <translation type="unfinished">بدون التفاف الأسطر</translation>
     </message>
     <message>
         <source>Show process output</source>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="178"/>
         <source>Always on top</source>
-        <translation>دائما على القمة</translation>
+        <translation type="unfinished">دائمًا في المقدمة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="85"/>
@@ -317,17 +317,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Select password storage program:</source>
-        <translation>برنامج تخزين كلمة السر المختارة:</translation>
+        <translation type="unfinished">اختر برنامج تخزين كلمات المرور:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1121"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;مرور الاستخدام</translation>
+        <translation type="unfinished">استخدام &amp;pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>فطري</translation>
+        <translation type="unfinished">أصلي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -344,12 +344,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1196"/>
         <source>Generate</source>
-        <translation>الجيل</translation>
+        <translation type="unfinished">توليد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1199"/>
         <source>Generate GPG key pair</source>
-        <translation>زوج مفاتيح GPG</translation>
+        <translation type="unfinished">توليد زوج مفاتيح GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1232"/>
@@ -360,12 +360,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1248"/>
         <source>Pass</source>
-        <translation>المرور</translation>
+        <translation type="unfinished">Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1259"/>
         <source>pass</source>
-        <translation>المرور</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1272"/>
@@ -400,7 +400,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="90"/>
         <source>Profiles</source>
-        <translation>الملامح</translation>
+        <translation type="unfinished">الملفات الشخصية</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="70"/>
@@ -415,7 +415,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation>استخدم أيقونة الدرج</translation>
+        <translation type="unfinished">إظهار أيقونة صينية النظام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -468,7 +468,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">إخفاء أسرار أخرى:</translation>
+        <translation type="unfinished">إخفاء أسرار أخرى أيضًا:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -478,7 +478,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">الإعدادات الافتراضية</translation>
+        <translation type="unfinished">الافتراضي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -611,12 +611,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1410"/>
         <source>Add</source>
-        <translation>مضافا إليها</translation>
+        <translation type="unfinished">إضافة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1428"/>
         <source>Delete</source>
-        <translation>تحذف</translation>
+        <translation type="unfinished">حذف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1513"/>
@@ -686,7 +686,7 @@
         <location filename="../src/configdialog.cpp" line="350"/>
         <location filename="../src/configdialog.cpp" line="355"/>
         <source>This field is required</source>
-        <translation>هذا المجال مطلوب</translation>
+        <translation type="unfinished">هذا الحقل مطلوب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="352"/>
@@ -1130,7 +1130,7 @@ e-mail</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation>مخزن كلمة السر غير مبدئي</translation>
+        <translation type="unfinished">لم تتم تهيئة مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1335,7 +1335,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="629"/>
         <location filename="../src/realpass.cpp" line="93"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>توقيع النسبة المئوية %1 غير صحيح.</translation>
+        <translation type="unfinished">توقيع %1 غير صالح.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="193"/>
@@ -1402,7 +1402,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="434"/>
         <source>Failed to sign %1.</source>
-        <translation>عدم التوقيع على النسبة المئوية %1.</translation>
+        <translation type="unfinished">فشل توقيع %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="574"/>
@@ -1575,7 +1575,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="996"/>
         <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Backup commit failed</source>
-        <translation>المساندة فشلت</translation>
+        <translation type="unfinished">فشل الإيداع الاحتياطي</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="997"/>
@@ -1617,7 +1617,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>تحديث كلمة السر</translation>
+        <translation type="unfinished">تحديث مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -1993,7 +1993,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
         <source>Repeat pass</source>
-        <translation>تمريرة متكررة</translation>
+        <translation type="unfinished">تكرار عبارة المرور</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
@@ -2023,12 +2023,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
-        <translation>الاسم غير الرسمي</translation>
+        <translation type="unfinished">اسم غير صالح</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="197"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>يجب أن يكون الاسم على الأقل 5 شخصيات طويلة.</translation>
+        <translation type="unfinished">يجب أن يتكون الاسم من 5 أحرف على الأقل.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="207"/>
@@ -2066,7 +2066,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>نبذة مختارة</translation>
+        <translation type="unfinished">اختر الملف الشخصي</translation>
     </message>
     <message>
         <source>Search Password</source>
@@ -2195,7 +2195,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="553"/>
         <source>&amp;Quit</source>
-        <translation>&amp;يترك</translation>
+        <translation type="unfinished">&amp;خروج</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="556"/>
@@ -2252,21 +2252,21 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
-        <translation>يضاف الملف</translation>
+        <translation type="unfinished">إضافة مجلد</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
         <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Edit</source>
-        <translation>يحرر</translation>
+        <translation type="unfinished">تحرير</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
-        <translation>تحذف</translation>
+        <translation type="unfinished">حذف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="462"/>
@@ -2276,7 +2276,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="465"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>إنتاج مكتب المدعي العام ونسخة إلى لوح النسيج</translation>
+        <translation type="unfinished">توليد رمز OTP ونسخه إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="468"/>
@@ -2301,19 +2301,19 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="481"/>
         <source>Update</source>
-        <translation>آخر</translation>
+        <translation type="unfinished">تحديث</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="731"/>
         <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Search password</source>
-        <translation>كلمة مرور البحث</translation>
+        <translation type="unfinished">البحث عن كلمة مرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">البحث داخل محتوى كلمة السر</translation>
+        <translation type="unfinished">البحث داخل محتوى كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -2344,7 +2344,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
-        <translation>من يستطيع قراءة كلمة السر في الملف</translation>
+        <translation type="unfinished">إدارة من يمكنه قراءة كلمات المرور في المجلد</translation>
     </message>
     <message>
         <source>Config</source>
@@ -2367,7 +2367,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>تحديث كلمة السر</translation>
+        <translation type="unfinished">تحديث مخزن كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="650"/>
@@ -2492,7 +2492,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Invalid name</source>
-        <translation>الاسم غير الرسمي</translation>
+        <translation type="unfinished">اسم غير صالح</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1042"/>
@@ -2530,12 +2530,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1117"/>
         <source>Delete folder?</source>
-        <translation>تحذف الملف؟</translation>
+        <translation type="unfinished">حذف المجلد؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>تحذف كلمة السر؟</translation>
+        <translation type="unfinished">حذف كلمة المرور؟</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1%2?</source>
@@ -2554,7 +2554,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>Open folder with file manager</source>
-        <translation>ملف مفتوح مع مدير ملف</translation>
+        <translation type="unfinished">فتح المجلد في مدير الملفات</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
@@ -2756,7 +2756,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
-        <translation>لم يخلق الملف: %1</translation>
+        <translation type="unfinished">تعذر إنشاء المجلد: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1570"/>
@@ -2766,7 +2766,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
-        <translation>ملف الاسم</translation>
+        <translation type="unfinished">إعادة تسمية الملف</translation>
     </message>
     <message>
         <source>Rename Folder To: </source>
@@ -2795,7 +2795,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <location filename="../src/mainwindow.cpp" line="1681"/>
         <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
-        <translation>كلمات السر المُبَتة</translation>
+        <translation type="unfinished">إعادة تشفير كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1682"/>
@@ -2868,7 +2868,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
         <source>No characters chosen</source>
-        <translation>لا أحد يختار</translation>
+        <translation type="unfinished">لم يتم اختيار أي أحرف</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="266"/>
@@ -3059,17 +3059,17 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="130"/>
         <source>Generate</source>
-        <translation>الجيل</translation>
+        <translation type="unfinished">توليد</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>كلمة المرور</translation>
+        <translation type="unfinished">إظهار كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
         <source>Character set:</source>
-        <translation>الرمز:</translation>
+        <translation type="unfinished">مجموعة الأحرف:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="169"/>
@@ -3087,7 +3087,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="174"/>
         <source>Alphabetical</source>
-        <translation>ألفا بيتسي</translation>
+        <translation type="unfinished">أبجدي</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="179"/>
@@ -3097,7 +3097,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="184"/>
         <source>Custom</source>
-        <translation>العرف</translation>
+        <translation type="unfinished">مخصص</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="198"/>
@@ -3329,7 +3329,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
-        <translation>المرور</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="222"/>
@@ -3402,7 +3402,7 @@ Continue?</source>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation>كلمة المرور</translation>
+        <translation type="unfinished">إظهار كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
@@ -3660,12 +3660,12 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/trayicon.cpp" line="41"/>
         <source>&amp;Show</source>
-        <translation>&amp;شو</translation>
+        <translation type="unfinished">&amp;إظهار</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="43"/>
         <source>&amp;Hide</source>
-        <translation>&amp;هايدي</translation>
+        <translation type="unfinished">&amp;إخفاء</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="46"/>
@@ -3675,17 +3675,17 @@ git config --global user.email you@example.org
     <message>
         <location filename="../src/trayicon.cpp" line="49"/>
         <source>Ma&amp;ximize</source>
-        <translation>&amp;تحقيق أقصى استفادة</translation>
+        <translation type="unfinished">&amp;تكبير</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Restore</source>
-        <translation>&amp;يعيد</translation>
+        <translation type="unfinished">&amp;استعادة</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="55"/>
         <source>&amp;Quit</source>
-        <translation>&amp;يترك</translation>
+        <translation type="unfinished">&amp;خروج</translation>
     </message>
 </context>
 <context>
@@ -3728,7 +3728,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>تظهر مفاتيح غير مستعملة</translation>
+        <translation type="unfinished">إظهار المفاتيح غير القابلة للاستخدام</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
@@ -3763,7 +3763,7 @@ Plain entries have a trusted encryption key, select these to allow other people 
     <message>
         <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
-        <translation>تنتهي مدة العضوية</translation>
+        <translation type="unfinished">تنتهي صلاحيته</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="395"/>

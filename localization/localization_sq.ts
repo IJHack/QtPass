@@ -425,7 +425,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation>Përdorni ikonën e trayit</translation>
+        <translation type="unfinished">Shfaq ikonën e trayit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Aktivoj kërsimin e përmet</translation>
+        <translation type="unfinished">Aktivizo kërkimin në përmbajtje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Rikthe klipboardin</translation>
+        <translation type="unfinished">Rikthe përmbajtjen e mëparshme të klipboardit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -472,7 +472,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Fsheh edhe sekretet tjera:</translation>
+        <translation type="unfinished">Fshih edhe sekretet e tjera:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -482,7 +482,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Standard</translation>
+        <translation type="unfinished">Parazgjedhje</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -753,7 +753,7 @@ Vlera do të ruhet ende siç është futur.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Dëshiron të krijosh një magazinë fjalëkalimesh në %1?</translation>
+        <translation type="unfinished">Dëshironi të krijoni një depo fjalëkalimesh në %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="835"/>
@@ -1617,7 +1617,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Përditësimi i dyqanit me fjalëkalime</translation>
+        <translation type="unfinished">Përditësimi i depos së fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -2102,7 +2102,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Kërko brenda përmbinë e fjalëkalimit</translation>
+        <translation type="unfinished">Kërko brenda përmbajtjes së fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2391,7 +2391,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="540"/>
         <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
-        <translation>Përditësimi i dyqanit me fjalëkalime</translation>
+        <translation type="unfinished">Përditësimi i depos së fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="650"/>

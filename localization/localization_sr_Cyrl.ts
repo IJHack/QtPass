@@ -536,7 +536,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Врати претходни клипборд</translation>
+        <translation type="unfinished">Врати претходни садржај клипборда</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -552,7 +552,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Такође, скријте и друге тајне:</translation>
+        <translation type="unfinished">Сакриј и друге тајне:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -567,7 +567,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Вратите подразумеване податке: ПИН, кодове за картице, кључеве, токенове и слично.</translation>
+        <translation type="unfinished">Вратите подразумеване речи: ПИН, кодове картица, кључеве, токене, кодове за опоравак и слично.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -2256,7 +2256,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Претражите садржај лозинке</translation>
+        <translation type="unfinished">Претражите садржај лозинки</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3103,7 +3103,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Улаз је успешно сачуван, али његово бележење у Git-у није успело. Саопштено је следеће:
+        <translation type="unfinished">Унос је сачуван у складишту, али његово бележење у Git-у није успело. Пријављено је:
 
 %1</translation>
     </message>
@@ -3115,7 +3115,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 није у склодишту лозинки. Примаоци су дефинисани за склодиште или фасцикла у њему.</translation>
+        <translation type="unfinished">%1 није у складишту лозинки. Примаоци се подешавају за складиште или фасциклу у њему.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>

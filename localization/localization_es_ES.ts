@@ -163,7 +163,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurar desde el portapapeles anterior</translation>
+        <translation type="unfinished">Restaurar el portapapeles anterior</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -179,7 +179,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Ocultar otros secretos:</translation>
+        <translation type="unfinished">Ocultar también otros secretos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -1435,8 +1435,8 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Ninguna de las claves secretas de la firma están disponible.
-¡No podrás modificar la lista de usuarios!</translation>
+        <translation type="unfinished">Ninguna de las claves secretas de firma está disponible.
+¡No podrá modificar la lista de usuarios!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="340"/>
@@ -1458,7 +1458,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="784"/>
         <location filename="../src/realpass.cpp" line="97"/>
         <source>Check .gpg-id file signature!</source>
-        <translation>¡Comprueba la firma del fichero .gpg-id!</translation>
+        <translation type="unfinished">¡Compruebe la firma del fichero .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="298"/>
@@ -1495,14 +1495,14 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
-        <translation>¡Comprueba los usuarios seleccionados!</translation>
+        <translation type="unfinished">¡Compruebe los usuarios seleccionados!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Ninguna de las claves seleccionadas tiene una clave secreta disponible.
-¡No podrás descifrar ninguna contraseña recién añadida!</translation>
+        <translation type="unfinished">Ninguna de las claves seleccionadas tiene una clave secreta disponible.
+¡No podrá descifrar ninguna contraseña recién añadida!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="435"/>
@@ -1984,12 +1984,12 @@ El recifrado no se completó, así que algunas entradas o todas siguen cifradas 
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegido con cuidado. Desde la perspectiva de la seguridad, la contraseña para desbloquear la clave privada es uno de los puntos más débiles en GnuPG (y otros sistemas de clave pública de cifrado también), ya que es la única protección que tiene si otro individuo obtiene su clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y se debe mezclar los caracteres alfabéticos con caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegida con cuidado. Desde la perspectiva de la seguridad, la frase de contraseña para desbloquear la clave privada es uno de los puntos más débiles de GnuPG (y también de otros sistemas de cifrado de clave pública), ya que es la única protección que tiene si otra persona obtiene su clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y debe combinar mayúsculas y minúsculas, además de usar caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="220"/>
         <source>Repeat pass</source>
-        <translation>Repite la contraseña</translation>
+        <translation type="unfinished">Repita la contraseña</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="237"/>
@@ -2310,7 +2310,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Está seguro que quiere borrar %1?</translation>
+        <translation type="unfinished">¿Está seguro de que quiere eliminar %1?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1117"/>

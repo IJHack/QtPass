@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Копираният текст е възстановен</translation>
+        <translation type="unfinished">Буферът е възстановен</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Символи</translation>
+        <translation type="unfinished">символа</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Използвай TrayIcon</translation>
+        <translation type="unfinished">Показване на икона в системния трей</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -538,12 +538,12 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Секунди</translation>
+        <translation type="unfinished">секунди</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Когато клипбордът бъде изчистен, възстановете съдържанието му преди копирането, както прави &quot;pass -c&quot;, освен ако не е копирано нещо друго по това време. Само текст: форматирането не се възстановява. Този текст остава в паметта до тогава. В случаите, когато клипбордът не може да бъде прочетен без фокус (някои Wayland десктопи), той вместо това се изчиства.</translation>
+        <translation type="unfinished">Когато буферът бъде изчистен, в него се връща съдържанието отпреди копирането, както прави pass -c, освен ако междувременно не е копирано нещо друго. Само текст: форматирането не се възстановява. Дотогава този текст остава в паметта. Където буферът не може да бъде прочетен без фокус (някои среди на Wayland), той вместо това се изчиства.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -564,7 +564,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Също така, скрийте и други тайни:</translation>
+        <translation type="unfinished">Скриване и на други тайни:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -2231,7 +2231,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Търсене вътре в съдържанието на паролата</translation>
+        <translation type="unfinished">Търсене в съдържанието на паролите</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -3079,7 +3079,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">Въведението е запазено, но записването му в Git не успя. Съобщеното:
+        <translation type="unfinished">Записът е запазен в хранилището, но вписването му в Git не успя. Съобщено беше:
 
 %1</translation>
     </message>

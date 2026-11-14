@@ -84,7 +84,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="550"/>
         <source>Use a monospace font</source>
-        <translation>Utilitzeu una font monoespaiada</translation>
+        <translation type="unfinished">Utilitza una font monoespaiada</translation>
     </message>
     <message>
         <source>Display the files content as-is</source>
@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Utilitza la safata del sistema</translation>
+        <translation type="unfinished">Mostra la icona a la safata del sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Activar la cerca de contingut</translation>
+        <translation type="unfinished">Activa la cerca de contingut</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Quan el corretge es borra, torna a posar allà el que hi havia abans de copiar-lo, tal com ho fa pass -c, tret que al mateix temps s&apos;hagi fet una altra còpia. Només text: no es restaura el format. El text queda guardat en la memòria fins aleshores. On el corretge no pot ser llegit sense focus (alguns entorns Wayland), se borra en comptes d&apos;això.</translation>
+        <translation type="unfinished">Quan s&apos;esborra el porta-retalls, hi torna a posar el que hi havia abans de la còpia, com fa pass -c, tret que mentrestant s&apos;hagi copiat una altra cosa. Només text: no es restaura el format. Aquest text es manté a la memòria fins aleshores. On el porta-retalls no es pot llegir sense tenir el focus (alguns escriptoris Wayland), s&apos;esborra en lloc d&apos;això.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurar el contingut anterior del portapantalles</translation>
+        <translation type="unfinished">Restaura el porta-retalls anterior</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -564,7 +564,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Oculta altres secrets:</translation>
+        <translation type="unfinished">Oculta també altres secrets:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -895,7 +895,7 @@ El valor es desarà tal com s&apos;ha introduït.</translation>
         <location filename="../src/configdialog.ui" line="979"/>
         <location filename="../src/configdialog.ui" line="1551"/>
         <source>Use Git</source>
-        <translation>Utilitzeu Git</translation>
+        <translation type="unfinished">Utilitza Git</translation>
     </message>
     <message>
         <source>Use QRencode</source>
@@ -1706,7 +1706,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 és, o es troba darrere, d&apos;un enllaç simbòlic o un punt de junció després de ser extret. El que apunta no forma part del dipòsit de contrasenyes i queda sense interacció.</translation>
+        <translation type="unfinished">%1 és un enllaç simbòlic o un punt d&apos;unió, o es troba darrere d&apos;un, després del pull. Allò a què apunta no forma part del magatzem de contrasenyes i es deixa intacte.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -3118,7 +3118,7 @@ Voleu continuar?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">L&apos;entrada s&apos;ha guardat, però registrar-la a Git ha fallat. El que s&apos;ha informat:
+        <translation type="unfinished">L&apos;entrada s&apos;ha desat al magatzem, però no s&apos;ha pogut registrar a Git. Missatge rebut:
 
 %1</translation>
     </message>
@@ -3130,7 +3130,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 no està dins del dipòsit de contrasenyes. Els destinataris estan configurats per al dipòsit o un directori dins d&apos;aquest.</translation>
+        <translation type="unfinished">%1 no és dins del magatzem de contrasenyes. Els destinataris es configuren per al magatzem o per a una carpeta seva.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
