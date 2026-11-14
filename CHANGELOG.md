@@ -709,6 +709,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   keys the readable lines name, reporting only the unreadable line as
   missing. Pressing OK then keeps the recipients instead of writing the bad
   line alone over the list and dropping everyone on re-encryption.
+- The Users dialog's search lists keys whose user ID contains a `/`
+  ("ACME A/S", "(dev/ops)"). It used filename matching, where `*` and `?`
+  stop at a slash, so such a key dropped out of the search and stayed ticked
+  unseen when someone was removed by unticking the rows their name brought
+  up. Broken since 1.4.0.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

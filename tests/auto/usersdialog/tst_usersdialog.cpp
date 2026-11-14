@@ -68,6 +68,7 @@ private slots:
   void acceptWithoutInitOnlyCollectsTheSelection();
   void togglingAFilteredRowEnablesTheRightKey();
   void selectionSurvivesFilteringAndEscapeClearsTheFilter();
+  void searchListsUserIdsWithASlash();
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
   void unreadableRecipientLineLeavesTheOthersTicked();
@@ -766,6 +767,70 @@ void tst_usersdialog::selectionSurvivesFilteringAndEscapeClearsTheFilter() {
   QCOMPARE(
       enabledIds(pass.initCalls.first().second),
       QStringList{QStringLiteral("13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9")});
+}
+
+/**
+ * @brief The search matches user IDs, not file names: "*" and "?" match a
+ *        "/" too. A key whose user ID has a slash must be listed when its
+ *        name is typed; otherwise unticking the listed rows leaves it ticked
+ *        unseen, and OK keeps it as a recipient.
+ */
+void tst_usersdialog::searchListsUserIdsWithASlash() {
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:AAAAAAAAAAAAAAA1:1700000000:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::1111111111111111111111111111111111111111:\n"
+      "uid:u::::1700000000::H1::Mallory (dev-ops) "
+      "<mallory@example.org>::::::::::0:\n"
+      "pub:u:4096:1:BBBBBBBBBBBBBBB2:1700000000:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::2222222222222222222222222222222222222222:\n"
+      "uid:u::::1700000000::H2::Mallory (dev/ops) "
+      "<mallory@example.org>::::::::::0:\n"
+      "pub:u:4096:1:CCCCCCCCCCCCCCC3:1700000000:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::3333333333333333333333333333333333333333:\n"
+      "uid:u::::1700000000::H3::Trent <trent@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-slash-uid"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("1111111111111111111111111111111111111111\n"
+              "2222222222222222222222222222222222222222\n"
+              "3333333333333333333333333333333333333333\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  auto *filter = dialog.findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  QVERIFY(list != nullptr && filter != nullptr);
+  QCOMPARE(list->count(), 3);
+
+  // Typed wildcards that have to cross the slash match both keys too.
+  for (const QString &typed :
+       {QStringLiteral("dev?ops"), QStringLiteral("mallory*ops")}) {
+    filter->setText(typed);
+    QVERIFY2(list->count() == 2, qPrintable(typed));
+  }
+
+  // Remove Mallory by name: untick every row the search lists.
+  filter->setText(QStringLiteral("mallory"));
+  QCOMPARE(list->count(), 2);
+  for (int i = 0; i < list->count(); ++i) {
+    list->item(i)->setCheckState(Qt::Unchecked);
+  }
+
+  // Only Trent stays: neither Mallory key, the slash one included.
+  dialog.accept();
+  QCOMPARE(pass.initCalls.size(), 1);
+  QCOMPARE(enabledIds(pass.initCalls.first().second),
+           QStringList{QStringLiteral("CCCCCCCCCCCCCCC3")});
 }
 
 auto tst_usersdialog::writeGpg(const QString &name, const QString &body)
