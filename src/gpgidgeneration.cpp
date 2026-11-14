@@ -447,16 +447,22 @@ auto takeHeaderLine(const QByteArray &line, std::optional<qint64> &generation,
                     std::optional<QString> &store) -> QString {
   if (line.startsWith(GpgIdGeneration::kStorePrefix)) {
     if (store) {
+      //: The store ID line is the line of a signed recipient list (.gpg-id)
+      //: that names the password store by its ID. "Store" is the password
+      //: store, not a shop.
       return QCoreApplication::translate(
-          "GpgIdGeneration", "The list carries more than one store line.");
+          "GpgIdGeneration", "The list carries more than one store ID line.");
     }
     const QByteArray value = line.mid(GpgIdGeneration::kStorePrefix.size());
     if (isStoreId(value)) {
       store = QString::fromLatin1(value);
       return {};
     }
+    //: The store ID line is the line of a signed recipient list (.gpg-id)
+    //: that names the password store by its ID. "Store" is the password
+    //: store, not a shop.
     return QCoreApplication::translate("GpgIdGeneration",
-                                       "The store line is malformed: %1")
+                                       "The store ID line is malformed: %1")
         .arg(QString::fromUtf8(line));
   }
   if (line.startsWith(GpgIdGeneration::kGenerationPrefix)) {
@@ -529,7 +535,9 @@ auto GpgIdGeneration::parse(const QByteArray &contents, QString *error)
   // QtPass writes the store line only with the other two.
   if (store && !generation) {
     if (error)
-      *error = tr("The list carries a store line but no generation line.");
+      //: The store ID line names the password store by its ID; see the
+      //: other store ID line messages.
+      *error = tr("The list carries a store ID line but no generation line.");
     return std::nullopt;
   }
   Header header;
@@ -784,12 +792,14 @@ auto GpgIdGeneration::ofThisStore(const QString &gpgIdFile,
   }
   if (error)
     *error =
-        tr("The signed recipient list %1 carries no store line, while this "
+        //: The store ID line is the line of a signed recipient list that
+        //: names the password store by its ID (%2 here).
+        tr("The signed recipient list %1 carries no store ID line, while this "
            "device knows this store by its ID %2: it may have been written "
            "for another store and copied here, or by an older QtPass. A "
            "holder of the signing key gets through by opening Users, "
            "selecting the recipients afresh and saving, which writes the "
-           "store line.")
+           "store ID line.")
             .arg(gpgIdFile, pinned);
   return false;
 }

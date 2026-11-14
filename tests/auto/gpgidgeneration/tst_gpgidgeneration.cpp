@@ -757,7 +757,7 @@ void tst_gpgidgeneration::
       GpgIdGeneration::withHeader(4, QStringLiteral("."), "MALLORY\n");
   QCOMPARE(GpgIdGeneration::accept(root, newRoot, store, &why),
            GpgIdGeneration::Verdict::WrongStore);
-  QVERIFY2(why.contains(QStringLiteral("no store line")) && why.contains(id),
+  QVERIFY2(why.contains(QStringLiteral("no store ID line")) && why.contains(id),
            qPrintable(why));
   QCOMPARE(GpgIdGeneration::accept(plain, "ALICE\n", store),
            GpgIdGeneration::Verdict::Accepted);
