@@ -918,13 +918,25 @@ auto storeFileSystem(MainWindow *window) -> QFileSystemModel * {
 }
 
 /// Hide every entry but @p keep from the tree's model, as a folder still
-/// loading would: an open of @p path then has to wait.
+/// loading would: an open of @p path then has to wait. False, without
+/// failing, where the model keeps the hidden entry indexable (macOS CI).
 auto hideAllBut(QFileSystemModel *fs, const QString &path, const QString &keep)
     -> bool {
   fs->setNameFilters({keep});
-  QTRY_VERIFY_WITH_TIMEOUT_RETURN(!fs->index(path).isValid(), 5000, false);
-  return true;
+  // Polled as QTRY_VERIFY_WITH_TIMEOUT_RETURN does: QTest::qWaitFor() did
+  // not let the model's delayed re-sort run.
+  QElapsedTimer timer;
+  timer.start();
+  while (fs->index(path).isValid() && timer.elapsed() < 5000) {
+    QTest::qWait(20);
+  }
+  return !fs->index(path).isValid();
 }
+
+/// Why a test that needs hideAllBut() is skipped where it cannot hide.
+constexpr const char *kCannotHide =
+    "the file system model keeps a name-filtered entry indexable here, so "
+    "an open that waits for the tree cannot be staged";
 
 /// Show every entry again and report the store folder loaded, as the model
 /// does when a folder finishes loading.
@@ -3407,7 +3419,10 @@ void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
   const QString path = QDir(m_storeDir.path()).filePath("waited.gpg");
   QFileSystemModel *fs = storeFileSystem(m_window.data());
 
-  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  if (!hideAllBut(fs, path, QStringLiteral("aaa.gpg"))) {
+    fs->setNameFilters({QStringLiteral("*.gpg")});
+    QSKIP(kCannotHide);
+  }
   passwordName()->clear();
   m_window->messageAvailable(QStringLiteral("waited"));
   QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
@@ -3444,7 +3459,10 @@ void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
   const QString path = QDir(m_storeDir.path()).filePath("re-rooted.gpg");
   QFileSystemModel *fs = storeFileSystem(m_window.data());
 
-  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  if (!hideAllBut(fs, path, QStringLiteral("aaa.gpg"))) {
+    fs->setNameFilters({QStringLiteral("*.gpg")});
+    QSKIP(kCannotHide);
+  }
   passwordName()->clear();
   m_window->messageAvailable(QStringLiteral("re-rooted"));
   QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
