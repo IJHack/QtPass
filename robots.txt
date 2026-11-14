@@ -1,8 +1,8 @@
 User-Agent: *
 Allow: /
 # The developer documentation under /docs/ has its own sitemap, written by
-# Doxygen. Its search pages and the test coverage report are not content.
+# Doxygen; the test coverage report is reached through its links. The search
+# pages are not content.
 Disallow: /docs/search/
-Disallow: /docs/coverage/
 Sitemap: https://qtpass.org/sitemap.xml
 Sitemap: https://qtpass.org/docs/sitemap.xml
