@@ -1,0 +1,17 @@
+<map id="ConfigDialog::setGroupBoxState" name="ConfigDialog::setGroupBoxState">
+<area shape="rect" id="Node000001" title="Enable the group box of the chosen backend and, in pass mode, disable the password&#45;generation control..." alt="" coords="761,75,958,119"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a2650ddbdc272cc7effb0541261a921f3" title="Native (gpg/git) backend chosen: enable its group box, disable pass&#39;s." alt="" coords="502,5,713,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="759,70,691,53,692,48,764,70"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a4ed1aadd50231d08811bb5c5b0bcc0f2" title="pass backend chosen: enable its group box, disable the native one." alt="" coords="502,75,713,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="743,97,714,100,714,94,748,97"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="526,167,690,195"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="778,124,653,169,651,164,773,125"/>
+<area shape="poly" id="edge8_Node000004_Node000004" title=" " alt="" coords="649,152,636,148,608,146,581,148,567,153,563,158,570,168,565,166,558,158,563,148,580,143,608,141,637,143,655,152"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="251,136,452,164"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="508,169,453,165,453,160,513,169"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="249,188,454,233"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="513,192,455,201,454,196,507,192"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,136,201,164"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="232,151,201,153,201,148,237,150"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="144,122,131,118,103,115,77,117,63,122,59,127,66,136,60,136,54,128,59,118,76,112,103,110,132,112,149,121"/>
+</map>

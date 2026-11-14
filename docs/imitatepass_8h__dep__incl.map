@@ -1,0 +1,38 @@
+<map id="src/imitatepass.h" name="src/imitatepass.h">
+<area shape="rect" id="Node000001" title="ImitatePass, the backend that does what pass does by running gpg and git itself." alt="" coords="594,5,727,33"/>
+<area shape="rect" id="Node000002" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="5,157,166,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="575,32,457,53,322,84,207,122,116,159,114,154,205,117,321,78,456,48,581,30"/>
+<area shape="rect" id="Node000003" href="$imitatepass_8cpp.html" title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha..." alt="" coords="1010,81,1158,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="742,32,1012,80,1007,81,742,37"/>
+<area shape="rect" id="Node000004" href="$passbackendfactory_8h.html" title="PassBackendFactory, which constructs the two Pass backends on demand and hands out the one the settin..." alt="" coords="333,81,518,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="607,37,468,83,467,78,601,39"/>
+<area shape="rect" id="Node000007" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="603,157,717,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="662,47,662,158,658,155,658,50"/>
+<area shape="rect" id="Node000008" href="$qtpasssettings_8h.html" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="835,81,986,109"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="720,35,869,80,863,80,719,40"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="350,115,147,159,146,153,349,110"/>
+<area shape="rect" id="Node000005" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="190,157,389,184"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="390,116,315,159,313,154,385,117"/>
+<area shape="rect" id="Node000006" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="413,157,579,184"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="450,117,486,157,481,155,447,122"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="817,102,533,126,178,159,167,161,166,155,177,154,533,121,822,102"/>
+<area shape="poly" id="edge15_Node000008_Node000005" title=" " alt="" coords="820,109,390,160,389,155,819,104"/>
+<area shape="poly" id="edge18_Node000008_Node000006" title=" " alt="" coords="824,112,571,159,571,153,819,112"/>
+<area shape="poly" id="edge17_Node000008_Node000007" title=" " alt="" coords="854,113,706,159,704,153,849,114"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="1498,157,1617,184"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1002,106,1139,121,1245,129,1351,138,1486,154,1500,159,1495,158,1485,159,1351,143,1245,134,1138,126,1002,112"/>
+<area shape="rect" id="Node000010" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="1641,157,1829,184"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="1002,106,1178,123,1316,132,1454,140,1628,154,1643,158,1637,158,1628,159,1453,145,1316,137,1178,128,1002,112"/>
+<area shape="rect" id="Node000011" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="1853,157,2003,184"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="1002,106,1238,124,1423,130,1607,136,1842,154,1855,158,1850,158,1841,159,1607,141,1423,135,1238,129,1002,112"/>
+<area shape="rect" id="Node000012" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="2028,157,2186,184"/>
+<area shape="poly" id="edge13_Node000008_Node000012" title=" " alt="" coords="1002,106,1156,119,1287,126,1509,131,1732,135,1862,142,2015,154,2030,158,2024,158,2015,159,1862,147,1731,141,1509,136,1287,131,1156,124,1002,112"/>
+<area shape="rect" id="Node000013" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="741,157,894,184"/>
+<area shape="poly" id="edge14_Node000008_Node000013" title=" " alt="" coords="885,118,835,159,833,154,880,119"/>
+<area shape="rect" id="Node000014" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="919,157,1092,184"/>
+<area shape="poly" id="edge16_Node000008_Node000014" title=" " alt="" coords="941,116,991,157,986,156,939,121"/>
+<area shape="rect" id="Node000015" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="1116,157,1263,184"/>
+<area shape="poly" id="edge19_Node000008_Node000015" title=" " alt="" coords="975,110,1142,156,1137,156,975,116"/>
+<area shape="rect" id="Node000016" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="1286,157,1474,184"/>
+<area shape="poly" id="edge20_Node000008_Node000016" title=" " alt="" coords="1002,108,1298,156,1293,156,1001,113"/>
+</map>

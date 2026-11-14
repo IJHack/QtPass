@@ -1,0 +1,9 @@
+<map id="Pass::Init" name="Pass::Init">
+<area shape="rect" id="Node000001" title="Initialize new password store." alt="" coords="694,5,774,33"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="495,5,646,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="676,19,646,22,646,17,681,19"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1" title="Connect dialog signals." alt="" coords="241,5,447,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="477,19,447,22,447,17,482,19"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,5,193,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,19,193,22,193,17,228,19"/>
+</map>

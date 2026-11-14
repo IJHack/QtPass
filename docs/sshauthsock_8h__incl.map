@@ -1,0 +1,7 @@
+<map id="src/sshauthsock.h" name="src/sshauthsock.h">
+<area shape="rect" id="Node000001" title="SshAuthSock: finding an SSH agent socket for child processes and judging a configured override." alt="" coords="17,5,154,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,75,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,32,58,69,54,66,75,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,81,165,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,31,118,68,113,68,92,36"/>
+</map>

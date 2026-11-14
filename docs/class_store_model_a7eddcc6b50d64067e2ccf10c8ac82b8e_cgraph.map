@@ -1,6 +1,26 @@
 <map id="StoreModel::dropMimeData" name="StoreModel::dropMimeData">
-<area shape="rect" id="Node000001" title="Handle dropped MIME data." alt="" coords="5,29,206,57"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="68,28,63,20,67,11,82,5,106,3,131,5,146,14,141,14,129,10,105,8,83,10,71,15,68,20,74,29"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="254,29,386,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,41,241,43,236,43,206,46"/>
+<area shape="rect" id="Node000001" title="Handle dropped MIME data." alt="" coords="5,81,206,109"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="254,5,480,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,78,253,49,303,36,298,39,254,54,156,83"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="826,56,959,84"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="206,97,445,102,587,100,729,93,813,84,808,85,730,98,587,105,445,107,207,103"/>
+<area shape="rect" id="Node000005" href="$class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5" title="Decode the drag payload from data." alt="" coords="528,56,729,84"/>
+<area shape="poly" id="edge13_Node000001_Node000005" title=" " alt="" coords="206,88,514,73,511,78,206,93"/>
+<area shape="rect" id="Node000006" href="$class_store_model.html#a8b9aceaa0b421a227661324501d09404" title="Resolve a validated drop into a Move or Copy." alt="" coords="254,183,480,210"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="144,107,317,175,313,178,143,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="479,22,600,30,730,42,814,56,808,56,729,47,600,35,480,27"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="442,31,541,52,536,53,442,36"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="1056,56,1195,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="959,67,1043,70,1038,70,959,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="730,67,813,69,808,70,730,72"/>
+<area shape="rect" id="Node000007" href="$namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d" title="Ask a yes/no question in plain text." alt="" coords="534,157,723,185"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="480,183,522,181,517,182,481,188"/>
+<area shape="rect" id="Node000009" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="528,209,729,237"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="480,205,516,211,510,212,480,211"/>
+<area shape="rect" id="Node000011" href="$class_store_model.html#ac66256efac2ec5e6924d8694b7a718c5" title="Perform the actual Move/Copy for a validated drop." alt="" coords="536,261,722,289"/>
+<area shape="poly" id="edge12_Node000006_Node000011" title=" " alt="" coords="411,208,529,246,560,257,554,257,527,251,410,214"/>
+<area shape="rect" id="Node000008" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="803,157,982,185"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="723,169,790,171,785,171,723,174"/>
+<area shape="rect" id="Node000010" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="777,209,1008,237"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="729,221,764,223,759,223,730,226"/>
 </map>

@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_settings_serializer.html','','class_settings_serializer-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,13 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_settings_serializer-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">SettingsSerializer Class Reference</div></div>
+  <div class="headertitle"><div class="title">SettingsSerializer Class Reference<div class="ingroups"><a class="el" href="group__settings.html">Settings and profiles</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -109,21 +124,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abadb580cf96435f4cdb7e733a9260754" id="r_abadb580cf96435f4cdb7e733a9260754"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abadb580cf96435f4cdb7e733a9260754">load</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td></tr>
-<tr class="memdesc:abadb580cf96435f4cdb7e733a9260754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all flat settings from a QSettings store.  <br /></td></tr>
-<tr class="memitem:ac8e3925e7eb3629721b9b78828078cf4" id="r_ac8e3925e7eb3629721b9b78828078cf4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8e3925e7eb3629721b9b78828078cf4">loadPasswordConfiguration</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td></tr>
-<tr class="memdesc:ac8e3925e7eb3629721b9b78828078cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read only the password generation settings from a QSettings store.  <br /></td></tr>
-<tr class="memitem:a8f027af895ac755143345eff96118cb2" id="r_a8f027af895ac755143345eff96118cb2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a8f027af895ac755143345eff96118cb2">save</a> (QSettings &amp;qs, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
-<tr class="memdesc:a8f027af895ac755143345eff96118cb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write all flat settings to a QSettings store.  <br /></td></tr>
+<tr class="memitem:afd33be02685dc57f2bf6d7e3664e2eeb" id="r_afd33be02685dc57f2bf6d7e3664e2eeb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afd33be02685dc57f2bf6d7e3664e2eeb">load</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td></tr>
+<tr class="memdesc:afd33be02685dc57f2bf6d7e3664e2eeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all flat settings from a QSettings store.  <br /></td></tr>
+<tr class="memitem:ab97de3759c1b701eae9a1522435bbb96" id="r_ab97de3759c1b701eae9a1522435bbb96"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab97de3759c1b701eae9a1522435bbb96">loadPasswordConfiguration</a> (QSettings &amp;qs) -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td></tr>
+<tr class="memdesc:ab97de3759c1b701eae9a1522435bbb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read only the password generation settings from a QSettings store.  <br /></td></tr>
+<tr class="memitem:ae5f9179768cb01ed33c7cf623c198d7c" id="r_ae5f9179768cb01ed33c7cf623c198d7c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae5f9179768cb01ed33c7cf623c198d7c">save</a> (QSettings &amp;qs, const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
+<tr class="memdesc:ae5f9179768cb01ed33c7cf623c198d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write all flat settings to a QSettings store.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Maps <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> to and from a QSettings store. </p>
 <p>Pure, side-effect-free translation between the flat <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> value object and the on-disk QSettings keys (the same keys <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> uses). Unlike the legacy getters it performs no path normalisation, directory creation, screen-centring or <span class="tt">.git</span> auto-detection — it only reads and writes raw values. That makes it unit-testable against a throwaway QSettings without any singleton or widget setup. </p>
 
-<p class="definition">Definition at line <a class="el" href="settingsserializer_8h_source.html#l00021">21</a> of file <a class="el" href="settingsserializer_8h_source.html">settingsserializer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="settingsserializer_8h_source.html#l00027">27</a> of file <a class="el" href="settingsserializer_8h_source.html">settingsserializer.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="abadb580cf96435f4cdb7e733a9260754" name="abadb580cf96435f4cdb7e733a9260754"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abadb580cf96435f4cdb7e733a9260754">&#9670;&#160;</a></span>load()</h2>
+<a id="afd33be02685dc57f2bf6d7e3664e2eeb" name="afd33be02685dc57f2bf6d7e3664e2eeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd33be02685dc57f2bf6d7e3664e2eeb">&#9670;&#160;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,7 +150,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto SettingsSerializer::load </td>
           <td>(</td>
           <td class="paramtype">QSettings &amp;</td>          <td class="paramname"><span class="paramname"><em>qs</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="struct_app_settings.html">AppSettings</a></td>
+          <td> -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td>
         </tr>
       </table>
   </td>
@@ -154,10 +169,24 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Populated <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> (defaults applied for absent keys). </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="settingsserializer_8cpp_source.html#l00044">44</a> of file <a class="el" href="settingsserializer_8cpp_source.html">settingsserializer.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_settings_serializer_afd33be02685dc57f2bf6d7e3664e2eeb_cgraph.svg" width="400" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_settings_serializer_afd33be02685dc57f2bf6d7e3664e2eeb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="ac8e3925e7eb3629721b9b78828078cf4" name="ac8e3925e7eb3629721b9b78828078cf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8e3925e7eb3629721b9b78828078cf4">&#9670;&#160;</a></span>loadPasswordConfiguration()</h2>
+<a id="ab97de3759c1b701eae9a1522435bbb96" name="ab97de3759c1b701eae9a1522435bbb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab97de3759c1b701eae9a1522435bbb96">&#9670;&#160;</a></span>loadPasswordConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +198,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto SettingsSerializer::loadPasswordConfiguration </td>
           <td>(</td>
           <td class="paramtype">QSettings &amp;</td>          <td class="paramname"><span class="paramname"><em>qs</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
+          <td> -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
         </tr>
       </table>
   </td>
@@ -180,19 +209,27 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read only the password generation settings from a QSettings store. </p>
-<p>The stored charset selection is validated against <a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01" title="Character set options for password generation.">PasswordConfiguration::CharacterSet</a>; an out-of-range value (hand-edited or corrupted ini) falls back to ALLCHARS so consumers can index <a class="el" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0" title="The different character sets.">PasswordConfiguration::Characters</a> with it safely.</p>
+<p>The stored charset selection is validated against <a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01" title="Character set options for password generation; also the index into Characters.">PasswordConfiguration::CharacterSet</a>; an out-of-range value (hand-edited or corrupted ini) falls back to ALLCHARS so consumers can index <a class="el" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0" title="The alphabet of each character set, indexed by CharacterSet. Only the CUSTOM entry is meant to be cha...">PasswordConfiguration::Characters</a> with it safely.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">qs</td><td>Source settings store. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Populated <a class="el" href="struct_password_configuration.html" title="Holds the password configuration settings.">PasswordConfiguration</a> (defaults applied for absent or invalid keys). </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Populated <a class="el" href="struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,...">PasswordConfiguration</a> (defaults applied for absent or invalid keys). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="settingsserializer_8cpp_source.html#l00015">15</a> of file <a class="el" href="settingsserializer_8cpp_source.html">settingsserializer.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_settings_serializer_ab97de3759c1b701eae9a1522435bbb96_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<a id="a8f027af895ac755143345eff96118cb2" name="a8f027af895ac755143345eff96118cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f027af895ac755143345eff96118cb2">&#9670;&#160;</a></span>save()</h2>
+<a id="ae5f9179768cb01ed33c7cf623c198d7c" name="ae5f9179768cb01ed33c7cf623c198d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f9179768cb01ed33c7cf623c198d7c">&#9670;&#160;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,16 +264,36 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="settingsserializer_8cpp_source.html#l00149">149</a> of file <a class="el" href="settingsserializer_8cpp_source.html">settingsserializer.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_settings_serializer_ae5f9179768cb01ed33c7cf623c198d7c_icgraph.svg" width="100%" height="594"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="settingsserializer_8h_source.html">settingsserializer.h</a></li>
+<li>src/<a class="el" href="settingsserializer_8cpp_source.html">settingsserializer.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_settings_serializer.html">SettingsSerializer</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

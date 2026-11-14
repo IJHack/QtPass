@@ -1,0 +1,20 @@
+<map id="src/appsettings.h" name="src/appsettings.h">
+<area shape="rect" id="Node000001" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="353,5,485,33"/>
+<area shape="rect" id="Node000002" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,81,91,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="352,35,107,83,106,78,353,30"/>
+<area shape="rect" id="Node000004" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="116,81,296,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="379,35,259,78,257,73,383,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="235,157,304,184"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="409,33,295,148,292,143,404,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="371,81,467,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="421,31,421,67,417,64,417,36"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="491,81,555,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="438,31,495,72,490,72,437,36"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="579,81,638,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="453,31,567,76,562,77,453,36"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="662,81,755,109"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="471,31,650,78,645,79,471,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,100,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="54,107,55,142,50,140,51,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="218,107,251,145,246,144,216,112"/>
+</map>

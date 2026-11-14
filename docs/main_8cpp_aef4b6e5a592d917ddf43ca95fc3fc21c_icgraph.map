@@ -1,0 +1,7 @@
+<map id="appendWithSpaceIfSuffixNotEmpty" name="appendWithSpaceIfSuffixNotEmpty">
+<area shape="rect" id="Node000001" title="Appends a suffix to a target string, inserting a separating space if the target is not empty." alt="" coords="114,29,322,74"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="245,13,236,10,218,8,202,10,192,14,187,21,188,30,184,27,182,19,188,10,200,5,218,3,237,5,250,14"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="12,38,66,66"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="96,53,67,54,67,49,101,51"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="69,24,60,19,39,16,20,19,11,23,9,29,14,38,9,39,3,30,6,20,19,13,39,11,62,14,74,24"/>
+</map>

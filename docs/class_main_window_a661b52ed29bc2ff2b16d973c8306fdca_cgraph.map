@@ -1,0 +1,30 @@
+<map id="MainWindow::onTimeoutSearch" name="MainWindow::onTimeoutSearch">
+<area shape="rect" id="Node000001" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="5,226,232,254"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="Clear the current tree view selection." alt="" coords="297,110,464,138"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,223,334,142,333,147,153,228"/>
+<area shape="rect" id="Node000009" href="$class_store_tree.html#ae66c7d3a2c5f172035cdeb1808ce7593" title=" " alt="" coords="317,199,444,227"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="232,226,304,220,299,222,233,231"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a7491c2974ab54018ac9a7d1738a4f654" title="Make the first entry (depth first) under the store root current." alt="" coords="280,251,482,279"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="232,248,267,253,262,254,232,253"/>
+<area shape="rect" id="Node000013" href="$class_store_tree.html#a7c5e7b2806ebe8314f0ec7a72bd8a256" title="Filter the visible entries." alt="" coords="309,303,452,331"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="164,251,280,288,311,299,306,298,279,293,163,257"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841" title="Forget the pending OTP and copy requests." alt="" coords="530,31,760,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="418,107,529,69,565,62,560,64,531,74,420,112"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="556,83,735,111"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="464,113,543,107,538,108,466,118"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="578,135,712,163"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="465,129,566,141,561,142,465,134"/>
+<area shape="rect" id="Node000005" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="808,5,975,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="712,80,760,68,813,54,807,56,761,73,713,85"/>
+<area shape="rect" id="Node000006" href="$class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e" title="Drop the mode flag only, without touching busy/cancelled state." alt="" coords="811,75,972,119"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="735,94,798,97,793,97,736,100"/>
+<area shape="rect" id="Node000007" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="811,144,972,189"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="712,109,761,121,813,139,807,139,760,126,712,114"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#ae9a674e42e112906d72b37ede211ca4d" title="Depth&#45;first search for the first entry under a folder." alt="" coords="565,211,725,239"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="477,248,552,239,547,240,477,253"/>
+<area shape="rect" id="Node000012" href="$class_store_tree.html#a1e44af30d459550e26502c6733705e9d" title="The proxy&#39;s root index for the current store." alt="" coords="569,263,721,291"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="483,267,556,273,551,273,483,272"/>
+<area shape="poly" id="edge11_Node000011_Node000011" title=" " alt="" coords="603,210,596,202,602,193,618,187,645,185,674,187,691,196,686,196,673,192,645,190,619,192,605,197,602,202,608,212"/>
+<area shape="rect" id="Node000014" href="$class_store_model.html#a9830413c7cf960e473adfa98311c3bcd" title="Set the source filesystem root and map it to a proxy index." alt="" coords="552,315,738,343"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="453,318,540,324,535,324,453,323"/>
+</map>

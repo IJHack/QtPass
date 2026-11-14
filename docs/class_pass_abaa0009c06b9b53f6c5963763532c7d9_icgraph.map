@@ -1,0 +1,5 @@
+<map id="Pass::loggableArgs" name="Pass::loggableArgs">
+<area shape="rect" id="Node000001" title="The arguments as they may appear in the debug log: the value of &#45;&#45;passphrase and friends,..." alt="" coords="218,5,361,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a23d30214443a4bc0d0508491872f06c3" title="Execute wrapper with input." alt="" coords="5,5,170,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,19,170,22,170,17,205,19"/>
+</map>

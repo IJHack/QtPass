@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_base32.html','','class_base32-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,13 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_base32-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Base32 Class Reference</div></div>
+  <div class="headertitle"><div class="title">Base32 Class Reference<div class="ingroups"><a class="el" href="group__store.html">Store tree and entries</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -109,30 +124,36 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa37affa1dea172a0e0df0ccec92f48f2" id="r_aa37affa1dea172a0e0df0ccec92f48f2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa37affa1dea172a0e0df0ccec92f48f2">decode</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
-<tr class="memdesc:aa37affa1dea172a0e0df0ccec92f48f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode strict RFC 4648 base32 data.  <br /></td></tr>
-<tr class="memitem:a538fcb8ba3afbf0f7e93b0baf609128a" id="r_a538fcb8ba3afbf0f7e93b0baf609128a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a538fcb8ba3afbf0f7e93b0baf609128a">encode</a> (const QByteArray &amp;data) -&gt; QByteArray</td></tr>
-<tr class="memdesc:a538fcb8ba3afbf0f7e93b0baf609128a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode raw bytes as padded RFC 4648 base32.  <br /></td></tr>
-<tr class="memitem:a0333781f29fc93e20b3792c243a666db" id="r_a0333781f29fc93e20b3792c243a666db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0333781f29fc93e20b3792c243a666db">addPadding</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
-<tr class="memdesc:a0333781f29fc93e20b3792c243a666db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append '=' padding up to a multiple of 8 characters.  <br /></td></tr>
-<tr class="memitem:aa1f7b5589e29a614a4894b448b90a8ca" id="r_aa1f7b5589e29a614a4894b448b90a8ca"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1f7b5589e29a614a4894b448b90a8ca">removePadding</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
-<tr class="memdesc:aa1f7b5589e29a614a4894b448b90a8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip trailing '=' padding.  <br /></td></tr>
-<tr class="memitem:aaf904f4cb4ce14e943cc46416202d827" id="r_aaf904f4cb4ce14e943cc46416202d827"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaf904f4cb4ce14e943cc46416202d827">sanitizeInput</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
-<tr class="memdesc:aaf904f4cb4ce14e943cc46416202d827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make human-entered base32 text decodable.  <br /></td></tr>
+<tr class="memitem:aab3feed3644b481794685b42410cf1e1" id="r_aab3feed3644b481794685b42410cf1e1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aab3feed3644b481794685b42410cf1e1">decode</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
+<tr class="memdesc:aab3feed3644b481794685b42410cf1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode strict RFC 4648 base32 data.  <br /></td></tr>
+<tr class="memitem:acf6b12a6850124ad51e39107c312d1ba" id="r_acf6b12a6850124ad51e39107c312d1ba"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acf6b12a6850124ad51e39107c312d1ba">encode</a> (const QByteArray &amp;data) -&gt; QByteArray</td></tr>
+<tr class="memdesc:acf6b12a6850124ad51e39107c312d1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode raw bytes as padded RFC 4648 base32.  <br /></td></tr>
+<tr class="memitem:a7d94c98c53b66296c785fe80dbe1c0f0" id="r_a7d94c98c53b66296c785fe80dbe1c0f0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7d94c98c53b66296c785fe80dbe1c0f0">addPadding</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
+<tr class="memdesc:a7d94c98c53b66296c785fe80dbe1c0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append '=' padding up to a multiple of 8 characters.  <br /></td></tr>
+<tr class="memitem:ad4506c7fc1411529d9b188e7ef9ee90c" id="r_ad4506c7fc1411529d9b188e7ef9ee90c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad4506c7fc1411529d9b188e7ef9ee90c">removePadding</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
+<tr class="memdesc:ad4506c7fc1411529d9b188e7ef9ee90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strip trailing '=' padding.  <br /></td></tr>
+<tr class="memitem:a251fbe9bbf3a490d0660690182de2fcb" id="r_a251fbe9bbf3a490d0660690182de2fcb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a251fbe9bbf3a490d0660690182de2fcb">sanitizeInput</a> (const QByteArray &amp;encodedData) -&gt; QByteArray</td></tr>
+<tr class="memdesc:a251fbe9bbf3a490d0660690182de2fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make human-entered base32 text decodable.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a79faf2394220266c154ffadbd2e8cd41" id="r_a79faf2394220266c154ffadbd2e8cd41"><td class="memItemLeft"><a id="a79faf2394220266c154ffadbd2e8cd41" name="a79faf2394220266c154ffadbd2e8cd41"></a>
+&#160;</td><td class="memItemRight"><b>Base32</b> ()=default</td></tr>
+<tr class="memdesc:a79faf2394220266c154ffadbd2e8cd41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static-only class; never instantiated. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RFC 4648 base32 codec, used for TOTP shared secrets. </p>
-<p>Ported from KeePassXC (<span class="tt">src/core/Base32.cpp</span>). <a class="el" href="#aa37affa1dea172a0e0df0ccec92f48f2" title="Decode strict RFC 4648 base32 data.">decode()</a> is deliberately strict: the input length must be a multiple of 8 and every character must be in the base32 alphabet, so whitespace is an error rather than something to skip. Secrets that come from a human (or from a QR code label) therefore go through <a class="el" href="#aaf904f4cb4ce14e943cc46416202d827" title="Make human-entered base32 text decodable.">sanitizeInput()</a> first, making the canonical entry point:</p>
+<p>Ported from KeePassXC (<span class="tt">src/core/Base32.cpp</span>). <a class="el" href="#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data.">decode()</a> is deliberately strict: the input length must be a multiple of 8 and every character must be in the base32 alphabet, so whitespace is an error rather than something to skip. Secrets that come from a human (or from a QR code label) therefore go through <a class="el" href="#a251fbe9bbf3a490d0660690182de2fcb" title="Make human-entered base32 text decodable.">sanitizeInput()</a> first, making the canonical entry point:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> QByteArray secret =</div>
-<div class="line"><a class="code hl_function" href="#aa37affa1dea172a0e0df0ccec92f48f2">Base32::decode</a>(<a class="code hl_function" href="#aaf904f4cb4ce14e943cc46416202d827">Base32::sanitizeInput</a>(text.toLatin1()));</div>
-<div class="ttc" id="aclass_base32_html_aa37affa1dea172a0e0df0ccec92f48f2"><div class="ttname"><a href="#aa37affa1dea172a0e0df0ccec92f48f2">Base32::decode</a></div><div class="ttdeci">static auto decode(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Decode strict RFC 4648 base32 data.</div></div>
-<div class="ttc" id="aclass_base32_html_aaf904f4cb4ce14e943cc46416202d827"><div class="ttname"><a href="#aaf904f4cb4ce14e943cc46416202d827">Base32::sanitizeInput</a></div><div class="ttdeci">static auto sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Make human-entered base32 text decodable.</div></div>
+<div class="line"><a class="code hl_function" href="#aab3feed3644b481794685b42410cf1e1">Base32::decode</a>(<a class="code hl_function" href="#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a>(text.toLatin1()));</div>
+<div class="ttc" id="aclass_base32_html_a251fbe9bbf3a490d0660690182de2fcb"><div class="ttname"><a href="#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a></div><div class="ttdeci">static auto sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Make human-entered base32 text decodable.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00305">base32.cpp:305</a></div></div>
+<div class="ttc" id="aclass_base32_html_aab3feed3644b481794685b42410cf1e1"><div class="ttname"><a href="#aab3feed3644b481794685b42410cf1e1">Base32::decode</a></div><div class="ttdeci">static auto decode(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Decode strict RFC 4648 base32 data.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00128">base32.cpp:128</a></div></div>
 </div><!-- fragment --><p>Failure is reported as an empty QByteArray. A successful decode of a non-empty input always yields at least one byte, so <span class="tt">isEmpty()</span> is an unambiguous error test. </p>
 
-<p class="definition">Definition at line <a class="el" href="base32_8h_source.html#l00028">28</a> of file <a class="el" href="base32_8h_source.html">base32.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="base32_8h_source.html#l00034">34</a> of file <a class="el" href="base32_8h_source.html">base32.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a0333781f29fc93e20b3792c243a666db" name="a0333781f29fc93e20b3792c243a666db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0333781f29fc93e20b3792c243a666db">&#9670;&#160;</a></span>addPadding()</h2>
+<a id="a7d94c98c53b66296c785fe80dbe1c0f0" name="a7d94c98c53b66296c785fe80dbe1c0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d94c98c53b66296c785fe80dbe1c0f0">&#9670;&#160;</a></span>addPadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +165,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Base32::addPadding </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>encodedData</em></span></td><td>)</td>
-          <td> -&gt;  QByteArray</td>
+          <td> -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -163,10 +184,18 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Padded text, or <code class="param">encodedData</code> unchanged when its length remainder is impossible for base32 (1, 3 or 6). </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="base32_8cpp_source.html#l00275">275</a> of file <a class="el" href="base32_8cpp_source.html">base32.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_base32_a7d94c98c53b66296c785fe80dbe1c0f0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="aa37affa1dea172a0e0df0ccec92f48f2" name="aa37affa1dea172a0e0df0ccec92f48f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa37affa1dea172a0e0df0ccec92f48f2">&#9670;&#160;</a></span>decode()</h2>
+<a id="aab3feed3644b481794685b42410cf1e1" name="aab3feed3644b481794685b42410cf1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3feed3644b481794685b42410cf1e1">&#9670;&#160;</a></span>decode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +207,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Base32::decode </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>encodedData</em></span></td><td>)</td>
-          <td> -&gt;  QByteArray</td>
+          <td> -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -197,10 +226,18 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Decoded bytes, or an empty QByteArray when the input is empty, mis-padded, or contains a character outside "A-Za-z2-7=". </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="base32_8cpp_source.html#l00128">128</a> of file <a class="el" href="base32_8cpp_source.html">base32.cpp</a>.</p>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_base32_aab3feed3644b481794685b42410cf1e1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a538fcb8ba3afbf0f7e93b0baf609128a" name="a538fcb8ba3afbf0f7e93b0baf609128a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a538fcb8ba3afbf0f7e93b0baf609128a">&#9670;&#160;</a></span>encode()</h2>
+<a id="acf6b12a6850124ad51e39107c312d1ba" name="acf6b12a6850124ad51e39107c312d1ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6b12a6850124ad51e39107c312d1ba">&#9670;&#160;</a></span>encode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -212,7 +249,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Base32::encode </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td> -&gt;  QByteArray</td>
+          <td> -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -231,10 +268,12 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Upper-case padded base32 text, or an empty QByteArray when <code class="param">data</code> is empty. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="base32_8cpp_source.html#l00191">191</a> of file <a class="el" href="base32_8cpp_source.html">base32.cpp</a>.</p>
+
 </div>
 </div>
-<a id="aa1f7b5589e29a614a4894b448b90a8ca" name="aa1f7b5589e29a614a4894b448b90a8ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1f7b5589e29a614a4894b448b90a8ca">&#9670;&#160;</a></span>removePadding()</h2>
+<a id="ad4506c7fc1411529d9b188e7ef9ee90c" name="ad4506c7fc1411529d9b188e7ef9ee90c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4506c7fc1411529d9b188e7ef9ee90c">&#9670;&#160;</a></span>removePadding()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +285,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Base32::removePadding </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>encodedData</em></span></td><td>)</td>
-          <td> -&gt;  QByteArray</td>
+          <td> -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -265,10 +304,18 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Text without padding, or <code class="param">encodedData</code> unchanged when its length is not a multiple of 8. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="base32_8cpp_source.html#l00294">294</a> of file <a class="el" href="base32_8cpp_source.html">base32.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_base32_ad4506c7fc1411529d9b188e7ef9ee90c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="aaf904f4cb4ce14e943cc46416202d827" name="aaf904f4cb4ce14e943cc46416202d827"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf904f4cb4ce14e943cc46416202d827">&#9670;&#160;</a></span>sanitizeInput()</h2>
+<a id="a251fbe9bbf3a490d0660690182de2fcb" name="a251fbe9bbf3a490d0660690182de2fcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251fbe9bbf3a490d0660690182de2fcb">&#9670;&#160;</a></span>sanitizeInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,7 +327,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Base32::sanitizeInput </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>encodedData</em></span></td><td>)</td>
-          <td> -&gt;  QByteArray</td>
+          <td> -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -291,7 +338,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Make human-entered base32 text decodable. </p>
-<p>Drops every character outside "A-Za-z2-7" (so the spaces and dashes used to group a printed secret are tolerated), maps the digits that are ambiguous in the base32 alphabet (0 to O, 1 to L, 8 to B), then pads the result with <a class="el" href="#a0333781f29fc93e20b3792c243a666db" title="Append &#39;=&#39; padding up to a multiple of 8 characters.">addPadding()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Drops every character outside "A-Za-z2-7" (so the spaces and dashes used to group a printed secret are tolerated), maps the digits that are ambiguous in the base32 alphabet (0 to O, 1 to L, 8 to B), then pads the result with <a class="el" href="#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters.">addPadding()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">encodedData</td><td>Raw user input. </td></tr>
   </table>
@@ -299,16 +346,42 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Sanitized, padded base32 text. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="base32_8cpp_source.html#l00305">305</a> of file <a class="el" href="base32_8cpp_source.html">base32.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_base32_a251fbe9bbf3a490d0660690182de2fcb_cgraph.svg" width="372" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_base32_a251fbe9bbf3a490d0660690182de2fcb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="base32_8h_source.html">base32.h</a></li>
+<li>src/<a class="el" href="base32_8cpp_source.html">base32.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_base32.html">Base32</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

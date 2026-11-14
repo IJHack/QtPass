@@ -1,0 +1,9 @@
+<map id="QtPassSettings::getProfiles" name="QtPassSettings::getProfiles">
+<area shape="rect" id="Node000001" title="Get all configured profiles." alt="" coords="5,32,201,60"/>
+<area shape="rect" id="Node000002" href="$struct_profile.html#a89364a3e36a6f8b6197adc385854e023" title="Parse the on&#45;disk tri&#45;state." alt="" coords="267,5,432,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,33,254,29,249,30,202,38"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="249,57,451,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,53,236,59,230,59,201,59"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="499,57,722,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="451,69,486,71,481,71,451,74"/>
+</map>

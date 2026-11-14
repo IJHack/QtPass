@@ -1,0 +1,7 @@
+<map id="src/qtpasslogging.cpp" name="src/qtpasslogging.cpp">
+<area shape="rect" id="Node000001" title="Defines the lcQtPass logging category with info as its default level, so a release build can be trace..." alt="" coords="5,5,168,33"/>
+<area shape="rect" id="Node000002" href="$qtpasslogging_8h.html" title="The &quot;qtpass&quot; logging category." alt="" coords="24,81,149,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,31,89,66,84,65,86,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="16,157,157,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,107,89,142,84,140,85,111"/>
+</map>

@@ -1,9 +1,19 @@
 var searchData=
 [
-  ['namedvalues_0',['NamedValues',['../class_named_values.html#ae05206d5b3c53ee4545089e8f7997b4f',1,'NamedValues']]],
-  ['nativegrep_1',['NativeGrep',['../class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592',1,'NativeGrep']]],
-  ['needsinit_2',['needsInit',['../class_profile_init.html#a1e036856179d70b9418af13561e4c7ac',1,'ProfileInit']]],
-  ['newlinesregex_3',['newLinesRegex',['../class_util.html#a0ba6ef4e4542287d5b257252728d1aa4',1,'Util']]],
-  ['normalize_4',['normalize',['../class_totp.html#ae84cc73aa9f5f9e1f90032554d0fa85f',1,'Totp']]],
-  ['normalizefolderpath_5',['normalizeFolderPath',['../class_util.html#ab23a1afdcad63df9101660fd6e53b763',1,'Util']]]
+  ['main_0',['main',['../main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4',1,'main.cpp']]],
+  ['mainwindow_1',['MainWindow',['../class_main_window.html#a52e97245b2f88492071e639395c4a15a',1,'MainWindow']]],
+  ['marginallyvalid_2',['marginallyValid',['../struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd',1,'UserInfo']]],
+  ['markotpfieldedited_3',['markOtpFieldEdited',['../class_password_dialog.html#acd29a018a14978015d932a052da966cf',1,'PasswordDialog']]],
+  ['marksecretkeys_4',['markSecretKeys',['../class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2',1,'UsersDialog']]],
+  ['matchfile_5',['matchFile',['../class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68',1,'NativeGrep']]],
+  ['maxoutputargs_6',['maxOutputArgs',['../class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a',1,'Pass']]],
+  ['menubarpeek_7',['MenuBarPeek',['../class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd',1,'MenuBarPeek']]],
+  ['messageavailable_8',['messageAvailable',['../class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b',1,'MainWindow::messageAvailable()'],['../class_single_application.html#ab893aad585d0cc3ee82659709a6a069b',1,'SingleApplication::messageAvailable()']]],
+  ['mimedata_9',['mimeData',['../class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09',1,'StoreModel']]],
+  ['mimetypes_10',['mimeTypes',['../class_store_model.html#a40620d3b37bb04b06b999308bf2ee137',1,'StoreModel']]],
+  ['mkpathforstore_11',['mkpathForStore',['../class_util.html#aa1d5ab65c22c21fe556ba0251e035f23',1,'Util']]],
+  ['mousedoubleclickevent_12',['mouseDoubleClickEvent',['../class_deselectable_tree_view.html#a3e29a7d444e39f91c52b83a920791a8d',1,'DeselectableTreeView::mouseDoubleClickEvent()'],['../class_field_label.html#ab888cb34aab13458b37ac20c5c491b70',1,'FieldLabel::mouseDoubleClickEvent()']]],
+  ['mousepressevent_13',['mousePressEvent',['../class_deselectable_tree_view.html#abfcdd23266bf6bcd318eeb25aac40ea7',1,'DeselectableTreeView']]],
+  ['mousereleaseevent_14',['mouseReleaseEvent',['../class_deselectable_tree_view.html#a0209e85dea0f1cf67c70c9545500eca5',1,'DeselectableTreeView::mouseReleaseEvent()'],['../class_secret_line_edit.html#a242041f66b392847e4963c5e70451977',1,'SecretLineEdit::mouseReleaseEvent()']]],
+  ['move_15',['Move',['../class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1',1,'ImitatePass::Move()'],['../class_pass.html#a386cbd930f4feac9275170912d45b3a3',1,'Pass::Move()'],['../class_real_pass.html#acbbb510bd58cdceae53d34985453fc83',1,'RealPass::Move()']]]
 ];

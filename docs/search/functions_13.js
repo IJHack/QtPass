@@ -1,14 +1,18 @@
 var searchData=
 [
-  ['unfinishedgitoperationreason_0',['unfinishedGitOperationReason',['../class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b',1,'Pass']]],
-  ['updateenv_1',['updateEnv',['../class_pass.html#ac679a086b289cdb9245906948ba0458a',1,'Pass']]],
-  ['usegit_2',['useGit',['../class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f',1,'ConfigDialog']]],
-  ['usegrepsearch_3',['useGrepSearch',['../class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7',1,'ConfigDialog']]],
-  ['useotp_4',['useOtp',['../class_config_dialog.html#a2a395844557989cf343503e80b075ba0',1,'ConfigDialog']]],
-  ['usepwgen_5',['usePwgen',['../class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995',1,'ConfigDialog::usePwgen()'],['../class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4',1,'PasswordDialog::usePwgen()']]],
-  ['useqrencode_6',['useQrencode',['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog']]],
-  ['userinfo_7',['UserInfo',['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo']]],
-  ['usersdialog_8',['UsersDialog',['../class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22',1,'UsersDialog::UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, QWidget *parent=nullptr)'],['../class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296',1,'UsersDialog::UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, Preselect preselect, QWidget *parent=nullptr)']]],
-  ['useselection_9',['useSelection',['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog']]],
-  ['usetrayicon_10',['useTrayIcon',['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog']]]
+  ['takenamedvalue_0',['takeNamedValue',['../class_named_values.html#a937ebcae4118431af19990a4a1e0bef7',1,'NamedValues']]],
+  ['takevalue_1',['takeValue',['../class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b',1,'NamedValues']]],
+  ['templateall_2',['templateAll',['../class_password_dialog.html#ac2af2ce4836edf9d5fda52d5ec66af82',1,'PasswordDialog']]],
+  ['textcopied_3',['textCopied',['../class_password_display_panel.html#ab3183a3523179d61490f18e41fbda13a',1,'PasswordDisplayPanel']]],
+  ['totp_4',['Totp',['../class_totp.html#af5356b79d5e5b93bef2c9713a3ed8ab3',1,'Totp']]],
+  ['touri_5',['toUri',['../class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351',1,'Totp']]],
+  ['trackcopied_6',['trackCopied',['../class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a',1,'ClipboardManager']]],
+  ['trackedtext_7',['trackedText',['../class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc',1,'ClipboardManager']]],
+  ['transactionadd_8',['transactionAdd',['../class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9',1,'SimpleTransaction']]],
+  ['transactionend_9',['transactionEnd',['../class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f',1,'SimpleTransaction']]],
+  ['transactionhelper_10',['TransactionHelper',['../class_imitate_pass_1_1_transaction_helper.html#a6ec9134c9e606f93ad7adb598d6b233d',1,'ImitatePass::TransactionHelper']]],
+  ['transactionisover_11',['transactionIsOver',['../class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1',1,'SimpleTransaction']]],
+  ['transactionstart_12',['transactionStart',['../class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24',1,'SimpleTransaction']]],
+  ['translatepathforwsl_13',['translatePathForWsl',['../class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86',1,'Executor::translatePathForWsl()'],['../class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8',1,'ImitatePass::translatePathForWsl()']]],
+  ['trayicon_14',['TrayIcon',['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon']]]
 ];

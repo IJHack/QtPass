@@ -1,0 +1,7 @@
+<map id="SettingsSerializer::load" name="SettingsSerializer::load">
+<area shape="rect" id="Node000001" title="Read all flat settings from a QSettings store." alt="" coords="5,40,141,85"/>
+<area shape="rect" id="Node000002" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="194,5,388,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,49,181,45,176,47,141,54"/>
+<area shape="rect" id="Node000003" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="189,75,394,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,70,176,78,170,79,141,76"/>
+</map>

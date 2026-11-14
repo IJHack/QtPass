@@ -1,0 +1,5 @@
+<map id="Util::isUnderLink" name="Util::isUnderLink">
+<area shape="rect" id="Node000001" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="5,5,135,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="183,5,328,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,17,170,19,165,19,135,22"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="MainWindow::on_lineEdit_textChanged" name="MainWindow::on_lineEdit_textChanged">
+<area shape="rect" id="Node000001" title="The search box changed (name filtering only): drop the pending decrypt and the panel,..." alt="" coords="5,80,190,125"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841" title="Forget the pending OTP and copy requests." alt="" coords="238,36,468,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,81,269,67,264,69,191,86"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="263,88,442,116"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,100,250,102,245,103,190,105"/>
+<area shape="rect" id="Node000006" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="519,144,679,189"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="190,117,238,125,377,143,506,158,501,158,377,148,237,130,190,123"/>
+<area shape="rect" id="Node000004" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="516,5,682,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="421,85,467,73,524,56,529,55,469,78,423,90"/>
+<area shape="rect" id="Node000005" href="$class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e" title="Drop the mode flag only, without touching busy/cancelled state." alt="" coords="519,75,679,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="443,98,506,99,501,99,443,103"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="409,114,506,142,501,142,409,119"/>
+</map>

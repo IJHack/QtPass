@@ -1,0 +1,7 @@
+<map id="src/trayicon.h" name="src/trayicon.h">
+<area shape="rect" id="Node000001" title="TrayIcon: the system tray icon and its context menu that show, hide, minimise, maximise,..." alt="" coords="109,5,218,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,43,98,83,95,78,135,44"/>
+<area shape="rect" id="Node000003" href="$trayicon_8cpp.html" title="Implements TrayIcon; the tray is only set up when QSystemTrayIcon::isSystemTrayAvailable() says there..." alt="" coords="182,81,307,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,41,233,81,228,80,188,46"/>
+</map>

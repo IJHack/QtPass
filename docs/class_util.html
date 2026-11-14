@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_util.html','','class_util-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,19 +112,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="class_util-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">Util Class Reference</div></div>
+  <div class="headertitle"><div class="title">Util Class Reference<div class="ingroups"><a class="el" href="group__support.html">Application support</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Some static utilities to be used elsewhere.  
+<p>Static helpers that have no better home: setting up the process and the Git environment the way pass does, finding binaries and the default store, path and URL handling, and file operations that refuse to follow links.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="util_8h_source.html">util.h</a>&gt;</code></p>
@@ -112,83 +125,95 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:acaa1adf59bd6ad4b1bae548134ea7f76" id="r_acaa1adf59bd6ad4b1bae548134ea7f76"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> = std::function&lt;QString(QFileDevice &amp;)&gt;</td></tr>
-<tr class="memdesc:acaa1adf59bd6ad4b1bae548134ea7f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string.  <br /></td></tr>
+<tr class="memdesc:acaa1adf59bd6ad4b1bae548134ea7f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the temporary of <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0954978822dc30f773f1302003dbea84" id="r_a0954978822dc30f773f1302003dbea84"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0954978822dc30f773f1302003dbea84">applyPassProcessDefaults</a> ()</td></tr>
-<tr class="memdesc:a0954978822dc30f773f1302003dbea84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store.  <br /></td></tr>
-<tr class="memitem:a595b817bda4e90e2de3afbafe8914306" id="r_a595b817bda4e90e2de3afbafe8914306"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a595b817bda4e90e2de3afbafe8914306">gitCeiling</a> (const QString &amp;store) -&gt; QString</td></tr>
-<tr class="memdesc:a595b817bda4e90e2de3afbafe8914306"><td class="mdescLeft">&#160;</td><td class="mdescRight">GIT_CEILING_DIRECTORIES for a store, as pass sets it.  <br /></td></tr>
-<tr class="memitem:a495277f2a6185cfc9bc14ff1eaf1e85d" id="r_a495277f2a6185cfc9bc14ff1eaf1e85d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a495277f2a6185cfc9bc14ff1eaf1e85d">repositoryPassClimbsTo</a> (const QString &amp;store) -&gt; QString</td></tr>
-<tr class="memdesc:a495277f2a6185cfc9bc14ff1eaf1e85d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The repository above <code class="param">store</code> that <span class="tt">pass</span> itself would commit to, if any.  <br /></td></tr>
-<tr class="memitem:a5bf7bba1e7d38a370b41d9acb1204eea" id="r_a5bf7bba1e7d38a370b41d9acb1204eea"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bf7bba1e7d38a370b41d9acb1204eea">gitStoreVariables</a> (const QString &amp;store, const QString &amp;git={}, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td></tr>
-<tr class="memdesc:a5bf7bba1e7d38a370b41d9acb1204eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#a595b817bda4e90e2de3afbafe8914306" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it.  <br /></td></tr>
-<tr class="memitem:ad568587e75fe9275425aced4a3c0802d" id="r_ad568587e75fe9275425aced4a3c0802d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad568587e75fe9275425aced4a3c0802d">setGitOwnerForTests</a> (std::optional&lt; uint &gt; user)</td></tr>
-<tr class="memdesc:ad568587e75fe9275425aced4a3c0802d"><td class="mdescLeft">&#160;</td><td class="mdescRight">For tests: the user <a class="el" href="#a5bf7bba1e7d38a370b41d9acb1204eea" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">gitStoreVariables()</a> compares owners with when no <code class="param">asUser</code> is given, in place of the effective user. A file owned by another user cannot be made without root.  <br /></td></tr>
-<tr class="memitem:af014b42fcbaf221a947950a289ad4d1b" id="r_af014b42fcbaf221a947950a289ad4d1b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af014b42fcbaf221a947950a289ad4d1b">mkpathForStore</a> (const QString &amp;path) -&gt; bool</td></tr>
-<tr class="memdesc:af014b42fcbaf221a947950a289ad4d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <code class="param">path</code> and any missing parents as pass would.  <br /></td></tr>
-<tr class="memitem:a18b864b454324ed54da82252dc77a15c" id="r_a18b864b454324ed54da82252dc77a15c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a18b864b454324ed54da82252dc77a15c">passUmask</a> (const QString &amp;value) -&gt; int</td></tr>
-<tr class="memdesc:a18b864b454324ed54da82252dc77a15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The umask pass would use for <code class="param">value</code> of PASSWORD_STORE_UMASK.  <br /></td></tr>
-<tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
-<tr class="memdesc:aa93547aecfd166a3e0eac955370cc05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
-<tr class="memitem:abdd60f9928354b515d9d6bd2ee837699" id="r_abdd60f9928354b515d9d6bd2ee837699"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abdd60f9928354b515d9d6bd2ee837699">findBinaryInPath</a> (const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td></tr>
-<tr class="memdesc:abdd60f9928354b515d9d6bd2ee837699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable in an explicit list of directories.  <br /></td></tr>
-<tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
-<tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
-<tr class="memitem:a0364b473e6ccf9506606f406cd927c22" id="r_a0364b473e6ccf9506606f406cd927c22"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0364b473e6ccf9506606f406cd927c22">expandTilde</a> (const QString &amp;path) -&gt; QString</td></tr>
-<tr class="memdesc:a0364b473e6ccf9506606f406cd927c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand a leading current-user tilde in a path.  <br /></td></tr>
-<tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
-<tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with '/'.  <br /></td></tr>
-<tr class="memitem:ac8926b725ca51d6e68f3f383cfae478f" id="r_ac8926b725ca51d6e68f3f383cfae478f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
-<tr class="memdesc:ac8926b725ca51d6e68f3f383cfae478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
-<tr class="memitem:a8ed01cfd3773e5b0034089f2f952a030" id="r_a8ed01cfd3773e5b0034089f2f952a030"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ed01cfd3773e5b0034089f2f952a030">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:a8ed01cfd3773e5b0034089f2f952a030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
-<tr class="memitem:a73aa66df403921fb49c57548f83490bc" id="r_a73aa66df403921fb49c57548f83490bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a73aa66df403921fb49c57548f83490bc">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:a73aa66df403921fb49c57548f83490bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match URL protocols.  <br /></td></tr>
-<tr class="memitem:a0a5f8ed9bf31f351af081b45b92360d0" id="r_a0a5f8ed9bf31f351af081b45b92360d0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0a5f8ed9bf31f351af081b45b92360d0">isLaunchableWebUrl</a> (const QString &amp;value) -&gt; bool</td></tr>
-<tr class="memdesc:a0a5f8ed9bf31f351af081b45b92360d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a value is a safe, launchable web URL.  <br /></td></tr>
-<tr class="memitem:a96f0f96cc2e05dc680250717efe0c428" id="r_a96f0f96cc2e05dc680250717efe0c428"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a96f0f96cc2e05dc680250717efe0c428">linkifyUrls</a> (const QString &amp;text, bool *linked=nullptr) -&gt; QString</td></tr>
-<tr class="memdesc:a96f0f96cc2e05dc680250717efe0c428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn plain text into HTML with clickable links for safe web URLs.  <br /></td></tr>
-<tr class="memitem:a0ba6ef4e4542287d5b257252728d1aa4" id="r_a0ba6ef4e4542287d5b257252728d1aa4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ba6ef4e4542287d5b257252728d1aa4">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:a0ba6ef4e4542287d5b257252728d1aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
-<tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
-<tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <span class="tt">.gpg-id</span> token may be passed to gpg as a key selector. Accepts any non-empty token that does not start with <span class="tt">-</span>, exactly as <span class="tt">pass</span> does: key IDs and fingerprints of every version, emails, <span class="tt">=Exact
+<tr class="memitem:ab16f1ac58307067ced38315c49f6fcba" id="r_ab16f1ac58307067ced38315c49f6fcba"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab16f1ac58307067ced38315c49f6fcba">applyPassProcessDefaults</a> ()</td></tr>
+<tr class="memdesc:ab16f1ac58307067ced38315c49f6fcba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store.  <br /></td></tr>
+<tr class="memitem:afd0e45a8685dd277e6f3d51c361e0b03" id="r_afd0e45a8685dd277e6f3d51c361e0b03"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afd0e45a8685dd277e6f3d51c361e0b03">gitCeiling</a> (const QString &amp;store) -&gt; QString</td></tr>
+<tr class="memdesc:afd0e45a8685dd277e6f3d51c361e0b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">GIT_CEILING_DIRECTORIES for a store, as pass sets it.  <br /></td></tr>
+<tr class="memitem:a158b1927cee3cffacaec8d583fbf72ad" id="r_a158b1927cee3cffacaec8d583fbf72ad"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a158b1927cee3cffacaec8d583fbf72ad">repositoryPassClimbsTo</a> (const QString &amp;store) -&gt; QString</td></tr>
+<tr class="memdesc:a158b1927cee3cffacaec8d583fbf72ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The repository above <code class="param">store</code> that <span class="tt">pass</span> itself would commit to, if any.  <br /></td></tr>
+<tr class="memitem:a98271dbaefe09960e1eaded52fed2694" id="r_a98271dbaefe09960e1eaded52fed2694"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a98271dbaefe09960e1eaded52fed2694">gitStoreVariables</a> (const QString &amp;store, const QString &amp;git={}, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td></tr>
+<tr class="memdesc:a98271dbaefe09960e1eaded52fed2694"><td class="mdescLeft">&#160;</td><td class="mdescRight">The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it.  <br /></td></tr>
+<tr class="memitem:a44056a3fca6102be2a1a4f896d6a2208" id="r_a44056a3fca6102be2a1a4f896d6a2208"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a44056a3fca6102be2a1a4f896d6a2208">setGitOwnerForTests</a> (std::optional&lt; uint &gt; user)</td></tr>
+<tr class="memdesc:a44056a3fca6102be2a1a4f896d6a2208"><td class="mdescLeft">&#160;</td><td class="mdescRight">For tests: the user <a class="el" href="#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">gitStoreVariables()</a> compares owners with when no <code class="param">asUser</code> is given, in place of the effective user. A file owned by another user cannot be made without root.  <br /></td></tr>
+<tr class="memitem:aa1d5ab65c22c21fe556ba0251e035f23" id="r_aa1d5ab65c22c21fe556ba0251e035f23"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1d5ab65c22c21fe556ba0251e035f23">mkpathForStore</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aa1d5ab65c22c21fe556ba0251e035f23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create <code class="param">path</code> and any missing parents as pass would.  <br /></td></tr>
+<tr class="memitem:a11eb90b4a067feefd84769d336d79b10" id="r_a11eb90b4a067feefd84769d336d79b10"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a11eb90b4a067feefd84769d336d79b10">passUmask</a> (const QString &amp;value) -&gt; int</td></tr>
+<tr class="memdesc:a11eb90b4a067feefd84769d336d79b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">The umask pass would use for <code class="param">value</code> of PASSWORD_STORE_UMASK.  <br /></td></tr>
+<tr class="memitem:aee9122a528c60168a0c105bfbed062d5" id="r_aee9122a528c60168a0c105bfbed062d5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aee9122a528c60168a0c105bfbed062d5">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
+<tr class="memdesc:aee9122a528c60168a0c105bfbed062d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
+<tr class="memitem:ab55cbfbfa5af9851085b7ed5ff59f359" id="r_ab55cbfbfa5af9851085b7ed5ff59f359"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab55cbfbfa5af9851085b7ed5ff59f359">findBinaryInPath</a> (const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td></tr>
+<tr class="memdesc:ab55cbfbfa5af9851085b7ed5ff59f359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable in an explicit list of directories.  <br /></td></tr>
+<tr class="memitem:a503abb6ccbf2aa18056c220b9b45284e" id="r_a503abb6ccbf2aa18056c220b9b45284e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a503abb6ccbf2aa18056c220b9b45284e">findPasswordStore</a> () -&gt; QString</td></tr>
+<tr class="memdesc:a503abb6ccbf2aa18056c220b9b45284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
+<tr class="memitem:aa3f2185f3dc49fda5ec247646da61c6f" id="r_aa3f2185f3dc49fda5ec247646da61c6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3f2185f3dc49fda5ec247646da61c6f">expandTilde</a> (const QString &amp;path) -&gt; QString</td></tr>
+<tr class="memdesc:aa3f2185f3dc49fda5ec247646da61c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand a leading current-user tilde in a path.  <br /></td></tr>
+<tr class="memitem:acfa7240a7682876cf78d5a44bbbb81de" id="r_acfa7240a7682876cf78d5a44bbbb81de"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acfa7240a7682876cf78d5a44bbbb81de">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
+<tr class="memdesc:acfa7240a7682876cf78d5a44bbbb81de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with '/'.  <br /></td></tr>
+<tr class="memitem:a5507d9913a6b54a0a1c12f1dc2704cbc" id="r_a5507d9913a6b54a0a1c12f1dc2704cbc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5507d9913a6b54a0a1c12f1dc2704cbc">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
+<tr class="memdesc:a5507d9913a6b54a0a1c12f1dc2704cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
+<tr class="memitem:a2a7a32586578a9b631bc6b2a821ce616" id="r_a2a7a32586578a9b631bc6b2a821ce616"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a7a32586578a9b631bc6b2a821ce616">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:a2a7a32586578a9b631bc6b2a821ce616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
+<tr class="memitem:a133c5da0c8a3f106c09977679bc615c3" id="r_a133c5da0c8a3f106c09977679bc615c3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a133c5da0c8a3f106c09977679bc615c3">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:a133c5da0c8a3f106c09977679bc615c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match URL protocols.  <br /></td></tr>
+<tr class="memitem:a86864a9430f6903425908e76ba6079b5" id="r_a86864a9430f6903425908e76ba6079b5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86864a9430f6903425908e76ba6079b5">isLaunchableWebUrl</a> (const QString &amp;value) -&gt; bool</td></tr>
+<tr class="memdesc:a86864a9430f6903425908e76ba6079b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a value is a safe, launchable web URL.  <br /></td></tr>
+<tr class="memitem:ada742504985a1e8b2c6adb5e14b24794" id="r_ada742504985a1e8b2c6adb5e14b24794"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ada742504985a1e8b2c6adb5e14b24794">linkifyUrls</a> (const QString &amp;text, bool *linked=nullptr) -&gt; QString</td></tr>
+<tr class="memdesc:ada742504985a1e8b2c6adb5e14b24794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn plain text into HTML with clickable links for safe web URLs.  <br /></td></tr>
+<tr class="memitem:aced819d4368806d046f0dc24a91843f7" id="r_aced819d4368806d046f0dc24a91843f7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aced819d4368806d046f0dc24a91843f7">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:aced819d4368806d046f0dc24a91843f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
+<tr class="memitem:aba7296e41ef990d5d945d5ed8cd99bd5" id="r_aba7296e41ef990d5d945d5ed8cd99bd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aba7296e41ef990d5d945d5ed8cd99bd5">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
+<tr class="memdesc:aba7296e41ef990d5d945d5ed8cd99bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <span class="tt">.gpg-id</span> token may be passed to gpg as a key selector. Accepts any non-empty token that does not start with <span class="tt">-</span>, exactly as <span class="tt">pass</span> does: key IDs and fingerprints of every version, emails, <span class="tt">=Exact
 User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes.  <br /></td></tr>
-<tr class="memitem:a77bcdde819b9f0bd6a68c84cd8198e23" id="r_a77bcdde819b9f0bd6a68c84cd8198e23"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23">regularFilesUnder</a> (const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false) -&gt; QStringList</td></tr>
-<tr class="memdesc:a77bcdde819b9f0bd6a68c84cd8198e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular files under <code class="param">dir</code> whose name matches one of <code class="param">nameFilters</code>, found by walking only real directories.  <br /></td></tr>
-<tr class="memitem:afaab47cf531353235a5ec8f2c6424c5e" id="r_afaab47cf531353235a5ec8f2c6424c5e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afaab47cf531353235a5ec8f2c6424c5e">directoriesUnder</a> (const QString &amp;dir) -&gt; QStringList</td></tr>
-<tr class="memdesc:afaab47cf531353235a5ec8f2c6424c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered.  <br /></td></tr>
-<tr class="memitem:a746306345314ca148272abc2dd3e9e3c" id="r_a746306345314ca148272abc2dd3e9e3c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a746306345314ca148272abc2dd3e9e3c">isLinkedFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
-<tr class="memdesc:a746306345314ca148272abc2dd3e9e3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). Folder or file: a linked <span class="tt">.gpg</span>, <span class="tt">.gpg-id</span> or <span class="tt">.gpg-id.sig</span> is judged the same way.  <br /></td></tr>
-<tr class="memitem:af4112ecd778ae8225a12fa96ce611425" id="r_af4112ecd778ae8225a12fa96ce611425"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af4112ecd778ae8225a12fa96ce611425">isUnderLink</a> (const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</td></tr>
-<tr class="memdesc:af4112ecd778ae8225a12fa96ce611425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
-<tr class="memitem:ad23339038f3f09d99359f1a25d659a6f" id="r_ad23339038f3f09d99359f1a25d659a6f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad23339038f3f09d99359f1a25d659a6f">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
-<tr class="memdesc:ad23339038f3f09d99359f1a25d659a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
-<tr class="memitem:a98fa003a6d00d1936da437f3d16d3568" id="r_a98fa003a6d00d1936da437f3d16d3568"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a98fa003a6d00d1936da437f3d16d3568">replaceFile</a> (const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td></tr>
-<tr class="memdesc:a98fa003a6d00d1936da437f3d16d3568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">linkat(2)</span> without <span class="tt">AT_SYMLINK_FOLLOW</span> and unlink on POSIX, where a no-replace rename is not portable; plain <span class="tt">link(2)</span> follows a symlink at <code class="param">from</code> on macOS and the BSDs).  <br /></td></tr>
-<tr class="memitem:a4cb272a3c3c392bfb4c9fd2c57e6bb15" id="r_a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15">openRegularFile</a> (const QString &amp;path, QFile &amp;file) -&gt; bool</td></tr>
-<tr class="memdesc:a4cb272a3c3c392bfb4c9fd2c57e6bb15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
-<tr class="memitem:a300aa55d5edadc5084b5dcd85199bcf1" id="r_a300aa55d5edadc5084b5dcd85199bcf1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a300aa55d5edadc5084b5dcd85199bcf1">readRegularFile</a> (const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td></tr>
-<tr class="memdesc:a300aa55d5edadc5084b5dcd85199bcf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read <code class="param">path</code> whole, as the regular file it is (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), when it holds at most <code class="param">maxBytes</code>.  <br /></td></tr>
-<tr class="memitem:aaad861f6fd0b64f8791ef5066d351bd8" id="r_aaad861f6fd0b64f8791ef5066d351bd8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8">stageFileReplacing</a> (const QString &amp;path, bool replace, const <a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;fill, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:aaad861f6fd0b64f8791ef5066d351bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since). Where the system cannot give both identities the write stands: on FAT and exFAT a rename moves the file ID, and those filesystems have no hard links to swap in either.  <br /></td></tr>
-<tr class="memitem:ab4611dd64c8704e7a6392f0201af6e39" id="r_ab4611dd64c8704e7a6392f0201af6e39"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab4611dd64c8704e7a6392f0201af6e39">writeFileReplacing</a> (const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:ab4611dd64c8704e7a6392f0201af6e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>.  <br /></td></tr>
-<tr class="memitem:a5c725b669b370ff5da26d0d31e40f7f2" id="r_a5c725b669b370ff5da26d0d31e40f7f2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5c725b669b370ff5da26d0d31e40f7f2">copyFileReplacing</a> (const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:a5c725b669b370ff5da26d0d31e40f7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it.  <br /></td></tr>
-<tr class="memitem:ab648b0017acac1869d91ebc924591a24" id="r_ab648b0017acac1869d91ebc924591a24"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab648b0017acac1869d91ebc924591a24">syncToDisk</a> (QFileDevice &amp;file) -&gt; bool</td></tr>
-<tr class="memdesc:ab648b0017acac1869d91ebc924591a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves.  <br /></td></tr>
+<tr class="memitem:a01aa652eefff30de7eabdf90c7737974" id="r_a01aa652eefff30de7eabdf90c7737974"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a01aa652eefff30de7eabdf90c7737974">regularFilesUnder</a> (const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false) -&gt; QStringList</td></tr>
+<tr class="memdesc:a01aa652eefff30de7eabdf90c7737974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Regular files under <code class="param">dir</code> whose name matches one of <code class="param">nameFilters</code>, found by walking only real directories.  <br /></td></tr>
+<tr class="memitem:aea1468816a5747a7b3421d9966689202" id="r_aea1468816a5747a7b3421d9966689202"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aea1468816a5747a7b3421d9966689202">directoriesUnder</a> (const QString &amp;dir) -&gt; QStringList</td></tr>
+<tr class="memdesc:aea1468816a5747a7b3421d9966689202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered.  <br /></td></tr>
+<tr class="memitem:aa9ae92951eb0e849c1e4f35d10c4192d" id="r_aa9ae92951eb0e849c1e4f35d10c4192d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa9ae92951eb0e849c1e4f35d10c4192d">isLinkedFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aa9ae92951eb0e849c1e4f35d10c4192d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">path</code> names a symbolic link or NTFS junction, with or without a trailing separator (which would otherwise make the check look at the target instead). Folder or file: a linked <span class="tt">.gpg</span>, <span class="tt">.gpg-id</span> or <span class="tt">.gpg-id.sig</span> is judged the same way.  <br /></td></tr>
+<tr class="memitem:a303cdce7f33f076823a0581defb52ca4" id="r_a303cdce7f33f076823a0581defb52ca4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a303cdce7f33f076823a0581defb52ca4">isUnderLink</a> (const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</td></tr>
+<tr class="memdesc:a303cdce7f33f076823a0581defb52ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the way from <code class="param">storeRoot</code> down to <code class="param">path</code> passes through a symbolic link or NTFS junction: <code class="param">path</code> itself or any folder between.  <br /></td></tr>
+<tr class="memitem:a1fb5c7c915c11a832a9d5a338f8d6b8c" id="r_a1fb5c7c915c11a832a9d5a338f8d6b8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1fb5c7c915c11a832a9d5a338f8d6b8c">removeTree</a> (const QString &amp;dir) -&gt; bool</td></tr>
+<tr class="memdesc:a1fb5c7c915c11a832a9d5a338f8d6b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">dir</code> and everything in it, the way <span class="tt">rm -rf</span> does: a symbolic link or NTFS junction, <code class="param">dir</code> itself or anything inside, is removed as an entry and what it points to is never entered. A trailing separator on <code class="param">dir</code> does not change that.  <br /></td></tr>
+<tr class="memitem:ab0e1c40d3ccc706e0d74d246361a2640" id="r_ab0e1c40d3ccc706e0d74d246361a2640"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0e1c40d3ccc706e0d74d246361a2640">replaceFile</a> (const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td></tr>
+<tr class="memdesc:ab0e1c40d3ccc706e0d74d246361a2640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give the file at <code class="param">from</code> the name <code class="param">to</code>, atomically and without following anything: the operating system's rename (<span class="tt">rename(2)</span>, <span class="tt">MoveFileEx</span>), never QFile::rename(), whose fallback when the plain rename fails is to copy by opening <code class="param">to</code> for writing, through whatever link sits under that name by then. With <code class="param">replace</code>, whatever entry is at <code class="param">to</code> (a file, a link) is replaced as an entry; without it, the call fails when anything is there (<span class="tt">linkat(2)</span> without <span class="tt">AT_SYMLINK_FOLLOW</span> and unlink on POSIX, where a no-replace rename is not portable; plain <span class="tt">link(2)</span> follows a symlink at <code class="param">from</code> on macOS and the BSDs).  <br /></td></tr>
+<tr class="memitem:acf5bf60f4f6eb548fb8b3c9bfa760612" id="r_acf5bf60f4f6eb548fb8b3c9bfa760612"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612">openRegularFile</a> (const QString &amp;path, QFile &amp;file) -&gt; bool</td></tr>
+<tr class="memdesc:acf5bf60f4f6eb548fb8b3c9bfa760612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <code class="param">path</code> for reading as the regular file it is, not as what a link under that name points to: the object opened is the object judged. A check of the name before an open by name leaves a window in which a co-writer of the store makes the name a link; opening without following (O_NOFOLLOW; on Windows the reparse point itself) and judging the open handle closes it. A directory, a link, a FIFO or a device is refused.  <br /></td></tr>
+<tr class="memitem:a8e427903937505b5e19ebbea7050494e" id="r_a8e427903937505b5e19ebbea7050494e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e427903937505b5e19ebbea7050494e">readRegularFile</a> (const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td></tr>
+<tr class="memdesc:a8e427903937505b5e19ebbea7050494e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read <code class="param">path</code> whole, as the regular file it is (<a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), when it holds at most <code class="param">maxBytes</code>.  <br /></td></tr>
+<tr class="memitem:add1e4f70c6d7630ace5e350b30f78907" id="r_add1e4f70c6d7630ace5e350b30f78907"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#add1e4f70c6d7630ace5e350b30f78907">stageFileReplacing</a> (const QString &amp;path, bool replace, const <a class="el" href="#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> &amp;fill, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:add1e4f70c6d7630ace5e350b30f78907"><td class="mdescLeft">&#160;</td><td class="mdescRight">The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since). Where the system cannot give both identities the write stands: on FAT and exFAT a rename moves the file ID, and those filesystems have no hard links to swap in either.  <br /></td></tr>
+<tr class="memitem:a5d33d7a093ab7e104320384f4ec3213c" id="r_a5d33d7a093ab7e104320384f4ec3213c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5d33d7a093ab7e104320384f4ec3213c">writeFileReplacing</a> (const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a5d33d7a093ab7e104320384f4ec3213c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>.  <br /></td></tr>
+<tr class="memitem:ac134662c3a71ca1cd0ec04642e9a6255" id="r_ac134662c3a71ca1cd0ec04642e9a6255"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac134662c3a71ca1cd0ec04642e9a6255">copyFileReplacing</a> (const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:ac134662c3a71ca1cd0ec04642e9a6255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it.  <br /></td></tr>
+<tr class="memitem:aa000e615528288c62c3388bfbad759ee" id="r_aa000e615528288c62c3388bfbad759ee"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa000e615528288c62c3388bfbad759ee">syncToDisk</a> (QFileDevice &amp;file) -&gt; bool</td></tr>
+<tr class="memdesc:aa000e615528288c62c3388bfbad759ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush <code class="param">file's</code> bytes to the device (<span class="tt">fsync</span>, <span class="tt">FlushFileBuffers</span>) before it is renamed into place, so that a crash right after the rename does not leave the name pointing at an empty file. QSaveFile did this on commit; the staged writes here do it themselves.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a8ba8f3a6d040fd6ec7f2291431404f6a" id="r_a8ba8f3a6d040fd6ec7f2291431404f6a"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="#a8ba8f3a6d040fd6ec7f2291431404f6a">kMaxGpgIdBytes</a> = 1024 * 1024</td></tr>
 <tr class="memdesc:a8ba8f3a6d040fd6ec7f2291431404f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of a .gpg-id <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:ae448351f44d5e8f0d03eeff8ef3e54b2" id="r_ae448351f44d5e8f0d03eeff8ef3e54b2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2">initialiseEnvironment</a> ()</td></tr>
+<tr class="memdesc:ae448351f44d5e8f0d03eeff8ef3e54b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacGPG2 and <span class="tt">/usr/local/bin</span> on macOS, WinGPG and GnuPG on Windows) when they exist.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a6f14f16322c96b174b357bbad4b66b67" id="r_a6f14f16322c96b174b357bbad4b66b67"><td class="memItemLeft">static QProcessEnvironment&#160;</td><td class="memItemRight"><a class="el" href="#a6f14f16322c96b174b357bbad4b66b67">_env</a></td></tr>
+<tr class="memitem:aeccb471a23085461c3c79f24f7f82e2c" id="r_aeccb471a23085461c3c79f24f7f82e2c"><td class="memItemLeft">static bool&#160;</td><td class="memItemRight"><a class="el" href="#aeccb471a23085461c3c79f24f7f82e2c">_envInitialised</a> = false</td></tr>
+<tr class="memdesc:aeccb471a23085461c3c79f24f7f82e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> has run.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Some static utilities to be used elsewhere. </p>
+<div class="textblock"><p>Static helpers that have no better home: setting up the process and the Git environment the way pass does, finding binaries and the default store, path and URL handling, and file operations that refuse to follow links. </p>
+<p>Nothing here keeps state apart from the cached process environment, and nothing depends on a widget or a model. Store-boundary checks live in <a class="el" href="class_path_validator.html" title="Password-store path-boundary checks.">PathValidator</a>, SSH agent discovery in <a class="el" href="class_ssh_auth_sock.html" title="SSH_AUTH_SOCK discovery and validation for child processes.">SshAuthSock</a> and template files in <a class="el" href="class_template_i_o.html" title="Read and write password-store template configuration.">TemplateIO</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00024">24</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00040">40</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="acaa1adf59bd6ad4b1bae548134ea7f76" name="acaa1adf59bd6ad4b1bae548134ea7f76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acaa1adf59bd6ad4b1bae548134ea7f76">&#9670;&#160;</a></span>Filler</h2>
@@ -202,15 +227,15 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fills the temporary of <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
+<p>Fills the temporary of <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a> through its open handle; returns why it could not (translated, for the user), or an empty string. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00389">389</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00405">405</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a0954978822dc30f773f1302003dbea84" name="a0954978822dc30f773f1302003dbea84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0954978822dc30f773f1302003dbea84">&#9670;&#160;</a></span>applyPassProcessDefaults()</h2>
+<a id="ab16f1ac58307067ced38315c49f6fcba" name="ab16f1ac58307067ced38315c49f6fcba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab16f1ac58307067ced38315c49f6fcba">&#9670;&#160;</a></span>applyPassProcessDefaults()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,12 +258,26 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the store. </p>
-<p>Clears the variables that point git at another repository (GIT_DIR, GIT_WORK_TREE and the rest pass clears), and on Unix gives the processes <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts (git, gpg, pass) the umask from PASSWORD_STORE_UMASK, 077 by default (<a class="el" href="class_executor.html#a1c8933b8dca68b4967740d6193a2ea4d" title="The umask every child QtPass starts gets, as pass sets its own.">Executor::setChildUmask()</a>): what they create in the store is then the user's alone, as with pass. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask stays the session's, so a browser or file manager it opens is not affected. Call it first thing in main(). </p>
+<p>Clears the variables that point git at another repository (GIT_DIR, GIT_WORK_TREE and the rest pass clears), and on Unix gives the processes <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> starts (git, gpg, pass) the umask from PASSWORD_STORE_UMASK, 077 by default (<a class="el" href="class_executor.html#a9f717e2a6f4b5ed7a0ef6f833a80d880" title="The umask every child QtPass starts gets, as pass sets its own.">Executor::setChildUmask()</a>): what they create in the store is then the user's alone, as with pass. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask stays the session's, so a browser or file manager it opens is not affected. Call it first thing in <a class="el" href="main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window.">main()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00106">106</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ab16f1ac58307067ced38315c49f6fcba_cgraph.svg" width="466" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ab16f1ac58307067ced38315c49f6fcba_icgraph.svg" width="344" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
-<a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
+<a id="a5507d9913a6b54a0a1c12f1dc2704cbc" name="a5507d9913a6b54a0a1c12f1dc2704cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5507d9913a6b54a0a1c12f1dc2704cbc">&#9670;&#160;</a></span>configIsValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,7 +289,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::configIsValid </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -269,10 +308,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00556">556</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5507d9913a6b54a0a1c12f1dc2704cbc_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5507d9913a6b54a0a1c12f1dc2704cbc_icgraph.svg" width="100%" height="441"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a5c725b669b370ff5da26d0d31e40f7f2" name="a5c725b669b370ff5da26d0d31e40f7f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c725b669b370ff5da26d0d31e40f7f2">&#9670;&#160;</a></span>copyFileReplacing()</h2>
+<a id="ac134662c3a71ca1cd0ec04642e9a6255" name="ac134662c3a71ca1cd0ec04642e9a6255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac134662c3a71ca1cd0ec04642e9a6255">&#9670;&#160;</a></span>copyFileReplacing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,7 +351,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -308,7 +361,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it. </p>
+<p>Copy the regular file <code class="param">src</code> to the name <code class="param">dst</code> through <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>: <code class="param">src</code> is read through a handle opened without following (<a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>). The copy is owner-only whatever <code class="param">src's</code> mode, as pass's <span class="tt">cp</span> under its umask 077 makes it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">src</td><td>The file to copy; a link, a directory or a special file under that name is refused. </td></tr>
@@ -320,10 +373,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">dst</code> now holds a copy of <code class="param">src</code>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01179">1179</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ac134662c3a71ca1cd0ec04642e9a6255_cgraph.svg" width="576" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ac134662c3a71ca1cd0ec04642e9a6255_icgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="afaab47cf531353235a5ec8f2c6424c5e" name="afaab47cf531353235a5ec8f2c6424c5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaab47cf531353235a5ec8f2c6424c5e">&#9670;&#160;</a></span>directoriesUnder()</h2>
+<a id="aea1468816a5747a7b3421d9966689202" name="aea1468816a5747a7b3421d9966689202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1468816a5747a7b3421d9966689202">&#9670;&#160;</a></span>directoriesUnder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +402,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::directoriesUnder </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
-          <td> -&gt;  QStringList</td>
+          <td> -&gt; QStringList</td>
         </tr>
       </table>
   </td>
@@ -345,7 +412,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a77bcdde819b9f0bd6a68c84cd8198e23" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered. </p>
+<p>Every real, visible directory under <code class="param">dir</code>, walked by the same rules as <a class="el" href="#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories...">regularFilesUnder()</a>: links, junctions and hidden directories are neither listed nor entered. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>Directory to walk. </td></tr>
@@ -354,10 +421,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, parents before children. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00749">749</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aea1468816a5747a7b3421d9966689202_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a8ed01cfd3773e5b0034089f2f952a030" name="a8ed01cfd3773e5b0034089f2f952a030"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ed01cfd3773e5b0034089f2f952a030">&#9670;&#160;</a></span>endsWithGpg()</h2>
+<a id="a2a7a32586578a9b631bc6b2a821ce616" name="a2a7a32586578a9b631bc6b2a821ce616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7a32586578a9b631bc6b2a821ce616">&#9670;&#160;</a></span>endsWithGpg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -369,7 +444,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::endsWithGpg </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  const QRegularExpression &amp;</td>
+          <td> -&gt; const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -382,10 +457,18 @@ Static Public Attributes</h2></td></tr>
 <p>Returns a regex to match .gpg file extensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00582">582</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a2a7a32586578a9b631bc6b2a821ce616_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a0364b473e6ccf9506606f406cd927c22" name="a0364b473e6ccf9506606f406cd927c22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0364b473e6ccf9506606f406cd927c22">&#9670;&#160;</a></span>expandTilde()</h2>
+<a id="aa3f2185f3dc49fda5ec247646da61c6f" name="aa3f2185f3dc49fda5ec247646da61c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f2185f3dc49fda5ec247646da61c6f">&#9670;&#160;</a></span>expandTilde()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -397,7 +480,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::expandTilde </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -417,10 +500,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a leading current-user tilde expanded. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00088">88</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa3f2185f3dc49fda5ec247646da61c6f_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="aa93547aecfd166a3e0eac955370cc05c" name="aa93547aecfd166a3e0eac955370cc05c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa93547aecfd166a3e0eac955370cc05c">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[1/2]</span></h2>
+<a id="aee9122a528c60168a0c105bfbed062d5" name="aee9122a528c60168a0c105bfbed062d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee9122a528c60168a0c105bfbed062d5">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +523,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::findBinaryInPath </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>binary</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -451,10 +542,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00474">474</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_icgraph.svg" width="100%" height="521"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="abdd60f9928354b515d9d6bd2ee837699" name="abdd60f9928354b515d9d6bd2ee837699"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdd60f9928354b515d9d6bd2ee837699">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[2/2]</span></h2>
+<a id="ab55cbfbfa5af9851085b7ed5ff59f359" name="ab55cbfbfa5af9851085b7ed5ff59f359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55cbfbfa5af9851085b7ed5ff59f359">&#9670;&#160;</a></span>findBinaryInPath() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,7 +575,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>searchPaths</em></span>&#160;) -&gt;  QString</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>searchPaths</em></span>&#160;) -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -490,10 +595,12 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00537">537</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
 </div>
 </div>
-<a id="abfddcff8c37fbb33e86605e4fb7250db" name="abfddcff8c37fbb33e86605e4fb7250db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfddcff8c37fbb33e86605e4fb7250db">&#9670;&#160;</a></span>findPasswordStore()</h2>
+<a id="a503abb6ccbf2aa18056c220b9b45284e" name="a503abb6ccbf2aa18056c220b9b45284e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503abb6ccbf2aa18056c220b9b45284e">&#9670;&#160;</a></span>findPasswordStore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,7 +612,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::findPasswordStore </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -518,10 +625,24 @@ Static Public Attributes</h2></td></tr>
 <p>Locate the password store directory. </p>
 <dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with '/'. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00073">73</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_cgraph.svg" width="422" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a595b817bda4e90e2de3afbafe8914306" name="a595b817bda4e90e2de3afbafe8914306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a595b817bda4e90e2de3afbafe8914306">&#9670;&#160;</a></span>gitCeiling()</h2>
+<a id="afd0e45a8685dd277e6f3d51c361e0b03" name="afd0e45a8685dd277e6f3d51c361e0b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0e45a8685dd277e6f3d51c361e0b03">&#9670;&#160;</a></span>gitCeiling()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,7 +654,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::gitCeiling </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -552,10 +673,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The ceiling, empty for an empty <code class="param">store</code>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00135">135</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_afd0e45a8685dd277e6f3d51c361e0b03_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a5bf7bba1e7d38a370b41d9acb1204eea" name="a5bf7bba1e7d38a370b41d9acb1204eea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bf7bba1e7d38a370b41d9acb1204eea">&#9670;&#160;</a></span>gitStoreVariables()</h2>
+<a id="a98271dbaefe09960e1eaded52fed2694" name="a98271dbaefe09960e1eaded52fed2694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98271dbaefe09960e1eaded52fed2694">&#9670;&#160;</a></span>gitStoreVariables()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -576,7 +705,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::optional&lt; uint &gt;</td>          <td class="paramname"><span class="paramname"><em>asUser</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;) -&gt;  QList&lt; std::pair&lt; QString, QString &gt; &gt;</td>
+          <td class="paramtype">std::optional&lt; uint &gt;</td>          <td class="paramname"><span class="paramname"><em>asUser</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -586,7 +715,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#a595b817bda4e90e2de3afbafe8914306" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it. </p>
+<p>The variables that keep git in <code class="param">store's</code> own repository, never one above it: GIT_CEILING_DIRECTORIES (<a class="el" href="#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it.">gitCeiling()</a>), and, when that ceiling holds git's list separator (":", ";" on Windows) and so cannot be one entry of the list, GIT_DIR and GIT_WORK_TREE naming the store's own <span class="tt">.git</span> and the store. A store without a <span class="tt">.git</span> then has no repository to git, rather than the one above it. </p>
 <p>An explicit GIT_DIR skips git's ownership check, which runs only when git discovers a repository. On Unix the store is therefore pinned only when git's check would pass: it, its <span class="tt">.git</span> and a gitfile's target are the user's own, or git's <span class="tt">safe.directory</span> names the store (as git reads it: only from system, global and command-line configuration, never a repository's own; <span class="tt">*</span>, an exact path, or a path ending in a slash and <span class="tt">*</span> for what lies below it, an empty value clearing the entries before it). Otherwise GIT_DIR names a path that cannot exist, and git refuses rather than run another user's repository and hooks. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">store</td><td>The store's path. </td></tr>
@@ -597,10 +726,59 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Name and value pairs to set; empty for an empty <code class="param">store</code>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00376">376</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a98271dbaefe09960e1eaded52fed2694_cgraph.svg" width="336" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a98271dbaefe09960e1eaded52fed2694_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a0a5f8ed9bf31f351af081b45b92360d0" name="a0a5f8ed9bf31f351af081b45b92360d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a5f8ed9bf31f351af081b45b92360d0">&#9670;&#160;</a></span>isLaunchableWebUrl()</h2>
+<a id="ae448351f44d5e8f0d03eeff8ef3e54b2" name="ae448351f44d5e8f0d03eeff8ef3e54b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae448351f44d5e8f0d03eeff8ef3e54b2">&#9670;&#160;</a></span>initialiseEnvironment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Util::initialiseEnvironment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacGPG2 and <span class="tt">/usr/local/bin</span> on macOS, WinGPG and GnuPG on Windows) when they exist. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00046">46</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ae448351f44d5e8f0d03eeff8ef3e54b2_icgraph.svg" width="100%" height="561"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a86864a9430f6903425908e76ba6079b5" name="a86864a9430f6903425908e76ba6079b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86864a9430f6903425908e76ba6079b5">&#9670;&#160;</a></span>isLaunchableWebUrl()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +790,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::isLaunchableWebUrl </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -623,7 +801,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check whether a value is a safe, launchable web URL. </p>
-<p>Stricter than <a class="el" href="#a73aa66df403921fb49c57548f83490bc" title="Returns a regex to match URL protocols.">protocolRegex()</a>: intended to gate an "open in browser" action, where launching a non-web scheme would be a security risk. Returns true only when the trimmed value:</p><ul>
+<p>Stricter than <a class="el" href="#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols.">protocolRegex()</a>: intended to gate an "open in browser" action, where launching a non-web scheme would be a security risk. Returns true only when the trimmed value:</p><ul>
 <li>contains no control characters (CR, LF, NUL),</li>
 <li>parses to a valid QUrl,</li>
 <li>has scheme exactly "http" or "https" (case-insensitive),</li>
@@ -639,10 +817,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the value is a launchable http(s) URL, false otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00596">596</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a86864a9430f6903425908e76ba6079b5_icgraph.svg" width="100%" height="593"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a746306345314ca148272abc2dd3e9e3c" name="a746306345314ca148272abc2dd3e9e3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a746306345314ca148272abc2dd3e9e3c">&#9670;&#160;</a></span>isLinkedFolder()</h2>
+<a id="aa9ae92951eb0e849c1e4f35d10c4192d" name="aa9ae92951eb0e849c1e4f35d10c4192d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ae92951eb0e849c1e4f35d10c4192d">&#9670;&#160;</a></span>isLinkedFolder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +840,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::isLinkedFolder </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -673,10 +859,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true for a link or junction. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00761">761</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa9ae92951eb0e849c1e4f35d10c4192d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="af4112ecd778ae8225a12fa96ce611425" name="af4112ecd778ae8225a12fa96ce611425"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4112ecd778ae8225a12fa96ce611425">&#9670;&#160;</a></span>isUnderLink()</h2>
+<a id="a303cdce7f33f076823a0581defb52ca4" name="a303cdce7f33f076823a0581defb52ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303cdce7f33f076823a0581defb52ca4">&#9670;&#160;</a></span>isUnderLink()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -697,7 +891,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>includeSelf</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -718,10 +912,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when something on the way is a link. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00765">765</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a303cdce7f33f076823a0581defb52ca4_cgraph.svg" width="334" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a303cdce7f33f076823a0581defb52ca4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a7a6dcbde6840aab13f34a83a4ce9f3c1" name="a7a6dcbde6840aab13f34a83a4ce9f3c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">&#9670;&#160;</a></span>isValidKeyId()</h2>
+<a id="aba7296e41ef990d5d945d5ed8cd99bd5" name="aba7296e41ef990d5d945d5ed8cd99bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7296e41ef990d5d945d5ed8cd99bd5">&#9670;&#160;</a></span>isValidKeyId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +941,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto Util::isValidKeyId </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyId</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -753,10 +961,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if gpg may be given the token, false otherwise. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00664">664</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aba7296e41ef990d5d945d5ed8cd99bd5_icgraph.svg" width="100%" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a96f0f96cc2e05dc680250717efe0c428" name="a96f0f96cc2e05dc680250717efe0c428"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96f0f96cc2e05dc680250717efe0c428">&#9670;&#160;</a></span>linkifyUrls()</h2>
+<a id="ada742504985a1e8b2c6adb5e14b24794" name="ada742504985a1e8b2c6adb5e14b24794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada742504985a1e8b2c6adb5e14b24794">&#9670;&#160;</a></span>linkifyUrls()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -772,7 +988,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>linked</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QString</td>
+          <td class="paramtype">bool *</td>          <td class="paramname"><span class="paramname"><em>linked</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -783,7 +999,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </div><div class="memdoc">
 
 <p>Turn plain text into HTML with clickable links for safe web URLs. </p>
-<p>The single rule for every place a value is rendered into an <span class="tt">&lt;a href&gt;</span>: the text is HTML-escaped, and only the <a class="el" href="#a73aa66df403921fb49c57548f83490bc" title="Returns a regex to match URL protocols.">protocolRegex()</a> matches that also pass <a class="el" href="#a0a5f8ed9bf31f351af081b45b92360d0" title="Check whether a value is a safe, launchable web URL.">isLaunchableWebUrl()</a> become anchors. Everything else (ssh://, <a href="ftp://">ftp://</a>, URLs carrying user:pass@ credentials, ...) stays escaped plain text, so a click can never hand a non-web scheme or a secret to the OS URL handler via QTextBrowser::setOpenExternalLinks().</p>
+<p>The single rule for every place a value is rendered into an <span class="tt">&lt;a href&gt;</span>: the text is HTML-escaped, and only the <a class="el" href="#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols.">protocolRegex()</a> matches that also pass <a class="el" href="#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL.">isLaunchableWebUrl()</a> become anchors. Everything else (ssh://, <a href="ftp://">ftp://</a>, URLs carrying user:pass@ credentials, ...) stays escaped plain text, so a click can never hand a non-web scheme or a secret to the OS URL handler via QTextBrowser::setOpenExternalLinks().</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>Plain (unescaped) text, possibly containing URLs. </td></tr>
@@ -793,10 +1009,24 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>HTML-escaped text with anchors for launchable http(s) URLs. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00627">627</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ada742504985a1e8b2c6adb5e14b24794_cgraph.svg" width="362" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ada742504985a1e8b2c6adb5e14b24794_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="af014b42fcbaf221a947950a289ad4d1b" name="af014b42fcbaf221a947950a289ad4d1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af014b42fcbaf221a947950a289ad4d1b">&#9670;&#160;</a></span>mkpathForStore()</h2>
+<a id="aa1d5ab65c22c21fe556ba0251e035f23" name="aa1d5ab65c22c21fe556ba0251e035f23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d5ab65c22c21fe556ba0251e035f23">&#9670;&#160;</a></span>mkpathForStore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -808,7 +1038,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::mkpathForStore </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -819,7 +1049,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </div><div class="memdoc">
 
 <p>Create <code class="param">path</code> and any missing parents as pass would. </p>
-<p>What pass's mkdir -p does under its umask, for the folders <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> makes in the store itself: on Unix the mode is 0777 less the store umask (<a class="el" href="class_executor.html#ab60903ccdf163f6f025f4bc857632887" title="The umask setChildUmask() set.">Executor::childUmask()</a>, from PASSWORD_STORE_UMASK, 077 by default and when none is set), whatever <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask. Existing folders are left as they are. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>What pass's mkdir -p does under its umask, for the folders <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> makes in the store itself: on Unix the mode is 0777 less the store umask (<a class="el" href="class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set.">Executor::childUmask()</a>, from PASSWORD_STORE_UMASK, 077 by default and when none is set), whatever <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own umask. Existing folders are left as they are. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The folder to create. </td></tr>
   </table>
@@ -827,10 +1057,24 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True when <code class="param">path</code> is a folder afterwards. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00438">438</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa1d5ab65c22c21fe556ba0251e035f23_cgraph.svg" width="378" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aa1d5ab65c22c21fe556ba0251e035f23_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a0ba6ef4e4542287d5b257252728d1aa4" name="a0ba6ef4e4542287d5b257252728d1aa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ba6ef4e4542287d5b257252728d1aa4">&#9670;&#160;</a></span>newLinesRegex()</h2>
+<a id="aced819d4368806d046f0dc24a91843f7" name="aced819d4368806d046f0dc24a91843f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced819d4368806d046f0dc24a91843f7">&#9670;&#160;</a></span>newLinesRegex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -842,7 +1086,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::newLinesRegex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  const QRegularExpression &amp;</td>
+          <td> -&gt; const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -855,10 +1099,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Returns a regex to match newline characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00656">656</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aced819d4368806d046f0dc24a91843f7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="ab23a1afdcad63df9101660fd6e53b763" name="ab23a1afdcad63df9101660fd6e53b763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab23a1afdcad63df9101660fd6e53b763">&#9670;&#160;</a></span>normalizeFolderPath()</h2>
+<a id="acfa7240a7682876cf78d5a44bbbb81de" name="acfa7240a7682876cf78d5a44bbbb81de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa7240a7682876cf78d5a44bbbb81de">&#9670;&#160;</a></span>normalizeFolderPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -870,7 +1122,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::normalizeFolderPath </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -890,10 +1142,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with a trailing '/' added if it was missing. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00098">98</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_acfa7240a7682876cf78d5a44bbbb81de_icgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a4cb272a3c3c392bfb4c9fd2c57e6bb15" name="a4cb272a3c3c392bfb4c9fd2c57e6bb15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15">&#9670;&#160;</a></span>openRegularFile()</h2>
+<a id="acf5bf60f4f6eb548fb8b3c9bfa760612" name="acf5bf60f4f6eb548fb8b3c9bfa760612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5bf60f4f6eb548fb8b3c9bfa760612">&#9670;&#160;</a></span>openRegularFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -909,7 +1169,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QFile &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QFile &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -929,10 +1189,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">file</code> is open on a regular file. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00913">913</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_acf5bf60f4f6eb548fb8b3c9bfa760612_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a18b864b454324ed54da82252dc77a15c" name="a18b864b454324ed54da82252dc77a15c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18b864b454324ed54da82252dc77a15c">&#9670;&#160;</a></span>passUmask()</h2>
+<a id="a11eb90b4a067feefd84769d336d79b10" name="a11eb90b4a067feefd84769d336d79b10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11eb90b4a067feefd84769d336d79b10">&#9670;&#160;</a></span>passUmask()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -944,7 +1212,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::passUmask </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  int</td>
+          <td> -&gt; int</td>
         </tr>
       </table>
   </td>
@@ -963,10 +1231,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The octal value when it is one (up to four octal digits), else 077, pass's default. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00122">122</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
+</div>
+<div id="dynsection-29-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a11eb90b4a067feefd84769d336d79b10_icgraph.svg" width="520" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="a73aa66df403921fb49c57548f83490bc" name="a73aa66df403921fb49c57548f83490bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73aa66df403921fb49c57548f83490bc">&#9670;&#160;</a></span>protocolRegex()</h2>
+<a id="a133c5da0c8a3f106c09977679bc615c3" name="a133c5da0c8a3f106c09977679bc615c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133c5da0c8a3f106c09977679bc615c3">&#9670;&#160;</a></span>protocolRegex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -978,7 +1254,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::protocolRegex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  const QRegularExpression &amp;</td>
+          <td> -&gt; const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -991,10 +1267,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Returns a regex to match URL protocols. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00590">590</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a133c5da0c8a3f106c09977679bc615c3_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a300aa55d5edadc5084b5dcd85199bcf1" name="a300aa55d5edadc5084b5dcd85199bcf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a300aa55d5edadc5084b5dcd85199bcf1">&#9670;&#160;</a></span>readRegularFile()</h2>
+<a id="a8e427903937505b5e19ebbea7050494e" name="a8e427903937505b5e19ebbea7050494e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e427903937505b5e19ebbea7050494e">&#9670;&#160;</a></span>readRegularFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1010,7 +1294,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>maxBytes</em></span>&#160;) -&gt;  std::optional&lt; QByteArray &gt;</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>maxBytes</em></span>&#160;) -&gt; std::optional&lt; QByteArray &gt;</td>
         </tr>
       </table>
   </td>
@@ -1020,7 +1304,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>Read <code class="param">path</code> whole, as the regular file it is (<a class="el" href="#a4cb272a3c3c392bfb4c9fd2c57e6bb15" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), when it holds at most <code class="param">maxBytes</code>. </p>
+<p>Read <code class="param">path</code> whole, as the regular file it is (<a class="el" href="#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob...">openRegularFile()</a>), when it holds at most <code class="param">maxBytes</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The file. </td></tr>
@@ -1030,10 +1314,24 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The contents; nothing when the file is missing, not a regular file (a link, FIFO or device included), unreadable or larger. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00973">973</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
+</div>
+<div id="dynsection-31-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a8e427903937505b5e19ebbea7050494e_cgraph.svg" width="371" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
+</div>
+<div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a8e427903937505b5e19ebbea7050494e_icgraph.svg" width="100%" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a77bcdde819b9f0bd6a68c84cd8198e23" name="a77bcdde819b9f0bd6a68c84cd8198e23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77bcdde819b9f0bd6a68c84cd8198e23">&#9670;&#160;</a></span>regularFilesUnder()</h2>
+<a id="a01aa652eefff30de7eabdf90c7737974" name="a01aa652eefff30de7eabdf90c7737974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01aa652eefff30de7eabdf90c7737974">&#9670;&#160;</a></span>regularFilesUnder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,7 +1357,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>hiddenFiles</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) -&gt;  QStringList</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>hiddenFiles</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;) -&gt; QStringList</td>
         </tr>
       </table>
   </td>
@@ -1071,7 +1369,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 
 <p>Regular files under <code class="param">dir</code> whose name matches one of <code class="param">nameFilters</code>, found by walking only real directories. </p>
 <p>Symbolic links and NTFS junctions are never entered and never listed: either can point outside the tree, and QDirIterator's own recursion treats a junction as an ordinary directory (Qt marks it JunctionType, not LinkType, so QDir::NoSymLinks does not see it). Hidden directories (<span class="tt">.git</span>, a sync tool's version folder) are not entered either, as with QDirIterator without QDir::Hidden.</p>
-<p><code class="param">dir</code> itself is followed whatever it is: the configured store root is commonly a symlink (<span class="tt">~/.password-store</span> to a synced folder), and it is the user's choice, not something found inside the store. A caller that gets its folder from the store tree decides with <a class="el" href="#a746306345314ca148272abc2dd3e9e3c" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul...">isLinkedFolder()</a> first.</p>
+<p><code class="param">dir</code> itself is followed whatever it is: the configured store root is commonly a symlink (<span class="tt">~/.password-store</span> to a synced folder), and it is the user's choice, not something found inside the store. A caller that gets its folder from the store tree decides with <a class="el" href="#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul...">isLinkedFolder()</a> first.</p>
 <p>The walk is a listing, not a lock: what is a regular file when listed can be replaced before it is opened. That is the store's trust boundary (SECURITY.md), not something a walk can close. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>Directory to walk. </td></tr>
@@ -1083,10 +1381,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Absolute paths, sorted by name within each directory, a directory's files before its subdirectories. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00721">721</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
+</div>
+<div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a01aa652eefff30de7eabdf90c7737974_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="ad23339038f3f09d99359f1a25d659a6f" name="ad23339038f3f09d99359f1a25d659a6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad23339038f3f09d99359f1a25d659a6f">&#9670;&#160;</a></span>removeTree()</h2>
+<a id="a1fb5c7c915c11a832a9d5a338f8d6b8c" name="a1fb5c7c915c11a832a9d5a338f8d6b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb5c7c915c11a832a9d5a338f8d6b8c">&#9670;&#160;</a></span>removeTree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1098,7 +1404,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::removeTree </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dir</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1117,10 +1423,24 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when <code class="param">dir</code> is gone. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01239">1239</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a1fb5c7c915c11a832a9d5a338f8d6b8c_cgraph.svg" width="140" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
+</div>
+<div id="dynsection-35-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a1fb5c7c915c11a832a9d5a338f8d6b8c_icgraph.svg" width="348" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="a98fa003a6d00d1936da437f3d16d3568" name="a98fa003a6d00d1936da437f3d16d3568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98fa003a6d00d1936da437f3d16d3568">&#9670;&#160;</a></span>replaceFile()</h2>
+<a id="ab0e1c40d3ccc706e0d74d246361a2640" name="ab0e1c40d3ccc706e0d74d246361a2640"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e1c40d3ccc706e0d74d246361a2640">&#9670;&#160;</a></span>replaceFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1141,7 +1461,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>replace</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1162,10 +1482,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">to</code> is now that file. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00873">873</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
+</div>
+<div id="dynsection-36-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_ab0e1c40d3ccc706e0d74d246361a2640_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a495277f2a6185cfc9bc14ff1eaf1e85d" name="a495277f2a6185cfc9bc14ff1eaf1e85d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a495277f2a6185cfc9bc14ff1eaf1e85d">&#9670;&#160;</a></span>repositoryPassClimbsTo()</h2>
+<a id="a158b1927cee3cffacaec8d583fbf72ad" name="a158b1927cee3cffacaec8d583fbf72ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158b1927cee3cffacaec8d583fbf72ad">&#9670;&#160;</a></span>repositoryPassClimbsTo()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1177,7 +1505,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::repositoryPassClimbsTo </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -1196,10 +1524,18 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The folder holding that repository's <span class="tt">.git</span>; empty when pass keeps to the store. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00146">146</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
+</div>
+<div id="dynsection-37-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a158b1927cee3cffacaec8d583fbf72ad_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="ad568587e75fe9275425aced4a3c0802d" name="ad568587e75fe9275425aced4a3c0802d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad568587e75fe9275425aced4a3c0802d">&#9670;&#160;</a></span>setGitOwnerForTests()</h2>
+<a id="a44056a3fca6102be2a1a4f896d6a2208" name="a44056a3fca6102be2a1a4f896d6a2208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44056a3fca6102be2a1a4f896d6a2208">&#9670;&#160;</a></span>setGitOwnerForTests()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1221,7 +1557,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>For tests: the user <a class="el" href="#a5bf7bba1e7d38a370b41d9acb1204eea" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">gitStoreVariables()</a> compares owners with when no <code class="param">asUser</code> is given, in place of the effective user. A file owned by another user cannot be made without root. </p>
+<p>For tests: the user <a class="el" href="#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g...">gitStoreVariables()</a> compares owners with when no <code class="param">asUser</code> is given, in place of the effective user. A file owned by another user cannot be made without root. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">user</td><td>The user, or nothing to go back to the effective user. </td></tr>
@@ -1229,10 +1565,12 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00284">284</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
 </div>
 </div>
-<a id="aaad861f6fd0b64f8791ef5066d351bd8" name="aaad861f6fd0b64f8791ef5066d351bd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaad861f6fd0b64f8791ef5066d351bd8">&#9670;&#160;</a></span>stageFileReplacing()</h2>
+<a id="add1e4f70c6d7630ace5e350b30f78907" name="add1e4f70c6d7630ace5e350b30f78907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1e4f70c6d7630ace5e350b30f78907">&#9670;&#160;</a></span>stageFileReplacing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1258,7 +1596,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1268,7 +1606,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#a98fa003a6d00d1936da437f3d16d3568" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since). Where the system cannot give both identities the write stands: on FAT and exFAT a rename moves the file ID, and those filesystems have no hard links to swap in either. </p>
+<p>The staged write every file <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> puts into a store goes through: a temporary created next to <code class="param">path</code> (an opaque name, exclusive, owner-only), filled by <code class="param">fill</code> through its open handle, synced, then <a class="el" href="#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ...">replaceFile()</a>d under the name, and the object under the name afterwards checked to be the very file that was filled (opened without following, compared by device and inode). The name is never opened for writing, so a link a co-writer plants under it between the caller's check and the write is replaced as an entry rather than written through (QSaveFile resolves such a link at open); a file swapped under the temporary's name before the rename (a hard link to something of the user's, say) is caught by the comparison and reported, and what is under the name is left (removing it by name could take another writer's file that landed there since). Where the system cannot give both identities the write stands: on FAT and exFAT a rename moves the file ID, and those filesystems have no hard links to swap in either. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The file to write. </td></tr>
@@ -1280,10 +1618,24 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds what <code class="param">fill</code> wrote. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01142">1142</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
+</div>
+<div id="dynsection-38-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_add1e4f70c6d7630ace5e350b30f78907_cgraph.svg" width="358" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
+</div>
+<div id="dynsection-39-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_add1e4f70c6d7630ace5e350b30f78907_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="ab648b0017acac1869d91ebc924591a24" name="ab648b0017acac1869d91ebc924591a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab648b0017acac1869d91ebc924591a24">&#9670;&#160;</a></span>syncToDisk()</h2>
+<a id="aa000e615528288c62c3388bfbad759ee" name="aa000e615528288c62c3388bfbad759ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa000e615528288c62c3388bfbad759ee">&#9670;&#160;</a></span>syncToDisk()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1295,7 +1647,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
           <td class="memname">auto Util::syncToDisk </td>
           <td>(</td>
           <td class="paramtype">QFileDevice &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1314,10 +1666,12 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the data is on the device. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00992">992</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
 </div>
 </div>
-<a id="ab4611dd64c8704e7a6392f0201af6e39" name="ab4611dd64c8704e7a6392f0201af6e39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4611dd64c8704e7a6392f0201af6e39">&#9670;&#160;</a></span>writeFileReplacing()</h2>
+<a id="a5d33d7a093ab7e104320384f4ec3213c" name="a5d33d7a093ab7e104320384f4ec3213c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d33d7a093ab7e104320384f4ec3213c">&#9670;&#160;</a></span>writeFileReplacing()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1343,7 +1697,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1353,7 +1707,7 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </table>
 </div><div class="memdoc">
 
-<p>Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#aaad861f6fd0b64f8791ef5066d351bd8" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>. </p>
+<p>Write <code class="param">bytes</code> as the file <code class="param">path</code> through <a class="el" href="#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (...">stageFileReplacing()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The file to write. </td></tr>
@@ -1365,9 +1719,74 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether <code class="param">path</code> now holds <code class="param">bytes</code>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l01165">1165</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
+</div>
+<div id="dynsection-40-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5d33d7a093ab7e104320384f4ec3213c_cgraph.svg" width="578" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
+</div>
+<div id="dynsection-41-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5d33d7a093ab7e104320384f4ec3213c_icgraph.svg" width="100%" height="539"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a6f14f16322c96b174b357bbad4b66b67" name="a6f14f16322c96b174b357bbad4b66b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f14f16322c96b174b357bbad4b66b67">&#9670;&#160;</a></span>_env</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QProcessEnvironment Util::_env</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The environment <a class="el" href="#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">findBinaryInPath()</a> and <a class="el" href="#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory.">findPasswordStore()</a> read, as <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> built it. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00479">479</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+
+</div>
+</div>
+<a id="aeccb471a23085461c3c79f24f7f82e2c" name="aeccb471a23085461c3c79f24f7f82e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeccb471a23085461c3c79f24f7f82e2c">&#9670;&#160;</a></span>_envInitialised</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Util::_envInitialised = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <a class="el" href="#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG...">initialiseEnvironment()</a> has run. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00481">481</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+
+</div>
+</div>
 <a id="a8ba8f3a6d040fd6ec7f2291431404f6a" name="a8ba8f3a6d040fd6ec7f2291431404f6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ba8f3a6d040fd6ec7f2291431404f6a">&#9670;&#160;</a></span>kMaxGpgIdBytes</h2>
 
@@ -1391,18 +1810,30 @@ User ID</span>, plain name substrings and the @, /, #, &amp; routing prefixes. <
 <p>Most bytes of a .gpg-id <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> reads. </p>
 <p>A recipient list is a few lines; a shared store's other writers could otherwise hand it a sparse file of gigabytes to read before the signature is even checked. Far beyond any real list. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00371">371</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00387">387</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="util_8h_source.html">util.h</a></li>
+<li>src/<a class="el" href="util_8cpp_source.html">util.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_util.html">Util</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

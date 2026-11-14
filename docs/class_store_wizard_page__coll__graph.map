@@ -1,5 +1,13 @@
 <map id="StoreWizardPage" name="StoreWizardPage">
-<area shape="rect" id="Node000001" title="The folder the passwords live in: an existing store is used as&#45;is, a folder without ...." alt="" coords="5,81,137,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="17,5,125,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,47,74,81,68,80,69,51"/>
+<area shape="rect" id="Node000001" title="The folder the passwords live in: an existing store is used as&#45;is, a folder without ...." alt="" coords="15,307,146,335"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,207,113,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,248,80,307,75,307,63,251"/>
+<area shape="rect" id="Node000003" href="$class_first_run_wizard.html" title="The first start of QtPass: find GnuPG (and pass and Git), make sure there is a secret key,..." alt="" coords="137,207,256,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,245,97,309,94,305,167,244"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="120,106,196,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,146,194,206,188,206,167,151"/>
+<area shape="rect" id="Node000005" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="220,106,319,134"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="253,144,208,208,204,204,249,148"/>
+<area shape="rect" id="Node000006" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="185,5,354,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="271,46,272,106,267,105,268,51"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="GpgIdGeneration::boundToItsFolder" name="GpgIdGeneration::boundToItsFolder">
+<area shape="rect" id="Node000001" title="Whether header&#39;s folder line, if it has one, names the folder the list sits in: a pair copied elsewhe..." alt="" coords="5,24,199,68"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4" title="The store&#45;relative folder of gpgIdFile, as written in and compared against the folder line: ...." alt="" coords="247,5,439,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,32,234,31,229,32,200,38"/>
+<area shape="rect" id="Node000003" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="251,57,435,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,53,238,60,232,60,199,59"/>
+</map>

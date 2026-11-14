@@ -1,0 +1,23 @@
+<map id="ConfigDialog::signerKeys" name="ConfigDialog::signerKeys">
+<area shape="rect" id="Node000001" title="One profile&#39;s signing keys as signers: each key as written, plus the primary fingerprint gpg gives fo..." alt="" coords="5,96,189,124"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="237,57,429,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,93,232,87,227,89,186,98"/>
+<area shape="rect" id="Node000008" href="$gpgkeystate_8cpp.html#a1d543e1b773901266ef423cfb0204b68" title="The primary key fingerprint of the key that key names." alt="" coords="254,133,412,161"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="189,122,241,132,236,133,189,127"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="477,57,639,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="429,69,464,71,459,72,430,74"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="687,57,853,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="640,69,674,71,669,71,640,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="901,5,1119,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="837,54,925,37,930,36,838,59"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="904,57,1116,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="853,69,891,71,886,71,853,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="908,109,1112,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="838,83,930,105,925,105,837,88"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="294,132,288,124,293,115,308,109,333,107,359,109,375,118,370,118,358,114,333,112,309,114,296,119,293,124,299,134"/>
+<area shape="rect" id="Node000009" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="500,133,616,161"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="412,145,488,147,482,147,412,150"/>
+<area shape="rect" id="Node000010" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="481,185,635,213"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="396,159,483,181,477,181,396,164"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="522,132,516,124,521,115,535,109,558,107,583,109,598,118,593,118,582,114,558,112,536,114,524,119,521,124,526,134"/>
+</map>

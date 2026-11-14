@@ -1,28 +1,7 @@
 var searchData=
 [
-  ['accept_0',['accept',['../class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180',1,'FirstRunWizard::accept()'],['../class_gpg_id_generation.html#a490cff66a5b86f14e762192bbfddd93d',1,'GpgIdGeneration::accept()'],['../class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736',1,'PasswordDialog::accept()'],['../class_users_dialog.html#aa1630582c14afcef9ad80398752762a4',1,'UsersDialog::accept()']]],
-  ['accepted_1',['Accepted',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678',1,'GpgIdGeneration']]],
-  ['activeprofile_2',['activeProfile',['../struct_app_settings.html#acde4fd8eb037e48e5185cf7e31fc6903',1,'AppSettings']]],
-  ['addgenerationheader_3',['addGenerationHeader',['../class_imitate_pass.html#aa327d0b0f45abfb88d10da0c5fdebd41',1,'ImitatePass']]],
-  ['addgpgid_4',['addGPGId',['../struct_app_settings.html#aa43f917a7f85275ec1cb6c579e9963e7',1,'AppSettings']]],
-  ['addpadding_5',['addPadding',['../class_base32.html#a0333781f29fc93e20b3792c243a666db',1,'Base32']]],
-  ['addtoggle_6',['addToggle',['../class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f',1,'TrayIcon']]],
-  ['algorithm_7',['Algorithm',['../class_totp.html#a01da8b4d496beba96c8836d273ec11c2',1,'Totp']]],
-  ['algorithm_8',['algorithm',['../struct_totp_1_1_settings.html#a8c8529f1946b9c46f48567ef78ffa386',1,'Totp::Settings']]],
-  ['alwaysontop_9',['alwaysOnTop',['../struct_app_settings.html#a5a5e02fd0a52d7d4b81422e49fba36cd',1,'AppSettings']]],
-  ['append_10',['append',['../class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac',1,'ProcessOutputPanel']]],
-  ['applypassphrase_11',['applyPassphrase',['../class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a',1,'KeygenDialog']]],
-  ['applypassprocessdefaults_12',['applyPassProcessDefaults',['../class_util.html#a0954978822dc30f773f1302003dbea84',1,'Util']]],
-  ['appsettings_13',['AppSettings',['../struct_app_settings.html',1,'']]],
-  ['arguments_14',['arguments',['../struct_resolved_gpgconf_command.html#aa06fa6189e39477786bbb118dca49556',1,'ResolvedGpgconfCommand']]],
-  ['argv_15',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['askyes_16',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
-  ['attach_17',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoclearpanelseconds_18',['autoclearPanelSeconds',['../struct_app_settings.html#a5dbc9ec5be7876610b987a0d221c28a8',1,'AppSettings']]],
-  ['autoclearseconds_19',['autoclearSeconds',['../struct_app_settings.html#a92b8e71fe0eb104d6f8f91a53db04f6d',1,'AppSettings']]],
-  ['autopull_20',['autoPull',['../struct_app_settings.html#a58078cf5ba353cf2fa920e79f5f6bd4f',1,'AppSettings::autoPull'],['../struct_profile.html#a3365fc692edf8aa98fc48afa850a792c',1,'Profile::autoPull']]],
-  ['autopush_21',['autoPush',['../struct_app_settings.html#aaf958d6fdb0d9d28ddf10872e9be0238',1,'AppSettings::autoPush'],['../struct_profile.html#a02fe0d44538b9aac07fc7e684237fefb',1,'Profile::autoPush']]],
-  ['autoscroll_22',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]],
-  ['avoidcapitals_23',['avoidCapitals',['../struct_app_settings.html#a8cc6fc41d08e175473fa5b004c5a2178',1,'AppSettings']]],
-  ['avoidnumbers_24',['avoidNumbers',['../struct_app_settings.html#ac69e7514bfb4ab78d83383ab8feb5049',1,'AppSettings']]]
+  ['_5fenv_0',['_env',['../class_util.html#a6f14f16322c96b174b357bbad4b66b67',1,'Util']]],
+  ['_5fenvinitialised_1',['_envInitialised',['../class_util.html#aeccb471a23085461c3c79f24f7f82e2c',1,'Util']]],
+  ['_5fisrunning_2',['_isRunning',['../class_single_application.html#a1101486283e5f1580c02f8e1562f195f',1,'SingleApplication']]],
+  ['_5funiquekey_3',['_uniqueKey',['../class_single_application.html#a796b973c0f8cbb128b557bbd9c048010',1,'SingleApplication']]]
 ];

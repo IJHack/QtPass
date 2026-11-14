@@ -1,0 +1,32 @@
+<map id="src/util.h" name="src/util.h">
+<area shape="rect" id="Node000001" title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l..." alt="" coords="874,5,951,33"/>
+<area shape="rect" id="Node000002" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="416,81,526,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="871,28,542,85,541,79,876,26"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="299,232,368,260"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="886,33,852,56,820,83,804,110,798,136,790,162,782,175,769,187,739,202,697,214,591,232,478,242,384,246,384,241,478,236,590,226,695,209,737,197,766,182,778,171,785,160,793,135,799,108,816,79,849,51,881,35"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="662,157,755,184"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="876,31,825,53,775,83,747,113,724,145,721,141,743,109,772,79,823,49,871,32"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="830,81,995,109"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="914,32,915,67,910,64,911,36"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1019,81,1171,109"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="945,31,1051,75,1046,75,945,36"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1196,81,1282,109"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="951,26,1184,80,1178,81,951,32"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1306,81,1380,109"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="952,23,1097,44,1293,80,1288,81,1096,49,952,28"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,157,91,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,105,280,127,107,159,106,154,279,122,418,103"/>
+<area shape="rect" id="Node000005" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="116,157,296,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="421,110,268,155,267,150,426,108"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="433,108,394,130,361,158,346,187,338,219,334,215,341,185,357,155,391,126,428,110"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="371,157,467,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="464,108,439,146,435,142,460,111"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="491,157,555,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="481,107,508,145,503,143,479,112"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="579,157,638,184"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="496,107,574,149,568,149,495,112"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="514,107,654,151,649,152,513,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,232,100,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,183,55,217,50,216,51,187"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="229,182,301,224,296,225,228,187"/>
+</map>

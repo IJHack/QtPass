@@ -1,0 +1,13 @@
+<map id="src/processinfo.cpp" name="src/processinfo.cpp">
+<area shape="rect" id="Node000001" title="The process table behind Enums::processInfo(); a missing row for a new Enums::PROCESS value fails the..." alt="" coords="100,5,246,33"/>
+<area shape="rect" id="Node000002" href="$processinfo_8h.html" title="Enums::ProcessInfo, the one table that names each kind of subprocess and says whether its output may ..." alt="" coords="5,81,114,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,36,94,74,90,70,154,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="138,81,208,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="174,31,175,66,170,65,172,36"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="232,81,287,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="189,31,235,70,230,71,188,36"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="21,157,98,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="60,107,62,141,57,141,59,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="12,232,107,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="61,183,62,217,57,216,58,187"/>
+</map>

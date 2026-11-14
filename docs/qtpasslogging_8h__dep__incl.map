@@ -1,0 +1,43 @@
+<map id="src/qtpasslogging.h" name="src/qtpasslogging.h">
+<area shape="rect" id="Node000001" title="The &quot;qtpass&quot; logging category." alt="" coords="1624,5,1772,33"/>
+<area shape="rect" id="Node000002" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="5,81,156,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1606,21,1361,27,1005,36,591,54,169,84,157,85,156,80,168,78,590,48,1004,30,1361,21,1611,21"/>
+<area shape="rect" id="Node000003" href="$executor_8cpp_source.html" title=" " alt="" coords="180,81,306,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1606,21,1382,26,1063,35,693,53,504,66,318,84,307,85,306,80,318,78,503,61,693,48,1062,29,1382,21,1611,21"/>
+<area shape="rect" id="Node000004" href="$gpgidgeneration_8cpp.html" title="Implements the .gpg&#45;id generation header and the per&#45;store record of accepted generations." alt="" coords="330,81,508,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1606,23,1143,43,833,60,519,84,508,85,508,79,519,78,833,55,1142,38,1611,23"/>
+<area shape="rect" id="Node000005" href="$gpgidsigner_8cpp.html" title="Implements GpgIdSigner on top of gpg&#39;s &#45;&#45;status&#45;fd output." alt="" coords="531,81,678,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1606,23,1210,44,951,61,690,84,678,85,678,80,690,78,951,55,1210,39,1611,23"/>
+<area shape="rect" id="Node000006" href="$imitatepass_8cpp.html" title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha..." alt="" coords="702,81,851,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1612,25,1280,48,1073,64,863,84,851,85,851,80,863,78,1072,58,1280,42,1606,25"/>
+<area shape="rect" id="Node000007" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="875,81,1033,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1611,27,1355,52,1045,84,1034,85,1033,80,1044,78,1355,47,1606,28"/>
+<area shape="rect" id="Node000008" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="1057,81,1210,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1612,31,1224,84,1211,85,1211,80,1223,78,1606,32"/>
+<area shape="rect" id="Node000009" href="$pass_8cpp.html" title="Implements what both backends share: the environment the store&#39;s processes run in,..." alt="" coords="1235,81,1336,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1611,35,1349,84,1337,86,1337,81,1348,78,1606,35"/>
+<area shape="rect" id="Node000010" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="1360,81,1534,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1641,37,1492,83,1492,78,1636,38"/>
+<area shape="rect" id="Node000011" href="$profileinit_8cpp.html" title="Implements ProfileInit; the environments its gpg and git processes run in are built by withGpgHome() ..." alt="" coords="1558,81,1691,109"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1676,43,1639,83,1636,78,1671,45"/>
+<area shape="rect" id="Node000012" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="1715,81,1830,109"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1723,42,1762,81,1757,80,1721,47"/>
+<area shape="rect" id="Node000013" href="$qtpasslogging_8cpp.html" title="Defines the lcQtPass logging category with info as its default level, so a release build can be trace..." alt="" coords="1854,81,2016,109"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1755,35,1895,81,1890,80,1754,41"/>
+<area shape="rect" id="Node000014" href="$realpass_8cpp.html" title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr..." alt="" coords="2040,81,2166,109"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1786,34,2042,82,2037,82,1785,39"/>
+<area shape="rect" id="Node000015" href="$simpletransaction_8cpp.html" title="Implements SimpleTransaction as a queue of (last process, result) pairs." alt="" coords="2190,81,2379,109"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1787,29,2193,82,2187,82,1787,34"/>
+<area shape="rect" id="Node000016" href="$singleapplication_8cpp.html" title="Implements SingleApplication; stale&#45;segment and takeover&#45;race recovery lives in the constructor and b..." alt="" coords="2403,81,2585,109"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1787,25,2058,47,2391,78,2405,82,2399,82,2391,84,2057,52,1787,30"/>
+<area shape="rect" id="Node000017" href="$sshauthsock_8cpp.html" title="Implements SshAuthSock; a probed socket is adopted only after ssh&#45;add &#45;l answers on it (isSshAgentRea..." alt="" coords="2610,81,2762,109"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1787,22,2142,41,2368,58,2597,78,2612,83,2607,82,2596,84,2368,63,2141,47,1787,27"/>
+<area shape="rect" id="Node000018" href="$storemodel_8cpp.html" title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro..." alt="" coords="2786,81,2932,109"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="1787,20,2213,37,2492,54,2774,78,2789,82,2783,82,2774,84,2491,60,2212,43,1787,25"/>
+<area shape="rect" id="Node000019" href="$trayicon_8cpp.html" title="Implements TrayIcon; the tray is only set up when QSystemTrayIcon::isSystemTrayAvailable() says there..." alt="" coords="2956,81,3080,109"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1787,18,1993,22,2280,32,2610,49,2945,78,2958,82,2952,82,2944,84,2610,55,2280,37,1993,27,1787,24"/>
+<area shape="rect" id="Node000020" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="3105,81,3251,109"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="1787,19,2016,22,2339,32,2713,50,3093,78,3107,82,3102,82,3092,84,2712,55,2339,37,2016,28,1787,24"/>
+<area shape="rect" id="Node000021" href="$util_8cpp.html" title="Implements Util; the staged, link&#45;safe store writes (stageFileReplacing() and its helpers) and the st..." alt="" coords="3276,81,3368,109"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="1787,19,2525,37,2951,55,3129,66,3263,78,3278,83,3273,83,3263,84,3128,71,2951,60,2525,42,1787,25"/>
+</map>

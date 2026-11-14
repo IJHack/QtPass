@@ -1,0 +1,14 @@
+<map id="QtPassSettings::getRealPass" name="QtPassSettings::getRealPass">
+<area shape="rect" id="Node000001" title="Get real pass backend instance." alt="" coords="804,32,1010,60"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,5,756,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="786,34,757,33,757,28,791,34"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="585,57,702,85"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="791,57,703,68,703,63,786,57"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,32,483,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="518,32,484,38,483,33,513,33"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,16,414,13,385,11,358,13,343,17,339,23,346,32,341,31,334,23,339,13,357,7,385,5,415,8,433,17"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,32,239,60"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,55,239,57,239,52,274,55"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,34,289,37,284,37,254,39"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="567,64,483,58,483,53,573,64"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="Util::findPasswordStore" name="Util::findPasswordStore">
+<area shape="rect" id="Node000001" title="Locate the password store directory." alt="" coords="805,80,977,108"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="597,80,691,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="787,94,692,96,692,91,793,94"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="805,77,757,71,614,57,483,49,483,44,614,52,758,66,810,77"/>
+<area shape="rect" id="Node000006" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="531,132,757,160"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="809,111,714,134,713,129,804,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,82,459,60,460,55,584,81"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="321,81,449,109"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="578,94,449,98,449,92,584,94"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,14,414,10,385,8,358,10,343,15,339,20,346,29,340,28,334,20,339,11,357,5,385,3,415,5,433,14"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,53,239,55,238,49,274,51"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,289,34,284,35,255,37"/>
+</map>

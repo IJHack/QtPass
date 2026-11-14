@@ -1,0 +1,13 @@
+<map id="DeselectableTreeView::emptyClicked" name="DeselectableTreeView::emptyClicked">
+<area shape="rect" id="Node000001" title="Emitted after deselect() has cleared the selection because of a single click on empty space or on a s..." alt="" coords="531,48,696,93"/>
+<area shape="rect" id="Node000002" href="$class_deselectable_tree_view.html#aed82ffca2f0dd0b041dfa51e83f1d113" title="Timer slot: clear the selection and current index and emit emptyClicked(), unless a double&#45;click happ..." alt="" coords="302,5,468,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,52,468,46,468,40,518,52"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,98,483,126"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="519,88,466,100,465,95,513,88"/>
+<area shape="rect" id="Node000003" href="$class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26" title="Construct the view and arm the single&#45;shot deselect timer." alt="" coords="35,5,209,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,29,209,30,209,25,289,27"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="422,82,410,79,385,76,361,78,348,83,345,89,350,98,346,96,339,89,344,79,360,73,385,71,412,74,428,83"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,98,239,126"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="269,121,239,123,239,118,274,121"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="254,100,289,103,284,103,254,105"/>
+</map>

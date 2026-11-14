@@ -1,0 +1,23 @@
+<map id="Pass::seedGpgIdFile" name="Pass::seedGpgIdFile">
+<area shape="rect" id="Node000001" title="Seed a new folder&#39;s .gpg&#45;id from the recipients it inherits." alt="" coords="5,161,156,189"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ae97e7a760b71609933dd3fe3a4629703" title="Get list of recipients for a password file." alt="" coords="208,109,372,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,158,218,140,214,143,140,163"/>
+<area shape="rect" id="Node000009" href="$class_util.html#a5d33d7a093ab7e104320384f4ec3213c" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="204,187,376,214"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="156,182,190,188,185,189,156,187"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="439,5,584,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="311,106,361,75,423,43,445,38,440,40,425,48,364,80,314,111"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="439,57,584,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="351,106,437,88,432,90,353,111"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f" title="Parse the contents of a .gpg&#45;id: one recipient per line, # starts a comment, unusable lines are logge..." alt="" coords="430,109,593,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="372,121,417,123,412,124,372,126"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="434,161,589,189"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="352,135,437,157,432,157,352,140"/>
+<area shape="rect" id="Node000006" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check whether a .gpg&#45;id token may be passed to gpg as a key selector. Accepts any non&#45;empty token tha..." alt="" coords="660,109,792,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="593,121,647,123,642,123,593,126"/>
+<area shape="rect" id="Node000008" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="647,161,805,189"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="589,173,634,175,629,175,590,178"/>
+<area shape="rect" id="Node000010" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="424,213,599,241"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="377,208,411,215,406,215,376,214"/>
+<area shape="rect" id="Node000011" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="664,213,788,241"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="600,225,652,227,647,227,600,230"/>
+</map>

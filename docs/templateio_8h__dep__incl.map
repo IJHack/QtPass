@@ -1,0 +1,9 @@
+<map id="src/templateio.h" name="src/templateio.h">
+<area shape="rect" id="Node000001" title="TemplateIO: the store&#39;s .templates and .default_template files and the # secret: marker in template t..." alt="" coords="206,5,334,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,40,116,83,114,78,220,38"/>
+<area shape="rect" id="Node000003" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="183,81,357,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="272,47,272,82,268,79,268,51"/>
+<area shape="rect" id="Node000004" href="$templateio_8cpp.html" title="Implements TemplateIO; template files are read through readTemplateFile(), which refuses anything but..." alt="" coords="380,81,522,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="317,37,422,80,417,81,316,42"/>
+</map>

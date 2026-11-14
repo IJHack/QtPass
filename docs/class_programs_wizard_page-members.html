@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_programs_wizard_page.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">ProgramsWizardPage Member List</div></div>
 </div><!--header-->
@@ -103,13 +121,23 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">initializePage</a>() override</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">isComplete</a>() const -&gt; bool override</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a3ef430c97905ad42348542127527a501">m_git</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a04679c431e2e08f1dad5fc1452001704">m_gpg</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a5f4168c6cc58916041d9bc602f2a2e70">m_gpgStatus</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a22621278890b1cc096e9d8639453e643">m_pass</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#af56daa51f19a313059a61f5bc0e6bca2">m_usePass</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a4ef7f86477141a85d0561f592fe02cc8">m_wizard</a></td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b">ProgramsWizardPage</a>(FirstRunWizard *wizard)</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">validatePage</a>() -&gt; bool override</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_programs_wizard_page.html#a6644c4d240c1883cdf790d69214171c4">updateStatus</a>()</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071">validatePage</a>() -&gt; bool override</td><td class="entry"><a class="el" href="class_programs_wizard_page.html">ProgramsWizardPage</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

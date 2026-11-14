@@ -1,0 +1,26 @@
+<map id="RealPass::Show" name="RealPass::Show">
+<area shape="rect" id="Node000001" title="Show decrypted password." alt="" coords="5,81,128,109"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="177,29,344,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,78,193,60,189,64,122,83"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a36a6f3e2815272e10ff895edc487d388" title="Remember what a Show() asked for, so its completion can say so." alt="" coords="194,81,327,109"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="127,93,180,94,176,97,129,98"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="176,133,345,161"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="121,107,194,127,189,130,121,112"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="418,29,582,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="344,41,405,42,400,44,345,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="459,28,453,20,458,11,474,5,500,3,528,5,545,14,540,14,527,10,500,8,475,10,461,15,458,20,464,29"/>
+<area shape="rect" id="Node000006" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="393,81,607,109"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="327,130,420,112,415,114,329,135"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="436,133,565,161"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="345,145,422,146,417,148,346,150"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="394,199,606,226"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="314,159,435,193,429,195,314,164"/>
+<area shape="rect" id="Node000008" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="690,120,835,148"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="565,141,677,138,672,139,565,147"/>
+<area shape="rect" id="Node000010" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="711,172,814,200"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="606,199,698,192,693,193,607,204"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="680,224,845,252"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="607,220,667,228,662,229,607,225"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="655,276,870,304"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="543,224,656,261,688,272,683,271,655,266,542,229"/>
+</map>

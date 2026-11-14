@@ -1,0 +1,9 @@
+<map id="Util::copyFileReplacing" name="Util::copyFileReplacing">
+<area shape="rect" id="Node000001" title="Copy the regular file src to the name dst through stageFileReplacing(): src is read through a handle ..." alt="" coords="5,32,176,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="233,5,390,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,33,220,30,215,31,177,38"/>
+<area shape="rect" id="Node000003" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="224,57,399,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,53,211,59,206,60,176,58"/>
+<area shape="rect" id="Node000004" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="447,57,570,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,69,434,71,429,71,399,74"/>
+</map>

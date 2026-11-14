@@ -1,0 +1,13 @@
+<map id="Pass::refuseUnfinishedGitOperation" name="Pass::refuseUnfinishedGitOperation">
+<area shape="rect" id="Node000001" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="5,76,193,120"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="297,5,399,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,72,240,43,284,33,279,36,241,48,159,77"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="266,57,430,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,85,253,81,248,83,194,90"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="241,109,455,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,105,228,110,222,111,193,110"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="244,161,452,206"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="163,118,242,146,264,156,259,155,240,151,162,123"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="503,169,613,197"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="452,181,490,183,484,183,452,186"/>
+</map>

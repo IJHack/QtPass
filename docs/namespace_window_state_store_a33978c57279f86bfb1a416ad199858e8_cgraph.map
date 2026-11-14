@@ -1,4 +1,13 @@
 <map id="WindowStateStore::restore" name="WindowStateStore::restore">
-<area shape="rect" id="Node000001" title="Restore window&#39;s geometry saved under key." alt="" coords="5,29,201,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="69,28,64,20,68,11,81,5,103,3,126,5,140,14,135,14,125,10,103,8,83,10,72,15,69,20,74,29"/>
+<area shape="rect" id="Node000001" title="Restore window&#39;s geometry saved under key." alt="" coords="5,72,201,100"/>
+<area shape="poly" id="edge6_Node000001_Node000001" title=" " alt="" coords="62,72,55,64,61,54,77,48,103,46,131,48,148,57,143,58,130,54,103,51,78,53,64,58,61,63,67,72"/>
+<area shape="rect" id="Node000002" href="$namespace_window_state_store.html#a5297f0374c183534e9573d4cf06542b5" title="Move window so its frame is centred on the screen under the mouse pointer (the primary screen when th..." alt="" coords="249,29,439,74"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,70,236,67,231,68,202,75"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="249,99,438,143"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="201,98,236,105,231,105,201,103"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="298,28,297,19,304,10,320,5,344,3,370,5,387,14,382,14,369,10,344,8,321,10,307,15,302,21,303,30"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="487,107,689,135"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="439,118,474,121,469,121,439,124"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="737,107,961,135"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="690,118,724,121,719,121,690,124"/>
 </map>

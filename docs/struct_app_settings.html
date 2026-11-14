@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_app_settings.html','','struct_app_settings-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_app_settings-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">AppSettings Struct Reference</div></div>
+  <div class="headertitle"><div class="title">AppSettings Struct Reference<div class="ingroups"><a class="el" href="group__settings.html">Settings and profiles</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,7 +126,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="struct_app_settings__coll__graph.svg" width="252" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -223,7 +237,7 @@ Public Attributes</h2></td></tr>
 <p>One field per persisted setting, with the same defaults the legacy <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> getters apply. This is a pure data carrier: it has no QSettings dependency and performs none of the side effects that the old getters did (directory creation for the pass store, screen-centring of the window position, <span class="tt">.git</span> auto-detection). Those remain application logic in the consumers; <a class="el" href="class_settings_serializer.html" title="Maps AppSettings to and from a QSettings store.">SettingsSerializer</a> maps this struct straight to and from QSettings.</p>
 <p>Nested/keyed settings — profiles (a dedicated <a class="el" href="struct_profile.html" title="One named password store: where it is, how its .gpg-id is signed and, optionally, its own Git switche...">Profile</a> type is tracked separately), per-dialog geometry, and splitter positions — are intentionally out of scope here and still go through <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> directly. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00031">31</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00036">36</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a56161e5ca9b77c88d36a90a634b47c05" name="a56161e5ca9b77c88d36a90a634b47c05"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56161e5ca9b77c88d36a90a634b47c05">&#9670;&#160;</a></span>defaultSecretFieldNames()</h2>
@@ -251,7 +265,13 @@ Public Attributes</h2></td></tr>
 <p>The secret field names a new or emptied setting starts with: what an entry commonly holds besides its password. </p>
 <dl class="section return"><dt>Returns</dt><dd>The names, lower case. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00037">37</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00042">42</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="struct_app_settings_a56161e5ca9b77c88d36a90a634b47c05_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -270,7 +290,7 @@ Public Attributes</h2></td></tr>
 
 <p>Name of the active profile. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00051">51</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00056">56</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +308,7 @@ Public Attributes</h2></td></tr>
 
 <p>Auto-add <span class="tt">.gpg-id</span> files to git. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00096">96</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00101">101</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -306,7 +326,7 @@ Public Attributes</h2></td></tr>
 
 <p>Keep the main window always on top. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00126">126</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00131">131</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -324,7 +344,7 @@ Public Attributes</h2></td></tr>
 
 <p>Panel autoclear delay (seconds). </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00077">77</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00082">82</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +362,7 @@ Public Attributes</h2></td></tr>
 
 <p>Clipboard autoclear delay (seconds). </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00075">75</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00080">80</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -360,7 +380,7 @@ Public Attributes</h2></td></tr>
 
 <p>Automatically <span class="tt">git pull</span> on open. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00102">102</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00107">107</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -377,7 +397,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Automatically <span class="tt">git push</span> after changes. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00103">103</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00108">108</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -395,7 +415,7 @@ Public Attributes</h2></td></tr>
 
 <p>Exclude uppercase letters. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00117">117</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00122">122</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -413,7 +433,7 @@ Public Attributes</h2></td></tr>
 
 <p>Exclude digits. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00118">118</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00123">123</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -430,11 +450,11 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">      <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>}</div>
-<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></div><div class="ttdeci">@ CLIPBOARD_NEVER</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00019">enums.h:19</a></div></div>
+<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></div><div class="ttdeci">@ CLIPBOARD_NEVER</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00025">enums.h:25</a></div></div>
 </div><!-- fragment -->
 <p>Clipboard copy behaviour. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00068">68</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00073">73</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -452,7 +472,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show file content unmodified. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00092">92</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00097">97</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -470,7 +490,7 @@ Public Attributes</h2></td></tr>
 
 <p>Main-window saved geometry. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00049">49</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00054">54</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -488,7 +508,7 @@ Public Attributes</h2></td></tr>
 
 <p>Path to the <span class="tt">git</span> executable. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00060">60</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00065">65</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -505,7 +525,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Let git use a repository in a folder above the store when the store has none of its own; off, git stops at the store's parent, as in pass. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00106">106</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00111">111</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -523,7 +543,7 @@ Public Attributes</h2></td></tr>
 
 <p>Path to the <span class="tt">gpg</span>/<span class="tt">gpg2</span> executable. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00061">61</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00066">66</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -541,7 +561,7 @@ Public Attributes</h2></td></tr>
 
 <p>GPG home directory (read-only externally). </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00064">64</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00069">69</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -558,7 +578,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>With hidePassword: hide every field, not only the secrets (shared screens, presenting). The notes and the OTP code stay visible. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00089">89</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00094">94</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +596,7 @@ Public Attributes</h2></td></tr>
 
 <p>Hide the entire content panel. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00090">90</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00095">95</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -594,7 +614,7 @@ Public Attributes</h2></td></tr>
 
 <p>Hide to tray instead of quitting on close. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00124">124</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00129">129</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -611,7 +631,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Hide the password line in the panel. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00080">80</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00085">85</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -628,7 +648,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>With hidePassword: hide the fields named in secretFieldNames too. Off, only the password is hidden, as in 1.8. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00083">83</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00088">88</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -646,7 +666,7 @@ Public Attributes</h2></td></tr>
 
 <p>Generate memorable (less random) passwords. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00119">119</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00124">124</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -664,7 +684,7 @@ Public Attributes</h2></td></tr>
 
 <p>Disable line wrapping in the panel. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00093">93</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00098">98</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -682,7 +702,7 @@ Public Attributes</h2></td></tr>
 
 <p>Path to the <span class="tt">pass</span> executable. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00059">59</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00064">64</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -700,7 +720,7 @@ Public Attributes</h2></td></tr>
 
 <p>GPG key used to sign <span class="tt">.gpg-id</span> files. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00056">56</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00061">61</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +738,7 @@ Public Attributes</h2></td></tr>
 
 <p>Password-store root path. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00055">55</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00060">60</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -736,7 +756,7 @@ Public Attributes</h2></td></tr>
 
 <p>Newline-separated template field names. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00111">111</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00116">116</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +774,7 @@ Public Attributes</h2></td></tr>
 
 <p>Length/charset/custom chars. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00116">116</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00121">121</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -772,7 +792,7 @@ Public Attributes</h2></td></tr>
 
 <p>Path to the <span class="tt">pwgen</span> executable. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00062">62</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00067">67</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -790,7 +810,7 @@ Public Attributes</h2></td></tr>
 
 <p>Path to the <span class="tt">qrencode</span> executable. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00063">63</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00068">68</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -807,7 +827,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>When autoclear runs: put back what was on the clipboard before, as <span class="tt">pass -c</span> does, unless something else was copied meanwhile. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00074">74</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00079">79</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -825,7 +845,7 @@ Public Attributes</h2></td></tr>
 
 <p>Main-window saved dock/toolbar state. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00050">50</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00055">55</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -842,7 +862,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The field names hideSecretFields hides, as whole words in any case ("key" hides "API key", not "keyboard"). May be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00086">86</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00091">91</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -860,7 +880,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show the menu bar (Ctrl+M toggles it). </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00108">108</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00113">113</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -878,7 +898,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show external process output. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00107">107</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00112">112</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -896,7 +916,7 @@ Public Attributes</h2></td></tr>
 
 <p>Manual SSH_AUTH_SOCK override path. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00065">65</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00070">70</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -914,7 +934,7 @@ Public Attributes</h2></td></tr>
 
 <p>Start the window minimised. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00125">125</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00130">130</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -932,7 +952,7 @@ Public Attributes</h2></td></tr>
 
 <p>Treat every <span class="tt">key:</span> line as a field. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00113">113</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00118">118</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -949,7 +969,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Clear the clipboard after a delay. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00071">71</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00076">76</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -967,7 +987,7 @@ Public Attributes</h2></td></tr>
 
 <p>Clear the content panel after a delay. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00076">76</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00081">81</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -985,7 +1005,7 @@ Public Attributes</h2></td></tr>
 
 <p>Enable git integration. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00097">97</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00102">102</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1003,7 +1023,7 @@ Public Attributes</h2></td></tr>
 
 <p>Enable content (grep) search. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00098">98</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00103">103</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1021,7 +1041,7 @@ Public Attributes</h2></td></tr>
 
 <p>Render content in a monospace font. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00091">91</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00096">96</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1059,7 @@ Public Attributes</h2></td></tr>
 
 <p>Enable native TOTP (OTP) support. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00099">99</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00104">104</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1057,7 +1077,7 @@ Public Attributes</h2></td></tr>
 
 <p>Use the <span class="tt">pass</span> CLI (true) or native git/gpg. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00054">54</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00059">59</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1095,7 @@ Public Attributes</h2></td></tr>
 
 <p>Use pwgen for password generation. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00101">101</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00106">106</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1093,7 +1113,7 @@ Public Attributes</h2></td></tr>
 
 <p>Enable qrencode support. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00100">100</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00105">105</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1111,7 +1131,7 @@ Public Attributes</h2></td></tr>
 
 <p>Use the X11 primary selection. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00070">70</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00075">75</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1129,7 +1149,7 @@ Public Attributes</h2></td></tr>
 
 <p>Include special symbols. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00120">120</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00125">125</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1147,7 +1167,7 @@ Public Attributes</h2></td></tr>
 
 <p>Use the password template. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00112">112</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00117">117</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1165,7 +1185,7 @@ Public Attributes</h2></td></tr>
 
 <p>Show a system tray icon. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00123">123</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00128">128</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1183,7 +1203,7 @@ Public Attributes</h2></td></tr>
 
 <p>Last-run application version. </p>
 
-<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00048">48</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="appsettings_8h_source.html#l00053">53</a> of file <a class="el" href="appsettings_8h_source.html">appsettings.h</a>.</p>
 
 </div>
 </div>
@@ -1191,10 +1211,21 @@ Public Attributes</h2></td></tr>
 <li>src/<a class="el" href="appsettings_8h_source.html">appsettings.h</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="struct_app_settings.html">AppSettings</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

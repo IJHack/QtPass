@@ -1,4 +1,13 @@
 <map id="RnpCrypto::saveKeyring" name="RnpCrypto::saveKeyring">
-<area shape="rect" id="Node000001" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,..." alt="" coords="5,29,183,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="63,28,58,20,62,11,74,5,94,3,115,5,128,14,123,14,113,10,94,8,76,10,66,15,63,20,68,29"/>
+<area shape="rect" id="Node000001" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,..." alt="" coords="5,57,183,85"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="244,5,390,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,54,242,36,237,38,157,59"/>
+<area shape="rect" id="Node000003" href="$class_rnp_crypto.html#abb1ff64a36e7589409a89d853785e072" title="The primary keys in the keyring." alt="" coords="243,57,391,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,69,230,71,225,72,183,74"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a5d33d7a093ab7e104320384f4ec3213c" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="231,109,403,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,83,242,104,237,106,156,88"/>
+<area shape="rect" id="Node000005" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="451,109,626,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="403,121,438,123,432,123,404,126"/>
+<area shape="rect" id="Node000006" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="674,109,798,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="626,121,662,123,656,123,627,126"/>
 </map>

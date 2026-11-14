@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_ssh_auth_sock.html','','class_ssh_auth_sock-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_ssh_auth_sock-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">SshAuthSock Class Reference</div></div>
+  <div class="headertitle"><div class="title">SshAuthSock Class Reference<div class="ingroups"><a class="el" href="group__settings.html">Settings and profiles</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -110,25 +124,25 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a35b8c125fcc1d0a8166271436057d5b2" id="r_a35b8c125fcc1d0a8166271436057d5b2"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a> : std::uint8_t { <b>Valid</b>
-, <b>DoesNotExist</b>
-, <b>NotReadable</b>
-, <b>NotUnixDomainSocket</b>
+<tr class="memitem:a35b8c125fcc1d0a8166271436057d5b2" id="r_a35b8c125fcc1d0a8166271436057d5b2"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a> : std::uint8_t { <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2a3ac705f2acd51a4613f9188c05c91d0d">Valid</a>
+, <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2ac47c93cf49de211bba5d62d65225f128">DoesNotExist</a>
+, <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2a09ad43b5d27fbf1d48f96e0a10b91613">NotReadable</a>
+, <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2aad420aed2bc9724b213dd0395fb2dc62">NotUnixDomainSocket</a>
  }</td></tr>
 <tr class="memdesc:a35b8c125fcc1d0a8166271436057d5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify a non-empty SSH_AUTH_SOCK override path supplied by the user.  <a href="#a35b8c125fcc1d0a8166271436057d5b2">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abdb660987ea5a58787e0ef6a5173654e" id="r_abdb660987ea5a58787e0ef6a5173654e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abdb660987ea5a58787e0ef6a5173654e">overrideStatus</a> (const QString &amp;path) -&gt; <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a></td></tr>
-<tr class="memdesc:abdb660987ea5a58787e0ef6a5173654e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empty / whitespace-only.  <br /></td></tr>
-<tr class="memitem:a7286c5480673720f00b04c8f18e0fdad" id="r_a7286c5480673720f00b04c8f18e0fdad"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a7286c5480673720f00b04c8f18e0fdad">initialise</a> (const QString &amp;override={})</td></tr>
-<tr class="memdesc:a7286c5480673720f00b04c8f18e0fdad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure SSH_AUTH_SOCK is set for child processes.  <br /></td></tr>
+<tr class="memitem:a5d4accd5e9b9f2461de8d3565fa336d8" id="r_a5d4accd5e9b9f2461de8d3565fa336d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5d4accd5e9b9f2461de8d3565fa336d8">overrideStatus</a> (const QString &amp;path) -&gt; <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a></td></tr>
+<tr class="memdesc:a5d4accd5e9b9f2461de8d3565fa336d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empty / whitespace-only.  <br /></td></tr>
+<tr class="memitem:aa5db3a45da13ec228c035d199d4dd1ff" id="r_aa5db3a45da13ec228c035d199d4dd1ff"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa5db3a45da13ec228c035d199d4dd1ff">initialise</a> (const QString &amp;override={})</td></tr>
+<tr class="memdesc:aa5db3a45da13ec228c035d199d4dd1ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure SSH_AUTH_SOCK is set for child processes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SSH_AUTH_SOCK discovery and validation for child processes. </p>
-<p>Extracted from <a class="el" href="class_util.html" title="Some static utilities to be used elsewhere.">Util</a>. GUI-launched applications don't inherit shell-set environment variables, so users with gpg-agent's SSH support or another external SSH agent see git push/pull fail. See <a class="el" href="#a7286c5480673720f00b04c8f18e0fdad" title="Ensure SSH_AUTH_SOCK is set for child processes.">initialise()</a>. Issue #543. </p>
+<p>Extracted from <a class="el" href="class_util.html" title="Static helpers that have no better home: setting up the process and the Git environment the way pass ...">Util</a>. GUI-launched applications don't inherit shell-set environment variables, so users with gpg-agent's SSH support or another external SSH agent see git push/pull fail. See <a class="el" href="#aa5db3a45da13ec228c035d199d4dd1ff" title="Ensure SSH_AUTH_SOCK is set for child processes.">initialise()</a>. Issue #543. </p>
 
-<p class="definition">Definition at line <a class="el" href="sshauthsock_8h_source.html#l00017">17</a> of file <a class="el" href="sshauthsock_8h_source.html">sshauthsock.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="sshauthsock_8h_source.html#l00023">23</a> of file <a class="el" href="sshauthsock_8h_source.html">sshauthsock.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="a35b8c125fcc1d0a8166271436057d5b2" name="a35b8c125fcc1d0a8166271436057d5b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35b8c125fcc1d0a8166271436057d5b2">&#9670;&#160;</a></span>OverrideStatus</h2>
@@ -151,22 +165,25 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Classify a non-empty SSH_AUTH_SOCK override path supplied by the user. </p>
-<p>Empty / unset input is handled by the caller (no warning when the field is blank). For a non-empty path, this returns one of:</p>
-<ul>
-<li><span class="tt">Valid</span> — exists, readable, and on Unix is a Unix domain socket.</li>
-<li><span class="tt">DoesNotExist</span> — <span class="tt">QFileInfo::exists()</span> returned false.</li>
-<li><span class="tt">NotReadable</span> — exists but <span class="tt">QFileInfo::isReadable()</span> returned false.</li>
-<li><span class="tt">NotUnixDomainSocket</span> — Unix-only: <span class="tt">stat()</span> says it's not <span class="tt">S_ISSOCK</span>.</li>
-</ul>
-<p>On Windows the socket check is skipped — ssh-agent uses a named pipe. </p>
+<p>Empty / unset input is handled by the caller (no warning when the field is blank). On Windows the socket check is skipped — ssh-agent uses a named pipe there. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a35b8c125fcc1d0a8166271436057d5b2a3ac705f2acd51a4613f9188c05c91d0d" name="a35b8c125fcc1d0a8166271436057d5b2a3ac705f2acd51a4613f9188c05c91d0d"></a>Valid&#160;</td><td class="fielddoc"><p>Exists, readable, and on Unix a Unix domain socket. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a35b8c125fcc1d0a8166271436057d5b2ac47c93cf49de211bba5d62d65225f128" name="a35b8c125fcc1d0a8166271436057d5b2ac47c93cf49de211bba5d62d65225f128"></a>DoesNotExist&#160;</td><td class="fielddoc"><p><span class="tt">QFileInfo::exists()</span> returned false. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a35b8c125fcc1d0a8166271436057d5b2a09ad43b5d27fbf1d48f96e0a10b91613" name="a35b8c125fcc1d0a8166271436057d5b2a09ad43b5d27fbf1d48f96e0a10b91613"></a>NotReadable&#160;</td><td class="fielddoc"><p>Exists, but <span class="tt">QFileInfo::isReadable()</span> returned false. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a35b8c125fcc1d0a8166271436057d5b2aad420aed2bc9724b213dd0395fb2dc62" name="a35b8c125fcc1d0a8166271436057d5b2aad420aed2bc9724b213dd0395fb2dc62"></a>NotUnixDomainSocket&#160;</td><td class="fielddoc"><p>Unix only: <span class="tt">stat()</span> says the path is not <span class="tt">S_ISSOCK</span>. </p>
+</td></tr>
+</table>
 
 <p class="definition">Definition at line <a class="el" href="sshauthsock_8h_source.html#l00033">33</a> of file <a class="el" href="sshauthsock_8h_source.html">sshauthsock.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a7286c5480673720f00b04c8f18e0fdad" name="a7286c5480673720f00b04c8f18e0fdad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7286c5480673720f00b04c8f18e0fdad">&#9670;&#160;</a></span>initialise()</h2>
+<a id="aa5db3a45da13ec228c035d199d4dd1ff" name="aa5db3a45da13ec228c035d199d4dd1ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5db3a45da13ec228c035d199d4dd1ff">&#9670;&#160;</a></span>initialise()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,10 +221,18 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="sshauthsock_8cpp_source.html#l00110">110</a> of file <a class="el" href="sshauthsock_8cpp_source.html">sshauthsock.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_ssh_auth_sock_aa5db3a45da13ec228c035d199d4dd1ff_icgraph.svg" width="286" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="abdb660987ea5a58787e0ef6a5173654e" name="abdb660987ea5a58787e0ef6a5173654e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdb660987ea5a58787e0ef6a5173654e">&#9670;&#160;</a></span>overrideStatus()</h2>
+<a id="a5d4accd5e9b9f2461de8d3565fa336d8" name="a5d4accd5e9b9f2461de8d3565fa336d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d4accd5e9b9f2461de8d3565fa336d8">&#9670;&#160;</a></span>overrideStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +244,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto SshAuthSock::overrideStatus </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a></td>
+          <td> -&gt; <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2">OverrideStatus</a></td>
         </tr>
       </table>
   </td>
@@ -238,16 +263,36 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Classification per <a class="el" href="#a35b8c125fcc1d0a8166271436057d5b2" title="Classify a non-empty SSH_AUTH_SOCK override path supplied by the user.">OverrideStatus</a>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="sshauthsock_8cpp_source.html#l00084">84</a> of file <a class="el" href="sshauthsock_8cpp_source.html">sshauthsock.cpp</a>.</p>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_ssh_auth_sock_a5d4accd5e9b9f2461de8d3565fa336d8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="sshauthsock_8h_source.html">sshauthsock.h</a></li>
+<li>src/<a class="el" href="sshauthsock_8cpp_source.html">sshauthsock.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_ssh_auth_sock.html">SshAuthSock</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

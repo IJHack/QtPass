@@ -1,5 +1,8 @@
 <map id="QtPass" name="QtPass">
-<area shape="rect" id="Node000001" title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends..." alt="" coords="9,81,75,109"/>
+<area shape="rect" id="Node000001" title="Application&#45;level glue between the pass backends and whatever shows their results: turns the backends..." alt="" coords="15,183,80,211"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,79,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,47,45,81,39,80,40,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,48,50,183,44,183,40,49"/>
+<area shape="rect" id="Node000003" href="$class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again." alt="" coords="64,82,204,110"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="70,40,121,81,116,83,70,46"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="115,123,61,184,57,181,110,121"/>
 </map>

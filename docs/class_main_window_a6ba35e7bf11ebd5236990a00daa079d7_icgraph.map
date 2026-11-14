@@ -1,0 +1,12 @@
+<map id="MainWindow::focusInput" name="MainWindow::focusInput">
+<area shape="rect" id="Node000001" title="Select&#45;all and focus the search box once the window is visible; sets m_firstShowCompleted only on suc..." alt="" coords="396,57,576,85"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad" title="React to language or window state changes." alt="" coords="134,5,331,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,54,304,36,304,31,403,53"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="117,57,348,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="378,71,349,74,349,69,383,71"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899" title="First&#45;show hook used to focus the search input once the window is actually mapped (avoids races with ..." alt="" coords="141,109,324,137"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="403,88,304,111,303,106,397,89"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="14,57,69,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="99,73,70,74,69,69,103,70"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="75,47,67,40,42,36,21,38,10,43,9,50,17,59,12,61,4,51,6,40,19,33,42,31,69,35,80,46"/>
+</map>

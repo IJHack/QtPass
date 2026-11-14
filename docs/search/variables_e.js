@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['passexecutable_0',['passExecutable',['../struct_app_settings.html#a7ddbf59d84bf56daae2dc267833fa25d',1,'AppSettings']]],
-  ['passsigningkey_1',['passSigningKey',['../struct_app_settings.html#a2dbd96ed7a8f3d7a92474728dd5605a1',1,'AppSettings']]],
-  ['passstore_2',['passStore',['../struct_app_settings.html#a402c261265cc7697d5ca38fc8d784ef4',1,'AppSettings']]],
-  ['passtemplate_3',['passTemplate',['../struct_app_settings.html#ab55d5b7f9d9314de9d16a315795fc3ca',1,'AppSettings']]],
-  ['passwordconfiguration_4',['passwordConfiguration',['../struct_app_settings.html#af653095f19fc321bee9e31eb1076616f',1,'AppSettings']]],
-  ['path_5',['path',['../struct_profile.html#a1e4c9f21760536f1ec3a4689b0932557',1,'Profile::path'],['../struct_store_drag_item.html#a67b80e2d0b8d10ca06559f0551e7e106',1,'StoreDragItem::path']]],
-  ['program_6',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
-  ['pwgenexecutable_7',['pwgenExecutable',['../struct_app_settings.html#a35250be8dc7ee2a17706657c217ce8ee',1,'AppSettings']]]
+  ['options_0',['options',['../struct_executor_1_1_wsl_command.html#a940314bd002f5f843b5d0b5358fb0e50',1,'Executor::WslCommand']]],
+  ['originalline_1',['originalLine',['../struct_named_value.html#a6fe60f7b7f43af03ac3a00e0a8d1b1e8',1,'NamedValue']]],
+  ['originalname_2',['originalName',['../struct_config_dialog_1_1_profile_entry.html#a8f9700c057f612ec07f302b26bffdfb4',1,'ConfigDialog::ProfileEntry']]],
+  ['otpuri_3',['otpUri',['../class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2',1,'FileContent']]],
+  ['output_4',['output',['../struct_imitate_pass_1_1_pending_insert.html#af5e2d28da0146d7d6a2fd8ed1bf78683',1,'ImitatePass::PendingInsert']]],
+  ['overwrite_5',['overwrite',['../struct_imitate_pass_1_1_pending_insert.html#aabc2c7d1804c96e544e2c10d7d38856d',1,'ImitatePass::PendingInsert']]]
 ];

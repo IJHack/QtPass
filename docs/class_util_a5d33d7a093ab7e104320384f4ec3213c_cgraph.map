@@ -1,0 +1,7 @@
+<map id="Util::writeFileReplacing" name="Util::writeFileReplacing">
+<area shape="rect" id="Node000001" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="5,5,178,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="226,5,401,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,17,212,19,207,19,178,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="449,5,572,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,17,436,19,431,19,401,22"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ImportKeyDialog::on_fileButton_clicked" name="ImportKeyDialog::on_fileButton_clicked">
+<area shape="rect" id="Node000001" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="5,24,160,68"/>
+<area shape="rect" id="Node000002" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="227,5,384,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,34,214,30,209,31,160,39"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="208,57,404,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,52,195,58,190,59,160,57"/>
+<area shape="rect" id="Node000004" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="452,57,630,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="404,69,439,71,433,71,405,74"/>
+</map>

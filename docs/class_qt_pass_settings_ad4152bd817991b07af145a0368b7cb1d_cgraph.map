@@ -1,0 +1,7 @@
+<map id="QtPassSettings::isHideOnClose" name="QtPassSettings::isHideOnClose">
+<area shape="rect" id="Node000001" title="Check whether closing the window hides the application." alt="" coords="5,5,191,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="239,14,441,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,25,226,27,220,28,191,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="489,14,712,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,25,476,28,471,28,441,30"/>
+</map>

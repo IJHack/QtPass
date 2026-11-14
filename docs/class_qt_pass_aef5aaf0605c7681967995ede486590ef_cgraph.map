@@ -1,0 +1,21 @@
+<map id="QtPass::showTextAsQRCode" name="QtPass::showTextAsQRCode">
+<area shape="rect" id="Node000001" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th..." alt="" coords="5,84,208,112"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d" title="Create a frameless popup dialog, placed at the cursor, showing the given QR code. Split out of showTe..." alt="" coords="262,5,468,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,81,255,43,289,36,284,39,256,48,147,86"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="256,57,474,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,85,242,83,238,85,209,90"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="288,109,442,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,105,275,113,270,115,208,110"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a" title="A short message for the status bar." alt="" coords="279,161,450,189"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="147,110,256,146,289,157,284,157,255,151,147,115"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="522,80,724,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="442,112,509,106,504,108,443,117"/>
+<area shape="rect" id="Node000007" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="556,132,691,176"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="442,130,543,144,537,144,443,135"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="772,80,996,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="724,91,759,94,754,94,725,96"/>
+<area shape="rect" id="Node000008" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="787,132,981,176"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="691,151,774,154,769,154,691,156"/>
+<area shape="rect" id="Node000009" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="781,201,987,246"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="692,169,785,196,780,196,691,174"/>
+</map>

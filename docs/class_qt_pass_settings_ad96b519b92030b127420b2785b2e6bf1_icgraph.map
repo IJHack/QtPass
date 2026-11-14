@@ -1,0 +1,39 @@
+<map id="QtPassSettings::save" name="QtPassSettings::save">
+<area shape="rect" id="Node000001" title="Persist an AppSettings value object to the singleton store." alt="" coords="1816,151,1973,178"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="1570,5,1740,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1870,137,1826,92,1798,67,1766,47,1741,36,1741,31,1769,42,1801,63,1830,88,1875,139"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#ab3751f42ebb07cd299f6ad494ea21c55" title="Point the active profile at its new name after a rename (or at none after a deletion),..." alt="" coords="1558,57,1752,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1836,145,1720,105,1720,99,1841,145"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="1286,105,1480,133"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="1797,156,1480,130,1480,125,1803,156"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="1336,192,1430,220"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="1797,172,1431,205,1430,199,1803,172"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="1542,227,1768,254"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="1842,183,1768,211,1709,229,1708,224,1767,206,1837,185"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1554,278,1756,323"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="1871,188,1825,230,1769,268,1742,280,1741,275,1766,264,1822,226,1866,190"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1540,96,1481,107,1480,102,1546,95"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1028,105,1223,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1267,119,1224,122,1223,117,1272,119"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="1163,90,1151,86,1125,84,1101,86,1088,91,1085,96,1091,106,1086,104,1080,96,1085,87,1100,81,1125,79,1152,81,1169,90"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,283,483,310"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="1317,201,1223,198,1125,194,1028,198,887,211,779,228,531,272,463,285,461,279,531,267,778,222,887,206,1027,193,1125,189,1223,193,1322,201"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="1061,207,1190,234"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="1318,210,1190,219,1190,214,1323,209"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="428,267,414,264,385,261,357,263,342,268,338,273,345,283,340,281,333,274,339,264,356,258,385,256,415,258,434,267"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,283,239,310"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="269,306,239,308,239,303,274,305"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="254,285,289,287,284,288,255,290"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="1525,224,1430,214,1430,209,1530,224"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1271,287,1494,314"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1536,301,1495,303,1495,298,1542,300"/>
+<area shape="poly" id="edge22_Node000012_Node000007" title=" " alt="" coords="1253,297,1223,299,877,291,726,290,531,292,484,294,483,289,531,287,726,284,877,286,1223,294,1258,297"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1050,308,1201,336"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="1258,311,1202,318,1201,313,1253,311"/>
+<area shape="poly" id="edge18_Node000013_Node000007" title=" " alt="" coords="1033,321,483,302,483,297,1035,316"/>
+<area shape="rect" id="Node000014" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,359,980,386"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="1047,339,961,361,961,355,1042,340"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,359,762,386"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="792,373,763,375,763,370,797,372"/>
+<area shape="poly" id="edge21_Node000015_Node000007" title=" " alt="" coords="576,354,530,343,432,313,433,308,532,338,581,354"/>
+</map>

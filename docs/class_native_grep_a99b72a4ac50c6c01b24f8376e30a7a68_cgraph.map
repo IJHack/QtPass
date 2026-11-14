@@ -1,0 +1,23 @@
+<map id="NativeGrep::matchFile" name="NativeGrep::matchFile">
+<area shape="rect" id="Node000001" title="Decrypt one .gpg file and return its trimmed lines matching rx." alt="" coords="5,81,173,109"/>
+<area shape="rect" id="Node000002" href="$class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6" title="Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ..." alt="" coords="256,5,401,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,78,220,49,266,37,261,39,221,54,133,83"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="484,107,676,134"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,88,297,87,436,93,499,103,494,104,436,98,297,92,174,94"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a" title="The gpg options that enforce kMaxPlaintextBytes." alt="" coords="248,107,408,134"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="173,101,236,110,230,111,173,107"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="221,159,436,186"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="124,107,222,143,252,154,247,154,220,148,123,112"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="724,107,887,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="676,118,711,120,706,121,677,123"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="935,107,1100,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="887,118,922,120,917,121,887,123"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1148,55,1366,82"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1084,103,1172,87,1177,86,1085,109"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1151,159,1363,186"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1085,132,1177,155,1172,155,1084,138"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1155,107,1359,134"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1100,118,1142,120,1136,121,1100,123"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="399,155,492,138,497,138,400,161"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="436,170,1136,170,1136,175,436,175"/>
+</map>

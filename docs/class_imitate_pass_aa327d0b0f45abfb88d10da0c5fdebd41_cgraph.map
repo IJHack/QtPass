@@ -1,0 +1,21 @@
+<map id="ImitatePass::addGenerationHeader" name="ImitatePass::addGenerationHeader">
+<area shape="rect" id="Node000001" title="Put the generation header on a list that is about to be signed: reserve a generation above what this ..." alt="" coords="5,128,207,172"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="313,5,416,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,125,186,83,254,43,300,30,296,33,256,48,189,88,135,129"/>
+<area shape="rect" id="Node000003" href="$class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4" title="The store&#45;relative folder of gpgIdFile, as written in and compared against the folder line: ...." alt="" coords="268,57,460,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,124,254,95,287,88,283,91,255,100,169,129"/>
+<area shape="rect" id="Node000004" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="277,109,452,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,137,264,133,259,135,208,142"/>
+<area shape="rect" id="Node000006" href="$class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver..." alt="" coords="255,213,474,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="170,170,255,198,288,209,283,209,254,203,170,175"/>
+<area shape="rect" id="Node000008" href="$class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="262,265,466,293"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="134,170,189,211,256,250,277,261,272,260,254,255,186,216,133,175"/>
+<area shape="rect" id="Node000009" href="$class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" title="A complete list: the header in front of the recipients." alt="" coords="257,161,472,189"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="207,157,244,162,239,164,208,162"/>
+<area shape="rect" id="Node000005" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="522,136,706,164"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="452,130,509,138,504,139,453,135"/>
+<area shape="rect" id="Node000007" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="533,239,695,266"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="474,236,520,243,515,243,474,241"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="467,266,515,263,520,263,467,271"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="471,162,509,160,504,161,472,167"/>
+</map>

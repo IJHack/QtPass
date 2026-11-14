@@ -1,0 +1,7 @@
+<map id="ImitatePass::ImitatePass" name="ImitatePass::ImitatePass">
+<area shape="rect" id="Node000001" title="Construct the backend and connect its content search." alt="" coords="5,32,187,60"/>
+<area shape="rect" id="Node000002" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="235,5,389,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,32,222,30,217,31,188,37"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched." alt="" coords="242,57,382,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,54,229,61,224,61,187,59"/>
+</map>

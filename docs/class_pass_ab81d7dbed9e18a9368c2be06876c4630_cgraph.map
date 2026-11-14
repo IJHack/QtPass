@@ -1,0 +1,7 @@
+<map id="Pass::withCurrentGitPin" name="Pass::withCurrentGitPin">
+<area shape="rect" id="Node000001" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="5,5,179,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="227,5,390,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,17,214,19,208,19,179,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="438,5,552,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,17,425,19,420,19,390,22"/>
+</map>

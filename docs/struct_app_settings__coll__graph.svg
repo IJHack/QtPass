@@ -31,7 +31,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="struct_password_configuration.html" target="_top" xlink:title="Holds the password configuration settings.">
+<g id="a_Node000002"><a xlink:href="struct_password_configuration.html" target="_top" xlink:title="Holds the password generator settings: which character set is selected, the alphabet of every set,...">
 <polygon fill="white" stroke="#666666" points="127,-96.25 0,-96.25 0,-75.5 127,-75.5 127,-96.25"/>
 <text xml:space="preserve" text-anchor="middle" x="63.5" y="-82.75" font-family="Helvetica,sans-Serif" font-size="10.00">PasswordConfiguration</text>
 </a>

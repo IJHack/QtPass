@@ -1,0 +1,11 @@
+<map id="Pass::refuseSkippedGpgId" name="Pass::refuseSkippedGpgId">
+<area shape="rect" id="Node000001" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="5,32,195,60"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="265,5,368,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,32,253,27,247,28,195,37"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="243,57,390,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,54,230,61,225,61,195,60"/>
+<area shape="rect" id="Node000004" href="$class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile...." alt="" coords="438,57,661,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="391,69,425,71,420,71,391,74"/>
+<area shape="rect" id="Node000005" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="709,57,872,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="662,69,696,71,691,71,662,74"/>
+</map>

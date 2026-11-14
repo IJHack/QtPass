@@ -1,0 +1,13 @@
+<map id="Pass::refuseFolderOutsideStore" name="Pass::refuseFolderOutsideStore">
+<area shape="rect" id="Node000001" title="Refuse recipients for a folder outside the store, as pass refuses a path with .. in it." alt="" coords="5,76,195,120"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="252,57,464,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,85,239,83,234,84,196,91"/>
+<area shape="rect" id="Node000006" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="243,109,473,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="195,104,230,110,225,110,195,110"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="577,5,679,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,54,559,32,564,31,434,59"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="546,57,710,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="464,69,533,71,528,71,465,74"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="521,109,735,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="434,83,540,106,535,106,433,88"/>
+</map>

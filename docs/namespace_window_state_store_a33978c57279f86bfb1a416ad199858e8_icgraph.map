@@ -1,4 +1,17 @@
 <map id="WindowStateStore::restore" name="WindowStateStore::restore">
-<area shape="rect" id="Node000001" title="Restore window&#39;s geometry saved under key." alt="" coords="5,29,201,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="135,14,125,10,103,8,83,10,72,15,69,20,74,29,69,28,64,20,68,11,81,5,103,3,126,5,140,14"/>
+<area shape="rect" id="Node000001" title="Restore window&#39;s geometry saved under key." alt="" coords="736,105,932,133"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="874,90,861,86,834,84,809,86,795,91,792,96,798,106,793,104,786,96,792,87,808,81,834,79,862,81,879,90"/>
+<area shape="rect" id="Node000002" href="$namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289" title="restore() now, save() whenever the dialog finishes." alt="" coords="498,105,688,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="718,119,689,122,689,117,723,119"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="633,90,620,86,593,84,568,86,554,91,551,96,557,106,552,104,545,96,551,87,567,81,593,79,621,81,638,90"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="248,29,443,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="536,100,449,72,406,60,406,55,451,67,541,99"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="241,105,450,133"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="479,119,451,122,450,117,485,119"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#a72f07ae1b408688108f0855624c789d2" title=" " alt="" coords="247,157,444,202"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="521,137,441,159,440,154,516,138"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="386,14,373,10,345,8,320,10,305,15,302,20,308,29,303,28,297,20,302,11,318,5,345,3,374,5,391,14"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="386,90,373,86,345,84,320,86,305,91,302,96,308,106,303,104,297,96,302,87,318,81,345,79,374,81,391,90"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,165,193,193"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="229,179,193,182,193,177,234,179"/>
 </map>

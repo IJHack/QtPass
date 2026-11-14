@@ -1,0 +1,7 @@
+<map id="ImportKeyDialog::showError" name="ImportKeyDialog::showError">
+<area shape="rect" id="Node000001" title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma..." alt="" coords="5,5,209,33"/>
+<area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="257,5,453,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,17,244,19,239,19,209,22"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="501,5,679,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,17,488,19,482,19,454,22"/>
+</map>

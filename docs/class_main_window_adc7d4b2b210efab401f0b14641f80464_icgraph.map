@@ -1,0 +1,22 @@
+<map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
+<area shape="rect" id="Node000001" title="Handle a click on an item in the tree view." alt="" coords="839,104,1033,148"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="566,29,791,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="865,97,791,72,747,60,747,55,792,67,870,97"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="575,81,782,109"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="821,113,783,110,783,105,826,112"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a7cb8cceb6798c42b16f050462c37650f" title="A content&#45;search result was clicked: select the entry in the tree, show it, and go back to the tree (..." alt="" coords="572,133,785,178"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="821,139,786,146,785,140,826,138"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a6ed67aa63c63c4867166cb21115d64f7" title="Enter in the search box: in content&#45;search mode start (or, for an empty query, cancel) the grep; othe..." alt="" coords="586,202,771,247"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="876,154,792,192,758,204,757,199,790,187,871,156"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="304,29,500,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="548,44,501,46,501,41,553,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="448,14,433,10,402,8,373,10,357,15,353,20,360,29,355,28,348,20,354,11,372,5,402,3,435,5,454,14"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="287,53,240,55,238,49,291,51"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,306,33,301,36,255,37"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="287,211,518,238"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="569,225,518,227,518,222,574,224"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="95,211,149,238"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="269,226,150,227,149,222,274,223"/>
+<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="163,210,172,202,169,197,153,192,122,189,88,192,73,199,72,202,75,205,97,217,92,218,71,209,67,203,69,196,86,187,122,184,154,186,172,193,177,204,165,214"/>
+</map>

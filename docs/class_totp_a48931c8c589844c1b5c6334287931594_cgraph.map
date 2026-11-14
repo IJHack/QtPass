@@ -1,0 +1,9 @@
+<map id="Totp::generateNow" name="Totp::generateNow">
+<area shape="rect" id="Node000001" title="Generate the code for the current wall&#45;clock time." alt="" coords="5,32,149,60"/>
+<area shape="rect" id="Node000002" href="$class_totp.html#a84866e76305152267035b917e7d84bdb" title="Current wall&#45;clock time." alt="" coords="197,5,362,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,34,184,31,178,33,150,39"/>
+<area shape="rect" id="Node000003" href="$class_totp.html#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time." alt="" coords="222,57,336,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,52,209,62,204,62,149,58"/>
+<area shape="rect" id="Node000004" href="$class_totp.html#a47445f93d87ea47de27ab8045914686d" title="Time&#45;step counter for a point in time." alt="" coords="410,57,515,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="337,69,397,71,392,71,337,74"/>
+</map>

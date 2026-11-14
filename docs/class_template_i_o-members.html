@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_template_i_o.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">TemplateIO Member List</div></div>
 </div><!--header-->
@@ -101,17 +119,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_template_i_o.html">TemplateIO</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#ac5332f90883657224c0444c930c7c150">fieldsIn</a>(const QString &amp;templateText) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_template_i_o.html#add783a19b718e10eb8a5cc02681fd87f">getFolderTemplate</a>(const QString &amp;folderPath, const QString &amp;storePath) -&gt; QString</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#a6a506878c3fc1f1d91c8a2dcdaba4170">readSecretFields</a>(const QString &amp;storePath) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_template_i_o.html#a3693dca9289ecd9c7d8fd941d110f489">readTemplates</a>(const QString &amp;storePath) -&gt; QHash&lt; QString, QStringList &gt;</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#ab4e9c06b39890ee564d14895c7c9d160">secretFieldsIn</a>(const QString &amp;templateText) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_template_i_o.html#a7eb718028cf367e72b431341a2c916a7">writeTemplates</a>(const QString &amp;storePath, const QHash&lt; QString, QStringList &gt; &amp;templates) -&gt; bool</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#a5396bc2abe581bb25003d9c735ac14fd">fieldsIn</a>(const QString &amp;templateText) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_template_i_o.html#aa791f4502e6159a46db2265fffb6ce2c">getFolderTemplate</a>(const QString &amp;folderPath, const QString &amp;storePath) -&gt; QString</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#ae6ce559fb2377f31bef854fb75df0af0">readSecretFields</a>(const QString &amp;storePath) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_template_i_o.html#a4ffd1c832f5325ef4bd08951939d1fb5">readTemplates</a>(const QString &amp;storePath) -&gt; QHash&lt; QString, QStringList &gt;</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#af8aac6eb0c68a90f03869c53606aa254">secretFieldsIn</a>(const QString &amp;templateText) -&gt; QStringList</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>TemplateIO</b>()=default (defined in <a class="el" href="class_template_i_o.html">TemplateIO</a>)</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_template_i_o.html#a4e75ba7938c8c5200829b651c1cb651a">writeTemplates</a>(const QString &amp;storePath, const QHash&lt; QString, QStringList &gt; &amp;templates) -&gt; bool</td><td class="entry"><a class="el" href="class_template_i_o.html">TemplateIO</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

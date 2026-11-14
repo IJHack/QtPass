@@ -1,0 +1,35 @@
+<map id="ClipboardManager::forgetIfSaved" name="ClipboardManager::forgetIfSaved">
+<area shape="rect" id="Node000001" title="Empty a saved previous text equal to text, now copied as a secret, so clear() does not put the secret..." alt="" coords="1818,92,2005,137"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl..." alt="" coords="1553,74,1760,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1800,103,1760,101,1760,96,1805,103"/>
+<area shape="rect" id="Node000007" href="$class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a" title="Track text that got onto the clipboard some other way." alt="" coords="1543,126,1770,154"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="1799,125,1770,131,1770,126,1805,125"/>
+<area shape="rect" id="Node000003" href="$class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c" title="Handle clipboard copying for a shown entry." alt="" coords="1304,5,1493,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1577,70,1493,52,1493,47,1582,70"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,124,755,152"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1535,90,1210,101,1011,110,811,122,756,127,755,122,810,117,1010,104,1210,95,1541,89"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,250,483,278"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="605,159,417,252,415,247,599,160"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="428,234,414,231,385,228,357,230,342,235,338,241,345,250,340,248,333,241,339,231,356,225,385,223,415,226,434,235"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,250,239,278"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="269,273,239,275,239,270,274,272"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="254,252,289,255,284,255,254,257"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="1526,141,756,141,756,136,1530,138"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1302,199,1495,227"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="1593,158,1451,201,1450,196,1588,159"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,296,1008,324"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="1313,230,983,299,982,293,1308,231"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1056,199,1254,227"/>
+<area shape="poly" id="edge15_Node000008_Node000011" title=" " alt="" coords="1284,213,1255,216,1254,210,1289,213"/>
+<area shape="poly" id="edge14_Node000009_Node000006" title=" " alt="" coords="792,311,560,308,423,302,286,292,204,281,204,275,287,286,423,297,561,303,798,310"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,250,762,278"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="810,293,728,281,729,275,815,293"/>
+<area shape="poly" id="edge13_Node000010_Node000005" title=" " alt="" coords="513,264,484,266,483,261,518,263"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,176,1006,221"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1038,206,1006,207,1006,201,1043,206"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,244,986,272"/>
+<area shape="poly" id="edge17_Node000011_Node000013" title=" " alt="" coords="1064,230,986,247,986,242,1058,231"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="816,237,809,235,792,219,784,203,776,187,761,173,725,155,726,150,764,168,780,184,789,201,797,216,812,231,821,238"/>
+<area shape="poly" id="edge20_Node000013_Node000006" title=" " alt="" coords="822,241,717,226,582,211,435,206,360,209,287,217,219,232,161,252,159,247,218,227,286,212,360,204,435,201,583,206,717,221,827,241"/>
+<area shape="poly" id="edge19_Node000013_Node000010" title=" " alt="" coords="814,260,763,264,762,259,819,260"/>
+</map>

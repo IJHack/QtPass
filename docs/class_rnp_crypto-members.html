@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_rnp_crypto.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">RnpCrypto Member List</div></div>
 </div><!--header-->
@@ -109,24 +127,30 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#adcd96547f63a74078b29ba5f2c078e35">kMaxPlaintextBytes</a></td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#abb1ff64a36e7589409a89d853785e072">listKeys</a>(bool secretOnly=false) const -&gt; QList&lt; KeyInfo &gt;</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#ac556c26fad6682ee3090fc1fc5fe6e67">loadKeyring</a>(const QString &amp;dir, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(const RnpCrypto &amp;) -&gt; RnpCrypto &amp;=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator=</b>(RnpCrypto &amp;&amp;) -&gt; RnpCrypto &amp;=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> typedef</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a9291eb10b1ea5adb343bfcb4da8455a6">protectKey</a>(const QString &amp;fingerprint, const QString &amp;passphrase, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0">RnpCrypto</a>()</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>RnpCrypto</b>(const RnpCrypto &amp;)=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RnpCrypto</b>(RnpCrypto &amp;&amp;)=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#ae6e958a87ecd1fa49b1159b2ad07e579">saveKeyring</a>(const QString &amp;dir, bool allowUnprotected=false, QString *error=nullptr) const -&gt; bool</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">setMaxPlaintextBytes</a>(qint64 bytes)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf">setPassphraseProvider</a>(PassphraseProvider provider)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a30389cc8522a6d684ecb8caacf934228">sign</a>(const QByteArray &amp;data, const QString &amp;signer, QString *error=nullptr) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a681d3f35bd3c8db88dfb9a182d0d788b">verify</a>(const QByteArray &amp;data, const QByteArray &amp;signature, QString *error=nullptr) -&gt; QStringList</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a83c893c7557cd64c31902561c1dee980">~RnpCrypto</a>()</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a90630c8fa95947522fdaec175b62ea8b">m_ffi</a></td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a60b0a0882191358396fee29e7b54a0aa">m_maxPlaintext</a></td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#ad475a4fc09c8491055d81f980ce8e271">m_passphrase</a></td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>operator=</b>(const RnpCrypto &amp;) -&gt; RnpCrypto &amp;=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator=</b>(RnpCrypto &amp;&amp;) -&gt; RnpCrypto &amp;=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a389051ff44ce503a7315d95087c2f0dc">PassphraseProvider</a> typedef</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a9291eb10b1ea5adb343bfcb4da8455a6">protectKey</a>(const QString &amp;fingerprint, const QString &amp;passphrase, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0">RnpCrypto</a>()</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RnpCrypto</b>(const RnpCrypto &amp;)=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>RnpCrypto</b>(RnpCrypto &amp;&amp;)=delete (defined in <a class="el" href="class_rnp_crypto.html">RnpCrypto</a>)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#ae6e958a87ecd1fa49b1159b2ad07e579">saveKeyring</a>(const QString &amp;dir, bool allowUnprotected=false, QString *error=nullptr) const -&gt; bool</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a6e60d2db2c0567dfd8add85a357a80b1">setMaxPlaintextBytes</a>(qint64 bytes)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a34d4b3fba554ee557ae749a3455992bf">setPassphraseProvider</a>(PassphraseProvider provider)</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a30389cc8522a6d684ecb8caacf934228">sign</a>(const QByteArray &amp;data, const QString &amp;signer, QString *error=nullptr) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_rnp_crypto.html#a681d3f35bd3c8db88dfb9a182d0d788b">verify</a>(const QByteArray &amp;data, const QByteArray &amp;signature, QString *error=nullptr) -&gt; QStringList</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_rnp_crypto.html#a83c893c7557cd64c31902561c1dee980">~RnpCrypto</a>()</td><td class="entry"><a class="el" href="class_rnp_crypto.html">RnpCrypto</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

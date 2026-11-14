@@ -1,0 +1,29 @@
+<map id="ProfileInit::writeGpgId" name="ProfileInit::writeGpgId">
+<area shape="rect" id="Node000001" title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen..." alt="" coords="5,161,168,189"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540" title="Record the bytes just written for gpgIdFile, so that this device recognises its own list afterwards a..." alt="" coords="216,57,444,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,159,154,127,215,95,241,88,236,91,217,100,156,131,109,163"/>
+<area shape="rect" id="Node000007" href="$class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver..." alt="" coords="220,109,440,137"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="154,158,249,139,244,142,156,163"/>
+<area shape="rect" id="Node000008" href="$class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="228,161,432,189"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="168,173,214,174,209,176,169,178"/>
+<area shape="rect" id="Node000009" href="$class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f" title="A complete list: the header in front of the recipients." alt="" coords="492,211,706,238"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="152,187,216,198,351,211,479,221,474,221,350,216,215,203,152,192"/>
+<area shape="rect" id="Node000010" href="$class_util.html#a5d33d7a093ab7e104320384f4ec3213c" title="Write bytes as the file path through stageFileReplacing()." alt="" coords="244,263,416,290"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="111,187,159,215,217,242,257,258,251,258,215,247,157,219,110,192"/>
+<area shape="rect" id="Node000003" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="510,5,689,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,54,511,36,506,38,406,59"/>
+<area shape="rect" id="Node000004" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="754,107,939,134"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="444,72,571,80,707,93,763,103,757,104,706,98,570,85,445,78"/>
+<area shape="rect" id="Node000005" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="518,159,680,186"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="416,83,445,96,461,108,470,120,479,132,493,144,509,153,503,153,491,148,475,136,466,123,457,111,443,100,416,88"/>
+<area shape="rect" id="Node000006" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="512,107,687,134"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="409,83,507,103,502,104,409,88"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="687,118,742,120,736,121,688,123"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="409,135,507,155,502,156,409,140"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="432,172,505,173,500,174,433,177"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="668,207,705,195,761,169,808,144,813,142,763,174,707,200,670,213"/>
+<area shape="rect" id="Node000011" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="512,263,687,290"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="417,274,499,276,493,277,417,279"/>
+<area shape="rect" id="Node000012" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="785,263,908,290"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="687,274,772,276,766,277,687,279"/>
+</map>

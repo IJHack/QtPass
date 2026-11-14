@@ -1,0 +1,19 @@
+<map id="MainWindow::initTrayIcon" name="MainWindow::initTrayIcon">
+<area shape="rect" id="Node000001" title="Create m_tray and add the menu bar toggle to its menu; gives up (m_tray stays null) when no system tr..." alt="" coords="1268,58,1455,85"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1069,32,1220,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1250,59,1221,58,1221,52,1255,59"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title="Restore window geometry and state from saved settings." alt="" coords="810,84,1021,112"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="1255,78,1021,95,1021,89,1250,78"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,32,483,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1068,29,1020,24,883,12,776,8,669,13,531,24,455,34,454,29,531,18,668,7,776,3,883,6,1021,18,1073,29"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="831,32,1000,60"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="1051,46,1001,49,1001,44,1056,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,17,414,13,385,11,357,13,342,18,338,23,345,33,340,31,333,24,339,14,356,8,385,6,415,8,434,17"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,32,239,60"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,56,239,58,239,53,274,55"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,35,289,37,284,38,254,40"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,32,762,60"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="813,46,763,49,763,44,818,46"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="513,46,484,49,483,44,518,46"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="792,93,667,88,531,74,460,63,460,58,531,69,668,82,797,93"/>
+</map>

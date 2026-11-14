@@ -1,0 +1,18 @@
+<map id="FirstRunWizard::isStore" name="FirstRunWizard::isStore">
+<area shape="rect" id="Node000001" title="Whether path points at an initialised store." alt="" coords="805,108,978,136"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="559,5,729,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="854,99,810,74,756,48,719,36,719,31,758,43,812,69,860,100"/>
+<area shape="rect" id="Node000003" href="$class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae" title="Fill the summary from the settings." alt="" coords="531,57,757,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="803,105,715,88,715,83,809,104"/>
+<area shape="rect" id="Node000004" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="245,133,472,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="787,127,472,144,472,139,792,126"/>
+<area shape="rect" id="Node000005" href="$class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319" title="Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to enc..." alt="" coords="538,159,751,186"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="809,139,716,161,715,155,803,140"/>
+<area shape="rect" id="Node000006" href="$class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="532,211,757,238"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="860,144,812,174,758,200,720,213,719,207,756,195,810,170,854,145"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="562,206,530,200,406,164,406,159,532,195,568,207"/>
+<area shape="rect" id="Node000007" href="$class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14" title="Build the page." alt="" coords="234,211,483,238"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="513,225,483,227,483,222,518,224"/>
+<area shape="rect" id="Node000008" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,202,186,247"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="215,225,186,227,186,222,220,224"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="GrepSearchController::leaveGrepMode" name="GrepSearchController::leaveGrepMode">
+<area shape="rect" id="Node000001" title="Leave content&#45;search mode (search button toggled off)." alt="" coords="261,5,421,50"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a7390a38fa0f78bcd05f797c70a959ac5" title="The content&#45;search toggle changed: switch the search box between name filtering and regex content sea..." alt="" coords="5,5,213,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,28,213,30,213,25,248,27"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="DoneWizardPage::initializePage" name="DoneWizardPage::initializePage">
+<area shape="rect" id="Node000001" title="Fill the summary from the settings." alt="" coords="5,5,232,33"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" title="Whether path points at an initialised store." alt="" coords="280,5,452,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,17,267,19,261,19,232,22"/>
+</map>

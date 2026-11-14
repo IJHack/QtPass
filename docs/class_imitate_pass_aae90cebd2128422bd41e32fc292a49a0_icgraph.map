@@ -1,0 +1,5 @@
+<map id="ImitatePass::gitAddGpgId" name="ImitatePass::gitAddGpgId">
+<area shape="rect" id="Node000001" title="Stage a .gpg&#45;id and, when given, its .sig, and commit both in one commit, so no commit in the history..." alt="" coords="180,5,365,33"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,5,132,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,19,132,22,132,17,167,19"/>
+</map>

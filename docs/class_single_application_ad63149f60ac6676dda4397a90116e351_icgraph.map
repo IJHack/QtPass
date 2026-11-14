@@ -1,0 +1,6 @@
+<map id="SingleApplication::sendMessage" name="SingleApplication::sendMessage">
+<area shape="rect" id="Node000001" title="Send a message to the running instance." alt="" coords="108,21,250,66"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="6,29,60,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,44,61,46,60,41,95,42"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="56,14,48,10,33,8,18,10,10,14,8,20,12,28,7,29,3,20,6,11,16,5,33,3,50,5,61,13"/>
+</map>

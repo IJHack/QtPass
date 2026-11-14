@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('nativegrep_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,107 +112,113 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">nativegrep.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
+<a href="nativegrep_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_NATIVEGREP_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_NATIVEGREP_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QPair&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QProcessEnvironment&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>QRegularExpression;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>QThread;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_native_grep.html">   25</a></span><span class="keyword">class </span><a class="code hl_function" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a> : <span class="keyword">public</span> QObject {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  Q_OBJECT</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">   33</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">   42</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a> = 100;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">   49</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> = 10000;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">   62</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> qsizetype <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> = 200;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">   74</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">return</span> line.isEmpty();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_NATIVEGREP_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_NATIVEGREP_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QPair&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QProcessEnvironment&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>QRegularExpression;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span>QThread;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_native_grep.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Q_OBJECT</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">   48</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a> = 100;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">   55</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a> = 10000;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">   68</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> qsizetype <a class="code hl_variable" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> = 200;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">   80</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">isMoreMarker</a>(<span class="keyword">const</span> QString &amp;line) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">return</span> line.isEmpty();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  }</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span></div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">   88</a></span>  <a class="code hl_function" href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a>(<span class="keyword">const</span> QPair&lt;QString, QStringList&gt; &amp;result) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> result.first.isEmpty();</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">   94</a></span>  <a class="code hl_function" href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a>(<span class="keyword">const</span> QPair&lt;QString, QStringList&gt; &amp;result) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> result.first.isEmpty();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45">   94</a></span>  <a class="code hl_function" href="class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45">~NativeGrep</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">  106</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">search</a>(<span class="keyword">const</span> QString &amp;pattern, <span class="keywordtype">bool</span> caseInsensitive,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>              <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>              <span class="keyword">const</span> QProcessEnvironment &amp;env);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">  115</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>();</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">  129</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">matchFile</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                        <span class="keyword">const</span> QString &amp;filePath, <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                        <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      -&gt; QStringList;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_native_grep.html#ad9b99ac184ab94d539f2937efbf13ed1">  147</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#ad9b99ac184ab94d539f2937efbf13ed1">scanStore</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                        <span class="keyword">const</span> QString &amp;storeDir, <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                        <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt;;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>signals:</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">  157</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>(<span class="keyword">const</span> QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keyword">struct </span>Worker {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    QThread *thread;</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    std::shared_ptr&lt;std::atomic_bool&gt; <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  };</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordtype">int</span> m_seq = 0;</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  QList&lt;Worker&gt; m_workers;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <a class="code hl_class" href="class_native_grep.html">~NativeGrep</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">search</a>(<span class="keyword">const</span> QString &amp;pattern, <span class="keywordtype">bool</span> caseInsensitive,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>              <span class="keyword">const</span> QString &amp;gpgExe, <span class="keyword">const</span> QString &amp;storeDir,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>              <span class="keyword">const</span> QProcessEnvironment &amp;env);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">matchFile</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                        <span class="keyword">const</span> QString &amp;filePath, <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                        <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      -&gt; QStringList;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a>(<span class="keyword">const</span> QProcessEnvironment &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                        <span class="keyword">const</span> QString &amp;storeDir, <span class="keyword">const</span> QRegularExpression &amp;rx,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                        <span class="keyword">const</span> std::atomic_bool *<a class="code hl_function" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">cancel</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt;;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>signals:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">  163</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">finished</a>(<span class="keyword">const</span> QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">private</span>:</div>
+<div class="foldopen" id="foldopen00169" data-start="{" data-end="};">
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="struct_native_grep_1_1_worker.html">  169</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="struct_native_grep_1_1_worker.html">Worker</a> {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">  171</a></span>    QThread *<a class="code hl_variable" href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">thread</a>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="struct_native_grep_1_1_worker.html#ab2d52f36bec34c01a8f6fef909380a24">  173</a></span>    std::shared_ptr&lt;std::atomic_bool&gt; <a class="code hl_variable" href="struct_native_grep_1_1_worker.html#ab2d52f36bec34c01a8f6fef909380a24">cancel</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  };</div>
 </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#endif </span><span class="comment">// SRC_NATIVEGREP_H_</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">  179</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a> = 0;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">  181</a></span>  QList&lt;Worker&gt; <a class="code hl_variable" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>};</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif </span><span class="comment">// SRC_NATIVEGREP_H_</span></div>
+<div class="ttc" id="aclass_native_grep_html"><div class="ttname"><a href="class_native_grep.html">NativeGrep</a></div><div class="ttdoc">Full-text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ...</div><div class="ttdef"><b>Definition</b> <a href="#l00031">nativegrep.h:31</a></div></div>
 <div class="ttc" id="aclass_native_grep_html_a195784ff0ea005b58f4f26beed4be27a"><div class="ttname"><a href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">NativeGrep::finished</a></div><div class="ttdeci">void finished(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</div><div class="ttdoc">The newest search is over.</div></div>
-<div class="ttc" id="aclass_native_grep_html_a393b6a05c39649304a77151702b76ec7"><div class="ttname"><a href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a></div><div class="ttdeci">void search(const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</div><div class="ttdoc">Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu...</div></div>
-<div class="ttc" id="aclass_native_grep_html_a4cce7dcbafd90ea622e9d00b346aba45"><div class="ttname"><a href="class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45">NativeGrep::~NativeGrep</a></div><div class="ttdeci">~NativeGrep() override</div><div class="ttdoc">Interrupt running searches and wait up to five seconds for them.</div></div>
-<div class="ttc" id="aclass_native_grep_html_a566acd70ea61876f0290f3b0ea900f78"><div class="ttname"><a href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">NativeGrep::kMaxMatches</a></div><div class="ttdeci">static constexpr int kMaxMatches</div><div class="ttdoc">Most matching lines a search collects over the whole store.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">nativegrep.h:49</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_a58e093d9bb7bae2d02fcf9ea7fa0132a"><div class="ttname"><a href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">NativeGrep::matchFile</a></div><div class="ttdeci">static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</div><div class="ttdoc">Decrypt one .gpg file and return its trimmed lines matching rx.</div></div>
-<div class="ttc" id="aclass_native_grep_html_a5923d0185ca5c7739b00ef8159a11681"><div class="ttname"><a href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">NativeGrep::isMoreMarker</a></div><div class="ttdeci">static auto isMoreMarker(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.</div><div class="ttdef"><b>Definition</b> <a href="#l00074">nativegrep.h:74</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_a60260a9fd1bcaffe995b0a52115ebe0d"><div class="ttname"><a href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">NativeGrep::kMaxPreviewLength</a></div><div class="ttdeci">static constexpr qsizetype kMaxPreviewLength</div><div class="ttdoc">Longest preview of a matching line, in UTF-16 code units.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">nativegrep.h:62</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_a737ae7b7488d442dc5d2a5ee5dc19482"><div class="ttname"><a href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">NativeGrep::kMaxMatchesPerEntry</a></div><div class="ttdeci">static constexpr int kMaxMatchesPerEntry</div><div class="ttdoc">Most matching lines taken from one entry.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">nativegrep.h:42</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_aa2bfb9a0d2fcdf94150d325e58e988d7"><div class="ttname"><a href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">NativeGrep::isStoppedMarker</a></div><div class="ttdeci">static auto isStoppedMarker(const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</div><div class="ttdoc">Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...</div><div class="ttdef"><b>Definition</b> <a href="#l00088">nativegrep.h:88</a></div></div>
-<div class="ttc" id="aclass_native_grep_html_ad9b99ac184ab94d539f2937efbf13ed1"><div class="ttname"><a href="class_native_grep.html#ad9b99ac184ab94d539f2937efbf13ed1">NativeGrep::scanStore</a></div><div class="ttdeci">static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Walk storeDir, decrypt every .gpg file and collect the matches.</div></div>
-<div class="ttc" id="aclass_native_grep_html_af640052e8b38885ef565d3c626aa1ce6"><div class="ttname"><a href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdoc">Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...</div></div>
-<div class="ttc" id="aclass_native_grep_html_afc48e9a61a6587abb5fa3e079e874592"><div class="ttname"><a href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep::NativeGrep</a></div><div class="ttdeci">NativeGrep(QObject *parent=nullptr)</div><div class="ttdoc">Create a searcher.</div></div>
+<div class="ttc" id="aclass_native_grep_html_a393b6a05c39649304a77151702b76ec7"><div class="ttname"><a href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">NativeGrep::search</a></div><div class="ttdeci">void search(const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</div><div class="ttdoc">Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu...</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8cpp_source.html#l00160">nativegrep.cpp:160</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a566acd70ea61876f0290f3b0ea900f78"><div class="ttname"><a href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">NativeGrep::kMaxMatches</a></div><div class="ttdeci">static constexpr int kMaxMatches</div><div class="ttdoc">Most matching lines a search collects over the whole store.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">nativegrep.h:55</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a5923d0185ca5c7739b00ef8159a11681"><div class="ttname"><a href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">NativeGrep::isMoreMarker</a></div><div class="ttdeci">static auto isMoreMarker(const QString &amp;line) -&gt; bool</div><div class="ttdoc">Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">nativegrep.h:80</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a60260a9fd1bcaffe995b0a52115ebe0d"><div class="ttname"><a href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">NativeGrep::kMaxPreviewLength</a></div><div class="ttdeci">static constexpr qsizetype kMaxPreviewLength</div><div class="ttdoc">Longest preview of a matching line, in UTF-16 code units.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">nativegrep.h:68</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a737ae7b7488d442dc5d2a5ee5dc19482"><div class="ttname"><a href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">NativeGrep::kMaxMatchesPerEntry</a></div><div class="ttdeci">static constexpr int kMaxMatchesPerEntry</div><div class="ttdoc">Most matching lines taken from one entry.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">nativegrep.h:48</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a99b72a4ac50c6c01b24f8376e30a7a68"><div class="ttname"><a href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">NativeGrep::matchFile</a></div><div class="ttdeci">static auto matchFile(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</div><div class="ttdoc">Decrypt one .gpg file and return its trimmed lines matching rx.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8cpp_source.html#l00041">nativegrep.cpp:41</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_a9c2523a0d1d82bc0201c6730bfa13a10"><div class="ttname"><a href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">NativeGrep::scanStore</a></div><div class="ttdeci">static auto scanStore(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Walk storeDir, decrypt every .gpg file and collect the matches.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8cpp_source.html#l00107">nativegrep.cpp:107</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_aa2bfb9a0d2fcdf94150d325e58e988d7"><div class="ttname"><a href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">NativeGrep::isStoppedMarker</a></div><div class="ttdeci">static auto isStoppedMarker(const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</div><div class="ttdoc">Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...</div><div class="ttdef"><b>Definition</b> <a href="#l00094">nativegrep.h:94</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_acce2afcd559c2272585093278ca4643e"><div class="ttname"><a href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">NativeGrep::m_seq</a></div><div class="ttdeci">int m_seq</div><div class="ttdoc">Number of the newest search. A worker reports through finished() only when its own number still equal...</div><div class="ttdef"><b>Definition</b> <a href="#l00179">nativegrep.h:179</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_acf4bbf115d80b421255145c2a4d6ca1d"><div class="ttname"><a href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">NativeGrep::m_workers</a></div><div class="ttdeci">QList&lt; Worker &gt; m_workers</div><div class="ttdoc">Searches still running, superseded ones included.</div><div class="ttdef"><b>Definition</b> <a href="#l00181">nativegrep.h:181</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_af640052e8b38885ef565d3c626aa1ce6"><div class="ttname"><a href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdoc">Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that ...</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8cpp_source.html#l00230">nativegrep.cpp:230</a></div></div>
+<div class="ttc" id="aclass_native_grep_html_afc48e9a61a6587abb5fa3e079e874592"><div class="ttname"><a href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep::NativeGrep</a></div><div class="ttdeci">NativeGrep(QObject *parent=nullptr)</div><div class="ttdoc">Create a searcher.</div><div class="ttdef"><b>Definition</b> <a href="nativegrep_8cpp_source.html#l00021">nativegrep.cpp:21</a></div></div>
+<div class="ttc" id="astruct_native_grep_1_1_worker_html"><div class="ttname"><a href="struct_native_grep_1_1_worker.html">NativeGrep::Worker</a></div><div class="ttdef"><b>Definition</b> <a href="#l00169">nativegrep.h:169</a></div></div>
+<div class="ttc" id="astruct_native_grep_1_1_worker_html_a5dd658bbb228077a92546358b9437d85"><div class="ttname"><a href="struct_native_grep_1_1_worker.html#a5dd658bbb228077a92546358b9437d85">NativeGrep::Worker::thread</a></div><div class="ttdeci">QThread * thread</div><div class="ttdoc">The thread the search runs on.</div><div class="ttdef"><b>Definition</b> <a href="#l00171">nativegrep.h:171</a></div></div>
+<div class="ttc" id="astruct_native_grep_1_1_worker_html_ab2d52f36bec34c01a8f6fef909380a24"><div class="ttname"><a href="struct_native_grep_1_1_worker.html#ab2d52f36bec34c01a8f6fef909380a24">NativeGrep::Worker::cancel</a></div><div class="ttdeci">std::shared_ptr&lt; std::atomic_bool &gt; cancel</div><div class="ttdoc">Set to ask the search to stop; polled by its gpg runs.</div><div class="ttdef"><b>Definition</b> <a href="#l00173">nativegrep.h:173</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="nativegrep_8h.html">nativegrep.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

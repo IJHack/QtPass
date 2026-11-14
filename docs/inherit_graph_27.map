@@ -1,9 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,57,111,85"/>
-<area shape="rect" id="Node000001" href="$class_q_push_button_as_q_r_code.html" title="QPushButton that presents a text payload as a QR code action." alt="" coords="173,5,346,33"/>
-<area shape="poly" id="edge25_Node000000_Node000001" title=" " alt="" coords="125,51,205,32,201,35,127,56"/>
-<area shape="rect" id="Node000002" href="$class_q_push_button_show_password.html" title="QPushButton that toggles visibility of an associated QLineEdit." alt="" coords="159,57,360,85"/>
-<area shape="poly" id="edge26_Node000000_Node000002" title=" " alt="" coords="126,69,161,70,156,72,127,74"/>
-<area shape="rect" id="Node000003" href="$class_q_push_button_with_clipboard.html" title="QPushButton that stores a text payload and emits it when activated." alt="" coords="161,109,358,137"/>
-<area shape="poly" id="edge27_Node000000_Node000003" title=" " alt="" coords="126,86,205,108,200,110,125,91"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,136,79,164"/>
+<area shape="rect" id="Node000001" href="$class_config_dialog.html" title="The ConfigDialog handles the configuration interface." alt="" coords="159,5,263,33"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="56,122,85,81,104,61,125,44,160,29,156,32,128,48,108,65,89,85,61,124"/>
+<area shape="rect" id="Node000002" href="$class_export_public_key_dialog.html" title="Dialog showing an ASCII&#45;armored public GPG key for sharing." alt="" coords="127,57,295,85"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="74,125,126,95,160,84,156,87,128,100,78,129"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html" title="Dialog for importing GPG keys from file or clipboard." alt="" coords="146,109,276,137"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="93,139,147,132,143,135,95,144"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html" title="Handles GPG keypair generation." alt="" coords="155,161,266,189"/>
+<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="93,155,157,165,153,168,94,160"/>
+<area shape="rect" id="Node000005" href="$class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one." alt="" coords="149,213,273,241"/>
+<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="77,170,128,198,161,212,156,213,126,203,76,175"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption." alt="" coords="161,265,261,293"/>
+<area shape="poly" id="edge7_Node000000_Node000006" title=" " alt="" coords="60,175,90,214,128,250,163,268,157,269,125,255,86,218,58,180"/>
 </map>

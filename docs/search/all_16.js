@@ -1,12 +1,20 @@
 var searchData=
 [
-  ['_7edeselectabletreeview_0',['~DeselectableTreeView',['../class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b',1,'DeselectableTreeView']]],
-  ['_7efieldlabel_1',['~FieldLabel',['../class_field_label.html#a97d47e3ccb600aa8012953dc801079f8',1,'FieldLabel']]],
-  ['_7eimitatepass_2',['~ImitatePass',['../class_imitate_pass.html#a59c774bacec45aa06d10e22bc71f596e',1,'ImitatePass']]],
-  ['_7enativegrep_3',['~NativeGrep',['../class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45',1,'NativeGrep']]],
-  ['_7eqtpass_4',['~QtPass',['../class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5',1,'QtPass']]],
-  ['_7erealpass_5',['~RealPass',['../class_real_pass.html#a629d63af70047e502c91d7a3da7c5809',1,'RealPass']]],
-  ['_7ernpcrypto_6',['~RnpCrypto',['../class_rnp_crypto.html#a83c893c7557cd64c31902561c1dee980',1,'RnpCrypto']]],
-  ['_7etransactionhelper_7',['~TransactionHelper',['../class_imitate_pass_1_1_transaction_helper.html#a7b512b63d63c4e2339ebfee98404cf04',1,'ImitatePass::TransactionHelper']]],
-  ['_7eusersdialog_8',['~UsersDialog',['../class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06',1,'UsersDialog']]]
+  ['valid_0',['Valid',['../class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2a3ac705f2acd51a4613f9188c05c91d0d',1,'SshAuthSock']]],
+  ['validate_1',['validate',['../class_config_dialog.html#a20e465aae5c77fb6219fbe6b477fbe0d',1,'ConfigDialog']]],
+  ['validatenewentry_2',['validateNewEntry',['../class_password_dialog.html#a366c4ee406d7a0b20cb88df65d914602',1,'PasswordDialog']]],
+  ['validateotpfield_3',['validateOtpField',['../class_password_dialog.html#a035a14b1473470f6af75fa0b88df7d16',1,'PasswordDialog']]],
+  ['validatepage_4',['validatePage',['../class_programs_wizard_page.html#abe18364fc2ec95981ec28fea3690d071',1,'ProgramsWizardPage::validatePage()'],['../class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89',1,'KeyWizardPage::validatePage()'],['../class_store_wizard_page.html#a3beb73b4e5575bcaa12dae36d6c24c01',1,'StoreWizardPage::validatePage()'],['../class_done_wizard_page.html#af6e4ba145af0504b311a9f2eb0504e76',1,'DoneWizardPage::validatePage()']]],
+  ['validity_5',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
+  ['validsigfingerprints_6',['validSigFingerprints',['../class_gpg_id_signer.html#a07ad9a63bb51e600fbec248d3028c2f0',1,'GpgIdSigner']]],
+  ['value_7',['value',['../struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d',1,'NamedValue']]],
+  ['verdict_8',['Verdict',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9',1,'GpgIdGeneration']]],
+  ['verified_9',['Verified',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a3f68e67dc6c397aaa9d1c24c356f754f',1,'Pass::RecipientsForEditing']]],
+  ['verifiedrollback_10',['VerifiedRollback',['../struct_pass_1_1_recipients_for_editing.html#ac3f77e5cad4c86e3e931a84edf949073a8a0f9d1cb7131a1031d38f0a7d9635bf',1,'Pass::RecipientsForEditing']]],
+  ['verify_11',['verify',['../class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858',1,'GpgIdSigner::verify()'],['../class_rnp_crypto.html#a681d3f35bd3c8db88dfb9a182d0d788b',1,'RnpCrypto::verify()']]],
+  ['verifyfile_12',['verifyFile',['../class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f',1,'GpgIdSigner']]],
+  ['verifygpgidfordir_13',['verifyGpgIdForDir',['../class_imitate_pass.html#a4b2388a7e250b886534e79c7ca131dbf',1,'ImitatePass']]],
+  ['verifysignedlist_14',['verifySignedList',['../class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb',1,'Pass']]],
+  ['version_15',['version',['../struct_app_settings.html#aaf6d5f6bafc91640cf07293134308634',1,'AppSettings']]],
+  ['view_16',['view',['../class_store_tree.html#aa93e44448a60d9e87d003529b5364ce1',1,'StoreTree']]]
 ];

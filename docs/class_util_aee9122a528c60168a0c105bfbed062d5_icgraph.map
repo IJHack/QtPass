@@ -1,0 +1,25 @@
+<map id="Util::findBinaryInPath" name="Util::findBinaryInPath">
+<area shape="rect" id="Node000001" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="1048,149,1206,177"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="1166,134,1154,130,1127,128,1102,130,1088,135,1085,140,1091,150,1086,148,1079,140,1085,131,1101,125,1127,123,1155,125,1172,134"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="774,55,1000,82"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="1089,140,1047,119,999,96,964,86,965,80,1001,91,1050,114,1094,141"/>
+<area shape="rect" id="Node000007" href="$class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449" title="Fill the fields from the settings (autodetection already ran)." alt="" coords="807,106,967,151"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="1030,150,967,143,967,137,1035,150"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#ae4d11811206b82326dca209f35910052" title="Whether qrencode can run: configuredPath when it is an executable file, else a qrencode on Util&#39;s PAT..." alt="" coords="794,176,980,220"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="1035,176,980,187,980,182,1030,177"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="784,245,990,290"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="1092,185,1048,212,1001,235,969,247,968,242,999,230,1046,207,1087,186"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="582,55,676,82"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="756,69,676,71,676,66,762,68"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="563,63,484,56,483,51,568,61"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="321,81,449,109"/>
+<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="563,76,450,91,449,86,568,74"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="425,14,412,10,385,8,359,10,345,15,342,20,348,29,343,29,336,20,342,11,358,5,385,3,413,5,430,14"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="269,53,240,55,238,50,274,51"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="253,32,289,33,284,36,255,37"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="531,184,726,212"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="776,198,727,200,727,195,781,198"/>
+<area shape="poly" id="edge12_Node000009_Node000009" title=" " alt="" coords="669,168,656,165,629,163,603,165,589,169,586,175,592,184,587,183,580,175,586,165,602,159,629,157,657,160,674,169"/>
+</map>

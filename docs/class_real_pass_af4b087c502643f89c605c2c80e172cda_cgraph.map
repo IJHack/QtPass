@@ -1,0 +1,19 @@
+<map id="RealPass::listSigner" name="RealPass::listSigner">
+<area shape="rect" id="Node000001" title="The verifier for signed lists, gpg in the store&#39;s environment." alt="" coords="5,84,154,112"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="214,57,406,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,87,201,83,196,85,155,92"/>
+<area shape="rect" id="Node000008" href="$class_gpg_id_signer.html#ad3a52326de6aaea36bbb4394576708b6" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="202,109,419,137"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="154,103,189,109,184,110,154,109"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="467,57,629,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,69,454,71,449,71,407,74"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="677,57,843,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="630,69,664,71,659,71,630,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="891,5,1109,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="827,54,915,37,920,37,828,59"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="894,57,1106,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="843,69,881,71,876,71,843,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="898,109,1102,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="828,83,920,106,915,105,827,88"/>
+<area shape="rect" id="Node000009" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="479,109,617,137"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="420,121,466,123,461,123,420,126"/>
+</map>

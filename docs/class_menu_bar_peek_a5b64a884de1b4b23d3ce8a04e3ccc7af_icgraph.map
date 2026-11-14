@@ -1,0 +1,21 @@
+<map id="MenuBarPeek::hideWhenNoMenuIsOpen" name="MenuBarPeek::hideWhenNoMenuIsOpen">
+<area shape="rect" id="Node000001" title="hide() on the next event&#45;loop pass, and only if no popup is open and the bar has no active action...." alt="" coords="1070,42,1308,87"/>
+<area shape="rect" id="Node000002" href="$class_menu_bar_peek.html#a8a9a8dc73d9d99dbcdc580b1b3567525" title="Follows Alt, Escape, clicks and focus for the whole application." alt="" coords="552,24,741,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1112,37,1069,26,1021,15,942,9,862,10,786,17,722,26,721,21,786,12,861,5,942,3,1022,10,1070,20,1118,37"/>
+<area shape="rect" id="Node000003" href="$class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd" title="Watch window for Alt while its menu bar is hidden." alt="" coords="811,128,1021,156"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1103,92,1022,118,976,130,976,125,1021,113,1098,93"/>
+<area shape="rect" id="Node000007" href="$class_menu_bar_peek.html#ac6bb1a4ecef94ccf5ce99ce3d01c95ea" title="Handle a key press seen by the application filter." alt="" coords="819,24,1013,52"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="1051,52,1013,50,1013,45,1057,52"/>
+<area shape="rect" id="Node000008" href="$class_menu_bar_peek.html#a16f2d7bb3d881e772f372ea8881967b7" title="Handle the release of Alt: a second lone tap hides the bar, an Alt+key chord that did not open a menu..." alt="" coords="810,76,1022,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="1057,77,1022,83,1022,78,1051,78"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,128,762,156"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="793,142,763,145,763,139,798,142"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,128,483,156"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,142,484,145,483,139,518,142"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="428,113,414,109,385,107,357,109,342,114,338,119,345,129,340,127,333,119,339,110,356,104,385,102,415,104,434,113"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,128,239,156"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="269,151,239,154,239,148,274,151"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="254,130,289,133,284,134,254,136"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="801,38,742,41,742,35,806,38"/>
+<area shape="poly" id="edge11_Node000008_Node000002" title=" " alt="" coords="823,73,722,55,723,50,828,73"/>
+</map>

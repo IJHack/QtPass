@@ -1,4 +1,0 @@
-<map id="RnpCrypto::sign" name="RnpCrypto::sign">
-<area shape="rect" id="Node000001" title="Makes a detached signature over data, as gpg –detach&#45;sign –local&#45;user signer does (for ...." alt="" coords="5,29,130,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="45,28,42,20,44,11,53,5,68,3,82,5,92,14,86,14,80,10,67,8,55,10,49,14,47,20,50,29"/>
-</map>

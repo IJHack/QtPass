@@ -1,0 +1,13 @@
+<map id="FirstRunWizard::secretKeys" name="FirstRunWizard::secretKeys">
+<area shape="rect" id="Node000001" title="The secret keys gpg lists for gpgExecutable." alt="" coords="994,40,1192,68"/>
+<area shape="rect" id="Node000002" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="775,40,946,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="976,54,946,57,946,52,981,54"/>
+<area shape="rect" id="Node000003" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="526,14,713,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="757,43,713,41,713,35,762,43"/>
+<area shape="rect" id="Node000006" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="511,66,727,94"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="762,65,728,71,728,66,757,65"/>
+<area shape="rect" id="Node000004" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="234,14,463,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="507,28,464,30,463,25,513,27"/>
+<area shape="rect" id="Node000005" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,5,186,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="215,28,187,30,186,25,221,27"/>
+</map>

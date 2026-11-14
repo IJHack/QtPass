@@ -1,0 +1,5 @@
+<map id="ImitatePass::TransactionHelper::TransactionHelper" name="ImitatePass::TransactionHelper::TransactionHelper">
+<area shape="rect" id="Node000001" title="Start transaction." alt="" coords="5,5,195,50"/>
+<area shape="rect" id="Node000002" href="$class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24" title="Open a transaction: the processes added until the matching transactionEnd() are reported as one opera..." alt="" coords="243,5,391,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,25,230,27,224,28,195,30"/>
+</map>

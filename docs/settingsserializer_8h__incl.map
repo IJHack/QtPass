@@ -1,0 +1,22 @@
+<map id="src/settingsserializer.h" name="src/settingsserializer.h">
+<area shape="rect" id="Node000001" title="SettingsSerializer: the flat AppSettings fields to and from their QSettings keys, without side effect..." alt="" coords="336,5,503,33"/>
+<area shape="rect" id="Node000002" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="364,81,474,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,31,421,67,417,64,418,36"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,157,91,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,108,107,159,105,154,364,103"/>
+<area shape="rect" id="Node000005" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="116,157,296,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="379,110,259,154,257,149,383,108"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="235,232,304,260"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="409,108,295,223,292,219,404,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="371,157,467,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="421,107,421,142,417,140,417,111"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="491,157,555,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="438,107,495,148,490,148,437,112"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="579,157,638,184"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="453,107,567,152,562,152,453,112"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="662,157,755,184"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="471,107,650,153,645,154,471,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,232,100,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,183,55,217,50,216,51,187"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="218,182,251,221,246,220,216,187"/>
+</map>

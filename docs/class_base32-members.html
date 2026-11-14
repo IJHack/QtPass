@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_base32.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">Base32 Member List</div></div>
 </div><!--header-->
@@ -101,16 +119,20 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_base32.html">Base32</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#a0333781f29fc93e20b3792c243a666db">addPadding</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_base32.html#aa37affa1dea172a0e0df0ccec92f48f2">decode</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#a538fcb8ba3afbf0f7e93b0baf609128a">encode</a>(const QByteArray &amp;data) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca">removePadding</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#aaf904f4cb4ce14e943cc46416202d827">sanitizeInput</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0">addPadding</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base32.html#a79faf2394220266c154ffadbd2e8cd41">Base32</a>()=default</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#aab3feed3644b481794685b42410cf1e1">decode</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base32.html#acf6b12a6850124ad51e39107c312d1ba">encode</a>(const QByteArray &amp;data) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">removePadding</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">sanitizeInput</a>(const QByteArray &amp;encodedData) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_base32.html">Base32</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

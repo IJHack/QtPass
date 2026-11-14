@@ -1,0 +1,8 @@
+<map id="NamedValues::NamedValues" name="NamedValues::NamedValues">
+<area shape="rect" id="Node000001" title="Construct an empty list." alt="" coords="5,5,215,33"/>
+<area shape="rect" id="Node000002" href="$class_named_values.html#a937ebcae4118431af19990a4a1e0bef7" title="Remove and return the named field, its original line included." alt="" coords="494,5,724,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,17,479,17,478,22,215,22"/>
+<area shape="rect" id="Node000003" href="$class_named_values.html#a427d280bd24b10d9a5b627b1fa4b5f4b" title="Remove and return the value for the named field." alt="" coords="263,31,446,58"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,27,250,33,244,33,215,33"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="446,33,476,32,481,32,447,38"/>
+</map>

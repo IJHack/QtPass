@@ -1,0 +1,15 @@
+<map id="Pass::getRecipientList" name="Pass::getRecipientList">
+<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="5,84,169,112"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="225,5,370,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,81,216,43,240,37,235,40,218,48,124,86"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="225,57,370,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,85,212,81,207,83,170,90"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f" title="Parse the contents of a .gpg&#45;id: one recipient per line, # starts a comment, unusable lines are logge..." alt="" coords="217,109,379,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,105,204,111,199,112,169,110"/>
+<area shape="rect" id="Node000006" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="221,161,375,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="124,110,218,146,240,156,235,156,216,151,123,115"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check whether a .gpg&#45;id token may be passed to gpg as a key selector. Accepts any non&#45;empty token tha..." alt="" coords="440,109,571,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="379,121,427,123,422,123,380,126"/>
+<area shape="rect" id="Node000007" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="427,161,584,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="376,173,414,175,409,175,376,178"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="MainWindow::onOperationError" name="MainWindow::onOperationError">
+<area shape="rect" id="Node000001" title="An operation ended in an error before or instead of a result: forget the pending requests and what th..." alt="" coords="5,5,229,33"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841" title="Forget the pending OTP and copy requests." alt="" coords="277,5,507,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,17,264,19,259,19,229,22"/>
+</map>

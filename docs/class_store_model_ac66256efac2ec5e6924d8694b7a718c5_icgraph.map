@@ -1,0 +1,7 @@
+<map id="StoreModel::performDrop" name="StoreModel::performDrop">
+<area shape="rect" id="Node000001" title="Perform the actual Move/Copy for a validated drop." alt="" coords="528,5,714,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a8b9aceaa0b421a227661324501d09404" title="Resolve a validated drop into a Move or Copy." alt="" coords="254,5,480,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,19,481,22,481,17,515,19"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="5,5,206,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,19,206,22,206,17,241,19"/>
+</map>

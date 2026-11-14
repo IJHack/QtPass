@@ -1,0 +1,9 @@
+<map id="src/usersdialog.h" name="src/usersdialog.h">
+<area shape="rect" id="Node000001" title="UsersDialog, the recipient picker for a folder&#39;s .gpg&#45;id." alt="" coords="191,5,322,33"/>
+<area shape="rect" id="Node000002" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="5,81,156,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,40,113,83,111,78,208,38"/>
+<area shape="rect" id="Node000003" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="180,81,333,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="258,47,259,82,254,79,255,51"/>
+<area shape="rect" id="Node000004" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="357,81,503,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="302,37,402,80,396,81,301,42"/>
+</map>

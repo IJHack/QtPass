@@ -1,0 +1,5 @@
+<map id="RealPass::finishLinkCommit" name="RealPass::finishLinkCommit">
+<area shape="rect" id="Node000001" title="Judge a queued linked&#45;folder removal commit by what is left staged in the store it ran in: pass git e..." alt="" coords="192,5,393,33"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="5,5,144,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,19,144,22,144,17,179,19"/>
+</map>

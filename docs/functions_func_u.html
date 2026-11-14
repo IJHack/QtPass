@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_u.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -102,9 +120,22 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
 <li>unfinishedGitOperationReason()&#160;:&#160;<a class="el" href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">Pass</a></li>
 <li>updateEnv()&#160;:&#160;<a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a">Pass</a></li>
+<li>updateGitButtonVisibility()&#160;:&#160;<a class="el" href="class_main_window.html#a37c3f03eee7961428579d2f3a9c77df5">MainWindow</a></li>
+<li>updateGrepButtonVisibility()&#160;:&#160;<a class="el" href="class_main_window.html#a45b0da2bbc51131497c2b47ff2168200">MainWindow</a></li>
+<li>updateOkButton()&#160;:&#160;<a class="el" href="class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98">UsersDialog</a></li>
+<li>updateOkState()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d">KeygenDialog</a></li>
+<li>updateOtpButtonVisibility()&#160;:&#160;<a class="el" href="class_main_window.html#a9211cb7acf62af3c66fec54ba813da4e">MainWindow</a></li>
+<li>updatePassGitWarning()&#160;:&#160;<a class="el" href="class_config_dialog.html#a22ec9ee25af48a65870b3ee28d594a80">ConfigDialog</a></li>
+<li>updateProcessOutputVisibility()&#160;:&#160;<a class="el" href="class_main_window.html#a79cf4ec54be24e7deecc7bbb9a1f36ec">MainWindow</a></li>
+<li>updateProfileBox()&#160;:&#160;<a class="el" href="class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895">MainWindow</a></li>
+<li>updateProfileBoxEnabled()&#160;:&#160;<a class="el" href="class_main_window.html#a86ff9b9b01ed40f6040b68ed2777d824">MainWindow</a></li>
+<li>updateProfileStatus()&#160;:&#160;<a class="el" href="class_config_dialog.html#adf90869f278396a2efc8a03cdc6d450d">ConfigDialog</a></li>
+<li>updateSecretFieldsEnabled()&#160;:&#160;<a class="el" href="class_config_dialog.html#a33efa7532ff400b7790ec7d55884ee90">ConfigDialog</a></li>
+<li>updateStatus()&#160;:&#160;<a class="el" href="class_programs_wizard_page.html#a6644c4d240c1883cdf790d69214171c4">ProgramsWizardPage</a>, <a class="el" href="class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b">StoreWizardPage</a></li>
 <li>useGit()&#160;:&#160;<a class="el" href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">ConfigDialog</a></li>
 <li>useGrepSearch()&#160;:&#160;<a class="el" href="class_config_dialog.html#a859c596a86c2ee90176c93d8c52f12a7">ConfigDialog</a></li>
 <li>useOtp()&#160;:&#160;<a class="el" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog</a></li>
+<li>usePass()&#160;:&#160;<a class="el" href="class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a">ConfigDialog</a></li>
 <li>usePwgen()&#160;:&#160;<a class="el" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">ConfigDialog</a>, <a class="el" href="class_password_dialog.html#abe02aee12f78e5914cf79162df9e77e4">PasswordDialog</a></li>
 <li>useQrencode()&#160;:&#160;<a class="el" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">ConfigDialog</a></li>
 <li>UserInfo()&#160;:&#160;<a class="el" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a></li>
@@ -113,10 +144,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <li>useTrayIcon()&#160;:&#160;<a class="el" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<map id="src/qtpasssettings.h" name="src/qtpasssettings.h">
+<area shape="rect" id="Node000001" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="1004,5,1155,33"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="5,81,124,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="985,23,615,43,376,60,135,84,125,85,124,80,135,78,376,54,615,37,990,23"/>
+<area shape="rect" id="Node000003" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="148,81,336,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="986,27,703,52,349,84,337,85,336,80,348,78,703,47,991,27"/>
+<area shape="rect" id="Node000004" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="360,81,510,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="991,30,523,84,511,85,511,80,523,78,985,29"/>
+<area shape="rect" id="Node000005" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="535,81,695,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="991,35,696,83,696,78,986,35"/>
+<area shape="rect" id="Node000006" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="720,81,878,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1017,37,850,83,849,78,1012,38"/>
+<area shape="rect" id="Node000007" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="902,81,1056,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1052,42,998,83,996,78,1047,43"/>
+<area shape="rect" id="Node000008" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="1080,81,1279,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1110,40,1164,81,1159,80,1108,45"/>
+<area shape="rect" id="Node000009" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="1303,81,1476,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1150,34,1337,80,1331,80,1150,40"/>
+<area shape="rect" id="Node000010" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="1501,81,1615,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1171,30,1489,78,1503,83,1498,83,1488,84,1170,36"/>
+<area shape="rect" id="Node000011" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="1639,81,1805,109"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1170,27,1627,78,1641,83,1636,82,1627,84,1170,33"/>
+<area shape="rect" id="Node000012" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="1829,81,1975,109"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1170,23,1459,44,1817,78,1831,83,1826,82,1816,84,1458,50,1170,29"/>
+<area shape="rect" id="Node000013" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="1999,81,2186,109"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1171,22,1529,43,1987,78,2001,82,1996,82,1987,84,1528,48,1170,28"/>
+</map>

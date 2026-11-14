@@ -1,0 +1,8 @@
+<map id="RealPass::GitPull" name="RealPass::GitPull">
+<area shape="rect" id="Node000001" title="Pull changes from remote." alt="" coords="5,29,136,57"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="184,29,351,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,41,171,43,165,43,136,46"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="399,29,563,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,41,386,43,381,43,352,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="444,28,438,20,443,11,458,5,481,3,506,5,521,14,516,14,505,10,481,8,459,10,447,15,444,20,449,30"/>
+</map>

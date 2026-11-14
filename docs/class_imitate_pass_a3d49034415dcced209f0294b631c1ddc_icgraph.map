@@ -1,0 +1,30 @@
+<map id="ImitatePass::copyDestination" name="ImitatePass::copyDestination">
+<area shape="rect" id="Node000001" title="The file a copy of src to dest writes: like pass cp, into an existing folder with ...." alt="" coords="1727,144,1938,172"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a" title="Copy password file." alt="" coords="1540,144,1679,172"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1708,158,1679,160,1679,155,1713,158"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re&#45;encryption progress: current of total files checked." alt="" coords="1269,113,1492,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1522,146,1489,144,1489,139,1527,147"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="996,45,1221,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1305,109,1167,76,1167,71,1310,109"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="1010,113,1207,141"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="1251,127,1208,130,1207,125,1256,127"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="749,29,945,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="977,51,946,52,945,47,983,51"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="890,14,876,10,847,8,820,10,804,15,801,20,807,30,802,28,795,20,801,11,819,5,847,3,878,5,896,14"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="465,29,698,57"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="730,52,699,55,699,49,736,52"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="714,32,751,34,746,35,714,37"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4" title="Start the worker thread once the Executor queue is idle." alt="" coords="746,105,948,150"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="991,127,948,130,948,125,997,127"/>
+<area shape="poly" id="edge16_Node000008_Node000008" title=" " alt="" coords="888,89,874,86,847,83,822,85,807,90,801,96,802,106,798,103,796,95,804,86,821,80,847,78,875,81,894,90"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="484,143,679,170"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="728,140,680,148,679,143,734,140"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="695,158,746,159,1199,161,1543,159,1537,159,1199,166,746,164,695,163"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,144,132,172"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="486,140,417,134,298,126,246,127,180,134,119,146,118,141,179,129,246,122,298,121,417,129,491,139"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b" title="Re&#45;encrypt dir under settings, the current profile&#39;s." alt="" coords="201,143,396,170"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="465,157,397,159,396,154,471,156"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#aa30ada0a871c60297f6bde37cec9df2e" title="Re&#45;encrypt dir to the .gpg&#45;id Init() wrote although its commit failed, without any Git step (they wou..." alt="" coords="180,195,417,222"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="490,173,378,197,378,191,485,174"/>
+<area shape="poly" id="edge15_Node000012_Node000010" title=" " alt="" coords="215,192,132,174,132,169,220,190"/>
+</map>

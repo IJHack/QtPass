@@ -1,6 +1,6 @@
 <map id="UsersDialog::UsersDialog" name="UsersDialog::UsersDialog">
-<area shape="rect" id="Node000001" title="Construct users dialog." alt="" coords="257,29,444,57"/>
-<area shape="rect" id="Node000002" href="$class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb" title="Handle key press." alt="" coords="5,29,209,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,43,209,46,209,41,244,43"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,14,134,10,107,8,82,10,68,15,64,20,70,29,65,29,59,20,64,11,80,5,107,3,135,5,152,14"/>
+<area shape="rect" id="Node000001" title="Construct users dialog." alt="" coords="241,29,428,57"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="373,14,361,10,334,8,310,10,296,15,293,20,299,30,294,28,288,20,293,11,309,5,334,3,362,5,378,14"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,29,193,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,43,193,46,193,41,227,43"/>
 </map>

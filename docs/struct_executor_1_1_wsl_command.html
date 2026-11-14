@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_executor_1_1_wsl_command.html','','struct_executor_1_1_wsl_command-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,17 +112,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a href="class_executor.html">Executor</a></li><li class="navelem"><a href="struct_executor_1_1_wsl_command.html">WslCommand</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_executor_1_1_wsl_command-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Executor::WslCommand Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -130,9 +140,9 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A configured executable that runs a Linux program through WSL. </p>
-<p>The one definition of "a WSL command" in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>; see <a class="el" href="class_executor.html#a78f8f16776f308c83b48b00a941c944e" title="Parse a configured executable as a WSL command.">parseWslCommand()</a>. </p>
+<p>The one definition of "a WSL command" in <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>; see <a class="el" href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command.">parseWslCommand()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00306">306</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00328">328</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a1810c7113590bc37be94c370a6ac549b" name="a1810c7113590bc37be94c370a6ac549b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1810c7113590bc37be94c370a6ac549b">&#9670;&#160;</a></span>argv()</h2>
@@ -144,7 +154,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">auto Executor::WslCommand::argv </td>
           <td>(</td>
           <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
-          <td> const -&gt;  QStringList</td>
+          <td> const -&gt; QStringList</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -158,6 +168,14 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="#a940314bd002f5f843b5d0b5358fb0e50" title="options">options</a>, <span class="tt">--exec</span>, <a class="el" href="#a2b36465b5c5df4f4d870d1a7d10575a3" title="command">command</a>, then <code class="param">args</code>. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00106">106</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="struct_executor_1_1_wsl_command_a1810c7113590bc37be94c370a6ac549b_icgraph.svg" width="402" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="abb2c0302f92c28f6d88f3802e8f0f398" name="abb2c0302f92c28f6d88f3802e8f0f398"></a>
@@ -170,7 +188,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">auto Executor::WslCommand::with </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>program</em></span></td><td>)</td>
-          <td> const -&gt;  <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a></td>
+          <td> const -&gt; <a class="el" href="struct_executor_1_1_wsl_command.html">WslCommand</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,6 +201,8 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A copy with <a class="el" href="#a2b36465b5c5df4f4d870d1a7d10575a3" title="command">command</a> replaced by <code class="param">program</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00110">110</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 
 </div>
 </div>
@@ -201,7 +221,7 @@ Public Attributes</h2></td></tr>
 
 <p>The Linux program to run, looked up on the WSL PATH. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00322">322</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00344">344</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -220,7 +240,7 @@ Public Attributes</h2></td></tr>
 <p>What to start. </p>
 <p>On Windows a bare <span class="tt">wsl</span>/<span class="tt">wsl.exe</span> in any case becomes <span class="tt">wsl</span>, which the PATH lookup resolves; elsewhere (<a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> itself running inside WSL, where <span class="tt">wsl.exe</span> is reachable through interop but <span class="tt">wsl</span> need not be) and for a launcher given as a path it stays as configured. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00315">315</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00337">337</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
@@ -238,18 +258,30 @@ Public Attributes</h2></td></tr>
 
 <p>wsl.exe options that go before the program (<span class="tt">-d Debian</span>, <span class="tt">-u me</span>), without any <span class="tt">-e</span>/<span class="tt">--exec</span>: <a class="el" href="#a1810c7113590bc37be94c370a6ac549b" title="Arguments for launcher that run command with args.">argv()</a> always adds that. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00320">320</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00342">342</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/<a class="el" href="executor_8h_source.html">executor.h</a></li>
+<li>src/<a class="el" href="executor_8cpp_source.html">executor.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_executor.html">Executor</a></li><li class="navelem"><a href="struct_executor_1_1_wsl_command.html">WslCommand</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

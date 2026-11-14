@@ -1,4 +1,30 @@
 <map id="PlainMessageBox::warning" name="PlainMessageBox::warning">
-<area shape="rect" id="Node000001" title="Show a warning in plain text." alt="" coords="5,29,202,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="135,14,125,10,103,8,83,10,72,15,69,20,74,29,69,28,64,20,68,11,82,5,104,3,127,5,141,14"/>
+<area shape="rect" id="Node000001" title="Show a warning in plain text." alt="" coords="1076,160,1272,188"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a43847693f774d77737aa23aa4a1ac272" title="Toolbar/context&#45;menu &quot;Add folder&quot;: ask for a name, create the folder under the current one (refusing ..." alt="" coords="831,80,1007,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1115,154,1027,127,973,111,973,106,1028,122,1120,155"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#aa967da10448f6f65b2d573f5063f5b1e" title="Share menu &quot;Export my public key&quot;: run gpg &#45;&#45;armor &#45;&#45;export for the configured signing key and show t..." alt="" coords="810,136,1028,164"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="1057,163,1028,163,1028,157,1063,163"/>
+<area shape="rect" id="Node000008" href="$class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f" title="&quot;From file&quot; button: picks a file, reads it as a regular file of at most 16 MiB, requires the &#45;&#45;&#45;&#45;&#45;BEG..." alt="" coords="308,182,462,227"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="1059,181,463,204,462,199,1061,176"/>
+<area shape="rect" id="Node000010" href="$class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a" title="Shows message in a plain&#45;text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma..." alt="" coords="817,244,1021,272"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="1117,193,964,246,963,241,1112,193"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,29,762,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="823,77,725,60,725,55,829,76"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,55,239,82"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="814,93,239,75,239,70,816,88"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,44,484,46,483,41,518,42"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="428,14,414,10,385,8,357,10,342,15,338,20,345,29,340,29,333,20,339,11,356,5,385,3,415,5,434,14"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="300,61,240,69,238,64,304,58"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="204,50,288,42,284,45,206,55"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="542,133,751,161"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="792,149,752,151,751,146,798,148"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="524,141,410,133,286,115,224,101,169,86,169,80,226,96,287,110,410,127,529,140"/>
+<area shape="rect" id="Node000009" href="$class_import_key_dialog.html#a3f791b9599a6c0903fb4c244d01c58bb" title="Destroys the dialog and its generated UI." alt="" coords="26,217,218,262"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="290,217,219,229,218,224,295,216"/>
+<area shape="rect" id="Node000011" href="$class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94" title="Feeds input to gpg &#45;&#45;status&#45;fd 1 &#45;&#45;import &#45;&#45;batch &#45;&#45;yes via Executor::executeBlocking() and records t..." alt="" coords="540,245,754,290"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="799,262,754,266,754,261,804,262"/>
+<area shape="rect" id="Node000012" href="$class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ..." alt="" coords="302,252,468,296"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="521,270,468,274,468,269,527,270"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="284,261,219,255,219,249,289,261"/>
 </map>

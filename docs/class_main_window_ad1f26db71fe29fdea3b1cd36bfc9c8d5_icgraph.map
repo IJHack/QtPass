@@ -1,0 +1,22 @@
+<map id="MainWindow::onUpdate" name="MainWindow::onUpdate">
+<area shape="rect" id="Node000001" title="Toolbar &quot;Update&quot;: git pull." alt="" coords="1298,100,1473,128"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1052,69,1250,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1280,100,1250,99,1251,94,1285,101"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,87,762,114"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="1285,118,1065,126,938,125,810,121,763,117,763,112,810,115,938,120,1065,120,1280,118"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="810,61,1004,106"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1033,83,1004,86,1004,81,1039,83"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="830,9,984,37"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1074,65,966,40,967,35,1080,65"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,35,755,62"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="812,33,756,41,756,35,817,32"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,59,239,86"/>
+<area shape="poly" id="edge11_Node000004_Node000007" title=" " alt="" coords="812,15,707,11,575,8,431,12,287,26,219,41,161,61,159,56,218,36,286,21,430,6,575,3,707,6,818,15"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="831,42,811,51,788,64,763,76,723,89,722,84,761,72,785,59,809,46,826,43"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,59,483,86"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="520,60,484,66,483,61,525,60"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="428,43,414,40,385,37,357,39,342,44,338,50,345,59,340,57,333,50,339,40,356,34,385,32,415,35,434,44"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="269,82,239,84,239,79,274,81"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="254,61,289,64,284,64,254,66"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="513,87,483,86,484,80,518,87"/>
+</map>

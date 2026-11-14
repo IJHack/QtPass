@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_native_grep.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">NativeGrep Member List</div></div>
 </div><!--header-->
@@ -108,16 +126,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="even"><td class="entry"><a class="el" href="class_native_grep.html#a566acd70ea61876f0290f3b0ea900f78">kMaxMatches</a></td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#a737ae7b7488d442dc5d2a5ee5dc19482">kMaxMatchesPerEntry</a></td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_native_grep.html#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a></td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">matchFile</a>(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">m_seq</a></td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a></td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">matchFile</a>(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_native_grep.html#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#ad9b99ac184ab94d539f2937efbf13ed1">scanStore</a>(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a>(const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_native_grep.html#a393b6a05c39649304a77151702b76ec7">search</a>(const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_native_grep.html#a4cce7dcbafd90ea622e9d00b346aba45">~NativeGrep</a>() override</td><td class="entry"><a class="el" href="class_native_grep.html">NativeGrep</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

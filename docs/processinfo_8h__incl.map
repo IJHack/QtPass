@@ -1,0 +1,7 @@
+<map id="src/processinfo.h" name="src/processinfo.h">
+<area shape="rect" id="Node000001" title="Enums::ProcessInfo, the one table that names each kind of subprocess and says whether its output may ..." alt="" coords="5,5,137,33"/>
+<area shape="rect" id="Node000002" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="32,81,110,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,31,74,66,68,65,70,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="24,157,118,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="73,107,74,142,68,140,69,111"/>
+</map>

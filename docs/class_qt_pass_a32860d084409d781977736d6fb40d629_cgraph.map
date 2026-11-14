@@ -1,0 +1,9 @@
+<map id="QtPass::formatOutput" name="QtPass::formatOutput">
+<area shape="rect" id="Node000001" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="5,32,167,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="215,32,333,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,43,202,45,196,46,167,48"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="381,5,565,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="333,35,368,33,363,34,334,41"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="400,57,546,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,51,387,60,382,60,334,56"/>
+</map>

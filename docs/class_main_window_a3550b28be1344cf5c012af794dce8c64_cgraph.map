@@ -1,0 +1,37 @@
+<map id="MainWindow::executeWrapperStarted" name="MainWindow::executeWrapperStarted">
+<area shape="rect" id="Node000001" title="Slot called when an external process wrapper has started." alt="" coords="5,111,224,155"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="300,41,466,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,108,287,88,282,90,205,113"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216" title="Get showProcessOutput setting." alt="" coords="272,195,494,239"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,153,297,189,292,190,188,159"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="Enable or disable the main UI elements." alt="" coords="279,111,486,155"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="224,130,266,132,261,134,225,136"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1087,182,1289,210"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="494,221,744,228,891,227,1038,218,1099,213,1104,213,1039,224,892,232,744,234,494,226"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1337,182,1560,210"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1289,193,1324,196,1319,196,1289,198"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a37c3f03eee7961428579d2f3a9c77df5" title="Show Push and Pull only when Git is in use; enable them only while the interface is." alt="" coords="544,95,763,139"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="487,124,531,124,526,125,487,130"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#a9211cb7acf62af3c66fec54ba813da4e" title="Refresh the OTP toolbar action from settings." alt="" coords="542,164,765,209"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="487,151,529,161,524,161,487,156"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#a86ff9b9b01ed40f6040b68ed2777d824" title="Enable the profile box only when there is more than one profile, the interface is enabled and the bac..." alt="" coords="554,21,753,66"/>
+<area shape="poly" id="edge16_Node000006_Node000015" title=" " alt="" coords="457,108,493,96,570,72,575,71,495,101,458,113"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1a3647880d3bf6d3e5d3584add2e8d49" title="Enable or disable the Push and Pull actions together." alt="" coords="813,130,1039,158"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="764,125,800,131,795,131,764,130"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="849,78,1003,106"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="764,104,836,100,831,101,764,109"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="999,103,1040,116,1100,143,1153,174,1148,173,1097,148,1038,121,999,109"/>
+<area shape="rect" id="Node000010" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1120,75,1256,119"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1004,91,1108,95,1102,96,1004,96"/>
+<area shape="rect" id="Node000011" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1352,93,1546,138"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1256,99,1339,108,1333,108,1256,104"/>
+<area shape="rect" id="Node000012" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1346,24,1551,69"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="1256,81,1328,70,1333,69,1256,87"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e" title="Check whether OTP support is enabled." alt="" coords="833,182,1019,210"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="766,188,821,192,815,192,766,193"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="1019,193,1074,196,1068,196,1019,198"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#afeb532f63d4dfa060f2ca012de89b5d9" title="Whether no backend, the active one or one kept from before a switch, runs or waits for anything (Pass..." alt="" coords="820,18,1032,46"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="753,37,807,37,802,37,753,42"/>
+<area shape="rect" id="Node000017" href="$class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep..." alt="" coords="1112,5,1264,50"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="1032,27,1099,29,1094,29,1032,33"/>
+</map>

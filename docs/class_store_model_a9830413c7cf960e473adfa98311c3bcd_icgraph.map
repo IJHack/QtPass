@@ -1,0 +1,33 @@
+<map id="StoreModel::rootIndexFor" name="StoreModel::rootIndexFor">
+<area shape="rect" id="Node000001" title="Set the source filesystem root and map it to a proxy index." alt="" coords="1992,100,2177,128"/>
+<area shape="rect" id="Node000002" href="$class_store_tree.html#a7c5e7b2806ebe8314f0ec7a72bd8a256" title="Filter the visible entries." alt="" coords="1800,74,1944,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1974,101,1944,99,1944,94,1979,101"/>
+<area shape="rect" id="Node000008" href="$class_store_tree.html#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt..." alt="" coords="1800,126,1944,154"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1979,127,1944,134,1944,128,1974,127"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a7390a38fa0f78bcd05f797c70a959ac5" title="The content&#45;search toggle changed: switch the search box between name filtering and regex content sea..." alt="" coords="1535,5,1742,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1798,69,1728,53,1728,48,1803,70"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="1525,74,1752,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1782,88,1752,90,1752,85,1787,87"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079" title=" " alt="" coords="1028,74,1206,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1508,88,1206,90,1206,85,1513,87"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,175,483,203"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1010,82,910,82,789,86,659,98,532,122,464,148,410,177,408,172,462,143,530,117,659,93,789,80,910,77,1015,81"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="428,160,414,156,385,154,357,156,342,161,338,166,345,175,340,174,333,166,339,156,356,151,385,149,415,151,434,160"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,175,239,203"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="269,199,239,201,238,195,274,197"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="254,177,289,180,284,181,255,183"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="1782,140,1367,141,894,141,781,145,668,153,477,177,476,172,668,148,781,139,894,136,1367,136,1787,139"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1538,176,1739,221"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="1802,157,1730,178,1729,173,1797,158"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1254,184,1477,212"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="1519,198,1478,201,1478,196,1525,198"/>
+<area shape="poly" id="edge18_Node000010_Node000006" title=" " alt="" coords="1238,200,484,193,483,187,1239,195"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1041,226,1192,254"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="1266,215,1193,230,1193,224,1261,216"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="1023,237,800,229,531,210,484,205,483,200,531,205,801,224,1028,237"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,276,980,304"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="1041,257,959,279,958,273,1036,258"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,276,762,304"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="792,290,763,293,763,288,797,290"/>
+<area shape="poly" id="edge17_Node000013_Node000006" title=" " alt="" coords="569,272,530,261,466,233,412,206,413,201,468,228,532,256,575,272"/>
+</map>

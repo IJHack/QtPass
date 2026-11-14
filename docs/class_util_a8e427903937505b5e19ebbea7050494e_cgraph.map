@@ -1,0 +1,5 @@
+<map id="Util::readRegularFile" name="Util::readRegularFile">
+<area shape="rect" id="Node000001" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="5,5,160,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="208,5,365,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,17,195,19,189,19,160,22"/>
+</map>

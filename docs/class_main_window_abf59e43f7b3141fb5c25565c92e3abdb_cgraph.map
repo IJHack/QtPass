@@ -1,0 +1,9 @@
+<map id="MainWindow::clearPanel" name="MainWindow::clearPanel">
+<area shape="rect" id="Node000001" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="5,83,185,111"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="233,5,399,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,80,230,54,226,57,143,85"/>
+<area shape="rect" id="Node000003" href="$class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e" title="Drop the mode flag only, without touching busy/cancelled state." alt="" coords="236,75,396,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,94,223,96,218,98,186,100"/>
+<area shape="rect" id="Node000004" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="236,144,396,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,109,230,138,226,140,141,114"/>
+</map>

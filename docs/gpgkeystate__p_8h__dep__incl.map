@@ -1,0 +1,5 @@
+<map id="src/gpgkeystate_p.h" name="src/gpgkeystate_p.h">
+<area shape="rect" id="Node000001" title="Record handlers of the gpg colon&#45;listing parser, declared separately only so the unit tests can call ..." alt="" coords="5,5,157,33"/>
+<area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html" title="Implements the colon&#45;listing parser: record classification, one handler per record type,..." alt="" coords="5,81,157,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,47,84,81,78,80,79,51"/>
+</map>

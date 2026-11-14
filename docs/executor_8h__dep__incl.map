@@ -1,0 +1,78 @@
+<map id="src/executor.h" name="src/executor.h">
+<area shape="rect" id="Node000001" title="Executor, the FIFO queue every gpg, git and pass child process of QtPass goes through,..." alt="" coords="1272,5,1383,33"/>
+<area shape="rect" id="Node000002" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="5,308,156,336"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1253,23,1035,31,751,43,490,60,397,71,343,84,299,106,257,134,183,200,127,263,91,309,88,306,122,260,180,196,254,130,296,101,341,78,396,66,490,55,751,38,1035,26,1259,22"/>
+<area shape="rect" id="Node000003" href="$executor_8cpp_source.html" title=" " alt="" coords="1389,81,1516,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1363,38,1433,81,1428,80,1362,44"/>
+<area shape="rect" id="Node000004" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="318,308,478,336"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1253,25,1021,43,717,71,571,89,444,110,350,133,319,146,301,158,294,176,295,202,303,231,316,258,342,286,373,308,367,307,338,290,312,262,298,233,290,203,289,175,297,155,316,141,348,128,443,104,570,84,717,66,1021,38,1258,24"/>
+<area shape="rect" id="Node000005" href="$gpgidsigner_8cpp.html" title="Implements GpgIdSigner on top of gpg&#39;s &#45;&#45;status&#45;fd output." alt="" coords="1539,81,1686,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1393,35,1564,80,1559,80,1393,40"/>
+<area shape="rect" id="Node000006" href="$imitatepass_8cpp.html" title="Implements ImitatePass: the gpg and git command sequences behind each operation, the transactions tha..." alt="" coords="326,232,475,260"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1253,25,1021,43,717,71,571,89,444,110,350,133,319,146,301,158,296,169,296,178,310,198,336,215,368,232,362,232,333,220,306,201,291,180,290,167,297,155,316,141,348,128,443,104,570,84,717,66,1021,38,1258,24"/>
+<area shape="rect" id="Node000007" href="$importkeydialog_8cpp.html" title="Implements ImportKeyDialog: the guarded key&#45;file read, the blocking gpg &#45;&#45;import call and the status&#45;..." alt="" coords="1709,81,1886,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1399,29,1716,80,1711,81,1398,34"/>
+<area shape="rect" id="Node000008" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="2032,308,2185,336"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1338,45,1355,78,1380,107,1431,137,1504,168,1592,197,1689,225,1884,272,2043,308,2037,307,1883,277,1687,230,1590,202,1502,173,1429,142,1376,111,1350,81,1335,50"/>
+<area shape="rect" id="Node000009" href="$nativegrep_8cpp.html" title="Implements NativeGrep: the store walk, the per&#45;file gpg runs and the hand&#45;over of results from the wo..." alt="" coords="311,157,452,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1254,32,940,84,454,160,453,155,939,78,1259,31"/>
+<area shape="rect" id="Node000010" href="$pass_8h.html" title="Pass, the abstract password&#45;store backend that RealPass and ImitatePass implement,..." alt="" coords="951,81,1037,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1253,37,1038,87,1037,81,1259,35"/>
+<area shape="rect" id="Node000015" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="179,308,294,336"/>
+<area shape="poly" id="edge44_Node000001_Node000015" title=" " alt="" coords="1254,22,1074,30,840,41,611,58,516,70,445,84,396,95,358,107,324,125,289,158,266,196,251,238,243,278,239,309,235,306,238,277,246,237,261,194,285,155,321,121,356,102,395,90,444,78,515,64,610,53,839,35,1074,25,1259,21"/>
+<area shape="rect" id="Node000025" href="$realpass_8cpp.html" title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr..." alt="" coords="1288,232,1414,260"/>
+<area shape="poly" id="edge45_Node000001_Node000025" title=" " alt="" coords="1331,47,1336,108,1351,233,1347,230,1331,109,1327,51"/>
+<area shape="rect" id="Node000027" href="$profileinit_8cpp.html" title="Implements ProfileInit; the environments its gpg and git processes run in are built by withGpgHome() ..." alt="" coords="1911,81,2044,109"/>
+<area shape="poly" id="edge43_Node000001_Node000027" title=" " alt="" coords="1398,24,1622,46,1900,78,1914,83,1908,83,1899,84,1622,51,1399,30"/>
+<area shape="rect" id="Node000028" href="$sshauthsock_8cpp.html" title="Implements SshAuthSock; a probed socket is adopted only after ssh&#45;add &#45;l answers on it (isSshAgentRea..." alt="" coords="2068,81,2221,109"/>
+<area shape="poly" id="edge46_Node000001_Node000028" title=" " alt="" coords="1398,22,1686,43,2057,78,2070,82,2065,82,2056,84,1686,49,1398,28"/>
+<area shape="rect" id="Node000029" href="$util_8cpp.html" title="Implements Util; the staged, link&#45;safe store writes (stageFileReplacing() and its helpers) and the st..." alt="" coords="2245,81,2337,109"/>
+<area shape="poly" id="edge47_Node000001_Node000029" title=" " alt="" coords="1398,19,1550,24,1757,34,1994,51,2233,78,2247,83,2242,83,2232,84,1993,57,1757,39,1549,29,1398,24"/>
+<area shape="poly" id="edge32_Node000010_Node000009" title=" " alt="" coords="933,103,728,127,465,159,454,161,452,156,464,154,727,122,938,102"/>
+<area shape="rect" id="Node000011" href="$imitatepass_8h.html" title="ImitatePass, the backend that does what pass does by running gpg and git itself." alt="" coords="772,157,906,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="955,115,867,159,866,154,950,117"/>
+<area shape="rect" id="Node000013" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="502,308,702,336"/>
+<area shape="poly" id="edge34_Node000010_Node000013" title=" " alt="" coords="988,122,976,157,957,194,932,231,899,262,865,278,816,292,702,312,702,306,815,286,863,273,896,258,928,228,952,192,971,155,983,125"/>
+<area shape="rect" id="Node000014" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="725,308,892,336"/>
+<area shape="poly" id="edge36_Node000010_Node000014" title=" " alt="" coords="994,122,981,192,966,229,944,262,926,278,906,291,863,310,862,305,903,287,923,274,940,258,961,226,976,190,990,126"/>
+<area shape="rect" id="Node000019" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="1483,308,1641,336"/>
+<area shape="poly" id="edge31_Node000010_Node000019" title=" " alt="" coords="1052,107,1105,125,1157,155,1182,182,1195,209,1209,234,1219,246,1234,258,1268,269,1332,282,1485,309,1479,309,1331,287,1267,274,1231,262,1215,250,1204,237,1190,211,1178,185,1154,159,1103,130,1052,112"/>
+<area shape="rect" id="Node000020" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="1664,308,1838,336"/>
+<area shape="poly" id="edge35_Node000010_Node000020" title=" " alt="" coords="1052,103,1120,122,1155,136,1187,155,1216,181,1232,209,1249,235,1261,247,1277,257,1667,309,1662,309,1276,263,1258,251,1245,238,1228,211,1212,185,1184,159,1152,141,1118,127,1052,109"/>
+<area shape="rect" id="Node000021" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="1862,308,2008,336"/>
+<area shape="poly" id="edge42_Node000010_Node000021" title=" " alt="" coords="1052,108,1220,154,1325,189,1427,230,1455,245,1484,257,1584,282,1665,290,1746,295,1850,305,1864,310,1859,309,1850,311,1746,300,1664,296,1584,287,1482,263,1453,250,1425,235,1323,194,1218,159,1052,113"/>
+<area shape="rect" id="Node000023" href="$pass_8cpp.html" title="Implements what both backends share: the environment the store&#39;s processes run in,..." alt="" coords="476,157,578,184"/>
+<area shape="poly" id="edge33_Node000010_Node000023" title=" " alt="" coords="933,105,779,129,590,159,579,161,578,156,589,154,779,124,938,103"/>
+<area shape="rect" id="Node000024" href="$realpass_8h.html" title="RealPass, the backend that hands every store operation to the pass command&#45;line tool." alt="" coords="1032,157,1143,184"/>
+<area shape="poly" id="edge37_Node000010_Node000024" title=" " alt="" coords="1023,116,1073,157,1068,156,1022,121"/>
+<area shape="rect" id="Node000026" href="$storemodel_8cpp.html" title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro..." alt="" coords="602,157,748,184"/>
+<area shape="poly" id="edge41_Node000010_Node000026" title=" " alt="" coords="933,110,733,159,732,153,938,109"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="792,189,589,263,441,310,440,305,588,257,787,190"/>
+<area shape="poly" id="edge12_Node000011_Node000006" title=" " alt="" coords="754,186,476,235,475,230,760,185"/>
+<area shape="rect" id="Node000012" href="$passbackendfactory_8h.html" title="PassBackendFactory, which constructs the two Pass backends on demand and hands out the one the settin..." alt="" coords="702,232,886,260"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="825,196,803,234,800,230,821,199"/>
+<area shape="poly" id="edge17_Node000011_Node000015" title=" " alt="" coords="771,188,589,235,488,263,293,310,292,305,486,257,588,230,766,189"/>
+<area shape="rect" id="Node000016" href="$qtpasssettings_8h.html" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="1012,232,1163,260"/>
+<area shape="poly" id="edge18_Node000011_Node000016" title=" " alt="" coords="898,186,1045,232,1040,232,898,192"/>
+<area shape="poly" id="edge14_Node000012_Node000004" title=" " alt="" coords="710,263,470,310,469,305,705,264"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="748,265,637,310,635,305,743,266"/>
+<area shape="poly" id="edge16_Node000012_Node000014" title=" " alt="" coords="801,273,808,309,804,306,798,278"/>
+<area shape="poly" id="edge21_Node000016_Node000002" title=" " alt="" coords="994,254,898,263,532,282,372,292,167,311,156,312,156,307,167,305,372,287,532,277,898,257,999,253"/>
+<area shape="poly" id="edge22_Node000016_Node000004" title=" " alt="" coords="999,256,766,281,490,311,479,312,478,307,490,305,766,275,993,256"/>
+<area shape="poly" id="edge24_Node000016_Node000008" title=" " alt="" coords="1178,251,1277,257,1649,277,1812,287,2021,305,2034,309,2029,309,2020,311,1811,292,1649,282,1276,263,1178,256"/>
+<area shape="poly" id="edge25_Node000016_Node000013" title=" " alt="" coords="999,261,689,310,689,305,994,261"/>
+<area shape="poly" id="edge28_Node000016_Node000014" title=" " alt="" coords="1026,264,859,310,858,305,1020,265"/>
+<area shape="poly" id="edge27_Node000016_Node000015" title=" " alt="" coords="993,254,604,286,306,311,295,312,294,307,306,305,604,280,999,254"/>
+<area shape="rect" id="Node000017" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="916,308,1034,336"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="1057,268,996,310,994,305,1052,269"/>
+<area shape="rect" id="Node000018" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="1058,308,1247,336"/>
+<area shape="poly" id="edge20_Node000016_Node000018" title=" " alt="" coords="1110,269,1143,309,1138,307,1108,274"/>
+<area shape="poly" id="edge23_Node000016_Node000019" title=" " alt="" coords="1178,259,1485,308,1480,308,1178,264"/>
+<area shape="poly" id="edge26_Node000016_Node000020" title=" " alt="" coords="1178,254,1653,305,1667,309,1661,309,1652,311,1178,259"/>
+<area shape="poly" id="edge29_Node000016_Node000021" title=" " alt="" coords="1178,251,1531,278,1850,305,1864,310,1859,309,1850,311,1531,283,1178,257"/>
+<area shape="rect" id="Node000022" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="1271,308,1458,336"/>
+<area shape="poly" id="edge30_Node000016_Node000022" title=" " alt="" coords="1152,262,1318,308,1312,307,1151,267"/>
+<area shape="poly" id="edge38_Node000024_Node000012" title=" " alt="" coords="1022,188,847,234,846,229,1017,189"/>
+<area shape="poly" id="edge39_Node000024_Node000016" title=" " alt="" coords="1089,198,1089,234,1085,230,1085,202"/>
+<area shape="poly" id="edge40_Node000024_Node000025" title=" " alt="" coords="1149,186,1307,232,1301,232,1149,192"/>
+</map>

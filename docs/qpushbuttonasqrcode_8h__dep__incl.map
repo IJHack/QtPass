@@ -1,0 +1,9 @@
+<map id="src/qpushbuttonasqrcode.h" name="src/qpushbuttonasqrcode.h">
+<area shape="rect" id="Node000001" title="Icon button that asks for a stored secret to be shown as a QR code." alt="" coords="193,5,390,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,40,120,83,119,78,238,37"/>
+<area shape="rect" id="Node000003" href="$passworddisplaypanel_8cpp.html" title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local..." alt="" coords="183,81,400,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="293,47,293,82,289,79,289,51"/>
+<area shape="rect" id="Node000004" href="$qpushbuttonasqrcode_8cpp.html" title="Implements QPushButtonAsQRCode: icon setup and the click re&#45;emit." alt="" coords="423,81,634,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="349,35,489,80,484,81,348,41"/>
+</map>

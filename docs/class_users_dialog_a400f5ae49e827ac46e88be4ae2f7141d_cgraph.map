@@ -1,0 +1,12 @@
+<map id="UsersDialog::applyUserStyling" name="UsersDialog::applyUserStyling">
+<area shape="rect" id="Node000001" title="Apply visual styling to user item." alt="" coords="5,31,225,58"/>
+<area shape="rect" id="Node000002" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="540,5,685,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,27,272,17,405,11,527,15,522,16,405,17,273,22,191,33"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="273,31,471,58"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,42,260,44,254,45,226,47"/>
+<area shape="rect" id="Node000004" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="308,83,436,110"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,56,296,80,291,81,187,62"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="429,79,470,67,557,39,562,38,472,72,430,85"/>
+<area shape="rect" id="Node000005" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="519,83,705,110"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="436,94,506,96,501,97,436,99"/>
+</map>

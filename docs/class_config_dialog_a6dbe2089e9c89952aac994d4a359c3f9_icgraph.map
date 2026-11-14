@@ -1,4 +1,9 @@
 <map id="ConfigDialog::useQrencode" name="ConfigDialog::useQrencode">
-<area shape="rect" id="Node000001" title="Enable or disable QR code display." alt="" coords="5,29,203,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="136,14,126,10,104,8,84,10,72,15,70,20,75,29,70,28,64,20,69,11,82,5,104,3,127,5,141,14"/>
+<area shape="rect" id="Node000001" title="Enable or disable QR code display." alt="" coords="498,29,695,57"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="638,14,624,10,597,8,571,10,557,15,553,20,559,30,554,28,548,20,553,11,570,5,597,3,626,5,643,14"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="249,29,450,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,43,451,46,451,41,485,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="144,14,131,10,103,8,77,10,63,15,60,20,66,29,61,29,54,20,60,11,76,5,103,3,132,5,149,14"/>
 </map>

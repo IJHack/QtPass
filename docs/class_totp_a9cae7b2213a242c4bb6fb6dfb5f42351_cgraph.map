@@ -1,0 +1,5 @@
+<map id="Totp::toUri" name="Totp::toUri">
+<area shape="rect" id="Node000001" title="Serialise settings as a canonical otpauth URI." alt="" coords="5,5,94,33"/>
+<area shape="rect" id="Node000002" href="$class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c" title="Strip trailing &#39;=&#39; padding." alt="" coords="142,5,320,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,17,128,19,123,19,94,22"/>
+</map>

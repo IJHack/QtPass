@@ -1,0 +1,8 @@
+<map id="MenuBarPeek::inWindow" name="MenuBarPeek::inWindow">
+<area shape="rect" id="Node000001" title="Whether watched is a widget that belongs to the main window." alt="" coords="485,5,668,33"/>
+<area shape="rect" id="Node000002" href="$class_menu_bar_peek.html#a8a9a8dc73d9d99dbcdc580b1b3567525" title="Follows Alt, Escape, clicks and focus for the whole application." alt="" coords="5,5,195,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="469,22,195,22,195,17,470,17"/>
+<area shape="rect" id="Node000003" href="$class_menu_bar_peek.html#ac6bb1a4ecef94ccf5ce99ce3d01c95ea" title="Handle a key press seen by the application filter." alt="" coords="243,31,437,58"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="472,30,438,37,437,31,467,31"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="224,33,195,32,195,27,230,32"/>
+</map>

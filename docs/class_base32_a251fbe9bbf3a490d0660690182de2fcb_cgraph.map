@@ -1,0 +1,5 @@
+<map id="Base32::sanitizeInput" name="Base32::sanitizeInput">
+<area shape="rect" id="Node000001" title="Make human&#45;entered base32 text decodable." alt="" coords="5,5,167,33"/>
+<area shape="rect" id="Node000002" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="215,5,367,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,17,202,19,196,19,167,22"/>
+</map>

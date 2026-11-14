@@ -1,0 +1,34 @@
+<map id="src/firstrunwizard.h" name="src/firstrunwizard.h">
+<area shape="rect" id="Node000001" title="The first&#45;run wizard and its four pages: programs, key, store and summary." alt="" coords="846,5,992,33"/>
+<area shape="rect" id="Node000002" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="416,81,526,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="844,33,542,85,541,79,849,32"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="528,232,598,260"/>
+<area shape="poly" id="edge15_Node000001_Node000006" title=" " alt="" coords="890,33,853,55,820,83,803,109,797,135,789,161,769,186,732,210,691,227,651,238,613,244,613,239,649,233,690,222,730,206,765,182,784,158,792,134,798,107,816,79,850,51,885,34"/>
+<area shape="rect" id="Node000011" href="$userinfo_8h.html" title="UserInfo, one GPG key as listed by gpg, with the selection flag the recipient dialogs use." alt="" coords="829,81,916,109"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="913,32,890,70,887,66,909,35"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="940,81,994,109"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="929,31,953,69,948,67,927,36"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1018,81,1095,109"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="944,31,1022,74,1016,73,943,36"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1119,81,1226,109"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="965,31,1115,76,1110,76,964,36"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,157,91,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,105,280,127,107,159,106,154,279,122,418,103"/>
+<area shape="rect" id="Node000005" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="116,157,296,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="421,110,268,155,267,150,426,108"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="432,108,399,125,371,142,362,152,357,162,356,172,361,183,376,198,393,211,432,229,474,239,516,246,511,246,473,244,431,234,390,216,372,202,357,186,351,173,351,160,358,149,368,138,396,120,427,110"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="371,157,467,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="464,108,439,146,435,142,460,111"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="491,157,555,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="481,107,508,145,503,143,479,112"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="579,157,638,184"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="496,107,574,149,568,149,495,112"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="662,157,755,184"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="514,107,654,151,649,152,513,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,232,100,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,183,55,217,50,216,51,187"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="270,182,516,233,511,236,270,188"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="869,108,849,148,832,169,813,187,764,213,711,230,659,240,614,246,613,240,658,235,709,225,762,208,810,182,829,165,844,145,865,111"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="881,157,976,184"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="884,107,912,145,907,143,881,112"/>
+</map>

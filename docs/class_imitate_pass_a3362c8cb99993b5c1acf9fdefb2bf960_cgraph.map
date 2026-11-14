@@ -1,0 +1,5 @@
+<map id="ImitatePass::reportUncommittedGpgId" name="ImitatePass::reportUncommittedGpgId">
+<area shape="rect" id="Node000001" title="Tell the user that the recipients of dir changed on disk but the change is not committed,..." alt="" coords="5,5,239,50"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="287,14,389,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,25,273,28,268,28,239,30"/>
+</map>

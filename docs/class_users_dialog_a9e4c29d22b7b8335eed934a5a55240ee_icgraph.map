@@ -1,0 +1,9 @@
+<map id="UsersDialog::selectRecipients" name="UsersDialog::selectRecipients">
+<area shape="rect" id="Node000001" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="493,36,708,64"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="241,5,445,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,35,446,34,446,29,480,35"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="244,57,442,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="480,64,443,71,442,65,475,64"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,5,193,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,20,194,22,193,17,228,19"/>
+</map>

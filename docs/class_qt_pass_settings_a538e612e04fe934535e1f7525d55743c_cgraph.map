@@ -1,0 +1,12 @@
+<map id="QtPassSettings::getPassStore" name="QtPassSettings::getPassStore">
+<area shape="rect" id="Node000001" title="Get password store directory path." alt="" coords="5,44,216,72"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="264,5,466,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,41,257,35,252,37,206,46"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="287,81,443,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,70,274,81,268,82,209,75"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="514,5,737,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,17,501,19,496,19,467,22"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="321,80,315,72,320,63,337,57,365,55,395,57,412,66,407,66,393,62,365,60,338,62,323,67,320,72,326,82"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="544,81,707,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="444,93,532,95,526,95,444,98"/>
+</map>

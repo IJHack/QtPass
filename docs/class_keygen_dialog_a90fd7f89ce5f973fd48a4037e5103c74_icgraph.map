@@ -1,0 +1,5 @@
+<map id="KeygenDialog::startGeneration" name="KeygenDialog::startGeneration">
+<area shape="rect" id="Node000001" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="205,5,426,33"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="5,5,157,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,19,157,22,157,17,192,19"/>
+</map>

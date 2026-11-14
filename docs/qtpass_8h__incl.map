@@ -1,0 +1,22 @@
+<map id="src/qtpass.h" name="src/qtpass.h">
+<area shape="rect" id="Node000001" title="QtPass: UI&#45;neutral glue that turns backend completion signals into formatted output,..." alt="" coords="279,5,378,33"/>
+<area shape="rect" id="Node000002" href="$clipboardmanager_8h.html" title="ClipboardManager, which puts secrets on the clipboard and removes them again, and the MIME data that ..." alt="" coords="186,81,336,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="319,32,285,72,281,67,314,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,157,79,184"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="286,35,234,57,175,83,120,116,73,149,70,145,117,112,173,79,232,52,291,32"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="360,81,433,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="342,31,377,70,372,69,340,36"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="458,81,538,109"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="359,31,457,74,451,75,359,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,157,202,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="244,108,186,150,183,145,239,110"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="222,112,94,154,93,149,221,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="226,157,295,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="263,107,263,142,258,140,259,111"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="320,157,412,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="280,107,338,148,332,148,279,112"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="437,157,506,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="299,107,424,152,419,152,298,112"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="530,157,604,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="318,107,518,155,512,157,317,112"/>
+</map>

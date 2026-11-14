@@ -1,0 +1,12 @@
+<map id="ImitatePass::GitPull" name="ImitatePass::GitPull">
+<area shape="rect" id="Node000001" title="Pull from remote." alt="" coords="5,56,154,84"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="202,29,377,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,58,188,56,183,57,154,63"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="208,81,371,109"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="154,76,195,83,190,84,154,81"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="425,29,589,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="377,41,412,43,407,43,378,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="470,28,464,20,469,11,483,5,507,3,533,5,548,14,543,14,531,10,507,8,485,10,472,15,469,20,475,30"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="444,81,570,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="371,93,432,95,426,95,371,98"/>
+</map>

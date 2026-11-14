@@ -80,7 +80,7 @@ let codefold = {
       el.style.marginRight = '2px';
       el.style.display = 'inline-block';
       el.style.width = '54px';
-      el.style.background = 'linear-gradient(var(--fold-line-color),var(--fold-line-color)) no-repeat 46px/2px 100%';
+      el.style.background = 'linear-gradient(#808080,#808080) no-repeat 46px/2px 100%';
       const span = document.createElement('span');
       if (index === 0) { // add global toggle to first line
         span.className = 'fold minus';

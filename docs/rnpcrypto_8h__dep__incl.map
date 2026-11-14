@@ -1,0 +1,5 @@
+<map id="src/rnpcrypto.h" name="src/rnpcrypto.h">
+<area shape="rect" id="Node000001" title="RnpCrypto, in&#45;process OpenPGP encryption and decryption through the RNP library." alt="" coords="13,5,131,33"/>
+<area shape="rect" id="Node000002" href="$rnpcrypto_8cpp.html" title="Implements RnpCrypto over RNP&#39;s C FFI, with RAII wrappers for its handles and bounded in&#45;memory input..." alt="" coords="5,81,139,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,47,75,81,69,80,70,51"/>
+</map>

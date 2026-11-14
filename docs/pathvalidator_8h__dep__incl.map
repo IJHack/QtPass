@@ -1,0 +1,15 @@
+<map id="src/pathvalidator.h" name="src/pathvalidator.h">
+<area shape="rect" id="Node000001" title="PathValidator: is a path inside the password store, and how is it spelled relative to the store root." alt="" coords="419,5,561,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="404,39,156,83,155,78,403,33"/>
+<area shape="rect" id="Node000003" href="$pass_8cpp.html" title="Implements what both backends share: the environment the store&#39;s processes run in,..." alt="" coords="183,81,285,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="433,37,280,83,279,78,427,38"/>
+<area shape="rect" id="Node000004" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="309,81,482,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="464,42,413,83,411,78,459,44"/>
+<area shape="rect" id="Node000005" href="$pathvalidator_8cpp.html" title="Implements PathValidator; storeRelativePath() does the canonical comparison the other checks build on..." alt="" coords="506,81,663,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="520,40,570,81,565,80,518,45"/>
+<area shape="rect" id="Node000006" href="$realpass_8cpp.html" title="Implements RealPass: builds the pass command lines and does itself the few things pass must not be tr..." alt="" coords="687,81,813,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="551,35,706,80,701,80,551,40"/>
+<area shape="rect" id="Node000007" href="$storemodel_8cpp.html" title="Implements StoreModel and the StoreDragItem stream operators; the drop validation lives in executeDro..." alt="" coords="837,81,983,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="577,33,839,81,834,81,576,38"/>
+</map>

@@ -1,6 +1,24 @@
 <map id="MainWindow::closeEvent" name="MainWindow::closeEvent">
-<area shape="rect" id="Node000001" title="Save window state and geometry on close." alt="" coords="5,29,189,57"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="237,29,386,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,41,224,43,218,43,189,46"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="274,28,269,20,273,11,288,5,311,3,337,5,352,14,346,14,335,10,311,8,289,10,277,15,274,20,279,30"/>
+<area shape="rect" id="Node000001" title="Save window state and geometry on close." alt="" coords="5,107,189,134"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="285,5,418,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,104,171,74,236,43,272,34,267,37,238,48,174,78,122,108"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="277,81,426,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,109,263,103,259,105,190,114"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d" title="Check whether closing the window hides the application." alt="" coords="527,124,712,168"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="189,122,513,138,511,143,189,128"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1d5b5aae0498c5c573de7f00c47fac3a" title=" " alt="" coords="237,192,466,220"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="141,132,295,185,291,188,141,138"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="308,80,301,72,307,63,324,57,351,55,381,57,399,66,393,66,380,62,351,60,325,62,310,67,306,72,313,81"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168" title="Drop a style&#45;imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet..." alt="" coords="516,54,723,99"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="426,87,503,84,498,85,427,93"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="773,192,976,220"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="713,165,800,188,795,188,713,170"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1024,192,1247,220"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="976,203,1011,206,1005,206,976,208"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title="Save window geometry." alt="" coords="514,192,725,220"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="466,203,501,206,496,206,467,208"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95" title="Save window state." alt="" coords="514,244,725,272"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="427,218,532,240,527,240,426,223"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="726,203,760,206,755,206,726,208"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="691,241,786,224,791,223,692,246"/>
 </map>

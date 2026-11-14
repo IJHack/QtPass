@@ -1,0 +1,15 @@
+<map id="src/clipboardmanager.h" name="src/clipboardmanager.h">
+<area shape="rect" id="Node000001" title="ClipboardManager, which puts secrets on the clipboard and removes them again, and the MIME data that ..." alt="" coords="227,5,400,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,105,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,36,116,79,115,74,267,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="129,81,202,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="290,33,206,76,204,71,285,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="227,81,296,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,32,281,71,278,66,302,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="321,81,413,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="324,31,351,69,346,68,322,36"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="438,81,507,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="343,31,433,74,428,74,341,36"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="531,81,606,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="360,31,519,78,514,79,359,36"/>
+</map>

@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_export_public_key_dialog.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">ExportPublicKeyDialog Member List</div></div>
 </div><!--header-->
@@ -102,13 +120,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a695a1b33857bba491078d1eb813d0dc0">ExportPublicKeyDialog</a>(const QString &amp;keyId, const QString &amp;armoredKey, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a1aa1f6ab4e3ae089795ab5cd37d952e8">sanitizeKeyIdForFilename</a>(const QString &amp;keyId) -&gt; QString</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~ExportPublicKeyDialog</b>() override (defined in <a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a>)</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#af6f5a95262f162c3baa9472a5eccba31">m_copyButtonOriginalText</a></td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a5dfa97fcc036ae75f8dcb111a62e9ac8">m_keyId</a></td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#ab038db52faf962bed7773029c4abddff">on_copyButton_clicked</a>()</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88">on_saveButton_clicked</a>()</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#ab793452fcca2a8c931654ce7a2789008">sanitizeKeyIdForFilename</a>(const QString &amp;keyId) -&gt; QString</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a133622ee9f8f7407e74744f42b031001">ui</a></td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_export_public_key_dialog.html#a92b83ba5e8bba9df2c8834b219c49e26">~ExportPublicKeyDialog</a>() override</td><td class="entry"><a class="el" href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

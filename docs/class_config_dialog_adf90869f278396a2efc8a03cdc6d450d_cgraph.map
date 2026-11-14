@@ -1,0 +1,5 @@
+<map id="ConfigDialog::updateProfileStatus" name="ConfigDialog::updateProfileStatus">
+<area shape="rect" id="Node000001" title="Refresh the status line under the form: the profile&#39;s name and cleaned path, marked &quot;New&quot; while the f..." alt="" coords="5,5,204,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a9838b375aed57fa4a92e7670fac90f27" title="The entry the form is editing." alt="" coords="252,14,444,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,25,239,27,234,28,204,30"/>
+</map>

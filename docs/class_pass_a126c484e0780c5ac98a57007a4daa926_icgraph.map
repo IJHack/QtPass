@@ -1,0 +1,6 @@
+<map id="Pass::getDefaultKeyTemplate" name="Pass::getDefaultKeyTemplate">
+<area shape="rect" id="Node000001" title="Get default key template for new GPG keys." alt="" coords="263,29,474,57"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="5,29,215,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,43,215,46,215,41,250,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="153,14,139,10,110,8,83,10,68,15,64,20,71,29,66,29,59,20,65,11,82,5,110,3,140,5,158,14"/>
+</map>

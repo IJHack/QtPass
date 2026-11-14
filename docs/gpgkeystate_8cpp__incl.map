@@ -1,0 +1,51 @@
+<map id="src/gpgkeystate.cpp" name="src/gpgkeystate.cpp">
+<area shape="rect" id="Node000001" title="Implements the colon&#45;listing parser: record classification, one handler per record type,..." alt="" coords="170,5,321,33"/>
+<area shape="rect" id="Node000002" href="$gpgkeystate_8h.html" title="Parsing of gpg &#45;&#45;with&#45;colons key listings into UserInfo records." alt="" coords="43,157,157,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,36,125,147,121,144,234,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="48,308,144,336"/>
+<area shape="poly" id="edge28_Node000001_Node000004" title=" " alt="" coords="205,36,166,54,118,81,71,115,33,158,17,184,9,208,10,231,20,259,36,280,58,299,53,301,32,284,15,261,5,232,4,207,12,182,29,155,68,111,115,76,163,49,209,32"/>
+<area shape="rect" id="Node000008" href="$gpgkeystate__p_8h.html" title="Record handlers of the gpg colon&#45;listing parser, declared separately only so the unit tests can call ..." alt="" coords="181,157,310,184"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="247,31,248,141,243,140,244,35"/>
+<area shape="rect" id="Node000009" href="$util_8h.html" title="Util: static helpers for the process environment, binary discovery, store paths, URL safety and the l..." alt="" coords="542,81,597,109"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="304,31,529,83,525,85,304,36"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="965,157,1118,184"/>
+<area shape="poly" id="edge29_Node000001_Node000018" title=" " alt="" coords="321,30,608,78,968,152,963,154,608,84,322,35"/>
+<area shape="rect" id="Node000003" href="$userinfo_8h.html" title="UserInfo, one GPG key as listed by gpg, with the selection flag the recipient dialogs use." alt="" coords="157,232,243,260"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,182,173,222,168,224,117,188"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="363,308,432,336"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="104,182,119,221,131,241,147,258,195,286,248,304,301,314,349,320,344,320,300,319,247,309,193,291,144,262,127,244,114,224,102,187"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="29,232,83,260"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="91,187,74,220,69,218,93,183"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="267,232,360,260"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="138,182,263,225,259,228,138,188"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="184,260,128,301,125,297,179,261"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="236,258,351,302,345,303,235,263"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="239,183,218,221,214,217,235,187"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="258,182,294,221,288,221,257,187"/>
+<area shape="poly" id="edge24_Node000009_Node000005" title=" " alt="" coords="539,100,514,108,482,119,450,135,425,158,407,190,398,226,396,262,396,294,392,291,390,261,393,225,402,188,421,155,447,131,480,114,512,103,544,99"/>
+<area shape="poly" id="edge25_Node000009_Node000007" title=" " alt="" coords="539,100,465,119,421,136,380,159,350,188,328,221,325,217,346,185,377,155,419,131,464,114,544,99"/>
+<area shape="rect" id="Node000010" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="435,157,544,184"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="557,108,516,148,513,144,553,111"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="569,157,733,184"/>
+<area shape="poly" id="edge22_Node000009_Node000017" title=" " alt="" coords="585,107,628,147,623,146,583,112"/>
+<area shape="poly" id="edge23_Node000009_Node000018" title=" " alt="" coords="597,98,952,154,947,156,597,103"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="757,157,843,184"/>
+<area shape="poly" id="edge26_Node000009_Node000019" title=" " alt="" coords="597,102,747,151,741,152,597,108"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="867,157,941,184"/>
+<area shape="poly" id="edge27_Node000009_Node000020" title=" " alt="" coords="597,99,854,155,849,157,597,104"/>
+<area shape="poly" id="edge20_Node000010_Node000005" title=" " alt="" coords="498,182,512,220,514,241,508,261,496,277,481,290,447,308,446,303,478,285,492,273,503,259,509,240,507,221,495,187"/>
+<area shape="poly" id="edge21_Node000010_Node000007" title=" " alt="" coords="460,184,359,229,358,224,455,186"/>
+<area shape="rect" id="Node000011" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="981,232,1059,260"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="544,180,556,182,670,196,760,204,851,212,968,232,963,232,850,218,760,209,669,201,556,187,545,185"/>
+<area shape="rect" id="Node000013" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="569,232,749,260"/>
+<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="520,182,617,226,612,226,519,188"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="773,232,870,260"/>
+<area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="545,181,760,230,755,231,544,187"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="893,232,958,260"/>
+<area shape="poly" id="edge18_Node000010_Node000015" title=" " alt="" coords="544,180,556,182,716,203,788,213,880,232,875,232,787,218,716,208,556,187,545,185"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="435,232,493,260"/>
+<area shape="poly" id="edge19_Node000010_Node000016" title=" " alt="" coords="487,183,475,219,472,216,483,187"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="973,308,1067,336"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="1022,259,1022,294,1018,291,1018,262"/>
+<area shape="poly" id="edge16_Node000013_Node000005" title=" " alt="" coords="615,260,447,309,446,304,609,261"/>
+</map>

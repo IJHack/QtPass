@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -100,21 +118,39 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>accept()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180">FirstRunWizard</a>, <a class="el" href="class_gpg_id_generation.html#a490cff66a5b86f14e762192bbfddd93d">GpgIdGeneration</a>, <a class="el" href="class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736">PasswordDialog</a>, <a class="el" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog</a></li>
+<li>accept()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180">FirstRunWizard</a>, <a class="el" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387">GpgIdGeneration</a>, <a class="el" href="class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736">PasswordDialog</a>, <a class="el" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog</a></li>
+<li>addActionButtons()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a57fc5d83ebe5d878f373c6785af5f8d4">PasswordDisplayPanel</a></li>
+<li>addField()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7">PasswordDisplayPanel</a></li>
+<li>addFolder()&#160;:&#160;<a class="el" href="class_main_window.html#a43847693f774d77737aa23aa4a1ac272">MainWindow</a></li>
 <li>addGenerationHeader()&#160;:&#160;<a class="el" href="class_imitate_pass.html#aa327d0b0f45abfb88d10da0c5fdebd41">ImitatePass</a></li>
-<li>addPadding()&#160;:&#160;<a class="el" href="class_base32.html#a0333781f29fc93e20b3792c243a666db">Base32</a></li>
+<li>addHiddenPassword()&#160;:&#160;<a class="el" href="class_password_display_panel.html#ae5b1f044561af878f68b76253fdc382e">PasswordDisplayPanel</a></li>
+<li>addOtpField()&#160;:&#160;<a class="el" href="class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268">PasswordDisplayPanel</a></li>
+<li>addPadding()&#160;:&#160;<a class="el" href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0">Base32</a></li>
+<li>addPassword()&#160;:&#160;<a class="el" href="class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554">MainWindow</a></li>
+<li>addRecipient()&#160;:&#160;<a class="el" href="class_main_window.html#a93b9f16badab892958d7b5bb28c55aa5">MainWindow</a></li>
+<li>addRow()&#160;:&#160;<a class="el" href="class_password_display_panel.html#acc2144babbefdd5937daf939410786b4">PasswordDisplayPanel</a></li>
+<li>addShareMenu()&#160;:&#160;<a class="el" href="class_main_window.html#a5890dfd116d4da96689e7114dd4e5494">MainWindow</a></li>
 <li>addToggle()&#160;:&#160;<a class="el" href="class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f">TrayIcon</a></li>
 <li>append()&#160;:&#160;<a class="el" href="class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac">ProcessOutputPanel</a></li>
-<li>applyPassphrase()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a8f57d71d0288d8088b23b8124088a62a">KeygenDialog</a></li>
-<li>applyPassProcessDefaults()&#160;:&#160;<a class="el" href="class_util.html#a0954978822dc30f773f1302003dbea84">Util</a></li>
+<li>applyFrameStyle()&#160;:&#160;<a class="el" href="class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee">PasswordDisplayPanel</a></li>
+<li>applyPassphrase()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1">KeygenDialog</a></li>
+<li>applyPassProcessDefaults()&#160;:&#160;<a class="el" href="class_util.html#ab16f1ac58307067ced38315c49f6fcba">Util</a></li>
+<li>applySettings()&#160;:&#160;<a class="el" href="class_config_dialog.html#abad77b747ca028e7b042b995a4620211">ConfigDialog</a></li>
+<li>applyTemplate()&#160;:&#160;<a class="el" href="class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3">PasswordDialog</a></li>
+<li>applyTextBrowserSettings()&#160;:&#160;<a class="el" href="class_main_window.html#ac5705aca84795de049d9a0f0a0d5e3fb">MainWindow</a></li>
+<li>applyUserStyling()&#160;:&#160;<a class="el" href="class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d">UsersDialog</a></li>
+<li>applyWindowFlagsSettings()&#160;:&#160;<a class="el" href="class_main_window.html#a8c981247a44bc74f5152c312c15a8a79">MainWindow</a></li>
 <li>argv()&#160;:&#160;<a class="el" href="struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b">Executor::WslCommand</a></li>
 <li>autoScroll()&#160;:&#160;<a class="el" href="class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755">ProcessOutputPanel</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

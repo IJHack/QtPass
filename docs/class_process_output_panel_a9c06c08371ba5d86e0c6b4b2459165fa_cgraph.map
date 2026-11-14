@@ -1,0 +1,9 @@
+<map id="ProcessOutputPanel::processName" name="ProcessOutputPanel::processName">
+<area shape="rect" id="Node000001" title="Human&#45;readable command label for a process id." alt="" coords="5,21,156,66"/>
+<area shape="rect" id="Node000002" href="$namespace_enums.html#a10371ee44aefcd45e202978699eb03ca" title="The command label for pid, as the output panel shows it." alt="" coords="204,29,362,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,41,191,43,185,43,156,46"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="248,28,242,20,247,11,261,5,283,3,307,5,321,14,316,14,305,10,283,8,262,10,251,15,248,20,253,30"/>
+<area shape="rect" id="Node000003" href="$namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e" title="What is known about pid." alt="" coords="410,29,558,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,41,397,43,392,43,362,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="449,28,444,20,448,11,462,5,484,3,508,5,522,14,517,14,506,10,484,8,463,10,452,15,449,20,454,30"/>
+</map>

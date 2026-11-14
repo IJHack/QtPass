@@ -1,0 +1,5 @@
+<map id="src/singleapplication.h" name="src/singleapplication.h">
+<area shape="rect" id="Node000001" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a shared&#45;memory segment..." alt="" coords="13,5,180,33"/>
+<area shape="rect" id="Node000002" href="$singleapplication_8cpp.html" title="Implements SingleApplication; stale&#45;segment and takeover&#45;race recovery lives in the constructor and b..." alt="" coords="5,81,188,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,47,99,82,94,80,95,51"/>
+</map>

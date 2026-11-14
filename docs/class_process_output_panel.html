@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_process_output_panel.html','','class_process_output_panel-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="class_process_output_panel-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ProcessOutputPanel Class Reference</div></div>
+  <div class="headertitle"><div class="title">ProcessOutputPanel Class Reference<div class="ingroups"><a class="el" href="group__ui.html">Windows and dialogs</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,19 +126,18 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel__inherit__graph.svg" width="162" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for ProcessOutputPanel:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel__coll__graph.svg" width="162" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a40eebd4f48de276cec251ffdfed97c15" id="r_a40eebd4f48de276cec251ffdfed97c15"><td class="memItemLeft"><a id="a40eebd4f48de276cec251ffdfed97c15" name="a40eebd4f48de276cec251ffdfed97c15"></a>
-void&#160;</td><td class="memItemRight"><b>clear</b> ()</td></tr>
-<tr class="memdesc:a40eebd4f48de276cec251ffdfed97c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop all output, reset the counter, re-arm auto-scroll. <br /></td></tr>
+<tr class="memitem:a40eebd4f48de276cec251ffdfed97c15" id="r_a40eebd4f48de276cec251ffdfed97c15"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40eebd4f48de276cec251ffdfed97c15">clear</a> ()</td></tr>
+<tr class="memdesc:a40eebd4f48de276cec251ffdfed97c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop all output, reset the counter, re-arm auto-scroll.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -141,21 +152,37 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af8ec4c669ae299698055cf9d36d50881" id="r_af8ec4c669ae299698055cf9d36d50881"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8ec4c669ae299698055cf9d36d50881">processName</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; QString</td></tr>
-<tr class="memdesc:af8ec4c669ae299698055cf9d36d50881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable command label for a process id.  <br /></td></tr>
-<tr class="memitem:ad6aa26912ba468c918d78d857c386da7" id="r_ad6aa26912ba468c918d78d857c386da7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad6aa26912ba468c918d78d857c386da7">isSensitiveProcess</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; bool</td></tr>
-<tr class="memdesc:ad6aa26912ba468c918d78d857c386da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass insert; pass grep, should it ever run again).  <br /></td></tr>
+<tr class="memitem:a9c06c08371ba5d86e0c6b4b2459165fa" id="r_a9c06c08371ba5d86e0c6b4b2459165fa"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c06c08371ba5d86e0c6b4b2459165fa">processName</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; QString</td></tr>
+<tr class="memdesc:a9c06c08371ba5d86e0c6b4b2459165fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Human-readable command label for a process id.  <br /></td></tr>
+<tr class="memitem:a3a0982ab575678d657c0f044c2efac24" id="r_a3a0982ab575678d657c0f044c2efac24"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3a0982ab575678d657c0f044c2efac24">isSensitiveProcess</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid) -&gt; bool</td></tr>
+<tr class="memdesc:a3a0982ab575678d657c0f044c2efac24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a process's output may carry secrets and must never reach this long-lived panel (pass show, pass insert; pass grep, should it ever run again).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a13d9b8f917417fc7e49b2b3fa785d0a7" id="r_a13d9b8f917417fc7e49b2b3fa785d0a7"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="#a13d9b8f917417fc7e49b2b3fa785d0a7">MaxLines</a> = 1000</td></tr>
 <tr class="memdesc:a13d9b8f917417fc7e49b2b3fa785d0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oldest lines are dropped once the document holds more than this.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1e8ed5d1bb9c3ce3568609cbf8d47ea7" id="r_a1e8ed5d1bb9c3ce3568609cbf8d47ea7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1e8ed5d1bb9c3ce3568609cbf8d47ea7">limitLines</a> ()</td></tr>
+<tr class="memdesc:a1e8ed5d1bb9c3ce3568609cbf8d47ea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drop the oldest text blocks once the document holds more than MaxLines; called after every <a class="el" href="#ae513643a2ccb1d663e79a2b480e0a1ac" title="Append output, one numbered line per non-empty input line.">append()</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac65762c3217a8a20d3edc5affe300fcf" id="r_ac65762c3217a8a20d3edc5affe300fcf"><td class="memItemLeft">QTextEdit *&#160;</td><td class="memItemRight"><a class="el" href="#ac65762c3217a8a20d3edc5affe300fcf">m_edit</a> = nullptr</td></tr>
+<tr class="memdesc:ac65762c3217a8a20d3edc5affe300fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only text edit holding the output; child of the dock.  <br /></td></tr>
+<tr class="memitem:ad89054f7933d1cc3ebe27430403017ef" id="r_ad89054f7933d1cc3ebe27430403017ef"><td class="memItemLeft">QToolButton *&#160;</td><td class="memItemRight"><a class="el" href="#ad89054f7933d1cc3ebe27430403017ef">m_clearButton</a> = nullptr</td></tr>
+<tr class="memdesc:ad89054f7933d1cc3ebe27430403017ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "Clear" button wired to <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>.  <br /></td></tr>
+<tr class="memitem:a53ef333e7ca07cef17d5c22364bfde09" id="r_a53ef333e7ca07cef17d5c22364bfde09"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a53ef333e7ca07cef17d5c22364bfde09">m_counter</a> = 0</td></tr>
+<tr class="memdesc:a53ef333e7ca07cef17d5c22364bfde09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Running line number shown in front of each line; reset by <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. Keeps counting past MaxLines.  <br /></td></tr>
+<tr class="memitem:a9fe04260a7925ed525234ce4f777c0e0" id="r_a9fe04260a7925ed525234ce4f777c0e0"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a9fe04260a7925ed525234ce4f777c0e0">m_autoScroll</a> = true</td></tr>
+<tr class="memdesc:a9fe04260a7925ed525234ce4f777c0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="#ae513643a2ccb1d663e79a2b480e0a1ac" title="Append output, one numbered line per non-empty input line.">append()</a> scrolls to the bottom: cleared when the user scrolls up, set again when the scroll bar reaches its maximum or on <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. Only updated on slider release while dragging.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The dockable "Process output" console: numbered, colour-coded lines of git/pass/gpg output with a line cap and sticky auto-scroll. </p>
 <p>A QDockWidget at the bottom dock area is the conventional place for an IDE-style console and gives users detach/move for free. The panel knows nothing about settings or the tree; <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> decides when to feed it and when to show it. </p>
 
-<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00024">24</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00030">30</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5eced61630b5293e8fda4c3b92c1fe71" name="a5eced61630b5293e8fda4c3b92c1fe71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5eced61630b5293e8fda4c3b92c1fe71">&#9670;&#160;</a></span>ProcessOutputPanel()</h2>
@@ -187,6 +214,20 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00017">17</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a5eced61630b5293e8fda4c3b92c1fe71_cgraph.svg" width="368" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a5eced61630b5293e8fda4c3b92c1fe71_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -225,6 +266,20 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00059">59</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_ae513643a2ccb1d663e79a2b480e0a1ac_cgraph.svg" width="360" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_ae513643a2ccb1d663e79a2b480e0a1ac_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="ac2b8edc0a3bd9eb9e0a76a2cb4f76755" name="ac2b8edc0a3bd9eb9e0a76a2cb4f76755"></a>
@@ -253,12 +308,47 @@ Static Public Attributes</h2></td></tr>
 <p>Whether new output scrolls the view to the bottom. </p>
 <dl class="section return"><dt>Returns</dt><dd>false after the user scrolled up, true again at the bottom or after <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00062">62</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00068">68</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
 
 </div>
 </div>
-<a id="ad6aa26912ba468c918d78d857c386da7" name="ad6aa26912ba468c918d78d857c386da7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6aa26912ba468c918d78d857c386da7">&#9670;&#160;</a></span>isSensitiveProcess()</h2>
+<a id="a40eebd4f48de276cec251ffdfed97c15" name="a40eebd4f48de276cec251ffdfed97c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40eebd4f48de276cec251ffdfed97c15">&#9670;&#160;</a></span>clear</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProcessOutputPanel::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drop all output, reset the counter, re-arm auto-scroll. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00110">110</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a40eebd4f48de276cec251ffdfed97c15_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a3a0982ab575678d657c0f044c2efac24" name="a3a0982ab575678d657c0f044c2efac24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0982ab575678d657c0f044c2efac24">&#9670;&#160;</a></span>isSensitiveProcess()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,7 +360,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto ProcessOutputPanel::isSensitiveProcess </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -288,6 +378,49 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the output must be dropped. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00120">120</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a3a0982ab575678d657c0f044c2efac24_cgraph.svg" width="358" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1e8ed5d1bb9c3ce3568609cbf8d47ea7" name="a1e8ed5d1bb9c3ce3568609cbf8d47ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e8ed5d1bb9c3ce3568609cbf8d47ea7">&#9670;&#160;</a></span>limitLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ProcessOutputPanel::limitLines </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drop the oldest text blocks once the document holds more than MaxLines; called after every <a class="el" href="#ae513643a2ccb1d663e79a2b480e0a1ac" title="Append output, one numbered line per non-empty input line.">append()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00098">98</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a1e8ed5d1bb9c3ce3568609cbf8d47ea7_icgraph.svg" width="630" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -317,12 +450,12 @@ Static Public Attributes</h2></td></tr>
 <p>Number of lines appended since the last <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The running counter shown as the line number. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00055">55</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00061">61</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
 
 </div>
 </div>
-<a id="af8ec4c669ae299698055cf9d36d50881" name="af8ec4c669ae299698055cf9d36d50881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8ec4c669ae299698055cf9d36d50881">&#9670;&#160;</a></span>processName()</h2>
+<a id="a9c06c08371ba5d86e0c6b4b2459165fa" name="a9c06c08371ba5d86e0c6b4b2459165fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c06c08371ba5d86e0c6b4b2459165fa">&#9670;&#160;</a></span>processName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,7 +467,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto ProcessOutputPanel::processName </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -353,9 +486,127 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>e.g. "git push"; empty for processes that are never shown. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8cpp_source.html#l00116">116</a> of file <a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a9c06c08371ba5d86e0c6b4b2459165fa_cgraph.svg" width="564" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_process_output_panel_a9c06c08371ba5d86e0c6b4b2459165fa_icgraph.svg" width="432" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a9fe04260a7925ed525234ce4f777c0e0" name="a9fe04260a7925ed525234ce4f777c0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fe04260a7925ed525234ce4f777c0e0">&#9670;&#160;</a></span>m_autoScroll</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProcessOutputPanel::m_autoScroll = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <a class="el" href="#ae513643a2ccb1d663e79a2b480e0a1ac" title="Append output, one numbered line per non-empty input line.">append()</a> scrolls to the bottom: cleared when the user scrolls up, set again when the scroll bar reaches its maximum or on <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. Only updated on slider release while dragging. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00113">113</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+
+</div>
+</div>
+<a id="ad89054f7933d1cc3ebe27430403017ef" name="ad89054f7933d1cc3ebe27430403017ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad89054f7933d1cc3ebe27430403017ef">&#9670;&#160;</a></span>m_clearButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QToolButton* ProcessOutputPanel::m_clearButton = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The "Clear" button wired to <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00102">102</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+
+</div>
+</div>
+<a id="a53ef333e7ca07cef17d5c22364bfde09" name="a53ef333e7ca07cef17d5c22364bfde09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53ef333e7ca07cef17d5c22364bfde09">&#9670;&#160;</a></span>m_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProcessOutputPanel::m_counter = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Running line number shown in front of each line; reset by <a class="el" href="#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re-arm auto-scroll.">clear()</a>. Keeps counting past MaxLines. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00107">107</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+
+</div>
+</div>
+<a id="ac65762c3217a8a20d3edc5affe300fcf" name="ac65762c3217a8a20d3edc5affe300fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac65762c3217a8a20d3edc5affe300fcf">&#9670;&#160;</a></span>m_edit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTextEdit* ProcessOutputPanel::m_edit = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read-only text edit holding the output; child of the dock. </p>
+
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00100">100</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+
+</div>
+</div>
 <a id="a13d9b8f917417fc7e49b2b3fa785d0a7" name="a13d9b8f917417fc7e49b2b3fa785d0a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13d9b8f917417fc7e49b2b3fa785d0a7">&#9670;&#160;</a></span>MaxLines</h2>
 
@@ -378,18 +629,30 @@ Static Public Attributes</h2></td></tr>
 
 <p>Oldest lines are dropped once the document holds more than this. </p>
 
-<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00029">29</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="processoutputpanel_8h_source.html#l00035">35</a> of file <a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="processoutputpanel_8h_source.html">processoutputpanel.h</a></li>
+<li>src/<a class="el" href="processoutputpanel_8cpp_source.html">processoutputpanel.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_process_output_panel.html">ProcessOutputPanel</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

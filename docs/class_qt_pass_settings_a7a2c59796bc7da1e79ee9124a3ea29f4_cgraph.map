@@ -1,0 +1,7 @@
+<map id="QtPassSettings::isUseGrepSearch" name="QtPassSettings::isUseGrepSearch">
+<area shape="rect" id="Node000001" title="Check whether content search is enabled." alt="" coords="5,5,199,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="247,14,449,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,25,234,27,228,28,199,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="497,14,720,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,25,484,28,479,28,449,30"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ClipboardManager::setAutoclearTimer" name="ClipboardManager::setAutoclearTimer">
+<area shape="rect" id="Node000001" title="Re&#45;read the autoclear delay from the settings." alt="" coords="264,5,494,50"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb" title="Construct a manager that also clears its text when the application quits." alt="" coords="5,5,216,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,28,216,30,216,25,251,28"/>
+</map>

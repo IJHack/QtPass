@@ -1,0 +1,7 @@
+<map id="ProfileInit::initGit" name="ProfileInit::initGit">
+<area shape="rect" id="Node000001" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="474,5,605,33"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a4c80ddbd79ef91cd4a0d729f0c535802" title="Give an existing store the Git repository it was chosen to have." alt="" coords="224,5,426,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="456,19,427,22,426,17,461,19"/>
+<area shape="rect" id="Node000003" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="5,5,176,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,19,176,22,176,17,211,19"/>
+</map>

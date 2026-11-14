@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_export_public_key_dialog.html','','class_export_public_key_dialog-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_export_public_key_dialog-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ExportPublicKeyDialog Class Reference</div></div>
+  <div class="headertitle"><div class="title">ExportPublicKeyDialog Class Reference<div class="ingroups"><a class="el" href="group__keys.html">Keys and recipients</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,29 +126,47 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog__inherit__graph.svg" width="179" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for ExportPublicKeyDialog:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog__coll__graph.svg" width="179" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a695a1b33857bba491078d1eb813d0dc0" id="r_a695a1b33857bba491078d1eb813d0dc0"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a695a1b33857bba491078d1eb813d0dc0">ExportPublicKeyDialog</a> (const QString &amp;keyId, const QString &amp;armoredKey, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a695a1b33857bba491078d1eb813d0dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="class_export_public_key_dialog.html" title="Dialog showing an ASCII-armored public GPG key for sharing.">ExportPublicKeyDialog</a>.  <br /></td></tr>
+<tr class="memitem:a92b83ba5e8bba9df2c8834b219c49e26" id="r_a92b83ba5e8bba9df2c8834b219c49e26"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a92b83ba5e8bba9df2c8834b219c49e26">~ExportPublicKeyDialog</a> () override</td></tr>
+<tr class="memdesc:a92b83ba5e8bba9df2c8834b219c49e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the dialog and its generated UI.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1aa1f6ab4e3ae089795ab5cd37d952e8" id="r_a1aa1f6ab4e3ae089795ab5cd37d952e8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1aa1f6ab4e3ae089795ab5cd37d952e8">sanitizeKeyIdForFilename</a> (const QString &amp;keyId) -&gt; QString</td></tr>
-<tr class="memdesc:a1aa1f6ab4e3ae089795ab5cd37d952e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce a key identifier to a filesystem-safe token.  <br /></td></tr>
+<tr class="memitem:ab793452fcca2a8c931654ce7a2789008" id="r_ab793452fcca2a8c931654ce7a2789008"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab793452fcca2a8c931654ce7a2789008">sanitizeKeyIdForFilename</a> (const QString &amp;keyId) -&gt; QString</td></tr>
+<tr class="memdesc:ab793452fcca2a8c931654ce7a2789008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce a key identifier to a filesystem-safe token.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ab038db52faf962bed7773029c4abddff" id="r_ab038db52faf962bed7773029c4abddff"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab038db52faf962bed7773029c4abddff">on_copyButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ab038db52faf962bed7773029c4abddff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the armored key text to the system clipboard; the button reads "Copied!" for 1.5 s as feedback. Public keys are not secrets, so this bypasses <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a> and its autoclear.  <br /></td></tr>
+<tr class="memitem:a0b8bdb10fc086d039f687909bb314b88" id="r_a0b8bdb10fc086d039f687909bb314b88"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b8bdb10fc086d039f687909bb314b88">on_saveButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a0b8bdb10fc086d039f687909bb314b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prompt for a destination and write the armored key to that file through a QSaveFile. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a133622ee9f8f7407e74744f42b031001" id="r_a133622ee9f8f7407e74744f42b031001"><td class="memItemLeft">QScopedPointer&lt; Ui::ExportPublicKeyDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a133622ee9f8f7407e74744f42b031001">ui</a></td></tr>
+<tr class="memdesc:a133622ee9f8f7407e74744f42b031001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated form (<span class="tt">exportpublickeydialog.ui</span>); owned.  <br /></td></tr>
+<tr class="memitem:a5dfa97fcc036ae75f8dcb111a62e9ac8" id="r_a5dfa97fcc036ae75f8dcb111a62e9ac8"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a5dfa97fcc036ae75f8dcb111a62e9ac8">m_keyId</a></td></tr>
+<tr class="memdesc:a5dfa97fcc036ae75f8dcb111a62e9ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key id as passed to the constructor; the basis of the suggested file name.  <br /></td></tr>
+<tr class="memitem:af6f5a95262f162c3baa9472a5eccba31" id="r_af6f5a95262f162c3baa9472a5eccba31"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#af6f5a95262f162c3baa9472a5eccba31">m_copyButtonOriginalText</a></td></tr>
+<tr class="memdesc:af6f5a95262f162c3baa9472a5eccba31"><td class="mdescLeft">&#160;</td><td class="mdescRight">The copy button's label from the form, restored after the "Copied!" flash.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dialog showing an ASCII-armored public GPG key for sharing. </p>
 <p>Displays the armored key text and offers Copy-to-Clipboard and Save-to-File actions so the user can hand the key to teammates. </p>
 
-<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00021">21</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00027">27</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a695a1b33857bba491078d1eb813d0dc0" name="a695a1b33857bba491078d1eb813d0dc0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a695a1b33857bba491078d1eb813d0dc0">&#9670;&#160;</a></span>ExportPublicKeyDialog()</h2>
@@ -177,6 +209,8 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00022">22</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -192,9 +226,118 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a92b83ba5e8bba9df2c8834b219c49e26" name="a92b83ba5e8bba9df2c8834b219c49e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92b83ba5e8bba9df2c8834b219c49e26">&#9670;&#160;</a></span>~ExportPublicKeyDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ExportPublicKeyDialog::~ExportPublicKeyDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the dialog and its generated UI. </p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a92b83ba5e8bba9df2c8834b219c49e26_cgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a1aa1f6ab4e3ae089795ab5cd37d952e8" name="a1aa1f6ab4e3ae089795ab5cd37d952e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1aa1f6ab4e3ae089795ab5cd37d952e8">&#9670;&#160;</a></span>sanitizeKeyIdForFilename()</h2>
+<a id="ab038db52faf962bed7773029c4abddff" name="ab038db52faf962bed7773029c4abddff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab038db52faf962bed7773029c4abddff">&#9670;&#160;</a></span>on_copyButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportPublicKeyDialog::on_copyButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy the armored key text to the system clipboard; the button reads "Copied!" for 1.5 s as feedback. Public keys are not secrets, so this bypasses <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a> and its autoclear. </p>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00049">49</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_ab038db52faf962bed7773029c4abddff_icgraph.svg" width="424" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a0b8bdb10fc086d039f687909bb314b88" name="a0b8bdb10fc086d039f687909bb314b88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b8bdb10fc086d039f687909bb314b88">&#9670;&#160;</a></span>on_saveButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ExportPublicKeyDialog::on_saveButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prompt for a destination and write the armored key to that file through a QSaveFile. The suggested name is <span class="tt">&lt;sanitizeKeyIdForFilename(keyId)&gt;.asc</span>, or <span class="tt">public_key.asc</span> when nothing of the key id survives. Failures are reported in a warning box. </p>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00057">57</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a0b8bdb10fc086d039f687909bb314b88_cgraph.svg" width="434" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_a0b8bdb10fc086d039f687909bb314b88_icgraph.svg" width="424" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab793452fcca2a8c931654ce7a2789008" name="ab793452fcca2a8c931654ce7a2789008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab793452fcca2a8c931654ce7a2789008">&#9670;&#160;</a></span>sanitizeKeyIdForFilename()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +349,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto ExportPublicKeyDialog::sanitizeKeyIdForFilename </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyId</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -225,16 +368,115 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The first whitespace-separated token of keyId with anything outside [A-Za-z0-9_-] stripped. Empty if no characters survive. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8cpp_source.html#l00036">36</a> of file <a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_export_public_key_dialog_ab793452fcca2a8c931654ce7a2789008_icgraph.svg" width="100%" height="365"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="af6f5a95262f162c3baa9472a5eccba31" name="af6f5a95262f162c3baa9472a5eccba31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f5a95262f162c3baa9472a5eccba31">&#9670;&#160;</a></span>m_copyButtonOriginalText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportPublicKeyDialog::m_copyButtonOriginalText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The copy button's label from the form, restored after the "Copied!" flash. </p>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00077">77</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a5dfa97fcc036ae75f8dcb111a62e9ac8" name="a5dfa97fcc036ae75f8dcb111a62e9ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dfa97fcc036ae75f8dcb111a62e9ac8">&#9670;&#160;</a></span>m_keyId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ExportPublicKeyDialog::m_keyId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Key id as passed to the constructor; the basis of the suggested file name. </p>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00074">74</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a133622ee9f8f7407e74744f42b031001" name="a133622ee9f8f7407e74744f42b031001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133622ee9f8f7407e74744f42b031001">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;Ui::ExportPublicKeyDialog&gt; ExportPublicKeyDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generated form (<span class="tt">exportpublickeydialog.ui</span>); owned. </p>
+
+<p class="definition">Definition at line <a class="el" href="exportpublickeydialog_8h_source.html#l00071">71</a> of file <a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="exportpublickeydialog_8h_source.html">exportpublickeydialog.h</a></li>
+<li>src/<a class="el" href="exportpublickeydialog_8cpp_source.html">exportpublickeydialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_export_public_key_dialog.html">ExportPublicKeyDialog</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

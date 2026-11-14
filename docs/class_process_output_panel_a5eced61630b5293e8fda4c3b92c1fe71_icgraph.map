@@ -1,0 +1,11 @@
+<map id="ProcessOutputPanel::ProcessOutputPanel" name="ProcessOutputPanel::ProcessOutputPanel">
+<area shape="rect" id="Node000001" title="Build the console (Clear button + read&#45;only text edit)." alt="" coords="806,21,965,66"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#adf84569020b01d026bd88ff43d07e16d" title=" " alt="" coords="531,29,758,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="788,43,759,46,759,41,794,43"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="513,43,484,46,484,41,518,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,14,414,10,385,8,358,10,343,15,339,20,345,30,340,28,333,20,339,11,357,5,385,3,415,5,433,14"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
+</map>

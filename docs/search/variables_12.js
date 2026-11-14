@@ -1,4 +1,24 @@
 var searchData=
 [
-  ['templateallfields_0',['templateAllFields',['../struct_app_settings.html#abf7c1a08e3aeb6528162cef23c65a04d',1,'AppSettings']]]
+  ['savestate_0',['savestate',['../struct_app_settings.html#aafa1f97c50a90866f9523851b2eaa058',1,'AppSettings']]],
+  ['scratch_1',['scratch',['../struct_imitate_pass_1_1_pending_insert.html#a8dd788fbfb052e3e2c7c03f8fbabdfa6',1,'ImitatePass::PendingInsert']]],
+  ['searchtimer_2',['searchTimer',['../class_main_window.html#a3707d5edf6ae13711a525bb03044eb29',1,'MainWindow']]],
+  ['secret_3',['secret',['../struct_enums_1_1_process_info.html#afa94d5e39597cbf0a887006a8c37d7c7',1,'Enums::ProcessInfo']]],
+  ['secretfieldnames_4',['secretFieldNames',['../struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2',1,'AppSettings']]],
+  ['secretprotected_5',['secretProtected',['../struct_rnp_crypto_1_1_key_info.html#a686e709d0a448165f7180fda6716504e',1,'RnpCrypto::KeyInfo']]],
+  ['selected_6',['selected',['../struct_password_configuration.html#a6a47dc673e03fd9a8f71f7b44ddb16d3',1,'PasswordConfiguration']]],
+  ['sharedkey_7',['sharedKey',['../struct_config_dialog_1_1_profile_problems.html#a608df96ed95830f21aee088400bb5efd',1,'ConfigDialog::ProfileProblems']]],
+  ['sharedmemory_8',['sharedMemory',['../class_single_application.html#a049e4d9a1ee8290afef91106c402cdda',1,'SingleApplication']]],
+  ['showaction_9',['showAction',['../class_tray_icon.html#ac3ed465c5410c76e723497cad352665d',1,'TrayIcon']]],
+  ['showmenubar_10',['showMenuBar',['../struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85',1,'AppSettings']]],
+  ['showprocessoutput_11',['showProcessOutput',['../struct_app_settings.html#a61d0d4c9f61852bac9fe3be71a9b1814',1,'AppSettings']]],
+  ['signingkey_12',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
+  ['sshauthsockoverride_13',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
+  ['startminimized_14',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
+  ['state_15',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
+  ['steam_5fdigits_16',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
+  ['step_17',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
+  ['store_18',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_model.html#a98ebce85d60d3372420113fe7e714428',1,'StoreModel::store']]],
+  ['stores_19',['stores',['../struct_config_dialog_1_1_signing_stores.html#a05aded4260ca220959acaa60e1bf64a1',1,'ConfigDialog::SigningStores']]],
+  ['systrayicon_20',['sysTrayIcon',['../class_tray_icon.html#a6863ce4e41778dc20d012f95660f35b9',1,'TrayIcon']]]
 ];

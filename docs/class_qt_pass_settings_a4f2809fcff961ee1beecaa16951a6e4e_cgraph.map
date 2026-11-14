@@ -1,0 +1,7 @@
+<map id="QtPassSettings::isUseOtp" name="QtPassSettings::isUseOtp">
+<area shape="rect" id="Node000001" title="Check whether OTP support is enabled." alt="" coords="5,5,191,33"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="239,5,441,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,17,226,19,220,19,191,22"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="489,5,712,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,17,476,19,471,19,441,22"/>
+</map>

@@ -2,4 +2,8 @@
 <area shape="rect" id="Node000001" title="The environment QtPass runs the store&#39;s processes in." alt="" coords="5,5,180,33"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="228,5,401,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,17,215,19,209,19,180,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="449,5,612,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,17,436,19,431,19,401,22"/>
+<area shape="rect" id="Node000004" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="660,5,775,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="613,17,647,19,642,19,613,22"/>
 </map>

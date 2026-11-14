@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_store_model.html','','class_store_model-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,13 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_store_model-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">StoreModel Class Reference</div></div>
+  <div class="headertitle"><div class="title">StoreModel Class Reference<div class="ingroups"><a class="el" href="group__store.html">Store tree and entries</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -111,19 +126,18 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model__inherit__graph.svg" width="179" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for StoreModel:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model__coll__graph.svg" width="179" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model__coll__graph.svg" width="498" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1d113aadab8e115cdd963f2246333664" id="r_a1d113aadab8e115cdd963f2246333664"><td class="memItemLeft"><a id="a1d113aadab8e115cdd963f2246333664" name="a1d113aadab8e115cdd963f2246333664"></a>
-&#160;</td><td class="memItemRight"><b>StoreModel</b> ()</td></tr>
-<tr class="memdesc:a1d113aadab8e115cdd963f2246333664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>. <br /></td></tr>
+<tr class="memitem:a1d113aadab8e115cdd963f2246333664" id="r_a1d113aadab8e115cdd963f2246333664"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1d113aadab8e115cdd963f2246333664">StoreModel</a> ()</td></tr>
+<tr class="memdesc:a1d113aadab8e115cdd963f2246333664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>.  <br /></td></tr>
 <tr class="memitem:a90d7f788202bdb64c4722ee897a01363" id="r_a90d7f788202bdb64c4722ee897a01363"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90d7f788202bdb64c4722ee897a01363">setPass</a> (<a class="el" href="class_pass.html">Pass</a> *pass)</td></tr>
 <tr class="memdesc:a90d7f788202bdb64c4722ee897a01363"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inject the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend for drag-and-drop Move/Copy operations.  <br /></td></tr>
 <tr class="memitem:a02542fddfeea1874e849c0bb1d94f6c1" id="r_a02542fddfeea1874e849c0bb1d94f6c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a02542fddfeea1874e849c0bb1d94f6c1">filterAcceptsRow</a> (int source_row, const QModelIndex &amp;source_parent) const -&gt; bool override</td></tr>
@@ -156,18 +170,61 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:accf361cc9145306e3063f7b0be939476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if drop is possible.  <br /></td></tr>
 <tr class="memitem:a7eddcc6b50d64067e2ccf10c8ac82b8e" id="r_a7eddcc6b50d64067e2ccf10c8ac82b8e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7eddcc6b50d64067e2ccf10c8ac82b8e">dropMimeData</a> (const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &amp;parent) -&gt; bool override</td></tr>
 <tr class="memdesc:a7eddcc6b50d64067e2ccf10c8ac82b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle dropped MIME data.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8b9aceaa0b421a227661324501d09404" id="r_a8b9aceaa0b421a227661324501d09404"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8b9aceaa0b421a227661324501d09404">executeDropAction</a> (const <a class="el" href="struct_store_drag_item.html">StoreDragItem</a> &amp;info, Qt::DropAction action, const QModelIndex &amp;parent) -&gt; bool</td></tr>
+<tr class="memdesc:a8b9aceaa0b421a227661324501d09404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve a validated drop into a Move or Copy.  <br /></td></tr>
+<tr class="memitem:ac66256efac2ec5e6924d8694b7a718c5" id="r_ac66256efac2ec5e6924d8694b7a718c5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac66256efac2ec5e6924d8694b7a718c5">performDrop</a> (const QString &amp;cleanedSrc, const QString &amp;cleanedDest, Qt::DropAction action, bool force) -&gt; bool</td></tr>
+<tr class="memdesc:ac66256efac2ec5e6924d8694b7a718c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform the actual Move/Copy for a validated drop.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a3f12de1e5eb2337e3165aa838655e5a5" id="r_a3f12de1e5eb2337e3165aa838655e5a5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f12de1e5eb2337e3165aa838655e5a5">parseDropData</a> (const QMimeData *data) -&gt; std::optional&lt; <a class="el" href="struct_store_drag_item.html">StoreDragItem</a> &gt;</td></tr>
+<tr class="memdesc:a3f12de1e5eb2337e3165aa838655e5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode the drag payload from <code class="param">data</code>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af094c70fe862af6d3e2023938b745a44" id="r_af094c70fe862af6d3e2023938b745a44"><td class="memItemLeft">QFileSystemModel *&#160;</td><td class="memItemRight"><a class="el" href="#af094c70fe862af6d3e2023938b745a44">fs</a></td></tr>
+<tr class="memdesc:af094c70fe862af6d3e2023938b745a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">The wrapped file system model, set by <a class="el" href="#a71787f93027b50575cfbdcbb1d8de071" title="Initialize model with source model and store path.">setModelAndStore()</a>; null until then, which makes <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">showThis()</a> hide everything.  <br /></td></tr>
+<tr class="memitem:a98ebce85d60d3372420113fe7e714428" id="r_a98ebce85d60d3372420113fe7e714428"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a98ebce85d60d3372420113fe7e714428">store</a></td></tr>
+<tr class="memdesc:a98ebce85d60d3372420113fe7e714428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store root used to make paths relative for filtering and for the drop boundary check.  <br /></td></tr>
+<tr class="memitem:a67138cb92b226ee1dfe186e4b1707280" id="r_a67138cb92b226ee1dfe186e4b1707280"><td class="memItemLeft"><a class="el" href="class_pass.html">Pass</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a67138cb92b226ee1dfe186e4b1707280">m_pass</a> {nullptr}</td></tr>
+<tr class="memdesc:a67138cb92b226ee1dfe186e4b1707280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend that performs drag-and-drop Move/Copy; not owned, null until <a class="el" href="#a90d7f788202bdb64c4722ee897a01363" title="Inject the Pass backend for drag-and-drop Move/Copy operations.">setPass()</a>, in which case drops are refused.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>QSortFilterProxyModel for filtering and displaying password store. </p>
 <p><a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a> wraps QFileSystemModel to provide password store-specific filtering and display functionality. It handles:</p><ul>
-<li>Hiding .gpg-id files from display</li>
+<li>Hiding the <span class="tt">.git</span> directory from display</li>
 <li>Removing .gpg extension from file names</li>
 <li>Supporting drag and drop operations</li>
 <li>Custom sorting (directories before files) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00072">72</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00084">84</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a1d113aadab8e115cdd963f2246333664" name="a1d113aadab8e115cdd963f2246333664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d113aadab8e115cdd963f2246333664">&#9670;&#160;</a></span>StoreModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StoreModel::StoreModel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00045">45</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="accf361cc9145306e3063f7b0be939476" name="accf361cc9145306e3063f7b0be939476"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#accf361cc9145306e3063f7b0be939476">&#9670;&#160;</a></span>canDropMimeData()</h2>
 
@@ -200,7 +257,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;) const -&gt;  bool</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;) const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -222,17 +279,19 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if drop is possible. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00178">178</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_accf361cc9145306e3063f7b0be939476_cgraph.svg" width="416" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_accf361cc9145306e3063f7b0be939476_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
 <div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_accf361cc9145306e3063f7b0be939476_icgraph.svg" width="236" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_accf361cc9145306e3063f7b0be939476_icgraph.svg" width="484" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -254,7 +313,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>role</em></span>&#160;) const -&gt;  QVariant</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>role</em></span>&#160;) const -&gt; QVariant</td>
         </tr>
       </table>
   </td>
@@ -273,11 +332,19 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Display data for the role. </dd></dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00111">111</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
 <div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a18097d60174b1d370e13d6a04ab7847f_icgraph.svg" width="416" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a18097d60174b1d370e13d6a04ab7847f_cgraph.svg" width="331" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a18097d60174b1d370e13d6a04ab7847f_icgraph.svg" width="100%" height="384"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -314,7 +381,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -336,17 +403,72 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if drop was handled. </dd></dl>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
-</div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a7eddcc6b50d64067e2ccf10c8ac82b8e_cgraph.svg" width="392" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00214">214</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary">
 </div>
 <div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a7eddcc6b50d64067e2ccf10c8ac82b8e_icgraph.svg" width="211" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a7eddcc6b50d64067e2ccf10c8ac82b8e_cgraph.svg" width="100%" height="521"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a8b9aceaa0b421a227661324501d09404" name="a8b9aceaa0b421a227661324501d09404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9aceaa0b421a227661324501d09404">&#9670;&#160;</a></span>executeDropAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto StoreModel::executeDropAction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_store_drag_item.html">StoreDragItem</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Qt::DropAction</td>          <td class="paramname"><span class="paramname"><em>action</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>parent</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resolve a validated drop into a Move or Copy. </p>
+<p>Both endpoints must resolve inside the store after symlink resolution (the payload could be crafted). A directory is dropped into the target folder; a file onto a folder goes into it, a file onto a file asks the user before overwriting. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">info</td><td>The decoded drag payload. </td></tr>
+    <tr><td class="paramname">action</td><td>Qt::MoveAction or Qt::CopyAction. </td></tr>
+    <tr><td class="paramname">parent</td><td>Proxy index of the drop target. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true once the operation has been dispatched to the backend; false for an escaping path, an unknown kind or a bad target. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00255">255</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8b9aceaa0b421a227661324501d09404_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8b9aceaa0b421a227661324501d09404_icgraph.svg" width="486" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -368,7 +490,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>source_parent</em></span>&#160;) const -&gt;  bool</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>source_parent</em></span>&#160;) const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -388,6 +510,14 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if row should be displayed. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00049">49</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a02542fddfeea1874e849c0bb1d94f6c1_cgraph.svg" width="623" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="ab8ebcb53ce116b2ff658a6d49134531d" name="ab8ebcb53ce116b2ff658a6d49134531d"></a>
@@ -403,7 +533,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::flags </td>
           <td>(</td>
           <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td> const -&gt;  Qt::ItemFlags</td>
+          <td> const -&gt; Qt::ItemFlags</td>
         </tr>
       </table>
   </td>
@@ -421,18 +551,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Item flags. </dd></dl>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
-</div>
-<div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_ab8ebcb53ce116b2ff658a6d49134531d_cgraph.svg" width="146" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
-</div>
-<div id="dynsection-8-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_ab8ebcb53ce116b2ff658a6d49134531d_icgraph.svg" width="146" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00136">136</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -462,7 +582,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the password store root path. </p>
 <dl class="section return"><dt>Returns</dt><dd>Store path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00179">179</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00218">218</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>
@@ -483,7 +603,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>source_right</em></span>&#160;) const -&gt;  bool</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>source_right</em></span>&#160;) const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -503,6 +623,8 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if left &lt; right. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00318">318</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a8a6c01f4d7883133d69730ceb1e97a09" name="a8a6c01f4d7883133d69730ceb1e97a09"></a>
@@ -518,7 +640,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::mimeData </td>
           <td>(</td>
           <td class="paramtype">const QModelIndexList &amp;</td>          <td class="paramname"><span class="paramname"><em>indexes</em></span></td><td>)</td>
-          <td> const -&gt;  QMimeData *override</td>
+          <td> const -&gt; QMimeData *</td>
         </tr>
       </table>
   </td>
@@ -536,16 +658,18 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MIME data object. </dd></dl>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
-</div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8a6c01f4d7883133d69730ceb1e97a09_cgraph.svg" width="183" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00151">151</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary">
 </div>
 <div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8a6c01f4d7883133d69730ceb1e97a09_cgraph.svg" width="183" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8a6c01f4d7883133d69730ceb1e97a09_icgraph.svg" width="183" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -564,7 +688,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::mimeTypes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  QStringList</td>
+          <td> const -&gt; QStringList</td>
         </tr>
       </table>
   </td>
@@ -576,17 +700,114 @@ Public Member Functions</h2></td></tr>
 
 <p>Get supported MIME types for drag/drop. </p>
 <dl class="section return"><dt>Returns</dt><dd>List of MIME type strings. </dd></dl>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00145">145</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a40620d3b37bb04b06b999308bf2ee137_cgraph.svg" width="190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<a id="a3f12de1e5eb2337e3165aa838655e5a5" name="a3f12de1e5eb2337e3165aa838655e5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f12de1e5eb2337e3165aa838655e5a5">&#9670;&#160;</a></span>parseDropData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto StoreModel::parseDropData </td>
+          <td>(</td>
+          <td class="paramtype">const QMimeData *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> -&gt; std::optional&lt; <a class="el" href="struct_store_drag_item.html">StoreDragItem</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode the drag payload from <code class="param">data</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>MIME data of the drop; may be null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The payload, or nothing when <code class="param">data</code> is null, carries no payload of ours, or the payload does not deserialise cleanly. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00237">237</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary">
 </div>
 <div id="dynsection-12-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a40620d3b37bb04b06b999308bf2ee137_icgraph.svg" width="190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f12de1e5eb2337e3165aa838655e5a5_cgraph.svg" width="580" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f12de1e5eb2337e3165aa838655e5a5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ac66256efac2ec5e6924d8694b7a718c5" name="ac66256efac2ec5e6924d8694b7a718c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac66256efac2ec5e6924d8694b7a718c5">&#9670;&#160;</a></span>performDrop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto StoreModel::performDrop </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cleanedSrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>cleanedDest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Qt::DropAction</td>          <td class="paramname"><span class="paramname"><em>action</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform the actual Move/Copy for a validated drop. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cleanedSrc</td><td>Canonical source path (inside the store). </td></tr>
+    <tr><td class="paramname">cleanedDest</td><td>Canonical destination path (inside the store). </td></tr>
+    <tr><td class="paramname">action</td><td>Qt::MoveAction or Qt::CopyAction. </td></tr>
+    <tr><td class="paramname">force</td><td>Overwrite an existing destination. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true once the operation has been dispatched. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00304">304</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_ac66256efac2ec5e6924d8694b7a718c5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -601,7 +822,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::rootIndexFor </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt;  QModelIndex</td>
+          <td> -&gt; QModelIndex</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -614,6 +835,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index for <span class="tt">path</span>, or an invalid index if no source model is set. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00092">92</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a9830413c7cf960e473adfa98311c3bcd_icgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -645,6 +874,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00085">85</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a71787f93027b50575cfbdcbb1d8de071_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a90d7f788202bdb64c4722ee897a01363" name="a90d7f788202bdb64c4722ee897a01363"></a>
@@ -669,6 +906,14 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00047">47</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a90d7f788202bdb64c4722ee897a01363_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -695,6 +940,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00099">99</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a8578051e478ac18e32bb50bc9cb82ee8_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a3f87cb8b3ca0d20117f37386e4701691" name="a3f87cb8b3ca0d20117f37386e4701691"></a>
@@ -710,7 +963,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::showThis </td>
           <td>(</td>
           <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -729,6 +982,20 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if index should be visible. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00056">56</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f87cb8b3ca0d20117f37386e4701691_cgraph.svg" width="363" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f87cb8b3ca0d20117f37386e4701691_icgraph.svg" width="436" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="aa0d2f19f9d92f85e5a7696f747bd5648" name="aa0d2f19f9d92f85e5a7696f747bd5648"></a>
@@ -744,7 +1011,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::supportedDragActions </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  Qt::DropActions</td>
+          <td> const -&gt; Qt::DropActions</td>
         </tr>
       </table>
   </td>
@@ -756,18 +1023,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Get supported drag actions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Supported Qt::DropActions. </dd></dl>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
-</div>
-<div id="dynsection-13-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_aa0d2f19f9d92f85e5a7696f747bd5648_cgraph.svg" width="211" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
-</div>
-<div id="dynsection-14-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_aa0d2f19f9d92f85e5a7696f747bd5648_icgraph.svg" width="211" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00132">132</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -784,7 +1041,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreModel::supportedDropActions </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  Qt::DropActions</td>
+          <td> const -&gt; Qt::DropActions</td>
         </tr>
       </table>
   </td>
@@ -797,16 +1054,109 @@ Public Member Functions</h2></td></tr>
 <p>Get supported drop actions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Supported Qt::DropActions. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00128">128</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="af094c70fe862af6d3e2023938b745a44" name="af094c70fe862af6d3e2023938b745a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af094c70fe862af6d3e2023938b745a44">&#9670;&#160;</a></span>fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFileSystemModel* StoreModel::fs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The wrapped file system model, set by <a class="el" href="#a71787f93027b50575cfbdcbb1d8de071" title="Initialize model with source model and store path.">setModelAndStore()</a>; null until then, which makes <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">showThis()</a> hide everything. </p>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00092">92</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+
+</div>
+</div>
+<a id="a67138cb92b226ee1dfe186e4b1707280" name="a67138cb92b226ee1dfe186e4b1707280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67138cb92b226ee1dfe186e4b1707280">&#9670;&#160;</a></span>m_pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_pass.html">Pass</a>* StoreModel::m_pass {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Backend that performs drag-and-drop Move/Copy; not owned, null until <a class="el" href="#a90d7f788202bdb64c4722ee897a01363" title="Inject the Pass backend for drag-and-drop Move/Copy operations.">setPass()</a>, in which case drops are refused. </p>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00102">102</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+
+</div>
+</div>
+<a id="a98ebce85d60d3372420113fe7e714428" name="a98ebce85d60d3372420113fe7e714428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ebce85d60d3372420113fe7e714428">&#9670;&#160;</a></span>store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString StoreModel::store</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Store root used to make paths relative for filtering and for the drop boundary check. </p>
+
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00097">97</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="storemodel_8h_source.html">storemodel.h</a></li>
+<li>src/<a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_store_model.html">StoreModel</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

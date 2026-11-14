@@ -1,0 +1,9 @@
+<map id="src/gpgidsigner.h" name="src/gpgidsigner.h">
+<area shape="rect" id="Node000001" title="GpgIdSigner, which signs a store&#39;s .gpg&#45;id and verifies an existing .gpg&#45;id.sig against the configure..." alt="" coords="80,5,211,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,75,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,33,72,74,69,70,124,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="99,81,192,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,32,148,66,143,64,144,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="216,81,302,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,31,229,72,223,73,165,36"/>
+</map>

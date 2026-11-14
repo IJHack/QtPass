@@ -1,0 +1,11 @@
+<map id="MainWindow::updateGrepButtonVisibility" name="MainWindow::updateGrepButtonVisibility">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,40,237,85"/>
+<area shape="rect" id="Node000002" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="301,5,462,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,44,288,40,283,41,238,49"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a7a2c59796bc7da1e79ee9124a3ea29f4" title="Check whether content search is enabled." alt="" coords="285,75,478,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,75,272,82,267,82,237,80"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="526,83,728,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="478,94,513,97,508,97,478,100"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="776,83,1000,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="729,94,763,97,758,97,729,100"/>
+</map>

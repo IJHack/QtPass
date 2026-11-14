@@ -1,0 +1,11 @@
+<map id="TrayIcon::TrayIcon" name="TrayIcon::TrayIcon">
+<area shape="rect" id="Node000001" title="Construct a TrayIcon associated with the given main window." alt="" coords="5,57,143,85"/>
+<area shape="rect" id="Node000002" href="$class_tray_icon.html#a2b5808f03a006945a8cfbd96c6f68f29" title="Create the Show/Hide/Minimize/Maximize/Restore/Quit actions and wire each one to the matching QWidget..." alt="" coords="194,5,366,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,54,210,36,205,39,133,59"/>
+<area shape="rect" id="Node000003" href="$class_tray_icon.html#a937817b83e4f11e4f500608e3bc16e6b" title="Build the context menu from the actions and create the QSystemTrayIcon that pops it up...." alt="" coords="191,57,369,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,69,177,70,172,72,143,74"/>
+<area shape="rect" id="Node000004" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="Handle activation events from the system tray icon." alt="" coords="194,109,366,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,83,210,104,205,106,132,88"/>
+<area shape="rect" id="Node000005" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="Toggle the visibility of the associated main window." alt="" coords="417,109,605,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,121,404,123,399,123,366,126"/>
+</map>

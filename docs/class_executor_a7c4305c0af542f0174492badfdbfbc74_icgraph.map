@@ -1,0 +1,10 @@
+<map id="Executor::execute" name="Executor::execute">
+<area shape="rect" id="Node000001" title="Queue a command without stdin input." alt="" coords="218,57,354,85"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="318,42,308,38,286,36,265,38,254,43,251,48,256,58,251,56,246,48,250,39,264,33,286,31,309,33,323,42"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#aedd0216127ab9915112df45d9eaaccfe" title="Queue a command with optional stdin input." alt="" coords="19,5,156,33"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="213,54,143,36,143,31,218,52"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a490166ea519a8047e207da8d67f3c0d2" title="Queue a command with an explicit working directory." alt="" coords="19,57,156,85"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="200,72,157,74,156,69,205,70"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a23d30214443a4bc0d0508491872f06c3" title="Execute wrapper with input." alt="" coords="5,109,170,137"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="218,89,144,111,143,106,213,90"/>
+</map>

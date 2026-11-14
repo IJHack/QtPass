@@ -1,0 +1,27 @@
+<map id="QtPass::reportError" name="QtPass::reportError">
+<area shape="rect" id="Node000001" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="1461,56,1605,84"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished()." alt="" coords="1234,5,1413,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1456,52,1384,36,1384,31,1461,52"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="1235,81,1412,109"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="1449,80,1413,87,1412,82,1443,81"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#a81e0207207f490616dd442837a2469d4" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="696,73,890,118"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1216,20,1084,30,1011,38,938,50,853,75,851,70,937,45,1010,33,1084,25,1221,19"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="531,81,648,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="678,95,649,98,649,93,684,95"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,81,483,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="512,96,484,98,483,93,518,95"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="418,66,408,62,385,60,364,62,352,67,349,72,354,82,349,80,344,72,348,63,362,57,385,55,409,57,424,66"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,81,239,109"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="269,105,239,107,238,101,274,103"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="254,84,289,86,284,87,255,89"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="1241,78,1186,72,1062,65,938,72,890,79,890,73,937,67,1062,60,1186,67,1246,78"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb" title="Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre..." alt="" coords="981,81,1142,109"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="1217,95,1143,98,1143,93,1222,95"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()...." alt="" coords="938,133,1186,161"/>
+<area shape="poly" id="edge12_Node000007_Node000009" title=" " alt="" coords="1238,112,1136,135,1135,130,1233,113"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass.html#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,..." alt="" coords="965,185,1159,213"/>
+<area shape="poly" id="edge14_Node000007_Node000010" title=" " alt="" coords="1291,117,1242,149,1187,175,1147,187,1146,182,1185,170,1240,144,1286,119"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="963,95,890,98,890,93,968,95"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="969,130,890,117,890,111,974,130"/>
+<area shape="poly" id="edge15_Node000010_Node000003" title=" " alt="" coords="961,181,937,175,879,149,829,121,831,116,881,144,939,170,967,181"/>
+</map>

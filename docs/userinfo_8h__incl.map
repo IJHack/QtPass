@@ -1,0 +1,7 @@
+<map id="src/userinfo.h" name="src/userinfo.h">
+<area shape="rect" id="Node000001" title="UserInfo, one GPG key as listed by gpg, with the selection flag the recipient dialogs use." alt="" coords="52,5,161,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,101,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,32,73,70,69,67,95,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="125,81,194,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,31,144,68,139,68,115,36"/>
+</map>

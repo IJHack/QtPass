@@ -1,0 +1,11 @@
+<map id="MenuBarPeek::onKeyPress" name="MenuBarPeek::onKeyPress">
+<area shape="rect" id="Node000001" title="Handle a key press seen by the application filter." alt="" coords="5,74,200,102"/>
+<area shape="rect" id="Node000002" href="$class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af" title="hide() on the next event&#45;loop pass, and only if no popup is open and the bar has no active action...." alt="" coords="248,5,486,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,71,253,53,249,55,167,76"/>
+<area shape="rect" id="Node000004" href="$class_menu_bar_peek.html#afbf6c5aff86d318171ac2a3f449463a6" title="Whether watched is a widget that belongs to the main window." alt="" coords="275,74,458,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,85,262,87,257,88,200,90"/>
+<area shape="rect" id="Node000005" href="$class_menu_bar_peek.html#a300d9ba6840c2ac04213e61b7d16defe" title="Show the menu bar and mark the peek as active." alt="" coords="290,126,444,154"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="177,99,280,121,275,123,177,105"/>
+<area shape="rect" id="Node000003" href="$class_menu_bar_peek.html#ad21d624502b17fbd7aea6b32c33c6176" title="End the peek; hides the menu bar unless the &quot;Show menu bar&quot; toggle was checked in the meantime." alt="" coords="534,14,681,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="486,25,521,27,516,28,487,30"/>
+</map>

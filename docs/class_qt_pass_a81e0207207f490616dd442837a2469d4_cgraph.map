@@ -1,0 +1,69 @@
+<map id="QtPass::connectPassSignalHandlers" name="QtPass::connectPassSignalHandlers">
+<area shape="rect" id="Node000001" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="5,361,199,406"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3" title="A Copy() succeeded; the copy exists beside the original." alt="" coords="300,5,442,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,360,114,297,139,211,157,165,181,121,210,79,245,44,263,32,287,24,283,28,266,37,248,48,214,83,185,123,162,167,144,213,120,298,108,361"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring." alt="" coords="257,57,485,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,360,119,305,146,233,164,196,187,159,214,125,245,96,256,91,253,95,248,100,218,128,191,162,169,198,151,236,125,307,110,361"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#ab484c95a5b7b79e34fc6aef127f23ba8" title="git init in the store succeeded; the store is a repository now and the tree is re&#45;read." alt="" coords="296,109,446,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="108,359,125,314,154,256,193,197,218,171,245,148,283,131,280,135,248,152,221,174,198,201,158,259,130,316,113,361"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a7a6b3a9abf7c6c1a58d1e1b6f3c72b82" title="git pull succeeded; entries may have changed on disk." alt="" coords="295,161,447,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="112,360,132,324,162,280,200,236,245,200,281,185,278,189,248,204,204,240,166,283,137,326,117,362"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a835378925ada56acd922899f64e85933" title="git push succeeded." alt="" coords="291,213,450,241"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="119,359,172,304,207,276,245,251,278,240,274,244,248,256,210,280,176,308,124,362"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#ac6fe8aec534ce7415eb23d45dca27e63" title="An Init() succeeded: the folder&#39;s .gpg&#45;id holds the new recipient list." alt="" coords="306,265,436,293"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="137,358,188,330,246,303,293,291,289,295,248,308,190,334,141,362"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a14d258f93b689ff92cea0d11b136eb83" title="An Insert() succeeded: the entry is in the store and, with Git in use, committed." alt="" coords="298,317,444,345"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="198,362,284,346,280,350,200,367"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb" title="Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre..." alt="" coords="290,369,452,397"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="198,381,276,382,272,385,200,386"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass.html#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="544,471,721,498"/>
+<area shape="poly" id="edge37_Node000001_Node000016" title=" " alt="" coords="135,403,188,433,247,458,319,474,393,483,531,489,526,491,393,488,318,479,246,463,185,438,136,409"/>
+<area shape="rect" id="Node000024" href="$class_pass.html#a662000feacb2400a1b5f6133cce44542" title="A Move() succeeded; the entry or folder is under its new name." alt="" coords="298,624,444,652"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="112,403,132,448,161,502,199,557,223,582,248,604,286,624,281,625,245,608,219,586,195,561,156,505,127,450,111,409"/>
+<area shape="rect" id="Node000025" href="$class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" title="A Remove() succeeded; the entry or folder is gone from the store." alt="" coords="289,676,452,704"/>
+<area shape="poly" id="edge26_Node000001_Node000025" title=" " alt="" coords="108,403,125,459,152,528,170,565,192,601,218,633,248,661,277,678,272,678,245,665,214,637,188,604,165,568,147,531,120,460,108,409"/>
+<area shape="rect" id="Node000026" href="$class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243" title="Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()...." alt="" coords="247,523,495,550"/>
+<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="124,403,178,454,212,480,248,502,281,517,276,518,245,507,209,484,175,458,124,409"/>
+<area shape="rect" id="Node000028" href="$class_qt_pass.html#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,..." alt="" coords="274,421,468,449"/>
+<area shape="poly" id="edge30_Node000001_Node000028" title=" " alt="" coords="198,399,283,416,278,419,200,404"/>
+<area shape="rect" id="Node000029" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="289,728,453,756"/>
+<area shape="poly" id="edge33_Node000001_Node000029" title=" " alt="" coords="106,403,120,468,144,551,163,596,186,639,214,679,248,713,277,731,272,731,245,717,210,682,181,642,158,598,139,553,115,469,106,409"/>
+<area shape="rect" id="Node000030" href="$class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04" title="Slot for Pass::processErrorExit: report the error in red and emit operationFinished()." alt="" coords="543,575,722,602"/>
+<area shape="poly" id="edge34_Node000001_Node000030" title=" " alt="" coords="114,403,136,441,164,484,202,526,224,545,248,559,281,574,316,586,389,599,462,603,530,603,525,604,462,608,389,604,315,591,279,579,245,564,221,549,199,530,160,487,131,443,114,408"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b" title="Emit pushRequested() when the settings ask for automatic push." alt="" coords="563,371,702,398"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="451,381,550,383,545,385,453,386"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e" title="An entry was written; the view of the current entry is stale." alt="" coords="552,319,713,346"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="445,366,545,349,540,351,447,371"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="451,394,496,407,551,432,599,462,594,462,548,437,494,412,452,400"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title="Check whether automatic push is enabled." alt="" coords="770,319,969,346"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="698,367,791,349,786,351,700,373"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push." alt="" coords="783,371,956,398"/>
+<area shape="poly" id="edge13_Node000010_Node000014" title=" " alt="" coords="702,382,770,384,765,385,704,387"/>
+<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1017,319,1219,346"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="968,330,1004,332,998,333,970,335"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1267,319,1490,346"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1219,330,1254,332,1249,333,1220,335"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="1037,472,1198,500"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="721,469,770,465,869,460,969,465,1024,472,1019,472,968,470,869,466,771,470,722,474"/>
+<area shape="rect" id="Node000021" href="$class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again." alt="" coords="775,523,964,550"/>
+<area shape="poly" id="edge20_Node000016_Node000021" title=" " alt="" coords="699,496,791,518,785,519,699,502"/>
+<area shape="rect" id="Node000022" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="1040,549,1196,577"/>
+<area shape="poly" id="edge21_Node000016_Node000022" title=" " alt="" coords="722,483,840,490,905,497,969,509,1022,523,1072,543,1067,543,1021,528,968,514,904,503,840,495,722,488"/>
+<area shape="rect" id="Node000023" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="798,575,941,602"/>
+<area shape="poly" id="edge22_Node000016_Node000023" title=" " alt="" coords="697,496,724,509,739,522,748,535,757,548,772,560,786,569,781,568,769,564,753,551,744,538,735,526,721,513,696,502"/>
+<area shape="rect" id="Node000018" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="1320,472,1438,500"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="1199,483,1307,486,1301,486,1199,488"/>
+<area shape="rect" id="Node000019" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="1538,445,1723,473"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="1438,477,1526,470,1520,471,1439,482"/>
+<area shape="rect" id="Node000020" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="1557,497,1704,525"/>
+<area shape="poly" id="edge19_Node000018_Node000020" title=" " alt="" coords="1438,489,1545,502,1539,502,1438,494"/>
+<area shape="poly" id="edge23_Node000023_Node000017" title=" " alt="" coords="931,572,968,559,1073,508,1078,506,970,564,932,577"/>
+<area shape="poly" id="edge24_Node000023_Node000022" title=" " alt="" coords="941,579,1027,572,1022,573,942,584"/>
+<area shape="poly" id="edge28_Node000026_Node000016" title=" " alt="" coords="444,519,547,501,542,503,445,525"/>
+<area shape="rect" id="Node000027" href="$class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a" title="A short message for the status bar." alt="" coords="547,523,718,550"/>
+<area shape="poly" id="edge29_Node000026_Node000027" title=" " alt="" coords="495,534,534,536,529,537,496,539"/>
+<area shape="poly" id="edge31_Node000028_Node000010" title=" " alt="" coords="445,418,550,400,546,402,447,423"/>
+<area shape="poly" id="edge32_Node000028_Node000016" title=" " alt="" coords="448,447,543,466,538,468,448,452"/>
+<area shape="poly" id="edge35_Node000030_Node000021" title=" " alt="" coords="699,571,791,554,785,555,700,577"/>
+<area shape="poly" id="edge36_Node000030_Node000023" title=" " alt="" coords="723,586,785,588,779,589,723,591"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="MainWindow::dropStaleToolsAreaPalettes" name="MainWindow::dropStaleToolsAreaPalettes">
+<area shape="rect" id="Node000001" title="Drop a style&#45;imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet..." alt="" coords="458,153,665,198"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="261,136,410,164"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="440,162,411,161,411,156,445,162"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#aa07eb275a856e189c141fde5b69a7166" title="Filter events from watched objects." alt="" coords="18,213,200,241"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="443,191,201,219,200,214,443,186"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="372,121,361,117,335,115,312,117,299,121,296,127,301,136,296,135,290,127,295,117,311,111,335,109,362,112,378,121"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad" title="React to language or window state changes." alt="" coords="11,5,207,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,125,266,86,211,48,183,36,183,31,214,43,270,82,314,125"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="Save window state and geometry on close." alt="" coords="17,57,201,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="288,130,212,100,172,88,172,83,214,95,293,129"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="290,170,214,203,172,215,171,210,212,198,285,171"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="5,109,213,137"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="242,140,214,138,213,133,248,139"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a3febb9ef08a8e0f7fc00848ea540a899" title="First&#45;show hook used to focus the search input once the window is actually mapped (avoids races with ..." alt="" coords="17,161,201,189"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="243,161,202,167,201,162,248,159"/>
+</map>

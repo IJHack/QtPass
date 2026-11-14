@@ -1,0 +1,5 @@
+<map id="ConfigDialog::on_comboBoxClipboard_activated" name="ConfigDialog::on_comboBoxClipboard_activated">
+<area shape="rect" id="Node000001" title="Enable the controls that only mean something with a clipboard (selection, hiding, autoclear) unless &quot;..." alt="" coords="5,5,210,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a33efa7532ff400b7790ec7d55884ee90" title=" " alt="" coords="258,5,456,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,25,245,27,240,28,210,30"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="FieldLabel::removeRequested" name="FieldLabel::removeRequested">
+<area shape="rect" id="Node000001" title="The user chose &quot;Remove field&quot;." alt="" coords="5,65,220,93"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2" title="Menu with Rename field and Remove field." alt="" coords="268,5,485,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,62,328,36,323,39,216,67"/>
+<area shape="rect" id="Node000004" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="746,125,902,153"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="167,91,268,111,393,124,519,132,734,140,728,140,519,138,393,130,267,116,167,96"/>
+<area shape="rect" id="Node000006" href="$class_field_label.html#ae22070170533686456e216dc4e7fe62f" title="Escape in the editor cancels the edit." alt="" coords="533,176,698,204"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="136,91,195,125,231,142,268,155,332,170,397,180,520,191,515,191,397,185,331,175,267,160,229,147,192,129,135,96"/>
+<area shape="rect" id="Node000007" href="$class_field_label.html#ab888cb34aab13458b37ac20c5c491b70" title="A left double&#45;click starts editing the name." alt="" coords="268,57,485,102"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="220,77,255,78,250,80,221,82"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="272,35,164,63,163,58,276,32"/>
+<area shape="rect" id="Node000003" href="$class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e" title="Open the in&#45;place editor over the label." alt="" coords="540,65,691,93"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="440,31,486,42,551,61,545,61,484,47,440,36"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="667,91,761,121,756,120,666,96"/>
+<area shape="rect" id="Node000005" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="950,125,1103,153"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="902,137,937,139,932,139,902,142"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="675,173,747,158,752,157,676,178"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="485,77,527,79,522,80,486,82"/>
+</map>

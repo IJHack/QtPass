@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_field_label.html','','class_field_label-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,20 +112,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="class_field_label-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">FieldLabel Class Reference</div></div>
+  <div class="headertitle"><div class="title">FieldLabel Class Reference<div class="ingroups"><a class="el" href="group__secrets.html">Handling secrets in the interface</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>The name of a <span class="tt">key: value</span> field in <a class="el" href="class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates.">PasswordDialog</a>, editable in place: double-click or the context menu renames it, the context menu can also remove the field (#132).  
+<p>The name of a <span class="tt">key: value</span> field in <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a>, editable in place: double-click or the context menu renames it, the context menu can also remove the field (#132).  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>&gt;</code></p>
@@ -114,35 +126,32 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label__inherit__graph.svg" width="99" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for FieldLabel:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label__coll__graph.svg" width="99" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:adae9f17d579fe091fe9ea94a8ba4719e" id="r_adae9f17d579fe091fe9ea94a8ba4719e"><td class="memItemLeft"><a id="adae9f17d579fe091fe9ea94a8ba4719e" name="adae9f17d579fe091fe9ea94a8ba4719e"></a>
-void&#160;</td><td class="memItemRight"><b>startEdit</b> ()</td></tr>
-<tr class="memdesc:adae9f17d579fe091fe9ea94a8ba4719e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the in-place editor over the label. <br /></td></tr>
+<tr class="memitem:adae9f17d579fe091fe9ea94a8ba4719e" id="r_adae9f17d579fe091fe9ea94a8ba4719e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adae9f17d579fe091fe9ea94a8ba4719e">startEdit</a> ()</td></tr>
+<tr class="memdesc:adae9f17d579fe091fe9ea94a8ba4719e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the in-place editor over the label.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:aa6c313a70722faead0ca8abf7c2abd00" id="r_aa6c313a70722faead0ca8abf7c2abd00"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa6c313a70722faead0ca8abf7c2abd00">renamed</a> (const QString &amp;from, const QString &amp;to)</td></tr>
 <tr class="memdesc:aa6c313a70722faead0ca8abf7c2abd00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user typed a different name and confirmed it.  <br /></td></tr>
-<tr class="memitem:a656a2fae4db3fbc2ff06e154b1ecbcee" id="r_a656a2fae4db3fbc2ff06e154b1ecbcee"><td class="memItemLeft"><a id="a656a2fae4db3fbc2ff06e154b1ecbcee" name="a656a2fae4db3fbc2ff06e154b1ecbcee"></a>
-void&#160;</td><td class="memItemRight"><b>removeRequested</b> ()</td></tr>
-<tr class="memdesc:a656a2fae4db3fbc2ff06e154b1ecbcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user chose "Remove field". <br /></td></tr>
+<tr class="memitem:a656a2fae4db3fbc2ff06e154b1ecbcee" id="r_a656a2fae4db3fbc2ff06e154b1ecbcee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a656a2fae4db3fbc2ff06e154b1ecbcee">removeRequested</a> ()</td></tr>
+<tr class="memdesc:a656a2fae4db3fbc2ff06e154b1ecbcee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The user chose "Remove field".  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a02ed94111b21b7f6419fb4e35ead4d62" id="r_a02ed94111b21b7f6419fb4e35ead4d62"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel</a> (const QString &amp;name, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a02ed94111b21b7f6419fb4e35ead4d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label for the field called <code class="param">name</code>.  <br /></td></tr>
-<tr class="memitem:a97d47e3ccb600aa8012953dc801079f8" id="r_a97d47e3ccb600aa8012953dc801079f8"><td class="memItemLeft"><a id="a97d47e3ccb600aa8012953dc801079f8" name="a97d47e3ccb600aa8012953dc801079f8"></a>
-&#160;</td><td class="memItemRight"><b>~FieldLabel</b> () override</td></tr>
-<tr class="memdesc:a97d47e3ccb600aa8012953dc801079f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind when the field is removed while its name is being edited. <br /></td></tr>
+<tr class="memitem:a97d47e3ccb600aa8012953dc801079f8" id="r_a97d47e3ccb600aa8012953dc801079f8"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a97d47e3ccb600aa8012953dc801079f8">~FieldLabel</a> () override</td></tr>
+<tr class="memdesc:a97d47e3ccb600aa8012953dc801079f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind when the field is removed while its name is being edited.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -152,12 +161,22 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a24ff71ebb79c3ad3b5c4bb36ddd5aeb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu with Rename field and Remove field.  <br /></td></tr>
 <tr class="memitem:ae22070170533686456e216dc4e7fe62f" id="r_ae22070170533686456e216dc4e7fe62f"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae22070170533686456e216dc4e7fe62f">eventFilter</a> (QObject *watched, QEvent *event) -&gt; bool override</td></tr>
 <tr class="memdesc:ae22070170533686456e216dc4e7fe62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape in the editor cancels the edit.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8ffd88532b8137846c84d7c8812d64ac" id="r_a8ffd88532b8137846c84d7c8812d64ac"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a> (bool commit)</td></tr>
+<tr class="memdesc:a8ffd88532b8137846c84d7c8812d64ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the editor, putting the label back in its place.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a30ecfc400277695f42c82ece55adc22d" id="r_a30ecfc400277695f42c82ece55adc22d"><td class="memItemLeft">QPointer&lt; QLineEdit &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a30ecfc400277695f42c82ece55adc22d">m_editor</a></td></tr>
+<tr class="memdesc:a30ecfc400277695f42c82ece55adc22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The line edit open over the label while a rename is in progress; null otherwise. A sibling in the parent's form layout rather than a child, so the destructor deletes it explicitly.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The name of a <span class="tt">key: value</span> field in <a class="el" href="class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates.">PasswordDialog</a>, editable in place: double-click or the context menu renames it, the context menu can also remove the field (#132). </p>
-<p>The label only reports what the user asked for; <a class="el" href="class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates.">PasswordDialog</a> owns the line edit the field belongs to and decides whether a new name is usable. </p>
+<div class="textblock"><p>The name of a <span class="tt">key: value</span> field in <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a>, editable in place: double-click or the context menu renames it, the context menu can also remove the field (#132). </p>
+<p>The label only reports what the user asked for; <a class="el" href="class_password_dialog.html" title="Dialog for creating a password entry or editing an existing one.">PasswordDialog</a> owns the line edit the field belongs to and decides whether a new name is usable. </p>
 
-<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00020">20</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00026">26</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a02ed94111b21b7f6419fb4e35ead4d62" name="a02ed94111b21b7f6419fb4e35ead4d62"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02ed94111b21b7f6419fb4e35ead4d62">&#9670;&#160;</a></span>FieldLabel()</h2>
@@ -195,6 +214,43 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00016">16</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a02ed94111b21b7f6419fb4e35ead4d62_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a97d47e3ccb600aa8012953dc801079f8" name="a97d47e3ccb600aa8012953dc801079f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d47e3ccb600aa8012953dc801079f8">&#9670;&#160;</a></span>~FieldLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FieldLabel::~FieldLabel </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Takes an open editor with it: the editor is a sibling, not a child, so it would otherwise stay behind when the field is removed while its name is being edited. </p>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00040">40</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -229,6 +285,20 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00033">33</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2_cgraph.svg" width="100%" height="434"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a24ff71ebb79c3ad3b5c4bb36ddd5aeb2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="ae22070170533686456e216dc4e7fe62f" name="ae22070170533686456e216dc4e7fe62f"></a>
@@ -248,7 +318,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -267,6 +337,67 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the event was consumed </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00072">72</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae22070170533686456e216dc4e7fe62f_cgraph.svg" width="582" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ae22070170533686456e216dc4e7fe62f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a8ffd88532b8137846c84d7c8812d64ac" name="a8ffd88532b8137846c84d7c8812d64ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffd88532b8137846c84d7c8812d64ac">&#9670;&#160;</a></span>finishEdit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FieldLabel::finishEdit </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>commit</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Close the editor, putting the label back in its place. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">commit</td><td>emit <a class="el" href="#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it.">renamed()</a> for a changed, non-empty name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00091">91</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a8ffd88532b8137846c84d7c8812d64ac_cgraph.svg" width="368" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a8ffd88532b8137846c84d7c8812d64ac_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -300,6 +431,59 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00025">25</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ab888cb34aab13458b37ac20c5c491b70_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_ab888cb34aab13458b37ac20c5c491b70_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a656a2fae4db3fbc2ff06e154b1ecbcee" name="a656a2fae4db3fbc2ff06e154b1ecbcee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a656a2fae4db3fbc2ff06e154b1ecbcee">&#9670;&#160;</a></span>removeRequested</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FieldLabel::removeRequested </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The user chose "Remove field". </p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a656a2fae4db3fbc2ff06e154b1ecbcee_cgraph.svg" width="100%" height="457"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_a656a2fae4db3fbc2ff06e154b1ecbcee_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -338,17 +522,103 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_aa6c313a70722faead0ca8abf7c2abd00_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="adae9f17d579fe091fe9ea94a8ba4719e" name="adae9f17d579fe091fe9ea94a8ba4719e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae9f17d579fe091fe9ea94a8ba4719e">&#9670;&#160;</a></span>startEdit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FieldLabel::startEdit </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open the in-place editor over the label. </p>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8cpp_source.html#l00042">42</a> of file <a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_adae9f17d579fe091fe9ea94a8ba4719e_cgraph.svg" width="566" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_field_label_adae9f17d579fe091fe9ea94a8ba4719e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a30ecfc400277695f42c82ece55adc22d" name="a30ecfc400277695f42c82ece55adc22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30ecfc400277695f42c82ece55adc22d">&#9670;&#160;</a></span>m_editor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointer&lt;QLineEdit&gt; FieldLabel::m_editor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The line edit open over the label while a rename is in progress; null otherwise. A sibling in the parent's form layout rather than a child, so the destructor deletes it explicitly. </p>
+
+<p class="definition">Definition at line <a class="el" href="fieldlabel_8h_source.html#l00092">92</a> of file <a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="fieldlabel_8h_source.html">fieldlabel.h</a></li>
+<li>src/<a class="el" href="fieldlabel_8cpp_source.html">fieldlabel.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_field_label.html">FieldLabel</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

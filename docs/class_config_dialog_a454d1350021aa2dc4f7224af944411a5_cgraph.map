@@ -1,0 +1,5 @@
+<map id="ConfigDialog::on_toolButtonStore_clicked" name="ConfigDialog::on_toolButtonStore_clicked">
+<area shape="rect" id="Node000001" title="Pick the password store folder for the pass backend&#39;s store path." alt="" coords="5,5,209,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#af46ecbc080ed3effc646a2776608bc03" title="Ask for a directory in a directories&#45;only file dialog." alt="" coords="257,14,448,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,25,244,27,239,28,209,30"/>
+</map>

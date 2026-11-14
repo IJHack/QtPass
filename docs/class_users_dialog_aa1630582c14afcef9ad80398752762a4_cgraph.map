@@ -1,4 +1,7 @@
 <map id="UsersDialog::accept" name="UsersDialog::accept">
-<area shape="rect" id="Node000001" title="Handle dialog acceptance." alt="" coords="5,29,157,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="54,28,50,20,53,11,64,5,81,3,99,5,110,14,105,14,97,10,81,8,66,10,57,14,55,20,59,29"/>
+<area shape="rect" id="Node000001" title="Handle dialog acceptance." alt="" coords="5,32,157,60"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="205,5,396,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,34,191,32,186,33,157,39"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store." alt="" coords="261,57,340,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,52,248,64,243,65,157,57"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="StoreTree::setFilter" name="StoreTree::setFilter">
+<area shape="rect" id="Node000001" title="Filter the visible entries." alt="" coords="5,5,149,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a9830413c7cf960e473adfa98311c3bcd" title="Set the source filesystem root and map it to a proxy index." alt="" coords="197,5,382,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,17,184,19,178,19,149,22"/>
+</map>

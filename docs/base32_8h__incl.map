@@ -1,0 +1,5 @@
+<map id="src/base32.h" name="src/base32.h">
+<area shape="rect" id="Node000001" title="Strict RFC 4648 base32 codec plus the input sanitizer that makes human&#45;typed TOTP secrets decodable." alt="" coords="5,5,109,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,81,105,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,31,60,66,54,65,55,36"/>
+</map>

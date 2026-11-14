@@ -1,0 +1,13 @@
+<map id="StoreWizardPage::recipients" name="StoreWizardPage::recipients">
+<area shape="rect" id="Node000001" title="How many keys are ticked on the key page." alt="" coords="804,32,1008,60"/>
+<area shape="rect" id="Node000002" href="$class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319" title="Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to enc..." alt="" coords="537,5,750,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="786,34,751,33,751,27,791,34"/>
+<area shape="rect" id="Node000003" href="$class_store_wizard_page.html#af948497007b04b2b861b0c9882e8ab2b" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="531,57,756,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="792,57,757,63,757,58,786,57"/>
+<area shape="rect" id="Node000004" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="245,31,472,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,59,472,58,472,52,518,59"/>
+<area shape="rect" id="Node000005" href="$class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14" title="Build the page." alt="" coords="234,83,483,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="518,82,484,88,483,83,513,83"/>
+<area shape="rect" id="Node000006" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,74,186,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="215,97,186,99,186,94,220,96"/>
+</map>

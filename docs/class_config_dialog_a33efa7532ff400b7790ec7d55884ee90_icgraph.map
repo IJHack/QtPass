@@ -1,0 +1,17 @@
+<map id="ConfigDialog::updateSecretFieldsEnabled" name="ConfigDialog::updateSecretFieldsEnabled">
+<area shape="rect" id="Node000001" title=" " alt="" coords="994,28,1192,72"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="492,5,693,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="975,43,694,28,694,23,981,42"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a755d63ce6853fef53f35b3584ae3336c" title="Enable the controls that only mean something with a clipboard (selection, hiding, autoclear) unless &quot;..." alt="" coords="741,57,946,102"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="981,63,947,70,946,64,976,64"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,56,201,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,31,249,54,202,59,201,54,248,49,478,27"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="143,41,130,37,103,35,78,37,64,41,60,47,66,55,61,56,55,47,60,37,76,31,103,29,131,32,148,40"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="725,80,201,74,201,68,726,75"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#ac002e1ead832154404e3edf6a41debfc" title="Re&#45;apply the clipboard gating for the current clipboard mode." alt="" coords="494,114,692,159"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="730,105,693,116,692,111,725,106"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="Enable or disable clipboard selection mode." alt="" coords="249,131,444,158"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="475,140,445,144,444,139,480,140"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="282,127,151,87,151,82,286,124"/>
+<area shape="poly" id="edge9_Node000006_Node000006" title=" " alt="" coords="387,115,374,112,346,109,321,111,307,116,303,121,310,131,305,129,298,122,303,112,320,106,346,104,375,107,392,116"/>
+</map>

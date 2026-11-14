@@ -1,0 +1,11 @@
+<map id="Pass::init" name="Pass::init">
+<area shape="rect" id="Node000001" title="Initialize the Pass instance with a settings snapshot." alt="" coords="754,40,834,68"/>
+<area shape="rect" id="Node000002" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="515,14,702,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="736,46,703,44,703,39,742,47"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b" title="Re&#45;encrypt dir under settings, the current profile&#39;s." alt="" coords="511,66,706,94"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="741,62,707,69,707,64,736,62"/>
+<area shape="rect" id="Node000003" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="234,14,463,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="497,28,464,30,463,25,502,27"/>
+<area shape="rect" id="Node000004" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,5,186,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,28,187,30,186,25,221,27"/>
+</map>

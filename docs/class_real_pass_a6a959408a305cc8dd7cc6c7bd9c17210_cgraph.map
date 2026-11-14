@@ -1,0 +1,15 @@
+<map id="RealPass::GitPull_b" name="RealPass::GitPull_b">
+<area shape="rect" id="Node000001" title="Pull with rebase." alt="" coords="5,57,151,85"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="199,57,391,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,69,186,70,180,72,152,74"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="439,57,601,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,69,426,71,420,71,391,74"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="649,57,815,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="602,69,636,71,631,71,602,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="863,5,1081,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="799,54,887,37,892,37,800,59"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="866,57,1078,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="815,69,853,71,848,71,815,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="870,109,1074,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="800,83,892,106,887,105,799,88"/>
+</map>

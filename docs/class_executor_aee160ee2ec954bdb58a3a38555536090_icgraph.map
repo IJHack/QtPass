@@ -1,4 +1,5 @@
 <map id="Executor::cancelNext" name="Executor::cancelNext">
-<area shape="rect" id="Node000001" title="Cancel the next queued command without executing it." alt="" coords="5,29,164,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="110,14,102,10,84,8,68,10,60,14,58,20,62,29,56,28,52,20,56,11,67,5,85,3,104,5,115,14"/>
+<area shape="rect" id="Node000001" title="Cancel the next queued command without executing it." alt="" coords="210,5,368,33"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,162,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,19,162,22,162,17,196,19"/>
 </map>

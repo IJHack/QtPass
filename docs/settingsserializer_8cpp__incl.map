@@ -1,0 +1,30 @@
+<map id="src/settingsserializer.cpp" name="src/settingsserializer.cpp">
+<area shape="rect" id="Node000001" title="Implements SettingsSerializer: one SettingsConstants key per AppSettings field, with the defaults app..." alt="" coords="565,5,748,33"/>
+<area shape="rect" id="Node000002" href="$settingsserializer_8h.html" title="SettingsSerializer: the flat AppSettings fields to and from their QSettings keys, without side effect..." alt="" coords="347,81,491,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="612,35,477,79,475,74,616,32"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="516,81,664,109"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="647,32,613,72,610,67,642,35"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="688,81,761,109"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="669,31,705,70,700,69,668,36"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="785,81,869,109"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="687,31,786,74,780,75,687,36"/>
+<area shape="rect" id="Node000003" href="$appsettings_8h.html" title="AppSettings, the value object holding every flat QtPass setting." alt="" coords="364,157,474,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,107,421,142,417,140,418,111"/>
+<area shape="rect" id="Node000004" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,232,91,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="364,184,107,234,105,229,364,179"/>
+<area shape="rect" id="Node000006" href="$passwordconfiguration_8h.html" title="Value object for the password generator: chosen character set, its alphabets and the length." alt="" coords="116,232,296,260"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="379,186,259,229,257,224,383,184"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="235,308,304,336"/>
+<area shape="poly" id="edge10_Node000003_Node000007" title=" " alt="" coords="409,184,295,299,292,295,404,185"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="371,232,467,260"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="421,183,421,218,417,215,417,187"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="491,232,555,260"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="438,182,495,224,490,223,437,187"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="579,232,638,260"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="453,182,567,228,562,228,453,188"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="662,232,755,260"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="471,182,650,229,645,230,471,188"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,308,100,336"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="54,258,55,293,50,292,51,263"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="218,258,251,297,246,296,216,263"/>
+</map>

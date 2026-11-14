@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_r.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,57 +114,96 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>readRegularFile()&#160;:&#160;<a class="el" href="class_util.html#a300aa55d5edadc5084b5dcd85199bcf1">Util</a></li>
-<li>readSecretFields()&#160;:&#160;<a class="el" href="class_template_i_o.html#a6a506878c3fc1f1d91c8a2dcdaba4170">TemplateIO</a></li>
-<li>readTemplates()&#160;:&#160;<a class="el" href="class_template_i_o.html#a3693dca9289ecd9c7d8fd941d110f489">TemplateIO</a></li>
+<li>readRegularFile()&#160;:&#160;<a class="el" href="class_util.html#a8e427903937505b5e19ebbea7050494e">Util</a></li>
+<li>readSecretFields()&#160;:&#160;<a class="el" href="class_template_i_o.html#ae6ce559fb2377f31bef854fb75df0af0">TemplateIO</a></li>
+<li>readSettings()&#160;:&#160;<a class="el" href="class_config_dialog.html#ae849e5a0ad73c5a191987b4cb5354410">ConfigDialog</a></li>
+<li>readStderr&#160;:&#160;<a class="el" href="struct_executor_1_1_exec_queue_item.html#a776ad4913f376526ba807a69b9868115">Executor::ExecQueueItem</a></li>
+<li>readStdout&#160;:&#160;<a class="el" href="struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f">Executor::ExecQueueItem</a></li>
+<li>readTemplates()&#160;:&#160;<a class="el" href="class_template_i_o.html#a4ffd1c832f5325ef4bd08951939d1fb5">TemplateIO</a></li>
 <li>RealPass()&#160;:&#160;<a class="el" href="class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6">RealPass</a></li>
+<li>realPass&#160;:&#160;<a class="el" href="class_pass_backend_factory.html#a9014d707f358b3523a23d94f64c3dee2">PassBackendFactory</a></li>
 <li>receiveMessage()&#160;:&#160;<a class="el" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">SingleApplication</a></li>
-<li>recipients&#160;:&#160;<a class="el" href="struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5">Pass::RecipientsForEditing</a></li>
+<li>recipients&#160;:&#160;<a class="el" href="struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5">Pass::RecipientsForEditing</a>, <a class="el" href="class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff">StoreWizardPage</a></li>
+<li>recipientsForDir()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a55e5e5b17e7f57d387944c22921ede3e">ImitatePass</a></li>
 <li>recipientsForEditing()&#160;:&#160;<a class="el" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">Pass</a></li>
 <li>recipientsForEntry()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a2cd108bdff679ad6d03daf0c7dfd1aa3">ImitatePass</a></li>
-<li>recordFile()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a53205d18f3175ed5e3e87c8bd1ca6918">GpgIdGeneration</a></li>
-<li>recordWritten()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a07ea80b67c1211c0f0eba73c8a1869f4">GpgIdGeneration</a></li>
-<li>reencryptPath()&#160;:&#160;<a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">ImitatePass</a></li>
+<li>recordFile()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#ae5b416ea3d26c3787b2af8e2e640e758">GpgIdGeneration</a></li>
+<li>recordWritten()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540">GpgIdGeneration</a></li>
+<li>recoverReencryptLeftovers()&#160;:&#160;<a class="el" href="class_imitate_pass.html#ae12b9655fdad620c3f6810aed04191ed">ImitatePass</a></li>
+<li>reencrypted&#160;:&#160;<a class="el" href="struct_imitate_pass_1_1_reencrypt_result.html#a361f02fa1e8941a21c36ac5c76412774">ImitatePass::ReencryptResult</a></li>
+<li>reencryptFiles()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a">ImitatePass</a></li>
+<li>reencryptPath()&#160;:&#160;<a class="el" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">ImitatePass</a>, <a class="el" href="class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16">MainWindow</a></li>
 <li>reencryptProgress()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a9332f01d3ce1447fb9eba7ec8f0172af">ImitatePass</a>, <a class="el" href="class_main_window.html#a558032c0521e95ce50f49be77300ff4e">MainWindow</a></li>
 <li>reencryptSingleFile()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a331fdf170bbd5de247d1e5ee7f6bb65c">ImitatePass</a></li>
+<li>reencryptUsesGit()&#160;:&#160;<a class="el" href="class_imitate_pass.html#af0e30ba675e011cd63447466afc04bed">ImitatePass</a></li>
+<li>reencryptWithoutGit()&#160;:&#160;<a class="el" href="class_imitate_pass.html#aa30ada0a871c60297f6bde37cec9df2e">ImitatePass</a></li>
 <li>refresh()&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">OtpCodeWidget</a></li>
 <li>refreshPalette()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a399a1b0ecdea8fe814a7c418e8e96c0f">PasswordDisplayPanel</a></li>
+<li>refuseAsNotPartOfStore()&#160;:&#160;<a class="el" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">Pass</a></li>
 <li>refuseFolderOutsideStore()&#160;:&#160;<a class="el" href="class_pass.html#afea04fa657d65846e2772b0b25c96276">Pass</a></li>
+<li>refuseLinkedFolder()&#160;:&#160;<a class="el" href="class_main_window.html#a6f69e343da300160c4ab4b2ad6618490">MainWindow</a></li>
 <li>refuseLinkedGpgIdFolder()&#160;:&#160;<a class="el" href="class_imitate_pass.html#abe06761236eb789f13dd4e8814ce7f15">ImitatePass</a></li>
 <li>refuseLinkedPath()&#160;:&#160;<a class="el" href="class_pass.html#a6cca7cd5646a752c16dac59df6e53581">Pass</a></li>
+<li>refuseList()&#160;:&#160;<a class="el" href="class_real_pass.html#a465da341035daa9bbdd1c4eb9fc78eb7">RealPass</a></li>
 <li>refuseSkippedGpgId()&#160;:&#160;<a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">Pass</a></li>
 <li>refuseUnfinishedGitOperation()&#160;:&#160;<a class="el" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">Pass</a></li>
-<li>regularFilesUnder()&#160;:&#160;<a class="el" href="class_util.html#a77bcdde819b9f0bd6a68c84cd8198e23">Util</a></li>
+<li>refuseUnverifiedList()&#160;:&#160;<a class="el" href="class_real_pass.html#a9bab556e0fa41d6cd8d5f9564760e629">RealPass</a></li>
+<li>refuseUnverifiedTree()&#160;:&#160;<a class="el" href="class_real_pass.html#af496429ebd2607ddb2c7c1f6c897d3fa">RealPass</a></li>
+<li>regularFilesUnder()&#160;:&#160;<a class="el" href="class_util.html#a01aa652eefff30de7eabdf90c7737974">Util</a></li>
 <li>reject()&#160;:&#160;<a class="el" href="class_password_dialog.html#a7316201e5b7ea4caf1a5dfb6f36799f2">PasswordDialog</a></li>
-<li>remembered()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a495c019fdefb8cb6c7349d4ff2f52cd5">GpgIdGeneration</a></li>
+<li>rel&#160;:&#160;<a class="el" href="struct_real_pass_1_1_link_commit.html#ae7cbd97a14853c0e5af92617181d3151">RealPass::LinkCommit</a></li>
+<li>reload()&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4">KeyWizardPage</a></li>
+<li>remainingData&#160;:&#160;<a class="el" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">FileContent</a></li>
+<li>remainingDataDisplay&#160;:&#160;<a class="el" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">FileContent</a></li>
+<li>remainingLines&#160;:&#160;<a class="el" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">FileContent</a></li>
+<li>remembered()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02">GpgIdGeneration</a></li>
 <li>Remove()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee">ImitatePass</a>, <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>, <a class="el" href="class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c">RealPass</a></li>
-<li>removePadding()&#160;:&#160;<a class="el" href="class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca">Base32</a></li>
+<li>removeField()&#160;:&#160;<a class="el" href="class_password_dialog.html#a9bdb7133816fa45decda3e10e53f5f96">PasswordDialog</a></li>
+<li>removePadding()&#160;:&#160;<a class="el" href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">Base32</a></li>
 <li>removeRequested()&#160;:&#160;<a class="el" href="class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee">FieldLabel</a></li>
-<li>removeTree()&#160;:&#160;<a class="el" href="class_util.html#ad23339038f3f09d99359f1a25d659a6f">Util</a></li>
+<li>removeTree()&#160;:&#160;<a class="el" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">Util</a></li>
 <li>renamed()&#160;:&#160;<a class="el" href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00">FieldLabel</a></li>
-<li>replaceFile()&#160;:&#160;<a class="el" href="class_util.html#a98fa003a6d00d1936da437f3d16d3568">Util</a></li>
-<li>repositoryPassClimbsTo()&#160;:&#160;<a class="el" href="class_util.html#a495277f2a6185cfc9bc14ff1eaf1e85d">Util</a></li>
-<li>reserveNext()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#aca79157e6460c0bb20028e1d8b46b3fb">GpgIdGeneration</a></li>
-<li>resolveExecutable()&#160;:&#160;<a class="el" href="class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408">Executor</a></li>
-<li>resolveGpgconfCommand()&#160;:&#160;<a class="el" href="class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6">Pass</a></li>
+<li>renameField()&#160;:&#160;<a class="el" href="class_password_dialog.html#aa5ec58a96d5758c175239a76b0c54691">PasswordDialog</a></li>
+<li>renameFolder()&#160;:&#160;<a class="el" href="class_main_window.html#a0e788394d24c96b5c2e35126f0c2cc1a">MainWindow</a></li>
+<li>renamePassword()&#160;:&#160;<a class="el" href="class_main_window.html#af58bd54fe790497dd1d8793619c94661">MainWindow</a></li>
+<li>replace()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25">KeygenDialog</a></li>
+<li>replaceFile()&#160;:&#160;<a class="el" href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640">Util</a></li>
+<li>reportCopies()&#160;:&#160;<a class="el" href="class_password_dialog.html#ac720352c9c25b6b05d48ab29d553dc78">PasswordDialog</a></li>
+<li>reportError()&#160;:&#160;<a class="el" href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199">QtPass</a></li>
+<li>reportUncommittedGpgId()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a3362c8cb99993b5c1acf9fdefb2bf960">ImitatePass</a></li>
+<li>reportUnrestorable()&#160;:&#160;<a class="el" href="class_imitate_pass.html#af6b661f1ea422063e61dd438534a1452">ImitatePass</a></li>
+<li>repositoryPassClimbsTo()&#160;:&#160;<a class="el" href="class_util.html#a158b1927cee3cffacaec8d583fbf72ad">Util</a></li>
+<li>reserveNext()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4">GpgIdGeneration</a></li>
+<li>resolveExecutable()&#160;:&#160;<a class="el" href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7">Executor</a></li>
+<li>resolveGpgconfCommand()&#160;:&#160;<a class="el" href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">Pass</a></li>
 <li>resolveMoveDestination()&#160;:&#160;<a class="el" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">ImitatePass</a></li>
+<li>resolveNewEntry()&#160;:&#160;<a class="el" href="class_password_dialog.html#ab409c36951be76bf20e1063ab1e33779">PasswordDialog</a></li>
+<li>restoreAction&#160;:&#160;<a class="el" href="class_tray_icon.html#a4b668e37495a62aae4f185f8eba96192">TrayIcon</a></li>
+<li>restoreBackup()&#160;:&#160;<a class="el" href="class_imitate_pass.html#ae8b869923a6a4ab96b47c0c42d83fca0">ImitatePass</a></li>
 <li>restoreClipboard&#160;:&#160;<a class="el" href="struct_app_settings.html#a9e7cafe6c28a37b4d186bb3156f98ca8">AppSettings</a></li>
 <li>restoreCursor&#160;:&#160;<a class="el" href="struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8">GrepSearchController::FinishOutcome</a></li>
+<li>restoreDialogState()&#160;:&#160;<a class="el" href="class_users_dialog.html#a72f07ae1b408688108f0855624c789d2">UsersDialog</a></li>
 <li>restoreWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">MainWindow</a></li>
 <li>revoked&#160;:&#160;<a class="el" href="struct_rnp_crypto_1_1_key_info.html#aee7afe54a18baecbe98430898727a882">RnpCrypto::KeyInfo</a></li>
 <li>RnpCrypto()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a48d67c8b98abcd1583159eedbdba76a0">RnpCrypto</a></li>
 <li>rootIndex()&#160;:&#160;<a class="el" href="class_store_tree.html#a1e44af30d459550e26502c6733705e9d">StoreTree</a></li>
 <li>rootIndexFor()&#160;:&#160;<a class="el" href="class_store_model.html#a9830413c7cf960e473adfa98311c3bcd">StoreModel</a></li>
+<li>run()&#160;:&#160;<a class="el" href="class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea">GpgIdSigner</a></li>
+<li>runBlocking()&#160;:&#160;<a class="el" href="class_executor.html#ae60746042ffc5c3eb343a2911a6bb896">Executor</a></li>
+<li>running&#160;:&#160;<a class="el" href="class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc">Executor</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

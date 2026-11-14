@@ -1,0 +1,11 @@
+<map id="ConfigDialog::on_passwordCharTemplateSelector_activated" name="ConfigDialog::on_passwordCharTemplateSelector_activated">
+<area shape="rect" id="Node000001" title="Show the chosen character set&#39;s characters in the line edit, editable only for the custom set." alt="" coords="5,28,238,72"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" title="Get complete password generation configuration." alt="" coords="286,28,494,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,47,273,49,268,50,238,52"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="544,5,746,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,35,531,33,525,34,495,40"/>
+<area shape="rect" id="Node000005" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="542,57,747,102"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="495,59,529,66,524,66,494,65"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="795,5,1019,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="746,17,782,19,777,19,747,22"/>
+</map>

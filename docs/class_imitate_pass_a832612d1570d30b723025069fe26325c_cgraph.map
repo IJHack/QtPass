@@ -1,0 +1,11 @@
+<map id="ImitatePass::placeEncryptedFile" name="ImitatePass::placeEncryptedFile">
+<area shape="rect" id="Node000001" title="Bring the ciphertext gpg wrote to output into the store as file (Util::copyFileReplacing): through a ..." alt="" coords="5,32,234,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ac134662c3a71ca1cd0ec04642e9a6255" title="Copy the regular file src to the name dst through stageFileReplacing(): src is read through a handle ..." alt="" coords="282,32,452,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,43,269,46,263,46,234,48"/>
+<area shape="rect" id="Node000003" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="509,5,666,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,33,491,31,496,30,453,38"/>
+<area shape="rect" id="Node000004" href="$class_util.html#add1e4f70c6d7630ace5e350b30f78907" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="500,57,675,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="453,53,487,59,482,59,452,58"/>
+<area shape="rect" id="Node000005" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="723,57,847,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="675,69,711,71,705,71,676,74"/>
+</map>

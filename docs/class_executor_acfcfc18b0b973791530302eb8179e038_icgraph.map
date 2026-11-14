@@ -1,0 +1,18 @@
+<map id="Executor::starting" name="Executor::starting">
+<area shape="rect" id="Node000001" title="Emitted just before a queued process is started; the main window shows the busy indicator on it." alt="" coords="797,32,932,60"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="607,5,749,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="778,34,749,32,749,27,784,34"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="634,57,722,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="784,57,722,68,722,63,779,57"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a57b61261a84b79bb73b209b3511a87ff" title="Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW." alt="" coords="367,18,559,63"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="616,63,560,57,560,52,622,63"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="210,57,319,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="349,58,320,65,319,60,354,57"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="334,72,367,73,559,73,636,73,631,73,559,78,367,78,335,77"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,162,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="197,54,134,36,134,31,201,51"/>
+<area shape="rect" id="Node000007" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="14,57,153,85"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="191,72,153,74,153,69,196,70"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="20,109,147,137"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="202,89,135,111,133,106,196,90"/>
+</map>

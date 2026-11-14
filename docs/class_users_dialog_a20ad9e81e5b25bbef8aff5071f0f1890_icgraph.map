@@ -1,0 +1,7 @@
+<map id="UsersDialog::showRecipientWarning" name="UsersDialog::showRecipientWarning">
+<area shape="rect" id="Node000001" title="Show text above the key list in bold red, for a recipient list that could not be verified." alt="" coords="493,5,696,50"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="241,14,445,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="475,28,445,30,445,25,480,28"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,14,193,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,28,193,30,193,25,228,27"/>
+</map>

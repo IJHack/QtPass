@@ -1,4 +1,6 @@
 <map id="ImitatePass::executeGpg" name="ImitatePass::executeGpg">
 <area shape="rect" id="Node000001" title="Execute GPG command." alt="" coords="5,29,188,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="64,28,60,20,64,11,76,5,97,3,118,5,131,14,126,14,117,10,96,8,78,10,68,15,65,20,70,29"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="236,29,400,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,223,43,218,43,188,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="280,28,274,20,279,11,294,5,318,3,344,5,359,14,354,14,342,10,318,8,295,10,282,15,279,20,285,30"/>
 </map>

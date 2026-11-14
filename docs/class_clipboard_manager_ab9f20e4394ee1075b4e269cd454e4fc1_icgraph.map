@@ -1,0 +1,5 @@
+<map id="ClipboardManager::clear" name="ClipboardManager::clear">
+<area shape="rect" id="Node000001" title="Remove the tracked text from the clipboard if it is still there. Silent no&#45;op when nothing is tracked..." alt="" coords="264,14,444,42"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb" title="Construct a manager that also clears its text when the application quits." alt="" coords="5,5,216,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,28,216,30,216,25,251,28"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="src/settingsserializer.h" name="src/settingsserializer.h">
+<area shape="rect" id="Node000001" title="SettingsSerializer: the flat AppSettings fields to and from their QSettings keys, without side effect..." alt="" coords="104,5,271,33"/>
+<area shape="rect" id="Node000002" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="5,81,172,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,42,107,83,105,78,155,43"/>
+<area shape="rect" id="Node000003" href="$settingsserializer_8cpp.html" title="Implements SettingsSerializer: one SettingsConstants key per AppSettings field, with the defaults app..." alt="" coords="196,81,378,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,40,272,81,267,80,216,45"/>
+</map>

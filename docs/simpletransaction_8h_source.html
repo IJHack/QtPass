@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('simpletransaction_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,52 +112,54 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">simpletransaction.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2017 Anne Jan Brouwer</span></div>
+<a href="simpletransaction_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2017 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_SIMPLETRANSACTION_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_SIMPLETRANSACTION_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;enums.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_simple_transaction.html">   14</a></span><span class="keyword">class </span><a class="code hl_function" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordtype">int</span> transactionDepth{0};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> lastInTransaction{<a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  std::queue&lt;std::pair&lt;Enums::PROCESS, Enums::PROCESS&gt;&gt; transactionQueue;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">   23</a></span>  <a class="code hl_function" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction</a>() {}</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24">   29</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24">transactionStart</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9">   39</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9">transactionAdd</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f">   45</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f">transactionEnd</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1">   54</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1">transactionIsOver</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> current) -&gt; <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_SIMPLETRANSACTION_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_SIMPLETRANSACTION_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="enums_8h.html">enums.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_simple_transaction.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#a87e287a8dc66e1e4de83e78b18e15fc8">   31</a></span>  <span class="keywordtype">int</span> <a class="code hl_variable" href="class_simple_transaction.html#a87e287a8dc66e1e4de83e78b18e15fc8">transactionDepth</a>{0};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#aefd1c927cfe6352d90064b6f3ae11bb9">   36</a></span>  <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> <a class="code hl_variable" href="class_simple_transaction.html#aefd1c927cfe6352d90064b6f3ae11bb9">lastInTransaction</a>{<a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#ac96bc56467b17eda41fbeb76ad25692f">   41</a></span>  std::queue&lt;std::pair&lt;Enums::PROCESS, Enums::PROCESS&gt;&gt; <a class="code hl_variable" href="class_simple_transaction.html#ac96bc56467b17eda41fbeb76ad25692f">transactionQueue</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">   47</a></span>  <a class="code hl_function" href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction</a>() {}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24">transactionStart</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9">transactionAdd</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f">transactionEnd</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> process);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1">transactionIsOver</a>(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> current) -&gt; <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SIMPLETRANSACTION_H_</span></div>
-<div class="ttc" id="aclass_simple_transaction_html_a09853d5e4cf4b047fa185705487e67f9"><div class="ttname"><a href="class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9">SimpleTransaction::transactionAdd</a></div><div class="ttdeci">void transactionAdd(Enums::PROCESS process)</div><div class="ttdoc">transactionAdd If called after call to transactionStart() and before transactionEnd(),...</div></div>
-<div class="ttc" id="aclass_simple_transaction_html_a342b1b5c98d1a38143680619f0566ff1"><div class="ttname"><a href="class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1">SimpleTransaction::transactionIsOver</a></div><div class="ttdeci">auto transactionIsOver(Enums::PROCESS current) -&gt; Enums::PROCESS</div><div class="ttdoc">transactionIsOver checks whether currently finished process is last in current transaction</div></div>
-<div class="ttc" id="aclass_simple_transaction_html_a49f52e0304088d6491e3bd5670b47e24"><div class="ttname"><a href="class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24">SimpleTransaction::transactionStart</a></div><div class="ttdeci">void transactionStart()</div><div class="ttdoc">transactionStart this function is used to mark start of the sequence of processes that shall be treat...</div></div>
-<div class="ttc" id="aclass_simple_transaction_html_a645199551e3d56f002a92ca800b1b00f"><div class="ttname"><a href="class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f">SimpleTransaction::transactionEnd</a></div><div class="ttdeci">void transactionEnd(Enums::PROCESS process)</div><div class="ttdoc">transactionEnd marks end of transaction</div></div>
-<div class="ttc" id="aclass_simple_transaction_html_addd388511742931041e60cf7a2604fb5"><div class="ttname"><a href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction::SimpleTransaction</a></div><div class="ttdeci">SimpleTransaction()</div><div class="ttdoc">Construct a SimpleTransaction in its initial idle state.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">simpletransaction.h:23</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00037">enums.h:37</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00057">enums.h:57</a></div></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SIMPLETRANSACTION_H_</span></div>
+<div class="ttc" id="aclass_simple_transaction_html_a09853d5e4cf4b047fa185705487e67f9"><div class="ttname"><a href="class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9">SimpleTransaction::transactionAdd</a></div><div class="ttdeci">void transactionAdd(Enums::PROCESS process)</div><div class="ttdoc">Note that process has been queued.</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00021">simpletransaction.cpp:21</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_a342b1b5c98d1a38143680619f0566ff1"><div class="ttname"><a href="class_simple_transaction.html#a342b1b5c98d1a38143680619f0566ff1">SimpleTransaction::transactionIsOver</a></div><div class="ttdeci">auto transactionIsOver(Enums::PROCESS current) -&gt; Enums::PROCESS</div><div class="ttdoc">Tell whether the process that just finished ends the oldest pending transaction, and take that transa...</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00041">simpletransaction.cpp:41</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_a49f52e0304088d6491e3bd5670b47e24"><div class="ttname"><a href="class_simple_transaction.html#a49f52e0304088d6491e3bd5670b47e24">SimpleTransaction::transactionStart</a></div><div class="ttdeci">void transactionStart()</div><div class="ttdoc">Open a transaction: the processes added until the matching transactionEnd() are reported as one opera...</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00016">simpletransaction.cpp:16</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_a645199551e3d56f002a92ca800b1b00f"><div class="ttname"><a href="class_simple_transaction.html#a645199551e3d56f002a92ca800b1b00f">SimpleTransaction::transactionEnd</a></div><div class="ttdeci">void transactionEnd(Enums::PROCESS process)</div><div class="ttdoc">Close the transaction opened by the matching transactionStart().</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00030">simpletransaction.cpp:30</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_a87e287a8dc66e1e4de83e78b18e15fc8"><div class="ttname"><a href="class_simple_transaction.html#a87e287a8dc66e1e4de83e78b18e15fc8">SimpleTransaction::transactionDepth</a></div><div class="ttdeci">int transactionDepth</div><div class="ttdoc">How many transactionStart() calls are still open.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">simpletransaction.h:31</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_ac96bc56467b17eda41fbeb76ad25692f"><div class="ttname"><a href="class_simple_transaction.html#ac96bc56467b17eda41fbeb76ad25692f">SimpleTransaction::transactionQueue</a></div><div class="ttdeci">std::queue&lt; std::pair&lt; Enums::PROCESS, Enums::PROCESS &gt; &gt; transactionQueue</div><div class="ttdoc">Closed transactions awaiting completion, oldest first: the process that ends each one,...</div><div class="ttdef"><b>Definition</b> <a href="#l00041">simpletransaction.h:41</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_addd388511742931041e60cf7a2604fb5"><div class="ttname"><a href="class_simple_transaction.html#addd388511742931041e60cf7a2604fb5">SimpleTransaction::SimpleTransaction</a></div><div class="ttdeci">SimpleTransaction()</div><div class="ttdoc">Construct a SimpleTransaction in its initial idle state.</div><div class="ttdef"><b>Definition</b> <a href="#l00047">simpletransaction.h:47</a></div></div>
+<div class="ttc" id="aclass_simple_transaction_html_aefd1c927cfe6352d90064b6f3ae11bb9"><div class="ttname"><a href="class_simple_transaction.html#aefd1c927cfe6352d90064b6f3ae11bb9">SimpleTransaction::lastInTransaction</a></div><div class="ttdeci">Enums::PROCESS lastInTransaction</div><div class="ttdoc">The process most recently added to the open transaction, or Enums::INVALID when none was added yet.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">simpletransaction.h:36</a></div></div>
+<div class="ttc" id="aenums_8h_html"><div class="ttname"><a href="enums_8h.html">enums.h</a></div><div class="ttdoc">The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues.</div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00043">enums.h:43</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00063">enums.h:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="simpletransaction_8h.html">simpletransaction.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

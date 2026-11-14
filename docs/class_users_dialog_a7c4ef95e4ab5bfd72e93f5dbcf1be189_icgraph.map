@@ -1,0 +1,13 @@
+<map id="UsersDialog::buildUserText" name="UsersDialog::buildUserText">
+<area shape="rect" id="Node000001" title="Build display text for user." alt="" coords="488,118,685,146"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" title="Populate user list." alt="" coords="252,118,440,146"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="470,132,441,134,440,129,475,131"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544" title="Handle select all checkbox." alt="" coords="7,5,202,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,111,203,65,174,53,173,48,205,60,307,109"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="5,75,204,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="234,117,205,114,204,109,239,115"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#a20609c91440503dc7f84f26a43d01509" title="Filter user list." alt="" coords="14,144,195,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="234,148,196,156,195,151,239,147"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="11,212,198,240"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="308,153,259,180,205,203,170,214,169,209,203,199,257,175,303,154"/>
+</map>

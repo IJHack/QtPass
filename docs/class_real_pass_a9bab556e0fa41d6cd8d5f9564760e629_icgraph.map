@@ -1,0 +1,11 @@
+<map id="RealPass::refuseUnverifiedList" name="RealPass::refuseUnverifiedList">
+<area shape="rect" id="Node000001" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass..." alt="" coords="426,32,644,60"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="215,5,340,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="408,33,340,28,340,23,413,33"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a7dc41cbf604316f975dfb6dc2786a794" title="Shared implementation of Move and Copy via pass mv/pass cp." alt="" coords="177,57,378,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="408,58,379,64,378,59,413,58"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e" title="Copy password file or directory." alt="" coords="7,31,127,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="159,57,128,55,128,49,164,56"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html#acbbb510bd58cdceae53d34985453fc83" title="Move password file or directory." alt="" coords="5,83,129,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="159,86,129,92,129,86,164,85"/>
+</map>

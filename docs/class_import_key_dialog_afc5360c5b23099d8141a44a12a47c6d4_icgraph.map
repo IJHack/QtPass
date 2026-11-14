@@ -1,0 +1,5 @@
+<map id="ImportKeyDialog::on_inputTextEdit_textChanged" name="ImportKeyDialog::on_inputTextEdit_textChanged">
+<area shape="rect" id="Node000001" title="Enables the Import button only while the input field holds non&#45;blank text." alt="" coords="246,5,449,50"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#a3f791b9599a6c0903fb4c244d01c58bb" title="Destroys the dialog and its generated UI." alt="" coords="5,5,198,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,28,198,30,198,25,233,27"/>
+</map>

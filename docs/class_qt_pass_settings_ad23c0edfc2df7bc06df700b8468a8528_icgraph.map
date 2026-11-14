@@ -1,0 +1,23 @@
+<map id="QtPassSettings::getImitatePass" name="QtPassSettings::getImitatePass">
+<area shape="rect" id="Node000001" title="Get imitate pass backend instance." alt="" coords="1102,81,1325,109"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="544,56,769,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1084,90,770,78,770,72,1089,89"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="877,5,994,33"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="1143,76,1053,54,990,36,990,31,1054,49,1148,77"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16" title="Share menu &quot;Re&#45;encrypt all passwords&quot;: confirm, lock the UI via startReencryptPath() and have Imitate..." alt="" coords="556,108,758,136"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="1166,115,1112,135,1054,148,969,156,883,155,803,148,735,139,736,134,804,143,884,150,969,151,1053,143,1110,130,1161,116"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="Begin a re&#45;encryption pass on the current path." alt="" coords="817,107,1054,134"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="1089,107,1054,112,1054,107,1084,107"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="293,56,490,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="526,70,490,72,490,67,531,70"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="435,41,421,37,391,35,364,37,348,42,344,47,351,56,346,55,339,47,345,37,362,31,391,29,422,32,441,41"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,56,239,84"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="275,79,239,81,239,76,280,78"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,58,295,61,290,62,255,63"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="859,22,715,32,544,47,470,58,469,53,544,42,714,27,864,21"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="287,108,496,136"/>
+<area shape="poly" id="edge9_Node000006_Node000007" title=" " alt="" coords="537,122,497,124,496,119,543,122"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="298,105,198,87,198,82,303,104"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="838,103,737,87,737,82,843,103"/>
+<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="799,121,758,124,758,119,805,121"/>
+</map>

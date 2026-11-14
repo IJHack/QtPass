@@ -1,0 +1,6 @@
+<map id="SshAuthSock::initialise" name="SshAuthSock::initialise">
+<area shape="rect" id="Node000001" title="Ensure SSH_AUTH_SOCK is set for child processes." alt="" coords="111,29,280,57"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="8,29,63,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,44,63,46,63,41,98,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="61,15,53,10,35,8,19,10,10,15,8,20,12,28,7,30,3,20,6,11,18,5,36,3,55,5,66,13"/>
+</map>

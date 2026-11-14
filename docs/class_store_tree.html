@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_store_tree.html','','class_store_tree-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,13 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_store_tree-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">StoreTree Class Reference</div></div>
+  <div class="headertitle"><div class="title">StoreTree Class Reference<div class="ingroups"><a class="el" href="group__store.html">Store tree and entries</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -111,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree__inherit__graph.svg" width="94" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for StoreTree:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree__coll__graph.svg" width="94" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree__coll__graph.svg" width="427" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -149,12 +164,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae66c7d3a2c5f172035cdeb1808ce7593" id="r_ae66c7d3a2c5f172035cdeb1808ce7593"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae66c7d3a2c5f172035cdeb1808ce7593">proxy</a> () -&gt; <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td></tr>
 <tr class="memitem:ab7f72371892ef32cf421282ad7b885f6" id="r_ab7f72371892ef32cf421282ad7b885f6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab7f72371892ef32cf421282ad7b885f6">fileSystem</a> () -&gt; QFileSystemModel &amp;</td></tr>
 <tr class="memitem:aa93e44448a60d9e87d003529b5364ce1" id="r_aa93e44448a60d9e87d003529b5364ce1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93e44448a60d9e87d003529b5364ce1">view</a> () const -&gt; QTreeView *</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6d27350c46f45bdf6d42bbd58a1a7495" id="r_a6d27350c46f45bdf6d42bbd58a1a7495"><td class="memItemLeft">QTreeView *&#160;</td><td class="memItemRight"><a class="el" href="#a6d27350c46f45bdf6d42bbd58a1a7495">m_view</a></td></tr>
+<tr class="memdesc:a6d27350c46f45bdf6d42bbd58a1a7495"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tree view this object drives; owned by the main window.  <br /></td></tr>
+<tr class="memitem:aae5d926bbe44b638e97316cc9e34182a" id="r_aae5d926bbe44b638e97316cc9e34182a"><td class="memItemLeft">QFileSystemModel&#160;</td><td class="memItemRight"><a class="el" href="#aae5d926bbe44b638e97316cc9e34182a">m_fs</a></td></tr>
+<tr class="memdesc:aae5d926bbe44b638e97316cc9e34182a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Source model over the store directory, filtered to <span class="tt">*.gpg</span>; re-rooted by <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a>.  <br /></td></tr>
+<tr class="memitem:ab5f28d041e80d41330917468c30fdc56" id="r_ab5f28d041e80d41330917468c30fdc56"><td class="memItemLeft"><a class="el" href="class_store_model.html">StoreModel</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab5f28d041e80d41330917468c30fdc56">m_proxy</a></td></tr>
+<tr class="memdesc:ab5f28d041e80d41330917468c30fdc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proxy the view shows: hides <span class="tt">.git</span>, strips <span class="tt">.gpg</span>, applies the search filter and handles drag and drop.  <br /></td></tr>
+<tr class="memitem:a015b7288cf004733d1a55f6de6ffe054" id="r_a015b7288cf004733d1a55f6de6ffe054"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a015b7288cf004733d1a55f6de6ffe054">m_store</a></td></tr>
+<tr class="memdesc:a015b7288cf004733d1a55f6de6ffe054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absolute store directory last passed to <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The password store as shown in the tree: the QFileSystemModel, the <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a> proxy on top of it and the QTreeView they drive, with the path questions the main window keeps asking. </p>
-<p>Owns the two models. <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a> is the one place that re-roots the file system model, the proxy and the view together (this sequence used to be spelled out five times); <a class="el" href="#a0af4ab5f8c00e1188af669b8aea1ab47" title="The folder an index stands for.">dirFor()</a>/fileFor() are the two path mappings that were duplicated across <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> and <a class="el" href="class_util.html" title="Some static utilities to be used elsewhere.">Util</a>. </p>
+<p>Owns the two models. <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a> is the one place that re-roots the file system model, the proxy and the view together (this sequence used to be spelled out five times); <a class="el" href="#a0af4ab5f8c00e1188af669b8aea1ab47" title="The folder an index stands for.">dirFor()</a>/fileFor() are the two path mappings that were duplicated across <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> and <a class="el" href="class_util.html" title="Static helpers that have no better home: setting up the process and the Git environment the way pass ...">Util</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00027">27</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00033">33</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9be3c4a12104973c27e721e08564f6eb" name="a9be3c4a12104973c27e721e08564f6eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9be3c4a12104973c27e721e08564f6eb">&#9670;&#160;</a></span>StoreTree()</h2>
@@ -191,11 +217,19 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00014">14</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a9be3c4a12104973c27e721e08564f6eb_cgraph.svg" width="332" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a9be3c4a12104973c27e721e08564f6eb_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -214,7 +248,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::currentDir </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span></td><td>)</td>
-          <td> const -&gt;  QString</td>
+          <td> const -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -233,6 +267,20 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Folder path. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00071">71</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_af4af91d99f47811cd66ad9a61df2f95b_cgraph.svg" width="342" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_af4af91d99f47811cd66ad9a61df2f95b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a62c3481cf1a8554c312594e67be27d95" name="a62c3481cf1a8554c312594e67be27d95"></a>
@@ -248,7 +296,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::currentFile </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span></td><td>)</td>
-          <td> const -&gt;  QString</td>
+          <td> const -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -267,6 +315,14 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Entry name or path. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00088">88</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a62c3481cf1a8554c312594e67be27d95_cgraph.svg" width="536" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a2fd943329edb11eece8793a8dccff73b" name="a2fd943329edb11eece8793a8dccff73b"></a>
@@ -282,7 +338,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::currentIndex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  QModelIndex</td>
+          <td> const -&gt; QModelIndex</td>
         </tr>
       </table>
   </td>
@@ -294,6 +350,8 @@ Public Member Functions</h2></td></tr>
 
 <p>The view's current index. </p>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index, possibly invalid. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00105">105</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +372,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span>&#160;) const -&gt;  QString</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span>&#160;) const -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -333,6 +391,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Folder path ending in the native separator (see forPass). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00055">55</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a0af4ab5f8c00e1188af669b8aea1ab47_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -353,7 +419,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span>&#160;) const -&gt;  QString</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>forPass</em></span>&#160;) const -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -373,6 +439,20 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Entry name or path, empty when <code class="param">index</code> is not a file. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00075">75</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a70b4b23a457f2b396a91433aaf9b9437_cgraph.svg" width="328" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a70b4b23a457f2b396a91433aaf9b9437_icgraph.svg" width="348" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a11258ee615d83fdeee5a23685c407227" name="a11258ee615d83fdeee5a23685c407227"></a>
@@ -388,7 +468,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::fileInfo </td>
           <td>(</td>
           <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td> const -&gt;  QFileInfo</td>
+          <td> const -&gt; QFileInfo</td>
         </tr>
       </table>
   </td>
@@ -406,6 +486,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QFileInfo of the underlying path. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00092">92</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a11258ee615d83fdeee5a23685c407227_icgraph.svg" width="100%" height="458"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -433,7 +521,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The file system model under the proxy. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00128">128</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00134">134</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_ab7f72371892ef32cf421282ad7b885f6_icgraph.svg" width="100%" height="423"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -450,7 +544,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::indexFor </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> const -&gt;  QModelIndex</td>
+          <td> const -&gt; QModelIndex</td>
         </tr>
       </table>
   </td>
@@ -468,6 +562,14 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00096">96</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_ad5caeb51eea88edf2233336ca8b59ea0_icgraph.svg" width="418" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -495,7 +597,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The proxy the view shows. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00126">126</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00132">132</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_ae66c7d3a2c5f172035cdeb1808ce7593_icgraph.svg" width="100%" height="429"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -512,7 +620,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto StoreTree::rootIndex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  QModelIndex</td>
+          <td> -&gt; QModelIndex</td>
         </tr>
       </table>
   </td>
@@ -524,6 +632,14 @@ Public Member Functions</h2></td></tr>
 
 <p>The proxy's root index for the current store. </p>
 <dl class="section return"><dt>Returns</dt><dd>Proxy index of the store root. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00101">101</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a1e44af30d459550e26502c6733705e9d_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -550,6 +666,20 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00049">49</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a7c5e7b2806ebe8314f0ec7a72bd8a256_cgraph.svg" width="388" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a7c5e7b2806ebe8314f0ec7a72bd8a256_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="aecea7d8a011161850841f9e3e3a36bee" name="aecea7d8a011161850841f9e3e3a36bee"></a>
@@ -575,6 +705,20 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00047">47</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aecea7d8a011161850841f9e3e3a36bee_cgraph.svg" width="351" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aecea7d8a011161850841f9e3e3a36bee_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="aae9afb31b40b43ba2dcbc006f9e8e8bb" name="aae9afb31b40b43ba2dcbc006f9e8e8bb"></a>
@@ -599,6 +743,20 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8cpp_source.html#l00026">26</a> of file <a class="el" href="storetree_8cpp_source.html">storetree.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aae9afb31b40b43ba2dcbc006f9e8e8bb_cgraph.svg" width="426" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aae9afb31b40b43ba2dcbc006f9e8e8bb_icgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -626,19 +784,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The store directory set with <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00124">124</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
-</div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a7900b8e82db6a34d4720c58ffafbf240_cgraph.svg" width="135" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
-</div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_a7900b8e82db6a34d4720c58ffafbf240_icgraph.svg" width="135" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00130">130</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
 
 </div>
 </div>
@@ -666,24 +812,141 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The tree view. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00130">130</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00136">136</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aa93e44448a60d9e87d003529b5364ce1_icgraph.svg" width="332" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_tree_aa93e44448a60d9e87d003529b5364ce1_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aae5d926bbe44b638e97316cc9e34182a" name="aae5d926bbe44b638e97316cc9e34182a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5d926bbe44b638e97316cc9e34182a">&#9670;&#160;</a></span>m_fs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QFileSystemModel StoreTree::m_fs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Source model over the store directory, filtered to <span class="tt">*.gpg</span>; re-rooted by <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00145">145</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+
+</div>
+</div>
+<a id="ab5f28d041e80d41330917468c30fdc56" name="ab5f28d041e80d41330917468c30fdc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f28d041e80d41330917468c30fdc56">&#9670;&#160;</a></span>m_proxy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_store_model.html">StoreModel</a> StoreTree::m_proxy</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Proxy the view shows: hides <span class="tt">.git</span>, strips <span class="tt">.gpg</span>, applies the search filter and handles drag and drop. </p>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00150">150</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+
+</div>
+</div>
+<a id="a015b7288cf004733d1a55f6de6ffe054" name="a015b7288cf004733d1a55f6de6ffe054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015b7288cf004733d1a55f6de6ffe054">&#9670;&#160;</a></span>m_store</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString StoreTree::m_store</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Absolute store directory last passed to <a class="el" href="#aae9afb31b40b43ba2dcbc006f9e8e8bb" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt...">setStore()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00152">152</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d27350c46f45bdf6d42bbd58a1a7495" name="a6d27350c46f45bdf6d42bbd58a1a7495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d27350c46f45bdf6d42bbd58a1a7495">&#9670;&#160;</a></span>m_view</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTreeView* StoreTree::m_view</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The tree view this object drives; owned by the main window. </p>
+
+<p class="definition">Definition at line <a class="el" href="storetree_8h_source.html#l00140">140</a> of file <a class="el" href="storetree_8h_source.html">storetree.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="storetree_8h_source.html">storetree.h</a></li>
+<li>src/<a class="el" href="storetree_8cpp_source.html">storetree.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_store_tree.html">StoreTree</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

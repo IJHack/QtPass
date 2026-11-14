@@ -1,0 +1,28 @@
+<map id="ClipboardManager::trackCopied" name="ClipboardManager::trackCopied">
+<area shape="rect" id="Node000001" title="Track text that got onto the clipboard some other way." alt="" coords="1543,171,1770,198"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,156,755,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1531,190,1202,200,1006,199,810,191,756,187,756,181,810,186,1006,193,1202,194,1525,190"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a2b0351f339c894215610f1b3557c8630" title="Run PasswordDialog for a new or existing entry. For a new one the dialog gets the store&#39;s real folder..." alt="" coords="1302,125,1495,153"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="1556,167,1481,156,1482,151,1562,168"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,55,483,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="592,151,422,86,424,80,597,150"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,40,414,36,385,33,357,35,342,40,338,46,345,55,340,54,333,46,339,36,356,30,385,28,415,31,434,39"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,55,239,82"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,78,239,80,238,75,274,77"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,57,289,59,284,61,255,62"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a03b4f9d80c2f9e80c9e4acfa72346554" title="Toolbar/context&#45;menu &quot;Add password&quot;: open PasswordDialog for a new entry in the current folder." alt="" coords="810,28,1008,56"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="1308,122,982,59,983,54,1313,122"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a4106ad4ec9fe0cbc62c4a604f91d88fe" title="Open PasswordDialog on an existing entry, after a blocking pull when auto&#45;pull is on...." alt="" coords="1056,125,1254,153"/>
+<area shape="poly" id="edge11_Node000005_Node000008" title=" " alt="" coords="1284,139,1255,142,1254,137,1289,139"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="792,26,687,17,560,10,423,10,287,22,219,37,161,57,158,52,218,32,286,17,423,4,560,4,688,12,798,25"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,55,762,82"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="792,54,763,60,762,54,798,53"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="513,69,484,71,483,66,518,68"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="812,132,1006,176"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="1043,146,1006,151,1006,146,1038,146"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="832,80,986,108"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="1058,122,986,111,986,105,1064,122"/>
+<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="836,112,811,122,763,141,704,158,703,153,761,135,809,117,830,113"/>
+<area shape="poly" id="edge16_Node000010_Node000004" title=" " alt="" coords="814,99,577,106,432,104,286,97,200,86,200,80,287,91,432,99,577,101,820,98"/>
+<area shape="poly" id="edge15_Node000010_Node000007" title=" " alt="" coords="814,85,763,82,762,77,819,85"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="FirstRunWizard::initialiseGit" name="FirstRunWizard::initialiseGit">
+<area shape="rect" id="Node000001" title="Give an existing store the Git repository it was chosen to have." alt="" coords="224,5,426,33"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="5,5,176,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,19,176,22,176,17,211,19"/>
+</map>

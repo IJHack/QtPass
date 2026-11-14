@@ -1,0 +1,5 @@
+<map id="Pass::parseRecipients" name="Pass::parseRecipients">
+<area shape="rect" id="Node000001" title="Parse the contents of a .gpg&#45;id: one recipient per line, # starts a comment, unusable lines are logge..." alt="" coords="5,5,168,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check whether a .gpg&#45;id token may be passed to gpg as a key selector. Accepts any non&#45;empty token tha..." alt="" coords="216,5,347,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,17,203,19,197,19,168,22"/>
+</map>

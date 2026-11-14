@@ -1,0 +1,5 @@
+<map id="FirstRunWizard::initialiseStore" name="FirstRunWizard::initialiseStore">
+<area shape="rect" id="Node000001" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="224,5,407,50"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="5,14,176,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,28,176,30,176,25,211,27"/>
+</map>

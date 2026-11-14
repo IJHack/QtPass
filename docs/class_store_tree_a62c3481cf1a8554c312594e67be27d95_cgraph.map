@@ -1,0 +1,7 @@
+<map id="StoreTree::currentFile" name="StoreTree::currentFile">
+<area shape="rect" id="Node000001" title="fileFor() applied to the view&#39;s current index." alt="" coords="5,5,165,33"/>
+<area shape="rect" id="Node000002" href="$class_store_tree.html#a70b4b23a457f2b396a91433aaf9b9437" title="The entry an index stands for." alt="" coords="213,5,343,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,17,200,19,195,19,165,22"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="391,5,530,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,17,378,19,373,19,343,22"/>
+</map>

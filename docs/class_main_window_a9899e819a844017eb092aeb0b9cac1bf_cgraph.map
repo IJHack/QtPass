@@ -1,0 +1,7 @@
+<map id="MainWindow::confirmLinkRemoval" name="MainWindow::confirmLinkRemoval">
+<area shape="rect" id="Node000001" title="Ask before removing a folder that is a link, which takes the link and leaves what it points to." alt="" coords="5,5,252,33"/>
+<area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d" title="Ask a yes/no question in plain text." alt="" coords="300,5,488,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,17,287,19,281,19,252,22"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="536,5,714,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="488,17,523,19,518,19,488,22"/>
+</map>

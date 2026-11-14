@@ -1,0 +1,21 @@
+<map id="Pass::listKeys" name="Pass::listKeys">
+<area shape="rect" id="Node000001" title="List GPG keys matching patterns." alt="" coords="767,84,877,112"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a3d45abeffc8d61f58828959e74b26176" title="Search password content for a pattern." alt="" coords="567,5,656,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="780,76,718,48,656,30,657,25,720,43,786,76"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="557,57,666,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="750,89,667,81,667,75,755,89"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="504,161,719,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="785,119,720,151,681,163,680,158,718,146,780,120"/>
+<area shape="rect" id="Node000008" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="504,109,719,137"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="755,106,720,113,720,107,749,107"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="257,161,450,189"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="486,175,451,178,451,173,492,175"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="5,133,204,178"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="239,166,204,166,204,160,244,166"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="11,71,198,98"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="297,157,145,102,146,96,301,154"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="488,134,204,152,204,146,489,128"/>
+<area shape="rect" id="Node000009" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="252,60,456,88"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="518,106,430,91,430,86,523,106"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="233,80,199,83,198,78,238,78"/>
+</map>

@@ -1,4 +1,8 @@
 <map id="FileContent::getPasswordForDisplay" name="FileContent::getPasswordForDisplay">
-<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line is itself an otpauth URI." alt="" coords="5,29,191,74"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="62,28,61,19,67,10,80,5,98,3,118,5,131,14,126,14,116,10,98,8,81,10,70,15,66,21,67,30"/>
+<area shape="rect" id="Node000001" title="Like getPassword but empty when the password line is itself an otpauth URI." alt="" coords="5,21,191,66"/>
+<area shape="rect" id="Node000002" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="239,29,313,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,41,226,43,220,43,191,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="245,28,240,20,244,11,256,5,276,3,297,5,310,14,304,14,295,10,276,8,258,10,248,15,245,20,250,30"/>
+<area shape="rect" id="Node000003" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="361,29,553,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="313,41,348,43,343,43,313,46"/>
 </map>

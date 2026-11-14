@@ -1,0 +1,5 @@
+<map id="Executor::onProcessFinished" name="Executor::onProcessFinished">
+<area shape="rect" id="Node000001" title="Finish the running item when its process exits." alt="" coords="195,5,400,33"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="5,5,147,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,19,147,22,147,17,182,19"/>
+</map>

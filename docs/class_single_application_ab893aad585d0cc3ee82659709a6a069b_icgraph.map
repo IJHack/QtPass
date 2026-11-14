@@ -1,0 +1,14 @@
+<map id="SingleApplication::messageAvailable" name="SingleApplication::messageAvailable">
+<area shape="rect" id="Node000001" title="messageAvailable notification from commandline" alt="" coords="679,50,821,95"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="6,29,60,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="666,45,631,40,547,31,462,26,295,26,155,34,61,43,60,38,154,29,295,21,462,21,548,26,632,35,671,46"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="489,50,631,95"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="661,73,632,75,631,70,666,72"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="56,14,48,10,33,8,18,10,10,14,8,20,12,28,7,29,3,20,6,11,16,5,33,3,50,5,61,13"/>
+<area shape="rect" id="Node000004" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Claim the segment and listen; no&#45;op when another instance holds it." alt="" coords="298,50,441,95"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="471,73,441,75,441,70,476,72"/>
+<area shape="poly" id="edge5_Node000004_Node000001" title=" " alt="" coords="452,97,489,105,560,111,631,105,680,96,686,95,632,110,560,117,488,110,451,102"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#ad63149f60ac6676dda4397a90116e351" title="Send a message to the running instance." alt="" coords="108,50,250,95"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="280,73,251,75,251,70,286,72"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="91,56,61,51,60,46,95,54"/>
+</map>

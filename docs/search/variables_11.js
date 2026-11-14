@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['savestate_0',['savestate',['../struct_app_settings.html#aafa1f97c50a90866f9523851b2eaa058',1,'AppSettings']]],
-  ['secret_1',['secret',['../struct_enums_1_1_process_info.html#afa94d5e39597cbf0a887006a8c37d7c7',1,'Enums::ProcessInfo']]],
-  ['secretfieldnames_2',['secretFieldNames',['../struct_app_settings.html#a215aceceb20bd8a0851239cea82b48e2',1,'AppSettings']]],
-  ['secretprotected_3',['secretProtected',['../struct_rnp_crypto_1_1_key_info.html#a686e709d0a448165f7180fda6716504e',1,'RnpCrypto::KeyInfo']]],
-  ['selected_4',['selected',['../struct_password_configuration.html#a6a47dc673e03fd9a8f71f7b44ddb16d3',1,'PasswordConfiguration']]],
-  ['showmenubar_5',['showMenuBar',['../struct_app_settings.html#a4b414237cc2001c4a07a242f2565cb85',1,'AppSettings']]],
-  ['showprocessoutput_6',['showProcessOutput',['../struct_app_settings.html#a61d0d4c9f61852bac9fe3be71a9b1814',1,'AppSettings']]],
-  ['signingkey_7',['signingKey',['../struct_profile.html#aca298d5aa8281c8ee91f97744dcdcc48',1,'Profile']]],
-  ['sshauthsockoverride_8',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
-  ['startminimized_9',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]],
-  ['state_10',['state',['../struct_pass_1_1_recipients_for_editing.html#a3f96b1dadf17eadef0828bc59c5a1ff3',1,'Pass::RecipientsForEditing']]],
-  ['steam_5fdigits_11',['STEAM_DIGITS',['../class_totp.html#a81979cc4e9b6933626ef5c62277649f0',1,'Totp']]],
-  ['step_12',['step',['../struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28',1,'Totp::Settings']]],
-  ['store_13',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header']]]
+  ['readstderr_0',['readStderr',['../struct_executor_1_1_exec_queue_item.html#a776ad4913f376526ba807a69b9868115',1,'Executor::ExecQueueItem']]],
+  ['readstdout_1',['readStdout',['../struct_executor_1_1_exec_queue_item.html#a06963eefa82e1b35d4c62a3352fcd60f',1,'Executor::ExecQueueItem']]],
+  ['realpass_2',['realPass',['../class_pass_backend_factory.html#a9014d707f358b3523a23d94f64c3dee2',1,'PassBackendFactory']]],
+  ['recipients_3',['recipients',['../struct_pass_1_1_recipients_for_editing.html#a1d5f75f32ae50b5189f5f9579e4ea2e5',1,'Pass::RecipientsForEditing']]],
+  ['reencrypted_4',['reencrypted',['../struct_imitate_pass_1_1_reencrypt_result.html#a361f02fa1e8941a21c36ac5c76412774',1,'ImitatePass::ReencryptResult']]],
+  ['rel_5',['rel',['../struct_real_pass_1_1_link_commit.html#ae7cbd97a14853c0e5af92617181d3151',1,'RealPass::LinkCommit']]],
+  ['remainingdata_6',['remainingData',['../class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2',1,'FileContent']]],
+  ['remainingdatadisplay_7',['remainingDataDisplay',['../class_file_content.html#ad581a32699afdbc00f52fe97e8585eef',1,'FileContent']]],
+  ['remaininglines_8',['remainingLines',['../class_file_content.html#a3bcd691a41d619d5525cc594cb6939db',1,'FileContent']]],
+  ['restoreaction_9',['restoreAction',['../class_tray_icon.html#a4b668e37495a62aae4f185f8eba96192',1,'TrayIcon']]],
+  ['restoreclipboard_10',['restoreClipboard',['../struct_app_settings.html#a9e7cafe6c28a37b4d186bb3156f98ca8',1,'AppSettings']]],
+  ['restorecursor_11',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
+  ['revoked_12',['revoked',['../struct_rnp_crypto_1_1_key_info.html#aee7afe54a18baecbe98430898727a882',1,'RnpCrypto::KeyInfo']]],
+  ['running_13',['running',['../class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc',1,'Executor']]]
 ];

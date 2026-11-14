@@ -1,0 +1,7 @@
+<map id="src/mainwindow.h" name="src/mainwindow.h">
+<area shape="rect" id="Node000001" title="MainWindow: the main application window (tree, toolbar, search, status bar, process output dock) and ..." alt="" coords="75,5,214,33"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="5,81,124,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,43,80,83,77,78,116,45"/>
+<area shape="rect" id="Node000003" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="148,81,301,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,41,213,81,208,80,169,46"/>
+</map>

@@ -1,0 +1,28 @@
+<map id="Executor::drained" name="Executor::drained">
+<area shape="rect" id="Node000001" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),..." alt="" coords="949,124,1083,152"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="758,87,846,114"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="931,124,846,111,846,105,936,123"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a0dc059529757ca423bde0b74fe0129c2" title=" " alt="" coords="703,161,901,189"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="936,152,886,163,885,158,931,153"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a57b61261a84b79bb73b209b3511a87ff" title="Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW." alt="" coords="463,18,655,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="740,86,652,66,652,61,746,86"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="258,57,367,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="445,55,368,67,367,62,450,53"/>
+<area shape="poly" id="edge7_Node000004_Node000002" title=" " alt="" coords="382,73,760,96,756,100,383,78"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,162,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="240,57,148,36,147,31,245,54"/>
+<area shape="rect" id="Node000006" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="14,57,153,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="240,73,154,74,152,69,244,70"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="20,109,147,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="240,89,148,111,146,106,245,85"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#ae71c92047b8337f770294e84211d850f" title="Start the head of the queue unless something runs or the queue is empty." alt="" coords="476,161,643,189"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="685,175,644,178,643,173,691,175"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="210,212,415,240"/>
+<area shape="poly" id="edge14_Node000008_Node000011" title=" " alt="" coords="713,192,656,203,531,216,416,224,415,218,531,210,655,198,708,193"/>
+<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="599,146,586,142,559,140,534,142,520,147,516,152,523,162,518,160,511,152,516,143,533,137,559,135,588,137,605,146"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#affda40d546db75d35f38db1ec1414bf7" title="Queue a command with working directory and optional stdin input." alt="" coords="244,160,380,188"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="458,175,381,177,381,172,463,174"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="477,192,384,214,383,209,471,193"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="13,212,154,240"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="191,226,154,228,154,223,197,226"/>
+</map>

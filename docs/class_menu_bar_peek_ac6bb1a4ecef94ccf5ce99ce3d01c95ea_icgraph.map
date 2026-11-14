@@ -1,0 +1,5 @@
+<map id="MenuBarPeek::onKeyPress" name="MenuBarPeek::onKeyPress">
+<area shape="rect" id="Node000001" title="Handle a key press seen by the application filter." alt="" coords="243,5,437,33"/>
+<area shape="rect" id="Node000002" href="$class_menu_bar_peek.html#a8a9a8dc73d9d99dbcdc580b1b3567525" title="Follows Alt, Escape, clicks and focus for the whole application." alt="" coords="5,5,195,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,19,195,22,195,17,230,19"/>
+</map>

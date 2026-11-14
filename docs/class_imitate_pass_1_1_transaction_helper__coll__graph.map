@@ -1,0 +1,5 @@
+<map id="ImitatePass::TransactionHelper" name="ImitatePass::TransactionHelper">
+<area shape="rect" id="Node000001" title="RAII helper for wrapping operations in transactions." alt="" coords="5,106,185,151"/>
+<area shape="rect" id="Node000002" href="$class_simple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation." alt="" coords="25,5,165,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,47,98,106,92,105,93,51"/>
+</map>

@@ -1,0 +1,43 @@
+<map id="NativeGrep::isMoreMarker" name="NativeGrep::isMoreMarker">
+<area shape="rect" id="Node000001" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match." alt="" coords="2196,36,2389,64"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a270b5f2701f275c3de734f4150a3d897" title="Handle results from a completed grep search." alt="" coords="1935,9,2148,37"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2178,38,2149,37,2149,32,2184,38"/>
+<area shape="rect" id="Node000007" href="$class_native_grep.html#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches." alt="" coords="1958,61,2125,89"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="2184,61,2126,69,2126,64,2179,61"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="1269,23,1508,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1917,26,1509,37,1508,31,1922,25"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="996,29,1221,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1251,40,1222,43,1221,38,1256,39"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="749,29,945,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="977,43,946,46,945,41,983,43"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="890,14,876,10,847,8,820,10,804,15,801,20,807,30,802,28,795,20,801,11,819,5,847,3,878,5,896,14"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="465,29,698,57"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="730,52,699,55,699,49,736,52"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="714,32,751,34,746,35,714,37"/>
+<area shape="rect" id="Node000008" href="$class_native_grep.html#a393b6a05c39649304a77151702b76ec7" title="Start a search; finished() follows asynchronously, also for an empty or invalid pattern (with no resu..." alt="" coords="1741,61,1887,89"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="1940,75,1887,78,1887,73,1946,75"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a4c18253700bd6127c546325448f14829" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="1556,112,1693,140"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="1747,93,1679,114,1678,109,1742,94"/>
+<area shape="rect" id="Node000018" href="$class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3" title="Search all password content by GPG&#45;decrypting each real .gpg file, as ImitatePass does." alt="" coords="1565,60,1684,88"/>
+<area shape="poly" id="edge23_Node000008_Node000018" title=" " alt="" coords="1723,75,1684,77,1684,72,1728,74"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a9332f01d3ce1447fb9eba7ec8f0172af" title="Re&#45;encryption progress: current of total files checked." alt="" coords="1277,87,1500,114"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="1538,117,1501,115,1501,110,1543,117"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="1300,83,1180,60,1180,55,1305,83"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a8117ed7e6ccc1916801d88883ea2819a" title="Worker&#45;thread body: scan dir and re&#45;encrypt stale files." alt="" coords="1010,147,1207,174"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="1308,118,1177,149,1176,143,1303,119"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#a44b84cc53695ae8e242ca182546234d4" title="Start the worker thread once the Executor queue is idle." alt="" coords="746,156,948,200"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="991,168,948,174,948,168,997,168"/>
+<area shape="poly" id="edge22_Node000012_Node000012" title=" " alt="" coords="888,140,874,137,847,134,822,136,807,141,801,147,802,156,798,153,796,145,804,136,821,131,847,129,875,131,894,141"/>
+<area shape="rect" id="Node000013" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="484,164,679,192"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="728,178,680,180,679,175,734,178"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a" title="Copy password file." alt="" coords="229,80,368,108"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="526,158,416,123,368,111,368,105,418,118,531,158"/>
+<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,157,132,185"/>
+<area shape="poly" id="edge18_Node000013_Node000015" title=" " alt="" coords="468,179,132,175,132,169,469,174"/>
+<area shape="rect" id="Node000016" href="$class_imitate_pass.html#abf14214692366809c82ad29e8d18c77b" title="Re&#45;encrypt dir under settings, the current profile&#39;s." alt="" coords="201,233,396,261"/>
+<area shape="poly" id="edge19_Node000013_Node000016" title=" " alt="" coords="510,196,359,235,358,230,505,196"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#aa30ada0a871c60297f6bde37cec9df2e" title="Re&#45;encrypt dir to the .gpg&#45;id Init() wrote although its commit failed, without any Git step (they wou..." alt="" coords="180,132,417,160"/>
+<area shape="poly" id="edge20_Node000013_Node000017" title=" " alt="" coords="466,165,418,162,417,157,471,165"/>
+<area shape="poly" id="edge17_Node000014_Node000010" title=" " alt="" coords="383,92,1277,97,1276,102,383,97"/>
+<area shape="poly" id="edge21_Node000017_Node000015" title=" " alt="" coords="162,162,133,167,131,162,167,159"/>
+</map>

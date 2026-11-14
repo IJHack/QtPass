@@ -1,0 +1,7 @@
+<map id="QtPassSettings::isShowProcessOutput" name="QtPassSettings::isShowProcessOutput">
+<area shape="rect" id="Node000001" title="Get showProcessOutput setting." alt="" coords="5,5,228,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="276,14,478,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,25,262,28,257,28,228,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="526,14,749,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,25,513,28,508,28,478,30"/>
+</map>

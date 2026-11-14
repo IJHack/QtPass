@@ -1,0 +1,9 @@
+<map id="StoreTree::setStore" name="StoreTree::setStore">
+<area shape="rect" id="Node000001" title="Point everything at path: file system root, proxy store and view root index. Also drops a search filt..." alt="" coords="5,57,150,85"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a9830413c7cf960e473adfa98311c3bcd" title="Set the source filesystem root and map it to a proxy index." alt="" coords="216,5,402,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,54,231,36,227,38,143,59"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html#a71787f93027b50575cfbdcbb1d8de071" title="Initialize model with source model and store path." alt="" coords="198,57,420,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,69,185,70,180,72,150,74"/>
+<area shape="rect" id="Node000004" href="$class_store_model.html#a8578051e478ac18e32bb50bc9cb82ee8" title="Update the store path used for filtering without changing the source model." alt="" coords="230,109,388,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,83,231,104,226,106,142,88"/>
+</map>

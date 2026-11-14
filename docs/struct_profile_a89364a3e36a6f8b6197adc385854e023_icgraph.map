@@ -1,0 +1,30 @@
+<map id="Profile::flagFromString" name="Profile::flagFromString">
+<area shape="rect" id="Node000001" title="Parse the on&#45;disk tri&#45;state." alt="" coords="1991,85,2156,113"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a8f6dce3f604c71b3e269e404ca28cd9c" title="Get all configured profiles." alt="" coords="1748,85,1943,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1973,99,1943,102,1943,97,1979,99"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1241,29,1436,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1800,78,1753,61,1699,46,1631,37,1563,33,1437,36,1437,31,1563,28,1632,31,1700,41,1755,56,1805,79"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="1502,55,1696,82"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="1730,85,1696,83,1697,78,1735,85"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1498,106,1700,151"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="1735,112,1700,119,1700,114,1730,113"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1227,144,1450,172"/>
+<area shape="poly" id="edge17_Node000002_Node000006" title=" " alt="" coords="1809,120,1758,147,1700,166,1636,175,1571,179,1451,175,1451,169,1571,174,1636,170,1699,161,1756,142,1804,121"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="1377,14,1365,10,1339,8,1314,10,1301,15,1297,20,1303,30,1298,28,1292,20,1297,11,1313,5,1339,3,1366,5,1383,14"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="1484,58,1437,55,1437,50,1489,58"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="1485,141,1451,148,1450,143,1480,142"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1028,119,1179,146"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="1209,144,1179,143,1180,138,1214,144"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,119,483,146"/>
+<area shape="poly" id="edge16_Node000006_Node000008" title=" " alt="" coords="1215,164,1072,172,902,174,716,171,531,160,455,150,455,144,531,155,716,166,902,169,1072,167,1209,165"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="1027,115,979,110,854,99,755,96,657,100,531,110,455,121,454,115,531,105,657,94,755,90,854,94,980,105,1032,115"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,119,980,146"/>
+<area shape="poly" id="edge13_Node000007_Node000010" title=" " alt="" coords="1009,133,980,135,980,130,1015,132"/>
+<area shape="poly" id="edge10_Node000008_Node000008" title=" " alt="" coords="428,103,414,100,385,97,357,99,342,104,338,109,345,119,340,117,333,110,339,100,356,94,385,92,415,94,434,104"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,119,239,146"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="269,142,239,144,239,139,274,141"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="254,121,289,123,284,124,254,126"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,119,762,146"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="792,133,763,135,763,130,797,132"/>
+<area shape="poly" id="edge15_Node000011_Node000008" title=" " alt="" coords="513,133,484,135,483,130,518,132"/>
+</map>

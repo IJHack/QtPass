@@ -1,0 +1,7 @@
+<map id="ConfigDialog::selectFolder" name="ConfigDialog::selectFolder">
+<area shape="rect" id="Node000001" title="Ask for a directory in a directories&#45;only file dialog." alt="" coords="257,48,448,76"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="19,5,195,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,47,196,43,195,37,244,46"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a454d1350021aa2dc4f7224af944411a5" title="Pick the password store folder for the pass backend&#39;s store path." alt="" coords="5,75,209,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,78,210,85,209,80,244,78"/>
+</map>

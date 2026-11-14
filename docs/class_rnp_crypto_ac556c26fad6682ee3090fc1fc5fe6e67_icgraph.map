@@ -1,4 +1,0 @@
-<map id="RnpCrypto::loadKeyring" name="RnpCrypto::loadKeyring">
-<area shape="rect" id="Node000001" title="Adds the keyring in dir (as saveKeyring() wrote it) to this one. Secret keys stay protected until an ..." alt="" coords="5,29,180,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="121,14,112,10,92,8,75,10,65,15,63,20,67,29,62,28,57,20,61,11,73,5,93,3,113,5,126,14"/>
-</map>

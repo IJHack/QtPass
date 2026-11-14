@@ -1,5 +1,11 @@
 <map id="OtpCodeWidget" name="OtpCodeWidget">
-<area shape="rect" id="Node000001" title="Live one&#45;time password display: code, copy button and countdown." alt="" coords="5,81,129,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="28,5,106,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,47,70,81,64,80,65,51"/>
+<area shape="rect" id="Node000001" title="Live one&#45;time password display: code, copy button and countdown." alt="" coords="100,183,223,211"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,82,83,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,118,148,181,143,184,70,123"/>
+<area shape="rect" id="Node000003" href="$struct_totp_1_1_settings.html" title="Validated TOTP parameters. Only Totp::parse() produces one." alt="" coords="107,82,216,110"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,124,164,183,159,181,159,127"/>
+<area shape="rect" id="Node000004" href="$class_q_push_button_with_clipboard.html" title="QPushButton that stores a text payload and emits it when activated." alt="" coords="240,82,437,110"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,118,248,161,197,185,195,180,245,157,307,120"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="286,5,391,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="340,46,341,83,336,81,337,51"/>
 </map>

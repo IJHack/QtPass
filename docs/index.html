@@ -5,16 +5,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QtPass: QtPass</title>
+<title>QtPass: QtPass developer documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -95,34 +113,85 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title"><a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> </div></div>
+  <div class="headertitle"><div class="title">QtPass developer documentation </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1 class="doxsection"><a class="anchor" id="intro_sec"></a>
-Introduction</h1>
-<p><a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> is a multi-platform GUI for pass, the standard unix password manager.</p>
-<p><a href="https://qtpass.org/">https://qtpass.org/</a></p>
-<h1 class="doxsection"><a class="anchor" id="install_sec"></a>
-Installation</h1>
-<h2 class="doxsection"><a class="anchor" id="dependencies"></a>
-Dependencies</h2>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
+<p>QtPass is a multi-platform GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard Unix password manager. This site documents its source code for people who work on it. QtPass has no public API: everything here, private members included, is described for contributors.</p>
+<p>If you want to use QtPass rather than change it, <a href="https://qtpass.org/">https://qtpass.org/</a> and the <a href="https://github.com/IJHack/QtPass#readme">Readme</a> are the places to go.</p>
+<h1>Where to start</h1>
+<p>Read these four classes first; almost everything else hangs off them.</p>
+<ol type="1">
+<li><a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> is the abstract password store: show, insert, remove, move, copy, init, Git, key generation and search. Its class description states the rules every operation keeps about paths and links.</li>
+<li><a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> runs the external programs. Every <span class="tt">gpg</span>, <span class="tt">git</span> and <span class="tt">pass</span> process goes through its queue, one at a time and in order.</li>
+<li><a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> owns the widgets and turns user actions into calls on <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a>.</li>
+<li><a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a> holds the configuration, and hands out the active backend.</li>
+</ol>
+<p>The <a class="el" href="group__backend.html" title="Password store backends">topics</a> below group the remaining classes by what they are for.</p>
+<h1>Two backends</h1>
+<p>QtPass can work a password store in two ways, chosen by the "use pass" setting.</p>
 <ul>
-<li><a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> requires Qt 6.8 or later.</li>
-<li>The Linguist package is required to compile the translations.</li>
-<li>For use of the fallback icons the SVG library is required.</li>
+<li><a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> hands every operation to the <span class="tt">pass</span> command-line tool.</li>
+<li><a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> does what <span class="tt">pass</span> does by running <span class="tt">gpg</span> and <span class="tt">git</span> itself, for systems where <span class="tt">pass</span> is not available (Windows, most of all).</li>
 </ul>
-<p>At runtime the only real dependency is gpg2 but to make the most of it, you'll need git and pass too.</p>
-<h2 class="doxsection"><a class="anchor" id="source"></a>
-From source</h2>
-<p>On most *nix systems all you need is:</p>
-<p><span class="tt">qmake6 &amp;&amp; make &amp;&amp; make install</span> </p>
+<p>Both derive from <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a>, so the rest of the program does not know which one is active. <a class="el" href="class_pass_backend_factory.html" title="Owns the Pass backend lifecycle (RealPass vs ImitatePass).">PassBackendFactory</a> constructs them on first use and picks one; <a class="el" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance.">QtPassSettings::getPass()</a> is how callers reach it.</p>
+<p>An operation in <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> is usually several processes: an insert is <span class="tt">gpg</span>, then <span class="tt">git add</span>, then <span class="tt">git commit</span>. <a class="el" href="class_simple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation.">SimpleTransaction</a> groups them so the operation is reported once, when its last process ends.</p>
+<h1>How an operation runs</h1>
+<p>Nothing in the interface waits for a process. A call on <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> queues work and returns; the result arrives later as a signal.</p>
+<div class="interactive_dotgraph"> <div class="dotgraph">
+<iframe scrolling="no" loading="lazy" frameborder="0" src="dot_inline_dotgraph_efffffe15b00f91cdeed6d7f68ea1a48.svg" width="1148" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+ </div><p>Showing an entry, step by step:</p>
+<ol type="1">
+<li><a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a> calls <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Pass::Show()</a> on the active backend.</li>
+<li>The backend refuses the path if it leads through a link, and otherwise queues one process on its <a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a>: <span class="tt">pass show</span> in <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a>, <span class="tt">gpg -d</span> in <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a>.</li>
+<li><a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> starts the process when everything queued before it has ended, and emits <a class="el" href="class_executor.html#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non-zero code is the receiver...">Executor::finished()</a> or <a class="el" href="class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure...">Executor::error()</a> when it exits.</li>
+<li><a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion.">Pass::finished()</a> receives both. Exit code 0 becomes the signal of that kind of operation, here <a class="el" href="class_pass.html#a3a1a065e12909518f3898b3557ed714c" title="Emitted when a Show() succeeds.">Pass::finishedShow()</a>; anything else becomes <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit()</a>.</li>
+<li><a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a>, the <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> glue object and the open dialogs are connected to those signals and update what the user sees.</li>
+</ol>
+<p>An operation that queued a command ends in a <span class="tt">finished...</span> signal or in <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit()</a>, and code that disables part of the interface while it runs relies on that to be released again. Checks made before anything is queued are less uniform: some refusals emit <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit()</a> too, others only <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail...">Pass::critical()</a>. The signal descriptions in <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> say which.</p>
+<p>A few things do not go through the queue. <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> runs a process and waits; it is for worker threads and for short probes. <a class="el" href="class_native_grep.html" title="Full-text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ...">NativeGrep</a>, the content search, decrypts on a thread of its own and reports through <a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched.">Pass::finishedGrep()</a>. Re-encrypting a folder in <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> runs on a worker thread as well.</p>
+<h1>Rules about secrets</h1>
+<p>Decrypted entries pass through this code, and several rules keep them from ending up where they should not. Please keep them when changing things.</p>
+<ul>
+<li>Every kind of process is classified in one table, <a class="el" href="namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e" title="What is known about pid.">Enums::processInfo()</a>, as able to output a secret or not. Output that may hold one reaches neither the process output panel nor <a class="el" href="class_pass.html#a13859dd31b009e6d362546d1c96dc303" title="A process of any kind finished successfully and its output cannot contain a secret.">Pass::finishedAnyWithPid()</a>. A new <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> value does not compile until it has a row there.</li>
+<li><a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a> is the only way a secret reaches the clipboard. It marks the data so clipboard managers skip it, remembers what it copied, and clears it again.</li>
+<li><a class="el" href="class_secret_line_edit.html" title="A QLineEdit for a password that can be shown: whatever is copied out of it is marked as a secret and ...">SecretLineEdit</a>, <a class="el" href="class_secret_plain_text_edit.html" title="A QPlainTextEdit for decrypted entry text being edited: whatever is copied or cut out of it is marked...">SecretPlainTextEdit</a> and <a class="el" href="class_secret_text_browser.html" title="A QTextBrowser for decrypted entry text: whatever is copied out of it is marked as a secret and repor...">SecretTextBrowser</a> are the widgets that may hold a secret. Whatever is copied out of them, the X11 primary selection included, is marked as a secret and cleared like any other copy.</li>
+<li>Nothing behind a link is treated as part of the store. <a class="el" href="class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">Pass::refuseLinkedPath()</a> and <a class="el" href="class_path_validator.html" title="Password-store path-boundary checks.">PathValidator</a> hold the checks.</li>
+</ul>
+<h1>Topics</h1>
+<ul>
+<li><a class="el" href="group__backend.html" title="Password store backends">Password store backends</a></li>
+<li><a class="el" href="group__process.html" title="Running external programs">Running external programs</a></li>
+<li><a class="el" href="group__keys.html" title="Keys and recipients">Keys and recipients</a></li>
+<li><a class="el" href="group__store.html" title="Store tree and entries">Store tree and entries</a></li>
+<li><a class="el" href="group__settings.html" title="Settings and profiles">Settings and profiles</a></li>
+<li><a class="el" href="group__ui.html" title="Windows and dialogs">Windows and dialogs</a></li>
+<li><a class="el" href="group__secrets.html" title="Handling secrets in the interface">Handling secrets in the interface</a></li>
+<li><a class="el" href="group__support.html" title="Application support">Application support</a></li>
+</ul>
+<h1>Working on these docs</h1>
+<p>The pages are generated by Doxygen from the comments in <span class="tt">src/</span> and <span class="tt">main/</span>, from this page and from <span class="tt">doxygen/groups.dox</span>. The documentation job fails on any Doxygen warning, so run it before pushing:</p>
+<div class="fragment"><div class="line">doxygen Doxyfile &gt;/dev/null</div>
+</div><!-- fragment --><p>Nothing printed means no warnings. Open <span class="tt">docs/index.html</span> to read the result.</p>
+<p>What a comment needs:</p>
+<ul>
+<li>Every class, function, signal, slot, member variable and enum value has a doc block, private ones as well. Non-void functions have <span class="tt">@return</span>, and every parameter has <span class="tt">@param</span>.</li>
+<li>The block in the header is the contract: what the thing does, when a signal is emitted and what the receiver should do, what a member holds and who owns it. Say what the name does not already say.</li>
+<li>For a function declared in a header, a block on the definition in the <span class="tt">.cpp</span> file is for how it works. Write it as plain paragraphs without <span class="tt">@brief</span>, <span class="tt">@param</span> or <span class="tt">@return</span>; Doxygen appends it to the description from the header.</li>
+<li>A function that exists only in a <span class="tt">.cpp</span> file, such as a <span class="tt">static</span> helper, has no header block. Its full block, with <span class="tt">@brief</span>, <span class="tt">@param</span> and <span class="tt">@return</span>, goes on the definition.</li>
+<li>Each file starts with a <span class="tt">@file</span> block, and each class belongs to one topic through <span class="tt">@ingroup</span>.</li>
+</ul>
+<p>Building, testing and the pull request workflow are described in <a href="https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

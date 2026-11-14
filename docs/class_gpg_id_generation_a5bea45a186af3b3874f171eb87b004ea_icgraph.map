@@ -1,5 +1,0 @@
-<map id="GpgIdGeneration::header" name="GpgIdGeneration::header">
-<area shape="rect" id="Node000001" title="The header lines for a list." alt="" coords="294,5,478,33"/>
-<area shape="rect" id="Node000002" href="$class_gpg_id_generation.html#a6e0bb5a3d0a36742737d9f7d29e714bc" title="The file the store IDs are kept in, next to recordFile() and under its lock, so a QtPass from before ..." alt="" coords="5,5,246,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,19,246,22,246,17,281,19"/>
-</map>

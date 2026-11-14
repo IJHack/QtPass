@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_executor.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">Executor Member List</div></div>
 </div><!--header-->
@@ -102,35 +120,49 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_executor.html">Executor</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">cancelNext</a>() -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#ab60903ccdf163f6f025f4bc857632887">childUmask</a>() -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871">dequeuing</a>(int id, bool completes)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a37986d339c981097b639c76fab602f92">detachFromTerminal</a>(QProcess &amp;process)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a987e7227ac1932bbb59cea5cbc82d483">drained</a>()</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a554cab50d6449b456ad4e8309ee11a90">environment</a>() const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88">error</a>(int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74">execute</a>(int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a490166ea519a8047e207da8d67f3c0d2">execute</a>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#aedd0216127ab9915112df45d9eaaccfe">execute</a>(int id, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#affda40d546db75d35f38db1ec1414bf7">execute</a>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#acd16a6a2c0d0cb55406c99b72c9d299f">executeBlocking</a>(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a6b68c11023f1844048df6969600e200b">executeBlocking</a>(QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#aec1ef83ae0df4b4a2773b5ad533c837e">executeBlocking</a>(const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#aa17378022bf90b96beb2a2ac0750751d">executeBlocking</a>(const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b">childUmask</a>() -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a676362a1d54d7bce3bced4abd3e65944">collectOutput</a>(const ExecQueueItem &amp;item, int exitCode) -&gt; std::pair&lt; QString, QString &gt;</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871">dequeuing</a>(int id, bool completes)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492">detachFromTerminal</a>(QProcess &amp;process)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a987e7227ac1932bbb59cea5cbc82d483">drained</a>()</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a554cab50d6449b456ad4e8309ee11a90">environment</a>() const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88">error</a>(int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74">execute</a>(int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a490166ea519a8047e207da8d67f3c0d2">execute</a>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#aedd0216127ab9915112df45d9eaaccfe">execute</a>(int id, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#affda40d546db75d35f38db1ec1414bf7">execute</a>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">executeBlocking</a>(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a15bdb2a88cfa90134bbf8601eef4055e">executeBlocking</a>(QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a9c01e6e31745874177b21982ce2cd4d1">executeBlocking</a>(const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a061f1202d96a7145f9bc19abef923fe3">executeBlocking</a>(const QProcessEnvironment &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#ae71c92047b8337f770294e84211d850f">executeNext</a>()</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d">Executor</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_executor.html#ace810a6d93c74dec7188038210c5a731">finished</a>(int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af">isIdle</a>() const -&gt; bool</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a78f8f16776f308c83b48b00a941c944e">parseWslCommand</a>(const QString &amp;app) -&gt; std::optional&lt; WslCommand &gt;</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a9fbf09f8da63419fa052c9d8ebf08408">resolveExecutable</a>(const QString &amp;app) -&gt; QString</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a1c8933b8dca68b4967740d6193a2ea4d">setChildUmask</a>(int mask)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a68704b9a35398e88fa70ae00600d70a5">m_drainCheckPosted</a></td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a32c4982fc25ba41f0b3ca420807c3e83">m_execQueue</a></td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a5c333622022bd27ab87b0c581496f66f">m_pendingErrors</a></td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#af165b60b2641b431ca57c506e5c5d9e8">m_process</a></td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c">onProcessFinished</a>(int exitCode, QProcess::ExitStatus exitStatus)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#aec74cb83e3072dbf74a5f09681f4716c">parseWslCommand</a>(const QString &amp;app) -&gt; std::optional&lt; WslCommand &gt;</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a0dc059529757ca423bde0b74fe0129c2">postDrainedIfIdle</a>()</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a96a40ee14be47ac090dea92e621d7be7">resolveExecutable</a>(const QString &amp;app) -&gt; QString</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#ae60746042ffc5c3eb343a2911a6bb896">runBlocking</a>(QProcess &amp;process, const QString &amp;app, const QStringList &amp;args, const QString &amp;input, QString *process_out, QString *process_err, const std::atomic_bool *cancel=nullptr, int timeoutMs=-1) -&gt; int</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#abd923dfe9e21c7914d3973ef3d4ebefc">running</a></td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a9f717e2a6f4b5ed7a0ef6f833a80d880">setChildUmask</a>(int mask)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#ae542d7fba49e96e26fb93c52a9860b22">setEnvironment</a>(const QProcessEnvironment &amp;env)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_executor.html#acfcfc18b0b973791530302eb8179e038">starting</a>()</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a4417d62f24842a5ff4459559b9527ead">translatePathForWsl</a>(const QString &amp;path, const QString &amp;exe) -&gt; QString</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a694edbdebf865b549812969f49bc0c3d">wslExecArgs</a>(const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10">startProcess</a>(QProcess &amp;process, const QString &amp;app, const QStringList &amp;args)</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86">translatePathForWsl</a>(const QString &amp;path, const QString &amp;exe) -&gt; QString</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd">wslExecArgs</a>(const QString &amp;command, const QStringList &amp;args) -&gt; QStringList</td><td class="entry"><a class="el" href="class_executor.html">Executor</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

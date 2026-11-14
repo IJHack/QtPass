@@ -1,4 +1,5 @@
 <map id="ImitatePass::gitReady" name="ImitatePass::gitReady">
-<area shape="rect" id="Node000001" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="5,29,169,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="58,28,54,20,57,11,69,5,87,3,107,5,118,14,113,14,105,10,87,8,70,10,61,15,59,20,63,29"/>
+<area shape="rect" id="Node000001" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="5,5,169,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="217,5,342,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,17,204,19,198,19,169,22"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="QtPassSettings::getPasswordConfiguration" name="QtPassSettings::getPasswordConfiguration">
+<area shape="rect" id="Node000001" title="Get complete password generation configuration." alt="" coords="286,5,494,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a09bc11e245b05410cd8c9084c83f02f2" title="Show the chosen character set&#39;s characters in the line edit, editable only for the custom set." alt="" coords="5,5,238,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,28,238,30,238,25,272,28"/>
+</map>

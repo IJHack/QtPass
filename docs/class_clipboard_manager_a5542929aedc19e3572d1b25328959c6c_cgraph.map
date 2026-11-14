@@ -1,0 +1,25 @@
+<map id="ClipboardManager::copyIfAlways" name="ClipboardManager::copyIfAlways">
+<area shape="rect" id="Node000001" title="Handle clipboard copying for a shown entry." alt="" coords="5,180,194,224"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl..." alt="" coords="242,159,448,186"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,188,229,186,224,188,195,193"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="513,219,667,246"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="194,205,499,224,496,229,194,210"/>
+<area shape="rect" id="Node000003" href="$clipboardmanager_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="498,29,682,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,156,418,112,455,88,495,66,513,61,508,64,497,71,458,92,421,116,364,160"/>
+<area shape="rect" id="Node000004" href="$class_clipboard_manager.html#a764964ed0180589399caa5b03504283c" title="Empty a saved previous text equal to text, now copied as a secret, so clear() does not put the secret..." alt="" coords="496,81,684,126"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="396,156,496,129,492,131,397,161"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="404,184,518,214,513,215,404,190"/>
+<area shape="rect" id="Node000011" href="$class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b" title="Something worth showing in the status bar happened." alt="" coords="496,150,684,195"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="448,170,483,172,478,173,449,175"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="548,28,542,20,547,11,564,5,590,3,619,5,636,14,630,14,617,10,590,8,565,10,551,15,547,20,554,29"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="732,188,935,216"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="667,220,719,216,714,217,668,225"/>
+<area shape="rect" id="Node000008" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="766,240,901,284"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="668,239,753,252,748,252,668,244"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="983,188,1206,216"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="935,199,970,202,964,202,935,204"/>
+<area shape="rect" id="Node000009" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="997,240,1192,284"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="902,259,984,262,979,262,902,264"/>
+<area shape="rect" id="Node000010" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="992,309,1197,354"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="902,277,995,304,990,304,901,282"/>
+</map>

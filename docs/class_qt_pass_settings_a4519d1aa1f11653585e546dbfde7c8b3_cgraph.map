@@ -1,0 +1,15 @@
+<map id="QtPassSettings::isUseGit" name="QtPassSettings::isUseGit">
+<area shape="rect" id="Node000001" title="Check whether Git integration is enabled." alt="" coords="5,31,187,58"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="493,5,695,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,37,478,22,477,28,187,43"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="235,56,445,84"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,51,222,57,217,58,187,57"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="743,5,967,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="696,17,730,19,725,19,696,22"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="412,53,503,37,509,36,413,58"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="516,81,672,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="445,78,503,86,498,86,445,83"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="551,80,544,72,549,63,566,57,594,55,624,57,642,66,636,66,623,62,594,60,568,62,553,67,549,72,556,82"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="774,81,936,109"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="673,93,761,95,756,95,673,98"/>
+</map>

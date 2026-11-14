@@ -1,0 +1,9 @@
+<map id="src/passbackendfactory.h" name="src/passbackendfactory.h">
+<area shape="rect" id="Node000001" title="PassBackendFactory, which constructs the two Pass backends on demand and hands out the one the settin..." alt="" coords="197,5,382,33"/>
+<area shape="rect" id="Node000002" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="5,81,166,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,40,123,83,121,78,237,37"/>
+<area shape="rect" id="Node000003" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="190,81,389,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="291,47,292,82,287,79,288,51"/>
+<area shape="rect" id="Node000004" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="413,81,579,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="341,36,462,80,457,81,340,41"/>
+</map>

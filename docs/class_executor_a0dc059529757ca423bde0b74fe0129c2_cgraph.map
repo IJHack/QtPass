@@ -1,0 +1,8 @@
+<map id="Executor::postDrainedIfIdle" name="Executor::postDrainedIfIdle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,44,203,72"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),..." alt="" coords="251,5,385,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,41,238,33,233,35,185,46"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af" title="Whether no command is running and nothing is queued." alt="" coords="258,81,378,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,70,245,82,240,82,187,75"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="281,80,275,72,280,63,294,57,318,55,343,57,358,66,353,66,342,62,318,60,296,62,283,67,280,72,286,82"/>
+</map>

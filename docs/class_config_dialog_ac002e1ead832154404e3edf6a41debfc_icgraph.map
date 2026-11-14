@@ -1,0 +1,9 @@
+<map id="ConfigDialog::on_checkBoxSelection_clicked" name="ConfigDialog::on_checkBoxSelection_clicked">
+<area shape="rect" id="Node000001" title="Re&#45;apply the clipboard gating for the current clipboard mode." alt="" coords="492,21,690,66"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="Enable or disable clipboard selection mode." alt="" coords="249,29,444,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,43,445,46,444,41,479,43"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="387,14,374,10,346,8,321,10,307,15,303,20,310,30,305,28,298,20,303,11,320,5,346,3,375,5,392,14"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="143,14,130,10,103,8,78,10,64,15,60,20,66,29,61,29,55,20,60,11,76,5,103,3,131,5,148,14"/>
+</map>

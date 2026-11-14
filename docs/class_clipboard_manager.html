@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_clipboard_manager.html','','class_clipboard_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,15 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_clipboard_manager-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ClipboardManager Class Reference</div></div>
+  <div class="headertitle"><div class="title">ClipboardManager Class Reference<div class="ingroups"><a class="el" href="group__secrets.html">Handling secrets in the interface</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -113,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager__inherit__graph.svg" width="151" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for ClipboardManager:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager__coll__graph.svg" width="151" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -127,9 +140,8 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:a7c807bebb29c44b69965ebee13becb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autoclear timer when enabled.  <br /></td></tr>
 <tr class="memitem:a17f2c6bd33ca83f2044ef232b8edf65a" id="r_a17f2c6bd33ca83f2044ef232b8edf65a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a17f2c6bd33ca83f2044ef232b8edf65a">trackCopied</a> (const QString &amp;text)</td></tr>
 <tr class="memdesc:a17f2c6bd33ca83f2044ef232b8edf65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Track text that got onto the clipboard some other way.  <br /></td></tr>
-<tr class="memitem:ab9f20e4394ee1075b4e269cd454e4fc1" id="r_ab9f20e4394ee1075b4e269cd454e4fc1"><td class="memItemLeft"><a id="ab9f20e4394ee1075b4e269cd454e4fc1" name="ab9f20e4394ee1075b4e269cd454e4fc1"></a>
-void&#160;</td><td class="memItemRight"><b>clear</b> ()</td></tr>
-<tr class="memdesc:ab9f20e4394ee1075b4e269cd454e4fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked. <br /></td></tr>
+<tr class="memitem:ab9f20e4394ee1075b4e269cd454e4fc1" id="r_ab9f20e4394ee1075b4e269cd454e4fc1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1">clear</a> ()</td></tr>
+<tr class="memdesc:ab9f20e4394ee1075b4e269cd454e4fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -140,19 +152,35 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:addcbfc9a4b057f9adeef3a986fb5fbeb" id="r_addcbfc9a4b057f9adeef3a986fb5fbeb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:addcbfc9a4b057f9adeef3a986fb5fbeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a manager that also clears its text when the application quits.  <br /></td></tr>
-<tr class="memitem:a6614eba6805293ea0ff96118c0567872" id="r_a6614eba6805293ea0ff96118c0567872"><td class="memItemLeft"><a id="a6614eba6805293ea0ff96118c0567872" name="a6614eba6805293ea0ff96118c0567872"></a>
-void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
-<tr class="memdesc:a6614eba6805293ea0ff96118c0567872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-read the autoclear delay from the settings. <br /></td></tr>
+<tr class="memitem:a6614eba6805293ea0ff96118c0567872" id="r_a6614eba6805293ea0ff96118c0567872"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6614eba6805293ea0ff96118c0567872">setAutoclearTimer</a> ()</td></tr>
+<tr class="memdesc:a6614eba6805293ea0ff96118c0567872"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-read the autoclear delay from the settings.  <br /></td></tr>
 <tr class="memitem:a5542929aedc19e3572d1b25328959c6c" id="r_a5542929aedc19e3572d1b25328959c6c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5542929aedc19e3572d1b25328959c6c">copyIfAlways</a> (const QString &amp;text, const QString &amp;p_output=QString())</td></tr>
 <tr class="memdesc:a5542929aedc19e3572d1b25328959c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle clipboard copying for a shown entry.  <br /></td></tr>
 <tr class="memitem:a17d1e93dc5cddccbd6f486f3d772b5cc" id="r_a17d1e93dc5cddccbd6f486f3d772b5cc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a17d1e93dc5cddccbd6f486f3d772b5cc">trackedText</a> () const -&gt; QString</td></tr>
 <tr class="memdesc:a17d1e93dc5cddccbd6f486f3d772b5cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The text this manager last put on the clipboard and still tracks.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a764964ed0180589399caa5b03504283c" id="r_a764964ed0180589399caa5b03504283c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a764964ed0180589399caa5b03504283c">forgetIfSaved</a> (const QString &amp;text)</td></tr>
+<tr class="memdesc:a764964ed0180589399caa5b03504283c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty a saved previous text equal to <code class="param">text</code>, now copied as a secret, so <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> does not put the secret back.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4" id="r_a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4"><td class="memItemLeft">QTimer&#160;</td><td class="memItemRight"><a class="el" href="#a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4">m_clearTimer</a></td></tr>
+<tr class="memdesc:a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single-shot autoclear timer; started by <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> when the autoclear setting is on, and calls <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> when it fires.  <br /></td></tr>
+<tr class="memitem:abf4dadc78d7a07b55e49365b0c1f44dc" id="r_abf4dadc78d7a07b55e49365b0c1f44dc"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#abf4dadc78d7a07b55e49365b0c1f44dc">m_clippedText</a></td></tr>
+<tr class="memdesc:abf4dadc78d7a07b55e49365b0c1f44dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The secret <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> last put on the clipboard; <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> removes the clipboard content only while it still equals this.  <br /></td></tr>
+<tr class="memitem:adf12996e998b62d918f9750ff1923b5d" id="r_adf12996e998b62d918f9750ff1923b5d"><td class="memItemLeft">std::optional&lt; QString &gt;&#160;</td><td class="memItemRight"><a class="el" href="#adf12996e998b62d918f9750ff1923b5d">m_previousClipboard</a></td></tr>
+<tr class="memitem:abb7f95aadcd33bad8021ccfc8a26f0f0" id="r_abb7f95aadcd33bad8021ccfc8a26f0f0"><td class="memItemLeft">std::optional&lt; QString &gt;&#160;</td><td class="memItemRight"><a class="el" href="#abb7f95aadcd33bad8021ccfc8a26f0f0">m_previousSelection</a></td></tr>
+<tr class="memdesc:abb7f95aadcd33bad8021ccfc8a26f0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">As m_previousClipboard, for the X11 primary selection.  <br /></td></tr>
+<tr class="memitem:a4a616d713f5cf757c429bcca6798fa4d" id="r_a4a616d713f5cf757c429bcca6798fa4d"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#a4a616d713f5cf757c429bcca6798fa4d">m_otherCopies</a></td></tr>
+<tr class="memdesc:a4a616d713f5cf757c429bcca6798fa4d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a17f2c6bd33ca83f2044ef232b8edf65a" title="Track text that got onto the clipboard some other way.">trackCopied()</a> texts, cleared with the rest  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Puts secrets on the system clipboard and takes them off again. </p>
 <p>Remembers what it copied so the autoclear timer (and the quit handler) only remove that text, never something the user copied in the meantime. Settings (selection vs. clipboard, autoclear on/off, delay) are read from <a class="el" href="class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults.">QtPassSettings</a>; call <a class="el" href="#a6614eba6805293ea0ff96118c0567872" title="Re-read the autoclear delay from the settings.">setAutoclearTimer()</a> after they change. Status text for the main window's status bar is emitted, not shown, so this class has no UI dependency and is unit-testable. </p>
 
-<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00041">41</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00047">47</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="addcbfc9a4b057f9adeef3a986fb5fbeb" name="addcbfc9a4b057f9adeef3a986fb5fbeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addcbfc9a4b057f9adeef3a986fb5fbeb">&#9670;&#160;</a></span>ClipboardManager()</h2>
@@ -185,9 +213,58 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00015">15</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_addcbfc9a4b057f9adeef3a986fb5fbeb_cgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="ab9f20e4394ee1075b4e269cd454e4fc1" name="ab9f20e4394ee1075b4e269cd454e4fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f20e4394ee1075b4e269cd454e4fc1">&#9670;&#160;</a></span>clear</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClipboardManager::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00137">137</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_ab9f20e4394ee1075b4e269cd454e4fc1_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_ab9f20e4394ee1075b4e269cd454e4fc1_icgraph.svg" width="450" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a5542929aedc19e3572d1b25328959c6c" name="a5542929aedc19e3572d1b25328959c6c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5542929aedc19e3572d1b25328959c6c">&#9670;&#160;</a></span>copyIfAlways()</h2>
 
@@ -215,6 +292,14 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00028">28</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a5542929aedc19e3572d1b25328959c6c_cgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -249,6 +334,94 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00042">42</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a7c807bebb29c44b69965ebee13becb99_cgraph.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a7c807bebb29c44b69965ebee13becb99_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a764964ed0180589399caa5b03504283c" name="a764964ed0180589399caa5b03504283c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764964ed0180589399caa5b03504283c">&#9670;&#160;</a></span>forgetIfSaved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClipboardManager::forgetIfSaved </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty a saved previous text equal to <code class="param">text</code>, now copied as a secret, so <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> does not put the secret back. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The text that has just been copied as a secret. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00081">81</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a764964ed0180589399caa5b03504283c_icgraph.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6614eba6805293ea0ff96118c0567872" name="a6614eba6805293ea0ff96118c0567872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6614eba6805293ea0ff96118c0567872">&#9670;&#160;</a></span>setAutoclearTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClipboardManager::setAutoclearTimer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Re-read the autoclear delay from the settings. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00023">23</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a6614eba6805293ea0ff96118c0567872_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a6614eba6805293ea0ff96118c0567872_icgraph.svg" width="500" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="ac2d547f75aeb2c6bb2755be4b30c777b" name="ac2d547f75aeb2c6bb2755be4b30c777b"></a>
@@ -281,6 +454,12 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_ac2d547f75aeb2c6bb2755be4b30c777b_icgraph.svg" width="100%" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -315,6 +494,20 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8cpp_source.html#l00093">93</a> of file <a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a17f2c6bd33ca83f2044ef232b8edf65a_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_clipboard_manager_a17f2c6bd33ca83f2044ef232b8edf65a_icgraph.svg" width="100%" height="453"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a17d1e93dc5cddccbd6f486f3d772b5cc" name="a17d1e93dc5cddccbd6f486f3d772b5cc"></a>
@@ -343,18 +536,160 @@ void&#160;</td><td class="memItemRight"><b>setAutoclearTimer</b> ()</td></tr>
 <p>The text this manager last put on the clipboard and still tracks. </p>
 <dl class="section return"><dt>Returns</dt><dd>Tracked text, empty once cleared. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00073">73</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00079">79</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4" name="a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4">&#9670;&#160;</a></span>m_clearTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer ClipboardManager::m_clearTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Single-shot autoclear timer; started by <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> when the autoclear setting is on, and calls <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> when it fires. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00119">119</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+
+</div>
+</div>
+<a id="abf4dadc78d7a07b55e49365b0c1f44dc" name="abf4dadc78d7a07b55e49365b0c1f44dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf4dadc78d7a07b55e49365b0c1f44dc">&#9670;&#160;</a></span>m_clippedText</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ClipboardManager::m_clippedText</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The secret <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> last put on the clipboard; <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> removes the clipboard content only while it still equals this. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00124">124</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a616d713f5cf757c429bcca6798fa4d" name="a4a616d713f5cf757c429bcca6798fa4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a616d713f5cf757c429bcca6798fa4d">&#9670;&#160;</a></span>m_otherCopies</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ClipboardManager::m_otherCopies</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#a17f2c6bd33ca83f2044ef232b8edf65a" title="Track text that got onto the clipboard some other way.">trackCopied()</a> texts, cleared with the rest </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00137">137</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+
+</div>
+</div>
+<a id="adf12996e998b62d918f9750ff1923b5d" name="adf12996e998b62d918f9750ff1923b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf12996e998b62d918f9750ff1923b5d">&#9670;&#160;</a></span>m_previousClipboard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;QString&gt; ClipboardManager::m_previousClipboard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>What was on the clipboard and in the selection before <a class="el" href="#a7c807bebb29c44b69965ebee13becb99" title="Copy text into the system clipboard (or the X11 primary selection when configured) and arm the autocl...">copyText()</a> first put a secret there, for <a class="el" href="#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no-op when nothing is tracked...">clear()</a> to put back (restoreClipboard). Text only, as pass -c keeps it; absent when nothing was saved. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00128">128</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+
+</div>
+</div>
+<a id="abb7f95aadcd33bad8021ccfc8a26f0f0" name="abb7f95aadcd33bad8021ccfc8a26f0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb7f95aadcd33bad8021ccfc8a26f0f0">&#9670;&#160;</a></span>m_previousSelection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;QString&gt; ClipboardManager::m_previousSelection</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>As m_previousClipboard, for the X11 primary selection. </p>
+
+<p class="definition">Definition at line <a class="el" href="clipboardmanager_8h_source.html#l00130">130</a> of file <a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="clipboardmanager_8h_source.html">clipboardmanager.h</a></li>
+<li>src/<a class="el" href="clipboardmanager_8cpp_source.html">clipboardmanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_clipboard_manager.html">ClipboardManager</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

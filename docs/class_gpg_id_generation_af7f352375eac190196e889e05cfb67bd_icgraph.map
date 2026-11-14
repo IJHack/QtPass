@@ -1,0 +1,26 @@
+<map id="GpgIdGeneration::storeIdFor" name="GpgIdGeneration::storeIdFor">
+<area shape="rect" id="Node000001" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="1437,44,1642,72"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa327d0b0f45abfb88d10da0c5fdebd41" title="Put the generation header on a list that is about to be signed: reserve a generation above what this ..." alt="" coords="1188,5,1389,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1419,44,1390,43,1390,37,1424,44"/>
+<area shape="rect" id="Node000005" href="$class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5" title="Write the enabled recipients to gpgIdFile, whole or not at all; with signed_ the list carries the gen..." alt="" coords="1208,74,1370,102"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1424,72,1371,81,1370,76,1419,72"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40" title="Write the enabled recipients to a .gpg&#45;id, atomically: a write that fails halfway (full disk,..." alt="" coords="941,14,1140,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1170,28,1140,30,1140,25,1175,27"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="738,14,864,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="922,28,865,30,865,25,928,27"/>
+<area shape="rect" id="Node000006" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="967,74,1114,102"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1189,88,1115,90,1114,85,1194,88"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="717,65,885,110"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="948,88,886,90,886,85,954,88"/>
+<area shape="rect" id="Node000011" href="$class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="709,135,893,179"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="978,106,881,137,880,131,973,107"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="492,65,660,110"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="699,88,661,90,661,85,704,87"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,74,443,102"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="473,88,444,90,443,85,479,87"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,74,201,102"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="231,88,201,90,201,85,236,87"/>
+<area shape="poly" id="edge10_Node000010_Node000010" title=" " alt="" coords="143,59,130,55,103,52,78,54,64,59,60,65,67,73,61,74,55,65,60,55,77,49,103,47,131,50,148,58"/>
+<area shape="rect" id="Node000012" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="491,143,661,171"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="691,157,662,160,662,154,697,157"/>
+</map>

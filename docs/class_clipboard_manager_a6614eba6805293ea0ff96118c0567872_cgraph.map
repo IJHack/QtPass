@@ -1,0 +1,9 @@
+<map id="ClipboardManager::setAutoclearTimer" name="ClipboardManager::setAutoclearTimer">
+<area shape="rect" id="Node000001" title="Re&#45;read the autoclear delay from the settings." alt="" coords="5,5,236,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="284,5,493,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,25,270,28,265,28,236,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="541,14,743,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,25,528,28,523,28,494,30"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="791,14,1015,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="744,25,778,28,773,28,744,30"/>
+</map>

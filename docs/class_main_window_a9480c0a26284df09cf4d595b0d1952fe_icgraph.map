@@ -1,0 +1,15 @@
+<map id="MainWindow::onEdit" name="MainWindow::onEdit">
+<area shape="rect" id="Node000001" title="Toolbar &quot;Edit&quot; or a double&#45;click: editPassword() on the current entry." alt="" coords="810,57,964,85"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="538,5,755,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="802,53,714,36,714,31,808,54"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,57,239,85"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="816,88,763,99,629,110,525,113,420,109,286,99,200,88,200,83,287,94,420,104,525,108,629,105,762,94,810,89"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,57,762,85"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="792,71,763,74,763,69,797,71"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,57,483,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="561,36,459,59,458,54,556,37"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,42,414,38,385,36,357,38,342,43,338,48,345,58,340,56,333,48,339,39,356,33,385,31,415,33,434,42"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,80,239,83,239,77,274,80"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,60,289,62,284,63,254,65"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="513,71,484,74,483,69,518,71"/>
+</map>

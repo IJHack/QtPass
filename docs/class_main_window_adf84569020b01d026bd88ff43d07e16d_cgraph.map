@@ -1,0 +1,13 @@
+<map id="MainWindow::initProcessOutput" name="MainWindow::initProcessOutput">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,233,76"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216" title="Get showProcessOutput setting." alt="" coords="281,5,503,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,45,268,43,263,44,233,50"/>
+<area shape="rect" id="Node000005" href="$class_process_output_panel.html#a5eced61630b5293e8fda4c3b92c1fe71" title="Build the console (Clear button + read&#45;only text edit)." alt="" coords="313,75,471,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="233,74,300,85,295,85,233,79"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="551,14,753,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="503,25,538,27,533,28,504,30"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="801,14,1025,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="754,25,788,27,783,28,754,30"/>
+<area shape="rect" id="Node000006" href="$class_process_output_panel.html#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re&#45;arm auto&#45;scroll." alt="" coords="577,75,727,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="471,94,564,97,559,97,472,100"/>
+</map>

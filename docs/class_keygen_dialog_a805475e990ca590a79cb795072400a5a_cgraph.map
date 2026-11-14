@@ -1,0 +1,49 @@
+<map id="KeygenDialog::done" name="KeygenDialog::done">
+<area shape="rect" id="Node000001" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="5,261,157,289"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1" title="Splice a passphrase into a GPG batch template." alt="" coords="205,106,433,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,258,283,140,283,146,106,263"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="217,209,420,237"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="147,258,239,239,235,242,149,263"/>
+<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="1022,398,1215,442"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="97,286,143,326,173,347,206,363,311,397,420,421,532,436,641,444,747,446,844,444,1003,435,1009,435,845,449,747,452,641,449,531,442,419,426,309,402,204,368,171,351,140,331,96,292"/>
+<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="208,261,430,289"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="156,272,195,273,191,276,158,277"/>
+<area shape="rect" id="Node000021" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="757,381,974,409"/>
+<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="132,287,287,328,384,349,481,367,616,382,744,392,739,392,615,387,481,372,383,354,286,333,131,292"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="522,54,669,82"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,103,508,83,504,86,397,108"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="518,106,672,134"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="433,117,505,119,500,121,434,123"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="549,53,542,45,548,36,566,30,595,28,627,30,645,39,640,39,626,35,595,33,567,35,551,40,547,45,554,54"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring." alt="" coords="481,210,709,238"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="398,258,503,240,498,242,399,263"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script." alt="" coords="506,158,684,186"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="404,258,432,246,446,234,455,222,464,209,480,196,498,191,493,193,482,201,468,213,459,225,450,238,434,250,406,263"/>
+<area shape="rect" id="Node000017" href="$class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial..." alt="" coords="759,262,972,290"/>
+<area shape="poly" id="edge22_Node000007_Node000017" title=" " alt="" coords="429,272,746,274,741,277,430,278"/>
+<area shape="rect" id="Node000020" href="$class_keygen_dialog.html#a7bb268b96119127b0051d1adffe42630" title="Stops and hides the progress indicator, re&#45;enables the form under the usual OK rule and shows error i..." alt="" coords="500,312,690,357"/>
+<area shape="poly" id="edge23_Node000007_Node000020" title=" " alt="" coords="386,287,488,310,483,311,386,292"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="769,210,962,238"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="671,184,778,206,772,207,671,189"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="783,106,948,134"/>
+<area shape="poly" id="edge16_Node000009_Node000016" title=" " alt="" coords="670,155,777,137,772,138,672,160"/>
+<area shape="poly" id="edge18_Node000009_Node000017" title=" " alt="" coords="682,184,711,196,726,209,736,222,744,235,759,247,773,256,768,256,756,252,740,239,731,226,722,213,708,201,682,189"/>
+<area shape="rect" id="Node000018" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="783,158,948,186"/>
+<area shape="poly" id="edge19_Node000009_Node000018" title=" " alt="" coords="684,169,770,171,765,173,685,175"/>
+<area shape="rect" id="Node000019" href="$class_pass.html#a6a9aa8dc4ff288ce256351b671533a84" title="Resolve the gpgconf command to kill agents." alt="" coords="1263,38,1490,66"/>
+<area shape="poly" id="edge20_Node000009_Node000019" title=" " alt="" coords="683,156,708,143,723,125,730,106,738,86,756,69,825,37,899,17,976,6,1052,3,1125,5,1193,12,1307,34,1302,35,1193,17,1125,11,1052,8,976,11,900,22,827,42,759,73,742,89,735,108,728,128,711,147,686,161"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1037,198,1200,226"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="962,217,1024,216,1019,217,962,222"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1294,192,1459,219"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1200,207,1281,208,1276,208,1200,213"/>
+<area shape="rect" id="Node000013" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1538,165,1757,193"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1460,195,1526,191,1521,191,1460,200"/>
+<area shape="rect" id="Node000014" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1541,64,1754,91"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="1407,188,1600,99,1605,98,1409,193"/>
+<area shape="rect" id="Node000015" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1545,217,1750,245"/>
+<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="1460,210,1533,220,1527,220,1460,216"/>
+<area shape="poly" id="edge17_Node000016_Node000016" title=" " alt="" coords="822,105,815,97,821,88,838,82,866,80,895,82,913,91,907,91,894,87,865,85,839,87,824,92,821,97,827,106"/>
+<area shape="poly" id="edge21_Node000019_Node000014" title=" " alt="" coords="1491,60,1529,66,1523,66,1491,65"/>
+<area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="691,353,788,377,783,377,690,358"/>
+<area shape="poly" id="edge25_Node000021_Node000006" title=" " alt="" coords="974,403,1009,409,1003,409,974,408"/>
+</map>

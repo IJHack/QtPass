@@ -1,0 +1,26 @@
+<map id="ImitatePass::finishReencrypt" name="ImitatePass::finishReencrypt">
+<area shape="rect" id="Node000001" title="Report the outcome of a run and emit endReencryptPath()." alt="" coords="5,130,212,158"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="586,22,688,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,128,176,74,215,46,259,25,299,14,341,7,426,3,505,9,573,21,568,22,504,14,426,9,342,12,300,19,261,30,218,51,179,79,124,131"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" title="A reencryptPath() run is over, whether it finished, failed, was cancelled or was refused; the main wi..." alt="" coords="265,39,488,67"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,127,193,101,259,76,287,70,283,72,261,81,195,106,140,132"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote." alt="" coords="299,159,454,187"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,153,286,162,281,164,212,158"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="801,185,926,212"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="139,155,195,178,260,196,331,206,404,213,549,217,681,212,788,207,783,207,681,218,549,222,404,218,331,211,259,201,194,183,139,161"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#af0e30ba675e011cd63447466afc04bed" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started." alt="" coords="267,261,486,288"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="128,156,186,197,261,240,297,256,292,256,259,245,183,202,127,161"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a3362c8cb99993b5c1acf9fdefb2bf960" title="Tell the user that the recipients of dir changed on disk but the change is not committed,..." alt="" coords="260,91,493,136"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="211,130,246,127,242,129,213,135"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="550,107,725,135"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="449,156,551,138,546,139,450,161"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="556,159,719,187"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="454,171,542,173,537,174,455,176"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="781,107,946,135"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="725,119,768,121,763,122,725,124"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="825,106,818,98,823,89,839,83,864,81,890,83,906,92,901,92,889,88,863,86,840,88,827,93,824,98,830,108"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="719,180,788,190,783,190,719,185"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured." alt="" coords="541,261,733,288"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="486,272,528,274,523,275,486,277"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="454,88,576,54,571,56,455,93"/>
+</map>

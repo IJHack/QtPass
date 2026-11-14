@@ -1,5 +1,16 @@
 <map id="StoreModel" name="StoreModel">
-<area shape="rect" id="Node000001" title="QSortFilterProxyModel for filtering and displaying password store." alt="" coords="41,81,137,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,173,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,47,91,82,87,80,87,51"/>
+<area shape="rect" id="Node000001" title="QSortFilterProxyModel for filtering and displaying password store." alt="" coords="63,307,158,335"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,207,173,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,248,110,307,105,306,93,251"/>
+<area shape="rect" id="Node000003" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="197,207,248,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,244,127,309,124,305,194,245"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="131,5,204,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="166,46,167,89,174,133,193,173,214,206,209,206,188,176,169,134,162,90,164,51"/>
+<area shape="rect" id="Node000007" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="184,106,261,134"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="183,44,218,105,212,106,182,49"/>
+<area shape="rect" id="Node000005" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="285,106,384,134"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="311,143,268,185,240,208,237,204,265,181,307,146"/>
+<area shape="rect" id="Node000006" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="250,5,419,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="336,46,337,106,332,104,333,51"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="224,147,225,207,220,205,221,151"/>
 </map>

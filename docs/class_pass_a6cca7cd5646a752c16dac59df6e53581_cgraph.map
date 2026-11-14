@@ -1,0 +1,17 @@
+<map id="Pass::refuseLinkedPath" name="Pass::refuseLinkedPath">
+<area shape="rect" id="Node000001" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="5,57,175,85"/>
+<area shape="rect" id="Node000002" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="223,5,437,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,54,249,35,245,39,158,59"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="265,57,394,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="175,69,252,70,247,72,176,74"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="224,123,436,150"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="144,83,264,117,259,120,144,88"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="520,44,665,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="394,65,507,62,502,63,395,71"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="541,96,643,124"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="436,123,528,116,523,117,437,128"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="510,148,674,176"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="436,144,497,152,492,153,436,149"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="485,200,699,228"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="372,148,486,185,518,196,513,195,484,190,372,153"/>
+</map>

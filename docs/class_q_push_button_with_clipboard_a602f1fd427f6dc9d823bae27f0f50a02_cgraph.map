@@ -1,0 +1,9 @@
+<map id="QPushButtonWithClipboard::buttonClicked" name="QPushButtonWithClipboard::buttonClicked">
+<area shape="rect" id="Node000001" title="Connected to QPushButton::clicked(bool); shows the pushed icon, arms the revert timer and re&#45;emits cl..." alt="" coords="5,35,203,79"/>
+<area shape="rect" id="Node000002" href="$class_q_push_button_with_clipboard.html#a54c897f5d3d52aafb69bf34f64c2d037" title="Restores the default copy icon; fired by a single&#45;shot timer 500 ms after a click." alt="" coords="496,5,693,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,31,250,20,369,13,483,18,478,19,369,18,251,25,187,37"/>
+<area shape="rect" id="Node000003" href="$class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a" title="Emitted when the button is activated with the stored text." alt="" coords="251,35,448,79"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,63,238,66,232,66,203,69"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="247,48,218,51,218,45,253,48"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="448,43,478,42,483,41,449,48"/>
+</map>

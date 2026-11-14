@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_qt_pass.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">QtPass Member List</div></div>
 </div><!--header-->
@@ -102,22 +120,34 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_qt_pass.html">QtPass</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">clipboard</a>() -&gt; ClipboardManager &amp;</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d">createQRCodePopup</a>(const QPixmap &amp;image)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a81e0207207f490616dd442837a2469d4">connectPassSignalHandlers</a>(Pass *pass)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a>(const QPixmap &amp;image)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b">doGitPush</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">entryInserted</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f">formatOutput</a>(QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">init</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">outputReady</a>(const QString &amp;html)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb">finishedInsert</a>(const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a32860d084409d781977736d6fb40d629">formatOutput</a>(QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">init</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">m_clipboard</a></td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243">onKeyGenerationComplete</a>(const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">outputReady</a>(const QString &amp;html)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#aa1153ea591126774caa31920020d188e">passStoreChanged</a>(const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04">processErrorExit</a>(int exitCode, const QString &amp;error)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a40570e79464875930afd869223136a99">processFinished</a>(const QString &amp;output, const QString &amp;errout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">pushRequested</a>()</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a>(const QString &amp;message, int timeout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">~QtPass</a>() override</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199">reportError</a>(int exitCode, const QString &amp;error)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a>(const QString &amp;message, int timeout)</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">~QtPass</a>() override</td><td class="entry"><a class="el" href="class_qt_pass.html">QtPass</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

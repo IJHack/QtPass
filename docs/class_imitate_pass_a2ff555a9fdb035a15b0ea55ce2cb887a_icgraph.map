@@ -1,4 +1,7 @@
 <map id="ImitatePass::executeGpg" name="ImitatePass::executeGpg">
-<area shape="rect" id="Node000001" title="Execute GPG command." alt="" coords="5,29,188,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="126,14,117,10,96,8,78,10,68,15,65,20,70,29,64,28,60,20,64,11,76,5,97,3,118,5,131,14"/>
+<area shape="rect" id="Node000001" title="Execute GPG command." alt="" coords="196,32,378,60"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password." alt="" coords="5,5,148,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,33,148,31,148,26,182,32"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="Show decrypted password." alt="" coords="6,57,147,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,59,147,65,146,60,183,58"/>
 </map>

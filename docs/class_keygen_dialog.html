@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_keygen_dialog.html','','class_keygen_dialog-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_keygen_dialog-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">KeygenDialog Class Reference</div></div>
+  <div class="headertitle"><div class="title">KeygenDialog Class Reference<div class="ingroups"><a class="el" href="group__keys.html">Keys and recipients</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,30 +126,76 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog__inherit__graph.svg" width="123" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for KeygenDialog:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog__coll__graph.svg" width="123" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog__coll__graph.svg" width="402" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2378a741fcb02e1f8ab4debec25c3c4d" id="r_a2378a741fcb02e1f8ab4debec25c3c4d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a2378a741fcb02e1f8ab4debec25c3c4d">KeygenDialog</a> (const QString &amp;gpgExe, <a class="el" href="class_pass.html">Pass</a> *pass, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:a2378a741fcb02e1f8ab4debec25c3c4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a>.  <br /></td></tr>
+<tr class="memitem:ab469a4e10fb2b2ee324e57cb1e209a3e" id="r_ab469a4e10fb2b2ee324e57cb1e209a3e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab469a4e10fb2b2ee324e57cb1e209a3e">~KeygenDialog</a> () override</td></tr>
+<tr class="memdesc:ab469a4e10fb2b2ee324e57cb1e209a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the dialog and its generated UI.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f57d71d0288d8088b23b8124088a62a" id="r_a8f57d71d0288d8088b23b8124088a62a"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a8f57d71d0288d8088b23b8124088a62a">applyPassphrase</a> (const QString &amp;batch, const QString &amp;passphrase)</td></tr>
-<tr class="memdesc:a8f57d71d0288d8088b23b8124088a62a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splice a passphrase into a GPG batch template.  <br /></td></tr>
-<tr class="memitem:aa57783258b6c2b910bc1a27659103976" id="r_aa57783258b6c2b910bc1a27659103976"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa57783258b6c2b910bc1a27659103976">isBatchValue</a> (const QString &amp;value) -&gt; bool</td></tr>
-<tr class="memdesc:aa57783258b6c2b910bc1a27659103976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">value</code> can go into a GPG batch line as one value.  <br /></td></tr>
+<tr class="memitem:a1286e8e44dcb894081e3e41c9cea21d1" id="r_a1286e8e44dcb894081e3e41c9cea21d1"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="#a1286e8e44dcb894081e3e41c9cea21d1">applyPassphrase</a> (const QString &amp;batch, const QString &amp;passphrase)</td></tr>
+<tr class="memdesc:a1286e8e44dcb894081e3e41c9cea21d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splice a passphrase into a GPG batch template.  <br /></td></tr>
+<tr class="memitem:afcdfc182f4c3dad57c74e7604131ec83" id="r_afcdfc182f4c3dad57c74e7604131ec83"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afcdfc182f4c3dad57c74e7604131ec83">isBatchValue</a> (const QString &amp;value) -&gt; bool</td></tr>
+<tr class="memdesc:afcdfc182f4c3dad57c74e7604131ec83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">value</code> can go into a GPG batch line as one value.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a68eaa387bd0f5f3074636fcfb6a5cc2f" id="r_a68eaa387bd0f5f3074636fcfb6a5cc2f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a68eaa387bd0f5f3074636fcfb6a5cc2f">on_passphrase1_textChanged</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:a68eaa387bd0f5f3074636fcfb6a5cc2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">First passphrase field edited: re-evaluates whether OK may be enabled. The text itself stays out of the template box.  <br /></td></tr>
+<tr class="memitem:af674d915b30db393f7dd6c0824ef363d" id="r_af674d915b30db393f7dd6c0824ef363d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af674d915b30db393f7dd6c0824ef363d">on_passphrase2_textChanged</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:af674d915b30db393f7dd6c0824ef363d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confirmation field edited: same as <a class="el" href="#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re-evaluates whether OK may be enabled. The text itself stays out of t...">on_passphrase1_textChanged()</a>.  <br /></td></tr>
+<tr class="memitem:a5a56db2294c6d4a0a2e7c665ad2a54a1" id="r_a5a56db2294c6d4a0a2e7c665ad2a54a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5a56db2294c6d4a0a2e7c665ad2a54a1">setNoPassphrase</a> (bool checked)</td></tr>
+<tr class="memdesc:a5a56db2294c6d4a0a2e7c665ad2a54a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ticking "no passphrase" clears and disables the passphrase fields and makes OK available; unticking it asks for one again.  <br /></td></tr>
+<tr class="memitem:a3a0ea832334cd27c1f74bd5bb65d4258" id="r_a3a0ea832334cd27c1f74bd5bb65d4258"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3a0ea832334cd27c1f74bd5bb65d4258">setExpertMode</a> (bool checked)</td></tr>
+<tr class="memdesc:a3a0ea832334cd27c1f74bd5bb65d4258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable expert mode (the editable batch template).  <br /></td></tr>
+<tr class="memitem:aa28f8db828f60edd4195bcc9f9e8cb6e" id="r_aa28f8db828f60edd4195bcc9f9e8cb6e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa28f8db828f60edd4195bcc9f9e8cb6e">on_email_textChanged</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:aa28f8db828f60edd4195bcc9f9e8cb6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mirrors the e-mail field into the template's <span class="tt">Name-Email:</span> line.  <br /></td></tr>
+<tr class="memitem:ac0ebf04c899e95033f560ae4aae5b2f3" id="r_ac0ebf04c899e95033f560ae4aae5b2f3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac0ebf04c899e95033f560ae4aae5b2f3">on_name_textChanged</a> (const QString &amp;arg1)</td></tr>
+<tr class="memdesc:ac0ebf04c899e95033f560ae4aae5b2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mirrors the name field into the template's <span class="tt">Name-Real:</span> line.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab6bde78f9ab9d4ccd40a5ec1e2dd087d" id="r_ab6bde78f9ab9d4ccd40a5ec1e2dd087d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab6bde78f9ab9d4ccd40a5ec1e2dd087d">updateOkState</a> ()</td></tr>
+<tr class="memdesc:ab6bde78f9ab9d4ccd40a5ec1e2dd087d"><td class="mdescLeft">&#160;</td><td class="mdescRight">OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explicitly. Empty fields alone are not a choice: the key would be stored unprotected without anyone saying so.  <br /></td></tr>
+<tr class="memitem:aec6a86ea8b6fc8eee1c2a49c501198d4" id="r_aec6a86ea8b6fc8eee1c2a49c501198d4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aec6a86ea8b6fc8eee1c2a49c501198d4">passphraseChosen</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:aec6a86ea8b6fc8eee1c2a49c501198d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox. Empty fields alone are neither.  <br /></td></tr>
+<tr class="memitem:a1697fd1a20cad8dd3bd3491120525a25" id="r_a1697fd1a20cad8dd3bd3491120525a25"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1697fd1a20cad8dd3bd3491120525a25">replace</a> (const QString &amp;key, const QString &amp;value)</td></tr>
+<tr class="memdesc:a1697fd1a20cad8dd3bd3491120525a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rewrites every <span class="tt">&lt;key&gt;: ...</span> line of the batch template to carry <code class="param">value</code>. Values that fail <a class="el" href="#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value.">isBatchValue()</a> are ignored so a pasted line break can never become a directive of its own.  <br /></td></tr>
+<tr class="memitem:a805475e990ca590a79cb795072400a5a" id="r_a805475e990ca590a79cb795072400a5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a805475e990ca590a79cb795072400a5a">done</a> (int r) override</td></tr>
+<tr class="memdesc:a805475e990ca590a79cb795072400a5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">On <span class="tt">Accepted</span>, validates the form (passphrase chosen, no line breaks, name of 5+ characters, plausible e-mail), swaps the form for the progress indicator and calls <a class="el" href="#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey...">startGeneration()</a>; the dialog only closes once the backend reports success. Any other result disconnects the backend signals and closes normally.  <br /></td></tr>
+<tr class="memitem:a90fd7f89ce5f973fd48a4037e5103c74" id="r_a90fd7f89ce5f973fd48a4037e5103c74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90fd7f89ce5f973fd48a4037e5103c74">startGeneration</a> (const QString &amp;batch)</td></tr>
+<tr class="memdesc:a90fd7f89ce5f973fd48a4037e5103c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to the backend's finished/failed signals for this one attempt and calls <a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script.">Pass::GenerateGPGKeys()</a>. With no backend the attempt fails at once.  <br /></td></tr>
+<tr class="memitem:a7bb268b96119127b0051d1adffe42630" id="r_a7bb268b96119127b0051d1adffe42630"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7bb268b96119127b0051d1adffe42630">generationFailed</a> (const QString &amp;error)</td></tr>
+<tr class="memdesc:a7bb268b96119127b0051d1adffe42630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops and hides the progress indicator, re-enables the form under the usual OK rule and shows <code class="param">error</code> in the status label, so the user can correct the input and try again.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa6e89ea0c59169dfd0c4205a143b369f" id="r_aa6e89ea0c59169dfd0c4205a143b369f"><td class="memItemLeft">QScopedPointer&lt; Ui::KeygenDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa6e89ea0c59169dfd0c4205a143b369f">ui</a></td></tr>
+<tr class="memdesc:aa6e89ea0c59169dfd0c4205a143b369f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated form (<span class="tt">keygendialog.ui</span>); owned.  <br /></td></tr>
+<tr class="memitem:ab9717d1d85f52af420ee5158d433b8f7" id="r_ab9717d1d85f52af420ee5158d433b8f7"><td class="memItemLeft"><a class="el" href="class_pass.html">Pass</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ab9717d1d85f52af420ee5158d433b8f7">m_pass</a></td></tr>
+<tr class="memdesc:ab9717d1d85f52af420ee5158d433b8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend that runs gpg; not owned, may be nullptr.  <br /></td></tr>
+<tr class="memitem:adb6748c6f81244e2983a7eadf508a79a" id="r_adb6748c6f81244e2983a7eadf508a79a"><td class="memItemLeft">QMetaObject::Connection&#160;</td><td class="memItemRight"><a class="el" href="#adb6748c6f81244e2983a7eadf508a79a">m_finished</a></td></tr>
+<tr class="memdesc:adb6748c6f81244e2983a7eadf508a79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection to <a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring.">Pass::finishedGenerateGPGKeys</a>, live only during an attempt.  <br /></td></tr>
+<tr class="memitem:a8b682fe8ddfd68fecfab7de107ec25cd" id="r_a8b682fe8ddfd68fecfab7de107ec25cd"><td class="memItemLeft">QMetaObject::Connection&#160;</td><td class="memItemRight"><a class="el" href="#a8b682fe8ddfd68fecfab7de107ec25cd">m_failed</a></td></tr>
+<tr class="memdesc:a8b682fe8ddfd68fecfab7de107ec25cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connection to <a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial...">Pass::generateGPGKeysFailed</a>, live only during an attempt.  <br /></td></tr>
+<tr class="memitem:a1d32ce07e0d9fbdc89d2caea7a4f8e8d" id="r_a1d32ce07e0d9fbdc89d2caea7a4f8e8d"><td class="memItemLeft">std::unique_ptr&lt; QProgressIndicator &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a1d32ce07e0d9fbdc89d2caea7a4f8e8d">m_progressIndicator</a></td></tr>
+<tr class="memdesc:a1d32ce07e0d9fbdc89d2caea7a4f8e8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spinner shown while gpg works; created lazily on the first attempt, reused (hidden) across retries.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles GPG keypair generation. </p>
+<p>The form asks for a name, an e-mail address and a passphrase typed twice (or an explicit "no passphrase"); an Expert checkbox reveals the editable GPG batch template that the name and e-mail fields are mirrored into. The passphrase is never written into that template: on OK, <a class="el" href="#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,...">done()</a> validates the fields, splices the passphrase in with <a class="el" href="#a1286e8e44dcb894081e3e41c9cea21d1" title="Splice a passphrase into a GPG batch template.">applyPassphrase()</a> and hands the batch to <a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script.">Pass::GenerateGPGKeys()</a>, replacing the form with a progress indicator. The dialog owns nothing of the backend; it connects to <a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring.">Pass::finishedGenerateGPGKeys</a> (accept) and <a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial...">Pass::generateGPGKeysFailed</a> (show the error and give the form back) for the duration of one attempt only, so an <span class="tt">exec()</span> caller such as the first-run wizard sees <span class="tt">Accepted</span> exactly when a key exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00022">22</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00040">40</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2378a741fcb02e1f8ab4debec25c3c4d" name="a2378a741fcb02e1f8ab4debec25c3c4d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2378a741fcb02e1f8ab4debec25c3c4d">&#9670;&#160;</a></span>KeygenDialog()</h2>
@@ -178,24 +238,59 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00024">24</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_cgraph.svg" width="220" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
 <div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_icgraph.svg" width="472" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a2378a741fcb02e1f8ab4debec25c3c4d_icgraph.svg" width="220" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab469a4e10fb2b2ee324e57cb1e209a3e" name="ab469a4e10fb2b2ee324e57cb1e209a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab469a4e10fb2b2ee324e57cb1e209a3e">&#9670;&#160;</a></span>~KeygenDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">KeygenDialog::~KeygenDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the dialog and its generated UI. </p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_ab469a4e10fb2b2ee324e57cb1e209a3e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a8f57d71d0288d8088b23b8124088a62a" name="a8f57d71d0288d8088b23b8124088a62a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f57d71d0288d8088b23b8124088a62a">&#9670;&#160;</a></span>applyPassphrase()</h2>
+<a id="a1286e8e44dcb894081e3e41c9cea21d1" name="a1286e8e44dcb894081e3e41c9cea21d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1286e8e44dcb894081e3e41c9cea21d1">&#9670;&#160;</a></span>applyPassphrase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,10 +326,112 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Batch text ready for gpg &ndash;gen-key &ndash;batch. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00130">130</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a1286e8e44dcb894081e3e41c9cea21d1_cgraph.svg" width="442" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a1286e8e44dcb894081e3e41c9cea21d1_icgraph.svg" width="508" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="aa57783258b6c2b910bc1a27659103976" name="aa57783258b6c2b910bc1a27659103976"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa57783258b6c2b910bc1a27659103976">&#9670;&#160;</a></span>isBatchValue()</h2>
+<a id="a805475e990ca590a79cb795072400a5a" name="a805475e990ca590a79cb795072400a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805475e990ca590a79cb795072400a5a">&#9670;&#160;</a></span>done()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::done </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>On <span class="tt">Accepted</span>, validates the form (passphrase chosen, no line breaks, name of 5+ characters, plausible e-mail), swaps the form for the progress indicator and calls <a class="el" href="#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey...">startGeneration()</a>; the dialog only closes once the backend reports success. Any other result disconnects the backend signals and closes normally. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The QDialog result code. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00176">176</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a805475e990ca590a79cb795072400a5a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a7bb268b96119127b0051d1adffe42630" name="a7bb268b96119127b0051d1adffe42630"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bb268b96119127b0051d1adffe42630">&#9670;&#160;</a></span>generationFailed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::generationFailed </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stops and hides the progress indicator, re-enables the form under the usual OK rule and shows <code class="param">error</code> in the status label, so the user can correct the input and try again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">error</td><td>Backend error text; HTML-escaped before display. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00272">272</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a7bb268b96119127b0051d1adffe42630_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a7bb268b96119127b0051d1adffe42630_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="afcdfc182f4c3dad57c74e7604131ec83" name="afcdfc182f4c3dad57c74e7604131ec83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdfc182f4c3dad57c74e7604131ec83">&#9670;&#160;</a></span>isBatchValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +443,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto KeygenDialog::isBatchValue </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -264,23 +461,620 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>False when it holds a CR, LF or NUL. </dd></dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00171">171</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_aa57783258b6c2b910bc1a27659103976_cgraph.svg" width="472" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_afcdfc182f4c3dad57c74e7604131ec83_icgraph.svg" width="100%" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="aa28f8db828f60edd4195bcc9f9e8cb6e" name="aa28f8db828f60edd4195bcc9f9e8cb6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28f8db828f60edd4195bcc9f9e8cb6e">&#9670;&#160;</a></span>on_email_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::on_email_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mirrors the e-mail field into the template's <span class="tt">Name-Email:</span> line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>The new field text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00083">83</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_aa28f8db828f60edd4195bcc9f9e8cb6e_cgraph.svg" width="658" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_aa28f8db828f60edd4195bcc9f9e8cb6e_icgraph.svg" width="459" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac0ebf04c899e95033f560ae4aae5b2f3" name="ac0ebf04c899e95033f560ae4aae5b2f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0ebf04c899e95033f560ae4aae5b2f3">&#9670;&#160;</a></span>on_name_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::on_name_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mirrors the name field into the template's <span class="tt">Name-Real:</span> line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>The new field text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00087">87</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_ac0ebf04c899e95033f560ae4aae5b2f3_cgraph.svg" width="658" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_ac0ebf04c899e95033f560ae4aae5b2f3_icgraph.svg" width="459" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a68eaa387bd0f5f3074636fcfb6a5cc2f" name="a68eaa387bd0f5f3074636fcfb6a5cc2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68eaa387bd0f5f3074636fcfb6a5cc2f">&#9670;&#160;</a></span>on_passphrase1_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::on_passphrase1_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>First passphrase field edited: re-evaluates whether OK may be enabled. The text itself stays out of the template box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>The new field text (unused). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00048">48</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a68eaa387bd0f5f3074636fcfb6a5cc2f_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a68eaa387bd0f5f3074636fcfb6a5cc2f_icgraph.svg" width="100%" height="365"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="af674d915b30db393f7dd6c0824ef363d" name="af674d915b30db393f7dd6c0824ef363d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af674d915b30db393f7dd6c0824ef363d">&#9670;&#160;</a></span>on_passphrase2_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::on_passphrase2_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Confirmation field edited: same as <a class="el" href="#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re-evaluates whether OK may be enabled. The text itself stays out of t...">on_passphrase1_textChanged()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg1</td><td>The new field text (unused). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00073">73</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_af674d915b30db393f7dd6c0824ef363d_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_af674d915b30db393f7dd6c0824ef363d_icgraph.svg" width="504" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aec6a86ea8b6fc8eee1c2a49c501198d4" name="aec6a86ea8b6fc8eee1c2a49c501198d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6a86ea8b6fc8eee1c2a49c501198d4">&#9670;&#160;</a></span>passphraseChosen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto KeygenDialog::passphraseChosen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox. Empty fields alone are neither. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when generation may proceed as far as the passphrase goes. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00053">53</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_aec6a86ea8b6fc8eee1c2a49c501198d4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a1697fd1a20cad8dd3bd3491120525a25" name="a1697fd1a20cad8dd3bd3491120525a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1697fd1a20cad8dd3bd3491120525a25">&#9670;&#160;</a></span>replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::replace </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rewrites every <span class="tt">&lt;key&gt;: ...</span> line of the batch template to carry <code class="param">value</code>. Values that fail <a class="el" href="#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value.">isBatchValue()</a> are ignored so a pasted line break can never become a directive of its own. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Batch parameter name, e.g. <span class="tt">Name-Real</span>. </td></tr>
+    <tr><td class="paramname">value</td><td>New value for that parameter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00091">91</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a1697fd1a20cad8dd3bd3491120525a25_cgraph.svg" width="430" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a1697fd1a20cad8dd3bd3491120525a25_icgraph.svg" width="100%" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a3a0ea832334cd27c1f74bd5bb65d4258" name="a3a0ea832334cd27c1f74bd5bb65d4258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0ea832334cd27c1f74bd5bb65d4258">&#9670;&#160;</a></span>setExpertMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::setExpertMode </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checked</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable or disable expert mode (the editable batch template). </p>
+<p>Connected explicitly to QCheckBox::toggled in the constructor; the box is two-state, so the deprecated stateChanged(int) is not needed. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checked</td><td>true when the Expert box is checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00077">77</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a3a0ea832334cd27c1f74bd5bb65d4258_icgraph.svg" width="496" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a5a56db2294c6d4a0a2e7c665ad2a54a1" name="a5a56db2294c6d4a0a2e7c665ad2a54a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a56db2294c6d4a0a2e7c665ad2a54a1">&#9670;&#160;</a></span>setNoPassphrase</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::setNoPassphrase </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checked</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ticking "no passphrase" clears and disables the passphrase fields and makes OK available; unticking it asks for one again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checked</td><td>The checkbox state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00063">63</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a5a56db2294c6d4a0a2e7c665ad2a54a1_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a5a56db2294c6d4a0a2e7c665ad2a54a1_icgraph.svg" width="510" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a90fd7f89ce5f973fd48a4037e5103c74" name="a90fd7f89ce5f973fd48a4037e5103c74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fd7f89ce5f973fd48a4037e5103c74">&#9670;&#160;</a></span>startGeneration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::startGeneration </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>batch</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connects to the backend's finished/failed signals for this one attempt and calls <a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script.">Pass::GenerateGPGKeys()</a>. With no backend the attempt fails at once. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">batch</td><td>Complete batch text, passphrase already spliced in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00249">249</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a90fd7f89ce5f973fd48a4037e5103c74_cgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a90fd7f89ce5f973fd48a4037e5103c74_icgraph.svg" width="432" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab6bde78f9ab9d4ccd40a5ec1e2dd087d" name="ab6bde78f9ab9d4ccd40a5ec1e2dd087d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6bde78f9ab9d4ccd40a5ec1e2dd087d">&#9670;&#160;</a></span>updateOkState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void KeygenDialog::updateOkState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explicitly. Empty fields alone are not a choice: the key would be stored unprotected without anyone saying so. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00059">59</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_ab6bde78f9ab9d4ccd40a5ec1e2dd087d_cgraph.svg" width="468" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_ab6bde78f9ab9d4ccd40a5ec1e2dd087d_icgraph.svg" width="100%" height="589"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a8b682fe8ddfd68fecfab7de107ec25cd" name="a8b682fe8ddfd68fecfab7de107ec25cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b682fe8ddfd68fecfab7de107ec25cd">&#9670;&#160;</a></span>m_failed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMetaObject::Connection KeygenDialog::m_failed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connection to <a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial...">Pass::generateGPGKeysFailed</a>, live only during an attempt. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00170">170</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+
+</div>
+</div>
+<a id="adb6748c6f81244e2983a7eadf508a79a" name="adb6748c6f81244e2983a7eadf508a79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb6748c6f81244e2983a7eadf508a79a">&#9670;&#160;</a></span>m_finished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMetaObject::Connection KeygenDialog::m_finished</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connection to <a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring.">Pass::finishedGenerateGPGKeys</a>, live only during an attempt. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00167">167</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9717d1d85f52af420ee5158d433b8f7" name="ab9717d1d85f52af420ee5158d433b8f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9717d1d85f52af420ee5158d433b8f7">&#9670;&#160;</a></span>m_pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_pass.html">Pass</a>* KeygenDialog::m_pass</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Backend that runs gpg; not owned, may be nullptr. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00164">164</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d32ce07e0d9fbdc89d2caea7a4f8e8d" name="a1d32ce07e0d9fbdc89d2caea7a4f8e8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d32ce07e0d9fbdc89d2caea7a4f8e8d">&#9670;&#160;</a></span>m_progressIndicator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;QProgressIndicator&gt; KeygenDialog::m_progressIndicator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Spinner shown while gpg works; created lazily on the first attempt, reused (hidden) across retries. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00173">173</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6e89ea0c59169dfd0c4205a143b369f" name="aa6e89ea0c59169dfd0c4205a143b369f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e89ea0c59169dfd0c4205a143b369f">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;Ui::KeygenDialog&gt; KeygenDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generated form (<span class="tt">keygendialog.ui</span>); owned. </p>
+
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00131">131</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="keygendialog_8h_source.html">keygendialog.h</a></li>
+<li>src/<a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_keygen_dialog.html">KeygenDialog</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

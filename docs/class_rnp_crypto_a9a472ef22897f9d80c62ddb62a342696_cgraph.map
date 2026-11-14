@@ -1,4 +1,0 @@
-<map id="RnpCrypto::decrypt" name="RnpCrypto::decrypt">
-<area shape="rect" id="Node000001" title="Decrypts an OpenPGP message with any secret key in the keyring." alt="" coords="5,29,152,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="52,28,48,20,52,11,62,5,79,3,96,5,107,14,101,14,94,10,78,8,64,10,56,14,54,20,58,29"/>
-</map>

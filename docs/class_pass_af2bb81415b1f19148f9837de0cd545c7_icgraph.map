@@ -1,0 +1,7 @@
+<map id="Pass::queueInsert" name="Pass::queueInsert">
+<area shape="rect" id="Node000001" title="Count one insert that has started queueing but not yet reported." alt="" coords="196,32,331,60"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password." alt="" coords="5,5,148,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,34,148,32,148,27,183,34"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830" title="Insert new password." alt="" coords="14,57,139,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,57,140,65,139,60,183,57"/>
+</map>

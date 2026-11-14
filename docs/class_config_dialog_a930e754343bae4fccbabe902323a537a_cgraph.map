@@ -1,0 +1,5 @@
+<map id="ConfigDialog::on_toolButtonPass_clicked" name="ConfigDialog::on_toolButtonPass_clicked">
+<area shape="rect" id="Node000001" title="Pick the pass executable in a file dialog; cancel keeps the field." alt="" coords="5,5,209,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a8ac46697f885118d2eb8773e22d28d85" title="Ask for an existing file in a read&#45;only file dialog." alt="" coords="257,14,479,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,25,244,27,239,28,209,30"/>
+</map>

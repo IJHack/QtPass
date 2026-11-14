@@ -1,0 +1,5 @@
+<map id="PathValidator::isPathInStore" name="PathValidator::isPathInStore">
+<area shape="rect" id="Node000001" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="5,5,206,33"/>
+<area shape="rect" id="Node000002" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="254,5,484,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,17,241,19,235,19,206,22"/>
+</map>

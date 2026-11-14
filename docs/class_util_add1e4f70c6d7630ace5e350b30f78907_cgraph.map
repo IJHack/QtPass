@@ -1,0 +1,5 @@
+<map id="Util::stageFileReplacing" name="Util::stageFileReplacing">
+<area shape="rect" id="Node000001" title="The staged write every file QtPass puts into a store goes through: a temporary created next to path (..." alt="" coords="5,5,181,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ab0e1c40d3ccc706e0d74d246361a2640" title="Give the file at from the name to, atomically and without following anything: the operating system&#39;s ..." alt="" coords="229,5,352,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,17,216,19,211,19,181,22"/>
+</map>

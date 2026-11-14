@@ -1,0 +1,8 @@
+<map id="KeygenDialog::on_passphrase1_textChanged" name="KeygenDialog::on_passphrase1_textChanged">
+<area shape="rect" id="Node000001" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="546,36,770,81"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="274,5,498,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,44,499,43,499,38,533,44"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#ab469a4e10fb2b2ee324e57cb1e209a3e" title="Destroys the dialog and its generated UI." alt="" coords="5,44,226,72"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="528,62,498,65,274,65,226,64,226,59,274,60,498,60,533,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,43,226,48,226,43,261,42"/>
+</map>

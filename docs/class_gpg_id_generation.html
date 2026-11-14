@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_gpg_id_generation.html','','class_gpg_id_generation-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="class_gpg_id_generation-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">GpgIdGeneration Class Reference</div></div>
+  <div class="headertitle"><div class="title">GpgIdGeneration Class Reference<div class="ingroups"><a class="el" href="group__keys.html">Keys and recipients</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -129,51 +141,62 @@ Public Types</h2></td></tr>
 , <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737">RecordUnavailable</a>
 <br />
  }</td></tr>
-<tr class="memdesc:aa4ec78f9896b8cbb9ea3f82151e9e8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outcome of <a class="el" href="#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder.  <a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">More...</a><br /></td></tr>
+<tr class="memdesc:aa4ec78f9896b8cbb9ea3f82151e9e8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The outcome of <a class="el" href="#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder.  <a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af9a3ef307c6046bf57c489ad730366d6" id="r_af9a3ef307c6046bf57c489ad730366d6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af9a3ef307c6046bf57c489ad730366d6">parse</a> (const QByteArray &amp;contents, QString *error=nullptr) -&gt; std::optional&lt; <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &gt;</td></tr>
-<tr class="memdesc:af9a3ef307c6046bf57c489ad730366d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header a <span class="tt">.gpg-id</span>'s bytes declare.  <br /></td></tr>
-<tr class="memitem:a5bea45a186af3b3874f171eb87b004ea" id="r_a5bea45a186af3b3874f171eb87b004ea"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5bea45a186af3b3874f171eb87b004ea">header</a> (qint64 generation, const QString &amp;folder, const QString &amp;store={}) -&gt; QByteArray</td></tr>
-<tr class="memdesc:a5bea45a186af3b3874f171eb87b004ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header lines for a list.  <br /></td></tr>
-<tr class="memitem:aa3bf28bd87147d4821a73d4a2c1bc7fb" id="r_aa3bf28bd87147d4821a73d4a2c1bc7fb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3bf28bd87147d4821a73d4a2c1bc7fb">withHeader</a> (qint64 generation, const QString &amp;folder, const QByteArray &amp;recipients, const QString &amp;store={}) -&gt; QByteArray</td></tr>
-<tr class="memdesc:aa3bf28bd87147d4821a73d4a2c1bc7fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A complete list: the header in front of the recipients.  <br /></td></tr>
-<tr class="memitem:afae720f2c34d2c1861b1e2e810b4a135" id="r_afae720f2c34d2c1861b1e2e810b4a135"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afae720f2c34d2c1861b1e2e810b4a135">storeIdFor</a> (const QString &amp;storeRoot, const std::optional&lt; QString &gt; &amp;onDisk, QString *error=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
-<tr class="memdesc:afae720f2c34d2c1861b1e2e810b4a135"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store id to write into a list of <code class="param">storeRoot:</code> the one this device knows the store by; else <code class="param">onDisk</code>, the store line of the verified list being replaced, so a device joining a store takes its id over; else a new random one. Remembered before it is returned.  <br /></td></tr>
-<tr class="memitem:a09b1614889db306cfd1efe17acc4ea8c" id="r_a09b1614889db306cfd1efe17acc4ea8c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a09b1614889db306cfd1efe17acc4ea8c">folderOf</a> (const QString &amp;gpgIdFile, const QString &amp;storeRoot) -&gt; std::optional&lt; QString &gt;</td></tr>
-<tr class="memdesc:a09b1614889db306cfd1efe17acc4ea8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store-relative folder of <code class="param">gpgIdFile</code>, as written in and compared against the folder line: <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated, from canonical paths, lower-cased on Windows.  <br /></td></tr>
-<tr class="memitem:a495c019fdefb8cb6c7349d4ff2f52cd5" id="r_a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a495c019fdefb8cb6c7349d4ff2f52cd5">remembered</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
-<tr class="memdesc:a495c019fdefb8cb6c7349d4ff2f52cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The highest generation this device has accepted or written for the <span class="tt">.gpg-id</span> at <code class="param">gpgIdFile</code>. Unreadable is not "never seen": a signed list must then be refused, not compared against 0.  <br /></td></tr>
-<tr class="memitem:a490cff66a5b86f14e762192bbfddd93d" id="r_a490cff66a5b86f14e762192bbfddd93d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a490cff66a5b86f14e762192bbfddd93d">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
-<tr class="memdesc:a490cff66a5b86f14e762192bbfddd93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, its bytes against the remembered digest when the generations are equal, and remember it when it passes. One transaction under the lock: read, compare, write through.  <br /></td></tr>
-<tr class="memitem:aca79157e6460c0bb20028e1d8b46b3fb" id="r_aca79157e6460c0bb20028e1d8b46b3fb"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb">reserveNext</a> (const QString &amp;gpgIdFile, std::optional&lt; qint64 &gt; verifiedOnDisk, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
-<tr class="memdesc:aca79157e6460c0bb20028e1d8b46b3fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve the generation to write next for <code class="param">gpgIdFile:</code> one above both what this device remembers and <code class="param">verifiedOnDisk</code>, recorded as remembered before it is returned. One transaction under the lock, so two writers in this process cannot get the same number.  <br /></td></tr>
-<tr class="memitem:a07ea80b67c1211c0f0eba73c8a1869f4" id="r_a07ea80b67c1211c0f0eba73c8a1869f4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a07ea80b67c1211c0f0eba73c8a1869f4">recordWritten</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, QString *error=nullptr) -&gt; bool</td></tr>
-<tr class="memdesc:a07ea80b67c1211c0f0eba73c8a1869f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave.  <br /></td></tr>
-<tr class="memitem:a593383b668ee43317c32dfac0170fb08" id="r_a593383b668ee43317c32dfac0170fb08"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a593383b668ee43317c32dfac0170fb08">digest</a> (const QByteArray &amp;contents) -&gt; QString</td></tr>
-<tr class="memdesc:a593383b668ee43317c32dfac0170fb08"><td class="mdescLeft">&#160;</td><td class="mdescRight">The digest of a list as the record keeps it: SHA-256 of the exact bytes, hexadecimal, so that two authentic lists of one generation can be told apart.  <br /></td></tr>
-<tr class="memitem:a8c27985a5dc102614c0c7b39ea7d81b5" id="r_a8c27985a5dc102614c0c7b39ea7d81b5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8c27985a5dc102614c0c7b39ea7d81b5">key</a> (const QString &amp;gpgIdFile) -&gt; QString</td></tr>
-<tr class="memdesc:a8c27985a5dc102614c0c7b39ea7d81b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The settings key for a <span class="tt">.gpg-id</span>: a hash of its canonical path, so path spelling (case, separators, links on the way) and QSettings' treatment of <span class="tt">/</span> do not matter.  <br /></td></tr>
-<tr class="memitem:a53205d18f3175ed5e3e87c8bd1ca6918" id="r_a53205d18f3175ed5e3e87c8bd1ca6918"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a53205d18f3175ed5e3e87c8bd1ca6918">recordFile</a> () -&gt; QString</td></tr>
-<tr class="memdesc:a53205d18f3175ed5e3e87c8bd1ca6918"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what was accepted, which is the manual way out for a device that cannot save the list itself.  <br /></td></tr>
-<tr class="memitem:a6e0bb5a3d0a36742737d9f7d29e714bc" id="r_a6e0bb5a3d0a36742737d9f7d29e714bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6e0bb5a3d0a36742737d9f7d29e714bc">storeRecordFile</a> () -&gt; QString</td></tr>
-<tr class="memdesc:a6e0bb5a3d0a36742737d9f7d29e714bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file the store IDs are kept in, next to <a class="el" href="#a53205d18f3175ed5e3e87c8bd1ca6918" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what...">recordFile()</a> and under its lock, so a <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> from before store IDs, rewriting the record, cannot drop them. Removing it forgets the IDs.  <br /></td></tr>
+<tr class="memitem:aed2c33b54281cbd539752f1090ecb2e4" id="r_aed2c33b54281cbd539752f1090ecb2e4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aed2c33b54281cbd539752f1090ecb2e4">parse</a> (const QByteArray &amp;contents, QString *error=nullptr) -&gt; std::optional&lt; <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &gt;</td></tr>
+<tr class="memdesc:aed2c33b54281cbd539752f1090ecb2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header a <span class="tt">.gpg-id</span>'s bytes declare.  <br /></td></tr>
+<tr class="memitem:a4db52b6f2f6464a1f2fa4f0aa0c126fc" id="r_a4db52b6f2f6464a1f2fa4f0aa0c126fc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4db52b6f2f6464a1f2fa4f0aa0c126fc">header</a> (qint64 generation, const QString &amp;folder, const QString &amp;store={}) -&gt; QByteArray</td></tr>
+<tr class="memdesc:a4db52b6f2f6464a1f2fa4f0aa0c126fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The header lines for a list.  <br /></td></tr>
+<tr class="memitem:adf82e57f1cda154b35f36dfde958120f" id="r_adf82e57f1cda154b35f36dfde958120f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adf82e57f1cda154b35f36dfde958120f">withHeader</a> (qint64 generation, const QString &amp;folder, const QByteArray &amp;recipients, const QString &amp;store={}) -&gt; QByteArray</td></tr>
+<tr class="memdesc:adf82e57f1cda154b35f36dfde958120f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A complete list: the header in front of the recipients.  <br /></td></tr>
+<tr class="memitem:af7f352375eac190196e889e05cfb67bd" id="r_af7f352375eac190196e889e05cfb67bd"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af7f352375eac190196e889e05cfb67bd">storeIdFor</a> (const QString &amp;storeRoot, const std::optional&lt; QString &gt; &amp;onDisk, QString *error=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:af7f352375eac190196e889e05cfb67bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store id to write into a list of <code class="param">storeRoot:</code> the one this device knows the store by; else <code class="param">onDisk</code>, the store line of the verified list being replaced, so a device joining a store takes its id over; else a new random one. Remembered before it is returned.  <br /></td></tr>
+<tr class="memitem:a8400be9a8caa988172707186e9f457d4" id="r_a8400be9a8caa988172707186e9f457d4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8400be9a8caa988172707186e9f457d4">folderOf</a> (const QString &amp;gpgIdFile, const QString &amp;storeRoot) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a8400be9a8caa988172707186e9f457d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store-relative folder of <code class="param">gpgIdFile</code>, as written in and compared against the folder line: <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated, from canonical paths, lower-cased on Windows.  <br /></td></tr>
+<tr class="memitem:aa71275249d300d5d4f18761334d85c02" id="r_aa71275249d300d5d4f18761334d85c02"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa71275249d300d5d4f18761334d85c02">remembered</a> (const QString &amp;gpgIdFile, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
+<tr class="memdesc:aa71275249d300d5d4f18761334d85c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">The highest generation this device has accepted or written for the <span class="tt">.gpg-id</span> at <code class="param">gpgIdFile</code>. Unreadable is not "never seen": a signed list must then be refused, not compared against 0.  <br /></td></tr>
+<tr class="memitem:a0cd43291d31707b298c9e86226a79387" id="r_a0cd43291d31707b298c9e86226a79387"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0cd43291d31707b298c9e86226a79387">accept</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, const QString &amp;storeRoot, QString *error=nullptr) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
+<tr class="memdesc:a0cd43291d31707b298c9e86226a79387"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decide about a verified list: its folder against where it sits, its generation against the remembered one, its bytes against the remembered digest when the generations are equal, and remember it when it passes. One transaction under the lock: read, compare, write through.  <br /></td></tr>
+<tr class="memitem:a8a0a444b882b99932d353adaedcfd6a4" id="r_a8a0a444b882b99932d353adaedcfd6a4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8a0a444b882b99932d353adaedcfd6a4">reserveNext</a> (const QString &amp;gpgIdFile, std::optional&lt; qint64 &gt; verifiedOnDisk, QString *error=nullptr) -&gt; std::optional&lt; qint64 &gt;</td></tr>
+<tr class="memdesc:a8a0a444b882b99932d353adaedcfd6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve the generation to write next for <code class="param">gpgIdFile:</code> one above both what this device remembers and <code class="param">verifiedOnDisk</code>, recorded as remembered before it is returned. One transaction under the lock, so two writers in this process cannot get the same number.  <br /></td></tr>
+<tr class="memitem:a9fedf696ffcf21f2ef7d465c634bf540" id="r_a9fedf696ffcf21f2ef7d465c634bf540"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9fedf696ffcf21f2ef7d465c634bf540">recordWritten</a> (const QString &amp;gpgIdFile, const QByteArray &amp;contents, QString *error=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:a9fedf696ffcf21f2ef7d465c634bf540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave.  <br /></td></tr>
+<tr class="memitem:a392a429416dece996856ac0eb7d2b3e1" id="r_a392a429416dece996856ac0eb7d2b3e1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a392a429416dece996856ac0eb7d2b3e1">digest</a> (const QByteArray &amp;contents) -&gt; QString</td></tr>
+<tr class="memdesc:a392a429416dece996856ac0eb7d2b3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The digest of a list as the record keeps it: SHA-256 of the exact bytes, hexadecimal, so that two authentic lists of one generation can be told apart.  <br /></td></tr>
+<tr class="memitem:aa2821ad93c4d61aa1152beba50b29d6e" id="r_aa2821ad93c4d61aa1152beba50b29d6e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2821ad93c4d61aa1152beba50b29d6e">key</a> (const QString &amp;gpgIdFile) -&gt; QString</td></tr>
+<tr class="memdesc:aa2821ad93c4d61aa1152beba50b29d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The settings key for a <span class="tt">.gpg-id</span>: a hash of its canonical path, so path spelling (case, separators, links on the way) and QSettings' treatment of <span class="tt">/</span> do not matter.  <br /></td></tr>
+<tr class="memitem:ae5b416ea3d26c3787b2af8e2e640e758" id="r_ae5b416ea3d26c3787b2af8e2e640e758"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae5b416ea3d26c3787b2af8e2e640e758">recordFile</a> () -&gt; QString</td></tr>
+<tr class="memdesc:ae5b416ea3d26c3787b2af8e2e640e758"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what was accepted, which is the manual way out for a device that cannot save the list itself.  <br /></td></tr>
+<tr class="memitem:a70cd5b49f5dca1370b8cef78873090d8" id="r_a70cd5b49f5dca1370b8cef78873090d8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a70cd5b49f5dca1370b8cef78873090d8">storeRecordFile</a> () -&gt; QString</td></tr>
+<tr class="memdesc:a70cd5b49f5dca1370b8cef78873090d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file the store IDs are kept in, next to <a class="el" href="#ae5b416ea3d26c3787b2af8e2e640e758" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what...">recordFile()</a> and under its lock, so a <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> from before store IDs, rewriting the record, cannot drop them. Removing it forgets the IDs.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aec962bd7ca805bf9164a35f07ca68c88" id="r_aec962bd7ca805bf9164a35f07ca68c88"><td class="memItemLeft">static const QByteArray&#160;</td><td class="memItemRight"><a class="el" href="#aec962bd7ca805bf9164a35f07ca68c88">kGenerationPrefix</a></td></tr>
 <tr class="memitem:abcdc85e16f816169a5bd5b665bb99000" id="r_abcdc85e16f816169a5bd5b665bb99000"><td class="memItemLeft">static const QByteArray&#160;</td><td class="memItemRight"><a class="el" href="#abcdc85e16f816169a5bd5b665bb99000">kFolderPrefix</a></td></tr>
 <tr class="memitem:ab6b0f551215df432adf31c4ad1e701e9" id="r_ab6b0f551215df432adf31c4ad1e701e9"><td class="memItemLeft">static const QByteArray&#160;</td><td class="memItemRight"><a class="el" href="#ab6b0f551215df432adf31c4ad1e701e9">kStorePrefix</a></td></tr>
-<tr class="memitem:ad1838a8d88e4b98e3f573bf89556a164" id="r_ad1838a8d88e4b98e3f573bf89556a164"><td class="memItemLeft">static const qint64&#160;</td><td class="memItemRight"><a class="el" href="#ad1838a8d88e4b98e3f573bf89556a164">kMaxGeneration</a></td></tr>
+<tr class="memitem:ad1838a8d88e4b98e3f573bf89556a164" id="r_ad1838a8d88e4b98e3f573bf89556a164"><td class="memItemLeft">static const qint64&#160;</td><td class="memItemRight"><a class="el" href="#ad1838a8d88e4b98e3f573bf89556a164">kMaxGeneration</a> = 999999999999999999LL</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a94e96377e9735f5e01b56a7703827095" id="r_a94e96377e9735f5e01b56a7703827095"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a94e96377e9735f5e01b56a7703827095">boundToItsFolder</a> (const QString &amp;gpgIdFile, const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;header, const QString &amp;storeRoot, QString *error) -&gt; bool</td></tr>
+<tr class="memdesc:a94e96377e9735f5e01b56a7703827095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">header's</code> folder line, if it has one, names the folder the list sits in: a pair copied elsewhere is that folder's first list, a rollback in disguise.  <br /></td></tr>
+<tr class="memitem:a2e43ee7d9b9fe9a24572a1b2e1c9654d" id="r_a2e43ee7d9b9fe9a24572a1b2e1c9654d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e43ee7d9b9fe9a24572a1b2e1c9654d">ofThisStore</a> (const QString &amp;gpgIdFile, const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;header, const QString &amp;pinned, bool alreadyAccepted, const QString &amp;recordPath, QString *error) -&gt; bool</td></tr>
+<tr class="memdesc:a2e43ee7d9b9fe9a24572a1b2e1c9654d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">header</code> fits the store this device knows by <code class="param">pinned:</code> its store line names that id, or it has none and is either generation 0 (<span class="tt">pass</span>) or a list this device accepted before it knew the id.  <br /></td></tr>
+<tr class="memitem:af86ff868df611b4db16a014a414f943c" id="r_af86ff868df611b4db16a014a414f943c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af86ff868df611b4db16a014a414f943c">wayThrough</a> (qint64 last, const QString &amp;recordPath, const QString &amp;saving) -&gt; QString</td></tr>
+<tr class="memdesc:af86ff868df611b4db16a014a414f943c"><td class="mdescLeft">&#160;</td><td class="mdescRight">How a holder of the signing key gets through a refusal, in words: saving the recipients writes the next generation, unless the record is already at the ceiling of the grammar, where it has to be removed first.  <br /></td></tr>
+<tr class="memitem:aa86015bb280ffcb87fe676eed5fd3820" id="r_aa86015bb280ffcb87fe676eed5fd3820"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa86015bb280ffcb87fe676eed5fd3820">staleList</a> (const QString &amp;gpgIdFile, const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;header, qint64 last, const QString &amp;recordPath, QString *error) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td></tr>
+<tr class="memdesc:aa86015bb280ffcb87fe676eed5fd3820"><td class="mdescLeft">&#160;</td><td class="mdescRight">The refusal for a list older than the one accepted here: a rollback, or an unbound list that could be any folder's history.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Rollback detection for signed <span class="tt">.gpg-id</span> files. </p>
 <p>A signature proves that a recipient list is authentic and unmodified; it does not prove that it is the current one, nor that it was written for the folder it sits in. Whoever can write to a shared store can put back an older, genuinely signed list that still names a member since removed, or copy such a pair into a folder that never had a list of its own, and every later encryption there would include them again.</p>
-<p>So a <span class="tt">.gpg-id</span> <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes for a store with a signing key starts with three comment lines, <span class="tt"># QtPass-GpgId-Generation: N</span>, <span class="tt"># QtPass-GpgId-Folder: &lt;store-relative folder&gt;</span> and <span class="tt"># QtPass-GpgId-Store: &lt;store id&gt;</span>, which <span class="tt">pass</span> (1.7.4 and later), <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> (1.8 and later) and <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own recipient parser ignore and the signature covers. The store id binds the list to its store, as the folder line binds it to its folder: one signing key may sign several stores, and a list of one copied into another at the same folder would verify there too (#2050). Each device remembers the id it first saw per store and refuses a list of another store, or a new list without the line. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> remembers, per <span class="tt">.gpg-id</span> file, the highest generation it has accepted or written, and refuses a signed list whose generation is lower or whose folder is not the one it sits in. Stores without a signing key get plain lists, as before: nothing checks their freshness, and older clients (pass up to 1.7.3, Android Password Store) take a comment for a recipient.</p>
+<p>So a <span class="tt">.gpg-id</span> <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes for a store with a signing key starts with three comment lines, <span class="tt"># QtPass-GpgId-Generation: N</span>, <span class="tt"># QtPass-GpgId-Folder: &lt;store-relative folder&gt;</span> and <span class="tt"># QtPass-GpgId-Store: &lt;<a class="el" href="group__store.html" title="The password store as files on disk: the tree shown in the main window, path checks,...">Store tree and entries</a> id&gt;</span>, which <span class="tt">pass</span> (1.7.4 and later), <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> (1.8 and later) and <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s own recipient parser ignore and the signature covers. The store id binds the list to its store, as the folder line binds it to its folder: one signing key may sign several stores, and a list of one copied into another at the same folder would verify there too (#2050). Each device remembers the id it first saw per store and refuses a list of another store, or a new list without the line. <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> remembers, per <span class="tt">.gpg-id</span> file, the highest generation it has accepted or written, and refuses a signed list whose generation is lower or whose folder is not the one it sits in. Stores without a signing key get plain lists, as before: nothing checks their freshness, and older clients (pass up to 1.7.3, Android Password Store) take a comment for a recipient.</p>
 <p>What this is and is not: rollback detection on a device that has seen the newer list. A device seeing a store for the first time, or one that was offline, has nothing to compare against. The generation is monotonic per observer, not a distributed sequence number: two devices can both produce generation 19 from 18, and Git is what sorts that out; a device that accepted one of the two then meets the other as the same generation with different bytes, which is a conflict, not a rollback, and is refused until a holder of the signing key saves the recipients once more. For that the record keeps, next to the generation, a digest of the exact bytes it accepted or wrote. A list without the lines (written by <span class="tt">pass</span>, or by <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> before 2.0) is generation 0 and is refused once anything higher was accepted; a holder of the signing key saving the recipients from <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes the next generation. Without a readable and writable record nothing is accepted or written: unknown state is not "never seen". </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00051">51</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00057">57</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">&#9670;&#160;</a></span>Verdict</h2>
@@ -195,7 +218,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The outcome of <a class="el" href="#a490cff66a5b86f14e762192bbfddd93d" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder. </p>
+<p>The outcome of <a class="el" href="#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">accept()</a>. Only Accepted means the list may be used; the others say why not, and Rollback alone is an authentic list of this folder. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678" name="aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678"></a>Accepted&#160;</td><td class="fielddoc"><p>Folder, generation and record all agree; remembered. </p>
 </td></tr>
@@ -215,13 +238,13 @@ Static Public Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00157">157</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00163">163</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a490cff66a5b86f14e762192bbfddd93d" name="a490cff66a5b86f14e762192bbfddd93d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a490cff66a5b86f14e762192bbfddd93d">&#9670;&#160;</a></span>accept()</h2>
+<a id="a0cd43291d31707b298c9e86226a79387" name="a0cd43291d31707b298c9e86226a79387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd43291d31707b298c9e86226a79387">&#9670;&#160;</a></span>accept()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,7 +270,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td>
         </tr>
       </table>
   </td>
@@ -269,10 +292,89 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Accepted when the list may be used; otherwise why not. Without established freshness state nothing is accepted. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00679">679</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary">
+</div>
+<div id="dynsection-0-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a0cd43291d31707b298c9e86226a79387_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary">
+</div>
+<div id="dynsection-1-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a0cd43291d31707b298c9e86226a79387_icgraph.svg" width="100%" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a593383b668ee43317c32dfac0170fb08" name="a593383b668ee43317c32dfac0170fb08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a593383b668ee43317c32dfac0170fb08">&#9670;&#160;</a></span>digest()</h2>
+<a id="a94e96377e9735f5e01b56a7703827095" name="a94e96377e9735f5e01b56a7703827095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94e96377e9735f5e01b56a7703827095">&#9670;&#160;</a></span>boundToItsFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::boundToItsFolder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">header's</code> folder line, if it has one, names the folder the list sits in: a pair copied elsewhere is that folder's first list, a rollback in disguise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> the bytes came from. </td></tr>
+    <tr><td class="paramname">header</td><td>What its header says. </td></tr>
+    <tr><td class="paramname">storeRoot</td><td>The configured store. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why not, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the list belongs where it is. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00601">601</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a94e96377e9735f5e01b56a7703827095_cgraph.svg" width="444" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a94e96377e9735f5e01b56a7703827095_icgraph.svg" width="100%" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a392a429416dece996856ac0eb7d2b3e1" name="a392a429416dece996856ac0eb7d2b3e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392a429416dece996856ac0eb7d2b3e1">&#9670;&#160;</a></span>digest()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -284,7 +386,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto GpgIdGeneration::digest </td>
           <td>(</td>
           <td class="paramtype">const QByteArray &amp;</td>          <td class="paramname"><span class="paramname"><em>contents</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -303,10 +405,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>64 hexadecimal characters. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00587">587</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a392a429416dece996856ac0eb7d2b3e1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a09b1614889db306cfd1efe17acc4ea8c" name="a09b1614889db306cfd1efe17acc4ea8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09b1614889db306cfd1efe17acc4ea8c">&#9670;&#160;</a></span>folderOf()</h2>
+<a id="a8400be9a8caa988172707186e9f457d4" name="a8400be9a8caa988172707186e9f457d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8400be9a8caa988172707186e9f457d4">&#9670;&#160;</a></span>folderOf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,7 +432,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>&#160;) -&gt;  std::optional&lt; QString &gt;</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>&#160;) -&gt; std::optional&lt; QString &gt;</td>
         </tr>
       </table>
   </td>
@@ -342,10 +452,18 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The folder, or nothing when <code class="param">gpgIdFile</code> is not under the store or a folder name on the way holds a control character, a line break among them (the folder line could not record it). </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00558">558</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8400be9a8caa988172707186e9f457d4_icgraph.svg" width="100%" height="560"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a5bea45a186af3b3874f171eb87b004ea" name="a5bea45a186af3b3874f171eb87b004ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bea45a186af3b3874f171eb87b004ea">&#9670;&#160;</a></span>header()</h2>
+<a id="a4db52b6f2f6464a1f2fa4f0aa0c126fc" name="a4db52b6f2f6464a1f2fa4f0aa0c126fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db52b6f2f6464a1f2fa4f0aa0c126fc">&#9670;&#160;</a></span>header()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,7 +484,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) -&gt;  QByteArray</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -381,22 +499,24 @@ Static Public Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">generation</td><td>The generation to declare. </td></tr>
     <tr><td class="paramname">folder</td><td>The store-relative folder the list is written for. </td></tr>
-    <tr><td class="paramname">store</td><td>The store's id (<a class="el" href="#afae720f2c34d2c1861b1e2e810b4a135" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">storeIdFor()</a>); empty writes no store line. </td></tr>
+    <tr><td class="paramname">store</td><td>The store's id (<a class="el" href="#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">storeIdFor()</a>); empty writes no store line. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The lines, newlines included. </dd></dl>
-<div id="dynsection-0" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00542">542</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
 </div>
-<div id="dynsection-0-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a5bea45a186af3b3874f171eb87b004ea_icgraph.svg" width="484" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a4db52b6f2f6464a1f2fa4f0aa0c126fc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a8c27985a5dc102614c0c7b39ea7d81b5" name="a8c27985a5dc102614c0c7b39ea7d81b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c27985a5dc102614c0c7b39ea7d81b5">&#9670;&#160;</a></span>key()</h2>
+<a id="aa2821ad93c4d61aa1152beba50b29d6e" name="aa2821ad93c4d61aa1152beba50b29d6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2821ad93c4d61aa1152beba50b29d6e">&#9670;&#160;</a></span>key()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +528,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto GpgIdGeneration::key </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -427,10 +547,95 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>64 hexadecimal characters. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00564">564</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa2821ad93c4d61aa1152beba50b29d6e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="af9a3ef307c6046bf57c489ad730366d6" name="af9a3ef307c6046bf57c489ad730366d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9a3ef307c6046bf57c489ad730366d6">&#9670;&#160;</a></span>parse()</h2>
+<a id="a2e43ee7d9b9fe9a24572a1b2e1c9654d" name="a2e43ee7d9b9fe9a24572a1b2e1c9654d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e43ee7d9b9fe9a24572a1b2e1c9654d">&#9670;&#160;</a></span>ofThisStore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::ofThisStore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pinned</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>alreadyAccepted</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>recordPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">header</code> fits the store this device knows by <code class="param">pinned:</code> its store line names that id, or it has none and is either generation 0 (<span class="tt">pass</span>) or a list this device accepted before it knew the id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> the bytes came from. </td></tr>
+    <tr><td class="paramname">header</td><td>What its header says. </td></tr>
+    <tr><td class="paramname">pinned</td><td>The store id this device knows the store by. </td></tr>
+    <tr><td class="paramname">alreadyAccepted</td><td>Whether these exact bytes are the generation this device accepted last for the file. </td></tr>
+    <tr><td class="paramname">recordPath</td><td>The store IDs' file, which the refusal names. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives why not, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the list is this store's. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00760">760</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a2e43ee7d9b9fe9a24572a1b2e1c9654d_cgraph.svg" width="456" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a2e43ee7d9b9fe9a24572a1b2e1c9654d_icgraph.svg" width="100%" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aed2c33b54281cbd539752f1090ecb2e4" name="aed2c33b54281cbd539752f1090ecb2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2c33b54281cbd539752f1090ecb2e4">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +651,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  std::optional&lt; <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &gt;</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &gt;</td>
         </tr>
       </table>
   </td>
@@ -466,10 +671,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The header (generation 0 and no folder for a list written before generations existed, or by <span class="tt">pass</span>); nothing when a line is malformed, appears twice, a generation line comes without a folder line or a store line without a generation line, which is not a list to trust. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00500">500</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aed2c33b54281cbd539752f1090ecb2e4_cgraph.svg" width="419" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aed2c33b54281cbd539752f1090ecb2e4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a53205d18f3175ed5e3e87c8bd1ca6918" name="a53205d18f3175ed5e3e87c8bd1ca6918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53205d18f3175ed5e3e87c8bd1ca6918">&#9670;&#160;</a></span>recordFile()</h2>
+<a id="ae5b416ea3d26c3787b2af8e2e640e758" name="ae5b416ea3d26c3787b2af8e2e640e758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b416ea3d26c3787b2af8e2e640e758">&#9670;&#160;</a></span>recordFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,7 +700,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto GpgIdGeneration::recordFile </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -494,10 +713,12 @@ Static Public Attributes</h2></td></tr>
 <p>The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what was accepted, which is the manual way out for a device that cannot save the list itself. </p>
 <dl class="section return"><dt>Returns</dt><dd>The record's path. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00583">583</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a07ea80b67c1211c0f0eba73c8a1869f4" name="a07ea80b67c1211c0f0eba73c8a1869f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07ea80b67c1211c0f0eba73c8a1869f4">&#9670;&#160;</a></span>recordWritten()</h2>
+<a id="a9fedf696ffcf21f2ef7d465c634bf540" name="a9fedf696ffcf21f2ef7d465c634bf540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fedf696ffcf21f2ef7d465c634bf540">&#9670;&#160;</a></span>recordWritten()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +739,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -528,7 +749,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave. </p>
+<p>Record the bytes just written for <code class="param">gpgIdFile</code>, so that this device recognises its own list afterwards and refuses another list of the same generation. Called after the file is on disk; the generation in <code class="param">contents</code> must be the one <a class="el" href="#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> gave. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> just written. </td></tr>
@@ -539,10 +760,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the digest was recorded. A list written but not digested is still recognised by its generation; only a second list of that generation would pass until it is read once. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00846">846</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a9fedf696ffcf21f2ef7d465c634bf540_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a9fedf696ffcf21f2ef7d465c634bf540_icgraph.svg" width="100%" height="412"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a495c019fdefb8cb6c7349d4ff2f52cd5" name="a495c019fdefb8cb6c7349d4ff2f52cd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a495c019fdefb8cb6c7349d4ff2f52cd5">&#9670;&#160;</a></span>remembered()</h2>
+<a id="aa71275249d300d5d4f18761334d85c02" name="aa71275249d300d5d4f18761334d85c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71275249d300d5d4f18761334d85c02">&#9670;&#160;</a></span>remembered()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -558,7 +793,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  std::optional&lt; qint64 &gt;</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; qint64 &gt;</td>
         </tr>
       </table>
   </td>
@@ -578,10 +813,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 when this device has never seen the list, the generation otherwise; nothing when the record cannot be read. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00592">592</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa71275249d300d5d4f18761334d85c02_cgraph.svg" width="444" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa71275249d300d5d4f18761334d85c02_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="aca79157e6460c0bb20028e1d8b46b3fb" name="aca79157e6460c0bb20028e1d8b46b3fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca79157e6460c0bb20028e1d8b46b3fb">&#9670;&#160;</a></span>reserveNext()</h2>
+<a id="a8a0a444b882b99932d353adaedcfd6a4" name="a8a0a444b882b99932d353adaedcfd6a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0a444b882b99932d353adaedcfd6a4">&#9670;&#160;</a></span>reserveNext()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -602,7 +851,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  std::optional&lt; qint64 &gt;</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; qint64 &gt;</td>
         </tr>
       </table>
   </td>
@@ -623,10 +872,95 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The generation to write, or nothing when the record could not be read or written or the counter is exhausted; the caller must not write the list then. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00819">819</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_cgraph.svg" width="440" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a8a0a444b882b99932d353adaedcfd6a4_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="afae720f2c34d2c1861b1e2e810b4a135" name="afae720f2c34d2c1861b1e2e810b4a135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afae720f2c34d2c1861b1e2e810b4a135">&#9670;&#160;</a></span>storeIdFor()</h2>
+<a id="aa86015bb280ffcb87fe676eed5fd3820" name="aa86015bb280ffcb87fe676eed5fd3820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86015bb280ffcb87fe676eed5fd3820">&#9670;&#160;</a></span>staleList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::staleList </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgIdFile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_gpg_id_generation_1_1_header.html">Header</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>header</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>last</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>recordPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;) -&gt; <a class="el" href="#aa4ec78f9896b8cbb9ea3f82151e9e8b9">Verdict</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The refusal for a list older than the one accepted here: a rollback, or an unbound list that could be any folder's history. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgIdFile</td><td>The <span class="tt">.gpg-id</span> the bytes came from. </td></tr>
+    <tr><td class="paramname">header</td><td>What its header says. </td></tr>
+    <tr><td class="paramname">last</td><td>The generation this device accepted before. </td></tr>
+    <tr><td class="paramname">recordPath</td><td>The record file, which the text names. </td></tr>
+    <tr><td class="paramname">error</td><td>Receives the reason, if not null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rollback for a list that says which folder it is for, Unbound for one that does not. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00642">642</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa86015bb280ffcb87fe676eed5fd3820_cgraph.svg" width="472" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_aa86015bb280ffcb87fe676eed5fd3820_icgraph.svg" width="100%" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="af7f352375eac190196e889e05cfb67bd" name="af7f352375eac190196e889e05cfb67bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f352375eac190196e889e05cfb67bd">&#9670;&#160;</a></span>storeIdFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -647,7 +981,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  std::optional&lt; QString &gt;</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>error</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; std::optional&lt; QString &gt;</td>
         </tr>
       </table>
   </td>
@@ -668,10 +1002,24 @@ Static Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The id, or nothing when the record is unavailable; the caller must not write the list then. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00797">797</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af7f352375eac190196e889e05cfb67bd_cgraph.svg" width="426" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af7f352375eac190196e889e05cfb67bd_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a6e0bb5a3d0a36742737d9f7d29e714bc" name="a6e0bb5a3d0a36742737d9f7d29e714bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e0bb5a3d0a36742737d9f7d29e714bc">&#9670;&#160;</a></span>storeRecordFile()</h2>
+<a id="a70cd5b49f5dca1370b8cef78873090d8" name="a70cd5b49f5dca1370b8cef78873090d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cd5b49f5dca1370b8cef78873090d8">&#9670;&#160;</a></span>storeRecordFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -683,7 +1031,7 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">auto GpgIdGeneration::storeRecordFile </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -693,19 +1041,68 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The file the store IDs are kept in, next to <a class="el" href="#a53205d18f3175ed5e3e87c8bd1ca6918" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what...">recordFile()</a> and under its lock, so a <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> from before store IDs, rewriting the record, cannot drop them. Removing it forgets the IDs. </p>
+<p>The file the store IDs are kept in, next to <a class="el" href="#ae5b416ea3d26c3787b2af8e2e640e758" title="The file the accepted generations are recorded in, so a refusal can name it: removing it forgets what...">recordFile()</a> and under its lock, so a <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> from before store IDs, rewriting the record, cannot drop them. Removing it forgets the IDs. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file's path. </dd></dl>
-<div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00585">585</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+
 </div>
-<div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_a6e0bb5a3d0a36742737d9f7d29e714bc_cgraph.svg" width="484" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<a id="af86ff868df611b4db16a014a414f943c" name="af86ff868df611b4db16a014a414f943c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86ff868df611b4db16a014a414f943c">&#9670;&#160;</a></span>wayThrough()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto GpgIdGeneration::wayThrough </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>last</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>recordPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>saving</em></span>&#160;) -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How a holder of the signing key gets through a refusal, in words: saving the recipients writes the next generation, unless the record is already at the ceiling of the grammar, where it has to be removed first. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">last</td><td>The generation this device accepted before. </td></tr>
+    <tr><td class="paramname">recordPath</td><td>The record file, which the text names. </td></tr>
+    <tr><td class="paramname">saving</td><td>What the user does in the Users dialog, in this refusal's terms ("checking the recipients and saving"). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sentence to append to a refusal. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00624">624</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_af86ff868df611b4db16a014a414f943c_icgraph.svg" width="100%" height="510"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="aa3bf28bd87147d4821a73d4a2c1bc7fb" name="aa3bf28bd87147d4821a73d4a2c1bc7fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3bf28bd87147d4821a73d4a2c1bc7fb">&#9670;&#160;</a></span>withHeader()</h2>
+<a id="adf82e57f1cda154b35f36dfde958120f" name="adf82e57f1cda154b35f36dfde958120f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf82e57f1cda154b35f36dfde958120f">&#9670;&#160;</a></span>withHeader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -731,7 +1128,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) -&gt;  QByteArray</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>store</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) -&gt; QByteArray</td>
         </tr>
       </table>
   </td>
@@ -747,11 +1144,25 @@ Static Public Attributes</h2></td></tr>
     <tr><td class="paramname">generation</td><td>The generation to declare. </td></tr>
     <tr><td class="paramname">folder</td><td>The store-relative folder the list is written for. </td></tr>
     <tr><td class="paramname">recipients</td><td>The recipient lines, one per line, no header. </td></tr>
-    <tr><td class="paramname">store</td><td>The store's id (<a class="el" href="#afae720f2c34d2c1861b1e2e810b4a135" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">storeIdFor()</a>); empty writes no store line. </td></tr>
+    <tr><td class="paramname">store</td><td>The store's id (<a class="el" href="#af7f352375eac190196e889e05cfb67bd" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,...">storeIdFor()</a>); empty writes no store line. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The bytes to write. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8cpp_source.html#l00552">552</a> of file <a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_adf82e57f1cda154b35f36dfde958120f_cgraph.svg" width="458" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_gpg_id_generation_adf82e57f1cda154b35f36dfde958120f_icgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -775,9 +1186,11 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The folder line: this prefix and the store-relative folder the list was written for, <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated. </p>
+<b>Initial value:</b><div class="fragment"><div class="line">                                            =</div>
+<div class="line">QByteArrayLiteral(<span class="stringliteral">&quot;# QtPass-GpgId-Folder: &quot;</span>)</div>
+</div><!-- fragment --><p>The folder line: this prefix and the store-relative folder the list was written for, <span class="tt">.</span> for the store root, <span class="tt">/</span>-separated. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00058">58</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00064">64</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -800,9 +1213,11 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The generation line. The grammar is strict: this prefix, one ASCII decimal number of at most 18 digits, nothing else on the line. </p>
+<b>Initial value:</b><div class="fragment"><div class="line">                                                =</div>
+<div class="line">QByteArrayLiteral(<span class="stringliteral">&quot;# QtPass-GpgId-Generation: &quot;</span>)</div>
+</div><!-- fragment --><p>The generation line. The grammar is strict: this prefix, one ASCII decimal number of at most 18 digits, nothing else on the line. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00055">55</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00061">61</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -816,7 +1231,7 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const qint64 GpgIdGeneration::kMaxGeneration</td>
+          <td class="memname">const qint64 GpgIdGeneration::kMaxGeneration = 999999999999999999LL</td>
         </tr>
       </table>
   </td>
@@ -825,9 +1240,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The largest generation the grammar admits (18 nines). <a class="el" href="#aca79157e6460c0bb20028e1d8b46b3fb" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> never goes above it: a header <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes must be one it reads back. </p>
+<p>The largest generation the grammar admits (18 nines). <a class="el" href="#a8a0a444b882b99932d353adaedcfd6a4" title="Reserve the generation to write next for gpgIdFile: one above both what this device remembers and ver...">reserveNext()</a> never goes above it: a header <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> writes must be one it reads back. </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00065">65</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00071">71</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
@@ -850,20 +1265,34 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The store line: this prefix and the store's id, 32 lowercase hex digits (a random 128-bit number given when the store's first signed list is written). </p>
+<b>Initial value:</b><div class="fragment"><div class="line">                                           =</div>
+<div class="line">QByteArrayLiteral(<span class="stringliteral">&quot;# QtPass-GpgId-Store: &quot;</span>)</div>
+</div><!-- fragment --><p>The store line: this prefix and the store's id, 32 lowercase hex digits (a random 128-bit number given when the store's first signed list is written). </p>
 
-<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00062">62</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gpgidgeneration_8h_source.html#l00068">68</a> of file <a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="gpgidgeneration_8h_source.html">gpgidgeneration.h</a></li>
+<li>src/<a class="el" href="gpgidgeneration_8cpp_source.html">gpgidgeneration.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_gpg_id_generation.html">GpgIdGeneration</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

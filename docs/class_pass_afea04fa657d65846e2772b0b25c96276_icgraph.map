@@ -1,0 +1,7 @@
+<map id="Pass::refuseFolderOutsideStore" name="Pass::refuseFolderOutsideStore">
+<area shape="rect" id="Node000001" title="Refuse recipients for a folder outside the store, as pass refuses a path with .. in it." alt="" coords="180,24,369,68"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,5,132,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,32,132,30,132,25,167,31"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a12a7e631a5040eee70da06585fe047ba" title="Initialize password store." alt="" coords="14,57,123,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,60,123,67,122,62,167,59"/>
+</map>

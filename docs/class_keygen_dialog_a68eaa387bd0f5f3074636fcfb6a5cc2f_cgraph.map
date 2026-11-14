@@ -1,0 +1,7 @@
+<map id="KeygenDialog::on_passphrase1_textChanged" name="KeygenDialog::on_passphrase1_textChanged">
+<area shape="rect" id="Node000001" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="5,5,230,50"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="278,14,494,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,25,265,28,259,28,230,30"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="542,5,735,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="494,25,529,28,523,28,494,30"/>
+</map>

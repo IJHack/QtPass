@@ -1,4 +1,5 @@
 <map id="RnpCrypto::listKeys" name="RnpCrypto::listKeys">
-<area shape="rect" id="Node000001" title="The primary keys in the keyring." alt="" coords="5,29,154,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="103,14,95,10,79,8,65,10,56,14,54,20,58,29,53,28,49,20,52,11,63,5,80,3,97,5,108,14"/>
+<area shape="rect" id="Node000001" title="The primary keys in the keyring." alt="" coords="231,5,379,33"/>
+<area shape="rect" id="Node000002" href="$class_rnp_crypto.html#ae6e958a87ecd1fa49b1159b2ad07e579" title="Writes the keyring to dir: keyring.gpg, public and secret keys in one file (OpenPGP keys,..." alt="" coords="5,5,183,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,19,183,22,183,17,218,19"/>
 </map>

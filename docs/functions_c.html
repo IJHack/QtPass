@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_c.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,11 +114,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>cancel()&#160;:&#160;<a class="el" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep</a></li>
+<li>cancel()&#160;:&#160;<a class="el" href="class_native_grep.html#af640052e8b38885ef565d3c626aa1ce6">NativeGrep</a>, <a class="el" href="struct_native_grep_1_1_worker.html#ab2d52f36bec34c01a8f6fef909380a24">NativeGrep::Worker</a></li>
+<li>cancelled&#160;:&#160;<a class="el" href="struct_imitate_pass_1_1_reencrypt_result.html#a09ae84d683a38f225f9fe3927a614d08">ImitatePass::ReencryptResult</a></li>
 <li>cancelNext()&#160;:&#160;<a class="el" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">Executor</a></li>
 <li>cancelOtpRequest()&#160;:&#160;<a class="el" href="class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841">MainWindow</a></li>
 <li>cancelReencryptPath()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a5cbd9d68f47d53b994ec25cecbb27436">ImitatePass</a></li>
@@ -109,51 +128,78 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <li>canEncrypt&#160;:&#160;<a class="el" href="struct_rnp_crypto_1_1_key_info.html#a4b1cba6912f9edcbb4ef24ef74f83b5d">RnpCrypto::KeyInfo</a></li>
 <li>canSign&#160;:&#160;<a class="el" href="struct_rnp_crypto_1_1_key_info.html#a4385215e8fe04c72597970bd64b4c864">RnpCrypto::KeyInfo</a></li>
 <li>changeEvent()&#160;:&#160;<a class="el" href="class_config_dialog.html#ad6420609a0f70cbc8a065a6fbc21dc94">ConfigDialog</a>, <a class="el" href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">MainWindow</a></li>
+<li>changeIconDefault()&#160;:&#160;<a class="el" href="class_q_push_button_with_clipboard.html#a54c897f5d3d52aafb69bf34f64c2d037">QPushButtonWithClipboard</a></li>
 <li>Characters&#160;:&#160;<a class="el" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0">PasswordConfiguration</a></li>
 <li>CharacterSet&#160;:&#160;<a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01">PasswordConfiguration</a></li>
-<li>childUmask()&#160;:&#160;<a class="el" href="class_executor.html#ab60903ccdf163f6f025f4bc857632887">Executor</a></li>
+<li>CHARSETS_COUNT&#160;:&#160;<a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01aa2455d2938f04bb57d15204bd06c2bfc">PasswordConfiguration</a></li>
+<li>checked&#160;:&#160;<a class="el" href="struct_imitate_pass_1_1_reencrypt_result.html#aa2d55a9aad9499e114e002f106a5328f">ImitatePass::ReencryptResult</a></li>
+<li>childUmask()&#160;:&#160;<a class="el" href="class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b">Executor</a></li>
 <li>ciphertextHolds()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a305a2851e3a8c3c815cc561b48a450ab">ImitatePass</a></li>
 <li>clear()&#160;:&#160;<a class="el" href="class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1">ClipboardManager</a>, <a class="el" href="class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2">PasswordDisplayPanel</a>, <a class="el" href="class_process_output_panel.html#a40eebd4f48de276cec251ffdfed97c15">ProcessOutputPanel</a></li>
 <li>clearGrepMode()&#160;:&#160;<a class="el" href="class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e">GrepSearchController</a></li>
+<li>clearPanel()&#160;:&#160;<a class="el" href="class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb">MainWindow</a></li>
+<li>clearPanelTimer&#160;:&#160;<a class="el" href="class_main_window.html#a7428919d42945d4b83863ca4219f38ac">MainWindow</a></li>
 <li>clicked()&#160;:&#160;<a class="el" href="class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8">QPushButtonAsQRCode</a>, <a class="el" href="class_q_push_button_show_password.html#aed1d368f2dac66057349e9b7d45c62d1">QPushButtonShowPassword</a>, <a class="el" href="class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a">QPushButtonWithClipboard</a></li>
+<li>clickSelected&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a72e3ccd9a689aeb6273def627bc40783">DeselectableTreeView</a></li>
 <li>clipboard()&#160;:&#160;<a class="el" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">QtPass</a></li>
 <li>ClipboardManager()&#160;:&#160;<a class="el" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a></li>
 <li>clipBoardType&#160;:&#160;<a class="el" href="struct_app_settings.html#aa601ce5267fa1142a0a5691d5c722c35">AppSettings</a></li>
 <li>closeEvent()&#160;:&#160;<a class="el" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow</a></li>
 <li>code()&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">OtpCodeWidget</a></li>
+<li>collectOutput()&#160;:&#160;<a class="el" href="class_executor.html#a676362a1d54d7bce3bced4abd3e65944">Executor</a></li>
 <li>command&#160;:&#160;<a class="el" href="struct_executor_1_1_wsl_command.html#a2b36465b5c5df4f4d870d1a7d10575a3">Executor::WslCommand</a></li>
 <li>commitArgs()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac">ImitatePass</a></li>
+<li>commitGpgId()&#160;:&#160;<a class="el" href="class_profile_init.html#a5588f9cb4ba9610c1f1899c10628dffb">ProfileInit</a></li>
 <li>commitReencrypted()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a0057a214bb3597b3da7b56acdaaacb3a">ImitatePass</a></li>
 <li>config()&#160;:&#160;<a class="el" href="class_main_window.html#acc003e9dd04952c5069f87839d708073">MainWindow</a></li>
 <li>ConfigDialog()&#160;:&#160;<a class="el" href="class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a></li>
-<li>configIsValid()&#160;:&#160;<a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f">Util</a></li>
+<li>configIsValid()&#160;:&#160;<a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc">Util</a></li>
+<li>confirmDeletion()&#160;:&#160;<a class="el" href="class_main_window.html#a769fe025472b4faa73f4846b92b552ed">MainWindow</a></li>
+<li>confirmLinkRemoval()&#160;:&#160;<a class="el" href="class_main_window.html#a9899e819a844017eb092aeb0b9cac1bf">MainWindow</a></li>
+<li>confirmPathInStore()&#160;:&#160;<a class="el" href="class_main_window.html#a7dc9b8ab1f814b9920ac2264bc9c0781">MainWindow</a></li>
+<li>connectBackends()&#160;:&#160;<a class="el" href="class_main_window.html#aaeb359b178b860a18c188edaf996ed4c">MainWindow</a></li>
+<li>connectPassSignalHandlers()&#160;:&#160;<a class="el" href="class_qt_pass.html#a81e0207207f490616dd442837a2469d4">QtPass</a></li>
+<li>connectPassSignals()&#160;:&#160;<a class="el" href="class_main_window.html#a53a99014ce1d19698aadd735b6af0284">MainWindow</a></li>
+<li>connectSignals()&#160;:&#160;<a class="el" href="class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1">UsersDialog</a></li>
 <li>contextMenuEvent()&#160;:&#160;<a class="el" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">FieldLabel</a>, <a class="el" href="class_secret_line_edit.html#a6e29923734219602f135750ef4b0ecc4">SecretLineEdit</a></li>
 <li>copied()&#160;:&#160;<a class="el" href="class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687">PasswordDialog</a>, <a class="el" href="class_secret_line_edit.html#a2edc83d685d05c5f94e1d792e03eedd5">SecretLineEdit</a>, <a class="el" href="class_secret_plain_text_edit.html#abc9333c8376dd116fea34bb1e9c72c34">SecretPlainTextEdit</a>, <a class="el" href="class_secret_text_browser.html#aec3ccda72fda735063fe8286c818a81b">SecretTextBrowser</a></li>
 <li>Copy()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a">ImitatePass</a>, <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>, <a class="el" href="class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e">RealPass</a></li>
 <li>copyDestination()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a3d49034415dcced209f0294b631c1ddc">ImitatePass</a></li>
-<li>copyFileReplacing()&#160;:&#160;<a class="el" href="class_util.html#a5c725b669b370ff5da26d0d31e40f7f2">Util</a></li>
+<li>copyFileReplacing()&#160;:&#160;<a class="el" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">Util</a></li>
 <li>copyIfAlways()&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">ClipboardManager</a></li>
+<li>copyPasswordFromTreeview()&#160;:&#160;<a class="el" href="class_main_window.html#a5389ebc0c173ffa3d38ead9b48a16cbb">MainWindow</a></li>
 <li>copyRequested()&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">OtpCodeWidget</a>, <a class="el" href="class_password_display_panel.html#ad58c050737049fabcc9b8004df7bc038">PasswordDisplayPanel</a></li>
+<li>copySelection()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#ae2aa8733d9f5647aa7d9af0ed481e393">SecretLineEdit</a></li>
 <li>copyText()&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">ClipboardManager</a></li>
-<li>counter()&#160;:&#160;<a class="el" href="class_totp.html#ab39efcea56e12523a829e15bc51a387e">Totp</a></li>
+<li>counter()&#160;:&#160;<a class="el" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">Totp</a></li>
+<li>createActions()&#160;:&#160;<a class="el" href="class_tray_icon.html#a2b5808f03a006945a8cfbd96c6f68f29">TrayIcon</a></li>
 <li>createBackupCommit()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">ImitatePass</a></li>
 <li>created&#160;:&#160;<a class="el" href="struct_rnp_crypto_1_1_key_info.html#ab97fc32ba4f37998331578f144c268bc">RnpCrypto::KeyInfo</a>, <a class="el" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">UserInfo</a></li>
+<li>createFieldFrame()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a84cafffc7779be4e2ba12f0119e6d374">PasswordDisplayPanel</a></li>
 <li>createMimeDataFromSelection()&#160;:&#160;<a class="el" href="class_secret_plain_text_edit.html#a1e211f62e947f82bb76009fc5c022229">SecretPlainTextEdit</a>, <a class="el" href="class_secret_text_browser.html#aba8acf3c7011b08b484a59e0d1762e1a">SecretTextBrowser</a></li>
-<li>createQRCodePopup()&#160;:&#160;<a class="el" href="class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d">QtPass</a></li>
+<li>createQRCodePopup()&#160;:&#160;<a class="el" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">QtPass</a></li>
 <li>createSecretContextMenu()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#a4bd5b8640f8be96ed3e794bd936022f3">SecretLineEdit</a></li>
+<li>createTrayIcon()&#160;:&#160;<a class="el" href="class_tray_icon.html#a937817b83e4f11e4f500608e3bc16e6b">TrayIcon</a></li>
 <li>critical()&#160;:&#160;<a class="el" href="class_main_window.html#a8719b3a133e95915dd72b244db1e49bf">MainWindow</a>, <a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">Pass</a></li>
+<li>criticalMessage()&#160;:&#160;<a class="el" href="class_config_dialog.html#aa8acc8fb6a7213f68c4dbe9dac733a6f">ConfigDialog</a></li>
 <li>currentDir()&#160;:&#160;<a class="el" href="class_store_tree.html#af4af91d99f47811cd66ad9a61df2f95b">StoreTree</a></li>
+<li>currentEntry()&#160;:&#160;<a class="el" href="class_config_dialog.html#a9838b375aed57fa4a92e7670fac90f27">ConfigDialog</a></li>
 <li>currentFile()&#160;:&#160;<a class="el" href="class_store_tree.html#a62c3481cf1a8554c312594e67be27d95">StoreTree</a></li>
 <li>currentIndex()&#160;:&#160;<a class="el" href="class_store_tree.html#a2fd943329edb11eece8793a8dccff73b">StoreTree</a></li>
 <li>currentOtpCode()&#160;:&#160;<a class="el" href="class_password_display_panel.html#ae6264ba408c200444310515749c279b1">PasswordDisplayPanel</a></li>
-<li>currentUnixTime()&#160;:&#160;<a class="el" href="class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c">Totp</a></li>
+<li>currentUnixTime()&#160;:&#160;<a class="el" href="class_totp.html#a84866e76305152267035b917e7d84bdb">Totp</a></li>
+<li>CUSTOM&#160;:&#160;<a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01af35fc83c482c602e7e5039fad8e97f3a">PasswordConfiguration</a></li>
+<li>cutSelection()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#a3707e8c2e63b6d31f2400e7a04ecef1a">SecretLineEdit</a></li>
 <li>cycleTemplate()&#160;:&#160;<a class="el" href="class_password_dialog.html#a3be525fe15b6af1939dad714e3244733">PasswordDialog</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

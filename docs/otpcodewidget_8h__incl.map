@@ -1,0 +1,17 @@
+<map id="src/otpcodewidget.h" name="src/otpcodewidget.h">
+<area shape="rect" id="Node000001" title="Self&#45;refreshing widget showing an entry&#39;s current TOTP code with a countdown bar and optional copy bu..." alt="" coords="201,5,354,33"/>
+<area shape="rect" id="Node000002" href="$totp_8h.html" title="RFC 6238 TOTP: otpauth URI parsing, code generation and canonical re&#45;serialisation." alt="" coords="202,81,262,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="271,32,250,69,246,66,267,35"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="286,81,363,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="287,31,310,68,305,67,285,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,102,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,111,100,153,98,148,200,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="126,157,181,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="221,108,180,148,177,144,216,110"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="204,157,260,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="234,107,234,142,230,140,230,111"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="284,157,354,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="249,107,295,147,289,146,247,112"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="378,157,452,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="263,106,371,150,366,151,262,111"/>
+</map>

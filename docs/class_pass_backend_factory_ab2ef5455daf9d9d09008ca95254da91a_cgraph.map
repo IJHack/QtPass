@@ -1,0 +1,21 @@
+<map id="PassBackendFactory::getImitatePass" name="PassBackendFactory::getImitatePass">
+<area shape="rect" id="Node000001" title="Get the lazily&#45;constructed ImitatePass backend." alt="" coords="5,76,158,120"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6" title="Construct the backend and connect its content search." alt="" coords="206,57,387,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,86,192,83,188,86,159,91"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="219,109,374,137"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="158,104,206,111,201,113,159,109"/>
+<area shape="rect" id="Node000003" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="459,5,613,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,54,456,36,451,38,365,59"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched." alt="" coords="466,57,606,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="387,69,453,70,448,72,388,74"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="435,109,637,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="374,121,422,123,417,124,374,126"/>
+<area shape="rect" id="Node000008" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="468,161,604,206"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="355,135,456,162,451,163,354,140"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="685,109,909,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="637,121,672,123,667,123,638,126"/>
+<area shape="rect" id="Node000009" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="700,161,894,206"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="604,181,687,183,682,183,604,186"/>
+<area shape="rect" id="Node000010" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="694,230,900,275"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="605,198,698,226,693,225,604,204"/>
+</map>

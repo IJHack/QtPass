@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_import_key_dialog.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">ImportKeyDialog Member List</div></div>
 </div><!--header-->
@@ -102,14 +120,27 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#a6ed8032e86a5f18fd07e23abcb8c5404">importedKeyId</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#acc2623c9f02a244daa1efff235b5704a">ImportKeyDialog</a>(const QString &amp;gpgExe, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#aa3e1e9caffd0ab1ca12ec0725f9ebe2e">parseGpgImportOutput</a>(const QString &amp;output) -&gt; QString</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~ImportKeyDialog</b>() override (defined in <a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a>)</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94">importFromString</a>(const QString &amp;input) -&gt; bool</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#acc2623c9f02a244daa1efff235b5704a">ImportKeyDialog</a>(const QString &amp;gpgExe, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#acdccd08b8f1f2198f8a8a8ba10304830">m_gpgExe</a></td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#a7eacdb5d2d478f846bbe54be938e1538">m_importedKeyId</a></td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f">on_fileButton_clicked</a>()</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc">on_importButton_clicked</a>()</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#afc5360c5b23099d8141a44a12a47c6d4">on_inputTextEdit_textChanged</a>()</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe">on_pasteButton_clicked</a>()</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#a5cac84f9f66c898bcf885abd67aaecec">parseGpgImportOutput</a>(const QString &amp;output) -&gt; QString</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#a651aaa533aeccc853985fe53ce2f5d9a">showError</a>(const QString &amp;message)</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#adef5ec5248765634e31af44dddfa3948">showSuccess</a>(const QString &amp;keyId)</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_import_key_dialog.html#aef777c2c76f289d635cc3ba8b6ca0acf">ui</a></td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_import_key_dialog.html#a3f791b9599a6c0903fb4c244d01c58bb">~ImportKeyDialog</a>() override</td><td class="entry"><a class="el" href="class_import_key_dialog.html">ImportKeyDialog</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

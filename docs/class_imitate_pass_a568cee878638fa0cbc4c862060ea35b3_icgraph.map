@@ -1,0 +1,9 @@
+<map id="ImitatePass::gitTracks" name="ImitatePass::gitTracks">
+<area shape="rect" id="Node000001" title="Check whether git already tracks a file in the store." alt="" coords="432,32,595,60"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee" title="Remove password." alt="" coords="202,5,362,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="414,35,362,31,362,26,419,35"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a86a50ad28d84a9c08a43b1de2621bb55" title="Bring the signature in line with the list just written: a new one when signing is on,..." alt="" coords="180,57,384,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="419,56,385,63,384,57,414,57"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,57,132,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="162,71,132,74,132,69,167,71"/>
+</map>

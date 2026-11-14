@@ -1,0 +1,14 @@
+<map id="src/filecontent.h" name="src/filecontent.h">
+<area shape="rect" id="Node000001" title="Parser for a decrypted password entry: password line, key: value fields, remaining text and the OTP c..." alt="" coords="182,5,308,33"/>
+<area shape="rect" id="Node000002" href="$filecontent_8cpp.html" title="Implements FileContent::parse() as a single streaming pass over the entry, with the field cap,..." alt="" coords="5,81,146,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,42,107,83,104,78,202,37"/>
+<area shape="rect" id="Node000003" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="171,157,324,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,44,213,76,210,92,211,108,223,134,239,157,234,156,219,136,206,109,204,92,208,75,223,48"/>
+<area shape="rect" id="Node000004" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="221,81,394,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,42,299,81,294,80,265,48"/>
+<area shape="rect" id="Node000005" href="$passworddisplaypanel_8h.html" title="PasswordDisplayPanel: renders the decrypted fields of an entry (password, template fields,..." alt="" coords="419,81,620,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="309,35,473,80,468,81,308,40"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="459,113,297,159,296,154,454,113"/>
+<area shape="rect" id="Node000006" href="$passworddisplaypanel_8cpp.html" title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local..." alt="" coords="411,157,628,184"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="521,123,522,158,517,155,518,126"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="MainWindow::confirmPathInStore" name="MainWindow::confirmPathInStore">
+<area shape="rect" id="Node000001" title="Guard the input dialogs (create, move, rename) against names like ../../etc/passwd or absolute paths ..." alt="" coords="5,100,207,144"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="255,81,465,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,109,242,107,237,108,208,114"/>
+<area shape="rect" id="Node000007" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="260,133,460,161"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="207,129,247,136,242,136,207,135"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="527,5,729,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="401,78,512,43,544,38,549,37,514,48,403,83"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="550,81,706,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,93,537,95,532,95,466,98"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="791,5,1015,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="729,17,778,19,773,19,730,22"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="582,80,575,72,581,63,599,57,628,55,659,57,678,66,673,66,658,62,628,60,600,62,584,67,581,72,587,82"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="822,81,984,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="707,93,809,95,804,95,707,98"/>
+<area shape="rect" id="Node000008" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="513,133,743,161"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="460,145,500,147,495,147,461,150"/>
+</map>

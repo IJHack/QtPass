@@ -1,0 +1,15 @@
+<map id="Totp::normalize" name="Totp::normalize">
+<area shape="rect" id="Node000001" title="Normalise a user&#45;entered value to a canonical otpauth URI." alt="" coords="5,84,127,112"/>
+<area shape="rect" id="Node000002" href="$class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string." alt="" coords="175,57,267,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,85,162,81,157,83,128,90"/>
+<area shape="rect" id="Node000006" href="$class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI." alt="" coords="177,109,265,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="127,105,164,113,159,114,127,110"/>
+<area shape="rect" id="Node000003" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="342,5,466,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,56,341,37,336,38,268,61"/>
+<area shape="rect" id="Node000004" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="324,57,485,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="267,69,310,71,305,72,268,74"/>
+<area shape="rect" id="Node000005" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="541,57,694,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="485,69,529,71,523,71,485,74"/>
+<area shape="rect" id="Node000007" href="$class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c" title="Strip trailing &#39;=&#39; padding." alt="" coords="315,109,493,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="265,121,302,123,297,123,265,126"/>
+</map>

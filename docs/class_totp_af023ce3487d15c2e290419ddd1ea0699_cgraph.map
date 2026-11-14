@@ -1,0 +1,11 @@
+<map id="Totp::isValid" name="Totp::isValid">
+<area shape="rect" id="Node000001" title="Convenience validity test, for UI feedback." alt="" coords="5,32,105,60"/>
+<area shape="rect" id="Node000002" href="$class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string." alt="" coords="153,32,245,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,43,140,45,135,47,106,48"/>
+<area shape="rect" id="Node000003" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="312,5,436,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,36,299,30,294,31,246,41"/>
+<area shape="rect" id="Node000004" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="293,57,454,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="245,50,280,57,275,57,245,55"/>
+<area shape="rect" id="Node000005" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="502,57,655,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="455,69,489,71,484,71,455,74"/>
+</map>

@@ -1,0 +1,28 @@
+<map id="MainWindow::deselect" name="MainWindow::deselect">
+<area shape="rect" id="Node000001" title="Clear the current tree view selection." alt="" coords="1800,105,1967,132"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1041,84,1192,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1781,115,1752,116,1193,102,1193,96,1752,111,1787,114"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,93,483,120"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="1827,99,1742,73,1628,43,1499,18,1432,11,1367,8,894,8,791,11,711,20,632,36,532,60,474,77,423,95,422,90,473,71,530,55,631,31,710,14,790,5,894,3,1367,3,1433,5,1499,13,1629,38,1743,68,1832,99"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1538,126,1739,170"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="1787,130,1740,139,1739,133,1782,131"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="1525,194,1752,222"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="1847,140,1802,165,1753,185,1715,196,1714,191,1751,180,1799,160,1842,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1023,85,979,84,755,73,657,75,531,84,455,95,454,90,531,79,657,70,755,68,980,79,1028,85"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,93,980,120"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="1023,101,980,106,980,100,1028,101"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,78,414,74,385,71,357,73,342,78,338,84,345,93,340,92,333,84,339,74,356,68,385,66,415,69,434,78"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,93,239,120"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,116,239,118,238,113,274,115"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,95,289,97,284,99,255,100"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,93,762,120"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="792,107,763,109,763,104,797,106"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="513,107,484,109,483,104,518,106"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1254,134,1477,162"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="1519,148,1478,151,1478,145,1525,148"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="1277,130,1188,114,1188,109,1282,131"/>
+<area shape="poly" id="edge13_Node000008_Node000003" title=" " alt="" coords="1236,152,917,155,724,148,531,135,456,124,456,118,531,129,724,143,917,149,1241,151"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079" title=" " alt="" coords="1028,194,1206,222"/>
+<area shape="poly" id="edge15_Node000009_Node000010" title=" " alt="" coords="1508,208,1206,211,1206,205,1513,208"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="1015,214,910,219,789,215,659,203,530,179,462,153,408,124,409,118,464,148,532,173,659,198,789,210,910,214,1009,214"/>
+</map>

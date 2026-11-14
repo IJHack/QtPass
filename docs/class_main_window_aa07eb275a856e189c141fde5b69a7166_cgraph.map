@@ -1,6 +1,9 @@
 <map id="MainWindow::eventFilter" name="MainWindow::eventFilter">
-<area shape="rect" id="Node000001" title="Filter events from watched objects." alt="" coords="5,29,188,57"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="236,29,385,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,41,222,43,217,43,188,46"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="273,28,268,20,272,11,287,5,310,3,336,5,351,14,345,14,334,10,310,8,288,10,276,15,273,20,278,30"/>
+<area shape="rect" id="Node000001" title="Filter events from watched objects." alt="" coords="5,14,188,42"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168" title="Drop a style&#45;imposed menu bar or toolbar palette that belongs to the other theme (Breeze header palet..." alt="" coords="433,5,640,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,16,236,13,310,11,385,13,420,17,415,18,385,18,310,16,236,18,189,21"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ac307f0d609d781011c2c35ad57ae070c" title="Notice an application palette change, the theme switch that makes a style&#45;imposed bar palette suspect..." alt="" coords="236,51,385,79"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,39,223,49,217,49,179,45"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="385,50,415,48,420,47,386,55"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="273,50,268,42,272,33,287,27,310,25,336,27,351,36,345,35,334,32,310,30,288,32,276,37,273,42,278,52"/>
 </map>

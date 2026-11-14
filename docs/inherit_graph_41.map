@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_store_drag_item.html" title="What a drag from the store tree carries: the kind of the dragged item and its path." alt="" coords="5,5,122,33"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,82,33"/>
+<area shape="rect" id="Node000001" href="$class_first_run_wizard.html" title="The first start of QtPass: find GnuPG (and pass and Git), make sure there is a secret key,..." alt="" coords="130,5,249,33"/>
+<area shape="poly" id="edge33_Node000000_Node000001" title=" " alt="" coords="97,17,132,19,127,19,97,22"/>
 </map>

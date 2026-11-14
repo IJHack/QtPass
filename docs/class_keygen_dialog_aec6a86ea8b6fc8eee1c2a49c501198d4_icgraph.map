@@ -1,0 +1,29 @@
+<map id="KeygenDialog::passphraseChosen" name="KeygenDialog::passphraseChosen">
+<area shape="rect" id="Node000001" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="1089,180,1282,224"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="40,43,191,70"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1125,172,1057,142,971,105,875,69,776,42,637,16,526,8,416,13,274,27,175,44,172,40,273,22,415,8,527,3,637,11,777,37,876,64,973,100,1059,137,1130,173"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="824,188,1041,216"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1071,202,1041,205,1041,199,1076,202"/>
+<area shape="rect" id="Node000009" href="$class_keygen_dialog.html#ab469a4e10fb2b2ee324e57cb1e209a3e" title="Destroys the dialog and its generated UI." alt="" coords="5,339,226,366"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="1131,231,974,311,877,353,777,390,701,414,640,430,578,441,498,450,385,464,335,463,273,450,230,434,191,412,132,369,134,364,194,407,233,429,274,445,336,457,385,459,498,445,577,435,639,425,699,409,775,385,875,348,971,306,1126,232"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="906,177,851,128,815,103,775,84,698,61,617,46,536,37,455,33,307,36,193,48,190,43,307,31,455,27,536,31,618,40,699,56,777,79,817,99,854,124,911,177"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html#a7bb268b96119127b0051d1adffe42630" title="Stops and hides the progress indicator, re&#45;enables the form under the usual OK rule and shows error i..." alt="" coords="566,94,756,139"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="869,183,735,142,735,137,874,183"/>
+<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="281,288,490,316"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="882,221,777,255,628,281,491,297,490,292,627,276,776,250,877,222"/>
+<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="549,330,773,375"/>
+<area shape="poly" id="edge9_Node000003_Node000007" title=" " alt="" coords="902,224,844,266,778,306,722,332,720,327,775,301,842,261,897,226"/>
+<area shape="poly" id="edge16_Node000003_Node000009" title=" " alt="" coords="840,186,725,173,581,168,503,171,425,180,348,196,275,220,228,246,187,279,153,313,130,340,126,336,149,309,183,275,225,242,273,216,347,191,424,175,503,166,581,162,726,168,845,185"/>
+<area shape="rect" id="Node000010" href="$class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="546,213,776,241"/>
+<area shape="poly" id="edge13_Node000003_Node000010" title=" " alt="" coords="806,214,777,219,776,214,811,213"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="275,97,496,125"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="548,115,498,116,496,111,553,114"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="297,95,188,74,187,68,301,92"/>
+<area shape="poly" id="edge8_Node000006_Node000006" title=" " alt="" coords="431,273,416,269,386,267,357,269,342,274,338,279,345,288,340,287,333,279,338,269,356,264,386,261,417,264,436,273"/>
+<area shape="rect" id="Node000008" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="274,390,498,435"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="543,378,492,392,491,387,538,379"/>
+<area shape="poly" id="edge12_Node000007_Node000009" title=" " alt="" coords="532,355,226,355,226,350,535,350"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="265,387,181,370,181,364,270,385"/>
+<area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="590,247,441,290,439,285,595,245"/>
+<area shape="poly" id="edge15_Node000010_Node000009" title=" " alt="" coords="528,221,470,224,405,229,338,239,275,255,233,273,193,296,134,341,131,336,190,292,230,268,273,250,337,233,404,223,470,218,533,219"/>
+</map>

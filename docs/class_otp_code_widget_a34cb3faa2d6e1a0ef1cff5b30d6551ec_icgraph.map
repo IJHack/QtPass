@@ -1,0 +1,29 @@
+<map id="OtpCodeWidget::refresh" name="OtpCodeWidget::refresh">
+<area shape="rect" id="Node000001" title="Recompute the code and countdown for an explicit point in time." alt="" coords="2078,48,2255,76"/>
+<area shape="rect" id="Node000002" href="$class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd" title="Build a live OTP code display and start its refresh timer." alt="" coords="1797,48,2030,76"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2060,62,2031,65,2030,60,2065,62"/>
+<area shape="rect" id="Node000003" href="$class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268" title="Render the live OTP row: an OtpCodeWidget in a field frame under an &quot;OTP code&quot; label...." alt="" coords="1582,40,1749,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1778,62,1749,65,1749,60,1784,62"/>
+<area shape="rect" id="Node000004" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="1368,5,1534,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1564,46,1535,44,1535,38,1569,47"/>
+<area shape="rect" id="Node000010" href="$class_password_display_panel.html#aea1986b10912132044f2ac970e1b8749" title="Emitted on a double&#45;click anywhere on a field row: the user wants to change what they are looking at." alt="" coords="1368,75,1534,119"/>
+<area shape="poly" id="edge11_Node000003_Node000010" title=" " alt="" coords="1569,78,1535,86,1534,81,1564,79"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1092,16,1320,44"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1350,29,1321,32,1320,26,1355,29"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,38,1044,66"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1074,40,1044,45,1044,40,1079,40"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,56,756,84"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="786,61,757,65,756,60,791,60"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,82,483,110"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="513,83,484,89,483,83,518,83"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="428,66,414,63,385,60,358,62,343,67,339,73,346,82,341,80,334,73,339,63,357,57,385,55,415,58,433,67"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,82,239,110"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="269,105,239,107,239,102,274,104"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="254,84,289,87,284,87,254,89"/>
+<area shape="rect" id="Node000011" href="$class_password_display_panel.html#a4bb93a3d467357d2778f9aa95287d089" title="Turn a left double&#45;click on a field row into editRequested()." alt="" coords="1123,72,1289,117"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1350,105,1289,106,1289,101,1355,105"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="815,107,1033,135"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="1358,123,1320,132,1246,138,1170,139,1033,134,1033,129,1170,134,1245,132,1320,126,1352,123"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="1304,84,1370,87,1365,88,1304,89"/>
+<area shape="poly" id="edge15_Node000012_Node000008" title=" " alt="" coords="797,116,483,103,484,98,802,115"/>
+</map>

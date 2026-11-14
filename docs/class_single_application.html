@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_single_application.html','','class_single_application-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,15 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_single_application-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">SingleApplication Class Reference</div></div>
+  <div class="headertitle"><div class="title">SingleApplication Class Reference<div class="ingroups"><a class="el" href="group__support.html">Application support</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -113,19 +126,18 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application__inherit__graph.svg" width="146" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for SingleApplication:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application__coll__graph.svg" width="146" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a3257ffeb5c48de33e6ded14902c9f238" id="r_a3257ffeb5c48de33e6ded14902c9f238"><td class="memItemLeft"><a id="a3257ffeb5c48de33e6ded14902c9f238" name="a3257ffeb5c48de33e6ded14902c9f238"></a>
-void&#160;</td><td class="memItemRight"><b>receiveMessage</b> ()</td></tr>
-<tr class="memdesc:a3257ffeb5c48de33e6ded14902c9f238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot invoked when an incoming IPC message arrives. <br /></td></tr>
+<tr class="memitem:a3257ffeb5c48de33e6ded14902c9f238" id="r_a3257ffeb5c48de33e6ded14902c9f238"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a> ()</td></tr>
+<tr class="memdesc:a3257ffeb5c48de33e6ded14902c9f238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for QLocalServer::newConnection: accept every pending connection and emit <a class="el" href="#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline">messageAvailable()</a> with what it sent.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -140,12 +152,43 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9408850aec7bca2e43e386f35ed780f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether another instance is already running.  <br /></td></tr>
 <tr class="memitem:ad63149f60ac6676dda4397a90116e351" id="r_ad63149f60ac6676dda4397a90116e351"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad63149f60ac6676dda4397a90116e351">sendMessage</a> (const QString &amp;message) -&gt; bool</td></tr>
 <tr class="memdesc:ad63149f60ac6676dda4397a90116e351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the running instance.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aeed9dcbbb9c7d6c8943f977918d1200a" id="r_aeed9dcbbb9c7d6c8943f977918d1200a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeed9dcbbb9c7d6c8943f977918d1200a">peerIsListening</a> () -&gt; bool</td></tr>
+<tr class="memdesc:aeed9dcbbb9c7d6c8943f977918d1200a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probe whether an instance is actually accepting connections.  <br /></td></tr>
+<tr class="memitem:a6bf78ae9ee5bbbb21e68e5f14d3ca543" id="r_a6bf78ae9ee5bbbb21e68e5f14d3ca543"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6bf78ae9ee5bbbb21e68e5f14d3ca543">becomePrimary</a> ()</td></tr>
+<tr class="memdesc:a6bf78ae9ee5bbbb21e68e5f14d3ca543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Claim the segment and listen; no-op when another instance holds it.  <br /></td></tr>
+<tr class="memitem:a1437fc816f04579f7c4af1927b0967ed" id="r_a1437fc816f04579f7c4af1927b0967ed"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1437fc816f04579f7c4af1927b0967ed">forwardMessage</a> (const QString &amp;message) -&gt; bool</td></tr>
+<tr class="memdesc:a1437fc816f04579f7c4af1927b0967ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deliver a message over the local socket.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a1101486283e5f1580c02f8e1562f195f" id="r_a1101486283e5f1580c02f8e1562f195f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a1101486283e5f1580c02f8e1562f195f">_isRunning</a></td></tr>
+<tr class="memdesc:a1101486283e5f1580c02f8e1562f195f"><td class="mdescLeft">&#160;</td><td class="mdescRight">true when another instance holds the segment and answers on the socket; this instance should forward and exit.  <br /></td></tr>
+<tr class="memitem:a796b973c0f8cbb128b557bbd9c048010" id="r_a796b973c0f8cbb128b557bbd9c048010"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a796b973c0f8cbb128b557bbd9c048010">_uniqueKey</a></td></tr>
+<tr class="memdesc:a796b973c0f8cbb128b557bbd9c048010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of both the shared-memory segment and the local socket.  <br /></td></tr>
+<tr class="memitem:a049e4d9a1ee8290afef91106c402cdda" id="r_a049e4d9a1ee8290afef91106c402cdda"><td class="memItemLeft">QSharedMemory&#160;</td><td class="memItemRight"><a class="el" href="#a049e4d9a1ee8290afef91106c402cdda">sharedMemory</a></td></tr>
+<tr class="memdesc:a049e4d9a1ee8290afef91106c402cdda"><td class="mdescLeft">&#160;</td><td class="mdescRight">The one-byte segment whose existence marks a running instance.  <br /></td></tr>
+<tr class="memitem:a4893f9017498cae49ff2bb6db7f777f7" id="r_a4893f9017498cae49ff2bb6db7f777f7"><td class="memItemLeft">QScopedPointer&lt; QLocalServer &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4893f9017498cae49ff2bb6db7f777f7">localServer</a></td></tr>
+<tr class="memdesc:a4893f9017498cae49ff2bb6db7f777f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server accepting forwarded command lines; only set in the primary instance, null in a secondary or when listening failed.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-static-attribs" class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a7fe3d993e578290d1ecd2033d7d5e0d9" id="r_a7fe3d993e578290d1ecd2033d7d5e0d9"><td class="memItemLeft">static const int&#160;</td><td class="memItemRight"><a class="el" href="#a7fe3d993e578290d1ecd2033d7d5e0d9">timeout</a> = 1000</td></tr>
+<tr class="memdesc:a7fe3d993e578290d1ecd2033d7d5e0d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Milliseconds to wait for a socket connect or write.  <br /></td></tr>
+<tr class="memitem:a94cc05f4d37956aded878645854b6b34" id="r_a94cc05f4d37956aded878645854b6b34"><td class="memItemLeft">static const int&#160;</td><td class="memItemRight"><a class="el" href="#a94cc05f4d37956aded878645854b6b34">maxMessageBytes</a> = 64 * 1024</td></tr>
+<tr class="memdesc:a94cc05f4d37956aded878645854b6b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper bound for one forwarded message (a command line).  <br /></td></tr>
+<tr class="memitem:ac4f2cd982269512e51d763013f318428" id="r_ac4f2cd982269512e51d763013f318428"><td class="memItemLeft">static const int&#160;</td><td class="memItemRight"><a class="el" href="#ac4f2cd982269512e51d763013f318428">takeoverProbes</a> = 5</td></tr>
+<tr class="memdesc:ac4f2cd982269512e51d763013f318428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Probes for the winner of a takeover race before giving up on IPC.  <br /></td></tr>
+<tr class="memitem:aefdefa8280cdb7a65b3447c675b2f0c8" id="r_aefdefa8280cdb7a65b3447c675b2f0c8"><td class="memItemLeft">static const int&#160;</td><td class="memItemRight"><a class="el" href="#aefdefa8280cdb7a65b3447c675b2f0c8">takeoverProbeIntervalMs</a> = 100</td></tr>
+<tr class="memdesc:aefdefa8280cdb7a65b3447c675b2f0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pause between two takeover probes, in milliseconds.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>QApplication subclass enforcing single-instance behavior via IPC. </p>
 <p>Detects whether another instance with the same unique key is running and enables forwarding messages (e.g., command-line arguments) to it. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00017">17</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00024">24</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a55e5986206cf99fe05d33169d9eb71f5" name="a55e5986206cf99fe05d33169d9eb71f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55e5986206cf99fe05d33169d9eb71f5">&#9670;&#160;</a></span>SingleApplication()</h2>
@@ -172,7 +215,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct a <a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC.">SingleApplication</a> with a unique instance key. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Attaches to the shared-memory segment named <code class="param">uniqueKey</code>. If an instance answers on the local socket this becomes a secondary and <a class="el" href="#a9408850aec7bca2e43e386f35ed780f4" title="Query whether another instance is already running.">isRunning()</a> turns true; if the segment is stale (left behind by a crash) or absent, this instance claims it and starts listening. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">argc</td><td>Reference to program argc forwarded to QApplication. </td></tr>
     <tr><td class="paramname">argv</td><td>Program argv forwarded to QApplication. </td></tr>
@@ -181,9 +224,95 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00016">16</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a6bf78ae9ee5bbbb21e68e5f14d3ca543" name="a6bf78ae9ee5bbbb21e68e5f14d3ca543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf78ae9ee5bbbb21e68e5f14d3ca543">&#9670;&#160;</a></span>becomePrimary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SingleApplication::becomePrimary </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Claim the segment and listen; no-op when another instance holds it. </p>
+<p>When the segment is already taken the other launcher is probed a few times (see takeoverProbes) and, if it answers, this becomes a secondary. Otherwise <a class="el" href="#a9408850aec7bca2e43e386f35ed780f4" title="Query whether another instance is already running.">isRunning()</a> stays false and the caller runs without IPC rather than not at all. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00082">82</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a6bf78ae9ee5bbbb21e68e5f14d3ca543_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a6bf78ae9ee5bbbb21e68e5f14d3ca543_icgraph.svg" width="534" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1437fc816f04579f7c4af1927b0967ed" name="a1437fc816f04579f7c4af1927b0967ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1437fc816f04579f7c4af1927b0967ed">&#9670;&#160;</a></span>forwardMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto SingleApplication::forwardMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deliver a message over the local socket. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Text to send; an empty string is sent as a single NUL so the peer still sees a connection with data. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the peer accepted the whole payload. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00122">122</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a1437fc816f04579f7c4af1927b0967ed_icgraph.svg" width="100%" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a9408850aec7bca2e43e386f35ed780f4" name="a9408850aec7bca2e43e386f35ed780f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9408850aec7bca2e43e386f35ed780f4">&#9670;&#160;</a></span>isRunning()</h2>
 
@@ -194,13 +323,21 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto SingleApplication::isRunning </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Query whether another instance is already running. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if another instance with the same key is running. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00062">62</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a9408850aec7bca2e43e386f35ed780f4_icgraph.svg" width="256" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -234,6 +371,96 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_cgraph.svg" width="534" height="175"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_icgraph.svg" width="100%" height="389"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aeed9dcbbb9c7d6c8943f977918d1200a" name="aeed9dcbbb9c7d6c8943f977918d1200a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed9dcbbb9c7d6c8943f977918d1200a">&#9670;&#160;</a></span>peerIsListening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto SingleApplication::peerIsListening </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Probe whether an instance is actually accepting connections. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if a connection to the unique key succeeded. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00142">142</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_aeed9dcbbb9c7d6c8943f977918d1200a_icgraph.svg" width="100%" height="430"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a3257ffeb5c48de33e6ded14902c9f238" name="a3257ffeb5c48de33e6ded14902c9f238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3257ffeb5c48de33e6ded14902c9f238">&#9670;&#160;</a></span>receiveMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SingleApplication::receiveMessage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for QLocalServer::newConnection: accept every pending connection and emit <a class="el" href="#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline">messageAvailable()</a> with what it sent. </p>
+<p>Each accepted socket is read asynchronously so a peer that connects without sending anything cannot stall the GUI thread; the message is delivered once the peer disconnects and the socket is then deleted. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00038">38</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_cgraph.svg" width="100%" height="432"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph.svg" width="636" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -247,7 +474,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto SingleApplication::sendMessage </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -261,16 +488,252 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the message was successfully delivered. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00064">64</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_cgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_icgraph.svg" width="256" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a1101486283e5f1580c02f8e1562f195f" name="a1101486283e5f1580c02f8e1562f195f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1101486283e5f1580c02f8e1562f195f">&#9670;&#160;</a></span>_isRunning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SingleApplication::_isRunning</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true when another instance holds the segment and answers on the socket; this instance should forward and exit. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00103">103</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="a796b973c0f8cbb128b557bbd9c048010" name="a796b973c0f8cbb128b557bbd9c048010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796b973c0f8cbb128b557bbd9c048010">&#9670;&#160;</a></span>_uniqueKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SingleApplication::_uniqueKey</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Name of both the shared-memory segment and the local socket. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00105">105</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="a4893f9017498cae49ff2bb6db7f777f7" name="a4893f9017498cae49ff2bb6db7f777f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4893f9017498cae49ff2bb6db7f777f7">&#9670;&#160;</a></span>localServer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;QLocalServer&gt; SingleApplication::localServer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Server accepting forwarded command lines; only set in the primary instance, null in a secondary or when listening failed. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00112">112</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="a94cc05f4d37956aded878645854b6b34" name="a94cc05f4d37956aded878645854b6b34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94cc05f4d37956aded878645854b6b34">&#9670;&#160;</a></span>maxMessageBytes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SingleApplication::maxMessageBytes = 64 * 1024</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Upper bound for one forwarded message (a command line). </p>
+<p>The socket is user-only, but a peer that keeps a connection open and streams data would otherwise grow the per-connection buffer without limit; anything past this is dropped and the peer disconnected. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00123">123</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="a049e4d9a1ee8290afef91106c402cdda" name="a049e4d9a1ee8290afef91106c402cdda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a049e4d9a1ee8290afef91106c402cdda">&#9670;&#160;</a></span>sharedMemory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QSharedMemory SingleApplication::sharedMemory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The one-byte segment whose existence marks a running instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00107">107</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="aefdefa8280cdb7a65b3447c675b2f0c8" name="aefdefa8280cdb7a65b3447c675b2f0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefdefa8280cdb7a65b3447c675b2f0c8">&#9670;&#160;</a></span>takeoverProbeIntervalMs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SingleApplication::takeoverProbeIntervalMs = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pause between two takeover probes, in milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00127">127</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4f2cd982269512e51d763013f318428" name="ac4f2cd982269512e51d763013f318428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f2cd982269512e51d763013f318428">&#9670;&#160;</a></span>takeoverProbes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SingleApplication::takeoverProbes = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Probes for the winner of a takeover race before giving up on IPC. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00125">125</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<a id="a7fe3d993e578290d1ecd2033d7d5e0d9" name="a7fe3d993e578290d1ecd2033d7d5e0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe3d993e578290d1ecd2033d7d5e0d9">&#9670;&#160;</a></span>timeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SingleApplication::timeout = 1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Milliseconds to wait for a socket connect or write. </p>
+
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00115">115</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="singleapplication_8h_source.html">singleapplication.h</a></li>
+<li>src/<a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_single_application.html">SingleApplication</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

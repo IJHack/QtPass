@@ -1,0 +1,9 @@
+<map id="Pass::refuseAsNotPartOfStore" name="Pass::refuseAsNotPartOfStore">
+<area shape="rect" id="Node000001" title="Refuse an operation on something that is not part of the store." alt="" coords="5,57,218,85"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="322,5,424,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,54,309,31,304,33,186,59"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="291,57,455,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="218,69,277,71,272,72,218,74"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="266,109,480,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,83,287,105,282,106,185,88"/>
+</map>

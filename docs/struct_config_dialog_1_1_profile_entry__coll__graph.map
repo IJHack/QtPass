@@ -1,0 +1,5 @@
+<map id="ConfigDialog::ProfileEntry" name="ConfigDialog::ProfileEntry">
+<area shape="rect" id="Node000001" title="One row of the profile list while the dialog is open. A QList rather than the Profiles map so a profi..." alt="" coords="5,106,193,134"/>
+<area shape="rect" id="Node000002" href="$struct_profile.html" title="One named password store: where it is, how its .gpg&#45;id is signed and, optionally, its own Git switche..." alt="" coords="68,5,130,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,47,102,106,96,105,97,50"/>
+</map>

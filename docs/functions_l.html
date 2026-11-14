@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_l.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,31 +114,42 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>label&#160;:&#160;<a class="el" href="struct_enums_1_1_process_info.html#af7687e8a1fb2f7883aa00cd3eff9460e">Enums::ProcessInfo</a>, <a class="el" href="struct_totp_1_1_settings.html#a3278972d462fe94dfbc0c52cd51285cf">Totp::Settings</a></li>
+<li>lastInTransaction&#160;:&#160;<a class="el" href="class_simple_transaction.html#aefd1c927cfe6352d90064b6f3ae11bb9">SimpleTransaction</a></li>
 <li>launcher&#160;:&#160;<a class="el" href="struct_executor_1_1_wsl_command.html#a54b5c7c31fa6a43d4bcfa0ef90e042c5">Executor::WslCommand</a></li>
 <li>leaveGrepMode()&#160;:&#160;<a class="el" href="class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237">GrepSearchController</a></li>
 <li>length&#160;:&#160;<a class="el" href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">PasswordConfiguration</a></li>
 <li>lessRandom&#160;:&#160;<a class="el" href="struct_app_settings.html#a19adc3d5ab6a7762c885a18599eee430">AppSettings</a></li>
 <li>lessThan()&#160;:&#160;<a class="el" href="class_store_model.html#adc8a200930127d54a13b2f15f5478445">StoreModel</a></li>
+<li>limitLines()&#160;:&#160;<a class="el" href="class_process_output_panel.html#a1e8ed5d1bb9c3ce3568609cbf8d47ea7">ProcessOutputPanel</a></li>
+<li>line&#160;:&#160;<a class="el" href="class_q_push_button_show_password.html#ad2776ccae25516e9fb7c64fb16e6167d">QPushButtonShowPassword</a></li>
 <li>lineCount()&#160;:&#160;<a class="el" href="class_process_output_panel.html#abeca8ba2340d47d42c10125fb72c7a39">ProcessOutputPanel</a></li>
-<li>linkifyUrls()&#160;:&#160;<a class="el" href="class_util.html#a96f0f96cc2e05dc680250717efe0c428">Util</a></li>
+<li>linkifyUrls()&#160;:&#160;<a class="el" href="class_util.html#ada742504985a1e8b2c6adb5e14b24794">Util</a></li>
 <li>LinkScope&#160;:&#160;<a class="el" href="class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106">Pass</a></li>
 <li>listKeys()&#160;:&#160;<a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2">Pass</a>, <a class="el" href="class_rnp_crypto.html#abb1ff64a36e7589409a89d853785e072">RnpCrypto</a></li>
-<li>load()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a6d6d2c5444b24ed89a71e7dc6dff877e">QtPassSettings</a>, <a class="el" href="class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754">SettingsSerializer</a></li>
+<li>listSigner()&#160;:&#160;<a class="el" href="class_real_pass.html#af4b087c502643f89c605c2c80e172cda">RealPass</a></li>
+<li>load()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667">QtPassSettings</a>, <a class="el" href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb">SettingsSerializer</a></li>
+<li>loadGpgKeys()&#160;:&#160;<a class="el" href="class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565">UsersDialog</a></li>
 <li>loadKeyring()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#ac556c26fad6682ee3090fc1fc5fe6e67">RnpCrypto</a></li>
-<li>loadPasswordConfiguration()&#160;:&#160;<a class="el" href="class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4">SettingsSerializer</a></li>
+<li>loadPasswordConfiguration()&#160;:&#160;<a class="el" href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96">SettingsSerializer</a></li>
+<li>loadProfileForm()&#160;:&#160;<a class="el" href="class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd">ConfigDialog</a></li>
+<li>loadRecipients()&#160;:&#160;<a class="el" href="class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b">UsersDialog</a></li>
 <li>loadVerifiedRecipients()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a70e0a1c01484ea4d62aa659bd444e89e">ImitatePass</a></li>
-<li>loggableArgs()&#160;:&#160;<a class="el" href="class_pass.html#af657ee8dde5189ac7aba6585db8f2c6a">Pass</a></li>
+<li>localServer&#160;:&#160;<a class="el" href="class_single_application.html#a4893f9017498cae49ff2bb6db7f777f7">SingleApplication</a></li>
+<li>loggableArgs()&#160;:&#160;<a class="el" href="class_pass.html#abaa0009c06b9b53f6c5963763532c7d9">Pass</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

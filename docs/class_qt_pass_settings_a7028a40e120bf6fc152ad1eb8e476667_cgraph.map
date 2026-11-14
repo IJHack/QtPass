@@ -1,0 +1,13 @@
+<map id="QtPassSettings::load" name="QtPassSettings::load">
+<area shape="rect" id="Node000001" title="Load all flat settings into an AppSettings value object." alt="" coords="5,36,160,64"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="208,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,37,195,34,190,36,161,42"/>
+<area shape="rect" id="Node000004" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="241,57,376,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,57,229,67,224,70,160,63"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="458,5,681,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,17,445,19,440,20,411,22"/>
+<area shape="rect" id="Node000005" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="472,57,667,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="377,77,460,79,454,80,377,82"/>
+<area shape="rect" id="Node000006" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="467,126,672,171"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="377,94,471,121,465,122,377,100"/>
+</map>

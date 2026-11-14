@@ -1,0 +1,25 @@
+<map id="KeygenDialog::updateOkState" name="KeygenDialog::updateOkState">
+<area shape="rect" id="Node000001" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="824,155,1041,183"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a" title="On Accepted, validates the form (passphrase chosen, no line breaks, name of 5+ characters,..." alt="" coords="40,46,191,74"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="870,150,776,129,613,103,451,85,192,66,191,60,452,80,614,98,777,124,875,150"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a7bb268b96119127b0051d1adffe42630" title="Stops and hides the progress indicator, re&#45;enables the form under the usual OK rule and shows error i..." alt="" coords="566,5,756,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="897,145,842,110,775,71,733,53,733,48,778,67,845,105,902,146"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="281,319,490,347"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="889,189,777,236,605,286,456,321,455,316,603,280,775,230,884,190"/>
+<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="549,176,773,221"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="806,183,774,189,773,184,811,182"/>
+<area shape="rect" id="Node000008" href="$class_keygen_dialog.html#ab469a4e10fb2b2ee324e57cb1e209a3e" title="Destroys the dialog and its generated UI." alt="" coords="5,214,226,242"/>
+<area shape="poly" id="edge14_Node000001_Node000008" title=" " alt="" coords="806,154,695,147,560,143,416,148,344,155,274,166,203,189,144,216,142,211,201,184,273,161,344,150,416,142,560,137,695,142,812,153"/>
+<area shape="rect" id="Node000009" href="$class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="546,319,776,347"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="907,192,849,243,778,291,709,321,708,316,775,287,846,239,902,195"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html#a90fd7f89ce5f973fd48a4037e5103c74" title="Connects to the backend&#39;s finished/failed signals for this one attempt and calls Pass::GenerateGPGKey..." alt="" coords="275,18,496,46"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="548,30,498,33,496,27,553,28"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="258,46,193,54,190,49,262,43"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="431,304,416,300,386,298,357,300,342,305,338,310,345,319,340,318,333,310,338,300,356,295,386,293,417,295,436,304"/>
+<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="274,176,498,221"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="531,199,499,201,498,196,536,198"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="552,225,498,236,356,242,226,239,226,233,356,237,498,230,557,224"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="256,213,227,218,225,213,261,211"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="527,333,491,336,491,330,533,333"/>
+<area shape="poly" id="edge13_Node000009_Node000008" title=" " alt="" coords="603,351,532,369,449,380,360,380,315,373,273,361,225,336,183,304,149,271,127,245,128,239,153,267,187,300,228,332,275,356,317,368,360,374,449,375,531,364,597,352"/>
+</map>

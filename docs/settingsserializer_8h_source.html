@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('settingsserializer_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,48 +112,47 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">settingsserializer.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span></div>
+<a href="settingsserializer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_SETTINGSSERIALIZER_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_SETTINGSSERIALIZER_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;appsettings.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>QSettings;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_settings_serializer.html">   21</a></span><span class="keyword">class </span>SettingsSerializer {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754">   28</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754">load</a>(QSettings &amp;qs) -&gt; <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4">   41</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4">loadPasswordConfiguration</a>(QSettings &amp;qs) -&gt; <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_settings_serializer.html#a8f027af895ac755143345eff96118cb2">   47</a></span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_serializer.html#a8f027af895ac755143345eff96118cb2">save</a>(QSettings &amp;qs, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;settings);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  SettingsSerializer() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_SETTINGSSERIALIZER_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_SETTINGSSERIALIZER_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="appsettings_8h.html">appsettings.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span>QSettings;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_settings_serializer.html">   27</a></span><span class="keyword">class </span>SettingsSerializer {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb">load</a>(QSettings &amp;qs) -&gt; <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96">loadPasswordConfiguration</a>(QSettings &amp;qs) -&gt; <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_settings_serializer.html#ae5f9179768cb01ed33c7cf623c198d7c">save</a>(QSettings &amp;qs, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;settings);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  SettingsSerializer() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
 </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SETTINGSSERIALIZER_H_</span></div>
-<div class="ttc" id="aclass_settings_serializer_html_a8f027af895ac755143345eff96118cb2"><div class="ttname"><a href="class_settings_serializer.html#a8f027af895ac755143345eff96118cb2">SettingsSerializer::save</a></div><div class="ttdeci">static void save(QSettings &amp;qs, const AppSettings &amp;settings)</div><div class="ttdoc">Write all flat settings to a QSettings store.</div></div>
-<div class="ttc" id="aclass_settings_serializer_html_abadb580cf96435f4cdb7e733a9260754"><div class="ttname"><a href="class_settings_serializer.html#abadb580cf96435f4cdb7e733a9260754">SettingsSerializer::load</a></div><div class="ttdeci">static auto load(QSettings &amp;qs) -&gt; AppSettings</div><div class="ttdoc">Read all flat settings from a QSettings store.</div></div>
-<div class="ttc" id="aclass_settings_serializer_html_ac8e3925e7eb3629721b9b78828078cf4"><div class="ttname"><a href="class_settings_serializer.html#ac8e3925e7eb3629721b9b78828078cf4">SettingsSerializer::loadPasswordConfiguration</a></div><div class="ttdeci">static auto loadPasswordConfiguration(QSettings &amp;qs) -&gt; PasswordConfiguration</div><div class="ttdoc">Read only the password generation settings from a QSettings store.</div></div>
-<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00031">appsettings.h:31</a></div></div>
-<div class="ttc" id="astruct_password_configuration_html"><div class="ttname"><a href="struct_password_configuration.html">PasswordConfiguration</a></div><div class="ttdoc">Holds the password configuration settings.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00012">passwordconfiguration.h:12</a></div></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SETTINGSSERIALIZER_H_</span></div>
+<div class="ttc" id="aappsettings_8h_html"><div class="ttname"><a href="appsettings_8h.html">appsettings.h</a></div><div class="ttdoc">AppSettings, the value object holding every flat QtPass setting.</div></div>
+<div class="ttc" id="aclass_settings_serializer_html_ab97de3759c1b701eae9a1522435bbb96"><div class="ttname"><a href="class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96">SettingsSerializer::loadPasswordConfiguration</a></div><div class="ttdeci">static auto loadPasswordConfiguration(QSettings &amp;qs) -&gt; PasswordConfiguration</div><div class="ttdoc">Read only the password generation settings from a QSettings store.</div><div class="ttdef"><b>Definition</b> <a href="settingsserializer_8cpp_source.html#l00015">settingsserializer.cpp:15</a></div></div>
+<div class="ttc" id="aclass_settings_serializer_html_ae5f9179768cb01ed33c7cf623c198d7c"><div class="ttname"><a href="class_settings_serializer.html#ae5f9179768cb01ed33c7cf623c198d7c">SettingsSerializer::save</a></div><div class="ttdeci">static void save(QSettings &amp;qs, const AppSettings &amp;settings)</div><div class="ttdoc">Write all flat settings to a QSettings store.</div><div class="ttdef"><b>Definition</b> <a href="settingsserializer_8cpp_source.html#l00149">settingsserializer.cpp:149</a></div></div>
+<div class="ttc" id="aclass_settings_serializer_html_afd33be02685dc57f2bf6d7e3664e2eeb"><div class="ttname"><a href="class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb">SettingsSerializer::load</a></div><div class="ttdeci">static auto load(QSettings &amp;qs) -&gt; AppSettings</div><div class="ttdoc">Read all flat settings from a QSettings store.</div><div class="ttdef"><b>Definition</b> <a href="settingsserializer_8cpp_source.html#l00044">settingsserializer.cpp:44</a></div></div>
+<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00036">appsettings.h:36</a></div></div>
+<div class="ttc" id="astruct_password_configuration_html"><div class="ttname"><a href="struct_password_configuration.html">PasswordConfiguration</a></div><div class="ttdoc">Holds the password generator settings: which character set is selected, the alphabet of every set,...</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00022">passwordconfiguration.h:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="settingsserializer_8h.html">settingsserializer.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

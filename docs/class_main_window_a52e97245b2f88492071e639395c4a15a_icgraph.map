@@ -1,4 +1,7 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="Node000001" title="Construct the main window." alt="" coords="5,29,202,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="135,14,125,10,103,8,83,10,72,15,69,20,74,29,69,28,64,20,68,11,82,5,104,3,127,5,141,14"/>
+<area shape="rect" id="Node000001" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="428,14,414,10,385,8,357,10,342,15,338,20,345,30,340,28,333,20,339,11,356,5,385,3,416,5,434,14"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge3_Node000002_Node000001" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
 </map>

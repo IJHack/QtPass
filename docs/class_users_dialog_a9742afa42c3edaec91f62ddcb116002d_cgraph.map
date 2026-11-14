@@ -1,0 +1,24 @@
+<map id="UsersDialog::populateList" name="UsersDialog::populateList">
+<area shape="rect" id="Node000001" title="Populate user list." alt="" coords="5,135,194,162"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="242,56,461,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,132,241,94,274,87,269,89,242,99,137,137"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="253,160,450,188"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="194,155,240,162,235,163,195,161"/>
+<area shape="rect" id="Node000008" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="258,108,444,136"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="194,136,245,132,240,134,195,141"/>
+<area shape="rect" id="Node000009" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="244,212,458,240"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="138,160,242,197,275,208,269,208,241,202,137,166"/>
+<area shape="rect" id="Node000003" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="776,5,921,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,53,509,42,641,29,763,23,758,24,641,34,509,47,434,58"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="509,108,707,136"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="423,82,524,104,519,105,423,87"/>
+<area shape="rect" id="Node000005" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="544,56,672,84"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="461,67,532,69,526,70,462,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="671,54,767,36,762,37,673,59"/>
+<area shape="rect" id="Node000006" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="755,57,942,85"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="672,68,742,70,737,71,672,73"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="445,119,496,121,491,122,445,124"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="423,105,532,85,527,86,424,110"/>
+<area shape="rect" id="Node000010" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="512,212,704,240"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="459,223,499,226,494,226,459,228"/>
+</map>

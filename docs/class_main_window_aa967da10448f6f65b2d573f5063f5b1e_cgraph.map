@@ -1,0 +1,31 @@
+<map id="MainWindow::exportPublicKey" name="MainWindow::exportPublicKey">
+<area shape="rect" id="Node000001" title="Share menu &quot;Export my public key&quot;: run gpg &#45;&#45;armor &#45;&#45;export for the configured signing key and show t..." alt="" coords="5,155,223,182"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="273,73,465,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,152,310,104,307,108,161,157"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="292,155,446,182"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="223,166,279,168,274,169,223,171"/>
+<area shape="rect" id="Node000014" href="$namespace_plain_message_box.html#aadbbbc27060fbd8854115dd8d7aa4849" title="Show a warning in plain text." alt="" coords="271,211,467,238"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="180,180,290,206,285,208,180,186"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="535,57,697,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="465,78,522,77,517,78,466,84"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="794,57,960,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="697,69,782,71,776,72,698,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1037,5,1255,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="952,54,1058,36,1053,37,953,59"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1040,57,1252,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="960,69,1027,71,1022,71,960,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1044,109,1248,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="953,83,1058,106,1053,106,952,88"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="515,109,717,137"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="446,152,525,140,519,141,447,157"/>
+<area shape="rect" id="Node000011" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="548,161,684,206"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="446,170,536,178,530,179,447,176"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="765,109,989,137"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="717,121,752,123,747,123,718,126"/>
+<area shape="rect" id="Node000012" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="780,161,974,206"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="684,181,767,183,762,183,684,186"/>
+<area shape="rect" id="Node000013" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="774,230,980,275"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="685,198,778,226,773,225,684,204"/>
+<area shape="rect" id="Node000015" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="527,229,705,257"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="468,229,514,235,509,235,468,235"/>
+</map>

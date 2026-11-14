@@ -1,0 +1,5 @@
+<map id="StoreTree::setPass" name="StoreTree::setPass">
+<area shape="rect" id="Node000001" title="Hand the proxy the backend it drops onto." alt="" coords="5,5,145,33"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a90d7f788202bdb64c4722ee897a01363" title="Inject the Pass backend for drag&#45;and&#45;drop Move/Copy operations." alt="" coords="193,5,345,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,17,180,19,174,19,145,22"/>
+</map>

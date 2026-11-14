@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="A summary and the two preferences worth asking on day one.">
+<g id="a_Node000001"><a xlink:title="Last page: a summary of what Finish will do and the two preferences worth asking on day one.">
 <polygon fill="#999999" stroke="#666666" points="98.5,-20.75 0,-20.75 0,0 98.5,0 98.5,-20.75"/>
 <text xml:space="preserve" text-anchor="middle" x="49.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">DoneWizardPage</text>
 </a>

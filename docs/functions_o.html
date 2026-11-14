@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_o.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,32 +114,102 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
+<li>ofThisStore()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a2e43ee7d9b9fe9a24572a1b2e1c9654d">GpgIdGeneration</a></li>
+<li>on_accepted()&#160;:&#160;<a class="el" href="class_config_dialog.html#abcea9914e341675611d83dff8b9b3163">ConfigDialog</a></li>
+<li>on_addButton_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#aecb3ede31edbc31bf9e295289f3cef15">ConfigDialog</a></li>
+<li>on_autodetectButton_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a">ConfigDialog</a></li>
+<li>on_checkBox_clicked()&#160;:&#160;<a class="el" href="class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544">UsersDialog</a></li>
+<li>on_checkBoxSelection_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#ac002e1ead832154404e3edf6a41debfc">ConfigDialog</a></li>
+<li>on_checkBoxUseGit_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac">ConfigDialog</a></li>
+<li>on_checkBoxUsePwgen_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73">ConfigDialog</a></li>
+<li>on_checkBoxUseTrayIcon_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a48e28d30f4a3edeeea9b1cb54f1f8f4f">ConfigDialog</a></li>
+<li>on_comboBoxClipboard_activated()&#160;:&#160;<a class="el" href="class_config_dialog.html#a755d63ce6853fef53f35b3584ae3336c">ConfigDialog</a></li>
+<li>on_copyButton_clicked()&#160;:&#160;<a class="el" href="class_export_public_key_dialog.html#ab038db52faf962bed7773029c4abddff">ExportPublicKeyDialog</a></li>
+<li>on_createPasswordButton_clicked()&#160;:&#160;<a class="el" href="class_password_dialog.html#ae3f9bdded8d39dea9081d405fec9e355">PasswordDialog</a></li>
+<li>on_deleteButton_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a013a0a52437c29cb37ac47d73ed900a6">ConfigDialog</a></li>
+<li>on_email_textChanged()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#aa28f8db828f60edd4195bcc9f9e8cb6e">KeygenDialog</a></li>
+<li>on_fileButton_clicked()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#aa4ecc33611d9fe18a2c743986217da7f">ImportKeyDialog</a></li>
+<li>on_grepButton_toggled()&#160;:&#160;<a class="el" href="class_main_window.html#a7390a38fa0f78bcd05f797c70a959ac5">MainWindow</a></li>
+<li>on_grepResultsList_itemClicked()&#160;:&#160;<a class="el" href="class_main_window.html#a7cb8cceb6798c42b16f050462c37650f">MainWindow</a></li>
+<li>on_importButton_clicked()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc">ImportKeyDialog</a></li>
+<li>on_importKeyButton_clicked()&#160;:&#160;<a class="el" href="class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906">UsersDialog</a></li>
+<li>on_inputTextEdit_textChanged()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#afc5360c5b23099d8141a44a12a47c6d4">ImportKeyDialog</a></li>
+<li>on_lineEdit_returnPressed()&#160;:&#160;<a class="el" href="class_main_window.html#a6ed67aa63c63c4867166cb21115d64f7">MainWindow</a></li>
+<li>on_lineEdit_textChanged()&#160;:&#160;<a class="el" href="class_main_window.html#af679b5f4773b48738fc67c5d5179751d">MainWindow</a>, <a class="el" href="class_users_dialog.html#a20609c91440503dc7f84f26a43d01509">UsersDialog</a></li>
+<li>on_name_textChanged()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#ac0ebf04c899e95033f560ae4aae5b2f3">KeygenDialog</a></li>
+<li>on_passphrase1_textChanged()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f">KeygenDialog</a></li>
+<li>on_passphrase2_textChanged()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d">KeygenDialog</a></li>
+<li>on_passwordCharTemplateSelector_activated()&#160;:&#160;<a class="el" href="class_config_dialog.html#a09bc11e245b05410cd8c9084c83f02f2">ConfigDialog</a></li>
+<li>on_pasteButton_clicked()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#ad86cbcb4a634566cf4131d158b5652fe">ImportKeyDialog</a></li>
+<li>on_profileBox_currentTextChanged()&#160;:&#160;<a class="el" href="class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136">MainWindow</a></li>
+<li>on_profilePathBrowse_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57">ConfigDialog</a></li>
+<li>on_pushButtonGenerateKey_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a3c8eaa46778f3979272be6bbce64f91e">ConfigDialog</a></li>
+<li>on_radioButtonNative_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a2650ddbdc272cc7effb0541261a921f3">ConfigDialog</a></li>
+<li>on_radioButtonPass_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a4ed1aadd50231d08811bb5c5b0bcc0f2">ConfigDialog</a></li>
+<li>on_rejected()&#160;:&#160;<a class="el" href="class_password_dialog.html#acddd50947c80336ac71442d186e7c6ff">PasswordDialog</a></li>
+<li>on_saveButton_clicked()&#160;:&#160;<a class="el" href="class_export_public_key_dialog.html#a0b8bdb10fc086d039f687909bb314b88">ExportPublicKeyDialog</a></li>
+<li>on_toolButtonGit_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a1a52ca14165a03beea9340cbce56afd0">ConfigDialog</a></li>
+<li>on_toolButtonGpg_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#ab801a2b12893d85d8eafbe681ae27021">ConfigDialog</a></li>
+<li>on_toolButtonPass_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a930e754343bae4fccbabe902323a537a">ConfigDialog</a></li>
+<li>on_toolButtonPwgen_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#ac22dcb9077296941812bdb51270fdac7">ConfigDialog</a></li>
+<li>on_toolButtonStore_clicked()&#160;:&#160;<a class="el" href="class_config_dialog.html#a454d1350021aa2dc4f7224af944411a5">ConfigDialog</a></li>
 <li>on_treeView_clicked()&#160;:&#160;<a class="el" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">MainWindow</a></li>
+<li>on_treeView_doubleClicked()&#160;:&#160;<a class="el" href="class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439">MainWindow</a></li>
+<li>onConfig()&#160;:&#160;<a class="el" href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44">MainWindow</a></li>
+<li>onDelete()&#160;:&#160;<a class="el" href="class_main_window.html#a3f29a7235acf922406190b6477167a80">MainWindow</a></li>
+<li>onDequeuing()&#160;:&#160;<a class="el" href="class_real_pass.html#a6d7163b691663d92f31ca20886f9979f">RealPass</a></li>
+<li>onEdit()&#160;:&#160;<a class="el" href="class_main_window.html#a9480c0a26284df09cf4d595b0d1952fe">MainWindow</a></li>
 <li>onGrepFinished()&#160;:&#160;<a class="el" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">MainWindow</a></li>
+<li>onInsertFailed()&#160;:&#160;<a class="el" href="class_password_dialog.html#a2bb64092f16a9943c56bc43b5eeb56a0">PasswordDialog</a></li>
+<li>onInsertFinished()&#160;:&#160;<a class="el" href="class_password_dialog.html#ace50299c31e4b90d33dc10e8f0365d8a">PasswordDialog</a></li>
+<li>onKeyGenerationComplete()&#160;:&#160;<a class="el" href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243">QtPass</a></li>
+<li>onKeyPress()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#ac6bb1a4ecef94ccf5ce99ce3d01c95ea">MenuBarPeek</a></li>
+<li>onKeyRelease()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a16f2d7bb3d881e772f372ea8881967b7">MenuBarPeek</a></li>
+<li>onMenuBar()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#ae0e3e934197991fe271509cdca295314">MenuBarPeek</a></li>
 <li>onOperationError()&#160;:&#160;<a class="el" href="class_main_window.html#a770b38c0ee4e6ffcd234857b039061ee">MainWindow</a></li>
+<li>onOtp()&#160;:&#160;<a class="el" href="class_main_window.html#a974b178baf718f5f5fe81d391aa666d7">MainWindow</a></li>
+<li>onProcessFinished()&#160;:&#160;<a class="el" href="class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c">Executor</a></li>
 <li>onProcessOutput()&#160;:&#160;<a class="el" href="class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c">MainWindow</a></li>
+<li>onProfileGitToggled()&#160;:&#160;<a class="el" href="class_config_dialog.html#a945c38fc165bd26def4acbc07576c3c1">ConfigDialog</a></li>
+<li>onProfileNameEdited()&#160;:&#160;<a class="el" href="class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f">ConfigDialog</a></li>
+<li>onProfilePathEdited()&#160;:&#160;<a class="el" href="class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9">ConfigDialog</a></li>
+<li>onProfileSelected()&#160;:&#160;<a class="el" href="class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9">ConfigDialog</a></li>
+<li>onProfileSigningKeyEdited()&#160;:&#160;<a class="el" href="class_config_dialog.html#ab31637f94fe25e2179ba916fc50ab9eb">ConfigDialog</a></li>
 <li>onPush()&#160;:&#160;<a class="el" href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">MainWindow</a></li>
-<li>openRegularFile()&#160;:&#160;<a class="el" href="class_util.html#a4cb272a3c3c392bfb4c9fd2c57e6bb15">Util</a></li>
+<li>onShowError()&#160;:&#160;<a class="el" href="class_password_dialog.html#a8c3b897acc1613cb32a265e1bee670ac">PasswordDialog</a></li>
+<li>onTimeoutSearch()&#160;:&#160;<a class="el" href="class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca">MainWindow</a></li>
+<li>onUpdate()&#160;:&#160;<a class="el" href="class_main_window.html#ad1f26db71fe29fdea3b1cd36bfc9c8d5">MainWindow</a></li>
+<li>onUsers()&#160;:&#160;<a class="el" href="class_main_window.html#ae65d3d151c79c84cedefbe6999ae89f3">MainWindow</a></li>
+<li>openFolder()&#160;:&#160;<a class="el" href="class_main_window.html#aa6db15fe86b6fa20bec8f0298ff9a595">MainWindow</a></li>
+<li>openRegularFile()&#160;:&#160;<a class="el" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">Util</a></li>
 <li>operationFinished()&#160;:&#160;<a class="el" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">QtPass</a></li>
 <li>operator!=()&#160;:&#160;<a class="el" href="struct_profile.html#a61ce06694c6c8e7dab43504a29e80db2">Profile</a></li>
 <li>operator==()&#160;:&#160;<a class="el" href="struct_profile.html#a2cbcbd0c1c062264c3952449f512aa06">Profile</a></li>
 <li>options&#160;:&#160;<a class="el" href="struct_executor_1_1_wsl_command.html#a940314bd002f5f843b5d0b5358fb0e50">Executor::WslCommand</a></li>
 <li>originalLine&#160;:&#160;<a class="el" href="struct_named_value.html#a6fe60f7b7f43af03ac3a00e0a8d1b1e8">NamedValue</a></li>
+<li>originalName&#160;:&#160;<a class="el" href="struct_config_dialog_1_1_profile_entry.html#a8f9700c057f612ec07f302b26bffdfb4">ConfigDialog::ProfileEntry</a></li>
 <li>OtpCodeWidget()&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a></li>
 <li>otpFromFileToClipboard()&#160;:&#160;<a class="el" href="class_main_window.html#ab7a805923a61f2441932d8d358fb040e">MainWindow</a></li>
+<li>otpLineEdit()&#160;:&#160;<a class="el" href="class_password_dialog.html#a546ab45626d21a2ecbe7646605857a11">PasswordDialog</a></li>
+<li>otpUri&#160;:&#160;<a class="el" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">FileContent</a></li>
+<li>output&#160;:&#160;<a class="el" href="struct_imitate_pass_1_1_pending_insert.html#af5e2d28da0146d7d6a2fd8ed1bf78683">ImitatePass::PendingInsert</a></li>
 <li>outputReady()&#160;:&#160;<a class="el" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">QtPass</a></li>
 <li>OverrideStatus&#160;:&#160;<a class="el" href="class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2">SshAuthSock</a></li>
-<li>overrideStatus()&#160;:&#160;<a class="el" href="class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e">SshAuthSock</a></li>
+<li>overrideStatus()&#160;:&#160;<a class="el" href="class_ssh_auth_sock.html#a5d4accd5e9b9f2461de8d3565fa336d8">SshAuthSock</a></li>
+<li>overwrite&#160;:&#160;<a class="el" href="struct_imitate_pass_1_1_pending_insert.html#aabc2c7d1804c96e544e2c10d7d38856d">ImitatePass::PendingInsert</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

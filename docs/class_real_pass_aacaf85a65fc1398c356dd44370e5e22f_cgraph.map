@@ -1,0 +1,8 @@
+<map id="RealPass::GitInit" name="RealPass::GitInit">
+<area shape="rect" id="Node000001" title="Initialize Git repository in password store." alt="" coords="5,29,133,57"/>
+<area shape="rect" id="Node000002" href="$class_real_pass.html#ae210a8e9148b9ea58e229e770b88f19b" title="Execute pass command with arguments." alt="" coords="181,29,348,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,41,167,43,162,43,133,46"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="396,29,560,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,41,383,43,378,43,349,46"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="441,28,435,20,440,11,455,5,478,3,503,5,518,14,513,14,502,10,478,8,456,10,444,15,441,20,446,30"/>
+</map>

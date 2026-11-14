@@ -1,0 +1,7 @@
+<map id="src/base32.h" name="src/base32.h">
+<area shape="rect" id="Node000001" title="Strict RFC 4648 base32 codec plus the input sanitizer that makes human&#45;typed TOTP secrets decodable." alt="" coords="78,5,182,33"/>
+<area shape="rect" id="Node000002" href="$base32_8cpp.html" title="Implements the Base32 codec: quantum&#45;by&#45;quantum decode and encode loops with the tail&#45;shape table tha..." alt="" coords="5,81,124,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,44,78,83,74,79,106,45"/>
+<area shape="rect" id="Node000003" href="$totp_8cpp.html" title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio..." alt="" coords="148,81,245,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,42,187,81,182,80,151,47"/>
+</map>

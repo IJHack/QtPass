@@ -1,0 +1,39 @@
+<map id="GpgIdSigner::validSigFingerprints" name="GpgIdSigner::validSigFingerprints">
+<area shape="rect" id="Node000001" title="Pick the fingerprints out of gpg&#39;s &#45;&#45;status&#45;fd VALIDSIG line." alt="" coords="1848,160,2085,188"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_signer.html#adf8bf20ff4e46bdb5b8b8b7ff8c2d858" title="Check a detached signature against the given bytes: gpg must report a VALIDSIG whose key or primary&#45;k..." alt="" coords="1655,160,1800,188"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1829,174,1801,176,1801,171,1835,174"/>
+<area shape="rect" id="Node000003" href="$class_gpg_id_signer.html#a2b57de99acd94df386ea1a0e52efbbe7" title="Write &lt;file&gt;.sig, a detached signature by the first key over contents, the bytes the caller just wrot..." alt="" coords="1455,133,1590,161"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1637,162,1591,159,1591,153,1642,163"/>
+<area shape="rect" id="Node000015" href="$class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig." alt="" coords="1438,185,1607,213"/>
+<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="1642,185,1607,191,1607,186,1636,185"/>
+<area shape="rect" id="Node000004" href="$class_profile_init.html#afe19dd50dc653f56630443479959eb9e" title="Sign the list just written as gpgIdFile, over the bytes contents that were written." alt="" coords="1216,103,1372,130"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1437,136,1372,130,1372,124,1442,136"/>
+<area shape="rect" id="Node000012" href="$class_imitate_pass.html#a9055e77fb0300ace61fde6386b50705f" title="Sign a .gpg&#45;id with the configured key and verify the result; failures are reported through critical(..." alt="" coords="1197,159,1390,186"/>
+<area shape="poly" id="edge12_Node000003_Node000012" title=" " alt="" coords="1442,156,1391,164,1391,159,1437,157"/>
+<area shape="rect" id="Node000005" href="$class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="973,99,1120,126"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1197,115,1121,116,1121,111,1203,115"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="719,21,887,66"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="978,94,884,69,884,63,984,94"/>
+<area shape="rect" id="Node000010" href="$class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="711,90,895,135"/>
+<area shape="poly" id="edge10_Node000005_Node000010" title=" " alt="" coords="955,113,895,115,895,110,960,112"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="492,21,660,66"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="700,44,661,46,660,41,706,43"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,29,443,57"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="474,44,444,46,443,41,479,43"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="231,44,202,46,200,41,236,42"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="143,15,130,10,103,8,78,10,64,15,60,20,66,28,61,29,55,20,60,11,77,5,103,3,131,5,148,13"/>
+<area shape="rect" id="Node000011" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="491,99,661,126"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="693,113,662,115,662,110,699,112"/>
+<area shape="rect" id="Node000013" href="$class_imitate_pass.html#a86a50ad28d84a9c08a43b1de2621bb55" title="Bring the signature in line with the list just written: a new one when signing is on,..." alt="" coords="945,159,1149,186"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1179,173,1149,175,1149,170,1184,172"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="740,159,866,186"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="927,173,867,175,867,170,932,172"/>
+<area shape="poly" id="edge19_Node000015_Node000012" title=" " alt="" coords="1421,188,1391,186,1391,181,1426,188"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#a849c5089c91fa9599653d9dad6e4c28c" title="The recipients a dialog may preselect for editing the list of dir." alt="" coords="1200,211,1387,238"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1426,210,1388,217,1388,211,1420,210"/>
+<area shape="rect" id="Node000017" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="945,211,1149,238"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="1182,225,1149,227,1149,222,1187,224"/>
+<area shape="rect" id="Node000018" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="709,211,897,238"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="927,225,897,227,897,222,932,224"/>
+</map>

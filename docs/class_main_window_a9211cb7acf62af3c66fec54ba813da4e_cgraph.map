@@ -1,0 +1,9 @@
+<map id="MainWindow::updateOtpButtonVisibility" name="MainWindow::updateOtpButtonVisibility">
+<area shape="rect" id="Node000001" title="Refresh the OTP toolbar action from settings." alt="" coords="5,5,229,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e" title="Check whether OTP support is enabled." alt="" coords="277,14,462,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,25,264,28,258,28,229,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="510,14,712,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,25,497,28,492,28,463,30"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="760,14,984,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="713,25,747,28,742,28,713,30"/>
+</map>

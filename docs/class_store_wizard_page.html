@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_store_wizard_page.html','','class_store_wizard_page-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,13 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_store_wizard_page-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">StoreWizardPage Class Reference</div></div>
+  <div class="headertitle"><div class="title">StoreWizardPage Class Reference<div class="ingroups"><a class="el" href="group__ui.html">Windows and dialogs</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -111,30 +126,47 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page__inherit__graph.svg" width="143" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for StoreWizardPage:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page__coll__graph.svg" width="143" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page__coll__graph.svg" width="432" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a19924f72223de1a13529a9b0cb443a14" id="r_a19924f72223de1a13529a9b0cb443a14"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a19924f72223de1a13529a9b0cb443a14">StoreWizardPage</a> (<a class="el" href="class_first_run_wizard.html">FirstRunWizard</a> *wizard)</td></tr>
 <tr class="memdesc:a19924f72223de1a13529a9b0cb443a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the page.  <br /></td></tr>
-<tr class="memitem:a550b05a051e81404ff1c71bb5a9229f8" id="r_a550b05a051e81404ff1c71bb5a9229f8"><td class="memItemLeft"><a id="a550b05a051e81404ff1c71bb5a9229f8" name="a550b05a051e81404ff1c71bb5a9229f8"></a>
-void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></tr>
-<tr class="memdesc:a550b05a051e81404ff1c71bb5a9229f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the configured store path. <br /></td></tr>
+<tr class="memitem:a550b05a051e81404ff1c71bb5a9229f8" id="r_a550b05a051e81404ff1c71bb5a9229f8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a550b05a051e81404ff1c71bb5a9229f8">initializePage</a> () override</td></tr>
+<tr class="memdesc:a550b05a051e81404ff1c71bb5a9229f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the configured store path.  <br /></td></tr>
 <tr class="memitem:aa588d7e82031fbeda97582e6f0840319" id="r_aa588d7e82031fbeda97582e6f0840319"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa588d7e82031fbeda97582e6f0840319">isComplete</a> () const -&gt; bool override</td></tr>
 <tr class="memdesc:aa588d7e82031fbeda97582e6f0840319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to encrypt it to.  <br /></td></tr>
 <tr class="memitem:a3beb73b4e5575bcaa12dae36d6c24c01" id="r_a3beb73b4e5575bcaa12dae36d6c24c01"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3beb73b4e5575bcaa12dae36d6c24c01">validatePage</a> () -&gt; bool override</td></tr>
 <tr class="memdesc:a3beb73b4e5575bcaa12dae36d6c24c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the path and the Git choice.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8089e9bf2ad6987d309fcccfde5b2eff" id="r_a8089e9bf2ad6987d309fcccfde5b2eff"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8089e9bf2ad6987d309fcccfde5b2eff">recipients</a> () const -&gt; int</td></tr>
+<tr class="memdesc:a8089e9bf2ad6987d309fcccfde5b2eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many keys are ticked on the key page.  <br /></td></tr>
+<tr class="memitem:af948497007b04b2b861b0c9882e8ab2b" id="r_af948497007b04b2b861b0c9882e8ab2b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af948497007b04b2b861b0c9882e8ab2b">updateStatus</a> ()</td></tr>
+<tr class="memdesc:af948497007b04b2b861b0c9882e8ab2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">After an edit: describe the folder (existing store with its entry count, empty folder, not a store yet, missing) and ask for a ticked key when it has to be initialised, then re-evaluate <a class="el" href="#aa588d7e82031fbeda97582e6f0840319" title="Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to enc...">isComplete()</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae5388dcec4290d7df80987b389a0e57b" id="r_ae5388dcec4290d7df80987b389a0e57b"><td class="memItemLeft"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae5388dcec4290d7df80987b389a0e57b">m_wizard</a></td></tr>
+<tr class="memdesc:ae5388dcec4290d7df80987b389a0e57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Owner; its settings get the path and flag.  <br /></td></tr>
+<tr class="memitem:aae5d59844d129b96be47ff6749ff7e7c" id="r_aae5d59844d129b96be47ff6749ff7e7c"><td class="memItemLeft">QLineEdit *&#160;</td><td class="memItemRight"><a class="el" href="#aae5d59844d129b96be47ff6749ff7e7c">m_path</a></td></tr>
+<tr class="memdesc:aae5d59844d129b96be47ff6749ff7e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store folder, in native separators.  <br /></td></tr>
+<tr class="memitem:abaaf1e540ea6366d352a691eea7a3db5" id="r_abaaf1e540ea6366d352a691eea7a3db5"><td class="memItemLeft">QCheckBox *&#160;</td><td class="memItemRight"><a class="el" href="#abaaf1e540ea6366d352a691eea7a3db5">m_useGit</a></td></tr>
+<tr class="memdesc:abaaf1e540ea6366d352a691eea7a3db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keep the store under Git; off without git.  <br /></td></tr>
+<tr class="memitem:a35c334a83f1ff63cc39b32564d706947" id="r_a35c334a83f1ff63cc39b32564d706947"><td class="memItemLeft">QLabel *&#160;</td><td class="memItemRight"><a class="el" href="#a35c334a83f1ff63cc39b32564d706947">m_status</a></td></tr>
+<tr class="memdesc:a35c334a83f1ff63cc39b32564d706947"><td class="mdescLeft">&#160;</td><td class="mdescRight">What Finish will do with the folder.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The folder the passwords live in: an existing store is used as-is, a folder without <span class="tt">.gpg-id</span> (or no folder) is initialised on Finish. The Git box lives here because its sensible default depends on the folder: on for a repository or a store still to be created, off for an existing store that is no repository. </p>
 
-<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00188">188</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00219">219</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a19924f72223de1a13529a9b0cb443a14" name="a19924f72223de1a13529a9b0cb443a14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19924f72223de1a13529a9b0cb443a14">&#9670;&#160;</a></span>StoreWizardPage()</h2>
@@ -167,9 +199,58 @@ void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00367">367</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a19924f72223de1a13529a9b0cb443a14_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a19924f72223de1a13529a9b0cb443a14_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a550b05a051e81404ff1c71bb5a9229f8" name="a550b05a051e81404ff1c71bb5a9229f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550b05a051e81404ff1c71bb5a9229f8">&#9670;&#160;</a></span>initializePage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StoreWizardPage::initializePage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show the configured store path. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00387">387</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a550b05a051e81404ff1c71bb5a9229f8_cgraph.svg" width="100%" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="aa588d7e82031fbeda97582e6f0840319" name="aa588d7e82031fbeda97582e6f0840319"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa588d7e82031fbeda97582e6f0840319">&#9670;&#160;</a></span>isComplete()</h2>
 
@@ -183,7 +264,7 @@ void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></
           <td class="memname">auto StoreWizardPage::isComplete </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -195,6 +276,91 @@ void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></
 
 <p>Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to encrypt it to. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when Finish can do its job. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00452">452</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_aa588d7e82031fbeda97582e6f0840319_cgraph.svg" width="476" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a8089e9bf2ad6987d309fcccfde5b2eff" name="a8089e9bf2ad6987d309fcccfde5b2eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8089e9bf2ad6987d309fcccfde5b2eff">&#9670;&#160;</a></span>recipients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto StoreWizardPage::recipients </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How many keys are ticked on the key page. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of enabled entries in the wizard's key list. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00419">419</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a8089e9bf2ad6987d309fcccfde5b2eff_icgraph.svg" width="100%" height="393"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="af948497007b04b2b861b0c9882e8ab2b" name="af948497007b04b2b861b0c9882e8ab2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af948497007b04b2b861b0c9882e8ab2b">&#9670;&#160;</a></span>updateStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StoreWizardPage::updateStatus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>After an edit: describe the folder (existing store with its entry count, empty folder, not a store yet, missing) and ask for a ticked key when it has to be initialised, then re-evaluate <a class="el" href="#aa588d7e82031fbeda97582e6f0840319" title="Whether a path is given and, for a folder that is not a store yet, at least one key was ticked to enc...">isComplete()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00427">427</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_af948497007b04b2b861b0c9882e8ab2b_cgraph.svg" width="488" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_af948497007b04b2b861b0c9882e8ab2b_icgraph.svg" width="100%" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -211,7 +377,7 @@ void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></
           <td class="memname">auto StoreWizardPage::validatePage </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -223,29 +389,136 @@ void&#160;</td><td class="memItemRight"><b>initializePage</b> () override</td></
 
 <p>Store the path and the Git choice. </p>
 <dl class="section return"><dt>Returns</dt><dd>Always true. </dd></dl>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
-</div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a3beb73b4e5575bcaa12dae36d6c24c01_cgraph.svg" width="235" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
-</div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_wizard_page_a3beb73b4e5575bcaa12dae36d6c24c01_icgraph.svg" width="235" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8cpp_source.html#l00460">460</a> of file <a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aae5d59844d129b96be47ff6749ff7e7c" name="aae5d59844d129b96be47ff6749ff7e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5d59844d129b96be47ff6749ff7e7c">&#9670;&#160;</a></span>m_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLineEdit* StoreWizardPage::m_path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The store folder, in native separators. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00246">246</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+
+</div>
+</div>
+<a id="a35c334a83f1ff63cc39b32564d706947" name="a35c334a83f1ff63cc39b32564d706947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c334a83f1ff63cc39b32564d706947">&#9670;&#160;</a></span>m_status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* StoreWizardPage::m_status</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>What Finish will do with the folder. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00248">248</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+
+</div>
+</div>
+<a id="abaaf1e540ea6366d352a691eea7a3db5" name="abaaf1e540ea6366d352a691eea7a3db5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaaf1e540ea6366d352a691eea7a3db5">&#9670;&#160;</a></span>m_useGit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QCheckBox* StoreWizardPage::m_useGit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Keep the store under Git; off without git. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00247">247</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+
+</div>
+</div>
+<a id="ae5388dcec4290d7df80987b389a0e57b" name="ae5388dcec4290d7df80987b389a0e57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5388dcec4290d7df80987b389a0e57b">&#9670;&#160;</a></span>m_wizard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>* StoreWizardPage::m_wizard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Owner; its settings get the path and flag. </p>
+
+<p class="definition">Definition at line <a class="el" href="firstrunwizard_8h_source.html#l00245">245</a> of file <a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="firstrunwizard_8h_source.html">firstrunwizard.h</a></li>
+<li>src/<a class="el" href="firstrunwizard_8cpp_source.html">firstrunwizard.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_store_wizard_page.html">StoreWizardPage</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

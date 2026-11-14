@@ -1,0 +1,5 @@
+<map id="GpgIdGeneration::storeIdFor" name="GpgIdGeneration::storeIdFor">
+<area shape="rect" id="Node000001" title="The store id to write into a list of storeRoot: the one this device knows the store by; else onDisk,..." alt="" coords="5,5,210,33"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="258,5,420,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,17,245,19,240,19,210,22"/>
+</map>

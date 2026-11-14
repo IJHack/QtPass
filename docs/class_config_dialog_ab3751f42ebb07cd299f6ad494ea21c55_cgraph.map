@@ -1,0 +1,22 @@
+<map id="ConfigDialog::followActiveProfile" name="ConfigDialog::followActiveProfile">
+<area shape="rect" id="Node000001" title="Point the active profile at its new name after a rename (or at none after a deletion),..." alt="" coords="5,165,199,210"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="248,143,402,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,172,235,169,230,171,200,177"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ad96b519b92030b127420b2785b2e6bf1" title="Persist an AppSettings value object to the singleton store." alt="" coords="247,199,404,227"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="198,196,234,202,229,203,199,201"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="452,143,654,171"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,154,439,156,434,158,403,160"/>
+<area shape="rect" id="Node000005" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="486,75,621,119"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="380,140,473,118,468,120,381,145"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="702,143,926,171"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="654,154,689,157,684,157,655,160"/>
+<area shape="rect" id="Node000006" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="717,75,911,119"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="621,94,704,97,699,97,622,100"/>
+<area shape="rect" id="Node000007" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="711,5,917,50"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="621,77,715,54,710,55,622,82"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="384,196,482,174,476,176,385,201"/>
+<area shape="rect" id="Node000009" href="$class_pass_backend_factory.html#abef8590b56c897a52f55ba8a28ad71ae" title="Forget the currently active backend." alt="" coords="477,195,629,239"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="404,212,464,215,459,216,404,217"/>
+<area shape="rect" id="Node000010" href="$class_settings_serializer.html#ae5f9179768cb01ed33c7cf623c198d7c" title="Write all flat settings to a QSettings store." alt="" coords="486,264,621,309"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="372,225,473,260,468,260,371,230"/>
+</map>

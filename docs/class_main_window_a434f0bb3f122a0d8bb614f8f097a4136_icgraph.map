@@ -1,0 +1,19 @@
+<map id="MainWindow::on_profileBox_currentTextChanged" name="MainWindow::on_profileBox_currentTextChanged">
+<area shape="rect" id="Node000001" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1498,48,1700,93"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1227,56,1450,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1480,70,1451,73,1451,68,1485,70"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1028,31,1179,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1209,56,1179,56,1180,50,1214,57"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,31,483,59"/>
+<area shape="poly" id="edge10_Node000002_Node000004" title=" " alt="" coords="1215,77,1072,84,902,87,716,84,531,73,455,62,455,57,531,68,716,78,902,81,1072,79,1209,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1027,27,979,22,854,11,755,8,657,12,531,22,455,33,454,28,531,17,657,7,755,3,854,6,980,17,1032,28"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,31,980,59"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="1009,45,980,48,980,42,1015,45"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="428,16,414,12,385,10,357,12,342,17,338,22,345,31,340,30,333,22,339,12,356,7,385,4,415,7,434,16"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,31,239,59"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="269,54,239,57,239,51,274,54"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="254,33,289,36,284,37,254,39"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,31,762,59"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="792,45,763,48,763,42,797,45"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="513,45,484,48,483,42,518,45"/>
+</map>

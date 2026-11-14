@@ -1,0 +1,6 @@
+<map id="StoreModel::showThis" name="StoreModel::showThis">
+<area shape="rect" id="Node000001" title="Check if a specific index should be shown." alt="" coords="266,29,430,57"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="387,14,374,10,348,8,323,10,310,15,306,20,312,30,307,28,301,20,306,11,322,5,348,3,376,5,392,14"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1" title="Filter whether a row should be displayed." alt="" coords="5,29,218,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,43,218,46,218,41,253,43"/>
+</map>

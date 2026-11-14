@@ -1,5 +1,30 @@
 <map id="UserInfo::marginallyValid" name="UserInfo::marginallyValid">
-<area shape="rect" id="Node000001" title="Check marginal validity per GnuPG validity codes." alt="" coords="181,5,367,33"/>
-<area shape="rect" id="Node000002" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="5,5,133,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,19,133,22,133,17,168,19"/>
+<area shape="rect" id="Node000001" title="Check marginal validity per GnuPG validity codes." alt="" coords="1218,204,1404,232"/>
+<area shape="rect" id="Node000002" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="1043,204,1170,232"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1200,218,1170,221,1170,216,1205,218"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="775,152,995,180"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1027,200,947,183,947,178,1032,200"/>
+<area shape="rect" id="Node000009" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="792,204,978,232"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1024,219,979,221,979,216,1030,218"/>
+<area shape="rect" id="Node000010" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="800,260,970,288"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1037,236,943,262,942,257,1031,237"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" title="Populate user list." alt="" coords="525,152,713,180"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="757,167,714,169,714,164,762,166"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544" title="Handle select all checkbox." alt="" coords="251,5,446,50"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="586,142,530,104,462,65,434,53,434,48,464,60,533,100,591,143"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="249,75,448,119"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="545,149,438,123,438,117,550,148"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#a20609c91440503dc7f84f26a43d01509" title="Filter user list." alt="" coords="258,144,438,189"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="507,167,440,169,439,164,512,166"/>
+<area shape="rect" id="Node000008" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="255,212,442,240"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="536,185,464,204,415,214,414,209,462,198,541,183"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="793,201,694,183,694,178,798,201"/>
+<area shape="rect" id="Node000011" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="526,260,713,288"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="782,274,714,277,713,272,787,274"/>
+<area shape="rect" id="Node000014" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="511,312,727,340"/>
+<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="798,291,694,314,694,309,793,292"/>
+<area shape="rect" id="Node000012" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="234,264,463,292"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="507,276,464,279,463,274,513,276"/>
+<area shape="rect" id="Node000013" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,256,186,301"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="215,279,187,281,186,276,221,278"/>
 </map>

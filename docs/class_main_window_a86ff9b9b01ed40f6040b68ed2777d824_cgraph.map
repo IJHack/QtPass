@@ -1,0 +1,7 @@
+<map id="MainWindow::updateProfileBoxEnabled" name="MainWindow::updateProfileBoxEnabled">
+<area shape="rect" id="Node000001" title="Enable the profile box only when there is more than one profile, the interface is enabled and the bac..." alt="" coords="5,5,204,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#afeb532f63d4dfa060f2ca012de89b5d9" title="Whether no backend, the active one or one kept from before a switch, runs or waits for anything (Pass..." alt="" coords="252,14,463,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,25,239,27,233,28,204,30"/>
+<area shape="rect" id="Node000003" href="$class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep..." alt="" coords="511,5,663,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,25,498,28,493,28,464,30"/>
+</map>

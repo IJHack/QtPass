@@ -1,5 +1,13 @@
 <map id="ProgramsWizardPage" name="ProgramsWizardPage">
-<area shape="rect" id="Node000001" title="Where gpg, pass and git are; gpg is required, the rest optional. A stored path that no longer runs is..." alt="" coords="5,81,165,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="31,5,139,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,47,87,81,83,80,83,51"/>
+<area shape="rect" id="Node000001" title="Where gpg, pass and git are; gpg is required, the rest optional. A stored path that no longer runs is..." alt="" coords="5,307,165,335"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="10,207,117,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,248,85,307,79,307,68,251"/>
+<area shape="rect" id="Node000003" href="$class_first_run_wizard.html" title="The first start of QtPass: find GnuPG (and pass and Git), make sure there is a secret key,..." alt="" coords="141,207,261,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,245,102,309,99,305,172,244"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="124,106,200,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="174,146,198,206,193,206,172,151"/>
+<area shape="rect" id="Node000005" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="225,106,324,134"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="258,144,213,208,209,204,254,148"/>
+<area shape="rect" id="Node000006" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="190,5,359,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="276,46,277,106,272,105,273,51"/>
 </map>

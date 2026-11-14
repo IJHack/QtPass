@@ -1,0 +1,5 @@
+<map id="UsersDialog::loadRecipients" name="UsersDialog::loadRecipients">
+<area shape="rect" id="Node000001" title="Load recipients and handle missing keys." alt="" coords="241,5,445,33"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="5,5,193,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,19,193,22,193,17,228,19"/>
+</map>

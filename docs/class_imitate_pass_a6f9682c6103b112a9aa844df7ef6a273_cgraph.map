@@ -1,0 +1,6 @@
+<map id="ImitatePass::executeGit" name="ImitatePass::executeGit">
+<area shape="rect" id="Node000001" title="Execute git command." alt="" coords="5,29,181,57"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="229,29,393,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,41,216,43,210,43,181,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="273,28,267,20,272,11,287,5,311,3,336,5,352,14,347,14,335,10,311,8,288,10,276,15,273,20,278,30"/>
+</map>

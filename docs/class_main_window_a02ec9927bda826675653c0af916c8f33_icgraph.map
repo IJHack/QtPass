@@ -1,0 +1,16 @@
+<map id="MainWindow::startReencryptPath" name="MainWindow::startReencryptPath">
+<area shape="rect" id="Node000001" title="Begin a re&#45;encryption pass on the current path." alt="" coords="817,56,1054,84"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="544,29,769,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="799,57,770,57,770,51,805,57"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a7cf82cedc4d5f790a8ed0bb4fadbbb16" title="Share menu &quot;Re&#45;encrypt all passwords&quot;: confirm, lock the UI via startReencryptPath() and have Imitate..." alt="" coords="556,81,758,109"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="804,82,758,89,758,83,799,82"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="293,29,490,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="526,43,490,46,490,41,531,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="435,14,421,10,391,8,364,10,348,15,344,20,351,30,346,28,339,20,345,11,362,5,391,3,422,5,441,14"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="275,52,239,55,239,49,280,52"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,295,34,290,35,254,37"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="287,81,496,109"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="537,95,497,98,496,93,543,95"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="298,78,197,60,198,55,303,77"/>
+</map>

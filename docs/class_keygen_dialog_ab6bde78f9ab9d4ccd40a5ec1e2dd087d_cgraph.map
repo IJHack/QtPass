@@ -1,0 +1,5 @@
+<map id="KeygenDialog::updateOkState" name="KeygenDialog::updateOkState">
+<area shape="rect" id="Node000001" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="5,14,222,42"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="270,5,463,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,25,256,28,251,28,222,30"/>
+</map>

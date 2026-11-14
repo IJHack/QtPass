@@ -1,0 +1,9 @@
+<map id="src/profile.h" name="src/profile.h">
+<area shape="rect" id="Node000001" title="One named password store (Profile) and the name&#45;to&#45;profile map (Profiles) the settings trade in." alt="" coords="74,5,172,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,65,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,33,64,73,60,69,105,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="88,81,158,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,32,125,66,121,64,121,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="182,81,256,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,31,193,71,187,72,139,36"/>
+</map>

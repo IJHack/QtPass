@@ -1,0 +1,5 @@
+<map id="UsersDialog::selectImportedKey" name="UsersDialog::selectImportedKey">
+<area shape="rect" id="Node000001" title="Make the key gpg just imported the current row. gpg reports a 16&#45;character long ID (IMPORTED) or a 40..." alt="" coords="252,14,482,42"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="5,5,204,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,28,204,30,204,25,239,27"/>
+</map>

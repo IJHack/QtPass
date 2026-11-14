@@ -1,0 +1,8 @@
+<map id="Util::passUmask" name="Util::passUmask">
+<area shape="rect" id="Node000001" title="The umask pass would use for value of PASSWORD_STORE_UMASK." alt="" coords="386,29,515,57"/>
+<area shape="rect" id="Node000002" href="$class_util.html#ab16f1ac58307067ced38315c49f6fcba" title="Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the s..." alt="" coords="116,29,338,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="368,43,339,46,339,41,373,43"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="14,29,68,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,44,69,46,68,41,103,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="73,18,64,11,41,8,21,10,10,15,9,21,15,30,11,32,3,22,6,12,19,5,41,3,66,6,78,17"/>
+</map>

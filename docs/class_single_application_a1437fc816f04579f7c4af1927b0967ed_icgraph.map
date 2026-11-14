@@ -1,0 +1,17 @@
+<map id="SingleApplication::forwardMessage" name="SingleApplication::forwardMessage">
+<area shape="rect" id="Node000001" title="Deliver a message over the local socket." alt="" coords="869,121,1012,165"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="679,65,821,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="852,117,821,111,822,105,857,118"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#ad63149f60ac6676dda4397a90116e351" title="Send a message to the running instance." alt="" coords="108,65,250,109"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="851,147,743,152,604,150,451,142,298,124,248,113,248,107,299,119,451,137,604,145,743,147,856,147"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="6,44,60,72"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="699,56,667,42,630,30,548,15,463,9,378,9,297,15,155,34,61,54,59,49,154,29,296,10,378,4,463,4,549,10,632,24,669,37,705,57"/>
+<area shape="rect" id="Node000004" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="489,39,631,84"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="661,76,631,74,631,69,666,75"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="56,29,48,25,33,23,18,24,10,29,8,35,12,43,7,44,3,35,6,26,16,19,33,17,50,20,61,27"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Claim the segment and listen; no&#45;op when another instance holds it." alt="" coords="298,65,441,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="471,74,442,80,441,75,476,73"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="456,92,489,94,631,94,681,93,676,94,631,99,489,99,457,97"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="280,88,251,90,250,84,285,87"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="91,71,61,66,60,60,95,68"/>
+</map>

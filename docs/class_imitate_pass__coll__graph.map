@@ -1,14 +1,19 @@
 <map id="ImitatePass" name="ImitatePass">
-<area shape="rect" id="Node000001" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="48,284,145,311"/>
-<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="72,207,122,234"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,248,99,284,94,282,95,252"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,79,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="39,46,42,89,49,133,67,173,89,206,84,207,62,176,43,134,36,90,39,51"/>
-<area shape="rect" id="Node000006" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="58,106,135,134"/>
-<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="57,44,92,105,87,106,56,49"/>
-<area shape="rect" id="Node000004" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="159,106,258,134"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="182,146,142,185,114,208,111,204,139,181,186,142"/>
-<area shape="rect" id="Node000005" href="$struct_password_configuration.html" title="Holds the password configuration settings." alt="" coords="124,5,293,33"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="210,46,211,106,206,105,207,51"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="98,147,99,207,94,206,95,152"/>
+<area shape="rect" id="Node000001" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="123,310,220,338"/>
+<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="146,209,197,237"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,251,174,310,169,308,170,254"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="84,5,158,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,46,149,133,170,209,165,209,144,134,126,51"/>
+<area shape="rect" id="Node000006" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="158,106,236,134"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="141,43,189,105,184,106,140,48"/>
+<area shape="rect" id="Node000008" href="$class_native_grep.html" title="Full&#45;text search over a password store without pass grep: every .gpg file is decrypted with gpg on a ..." alt="" coords="5,158,101,185"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="106,50,105,58,61,158,56,156,100,56,108,45"/>
+<area shape="rect" id="Node000004" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="259,106,359,134"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="285,142,232,188,195,211,192,207,229,183,281,145"/>
+<area shape="rect" id="Node000005" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="224,5,394,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="310,46,311,106,307,104,308,51"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="192,147,177,210,173,208,188,151"/>
+<area shape="rect" id="Node000007" href="$class_simple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation." alt="" coords="222,209,362,237"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="267,246,189,312,186,307,262,247"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="61,198,80,236,117,277,155,309,150,310,113,281,75,238,60,203"/>
 </map>

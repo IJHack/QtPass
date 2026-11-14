@@ -1,4 +1,10 @@
 <map id="WindowStateStore::save" name="WindowStateStore::save">
 <area shape="rect" id="Node000001" title="Save window&#39;s geometry under key." alt="" coords="5,29,186,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="64,28,59,20,63,11,76,5,96,3,117,5,130,14,125,14,115,10,95,8,77,10,67,15,64,20,69,29"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="55,29,49,20,54,11,70,5,96,3,123,5,139,14,134,14,121,10,95,8,71,10,58,15,55,20,61,29"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe" title="Save dialog geometry." alt="" coords="234,21,422,66"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="186,41,221,43,215,43,186,46"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="470,29,672,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="422,41,457,43,452,43,423,46"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="720,29,944,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="673,41,707,43,702,43,673,46"/>
 </map>

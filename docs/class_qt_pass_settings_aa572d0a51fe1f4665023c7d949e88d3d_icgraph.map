@@ -1,0 +1,8 @@
+<map id="QtPassSettings::setProfiles" name="QtPassSettings::setProfiles">
+<area shape="rect" id="Node000001" title="Save all configured profiles." alt="" coords="491,29,685,57"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,29,443,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="473,43,443,46,443,41,478,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="143,14,130,10,103,8,78,10,64,15,60,20,67,29,61,29,55,20,60,11,77,5,103,3,131,5,148,14"/>
+</map>

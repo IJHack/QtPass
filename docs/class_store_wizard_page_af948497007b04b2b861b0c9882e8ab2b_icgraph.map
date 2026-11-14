@@ -1,0 +1,9 @@
+<map id="StoreWizardPage::updateStatus" name="StoreWizardPage::updateStatus">
+<area shape="rect" id="Node000001" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="531,32,756,60"/>
+<area shape="rect" id="Node000002" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="245,5,472,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,34,472,32,472,27,518,34"/>
+<area shape="rect" id="Node000003" href="$class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14" title="Build the page." alt="" coords="234,57,483,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="518,57,484,63,483,57,513,57"/>
+<area shape="rect" id="Node000004" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,49,186,94"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,71,186,74,186,69,220,71"/>
+</map>

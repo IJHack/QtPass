@@ -1,0 +1,5 @@
+<map id="QtPassSettings::backendsIdle" name="QtPassSettings::backendsIdle">
+<area shape="rect" id="Node000001" title="Whether no backend, the active one or one kept from before a switch, runs or waits for anything (Pass..." alt="" coords="5,14,217,42"/>
+<area shape="rect" id="Node000002" href="$class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706" title="Whether neither backend runs or waits for anything: after a switch of backend the previous one is kep..." alt="" coords="265,5,417,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,25,252,28,246,28,217,30"/>
+</map>

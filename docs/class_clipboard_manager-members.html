@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_clipboard_manager.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">ClipboardManager Member List</div></div>
 </div><!--header-->
@@ -105,15 +123,24 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb">ClipboardManager</a>(QObject *parent=nullptr)</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#a5542929aedc19e3572d1b25328959c6c">copyIfAlways</a>(const QString &amp;text, const QString &amp;p_output=QString())</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#a7c807bebb29c44b69965ebee13becb99">copyText</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#a764964ed0180589399caa5b03504283c">forgetIfSaved</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4">m_clearTimer</a></td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#abf4dadc78d7a07b55e49365b0c1f44dc">m_clippedText</a></td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#a4a616d713f5cf757c429bcca6798fa4d">m_otherCopies</a></td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#adf12996e998b62d918f9750ff1923b5d">m_previousClipboard</a></td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#abb7f95aadcd33bad8021ccfc8a26f0f0">m_previousSelection</a></td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872">setAutoclearTimer</a>()</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b">statusMessage</a>(const QString &amp;message)</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_clipboard_manager.html#a17f2c6bd33ca83f2044ef232b8edf65a">trackCopied</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_clipboard_manager.html#a17d1e93dc5cddccbd6f486f3d772b5cc">trackedText</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

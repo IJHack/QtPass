@@ -1,0 +1,33 @@
+<map id="Util::initialiseEnvironment" name="Util::initialiseEnvironment">
+<area shape="rect" id="Node000001" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG..." alt="" coords="1285,208,1476,236"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="1079,152,1237,180"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1305,204,1216,183,1216,178,1311,204"/>
+<area shape="rect" id="Node000012" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory." alt="" coords="832,264,1004,292"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="1272,235,1005,271,1004,265,1267,236"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="1194,137,1183,133,1158,131,1135,133,1122,138,1119,143,1124,153,1119,151,1113,144,1118,134,1133,128,1158,126,1184,128,1200,138"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="805,212,1031,240"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="1095,184,1031,204,985,215,984,209,1030,198,1089,185"/>
+<area shape="rect" id="Node000008" href="$class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449" title="Fill the fields from the settings (autodetection already ran)." alt="" coords="838,144,998,189"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="1061,167,998,169,998,164,1066,166"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#ae4d11811206b82326dca209f35910052" title="Whether qrencode can run: configuredPath when it is an executable file, else a qrencode on Util&#39;s PAT..." alt="" coords="825,75,1011,119"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="1090,148,998,123,998,117,1095,148"/>
+<area shape="rect" id="Node000011" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="815,5,1021,50"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="1130,141,1086,103,1029,65,1005,53,1005,48,1032,60,1089,99,1135,142"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="597,212,691,240"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="787,227,692,229,692,224,793,226"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,264,483,292"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="584,238,458,266,457,261,579,239"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="321,188,449,216"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="579,221,449,211,449,206,584,220"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="428,249,414,246,385,243,358,245,343,250,339,255,346,265,341,263,334,256,339,246,357,240,385,238,415,240,433,249"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,264,239,292"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="269,288,239,290,239,285,274,287"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="254,267,289,269,284,270,254,272"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="546,83,742,111"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="807,97,743,100,742,94,812,97"/>
+<area shape="poly" id="edge13_Node000010_Node000010" title=" " alt="" coords="687,68,673,64,644,62,617,64,602,69,598,74,605,83,600,82,593,74,599,64,616,59,644,57,674,59,692,68"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="823,261,692,238,692,233,829,261"/>
+<area shape="poly" id="edge18_Node000012_Node000005" title=" " alt="" coords="815,279,484,281,483,276,820,278"/>
+<area shape="rect" id="Node000013" href="$class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8" title="Show the configured store path." alt="" coords="531,315,757,343"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="827,295,723,317,723,312,822,296"/>
+</map>

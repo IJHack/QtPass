@@ -1,0 +1,7 @@
+<map id="FieldLabel::eventFilter" name="FieldLabel::eventFilter">
+<area shape="rect" id="Node000001" title="Escape in the editor cancels the edit." alt="" coords="5,5,171,33"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="219,5,374,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,17,205,19,200,19,171,22"/>
+<area shape="rect" id="Node000003" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="422,5,575,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,17,409,19,404,19,374,22"/>
+</map>

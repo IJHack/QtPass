@@ -1,0 +1,5 @@
+<map id="ConfigDialog::updatePassGitWarning" name="ConfigDialog::updatePassGitWarning">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,192,50"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any." alt="" coords="240,14,446,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,25,227,27,221,28,192,30"/>
+</map>

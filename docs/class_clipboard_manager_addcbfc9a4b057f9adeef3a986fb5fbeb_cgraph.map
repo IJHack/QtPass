@@ -1,0 +1,24 @@
+<map id="ClipboardManager::ClipboardManager" name="ClipboardManager::ClipboardManager">
+<area shape="rect" id="Node000001" title="Construct a manager that also clears its text when the application quits." alt="" coords="5,105,216,150"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#ab9f20e4394ee1075b4e269cd454e4fc1" title="Remove the tracked text from the clipboard if it is still there. Silent no&#45;op when nothing is tracked..." alt="" coords="289,83,469,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,113,276,108,271,110,217,118"/>
+<area shape="rect" id="Node000010" href="$class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872" title="Re&#45;read the autoclear delay from the settings." alt="" coords="264,135,494,179"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="216,137,251,143,245,143,216,142"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="570,83,724,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="469,94,557,97,551,97,470,100"/>
+<area shape="rect" id="Node000009" href="$class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b" title="Something worth showing in the status bar happened." alt="" coords="552,15,741,59"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="443,80,534,62,540,61,445,85"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="799,143,1002,171"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="708,109,826,139,821,139,708,114"/>
+<area shape="rect" id="Node000006" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="833,75,968,119"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="724,94,820,97,815,97,725,100"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1050,143,1273,171"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1002,154,1037,157,1031,157,1002,160"/>
+<area shape="rect" id="Node000007" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1064,75,1258,119"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="969,94,1051,97,1046,97,969,100"/>
+<area shape="rect" id="Node000008" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1059,5,1264,50"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="968,76,1057,55,1062,54,969,82"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="542,135,751,179"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="494,154,529,157,523,157,495,160"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="752,154,786,157,781,157,752,160"/>
+</map>

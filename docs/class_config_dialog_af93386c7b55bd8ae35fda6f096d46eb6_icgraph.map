@@ -1,4 +1,7 @@
 <map id="ConfigDialog::useSelection" name="ConfigDialog::useSelection">
-<area shape="rect" id="Node000001" title="Enable or disable clipboard selection mode." alt="" coords="5,29,201,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="135,14,125,10,103,8,83,10,72,15,69,20,74,29,69,28,64,20,68,11,81,5,103,3,126,5,140,14"/>
+<area shape="rect" id="Node000001" title="Enable or disable clipboard selection mode." alt="" coords="249,29,444,57"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="387,14,374,10,346,8,321,10,307,15,303,20,310,30,305,28,298,20,303,11,320,5,346,3,375,5,392,14"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="143,14,130,10,103,8,78,10,64,15,60,20,66,29,61,29,55,20,60,11,76,5,103,3,131,5,148,14"/>
 </map>

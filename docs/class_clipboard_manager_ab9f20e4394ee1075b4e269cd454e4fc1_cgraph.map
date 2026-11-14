@@ -1,0 +1,17 @@
+<map id="ClipboardManager::clear" name="ClipboardManager::clear">
+<area shape="rect" id="Node000001" title="Remove the tracked text from the clipboard if it is still there. Silent no&#45;op when nothing is tracked..." alt="" coords="5,65,186,93"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="251,35,405,62"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,65,238,60,233,62,187,70"/>
+<area shape="rect" id="Node000008" href="$class_clipboard_manager.html#ac2d547f75aeb2c6bb2755be4b30c777b" title="Something worth showing in the status bar happened." alt="" coords="234,86,422,131"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="186,88,221,94,216,95,186,93"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="470,5,672,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,37,457,33,452,34,406,42"/>
+<area shape="rect" id="Node000005" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="504,57,639,102"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,56,491,68,485,69,405,61"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="720,5,944,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="672,17,707,19,702,19,673,22"/>
+<area shape="rect" id="Node000006" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="735,57,929,102"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="639,77,722,79,717,79,639,82"/>
+<area shape="rect" id="Node000007" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="729,126,935,171"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="640,94,733,122,728,121,639,100"/>
+</map>

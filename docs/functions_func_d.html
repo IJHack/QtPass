@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_d.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -101,28 +119,35 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>data()&#160;:&#160;<a class="el" href="class_store_model.html#a18097d60174b1d370e13d6a04ab7847f">StoreModel</a></li>
-<li>decode()&#160;:&#160;<a class="el" href="class_base32.html#aa37affa1dea172a0e0df0ccec92f48f2">Base32</a></li>
+<li>decode()&#160;:&#160;<a class="el" href="class_base32.html#aab3feed3644b481794685b42410cf1e1">Base32</a></li>
 <li>decrypt()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a9a472ef22897f9d80c62ddb62a342696">RnpCrypto</a></li>
 <li>decryptEntry()&#160;:&#160;<a class="el" href="class_imitate_pass.html#aee1afe18c4bbce2d16e4fe90c6d160c9">ImitatePass</a></li>
 <li>defaultSecretFieldNames()&#160;:&#160;<a class="el" href="struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05">AppSettings</a></li>
 <li>dequeuing()&#160;:&#160;<a class="el" href="class_executor.html#a22b5633f6b06f7f15be77370b5bd2871">Executor</a></li>
-<li>deselect()&#160;:&#160;<a class="el" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">MainWindow</a></li>
+<li>deselect()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#aed82ffca2f0dd0b041dfa51e83f1d113">DeselectableTreeView</a>, <a class="el" href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">MainWindow</a></li>
 <li>DeselectableTreeView()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">DeselectableTreeView</a></li>
-<li>detachFromTerminal()&#160;:&#160;<a class="el" href="class_executor.html#a37986d339c981097b639c76fab602f92">Executor</a></li>
-<li>digest()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a593383b668ee43317c32dfac0170fb08">GpgIdGeneration</a></li>
-<li>directoriesUnder()&#160;:&#160;<a class="el" href="class_util.html#afaab47cf531353235a5ec8f2c6424c5e">Util</a></li>
+<li>destroyTrayIcon()&#160;:&#160;<a class="el" href="class_main_window.html#ae6cd4b4efa51da309090b9c394ae5a57">MainWindow</a></li>
+<li>detachFromTerminal()&#160;:&#160;<a class="el" href="class_executor.html#ae6200004e4ffabc8eb35b63f419ef492">Executor</a></li>
+<li>digest()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1">GpgIdGeneration</a></li>
+<li>directoriesUnder()&#160;:&#160;<a class="el" href="class_util.html#aea1468816a5747a7b3421d9966689202">Util</a></li>
 <li>dirFor()&#160;:&#160;<a class="el" href="class_store_tree.html#a0af4ab5f8c00e1188af669b8aea1ab47">StoreTree</a></li>
 <li>displayFields()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f">PasswordDisplayPanel</a></li>
+<li>doGitPush()&#160;:&#160;<a class="el" href="class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b">QtPass</a></li>
+<li>done()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a805475e990ca590a79cb795072400a5a">KeygenDialog</a></li>
 <li>DoneWizardPage()&#160;:&#160;<a class="el" href="class_done_wizard_page.html#aa479270c512e40c01f1f527cc8420183">DoneWizardPage</a></li>
 <li>drained()&#160;:&#160;<a class="el" href="class_executor.html#a987e7227ac1932bbb59cea5cbc82d483">Executor</a></li>
 <li>dropMimeData()&#160;:&#160;<a class="el" href="class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e">StoreModel</a></li>
+<li>dropStaleTemporary()&#160;:&#160;<a class="el" href="class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c">ImitatePass</a></li>
 <li>dropStaleToolsAreaPalettes()&#160;:&#160;<a class="el" href="class_main_window.html#a02c5373d61038b8d1dfe4dea1bf0a168">MainWindow</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

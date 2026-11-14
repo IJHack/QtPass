@@ -1,0 +1,36 @@
+<map id="parseGpgColonOutput" name="parseGpgColonOutput">
+<area shape="rect" id="Node000001" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="1285,161,1449,189"/>
+<area shape="poly" id="edge12_Node000001_Node000001" title=" " alt="" coords="1405,146,1393,142,1367,140,1343,142,1330,147,1327,152,1333,162,1328,160,1322,152,1327,143,1342,137,1367,135,1394,137,1410,146"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="1083,109,1192,137"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1285,157,1193,138,1193,133,1290,157"/>
+<area shape="rect" id="Node000011" href="$class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9" title="The secret keys gpg lists for gpgExecutable." alt="" coords="1039,187,1237,214"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1272,186,1238,192,1237,187,1267,186"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a3d45abeffc8d61f58828959e74b26176" title="Search password content for a pattern." alt="" coords="838,161,928,189"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1071,137,929,169,928,164,1066,138"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="828,5,938,33"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="1098,101,1048,75,990,48,938,33,938,27,992,43,1051,70,1103,101"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2" title="Mark which keys have secret counterparts." alt="" coords="776,109,990,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="1065,123,991,126,991,121,1071,123"/>
+<area shape="rect" id="Node000009" href="$class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee" title="Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,..." alt="" coords="775,57,991,85"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1066,109,954,88,955,83,1071,109"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565" title="Load GPG keys and determine secret key status." alt="" coords="522,109,716,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="757,123,716,126,716,121,763,123"/>
+<area shape="rect" id="Node000007" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="249,90,448,135"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="505,119,448,119,448,114,510,118"/>
+<area shape="rect" id="Node000008" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="255,19,442,46"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="559,105,392,50,393,44,564,103"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="757,80,511,100,448,106,447,101,511,95,762,79"/>
+<area shape="rect" id="Node000010" href="$class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b" title="Load recipients and handle missing keys." alt="" coords="517,8,721,36"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="788,54,697,39,697,34,793,54"/>
+<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="499,27,443,31,442,26,504,26"/>
+<area shape="rect" id="Node000012" href="$class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4" title="List the secret keys of the chosen gpg into the wizard and the widget, ticking every usable key and g..." alt="" coords="798,213,968,241"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="1026,212,969,221,969,216,1020,213"/>
+<area shape="rect" id="Node000013" href="$class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225" title="Run KeygenDialog on a private ImitatePass built from the wizard&#39;s settings, so the chosen gpg is used..." alt="" coords="526,239,713,266"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="785,237,713,246,713,241,780,237"/>
+<area shape="rect" id="Node000016" href="$class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd" title="List the secret keys for the gpg chosen on the previous page." alt="" coords="511,187,727,214"/>
+<area shape="poly" id="edge18_Node000012_Node000016" title=" " alt="" coords="780,217,728,214,728,209,785,217"/>
+<area shape="rect" id="Node000014" href="$class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a" title="Build the page." alt="" coords="234,239,463,266"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="507,253,464,255,464,250,513,252"/>
+<area shape="rect" id="Node000015" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,230,186,275"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="215,253,186,255,186,250,221,252"/>
+</map>

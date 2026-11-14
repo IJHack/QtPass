@@ -1,0 +1,13 @@
+<map id="src/windowstatestore.h" name="src/windowstatestore.h">
+<area shape="rect" id="Node000001" title="WindowStateStore: saves and restores top&#45;level window geometry through QtPassSettings,..." alt="" coords="353,5,525,33"/>
+<area shape="rect" id="Node000002" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="5,81,156,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,39,146,83,145,78,359,34"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="180,81,338,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="396,39,292,83,290,78,390,40"/>
+<area shape="rect" id="Node000004" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="362,81,516,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="441,47,441,82,437,79,437,51"/>
+<area shape="rect" id="Node000005" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="539,81,686,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="485,37,584,81,579,80,483,42"/>
+<area shape="rect" id="Node000006" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="710,81,897,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="520,34,740,80,735,81,519,39"/>
+</map>

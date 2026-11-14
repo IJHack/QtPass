@@ -1,0 +1,21 @@
+<map id="ConfigDialog::updateProfileStatus" name="ConfigDialog::updateProfileStatus">
+<area shape="rect" id="Node000001" title="Refresh the status line under the form: the profile&#39;s name and cleaned path, marked &quot;New&quot; while the f..." alt="" coords="784,100,983,144"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="522,48,736,76"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="769,95,691,79,691,74,774,95"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#ae85c1736edfdde38aee8350ebae8201f" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="525,100,733,144"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="766,122,734,124,734,119,771,122"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a7e412007641751f3b162bd5b6a2b80d9" title="The path field was typed in: store it in the entry, validate and refresh the status line." alt="" coords="530,169,728,214"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="787,148,714,171,713,166,782,149"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="249,5,474,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="520,45,453,36,452,31,526,44"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="271,57,452,85"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="504,67,452,71,451,65,509,65"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,83,201,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="278,39,249,48,143,84,141,80,248,43,282,36"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="146,68,132,64,103,61,76,63,61,68,57,73,64,82,59,83,52,74,58,64,75,58,103,56,133,58,151,66"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="253,83,202,89,200,84,258,80"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="508,118,201,104,201,99,510,114"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="514,173,184,114,184,108,516,168"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#a59af9a31c3b09e4aa14f0fff5311ef57" title="Pick the selected profile&#39;s store folder and store it in its entry." alt="" coords="273,210,450,255"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="518,208,450,222,449,216,512,209"/>
+</map>

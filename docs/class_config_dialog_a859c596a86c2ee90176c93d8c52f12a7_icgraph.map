@@ -1,4 +1,9 @@
 <map id="ConfigDialog::useGrepSearch" name="ConfigDialog::useGrepSearch">
-<area shape="rect" id="Node000001" title="Enable or disable grep content search." alt="" coords="5,29,216,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="145,14,134,10,110,8,89,10,77,15,74,20,79,29,74,28,68,20,73,11,87,5,111,3,135,5,150,14"/>
+<area shape="rect" id="Node000001" title="Enable or disable grep content search." alt="" coords="498,29,708,57"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="645,14,632,10,603,8,577,10,562,15,558,20,565,30,560,28,553,20,559,11,576,5,603,3,633,5,650,14"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="249,29,450,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,43,451,46,451,41,485,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="144,14,131,10,103,8,77,10,63,15,60,20,66,29,61,29,54,20,60,11,76,5,103,3,132,5,149,14"/>
 </map>

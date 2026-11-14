@@ -1,0 +1,7 @@
+<map id="KeygenDialog::setNoPassphrase" name="KeygenDialog::setNoPassphrase">
+<area shape="rect" id="Node000001" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="5,14,236,42"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="284,14,500,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,25,270,28,265,28,236,30"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="548,5,741,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="500,25,535,28,529,28,500,30"/>
+</map>

@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_qt_pass.html','','class_qt_pass-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_qt_pass-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">QtPass Class Reference</div></div>
+  <div class="headertitle"><div class="title">QtPass Class Reference<div class="ingroups"><a class="el" href="group__support.html">Application support</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass__inherit__graph.svg" width="84" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for QtPass:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass__coll__graph.svg" width="84" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass__coll__graph.svg" width="210" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -130,43 +142,65 @@ Public Slots</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a83ed57a1825df0802c51314eccb963c6" id="r_a83ed57a1825df0802c51314eccb963c6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a83ed57a1825df0802c51314eccb963c6">outputReady</a> (const QString &amp;html)</td></tr>
-<tr class="memdesc:a83ed57a1825df0802c51314eccb963c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted output (see <a class="el" href="#a3a911b2dc52f8959aadf21ddbd21960f" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser.  <br /></td></tr>
-<tr class="memitem:a09c3a4f7b75656b6f79c90ffbabbf4cb" id="r_a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="memItemLeft"><a id="a09c3a4f7b75656b6f79c90ffbabbf4cb" name="a09c3a4f7b75656b6f79c90ffbabbf4cb"></a>
-void&#160;</td><td class="memItemRight"><b>operationFinished</b> ()</td></tr>
-<tr class="memdesc:a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A backend operation is over, successfully or not; the interface can be enabled again. <br /></td></tr>
+<tr class="memdesc:a83ed57a1825df0802c51314eccb963c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatted output (see <a class="el" href="#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser.  <br /></td></tr>
+<tr class="memitem:a09c3a4f7b75656b6f79c90ffbabbf4cb" id="r_a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a> ()</td></tr>
+<tr class="memdesc:a09c3a4f7b75656b6f79c90ffbabbf4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A backend operation is over, successfully or not; the interface can be enabled again.  <br /></td></tr>
 <tr class="memitem:a21d53cbc4749f4f9aedb72b32e0b706a" id="r_a21d53cbc4749f4f9aedb72b32e0b706a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a> (const QString &amp;message, int timeout)</td></tr>
 <tr class="memdesc:a21d53cbc4749f4f9aedb72b32e0b706a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short message for the status bar.  <br /></td></tr>
-<tr class="memitem:a61c4a373b679d83e94f3d48ac8850c5a" id="r_a61c4a373b679d83e94f3d48ac8850c5a"><td class="memItemLeft"><a id="a61c4a373b679d83e94f3d48ac8850c5a" name="a61c4a373b679d83e94f3d48ac8850c5a"></a>
-void&#160;</td><td class="memItemRight"><b>pushRequested</b> ()</td></tr>
-<tr class="memdesc:a61c4a373b679d83e94f3d48ac8850c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store changed and the settings ask for an automatic push. <br /></td></tr>
-<tr class="memitem:a343ad459c6420baf92070a4e7a31ec6e" id="r_a343ad459c6420baf92070a4e7a31ec6e"><td class="memItemLeft"><a id="a343ad459c6420baf92070a4e7a31ec6e" name="a343ad459c6420baf92070a4e7a31ec6e"></a>
-void&#160;</td><td class="memItemRight"><b>entryInserted</b> ()</td></tr>
-<tr class="memdesc:a343ad459c6420baf92070a4e7a31ec6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An entry was written; the view of the current entry is stale. <br /></td></tr>
+<tr class="memitem:a61c4a373b679d83e94f3d48ac8850c5a" id="r_a61c4a373b679d83e94f3d48ac8850c5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a61c4a373b679d83e94f3d48ac8850c5a">pushRequested</a> ()</td></tr>
+<tr class="memdesc:a61c4a373b679d83e94f3d48ac8850c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The store changed and the settings ask for an automatic push.  <br /></td></tr>
+<tr class="memitem:a343ad459c6420baf92070a4e7a31ec6e" id="r_a343ad459c6420baf92070a4e7a31ec6e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a343ad459c6420baf92070a4e7a31ec6e">entryInserted</a> ()</td></tr>
+<tr class="memdesc:a343ad459c6420baf92070a4e7a31ec6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">An entry was written; the view of the current entry is stale.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa74fc7422261b27a790a0ea0d875fc7b" id="r_aa74fc7422261b27a790a0ea0d875fc7b"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:aa74fc7422261b27a790a0ea0d875fc7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the glue and connect it to both pass backends.  <br /></td></tr>
-<tr class="memitem:adfa404cc09dade6c0b025d7dc1b240a5" id="r_adfa404cc09dade6c0b025d7dc1b240a5"><td class="memItemLeft"><a id="adfa404cc09dade6c0b025d7dc1b240a5" name="adfa404cc09dade6c0b025d7dc1b240a5"></a>
-&#160;</td><td class="memItemRight"><b>~QtPass</b> () override</td></tr>
-<tr class="memdesc:adfa404cc09dade6c0b025d7dc1b240a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance and clean up signal connections. <br /></td></tr>
-<tr class="memitem:aa247e023d75a86e72f96617f3e8f2b65" id="r_aa247e023d75a86e72f96617f3e8f2b65"><td class="memItemLeft"><a id="aa247e023d75a86e72f96617f3e8f2b65" name="aa247e023d75a86e72f96617f3e8f2b65"></a>
-void&#160;</td><td class="memItemRight"><b>init</b> ()</td></tr>
-<tr class="memdesc:aa247e023d75a86e72f96617f3e8f2b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the password store and the executables and migrate the settings of an older version (fresh-install defaults, the native-OTP switch). Whether the resulting configuration is usable is the caller's question: see <a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f" title="Verify that the required configuration is complete.">Util::configIsValid()</a>. <br /></td></tr>
+<tr class="memitem:adfa404cc09dade6c0b025d7dc1b240a5" id="r_adfa404cc09dade6c0b025d7dc1b240a5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#adfa404cc09dade6c0b025d7dc1b240a5">~QtPass</a> () override</td></tr>
+<tr class="memdesc:adfa404cc09dade6c0b025d7dc1b240a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance and clean up signal connections.  <br /></td></tr>
+<tr class="memitem:aa247e023d75a86e72f96617f3e8f2b65" id="r_aa247e023d75a86e72f96617f3e8f2b65"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa247e023d75a86e72f96617f3e8f2b65">init</a> ()</td></tr>
+<tr class="memdesc:aa247e023d75a86e72f96617f3e8f2b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the password store and the executables and migrate the settings of an older version (fresh-install defaults, the native-OTP switch). Whether the resulting configuration is usable is the caller's question: see <a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete.">Util::configIsValid()</a>.  <br /></td></tr>
 <tr class="memitem:aa1918767cdefea447f1c90272fd95966" id="r_aa1918767cdefea447f1c90272fd95966"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa1918767cdefea447f1c90272fd95966">clipboard</a> () -&gt; <a class="el" href="class_clipboard_manager.html">ClipboardManager</a> &amp;</td></tr>
 <tr class="memdesc:aa1918767cdefea447f1c90272fd95966"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clipboard handling for this application instance.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3a911b2dc52f8959aadf21ddbd21960f" id="r_a3a911b2dc52f8959aadf21ddbd21960f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3a911b2dc52f8959aadf21ddbd21960f">formatOutput</a> (QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</td></tr>
-<tr class="memdesc:a3a911b2dc52f8959aadf21ddbd21960f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a process' plain-text output into the HTML the text browser shows: http(s) URLs become links, everything else is escaped, line breaks become <span class="tt">&lt;br /&gt;</span>.  <br /></td></tr>
-<tr class="memitem:a87eca9145118d654cf0e87fe3f2b7a7d" id="r_a87eca9145118d654cf0e87fe3f2b7a7d"><td class="memItemLeft">static QDialog *&#160;</td><td class="memItemRight"><a class="el" href="#a87eca9145118d654cf0e87fe3f2b7a7d">createQRCodePopup</a> (const QPixmap &amp;image)</td></tr>
-<tr class="memdesc:a87eca9145118d654cf0e87fe3f2b7a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a modal dialog configured to display the given QR code.  <br /></td></tr>
+<tr class="memitem:a32860d084409d781977736d6fb40d629" id="r_a32860d084409d781977736d6fb40d629"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a32860d084409d781977736d6fb40d629">formatOutput</a> (QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</td></tr>
+<tr class="memdesc:a32860d084409d781977736d6fb40d629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn a process' plain-text output into the HTML the text browser shows: http(s) URLs become links, everything else is escaped, line breaks become <span class="tt">&lt;br /&gt;</span>.  <br /></td></tr>
+<tr class="memitem:abd2dacf3e88b411ef39ec78f49bbdd2d" id="r_abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="memItemLeft">static QDialog *&#160;</td><td class="memItemRight"><a class="el" href="#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a> (const QPixmap &amp;image)</td></tr>
+<tr class="memdesc:abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a frameless popup dialog, placed at the cursor, showing the given QR code. Split out of <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> so tests can inspect the dialog without running qrencode.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:ae856718a4e0fdd5f200a655b291e5f04" id="r_ae856718a4e0fdd5f200a655b291e5f04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae856718a4e0fdd5f200a655b291e5f04">processErrorExit</a> (int exitCode, const QString &amp;error)</td></tr>
+<tr class="memdesc:ae856718a4e0fdd5f200a655b291e5f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit</a>: report the error in red and emit <a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again.">operationFinished()</a>.  <br /></td></tr>
+<tr class="memitem:a40570e79464875930afd869223136a99" id="r_a40570e79464875930afd869223136a99"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40570e79464875930afd869223136a99">processFinished</a> (const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="memdesc:a40570e79464875930afd869223136a99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for <a class="el" href="class_pass.html#a7a6b3a9abf7c6c1a58d1e1b6f3c72b82" title="git pull succeeded; entries may have changed on disk.">Pass::finishedGitPull</a> / finishedGitPush and the common tail of the other slots: emit the stdout as formatted output (if any), the stderr as grey chatter, then <a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again.">operationFinished()</a>.  <br /></td></tr>
+<tr class="memitem:aa1153ea591126774caa31920020d188e" id="r_aa1153ea591126774caa31920020d188e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1153ea591126774caa31920020d188e">passStoreChanged</a> (const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="memdesc:aa1153ea591126774caa31920020d188e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for the backend signals that change the store on disk (git init, remove, init, move, copy): <a class="el" href="#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std...">processFinished()</a> followed by <a class="el" href="#ab7c71f983556835691ab2da4a51f5f9b" title="Emit pushRequested() when the settings ask for automatic push.">doGitPush()</a>.  <br /></td></tr>
+<tr class="memitem:ab7c71f983556835691ab2da4a51f5f9b" id="r_ab7c71f983556835691ab2da4a51f5f9b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab7c71f983556835691ab2da4a51f5f9b">doGitPush</a> ()</td></tr>
+<tr class="memdesc:ab7c71f983556835691ab2da4a51f5f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit <a class="el" href="#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push.">pushRequested()</a> when the settings ask for automatic push.  <br /></td></tr>
+<tr class="memitem:a8f03731a98c5de1cc086c10479d63dbb" id="r_a8f03731a98c5de1cc086c10479d63dbb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8f03731a98c5de1cc086c10479d63dbb">finishedInsert</a> (const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="memdesc:a8f03731a98c5de1cc086c10479d63dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for <a class="el" href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83" title="An Insert() succeeded: the entry is in the store and, with Git in use, committed.">Pass::finishedInsert</a>: like <a class="el" href="#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,...">passStoreChanged()</a>, then emit <a class="el" href="#a343ad459c6420baf92070a4e7a31ec6e" title="An entry was written; the view of the current entry is stale.">entryInserted()</a> so the window refreshes the shown entry.  <br /></td></tr>
+<tr class="memitem:a951d0166f5aafa6f2c1fb37d584f0243" id="r_a951d0166f5aafa6f2c1fb37d584f0243"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a951d0166f5aafa6f2c1fb37d584f0243">onKeyGenerationComplete</a> (const QString &amp;output, const QString &amp;errout)</td></tr>
+<tr class="memdesc:a951d0166f5aafa6f2c1fb37d584f0243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot for <a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring.">Pass::finishedGenerateGPGKeys</a>: a status message followed by <a class="el" href="#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std...">processFinished()</a>. The <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> listens to the same signal and closes itself.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a81e0207207f490616dd442837a2469d4" id="r_a81e0207207f490616dd442837a2469d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a81e0207207f490616dd442837a2469d4">connectPassSignalHandlers</a> (<a class="el" href="class_pass.html">Pass</a> *pass)</td></tr>
+<tr class="memdesc:a81e0207207f490616dd442837a2469d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect the completion signals of one backend to the slots that turn them into output, status and "finished" signals. Both backends are wired up at construction because the active one can change through the configuration dialog.  <br /></td></tr>
+<tr class="memitem:a90e284bd33b10bf0407541d5c698f199" id="r_a90e284bd33b10bf0407541d5c698f199"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a90e284bd33b10bf0407541d5c698f199">reportError</a> (int exitCode, const QString &amp;error)</td></tr>
+<tr class="memdesc:a90e284bd33b10bf0407541d5c698f199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a process' stderr in colour through <a class="el" href="#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser.">outputReady()</a>: red for a failure, dark grey for the chatter a successful command prints (see issue #111). Nothing is shown for empty output.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2b93e09069f27c938b606431c890ff68" id="r_a2b93e09069f27c938b606431c890ff68"><td class="memItemLeft"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2b93e09069f27c938b606431c890ff68">m_clipboard</a></td></tr>
+<tr class="memdesc:a2b93e09069f27c938b606431c890ff68"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clipboard handling for this application instance, exposed through <a class="el" href="#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance.">clipboard()</a>; parented to this object.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Application-level glue between the pass backends and whatever shows their results: turns the backends' completion signals into UI-neutral signals (formatted output, status messages, "the operation is over"), owns the <a class="el" href="class_clipboard_manager.html" title="Puts secrets on the system clipboard and takes them off again.">ClipboardManager</a>, migrates the settings of older versions on start-up and renders QR codes. It knows nothing about the main window; the window connects to the signals below. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00022">22</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00028">28</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa74fc7422261b27a790a0ea0d875fc7b" name="aa74fc7422261b27a790a0ea0d875fc7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa74fc7422261b27a790a0ea0d875fc7b">&#9670;&#160;</a></span>QtPass()</h2>
@@ -199,6 +233,53 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00022">22</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa74fc7422261b27a790a0ea0d875fc7b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa74fc7422261b27a790a0ea0d875fc7b_icgraph.svg" width="654" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="adfa404cc09dade6c0b025d7dc1b240a5" name="adfa404cc09dade6c0b025d7dc1b240a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa404cc09dade6c0b025d7dc1b240a5">&#9670;&#160;</a></span>~QtPass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QtPass::~QtPass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> instance and clean up signal connections. </p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_adfa404cc09dade6c0b025d7dc1b240a5_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -228,12 +309,65 @@ Static Public Member Functions</h2></td></tr>
 <p>The clipboard handling for this application instance. </p>
 <dl class="section return"><dt>Returns</dt><dd>The manager; lives as long as this object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00048">48</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00054">54</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1918767cdefea447f1c90272fd95966_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<a id="a87eca9145118d654cf0e87fe3f2b7a7d" name="a87eca9145118d654cf0e87fe3f2b7a7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87eca9145118d654cf0e87fe3f2b7a7d">&#9670;&#160;</a></span>createQRCodePopup()</h2>
+<a id="a81e0207207f490616dd442837a2469d4" name="a81e0207207f490616dd442837a2469d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e0207207f490616dd442837a2469d4">&#9670;&#160;</a></span>connectPassSignalHandlers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::connectPassSignalHandlers </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pass.html">Pass</a> *</td>          <td class="paramname"><span class="paramname"><em>pass</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connect the completion signals of one backend to the slots that turn them into output, status and "finished" signals. Both backends are wired up at construction because the active one can change through the configuration dialog. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pass</td><td>The backend to listen to. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00084">84</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a81e0207207f490616dd442837a2469d4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a81e0207207f490616dd442837a2469d4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="abd2dacf3e88b411ef39ec78f49bbdd2d" name="abd2dacf3e88b411ef39ec78f49bbdd2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2dacf3e88b411ef39ec78f49bbdd2d">&#9670;&#160;</a></span>createQRCodePopup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,19 +389,153 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a modal dialog configured to display the given QR code. </p>
+<p>Create a frameless popup dialog, placed at the cursor, showing the given QR code. Split out of <a class="el" href="#aef5aaf0605c7681967995ede486590ef" title="Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...">showTextAsQRCode()</a> so tests can inspect the dialog without running qrencode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">image</td><td>Pixmap containing the rendered QR code. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to a QDialog showing the image; caller takes ownership. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a QDialog showing the image; it deletes itself on close, the caller shows it. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00201">201</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_abd2dacf3e88b411ef39ec78f49bbdd2d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<a id="a3a911b2dc52f8959aadf21ddbd21960f" name="a3a911b2dc52f8959aadf21ddbd21960f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a911b2dc52f8959aadf21ddbd21960f">&#9670;&#160;</a></span>formatOutput()</h2>
+<a id="ab7c71f983556835691ab2da4a51f5f9b" name="ab7c71f983556835691ab2da4a51f5f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7c71f983556835691ab2da4a51f5f9b">&#9670;&#160;</a></span>doGitPush</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::doGitPush </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emit <a class="el" href="#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push.">pushRequested()</a> when the settings ask for automatic push. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00151">151</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ab7c71f983556835691ab2da4a51f5f9b_cgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ab7c71f983556835691ab2da4a51f5f9b_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a343ad459c6420baf92070a4e7a31ec6e" name="a343ad459c6420baf92070a4e7a31ec6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343ad459c6420baf92070a4e7a31ec6e">&#9670;&#160;</a></span>entryInserted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::entryInserted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>An entry was written; the view of the current entry is stale. </p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a343ad459c6420baf92070a4e7a31ec6e_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a8f03731a98c5de1cc086c10479d63dbb" name="a8f03731a98c5de1cc086c10479d63dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f03731a98c5de1cc086c10479d63dbb">&#9670;&#160;</a></span>finishedInsert</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::finishedInsert </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>errout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for <a class="el" href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83" title="An Insert() succeeded: the entry is in the store and, with Git in use, committed.">Pass::finishedInsert</a>: like <a class="el" href="#aa1153ea591126774caa31920020d188e" title="Slot for the backend signals that change the store on disk (git init, remove, init,...">passStoreChanged()</a>, then emit <a class="el" href="#a343ad459c6420baf92070a4e7a31ec6e" title="An entry was written; the view of the current entry is stale.">entryInserted()</a> so the window refreshes the shown entry. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>stdout of the process. </td></tr>
+    <tr><td class="paramname">errout</td><td>stderr of the process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00129">129</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a8f03731a98c5de1cc086c10479d63dbb_cgraph.svg" width="100%" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a8f03731a98c5de1cc086c10479d63dbb_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a32860d084409d781977736d6fb40d629" name="a32860d084409d781977736d6fb40d629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32860d084409d781977736d6fb40d629">&#9670;&#160;</a></span>formatOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +556,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>postfix</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt;  QString</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>postfix</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -308,6 +576,138 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The HTML. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00142">142</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_cgraph.svg" width="571" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a32860d084409d781977736d6fb40d629_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa247e023d75a86e72f96617f3e8f2b65" name="aa247e023d75a86e72f96617f3e8f2b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa247e023d75a86e72f96617f3e8f2b65">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resolve the password store and the executables and migrate the settings of an older version (fresh-install defaults, the native-OTP switch). Whether the resulting configuration is usable is the caller's question: see <a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc" title="Verify that the required configuration is complete.">Util::configIsValid()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00031">31</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa247e023d75a86e72f96617f3e8f2b65_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa247e023d75a86e72f96617f3e8f2b65_icgraph.svg" width="631" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a951d0166f5aafa6f2c1fb37d584f0243" name="a951d0166f5aafa6f2c1fb37d584f0243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951d0166f5aafa6f2c1fb37d584f0243">&#9670;&#160;</a></span>onKeyGenerationComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::onKeyGenerationComplete </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>errout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for <a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring.">Pass::finishedGenerateGPGKeys</a>: a status message followed by <a class="el" href="#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std...">processFinished()</a>. The <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> listens to the same signal and closes itself. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>stdout of the key generation process. </td></tr>
+    <tr><td class="paramname">errout</td><td>stderr of the key generation process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00135">135</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a951d0166f5aafa6f2c1fb37d584f0243_cgraph.svg" width="100%" height="417"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a951d0166f5aafa6f2c1fb37d584f0243_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a09c3a4f7b75656b6f79c90ffbabbf4cb" name="a09c3a4f7b75656b6f79c90ffbabbf4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c3a4f7b75656b6f79c90ffbabbf4cb">&#9670;&#160;</a></span>operationFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::operationFinished </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A backend operation is over, successfully or not; the interface can be enabled again. </p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a09c3a4f7b75656b6f79c90ffbabbf4cb_icgraph.svg" width="100%" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -334,13 +734,260 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Formatted output (see <a class="el" href="#a3a911b2dc52f8959aadf21ddbd21960f" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser. </p>
+<p>Formatted output (see <a class="el" href="#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...">formatOutput()</a>) or an error rendered in colour, ready for the text browser. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">html</td><td>The HTML to show. </td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a83ed57a1825df0802c51314eccb963c6_icgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa1153ea591126774caa31920020d188e" name="aa1153ea591126774caa31920020d188e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1153ea591126774caa31920020d188e">&#9670;&#160;</a></span>passStoreChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::passStoreChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>errout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for the backend signals that change the store on disk (git init, remove, init, move, copy): <a class="el" href="#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std...">processFinished()</a> followed by <a class="el" href="#ab7c71f983556835691ab2da4a51f5f9b" title="Emit pushRequested() when the settings ask for automatic push.">doGitPush()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>stdout of the process. </td></tr>
+    <tr><td class="paramname">errout</td><td>stderr of the process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00124">124</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1153ea591126774caa31920020d188e_cgraph.svg" width="100%" height="505"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa1153ea591126774caa31920020d188e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae856718a4e0fdd5f200a655b291e5f04" name="ae856718a4e0fdd5f200a655b291e5f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae856718a4e0fdd5f200a655b291e5f04">&#9670;&#160;</a></span>processErrorExit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::processErrorExit </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exitCode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for <a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non-zero, could not be started or crashed,...">Pass::processErrorExit</a>: report the error in red and emit <a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again.">operationFinished()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exitCode</td><td>The exit code of the failed process. </td></tr>
+    <tr><td class="paramname">error</td><td>Its stderr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00109">109</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ae856718a4e0fdd5f200a655b291e5f04_cgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ae856718a4e0fdd5f200a655b291e5f04_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a40570e79464875930afd869223136a99" name="a40570e79464875930afd869223136a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40570e79464875930afd869223136a99">&#9670;&#160;</a></span>processFinished</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::processFinished </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>errout</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot for <a class="el" href="class_pass.html#a7a6b3a9abf7c6c1a58d1e1b6f3c72b82" title="git pull succeeded; entries may have changed on disk.">Pass::finishedGitPull</a> / finishedGitPush and the common tail of the other slots: emit the stdout as formatted output (if any), the stderr as grey chatter, then <a class="el" href="#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again.">operationFinished()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>stdout of the process. </td></tr>
+    <tr><td class="paramname">errout</td><td>stderr of the process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00114">114</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a40570e79464875930afd869223136a99_cgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a40570e79464875930afd869223136a99_icgraph.svg" width="100%" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a61c4a373b679d83e94f3d48ac8850c5a" name="a61c4a373b679d83e94f3d48ac8850c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c4a373b679d83e94f3d48ac8850c5a">&#9670;&#160;</a></span>pushRequested</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::pushRequested </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The store changed and the settings ask for an automatic push. </p>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a61c4a373b679d83e94f3d48ac8850c5a_icgraph.svg" width="100%" height="406"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a90e284bd33b10bf0407541d5c698f199" name="a90e284bd33b10bf0407541d5c698f199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90e284bd33b10bf0407541d5c698f199">&#9670;&#160;</a></span>reportError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPass::reportError </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>exitCode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show a process' stderr in colour through <a class="el" href="#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser.">outputReady()</a>: red for a failure, dark grey for the chatter a successful command prints (see issue #111). Nothing is shown for empty output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exitCode</td><td>The process exit code; 0 selects grey. </td></tr>
+    <tr><td class="paramname">error</td><td>The stderr text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00098">98</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
+</div>
+<div id="dynsection-29-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a90e284bd33b10bf0407541d5c698f199_cgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a90e284bd33b10bf0407541d5c698f199_icgraph.svg" width="100%" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -374,6 +1021,20 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00157">157</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
+</div>
+<div id="dynsection-31-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_cgraph.svg" width="100%" height="488"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
+</div>
+<div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -412,17 +1073,62 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
+</div>
+<div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a21d53cbc4749f4f9aedb72b32e0b706a_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a2b93e09069f27c938b606431c890ff68" name="a2b93e09069f27c938b606431c890ff68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b93e09069f27c938b606431c890ff68">&#9670;&#160;</a></span>m_clipboard</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_clipboard_manager.html">ClipboardManager</a> QtPass::m_clipboard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The clipboard handling for this application instance, exposed through <a class="el" href="#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance.">clipboard()</a>; parented to this object. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00118">118</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="qtpass_8h_source.html">qtpass.h</a></li>
+<li>src/<a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_qt_pass.html">QtPass</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

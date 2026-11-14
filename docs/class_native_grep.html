@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_native_grep.html','','class_native_grep-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="class_native_grep-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">NativeGrep Class Reference</div></div>
+  <div class="headertitle"><div class="title">NativeGrep Class Reference<div class="ingroups"><a class="el" href="group__backend.html">Password store backends</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,14 +126,18 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep__inherit__graph.svg" width="107" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for NativeGrep:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep__coll__graph.svg" width="107" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Worker" id="r_Worker"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_native_grep_1_1_worker.html">Worker</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a195784ff0ea005b58f4f26beed4be27a" id="r_a195784ff0ea005b58f4f26beed4be27a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a195784ff0ea005b58f4f26beed4be27a">finished</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
@@ -131,9 +147,8 @@ Signals</h2></td></tr>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afc48e9a61a6587abb5fa3e079e874592" id="r_afc48e9a61a6587abb5fa3e079e874592"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#afc48e9a61a6587abb5fa3e079e874592">NativeGrep</a> (QObject *parent=nullptr)</td></tr>
 <tr class="memdesc:afc48e9a61a6587abb5fa3e079e874592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a searcher.  <br /></td></tr>
-<tr class="memitem:a4cce7dcbafd90ea622e9d00b346aba45" id="r_a4cce7dcbafd90ea622e9d00b346aba45"><td class="memItemLeft"><a id="a4cce7dcbafd90ea622e9d00b346aba45" name="a4cce7dcbafd90ea622e9d00b346aba45"></a>
-&#160;</td><td class="memItemRight"><b>~NativeGrep</b> () override</td></tr>
-<tr class="memdesc:a4cce7dcbafd90ea622e9d00b346aba45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt running searches and wait up to five seconds for them. <br /></td></tr>
+<tr class="memitem:a4cce7dcbafd90ea622e9d00b346aba45" id="r_a4cce7dcbafd90ea622e9d00b346aba45"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a4cce7dcbafd90ea622e9d00b346aba45">~NativeGrep</a> () override</td></tr>
+<tr class="memdesc:a4cce7dcbafd90ea622e9d00b346aba45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt running searches and wait up to five seconds for them.  <br /></td></tr>
 <tr class="memitem:a393b6a05c39649304a77151702b76ec7" id="r_a393b6a05c39649304a77151702b76ec7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a393b6a05c39649304a77151702b76ec7">search</a> (const QString &amp;pattern, bool caseInsensitive, const QString &amp;gpgExe, const QString &amp;storeDir, const QProcessEnvironment &amp;env)</td></tr>
 <tr class="memdesc:a393b6a05c39649304a77151702b76ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a search; <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> follows asynchronously, also for an empty or invalid pattern (with no results).  <br /></td></tr>
 <tr class="memitem:af640052e8b38885ef565d3c626aa1ce6" id="r_af640052e8b38885ef565d3c626aa1ce6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af640052e8b38885ef565d3c626aa1ce6">cancel</a> ()</td></tr>
@@ -147,10 +162,10 @@ this entry" rather than a match.  <br /></td></tr>
 <tr class="memitem:aa2bfb9a0d2fcdf94150d325e58e988d7" id="r_aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7">isStoppedMarker</a> (const QPair&lt; QString, QStringList &gt; &amp;result) -&gt; bool</td></tr>
 <tr class="memdesc:aa2bfb9a0d2fcdf94150d325e58e988d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a result is the marker for "the search stopped at
 kMaxMatches, more entries were not searched".  <br /></td></tr>
-<tr class="memitem:a58e093d9bb7bae2d02fcf9ea7fa0132a" id="r_a58e093d9bb7bae2d02fcf9ea7fa0132a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a58e093d9bb7bae2d02fcf9ea7fa0132a">matchFile</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td></tr>
-<tr class="memdesc:a58e093d9bb7bae2d02fcf9ea7fa0132a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>.  <br /></td></tr>
-<tr class="memitem:ad9b99ac184ab94d539f2937efbf13ed1" id="r_ad9b99ac184ab94d539f2937efbf13ed1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1">scanStore</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td></tr>
-<tr class="memdesc:ad9b99ac184ab94d539f2937efbf13ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walk <code class="param">storeDir</code>, decrypt every .gpg file and collect the matches.  <br /></td></tr>
+<tr class="memitem:a99b72a4ac50c6c01b24f8376e30a7a68" id="r_a99b72a4ac50c6c01b24f8376e30a7a68"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a99b72a4ac50c6c01b24f8376e30a7a68">matchFile</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;filePath, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QStringList</td></tr>
+<tr class="memdesc:a99b72a4ac50c6c01b24f8376e30a7a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>.  <br /></td></tr>
+<tr class="memitem:a9c2523a0d1d82bc0201c6730bfa13a10" id="r_a9c2523a0d1d82bc0201c6730bfa13a10"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10">scanStore</a> (const QProcessEnvironment &amp;env, const QString &amp;gpgExe, const QString &amp;storeDir, const QRegularExpression &amp;rx, const std::atomic_bool *cancel=nullptr) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td></tr>
+<tr class="memdesc:a9c2523a0d1d82bc0201c6730bfa13a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Walk <code class="param">storeDir</code>, decrypt every .gpg file and collect the matches.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -160,11 +175,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a566acd70ea61876f0290f3b0ea900f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most matching lines a search collects over the whole store.  <br /></td></tr>
 <tr class="memitem:a60260a9fd1bcaffe995b0a52115ebe0d" id="r_a60260a9fd1bcaffe995b0a52115ebe0d"><td class="memItemLeft">static constexpr qsizetype&#160;</td><td class="memItemRight"><a class="el" href="#a60260a9fd1bcaffe995b0a52115ebe0d">kMaxPreviewLength</a> = 200</td></tr>
 <tr class="memdesc:a60260a9fd1bcaffe995b0a52115ebe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Longest preview of a matching line, in UTF-16 code units.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acce2afcd559c2272585093278ca4643e" id="r_acce2afcd559c2272585093278ca4643e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#acce2afcd559c2272585093278ca4643e">m_seq</a> = 0</td></tr>
+<tr class="memdesc:acce2afcd559c2272585093278ca4643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of the newest search. A worker reports through <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> only when its own number still equals this.  <br /></td></tr>
+<tr class="memitem:acf4bbf115d80b421255145c2a4d6ca1d" id="r_acf4bbf115d80b421255145c2a4d6ca1d"><td class="memItemLeft">QList&lt; <a class="el" href="struct_native_grep_1_1_worker.html">Worker</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#acf4bbf115d80b421255145c2a4d6ca1d">m_workers</a></td></tr>
+<tr class="memdesc:acf4bbf115d80b421255145c2a4d6ca1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches still running, superseded ones included.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Full-text search over a password store without <span class="tt">pass grep</span>: every <span class="tt">.gpg</span> file is decrypted with gpg on a worker thread and its lines matched against a QRegularExpression. Only the newest search may report; a search started while another runs asks that one to stop and supersedes it. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00025">25</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00031">31</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afc48e9a61a6587abb5fa3e079e874592" name="afc48e9a61a6587abb5fa3e079e874592"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc48e9a61a6587abb5fa3e079e874592">&#9670;&#160;</a></span>NativeGrep()</h2>
@@ -197,6 +219,43 @@ Static Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00021">21</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4cce7dcbafd90ea622e9d00b346aba45" name="a4cce7dcbafd90ea622e9d00b346aba45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cce7dcbafd90ea622e9d00b346aba45">&#9670;&#160;</a></span>~NativeGrep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">NativeGrep::~NativeGrep </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Interrupt running searches and wait up to five seconds for them. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00023">23</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a4cce7dcbafd90ea622e9d00b346aba45_cgraph.svg" width="392" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -216,11 +275,13 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ask running searches to stop without waiting for them: the walk ends at the next file and a gpg that is decrypting is terminated by its own worker thread. </p>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00230">230</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
 </div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_af640052e8b38885ef565d3c626aa1ce6_icgraph.svg" width="372" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_af640052e8b38885ef565d3c626aa1ce6_icgraph.svg" width="100%" height="565"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -255,11 +316,11 @@ Static Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a195784ff0ea005b58f4f26beed4be27a_cgraph.svg" width="359" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a195784ff0ea005b58f4f26beed4be27a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -289,7 +350,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Whether a line in a result is the marker for "more matches in
 this entry" rather than a match. </p>
-<p>A match is a trimmed, non-empty line, so an empty one can only be the marker, which <a class="el" href="#a58e093d9bb7bae2d02fcf9ea7fa0132a" title="Decrypt one .gpg file and return its trimmed lines matching rx.">matchFile()</a> and <a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> put last. Not a match: not counted, not content to hide. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>A match is a trimmed, non-empty line, so an empty one can only be the marker, which <a class="el" href="#a99b72a4ac50c6c01b24f8376e30a7a68" title="Decrypt one .gpg file and return its trimmed lines matching rx.">matchFile()</a> and <a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> put last. Not a match: not counted, not content to hide. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>A line of a result. </td></tr>
   </table>
@@ -297,7 +358,13 @@ this entry" rather than a match. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00074">74</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00080">80</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a5923d0185ca5c7739b00ef8159a11681_icgraph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -326,7 +393,7 @@ this entry" rather than a match. </p>
 
 <p>Whether a result is the marker for "the search stopped at
 kMaxMatches, more entries were not searched". </p>
-<p>No entry has an empty name, so a result without one can only be the marker, which <a class="el" href="#ad9b99ac184ab94d539f2937efbf13ed1" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> puts last. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>No entry has an empty name, so a result without one can only be the marker, which <a class="el" href="#a9c2523a0d1d82bc0201c6730bfa13a10" title="Walk storeDir, decrypt every .gpg file and collect the matches.">scanStore()</a> puts last. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>A result. </td></tr>
   </table>
@@ -334,12 +401,18 @@ kMaxMatches, more entries were not searched". </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it is the marker. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00088">88</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00094">94</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_aa2bfb9a0d2fcdf94150d325e58e988d7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<a id="a58e093d9bb7bae2d02fcf9ea7fa0132a" name="a58e093d9bb7bae2d02fcf9ea7fa0132a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58e093d9bb7bae2d02fcf9ea7fa0132a">&#9670;&#160;</a></span>matchFile()</h2>
+<a id="a99b72a4ac50c6c01b24f8376e30a7a68" name="a99b72a4ac50c6c01b24f8376e30a7a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b72a4ac50c6c01b24f8376e30a7a68">&#9670;&#160;</a></span>matchFile()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -370,7 +443,7 @@ kMaxMatches, more entries were not searched". </p>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QStringList</td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; QStringList</td>
         </tr>
       </table>
   </td>
@@ -381,6 +454,7 @@ kMaxMatches, more entries were not searched". </p>
 </div><div class="memdoc">
 
 <p>Decrypt one .gpg file and return its trimmed lines matching <code class="param">rx</code>. </p>
+<p>Decrypt one .gpg file and return lines matching rx.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">env</td><td>Environment for gpg. </td></tr>
@@ -392,17 +466,25 @@ kMaxMatches, more entries were not searched". </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Matching lines, at most kMaxMatchesPerEntry and then a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>) when there are more; empty when gpg fails, is cancelled or nothing matches. </dd></dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00041">41</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a58e093d9bb7bae2d02fcf9ea7fa0132a_cgraph.svg" width="372" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a99b72a4ac50c6c01b24f8376e30a7a68_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="ad9b99ac184ab94d539f2937efbf13ed1" name="ad9b99ac184ab94d539f2937efbf13ed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9b99ac184ab94d539f2937efbf13ed1">&#9670;&#160;</a></span>scanStore()</h2>
+<a id="a9c2523a0d1d82bc0201c6730bfa13a10" name="a9c2523a0d1d82bc0201c6730bfa13a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2523a0d1d82bc0201c6730bfa13a10">&#9670;&#160;</a></span>scanStore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,7 +515,7 @@ kMaxMatches, more entries were not searched". </p>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td>
+          <td class="paramtype">const std::atomic_bool *</td>          <td class="paramname"><span class="paramname"><em>cancel</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td>
         </tr>
       </table>
   </td>
@@ -444,6 +526,7 @@ kMaxMatches, more entries were not searched". </p>
 </div><div class="memdoc">
 
 <p>Walk <code class="param">storeDir</code>, decrypt every .gpg file and collect the matches. </p>
+<p>Walk the store, decrypt every .gpg file, collect matches.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">env</td><td>Environment for gpg. </td></tr>
@@ -455,11 +538,19 @@ kMaxMatches, more entries were not searched". </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>(entry name without .gpg, matching lines) per file with matches, at most kMaxMatches lines in all, an entry cut short ending in a marker (<a class="el" href="#a5923d0185ca5c7739b00ef8159a11681" title="Whether a line in a result is the marker for &quot;more matches inthis entry&quot; rather than a match.">isMoreMarker()</a>); when the walk stopped at that budget with entries left, a last result that is a marker (<a class="el" href="#aa2bfb9a0d2fcdf94150d325e58e988d7" title="Whether a result is the marker for &quot;the search stopped atkMaxMatches, more entries were not searched&quot;...">isStoppedMarker()</a>). Empty when the search is stopped. </dd></dl>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00107">107</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_ad9b99ac184ab94d539f2937efbf13ed1_cgraph.svg" width="372" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a9c2523a0d1d82bc0201c6730bfa13a10_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -499,16 +590,32 @@ kMaxMatches, more entries were not searched". </p>
 </div><div class="memdoc">
 
 <p>Start a search; <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> follows asynchronously, also for an empty or invalid pattern (with no results). </p>
+<p>Start a search on a worker thread.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pattern</td><td>PCRE pattern. </td></tr>
     <tr><td class="paramname">caseInsensitive</td><td>Match regardless of case. </td></tr>
     <tr><td class="paramname">gpgExe</td><td>The gpg executable (a <span class="tt">wsl </span> prefix routes paths through wslpath). </td></tr>
     <tr><td class="paramname">storeDir</td><td>The store to walk. </td></tr>
-    <tr><td class="paramname">env</td><td>Environment for gpg (GNUPGHOME and friends). </td></tr>
+    <tr><td class="paramname">env</td><td>Environment for gpg (GNUPGHOME and friends).</td></tr>
   </table>
   </dd>
 </dl>
+<p>Results are emitted on the owner's thread via QMetaObject::invokeMethod. A sequence counter discards results from superseded searches; the previous search is asked to stop but not waited for, since blocking the UI thread while gpg decrypts would freeze the interface. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8cpp_source.html#l00160">160</a> of file <a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a393b6a05c39649304a77151702b76ec7_cgraph.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_native_grep_a393b6a05c39649304a77151702b76ec7_icgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -536,7 +643,7 @@ kMaxMatches, more entries were not searched". </p>
 <p>Most matching lines a search collects over the whole store. </p>
 <p>The search stops once it has this many; the window says so. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00049">49</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00055">55</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -563,7 +670,7 @@ kMaxMatches, more entries were not searched". </p>
 <p>Most matching lines taken from one entry. </p>
 <p>A compressed entry can expand into millions of lines within the plaintext limit, each a result and a row in the results list; past this many, the entry gets one line saying there are more. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00042">42</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00048">48</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
@@ -590,18 +697,82 @@ kMaxMatches, more entries were not searched". </p>
 <p>Longest preview of a matching line, in UTF-16 code units. </p>
 <p>A result shows where the pattern matched, not the line; a single line can be most of an entry's 64 MiB plaintext, and 10000 such copies would not fit in memory. A longer line is shown as a window of this many code units around the match (up to two more, one per edge, to keep a surrogate pair whole), "…" where the line goes on. A sequence of several code points (a ZWJ emoji, a flag) can still be cut between them. </p>
 
-<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00062">62</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00068">68</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="acce2afcd559c2272585093278ca4643e" name="acce2afcd559c2272585093278ca4643e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acce2afcd559c2272585093278ca4643e">&#9670;&#160;</a></span>m_seq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NativeGrep::m_seq = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of the newest search. A worker reports through <a class="el" href="#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over.">finished()</a> only when its own number still equals this. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00179">179</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+
+</div>
+</div>
+<a id="acf4bbf115d80b421255145c2a4d6ca1d" name="acf4bbf115d80b421255145c2a4d6ca1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4bbf115d80b421255145c2a4d6ca1d">&#9670;&#160;</a></span>m_workers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="struct_native_grep_1_1_worker.html">Worker</a>&gt; NativeGrep::m_workers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches still running, superseded ones included. </p>
+
+<p class="definition">Definition at line <a class="el" href="nativegrep_8h_source.html#l00181">181</a> of file <a class="el" href="nativegrep_8h_source.html">nativegrep.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="nativegrep_8h_source.html">nativegrep.h</a></li>
+<li>src/<a class="el" href="nativegrep_8cpp_source.html">nativegrep.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_native_grep.html">NativeGrep</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

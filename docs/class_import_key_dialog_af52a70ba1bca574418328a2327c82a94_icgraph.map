@@ -1,0 +1,7 @@
+<map id="ImportKeyDialog::importFromString" name="ImportKeyDialog::importFromString">
+<area shape="rect" id="Node000001" title="Feeds input to gpg &#45;&#45;status&#45;fd 1 &#45;&#45;import &#45;&#45;batch &#45;&#45;yes via Executor::executeBlocking() and records t..." alt="" coords="460,5,674,50"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#afb6c1192dea0f33eba31420f1f9753cc" title="&quot;Import&quot; button: runs importFromString() on the trimmed input and closes the dialog with accept() on ..." alt="" coords="246,5,412,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,28,413,30,412,25,447,28"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html#a3f791b9599a6c0903fb4c244d01c58bb" title="Destroys the dialog and its generated UI." alt="" coords="5,5,198,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,28,198,30,198,25,233,27"/>
+</map>

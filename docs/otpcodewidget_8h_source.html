@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('otpcodewidget_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,72 +112,78 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">otpcodewidget.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
+<a href="otpcodewidget_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_OTPCODEWIDGET_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_OTPCODEWIDGET_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;totp.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span>QLabel;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>QProgressBar;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span><a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a> : <span class="keyword">public</span> QWidget {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Q_OBJECT</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">   40</a></span>  <a class="code hl_function" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a>(<a class="code hl_struct" href="struct_totp_1_1_settings.html">Totp::Settings</a> settings, <span class="keywordtype">bool</span> withCopyButton, <span class="keywordtype">bool</span> monospace,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">refresh</a>(quint64 unixTime);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">   56</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">code</a>() const -&gt; QString;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_OTPCODEWIDGET_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_OTPCODEWIDGET_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="totp_8h.html">totp.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>QLabel;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>QProgressBar;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html">   34</a></span><span class="keyword">class </span><a class="code hl_function" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a> : <span class="keyword">public</span> QWidget {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  Q_OBJECT</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_function" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a>(<a class="code hl_struct" href="struct_totp_1_1_settings.html">Totp::Settings</a> settings, <span class="keywordtype">bool</span> withCopyButton, <span class="keywordtype">bool</span> monospace,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">refresh</a>(quint64 unixTime);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">   62</a></span>  [[nodiscard]] auto <a class="code hl_function" href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">secondsRemaining</a>() const -&gt; uint;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>signals:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">   69</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">copyRequested</a>(const QString &amp;text);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>private:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_class" href="class_totp.html">Totp</a>::Settings m_settings;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a> *m_copyButton{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  QLabel *m_codeLabel{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  QProgressBar *m_progress{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  QString m_code;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  quint64 m_counter{0};</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  uint m_secondsRemaining{0};</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">bool</span> m_hasCode{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">code</a>() <span class="keyword">const</span> -&gt; QString;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">secondsRemaining</a>() <span class="keyword">const</span> -&gt; uint;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>signals:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">   75</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">copyRequested</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#adcfdedcd694498a7f6eba42049b16751">   79</a></span>  <a class="code hl_struct" href="struct_totp_1_1_settings.html">Totp::Settings</a> <a class="code hl_variable" href="class_otp_code_widget.html#adcfdedcd694498a7f6eba42049b16751">m_settings</a>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a2cc6c61688b678f306c15b13f224dd15">   82</a></span>  <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a> *<a class="code hl_variable" href="class_otp_code_widget.html#a2cc6c61688b678f306c15b13f224dd15">m_copyButton</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a57208d6ef3f8ad0277b10b65f042624b">   84</a></span>  QLabel *<a class="code hl_variable" href="class_otp_code_widget.html#a57208d6ef3f8ad0277b10b65f042624b">m_codeLabel</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">   86</a></span>  QProgressBar *<a class="code hl_variable" href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">m_progress</a>{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a0635df424ec67801fca97ba3679b636f">   88</a></span>  QString <a class="code hl_variable" href="class_otp_code_widget.html#a0635df424ec67801fca97ba3679b636f">m_code</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a1df63d1d2ffa40269e35bc37d825a636">   91</a></span>  quint64 <a class="code hl_variable" href="class_otp_code_widget.html#a1df63d1d2ffa40269e35bc37d825a636">m_counter</a>{0};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#a692ab7bf0cea953e925c0e02a8a81d2f">   93</a></span>  uint <a class="code hl_variable" href="class_otp_code_widget.html#a692ab7bf0cea953e925c0e02a8a81d2f">m_secondsRemaining</a>{0};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">   96</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">m_hasCode</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">// SRC_OTPCODEWIDGET_H_</span></div>
-<div class="ttc" id="aclass_otp_code_widget_html_a34cb3faa2d6e1a0ef1cff5b30d6551ec"><div class="ttname"><a href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">OtpCodeWidget::refresh</a></div><div class="ttdeci">void refresh(quint64 unixTime)</div><div class="ttdoc">Recompute the code and countdown for an explicit point in time.</div></div>
-<div class="ttc" id="aclass_otp_code_widget_html_a49b4e45b352e23f13ac378c50c2e81bd"><div class="ttname"><a href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget::OtpCodeWidget</a></div><div class="ttdeci">OtpCodeWidget(Totp::Settings settings, bool withCopyButton, bool monospace, QWidget *parent=nullptr)</div><div class="ttdoc">Build a live OTP code display and start its refresh timer.</div></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">// SRC_OTPCODEWIDGET_H_</span></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a0635df424ec67801fca97ba3679b636f"><div class="ttname"><a href="class_otp_code_widget.html#a0635df424ec67801fca97ba3679b636f">OtpCodeWidget::m_code</a></div><div class="ttdeci">QString m_code</div><div class="ttdoc">The code last rendered, ungrouped.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">otpcodewidget.h:88</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a1df63d1d2ffa40269e35bc37d825a636"><div class="ttname"><a href="class_otp_code_widget.html#a1df63d1d2ffa40269e35bc37d825a636">OtpCodeWidget::m_counter</a></div><div class="ttdeci">quint64 m_counter</div><div class="ttdoc">Time-step counter m_code was generated for; a tick only regenerates when the counter changes.</div><div class="ttdef"><b>Definition</b> <a href="#l00091">otpcodewidget.h:91</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a2cc6c61688b678f306c15b13f224dd15"><div class="ttname"><a href="class_otp_code_widget.html#a2cc6c61688b678f306c15b13f224dd15">OtpCodeWidget::m_copyButton</a></div><div class="ttdeci">QPushButtonWithClipboard * m_copyButton</div><div class="ttdoc">Copy button, or nullptr when built without one; child widget whose text is kept equal to m_code.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">otpcodewidget.h:82</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a34cb3faa2d6e1a0ef1cff5b30d6551ec"><div class="ttname"><a href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">OtpCodeWidget::refresh</a></div><div class="ttdeci">void refresh(quint64 unixTime)</div><div class="ttdoc">Recompute the code and countdown for an explicit point in time.</div><div class="ttdef"><b>Definition</b> <a href="otpcodewidget_8cpp_source.html#l00082">otpcodewidget.cpp:82</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a3c15f1bb8dd1ad1eff5a7012528bddfa"><div class="ttname"><a href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">OtpCodeWidget::m_progress</a></div><div class="ttdeci">QProgressBar * m_progress</div><div class="ttdoc">Countdown bar from step down to 1 second; child widget.</div><div class="ttdef"><b>Definition</b> <a href="#l00086">otpcodewidget.h:86</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a49b4e45b352e23f13ac378c50c2e81bd"><div class="ttname"><a href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget::OtpCodeWidget</a></div><div class="ttdeci">OtpCodeWidget(Totp::Settings settings, bool withCopyButton, bool monospace, QWidget *parent=nullptr)</div><div class="ttdoc">Build a live OTP code display and start its refresh timer.</div><div class="ttdef"><b>Definition</b> <a href="otpcodewidget_8cpp_source.html#l00032">otpcodewidget.cpp:32</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a57208d6ef3f8ad0277b10b65f042624b"><div class="ttname"><a href="class_otp_code_widget.html#a57208d6ef3f8ad0277b10b65f042624b">OtpCodeWidget::m_codeLabel</a></div><div class="ttdeci">QLabel * m_codeLabel</div><div class="ttdoc">Shows the current code; child widget.</div><div class="ttdef"><b>Definition</b> <a href="#l00084">otpcodewidget.h:84</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a692ab7bf0cea953e925c0e02a8a81d2f"><div class="ttname"><a href="class_otp_code_widget.html#a692ab7bf0cea953e925c0e02a8a81d2f">OtpCodeWidget::m_secondsRemaining</a></div><div class="ttdeci">uint m_secondsRemaining</div><div class="ttdoc">Seconds left on m_code as of the last refresh().</div><div class="ttdef"><b>Definition</b> <a href="#l00093">otpcodewidget.h:93</a></div></div>
 <div class="ttc" id="aclass_otp_code_widget_html_a79e9906a4fe462a8032eb3a88191c4e6"><div class="ttname"><a href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">OtpCodeWidget::copyRequested</a></div><div class="ttdeci">void copyRequested(const QString &amp;text)</div><div class="ttdoc">Emitted when the copy button is activated.</div></div>
-<div class="ttc" id="aclass_otp_code_widget_html_a94487d5f3e33884162e3d43eaf22d9c2"><div class="ttname"><a href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">OtpCodeWidget::code</a></div><div class="ttdeci">auto code() const -&gt; QString</div><div class="ttdoc">The current code, ungrouped, exactly as it is copied.</div></div>
-<div class="ttc" id="aclass_otp_code_widget_html_ab0d806d623337313c961d284a7ef2758"><div class="ttname"><a href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">OtpCodeWidget::secondsRemaining</a></div><div class="ttdeci">auto secondsRemaining() const -&gt; uint</div><div class="ttdoc">Seconds left on the current code, as last rendered.</div></div>
-<div class="ttc" id="aclass_q_push_button_with_clipboard_html"><div class="ttname"><a href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a></div><div class="ttdoc">QPushButton that stores a text payload and emits it when activated.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8h_source.html#l00013">qpushbuttonwithclipboard.h:13</a></div></div>
-<div class="ttc" id="aclass_totp_html"><div class="ttname"><a href="class_totp.html">Totp</a></div><div class="ttdoc">RFC 6238 time-based one-time password generation.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00030">totp.h:30</a></div></div>
-<div class="ttc" id="astruct_totp_1_1_settings_html"><div class="ttname"><a href="struct_totp_1_1_settings.html">Totp::Settings</a></div><div class="ttdoc">Validated TOTP parameters. Only Totp::parse() produces one.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00053">totp.h:53</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_a94487d5f3e33884162e3d43eaf22d9c2"><div class="ttname"><a href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">OtpCodeWidget::code</a></div><div class="ttdeci">auto code() const -&gt; QString</div><div class="ttdoc">The current code, ungrouped, exactly as it is copied.</div><div class="ttdef"><b>Definition</b> <a href="otpcodewidget_8cpp_source.html#l00098">otpcodewidget.cpp:98</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_aa90134420a39f8623f7f26a001818611"><div class="ttname"><a href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">OtpCodeWidget::m_hasCode</a></div><div class="ttdeci">bool m_hasCode</div><div class="ttdoc">False until the first refresh(), which must generate a code regardless of m_counter.</div><div class="ttdef"><b>Definition</b> <a href="#l00096">otpcodewidget.h:96</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_ab0d806d623337313c961d284a7ef2758"><div class="ttname"><a href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">OtpCodeWidget::secondsRemaining</a></div><div class="ttdeci">auto secondsRemaining() const -&gt; uint</div><div class="ttdoc">Seconds left on the current code, as last rendered.</div><div class="ttdef"><b>Definition</b> <a href="otpcodewidget_8cpp_source.html#l00100">otpcodewidget.cpp:100</a></div></div>
+<div class="ttc" id="aclass_otp_code_widget_html_adcfdedcd694498a7f6eba42049b16751"><div class="ttname"><a href="class_otp_code_widget.html#adcfdedcd694498a7f6eba42049b16751">OtpCodeWidget::m_settings</a></div><div class="ttdeci">Totp::Settings m_settings</div><div class="ttdoc">Validated TOTP parameters for the entry; fixed at construction.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">otpcodewidget.h:79</a></div></div>
+<div class="ttc" id="aclass_q_push_button_with_clipboard_html"><div class="ttname"><a href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a></div><div class="ttdoc">QPushButton that stores a text payload and emits it when activated.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8h_source.html#l00025">qpushbuttonwithclipboard.h:25</a></div></div>
+<div class="ttc" id="astruct_totp_1_1_settings_html"><div class="ttname"><a href="struct_totp_1_1_settings.html">Totp::Settings</a></div><div class="ttdoc">Validated TOTP parameters. Only Totp::parse() produces one.</div><div class="ttdef"><b>Definition</b> <a href="totp_8h_source.html#l00059">totp.h:59</a></div></div>
+<div class="ttc" id="atotp_8h_html"><div class="ttname"><a href="totp_8h.html">totp.h</a></div><div class="ttdoc">RFC 6238 TOTP: otpauth URI parsing, code generation and canonical re-serialisation.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="otpcodewidget_8h.html">otpcodewidget.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

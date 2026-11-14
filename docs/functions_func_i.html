@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_i.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -104,56 +122,77 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <li>idle()&#160;:&#160;<a class="el" href="class_pass.html#ad0936452d739b37d9a9e46db356792c2">Pass</a></li>
 <li>ImitatePass()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6">ImitatePass</a></li>
 <li>importedKeyId()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#a6ed8032e86a5f18fd07e23abcb8c5404">ImportKeyDialog</a></li>
+<li>importFromString()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#af52a70ba1bca574418328a2327c82a94">ImportKeyDialog</a></li>
 <li>ImportKeyDialog()&#160;:&#160;<a class="el" href="class_import_key_dialog.html#acc2623c9f02a244daa1efff235b5704a">ImportKeyDialog</a></li>
 <li>importKeys()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a4c706b9a5c20ce2c1eb8c666c8af1bcd">RnpCrypto</a></li>
 <li>indexFor()&#160;:&#160;<a class="el" href="class_store_tree.html#ad5caeb51eea88edf2233336ca8b59ea0">StoreTree</a></li>
 <li>inGrepMode()&#160;:&#160;<a class="el" href="class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7">GrepSearchController</a></li>
 <li>Init()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass</a>, <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>, <a class="el" href="class_real_pass.html#a12a7e631a5040eee70da06585fe047ba">RealPass</a></li>
 <li>init()&#160;:&#160;<a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09">Pass</a>, <a class="el" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">QtPass</a></li>
-<li>initExecutables()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#accde18f59a051107c85755993fcefdac">QtPassSettings</a></li>
-<li>initGit()&#160;:&#160;<a class="el" href="class_profile_init.html#a081c40711c532e0e3859ffb4ecac1468">ProfileInit</a></li>
-<li>initialise()&#160;:&#160;<a class="el" href="class_profile_init.html#ada77ef0ec16292445039c703aa996081">ProfileInit</a>, <a class="el" href="class_ssh_auth_sock.html#a7286c5480673720f00b04c8f18e0fdad">SshAuthSock</a></li>
+<li>initDisplayPanel()&#160;:&#160;<a class="el" href="class_main_window.html#ab393d6375319b66d4c72f72e320940ae">MainWindow</a></li>
+<li>initExecutables()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56">QtPassSettings</a></li>
+<li>initGit()&#160;:&#160;<a class="el" href="class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2">ProfileInit</a></li>
+<li>initialise()&#160;:&#160;<a class="el" href="class_profile_init.html#ac65b0b3a9265d2bf8f793ad3071f8b24">ProfileInit</a>, <a class="el" href="class_ssh_auth_sock.html#aa5db3a45da13ec228c035d199d4dd1ff">SshAuthSock</a></li>
+<li>initialiseEnvironment()&#160;:&#160;<a class="el" href="class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2">Util</a></li>
+<li>initialiseGit()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a4c80ddbd79ef91cd4a0d729f0c535802">FirstRunWizard</a></li>
+<li>initialiseProfileStore()&#160;:&#160;<a class="el" href="class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2">ConfigDialog</a></li>
+<li>initialiseStore()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0">FirstRunWizard</a></li>
+<li>initializeNewProfiles()&#160;:&#160;<a class="el" href="class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e">ConfigDialog</a></li>
 <li>initializePage()&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a468b42b8e6e9c642816ed624e799f0ae">DoneWizardPage</a>, <a class="el" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">KeyWizardPage</a>, <a class="el" href="class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449">ProgramsWizardPage</a>, <a class="el" href="class_store_wizard_page.html#a550b05a051e81404ff1c71bb5a9229f8">StoreWizardPage</a></li>
+<li>initProcessOutput()&#160;:&#160;<a class="el" href="class_main_window.html#adf84569020b01d026bd88ff43d07e16d">MainWindow</a></li>
+<li>initStatusBar()&#160;:&#160;<a class="el" href="class_main_window.html#ab03270fd7d6947737a5e3d57684c8547">MainWindow</a></li>
 <li>initSucceeded()&#160;:&#160;<a class="el" href="class_main_window.html#ac4f5f3a524aa6bf13c16b348c48074b6">MainWindow</a></li>
+<li>initTextBrowser()&#160;:&#160;<a class="el" href="class_main_window.html#a19e412bb237b40dbd602c8b5c003695f">MainWindow</a></li>
+<li>initTimers()&#160;:&#160;<a class="el" href="class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079">MainWindow</a></li>
+<li>initToolBarButtons()&#160;:&#160;<a class="el" href="class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a">MainWindow</a></li>
+<li>initTrayIcon()&#160;:&#160;<a class="el" href="class_main_window.html#aac6a34d508898a862807dc2512e6b659">MainWindow</a></li>
 <li>Insert()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6">ImitatePass</a>, <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>, <a class="el" href="class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830">RealPass</a></li>
 <li>insertFailed()&#160;:&#160;<a class="el" href="class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8">Pass</a></li>
 <li>insertsPending()&#160;:&#160;<a class="el" href="class_pass.html#aa4e8d6d0d817903ae20ddadc3c34657e">Pass</a></li>
-<li>insertWritten()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>, <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a></li>
-<li>invalidate()&#160;:&#160;<a class="el" href="class_pass_backend_factory.html#a03fc5df993c6ee7cd1dad826b51562c7">PassBackendFactory</a></li>
-<li>isAlwaysOnTop()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#aff8eb58a6814a95f12c4369f0187ab97">QtPassSettings</a></li>
-<li>isAutoPush()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a2df5530ff5930281eff264172535d4f6">QtPassSettings</a></li>
-<li>isBatchValue()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#aa57783258b6c2b910bc1a27659103976">KeygenDialog</a></li>
+<li>insertWritten()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>, <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>, <a class="el" href="class_real_pass.html#ae83239077615fed7e3cd5fccfad9336a">RealPass</a></li>
+<li>invalidate()&#160;:&#160;<a class="el" href="class_pass_backend_factory.html#abef8590b56c897a52f55ba8a28ad71ae">PassBackendFactory</a></li>
+<li>inWindow()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#afbf6c5aff86d318171ac2a3f449463a6">MenuBarPeek</a></li>
+<li>isAlwaysOnTop()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed">QtPassSettings</a></li>
+<li>isAutoPush()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">QtPassSettings</a></li>
+<li>isBatchValue()&#160;:&#160;<a class="el" href="class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83">KeygenDialog</a></li>
 <li>isComplete()&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">KeyWizardPage</a>, <a class="el" href="class_programs_wizard_page.html#a7fdbfd82d68ccfde28c61fbdf143d5dc">ProgramsWizardPage</a>, <a class="el" href="class_store_wizard_page.html#aa588d7e82031fbeda97582e6f0840319">StoreWizardPage</a></li>
-<li>isFingerprintList()&#160;:&#160;<a class="el" href="class_config_dialog.html#a9510d87bcaf8b95b42d68423133a0932">ConfigDialog</a></li>
-<li>isHideOnClose()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a1772cf257c6fc26421e6b70a4680687f">QtPassSettings</a></li>
-<li>isIdle()&#160;:&#160;<a class="el" href="class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af">Executor</a>, <a class="el" href="class_pass.html#a66d554f693ae3069381483cb229bb193">Pass</a>, <a class="el" href="class_pass_backend_factory.html#a801a5d6a05ebf5212394021f2f0b6a22">PassBackendFactory</a></li>
-<li>isLaunchableWebUrl()&#160;:&#160;<a class="el" href="class_util.html#a0a5f8ed9bf31f351af081b45b92360d0">Util</a></li>
-<li>isLinkedFolder()&#160;:&#160;<a class="el" href="class_util.html#a746306345314ca148272abc2dd3e9e3c">Util</a></li>
+<li>isFingerprintList()&#160;:&#160;<a class="el" href="class_config_dialog.html#a10a27a2854432e9294934b0ebcb76146">ConfigDialog</a></li>
+<li>isHideOnClose()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">QtPassSettings</a></li>
+<li>isIdle()&#160;:&#160;<a class="el" href="class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af">Executor</a>, <a class="el" href="class_pass.html#a66d554f693ae3069381483cb229bb193">Pass</a>, <a class="el" href="class_pass_backend_factory.html#aa8ab517b87e5b6923eed8a963cca3706">PassBackendFactory</a></li>
+<li>isLaunchableWebUrl()&#160;:&#160;<a class="el" href="class_util.html#a86864a9430f6903425908e76ba6079b5">Util</a></li>
+<li>isLinkedFolder()&#160;:&#160;<a class="el" href="class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d">Util</a></li>
 <li>isMoreMarker()&#160;:&#160;<a class="el" href="class_native_grep.html#a5923d0185ca5c7739b00ef8159a11681">NativeGrep</a></li>
-<li>isOtpFieldName()&#160;:&#160;<a class="el" href="class_file_content.html#affff8612aceb9006d8b7117e2a6ef70a">FileContent</a></li>
-<li>isOtpUriValue()&#160;:&#160;<a class="el" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">FileContent</a></li>
-<li>isPathInStore()&#160;:&#160;<a class="el" href="class_path_validator.html#a15120558ca5dd41cdd9c485ae08030c7">PathValidator</a></li>
+<li>isOtpFieldName()&#160;:&#160;<a class="el" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">FileContent</a></li>
+<li>isOtpUriValue()&#160;:&#160;<a class="el" href="class_file_content.html#af99e299f227bbdd4714c429004152742">FileContent</a></li>
+<li>isOwnInsertReport()&#160;:&#160;<a class="el" href="class_password_dialog.html#aa624de2d68d4b2a956e0c529901bccfe">PasswordDialog</a></li>
+<li>isPathInStore()&#160;:&#160;<a class="el" href="class_path_validator.html#ab45fab776e795db0071e4561291ca12d">PathValidator</a></li>
 <li>isPeeking()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#adcac65462ff1daa7013081622cb15d20">MenuBarPeek</a></li>
+<li>isQrencodeAvailable()&#160;:&#160;<a class="el" href="class_config_dialog.html#ae4d11811206b82326dca209f35910052">ConfigDialog</a></li>
 <li>isRunning()&#160;:&#160;<a class="el" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">SingleApplication</a></li>
 <li>isSecret()&#160;:&#160;<a class="el" href="class_password_display_panel.html#a05afd2d04c8c317910fb04b0c53cdb4a">PasswordDisplayPanel</a></li>
-<li>isSecretFieldName()&#160;:&#160;<a class="el" href="class_file_content.html#a18a02db7e70b10aaf86f76345418fd00">FileContent</a></li>
-<li>isSensitiveProcess()&#160;:&#160;<a class="el" href="class_process_output_panel.html#ad6aa26912ba468c918d78d857c386da7">ProcessOutputPanel</a></li>
-<li>isShowProcessOutput()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def">QtPassSettings</a></li>
+<li>isSecretFieldName()&#160;:&#160;<a class="el" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">FileContent</a></li>
+<li>isSensitiveProcess()&#160;:&#160;<a class="el" href="class_process_output_panel.html#a3a0982ab575678d657c0f044c2efac24">ProcessOutputPanel</a></li>
+<li>isShowProcessOutput()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216">QtPassSettings</a></li>
 <li>isStoppedMarker()&#160;:&#160;<a class="el" href="class_native_grep.html#aa2bfb9a0d2fcdf94150d325e58e988d7">NativeGrep</a></li>
-<li>isStore()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#afb93850960a89ed80e166fa1ee4fc124">FirstRunWizard</a></li>
-<li>isTargetSpelled()&#160;:&#160;<a class="el" href="class_path_validator.html#a373941a0115bec639224335b4ede6994">PathValidator</a></li>
-<li>isUnderLink()&#160;:&#160;<a class="el" href="class_util.html#af4112ecd778ae8225a12fa96ce611425">Util</a></li>
-<li>isUseGit()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710">QtPassSettings</a></li>
-<li>isUseGrepSearch()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c">QtPassSettings</a></li>
-<li>isUseOtp()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36">QtPassSettings</a></li>
-<li>isValid()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#abcf881c3df59955359ec12f5cb794f1c">RnpCrypto</a>, <a class="el" href="class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2">Totp</a>, <a class="el" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">UserInfo</a></li>
-<li>isValidKeyId()&#160;:&#160;<a class="el" href="class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1">Util</a></li>
+<li>isStore()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848">FirstRunWizard</a></li>
+<li>isTargetSpelled()&#160;:&#160;<a class="el" href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator</a></li>
+<li>isUnderLink()&#160;:&#160;<a class="el" href="class_util.html#a303cdce7f33f076823a0581defb52ca4">Util</a></li>
+<li>isUseGit()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings</a></li>
+<li>isUseGrepSearch()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a7a2c59796bc7da1e79ee9124a3ea29f4">QtPassSettings</a></li>
+<li>isUseOtp()&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e">QtPassSettings</a></li>
+<li>isUserExpired()&#160;:&#160;<a class="el" href="class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106">UsersDialog</a></li>
+<li>isValid()&#160;:&#160;<a class="el" href="class_rnp_crypto.html#abcf881c3df59955359ec12f5cb794f1c">RnpCrypto</a>, <a class="el" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">Totp</a>, <a class="el" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">UserInfo</a></li>
+<li>isValidKeyId()&#160;:&#160;<a class="el" href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">Util</a></li>
+<li>itemChange()&#160;:&#160;<a class="el" href="class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b">UsersDialog</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

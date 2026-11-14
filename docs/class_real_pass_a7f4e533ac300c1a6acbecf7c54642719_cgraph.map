@@ -1,0 +1,5 @@
+<map id="RealPass::passName" name="RealPass::passName">
+<area shape="rect" id="Node000001" title="path as pass names it: relative to the store, without the .gpg pass appends itself." alt="" coords="5,5,162,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="210,5,349,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,17,197,19,191,19,162,22"/>
+</map>

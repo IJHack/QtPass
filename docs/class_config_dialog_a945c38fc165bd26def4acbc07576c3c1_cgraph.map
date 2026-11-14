@@ -1,0 +1,5 @@
+<map id="ConfigDialog::onProfileGitToggled" name="ConfigDialog::onProfileGitToggled">
+<area shape="rect" id="Node000001" title="One of the profile&#39;s Git boxes was clicked: all three flags become the profile&#39;s own (no longer follo..." alt="" coords="5,5,194,50"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a9838b375aed57fa4a92e7670fac90f27" title="The entry the form is editing." alt="" coords="242,14,434,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,25,229,27,224,28,194,30"/>
+</map>

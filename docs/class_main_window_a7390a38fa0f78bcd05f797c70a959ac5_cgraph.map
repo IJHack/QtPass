@@ -1,0 +1,23 @@
+<map id="MainWindow::on_grepButton_toggled" name="MainWindow::on_grepButton_toggled">
+<area shape="rect" id="Node000001" title="The content&#45;search toggle changed: switch the search box between name filtering and regex content sea..." alt="" coords="5,105,213,150"/>
+<area shape="rect" id="Node000002" href="$class_grep_search_controller.html#a95e639ef2ee1e402d8045d44fe3f54ad" title="Enter content&#45;search mode (search button toggled on)." alt="" coords="261,5,421,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,102,275,55,271,58,164,107"/>
+<area shape="rect" id="Node000003" href="$class_grep_search_controller.html#a6432377a14814db264769dd7b4b7a237" title="Leave content&#45;search mode (search button toggled off)." alt="" coords="261,75,421,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,111,248,109,243,111,214,116"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="264,143,418,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,138,251,145,246,146,213,143"/>
+<area shape="rect" id="Node000010" href="$class_store_tree.html#a7c5e7b2806ebe8314f0ec7a72bd8a256" title="Filter the visible entries." alt="" coords="269,199,412,227"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="172,148,289,192,284,194,171,153"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="469,83,671,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="393,140,468,120,499,115,494,116,470,125,395,145"/>
+<area shape="rect" id="Node000007" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="502,135,638,179"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="418,154,490,157,484,157,418,160"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="719,83,943,111"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="671,94,706,97,701,97,672,100"/>
+<area shape="rect" id="Node000008" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="734,135,928,179"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="638,154,721,157,716,157,638,160"/>
+<area shape="rect" id="Node000009" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="728,204,934,249"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="639,172,732,200,727,199,638,178"/>
+<area shape="rect" id="Node000011" href="$class_store_model.html#a9830413c7cf960e473adfa98311c3bcd" title="Set the source filesystem root and map it to a proxy index." alt="" coords="478,203,663,231"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="413,212,465,215,459,215,413,217"/>
+</map>

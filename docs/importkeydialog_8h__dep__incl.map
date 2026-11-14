@@ -1,0 +1,7 @@
+<map id="src/importkeydialog.h" name="src/importkeydialog.h">
+<area shape="rect" id="Node000001" title="Dialog that imports an ASCII&#45;armored GPG public key from a file or the clipboard by running gpg &#45;&#45;imp..." alt="" coords="105,5,267,33"/>
+<area shape="rect" id="Node000002" href="$importkeydialog_8cpp.html" title="Implements ImportKeyDialog: the guarded key&#45;file read, the blocking gpg &#45;&#45;import call and the status&#45;..." alt="" coords="5,81,183,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,42,112,83,109,78,155,43"/>
+<area shape="rect" id="Node000003" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="206,81,352,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,40,265,81,260,80,214,45"/>
+</map>

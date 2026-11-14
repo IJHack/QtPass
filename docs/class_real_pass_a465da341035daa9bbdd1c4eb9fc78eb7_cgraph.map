@@ -1,0 +1,42 @@
+<map id="RealPass::refuseList" name="RealPass::refuseList">
+<area shape="rect" id="Node000001" title="The checks of refuseUnverifiedList() for file&#39;s nearest list, once per list." alt="" coords="5,149,157,177"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="482,85,584,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,147,151,126,204,109,273,97,344,92,469,93,464,96,344,97,274,102,205,114,153,131,110,151"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg&#45;id file path for a password file." alt="" coords="227,123,372,150"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,152,213,146,209,149,158,156"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb" title="With signing on, refuse to encrypt file when the lookup passed over its folder&#39;s own list (skippedGpg..." alt="" coords="205,175,394,202"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="156,169,191,174,187,177,158,174"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb" title="Whether gpgIdFile is a signed list QtPass accepts: its signature verifies (GpgIdSigner::verifyFile())..." alt="" coords="218,227,380,254"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="114,175,206,211,231,221,226,223,204,216,114,180"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="356,172,393,159,441,135,485,118,481,121,443,140,395,164,359,176"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over..." alt="" coords="460,149,607,177"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="393,176,447,172,442,174,395,181"/>
+<area shape="rect" id="Node000006" href="$class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02" title="The highest generation this device has accepted or written for the .gpg&#45;id at gpgIdFile...." alt="" coords="672,5,896,33"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="581,146,603,136,623,123,638,104,645,86,654,67,671,49,695,38,690,41,674,53,658,70,650,88,642,107,626,126,605,141,583,151"/>
+<area shape="rect" id="Node000007" href="$class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e" title="The settings key for a .gpg&#45;id: a hash of its canonical path, so path spelling (case,..." alt="" coords="972,31,1134,58"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="896,27,959,35,954,36,896,32"/>
+<area shape="rect" id="Node000009" href="$class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered..." alt="" coords="442,227,624,254"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="380,238,429,240,424,241,381,243"/>
+<area shape="poly" id="edge15_Node000009_Node000007" title=" " alt="" coords="568,224,596,208,622,187,638,162,644,139,651,115,671,93,692,82,721,73,794,59,877,50,959,47,954,48,878,55,795,64,722,78,694,87,674,97,656,118,649,140,642,164,626,190,599,212,570,229"/>
+<area shape="rect" id="Node000010" href="$class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095" title="Whether header&#39;s folder line, if it has one, names the folder the list sits in: a pair copied elsewhe..." alt="" coords="687,108,881,152"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="560,224,671,169,706,157,702,159,673,174,562,229"/>
+<area shape="rect" id="Node000012" href="$class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc" title="The header lines for a list." alt="" coords="961,279,1146,306"/>
+<area shape="poly" id="edge14_Node000009_Node000012" title=" " alt="" coords="592,223,655,212,731,203,814,202,896,213,930,223,963,237,1021,270,1015,270,961,242,929,228,895,218,814,207,732,208,656,217,593,229"/>
+<area shape="rect" id="Node000013" href="$class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1" title="The digest of a list as the record keeps it: SHA&#45;256 of the exact bytes, hexadecimal,..." alt="" coords="694,227,874,254"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="624,238,681,240,676,241,625,243"/>
+<area shape="rect" id="Node000014" href="$class_gpg_id_generation.html#a2e43ee7d9b9fe9a24572a1b2e1c9654d" title="Whether header fits the store this device knows by pinned: its store line names that id,..." alt="" coords="677,279,891,306"/>
+<area shape="poly" id="edge16_Node000009_Node000014" title=" " alt="" coords="604,252,701,275,696,275,604,258"/>
+<area shape="rect" id="Node000015" href="$class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4" title="The header a .gpg&#45;id&#39;s bytes declare." alt="" coords="696,331,872,358"/>
+<area shape="poly" id="edge18_Node000009_Node000015" title=" " alt="" coords="556,252,609,284,673,315,699,326,693,326,671,320,606,289,555,257"/>
+<area shape="rect" id="Node000016" href="$class_gpg_id_generation.html#aa86015bb280ffcb87fe676eed5fd3820" title="The refusal for a list older than the one accepted here: a rollback, or an unbound list that could be..." alt="" coords="687,383,881,410"/>
+<area shape="poly" id="edge20_Node000009_Node000016" title=" " alt="" coords="546,252,598,309,634,341,674,368,690,377,685,377,671,372,630,345,594,313,544,257"/>
+<area shape="rect" id="Node000017" href="$class_gpg_id_generation.html#af86ff868df611b4db16a014a414f943c" title="How a holder of the signing key gets through a refusal, in words: saving the recipients writes the ne..." alt="" coords="944,408,1163,436"/>
+<area shape="poly" id="edge23_Node000009_Node000017" title=" " alt="" coords="541,253,559,290,587,337,625,384,648,404,674,419,712,435,752,445,793,451,835,452,915,448,980,440,986,439,915,453,835,458,793,456,751,450,710,440,671,424,645,408,621,388,582,340,554,292,539,257"/>
+<area shape="rect" id="Node000011" href="$class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4" title="The store&#45;relative folder of gpgIdFile, as written in and compared against the folder line: ...." alt="" coords="957,116,1150,144"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="881,127,944,129,939,130,882,132"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="856,150,897,169,970,218,1028,269,1023,267,967,222,894,173,856,155"/>
+<area shape="poly" id="edge17_Node000014_Node000012" title=" " alt="" coords="891,290,948,292,943,293,891,295"/>
+<area shape="poly" id="edge19_Node000015_Node000012" title=" " alt="" coords="859,327,960,310,965,309,860,333"/>
+<area shape="poly" id="edge21_Node000016_Node000012" title=" " alt="" coords="855,379,895,367,958,340,1012,315,1017,313,960,345,897,372,856,385"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="882,403,931,410,926,410,882,408"/>
+</map>

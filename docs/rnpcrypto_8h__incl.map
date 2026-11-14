@@ -1,0 +1,15 @@
+<map id="src/rnpcrypto.h" name="src/rnpcrypto.h">
+<area shape="rect" id="Node000001" title="RnpCrypto, in&#45;process OpenPGP encryption and decryption through the RNP library." alt="" coords="256,5,374,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,102,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,36,116,79,114,74,267,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="126,81,221,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,33,213,76,211,71,287,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="245,81,299,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="310,32,289,70,286,66,305,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="323,81,392,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="324,31,345,69,340,67,321,36"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="417,81,509,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="342,31,426,74,420,74,341,36"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="533,81,619,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="362,31,520,77,515,78,361,36"/>
+</map>

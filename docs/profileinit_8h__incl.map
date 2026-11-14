@@ -1,0 +1,11 @@
+<map id="src/profileinit.h" name="src/profileinit.h">
+<area shape="rect" id="Node000001" title="Initialising a new profile&#39;s store (.gpg&#45;id, signature, Git) with blocking processes,..." alt="" coords="199,5,317,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,140,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="227,34,120,78,118,73,222,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="164,81,218,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,32,215,72,212,67,243,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="242,81,407,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="271,31,305,70,300,69,269,36"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="431,81,500,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="295,31,419,76,414,77,295,36"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ProcessOutputPanel::isSensitiveProcess" name="ProcessOutputPanel::isSensitiveProcess">
+<area shape="rect" id="Node000001" title="Whether a process&#39;s output may carry secrets and must never reach this long&#45;lived panel (pass show,..." alt="" coords="5,21,156,66"/>
+<area shape="rect" id="Node000002" href="$namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e" title="What is known about pid." alt="" coords="204,29,352,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,41,191,43,185,43,156,46"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="244,28,238,20,243,11,256,5,278,3,301,5,315,14,310,14,300,10,278,8,257,10,246,15,244,20,248,30"/>
+</map>

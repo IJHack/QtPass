@@ -1,0 +1,7 @@
+<map id="ImitatePass::addGenerationHeader" name="ImitatePass::addGenerationHeader">
+<area shape="rect" id="Node000001" title="Put the generation header on a list that is about to be signed: reserve a generation above what this ..." alt="" coords="427,5,628,50"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40" title="Write the enabled recipients to a .gpg&#45;id, atomically: a write that fails halfway (full disk,..." alt="" coords="180,14,379,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,28,379,30,379,25,414,28"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,14,132,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,28,132,30,132,25,167,27"/>
+</map>

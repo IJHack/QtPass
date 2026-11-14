@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_m.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,35 +114,184 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>m_allFields&#160;:&#160;<a class="el" href="class_password_dialog.html#a4d4d0ed37161f3f768e27ffea9267bfc">PasswordDialog</a></li>
+<li>m_altAlone&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#af79fd843a3acf7a7a22e822b634349f9">MenuBarPeek</a></li>
+<li>m_altDown&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a54faf416473c8e3140cffebbef56f9cb">MenuBarPeek</a></li>
+<li>m_autoScroll&#160;:&#160;<a class="el" href="class_process_output_panel.html#a9fe04260a7925ed525234ce4f777c0e0">ProcessOutputPanel</a></li>
+<li>m_availableTemplates&#160;:&#160;<a class="el" href="class_password_dialog.html#a75220d8f4a10a68f7ef6a3a8403ca886">PasswordDialog</a></li>
+<li>m_busy&#160;:&#160;<a class="el" href="class_grep_search_controller.html#ae25e78e0a7f2f2465e2d1d35525f7a16">GrepSearchController</a></li>
+<li>m_cachedCurrentDateTime&#160;:&#160;<a class="el" href="class_users_dialog.html#a6d7caab10693c9c45c0089c931f5843b">UsersDialog</a></li>
+<li>m_cachedDateTimeValid&#160;:&#160;<a class="el" href="class_users_dialog.html#aa6d656c586c0469fe10e5a7055255c07">UsersDialog</a></li>
+<li>m_cachedNameFilter&#160;:&#160;<a class="el" href="class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216">UsersDialog</a></li>
+<li>m_cachedPatternString&#160;:&#160;<a class="el" href="class_users_dialog.html#a01126f883fe8cf0f351d340945af8552">UsersDialog</a></li>
+<li>m_cancelled&#160;:&#160;<a class="el" href="class_grep_search_controller.html#acc3b83e83956659a141a5a263b25700d">GrepSearchController</a></li>
+<li>m_clearButton&#160;:&#160;<a class="el" href="class_process_output_panel.html#ad89054f7933d1cc3ebe27430403017ef">ProcessOutputPanel</a></li>
+<li>m_clearTimer&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a91c5a3ccc3d2fe55a2d6c1ca7fbba3c4">ClipboardManager</a></li>
+<li>m_clipboard&#160;:&#160;<a class="el" href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">QtPass</a></li>
+<li>m_clippedText&#160;:&#160;<a class="el" href="class_clipboard_manager.html#abf4dadc78d7a07b55e49365b0c1f44dc">ClipboardManager</a></li>
+<li>m_code&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a0635df424ec67801fca97ba3679b636f">OtpCodeWidget</a></li>
+<li>m_codeLabel&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a57208d6ef3f8ad0277b10b65f042624b">OtpCodeWidget</a></li>
+<li>m_container&#160;:&#160;<a class="el" href="class_password_display_panel.html#a580a255eef7ca0b304bcd45cefb589da">PasswordDisplayPanel</a></li>
+<li>m_contentLoaded&#160;:&#160;<a class="el" href="class_password_dialog.html#aca8083fc7b1db34e610b59781cfa008b">PasswordDialog</a></li>
+<li>m_copyButton&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a2cc6c61688b678f306c15b13f224dd15">OtpCodeWidget</a></li>
+<li>m_copyButtonOriginalText&#160;:&#160;<a class="el" href="class_export_public_key_dialog.html#af6f5a95262f162c3baa9472a5eccba31">ExportPublicKeyDialog</a></li>
+<li>m_copyRequestFile&#160;:&#160;<a class="el" href="class_main_window.html#a734bea0e0233113bdd6baa6328d9b0d6">MainWindow</a></li>
+<li>m_counter&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a1df63d1d2ffa40269e35bc37d825a636">OtpCodeWidget</a>, <a class="el" href="class_process_output_panel.html#a53ef333e7ca07cef17d5c22364bfde09">ProcessOutputPanel</a></li>
+<li>m_currentEntry&#160;:&#160;<a class="el" href="class_config_dialog.html#a514c0cbe5f770c2eef82bee516c4672d">ConfigDialog</a></li>
+<li>m_currentTemplateName&#160;:&#160;<a class="el" href="class_password_dialog.html#af86a69cb846a1c3ae7721eb27c723a20">PasswordDialog</a></li>
+<li>m_customPasswordChars&#160;:&#160;<a class="el" href="class_config_dialog.html#a8bccd621f9d7c7eb7058e7608a106a02">ConfigDialog</a></li>
+<li>m_dir&#160;:&#160;<a class="el" href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">UsersDialog</a></li>
+<li>m_displayPanel&#160;:&#160;<a class="el" href="class_main_window.html#a358125b8efbfbe4b22eecd2716c2dc7c">MainWindow</a></li>
+<li>m_drainCheckPosted&#160;:&#160;<a class="el" href="class_executor.html#a68704b9a35398e88fa70ae00600d70a5">Executor</a></li>
+<li>m_edit&#160;:&#160;<a class="el" href="class_process_output_panel.html#ac65762c3217a8a20d3edc5affe300fcf">ProcessOutputPanel</a></li>
+<li>m_editor&#160;:&#160;<a class="el" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">FieldLabel</a></li>
+<li>m_entries&#160;:&#160;<a class="el" href="class_config_dialog.html#a270dda538d799ca4e79373f31854e75f">ConfigDialog</a></li>
+<li>m_exec&#160;:&#160;<a class="el" href="class_gpg_id_signer.html#a10d57b933201068f3e3157133fab5112">GpgIdSigner</a></li>
+<li>m_execQueue&#160;:&#160;<a class="el" href="class_executor.html#a32c4982fc25ba41f0b3ca420807c3e83">Executor</a></li>
+<li>m_failed&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a8b682fe8ddfd68fecfab7de107ec25cd">KeygenDialog</a></li>
+<li>m_ffi&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a90630c8fa95947522fdaec175b62ea8b">RnpCrypto</a></li>
+<li>m_fields&#160;:&#160;<a class="el" href="class_password_dialog.html#a1ec8b1c5dbc22b837c0ef488564824f9">PasswordDialog</a></li>
+<li>m_file&#160;:&#160;<a class="el" href="class_password_dialog.html#a760b0e586c9e090365f50b20bc327877">PasswordDialog</a></li>
+<li>m_finished&#160;:&#160;<a class="el" href="class_keygen_dialog.html#adb6748c6f81244e2983a7eadf508a79a">KeygenDialog</a></li>
+<li>m_firstShowCompleted&#160;:&#160;<a class="el" href="class_main_window.html#a93f01ed6916dd3114676309ab386fe46">MainWindow</a></li>
+<li>m_freshStart&#160;:&#160;<a class="el" href="class_main_window.html#a57db704bcff94381497191c3a0f52299">MainWindow</a></li>
+<li>m_fs&#160;:&#160;<a class="el" href="class_store_tree.html#aae5d926bbe44b638e97316cc9e34182a">StoreTree</a></li>
+<li>m_generate&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a73444781c895e507e9048dba7dfb77e8">KeyWizardPage</a></li>
+<li>m_git&#160;:&#160;<a class="el" href="class_programs_wizard_page.html#a3ef430c97905ad42348542127527a501">ProgramsWizardPage</a></li>
+<li>m_gpg&#160;:&#160;<a class="el" href="class_gpg_id_signer.html#abe8786dc6b8604cba9326ddda0abb0b8">GpgIdSigner</a>, <a class="el" href="class_programs_wizard_page.html#a04679c431e2e08f1dad5fc1452001704">ProgramsWizardPage</a></li>
+<li>m_gpgExe&#160;:&#160;<a class="el" href="class_import_key_dialog.html#acdccd08b8f1f2198f8a8a8ba10304830">ImportKeyDialog</a>, <a class="el" href="class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a">UsersDialog</a></li>
+<li>m_gpgSettings&#160;:&#160;<a class="el" href="class_config_dialog.html#a02ee4fd4b269da59846fb38b8efda5ee">ConfigDialog</a></li>
+<li>m_gpgStatus&#160;:&#160;<a class="el" href="class_programs_wizard_page.html#a5f4168c6cc58916041d9bc602f2a2e70">ProgramsWizardPage</a></li>
+<li>m_grep&#160;:&#160;<a class="el" href="class_imitate_pass.html#adf06adb6a787c9e7c6c19ed1da9d8b05">ImitatePass</a>, <a class="el" href="class_main_window.html#a00e108f09fd76b84ae1a11525168812e">MainWindow</a>, <a class="el" href="class_real_pass.html#a0016113b00ad8de4b36b33c4b3b1f0cc">RealPass</a></li>
+<li>m_grid&#160;:&#160;<a class="el" href="class_password_display_panel.html#a50268730943ba64e36bc8e13d2fdd2d8">PasswordDisplayPanel</a></li>
+<li>m_hasCode&#160;:&#160;<a class="el" href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">OtpCodeWidget</a></li>
+<li>m_hidePassword&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a8379cad4848a90bbca01e9cecebea98b">DoneWizardPage</a></li>
+<li>m_importedKeyId&#160;:&#160;<a class="el" href="class_import_key_dialog.html#a7eacdb5d2d478f846bbe54be938e1538">ImportKeyDialog</a></li>
+<li>m_initOnAccept&#160;:&#160;<a class="el" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">UsersDialog</a></li>
+<li>m_initSucceeded&#160;:&#160;<a class="el" href="class_main_window.html#accfd1464f92298d292b7420d9e8aad23">MainWindow</a></li>
+<li>m_insertDone&#160;:&#160;<a class="el" href="class_real_pass.html#a65ad5fa1183824c29a219aeca72ae112">RealPass</a></li>
+<li>m_insertPending&#160;:&#160;<a class="el" href="class_real_pass.html#a257df61a55c93d151c12a8269dae3504">RealPass</a></li>
+<li>m_insertPlaced&#160;:&#160;<a class="el" href="class_imitate_pass.html#a18b7e9be840532e83641ffada699e7ce">ImitatePass</a></li>
+<li>m_insertQueue&#160;:&#160;<a class="el" href="class_real_pass.html#af4c87fe10cd48503c70e7e78ed135fab">RealPass</a></li>
+<li>m_insertsAhead&#160;:&#160;<a class="el" href="class_password_dialog.html#a1b29fbf519a6cdd8bb2f3cf064e3a1dc">PasswordDialog</a></li>
+<li>m_insertsPending&#160;:&#160;<a class="el" href="class_pass.html#ae90247bfa03db35b4e4d4449b0a0065e">Pass</a></li>
+<li>m_instance&#160;:&#160;<a class="el" href="class_qt_pass_settings.html#adee7d69291b6dea108ddc7b5e0399103">QtPassSettings</a></li>
+<li>m_isNew&#160;:&#160;<a class="el" href="class_password_dialog.html#a624596401aa7d44b384dc715b126fb90">PasswordDialog</a></li>
+<li>m_keyId&#160;:&#160;<a class="el" href="class_export_public_key_dialog.html#a5dfa97fcc036ae75f8dcb111a62e9ac8">ExportPublicKeyDialog</a></li>
+<li>m_keys&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a7b3b53062e4879094eb06ae05a77b348">FirstRunWizard</a>, <a class="el" href="class_gpg_id_signer.html#a71d5846abc8be14dcc76600b8ff847db">GpgIdSigner</a></li>
+<li>m_keyTip&#160;:&#160;<a class="el" href="class_config_dialog.html#abcc0cd3904a519549464465a916b11c6">ConfigDialog</a></li>
+<li>m_lastFilter&#160;:&#160;<a class="el" href="class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8">UsersDialog</a></li>
+<li>m_linkCommits&#160;:&#160;<a class="el" href="class_real_pass.html#ac7c17226af0d3366f2e9388a08475839">RealPass</a></li>
+<li>m_list&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a11a1086c1ece6a1fdeff02bbd06deac2">KeyWizardPage</a></li>
+<li>m_loadingForm&#160;:&#160;<a class="el" href="class_config_dialog.html#a366cccaf889a9aba07bd47747b3b54b4">ConfigDialog</a></li>
+<li>m_markedSecrets&#160;:&#160;<a class="el" href="class_password_display_panel.html#a3be383ffb43c6be89ce0d45f040cc27c">PasswordDisplayPanel</a></li>
+<li>m_maxPlaintext&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a60b0a0882191358396fee29e7b54a0aa">RnpCrypto</a></li>
+<li>m_mode&#160;:&#160;<a class="el" href="class_grep_search_controller.html#aef42d6b79cd42f2129e0c55714916434">GrepSearchController</a></li>
+<li>m_nameTip&#160;:&#160;<a class="el" href="class_config_dialog.html#a35bda88aa17a961c5683190d99d374f7">ConfigDialog</a></li>
+<li>m_newEntryFolder&#160;:&#160;<a class="el" href="class_password_dialog.html#a2de8de1813e3f297d8f739b2b2793122">PasswordDialog</a></li>
+<li>m_otherCopies&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a4a616d713f5cf757c429bcca6798fa4d">ClipboardManager</a></li>
+<li>m_otherLines&#160;:&#160;<a class="el" href="class_password_dialog.html#a1570f5d1c3d81673f37c71b33063e39e">PasswordDialog</a></li>
+<li>m_otpLine&#160;:&#160;<a class="el" href="class_password_dialog.html#adb71161605aa67d32918fbff402fdb1c">PasswordDialog</a></li>
+<li>m_otpRequestFile&#160;:&#160;<a class="el" href="class_main_window.html#a968492980a2afd7e2ad940fd49ff2f83">MainWindow</a></li>
+<li>m_otpWarning&#160;:&#160;<a class="el" href="class_password_dialog.html#afa36e913c806c82e962d75daf75b2953">PasswordDialog</a></li>
+<li>m_pass&#160;:&#160;<a class="el" href="class_keygen_dialog.html#ab9717d1d85f52af420ee5158d433b8f7">KeygenDialog</a>, <a class="el" href="class_password_dialog.html#a3acaf78f140cb84e22fcdb74b34c94c6">PasswordDialog</a>, <a class="el" href="class_programs_wizard_page.html#a22621278890b1cc096e9d8639453e643">ProgramsWizardPage</a>, <a class="el" href="class_store_model.html#a67138cb92b226ee1dfe186e4b1707280">StoreModel</a>, <a class="el" href="class_users_dialog.html#af37c4ba124940166decd520d1b1e3428">UsersDialog</a></li>
+<li>m_passConfig&#160;:&#160;<a class="el" href="class_password_dialog.html#aab7118867180538bae7a84bcdb25c13e">PasswordDialog</a></li>
+<li>m_passGitWarning&#160;:&#160;<a class="el" href="class_config_dialog.html#a88445c315f1570bfcb7a867527874dea">ConfigDialog</a></li>
+<li>m_passphrase&#160;:&#160;<a class="el" href="class_rnp_crypto.html#ad475a4fc09c8491055d81f980ce8e271">RnpCrypto</a></li>
+<li>m_passStore&#160;:&#160;<a class="el" href="class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b">UsersDialog</a></li>
+<li>m_path&#160;:&#160;<a class="el" href="class_store_wizard_page.html#aae5d59844d129b96be47ff6749ff7e7c">StoreWizardPage</a></li>
+<li>m_pathTip&#160;:&#160;<a class="el" href="class_config_dialog.html#ac4f4c0cd0674ec2cceb467d2e5a4e731">ConfigDialog</a></li>
+<li>m_peeking&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a40df1a3e7e3238b2e4874f859e586b25">MenuBarPeek</a></li>
+<li>m_pendingErrors&#160;:&#160;<a class="el" href="class_executor.html#a5c333622022bd27ab87b0c581496f66f">Executor</a></li>
+<li>m_pendingInserts&#160;:&#160;<a class="el" href="class_imitate_pass.html#ad632c7dbec6721c349ea86e21a75c744">ImitatePass</a></li>
+<li>m_pendingShows&#160;:&#160;<a class="el" href="class_pass.html#af310a136a6d9ec695c490215eef4d937">Pass</a></li>
+<li>m_preselect&#160;:&#160;<a class="el" href="class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5">UsersDialog</a></li>
+<li>m_previousClipboard&#160;:&#160;<a class="el" href="class_clipboard_manager.html#adf12996e998b62d918f9750ff1923b5d">ClipboardManager</a></li>
+<li>m_previousSelection&#160;:&#160;<a class="el" href="class_clipboard_manager.html#abb7f95aadcd33bad8021ccfc8a26f0f0">ClipboardManager</a></li>
+<li>m_primaryOf&#160;:&#160;<a class="el" href="class_config_dialog.html#a4ccba57212e79149d0f1726084f46fb5">ConfigDialog</a></li>
+<li>m_process&#160;:&#160;<a class="el" href="class_executor.html#af165b60b2641b431ca57c506e5c5d9e8">Executor</a></li>
+<li>m_processOutput&#160;:&#160;<a class="el" href="class_main_window.html#a4ebc3150bc50eb101d504fbedff4c419">MainWindow</a></li>
+<li>m_progress&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">OtpCodeWidget</a></li>
+<li>m_progressIndicator&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a1d32ce07e0d9fbdc89d2caea7a4f8e8d">KeygenDialog</a></li>
+<li>m_proxy&#160;:&#160;<a class="el" href="class_store_tree.html#ab5f28d041e80d41330917468c30fdc56">StoreTree</a></li>
+<li>m_qtPass&#160;:&#160;<a class="el" href="class_main_window.html#ae772473e8fa0047f5db5bcb410dc88a1">MainWindow</a></li>
+<li>m_recheckSigners&#160;:&#160;<a class="el" href="class_config_dialog.html#a93c7c680886d37da60613c14c9a0b236">ConfigDialog</a></li>
+<li>m_reencryptActive&#160;:&#160;<a class="el" href="class_imitate_pass.html#a41666e690d1fce6474bed3a5f6485314">ImitatePass</a></li>
+<li>m_reencryptCancel&#160;:&#160;<a class="el" href="class_imitate_pass.html#ab880f27383b3786e10782d30df512a17">ImitatePass</a></li>
 <li>m_reencryptEnv&#160;:&#160;<a class="el" href="class_imitate_pass.html#a918e7256c5c1a934a29f311e55205b71">ImitatePass</a></li>
-<li>m_settings&#160;:&#160;<a class="el" href="class_pass.html#a21a21503b387384833ebd2271bd18592">Pass</a></li>
+<li>m_reencryptProgress&#160;:&#160;<a class="el" href="class_main_window.html#a42a13a21710984a7ba71158b5651c0ee">MainWindow</a></li>
+<li>m_reencryptRunning&#160;:&#160;<a class="el" href="class_main_window.html#afe4566e631ef61e85d4f22c675de3fe2">MainWindow</a></li>
+<li>m_reencryptThread&#160;:&#160;<a class="el" href="class_imitate_pass.html#a783c34e41f2f2d3903d9c7d5cfe4935c">ImitatePass</a></li>
+<li>m_result&#160;:&#160;<a class="el" href="class_imitate_pass_1_1_transaction_helper.html#af6eeacd3d9538f511e24116dbf7a83ee">ImitatePass::TransactionHelper</a></li>
+<li>m_saving&#160;:&#160;<a class="el" href="class_password_dialog.html#a77f54fa5d5517a2a9e452ecca0ec00f5">PasswordDialog</a></li>
+<li>m_secondsRemaining&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a692ab7bf0cea953e925c0e02a8a81d2f">OtpCodeWidget</a></li>
+<li>m_seq&#160;:&#160;<a class="el" href="class_native_grep.html#acce2afcd559c2272585093278ca4643e">NativeGrep</a></li>
+<li>m_settings&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a6be706d678e87d55d9a27de30a5b1da9">FirstRunWizard</a>, <a class="el" href="class_otp_code_widget.html#adcfdedcd694498a7f6eba42049b16751">OtpCodeWidget</a>, <a class="el" href="class_pass.html#a21a21503b387384833ebd2271bd18592">Pass</a></li>
+<li>m_sharedKeyWarning&#160;:&#160;<a class="el" href="class_config_dialog.html#a5bcbd3edb7659a10b98fdeefdd706162">ConfigDialog</a></li>
+<li>m_shownByThisPress&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a5a5051065c4343673880b34b27827625">MenuBarPeek</a></li>
+<li>m_shownFile&#160;:&#160;<a class="el" href="class_main_window.html#aaba13f61c81edb811a593818518cf831">MainWindow</a></li>
+<li>m_status&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a9f5bf936eb127ead6f6e20143cfc0aa1">KeyWizardPage</a>, <a class="el" href="class_store_wizard_page.html#a35c334a83f1ff63cc39b32564d706947">StoreWizardPage</a></li>
+<li>m_store&#160;:&#160;<a class="el" href="class_store_tree.html#a015b7288cf004733d1a55f6de6ffe054">StoreTree</a></li>
+<li>m_storeRoot&#160;:&#160;<a class="el" href="class_password_dialog.html#a9de844765b306cb192ff837677d1c9f0">PasswordDialog</a></li>
+<li>m_summary&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a102c2dbf3c931b38f38ed49810f485d2">DoneWizardPage</a></li>
+<li>m_templateLines&#160;:&#160;<a class="el" href="class_password_dialog.html#ad8d89451f12b86a6733e17b781f52a25">PasswordDialog</a></li>
+<li>m_templateShortcut&#160;:&#160;<a class="el" href="class_password_dialog.html#a78ace54e705a7900dfaa482b8a3abc68">PasswordDialog</a></li>
+<li>m_templating&#160;:&#160;<a class="el" href="class_password_dialog.html#a0babf3db47a8da35da550c991be84f0c">PasswordDialog</a></li>
+<li>m_themeSwitched&#160;:&#160;<a class="el" href="class_main_window.html#a6e89bee83cd89b0e4e08ca966ee6c898">MainWindow</a></li>
+<li>m_toggle&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#ae517f5f7fb38d88a1ed41d278a60eed4">MenuBarPeek</a></li>
+<li>m_transaction&#160;:&#160;<a class="el" href="class_imitate_pass.html#a8900e1dace8bc434e07b57d88901dc3d">ImitatePass</a>, <a class="el" href="class_imitate_pass_1_1_transaction_helper.html#abf7c83b574c66cc8513ba84d7dd7d893">ImitatePass::TransactionHelper</a></li>
+<li>m_transactionOutput&#160;:&#160;<a class="el" href="class_imitate_pass.html#a1fb9d35f19a5a7b0ff56c3e1e4b398ee">ImitatePass</a></li>
+<li>m_tray&#160;:&#160;<a class="el" href="class_main_window.html#ae70281ce55cf133f26b92d2f066f038a">MainWindow</a></li>
+<li>m_trayIcon&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a52cc5050c6ad5f552172fe9abc18e38f">DoneWizardPage</a></li>
+<li>m_tree&#160;:&#160;<a class="el" href="class_main_window.html#a542c3ac7e7c9c53875db4db4768b9c2c">MainWindow</a></li>
+<li>m_uiEnabled&#160;:&#160;<a class="el" href="class_main_window.html#a0d3084672c133448c06859bf52cc452c">MainWindow</a></li>
+<li>m_uiWatchdog&#160;:&#160;<a class="el" href="class_main_window.html#a2065078258f08feaf7088750a0fabe27">MainWindow</a></li>
+<li>m_uncommittedGpgId&#160;:&#160;<a class="el" href="class_imitate_pass.html#ab4c1b653dbb4b542b7a3a5f6333785d8">ImitatePass</a></li>
+<li>m_useGit&#160;:&#160;<a class="el" href="class_store_wizard_page.html#abaaf1e540ea6366d352a691eea7a3db5">StoreWizardPage</a></li>
+<li>m_usePass&#160;:&#160;<a class="el" href="class_programs_wizard_page.html#af56daa51f19a313059a61f5bc0e6bca2">ProgramsWizardPage</a></li>
+<li>m_usePwgen&#160;:&#160;<a class="el" href="class_password_dialog.html#aa64e407906edab1a583da58208c0d8f7">PasswordDialog</a></li>
+<li>m_userList&#160;:&#160;<a class="el" href="class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2">UsersDialog</a></li>
+<li>m_view&#160;:&#160;<a class="el" href="class_store_tree.html#a6d27350c46f45bdf6d42bbd58a1a7495">StoreTree</a></li>
+<li>m_widgetParent&#160;:&#160;<a class="el" href="class_password_display_panel.html#a1e9ba0ef466c4207b26b898e1dc50a18">PasswordDisplayPanel</a></li>
+<li>m_window&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a81f0b0b1a9bd335a3b8770b80ae7aad9">MenuBarPeek</a></li>
+<li>m_wizard&#160;:&#160;<a class="el" href="class_done_wizard_page.html#a69c828d35c9eab514e461aad4afd5789">DoneWizardPage</a>, <a class="el" href="class_key_wizard_page.html#a812e04fd670f8ce3d6d70a4dbf699248">KeyWizardPage</a>, <a class="el" href="class_programs_wizard_page.html#a4ef7f86477141a85d0561f592fe02cc8">ProgramsWizardPage</a>, <a class="el" href="class_store_wizard_page.html#ae5388dcec4290d7df80987b389a0e57b">StoreWizardPage</a></li>
+<li>m_workers&#160;:&#160;<a class="el" href="class_native_grep.html#acf4bbf115d80b421255145c2a4d6ca1d">NativeGrep</a></li>
 <li>MainWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a></li>
 <li>marginallyValid()&#160;:&#160;<a class="el" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">UserInfo</a></li>
-<li>matchFile()&#160;:&#160;<a class="el" href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">NativeGrep</a></li>
+<li>markOtpFieldEdited()&#160;:&#160;<a class="el" href="class_password_dialog.html#acd29a018a14978015d932a052da966cf">PasswordDialog</a></li>
+<li>markSecretKeys()&#160;:&#160;<a class="el" href="class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2">UsersDialog</a></li>
+<li>matchFile()&#160;:&#160;<a class="el" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">NativeGrep</a></li>
 <li>MAX_CONFIG_LENGTH&#160;:&#160;<a class="el" href="class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a">Totp</a></li>
 <li>MAX_DIGITS&#160;:&#160;<a class="el" href="class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0">Totp</a></li>
 <li>MAX_STEP&#160;:&#160;<a class="el" href="class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505">Totp</a></li>
+<li>maximizeAction&#160;:&#160;<a class="el" href="class_tray_icon.html#a6eeb738d4e2274fb8becf21726455db3">TrayIcon</a></li>
 <li>MaxLines&#160;:&#160;<a class="el" href="class_process_output_panel.html#a13d9b8f917417fc7e49b2b3fa785d0a7">ProcessOutputPanel</a></li>
-<li>maxOutputArgs()&#160;:&#160;<a class="el" href="class_pass.html#a37740695a420cdcd972994c576f9f049">Pass</a></li>
+<li>maxMessageBytes&#160;:&#160;<a class="el" href="class_single_application.html#a94cc05f4d37956aded878645854b6b34">SingleApplication</a></li>
+<li>maxOutputArgs()&#160;:&#160;<a class="el" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass</a></li>
 <li>MenuBarPeek()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd">MenuBarPeek</a></li>
 <li>messageAvailable()&#160;:&#160;<a class="el" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow</a>, <a class="el" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">SingleApplication</a></li>
 <li>mimeData()&#160;:&#160;<a class="el" href="class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09">StoreModel</a></li>
 <li>mimeTypes()&#160;:&#160;<a class="el" href="class_store_model.html#a40620d3b37bb04b06b999308bf2ee137">StoreModel</a></li>
 <li>MIN_DIGITS&#160;:&#160;<a class="el" href="class_totp.html#a28370b47bc9f3c92a981a6fcdb543368">Totp</a></li>
-<li>mkpathForStore()&#160;:&#160;<a class="el" href="class_util.html#af014b42fcbaf221a947950a289ad4d1b">Util</a></li>
-<li>mouseDoubleClickEvent()&#160;:&#160;<a class="el" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel</a></li>
-<li>mouseReleaseEvent()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#a242041f66b392847e4963c5e70451977">SecretLineEdit</a></li>
+<li>minimizeAction&#160;:&#160;<a class="el" href="class_tray_icon.html#a93823602fd2ec7d5a42ba98a9d542c47">TrayIcon</a></li>
+<li>mkpathForStore()&#160;:&#160;<a class="el" href="class_util.html#aa1d5ab65c22c21fe556ba0251e035f23">Util</a></li>
+<li>mouseDoubleClickEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a3e29a7d444e39f91c52b83a920791a8d">DeselectableTreeView</a>, <a class="el" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel</a></li>
+<li>mousePressEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#abfcdd23266bf6bcd318eeb25aac40ea7">DeselectableTreeView</a></li>
+<li>mouseReleaseEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a0209e85dea0f1cf67c70c9545500eca5">DeselectableTreeView</a>, <a class="el" href="class_secret_line_edit.html#a242041f66b392847e4963c5e70451977">SecretLineEdit</a></li>
 <li>Move()&#160;:&#160;<a class="el" href="class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1">ImitatePass</a>, <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>, <a class="el" href="class_real_pass.html#acbbb510bd58cdceae53d34985453fc83">RealPass</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

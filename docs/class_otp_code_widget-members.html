@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_otp_code_widget.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">OtpCodeWidget Member List</div></div>
 </div><!--header-->
@@ -103,14 +121,25 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#a94487d5f3e33884162e3d43eaf22d9c2">code</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6">copyRequested</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#a0635df424ec67801fca97ba3679b636f">m_code</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#a57208d6ef3f8ad0277b10b65f042624b">m_codeLabel</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#a2cc6c61688b678f306c15b13f224dd15">m_copyButton</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#a1df63d1d2ffa40269e35bc37d825a636">m_counter</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#aa90134420a39f8623f7f26a001818611">m_hasCode</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">m_progress</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#a692ab7bf0cea953e925c0e02a8a81d2f">m_secondsRemaining</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#adcfdedcd694498a7f6eba42049b16751">m_settings</a></td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd">OtpCodeWidget</a>(Totp::Settings settings, bool withCopyButton, bool monospace, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec">refresh</a>(quint64 unixTime)</td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_otp_code_widget.html#ab0d806d623337313c961d284a7ef2758">secondsRemaining</a>() const -&gt; uint</td><td class="entry"><a class="el" href="class_otp_code_widget.html">OtpCodeWidget</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

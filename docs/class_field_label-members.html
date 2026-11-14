@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_field_label.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">FieldLabel Member List</div></div>
 </div><!--header-->
@@ -104,16 +122,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="even"><td class="entry"><a class="el" href="class_field_label.html#a24ff71ebb79c3ad3b5c4bb36ddd5aeb2">contextMenuEvent</a>(QContextMenuEvent *event) override</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_field_label.html#ae22070170533686456e216dc4e7fe62f">eventFilter</a>(QObject *watched, QEvent *event) -&gt; bool override</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel</a>(const QString &amp;name, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">finishEdit</a>(bool commit)</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_field_label.html#a30ecfc400277695f42c82ece55adc22d">m_editor</a></td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">mouseDoubleClickEvent</a>(QMouseEvent *event) override</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_field_label.html#a656a2fae4db3fbc2ff06e154b1ecbcee">removeRequested</a>()</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00">renamed</a>(const QString &amp;from, const QString &amp;to)</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e">startEdit</a>()</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_field_label.html#a97d47e3ccb600aa8012953dc801079f8">~FieldLabel</a>() override</td><td class="entry"><a class="el" href="class_field_label.html">FieldLabel</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,7 @@
+<map id="src/fieldlabel.h" name="src/fieldlabel.h">
+<area shape="rect" id="Node000001" title="FieldLabel: the in&#45;place renamable, removable name label of a key: value field in PasswordDialog." alt="" coords="101,5,217,33"/>
+<area shape="rect" id="Node000002" href="$fieldlabel_8cpp.html" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="5,81,137,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,43,88,83,85,78,129,44"/>
+<area shape="rect" id="Node000003" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="160,81,334,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,41,234,81,229,81,185,46"/>
+</map>

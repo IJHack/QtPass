@@ -1,5 +1,11 @@
 <map id="StoreTree::view" name="StoreTree::view">
-<area shape="rect" id="Node000001" title=" " alt="" coords="205,5,326,33"/>
-<area shape="rect" id="Node000002" href="$class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb" title="Attach the proxy model to the view and set its look: hidden header, indentation, scroll bars,..." alt="" coords="5,5,157,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,19,157,22,157,17,191,19"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="730,29,852,57"/>
+<area shape="rect" id="Node000002" href="$class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb" title="Attach the proxy model to the view and set its look: hidden header, indentation, scroll bars,..." alt="" coords="531,29,682,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="712,43,683,46,682,41,717,43"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="513,43,484,46,483,41,518,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="421,14,410,10,385,8,362,10,349,15,346,20,352,30,347,28,341,20,346,11,361,5,385,3,411,5,427,14"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
 </map>

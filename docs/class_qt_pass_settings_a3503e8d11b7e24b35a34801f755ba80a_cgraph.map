@@ -1,0 +1,9 @@
+<map id="QtPassSettings::getPasswordConfiguration" name="QtPassSettings::getPasswordConfiguration">
+<area shape="rect" id="Node000001" title="Get complete password generation configuration." alt="" coords="5,28,214,72"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="263,5,466,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,35,250,33,245,34,215,40"/>
+<area shape="rect" id="Node000004" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="262,57,467,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,59,249,65,243,66,214,65"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="515,5,738,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,17,502,19,497,19,466,22"/>
+</map>

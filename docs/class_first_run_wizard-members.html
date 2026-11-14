@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_first_run_wizard.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">FirstRunWizard Member List</div></div>
 </div><!--header-->
@@ -102,25 +120,32 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180">accept</a>() override</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>DonePage</b> enum value (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92ca54359cdc67bdbe2ae12efab04853d293">DonePage</a> enum value</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>DoneWizardPage</b> (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d">FirstRunWizard</a>(QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>IntroPage</b> enum value (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#afb93850960a89ed80e166fa1ee4fc124">isStore</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>KeyPage</b> enum value (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a4c80ddbd79ef91cd4a0d729f0c535802">initialiseGit</a>(const QString &amp;store) -&gt; bool</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0">initialiseStore</a>(const QString &amp;store) -&gt; bool</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92cabbc2839f92bb1cfe123c56eac9dfad01">IntroPage</a> enum value</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848">isStore</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92ca60ce1c6692a23daad6b62bcac3f63e47">KeyPage</a> enum value</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>KeyWizardPage</b> (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a7b3b53062e4879094eb06ae05a77b348">m_keys</a></td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a6be706d678e87d55d9a27de30a5b1da9">m_settings</a></td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92c">Page</a> enum name</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>ProgramsPage</b> enum value (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92ca5c23923312b07c14eab159461724aa44">ProgramsPage</a> enum value</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ProgramsWizardPage</b> (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#ab50c105360babf61712dca9c6e6a85c3">secretKeys</a>(const QString &amp;gpgExecutable) -&gt; QList&lt; UserInfo &gt;</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#aba1e75b404b0982f37637cde0f087cb9">secretKeys</a>(const QString &amp;gpgExecutable) -&gt; QList&lt; UserInfo &gt;</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_first_run_wizard.html#ae784b52bdd028f2f1f92174179efaad3">settings</a>() const -&gt; AppSettings</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>StorePage</b> enum value (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92ca7ef2b8c9b360d5ef9a16b59f636c5e33">StorePage</a> enum value</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>StoreWizardPage</b> (defined in <a class="el" href="class_first_run_wizard.html">FirstRunWizard</a>)</td><td class="entry"><a class="el" href="class_first_run_wizard.html">FirstRunWizard</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<map id="parseGpgColonOutput" name="parseGpgColonOutput">
+<area shape="rect" id="Node000001" title="Parse a gpg colon listing into one UserInfo per key." alt="" coords="5,220,170,248"/>
+<area shape="poly" id="edge10_Node000001_Node000001" title=" " alt="" coords="51,220,46,211,50,201,65,195,88,193,112,196,127,204,122,206,111,201,87,199,66,201,54,205,51,211,56,219"/>
+<area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a record of a gpg colon listing by its first field." alt="" coords="239,29,354,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,218,139,147,174,105,216,68,229,62,225,66,219,72,178,108,143,150,98,221"/>
+<area shape="rect" id="Node000003" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Replace the key ID of the key being built with its fingerprint." alt="" coords="231,105,362,133"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="105,217,154,181,216,143,235,137,231,141,219,148,157,186,108,221"/>
+<area shape="rect" id="Node000004" href="$gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c" title="Start a key from a pub or sec record: key ID, the user ID the record may carry, validity,..." alt="" coords="218,181,375,209"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="165,217,205,211,201,214,167,222"/>
+<area shape="rect" id="Node000005" href="$gpgkeystate_8cpp.html#adbcf251249671777862e00f89092058b" title="Handle a uid record in GPG colon output." alt="" coords="230,257,362,285"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="168,246,217,256,212,258,169,251"/>
+<area shape="rect" id="Node000006" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="219,309,374,337"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="116,246,219,294,238,303,233,304,217,299,116,251"/>
+<area shape="rect" id="Node000007" href="$struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa" title="Construct a UserInfo with default (invalid/disabled) state." alt="" coords="227,361,366,389"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="102,246,151,295,184,322,219,346,233,355,227,355,216,351,181,326,148,299,101,251"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="260,29,255,20,259,11,273,5,296,3,321,5,336,13,330,15,320,10,296,8,275,10,263,15,260,20,265,29"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="260,105,255,96,259,87,273,81,296,79,321,81,336,90,330,90,320,86,296,84,275,86,263,91,260,96,265,105"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="260,180,255,172,259,163,273,157,296,155,321,157,336,166,330,166,320,162,296,160,275,162,263,167,260,172,265,181"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="260,256,255,248,259,239,273,233,296,231,321,233,336,242,330,242,320,238,296,236,275,238,263,243,260,248,265,257"/>
+</map>

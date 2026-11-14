@@ -1,0 +1,5 @@
+<map id="UsersDialog::updateOkButton" name="UsersDialog::updateOkButton">
+<area shape="rect" id="Node000001" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="5,5,220,33"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="268,5,459,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,17,255,19,249,19,220,22"/>
+</map>

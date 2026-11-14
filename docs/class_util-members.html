@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_util.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">Util Member List</div></div>
 </div><!--header-->
@@ -101,44 +119,50 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_util.html">Util</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a0954978822dc30f773f1302003dbea84">applyPassProcessDefaults</a>()</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a>(const AppSettings &amp;s) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a5c725b669b370ff5da26d0d31e40f7f2">copyFileReplacing</a>(const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#afaab47cf531353235a5ec8f2c6424c5e">directoriesUnder</a>(const QString &amp;dir) -&gt; QStringList</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a8ed01cfd3773e5b0034089f2f952a030">endsWithGpg</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a0364b473e6ccf9506606f406cd927c22">expandTilde</a>(const QString &amp;path) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a6f14f16322c96b174b357bbad4b66b67">_env</a></td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aeccb471a23085461c3c79f24f7f82e2c">_envInitialised</a></td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ab16f1ac58307067ced38315c49f6fcba">applyPassProcessDefaults</a>()</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a5507d9913a6b54a0a1c12f1dc2704cbc">configIsValid</a>(const AppSettings &amp;s) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ac134662c3a71ca1cd0ec04642e9a6255">copyFileReplacing</a>(const QString &amp;src, const QString &amp;dst, bool replace, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aea1468816a5747a7b3421d9966689202">directoriesUnder</a>(const QString &amp;dir) -&gt; QStringList</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">endsWithGpg</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aa3f2185f3dc49fda5ec247646da61c6f">expandTilde</a>(const QString &amp;path) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_util.html#acaa1adf59bd6ad4b1bae548134ea7f76">Filler</a> typedef</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a>(const QString &amp;binary) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#abdd60f9928354b515d9d6bd2ee837699">findBinaryInPath</a>(const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a>() -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a595b817bda4e90e2de3afbafe8914306">gitCeiling</a>(const QString &amp;store) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a5bf7bba1e7d38a370b41d9acb1204eea">gitStoreVariables</a>(const QString &amp;store, const QString &amp;git={}, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a0a5f8ed9bf31f351af081b45b92360d0">isLaunchableWebUrl</a>(const QString &amp;value) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a746306345314ca148272abc2dd3e9e3c">isLinkedFolder</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#af4112ecd778ae8225a12fa96ce611425">isUnderLink</a>(const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a>(const QString &amp;keyId) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">kMaxGpgIdBytes</a></td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a96f0f96cc2e05dc680250717efe0c428">linkifyUrls</a>(const QString &amp;text, bool *linked=nullptr) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#af014b42fcbaf221a947950a289ad4d1b">mkpathForStore</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a0ba6ef4e4542287d5b257252728d1aa4">newLinesRegex</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a>(const QString &amp;path) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a4cb272a3c3c392bfb4c9fd2c57e6bb15">openRegularFile</a>(const QString &amp;path, QFile &amp;file) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a18b864b454324ed54da82252dc77a15c">passUmask</a>(const QString &amp;value) -&gt; int</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a73aa66df403921fb49c57548f83490bc">protocolRegex</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a300aa55d5edadc5084b5dcd85199bcf1">readRegularFile</a>(const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a77bcdde819b9f0bd6a68c84cd8198e23">regularFilesUnder</a>(const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false) -&gt; QStringList</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ad23339038f3f09d99359f1a25d659a6f">removeTree</a>(const QString &amp;dir) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a98fa003a6d00d1936da437f3d16d3568">replaceFile</a>(const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a495277f2a6185cfc9bc14ff1eaf1e85d">repositoryPassClimbsTo</a>(const QString &amp;store) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#ad568587e75fe9275425aced4a3c0802d">setGitOwnerForTests</a>(std::optional&lt; uint &gt; user)</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#aaad861f6fd0b64f8791ef5066d351bd8">stageFileReplacing</a>(const QString &amp;path, bool replace, const Filler &amp;fill, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#ab648b0017acac1869d91ebc924591a24">syncToDisk</a>(QFileDevice &amp;file) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ab4611dd64c8704e7a6392f0201af6e39">writeFileReplacing</a>(const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">findBinaryInPath</a>(const QString &amp;binary) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ab55cbfbfa5af9851085b7ed5ff59f359">findBinaryInPath</a>(const QString &amp;binary, const QStringList &amp;searchPaths) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">findPasswordStore</a>() -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#afd0e45a8685dd277e6f3d51c361e0b03">gitCeiling</a>(const QString &amp;store) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a98271dbaefe09960e1eaded52fed2694">gitStoreVariables</a>(const QString &amp;store, const QString &amp;git={}, std::optional&lt; uint &gt; asUser=std::nullopt) -&gt; QList&lt; std::pair&lt; QString, QString &gt; &gt;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2">initialiseEnvironment</a>()</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a86864a9430f6903425908e76ba6079b5">isLaunchableWebUrl</a>(const QString &amp;value) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d">isLinkedFolder</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a303cdce7f33f076823a0581defb52ca4">isUnderLink</a>(const QString &amp;path, const QString &amp;storeRoot, bool includeSelf=true) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">isValidKeyId</a>(const QString &amp;keyId) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a8ba8f3a6d040fd6ec7f2291431404f6a">kMaxGpgIdBytes</a></td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ada742504985a1e8b2c6adb5e14b24794">linkifyUrls</a>(const QString &amp;text, bool *linked=nullptr) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#aa1d5ab65c22c21fe556ba0251e035f23">mkpathForStore</a>(const QString &amp;path) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#aced819d4368806d046f0dc24a91843f7">newLinesRegex</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#acfa7240a7682876cf78d5a44bbbb81de">normalizeFolderPath</a>(const QString &amp;path) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612">openRegularFile</a>(const QString &amp;path, QFile &amp;file) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a11eb90b4a067feefd84769d336d79b10">passUmask</a>(const QString &amp;value) -&gt; int</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">protocolRegex</a>() -&gt; const QRegularExpression &amp;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a8e427903937505b5e19ebbea7050494e">readRegularFile</a>(const QString &amp;path, qint64 maxBytes) -&gt; std::optional&lt; QByteArray &gt;</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a01aa652eefff30de7eabdf90c7737974">regularFilesUnder</a>(const QString &amp;dir, const QStringList &amp;nameFilters, QStringList *skipped=nullptr, bool hiddenFiles=false) -&gt; QStringList</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c">removeTree</a>(const QString &amp;dir) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#ab0e1c40d3ccc706e0d74d246361a2640">replaceFile</a>(const QString &amp;from, const QString &amp;to, bool replace) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a158b1927cee3cffacaec8d583fbf72ad">repositoryPassClimbsTo</a>(const QString &amp;store) -&gt; QString</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#a44056a3fca6102be2a1a4f896d6a2208">setGitOwnerForTests</a>(std::optional&lt; uint &gt; user)</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#add1e4f70c6d7630ace5e350b30f78907">stageFileReplacing</a>(const QString &amp;path, bool replace, const Filler &amp;fill, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_util.html#aa000e615528288c62c3388bfbad759ee">syncToDisk</a>(QFileDevice &amp;file) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">writeFileReplacing</a>(const QString &amp;path, const QByteArray &amp;bytes, bool replace, QString *error=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_util.html">Util</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

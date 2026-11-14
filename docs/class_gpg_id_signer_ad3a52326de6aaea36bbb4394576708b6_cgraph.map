@@ -1,0 +1,5 @@
+<map id="GpgIdSigner::keysFromSetting" name="GpgIdSigner::keysFromSetting">
+<area shape="rect" id="Node000001" title="Split the settings value into keys, upper&#45;cased the way gpg prints fingerprints." alt="" coords="5,5,223,33"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_signer.html#a772cffc3e742e90ae31d253e012494e8" title="The keys this signer was given." alt="" coords="271,5,409,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,17,258,19,252,19,223,22"/>
+</map>

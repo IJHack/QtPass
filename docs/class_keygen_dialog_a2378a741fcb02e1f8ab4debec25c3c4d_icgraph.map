@@ -1,6 +1,4 @@
 <map id="KeygenDialog::KeygenDialog" name="KeygenDialog::KeygenDialog">
-<area shape="rect" id="Node000001" title="Construct a KeygenDialog." alt="" coords="257,29,466,57"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="403,14,390,10,361,8,335,10,320,15,316,20,323,30,318,28,311,20,317,11,334,5,361,3,391,5,409,14"/>
-<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#aa57783258b6c2b910bc1a27659103976" title="Whether value can go into a GPG batch line as one value." alt="" coords="5,29,209,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,43,209,46,209,41,244,43"/>
+<area shape="rect" id="Node000001" title="Construct a KeygenDialog." alt="" coords="5,29,215,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="144,14,133,10,110,8,88,10,76,15,73,20,79,29,74,28,68,20,73,11,87,5,110,3,135,5,150,14"/>
 </map>

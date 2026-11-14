@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_qt_pass_settings.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">QtPassSettings Member List</div></div>
 </div><!--header-->
@@ -101,44 +119,53 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_qt_pass_settings.html">QtPassSettings</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ab582b8d98277d74c1127dd42e2eeb7b7">backendsIdle</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ae18fe9b401aac964c72e7d7711283afe">getAutoclearSeconds</a>(const int &amp;defaultValue=QVariant().toInt()) -&gt; int</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a41481e1e44a7db8f1bae4371017dd023">getDialogGeometry</a>(const QString &amp;key, const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a9919a3d64fe7ebad42799b113af93799">getGeometry</a>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a9d6e6cd009f6fa307d9fccd821fd45ad">getImitatePass</a>() -&gt; ImitatePass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a3d38816e907ea2ea01842a8ab488260c">getInstance</a>() -&gt; QtPassSettings *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ae0abe010de1e0e023e23639717f9f7e5">getPass</a>() -&gt; Pass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a1bedf6d09f7ed13de785940d77c92f14">getPassExecutable</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a0de322eb0b4907a730325e4008c0b4b6">getPassStore</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a5ea4fd4cf00b38267cfa34b5b585de40">getPasswordConfiguration</a>() -&gt; PasswordConfiguration</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#af2548c1c64c4daccdc1df6f505935588">getProfile</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a516b8454456c7518a17ffed604be9781">getProfiles</a>() -&gt; Profiles</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ac52b7ef718ee01e521d4e07d07a08e31">getRealPass</a>() -&gt; RealPass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a7815c25281a1bdf768c0d27cd237cab4">getSavestate</a>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a6f238c4845f87423bcd4cedbf12fc390">getVersion</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#accde18f59a051107c85755993fcefdac">initExecutables</a>()</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aff8eb58a6814a95f12c4369f0187ab97">isAlwaysOnTop</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a2df5530ff5930281eff264172535d4f6">isAutoPush</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a1772cf257c6fc26421e6b70a4680687f">isHideOnClose</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def">isShowProcessOutput</a>(const bool &amp;defaultValue=false) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a0bd97a8df7fb91cf461b5a1c57940710">isUseGit</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a48f32603dae06c6a513bcad0de85301c">isUseGrepSearch</a>(const bool &amp;defaultValue=false) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#af9e41239c39581b0f3a573dfdaabff36">isUseOtp</a>(const bool &amp;defaultValue=true) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a6d6d2c5444b24ed89a71e7dc6dff877e">load</a>() -&gt; AppSettings</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ae359880612f89fc35f08831fa9a3a732">save</a>(const AppSettings &amp;settings)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a0e743a38e3bcb3d4244c8b8047ab077d">setDialogGeometry</a>(const QString &amp;key, const QByteArray &amp;geometry)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a78c4b9888e34244fed364ca2072459f5">setGeometry</a>(const QByteArray &amp;geometry)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a87ce0a9a9a6510a621e6429f2d090862">setPassStore</a>(const QString &amp;passStore)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a12b672eff7c7630ac5643eb93ce8b6ae">setProfiles</a>(const Profiles &amp;profiles)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a245a6070294e235080db309cbdd9c5db">setQrencodeExecutable</a>(const QString &amp;qrencodeExecutable)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a1c215f68a785e07d0bf01dc7f26f1605">setSavestate</a>(const QByteArray &amp;saveState)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#abfe9f251d4037975f3f42c2322159bb3">setUsePass</a>(const bool &amp;usePass)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a03ae30049a0011939ca6e15dad4426d5">setVersion</a>(const QString &amp;version)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#afeb532f63d4dfa060f2ca012de89b5d9">backendsIdle</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8">getAutoclearSeconds</a>(const int &amp;defaultValue=QVariant().toInt()) -&gt; int</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5">getDialogGeometry</a>(const QString &amp;key, const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#af927e98c41ba80029ce3267a7dcc4ca1">getGeometry</a>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528">getImitatePass</a>() -&gt; ImitatePass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d">getInstance</a>() -&gt; QtPassSettings *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">getPass</a>() -&gt; Pass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">getPassExecutable</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">getPassStore</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a">getPasswordConfiguration</a>() -&gt; PasswordConfiguration</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aa1bcf7afe1cccd1a599fe15f86a1b66f">getProfile</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a8f6dce3f604c71b3e269e404ca28cd9c">getProfiles</a>() -&gt; Profiles</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e">getRealPass</a>() -&gt; RealPass *</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#afeada475d9f9777f06b9f624026dde18">getSavestate</a>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a5623f8d47534a6c21eb9fd95540b253e">getVersion</a>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56">initExecutables</a>()</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a182a8c7e9d3fc5738da9c9c67ea7a743">initialized</a></td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed">isAlwaysOnTop</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">isAutoPush</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">isHideOnClose</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216">isShowProcessOutput</a>(const bool &amp;defaultValue=false) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">isUseGit</a>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a7a2c59796bc7da1e79ee9124a3ea29f4">isUseGrepSearch</a>(const bool &amp;defaultValue=false) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a4f2809fcff961ee1beecaa16951a6e4e">isUseOtp</a>(const bool &amp;defaultValue=true) -&gt; bool</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667">load</a>() -&gt; AppSettings</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#adee7d69291b6dea108ddc7b5e0399103">m_instance</a></td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941">QtPassSettings</a>()=delete</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">explicit</span><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ad7bcd850d6cb2b8046e2d8deb4822639">QtPassSettings</a>(const QString &amp;organization, const QSettings::Format format)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#adceeba713360a20aa915923caedb9806">QtPassSettings</a>(const QString &amp;organization, const QString &amp;application)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ad96b519b92030b127420b2785b2e6bf1">save</a>(const AppSettings &amp;settings)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe">setDialogGeometry</a>(const QString &amp;key, const QByteArray &amp;geometry)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4">setGeometry</a>(const QByteArray &amp;geometry)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">setPassStore</a>(const QString &amp;passStore)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aa572d0a51fe1f4665023c7d949e88d3d">setProfiles</a>(const Profiles &amp;profiles)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a9fc49a7028760e8df558db90a8502b8e">setQrencodeExecutable</a>(const QString &amp;qrencodeExecutable)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95">setSavestate</a>(const QByteArray &amp;saveState)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2">setUsePass</a>(const bool &amp;usePass)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081">setVersion</a>(const QString &amp;version)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~QtPassSettings</b>() override=default (defined in <a class="el" href="class_qt_pass_settings.html">QtPassSettings</a>)</td><td class="entry"><a class="el" href="class_qt_pass_settings.html">QtPassSettings</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

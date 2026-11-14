@@ -1,0 +1,17 @@
+<map id="ImitatePass::recoverReencryptLeftovers" name="ImitatePass::recoverReencryptLeftovers">
+<area shape="rect" id="Node000001" title="Deal with what a crashed or failed earlier run left under dir before touching anything: stale tempora..." alt="" coords="5,74,226,119"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#ae9a418566f8f18e20fe4552d0b88e46c" title="Remove a stale temporary a crashed run left, unless it was modified within the hour: on a shared stor..." alt="" coords="274,5,510,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,71,273,43,311,36,306,38,274,48,184,76"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="308,57,476,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,84,296,79,291,81,227,89"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#af6b661f1ea422063e61dd438534a1452" title="Tell the user a leftover is not a regular file and was left." alt="" coords="558,108,786,136"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="226,99,544,114,541,118,226,104"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#ae8b869923a6a4ab96b47c0c42d83fca0" title="Put a 1.8.x backup back in its entry&#39;s place when the entry is missing; report it when both exist (bo..." alt="" coords="293,159,491,186"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="198,117,274,138,326,154,320,154,273,143,198,122"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="834,133,937,161"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="787,133,822,139,816,139,787,138"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="472,155,574,139,579,139,473,161"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="491,165,822,150,817,151,492,170"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="610,209,735,237"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="473,184,597,209,592,209,472,190"/>
+</map>

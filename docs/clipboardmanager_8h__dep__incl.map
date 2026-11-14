@@ -1,0 +1,17 @@
+<map id="src/clipboardmanager.h" name="src/clipboardmanager.h">
+<area shape="rect" id="Node000001" title="ClipboardManager, which puts secrets on the clipboard and removes them again, and the MIME data that ..." alt="" coords="334,5,508,33"/>
+<area shape="rect" id="Node000002" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="5,81,194,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="347,39,158,83,157,78,349,35"/>
+<area shape="rect" id="Node000003" href="$qtpass_8h.html" title="QtPass: UI&#45;neutral glue that turns backend completion signals into formatted output,..." alt="" coords="218,81,317,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="382,39,296,83,294,78,377,41"/>
+<area shape="rect" id="Node000006" href="$secretlineedit_8cpp.html" title="Implements SecretLineEdit: the four copy paths (Ctrl+C, Cut, context menu, X11 primary selection) rou..." alt="" coords="341,81,501,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="423,47,423,82,419,79,419,51"/>
+<area shape="rect" id="Node000007" href="$secretplaintextedit_8cpp.html" title="Implements SecretPlainTextEdit::createMimeDataFromSelection(), the single hook through which all copi..." alt="" coords="525,81,719,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="471,36,589,80,583,81,471,41"/>
+<area shape="rect" id="Node000008" href="$secrettextbrowser_8cpp.html" title="Implements SecretTextBrowser::createMimeDataFromSelection(), copying plain text only so no unmarked H..." alt="" coords="744,81,932,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="511,34,766,80,760,81,511,39"/>
+<area shape="rect" id="Node000004" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="112,157,266,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,119,204,159,201,154,240,120"/>
+<area shape="rect" id="Node000005" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="289,157,403,184"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="294,117,335,157,330,156,292,122"/>
+</map>

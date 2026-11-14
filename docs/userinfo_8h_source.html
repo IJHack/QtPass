@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('userinfo_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,64 +112,62 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">userinfo.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
+<a href="userinfo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_USERINFO_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_USERINFO_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_user_info.html">   13</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">   17</a></span>  <a class="code hl_function" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a>() {}</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">   24</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>() const -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;f&#39;</span>) || (<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;u&#39;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_USERINFO_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_USERINFO_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_user_info.html">   19</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">   23</a></span>  <a class="code hl_function" href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a>() {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">   30</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>() const -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> (<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;f&#39;</span>) || (<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;u&#39;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">   32</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;m&#39;</span>; }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">   37</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>() || <a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>(); }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">   42</a></span>  QString <a class="code hl_variable" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">name</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">   46</a></span>  QString <a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">   51</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a>{<span class="charliteral">&#39;-&#39;</span>};</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">   55</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a>{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">   59</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a>{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">   63</a></span>  QDateTime <a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">   67</a></span>  QDateTime <a class="code hl_variable" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">created</a>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">   38</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;m&#39;</span>; }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">   43</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>() const -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>() || <a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>(); }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">   48</a></span>  QString <a class="code hl_variable" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">name</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">   52</a></span>  QString <a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">   57</a></span>  <span class="keywordtype">char</span> <a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a>{<span class="charliteral">&#39;-&#39;</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">   61</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">   65</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">   69</a></span>  QDateTime <a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">   73</a></span>  QDateTime <a class="code hl_variable" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">created</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERINFO_H_</span></div>
-<div class="ttc" id="astruct_user_info_html_a0779dd42b6e6810c191b08b788ebaf99"><div class="ttname"><a href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">UserInfo::have_secret</a></div><div class="ttdeci">bool have_secret</div><div class="ttdoc">Whether secret key is available (can decrypt with this key).</div><div class="ttdef"><b>Definition</b> <a href="#l00055">userinfo.h:55</a></div></div>
-<div class="ttc" id="astruct_user_info_html_a163a4e36d5d12cbfc3c13c60f33c5f1f"><div class="ttname"><a href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">UserInfo::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdoc">Whether this user/key is enabled for normal use.</div><div class="ttdef"><b>Definition</b> <a href="#l00059">userinfo.h:59</a></div></div>
-<div class="ttc" id="astruct_user_info_html_a1bd803884a9f1fb8a954d891c14bf2fd"><div class="ttname"><a href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">UserInfo::marginallyValid</a></div><div class="ttdeci">auto marginallyValid() const -&gt; bool</div><div class="ttdoc">Check marginal validity per GnuPG validity codes.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">userinfo.h:32</a></div></div>
-<div class="ttc" id="astruct_user_info_html_a7ea1df76d75ada608ce5a641bd53f7e6"><div class="ttname"><a href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">UserInfo::key_id</a></div><div class="ttdeci">QString key_id</div><div class="ttdoc">Hexadecimal representation of the GnuPG key identifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00046">userinfo.h:46</a></div></div>
-<div class="ttc" id="astruct_user_info_html_a93677d46e6641eb4148c5f09ed5850a5"><div class="ttname"><a href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">UserInfo::fullyValid</a></div><div class="ttdeci">auto fullyValid() const -&gt; bool</div><div class="ttdoc">Check full validity per GnuPG validity codes.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">userinfo.h:24</a></div></div>
-<div class="ttc" id="astruct_user_info_html_aa5b7b2f037ffc50ade5b78f09599d43a"><div class="ttname"><a href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">UserInfo::isValid</a></div><div class="ttdeci">auto isValid() const -&gt; bool</div><div class="ttdoc">Check whether the key has any usable validity level.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">userinfo.h:37</a></div></div>
-<div class="ttc" id="astruct_user_info_html_ac7919fbe53ce83369fc4bcfef8934ff6"><div class="ttname"><a href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">UserInfo::created</a></div><div class="ttdeci">QDateTime created</div><div class="ttdoc">Date/time when key was created.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">userinfo.h:67</a></div></div>
-<div class="ttc" id="astruct_user_info_html_acf06e7727153cca2cd8b4a912517a2bb"><div class="ttname"><a href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">UserInfo::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">GPG user ID / full name.</div><div class="ttdef"><b>Definition</b> <a href="#l00042">userinfo.h:42</a></div></div>
-<div class="ttc" id="astruct_user_info_html_aebbc7aa95fa4142a0059e7dec61acefa"><div class="ttname"><a href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo::UserInfo</a></div><div class="ttdeci">UserInfo()</div><div class="ttdoc">Construct a UserInfo with default (invalid/disabled) state.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">userinfo.h:17</a></div></div>
-<div class="ttc" id="astruct_user_info_html_af09fb1cdf748f23cb6a74fa7e2972766"><div class="ttname"><a href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">UserInfo::validity</a></div><div class="ttdeci">char validity</div><div class="ttdoc">GnuPG representation of validity. http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg....</div><div class="ttdef"><b>Definition</b> <a href="#l00051">userinfo.h:51</a></div></div>
-<div class="ttc" id="astruct_user_info_html_af6b3e6dc6e34553f764e577d2994f5aa"><div class="ttname"><a href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">UserInfo::expiry</a></div><div class="ttdeci">QDateTime expiry</div><div class="ttdoc">Date/time when key expires.</div><div class="ttdef"><b>Definition</b> <a href="#l00063">userinfo.h:63</a></div></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERINFO_H_</span></div>
+<div class="ttc" id="astruct_user_info_html_a0779dd42b6e6810c191b08b788ebaf99"><div class="ttname"><a href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">UserInfo::have_secret</a></div><div class="ttdeci">bool have_secret</div><div class="ttdoc">Whether secret key is available (can decrypt with this key).</div><div class="ttdef"><b>Definition</b> <a href="#l00061">userinfo.h:61</a></div></div>
+<div class="ttc" id="astruct_user_info_html_a163a4e36d5d12cbfc3c13c60f33c5f1f"><div class="ttname"><a href="struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f">UserInfo::enabled</a></div><div class="ttdeci">bool enabled</div><div class="ttdoc">Whether this user/key is enabled for normal use.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">userinfo.h:65</a></div></div>
+<div class="ttc" id="astruct_user_info_html_a1bd803884a9f1fb8a954d891c14bf2fd"><div class="ttname"><a href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">UserInfo::marginallyValid</a></div><div class="ttdeci">auto marginallyValid() const -&gt; bool</div><div class="ttdoc">Check marginal validity per GnuPG validity codes.</div><div class="ttdef"><b>Definition</b> <a href="#l00038">userinfo.h:38</a></div></div>
+<div class="ttc" id="astruct_user_info_html_a7ea1df76d75ada608ce5a641bd53f7e6"><div class="ttname"><a href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">UserInfo::key_id</a></div><div class="ttdeci">QString key_id</div><div class="ttdoc">Hexadecimal representation of the GnuPG key identifier.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">userinfo.h:52</a></div></div>
+<div class="ttc" id="astruct_user_info_html_a93677d46e6641eb4148c5f09ed5850a5"><div class="ttname"><a href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">UserInfo::fullyValid</a></div><div class="ttdeci">auto fullyValid() const -&gt; bool</div><div class="ttdoc">Check full validity per GnuPG validity codes.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">userinfo.h:30</a></div></div>
+<div class="ttc" id="astruct_user_info_html_aa5b7b2f037ffc50ade5b78f09599d43a"><div class="ttname"><a href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">UserInfo::isValid</a></div><div class="ttdeci">auto isValid() const -&gt; bool</div><div class="ttdoc">Check whether the key has any usable validity level.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">userinfo.h:43</a></div></div>
+<div class="ttc" id="astruct_user_info_html_ac7919fbe53ce83369fc4bcfef8934ff6"><div class="ttname"><a href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">UserInfo::created</a></div><div class="ttdeci">QDateTime created</div><div class="ttdoc">Date/time when key was created.</div><div class="ttdef"><b>Definition</b> <a href="#l00073">userinfo.h:73</a></div></div>
+<div class="ttc" id="astruct_user_info_html_acf06e7727153cca2cd8b4a912517a2bb"><div class="ttname"><a href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">UserInfo::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">GPG user ID / full name.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">userinfo.h:48</a></div></div>
+<div class="ttc" id="astruct_user_info_html_aebbc7aa95fa4142a0059e7dec61acefa"><div class="ttname"><a href="struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo::UserInfo</a></div><div class="ttdeci">UserInfo()</div><div class="ttdoc">Construct a UserInfo with default (invalid/disabled) state.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">userinfo.h:23</a></div></div>
+<div class="ttc" id="astruct_user_info_html_af09fb1cdf748f23cb6a74fa7e2972766"><div class="ttname"><a href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">UserInfo::validity</a></div><div class="ttdeci">char validity</div><div class="ttdoc">GnuPG representation of validity. http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg....</div><div class="ttdef"><b>Definition</b> <a href="#l00057">userinfo.h:57</a></div></div>
+<div class="ttc" id="astruct_user_info_html_af6b3e6dc6e34553f764e577d2994f5aa"><div class="ttname"><a href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">UserInfo::expiry</a></div><div class="ttdeci">QDateTime expiry</div><div class="ttdoc">Date/time when key expires.</div><div class="ttdef"><b>Definition</b> <a href="#l00069">userinfo.h:69</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="userinfo_8h.html">userinfo.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

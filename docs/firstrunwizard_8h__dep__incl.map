@@ -1,0 +1,7 @@
+<map id="src/firstrunwizard.h" name="src/firstrunwizard.h">
+<area shape="rect" id="Node000001" title="The first&#45;run wizard and its four pages: programs, key, store and summary." alt="" coords="104,5,249,33"/>
+<area shape="rect" id="Node000002" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="5,81,166,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,43,103,83,100,78,145,44"/>
+<area shape="rect" id="Node000003" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="190,81,344,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,41,253,81,248,80,203,46"/>
+</map>

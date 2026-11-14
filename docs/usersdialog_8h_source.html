@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('usersdialog_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,135 +112,165 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">usersdialog.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
+<a href="usersdialog_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_USERSDIALOG_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_USERSDIALOG_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;appsettings.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;userinfo.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QRegularExpression&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QScopedPointer&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>Ui {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>UsersDialog;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef SRC_USERSDIALOG_H_</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define SRC_USERSDIALOG_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="appsettings_8h.html">appsettings.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="userinfo_8h.html">userinfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QRegularExpression&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QScopedPointer&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>QKeyEvent;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>QListWidgetItem;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_users_dialog.html">   30</a></span><span class="keyword">class </span><a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a> : <span class="keyword">public</span> QDialog {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  Q_OBJECT</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>UsersDialog;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">class </span>QKeyEvent;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span>QListWidgetItem;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">   35</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">   36</a></span>    FromList, </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5">   37</a></span>    Nothing,  </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_users_dialog.html">   35</a></span><span class="keyword">class </span><a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a> : <span class="keyword">public</span> QDialog {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  Q_OBJECT</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="};">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">   40</a></span>  <span class="keyword">enum class</span> <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">   41</a></span>    FromList, </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111af80a4ad87fee7c9fdc19b7769495fdb5">   42</a></span>    Nothing,  </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  };</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">   47</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                       QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296">   57</a></span>  <a class="code hl_function" href="class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>              <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> preselect, QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">   62</a></span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">   72</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">setInitOnAccept</a>(<span class="keywordtype">bool</span> initOnAccept) { m_initOnAccept = initOnAccept; }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span></div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">   78</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">selectedUsers</a>() const -&gt; QList&lt;<a class="code hl_struct" href="struct_user_info.html">UserInfo</a>&gt; {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> m_userList;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                       QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass, <span class="keyword">const</span> <a class="code hl_struct" href="struct_app_settings.html">AppSettings</a> &amp;s, QString dir,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>              <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> preselect, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">   67</a></span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">   77</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">setInitOnAccept</a>(<span class="keywordtype">bool</span> initOnAccept) { <a class="code hl_variable" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">m_initOnAccept</a> = initOnAccept; }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">   83</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">selectedUsers</a>() const -&gt; QList&lt;<a class="code hl_struct" href="struct_user_info.html">UserInfo</a>&gt; {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2">m_userList</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  }</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd">   86</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd">hasSelection</a>() const -&gt; <span class="keywordtype">bool</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>public slots:</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">   92</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() override;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>protected:</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">   99</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) override;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>private slots:</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> itemChange(QListWidgetItem *item);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> on_lineEdit_textChanged(const QString &amp;filter);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">void</span> on_checkBox_clicked();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordtype">void</span> on_importKeyButton_clicked();</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordtype">void</span> selectImportedKey(const QString &amp;importedKey);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>private:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  QScopedPointer&lt;Ui::<a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>&gt; ui;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <a class="code hl_class" href="class_pass.html">Pass</a> *m_pass;               </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  QString m_passStore;        </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  QString m_gpgExe;           </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  QList&lt;<a class="code hl_struct" href="struct_user_info.html">UserInfo</a>&gt; m_userList; </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">bool</span> m_initOnAccept{<span class="keyword">true</span>};  </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">void</span> updateOkButton();</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  QString m_dir;                               </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> m_preselect = <a class="code hl_enumvalue" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a>; </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  QString m_lastFilter;                  </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  QString m_cachedPatternString;         </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  QRegularExpression m_cachedNameFilter; </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keyword">mutable</span> QDateTime m_cachedCurrentDateTime; </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> m_cachedDateTimeValid =</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <span class="keyword">false</span>; </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">void</span> restoreDialogState();</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">void</span> connectSignals();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd">hasSelection</a>() const -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>public slots:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() override;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>protected:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) override;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>private slots:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b">itemChange</a>(QListWidgetItem *item);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#a20609c91440503dc7f84f26a43d01509">on_lineEdit_textChanged</a>(const QString &amp;filter);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544">on_checkBox_clicked</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906">on_importKeyButton_clicked</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9">selectImportedKey</a>(const QString &amp;importedKey);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>private:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069">  135</a></span>  QScopedPointer&lt;Ui::<a class="code hl_function" href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog</a>&gt; <a class="code hl_variable" href="class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069">ui</a>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="class_users_dialog.html#af37c4ba124940166decd520d1b1e3428">  136</a></span>  <a class="code hl_class" href="class_pass.html">Pass</a> *<a class="code hl_variable" href="class_users_dialog.html#af37c4ba124940166decd520d1b1e3428">m_pass</a>;               </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b">  137</a></span>  QString <a class="code hl_variable" href="class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b">m_passStore</a>;        </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a">  138</a></span>  QString <a class="code hl_variable" href="class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a">m_gpgExe</a>;           </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2">  139</a></span>  QList&lt;<a class="code hl_struct" href="struct_user_info.html">UserInfo</a>&gt; <a class="code hl_variable" href="class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2">m_userList</a>; </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">  140</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">m_initOnAccept</a>{<span class="keyword">true</span>};  </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98">updateOkButton</a>();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">  143</a></span>  QString <a class="code hl_variable" href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">m_dir</a>;                               </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5">  144</a></span>  <a class="code hl_enumeration" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> <a class="code hl_variable" href="class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5">m_preselect</a> = <a class="code hl_enumvalue" href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a>; </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8">  145</a></span>  QString <a class="code hl_variable" href="class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8">m_lastFilter</a>;                  </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a01126f883fe8cf0f351d340945af8552">  146</a></span>  QString <a class="code hl_variable" href="class_users_dialog.html#a01126f883fe8cf0f351d340945af8552">m_cachedPatternString</a>;         </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216">  147</a></span>  QRegularExpression <a class="code hl_variable" href="class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216">m_cachedNameFilter</a>; </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a6d7caab10693c9c45c0089c931f5843b">  148</a></span>  <span class="keyword">mutable</span> QDateTime <a class="code hl_variable" href="class_users_dialog.html#a6d7caab10693c9c45c0089c931f5843b">m_cachedCurrentDateTime</a>; </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa6d656c586c0469fe10e5a7055255c07">  150</a></span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_users_dialog.html#aa6d656c586c0469fe10e5a7055255c07">m_cachedDateTimeValid</a> =</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keyword">false</span>; </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keyword">auto</span> loadGpgKeys() -&gt; bool;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keywordtype">void</span> markSecretKeys(QList&lt;UserInfo&gt; &amp;users);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordtype">void</span> loadRecipients();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">void</span> showRecipientWarning(<span class="keyword">const</span> QString &amp;text);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  <span class="keywordtype">void</span> selectRecipients(<span class="keyword">const</span> QStringList &amp;recipients);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  <span class="keywordtype">void</span> populateList(<span class="keyword">const</span> QString &amp;filter = QString());</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordtype">bool</span> passesFilter(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user, <span class="keyword">const</span> QString &amp;filter,</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                    <span class="keyword">const</span> QRegularExpression &amp;nameFilter) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keyword">auto</span> isUserExpired(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span> -&gt; bool;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  QString buildUserText(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  <span class="keywordtype">void</span> applyUserStyling(QListWidgetItem *item, <span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>};</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a72f07ae1b408688108f0855624c789d2">restoreDialogState</a>();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1">connectSignals</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565">loadGpgKeys</a>() -&gt; bool;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2">markSecretKeys</a>(QList&lt;UserInfo&gt; &amp;users);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b">loadRecipients</a>();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a20ad9e81e5b25bbef8aff5071f0f1890">showRecipientWarning</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee">selectRecipients</a>(<span class="keyword">const</span> QStringList &amp;recipients);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d">populateList</a>(<span class="keyword">const</span> QString &amp;filter = QString());</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833">passesFilter</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user, <span class="keyword">const</span> QString &amp;filter,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                    <span class="keyword">const</span> QRegularExpression &amp;nameFilter) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106">isUserExpired</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span> -&gt; bool;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  QString <a class="code hl_function" href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189">buildUserText</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d">applyUserStyling</a>(QListWidgetItem *item, <span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;user) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>};</div>
 </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERSDIALOG_H_</span></div>
-<div class="ttc" id="aclass_pass_html"><div class="ttname"><a href="class_pass.html">Pass</a></div><div class="ttdoc">Abstract base class for password store operations.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00067">pass.h:67</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_a03e8b70497881510ffc82e753e6f8296"><div class="ttname"><a href="class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, Preselect preselect, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog, saying what to preselect.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_a046728922f9ad9d2bf17ff64bf639d06"><div class="ttname"><a href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">UsersDialog::~UsersDialog</a></div><div class="ttdeci">~UsersDialog() override</div><div class="ttdoc">Destructor.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_a106ab7fe0698daa57d92a2a6f1a337c7"><div class="ttname"><a href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">UsersDialog::selectedUsers</a></div><div class="ttdeci">auto selectedUsers() const -&gt; QList&lt; UserInfo &gt;</div><div class="ttdoc">The key list with the user&#39;s choice in each entry&#39;s enabled flag.</div><div class="ttdef"><b>Definition</b> <a href="#l00078">usersdialog.h:78</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_a2b8e6e8605111e43bab64328add16ddb"><div class="ttname"><a href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">UsersDialog::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Handle key press.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_a4bc2c40314993e5e06b649bc6c037111"><div class="ttname"><a href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">UsersDialog::Preselect</a></div><div class="ttdeci">Preselect</div><div class="ttdoc">Whether the recipients on disk are ticked when it opens.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">usersdialog.h:35</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014"><div class="ttname"><a href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">UsersDialog::Preselect::FromList</a></div><div class="ttdeci">@ FromList</div><div class="ttdoc">The folder&#39;s recipient list, as the backend reads it.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">usersdialog.h:36</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_aa1630582c14afcef9ad80398752762a4"><div class="ttname"><a href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog::accept</a></div><div class="ttdeci">void accept() override</div><div class="ttdoc">Handle dialog acceptance.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_aadc5be04d9f54b8d827348bf9248ae22"><div class="ttname"><a href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog.</div></div>
-<div class="ttc" id="aclass_users_dialog_html_ab30de74144c09f81f4d3324207e911cd"><div class="ttname"><a href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">UsersDialog::setInitOnAccept</a></div><div class="ttdeci">void setInitOnAccept(bool initOnAccept)</div><div class="ttdoc">Choose whether OK runs Pass::Init on the folder.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">usersdialog.h:72</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_adb673bcebad1749f22183ce146b846cd"><div class="ttname"><a href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd">UsersDialog::hasSelection</a></div><div class="ttdeci">auto hasSelection() const -&gt; bool</div><div class="ttdoc">Whether at least one key is ticked.</div></div>
-<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00031">appsettings.h:31</a></div></div>
-<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERSDIALOG_H_</span></div>
+<div class="ttc" id="aappsettings_8h_html"><div class="ttname"><a href="appsettings_8h.html">appsettings.h</a></div><div class="ttdoc">AppSettings, the value object holding every flat QtPass setting.</div></div>
+<div class="ttc" id="aclass_pass_html"><div class="ttname"><a href="class_pass.html">Pass</a></div><div class="ttdoc">Abstract base class for password store operations.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00075">pass.h:75</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a01126f883fe8cf0f351d340945af8552"><div class="ttname"><a href="class_users_dialog.html#a01126f883fe8cf0f351d340945af8552">UsersDialog::m_cachedPatternString</a></div><div class="ttdeci">QString m_cachedPatternString</div><div class="ttdef"><b>Definition</b> <a href="#l00146">usersdialog.h:146</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a046728922f9ad9d2bf17ff64bf639d06"><div class="ttname"><a href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">UsersDialog::~UsersDialog</a></div><div class="ttdeci">~UsersDialog() override</div><div class="ttdoc">Destroys the dialog and its generated form.</div></div>
+<div class="ttc" id="aclass_users_dialog_html_a0506ad62cc53b4e491d4548029511b98"><div class="ttname"><a href="class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98">UsersDialog::updateOkButton</a></div><div class="ttdeci">void updateOkButton()</div><div class="ttdoc">Enable OK only while at least one key is ticked (hasSelection()).</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00268">usersdialog.cpp:268</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a09489f1a683129c5dad8386ae9155bd6"><div class="ttname"><a href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">UsersDialog::m_initOnAccept</a></div><div class="ttdeci">bool m_initOnAccept</div><div class="ttdef"><b>Definition</b> <a href="#l00140">usersdialog.h:140</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a0a9df57e10de95c375523902b4bbdc5b"><div class="ttname"><a href="class_users_dialog.html#a0a9df57e10de95c375523902b4bbdc5b">UsersDialog::itemChange</a></div><div class="ttdeci">void itemChange(QListWidgetItem *item)</div><div class="ttdoc">Handle user selection change.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00284">usersdialog.cpp:284</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a0b48f9c3f9f9ab0fd01598c00ab29216"><div class="ttname"><a href="class_users_dialog.html#a0b48f9c3f9f9ab0fd01598c00ab29216">UsersDialog::m_cachedNameFilter</a></div><div class="ttdeci">QRegularExpression m_cachedNameFilter</div><div class="ttdef"><b>Definition</b> <a href="#l00147">usersdialog.h:147</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a0b5cc847c9d780a1a317329a49a52906"><div class="ttname"><a href="class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906">UsersDialog::on_importKeyButton_clicked</a></div><div class="ttdeci">void on_importKeyButton_clicked()</div><div class="ttdoc">Import a GPG key and refresh the list.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00437">usersdialog.cpp:437</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a106ab7fe0698daa57d92a2a6f1a337c7"><div class="ttname"><a href="class_users_dialog.html#a106ab7fe0698daa57d92a2a6f1a337c7">UsersDialog::selectedUsers</a></div><div class="ttdeci">auto selectedUsers() const -&gt; QList&lt; UserInfo &gt;</div><div class="ttdoc">The key list with the user&#39;s choice in each entry&#39;s enabled flag.</div><div class="ttdef"><b>Definition</b> <a href="#l00083">usersdialog.h:83</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a20609c91440503dc7f84f26a43d01509"><div class="ttname"><a href="class_users_dialog.html#a20609c91440503dc7f84f26a43d01509">UsersDialog::on_lineEdit_textChanged</a></div><div class="ttdeci">void on_lineEdit_textChanged(const QString &amp;filter)</div><div class="ttdoc">Filter user list.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00410">usersdialog.cpp:410</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a20ad9e81e5b25bbef8aff5071f0f1890"><div class="ttname"><a href="class_users_dialog.html#a20ad9e81e5b25bbef8aff5071f0f1890">UsersDialog::showRecipientWarning</a></div><div class="ttdeci">void showRecipientWarning(const QString &amp;text)</div><div class="ttdoc">Show text above the key list in bold red, for a recipient list that could not be verified.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00102">usersdialog.cpp:102</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a248e650a6f68a40a4bd7ea10b5686106"><div class="ttname"><a href="class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106">UsersDialog::isUserExpired</a></div><div class="ttdeci">auto isUserExpired(const UserInfo &amp;user) const -&gt; bool</div><div class="ttdoc">Check if GPG key is expired.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00351">usersdialog.cpp:351</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a2b8e6e8605111e43bab64328add16ddb"><div class="ttname"><a href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">UsersDialog::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Handle key press.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00274">usersdialog.cpp:274</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a400f5ae49e827ac46e88be4ae2f7141d"><div class="ttname"><a href="class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d">UsersDialog::applyUserStyling</a></div><div class="ttdeci">void applyUserStyling(QListWidgetItem *item, const UserInfo &amp;user) const</div><div class="ttdoc">Apply visual styling to user item.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00374">usersdialog.cpp:374</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a486ab9a602907d6110dceaed9a7b3138"><div class="ttname"><a href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">UsersDialog::m_dir</a></div><div class="ttdeci">QString m_dir</div><div class="ttdef"><b>Definition</b> <a href="#l00143">usersdialog.h:143</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a4bc2c40314993e5e06b649bc6c037111"><div class="ttname"><a href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111">UsersDialog::Preselect</a></div><div class="ttdeci">Preselect</div><div class="ttdoc">Whether the recipients on disk are ticked when it opens.</div><div class="ttdef"><b>Definition</b> <a href="#l00040">usersdialog.h:40</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014"><div class="ttname"><a href="class_users_dialog.html#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">UsersDialog::Preselect::FromList</a></div><div class="ttdeci">@ FromList</div><div class="ttdoc">The folder&#39;s recipient list, as the backend reads it.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">usersdialog.h:41</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a50a8ee7a2dbd27672249f0c8d109beb8"><div class="ttname"><a href="class_users_dialog.html#a50a8ee7a2dbd27672249f0c8d109beb8">UsersDialog::m_lastFilter</a></div><div class="ttdeci">QString m_lastFilter</div><div class="ttdef"><b>Definition</b> <a href="#l00145">usersdialog.h:145</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a50e207112771a8c69d73a326f8efb0e2"><div class="ttname"><a href="class_users_dialog.html#a50e207112771a8c69d73a326f8efb0e2">UsersDialog::m_userList</a></div><div class="ttdeci">QList&lt; UserInfo &gt; m_userList</div><div class="ttdef"><b>Definition</b> <a href="#l00139">usersdialog.h:139</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a56e762c68f4ae6faf7e50c227598e0f1"><div class="ttname"><a href="class_users_dialog.html#a56e762c68f4ae6faf7e50c227598e0f1">UsersDialog::connectSignals</a></div><div class="ttdeci">void connectSignals()</div><div class="ttdoc">Connect dialog signals.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00058">usersdialog.cpp:58</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a63e446d81e383b7ee8b21cb4ab5a8c8b"><div class="ttname"><a href="class_users_dialog.html#a63e446d81e383b7ee8b21cb4ab5a8c8b">UsersDialog::m_passStore</a></div><div class="ttdeci">QString m_passStore</div><div class="ttdef"><b>Definition</b> <a href="#l00137">usersdialog.h:137</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a6d7caab10693c9c45c0089c931f5843b"><div class="ttname"><a href="class_users_dialog.html#a6d7caab10693c9c45c0089c931f5843b">UsersDialog::m_cachedCurrentDateTime</a></div><div class="ttdeci">QDateTime m_cachedCurrentDateTime</div><div class="ttdef"><b>Definition</b> <a href="#l00148">usersdialog.h:148</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a72f07ae1b408688108f0855624c789d2"><div class="ttname"><a href="class_users_dialog.html#a72f07ae1b408688108f0855624c789d2">UsersDialog::restoreDialogState</a></div><div class="ttdeci">void restoreDialogState()</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00070">usersdialog.cpp:70</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a7c4ef95e4ab5bfd72e93f5dbcf1be189"><div class="ttname"><a href="class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189">UsersDialog::buildUserText</a></div><div class="ttdeci">QString buildUserText(const UserInfo &amp;user) const</div><div class="ttdoc">Build display text for user.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00361">usersdialog.cpp:361</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a9742afa42c3edaec91f62ddcb116002d"><div class="ttname"><a href="class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d">UsersDialog::populateList</a></div><div class="ttdeci">void populateList(const QString &amp;filter=QString())</div><div class="ttdoc">Populate user list.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00305">usersdialog.cpp:305</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a9a4174d9ae0e84c8742e24f1092a63b9"><div class="ttname"><a href="class_users_dialog.html#a9a4174d9ae0e84c8742e24f1092a63b9">UsersDialog::selectImportedKey</a></div><div class="ttdeci">void selectImportedKey(const QString &amp;importedKey)</div><div class="ttdoc">Make the key gpg just imported the current row. gpg reports a 16-character long ID (IMPORTED) or a 40...</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00416">usersdialog.cpp:416</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a9e4c29d22b7b8335eed934a5a55240ee"><div class="ttname"><a href="class_users_dialog.html#a9e4c29d22b7b8335eed934a5a55240ee">UsersDialog::selectRecipients</a></div><div class="ttdeci">void selectRecipients(const QStringList &amp;recipients)</div><div class="ttdoc">Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to,...</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00158">usersdialog.cpp:158</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aa1508b1fe6dc8fba34257d72a1633a4b"><div class="ttname"><a href="class_users_dialog.html#aa1508b1fe6dc8fba34257d72a1633a4b">UsersDialog::loadRecipients</a></div><div class="ttdeci">void loadRecipients()</div><div class="ttdoc">Load recipients and handle missing keys.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00226">usersdialog.cpp:226</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aa1630582c14afcef9ad80398752762a4"><div class="ttname"><a href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog::accept</a></div><div class="ttdeci">void accept() override</div><div class="ttdoc">Handle dialog acceptance.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00250">usersdialog.cpp:250</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aa6d656c586c0469fe10e5a7055255c07"><div class="ttname"><a href="class_users_dialog.html#aa6d656c586c0469fe10e5a7055255c07">UsersDialog::m_cachedDateTimeValid</a></div><div class="ttdeci">bool m_cachedDateTimeValid</div><div class="ttdef"><b>Definition</b> <a href="#l00150">usersdialog.h:150</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aa9efcd78d2b82147dd8667ced397353a"><div class="ttname"><a href="class_users_dialog.html#aa9efcd78d2b82147dd8667ced397353a">UsersDialog::m_gpgExe</a></div><div class="ttdeci">QString m_gpgExe</div><div class="ttdef"><b>Definition</b> <a href="#l00138">usersdialog.h:138</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aadc5be04d9f54b8d827348bf9248ae22"><div class="ttname"><a href="class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00034">usersdialog.cpp:34</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aae28ed1da1149c4e1d1685a6e4c9d3a2"><div class="ttname"><a href="class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2">UsersDialog::markSecretKeys</a></div><div class="ttdeci">void markSecretKeys(QList&lt; UserInfo &gt; &amp;users)</div><div class="ttdoc">Mark which keys have secret counterparts.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00089">usersdialog.cpp:89</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aaf2a368116ead1381e833f52f4bb7cf5"><div class="ttname"><a href="class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5">UsersDialog::m_preselect</a></div><div class="ttdeci">Preselect m_preselect</div><div class="ttdef"><b>Definition</b> <a href="#l00144">usersdialog.h:144</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_ab30de74144c09f81f4d3324207e911cd"><div class="ttname"><a href="class_users_dialog.html#ab30de74144c09f81f4d3324207e911cd">UsersDialog::setInitOnAccept</a></div><div class="ttdeci">void setInitOnAccept(bool initOnAccept)</div><div class="ttdoc">Choose whether OK runs Pass::Init on the folder.</div><div class="ttdef"><b>Definition</b> <a href="#l00077">usersdialog.h:77</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_ad8f7dcefe8f44773b5931295c2e35833"><div class="ttname"><a href="class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833">UsersDialog::passesFilter</a></div><div class="ttdeci">bool passesFilter(const UserInfo &amp;user, const QString &amp;filter, const QRegularExpression &amp;nameFilter) const</div><div class="ttdoc">Check if user passes filter.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00337">usersdialog.cpp:337</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_adb673bcebad1749f22183ce146b846cd"><div class="ttname"><a href="class_users_dialog.html#adb673bcebad1749f22183ce146b846cd">UsersDialog::hasSelection</a></div><div class="ttdeci">auto hasSelection() const -&gt; bool</div><div class="ttdoc">Whether at least one key is ticked.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00263">usersdialog.cpp:263</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_ae4d6d585d09d26213b5c1fe757974544"><div class="ttname"><a href="class_users_dialog.html#ae4d6d585d09d26213b5c1fe757974544">UsersDialog::on_checkBox_clicked</a></div><div class="ttdeci">void on_checkBox_clicked()</div><div class="ttdoc">Handle select all checkbox.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00414">usersdialog.cpp:414</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_ae86b7e4f8a990b980dfcc4f394722069"><div class="ttname"><a href="class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069">UsersDialog::ui</a></div><div class="ttdeci">QScopedPointer&lt; Ui::UsersDialog &gt; ui</div><div class="ttdoc">The widgets from usersdialog.ui.</div><div class="ttdef"><b>Definition</b> <a href="#l00135">usersdialog.h:135</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_aeeb98a4267c9aaa8c8087d4fb3774565"><div class="ttname"><a href="class_users_dialog.html#aeeb98a4267c9aaa8c8087d4fb3774565">UsersDialog::loadGpgKeys</a></div><div class="ttdeci">auto loadGpgKeys() -&gt; bool</div><div class="ttdoc">Load GPG keys and determine secret key status.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00074">usersdialog.cpp:74</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_af37c4ba124940166decd520d1b1e3428"><div class="ttname"><a href="class_users_dialog.html#af37c4ba124940166decd520d1b1e3428">UsersDialog::m_pass</a></div><div class="ttdeci">Pass * m_pass</div><div class="ttdef"><b>Definition</b> <a href="#l00136">usersdialog.h:136</a></div></div>
+<div class="ttc" id="astruct_app_settings_html"><div class="ttname"><a href="struct_app_settings.html">AppSettings</a></div><div class="ttdoc">Plain value-object holding all flat QtPass configuration.</div><div class="ttdef"><b>Definition</b> <a href="appsettings_8h_source.html#l00036">appsettings.h:36</a></div></div>
+<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00019">userinfo.h:19</a></div></div>
+<div class="ttc" id="auserinfo_8h_html"><div class="ttname"><a href="userinfo_8h.html">userinfo.h</a></div><div class="ttdoc">UserInfo, one GPG key as listed by gpg, with the selection flag the recipient dialogs use.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="usersdialog_8h.html">usersdialog.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

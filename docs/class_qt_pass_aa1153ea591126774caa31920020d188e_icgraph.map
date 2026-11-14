@@ -1,0 +1,13 @@
+<map id="QtPass::passStoreChanged" name="QtPass::passStoreChanged">
+<area shape="rect" id="Node000001" title="Slot for the backend signals that change the store on disk (git init, remove, init,..." alt="" coords="938,29,1132,57"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a81e0207207f490616dd442837a2469d4" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="696,21,890,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="919,43,890,46,890,41,925,43"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="531,29,648,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="678,43,649,46,649,41,684,43"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="512,43,483,46,483,41,518,43"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="418,14,408,10,385,8,364,10,352,15,349,20,354,30,349,28,344,20,348,11,362,5,385,3,409,5,424,14"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
+</map>

@@ -1,0 +1,41 @@
+<map id="FileContent::isSecretFieldName" name="FileContent::isSecretFieldName">
+<area shape="rect" id="Node000001" title="Whether a field name names a secret: one of secrets occurs in it as whole words, compared case&#45;insens..." alt="" coords="2654,186,2879,213"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a05afd2d04c8c317910fb04b0c53cdb4a" title="Whether a field is a secret &quot;Hide password&quot; hides: one a template marks (setMarkedSecrets()),..." alt="" coords="2440,177,2606,222"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2636,200,2606,202,2606,197,2641,199"/>
+<area shape="rect" id="Node000003" href="$class_password_display_panel.html#af0b6c619d59cff43692b8087999fe3a5" title="Whether a field is shown behind the eye button: the password, a field a template marks,..." alt="" coords="2225,72,2392,117"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2460,170,2355,120,2357,115,2465,171"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1092,168,1320,196"/>
+<area shape="poly" id="edge24_Node000002_Node000008" title=" " alt="" coords="2427,219,2270,245,2183,254,2096,257,1664,257,1551,251,1440,236,1340,217,1262,199,1263,194,1341,212,1441,231,1552,246,1664,252,2095,252,2182,248,2270,240,2421,219"/>
+<area shape="rect" id="Node000004" href="$class_password_display_panel.html#a57fc5d83ebe5d878f373c6785af5f8d4" title="Add the copy, QR and open&#45;in&#45;browser buttons a field gets, per the settings." alt="" coords="2011,41,2177,86"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2207,80,2178,78,2178,73,2212,80"/>
+<area shape="rect" id="Node000005" href="$class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7" title="Render one name: value row: action buttons, then the value either behind the eye button (see hides())..." alt="" coords="1797,101,1963,146"/>
+<area shape="poly" id="edge22_Node000003_Node000005" title=" " alt="" coords="2207,101,1964,121,1963,115,2213,101"/>
+<area shape="rect" id="Node000013" href="$class_password_display_panel.html#aea1986b10912132044f2ac970e1b8749" title="Emitted on a double&#45;click anywhere on a field row: the user wants to change what they are looking at." alt="" coords="1368,61,1534,106"/>
+<area shape="poly" id="edge23_Node000003_Node000013" title=" " alt="" coords="2258,63,2220,46,2177,31,2089,16,2000,9,1910,9,1822,15,1661,37,1535,64,1534,59,1660,32,1821,10,1910,4,2000,4,2090,11,2178,26,2222,41,2263,64"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2000,90,1963,103,1962,98,1995,91"/>
+<area shape="poly" id="edge21_Node000004_Node000013" title=" " alt="" coords="1993,67,1535,84,1534,78,1998,66"/>
+<area shape="rect" id="Node000006" href="$class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268" title="Render the live OTP row: an OtpCodeWidget in a field frame under an &quot;OTP code&quot; label...." alt="" coords="1582,121,1749,166"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1784,133,1749,138,1749,133,1778,133"/>
+<area shape="rect" id="Node000007" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="1368,160,1534,205"/>
+<area shape="poly" id="edge19_Node000005_Node000007" title=" " alt="" coords="1825,152,1788,170,1749,181,1694,189,1637,193,1535,192,1534,187,1637,188,1693,184,1748,176,1786,165,1820,153"/>
+<area shape="poly" id="edge20_Node000005_Node000013" title=" " alt="" coords="1779,112,1748,112,1535,93,1535,87,1749,106,1784,112"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1569,161,1535,170,1534,165,1564,162"/>
+<area shape="poly" id="edge14_Node000006_Node000013" title=" " alt="" coords="1566,116,1533,109,1534,104,1571,117"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1350,182,1320,185,1320,180,1355,182"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,135,1044,163"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1074,167,1044,166,1044,160,1079,167"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,135,756,163"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="786,149,757,152,757,146,791,149"/>
+<area shape="rect" id="Node000011" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,110,483,137"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="513,137,484,136,483,130,518,136"/>
+<area shape="poly" id="edge11_Node000011_Node000011" title=" " alt="" coords="428,94,414,91,385,88,358,90,343,95,339,100,346,110,341,109,334,101,339,91,357,85,385,83,415,86,433,94"/>
+<area shape="rect" id="Node000012" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,110,239,137"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="269,133,239,135,238,130,274,132"/>
+<area shape="poly" id="edge13_Node000012_Node000011" title=" " alt="" coords="254,112,289,114,284,116,255,117"/>
+<area shape="rect" id="Node000014" href="$class_password_display_panel.html#a4bb93a3d467357d2778f9aa95287d089" title="Turn a left double&#45;click on a field row into editRequested()." alt="" coords="1123,75,1289,119"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="1350,98,1290,104,1289,98,1355,97"/>
+<area shape="rect" id="Node000015" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="815,66,1033,93"/>
+<area shape="poly" id="edge17_Node000013_Node000015" title=" " alt="" coords="1350,66,1320,65,1206,60,1092,65,1033,69,1033,64,1092,60,1206,54,1320,60,1355,66"/>
+<area shape="poly" id="edge16_Node000014_Node000013" title=" " alt="" coords="1304,80,1370,79,1365,80,1305,85"/>
+<area shape="poly" id="edge18_Node000015_Node000011" title=" " alt="" coords="797,91,484,118,483,113,802,89"/>
+</map>

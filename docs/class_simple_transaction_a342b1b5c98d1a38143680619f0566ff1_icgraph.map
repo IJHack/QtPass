@@ -1,0 +1,5 @@
+<map id="SimpleTransaction::transactionIsOver" name="SimpleTransaction::transactionIsOver">
+<area shape="rect" id="Node000001" title="Tell whether the process that just finished ends the oldest pending transaction, and take that transa..." alt="" coords="210,5,358,50"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,14,162,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,28,162,30,162,25,197,27"/>
+</map>

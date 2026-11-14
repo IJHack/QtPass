@@ -1,0 +1,5 @@
+<map id="ImitatePass::refuseLinkedGpgIdFolder" name="ImitatePass::refuseLinkedGpgIdFolder">
+<area shape="rect" id="Node000001" title="Refuse a folder, or a .gpg&#45;id/.gpg&#45;id.sig in it, that is a link: writing there would reach outside th..." alt="" coords="180,5,368,50"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="5,14,132,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,28,132,30,132,25,167,27"/>
+</map>

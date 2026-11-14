@@ -25,9 +25,9 @@ dark-mode-toggle {
 #MSearchBox {
     display: inline-block;
     white-space : nowrap;
-    background: var(--search-background-color);
+    background: white;
     border-radius: 0.65em;
-    border: 1px solid var(--search-box-border-color);
+    border: 1px solid #B6C4DF;
     z-index: 102;
     margin-right: 4px;
 }
@@ -47,9 +47,9 @@ dark-mode-toggle {
     padding: 0;
     line-height: 1em;
     border:none;
-    color: var(--search-foreground-color);
+    color: #909090;
     outline: none;
-    font-family: var(--font-family-search);
+    font-family: Arial,Verdana,sans-serif;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     background: none;
@@ -87,7 +87,7 @@ dark-mode-toggle {
 .close-icon {
   width: 11px;
   height: 11px;
-  background-color: var(--search-close-icon-bg-color);
+  background-color: #A0A0A0;
   border-radius: 50%;
   position: relative;
   display: flex;
@@ -102,7 +102,7 @@ dark-mode-toggle {
   position: absolute;
   width: 7px;
   height: 1px;
-  background-color: var(--search-close-icon-fg-color);
+  background-color: white;
 }
 
 .close-icon:before {
@@ -115,7 +115,7 @@ dark-mode-toggle {
 
 
 .MSearchBoxActive #MSearchField {
-    color: var(--search-active-color);
+    color: black;
 }
 
 .search-icon {
@@ -137,7 +137,7 @@ dark-mode-toggle {
 .search-icon::before, .search-icon::after {
     content: '';
     position: absolute;
-    border: 1.5px solid var(--search-foreground-color);
+    border: 1.5px solid #909090;
     box-sizing: content-box;
 }
 
@@ -147,11 +147,11 @@ dark-mode-toggle {
     border-radius: 50%;
     top: 7px;
     left: 2px;
-    background: var(--search-background-color);
+    background: white;
 }
 
 .search-icon::after {
-    border: 1px solid var(--search-foreground-color);
+    border: 1px solid #909090;
     width: 0px;
     height: 3px;
     border-radius: 2px;
@@ -167,7 +167,7 @@ dark-mode-toggle {
     height: 0;
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
-    border-top: 3px solid var(--search-foreground-color);
+    border-top: 3px solid #909090;
     top: 8px;
     left: 15px;
     transform: translateX(-50%);
@@ -183,10 +183,10 @@ dark-mode-toggle {
     display: none;
     position: absolute;
     left: 0; top: 0;
-    border: 1px solid var(--search-filter-border-color);
-    background-color: var(--search-filter-background-color);
-    backdrop-filter: var(--search-filter-backdrop-filter);
-    -webkit-backdrop-filter: var(--search-filter-backdrop-filter);
+    border: 1px solid rgba(150,150,150,.4);
+    background-color: rgba(255,255,255,.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 10001;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -194,7 +194,7 @@ dark-mode-toggle {
 }
 
 .SelectItem {
-    font: 8pt var(--font-family-search);
+    font: 8pt Arial,Verdana,sans-serif;
     padding-left:  2px;
     padding-right: 12px;
     border: 0px;
@@ -202,7 +202,7 @@ dark-mode-toggle {
 
 span.SelectionMark {
     margin-right: 4px;
-    font-family: var(--font-family-monospace);
+    font-family: 'JetBrains Mono',Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace,fixed;
     outline-style: none;
     text-decoration: none;
 }
@@ -210,7 +210,7 @@ span.SelectionMark {
 a.SelectItem {
     display: block;
     outline-style: none;
-    color: var(--search-filter-foreground-color);
+    color: black;
     text-decoration: none;
     padding-left:   6px;
     padding-right: 12px;
@@ -218,14 +218,14 @@ a.SelectItem {
 
 a.SelectItem:focus,
 a.SelectItem:active {
-    color: var(--search-filter-foreground-color);
+    color: black;
     outline-style: none;
     text-decoration: none;
 }
 
 a.SelectItem:hover {
-    color: var(--search-filter-highlight-text-color);
-    background-color: var(--search-filter-highlight-bg-color);
+    color: white;
+    background-color: #3D578C;
     outline-style: none;
     text-decoration: none;
     cursor: pointer;
@@ -257,10 +257,10 @@ iframe#MSearchResults {
     left: auto;
     right: 4px;
     top: 0;
-    border: 1px solid var(--search-results-border-color);
-    background-color: var(--search-results-background-color);
-    backdrop-filter: var(--search-results-backdrop-filter);
-    -webkit-backdrop-filter: var(--search-results-backdrop-filter);
+    border: 1px solid rgba(150,150,150,.4);
+    background-color: rgba(255,255,255,.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index:10000;
     width: 300px;
     height: 400px;
@@ -303,16 +303,16 @@ div.SRPage {
 
 .SRSymbol {
     font-weight: bold;
-    color: var(--search-results-foreground-color);
-    font-family: var(--font-family-search);
+    color: #425E97;
+    font-family: Arial,Verdana,sans-serif;
     text-decoration: none;
     outline: none;
 }
 
 a.SRScope {
     display: block;
-    color: var(--search-results-foreground-color);
-    font-family: var(--font-family-search);
+    color: #425E97;
+    font-family: Arial,Verdana,sans-serif;
     font-size: 8pt;
     text-decoration: none;
     outline: none;
@@ -325,14 +325,14 @@ a.SRScope:focus, a.SRScope:active {
 
 span.SRScope {
     padding-left: 4px;
-    font-family: var(--font-family-search);
+    font-family: Arial,Verdana,sans-serif;
 }
 
 .SRPage .SRStatus {
     padding: 2px 5px;
     font-size: 8pt;
     font-style: italic;
-    font-family: var(--font-family-search);
+    font-family: Arial,Verdana,sans-serif;
 }
 
 .SRResult {
@@ -351,9 +351,9 @@ div.searchresults {
 /*---------------- External search page results */
 
 .pages b {
-   color: var(--nav-foreground-color);
+   color: #364D7C;
    padding: 5px 5px 3px 5px;
-   background-color: var(--nav-menu-active-bg);
+   background-color: #DCE2EF;
    border-radius: 4px;
 }
 

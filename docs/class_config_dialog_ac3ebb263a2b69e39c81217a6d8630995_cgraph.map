@@ -1,4 +1,7 @@
 <map id="ConfigDialog::usePwgen" name="ConfigDialog::usePwgen">
 <area shape="rect" id="Node000001" title="Enable or disable pwgen&#45;based password generation." alt="" coords="5,29,184,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="63,28,58,20,62,11,75,5,95,3,116,5,129,14,123,14,114,10,94,8,76,10,66,15,64,20,68,29"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="54,29,48,20,53,11,69,5,95,3,122,5,139,14,133,14,121,10,94,8,70,10,56,15,53,20,59,29"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character&#45;set controls, whichever the &quot;use pwgen&quot; box selects; nothing in..." alt="" coords="232,21,430,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,49,219,52,213,52,184,55"/>
+<area shape="poly" id="edge2_Node000002_Node000001" title=" " alt="" coords="229,35,200,37,199,32,234,34"/>
 </map>

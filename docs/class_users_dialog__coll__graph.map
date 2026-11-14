@@ -1,5 +1,16 @@
 <map id="UsersDialog" name="UsersDialog">
-<area shape="rect" id="Node000001" title="Dialog for selecting GPG recipients for password encryption." alt="" coords="5,81,106,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="19,5,92,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,47,58,81,53,80,54,51"/>
+<area shape="rect" id="Node000001" title="Dialog for selecting GPG recipients for password encryption." alt="" coords="13,307,114,335"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,207,79,234"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,248,63,307,58,307,46,251"/>
+<area shape="rect" id="Node000003" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="102,207,152,234"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,247,74,308,70,305,108,247"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="36,5,109,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="70,46,72,89,79,133,98,173,119,206,114,207,93,176,74,134,67,90,69,51"/>
+<area shape="rect" id="Node000007" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="89,106,166,134"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="87,44,123,105,117,106,87,49"/>
+<area shape="rect" id="Node000005" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="190,106,289,134"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="212,146,173,185,145,208,142,204,170,181,216,142"/>
+<area shape="rect" id="Node000006" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="155,5,324,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="241,46,242,106,237,105,238,51"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="129,147,130,207,125,205,126,152"/>
 </map>

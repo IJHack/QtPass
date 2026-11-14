@@ -1,4 +1,8 @@
 <map id="Enums::processLabel" name="Enums::processLabel">
-<area shape="rect" id="Node000001" title="The command label for pid, as the output panel shows it." alt="" coords="5,29,164,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="110,14,102,10,84,8,68,10,60,14,58,20,62,29,56,28,52,20,56,11,67,5,85,3,104,5,115,14"/>
+<area shape="rect" id="Node000001" title="The command label for pid, as the output panel shows it." alt="" coords="474,29,632,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="586,14,576,10,553,8,532,10,521,15,518,20,523,30,518,28,513,20,517,11,531,5,553,3,577,5,591,14"/>
+<area shape="rect" id="Node000002" href="$class_process_output_panel.html#a9c06c08371ba5d86e0c6b4b2459165fa" title="Human&#45;readable command label for a process id." alt="" coords="276,21,426,66"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="456,43,426,46,426,41,461,43"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c" title="Handle generic process output for display in output panel." alt="" coords="5,29,228,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="258,43,228,46,228,41,263,43"/>
 </map>

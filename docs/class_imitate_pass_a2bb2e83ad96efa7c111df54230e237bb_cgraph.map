@@ -1,0 +1,27 @@
+<map id="ImitatePass::GitInit" name="ImitatePass::GitInit">
+<area shape="rect" id="Node000001" title="Initialize Git repository." alt="" coords="5,60,151,88"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="199,32,374,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,61,186,59,181,61,152,67"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#af337264de66506f7f949169654aa267d" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="221,85,352,113"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="151,80,208,89,203,90,151,85"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="436,29,600,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,42,423,44,417,45,374,47"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="478,28,472,20,477,11,492,5,518,3,545,5,561,14,556,14,543,10,518,8,494,10,480,15,477,20,483,30"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="422,81,613,126"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="352,98,409,101,404,101,352,103"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="661,89,877,117"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="614,101,648,103,643,103,614,106"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="925,64,1117,92"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="877,90,907,89,912,89,877,95"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1592,115,1804,142"/>
+<area shape="poly" id="edge13_Node000006_Node000011" title=" " alt="" coords="877,103,1579,125,1574,126,877,109"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1165,64,1327,92"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1117,75,1152,78,1146,78,1117,80"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1375,64,1541,92"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1328,75,1362,78,1357,78,1328,80"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1589,11,1807,38"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1523,61,1615,43,1620,42,1524,66"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="1527,90,1617,111,1612,111,1526,95"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1596,63,1800,90"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="1541,75,1582,77,1577,77,1541,80"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="MainWindow::initTrayIcon" name="MainWindow::initTrayIcon">
+<area shape="rect" id="Node000001" title="Create m_tray and add the menu bar toggle to its menu; gives up (m_tray stays null) when no system tr..." alt="" coords="5,84,193,112"/>
+<area shape="rect" id="Node000002" href="$class_tray_icon.html#a510aaa56c5fef9b4b5ccf0c8c7cd6e3f" title="Put one of the window&#39;s toggles in the tray menu, above Quit." alt="" coords="274,5,423,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,81,240,43,273,36,268,39,241,48,137,86"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ae6cd4b4efa51da309090b9c394ae5a57" title="Delete m_tray and reset it to null." alt="" coords="241,57,456,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,85,227,83,223,85,194,90"/>
+<area shape="rect" id="Node000004" href="$class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47" title="Check whether tray resources have been allocated and initialized." alt="" coords="260,109,436,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,105,248,112,242,114,194,110"/>
+<area shape="rect" id="Node000005" href="$class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5" title="Construct a TrayIcon associated with the given main window." alt="" coords="280,161,417,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,110,241,146,273,157,268,157,240,151,137,115"/>
+<area shape="rect" id="Node000006" href="$class_tray_icon.html#a2b5808f03a006945a8cfbd96c6f68f29" title="Create the Show/Hide/Minimize/Maximize/Restore/Quit actions and wire each one to the matching QWidget..." alt="" coords="507,109,679,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="417,158,507,141,512,140,418,163"/>
+<area shape="rect" id="Node000007" href="$class_tray_icon.html#a937817b83e4f11e4f500608e3bc16e6b" title="Build the context menu from the actions and create the QSystemTrayIcon that pops it up...." alt="" coords="504,161,682,189"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="417,173,491,175,486,175,417,178"/>
+<area shape="rect" id="Node000008" href="$class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8" title="Handle activation events from the system tray icon." alt="" coords="507,213,679,241"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="417,187,512,209,507,209,417,192"/>
+<area shape="rect" id="Node000009" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="Toggle the visibility of the associated main window." alt="" coords="730,213,919,241"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="680,225,717,227,712,227,680,230"/>
+</map>

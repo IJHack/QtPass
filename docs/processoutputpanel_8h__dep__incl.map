@@ -1,0 +1,7 @@
+<map id="src/processoutputpanel.h" name="src/processoutputpanel.h">
+<area shape="rect" id="Node000001" title="ProcessOutputPanel: the dockable console that shows numbered, colour&#45;coded git/pass/gpg output." alt="" coords="90,5,274,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,42,101,83,98,78,149,43"/>
+<area shape="rect" id="Node000003" href="$processoutputpanel_8cpp.html" title="Implements ProcessOutputPanel; the sticky auto&#45;scroll hysteresis is set up in the constructor,..." alt="" coords="182,81,382,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,40,267,81,262,81,211,45"/>
+</map>

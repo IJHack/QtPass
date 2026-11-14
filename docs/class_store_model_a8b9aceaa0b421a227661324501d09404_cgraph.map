@@ -1,0 +1,13 @@
+<map id="StoreModel::executeDropAction" name="StoreModel::executeDropAction">
+<area shape="rect" id="Node000001" title="Resolve a validated drop into a Move or Copy." alt="" coords="5,57,232,85"/>
+<area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d" title="Ask a yes/no question in plain text." alt="" coords="286,5,474,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,54,294,36,289,38,193,59"/>
+<area shape="rect" id="Node000004" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="280,57,480,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="232,69,267,71,261,72,232,74"/>
+<area shape="rect" id="Node000006" href="$class_store_model.html#ac66256efac2ec5e6924d8694b7a718c5" title="Perform the actual Move/Copy for a validated drop." alt="" coords="287,109,473,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="192,83,294,105,289,106,192,88"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="554,5,732,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,17,541,19,536,20,475,22"/>
+<area shape="rect" id="Node000005" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="528,57,758,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="480,69,515,71,510,71,481,74"/>
+</map>

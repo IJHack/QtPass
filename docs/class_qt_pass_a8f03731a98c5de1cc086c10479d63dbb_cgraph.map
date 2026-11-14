@@ -1,0 +1,33 @@
+<map id="QtPass::finishedInsert" name="QtPass::finishedInsert">
+<area shape="rect" id="Node000001" title="Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre..." alt="" coords="5,109,167,137"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b" title="Emit pushRequested() when the settings ask for automatic push." alt="" coords="234,57,373,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,106,230,88,225,91,148,111"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e" title="An entry was written; the view of the current entry is stale." alt="" coords="223,109,384,137"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="167,121,210,122,205,124,168,126"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#a40570e79464875930afd869223136a99" title="Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std..." alt="" coords="215,161,392,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="147,135,230,156,225,158,147,140"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title="Check whether automatic push is enabled." alt="" coords="440,5,638,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,54,461,36,456,38,370,59"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a" title="The store changed and the settings ask for an automatic push." alt="" coords="452,57,626,85"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="373,69,440,70,435,72,374,74"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="686,5,889,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="638,17,673,19,668,20,639,22"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="937,5,1160,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="889,17,924,19,918,20,889,22"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass.html#a32860d084409d781977736d6fb40d629" title="Turn a process&#39; plain&#45;text output into the HTML the text browser shows: http(s) URLs become links,..." alt="" coords="707,147,868,174"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="364,158,440,146,505,142,571,142,694,150,689,151,571,147,505,147,440,151,365,163"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb" title="A backend operation is over, successfully or not; the interface can be enabled again." alt="" coords="444,160,634,188"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="392,172,432,174,426,175,392,177"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6" title="Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser." alt="" coords="709,237,866,265"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="324,187,375,221,407,237,441,249,505,261,572,265,636,265,691,264,696,264,636,270,572,271,505,266,439,254,405,242,372,225,322,192"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199" title="Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ..." alt="" coords="468,212,611,240"/>
+<area shape="poly" id="edge14_Node000008_Node000015" title=" " alt="" coords="371,187,459,208,454,208,371,192"/>
+<area shape="rect" id="Node000010" href="$class_util.html#ada742504985a1e8b2c6adb5e14b24794" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="989,147,1108,174"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="869,158,976,160,971,161,869,163"/>
+<area shape="rect" id="Node000011" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="1208,120,1392,148"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1108,152,1190,145,1195,145,1108,157"/>
+<area shape="rect" id="Node000012" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="1227,172,1373,200"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="1108,164,1214,177,1209,177,1108,169"/>
+<area shape="poly" id="edge15_Node000015_Node000009" title=" " alt="" coords="594,209,715,179,720,178,596,214"/>
+<area shape="poly" id="edge16_Node000015_Node000014" title=" " alt="" coords="611,230,697,242,691,242,611,236"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="src/otpcodewidget.h" name="src/otpcodewidget.h">
+<area shape="rect" id="Node000001" title="Self&#45;refreshing widget showing an entry&#39;s current TOTP code with a countdown bar and optional copy bu..." alt="" coords="121,5,273,33"/>
+<area shape="rect" id="Node000002" href="$otpcodewidget_8cpp.html" title="Implements OtpCodeWidget: builds the code label, copy button and countdown bar, and owns the one&#45;seco..." alt="" coords="5,81,173,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,42,109,83,107,78,162,43"/>
+<area shape="rect" id="Node000003" href="$passworddisplaypanel_8cpp.html" title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local..." alt="" coords="197,81,413,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,40,289,81,283,81,228,45"/>
+</map>

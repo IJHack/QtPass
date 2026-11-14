@@ -1,0 +1,20 @@
+<map id="ImitatePass::pgit" name="ImitatePass::pgit">
+<area shape="rect" id="Node000001" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="5,84,136,112"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="184,76,375,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,95,171,97,166,98,136,100"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="423,84,638,112"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="375,95,410,98,405,98,376,100"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="686,59,879,86"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="639,84,668,84,674,83,639,90"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1353,109,1566,137"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="639,98,1339,117,1337,122,639,103"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="927,59,1089,86"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="879,70,913,72,908,73,879,75"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1137,59,1302,86"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1089,70,1124,72,1119,73,1090,75"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1350,5,1569,33"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1285,55,1377,37,1382,37,1286,61"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="1289,84,1379,106,1373,105,1288,90"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1357,57,1562,85"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1303,69,1344,72,1339,72,1303,75"/>
+</map>

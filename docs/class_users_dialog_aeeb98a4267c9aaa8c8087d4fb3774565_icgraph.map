@@ -1,0 +1,7 @@
+<map id="UsersDialog::loadGpgKeys" name="UsersDialog::loadGpgKeys">
+<area shape="rect" id="Node000001" title="Load GPG keys and determine secret key status." alt="" coords="252,44,445,72"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a0b5cc847c9d780a1a317329a49a52906" title="Import a GPG key and refresh the list." alt="" coords="5,5,204,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,45,204,43,204,38,239,44"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a03e8b70497881510ffc82e753e6f8296" title="Construct users dialog, saying what to preselect." alt="" coords="11,74,198,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,72,199,79,198,74,239,71"/>
+</map>

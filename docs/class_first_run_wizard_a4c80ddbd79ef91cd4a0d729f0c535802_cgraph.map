@@ -1,0 +1,19 @@
+<map id="FirstRunWizard::initialiseGit" name="FirstRunWizard::initialiseGit">
+<area shape="rect" id="Node000001" title="Give an existing store the Git repository it was chosen to have." alt="" coords="5,84,208,112"/>
+<area shape="rect" id="Node000002" href="$class_profile_init.html#a52111b898d794f14ec9d7dbe668dc5a2" title="Put an existing store under Git: git init, stage the .gpg entries and the .gpg&#45;id files (nothing else..." alt="" coords="256,84,387,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,95,243,98,238,98,209,100"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="435,57,627,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,87,416,86,422,85,388,92"/>
+<area shape="rect" id="Node000009" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="448,109,615,137"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="388,103,435,111,430,111,388,108"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="675,57,838,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="627,69,662,71,657,71,628,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="886,57,1051,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="838,69,873,71,868,71,838,74"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1099,5,1317,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1035,54,1123,37,1128,37,1036,59"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1102,57,1314,85"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1051,69,1089,71,1084,71,1051,74"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1106,109,1310,137"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1036,83,1128,106,1123,105,1035,88"/>
+</map>

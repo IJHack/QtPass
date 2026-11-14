@@ -1,0 +1,6 @@
+<map id="isOtpUri" name="isOtpUri">
+<area shape="rect" id="Node000001" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="5,29,80,57"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="11,30,6,20,10,11,22,5,43,3,64,5,77,14,72,14,62,10,42,8,24,10,14,15,11,20,16,28"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="128,29,320,57"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="80,41,115,43,109,44,80,46"/>
+</map>

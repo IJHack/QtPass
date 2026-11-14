@@ -1,0 +1,5 @@
+<map id="ImitatePass::beforeExecute" name="ImitatePass::beforeExecute">
+<area shape="rect" id="Node000001" title="Open a transaction for every execution." alt="" coords="5,14,204,42"/>
+<area shape="rect" id="Node000002" href="$class_simple_transaction.html#a09853d5e4cf4b047fa185705487e67f9" title="Note that process has been queued." alt="" coords="252,5,400,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,25,239,27,234,28,204,30"/>
+</map>

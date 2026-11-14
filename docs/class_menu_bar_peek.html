@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_menu_bar_peek.html','','class_menu_bar_peek-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="class_menu_bar_peek-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">MenuBarPeek Class Reference</div></div>
+  <div class="headertitle"><div class="title">MenuBarPeek Class Reference<div class="ingroups"><a class="el" href="group__ui.html">Windows and dialogs</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek__inherit__graph.svg" width="123" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for MenuBarPeek:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek__coll__graph.svg" width="123" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -131,13 +145,45 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8a9a8dc73d9d99dbcdc580b1b3567525" id="r_a8a9a8dc73d9d99dbcdc580b1b3567525"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8a9a8dc73d9d99dbcdc580b1b3567525">eventFilter</a> (QObject *watched, QEvent *event) -&gt; bool override</td></tr>
 <tr class="memdesc:a8a9a8dc73d9d99dbcdc580b1b3567525"><td class="mdescLeft">&#160;</td><td class="mdescRight">Follows Alt, Escape, clicks and focus for the whole application.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac6bb1a4ecef94ccf5ce99ce3d01c95ea" id="r_ac6bb1a4ecef94ccf5ce99ce3d01c95ea"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac6bb1a4ecef94ccf5ce99ce3d01c95ea">onKeyPress</a> (QObject *watched, const QKeyEvent *event)</td></tr>
+<tr class="memdesc:ac6bb1a4ecef94ccf5ce99ce3d01c95ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a key press seen by the application filter.  <br /></td></tr>
+<tr class="memitem:a16f2d7bb3d881e772f372ea8881967b7" id="r_a16f2d7bb3d881e772f372ea8881967b7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a16f2d7bb3d881e772f372ea8881967b7">onKeyRelease</a> (const QKeyEvent *event)</td></tr>
+<tr class="memdesc:a16f2d7bb3d881e772f372ea8881967b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the release of Alt: a second lone tap hides the bar, an Alt+key chord that did not open a menu hides it once no menu is open, and the tap that showed it leaves it up.  <br /></td></tr>
+<tr class="memitem:afbf6c5aff86d318171ac2a3f449463a6" id="r_afbf6c5aff86d318171ac2a3f449463a6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afbf6c5aff86d318171ac2a3f449463a6">inWindow</a> (QObject *watched) const -&gt; bool</td></tr>
+<tr class="memdesc:afbf6c5aff86d318171ac2a3f449463a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">watched</code> is a widget that belongs to the main window.  <br /></td></tr>
+<tr class="memitem:ae0e3e934197991fe271509cdca295314" id="r_ae0e3e934197991fe271509cdca295314"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae0e3e934197991fe271509cdca295314">onMenuBar</a> (QObject *watched) const -&gt; bool</td></tr>
+<tr class="memdesc:ae0e3e934197991fe271509cdca295314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">watched</code> is the menu bar itself or one of its children, so a click there must not end the peek.  <br /></td></tr>
+<tr class="memitem:a300d9ba6840c2ac04213e61b7d16defe" id="r_a300d9ba6840c2ac04213e61b7d16defe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a300d9ba6840c2ac04213e61b7d16defe">show</a> ()</td></tr>
+<tr class="memdesc:a300d9ba6840c2ac04213e61b7d16defe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the menu bar and mark the peek as active.  <br /></td></tr>
+<tr class="memitem:ad21d624502b17fbd7aea6b32c33c6176" id="r_ad21d624502b17fbd7aea6b32c33c6176"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad21d624502b17fbd7aea6b32c33c6176">hide</a> ()</td></tr>
+<tr class="memdesc:ad21d624502b17fbd7aea6b32c33c6176"><td class="mdescLeft">&#160;</td><td class="mdescRight">End the peek; hides the menu bar unless the "Show menu bar" toggle was checked in the meantime.  <br /></td></tr>
+<tr class="memitem:a5b64a884de1b4b23d3ce8a04e3ccc7af" id="r_a5b64a884de1b4b23d3ce8a04e3ccc7af"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5b64a884de1b4b23d3ce8a04e3ccc7af">hideWhenNoMenuIsOpen</a> ()</td></tr>
+<tr class="memdesc:a5b64a884de1b4b23d3ce8a04e3ccc7af"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad21d624502b17fbd7aea6b32c33c6176" title="End the peek; hides the menu bar unless the &quot;Show menu bar&quot; toggle was checked in the meantime.">hide()</a> on the next event-loop pass, and only if no popup is open and the bar has no active action. Deferred because a menu's aboutToHide also fires when the pointer moves on to the next menu, and Escape is seen before the bar leaves keyboard mode.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a81f0b0b1a9bd335a3b8770b80ae7aad9" id="r_a81f0b0b1a9bd335a3b8770b80ae7aad9"><td class="memItemLeft">QMainWindow *&#160;</td><td class="memItemRight"><a class="el" href="#a81f0b0b1a9bd335a3b8770b80ae7aad9">m_window</a></td></tr>
+<tr class="memdesc:a81f0b0b1a9bd335a3b8770b80ae7aad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main window whose menuBar() is shown and hidden; the parent.  <br /></td></tr>
+<tr class="memitem:ae517f5f7fb38d88a1ed41d278a60eed4" id="r_ae517f5f7fb38d88a1ed41d278a60eed4"><td class="memItemLeft">QAction *&#160;</td><td class="memItemRight"><a class="el" href="#ae517f5f7fb38d88a1ed41d278a60eed4">m_toggle</a></td></tr>
+<tr class="memdesc:ae517f5f7fb38d88a1ed41d278a60eed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The window's "Show menu bar" action; while checked the bar is up by choice and the peek state is cleared.  <br /></td></tr>
+<tr class="memitem:a40df1a3e7e3238b2e4874f859e586b25" id="r_a40df1a3e7e3238b2e4874f859e586b25"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a40df1a3e7e3238b2e4874f859e586b25">m_peeking</a> {false}</td></tr>
+<tr class="memdesc:a40df1a3e7e3238b2e4874f859e586b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">true while the bar is shown because of Alt, not the toggle.  <br /></td></tr>
+<tr class="memitem:a54faf416473c8e3140cffebbef56f9cb" id="r_a54faf416473c8e3140cffebbef56f9cb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a54faf416473c8e3140cffebbef56f9cb">m_altDown</a> {false}</td></tr>
+<tr class="memdesc:a54faf416473c8e3140cffebbef56f9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">true between an Alt press in the window and its release (or the window losing activation); filters repeats and propagated copies.  <br /></td></tr>
+<tr class="memitem:af79fd843a3acf7a7a22e822b634349f9" id="r_af79fd843a3acf7a7a22e822b634349f9"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af79fd843a3acf7a7a22e822b634349f9">m_altAlone</a> {false}</td></tr>
+<tr class="memdesc:af79fd843a3acf7a7a22e822b634349f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">true while no other key has been pressed since Alt went down, i.e. the release will be a lone tap rather than a chord.  <br /></td></tr>
+<tr class="memitem:a5a5051065c4343673880b34b27827625" id="r_a5a5051065c4343673880b34b27827625"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a5a5051065c4343673880b34b27827625">m_shownByThisPress</a> {false}</td></tr>
+<tr class="memdesc:a5a5051065c4343673880b34b27827625"><td class="mdescLeft">&#160;</td><td class="mdescRight">true when the current Alt press is the one that showed the bar, so its release must not hide it again.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Shows a hidden menu bar while Alt is used, as browsers and file managers do. </p>
 <p>Pressing Alt in the window shows the bar, so Alt+F and the other mnemonics open their menus. A lone tap leaves it up until Alt is tapped again, Escape is pressed, the window is clicked or loses focus; after a menu closes, or after an Alt shortcut that was not a menu, it goes again. The stored "Show
 menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
 
-<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00023">23</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00029">29</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a417cdc2f5cdbe788effec7a8785238fd" name="a417cdc2f5cdbe788effec7a8785238fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a417cdc2f5cdbe788effec7a8785238fd">&#9670;&#160;</a></span>MenuBarPeek()</h2>
@@ -167,6 +213,20 @@ menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00017">17</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a417cdc2f5cdbe788effec7a8785238fd_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a417cdc2f5cdbe788effec7a8785238fd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -187,7 +247,7 @@ menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt;  bool</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -206,17 +266,131 @@ menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Always false. </dd></dl>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00033">33</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a8a9a8dc73d9d99dbcdc580b1b3567525_cgraph.svg" width="200" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a8a9a8dc73d9d99dbcdc580b1b3567525_cgraph.svg" width="100%" height="483"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a8a9a8dc73d9d99dbcdc580b1b3567525_icgraph.svg" width="200" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<a id="ad21d624502b17fbd7aea6b32c33c6176" name="ad21d624502b17fbd7aea6b32c33c6176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad21d624502b17fbd7aea6b32c33c6176">&#9670;&#160;</a></span>hide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuBarPeek::hide </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>End the peek; hides the menu bar unless the "Show menu bar" toggle was checked in the meantime. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00112">112</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_ad21d624502b17fbd7aea6b32c33c6176_icgraph.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a5b64a884de1b4b23d3ce8a04e3ccc7af" name="a5b64a884de1b4b23d3ce8a04e3ccc7af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b64a884de1b4b23d3ce8a04e3ccc7af">&#9670;&#160;</a></span>hideWhenNoMenuIsOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuBarPeek::hideWhenNoMenuIsOpen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#ad21d624502b17fbd7aea6b32c33c6176" title="End the peek; hides the menu bar unless the &quot;Show menu bar&quot; toggle was checked in the meantime.">hide()</a> on the next event-loop pass, and only if no popup is open and the bar has no active action. Deferred because a menu's aboutToHide also fires when the pointer moves on to the next menu, and Escape is seen before the bar leaves keyboard mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00121">121</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a5b64a884de1b4b23d3ce8a04e3ccc7af_cgraph.svg" width="444" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a5b64a884de1b4b23d3ce8a04e3ccc7af_icgraph.svg" width="100%" height="421"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="afbf6c5aff86d318171ac2a3f449463a6" name="afbf6c5aff86d318171ac2a3f449463a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbf6c5aff86d318171ac2a3f449463a6">&#9670;&#160;</a></span>inWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto MenuBarPeek::inWindow </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">watched</code> is a widget that belongs to the main window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>The object an event was sent to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if it is a widget whose top-level window is m_window. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00096">96</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_afbf6c5aff86d318171ac2a3f449463a6_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -234,7 +408,7 @@ menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
           <td class="memname">auto MenuBarPeek::isPeeking </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -247,16 +421,363 @@ menu bar" choice is never touched: checking it during a peek keeps the bar. </p>
 <p>Whether the bar is up for a peek rather than by choice. </p>
 <dl class="section return"><dt>Returns</dt><dd>true between the Alt press that showed it and its hiding. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00031">31</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="ac6bb1a4ecef94ccf5ce99ce3d01c95ea" name="ac6bb1a4ecef94ccf5ce99ce3d01c95ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6bb1a4ecef94ccf5ce99ce3d01c95ea">&#9670;&#160;</a></span>onKeyPress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuBarPeek::onKeyPress </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QKeyEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a key press seen by the application filter. </p>
+<p>A first, non-repeated Alt press inside the window shows the bar when it is hidden; any other key marks the press as "Alt plus something", and Escape during a peek hides the bar. A key event reaches the filter once for every widget it propagates to and again as auto-repeat; m_altDown makes the second sighting a no-op. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>The object the event was sent to. </td></tr>
+    <tr><td class="paramname">event</td><td>The key press. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00061">61</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_ac6bb1a4ecef94ccf5ce99ce3d01c95ea_cgraph.svg" width="100%" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_ac6bb1a4ecef94ccf5ce99ce3d01c95ea_icgraph.svg" width="443" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a16f2d7bb3d881e772f372ea8881967b7" name="a16f2d7bb3d881e772f372ea8881967b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f2d7bb3d881e772f372ea8881967b7">&#9670;&#160;</a></span>onKeyRelease()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuBarPeek::onKeyRelease </td>
+          <td>(</td>
+          <td class="paramtype">const QKeyEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle the release of Alt: a second lone tap hides the bar, an Alt+key chord that did not open a menu hides it once no menu is open, and the tap that showed it leaves it up. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>The key release; anything but a tracked Alt is ignored. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00081">81</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a16f2d7bb3d881e772f372ea8881967b7_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a16f2d7bb3d881e772f372ea8881967b7_icgraph.svg" width="460" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae0e3e934197991fe271509cdca295314" name="ae0e3e934197991fe271509cdca295314"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e3e934197991fe271509cdca295314">&#9670;&#160;</a></span>onMenuBar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto MenuBarPeek::onMenuBar </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>watched</em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether <code class="param">watched</code> is the menu bar itself or one of its children, so a click there must not end the peek. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">watched</td><td>The object a mouse press was sent to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true for the menu bar or a descendant of it. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00101">101</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_ae0e3e934197991fe271509cdca295314_icgraph.svg" width="442" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a300d9ba6840c2ac04213e61b7d16defe" name="a300d9ba6840c2ac04213e61b7d16defe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300d9ba6840c2ac04213e61b7d16defe">&#9670;&#160;</a></span>show()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MenuBarPeek::show </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show the menu bar and mark the peek as active. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8cpp_source.html#l00107">107</a> of file <a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_menu_bar_peek_a300d9ba6840c2ac04213e61b7d16defe_icgraph.svg" width="644" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="af79fd843a3acf7a7a22e822b634349f9" name="af79fd843a3acf7a7a22e822b634349f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79fd843a3acf7a7a22e822b634349f9">&#9670;&#160;</a></span>m_altAlone</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MenuBarPeek::m_altAlone {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true while no other key has been pressed since Alt went down, i.e. the release will be a lone tap rather than a chord. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00128">128</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<a id="a54faf416473c8e3140cffebbef56f9cb" name="a54faf416473c8e3140cffebbef56f9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54faf416473c8e3140cffebbef56f9cb">&#9670;&#160;</a></span>m_altDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MenuBarPeek::m_altDown {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true between an Alt press in the window and its release (or the window losing activation); filters repeats and propagated copies. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00123">123</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<a id="a40df1a3e7e3238b2e4874f859e586b25" name="a40df1a3e7e3238b2e4874f859e586b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40df1a3e7e3238b2e4874f859e586b25">&#9670;&#160;</a></span>m_peeking</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MenuBarPeek::m_peeking {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true while the bar is shown because of Alt, not the toggle. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00118">118</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a5051065c4343673880b34b27827625" name="a5a5051065c4343673880b34b27827625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5051065c4343673880b34b27827625">&#9670;&#160;</a></span>m_shownByThisPress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MenuBarPeek::m_shownByThisPress {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>true when the current Alt press is the one that showed the bar, so its release must not hide it again. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00133">133</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<a id="ae517f5f7fb38d88a1ed41d278a60eed4" name="ae517f5f7fb38d88a1ed41d278a60eed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae517f5f7fb38d88a1ed41d278a60eed4">&#9670;&#160;</a></span>m_toggle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QAction* MenuBarPeek::m_toggle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The window's "Show menu bar" action; while checked the bar is up by choice and the peek state is cleared. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00116">116</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<a id="a81f0b0b1a9bd335a3b8770b80ae7aad9" name="a81f0b0b1a9bd335a3b8770b80ae7aad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81f0b0b1a9bd335a3b8770b80ae7aad9">&#9670;&#160;</a></span>m_window</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMainWindow* MenuBarPeek::m_window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The main window whose menuBar() is shown and hidden; the parent. </p>
+
+<p class="definition">Definition at line <a class="el" href="menubarpeek_8h_source.html#l00111">111</a> of file <a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="menubarpeek_8h_source.html">menubarpeek.h</a></li>
+<li>src/<a class="el" href="menubarpeek_8cpp_source.html">menubarpeek.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_menu_bar_peek.html">MenuBarPeek</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

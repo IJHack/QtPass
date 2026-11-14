@@ -1,4 +1,22 @@
 <map id="WindowStateStore::attach" name="WindowStateStore::attach">
-<area shape="rect" id="Node000001" title="restore() now, save() whenever the dialog finishes." alt="" coords="5,29,196,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="67,28,62,20,66,11,79,5,101,3,123,5,137,14,131,14,121,10,100,8,81,10,70,15,68,20,72,29"/>
+<area shape="rect" id="Node000001" title="restore() now, save() whenever the dialog finishes." alt="" coords="5,139,196,167"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="59,139,53,130,58,121,74,115,101,113,129,115,146,123,140,124,127,120,100,118,75,120,61,125,58,130,64,138"/>
+<area shape="rect" id="Node000002" href="$namespace_window_state_store.html#a33978c57279f86bfb1a416ad199858e8" title="Restore window&#39;s geometry saved under key." alt="" coords="244,100,439,128"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="190,136,238,130,233,132,191,141"/>
+<area shape="rect" id="Node000007" href="$namespace_window_state_store.html#a12847c28255482a7c0105efb4f788987" title="Save window&#39;s geometry under key." alt="" coords="251,176,432,204"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="194,165,239,174,233,174,194,170"/>
+<area shape="poly" id="edge8_Node000002_Node000002" title=" " alt="" coords="300,99,294,92,299,82,315,76,341,74,370,76,386,85,381,85,368,82,341,79,316,81,302,86,299,91,305,101"/>
+<area shape="rect" id="Node000003" href="$namespace_window_state_store.html#a5297f0374c183534e9573d4cf06542b5" title="Move window so its frame is centred on the screen under the mouse pointer (the primary screen when th..." alt="" coords="487,29,677,74"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="397,97,482,78,477,79,398,103"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="488,99,677,143"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="439,114,475,118,469,118,440,120"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="537,27,535,19,543,10,559,5,582,3,608,5,625,14,620,14,607,10,582,8,560,10,546,15,540,21,541,30"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="725,142,928,170"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="677,132,713,139,707,139,677,137"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="976,142,1199,170"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="928,153,963,156,957,156,928,158"/>
+<area shape="poly" id="edge10_Node000007_Node000007" title=" " alt="" coords="300,175,294,168,299,158,315,152,341,150,370,152,386,161,381,161,368,158,341,155,316,157,302,162,299,167,305,177"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe" title="Save dialog geometry." alt="" coords="488,168,676,213"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="432,188,475,190,470,190,432,193"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="677,174,707,172,712,172,677,180"/>
 </map>

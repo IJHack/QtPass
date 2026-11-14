@@ -1,0 +1,9 @@
+<map id="src/singleapplication.h" name="src/singleapplication.h">
+<area shape="rect" id="Node000001" title="SingleApplication: a QApplication that keeps one QtPass instance per user via a shared&#45;memory segment..." alt="" coords="103,5,270,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,110,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,33,95,76,92,71,161,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="133,81,240,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,32,189,67,185,64,185,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="264,81,395,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,31,293,73,288,74,212,36"/>
+</map>

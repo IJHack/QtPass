@@ -1,0 +1,23 @@
+<map id="MainWindow::refuseLinkedFolder" name="MainWindow::refuseLinkedFolder">
+<area shape="rect" id="Node000001" title="Refuse, with a message, a tree&#45;picked folder that is or lies behind a symlink or junction: what it po..." alt="" coords="5,49,201,94"/>
+<area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#ae9796117699b84c7f457dcfa9cdc4335" title="Show an error in plain text." alt="" coords="249,5,437,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,48,263,35,258,38,202,52"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="278,57,408,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,69,265,70,260,72,202,74"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="266,109,420,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="201,90,263,104,258,106,201,95"/>
+<area shape="rect" id="Node000003" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="497,5,675,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,17,484,18,479,20,438,22"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="514,57,659,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="408,69,500,70,495,72,408,74"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="485,109,687,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="420,121,472,123,467,124,421,126"/>
+<area shape="rect" id="Node000009" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="518,161,654,206"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="402,135,506,163,501,163,402,140"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="735,109,959,137"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="687,121,722,123,717,123,688,126"/>
+<area shape="rect" id="Node000010" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="750,161,944,206"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="654,181,737,183,732,183,654,186"/>
+<area shape="rect" id="Node000011" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="744,230,950,275"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="655,198,748,226,743,225,654,204"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="StoreTree::setFilter" name="StoreTree::setFilter">
+<area shape="rect" id="Node000001" title="Filter the visible entries." alt="" coords="1032,44,1175,72"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a7390a38fa0f78bcd05f797c70a959ac5" title="The content&#45;search toggle changed: switch the search box between name filtering and regex content sea..." alt="" coords="767,5,974,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1013,47,975,44,975,39,1019,47"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="757,74,984,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1019,69,984,76,984,71,1013,69"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079" title=" " alt="" coords="531,74,709,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="739,88,710,90,710,85,744,88"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,74,483,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,88,484,90,484,85,519,88"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="424,58,411,55,385,52,360,54,347,59,343,65,349,74,344,72,338,65,343,55,359,49,385,47,412,50,429,59"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,74,239,102"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="269,97,239,99,239,94,274,97"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="254,76,289,79,284,79,254,81"/>
+</map>

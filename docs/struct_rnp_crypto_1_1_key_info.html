@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_rnp_crypto_1_1_key_info.html','','struct_rnp_crypto_1_1_key_info-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a href="class_rnp_crypto.html">RnpCrypto</a></li><li class="navelem"><a href="struct_rnp_crypto_1_1_key_info.html">KeyInfo</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_rnp_crypto_1_1_key_info-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">RnpCrypto::KeyInfo Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -139,7 +150,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One primary key in the keyring, as the Users dialog lists keys. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00040">40</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00046">46</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a4b1cba6912f9edcbb4ef24ef74f83b5d" name="a4b1cba6912f9edcbb4ef24ef74f83b5d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b1cba6912f9edcbb4ef24ef74f83b5d">&#9670;&#160;</a></span>canEncrypt</h2>
@@ -155,7 +166,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether a message can be encrypted to it now. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00069">69</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00075">75</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -173,7 +184,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether it can sign now, with a secret key that is here. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00071">71</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00077">77</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -191,7 +202,7 @@ Public Attributes</h2></td></tr>
 
 <p>When it was created. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00051">51</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00057">57</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +220,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether it has expired. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00057">57</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00063">63</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -227,7 +238,7 @@ Public Attributes</h2></td></tr>
 
 <p>When it expires; invalid when it does not. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00053">53</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00059">59</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +256,7 @@ Public Attributes</h2></td></tr>
 
 <p>The primary key's fingerprint, upper-case hex. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00042">42</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00048">48</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +274,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether a secret part of it (primary or subkey) is here to use: a GnuPG stub (a key left at home, or on a smartcard) does not count. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00062">62</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00068">68</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -281,7 +292,7 @@ Public Attributes</h2></td></tr>
 
 <p>The primary key's 16-hex-digit key ID. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00044">44</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00050">50</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -299,7 +310,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether it has been revoked. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00055">55</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00061">61</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -317,7 +328,7 @@ Public Attributes</h2></td></tr>
 
 <p>Whether every secret part of it that is here is protected by a passphrase; true when none is here. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00067">67</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00073">73</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -335,7 +346,7 @@ Public Attributes</h2></td></tr>
 
 <p>Its user IDs that are still its own (valid, not revoked), in the keyring's order. </p>
 
-<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00049">49</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rnpcrypto_8h_source.html#l00055">55</a> of file <a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a>.</p>
 
 </div>
 </div>
@@ -343,10 +354,21 @@ Public Attributes</h2></td></tr>
 <li>src/<a class="el" href="rnpcrypto_8h_source.html">rnpcrypto.h</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_rnp_crypto.html">RnpCrypto</a></li><li class="navelem"><a href="struct_rnp_crypto_1_1_key_info.html">KeyInfo</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

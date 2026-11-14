@@ -1,0 +1,6 @@
+<map id="StoreModel::showThis" name="StoreModel::showThis">
+<area shape="rect" id="Node000001" title="Check if a specific index should be shown." alt="" coords="5,29,170,57"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="53,29,47,20,52,11,66,5,88,3,111,5,125,14,120,14,110,10,87,8,67,10,56,15,53,20,58,29"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="218,29,357,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,41,205,43,199,43,170,46"/>
+</map>

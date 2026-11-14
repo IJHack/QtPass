@@ -1,0 +1,6 @@
+<map id="MainWindow::initSucceeded" name="MainWindow::initSucceeded">
+<area shape="rect" id="Node000001" title="Return whether startup configuration succeeded." alt="" coords="114,29,317,57"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="12,29,66,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,44,66,46,66,41,101,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="68,15,59,11,39,8,20,10,11,15,8,21,14,29,9,30,3,21,7,11,19,5,39,3,61,5,73,14"/>
+</map>

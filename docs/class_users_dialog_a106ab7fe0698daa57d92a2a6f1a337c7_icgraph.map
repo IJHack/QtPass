@@ -1,0 +1,12 @@
+<map id="UsersDialog::selectedUsers" name="UsersDialog::selectedUsers">
+<area shape="rect" id="Node000001" title="The key list with the user&#39;s choice in each entry&#39;s enabled flag." alt="" coords="924,29,1124,57"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="707,21,876,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="905,43,876,46,876,41,911,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="491,21,659,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="689,43,660,46,660,41,695,43"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,29,443,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="473,43,443,46,443,41,478,43"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="143,14,130,10,103,8,78,10,64,15,60,20,67,29,61,29,55,20,60,11,77,5,103,3,131,5,148,14"/>
+</map>

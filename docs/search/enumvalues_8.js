@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['malformed_0',['Malformed',['../class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5',1,'GpgIdGeneration']]]
+  ['keypage_0',['KeyPage',['../class_first_run_wizard.html#a14958ddb0cfbdc353e4ca77c9418f92ca60ce1c6692a23daad6b62bcac3f63e47',1,'FirstRunWizard']]]
 ];

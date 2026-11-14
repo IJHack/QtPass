@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['validity_0',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
-  ['value_1',['value',['../struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d',1,'NamedValue']]],
-  ['version_2',['version',['../struct_app_settings.html#aaf6d5f6bafc91640cf07293134308634',1,'AppSettings']]]
+  ['ui_0',['ui',['../class_config_dialog.html#a5de66ac7a8a063efdd7c515b1e75e5f3',1,'ConfigDialog::ui'],['../class_export_public_key_dialog.html#a133622ee9f8f7407e74744f42b031001',1,'ExportPublicKeyDialog::ui'],['../class_import_key_dialog.html#aef777c2c76f289d635cc3ba8b6ca0acf',1,'ImportKeyDialog::ui'],['../class_keygen_dialog.html#aa6e89ea0c59169dfd0c4205a143b369f',1,'KeygenDialog::ui'],['../class_main_window.html#a9df5005557a207e799dbe45333adac74',1,'MainWindow::ui'],['../class_password_dialog.html#a07264e58155c4b7b3a12cb926c472f5b',1,'PasswordDialog::ui'],['../class_users_dialog.html#ae86b7e4f8a990b980dfcc4f394722069',1,'UsersDialog::ui']]],
+  ['uiwatchdogms_1',['UiWatchdogMs',['../class_main_window.html#aa6d6ebb1c20bb473ef249093ae349c53',1,'MainWindow']]],
+  ['useautoclear_2',['useAutoclear',['../struct_app_settings.html#ab7ed344d235b3e5777a94c13d50e0b66',1,'AppSettings']]],
+  ['useautoclearpanel_3',['useAutoclearPanel',['../struct_app_settings.html#a457fe600e8bd16cdb5b985754deab231',1,'AppSettings']]],
+  ['usegit_4',['useGit',['../struct_app_settings.html#a95d05280efb398eb31e2440b1fcd1444',1,'AppSettings::useGit'],['../struct_profile.html#a3943541e66642e37b2ef228c6e3bc4f3',1,'Profile::useGit']]],
+  ['usegrepsearch_5',['useGrepSearch',['../struct_app_settings.html#a0cd6f1f365fafe779fbb047bc10453d7',1,'AppSettings']]],
+  ['usemonospace_6',['useMonospace',['../struct_app_settings.html#abca264324f7360383c5e262223a4f97e',1,'AppSettings']]],
+  ['useotp_7',['useOtp',['../struct_app_settings.html#a39b0ad93cc76f9941fe22291ea689613',1,'AppSettings']]],
+  ['usepass_8',['usePass',['../struct_app_settings.html#a32643a3ae350c55c2441875d7e5966ad',1,'AppSettings']]],
+  ['usepwgen_9',['usePwgen',['../struct_app_settings.html#a6c2e2a0291def634f07ab1608386676a',1,'AppSettings']]],
+  ['useqrencode_10',['useQrencode',['../struct_app_settings.html#ac73a141ef053548af932d5d6cc56e1b9',1,'AppSettings']]],
+  ['userids_11',['userIds',['../struct_rnp_crypto_1_1_key_info.html#a2cef07cc019ce6b9097c31dd2d3b2c32',1,'RnpCrypto::KeyInfo']]],
+  ['useselection_12',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings']]],
+  ['usesymbols_13',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
+  ['usetemplate_14',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings']]],
+  ['usetrayicon_15',['useTrayIcon',['../struct_app_settings.html#a7489ac000e265da73e55da7e94f313cc',1,'AppSettings']]]
 ];

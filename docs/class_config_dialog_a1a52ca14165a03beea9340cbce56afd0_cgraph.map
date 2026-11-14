@@ -1,0 +1,10 @@
+<map id="ConfigDialog::on_toolButtonGit_clicked" name="ConfigDialog::on_toolButtonGit_clicked">
+<area shape="rect" id="Node000001" title="Pick the git executable in a file dialog; a cancelled dialog turns Git off and disables its checkbox,..." alt="" coords="5,36,209,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a8ac46697f885118d2eb8773e22d28d85" title="Ask for an existing file in a read&#45;only file dialog." alt="" coords="257,5,479,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,40,257,35,252,37,210,45"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="Enable or disable git integration." alt="" coords="291,81,445,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,70,278,82,272,82,209,75"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="324,80,317,72,322,63,340,57,368,55,398,57,416,66,411,66,397,62,368,60,341,62,326,67,322,72,329,82"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="527,73,725,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="445,93,514,95,509,95,446,98"/>
+</map>

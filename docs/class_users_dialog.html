@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_users_dialog.html','','class_users_dialog-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,16 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-slots">Public Slots</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="class_users_dialog-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">UsersDialog Class Reference</div></div>
+  <div class="headertitle"><div class="title">UsersDialog Class Reference<div class="ingroups"><a class="el" href="group__keys.html">Keys and recipients</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -114,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog__inherit__graph.svg" width="111" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for UsersDialog:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog__coll__graph.svg" width="111" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog__coll__graph.svg" width="402" height="340"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -142,7 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a03e8b70497881510ffc82e753e6f8296"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct users dialog, saying what to preselect.  <br /></td></tr>
 <tr class="memitem:a046728922f9ad9d2bf17ff64bf639d06" id="r_a046728922f9ad9d2bf17ff64bf639d06"><td class="memItemLeft"><a id="a046728922f9ad9d2bf17ff64bf639d06" name="a046728922f9ad9d2bf17ff64bf639d06"></a>
 &#160;</td><td class="memItemRight"><b>~UsersDialog</b> () override</td></tr>
-<tr class="memdesc:a046728922f9ad9d2bf17ff64bf639d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="memdesc:a046728922f9ad9d2bf17ff64bf639d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the dialog and its generated form. <br /></td></tr>
 <tr class="memitem:ab30de74144c09f81f4d3324207e911cd" id="r_ab30de74144c09f81f4d3324207e911cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab30de74144c09f81f4d3324207e911cd">setInitOnAccept</a> (bool initOnAccept)</td></tr>
 <tr class="memdesc:ab30de74144c09f81f4d3324207e911cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose whether OK runs <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a> on the folder.  <br /></td></tr>
 <tr class="memitem:a106ab7fe0698daa57d92a2a6f1a337c7" id="r_a106ab7fe0698daa57d92a2a6f1a337c7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a106ab7fe0698daa57d92a2a6f1a337c7">selectedUsers</a> () const -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
@@ -154,12 +166,70 @@ Public Member Functions</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a2b8e6e8605111e43bab64328add16ddb" id="r_a2b8e6e8605111e43bab64328add16ddb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
 <tr class="memdesc:a2b8e6e8605111e43bab64328add16ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle key press.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a0a9df57e10de95c375523902b4bbdc5b" id="r_a0a9df57e10de95c375523902b4bbdc5b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0a9df57e10de95c375523902b4bbdc5b">itemChange</a> (QListWidgetItem *item)</td></tr>
+<tr class="memdesc:a0a9df57e10de95c375523902b4bbdc5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle user selection change.  <br /></td></tr>
+<tr class="memitem:a20609c91440503dc7f84f26a43d01509" id="r_a20609c91440503dc7f84f26a43d01509"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20609c91440503dc7f84f26a43d01509">on_lineEdit_textChanged</a> (const QString &amp;filter)</td></tr>
+<tr class="memdesc:a20609c91440503dc7f84f26a43d01509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter user list.  <br /></td></tr>
+<tr class="memitem:ae4d6d585d09d26213b5c1fe757974544" id="r_ae4d6d585d09d26213b5c1fe757974544"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae4d6d585d09d26213b5c1fe757974544">on_checkBox_clicked</a> ()</td></tr>
+<tr class="memdesc:ae4d6d585d09d26213b5c1fe757974544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle select all checkbox.  <br /></td></tr>
+<tr class="memitem:a0b5cc847c9d780a1a317329a49a52906" id="r_a0b5cc847c9d780a1a317329a49a52906"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0b5cc847c9d780a1a317329a49a52906">on_importKeyButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a0b5cc847c9d780a1a317329a49a52906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import a GPG key and refresh the list.  <br /></td></tr>
+<tr class="memitem:a9a4174d9ae0e84c8742e24f1092a63b9" id="r_a9a4174d9ae0e84c8742e24f1092a63b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9a4174d9ae0e84c8742e24f1092a63b9">selectImportedKey</a> (const QString &amp;importedKey)</td></tr>
+<tr class="memdesc:a9a4174d9ae0e84c8742e24f1092a63b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the key gpg just imported the current row. gpg reports a 16-character long ID (IMPORTED) or a 40-character fingerprint (IMPORT_OK), so the two are compared both ways, by suffix.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0506ad62cc53b4e491d4548029511b98" id="r_a0506ad62cc53b4e491d4548029511b98"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0506ad62cc53b4e491d4548029511b98">updateOkButton</a> ()</td></tr>
+<tr class="memdesc:a0506ad62cc53b4e491d4548029511b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable OK only while at least one key is ticked (<a class="el" href="#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked.">hasSelection()</a>).  <br /></td></tr>
+<tr class="memitem:a72f07ae1b408688108f0855624c789d2" id="r_a72f07ae1b408688108f0855624c789d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a72f07ae1b408688108f0855624c789d2">restoreDialogState</a> ()</td></tr>
+<tr class="memitem:a56e762c68f4ae6faf7e50c227598e0f1" id="r_a56e762c68f4ae6faf7e50c227598e0f1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a56e762c68f4ae6faf7e50c227598e0f1">connectSignals</a> ()</td></tr>
+<tr class="memdesc:a56e762c68f4ae6faf7e50c227598e0f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect dialog signals.  <br /></td></tr>
+<tr class="memitem:aeeb98a4267c9aaa8c8087d4fb3774565" id="r_aeeb98a4267c9aaa8c8087d4fb3774565"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aeeb98a4267c9aaa8c8087d4fb3774565">loadGpgKeys</a> () -&gt; bool</td></tr>
+<tr class="memdesc:aeeb98a4267c9aaa8c8087d4fb3774565"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load GPG keys and determine secret key status.  <br /></td></tr>
+<tr class="memitem:aae28ed1da1149c4e1d1685a6e4c9d3a2" id="r_aae28ed1da1149c4e1d1685a6e4c9d3a2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aae28ed1da1149c4e1d1685a6e4c9d3a2">markSecretKeys</a> (QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users)</td></tr>
+<tr class="memdesc:aae28ed1da1149c4e1d1685a6e4c9d3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark which keys have secret counterparts.  <br /></td></tr>
+<tr class="memitem:aa1508b1fe6dc8fba34257d72a1633a4b" id="r_aa1508b1fe6dc8fba34257d72a1633a4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa1508b1fe6dc8fba34257d72a1633a4b">loadRecipients</a> ()</td></tr>
+<tr class="memdesc:aa1508b1fe6dc8fba34257d72a1633a4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load recipients and handle missing keys.  <br /></td></tr>
+<tr class="memitem:a20ad9e81e5b25bbef8aff5071f0f1890" id="r_a20ad9e81e5b25bbef8aff5071f0f1890"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20ad9e81e5b25bbef8aff5071f0f1890">showRecipientWarning</a> (const QString &amp;text)</td></tr>
+<tr class="memdesc:a20ad9e81e5b25bbef8aff5071f0f1890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show <code class="param">text</code> above the key list in bold red, for a recipient list that could not be verified.  <br /></td></tr>
+<tr class="memitem:a9e4c29d22b7b8335eed934a5a55240ee" id="r_a9e4c29d22b7b8335eed934a5a55240ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9e4c29d22b7b8335eed934a5a55240ee">selectRecipients</a> (const QStringList &amp;recipients)</td></tr>
+<tr class="memdesc:a9e4c29d22b7b8335eed934a5a55240ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently.  <br /></td></tr>
+<tr class="memitem:a9742afa42c3edaec91f62ddcb116002d" id="r_a9742afa42c3edaec91f62ddcb116002d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9742afa42c3edaec91f62ddcb116002d">populateList</a> (const QString &amp;filter=QString())</td></tr>
+<tr class="memdesc:a9742afa42c3edaec91f62ddcb116002d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate user list.  <br /></td></tr>
+<tr class="memitem:ad8f7dcefe8f44773b5931295c2e35833" id="r_ad8f7dcefe8f44773b5931295c2e35833"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ad8f7dcefe8f44773b5931295c2e35833">passesFilter</a> (const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;user, const QString &amp;filter, const QRegularExpression &amp;nameFilter) const</td></tr>
+<tr class="memdesc:ad8f7dcefe8f44773b5931295c2e35833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if user passes filter.  <br /></td></tr>
+<tr class="memitem:a248e650a6f68a40a4bd7ea10b5686106" id="r_a248e650a6f68a40a4bd7ea10b5686106"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a248e650a6f68a40a4bd7ea10b5686106">isUserExpired</a> (const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;user) const -&gt; bool</td></tr>
+<tr class="memdesc:a248e650a6f68a40a4bd7ea10b5686106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG key is expired.  <br /></td></tr>
+<tr class="memitem:a7c4ef95e4ab5bfd72e93f5dbcf1be189" id="r_a7c4ef95e4ab5bfd72e93f5dbcf1be189"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a7c4ef95e4ab5bfd72e93f5dbcf1be189">buildUserText</a> (const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;user) const</td></tr>
+<tr class="memdesc:a7c4ef95e4ab5bfd72e93f5dbcf1be189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build display text for user.  <br /></td></tr>
+<tr class="memitem:a400f5ae49e827ac46e88be4ae2f7141d" id="r_a400f5ae49e827ac46e88be4ae2f7141d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a400f5ae49e827ac46e88be4ae2f7141d">applyUserStyling</a> (QListWidgetItem *item, const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;user) const</td></tr>
+<tr class="memdesc:a400f5ae49e827ac46e88be4ae2f7141d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply visual styling to user item.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae86b7e4f8a990b980dfcc4f394722069" id="r_ae86b7e4f8a990b980dfcc4f394722069"><td class="memItemLeft">QScopedPointer&lt; Ui::UsersDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae86b7e4f8a990b980dfcc4f394722069">ui</a></td></tr>
+<tr class="memdesc:ae86b7e4f8a990b980dfcc4f394722069"><td class="mdescLeft">&#160;</td><td class="mdescRight">The widgets from usersdialog.ui.  <br /></td></tr>
+<tr class="memitem:af37c4ba124940166decd520d1b1e3428" id="r_af37c4ba124940166decd520d1b1e3428"><td class="memItemLeft"><a class="el" href="class_pass.html">Pass</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af37c4ba124940166decd520d1b1e3428">m_pass</a></td></tr>
+<tr class="memitem:a63e446d81e383b7ee8b21cb4ab5a8c8b" id="r_a63e446d81e383b7ee8b21cb4ab5a8c8b"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a63e446d81e383b7ee8b21cb4ab5a8c8b">m_passStore</a></td></tr>
+<tr class="memitem:aa9efcd78d2b82147dd8667ced397353a" id="r_aa9efcd78d2b82147dd8667ced397353a"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#aa9efcd78d2b82147dd8667ced397353a">m_gpgExe</a></td></tr>
+<tr class="memitem:a50e207112771a8c69d73a326f8efb0e2" id="r_a50e207112771a8c69d73a326f8efb0e2"><td class="memItemLeft">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a50e207112771a8c69d73a326f8efb0e2">m_userList</a></td></tr>
+<tr class="memitem:a09489f1a683129c5dad8386ae9155bd6" id="r_a09489f1a683129c5dad8386ae9155bd6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a09489f1a683129c5dad8386ae9155bd6">m_initOnAccept</a> {true}</td></tr>
+<tr class="memitem:a486ab9a602907d6110dceaed9a7b3138" id="r_a486ab9a602907d6110dceaed9a7b3138"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a486ab9a602907d6110dceaed9a7b3138">m_dir</a></td></tr>
+<tr class="memitem:aaf2a368116ead1381e833f52f4bb7cf5" id="r_aaf2a368116ead1381e833f52f4bb7cf5"><td class="memItemLeft"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a>&#160;</td><td class="memItemRight"><a class="el" href="#aaf2a368116ead1381e833f52f4bb7cf5">m_preselect</a> = <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a></td></tr>
+<tr class="memitem:a50a8ee7a2dbd27672249f0c8d109beb8" id="r_a50a8ee7a2dbd27672249f0c8d109beb8"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a50a8ee7a2dbd27672249f0c8d109beb8">m_lastFilter</a></td></tr>
+<tr class="memitem:a01126f883fe8cf0f351d340945af8552" id="r_a01126f883fe8cf0f351d340945af8552"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a01126f883fe8cf0f351d340945af8552">m_cachedPatternString</a></td></tr>
+<tr class="memitem:a0b48f9c3f9f9ab0fd01598c00ab29216" id="r_a0b48f9c3f9f9ab0fd01598c00ab29216"><td class="memItemLeft">QRegularExpression&#160;</td><td class="memItemRight"><a class="el" href="#a0b48f9c3f9f9ab0fd01598c00ab29216">m_cachedNameFilter</a></td></tr>
+<tr class="memitem:a6d7caab10693c9c45c0089c931f5843b" id="r_a6d7caab10693c9c45c0089c931f5843b"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#a6d7caab10693c9c45c0089c931f5843b">m_cachedCurrentDateTime</a></td></tr>
+<tr class="memitem:aa6d656c586c0469fe10e5a7055255c07" id="r_aa6d656c586c0469fe10e5a7055255c07"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa6d656c586c0469fe10e5a7055255c07">m_cachedDateTimeValid</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dialog for selecting GPG recipients for password encryption. </p>
 <p><a class="el" href="class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption.">UsersDialog</a> allows users to select which GPG keys to encrypt passwords to. It displays available keys, supports filtering, and shows key expiration status. </p>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00030">30</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00035">35</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="a4bc2c40314993e5e06b649bc6c037111" name="a4bc2c40314993e5e06b649bc6c037111"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4bc2c40314993e5e06b649bc6c037111">&#9670;&#160;</a></span>Preselect</h2>
@@ -189,7 +259,7 @@ Protected Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00035">35</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00040">40</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
 
 </div>
 </div>
@@ -241,11 +311,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00034">34</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aadc5be04d9f54b8d827348bf9248ae22_icgraph.svg" width="450" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aadc5be04d9f54b8d827348bf9248ae22_cgraph.svg" width="199" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aadc5be04d9f54b8d827348bf9248ae22_icgraph.svg" width="434" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -296,6 +374,14 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00038">38</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a03e8b70497881510ffc82e753e6f8296_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -323,17 +409,154 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handle dialog acceptance. </p>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00250">250</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
 </div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_cgraph.svg" width="163" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_cgraph.svg" width="402" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_icgraph.svg" width="163" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1630582c14afcef9ad80398752762a4_icgraph.svg" width="652" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a400f5ae49e827ac46e88be4ae2f7141d" name="a400f5ae49e827ac46e88be4ae2f7141d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400f5ae49e827ac46e88be4ae2f7141d">&#9670;&#160;</a></span>applyUserStyling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::applyUserStyling </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *</td>          <td class="paramname"><span class="paramname"><em>item</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply visual styling to user item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>List item. </td></tr>
+    <tr><td class="paramname">user</td><td>User info. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00374">374</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a400f5ae49e827ac46e88be4ae2f7141d_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a400f5ae49e827ac46e88be4ae2f7141d_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a7c4ef95e4ab5bfd72e93f5dbcf1be189" name="a7c4ef95e4ab5bfd72e93f5dbcf1be189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4ef95e4ab5bfd72e93f5dbcf1be189">&#9670;&#160;</a></span>buildUserText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::buildUserText </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build display text for user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>User info. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Formatted text. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00361">361</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a7c4ef95e4ab5bfd72e93f5dbcf1be189_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a56e762c68f4ae6faf7e50c227598e0f1" name="a56e762c68f4ae6faf7e50c227598e0f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e762c68f4ae6faf7e50c227598e0f1">&#9670;&#160;</a></span>connectSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::connectSignals </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Connect dialog signals. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00058">58</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a56e762c68f4ae6faf7e50c227598e0f1_cgraph.svg" width="100%" height="381"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a56e762c68f4ae6faf7e50c227598e0f1_icgraph.svg" width="452" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -351,7 +574,7 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto UsersDialog::hasSelection </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  bool</td>
+          <td> const -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -363,6 +586,103 @@ Protected Member Functions</h2></td></tr>
 
 <p>Whether at least one key is ticked. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if Init would get a recipient. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00263">263</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_adb673bcebad1749f22183ce146b846cd_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a248e650a6f68a40a4bd7ea10b5686106" name="a248e650a6f68a40a4bd7ea10b5686106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248e650a6f68a40a4bd7ea10b5686106">&#9670;&#160;</a></span>isUserExpired()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto UsersDialog::isUserExpired </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if GPG key is expired. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>User to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if key is expired. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00351">351</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a248e650a6f68a40a4bd7ea10b5686106_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a0a9df57e10de95c375523902b4bbdc5b" name="a0a9df57e10de95c375523902b4bbdc5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a9df57e10de95c375523902b4bbdc5b">&#9670;&#160;</a></span>itemChange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::itemChange </td>
+          <td>(</td>
+          <td class="paramtype">QListWidgetItem *</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle user selection change. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>Changed list item. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00284">284</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0a9df57e10de95c375523902b4bbdc5b_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0a9df57e10de95c375523902b4bbdc5b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -396,17 +716,394 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00274">274</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a2b8e6e8605111e43bab64328add16ddb_cgraph.svg" width="450" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<a id="aeeb98a4267c9aaa8c8087d4fb3774565" name="aeeb98a4267c9aaa8c8087d4fb3774565"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb98a4267c9aaa8c8087d4fb3774565">&#9670;&#160;</a></span>loadGpgKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto UsersDialog::loadGpgKeys </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load GPG keys and determine secret key status. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if successful, false if keys could not be loaded. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00074">74</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a2b8e6e8605111e43bab64328add16ddb_icgraph.svg" width="215" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aeeb98a4267c9aaa8c8087d4fb3774565_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aeeb98a4267c9aaa8c8087d4fb3774565_icgraph.svg" width="451" height="107"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aa1508b1fe6dc8fba34257d72a1633a4b" name="aa1508b1fe6dc8fba34257d72a1633a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1508b1fe6dc8fba34257d72a1633a4b">&#9670;&#160;</a></span>loadRecipients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::loadRecipients </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load recipients and handle missing keys. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00226">226</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1508b1fe6dc8fba34257d72a1633a4b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aa1508b1fe6dc8fba34257d72a1633a4b_icgraph.svg" width="451" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aae28ed1da1149c4e1d1685a6e4c9d3a2" name="aae28ed1da1149c4e1d1685a6e4c9d3a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae28ed1da1149c4e1d1685a6e4c9d3a2">&#9670;&#160;</a></span>markSecretKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::markSecretKeys </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>users</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mark which keys have secret counterparts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">users</td><td>List of users to mark. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00089">89</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aae28ed1da1149c4e1d1685a6e4c9d3a2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_aae28ed1da1149c4e1d1685a6e4c9d3a2_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae4d6d585d09d26213b5c1fe757974544" name="ae4d6d585d09d26213b5c1fe757974544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d6d585d09d26213b5c1fe757974544">&#9670;&#160;</a></span>on_checkBox_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::on_checkBox_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle select all checkbox. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00414">414</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ae4d6d585d09d26213b5c1fe757974544_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a0b5cc847c9d780a1a317329a49a52906" name="a0b5cc847c9d780a1a317329a49a52906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5cc847c9d780a1a317329a49a52906">&#9670;&#160;</a></span>on_importKeyButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::on_importKeyButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Import a GPG key and refresh the list. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00437">437</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0b5cc847c9d780a1a317329a49a52906_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a20609c91440503dc7f84f26a43d01509" name="a20609c91440503dc7f84f26a43d01509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20609c91440503dc7f84f26a43d01509">&#9670;&#160;</a></span>on_lineEdit_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::on_lineEdit_textChanged </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Filter user list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>Filter text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00410">410</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a20609c91440503dc7f84f26a43d01509_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ad8f7dcefe8f44773b5931295c2e35833" name="ad8f7dcefe8f44773b5931295c2e35833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8f7dcefe8f44773b5931295c2e35833">&#9670;&#160;</a></span>passesFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UsersDialog::passesFilter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_user_info.html">UserInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>user</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QRegularExpression &amp;</td>          <td class="paramname"><span class="paramname"><em>nameFilter</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if user passes filter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>User to check. </td></tr>
+    <tr><td class="paramname">filter</td><td>Text filter. </td></tr>
+    <tr><td class="paramname">nameFilter</td><td>Regex filter. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if user passes. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00337">337</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ad8f7dcefe8f44773b5931295c2e35833_cgraph.svg" width="100%" height="387"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ad8f7dcefe8f44773b5931295c2e35833_icgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a9742afa42c3edaec91f62ddcb116002d" name="a9742afa42c3edaec91f62ddcb116002d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9742afa42c3edaec91f62ddcb116002d">&#9670;&#160;</a></span>populateList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::populateList </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>filter</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Populate user list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filter</td><td>Optional filter text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00305">305</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9742afa42c3edaec91f62ddcb116002d_cgraph.svg" width="100%" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9742afa42c3edaec91f62ddcb116002d_icgraph.svg" width="446" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a72f07ae1b408688108f0855624c789d2" name="a72f07ae1b408688108f0855624c789d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f07ae1b408688108f0855624c789d2">&#9670;&#160;</a></span>restoreDialogState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::restoreDialogState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Attach <a class="el" href="namespace_window_state_store.html" title="Persist and restore a top-level window&#39;s geometry, one way for the main window and every dialog.">WindowStateStore</a>, which restores the dialog's saved geometry now and saves it under "usersDialog" when the dialog closes. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00070">70</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
+</div>
+<div id="dynsection-29-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a72f07ae1b408688108f0855624c789d2_cgraph.svg" width="100%" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a72f07ae1b408688108f0855624c789d2_icgraph.svg" width="443" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -437,7 +1134,101 @@ Protected Member Functions</h2></td></tr>
 <p>The key list with the user's choice in each entry's enabled flag. </p>
 <dl class="section return"><dt>Returns</dt><dd>All listed users; the selected ones have enabled == true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00078">78</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00083">83</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
+</div>
+<div id="dynsection-31-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a106ab7fe0698daa57d92a2a6f1a337c7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a9a4174d9ae0e84c8742e24f1092a63b9" name="a9a4174d9ae0e84c8742e24f1092a63b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4174d9ae0e84c8742e24f1092a63b9">&#9670;&#160;</a></span>selectImportedKey</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::selectImportedKey </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>importedKey</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Make the key gpg just imported the current row. gpg reports a 16-character long ID (IMPORTED) or a 40-character fingerprint (IMPORT_OK), so the two are compared both ways, by suffix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">importedKey</td><td>What gpg reported. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00416">416</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
+</div>
+<div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9a4174d9ae0e84c8742e24f1092a63b9_icgraph.svg" width="488" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a9e4c29d22b7b8335eed934a5a55240ee" name="a9e4c29d22b7b8335eed934a5a55240ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4c29d22b7b8335eed934a5a55240ee">&#9670;&#160;</a></span>selectRecipients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::selectRecipients </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>recipients</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tick the keys the folder is encrypted to, and list recipients no key in the keyring answers to, so saving does not drop them silently. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recipients</td><td>The folder's recipients, as listed in its <span class="tt">.gpg-id</span>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00158">158</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
+</div>
+<div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9e4c29d22b7b8335eed934a5a55240ee_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a9e4c29d22b7b8335eed934a5a55240ee_icgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -472,18 +1263,447 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00072">72</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00077">77</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
+</div>
+<div id="dynsection-35-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_ab30de74144c09f81f4d3324207e911cd_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a20ad9e81e5b25bbef8aff5071f0f1890" name="a20ad9e81e5b25bbef8aff5071f0f1890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ad9e81e5b25bbef8aff5071f0f1890">&#9670;&#160;</a></span>showRecipientWarning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::showRecipientWarning </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show <code class="param">text</code> above the key list in bold red, for a recipient list that could not be verified. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The warning, plain text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00102">102</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
+</div>
+<div id="dynsection-36-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a20ad9e81e5b25bbef8aff5071f0f1890_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a0506ad62cc53b4e491d4548029511b98" name="a0506ad62cc53b4e491d4548029511b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0506ad62cc53b4e491d4548029511b98">&#9670;&#160;</a></span>updateOkButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UsersDialog::updateOkButton </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable OK only while at least one key is ticked (<a class="el" href="#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked.">hasSelection()</a>). </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8cpp_source.html#l00268">268</a> of file <a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a>.</p>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
+</div>
+<div id="dynsection-37-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0506ad62cc53b4e491d4548029511b98_cgraph.svg" width="464" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
+</div>
+<div id="dynsection-38-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_users_dialog_a0506ad62cc53b4e491d4548029511b98_icgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a6d7caab10693c9c45c0089c931f5843b" name="a6d7caab10693c9c45c0089c931f5843b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d7caab10693c9c45c0089c931f5843b">&#9670;&#160;</a></span>m_cachedCurrentDateTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDateTime UsersDialog::m_cachedCurrentDateTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cached current date/time for expiry checks </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00148">148</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6d656c586c0469fe10e5a7055255c07" name="aa6d656c586c0469fe10e5a7055255c07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d656c586c0469fe10e5a7055255c07">&#9670;&#160;</a></span>m_cachedDateTimeValid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UsersDialog::m_cachedDateTimeValid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">                               =</div>
+<div class="line"><span class="keyword">false</span></div>
+</div><!-- fragment --><p>Whether cached date/time is valid </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00150">150</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a0b48f9c3f9f9ab0fd01598c00ab29216" name="a0b48f9c3f9f9ab0fd01598c00ab29216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b48f9c3f9f9ab0fd01598c00ab29216">&#9670;&#160;</a></span>m_cachedNameFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRegularExpression UsersDialog::m_cachedNameFilter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cached regex filter </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00147">147</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a01126f883fe8cf0f351d340945af8552" name="a01126f883fe8cf0f351d340945af8552"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01126f883fe8cf0f351d340945af8552">&#9670;&#160;</a></span>m_cachedPatternString</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::m_cachedPatternString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cached pattern string </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00146">146</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a486ab9a602907d6110dceaed9a7b3138" name="a486ab9a602907d6110dceaed9a7b3138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a486ab9a602907d6110dceaed9a7b3138">&#9670;&#160;</a></span>m_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::m_dir</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Password store directory </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00143">143</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9efcd78d2b82147dd8667ced397353a" name="aa9efcd78d2b82147dd8667ced397353a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9efcd78d2b82147dd8667ced397353a">&#9670;&#160;</a></span>m_gpgExe</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::m_gpgExe</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>GPG executable path </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00138">138</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a09489f1a683129c5dad8386ae9155bd6" name="a09489f1a683129c5dad8386ae9155bd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09489f1a683129c5dad8386ae9155bd6">&#9670;&#160;</a></span>m_initOnAccept</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UsersDialog::m_initOnAccept {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether <a class="el" href="#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance.">accept()</a> runs <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2" title="Initialize new password store.">Pass::Init</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00140">140</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a50a8ee7a2dbd27672249f0c8d109beb8" name="a50a8ee7a2dbd27672249f0c8d109beb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a8ee7a2dbd27672249f0c8d109beb8">&#9670;&#160;</a></span>m_lastFilter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::m_lastFilter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Last filter text for caching </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00145">145</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="af37c4ba124940166decd520d1b1e3428" name="af37c4ba124940166decd520d1b1e3428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37c4ba124940166decd520d1b1e3428">&#9670;&#160;</a></span>m_pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_pass.html">Pass</a>* UsersDialog::m_pass</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Active <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00136">136</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a63e446d81e383b7ee8b21cb4ab5a8c8b" name="a63e446d81e383b7ee8b21cb4ab5a8c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e446d81e383b7ee8b21cb4ab5a8c8b">&#9670;&#160;</a></span>m_passStore</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString UsersDialog::m_passStore</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Password store root path </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00137">137</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="aaf2a368116ead1381e833f52f4bb7cf5" name="aaf2a368116ead1381e833f52f4bb7cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf2a368116ead1381e833f52f4bb7cf5">&#9670;&#160;</a></span>m_preselect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4bc2c40314993e5e06b649bc6c037111">Preselect</a> UsersDialog::m_preselect = <a class="el" href="#a4bc2c40314993e5e06b649bc6c037111a6168c9de78e6774129aa10cc98617014">Preselect::FromList</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>What opens ticked </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00144">144</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a50e207112771a8c69d73a326f8efb0e2" name="a50e207112771a8c69d73a326f8efb0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e207112771a8c69d73a326f8efb0e2">&#9670;&#160;</a></span>m_userList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="struct_user_info.html">UserInfo</a>&gt; UsersDialog::m_userList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>List of available GPG users </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00139">139</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="ae86b7e4f8a990b980dfcc4f394722069" name="ae86b7e4f8a990b980dfcc4f394722069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae86b7e4f8a990b980dfcc4f394722069">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;Ui::UsersDialog&gt; UsersDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The widgets from usersdialog.ui. </p>
+
+<p class="definition">Definition at line <a class="el" href="usersdialog_8h_source.html#l00135">135</a> of file <a class="el" href="usersdialog_8h_source.html">usersdialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="usersdialog_8h_source.html">usersdialog.h</a></li>
+<li>src/<a class="el" href="usersdialog_8cpp_source.html">usersdialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_users_dialog.html">UsersDialog</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

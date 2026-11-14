@@ -1,5 +1,19 @@
 <map id="StoreTree" name="StoreTree">
-<area shape="rect" id="Node000001" title="The password store as shown in the tree: the QFileSystemModel, the StoreModel proxy on top of it and ..." alt="" coords="5,81,88,109"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="10,5,83,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="48,47,49,81,44,80,45,51"/>
+<area shape="rect" id="Node000001" title="The password store as shown in the tree: the QFileSystemModel, the StoreModel proxy on top of it and ..." alt="" coords="5,408,88,436"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="39,5,112,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,47,37,80,30,99,28,119,28,322,34,369,44,407,39,408,28,370,23,323,23,118,25,97,32,77,56,42"/>
+<area shape="rect" id="Node000005" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="97,207,148,234"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="82,46,104,133,122,206,117,206,99,134,82,51"/>
+<area shape="rect" id="Node000008" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="113,106,190,134"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="95,43,144,105,139,106,95,48"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store." alt="" coords="75,307,170,335"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,348,59,409,55,406,101,347"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,207,340,234"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,247,188,285,150,309,147,305,185,281,234,243"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="124,248,125,307,120,306,121,252"/>
+<area shape="rect" id="Node000006" href="$struct_app_settings.html" title="Plain value&#45;object holding all flat QtPass configuration." alt="" coords="214,106,314,134"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="235,145,185,185,147,208,144,204,182,180,238,141"/>
+<area shape="rect" id="Node000007" href="$struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,..." alt="" coords="179,5,348,33"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="265,46,266,106,261,105,263,51"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="145,146,129,207,124,205,143,151"/>
 </map>

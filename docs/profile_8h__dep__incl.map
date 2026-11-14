@@ -1,0 +1,34 @@
+<map id="src/profile.h" name="src/profile.h">
+<area shape="rect" id="Node000001" title="One named password store (Profile) and the name&#45;to&#45;profile map (Profiles) the settings trade in." alt="" coords="569,5,666,33"/>
+<area shape="rect" id="Node000002" href="$configdialog_8h.html" title="Settings dialog: every page of the configuration window and the profile table, with the validation th..." alt="" coords="282,81,418,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="558,37,398,83,397,78,553,38"/>
+<area shape="rect" id="Node000006" href="$qtpasssettings_8h.html" title="QtPassSettings, the QSettings singleton behind every saved setting, the profiles and the Pass backend..." alt="" coords="900,81,1051,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="682,31,914,80,909,81,682,36"/>
+<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="5,157,156,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,116,129,159,128,154,286,111"/>
+<area shape="rect" id="Node000004" href="$keygendialog_8cpp.html" title="Implements KeygenDialog: form validation, splicing the passphrase into the GPG batch the way gpg itse..." alt="" coords="180,157,338,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="324,118,276,159,274,154,319,120"/>
+<area shape="rect" id="Node000005" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="362,157,516,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="378,116,426,157,421,156,377,121"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="881,101,567,124,169,159,157,161,156,155,168,154,567,119,887,101"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="881,104,643,129,350,159,339,161,338,155,350,154,642,123,887,104"/>
+<area shape="poly" id="edge11_Node000006_Node000005" title=" " alt="" coords="886,108,529,159,516,161,516,156,528,154,881,108"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="540,157,658,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="895,112,659,160,658,155,890,112"/>
+<area shape="rect" id="Node000008" href="$clipboardmanager_8cpp.html" title="Implements ClipboardManager and the per&#45;platform clipboard hints that keep secrets out of clipboard h..." alt="" coords="682,157,871,184"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="928,114,813,159,811,154,923,115"/>
+<area shape="rect" id="Node000009" href="$firstrunwizard_8cpp.html" title="Implements FirstRunWizard and its pages; the store is created and initialised in FirstRunWizard::init..." alt="" coords="895,157,1055,184"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="977,123,977,158,973,154,973,126"/>
+<area shape="rect" id="Node000010" href="$passbackendfactory_8cpp.html" title="Implements PassBackendFactory. The backends are held through pointers and constructed on first use,..." alt="" coords="1080,157,1279,184"/>
+<area shape="poly" id="edge12_Node000006_Node000010" title=" " alt="" coords="1026,112,1145,156,1140,156,1025,117"/>
+<area shape="rect" id="Node000011" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="1303,157,1476,184"/>
+<area shape="poly" id="edge13_Node000006_Node000011" title=" " alt="" coords="1065,109,1318,156,1312,156,1065,115"/>
+<area shape="rect" id="Node000012" href="$qtpass_8cpp.html" title="Implements QtPass; init() holds the settings migrations run on every start&#45;up and showTextAsQRCode() ..." alt="" coords="1501,157,1615,184"/>
+<area shape="poly" id="edge14_Node000006_Node000012" title=" " alt="" coords="1066,103,1261,124,1489,154,1503,159,1498,158,1488,159,1260,129,1066,108"/>
+<area shape="rect" id="Node000013" href="$qtpasssettings_8cpp.html" title="Implements QtPassSettings; getInstance() picks the portable qtpass.ini over the platform store,..." alt="" coords="1639,157,1805,184"/>
+<area shape="poly" id="edge15_Node000006_Node000013" title=" " alt="" coords="1066,101,1319,123,1627,154,1641,158,1636,158,1627,159,1319,128,1066,106"/>
+<area shape="rect" id="Node000014" href="$usersdialog_8cpp.html" title="Implements UsersDialog; selectRecipients() matches the .gpg&#45;id lines against the keyring and lists th..." alt="" coords="1829,157,1975,184"/>
+<area shape="poly" id="edge16_Node000006_Node000014" title=" " alt="" coords="1066,98,1397,118,1606,134,1817,154,1831,158,1826,158,1816,159,1606,139,1397,123,1066,103"/>
+<area shape="rect" id="Node000015" href="$windowstatestore_8cpp.html" title="Implements WindowStateStore on top of QWidget::saveGeometry() / restoreGeometry(); the Wayland check ..." alt="" coords="1999,157,2186,184"/>
+<area shape="poly" id="edge17_Node000006_Node000015" title=" " alt="" coords="1066,97,1466,117,1725,133,1987,154,2001,158,1996,158,1987,159,1725,139,1466,122,1066,102"/>
+</map>

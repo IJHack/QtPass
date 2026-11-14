@@ -1,0 +1,21 @@
+<map id="MainWindow::onProcessOutput" name="MainWindow::onProcessOutput">
+<area shape="rect" id="Node000001" title="Handle generic process output for display in output panel." alt="" coords="5,83,228,111"/>
+<area shape="rect" id="Node000002" href="$class_process_output_panel.html#ae513643a2ccb1d663e79a2b480e0a1ac" title="Append output, one numbered line per non&#45;empty input line." alt="" coords="312,5,462,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,80,299,49,295,52,174,85"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216" title="Get showProcessOutput setting." alt="" coords="276,75,498,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="228,94,263,96,258,98,229,100"/>
+<area shape="rect" id="Node000007" href="$class_process_output_panel.html#a9c06c08371ba5d86e0c6b4b2459165fa" title="Human&#45;readable command label for a process id." alt="" coords="312,145,462,190"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="173,109,299,143,294,145,172,114"/>
+<area shape="rect" id="Node000003" href="$class_process_output_panel.html#a1e8ed5d1bb9c3ce3568609cbf8d47ea7" title="Drop the oldest text blocks once the document holds more than MaxLines; called after every append()." alt="" coords="572,5,722,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,25,559,27,554,28,463,30"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="546,80,748,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="498,93,533,95,528,96,499,99"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="796,80,1020,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="749,92,783,94,778,95,749,97"/>
+<area shape="rect" id="Node000008" href="$namespace_enums.html#a10371ee44aefcd45e202978699eb03ca" title="The command label for pid, as the output panel shows it." alt="" coords="568,156,726,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="462,166,555,169,550,169,462,171"/>
+<area shape="poly" id="edge10_Node000008_Node000008" title=" " alt="" coords="603,155,596,148,601,138,619,132,647,130,678,132,696,142,690,141,676,138,647,135,620,137,605,142,601,147,608,157"/>
+<area shape="rect" id="Node000009" href="$namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e" title="What is known about pid." alt="" coords="834,156,982,184"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="727,168,821,170,815,170,727,173"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="864,155,856,148,862,138,880,132,908,130,938,132,957,142,951,141,937,138,908,135,881,137,866,142,862,147,868,157"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="UsersDialog::itemChange" name="UsersDialog::itemChange">
+<area shape="rect" id="Node000001" title="Handle user selection change." alt="" coords="5,5,193,33"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="241,5,455,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,17,228,19,222,19,193,22"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="503,5,694,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,17,490,19,485,19,456,22"/>
+</map>

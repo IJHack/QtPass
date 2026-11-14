@@ -1,0 +1,8 @@
+<map id="Util::removeTree" name="Util::removeTree">
+<area shape="rect" id="Node000001" title="Remove dir and everything in it, the way rm &#45;rf does: a symbolic link or NTFS junction,..." alt="" coords="213,32,342,60"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="309,16,299,13,277,11,257,13,247,17,244,23,249,32,244,31,239,23,243,14,256,7,277,5,300,8,314,17"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee" title="Remove password." alt="" coords="5,5,165,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,35,165,33,165,28,200,34"/>
+<area shape="rect" id="Node000003" href="$class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c" title="Remove an entry or folder with pass rm." alt="" coords="14,57,156,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,57,156,64,156,59,200,56"/>
+</map>

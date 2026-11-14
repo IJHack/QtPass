@@ -1,0 +1,18 @@
+<map id="ConfigDialog::usePass" name="ConfigDialog::usePass">
+<area shape="rect" id="Node000001" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="5,83,170,111"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="48,83,42,74,47,65,63,59,88,57,114,59,130,67,125,69,113,64,87,62,64,64,51,69,47,74,53,82"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a93a014267e13ce2a518d6ff125bcb172" title="Enable the group box of the chosen backend and, in pass mode, disable the password&#45;generation control..." alt="" coords="218,75,414,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,94,205,96,200,98,171,100"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="462,5,660,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,71,468,54,463,55,398,77"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character&#45;set controls, whichever the &quot;use pwgen&quot; box selects; nothing in..." alt="" coords="462,75,660,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="414,94,449,97,444,97,415,100"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#a22ec9ee25af48a65870b3ee28d594a80" title=" " alt="" coords="468,144,654,189"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="398,117,468,139,462,139,397,123"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="Enable or disable pwgen&#45;based password generation." alt="" coords="722,83,901,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="661,103,709,106,704,106,661,108"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="719,89,676,91,676,85,724,88"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="769,82,762,74,767,64,784,59,812,57,841,59,858,68,853,68,840,64,811,62,785,64,771,69,767,74,774,84"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any." alt="" coords="708,152,915,180"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="655,164,696,166,690,166,655,169"/>
+</map>

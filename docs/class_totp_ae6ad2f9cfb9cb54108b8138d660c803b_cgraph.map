@@ -1,0 +1,9 @@
+<map id="Totp::parse" name="Totp::parse">
+<area shape="rect" id="Node000001" title="Parse an OTP configuration string." alt="" coords="5,32,98,60"/>
+<area shape="rect" id="Node000002" href="$class_base32.html#aab3feed3644b481794685b42410cf1e1" title="Decode strict RFC 4648 base32 data." alt="" coords="164,5,288,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,36,151,30,146,32,99,41"/>
+<area shape="rect" id="Node000003" href="$class_base32.html#a251fbe9bbf3a490d0660690182de2fcb" title="Make human&#45;entered base32 text decodable." alt="" coords="146,57,307,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,50,133,57,127,58,98,55"/>
+<area shape="rect" id="Node000004" href="$class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0" title="Append &#39;=&#39; padding up to a multiple of 8 characters." alt="" coords="355,57,507,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="308,69,342,71,337,71,308,74"/>
+</map>

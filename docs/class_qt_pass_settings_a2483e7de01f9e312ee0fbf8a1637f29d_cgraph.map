@@ -1,0 +1,5 @@
+<map id="QtPassSettings::getInstance" name="QtPassSettings::getInstance">
+<area shape="rect" id="Node000001" title="Get the singleton instance." alt="" coords="5,5,208,33"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="256,5,479,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,17,243,19,237,19,208,22"/>
+</map>

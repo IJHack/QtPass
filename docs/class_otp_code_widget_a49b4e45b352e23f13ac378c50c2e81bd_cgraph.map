@@ -1,0 +1,29 @@
+<map id="OtpCodeWidget::OtpCodeWidget" name="OtpCodeWidget::OtpCodeWidget">
+<area shape="rect" id="Node000001" title="Build a live OTP code display and start its refresh timer." alt="" coords="5,126,239,154"/>
+<area shape="rect" id="Node000002" href="$class_q_push_button_with_clipboard.html#a14c2e48aa665e500839ef2a3222e995a" title="Emitted when the button is activated with the stored text." alt="" coords="304,5,501,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,123,211,92,286,60,308,54,303,57,288,65,213,97,152,127"/>
+<area shape="rect" id="Node000005" href="$class_otp_code_widget.html#a79e9906a4fe462a8032eb3a88191c4e6" title="Emitted when the copy button is activated." alt="" coords="287,74,518,102"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="200,123,311,103,307,107,202,128"/>
+<area shape="rect" id="Node000006" href="$class_totp.html#a84866e76305152267035b917e7d84bdb" title="Current wall&#45;clock time." alt="" coords="320,126,485,154"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="238,137,307,138,302,141,240,142"/>
+<area shape="rect" id="Node000007" href="$class_q_push_button_with_clipboard.html#a9fcd74d855d552598d1ebf4910f53666" title="Construct a QPushButtonWithClipboard with an optional initial text." alt="" coords="300,177,505,222"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="190,151,287,173,282,176,190,157"/>
+<area shape="rect" id="Node000008" href="$class_otp_code_widget.html#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time." alt="" coords="314,246,491,274"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="144,151,207,192,246,213,288,232,309,241,303,241,286,237,244,218,204,196,143,157"/>
+<area shape="rect" id="Node000003" href="$class_q_push_button_with_clipboard.html#a602f1fd427f6dc9d823bae27f0f50a02" title="Connected to QPushButton::clicked(bool); shows the pushed icon, arms the revert timer and re&#45;emits cl..." alt="" coords="566,36,763,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,45,553,53,548,55,502,51"/>
+<area shape="rect" id="Node000004" href="$class_q_push_button_with_clipboard.html#a54c897f5d3d52aafb69bf34f64c2d037" title="Restores the default copy icon; fired by a single&#45;shot timer 500 ms after a click." alt="" coords="811,7,1009,51"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="501,22,566,21,763,21,799,24,793,25,763,26,566,26,502,27"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="563,39,517,35,516,29,568,37"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="763,44,798,42,793,43,764,49"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="489,174,517,163,575,127,624,92,629,90,578,132,519,167,491,179"/>
+<area shape="rect" id="Node000009" href="$class_totp.html#a47445f93d87ea47de27ab8045914686d" title="Time&#45;step counter for a point in time." alt="" coords="857,194,963,222"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="482,243,517,232,540,218,565,205,638,192,713,188,783,190,845,198,839,198,782,195,713,193,639,197,567,210,543,222,519,237,483,248"/>
+<area shape="rect" id="Node000010" href="$class_totp.html#ab8caa914c714a205c21919b3ac09cf08" title="Generate the code for a given point in time." alt="" coords="608,219,722,247"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="491,248,594,240,589,241,492,253"/>
+<area shape="rect" id="Node000011" href="$class_totp.html#af449a258178c0fdc0f744be9bf2d6103" title="Seconds until the code for unixTime expires." alt="" coords="575,271,754,299"/>
+<area shape="poly" id="edge14_Node000008_Node000011" title=" " alt="" coords="492,266,563,275,557,275,492,271"/>
+<area shape="rect" id="Node000012" href="$class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8" title="Update the stored text used for copying." alt="" coords="566,323,763,367"/>
+<area shape="poly" id="edge15_Node000008_Node000012" title=" " alt="" coords="448,272,582,317,576,317,447,277"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="722,224,844,214,839,215,723,230"/>
+</map>

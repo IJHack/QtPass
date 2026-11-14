@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('gpgkeystate__p_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,36 +112,37 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">gpgkeystate_p.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
+<a href="gpgkeystate__p_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_GPGKEYSTATE_P_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_GPGKEYSTATE_P_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;userinfo.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">void</span> handlePubSecRecord(<span class="keyword">const</span> QStringList &amp;props, <span class="keywordtype">bool</span> secret,</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>                        <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;current_user);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">void</span> handleFprRecord(<span class="keyword">const</span> QStringList &amp;props, <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;current_user);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SRC_GPGKEYSTATE_P_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SRC_GPGKEYSTATE_P_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="userinfo_8h.html">userinfo.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif </span><span class="comment">// SRC_GPGKEYSTATE_P_H_</span></div>
-<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a>(<span class="keyword">const</span> QStringList &amp;props, <span class="keywordtype">bool</span> secret,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                        <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;current_user);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(<span class="keyword">const</span> QStringList &amp;props, <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;current_user);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// SRC_GPGKEYSTATE_P_H_</span></div>
+<div class="ttc" id="agpgkeystate_8cpp_html_a10a7a502b6b816c2ad7d1d175d9f5a0c"><div class="ttname"><a href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a></div><div class="ttdeci">void handlePubSecRecord(const QStringList &amp;props, bool secret, UserInfo &amp;current_user)</div><div class="ttdoc">Start a key from a pub or sec record: key ID, the user ID the record may carry, validity,...</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00059">gpgkeystate.cpp:59</a></div></div>
+<div class="ttc" id="agpgkeystate_8cpp_html_ab4971658d9c682542957f596dc275178"><div class="ttname"><a href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a></div><div class="ttdeci">void handleFprRecord(const QStringList &amp;props, UserInfo &amp;current_user)</div><div class="ttdoc">Replace the key ID of the key being built with its fingerprint.</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00096">gpgkeystate.cpp:96</a></div></div>
+<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00019">userinfo.h:19</a></div></div>
+<div class="ttc" id="auserinfo_8h_html"><div class="ttname"><a href="userinfo_8h.html">userinfo.h</a></div><div class="ttdoc">UserInfo, one GPG key as listed by gpg, with the selection flag the recipient dialogs use.</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="gpgkeystate__p_8h.html">gpgkeystate_p.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

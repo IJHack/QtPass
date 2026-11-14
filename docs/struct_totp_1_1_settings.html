@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('struct_totp_1_1_settings.html','','struct_totp_1_1_settings-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,21 +112,12 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a href="class_totp.html">Totp</a></li><li class="navelem"><a href="struct_totp_1_1_settings.html">Settings</a></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="struct_totp_1_1_settings-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Totp::Settings Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#a4b9e16c21366dc739b9855bbd1fbd7cb" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  
+<p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="totp_8h_source.html">totp.h</a>&gt;</code></p>
@@ -131,9 +142,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aa5883b90af9312b768b7c3afbeb5c69a" id="r_aa5883b90af9312b768b7c3afbeb5c69a"><td class="memItemLeft">QList&lt; QPair&lt; QString, QString &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa5883b90af9312b768b7c3afbeb5c69a">extraParams</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#a4b9e16c21366dc739b9855bbd1fbd7cb" title="Parse an OTP configuration string.">Totp::parse()</a> produces one. </p>
+<div class="textblock"><p>Validated TOTP parameters. Only <a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b" title="Parse an OTP configuration string.">Totp::parse()</a> produces one. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00053">53</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00059">59</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a8c8529f1946b9c46f48567ef78ffa386" name="a8c8529f1946b9c46f48567ef78ffa386"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c8529f1946b9c46f48567ef78ffa386">&#9670;&#160;</a></span>algorithm</h2>
@@ -149,7 +160,7 @@ Public Attributes</h2></td></tr>
 
 <p>HMAC hash function. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00056">56</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00062">62</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -167,7 +178,7 @@ Public Attributes</h2></td></tr>
 
 <p>Sanitized base32 secret, for re-serialisation. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00055">55</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00061">61</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -185,7 +196,7 @@ Public Attributes</h2></td></tr>
 
 <p>Code length, MIN_DIGITS..MAX_DIGITS. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00058">58</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00064">64</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -203,7 +214,7 @@ Public Attributes</h2></td></tr>
 
 <p>Digit encoding. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00057">57</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00063">63</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -218,9 +229,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Query parameters the parser does not model, kept verbatim so <a class="el" href="class_totp.html#a0d3e89bdf41b159eebe128efa9b8c5dc" title="Serialise settings as a canonical otpauth URI.">toUri()</a> can put them back instead of silently dropping them. </p>
+<p>Query parameters the parser does not model, kept verbatim so <a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351" title="Serialise settings as a canonical otpauth URI.">toUri()</a> can put them back instead of silently dropping them. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00064">64</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00070">70</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -237,7 +248,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>otpauth issuer; may be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00061">61</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00067">67</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -255,7 +266,7 @@ Public Attributes</h2></td></tr>
 
 <p>Decoded shared secret; never empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00054">54</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00060">60</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -273,7 +284,7 @@ Public Attributes</h2></td></tr>
 
 <p>otpauth label; may be empty. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00060">60</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00066">66</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -291,7 +302,7 @@ Public Attributes</h2></td></tr>
 
 <p>Period in seconds, 1..MAX_STEP. </p>
 
-<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00059">59</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="totp_8h_source.html#l00065">65</a> of file <a class="el" href="totp_8h_source.html">totp.h</a>.</p>
 
 </div>
 </div>
@@ -299,10 +310,21 @@ Public Attributes</h2></td></tr>
 <li>src/<a class="el" href="totp_8h_source.html">totp.h</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_totp.html">Totp</a></li><li class="navelem"><a href="struct_totp_1_1_settings.html">Settings</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

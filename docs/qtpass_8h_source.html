@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('qtpass_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,93 +112,105 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">qtpass.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2018 Anne Jan Brouwer</span></div>
+<a href="qtpass_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2018 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_QTPASS_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_QTPASS_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;clipboardmanager.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_QTPASS_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_QTPASS_H_</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_qt_pass.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a> : <span class="keyword">public</span> QObject {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  Q_OBJECT</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">   30</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">   34</a></span>  <a class="code hl_function" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">~QtPass</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">   42</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">init</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">   48</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">clipboard</a>() -&gt; <a class="code hl_class" href="class_clipboard_manager.html">ClipboardManager</a> &amp; { <span class="keywordflow">return</span> m_clipboard; }</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="clipboardmanager_8h.html">clipboardmanager.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_pass.html">Pass</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_qt_pass.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Q_OBJECT</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">   40</a></span>  <a class="code hl_function" href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">~QtPass</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">init</a>();</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f">   59</a></span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f">formatOutput</a>(QString output, <span class="keyword">const</span> QString &amp;prefix = QString(),</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                           <span class="keyword">const</span> QString &amp;postfix = QString()) -&gt; QString;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d">   67</a></span>  <span class="keyword">static</span> QDialog *<a class="code hl_function" href="class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d">createQRCodePopup</a>(<span class="keyword">const</span> QPixmap &amp;image);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">   75</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a>(<span class="keyword">const</span> QString &amp;text);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>signals:</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">   83</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">outputReady</a>(<span class="keyword">const</span> QString &amp;html);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">   88</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a>();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">   94</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a>(<span class="keyword">const</span> QString &amp;message, <span class="keywordtype">int</span> timeout);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">   98</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">pushRequested</a>();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">  102</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">entryInserted</a>();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <a class="code hl_class" href="class_clipboard_manager.html">ClipboardManager</a> m_clipboard;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> connectPassSignalHandlers(<a class="code hl_class" href="class_pass.html">Pass</a> *pass);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordtype">void</span> reportError(<span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;error);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> processErrorExit(<span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;error);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordtype">void</span> processFinished(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> passStoreChanged(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">void</span> doGitPush();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordtype">void</span> finishedInsert(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> onKeyGenerationComplete(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">   54</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">clipboard</a>() -&gt; <a class="code hl_class" href="class_clipboard_manager.html">ClipboardManager</a> &amp; { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">m_clipboard</a>; }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_qt_pass.html#a32860d084409d781977736d6fb40d629">formatOutput</a>(QString output, <span class="keyword">const</span> QString &amp;prefix = QString(),</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                           <span class="keyword">const</span> QString &amp;postfix = QString()) -&gt; QString;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">static</span> QDialog *<a class="code hl_function" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a>(<span class="keyword">const</span> QPixmap &amp;image);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a>(<span class="keyword">const</span> QString &amp;text);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>signals:</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">   92</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">outputReady</a>(<span class="keyword">const</span> QString &amp;html);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">   97</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">operationFinished</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">  103</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">statusMessage</a>(<span class="keyword">const</span> QString &amp;message, <span class="keywordtype">int</span> timeout);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">  107</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">pushRequested</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">  111</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">entryInserted</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">  118</a></span>  <a class="code hl_class" href="class_clipboard_manager.html">ClipboardManager</a> <a class="code hl_variable" href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">m_clipboard</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_pass.html#a81e0207207f490616dd442837a2469d4">connectPassSignalHandlers</a>(<a class="code hl_class" href="class_pass.html">Pass</a> *pass);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199">reportError</a>(<span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;error);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04">processErrorExit</a>(<span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;error);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#a40570e79464875930afd869223136a99">processFinished</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#aa1153ea591126774caa31920020d188e">passStoreChanged</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b">doGitPush</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb">finishedInsert</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243">onKeyGenerationComplete</a>(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;errout);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>};</div>
 </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// SRC_QTPASS_H_</span></div>
-<div class="ttc" id="aclass_clipboard_manager_html"><div class="ttname"><a href="class_clipboard_manager.html">ClipboardManager</a></div><div class="ttdoc">Puts secrets on the system clipboard and takes them off again.</div><div class="ttdef"><b>Definition</b> <a href="clipboardmanager_8h_source.html#l00041">clipboardmanager.h:41</a></div></div>
-<div class="ttc" id="aclass_pass_html"><div class="ttname"><a href="class_pass.html">Pass</a></div><div class="ttdoc">Abstract base class for password store operations.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00067">pass.h:67</a></div></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#endif </span><span class="comment">// SRC_QTPASS_H_</span></div>
+<div class="ttc" id="aclass_clipboard_manager_html"><div class="ttname"><a href="class_clipboard_manager.html">ClipboardManager</a></div><div class="ttdoc">Puts secrets on the system clipboard and takes them off again.</div><div class="ttdef"><b>Definition</b> <a href="clipboardmanager_8h_source.html#l00047">clipboardmanager.h:47</a></div></div>
+<div class="ttc" id="aclass_pass_html"><div class="ttname"><a href="class_pass.html">Pass</a></div><div class="ttdoc">Abstract base class for password store operations.</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00075">pass.h:75</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_a09c3a4f7b75656b6f79c90ffbabbf4cb"><div class="ttname"><a href="class_qt_pass.html#a09c3a4f7b75656b6f79c90ffbabbf4cb">QtPass::operationFinished</a></div><div class="ttdeci">void operationFinished()</div><div class="ttdoc">A backend operation is over, successfully or not; the interface can be enabled again.</div></div>
 <div class="ttc" id="aclass_qt_pass_html_a21d53cbc4749f4f9aedb72b32e0b706a"><div class="ttname"><a href="class_qt_pass.html#a21d53cbc4749f4f9aedb72b32e0b706a">QtPass::statusMessage</a></div><div class="ttdeci">void statusMessage(const QString &amp;message, int timeout)</div><div class="ttdoc">A short message for the status bar.</div></div>
+<div class="ttc" id="aclass_qt_pass_html_a2b93e09069f27c938b606431c890ff68"><div class="ttname"><a href="class_qt_pass.html#a2b93e09069f27c938b606431c890ff68">QtPass::m_clipboard</a></div><div class="ttdeci">ClipboardManager m_clipboard</div><div class="ttdoc">The clipboard handling for this application instance, exposed through clipboard(); parented to this o...</div><div class="ttdef"><b>Definition</b> <a href="#l00118">qtpass.h:118</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_a32860d084409d781977736d6fb40d629"><div class="ttname"><a href="class_qt_pass.html#a32860d084409d781977736d6fb40d629">QtPass::formatOutput</a></div><div class="ttdeci">static auto formatOutput(QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</div><div class="ttdoc">Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00142">qtpass.cpp:142</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_a343ad459c6420baf92070a4e7a31ec6e"><div class="ttname"><a href="class_qt_pass.html#a343ad459c6420baf92070a4e7a31ec6e">QtPass::entryInserted</a></div><div class="ttdeci">void entryInserted()</div><div class="ttdoc">An entry was written; the view of the current entry is stale.</div></div>
-<div class="ttc" id="aclass_qt_pass_html_a3a911b2dc52f8959aadf21ddbd21960f"><div class="ttname"><a href="class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f">QtPass::formatOutput</a></div><div class="ttdeci">static auto formatOutput(QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString()) -&gt; QString</div><div class="ttdoc">Turn a process&#39; plain-text output into the HTML the text browser shows: http(s) URLs become links,...</div></div>
+<div class="ttc" id="aclass_qt_pass_html_a40570e79464875930afd869223136a99"><div class="ttname"><a href="class_qt_pass.html#a40570e79464875930afd869223136a99">QtPass::processFinished</a></div><div class="ttdeci">void processFinished(const QString &amp;output, const QString &amp;errout)</div><div class="ttdoc">Slot for Pass::finishedGitPull / finishedGitPush and the common tail of the other slots: emit the std...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00114">qtpass.cpp:114</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_a61c4a373b679d83e94f3d48ac8850c5a"><div class="ttname"><a href="class_qt_pass.html#a61c4a373b679d83e94f3d48ac8850c5a">QtPass::pushRequested</a></div><div class="ttdeci">void pushRequested()</div><div class="ttdoc">The store changed and the settings ask for an automatic push.</div></div>
+<div class="ttc" id="aclass_qt_pass_html_a81e0207207f490616dd442837a2469d4"><div class="ttname"><a href="class_qt_pass.html#a81e0207207f490616dd442837a2469d4">QtPass::connectPassSignalHandlers</a></div><div class="ttdeci">void connectPassSignalHandlers(Pass *pass)</div><div class="ttdoc">Connect the completion signals of one backend to the slots that turn them into output,...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00084">qtpass.cpp:84</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_a83ed57a1825df0802c51314eccb963c6"><div class="ttname"><a href="class_qt_pass.html#a83ed57a1825df0802c51314eccb963c6">QtPass::outputReady</a></div><div class="ttdeci">void outputReady(const QString &amp;html)</div><div class="ttdoc">Formatted output (see formatOutput()) or an error rendered in colour, ready for the text browser.</div></div>
-<div class="ttc" id="aclass_qt_pass_html_a87eca9145118d654cf0e87fe3f2b7a7d"><div class="ttname"><a href="class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d">QtPass::createQRCodePopup</a></div><div class="ttdeci">static QDialog * createQRCodePopup(const QPixmap &amp;image)</div><div class="ttdoc">Create a modal dialog configured to display the given QR code.</div></div>
-<div class="ttc" id="aclass_qt_pass_html_aa1918767cdefea447f1c90272fd95966"><div class="ttname"><a href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">QtPass::clipboard</a></div><div class="ttdeci">auto clipboard() -&gt; ClipboardManager &amp;</div><div class="ttdoc">The clipboard handling for this application instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00048">qtpass.h:48</a></div></div>
-<div class="ttc" id="aclass_qt_pass_html_aa247e023d75a86e72f96617f3e8f2b65"><div class="ttname"><a href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">QtPass::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Resolve the password store and the executables and migrate the settings of an older version (fresh-in...</div></div>
-<div class="ttc" id="aclass_qt_pass_html_aa74fc7422261b27a790a0ea0d875fc7b"><div class="ttname"><a href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass::QtPass</a></div><div class="ttdeci">QtPass(QObject *parent=nullptr)</div><div class="ttdoc">Construct the glue and connect it to both pass backends.</div></div>
+<div class="ttc" id="aclass_qt_pass_html_a8f03731a98c5de1cc086c10479d63dbb"><div class="ttname"><a href="class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb">QtPass::finishedInsert</a></div><div class="ttdeci">void finishedInsert(const QString &amp;output, const QString &amp;errout)</div><div class="ttdoc">Slot for Pass::finishedInsert: like passStoreChanged(), then emit entryInserted() so the window refre...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00129">qtpass.cpp:129</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_a90e284bd33b10bf0407541d5c698f199"><div class="ttname"><a href="class_qt_pass.html#a90e284bd33b10bf0407541d5c698f199">QtPass::reportError</a></div><div class="ttdeci">void reportError(int exitCode, const QString &amp;error)</div><div class="ttdoc">Show a process&#39; stderr in colour through outputReady(): red for a failure, dark grey for the chatter ...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00098">qtpass.cpp:98</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_a951d0166f5aafa6f2c1fb37d584f0243"><div class="ttname"><a href="class_qt_pass.html#a951d0166f5aafa6f2c1fb37d584f0243">QtPass::onKeyGenerationComplete</a></div><div class="ttdeci">void onKeyGenerationComplete(const QString &amp;output, const QString &amp;errout)</div><div class="ttdoc">Slot for Pass::finishedGenerateGPGKeys: a status message followed by processFinished()....</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00135">qtpass.cpp:135</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aa1153ea591126774caa31920020d188e"><div class="ttname"><a href="class_qt_pass.html#aa1153ea591126774caa31920020d188e">QtPass::passStoreChanged</a></div><div class="ttdeci">void passStoreChanged(const QString &amp;output, const QString &amp;errout)</div><div class="ttdoc">Slot for the backend signals that change the store on disk (git init, remove, init,...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00124">qtpass.cpp:124</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aa1918767cdefea447f1c90272fd95966"><div class="ttname"><a href="class_qt_pass.html#aa1918767cdefea447f1c90272fd95966">QtPass::clipboard</a></div><div class="ttdeci">auto clipboard() -&gt; ClipboardManager &amp;</div><div class="ttdoc">The clipboard handling for this application instance.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">qtpass.h:54</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aa247e023d75a86e72f96617f3e8f2b65"><div class="ttname"><a href="class_qt_pass.html#aa247e023d75a86e72f96617f3e8f2b65">QtPass::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Resolve the password store and the executables and migrate the settings of an older version (fresh-in...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00031">qtpass.cpp:31</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aa74fc7422261b27a790a0ea0d875fc7b"><div class="ttname"><a href="class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b">QtPass::QtPass</a></div><div class="ttdeci">QtPass(QObject *parent=nullptr)</div><div class="ttdoc">Construct the glue and connect it to both pass backends.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00022">qtpass.cpp:22</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_ab7c71f983556835691ab2da4a51f5f9b"><div class="ttname"><a href="class_qt_pass.html#ab7c71f983556835691ab2da4a51f5f9b">QtPass::doGitPush</a></div><div class="ttdeci">void doGitPush()</div><div class="ttdoc">Emit pushRequested() when the settings ask for automatic push.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00151">qtpass.cpp:151</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_abd2dacf3e88b411ef39ec78f49bbdd2d"><div class="ttname"><a href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">QtPass::createQRCodePopup</a></div><div class="ttdeci">static QDialog * createQRCodePopup(const QPixmap &amp;image)</div><div class="ttdoc">Create a frameless popup dialog, placed at the cursor, showing the given QR code. Split out of showTe...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00201">qtpass.cpp:201</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_adfa404cc09dade6c0b025d7dc1b240a5"><div class="ttname"><a href="class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5">QtPass::~QtPass</a></div><div class="ttdeci">~QtPass() override</div><div class="ttdoc">Destroy the QtPass instance and clean up signal connections.</div></div>
-<div class="ttc" id="aclass_qt_pass_html_aef5aaf0605c7681967995ede486590ef"><div class="ttname"><a href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a></div><div class="ttdeci">void showTextAsQRCode(const QString &amp;text)</div><div class="ttdoc">Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...</div></div>
+<div class="ttc" id="aclass_qt_pass_html_ae856718a4e0fdd5f200a655b291e5f04"><div class="ttname"><a href="class_qt_pass.html#ae856718a4e0fdd5f200a655b291e5f04">QtPass::processErrorExit</a></div><div class="ttdeci">void processErrorExit(int exitCode, const QString &amp;error)</div><div class="ttdoc">Slot for Pass::processErrorExit: report the error in red and emit operationFinished().</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00109">qtpass.cpp:109</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aef5aaf0605c7681967995ede486590ef"><div class="ttname"><a href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a></div><div class="ttdeci">void showTextAsQRCode(const QString &amp;text)</div><div class="ttdoc">Render text as a QR code with qrencode and show it in a popup at the cursor; failures are reported th...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00157">qtpass.cpp:157</a></div></div>
+<div class="ttc" id="aclipboardmanager_8h_html"><div class="ttname"><a href="clipboardmanager_8h.html">clipboardmanager.h</a></div><div class="ttdoc">ClipboardManager, which puts secrets on the clipboard and removes them again, and the MIME data that ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="qtpass_8h.html">qtpass.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

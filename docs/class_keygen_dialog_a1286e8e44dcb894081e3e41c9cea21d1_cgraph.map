@@ -1,0 +1,8 @@
+<map id="KeygenDialog::applyPassphrase" name="KeygenDialog::applyPassphrase">
+<area shape="rect" id="Node000001" title="Splice a passphrase into a GPG batch template." alt="" coords="5,56,234,84"/>
+<area shape="rect" id="Node000002" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="285,29,432,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,54,272,53,267,54,235,60"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="282,81,436,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="234,79,269,85,263,85,234,85"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="318,28,311,20,317,11,333,5,359,3,387,5,404,14,398,14,386,10,359,8,334,10,320,15,317,20,323,30"/>
+</map>

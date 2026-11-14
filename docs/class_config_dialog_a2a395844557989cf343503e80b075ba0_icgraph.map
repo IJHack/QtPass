@@ -1,4 +1,9 @@
 <map id="ConfigDialog::useOtp" name="ConfigDialog::useOtp">
-<area shape="rect" id="Node000001" title="Enable or disable OTP support." alt="" coords="5,29,164,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="110,14,102,10,84,8,68,10,60,14,58,20,62,29,56,28,52,20,56,11,67,5,85,3,104,5,115,14"/>
+<area shape="rect" id="Node000001" title="Enable or disable OTP support." alt="" coords="498,29,656,57"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="615,14,603,10,577,8,553,10,540,15,537,20,543,30,538,28,532,20,537,11,552,5,577,3,604,5,620,14"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="249,29,450,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,43,450,46,450,41,485,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="144,14,131,10,103,8,77,10,63,15,60,20,66,29,61,29,54,20,60,11,76,5,103,3,132,5,149,14"/>
 </map>

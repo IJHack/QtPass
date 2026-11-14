@@ -1,0 +1,35 @@
+var class_gpg_id_generation =
+[
+    [ "Header", "struct_gpg_id_generation_1_1_header.html", "struct_gpg_id_generation_1_1_header" ],
+    [ "Verdict", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9", [
+      [ "Accepted", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a382ab522931673c11e398ead1b7b1678", null ],
+      [ "Rollback", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a446c9e952debe114c86bbd9e5eea7d61", null ],
+      [ "Unbound", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9aedac80248b7bf68ccfaa9c78bfb81c32", null ],
+      [ "Conflict", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9af1d4ac54357cc0932f385d56814ba7e4", null ],
+      [ "WrongFolder", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ad39adbc2bce77d81dc875fe79e8610e9", null ],
+      [ "WrongStore", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9ae037bb4b2fc6b1868bafa9f762c26365", null ],
+      [ "Malformed", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a0dc7301026e66d38061d7eaba481c9a5", null ],
+      [ "RecordUnavailable", "class_gpg_id_generation.html#aa4ec78f9896b8cbb9ea3f82151e9e8b9a390ae4f038021219bbd1af349d76b737", null ]
+    ] ],
+    [ "accept", "class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387", null ],
+    [ "boundToItsFolder", "class_gpg_id_generation.html#a94e96377e9735f5e01b56a7703827095", null ],
+    [ "digest", "class_gpg_id_generation.html#a392a429416dece996856ac0eb7d2b3e1", null ],
+    [ "folderOf", "class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4", null ],
+    [ "header", "class_gpg_id_generation.html#a4db52b6f2f6464a1f2fa4f0aa0c126fc", null ],
+    [ "key", "class_gpg_id_generation.html#aa2821ad93c4d61aa1152beba50b29d6e", null ],
+    [ "ofThisStore", "class_gpg_id_generation.html#a2e43ee7d9b9fe9a24572a1b2e1c9654d", null ],
+    [ "parse", "class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4", null ],
+    [ "recordFile", "class_gpg_id_generation.html#ae5b416ea3d26c3787b2af8e2e640e758", null ],
+    [ "recordWritten", "class_gpg_id_generation.html#a9fedf696ffcf21f2ef7d465c634bf540", null ],
+    [ "remembered", "class_gpg_id_generation.html#aa71275249d300d5d4f18761334d85c02", null ],
+    [ "reserveNext", "class_gpg_id_generation.html#a8a0a444b882b99932d353adaedcfd6a4", null ],
+    [ "staleList", "class_gpg_id_generation.html#aa86015bb280ffcb87fe676eed5fd3820", null ],
+    [ "storeIdFor", "class_gpg_id_generation.html#af7f352375eac190196e889e05cfb67bd", null ],
+    [ "storeRecordFile", "class_gpg_id_generation.html#a70cd5b49f5dca1370b8cef78873090d8", null ],
+    [ "wayThrough", "class_gpg_id_generation.html#af86ff868df611b4db16a014a414f943c", null ],
+    [ "withHeader", "class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f", null ],
+    [ "kFolderPrefix", "class_gpg_id_generation.html#abcdc85e16f816169a5bd5b665bb99000", null ],
+    [ "kGenerationPrefix", "class_gpg_id_generation.html#aec962bd7ca805bf9164a35f07ca68c88", null ],
+    [ "kMaxGeneration", "class_gpg_id_generation.html#ad1838a8d88e4b98e3f573bf89556a164", null ],
+    [ "kStorePrefix", "class_gpg_id_generation.html#ab6b0f551215df432adf31c4ad1e701e9", null ]
+];

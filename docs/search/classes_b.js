@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['namedvalue_0',['NamedValue',['../struct_named_value.html',1,'']]],
-  ['namedvalues_1',['NamedValues',['../class_named_values.html',1,'']]],
-  ['nativegrep_2',['NativeGrep',['../class_native_grep.html',1,'']]]
+  ['mainwindow_0',['MainWindow',['../class_main_window.html',1,'']]],
+  ['menubarpeek_1',['MenuBarPeek',['../class_menu_bar_peek.html',1,'']]]
 ];

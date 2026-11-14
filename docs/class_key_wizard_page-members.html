@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_key_wizard_page.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">KeyWizardPage Member List</div></div>
 </div><!--header-->
@@ -101,15 +119,24 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_key_wizard_page.html">KeyWizardPage</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">initializePage</a>() override</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">isComplete</a>() const -&gt; bool override</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a>(FirstRunWizard *wizard)</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a7d7d221d80c65382462761e221b73225">generate</a>()</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#a3bc0551c6f5a1b31b6ec2538b42942dd">initializePage</a>() override</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a58d7541dfdc938da50ae6adca6ca2a2f">isComplete</a>() const -&gt; bool override</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#af4836dab87ec18aaf72adfa7ab82ba4a">KeyWizardPage</a>(FirstRunWizard *wizard)</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a73444781c895e507e9048dba7dfb77e8">m_generate</a></td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#a11a1086c1ece6a1fdeff02bbd06deac2">m_list</a></td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a9f5bf936eb127ead6f6e20143cfc0aa1">m_status</a></td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#a812e04fd670f8ce3d6d70a4dbf699248">m_wizard</a></td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_key_wizard_page.html#a42f52524e4dae186f78a6ef00b2546b4">reload</a>()</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_key_wizard_page.html#ae56080c44a25f205f189e6cc0cfc7e89">validatePage</a>() -&gt; bool override</td><td class="entry"><a class="el" href="class_key_wizard_page.html">KeyWizardPage</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

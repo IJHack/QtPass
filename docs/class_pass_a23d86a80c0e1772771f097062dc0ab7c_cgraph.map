@@ -1,0 +1,18 @@
+<map id="Pass::handleProcessError" name="Pass::handleProcessError">
+<area shape="rect" id="Node000001" title="Report a process that exited non&#45;zero; called by finished()." alt="" coords="5,185,189,213"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="292,5,394,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,183,154,116,192,77,235,44,280,27,275,31,238,48,195,81,158,119,109,186"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#aa7deb8fc813c6652b169d11bb687f613" title="Put the translated reason for a failed insert above what gpg itself printed, leaving out the machine&#45;..." alt="" coords="258,57,428,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,183,164,140,199,116,236,95,257,89,253,92,238,100,201,120,167,144,116,187"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial..." alt="" coords="237,109,450,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,182,236,147,269,140,264,143,237,152,137,187"/>
+<area shape="rect" id="Node000005" href="$pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc" title="Maps GPG stderr (which may include –status&#45;fd 2 tokens) to a translated user&#45;friendly encryption erro..." alt="" coords="276,185,410,213"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,197,263,198,258,200,190,202"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8" title="Emitted when an Insert() fails through a queued command, before the generic processErrorExit(): the p..." alt="" coords="277,237,410,265"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="166,211,264,233,259,235,166,216"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a6097de48d30068d8a73f7dc80ff01de0" title="Whether the insert that just failed had put its entry in the store before a later step failed...." alt="" coords="272,289,415,317"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="120,211,173,243,238,274,262,284,256,285,236,279,171,247,120,216"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="261,341,426,369"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="110,211,162,268,198,299,238,326,254,336,248,335,235,331,195,304,158,271,108,216"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="301,184,295,176,300,167,316,161,343,159,372,161,389,170,384,170,371,166,343,164,318,166,303,171,300,176,306,185"/>
+</map>

@@ -1,0 +1,72 @@
+<map id="Pass::finished" name="Pass::finished">
+<area shape="rect" id="Node000001" title="Handle process completion." alt="" coords="5,576,115,604"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a57b61261a84b79bb73b209b3511a87ff" title="Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW." alt="" coords="163,309,355,354"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,574,232,363,231,369,74,577"/>
+<area shape="rect" id="Node000026" href="$class_pass.html#a3a1a065e12909518f3898b3557ed714c" title="Emitted when a Show() succeeds." alt="" coords="187,551,331,578"/>
+<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="113,581,173,574,169,578,116,585"/>
+<area shape="rect" id="Node000027" href="$class_pass.html#a23d86a80c0e1772771f097062dc0ab7c" title="Report a process that exited non&#45;zero; called by finished()." alt="" coords="167,795,350,822"/>
+<area shape="poly" id="edge28_Node000001_Node000027" title=" " alt="" coords="75,602,237,782,232,784,73,607"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a13859dd31b009e6d362546d1c96dc303" title="A process of any kind finished successfully and its output cannot contain a secret." alt="" coords="425,5,609,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,308,276,254,303,182,321,144,344,107,370,73,401,44,413,38,410,42,405,48,374,77,348,110,326,147,308,184,281,255,267,309"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3" title="A Copy() succeeded; the copy exists beside the original." alt="" coords="446,57,588,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="265,308,282,262,310,205,350,146,374,119,402,96,433,81,430,85,404,100,378,123,354,149,315,207,287,264,270,309"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a296dba6b2dc144cdd95af8da86d2170a" title="GenerateGPGKeys() succeeded; the new key pair is in the keyring." alt="" coords="403,109,631,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="269,308,289,272,319,228,356,184,401,148,416,141,413,145,405,152,360,188,323,232,294,275,274,310"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#ab484c95a5b7b79e34fc6aef127f23ba8" title="git init in the store succeeded; the store is a repository now and the tree is re&#45;read." alt="" coords="442,161,592,189"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="277,307,329,252,364,224,402,199,430,189,426,193,404,204,367,228,333,256,281,310"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a7a6b3a9abf7c6c1a58d1e1b6f3c72b82" title="git pull succeeded; entries may have changed on disk." alt="" coords="441,213,593,241"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="294,307,344,278,402,251,430,244,426,247,404,256,347,283,298,310"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a835378925ada56acd922899f64e85933" title="git push succeeded." alt="" coords="438,265,597,293"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="354,310,432,295,428,298,357,314"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#ac6fe8aec534ce7415eb23d45dca27e63" title="An Init() succeeded: the folder&#39;s .gpg&#45;id holds the new recipient list." alt="" coords="452,317,582,345"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="354,329,439,330,434,333,357,334"/>
+<area shape="rect" id="Node000010" href="$class_pass.html#a14d258f93b689ff92cea0d11b136eb83" title="An Insert() succeeded: the entry is in the store and, with Git in use, committed." alt="" coords="444,369,590,397"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="354,348,432,364,428,367,356,353"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a662000feacb2400a1b5f6133cce44542" title="A Move() succeeded; the entry or folder is under its new name." alt="" coords="444,421,590,449"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="295,351,347,380,404,406,432,416,427,418,402,411,344,385,297,357"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#af08e80e76ffd6581f35e701e6c8b533e" title="A Remove() succeeded; the entry or folder is gone from the store." alt="" coords="436,473,599,501"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="279,351,333,406,367,434,404,458,423,468,418,469,402,463,364,439,329,410,279,357"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="474,601,561,629"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="270,351,332,479,370,545,388,570,405,586,430,600,461,610,456,612,428,605,401,591,384,573,366,548,328,482,270,357"/>
+<area shape="rect" id="Node000025" href="$namespace_enums.html#ad33195b2ca21f0ffd9b33b76bf09a03e" title="What is known about pid." alt="" coords="443,549,591,577"/>
+<area shape="poly" id="edge25_Node000002_Node000025" title=" " alt="" coords="273,351,327,429,363,472,405,510,430,527,460,543,454,544,428,532,401,515,359,476,322,432,273,357"/>
+<area shape="poly" id="edge17_Node000013_Node000001" title=" " alt="" coords="472,615,131,596,130,591,475,611"/>
+<area shape="rect" id="Node000014" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="710,393,863,421"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="560,613,597,605,614,597,629,587,644,568,651,550,653,511,655,471,662,451,677,432,698,420,694,424,681,436,667,454,660,473,658,511,656,551,649,571,633,590,617,602,599,610,562,617"/>
+<area shape="rect" id="Node000015" href="$class_executor.html#a987e7227ac1932bbb59cea5cbc82d483" title="Emitted once the last queued item is done and nothing runs or waits any more (isIdle()),..." alt="" coords="719,445,854,473"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="560,611,597,604,630,586,641,575,647,563,653,537,658,510,666,497,678,484,707,470,702,473,681,488,670,500,663,512,658,538,652,564,645,578,633,591,598,609,562,616"/>
+<area shape="rect" id="Node000016" href="$class_executor.html#a9c450bcba881197a3e10eb1bf59b3a88" title="Emitted instead of finished() when a queued process could not be started, had no executable configure..." alt="" coords="728,497,845,525"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="560,609,596,600,630,586,644,574,653,562,662,548,678,536,716,522,711,525,681,540,666,552,658,565,648,578,633,591,597,606,562,613"/>
+<area shape="rect" id="Node000017" href="$class_executor.html#ace810a6d93c74dec7188038210c5a731" title="Emitted when a queued process exits normally, whatever its exit code; a non&#45;zero code is the receiver..." alt="" coords="718,549,855,577"/>
+<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="560,604,706,578,701,580,562,609"/>
+<area shape="rect" id="Node000018" href="$class_pass.html#ad0936452d739b37d9a9e46db356792c2" title="Nothing of the store&#39;s runs or waits any more (isIdle())." alt="" coords="745,601,828,629"/>
+<area shape="poly" id="edge18_Node000013_Node000018" title=" " alt="" coords="561,613,733,614,728,616,562,618"/>
+<area shape="rect" id="Node000019" href="$class_executor.html#ae542d7fba49e96e26fb93c52a9860b22" title="Set the environment passed to all child processes." alt="" coords="692,653,881,681"/>
+<area shape="poly" id="edge19_Node000013_Node000019" title=" " alt="" coords="561,621,699,649,694,651,562,626"/>
+<area shape="rect" id="Node000020" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="Emitted just before a queued process is started; the main window shows the busy indicator on it." alt="" coords="719,705,854,733"/>
+<area shape="poly" id="edge20_Node000013_Node000020" title=" " alt="" coords="561,617,597,625,633,640,648,652,658,666,666,678,681,690,707,704,701,704,678,695,662,682,653,669,644,656,630,644,596,630,562,622"/>
+<area shape="rect" id="Node000021" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="679,757,894,785"/>
+<area shape="poly" id="edge21_Node000013_Node000021" title=" " alt="" coords="561,614,598,622,633,640,645,652,652,666,658,693,663,718,670,731,681,743,689,750,684,749,678,746,666,734,658,720,653,694,647,668,641,656,630,644,597,627,561,619"/>
+<area shape="rect" id="Node000022" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="700,809,873,837"/>
+<area shape="poly" id="edge22_Node000013_Node000022" title=" " alt="" coords="561,613,599,620,617,628,633,640,649,659,656,679,658,719,660,758,667,776,681,795,689,803,684,802,677,798,662,779,655,759,653,719,651,680,644,662,629,644,614,633,597,625,562,618"/>
+<area shape="rect" id="Node000023" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="942,809,1105,837"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="873,821,929,823,923,823,874,826"/>
+<area shape="rect" id="Node000024" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="1153,809,1267,837"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="1105,821,1140,823,1135,823,1106,826"/>
+<area shape="poly" id="edge26_Node000025_Node000025" title=" " alt="" coords="473,549,466,540,472,531,489,525,517,523,547,525,565,534,560,535,546,530,517,528,490,530,475,535,471,540,478,549"/>
+<area shape="rect" id="Node000028" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="466,653,568,681"/>
+<area shape="poly" id="edge29_Node000027_Node000028" title=" " alt="" coords="272,792,325,743,362,715,402,691,454,676,449,679,404,696,365,719,329,747,275,796"/>
+<area shape="rect" id="Node000029" href="$class_pass.html#aa7deb8fc813c6652b169d11bb687f613" title="Put the translated reason for a failed insert above what gpg itself printed, leaving out the machine&#45;..." alt="" coords="432,705,602,733"/>
+<area shape="poly" id="edge30_Node000027_Node000029" title=" " alt="" coords="287,792,340,767,402,743,434,736,429,739,404,748,342,772,290,797"/>
+<area shape="rect" id="Node000030" href="$class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393" title="Emitted when GPG key generation fails, alongside the generic processErrorExit(); lets the keygen dial..." alt="" coords="410,757,624,785"/>
+<area shape="poly" id="edge31_Node000027_Node000030" title=" " alt="" coords="350,793,404,787,399,789,352,798"/>
+<area shape="rect" id="Node000031" href="$pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc" title="Maps GPG stderr (which may include –status&#45;fd 2 tokens) to a translated user&#45;friendly encryption erro..." alt="" coords="450,833,584,861"/>
+<area shape="poly" id="edge32_Node000027_Node000031" title=" " alt="" coords="351,820,437,834,432,836,351,825"/>
+<area shape="rect" id="Node000032" href="$class_pass.html#a4f8a565d9693da516f7b10e3d7652ae8" title="Emitted when an Insert() fails through a queued command, before the generic processErrorExit(): the p..." alt="" coords="450,885,584,913"/>
+<area shape="poly" id="edge34_Node000027_Node000032" title=" " alt="" coords="288,820,342,845,404,870,438,882,433,882,402,875,340,850,288,826"/>
+<area shape="rect" id="Node000033" href="$class_pass.html#a6097de48d30068d8a73f7dc80ff01de0" title="Whether the insert that just failed had put its entry in the store before a later step failed...." alt="" coords="446,937,589,965"/>
+<area shape="poly" id="edge35_Node000027_Node000033" title=" " alt="" coords="274,820,328,871,365,899,404,922,433,936,428,935,402,927,362,903,325,875,273,825"/>
+<area shape="rect" id="Node000034" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="435,989,599,1017"/>
+<area shape="poly" id="edge36_Node000027_Node000034" title=" " alt="" coords="269,820,290,854,320,895,359,938,404,974,423,986,418,985,402,979,355,942,316,899,286,857,267,825"/>
+<area shape="poly" id="edge33_Node000031_Node000031" title=" " alt="" coords="473,832,466,824,472,815,489,809,517,807,547,809,565,818,560,818,546,814,517,812,490,814,475,819,471,824,478,833"/>
+</map>

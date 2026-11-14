@@ -1,0 +1,9 @@
+<map id="src/gpgidgeneration.h" name="src/gpgidgeneration.h">
+<area shape="rect" id="Node000001" title="Rollback detection for signed .gpg&#45;id files: the generation counter and the record of what was last s..." alt="" coords="79,5,241,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,102,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,33,86,74,83,70,139,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="126,81,195,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,32,163,67,158,64,158,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="219,81,293,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,31,230,71,224,71,176,36"/>
+</map>

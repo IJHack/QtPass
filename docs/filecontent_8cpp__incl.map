@@ -1,0 +1,25 @@
+<map id="src/filecontent.cpp" name="src/filecontent.cpp">
+<area shape="rect" id="Node000001" title="Implements FileContent::parse() as a single streaming pass over the entry, with the field cap,..." alt="" coords="576,5,716,33"/>
+<area shape="rect" id="Node000002" href="$filecontent_8h.html" title="Parser for a decrypted password entry: password line, key: value fields, remaining text and the OTP c..." alt="" coords="119,81,221,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="575,32,237,83,236,78,576,27"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="246,81,398,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="585,34,395,80,394,74,590,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="423,81,557,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="620,33,532,77,530,72,615,34"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="581,81,711,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="648,32,648,67,644,64,644,36"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="736,81,820,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="670,31,744,73,738,73,669,36"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="845,81,903,109"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="687,31,833,79,827,80,686,36"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="927,81,986,109"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="711,31,914,80,909,80,710,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,60,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,112,71,152,69,147,144,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="83,157,152,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,108,138,146,134,142,158,111"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="177,157,269,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="181,107,207,144,202,144,178,112"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="293,157,380,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="200,107,296,149,290,151,199,112"/>
+</map>

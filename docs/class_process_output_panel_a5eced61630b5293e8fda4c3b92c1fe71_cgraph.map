@@ -1,0 +1,5 @@
+<map id="ProcessOutputPanel::ProcessOutputPanel" name="ProcessOutputPanel::ProcessOutputPanel">
+<area shape="rect" id="Node000001" title="Build the console (Clear button + read&#45;only text edit)." alt="" coords="5,5,164,50"/>
+<area shape="rect" id="Node000002" href="$class_process_output_panel.html#a40eebd4f48de276cec251ffdfed97c15" title="Drop all output, reset the counter, re&#45;arm auto&#45;scroll." alt="" coords="212,5,362,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,25,199,27,194,28,164,30"/>
+</map>

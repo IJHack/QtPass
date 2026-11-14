@@ -1,0 +1,19 @@
+<map id="ImitatePass::refuseLinkedGpgIdFolder" name="ImitatePass::refuseLinkedGpgIdFolder">
+<area shape="rect" id="Node000001" title="Refuse a folder, or a .gpg&#45;id/.gpg&#45;id.sig in it, that is a link: writing there would reach outside th..." alt="" coords="5,49,194,94"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="242,57,411,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,69,228,70,223,72,195,74"/>
+<area shape="rect" id="Node000003" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="459,5,673,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="393,54,486,36,481,38,394,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="502,57,631,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,69,488,71,483,72,412,74"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="460,123,672,150"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="380,83,501,118,495,119,380,88"/>
+<area shape="rect" id="Node000005" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="756,44,901,72"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,65,743,62,738,63,631,71"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="777,96,880,124"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="672,123,764,116,759,117,673,128"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="746,148,911,176"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="673,144,733,152,728,152,673,149"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="721,200,936,228"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="609,148,722,185,754,196,749,195,721,190,608,153"/>
+</map>

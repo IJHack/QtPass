@@ -1,0 +1,7 @@
+<map id="KeygenDialog::replace" name="KeygenDialog::replace">
+<area shape="rect" id="Node000001" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="5,32,173,60"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="221,5,424,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,34,207,32,202,33,173,39"/>
+<area shape="rect" id="Node000003" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="245,57,400,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,52,233,61,227,61,173,58"/>
+</map>

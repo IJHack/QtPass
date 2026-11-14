@@ -1,0 +1,5 @@
+<map id="FieldLabel::finishEdit" name="FieldLabel::finishEdit">
+<area shape="rect" id="Node000001" title="Close the editor, putting the label back in its place." alt="" coords="5,5,161,33"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="209,5,362,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,17,196,19,191,19,161,22"/>
+</map>

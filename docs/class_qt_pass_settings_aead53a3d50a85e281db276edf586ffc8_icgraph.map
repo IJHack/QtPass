@@ -1,0 +1,7 @@
+<map id="QtPassSettings::getAutoclearSeconds" name="QtPassSettings::getAutoclearSeconds">
+<area shape="rect" id="Node000001" title="Get autoclear delay in seconds." alt="" coords="542,5,751,50"/>
+<area shape="rect" id="Node000002" href="$class_clipboard_manager.html#a6614eba6805293ea0ff96118c0567872" title="Re&#45;read the autoclear delay from the settings." alt="" coords="264,5,494,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,28,494,30,494,25,529,28"/>
+<area shape="rect" id="Node000003" href="$class_clipboard_manager.html#addcbfc9a4b057f9adeef3a986fb5fbeb" title="Construct a manager that also clears its text when the application quits." alt="" coords="5,5,216,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,28,216,30,216,25,251,28"/>
+</map>

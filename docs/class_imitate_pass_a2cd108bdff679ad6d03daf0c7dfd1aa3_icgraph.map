@@ -1,0 +1,5 @@
+<map id="ImitatePass::recipientsForEntry" name="ImitatePass::recipientsForEntry">
+<area shape="rect" id="Node000001" title="The recipients to encrypt file to: its folder&#39;s .gpg&#45;id, verified when a signing key is set." alt="" coords="196,5,385,50"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6" title="Insert new password." alt="" coords="5,14,148,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,28,148,30,148,25,182,27"/>
+</map>

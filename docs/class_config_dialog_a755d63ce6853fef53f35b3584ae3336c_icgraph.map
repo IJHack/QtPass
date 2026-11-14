@@ -1,0 +1,12 @@
+<map id="ConfigDialog::on_comboBoxClipboard_activated" name="ConfigDialog::on_comboBoxClipboard_activated">
+<area shape="rect" id="Node000001" title="Enable the controls that only mean something with a clipboard (selection, hiding, autoclear) unless &quot;..." alt="" coords="738,21,943,66"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="720,37,503,32,375,31,249,34,202,37,201,31,249,29,375,26,503,26,725,36"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#ac002e1ead832154404e3edf6a41debfc" title="Re&#45;apply the clipboard gating for the current clipboard mode." alt="" coords="492,50,690,95"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="725,57,691,63,690,58,720,57"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="143,14,130,10,103,8,78,10,64,15,60,20,66,29,61,29,55,20,60,11,76,5,103,3,131,5,148,14"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6" title="Enable or disable clipboard selection mode." alt="" coords="249,67,444,94"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="473,76,445,80,444,75,479,76"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="234,64,198,60,198,55,239,64"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="387,51,374,48,346,45,321,47,307,52,303,57,310,67,305,65,298,58,303,48,320,42,346,40,375,43,392,52"/>
+</map>

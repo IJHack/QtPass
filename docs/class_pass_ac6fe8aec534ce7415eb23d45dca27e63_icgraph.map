@@ -1,0 +1,26 @@
+<map id="Pass::finishedInit" name="Pass::finishedInit">
+<area shape="rect" id="Node000001" title="An Init() succeeded: the folder&#39;s .gpg&#45;id holds the new recipient list." alt="" coords="938,140,1068,168"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a81e0207207f490616dd442837a2469d4" title="Connect the completion signals of one backend to the slots that turn them into output,..." alt="" coords="696,76,890,120"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="931,135,879,123,879,118,936,136"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a57b61261a84b79bb73b209b3511a87ff" title="Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW." alt="" coords="697,166,889,211"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="925,167,890,175,889,170,920,167"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#aa74fc7422261b27a790a0ea0d875fc7b" title="Construct the glue and connect it to both pass backends." alt="" coords="531,41,648,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="679,75,649,70,649,65,684,74"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,51,484,52,483,46,518,50"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="418,14,408,10,385,8,364,10,352,15,349,20,354,29,349,28,344,20,348,11,362,5,385,3,409,5,424,14"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="269,53,240,55,238,50,274,51"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="253,32,289,33,284,35,255,37"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="535,175,644,202"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="679,189,645,191,645,186,684,188"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="307,81,463,109"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="555,165,521,145,482,124,449,112,449,107,484,119,524,140,560,166"/>
+<area shape="rect" id="Node000009" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="316,133,454,161"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="517,175,454,164,455,158,522,174"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="322,185,448,213"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="517,192,449,199,448,193,523,192"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="341,237,428,265"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="536,207,484,227,429,243,428,237,482,222,531,208"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="443,241,648,211,694,206,699,205,649,216,444,246"/>
+</map>

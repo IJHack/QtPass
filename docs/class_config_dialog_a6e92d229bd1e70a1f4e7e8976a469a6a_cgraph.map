@@ -1,0 +1,37 @@
+<map id="ConfigDialog::on_autodetectButton_clicked" name="ConfigDialog::on_autodetectButton_clicked">
+<area shape="rect" id="Node000001" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="5,141,211,186"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="262,111,420,138"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,144,249,139,244,141,212,149"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="259,187,423,214"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="211,177,246,184,241,186,212,182"/>
+<area shape="poly" id="edge8_Node000002_Node000002" title=" " alt="" coords="301,110,295,102,300,92,316,86,341,84,368,87,384,95,378,96,366,92,341,89,317,91,304,96,301,101,307,111"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="473,59,665,86"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,107,493,89,488,91,406,113"/>
+<area shape="rect" id="Node000009" href="$class_util.html#ae448351f44d5e8f0d03eeff8ef3e54b2" title="Fill _env once: the process environment with the usual GPG install directories appended to PATH (MacG..." alt="" coords="474,111,665,138"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="420,122,460,124,455,125,421,127"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="733,57,896,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="665,69,721,71,715,72,666,75"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="982,57,1148,85"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="896,69,969,71,964,72,897,74"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1216,5,1434,33"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1137,54,1240,36,1234,37,1138,59"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1219,57,1431,85"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1148,69,1206,71,1201,71,1148,74"/>
+<area shape="rect" id="Node000008" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1223,109,1427,137"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1138,83,1240,106,1234,106,1138,88"/>
+<area shape="poly" id="edge19_Node000010_Node000010" title=" " alt="" coords="301,185,295,178,300,168,316,162,341,160,368,163,384,171,378,171,366,168,341,165,317,167,304,172,301,177,307,187"/>
+<area shape="rect" id="Node000011" href="$class_config_dialog.html#a93a014267e13ce2a518d6ff125bcb172" title="Enable the group box of the chosen backend and, in pass mode, disable the password&#45;generation control..." alt="" coords="471,178,667,223"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="423,198,458,200,453,201,424,203"/>
+<area shape="rect" id="Node000012" href="$class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="715,109,914,154"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="650,175,716,159,721,158,652,180"/>
+<area shape="rect" id="Node000013" href="$class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character&#45;set controls, whichever the &quot;use pwgen&quot; box selects; nothing in..." alt="" coords="715,178,914,223"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="668,198,703,200,697,201,668,203"/>
+<area shape="rect" id="Node000015" href="$class_config_dialog.html#a22ec9ee25af48a65870b3ee28d594a80" title=" " alt="" coords="721,248,908,292"/>
+<area shape="poly" id="edge17_Node000011_Node000015" title=" " alt="" coords="651,221,721,243,716,243,651,226"/>
+<area shape="rect" id="Node000014" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="Enable or disable pwgen&#45;based password generation." alt="" coords="976,187,1154,214"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="914,207,963,209,957,210,914,212"/>
+<area shape="poly" id="edge15_Node000014_Node000013" title=" " alt="" coords="972,192,929,194,929,189,978,192"/>
+<area shape="poly" id="edge16_Node000014_Node000014" title=" " alt="" coords="1022,185,1015,178,1021,168,1038,162,1065,160,1094,162,1112,172,1106,171,1093,168,1065,165,1039,167,1024,172,1021,177,1027,187"/>
+<area shape="rect" id="Node000016" href="$class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any." alt="" coords="962,256,1168,284"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="908,267,949,270,944,270,908,272"/>
+</map>

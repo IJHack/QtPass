@@ -1,0 +1,17 @@
+<map id="src/simpletransaction.cpp" name="src/simpletransaction.cpp">
+<area shape="rect" id="Node000001" title="Implements SimpleTransaction as a queue of (last process, result) pairs." alt="" coords="134,5,323,33"/>
+<area shape="rect" id="Node000002" href="$simpletransaction_8h.html" title="SimpleTransaction, the bookkeeping that lets ImitatePass report several queued processes as one finis..." alt="" coords="24,81,174,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,36,137,75,134,71,207,32"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="199,81,258,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="230,31,231,66,226,64,227,36"/>
+<area shape="rect" id="Node000007" href="$qtpasslogging_8h.html" title="The &quot;qtpass&quot; logging category." alt="" coords="282,81,407,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="249,31,314,72,308,73,249,36"/>
+<area shape="rect" id="Node000003" href="$enums_8h.html" title="The Enums namespace: clipboard behaviour and the identifiers of the subprocess kinds QtPass queues." alt="" coords="14,157,91,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,112,71,145,67,142,92,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="115,157,176,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="108,107,132,143,127,144,107,112"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,232,100,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="54,183,55,217,50,216,51,187"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="274,157,415,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="346,107,347,142,342,140,343,111"/>
+</map>

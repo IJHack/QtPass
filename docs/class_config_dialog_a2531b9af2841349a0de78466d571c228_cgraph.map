@@ -1,0 +1,8 @@
+<map id="ConfigDialog::ensureProfileFolder" name="ConfigDialog::ensureProfileFolder">
+<area shape="rect" id="Node000001" title="Offer to create a new profile&#39;s store folder when it is missing." alt="" coords="5,21,203,66"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="251,29,407,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,41,238,43,232,43,203,46"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="293,28,287,20,292,11,306,5,329,3,353,5,368,14,363,14,352,10,329,8,307,10,296,15,293,20,298,30"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="455,29,617,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,41,442,43,437,43,408,46"/>
+</map>

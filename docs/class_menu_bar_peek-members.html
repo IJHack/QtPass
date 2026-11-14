@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_menu_bar_peek.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">MenuBarPeek Member List</div></div>
 </div><!--header-->
@@ -102,13 +120,29 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a8a9a8dc73d9d99dbcdc580b1b3567525">eventFilter</a>(QObject *watched, QEvent *event) -&gt; bool override</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#adcac65462ff1daa7013081622cb15d20">isPeeking</a>() const -&gt; bool</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd">MenuBarPeek</a>(QMainWindow *window, QAction *toggle)</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#ad21d624502b17fbd7aea6b32c33c6176">hide</a>()</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a5b64a884de1b4b23d3ce8a04e3ccc7af">hideWhenNoMenuIsOpen</a>()</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#afbf6c5aff86d318171ac2a3f449463a6">inWindow</a>(QObject *watched) const -&gt; bool</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#adcac65462ff1daa7013081622cb15d20">isPeeking</a>() const -&gt; bool</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#af79fd843a3acf7a7a22e822b634349f9">m_altAlone</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a54faf416473c8e3140cffebbef56f9cb">m_altDown</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a40df1a3e7e3238b2e4874f859e586b25">m_peeking</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a5a5051065c4343673880b34b27827625">m_shownByThisPress</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#ae517f5f7fb38d88a1ed41d278a60eed4">m_toggle</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a81f0b0b1a9bd335a3b8770b80ae7aad9">m_window</a></td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd">MenuBarPeek</a>(QMainWindow *window, QAction *toggle)</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#ac6bb1a4ecef94ccf5ce99ce3d01c95ea">onKeyPress</a>(QObject *watched, const QKeyEvent *event)</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a16f2d7bb3d881e772f372ea8881967b7">onKeyRelease</a>(const QKeyEvent *event)</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_bar_peek.html#ae0e3e934197991fe271509cdca295314">onMenuBar</a>(QObject *watched) const -&gt; bool</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_menu_bar_peek.html#a300d9ba6840c2ac04213e61b7d16defe">show</a>()</td><td class="entry"><a class="el" href="class_menu_bar_peek.html">MenuBarPeek</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

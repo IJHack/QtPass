@@ -1,0 +1,7 @@
+<map id="Util::linkifyUrls" name="Util::linkifyUrls">
+<area shape="rect" id="Node000001" title="Turn plain text into HTML with clickable links for safe web URLs." alt="" coords="5,32,124,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a86864a9430f6903425908e76ba6079b5" title="Check whether a value is a safe, launchable web URL." alt="" coords="172,5,356,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,35,159,33,154,34,125,41"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a133c5da0c8a3f106c09977679bc615c3" title="Returns a regex to match URL protocols." alt="" coords="191,57,337,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,51,178,59,173,60,124,56"/>
+</map>

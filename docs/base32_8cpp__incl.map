@@ -1,0 +1,9 @@
+<map id="src/base32.cpp" name="src/base32.cpp">
+<area shape="rect" id="Node000001" title="Implements the Base32 codec: quantum&#45;by&#45;quantum decode and encode loops with the tail&#45;shape table tha..." alt="" coords="45,5,163,33"/>
+<area shape="rect" id="Node000002" href="$base32_8h.html" title="Strict RFC 4648 base32 codec plus the input sanitizer that makes human&#45;typed TOTP secrets decodable." alt="" coords="13,81,94,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,36,73,69,69,67,96,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="118,81,192,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,31,140,68,134,68,113,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,102,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,107,56,142,51,140,52,111"/>
+</map>

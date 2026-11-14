@@ -1,4 +1,27 @@
 <map id="ConfigDialog::usePwgen" name="ConfigDialog::usePwgen">
-<area shape="rect" id="Node000001" title="Enable or disable pwgen&#45;based password generation." alt="" coords="5,29,184,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="123,14,114,10,94,8,76,10,66,15,64,20,68,29,63,28,58,20,62,11,75,5,95,3,116,5,129,14"/>
+<area shape="rect" id="Node000001" title="Enable or disable pwgen&#45;based password generation." alt="" coords="1259,39,1437,66"/>
+<area shape="poly" id="edge15_Node000001_Node000001" title=" " alt="" coords="1387,23,1375,20,1348,17,1324,19,1310,24,1307,29,1313,39,1308,37,1301,30,1306,20,1322,14,1348,12,1376,15,1392,24"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="251,29,452,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1285,34,1211,20,1099,15,921,14,711,18,502,28,453,33,452,28,502,23,711,13,921,8,1099,9,1211,15,1290,34"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character&#45;set controls, whichever the &quot;use pwgen&quot; box selects; nothing in..." alt="" coords="1013,30,1211,75"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="1241,62,1212,64,1211,59,1246,61"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,44,202,46,200,41,237,42"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="144,15,131,10,103,8,77,10,63,15,59,20,66,28,60,29,54,20,59,11,76,5,103,3,132,5,149,13"/>
+<area shape="poly" id="edge14_Node000004_Node000001" title=" " alt="" coords="1226,41,1261,44,1256,44,1227,46"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a93a014267e13ce2a518d6ff125bcb172" title="Enable the group box of the chosen backend and, in pass mode, disable the password&#45;generation control..." alt="" coords="765,125,961,170"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1040,80,925,127,923,122,1034,81"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a3d42b658f6b8436e9f6ca17059703c0a" title="Set the path to the pwgen executable." alt="" coords="761,33,965,61"/>
+<area shape="poly" id="edge12_Node000004_Node000010" title=" " alt="" coords="994,50,965,52,965,47,1000,50"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#a2650ddbdc272cc7effb0541261a921f3" title="Native (gpg/git) backend chosen: enable its group box, disable pass&#39;s." alt="" coords="502,156,713,200"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="747,161,714,168,713,162,752,160"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a4ed1aadd50231d08811bb5c5b0bcc0f2" title="pass backend chosen: enable its group box, disable the native one." alt="" coords="502,225,713,270"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="802,176,714,215,682,227,681,222,712,210,796,177"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="526,104,690,132"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="747,134,690,130,690,125,752,134"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="541,100,402,60,402,55,546,99"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="650,89,636,85,608,83,581,85,566,89,563,95,569,104,564,103,557,95,563,85,580,79,608,77,638,80,655,89"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="249,96,454,140"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="507,118,455,120,454,115,513,117"/>
+<area shape="poly" id="edge13_Node000010_Node000002" title=" " alt="" coords="744,48,453,47,452,41,748,45"/>
 </map>

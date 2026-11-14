@@ -1,0 +1,20 @@
+<map id="Executor::finished" name="Executor::finished">
+<area shape="rect" id="Node000001" title="Emitted when a queued process exits normally, whatever its exit code; a non&#45;zero code is the receiver..." alt="" coords="861,40,997,68"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="607,9,813,37"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,42,813,40,813,35,848,42"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="666,65,754,93"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="843,64,754,77,754,72,848,63"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="392,5,534,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="589,22,534,23,534,18,595,21"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a57b61261a84b79bb73b209b3511a87ff" title="Emit the signals for a process that exited with 0; called by finished() for everything but PASS_SHOW." alt="" coords="367,57,559,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="648,79,560,82,560,77,654,79"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="210,96,319,124"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="349,97,320,104,319,99,354,96"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="334,110,367,111,463,115,505,116,559,111,615,102,663,92,669,91,616,107,560,116,506,121,463,121,367,116,335,116"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,44,162,72"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="197,92,134,75,134,70,201,90"/>
+<area shape="rect" id="Node000008" href="$class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked&#45;folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i..." alt="" coords="14,96,153,124"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="191,111,153,112,153,107,196,109"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="20,148,147,176"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="202,128,135,150,133,145,196,129"/>
+</map>

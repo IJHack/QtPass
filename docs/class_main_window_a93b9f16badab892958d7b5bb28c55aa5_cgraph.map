@@ -1,0 +1,59 @@
+<map id="MainWindow::addRecipient" name="MainWindow::addRecipient">
+<area shape="rect" id="Node000001" title="Share menu &quot;Add recipient&quot;: open UsersDialog for dir (keys already in the keyring only)." alt="" coords="5,177,203,205"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="260,177,436,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,189,247,190,242,192,204,194"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a7028a40e120bf6fc152ad1eb8e476667" title="Load all flat settings into an AppSettings value object." alt="" coords="970,57,1124,85"/>
+<area shape="poly" id="edge25_Node000001_Node000008" title=" " alt="" coords="151,174,254,145,397,108,561,73,730,47,819,42,909,47,957,55,952,55,908,52,819,47,731,52,562,78,398,113,256,150,153,179"/>
+<area shape="rect" id="Node000022" href="$class_main_window.html#a6f69e343da300160c4ab4b2ad6618490" title="Refuse, with a message, a tree&#45;picked folder that is or lies behind a symlink or junction: what it po..." alt="" coords="251,229,446,274"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="163,203,242,223,238,226,164,208"/>
+<area shape="rect" id="Node000003" href="$class_pass_backend_factory.html#a51cc8fe2ab743a6fa1e81182d83a7843" title="Get the active backend, constructing and initialising it on first use after construction or invalidat..." alt="" coords="512,169,664,214"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,189,499,190,494,192,438,194"/>
+<area shape="rect" id="Node000004" href="$class_pass_backend_factory.html#ab2ef5455daf9d9d09008ca95254da91a" title="Get the lazily&#45;constructed ImitatePass backend." alt="" coords="743,150,896,195"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="664,182,730,179,725,181,665,188"/>
+<area shape="poly" id="edge21_Node000003_Node000008" title=" " alt="" coords="643,166,730,135,846,106,958,86,953,87,847,111,731,140,645,171"/>
+<area shape="rect" id="Node000014" href="$class_pass_backend_factory.html#a736cc5bb20a13171ce8537f9b4570bb8" title="Get the lazily&#45;constructed RealPass backend." alt="" coords="743,220,896,264"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="664,205,731,222,726,222,664,210"/>
+<area shape="rect" id="Node000020" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="741,312,898,340"/>
+<area shape="poly" id="edge22_Node000003_Node000020" title=" " alt="" coords="627,211,732,274,781,304,776,304,729,279,626,217"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6" title="Construct the backend and connect its content search." alt="" coords="957,159,1138,186"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="895,170,944,172,938,173,896,175"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="871,147,997,93,1002,91,873,152"/>
+<area shape="rect" id="Node000006" href="$class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a" title="The newest search is over." alt="" coords="1210,193,1364,221"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1138,183,1198,194,1192,194,1138,188"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a74344f203b81f87b4d42a6281a176db4" title="The newest Grep() is over; an empty list means no entry matched." alt="" coords="1217,141,1357,169"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1138,163,1204,161,1198,162,1139,169"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1186,5,1388,33"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1114,54,1207,36,1202,38,1115,59"/>
+<area shape="rect" id="Node000011" href="$class_settings_serializer.html#afd33be02685dc57f2bf6d7e3664e2eeb" title="Read all flat settings from a QSettings store." alt="" coords="1220,57,1355,102"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1125,71,1207,76,1201,77,1125,76"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1436,5,1660,33"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1388,17,1423,19,1418,20,1389,22"/>
+<area shape="rect" id="Node000012" href="$struct_app_settings.html#a56161e5ca9b77c88d36a90a634b47c05" title="The secret field names a new or emptied setting starts with: what an entry commonly holds besides its..." alt="" coords="1451,57,1645,102"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1355,77,1438,79,1433,80,1356,82"/>
+<area shape="rect" id="Node000013" href="$class_settings_serializer.html#ab97de3759c1b701eae9a1522435bbb96" title="Read only the password generation settings from a QSettings store." alt="" coords="1445,126,1651,171"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1355,94,1449,122,1444,122,1355,100"/>
+<area shape="rect" id="Node000015" href="$class_real_pass.html#a6bfb05f4c53a784e8c3ab12a787c74f6" title="Construct a RealPass instance." alt="" coords="975,228,1120,256"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="896,239,962,242,956,242,896,244"/>
+<area shape="poly" id="edge16_Node000015_Node000006" title=" " alt="" coords="1120,229,1197,220,1192,221,1121,234"/>
+<area shape="poly" id="edge17_Node000015_Node000007" title=" " alt="" coords="1077,225,1185,179,1209,174,1214,173,1187,184,1079,230"/>
+<area shape="rect" id="Node000016" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="1210,245,1364,273"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1120,244,1198,252,1192,253,1121,250"/>
+<area shape="rect" id="Node000017" href="$class_real_pass.html#a6d7163b691663d92f31ca20886f9979f" title="The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueu..." alt="" coords="1200,297,1374,325"/>
+<area shape="poly" id="edge18_Node000015_Node000017" title=" " alt="" coords="1094,254,1187,282,1218,293,1213,293,1185,287,1093,259"/>
+<area shape="rect" id="Node000018" href="$class_real_pass.html#aab2302e8117d96d1a1bfefb6e0bc099b" title="A SHA&#45;256 of the regular file path (opened without following a link or blocking on a FIFO)." alt="" coords="1452,297,1644,325"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="1374,309,1439,311,1434,311,1375,314"/>
+<area shape="rect" id="Node000019" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="1708,297,1865,325"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="1644,309,1695,311,1690,311,1644,314"/>
+<area shape="poly" id="edge24_Node000020_Node000020" title=" " alt="" coords="780,310,774,303,779,293,795,287,820,285,846,288,862,297,857,296,845,293,819,291,796,293,783,297,779,303,785,312"/>
+<area shape="rect" id="Node000021" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="966,312,1128,340"/>
+<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="898,323,953,326,948,326,898,328"/>
+<area shape="poly" id="edge31_Node000022_Node000008" title=" " alt="" coords="425,226,444,214,459,200,467,185,476,169,492,154,549,124,609,101,671,84,733,72,853,61,957,63,952,64,854,66,734,77,672,89,610,106,551,129,496,159,480,172,472,187,463,203,448,219,427,231"/>
+<area shape="rect" id="Node000023" href="$namespace_plain_message_box.html#ae9796117699b84c7f457dcfa9cdc4335" title="Show an error in plain text." alt="" coords="494,273,682,301"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="446,263,481,270,476,271,447,269"/>
+<area shape="rect" id="Node000025" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="524,397,653,425"/>
+<area shape="poly" id="edge29_Node000022_Node000025" title=" " alt="" coords="385,272,556,388,551,389,383,277"/>
+<area shape="rect" id="Node000024" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="730,364,909,392"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="619,299,731,349,755,359,750,359,729,354,618,304"/>
+<area shape="rect" id="Node000026" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="747,416,892,444"/>
+<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="653,414,734,423,729,423,653,419"/>
+</map>

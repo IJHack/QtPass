@@ -1,0 +1,9 @@
+<map id="src/templateio.h" name="src/templateio.h">
+<area shape="rect" id="Node000001" title="TemplateIO: the store&#39;s .templates and .default_template files and the # secret: marker in template t..." alt="" coords="64,5,192,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,70,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,33,67,73,64,69,109,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,81,163,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,32,131,66,126,64,126,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="187,81,280,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,31,205,72,200,73,146,36"/>
+</map>

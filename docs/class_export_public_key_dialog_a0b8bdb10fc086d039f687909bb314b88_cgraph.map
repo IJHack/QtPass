@@ -1,0 +1,5 @@
+<map id="ExportPublicKeyDialog::on_saveButton_clicked" name="ExportPublicKeyDialog::on_saveButton_clicked">
+<area shape="rect" id="Node000001" title="Prompt for a destination and write the armored key to that file through a QSaveFile...." alt="" coords="5,5,184,50"/>
+<area shape="rect" id="Node000002" href="$class_export_public_key_dialog.html#ab793452fcca2a8c931654ce7a2789008" title="Reduce a key identifier to a filesystem&#45;safe token." alt="" coords="232,5,428,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,25,219,27,213,28,184,30"/>
+</map>

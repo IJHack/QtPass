@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_w.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -96,24 +114,33 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions__.html#index__">_</a><div class="alphasepar"></div><a class="qindex" href="functions_~.html#index_~">~</a></div>
 
 
 <h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>warnAboutSshAuthSockOverride()&#160;:&#160;<a class="el" href="class_config_dialog.html#ab929ea2f2dc20e2851eee510d5feb02a">ConfigDialog</a></li>
 <li>warning&#160;:&#160;<a class="el" href="struct_pass_1_1_recipients_for_editing.html#a80d11111de869cd66ce9ccce4c8d7acc">Pass::RecipientsForEditing</a></li>
+<li>wayThrough()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#af86ff868df611b4db16a014a414f943c">GpgIdGeneration</a></li>
 <li>with()&#160;:&#160;<a class="el" href="struct_executor_1_1_wsl_command.html#abb2c0302f92c28f6d88f3802e8f0f398">Executor::WslCommand</a></li>
 <li>withCurrentGitPin()&#160;:&#160;<a class="el" href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630">Pass</a></li>
-<li>withHeader()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#aa3bf28bd87147d4821a73d4a2c1bc7fb">GpgIdGeneration</a></li>
-<li>writeFileReplacing()&#160;:&#160;<a class="el" href="class_util.html#ab4611dd64c8704e7a6392f0201af6e39">Util</a></li>
+<li>withHeader()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#adf82e57f1cda154b35f36dfde958120f">GpgIdGeneration</a></li>
+<li>withoutPlainSelectionCopy()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#a386b60705220dff0bcd807ebb1589b24">SecretLineEdit</a></li>
+<li>workingDir&#160;:&#160;<a class="el" href="struct_executor_1_1_exec_queue_item.html#a1f17ba7a8c263325ae0aeb53f679648d">Executor::ExecQueueItem</a></li>
+<li>wrapperRunning&#160;:&#160;<a class="el" href="class_pass.html#a056fe06a59546aa9539a60a9ba566546">Pass</a></li>
+<li>writeFileReplacing()&#160;:&#160;<a class="el" href="class_util.html#a5d33d7a093ab7e104320384f4ec3213c">Util</a></li>
+<li>writeGpgId()&#160;:&#160;<a class="el" href="class_profile_init.html#ad02510c0e01ce2370690838e17f7a6d5">ProfileInit</a></li>
 <li>writeGpgIdFile()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a4819b3c68c49968658849aa8535e1f40">ImitatePass</a></li>
-<li>writeTemplates()&#160;:&#160;<a class="el" href="class_template_i_o.html#a7eb718028cf367e72b431341a2c916a7">TemplateIO</a></li>
-<li>wslExecArgs()&#160;:&#160;<a class="el" href="class_executor.html#a694edbdebf865b549812969f49bc0c3d">Executor</a></li>
+<li>writeTemplates()&#160;:&#160;<a class="el" href="class_template_i_o.html#a4e75ba7938c8c5200829b651c1cb651a">TemplateIO</a></li>
+<li>wslExecArgs()&#160;:&#160;<a class="el" href="class_executor.html#a9eb4d0403edeab54a94cba4ba3cc3dfd">Executor</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

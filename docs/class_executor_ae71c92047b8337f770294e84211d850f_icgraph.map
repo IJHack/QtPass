@@ -1,0 +1,10 @@
+<map id="Executor::executeNext" name="Executor::executeNext">
+<area shape="rect" id="Node000001" title="Start the head of the queue unless something runs or the queue is empty." alt="" coords="448,32,615,60"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="570,16,558,13,532,11,507,13,494,17,490,23,496,33,491,30,485,23,490,13,506,7,532,5,559,8,576,17"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#affda40d546db75d35f38db1ec1414bf7" title="Queue a command with working directory and optional stdin input." alt="" coords="229,5,366,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="430,35,366,30,366,24,435,34"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c" title="Finish the running item when its process exits." alt="" coords="195,57,400,85"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="435,56,401,63,400,57,430,57"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d" title="Construct an Executor with an optional parent QObject." alt="" coords="5,57,147,85"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="177,71,147,74,147,69,182,71"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="QtPassSettings::getProfile" name="QtPassSettings::getProfile">
+<area shape="rect" id="Node000001" title="Get active profile name." alt="" coords="1748,89,1936,117"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="1501,29,1697,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1766,85,1658,60,1659,55,1771,85"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a434f0bb3f122a0d8bb614f8f097a4136" title="The user picked another profile: save its store, key and Git flags as the active settings,..." alt="" coords="1498,81,1700,126"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="1729,103,1700,106,1700,101,1735,103"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a91bfea12c6549f4eb243b4d41a1e3895" title="Fill the profile box from the settings, the active profile selected, without switching profiles while..." alt="" coords="1227,120,1450,148"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="1782,121,1700,140,1571,148,1451,145,1451,140,1571,143,1699,135,1777,122"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="1639,14,1626,10,1599,8,1574,10,1560,15,1556,20,1562,30,1557,28,1551,20,1556,11,1573,5,1599,3,1627,5,1644,14"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="1485,117,1451,123,1450,118,1480,117"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#acc003e9dd04952c5069f87839d708073" title="Open the configuration dialog." alt="" coords="1028,95,1179,122"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1209,120,1179,119,1180,114,1214,120"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,95,483,122"/>
+<area shape="poly" id="edge13_Node000004_Node000006" title=" " alt="" coords="1215,140,1072,148,902,150,716,147,531,136,455,126,455,120,531,131,716,142,902,145,1072,143,1209,141"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="1027,91,979,86,854,75,755,72,657,76,531,86,455,97,454,91,531,81,657,70,755,66,854,70,980,81,1032,91"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" title="Toolbar &quot;Config&quot;: config(), ignoring its result." alt="" coords="810,95,980,122"/>
+<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="1009,109,980,111,980,106,1015,108"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="428,79,414,76,385,73,357,75,342,80,338,85,345,95,340,93,333,86,339,76,356,70,385,68,415,70,434,80"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,95,239,122"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="269,118,239,120,239,115,274,117"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="254,97,289,99,284,100,254,102"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,95,762,122"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="792,109,763,111,763,106,797,108"/>
+<area shape="poly" id="edge12_Node000009_Node000006" title=" " alt="" coords="513,109,484,111,483,106,518,108"/>
+</map>

@@ -1,0 +1,37 @@
+<map id="QPushButtonWithClipboard::QPushButtonWithClipboard" name="QPushButtonWithClipboard::QPushButtonWithClipboard">
+<area shape="rect" id="Node000001" title="Construct a QPushButtonWithClipboard with an optional initial text." alt="" coords="2292,87,2498,131"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a57fc5d83ebe5d878f373c6785af5f8d4" title="Add the copy, QR and open&#45;in&#45;browser buttons a field gets, per the settings." alt="" coords="2078,56,2244,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2274,93,2245,92,2245,87,2279,94"/>
+<area shape="rect" id="Node000014" href="$class_otp_code_widget.html#a49b4e45b352e23f13ac378c50c2e81bd" title="Build a live OTP code display and start its refresh timer." alt="" coords="1797,124,2030,152"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="2280,116,2031,134,2030,129,2274,116"/>
+<area shape="rect" id="Node000003" href="$class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7" title="Render one name: value row: action buttons, then the value either behind the eye button (see hides())..." alt="" coords="1830,56,1996,101"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2060,78,1997,81,1997,76,2065,78"/>
+<area shape="rect" id="Node000011" href="$class_password_display_panel.html#aea1986b10912132044f2ac970e1b8749" title="Emitted on a double&#45;click anywhere on a field row: the user wants to change what they are looking at." alt="" coords="1368,5,1534,50"/>
+<area shape="poly" id="edge19_Node000002_Node000011" title=" " alt="" coords="2067,51,2030,46,1895,31,1759,25,1635,24,1535,26,1535,21,1635,19,1759,19,1895,26,2030,41,2073,52"/>
+<area shape="rect" id="Node000004" href="$class_password_display_panel.html#ae39ac5b0704842fa580cfd902c73f268" title="Render the live OTP row: an OtpCodeWidget in a field frame under an &quot;OTP code&quot; label...." alt="" coords="1582,116,1749,161"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1817,102,1749,121,1749,116,1812,102"/>
+<area shape="rect" id="Node000005" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="1368,116,1534,161"/>
+<area shape="poly" id="edge17_Node000003_Node000005" title=" " alt="" coords="1817,81,1703,91,1583,106,1530,118,1529,113,1582,101,1702,86,1812,81"/>
+<area shape="poly" id="edge18_Node000003_Node000011" title=" " alt="" coords="1812,67,1748,62,1535,39,1535,34,1749,57,1818,67"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1564,138,1535,141,1535,136,1569,138"/>
+<area shape="poly" id="edge12_Node000004_Node000011" title=" " alt="" coords="1604,108,1496,53,1497,48,1610,109"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1092,124,1320,152"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1350,138,1320,141,1320,136,1355,138"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,124,1044,152"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1074,138,1044,141,1044,136,1079,138"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,124,756,152"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="786,138,757,141,757,136,791,138"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,99,483,127"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="513,126,483,125,484,120,518,126"/>
+<area shape="poly" id="edge9_Node000009_Node000009" title=" " alt="" coords="428,84,414,80,385,78,358,80,343,85,339,90,346,100,341,98,334,90,339,80,357,75,385,73,415,75,433,84"/>
+<area shape="rect" id="Node000010" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,99,239,127"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="269,122,239,125,239,119,274,122"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="254,101,289,104,284,105,254,107"/>
+<area shape="rect" id="Node000012" href="$class_password_display_panel.html#a4bb93a3d467357d2778f9aa95287d089" title="Turn a left double&#45;click on a field row into editRequested()." alt="" coords="1123,5,1289,50"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="1350,37,1290,39,1289,34,1355,36"/>
+<area shape="rect" id="Node000013" href="$class_main_window.html#ab393d6375319b66d4c72f72e320940ae" title="The grid of decrypted fields and what its buttons ask for." alt="" coords="815,72,1033,100"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="1362,54,1320,65,1171,82,1033,88,1033,83,1170,76,1320,60,1357,55"/>
+<area shape="poly" id="edge14_Node000012_Node000011" title=" " alt="" coords="1304,16,1370,19,1365,19,1305,21"/>
+<area shape="poly" id="edge16_Node000013_Node000009" title=" " alt="" coords="797,93,484,111,483,105,802,92"/>
+<area shape="poly" id="edge21_Node000014_Node000004" title=" " alt="" coords="1778,138,1749,141,1749,136,1784,138"/>
+</map>

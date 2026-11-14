@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_deselectable_tree_view.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">DeselectableTreeView Member List</div></div>
 </div><!--header-->
@@ -101,14 +119,24 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a>, including all inherited members.</p>
 <table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a72e3ccd9a689aeb6273def627bc40783">clickSelected</a></td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#aed82ffca2f0dd0b041dfa51e83f1d113">deselect</a>()</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">DeselectableTreeView</a>(QWidget *parent)</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a082a7e796636f38d6dafa209a7d7fa29">deselectTimer</a></td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a25d7d24dddf49ee15ef1b0870fa293f8">doubleClickHappened</a></td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">emptyClicked</a>()</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">~DeselectableTreeView</a>() override=default</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a3e29a7d444e39f91c52b83a920791a8d">mouseDoubleClickEvent</a>(QMouseEvent *event) override</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#abfcdd23266bf6bcd318eeb25aac40ea7">mousePressEvent</a>(QMouseEvent *event) override</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#a0209e85dea0f1cf67c70c9545500eca5">mouseReleaseEvent</a>(QMouseEvent *event) override</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">~DeselectableTreeView</a>() override=default</td><td class="entry"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

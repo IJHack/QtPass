@@ -1,0 +1,9 @@
+<map id="ConfigDialog::setPwgenPath" name="ConfigDialog::setPwgenPath">
+<area shape="rect" id="Node000001" title="Set the path to the pwgen executable." alt="" coords="5,29,209,57"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character&#45;set controls, whichever the &quot;use pwgen&quot; box selects; nothing in..." alt="" coords="257,21,455,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,41,244,43,239,43,209,46"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995" title="Enable or disable pwgen&#45;based password generation." alt="" coords="503,29,681,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,49,490,52,485,52,456,55"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="500,34,471,37,471,32,505,34"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="552,28,545,20,550,11,566,5,592,3,620,5,636,14,631,14,619,10,592,8,568,10,554,15,551,20,557,30"/>
+</map>

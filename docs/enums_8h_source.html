@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('enums_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,90 +112,88 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">enums.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span></div>
+<a href="enums_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_ENUMS_H_</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_ENUMS_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QMetaType&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_enums.html">Enums</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">   18</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">ClipBoardType</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">   19</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">CLIPBOARD_NEVER</a> = 0,    </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">   20</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">CLIPBOARD_ALWAYS</a> = 1,   </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">   21</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">CLIPBOARD_ON_DEMAND</a> = 2 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef SRC_ENUMS_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define SRC_ENUMS_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QMetaType&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_enums.html">Enums</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">   24</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">ClipBoardType</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">   25</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">CLIPBOARD_NEVER</a> = 0,    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">   26</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">CLIPBOARD_ALWAYS</a> = 1,   </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">   27</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">CLIPBOARD_ON_DEMAND</a> = 2 </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">   37</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">   38</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">GIT_INIT</a> = 0,  </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">   39</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">GIT_ADD</a>,       </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">   40</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">GIT_COMMIT</a>,    </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">   41</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">GIT_RM</a>,        </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">   42</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">GIT_PULL</a>,      </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">   43</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">GIT_PUSH</a>,      </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">   44</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">PASS_SHOW</a>,     </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">   45</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>,   </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">   46</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">PASS_REMOVE</a>,   </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">   47</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">PASS_INIT</a>,     </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">   48</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">GPG_GENKEYS</a>,   </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">   49</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">PASS_MOVE</a>,     </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">   50</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">PASS_COPY</a>,     </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">   51</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">GIT_MOVE</a>,      </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">   52</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">GIT_COPY</a>,      </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">   53</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">PASS_GREP</a>,     </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">   56</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">PROCESS_COUNT</a>, </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">   57</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">INVALID</a>        </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">   43</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">   44</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">GIT_INIT</a> = 0,  </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">   45</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">GIT_ADD</a>,       </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">   46</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">GIT_COMMIT</a>,    </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">   47</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">GIT_RM</a>,        </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">   48</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">GIT_PULL</a>,      </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">   49</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">GIT_PUSH</a>,      </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">   50</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">PASS_SHOW</a>,     </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">   51</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>,   </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">   52</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">PASS_REMOVE</a>,   </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">   53</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">PASS_INIT</a>,     </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">   54</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">GPG_GENKEYS</a>,   </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">   55</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">PASS_MOVE</a>,     </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">   56</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">PASS_COPY</a>,     </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">   57</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">GIT_MOVE</a>,      </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">   58</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">GIT_COPY</a>,      </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">   59</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">PASS_GREP</a>,     </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">   62</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">PROCESS_COUNT</a>, </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">   63</a></span>  <a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">INVALID</a>        </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <span class="comment">// namespace Enums</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>Q_DECLARE_METATYPE(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a>)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif </span><span class="comment">// SRC_ENUMS_H_</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>} <span class="comment">// namespace Enums</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>Q_DECLARE_METATYPE(<a class="code hl_enumeration" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// SRC_ENUMS_H_</span></div>
 <div class="ttc" id="anamespace_enums_html"><div class="ttname"><a href="namespace_enums.html">Enums</a></div><div class="ttdoc">Enumerators for QtPass configuration and runtime operations.</div></div>
-<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">Enums::ClipBoardType</a></div><div class="ttdeci">ClipBoardType</div><div class="ttdoc">Defines when to copy passwords to clipboard.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">enums.h:18</a></div></div>
-<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">Enums::CLIPBOARD_ALWAYS</a></div><div class="ttdeci">@ CLIPBOARD_ALWAYS</div><div class="ttdef"><b>Definition</b> <a href="#l00020">enums.h:20</a></div></div>
-<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></div><div class="ttdeci">@ CLIPBOARD_NEVER</div><div class="ttdef"><b>Definition</b> <a href="#l00019">enums.h:19</a></div></div>
-<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">Enums::CLIPBOARD_ON_DEMAND</a></div><div class="ttdeci">@ CLIPBOARD_ON_DEMAND</div><div class="ttdef"><b>Definition</b> <a href="#l00021">enums.h:21</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">enums.h:37</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">Enums::PASS_INIT</a></div><div class="ttdeci">@ PASS_INIT</div><div class="ttdef"><b>Definition</b> <a href="#l00047">enums.h:47</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">Enums::PASS_INSERT</a></div><div class="ttdeci">@ PASS_INSERT</div><div class="ttdef"><b>Definition</b> <a href="#l00045">enums.h:45</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">Enums::GIT_INIT</a></div><div class="ttdeci">@ GIT_INIT</div><div class="ttdef"><b>Definition</b> <a href="#l00038">enums.h:38</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">Enums::PASS_COPY</a></div><div class="ttdeci">@ PASS_COPY</div><div class="ttdef"><b>Definition</b> <a href="#l00050">enums.h:50</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">Enums::PASS_MOVE</a></div><div class="ttdeci">@ PASS_MOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00049">enums.h:49</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">Enums::GIT_MOVE</a></div><div class="ttdeci">@ GIT_MOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00051">enums.h:51</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">Enums::PASS_GREP</a></div><div class="ttdeci">@ PASS_GREP</div><div class="ttdef"><b>Definition</b> <a href="#l00053">enums.h:53</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">Enums::GPG_GENKEYS</a></div><div class="ttdeci">@ GPG_GENKEYS</div><div class="ttdef"><b>Definition</b> <a href="#l00048">enums.h:48</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">Enums::PASS_REMOVE</a></div><div class="ttdeci">@ PASS_REMOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00046">enums.h:46</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">Enums::GIT_COPY</a></div><div class="ttdeci">@ GIT_COPY</div><div class="ttdef"><b>Definition</b> <a href="#l00052">enums.h:52</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="#l00057">enums.h:57</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">Enums::GIT_COMMIT</a></div><div class="ttdeci">@ GIT_COMMIT</div><div class="ttdef"><b>Definition</b> <a href="#l00040">enums.h:40</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">Enums::GIT_RM</a></div><div class="ttdeci">@ GIT_RM</div><div class="ttdef"><b>Definition</b> <a href="#l00041">enums.h:41</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a></div><div class="ttdeci">@ PASS_SHOW</div><div class="ttdef"><b>Definition</b> <a href="#l00044">enums.h:44</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">Enums::GIT_ADD</a></div><div class="ttdeci">@ GIT_ADD</div><div class="ttdef"><b>Definition</b> <a href="#l00039">enums.h:39</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a></div><div class="ttdeci">@ PROCESS_COUNT</div><div class="ttdef"><b>Definition</b> <a href="#l00056">enums.h:56</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a></div><div class="ttdeci">@ GIT_PULL</div><div class="ttdef"><b>Definition</b> <a href="#l00042">enums.h:42</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">Enums::GIT_PUSH</a></div><div class="ttdeci">@ GIT_PUSH</div><div class="ttdef"><b>Definition</b> <a href="#l00043">enums.h:43</a></div></div>
+<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4">Enums::ClipBoardType</a></div><div class="ttdeci">ClipBoardType</div><div class="ttdoc">Defines when to copy passwords to clipboard.</div><div class="ttdef"><b>Definition</b> <a href="#l00024">enums.h:24</a></div></div>
+<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a00dc0ed766a614a278d3f392089c814e">Enums::CLIPBOARD_ALWAYS</a></div><div class="ttdeci">@ CLIPBOARD_ALWAYS</div><div class="ttdef"><b>Definition</b> <a href="#l00026">enums.h:26</a></div></div>
+<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4a31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></div><div class="ttdeci">@ CLIPBOARD_NEVER</div><div class="ttdef"><b>Definition</b> <a href="#l00025">enums.h:25</a></div></div>
+<div class="ttc" id="anamespace_enums_html_a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b"><div class="ttname"><a href="namespace_enums.html#a9c199ed74f3f57c2947f79c6ddce0cd4af4f60eefd26af9c92962895d9a55ae2b">Enums::CLIPBOARD_ON_DEMAND</a></div><div class="ttdeci">@ CLIPBOARD_ON_DEMAND</div><div class="ttdef"><b>Definition</b> <a href="#l00027">enums.h:27</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="#l00043">enums.h:43</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">Enums::PASS_INIT</a></div><div class="ttdeci">@ PASS_INIT</div><div class="ttdef"><b>Definition</b> <a href="#l00053">enums.h:53</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">Enums::PASS_INSERT</a></div><div class="ttdeci">@ PASS_INSERT</div><div class="ttdef"><b>Definition</b> <a href="#l00051">enums.h:51</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">Enums::GIT_INIT</a></div><div class="ttdeci">@ GIT_INIT</div><div class="ttdef"><b>Definition</b> <a href="#l00044">enums.h:44</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">Enums::PASS_COPY</a></div><div class="ttdeci">@ PASS_COPY</div><div class="ttdef"><b>Definition</b> <a href="#l00056">enums.h:56</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">Enums::PASS_MOVE</a></div><div class="ttdeci">@ PASS_MOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00055">enums.h:55</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">Enums::GIT_MOVE</a></div><div class="ttdeci">@ GIT_MOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00057">enums.h:57</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">Enums::PASS_GREP</a></div><div class="ttdeci">@ PASS_GREP</div><div class="ttdef"><b>Definition</b> <a href="#l00059">enums.h:59</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">Enums::GPG_GENKEYS</a></div><div class="ttdeci">@ GPG_GENKEYS</div><div class="ttdef"><b>Definition</b> <a href="#l00054">enums.h:54</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">Enums::PASS_REMOVE</a></div><div class="ttdeci">@ PASS_REMOVE</div><div class="ttdef"><b>Definition</b> <a href="#l00052">enums.h:52</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">Enums::GIT_COPY</a></div><div class="ttdeci">@ GIT_COPY</div><div class="ttdef"><b>Definition</b> <a href="#l00058">enums.h:58</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="#l00063">enums.h:63</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">Enums::GIT_COMMIT</a></div><div class="ttdeci">@ GIT_COMMIT</div><div class="ttdef"><b>Definition</b> <a href="#l00046">enums.h:46</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">Enums::GIT_RM</a></div><div class="ttdeci">@ GIT_RM</div><div class="ttdef"><b>Definition</b> <a href="#l00047">enums.h:47</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a></div><div class="ttdeci">@ PASS_SHOW</div><div class="ttdef"><b>Definition</b> <a href="#l00050">enums.h:50</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">Enums::GIT_ADD</a></div><div class="ttdeci">@ GIT_ADD</div><div class="ttdef"><b>Definition</b> <a href="#l00045">enums.h:45</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a></div><div class="ttdeci">@ PROCESS_COUNT</div><div class="ttdef"><b>Definition</b> <a href="#l00062">enums.h:62</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a></div><div class="ttdeci">@ GIT_PULL</div><div class="ttdef"><b>Definition</b> <a href="#l00048">enums.h:48</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">Enums::GIT_PUSH</a></div><div class="ttdeci">@ GIT_PUSH</div><div class="ttdef"><b>Definition</b> <a href="#l00049">enums.h:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="enums_8h.html">enums.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

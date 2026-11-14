@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_file_content.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">FileContent Member List</div></div>
 </div><!--header-->
@@ -101,25 +119,35 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_file_content.html">FileContent</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#ad19ad6d4d081ae47e5206e675cb7dd54">boundedForDisplay</a>(const QString &amp;text) -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a>() const -&gt; NamedValues</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">getPasswordForDisplay</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">getRemainingLineCount</a>() const -&gt; qsizetype</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#affff8612aceb9006d8b7117e2a6ef70a">isOtpFieldName</a>(const QString &amp;name) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a92629a218b9fce0c611d9ac1e1eca638">isOtpUriValue</a>(const QString &amp;value) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a18a02db7e70b10aaf86f76345418fd00">isSecretFieldName</a>(const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ae159088c8d0baf049de2d596a8bfb523">parse</a>(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields, const std::function&lt; bool(const QString &amp;)&gt; &amp;alsoField={}) -&gt; FileContent</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a2afdde46ca2b092bbd613219f37fd400">boundedForDisplay</a>(const QString &amp;text) -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent</a>(QString password, NamedValues namedValues, QString remainingData, QString remainingDataDisplay, QString otpUri, qsizetype remainingLines)</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a>() const -&gt; NamedValues</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ad196088dd0d816ee3c1311a4448940d2">getOtpUri</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4">getPasswordForDisplay</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a58c11b05ff5987b86b38ef63098a53ee">getRemainingLineCount</a>() const -&gt; qsizetype</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f">isOtpFieldName</a>(const QString &amp;name) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#af99e299f227bbdd4714c429004152742">isOtpUriValue</a>(const QString &amp;value) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a91dfee0a7472e06dad305a66d8025460">isSecretFieldName</a>(const QString &amp;name, const QStringList &amp;secrets) -&gt; bool</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a803a9d95b4a7575124f3ed141c7d6365">kMaxDisplayLines</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a8f40336c23a584d3429013f4e16fe1b8">kMaxNamedFields</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#aabce3daaa0ff8a8af022128b3eb4f518">namedValues</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a6bf8570034e51a7d4bcee4bac22378b2">otpUri</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a91861b1faa5ba9da9f27202262bfd94e">parse</a>(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields, const std::function&lt; bool(const QString &amp;)&gt; &amp;alsoField={}) -&gt; FileContent</td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#a5c5035cd2054014d2ff2fdfbb7bb7dac">password</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a4a28534f84dee950888b5ff68a5a0cc2">remainingData</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_file_content.html#ad581a32699afdbc00f52fe97e8585eef">remainingDataDisplay</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_content.html#a3bcd691a41d619d5525cc594cb6939db">remainingLines</a></td><td class="entry"><a class="el" href="class_file_content.html">FileContent</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,0 +1,9 @@
+<map id="src/sshauthsock.h" name="src/sshauthsock.h">
+<area shape="rect" id="Node000001" title="SshAuthSock: finding an SSH agent socket for child processes and judging a configured override." alt="" coords="154,5,292,33"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title="Program entry point: command&#45;line parsing, the single&#45;instance hand&#45; over, translations and the main ..." alt="" coords="5,81,124,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,41,94,83,92,78,179,38"/>
+<area shape="rect" id="Node000003" href="$configdialog_8cpp.html" title="Implements ConfigDialog: loading and reading the widgets (applySettings(), readSettings()),..." alt="" coords="148,81,298,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,47,225,82,221,79,221,51"/>
+<area shape="rect" id="Node000004" href="$sshauthsock_8cpp.html" title="Implements SshAuthSock; a probed socket is adopted only after ssh&#45;add &#45;l answers on it (isSshAgentRea..." alt="" coords="323,81,475,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,37,371,80,365,81,268,42"/>
+</map>

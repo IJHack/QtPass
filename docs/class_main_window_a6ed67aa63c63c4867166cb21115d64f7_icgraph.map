@@ -1,0 +1,8 @@
+<map id="MainWindow::on_lineEdit_returnPressed" name="MainWindow::on_lineEdit_returnPressed">
+<area shape="rect" id="Node000001" title="Enter in the search box: in content&#45;search mode start (or, for an empty query, cancel) the grep; othe..." alt="" coords="396,21,580,66"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="117,29,348,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="378,43,349,46,348,41,383,43"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="14,29,69,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,44,69,46,69,41,103,42"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="75,19,67,12,42,8,21,10,10,15,9,22,17,30,12,33,4,23,6,12,19,5,42,3,69,7,80,19"/>
+</map>

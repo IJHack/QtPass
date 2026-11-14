@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_m.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -102,22 +120,28 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
 <li>MainWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow</a></li>
 <li>marginallyValid()&#160;:&#160;<a class="el" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">UserInfo</a></li>
-<li>matchFile()&#160;:&#160;<a class="el" href="class_native_grep.html#a58e093d9bb7bae2d02fcf9ea7fa0132a">NativeGrep</a></li>
-<li>maxOutputArgs()&#160;:&#160;<a class="el" href="class_pass.html#a37740695a420cdcd972994c576f9f049">Pass</a></li>
+<li>markOtpFieldEdited()&#160;:&#160;<a class="el" href="class_password_dialog.html#acd29a018a14978015d932a052da966cf">PasswordDialog</a></li>
+<li>markSecretKeys()&#160;:&#160;<a class="el" href="class_users_dialog.html#aae28ed1da1149c4e1d1685a6e4c9d3a2">UsersDialog</a></li>
+<li>matchFile()&#160;:&#160;<a class="el" href="class_native_grep.html#a99b72a4ac50c6c01b24f8376e30a7a68">NativeGrep</a></li>
+<li>maxOutputArgs()&#160;:&#160;<a class="el" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">Pass</a></li>
 <li>MenuBarPeek()&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a417cdc2f5cdbe788effec7a8785238fd">MenuBarPeek</a></li>
 <li>messageAvailable()&#160;:&#160;<a class="el" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow</a>, <a class="el" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">SingleApplication</a></li>
 <li>mimeData()&#160;:&#160;<a class="el" href="class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09">StoreModel</a></li>
 <li>mimeTypes()&#160;:&#160;<a class="el" href="class_store_model.html#a40620d3b37bb04b06b999308bf2ee137">StoreModel</a></li>
-<li>mkpathForStore()&#160;:&#160;<a class="el" href="class_util.html#af014b42fcbaf221a947950a289ad4d1b">Util</a></li>
-<li>mouseDoubleClickEvent()&#160;:&#160;<a class="el" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel</a></li>
-<li>mouseReleaseEvent()&#160;:&#160;<a class="el" href="class_secret_line_edit.html#a242041f66b392847e4963c5e70451977">SecretLineEdit</a></li>
+<li>mkpathForStore()&#160;:&#160;<a class="el" href="class_util.html#aa1d5ab65c22c21fe556ba0251e035f23">Util</a></li>
+<li>mouseDoubleClickEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a3e29a7d444e39f91c52b83a920791a8d">DeselectableTreeView</a>, <a class="el" href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70">FieldLabel</a></li>
+<li>mousePressEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#abfcdd23266bf6bcd318eeb25aac40ea7">DeselectableTreeView</a></li>
+<li>mouseReleaseEvent()&#160;:&#160;<a class="el" href="class_deselectable_tree_view.html#a0209e85dea0f1cf67c70c9545500eca5">DeselectableTreeView</a>, <a class="el" href="class_secret_line_edit.html#a242041f66b392847e4963c5e70451977">SecretLineEdit</a></li>
 <li>Move()&#160;:&#160;<a class="el" href="class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1">ImitatePass</a>, <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>, <a class="el" href="class_real_pass.html#acbbb510bd58cdceae53d34985453fc83">RealPass</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

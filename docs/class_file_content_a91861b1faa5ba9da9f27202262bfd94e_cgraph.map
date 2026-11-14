@@ -1,0 +1,16 @@
+<map id="FileContent::parse" name="FileContent::parse">
+<area shape="rect" id="Node000001" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="5,81,145,109"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19" title="Assemble a parsed entry; only parse() calls this." alt="" coords="193,5,370,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,78,192,43,217,37,213,39,194,48,109,83"/>
+<area shape="rect" id="Node000003" href="$filecontent_8cpp.html#a675927185d9a8c3fb4d0310af8c2198a" title="Whether a body line carries a TOTP shared secret and must stay out of the parsed display: a bare otpa..." alt="" coords="229,81,334,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,93,216,94,211,96,146,98"/>
+<area shape="rect" id="Node000005" href="$filecontent_8cpp.html#a7986f3a7df9713a52e8ba0227e179230" title="Shorthand for the public FileContent::isOtpUriValue." alt="" coords="484,132,559,160"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="135,107,193,118,343,134,472,144,467,144,343,139,192,123,135,112"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="246,80,240,72,245,63,259,57,281,55,306,57,320,66,315,66,304,62,281,60,260,62,248,67,245,72,251,82"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="418,56,625,84"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="334,87,405,82,400,83,335,92"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="335,104,472,135,466,135,334,109"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="482,131,474,124,479,114,495,108,522,105,552,108,568,119,563,118,551,114,522,111,496,113,482,118,479,123,487,133"/>
+<area shape="rect" id="Node000006" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="673,132,866,160"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="559,143,661,146,655,146,559,148"/>
+</map>

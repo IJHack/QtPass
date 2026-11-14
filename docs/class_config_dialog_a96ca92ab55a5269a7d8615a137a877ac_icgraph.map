@@ -1,0 +1,36 @@
+<map id="ConfigDialog::on_checkBoxUseGit_clicked" name="ConfigDialog::on_checkBoxUseGit_clicked">
+<area shape="rect" id="Node000001" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="1029,210,1227,255"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a93a014267e13ce2a518d6ff125bcb172" title="Enable the group box of the chosen backend and, in pass mode, disable the password&#45;generation control..." alt="" coords="784,116,981,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1051,204,942,163,943,158,1056,204"/>
+<area shape="rect" id="Node000009" href="$class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f" title="Enable or disable git integration." alt="" coords="805,279,960,306"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1022,259,943,281,942,275,1017,260"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a2650ddbdc272cc7effb0541261a921f3" title="Native (gpg/git) backend chosen: enable its group box, disable pass&#39;s." alt="" coords="524,81,735,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="766,123,735,120,735,115,771,122"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a4ed1aadd50231d08811bb5c5b0bcc0f2" title="pass backend chosen: enable its group box, disable the native one." alt="" coords="524,150,735,195"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="766,154,736,161,735,155,771,153"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a7f3e2d9557dc842724d7754504e9ee0a" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="547,29,711,57"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="824,108,735,71,700,60,700,55,737,66,829,108"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="671,14,658,10,629,8,603,10,588,15,584,20,591,29,586,28,579,20,585,11,602,5,629,3,659,5,676,14"/>
+<area shape="rect" id="Node000006" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="261,252,462,280"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="530,64,523,71,496,91,470,114,426,166,393,216,372,254,368,250,389,213,422,163,467,111,493,87,521,66,535,61"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="259,21,464,66"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="529,44,465,46,464,41,534,42"/>
+<area shape="rect" id="Node000007" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,339,201,366"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="303,287,148,341,146,336,305,282"/>
+<area shape="poly" id="edge7_Node000007_Node000007" title=" " alt="" coords="146,324,132,320,103,317,76,319,61,324,57,329,64,338,59,338,52,330,58,320,75,314,103,312,133,314,151,323"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="816,274,736,260,665,255,593,254,463,259,462,254,593,248,665,250,737,255,821,274"/>
+<area shape="poly" id="edge20_Node000009_Node000009" title=" " alt="" coords="923,263,910,260,882,257,857,259,843,264,839,269,845,279,840,277,834,270,839,260,856,254,883,252,911,254,928,264"/>
+<area shape="rect" id="Node000010" href="$class_config_dialog.html#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for &#45;1), with m_loadingForm set so the fi..." alt="" coords="522,391,736,418"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="851,315,798,350,737,380,700,393,699,387,735,375,796,345,846,316"/>
+<area shape="rect" id="Node000013" href="$class_config_dialog.html#a1a52ca14165a03beea9340cbce56afd0" title="Pick the git executable in a file dialog; a cancelled dialog turns Git off and disables its checkbox,..." alt="" coords="528,270,731,315"/>
+<area shape="poly" id="edge17_Node000009_Node000013" title=" " alt="" coords="787,293,732,295,731,290,793,292"/>
+<area shape="rect" id="Node000014" href="$class_config_dialog.html#a920010e30f9c4ae45ab046b1b689e290" title="Show path as the git executable; an empty path disables and turns off &quot;use Git&quot;." alt="" coords="540,339,719,366"/>
+<area shape="poly" id="edge18_Node000009_Node000014" title=" " alt="" coords="809,310,691,341,690,335,804,311"/>
+<area shape="rect" id="Node000011" href="$class_config_dialog.html#a88d327d76d34dd8cf2c592d8add6ccd9" title="The profile list&#39;s current row changed: show that profile." alt="" coords="249,339,474,366"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="536,387,436,370,437,364,542,387"/>
+<area shape="rect" id="Node000012" href="$class_config_dialog.html#a68f58b41ba03c59341759473d95c839e" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="271,391,452,418"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="504,405,452,407,452,402,509,404"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="230,353,201,355,201,350,236,352"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="271,388,175,370,176,364,276,386"/>
+<area shape="poly" id="edge19_Node000014_Node000006" title=" " alt="" coords="544,334,521,330,396,283,397,278,523,325,550,334"/>
+</map>

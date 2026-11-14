@@ -1,0 +1,9 @@
+<map id="QtPassSettings::setGeometry" name="QtPassSettings::setGeometry">
+<area shape="rect" id="Node000001" title="Save window geometry." alt="" coords="538,32,749,60"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a1d5b5aae0498c5c573de7f00c47fac3a" title=" " alt="" coords="261,32,490,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="519,46,491,48,490,43,525,46"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="Save window state and geometry on close." alt="" coords="17,5,201,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,33,201,31,201,26,248,32"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a1f7d2c56410fc1bfa135bb907d43313f" title="Save the window state (a quit from the tray menu or a SIGTERM never delivers closeEvent()) and delete..." alt="" coords="5,57,213,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="243,58,214,64,213,59,248,58"/>
+</map>

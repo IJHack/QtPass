@@ -1,0 +1,16 @@
+<map id="ProfileInit::initialise" name="ProfileInit::initialise">
+<area shape="rect" id="Node000001" title="Write the recipients and, if wanted, put the folder under git." alt="" coords="941,64,1088,92"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a9a6ab8bd9026c852b5f4e3831db0a6a2" title="Ask for a new profile&#39;s recipients and initialise its store with them, keeping the active backend&#39;s s..." alt="" coords="717,21,885,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="923,63,886,60,886,54,928,63"/>
+<area shape="rect" id="Node000006" href="$class_first_run_wizard.html#a165af79e3e899444d7b653ae980084c0" title="Make store a password store for the ticked keys: create the folder when it is missing,..." alt="" coords="709,90,893,135"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="928,92,893,100,893,95,923,92"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="492,21,660,66"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="699,43,661,46,661,41,704,43"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,29,443,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="473,43,444,46,443,41,479,43"/>
+<area shape="rect" id="Node000005" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="231,44,201,46,201,41,236,42"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="143,15,130,10,103,8,78,10,64,15,60,20,67,28,61,29,55,20,60,11,77,5,103,3,131,5,148,13"/>
+<area shape="rect" id="Node000007" href="$class_first_run_wizard.html#a2b0cd285b53af8212ecd0d7d82624180" title="Write the settings and, when the chosen store has no .gpg&#45;id yet, create and initialise it for the ch..." alt="" coords="491,99,661,126"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="691,113,662,115,662,110,697,112"/>
+</map>

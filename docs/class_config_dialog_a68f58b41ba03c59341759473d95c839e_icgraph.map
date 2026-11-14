@@ -1,0 +1,6 @@
+<map id="ConfigDialog::setProfiles" name="ConfigDialog::setProfiles">
+<area shape="rect" id="Node000001" title="Fill the profile list and m_entries from profiles, dropping the empty&#45;named leftover older versions w..." alt="" coords="249,29,429,57"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,43,201,46,201,41,235,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="142,14,129,10,103,8,78,10,65,15,61,20,68,29,62,29,56,20,61,11,77,5,103,3,131,5,147,14"/>
+</map>

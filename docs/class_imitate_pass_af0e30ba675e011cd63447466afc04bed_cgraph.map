@@ -1,0 +1,5 @@
+<map id="ImitatePass::reencryptUsesGit" name="ImitatePass::reencryptUsesGit">
+<area shape="rect" id="Node000001" title="gitConfigured(), unless the current run is one reencryptWithoutGit() started." alt="" coords="5,5,224,33"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#af1e911c908f7848aa229190053cf6e87" title="Git is enabled and an executable is configured." alt="" coords="272,5,464,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,17,259,19,253,19,224,22"/>
+</map>

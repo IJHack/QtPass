@@ -1,0 +1,9 @@
+<map id="MainWindow::passwordFromFileToClipboard" name="MainWindow::passwordFromFileToClipboard">
+<area shape="rect" id="Node000001" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas..." alt="" coords="5,49,213,94"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="290,5,424,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,47,277,35,272,37,214,52"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89" title="Display a transient message in the text panel." alt="" coords="272,57,442,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,69,259,71,253,72,214,74"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#af99e299f227bbdd4714c429004152742" title="Whether a field value is an otpauth URI, and therefore a secret." alt="" coords="261,109,453,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,90,275,105,270,106,213,96"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="KeygenDialog::setExpertMode" name="KeygenDialog::setExpertMode">
+<area shape="rect" id="Node000001" title="Enable or disable expert mode (the editable batch template)." alt="" coords="274,56,491,84"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a2378a741fcb02e1f8ab4debec25c3c4d" title="Construct a KeygenDialog." alt="" coords="11,29,220,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,58,221,56,220,51,261,57"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#ab469a4e10fb2b2ee324e57cb1e209a3e" title="Destroys the dialog and its generated UI." alt="" coords="5,81,226,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="255,82,226,87,226,82,261,81"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="160,14,145,10,115,8,88,10,72,15,68,20,75,29,70,29,63,20,69,11,87,5,116,3,147,5,165,14"/>
+</map>

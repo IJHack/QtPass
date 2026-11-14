@@ -1,0 +1,8 @@
+<map id="MainWindow::selectFirstFile" name="MainWindow::selectFirstFile">
+<area shape="rect" id="Node000001" title="Make the first entry (depth first) under the store root current." alt="" coords="5,56,208,84"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ae9a674e42e112906d72b37ede211ca4d" title="Depth&#45;first search for the first entry under a folder." alt="" coords="256,29,416,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,55,242,54,237,55,208,61"/>
+<area shape="rect" id="Node000003" href="$class_store_tree.html#a1e44af30d459550e26502c6733705e9d" title="The proxy&#39;s root index for the current store." alt="" coords="260,81,412,109"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="208,78,247,85,242,85,208,84"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="296,28,290,20,295,11,311,5,336,3,363,5,379,14,374,14,361,10,336,8,312,10,299,15,296,20,301,30"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Util::gitStoreVariables" name="Util::gitStoreVariables">
+<area shape="rect" id="Node000001" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="5,5,169,33"/>
+<area shape="rect" id="Node000002" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="217,5,331,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,17,204,19,198,19,169,22"/>
+</map>

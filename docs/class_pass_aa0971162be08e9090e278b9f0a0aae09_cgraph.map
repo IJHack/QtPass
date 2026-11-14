@@ -1,0 +1,5 @@
+<map id="Pass::init" name="Pass::init">
+<area shape="rect" id="Node000001" title="Initialize the Pass instance with a settings snapshot." alt="" coords="5,5,85,33"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="133,5,258,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,17,120,19,114,20,85,22"/>
+</map>

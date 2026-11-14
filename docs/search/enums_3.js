@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['itemkind_0',['ItemKind',['../struct_store_drag_item.html#a6f0117fb57988969a4954b64c60e11d4',1,'StoreDragItem']]]
+  ['gpgrecordtype_0',['GpgRecordType',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314',1,'gpgkeystate.h']]]
 ];

@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_pass.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">Pass Member List</div></div>
 </div><!--header-->
@@ -101,14 +119,16 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_pass.html">Pass</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a31ea796fe4d60101a9562d893647bcde">beforeExecute</a>(PROCESS id)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a0a580982bcc672c58aad1289d05c4951">beforeExecute</a>(PROCESS id)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a>(quint32 bound) -&gt; quint32</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Copy</a>(const QString srcDir, const QString dest, const bool force)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9">critical</a>(const QString &amp;title, const QString &amp;message)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a57b61261a84b79bb73b209b3511a87ff">emitProcessFinishedSignal</a>(PROCESS pid, const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a3aadcc1218b87ee1c457953feaaaafbc">env</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a>(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a23d30214443a4bc0d0508491872f06c3">executeWrapper</a>(PROCESS id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a8efe916aa899deaed23aa445cc9a302f">finished</a>(int id, int exitCode, const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">finished</a>(int id, int exitCode, const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a13859dd31b009e6d362546d1c96dc303">finishedAnyWithPid</a>(const QString &amp;out, const QString &amp;err, Enums::PROCESS pid)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3">finishedCopy</a>(const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a">finishedGenerateGPGKeys</a>(const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
@@ -121,19 +141,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a662000feacb2400a1b5f6133cce44542">finishedMove</a>(const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e">finishedRemove</a>(const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a3a1a065e12909518f3898b3557ed714c">finishedShow</a>(const QString &amp;out, const QString &amp;file)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a>(QString batch)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393">generateGPGKeysFailed</a>(const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#abeaa28bc8d5250f107cfc587c608e97b">generatePassword</a>(unsigned int length, const QString &amp;charset) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a>(const QString &amp;charset, unsigned int length) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a0240e98aae2cee6ab3d035ff17c47920">getDefaultKeyTemplate</a>(const QString &amp;gpgExecutable={})</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a7b85488c618db05c5ed43788765ccc6b">getGpgIdPath</a>(const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aecbf5f13da209c44955bad681a63a388">getRecipientList</a>(const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">GitInit</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">GitPull</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a407558ed7e2d88f953de7b179a1d143a">gpgSupportsEd25519</a>(const QString &amp;gpgExecutable={})</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Grep</a>(QString pattern, bool caseInsensitive)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aa7deb8fc813c6652b169d11bb687f613">formatInsertError</a>(const QString &amp;friendly, const QString &amp;err) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a>(QString batch)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#ae2ce1c54d65a0d00db42a0ffc139c393">generateGPGKeysFailed</a>(const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a35b3cba623a22f41173670ec34ebb67c">generatePassword</a>(unsigned int length, const QString &amp;charset) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a>(const QString &amp;charset, unsigned int length) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a126c484e0780c5ac98a57007a4daa926">getDefaultKeyTemplate</a>(const QString &amp;gpgExecutable={})</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a>(const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a>(const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">GitInit</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">GitPull</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</a>()=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a57cc7915c4d3f4a795b0ec8ad4056482">gpgSupportsEd25519</a>(const QString &amp;gpgExecutable={})</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Grep</a>(QString pattern, bool caseInsensitive)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a23d86a80c0e1772771f097062dc0ab7c">handleProcessError</a>(PROCESS pid, int exitCode, const QString &amp;out, const QString &amp;err)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ad0936452d739b37d9a9e46db356792c2">idle</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Init</a>(QString path, const QList&lt; UserInfo &gt; &amp;users)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09">init</a>(const AppSettings &amp;settings)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
@@ -146,11 +168,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aef20faec56cbdf08fa1530f7bb7ba106">LinkScope</a> enum name</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2">listKeys</a>(QStringList keystrings, bool secret=false) -&gt; QList&lt; UserInfo &gt;</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6">listKeys</a>(const QString &amp;keystring=&quot;&quot;, bool secret=false) -&gt; QList&lt; UserInfo &gt;</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#af657ee8dde5189ac7aba6585db8f2c6a">loggableArgs</a>(const QStringList &amp;args) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#abaa0009c06b9b53f6c5963763532c7d9">loggableArgs</a>(const QStringList &amp;args) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#ae90247bfa03db35b4e4d4449b0a0065e">m_insertsPending</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#af310a136a6d9ec695c490215eef4d937">m_pendingShows</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a21a21503b387384833ebd2271bd18592">m_settings</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a37740695a420cdcd972994c576f9f049">maxOutputArgs</a>() -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">maxOutputArgs</a>() -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Move</a>(const QString srcDir, const QString dest, const bool force)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a1f0cee3a2fb00cb379fb814edf056c4c">parseRecipients</a>(const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a>(const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9">Pass</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a4a2fc7833af61945b684295de61894cd">PathSpelling</a> enum name</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a> typedef</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -158,30 +182,35 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#af2bb81415b1f19148f9837de0cd545c7">queueInsert</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a>(const QString &amp;file)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a849c5089c91fa9599653d9dad6e4c28c">recipientsForEditing</a>(const QString &amp;dir, const QString &amp;passStore) -&gt; RecipientsForEditing</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a>(const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a6cca7cd5646a752c16dac59df6e53581">refuseLinkedPath</a>(const QString &amp;path, LinkScope scope=LinkScope::EntryAndParents, PathSpelling spelling=PathSpelling::Configured) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a>(const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">refuseUnfinishedGitOperation</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a>(QString file, bool isDir)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6">resolveGpgconfCommand</a>(const QString &amp;gpgPath) -&gt; ResolvedGpgconfCommand</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a1ed10aadc40a4f13667f235d3a2d67b7">seedGpgIdFile</a>(const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#ab99111861b84c7efcda725c53946b2ca">setEnvVar</a>(const QString &amp;name, const QString &amp;value)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Show</a>(QString file)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a717df61e5c322ebe742c564de47d74d7">skippedGpgId</a>(const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb">statusMsg</a>(const QString &amp;msg, int timeout)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a>() const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">storeGit</a>(const QStringList &amp;args, QString *out) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">unfinishedGitOperationReason</a>() -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a">updateEnv</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a>(const GpgIdSigner &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630">withCurrentGitPin</a>(QProcessEnvironment base) const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a587c7c2f547746e11e668cdb769f0f69">refuseAsNotPartOfStore</a>(const QString &amp;why)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a>(const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a6cca7cd5646a752c16dac59df6e53581">refuseLinkedPath</a>(const QString &amp;path, LinkScope scope=LinkScope::EntryAndParents, PathSpelling spelling=PathSpelling::Configured) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a>(const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#af1859cdb9fb7f506d92740f3370acd0b">refuseUnfinishedGitOperation</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a>(QString file, bool isDir)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">resolveGpgconfCommand</a>(const QString &amp;gpgPath) -&gt; ResolvedGpgconfCommand</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a5a10957e491f2f8e19d95a07e1221675">seedGpgIdFile</a>(const QString &amp;newDir, const QString &amp;passStore) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ab99111861b84c7efcda725c53946b2ca">setEnvVar</a>(const QString &amp;name, const QString &amp;value)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Show</a>(QString file)=0</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a>(const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb">statusMsg</a>(const QString &amp;msg, int timeout)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2">storeEnvironment</a>() const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">storeGit</a>(const QStringList &amp;args, QString *out) -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b">unfinishedGitOperationReason</a>() -&gt; QString</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a">updateEnv</a>()</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a>(const GpgIdSigner &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_pass.html#ab81d7dbed9e18a9368c2be06876c4630">withCurrentGitPin</a>(QProcessEnvironment base) const -&gt; QProcessEnvironment</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_pass.html#a056fe06a59546aa9539a60a9ba566546">wrapperRunning</a></td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~Pass</b>() override=default (defined in <a class="el" href="class_pass.html">Pass</a>)</td><td class="entry"><a class="el" href="class_pass.html">Pass</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

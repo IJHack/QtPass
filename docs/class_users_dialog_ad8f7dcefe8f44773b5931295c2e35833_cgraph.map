@@ -1,0 +1,11 @@
+<map id="UsersDialog::passesFilter" name="UsersDialog::passesFilter">
+<area shape="rect" id="Node000001" title="Check if user passes filter." alt="" coords="5,32,192,60"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="240,5,438,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,33,227,31,221,33,193,38"/>
+<area shape="rect" id="Node000003" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="275,57,402,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,53,263,62,257,63,192,58"/>
+<area shape="rect" id="Node000004" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="506,31,652,58"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,62,494,54,488,55,403,67"/>
+<area shape="rect" id="Node000005" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="486,83,672,110"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="403,75,473,85,468,85,403,80"/>
+</map>

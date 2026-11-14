@@ -1,0 +1,9 @@
+<map id="QtPassSettings::setUsePass" name="QtPassSettings::setUsePass">
+<area shape="rect" id="Node000001" title="Save use pass setting." alt="" coords="5,36,206,64"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="254,5,456,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,35,241,33,236,34,207,40"/>
+<area shape="rect" id="Node000004" href="$class_pass_backend_factory.html#abef8590b56c897a52f55ba8a28ad71ae" title="Forget the currently active backend." alt="" coords="279,57,431,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,59,266,68,261,69,206,64"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="504,5,727,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,17,491,19,486,19,457,22"/>
+</map>

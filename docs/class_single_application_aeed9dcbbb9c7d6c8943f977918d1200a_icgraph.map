@@ -1,0 +1,17 @@
+<map id="SingleApplication::peerIsListening" name="SingleApplication::peerIsListening">
+<area shape="rect" id="Node000001" title="Probe whether an instance is actually accepting connections." alt="" coords="576,89,719,134"/>
+<area shape="rect" id="Node000002" href="$class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543" title="Claim the segment and listen; no&#45;op when another instance holds it." alt="" coords="386,56,528,101"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="558,96,529,93,529,88,563,97"/>
+<area shape="rect" id="Node000003" href="$class_single_application.html#ab893aad585d0cc3ee82659709a6a069b" title="messageAvailable notification from commandline" alt="" coords="196,123,338,167"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="563,119,339,141,338,136,558,119"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,106,334,125,332,119,374,107"/>
+<area shape="rect" id="Node000006" href="$class_single_application.html#ad63149f60ac6676dda4397a90116e351" title="Send a message to the running instance." alt="" coords="196,53,338,98"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="368,77,339,79,338,74,373,77"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="49,108,104,136"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="178,136,104,128,104,123,182,133"/>
+<area shape="rect" id="Node000005" href="$class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238" title="Slot for QLocalServer::newConnection: accept every pending connection and emit messageAvailable() wit..." alt="" coords="5,5,148,50"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="201,115,194,113,170,94,146,75,114,53,115,48,149,71,173,90,197,108,206,115"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="109,98,102,91,76,87,56,89,45,95,44,101,52,110,47,111,39,102,41,91,54,84,77,82,104,86,115,98"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="163,24,248,27,338,38,396,55,391,56,338,44,248,33,164,29"/>
+<area shape="poly" id="edge8_Node000006_Node000004" title=" " alt="" coords="178,98,105,118,103,113,183,95"/>
+</map>

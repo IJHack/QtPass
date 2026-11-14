@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_otp_code_widget.html','','class_otp_code_widget-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#signals">Signals</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="class_otp_code_widget-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">OtpCodeWidget Class Reference</div></div>
+  <div class="headertitle"><div class="title">OtpCodeWidget Class Reference<div class="ingroups"><a class="el" href="group__secrets.html">Handling secrets in the interface</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,13 +126,13 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget__inherit__graph.svg" width="135" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for OtpCodeWidget:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget__coll__graph.svg" width="135" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget__coll__graph.svg" width="443" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -135,13 +149,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a94487d5f3e33884162e3d43eaf22d9c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current code, ungrouped, exactly as it is copied.  <br /></td></tr>
 <tr class="memitem:ab0d806d623337313c961d284a7ef2758" id="r_ab0d806d623337313c961d284a7ef2758"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab0d806d623337313c961d284a7ef2758">secondsRemaining</a> () const -&gt; uint</td></tr>
 <tr class="memdesc:ab0d806d623337313c961d284a7ef2758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seconds left on the current code, as last rendered.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:adcfdedcd694498a7f6eba42049b16751" id="r_adcfdedcd694498a7f6eba42049b16751"><td class="memItemLeft"><a class="el" href="struct_totp_1_1_settings.html">Totp::Settings</a>&#160;</td><td class="memItemRight"><a class="el" href="#adcfdedcd694498a7f6eba42049b16751">m_settings</a></td></tr>
+<tr class="memdesc:adcfdedcd694498a7f6eba42049b16751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validated TOTP parameters for the entry; fixed at construction.  <br /></td></tr>
+<tr class="memitem:a2cc6c61688b678f306c15b13f224dd15" id="r_a2cc6c61688b678f306c15b13f224dd15"><td class="memItemLeft"><a class="el" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2cc6c61688b678f306c15b13f224dd15">m_copyButton</a> {nullptr}</td></tr>
+<tr class="memdesc:a2cc6c61688b678f306c15b13f224dd15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy button, or nullptr when built without one; child widget whose text is kept equal to <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a>.  <br /></td></tr>
+<tr class="memitem:a57208d6ef3f8ad0277b10b65f042624b" id="r_a57208d6ef3f8ad0277b10b65f042624b"><td class="memItemLeft">QLabel *&#160;</td><td class="memItemRight"><a class="el" href="#a57208d6ef3f8ad0277b10b65f042624b">m_codeLabel</a> {nullptr}</td></tr>
+<tr class="memdesc:a57208d6ef3f8ad0277b10b65f042624b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the current code; child widget.  <br /></td></tr>
+<tr class="memitem:a3c15f1bb8dd1ad1eff5a7012528bddfa" id="r_a3c15f1bb8dd1ad1eff5a7012528bddfa"><td class="memItemLeft">QProgressBar *&#160;</td><td class="memItemRight"><a class="el" href="#a3c15f1bb8dd1ad1eff5a7012528bddfa">m_progress</a> {nullptr}</td></tr>
+<tr class="memdesc:a3c15f1bb8dd1ad1eff5a7012528bddfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Countdown bar from <span class="tt">step</span> down to 1 second; child widget.  <br /></td></tr>
+<tr class="memitem:a0635df424ec67801fca97ba3679b636f" id="r_a0635df424ec67801fca97ba3679b636f"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a0635df424ec67801fca97ba3679b636f">m_code</a></td></tr>
+<tr class="memdesc:a0635df424ec67801fca97ba3679b636f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The code last rendered, ungrouped.  <br /></td></tr>
+<tr class="memitem:a1df63d1d2ffa40269e35bc37d825a636" id="r_a1df63d1d2ffa40269e35bc37d825a636"><td class="memItemLeft">quint64&#160;</td><td class="memItemRight"><a class="el" href="#a1df63d1d2ffa40269e35bc37d825a636">m_counter</a> {0}</td></tr>
+<tr class="memdesc:a1df63d1d2ffa40269e35bc37d825a636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time-step counter <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a> was generated for; a tick only regenerates when the counter changes.  <br /></td></tr>
+<tr class="memitem:a692ab7bf0cea953e925c0e02a8a81d2f" id="r_a692ab7bf0cea953e925c0e02a8a81d2f"><td class="memItemLeft">uint&#160;</td><td class="memItemRight"><a class="el" href="#a692ab7bf0cea953e925c0e02a8a81d2f">m_secondsRemaining</a> {0}</td></tr>
+<tr class="memdesc:a692ab7bf0cea953e925c0e02a8a81d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seconds left on <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a> as of the last <a class="el" href="#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time.">refresh()</a>.  <br /></td></tr>
+<tr class="memitem:aa90134420a39f8623f7f26a001818611" id="r_aa90134420a39f8623f7f26a001818611"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa90134420a39f8623f7f26a001818611">m_hasCode</a> {false}</td></tr>
+<tr class="memdesc:aa90134420a39f8623f7f26a001818611"><td class="mdescLeft">&#160;</td><td class="mdescRight">False until the first <a class="el" href="#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time.">refresh()</a>, which must generate a code regardless of <a class="el" href="#a1df63d1d2ffa40269e35bc37d825a636" title="m_counter">m_counter</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Live one-time password display: code, copy button and countdown. </p>
 <p>Rendered by <a class="el" href="class_password_display_panel.html" title="Renders decrypted password-file fields into MainWindow&#39;s grid.">PasswordDisplayPanel</a> as the value side of the "OTP code" row. It is a widget rather than a set of loose children so that its refresh timer is a child of the thing it updates: <a class="el" href="class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing.">PasswordDisplayPanel::clear()</a> deletes the row's widgets, which destroys this widget and therefore the timer. A timer owned by the panel instead could fire after its label had been deleted.</p>
 <p>The code is recomputed from the wall clock on every tick rather than from an internal counter, so a machine that suspends across a period boundary self-corrects on the first tick after resume. </p>
 
-<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00028">28</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00034">34</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a49b4e45b352e23f13ac378c50c2e81bd" name="a49b4e45b352e23f13ac378c50c2e81bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49b4e45b352e23f13ac378c50c2e81bd">&#9670;&#160;</a></span>OtpCodeWidget()</h2>
@@ -183,6 +216,20 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8cpp_source.html#l00032">32</a> of file <a class="el" href="otpcodewidget_8cpp_source.html">otpcodewidget.cpp</a>.</p>
+<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary">
+</div>
+<div id="dynsection-2-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a49b4e45b352e23f13ac378c50c2e81bd_cgraph.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary">
+</div>
+<div id="dynsection-3-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a49b4e45b352e23f13ac378c50c2e81bd_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
@@ -199,7 +246,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto OtpCodeWidget::code </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  QString</td>
+          <td> const -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -211,6 +258,8 @@ Public Member Functions</h2></td></tr>
 
 <p>The current code, ungrouped, exactly as it is copied. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current OTP code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8cpp_source.html#l00098">98</a> of file <a class="el" href="otpcodewidget_8cpp_source.html">otpcodewidget.cpp</a>.</p>
 
 </div>
 </div>
@@ -244,17 +293,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary">
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
 </div>
-<div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a79e9906a4fe462a8032eb3a88191c4e6_cgraph.svg" width="243" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary">
-</div>
-<div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a79e9906a4fe462a8032eb3a88191c4e6_icgraph.svg" width="243" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a79e9906a4fe462a8032eb3a88191c4e6_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -282,6 +325,20 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8cpp_source.html#l00082">82</a> of file <a class="el" href="otpcodewidget_8cpp_source.html">otpcodewidget.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a34cb3faa2d6e1a0ef1cff5b30d6551ec_cgraph.svg" width="587" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_a34cb3faa2d6e1a0ef1cff5b30d6551ec_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="ab0d806d623337313c961d284a7ef2758" name="ab0d806d623337313c961d284a7ef2758"></a>
@@ -297,7 +354,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto OtpCodeWidget::secondsRemaining </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  uint</td>
+          <td> const -&gt; uint</td>
         </tr>
       </table>
   </td>
@@ -309,29 +366,240 @@ Public Member Functions</h2></td></tr>
 
 <p>Seconds left on the current code, as last rendered. </p>
 <dl class="section return"><dt>Returns</dt><dd>A value in 1..<a class="el" href="struct_totp_1_1_settings.html#a917cdf30d6342b5e82175c5abcf10d28" title="Period in seconds, 1..MAX_STEP.">Totp::Settings::step</a>. </dd></dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
-</div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_ab0d806d623337313c961d284a7ef2758_cgraph.svg" width="266" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
-</div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_otp_code_widget_ab0d806d623337313c961d284a7ef2758_icgraph.svg" width="266" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8cpp_source.html#l00100">100</a> of file <a class="el" href="otpcodewidget_8cpp_source.html">otpcodewidget.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a0635df424ec67801fca97ba3679b636f" name="a0635df424ec67801fca97ba3679b636f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0635df424ec67801fca97ba3679b636f">&#9670;&#160;</a></span>m_code</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString OtpCodeWidget::m_code</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The code last rendered, ungrouped. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00088">88</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a57208d6ef3f8ad0277b10b65f042624b" name="a57208d6ef3f8ad0277b10b65f042624b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57208d6ef3f8ad0277b10b65f042624b">&#9670;&#160;</a></span>m_codeLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* OtpCodeWidget::m_codeLabel {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows the current code; child widget. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00084">84</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a2cc6c61688b678f306c15b13f224dd15" name="a2cc6c61688b678f306c15b13f224dd15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cc6c61688b678f306c15b13f224dd15">&#9670;&#160;</a></span>m_copyButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>* OtpCodeWidget::m_copyButton {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy button, or nullptr when built without one; child widget whose text is kept equal to <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00082">82</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a1df63d1d2ffa40269e35bc37d825a636" name="a1df63d1d2ffa40269e35bc37d825a636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df63d1d2ffa40269e35bc37d825a636">&#9670;&#160;</a></span>m_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint64 OtpCodeWidget::m_counter {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Time-step counter <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a> was generated for; a tick only regenerates when the counter changes. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00091">91</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="aa90134420a39f8623f7f26a001818611" name="aa90134420a39f8623f7f26a001818611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90134420a39f8623f7f26a001818611">&#9670;&#160;</a></span>m_hasCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool OtpCodeWidget::m_hasCode {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>False until the first <a class="el" href="#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time.">refresh()</a>, which must generate a code regardless of <a class="el" href="#a1df63d1d2ffa40269e35bc37d825a636" title="m_counter">m_counter</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00096">96</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c15f1bb8dd1ad1eff5a7012528bddfa" name="a3c15f1bb8dd1ad1eff5a7012528bddfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c15f1bb8dd1ad1eff5a7012528bddfa">&#9670;&#160;</a></span>m_progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QProgressBar* OtpCodeWidget::m_progress {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Countdown bar from <span class="tt">step</span> down to 1 second; child widget. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00086">86</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="a692ab7bf0cea953e925c0e02a8a81d2f" name="a692ab7bf0cea953e925c0e02a8a81d2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a692ab7bf0cea953e925c0e02a8a81d2f">&#9670;&#160;</a></span>m_secondsRemaining</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint OtpCodeWidget::m_secondsRemaining {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Seconds left on <a class="el" href="#a0635df424ec67801fca97ba3679b636f" title="m_code">m_code</a> as of the last <a class="el" href="#a34cb3faa2d6e1a0ef1cff5b30d6551ec" title="Recompute the code and countdown for an explicit point in time.">refresh()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00093">93</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<a id="adcfdedcd694498a7f6eba42049b16751" name="adcfdedcd694498a7f6eba42049b16751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfdedcd694498a7f6eba42049b16751">&#9670;&#160;</a></span>m_settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_totp_1_1_settings.html">Totp::Settings</a> OtpCodeWidget::m_settings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validated TOTP parameters for the entry; fixed at construction. </p>
+
+<p class="definition">Definition at line <a class="el" href="otpcodewidget_8h_source.html#l00079">79</a> of file <a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="otpcodewidget_8h_source.html">otpcodewidget.h</a></li>
+<li>src/<a class="el" href="otpcodewidget_8cpp_source.html">otpcodewidget.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_otp_code_widget.html">OtpCodeWidget</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

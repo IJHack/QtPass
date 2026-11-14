@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_import_key_dialog.html','','class_import_key_dialog-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,14 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="class_import_key_dialog-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ImportKeyDialog Class Reference</div></div>
+  <div class="headertitle"><div class="title">ImportKeyDialog Class Reference<div class="ingroups"><a class="el" href="group__keys.html">Keys and recipients</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -112,31 +126,62 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog__inherit__graph.svg" width="142" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for ImportKeyDialog:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog__coll__graph.svg" width="142" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acc2623c9f02a244daa1efff235b5704a" id="r_acc2623c9f02a244daa1efff235b5704a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acc2623c9f02a244daa1efff235b5704a">ImportKeyDialog</a> (const QString &amp;gpgExe, QWidget *parent=nullptr)</td></tr>
 <tr class="memdesc:acc2623c9f02a244daa1efff235b5704a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="class_import_key_dialog.html" title="Dialog for importing GPG keys from file or clipboard.">ImportKeyDialog</a>.  <br /></td></tr>
+<tr class="memitem:a3f791b9599a6c0903fb4c244d01c58bb" id="r_a3f791b9599a6c0903fb4c244d01c58bb"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a3f791b9599a6c0903fb4c244d01c58bb">~ImportKeyDialog</a> () override</td></tr>
+<tr class="memdesc:a3f791b9599a6c0903fb4c244d01c58bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the dialog and its generated UI.  <br /></td></tr>
 <tr class="memitem:a6ed8032e86a5f18fd07e23abcb8c5404" id="r_a6ed8032e86a5f18fd07e23abcb8c5404"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6ed8032e86a5f18fd07e23abcb8c5404">importedKeyId</a> () const -&gt; QString</td></tr>
 <tr class="memdesc:a6ed8032e86a5f18fd07e23abcb8c5404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the imported key id on success.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa3e1e9caffd0ab1ca12ec0725f9ebe2e" id="r_aa3e1e9caffd0ab1ca12ec0725f9ebe2e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa3e1e9caffd0ab1ca12ec0725f9ebe2e">parseGpgImportOutput</a> (const QString &amp;output) -&gt; QString</td></tr>
-<tr class="memdesc:aa3e1e9caffd0ab1ca12ec0725f9ebe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse GPG import output to extract a key id or fingerprint.  <br /></td></tr>
+<tr class="memitem:a5cac84f9f66c898bcf885abd67aaecec" id="r_a5cac84f9f66c898bcf885abd67aaecec"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5cac84f9f66c898bcf885abd67aaecec">parseGpgImportOutput</a> (const QString &amp;output) -&gt; QString</td></tr>
+<tr class="memdesc:a5cac84f9f66c898bcf885abd67aaecec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse GPG import output to extract a key id or fingerprint.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:aa4ecc33611d9fe18a2c743986217da7f" id="r_aa4ecc33611d9fe18a2c743986217da7f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa4ecc33611d9fe18a2c743986217da7f">on_fileButton_clicked</a> ()</td></tr>
+<tr class="memdesc:aa4ecc33611d9fe18a2c743986217da7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">"From file" button: picks a file, reads it as a regular file of at most 16 MiB, requires the <span class="tt">-----BEGIN PGP</span> armor header and loads the text into the input field. Binary keyrings are refused with a hint to <span class="tt">gpg --armor --export</span> first.  <br /></td></tr>
+<tr class="memitem:ad86cbcb4a634566cf4131d158b5652fe" id="r_ad86cbcb4a634566cf4131d158b5652fe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad86cbcb4a634566cf4131d158b5652fe">on_pasteButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ad86cbcb4a634566cf4131d158b5652fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">"From clipboard" button: replaces the input field with the clipboard text, unless the clipboard is empty.  <br /></td></tr>
+<tr class="memitem:afb6c1192dea0f33eba31420f1f9753cc" id="r_afb6c1192dea0f33eba31420f1f9753cc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afb6c1192dea0f33eba31420f1f9753cc">on_importButton_clicked</a> ()</td></tr>
+<tr class="memdesc:afb6c1192dea0f33eba31420f1f9753cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Import" button: runs <a class="el" href="#af52a70ba1bca574418328a2327c82a94" title="Feeds input to gpg --status-fd 1 --import --batch --yes via Executor::executeBlocking() and records t...">importFromString()</a> on the trimmed input and closes the dialog with <span class="tt">accept()</span> on success.  <br /></td></tr>
+<tr class="memitem:afc5360c5b23099d8141a44a12a47c6d4" id="r_afc5360c5b23099d8141a44a12a47c6d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc5360c5b23099d8141a44a12a47c6d4">on_inputTextEdit_textChanged</a> ()</td></tr>
+<tr class="memdesc:afc5360c5b23099d8141a44a12a47c6d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the Import button only while the input field holds non-blank text.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af52a70ba1bca574418328a2327c82a94" id="r_af52a70ba1bca574418328a2327c82a94"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af52a70ba1bca574418328a2327c82a94">importFromString</a> (const QString &amp;input) -&gt; bool</td></tr>
+<tr class="memdesc:af52a70ba1bca574418328a2327c82a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feeds <code class="param">input</code> to <span class="tt">gpg --status-fd 1 --import --batch --yes</span> via <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> and records the imported key id.  <br /></td></tr>
+<tr class="memitem:a651aaa533aeccc853985fe53ce2f5d9a" id="r_a651aaa533aeccc853985fe53ce2f5d9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a651aaa533aeccc853985fe53ce2f5d9a">showError</a> (const QString &amp;message)</td></tr>
+<tr class="memdesc:a651aaa533aeccc853985fe53ce2f5d9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows <code class="param">message</code> in a plain-text warning box (gpg's stderr quotes user IDs, which must not be read as markup).  <br /></td></tr>
+<tr class="memitem:adef5ec5248765634e31af44dddfa3948" id="r_adef5ec5248765634e31af44dddfa3948"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adef5ec5248765634e31af44dddfa3948">showSuccess</a> (const QString &amp;keyId)</td></tr>
+<tr class="memdesc:adef5ec5248765634e31af44dddfa3948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows the "imported, now verify the fingerprint" information box.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aef777c2c76f289d635cc3ba8b6ca0acf" id="r_aef777c2c76f289d635cc3ba8b6ca0acf"><td class="memItemLeft">QScopedPointer&lt; Ui::ImportKeyDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aef777c2c76f289d635cc3ba8b6ca0acf">ui</a></td></tr>
+<tr class="memdesc:aef777c2c76f289d635cc3ba8b6ca0acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated form (<span class="tt">importkeydialog.ui</span>); owned.  <br /></td></tr>
+<tr class="memitem:a7eacdb5d2d478f846bbe54be938e1538" id="r_a7eacdb5d2d478f846bbe54be938e1538"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a7eacdb5d2d478f846bbe54be938e1538">m_importedKeyId</a></td></tr>
+<tr class="memdesc:a7eacdb5d2d478f846bbe54be938e1538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key id or fingerprint of the last successful import; empty until then. Read back through <a class="el" href="#a6ed8032e86a5f18fd07e23abcb8c5404" title="Get the imported key id on success.">importedKeyId()</a>.  <br /></td></tr>
+<tr class="memitem:acdccd08b8f1f2198f8a8a8ba10304830" id="r_acdccd08b8f1f2198f8a8a8ba10304830"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#acdccd08b8f1f2198f8a8a8ba10304830">m_gpgExe</a></td></tr>
+<tr class="memdesc:acdccd08b8f1f2198f8a8a8ba10304830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path of the gpg binary to run; empty means plain <span class="tt">gpg</span> on PATH.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Dialog for importing GPG keys from file or clipboard. </p>
 <p>Allows users to import GPG public keys without leaving <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>. Offers two import paths: from file or from clipboard text. </p>
 
-<p class="definition">Definition at line <a class="el" href="importkeydialog_8h_source.html#l00021">21</a> of file <a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8h_source.html#l00027">27</a> of file <a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acc2623c9f02a244daa1efff235b5704a" name="acc2623c9f02a244daa1efff235b5704a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc2623c9f02a244daa1efff235b5704a">&#9670;&#160;</a></span>ImportKeyDialog()</h2>
@@ -173,6 +218,8 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00044">44</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -183,7 +230,40 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-3-summary" class="dynsummary">
 </div>
 <div id="dynsection-3-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_acc2623c9f02a244daa1efff235b5704a_icgraph.svg" width="464" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_acc2623c9f02a244daa1efff235b5704a_icgraph.svg" width="216" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3f791b9599a6c0903fb4c244d01c58bb" name="a3f791b9599a6c0903fb4c244d01c58bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f791b9599a6c0903fb4c244d01c58bb">&#9670;&#160;</a></span>~ImportKeyDialog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImportKeyDialog::~ImportKeyDialog </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel default">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroys the dialog and its generated UI. </p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_a3f791b9599a6c0903fb4c244d01c58bb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -199,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto ImportKeyDialog::importedKeyId </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt;  QString</td>
+          <td> const -&gt; QString</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -207,10 +287,218 @@ Static Public Member Functions</h2></td></tr>
 <p>Get the imported key id on success. </p>
 <dl class="section return"><dt>Returns</dt><dd>The imported key id (or fingerprint when GnuPG status output provides one), or empty if import failed. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00052">52</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_a6ed8032e86a5f18fd07e23abcb8c5404_icgraph.svg" width="455" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="aa3e1e9caffd0ab1ca12ec0725f9ebe2e" name="aa3e1e9caffd0ab1ca12ec0725f9ebe2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3e1e9caffd0ab1ca12ec0725f9ebe2e">&#9670;&#160;</a></span>parseGpgImportOutput()</h2>
+<a id="af52a70ba1bca574418328a2327c82a94" name="af52a70ba1bca574418328a2327c82a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52a70ba1bca574418328a2327c82a94">&#9670;&#160;</a></span>importFromString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImportKeyDialog::importFromString </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>input</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Feeds <code class="param">input</code> to <span class="tt">gpg --status-fd 1 --import --batch --yes</span> via <a class="el" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code.">Executor::executeBlocking()</a> and records the imported key id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Armored key text, trimmed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when gpg exited with 0 and a key id could be parsed from its output; false after <a class="el" href="#a651aaa533aeccc853985fe53ce2f5d9a" title="Shows message in a plain-text warning box (gpg&#39;s stderr quotes user IDs, which must not be read as ma...">showError()</a> otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00138">138</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_af52a70ba1bca574418328a2327c82a94_cgraph.svg" width="100%" height="497"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_af52a70ba1bca574418328a2327c82a94_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa4ecc33611d9fe18a2c743986217da7f" name="aa4ecc33611d9fe18a2c743986217da7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ecc33611d9fe18a2c743986217da7f">&#9670;&#160;</a></span>on_fileButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::on_fileButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"From file" button: picks a file, reads it as a regular file of at most 16 MiB, requires the <span class="tt">-----BEGIN PGP</span> armor header and loads the text into the input field. Binary keyrings are refused with a hint to <span class="tt">gpg --armor --export</span> first. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00056">56</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_aa4ecc33611d9fe18a2c743986217da7f_cgraph.svg" width="636" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_aa4ecc33611d9fe18a2c743986217da7f_icgraph.svg" width="406" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="afb6c1192dea0f33eba31420f1f9753cc" name="afb6c1192dea0f33eba31420f1f9753cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6c1192dea0f33eba31420f1f9753cc">&#9670;&#160;</a></span>on_importButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::on_importButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"Import" button: runs <a class="el" href="#af52a70ba1bca574418328a2327c82a94" title="Feeds input to gpg --status-fd 1 --import --batch --yes via Executor::executeBlocking() and records t...">importFromString()</a> on the trimmed input and closes the dialog with <span class="tt">accept()</span> on success. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00122">122</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_afb6c1192dea0f33eba31420f1f9753cc_cgraph.svg" width="100%" height="497"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_afb6c1192dea0f33eba31420f1f9753cc_icgraph.svg" width="418" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="afc5360c5b23099d8141a44a12a47c6d4" name="afc5360c5b23099d8141a44a12a47c6d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc5360c5b23099d8141a44a12a47c6d4">&#9670;&#160;</a></span>on_inputTextEdit_textChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::on_inputTextEdit_textChanged </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables the Import button only while the input field holds non-blank text. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00133">133</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_afc5360c5b23099d8141a44a12a47c6d4_icgraph.svg" width="455" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad86cbcb4a634566cf4131d158b5652fe" name="ad86cbcb4a634566cf4131d158b5652fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad86cbcb4a634566cf4131d158b5652fe">&#9670;&#160;</a></span>on_pasteButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::on_pasteButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"From clipboard" button: replaces the input field with the clipboard text, unless the clipboard is empty. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00111">111</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_ad86cbcb4a634566cf4131d158b5652fe_icgraph.svg" width="411" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a5cac84f9f66c898bcf885abd67aaecec" name="a5cac84f9f66c898bcf885abd67aaecec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cac84f9f66c898bcf885abd67aaecec">&#9670;&#160;</a></span>parseGpgImportOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +510,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto ImportKeyDialog::parseGpgImportOutput </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td> -&gt; QString</td>
         </tr>
       </table>
   </td>
@@ -241,29 +529,204 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The imported key id or fingerprint, or empty if not found. </dd></dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00167">167</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_aa3e1e9caffd0ab1ca12ec0725f9ebe2e_cgraph.svg" width="464" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
-</div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_aa3e1e9caffd0ab1ca12ec0725f9ebe2e_icgraph.svg" width="211" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_a5cac84f9f66c898bcf885abd67aaecec_icgraph.svg" width="100%" height="365"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a651aaa533aeccc853985fe53ce2f5d9a" name="a651aaa533aeccc853985fe53ce2f5d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a651aaa533aeccc853985fe53ce2f5d9a">&#9670;&#160;</a></span>showError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::showError </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows <code class="param">message</code> in a plain-text warning box (gpg's stderr quotes user IDs, which must not be read as markup). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The error text. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00197">197</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_a651aaa533aeccc853985fe53ce2f5d9a_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_a651aaa533aeccc853985fe53ce2f5d9a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="adef5ec5248765634e31af44dddfa3948" name="adef5ec5248765634e31af44dddfa3948"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adef5ec5248765634e31af44dddfa3948">&#9670;&#160;</a></span>showSuccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImportKeyDialog::showSuccess </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Shows the "imported, now verify the fingerprint" information box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyId</td><td>The imported key id or fingerprint. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8cpp_source.html#l00203">203</a> of file <a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_import_key_dialog_adef5ec5248765634e31af44dddfa3948_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="acdccd08b8f1f2198f8a8a8ba10304830" name="acdccd08b8f1f2198f8a8a8ba10304830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdccd08b8f1f2198f8a8a8ba10304830">&#9670;&#160;</a></span>m_gpgExe</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ImportKeyDialog::m_gpgExe</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Path of the gpg binary to run; empty means plain <span class="tt">gpg</span> on PATH. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8h_source.html#l00093">93</a> of file <a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a7eacdb5d2d478f846bbe54be938e1538" name="a7eacdb5d2d478f846bbe54be938e1538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eacdb5d2d478f846bbe54be938e1538">&#9670;&#160;</a></span>m_importedKeyId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ImportKeyDialog::m_importedKeyId</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Key id or fingerprint of the last successful import; empty until then. Read back through <a class="el" href="#a6ed8032e86a5f18fd07e23abcb8c5404" title="Get the imported key id on success.">importedKeyId()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8h_source.html#l00091">91</a> of file <a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a>.</p>
+
+</div>
+</div>
+<a id="aef777c2c76f289d635cc3ba8b6ca0acf" name="aef777c2c76f289d635cc3ba8b6ca0acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef777c2c76f289d635cc3ba8b6ca0acf">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;Ui::ImportKeyDialog&gt; ImportKeyDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generated form (<span class="tt">importkeydialog.ui</span>); owned. </p>
+
+<p class="definition">Definition at line <a class="el" href="importkeydialog_8h_source.html#l00088">88</a> of file <a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="importkeydialog_8h_source.html">importkeydialog.h</a></li>
+<li>src/<a class="el" href="importkeydialog_8cpp_source.html">importkeydialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_import_key_dialog.html">ImportKeyDialog</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

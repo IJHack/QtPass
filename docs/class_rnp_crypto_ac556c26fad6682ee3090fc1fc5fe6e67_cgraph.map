@@ -1,4 +1,9 @@
 <map id="RnpCrypto::loadKeyring" name="RnpCrypto::loadKeyring">
-<area shape="rect" id="Node000001" title="Adds the keyring in dir (as saveKeyring() wrote it) to this one. Secret keys stay protected until an ..." alt="" coords="5,29,180,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="62,28,57,20,61,11,73,5,93,3,113,5,126,14,121,14,112,10,92,8,75,10,65,15,63,20,67,29"/>
+<area shape="rect" id="Node000001" title="Adds the keyring in dir (as saveKeyring() wrote it) to this one. Secret keys stay protected until an ..." alt="" coords="5,32,180,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="232,5,378,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,32,219,30,214,31,181,37"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a8e427903937505b5e19ebbea7050494e" title="Read path whole, as the regular file it is (openRegularFile()), when it holds at most maxBytes." alt="" coords="228,57,382,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,54,215,60,210,60,180,59"/>
+<area shape="rect" id="Node000004" href="$class_util.html#acf5bf60f4f6eb548fb8b3c9bfa760612" title="Open path for reading as the regular file it is, not as what a link under that name points to: the ob..." alt="" coords="430,57,587,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,69,417,71,412,71,382,74"/>
 </map>

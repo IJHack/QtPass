@@ -1,0 +1,17 @@
+<map id="src/executor.h" name="src/executor.h">
+<area shape="rect" id="Node000001" title="Executor, the FIFO queue every gpg, git and pass child process of QtPass goes through,..." alt="" coords="377,5,488,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,79,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="374,30,251,53,94,83,93,78,250,47,379,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,81,184,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="383,35,200,82,198,77,378,33"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="208,81,372,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="410,33,330,76,328,71,405,34"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="396,81,469,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="435,32,435,67,431,64,431,35"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="493,81,559,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="450,31,500,72,495,71,448,36"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="584,81,658,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="467,31,576,75,571,75,466,36"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="682,81,741,109"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="487,31,669,80,664,80,487,36"/>
+</map>

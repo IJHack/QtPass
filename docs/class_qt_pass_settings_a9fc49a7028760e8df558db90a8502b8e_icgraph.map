@@ -1,0 +1,8 @@
+<map id="QtPassSettings::setQrencodeExecutable" name="QtPassSettings::setQrencodeExecutable">
+<area shape="rect" id="Node000001" title="Save qrencode executable path." alt="" coords="482,21,690,66"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#ae4d11811206b82326dca209f35910052" title="Whether qrencode can run: configuredPath when it is an executable file, else a qrencode on Util&#39;s PAT..." alt="" coords="249,21,434,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,43,435,46,435,41,469,43"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="142,14,130,10,103,8,78,10,64,15,61,20,67,29,62,29,56,20,61,11,77,5,103,3,131,5,148,14"/>
+</map>

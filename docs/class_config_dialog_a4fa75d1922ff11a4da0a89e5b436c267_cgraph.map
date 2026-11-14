@@ -1,0 +1,7 @@
+<map id="ConfigDialog::showProblems" name="ConfigDialog::showProblems">
+<area shape="rect" id="Node000001" title="Mark row row of the profile list, and the form fields when it is the row being edited,..." alt="" coords="5,48,213,76"/>
+<area shape="rect" id="Node000002" href="$struct_config_dialog_1_1_profile_problems.html#a6125c12355bc1a1033f9addc61f0ba68" title="The first complaint, for a tooltip on the profile&#39;s row." alt="" coords="261,5,475,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,46,248,43,243,45,214,51"/>
+<area shape="rect" id="Node000003" href="$struct_config_dialog_1_1_profile_problems.html#a2a577212daad2548b5888b385b5ca8d0" title="Whether all three fields are fine." alt="" coords="261,75,475,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,74,248,80,243,81,213,79"/>
+</map>

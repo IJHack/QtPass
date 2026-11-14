@@ -1,0 +1,9 @@
+<map id="MainWindow::updateProcessOutputVisibility" name="MainWindow::updateProcessOutputVisibility">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,213,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#aa24e097cd2c611bb45265376b1d23216" title="Get showProcessOutput setting." alt="" coords="261,5,483,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,25,248,27,243,28,213,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="531,14,733,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="484,25,518,28,512,28,484,30"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="781,14,1005,42"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="734,25,768,28,763,28,734,30"/>
+</map>

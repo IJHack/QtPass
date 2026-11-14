@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_q_push_button_as_q_r_code.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">QPushButtonAsQRCode Member List</div></div>
 </div><!--header-->
@@ -101,15 +119,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8">clicked</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">getTextToCopy</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#a131b43ae67e83063e9ebb8227c161bdc">buttonClicked</a>(bool checked)</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#a63baaf712643365fe4ebf1a9084fceb8">clicked</a>(const QString &amp;text)</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">getTextToCopy</a>() const -&gt; QString</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#a8e79f10b1a94893897a2fcb9cdf2c007">iconEdit</a></td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00">QPushButtonAsQRCode</a>(QString textToCopy=&quot;&quot;, QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">setTextToCopy</a>(const QString &amp;value)</td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html#ab66dcc144fb8a7b51867c523a0d5018f">textToCopy</a></td><td class="entry"><a class="el" href="class_q_push_button_as_q_r_code.html">QPushButtonAsQRCode</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

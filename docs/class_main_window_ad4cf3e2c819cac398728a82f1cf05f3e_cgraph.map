@@ -1,0 +1,15 @@
+<map id="MainWindow::deselect" name="MainWindow::deselect">
+<area shape="rect" id="Node000001" title="Clear the current tree view selection." alt="" coords="5,83,173,111"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841" title="Forget the pending OTP and copy requests." alt="" coords="221,31,451,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,80,254,61,250,64,159,85"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#abf59e43f7b3141fb5c25565c92e3abdb" title="Empty the display panel and the text browser, and leave content search if its results were showing...." alt="" coords="246,83,426,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,94,233,96,228,98,173,100"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#aa1918767cdefea447f1c90272fd95966" title="The clipboard handling for this application instance." alt="" coords="269,135,402,163"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="158,109,256,131,251,133,158,114"/>
+<area shape="rect" id="Node000004" href="$class_password_display_panel.html#a7810ceca9601d66a4a17706beb5c7ef2" title="Remove all field rows and collapse the container spacing." alt="" coords="499,5,665,50"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,80,450,68,498,56,503,54,452,73,404,85"/>
+<area shape="rect" id="Node000005" href="$class_grep_search_controller.html#a17428e45f4ca498d7663327dfb41be0e" title="Drop the mode flag only, without touching busy/cancelled state." alt="" coords="502,75,662,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="426,94,489,97,484,97,426,100"/>
+<area shape="rect" id="Node000006" href="$class_grep_search_controller.html#accee285866ae612f56f572a7687d8ca7" title="Whether content&#45;search mode is currently active." alt="" coords="502,144,662,189"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="403,109,452,121,503,139,498,139,450,126,403,114"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ConfigDialog::onProfileSigningKeyEdited" name="ConfigDialog::onProfileSigningKeyEdited">
+<area shape="rect" id="Node000001" title="The signing&#45;key field was typed in: store it in the entry and validate (fingerprints only,..." alt="" coords="249,21,466,66"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="145,14,132,10,103,8,76,10,62,15,58,20,65,29,59,29,53,20,58,11,75,5,103,3,133,5,150,14"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="MainWindow::onDelete" name="MainWindow::onDelete">
+<area shape="rect" id="Node000001" title="Toolbar &quot;Delete&quot; or the Delete key: confirm, then remove the current entry or folder...." alt="" coords="810,80,982,108"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,29,762,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="807,76,718,60,718,55,812,76"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="792,93,562,89,424,82,286,71,205,60,205,55,287,66,425,77,563,84,798,93"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="543,131,750,158"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="812,111,719,133,718,127,807,112"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="513,44,484,46,483,41,518,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,14,414,10,385,8,357,10,342,15,338,20,345,29,340,28,333,20,339,11,356,5,385,3,415,5,434,14"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,53,239,55,238,49,274,51"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,32,289,34,284,35,255,37"/>
+</map>

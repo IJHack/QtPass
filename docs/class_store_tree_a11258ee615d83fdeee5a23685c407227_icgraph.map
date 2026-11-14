@@ -1,0 +1,22 @@
+<map id="StoreTree::fileInfo" name="StoreTree::fileInfo">
+<area shape="rect" id="Node000001" title="File system information for a view index." alt="" coords="1052,69,1187,96"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a5389ebc0c173ffa3d38ead9b48a16cbb" title="Ctrl+C on the tree: decrypt the current entry and let passwordFromFileToClipboard() copy its first li..." alt="" coords="544,37,749,82"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1034,79,749,67,749,62,1039,78"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,83,239,111"/>
+<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="1051,64,1003,56,803,22,721,12,645,8,569,10,487,17,287,50,222,67,164,85,162,80,220,62,286,45,486,12,568,5,645,3,722,7,804,17,1004,51,1056,64"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a5a951938ec2d2a1e10579cd1f2889439" title="A double&#45;click on a tree entry opens it for editing; folders are left to the view." alt="" coords="810,89,1004,134"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="1039,94,1004,101,1004,96,1033,94"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a3f29a7235acf922406190b6477167a80" title="Toolbar &quot;Delete&quot; or the Delete key: confirm, then remove the current entry or folder...." alt="" coords="821,158,993,186"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="1086,104,1047,129,1005,149,972,160,971,155,1003,144,1044,124,1081,106"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,83,483,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="526,77,484,86,483,80,532,76"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="428,68,414,64,385,62,357,64,342,69,338,74,345,83,340,82,333,74,339,65,356,59,385,57,415,59,434,68"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="269,107,239,109,238,103,274,105"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="254,85,289,88,284,89,255,91"/>
+<area shape="poly" id="edge11_Node000006_Node000004" title=" " alt="" coords="826,189,763,200,647,208,531,200,427,183,325,160,166,114,167,109,326,154,428,178,531,194,647,202,762,194,820,189"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a1ea53c7a8b5941564ac8e94ed18abe7a" title=" " alt="" coords="531,106,762,134"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="816,154,720,137,720,132,822,154"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="543,158,750,186"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="803,172,751,174,751,169,809,172"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="513,109,484,108,483,103,518,108"/>
+</map>

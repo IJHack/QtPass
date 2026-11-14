@@ -1,0 +1,5 @@
+<map id="MenuBarPeek::hideWhenNoMenuIsOpen" name="MenuBarPeek::hideWhenNoMenuIsOpen">
+<area shape="rect" id="Node000001" title="hide() on the next event&#45;loop pass, and only if no popup is open and the bar has no active action...." alt="" coords="5,5,244,50"/>
+<area shape="rect" id="Node000002" href="$class_menu_bar_peek.html#ad21d624502b17fbd7aea6b32c33c6176" title="End the peek; hides the menu bar unless the &quot;Show menu bar&quot; toggle was checked in the meantime." alt="" coords="292,14,439,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,25,279,28,274,28,244,30"/>
+</map>

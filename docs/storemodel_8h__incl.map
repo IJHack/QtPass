@@ -1,0 +1,9 @@
+<map id="src/storemodel.h" name="src/storemodel.h">
+<area shape="rect" id="Node000001" title="StoreModel, the filtering/sorting proxy over the store&#39;s QFileSystemModel, and StoreDragItem,..." alt="" coords="128,5,258,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,85,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,35,86,76,84,71,165,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="109,81,277,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,32,195,67,191,64,191,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="301,81,376,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="220,31,302,73,296,74,218,36"/>
+</map>

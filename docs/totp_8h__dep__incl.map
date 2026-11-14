@@ -1,0 +1,16 @@
+<map id="src/totp.h" name="src/totp.h">
+<area shape="rect" id="Node000001" title="RFC 6238 TOTP: otpauth URI parsing, code generation and canonical re&#45;serialisation." alt="" coords="332,5,414,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="315,37,135,83,134,78,317,32"/>
+<area shape="rect" id="Node000003" href="$otpcodewidget_8h.html" title="Self&#45;refreshing widget showing an entry&#39;s current TOTP code with a countdown bar and optional copy bu..." alt="" coords="183,81,336,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="342,41,281,83,278,78,337,43"/>
+<area shape="rect" id="Node000005" href="$passworddisplaypanel_8cpp.html" title="Implements PasswordDisplayPanel; the value browser and open&#45;in&#45;browser button are built by file&#45;local..." alt="" coords="264,157,481,184"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="375,47,375,157,370,155,371,50"/>
+<area shape="rect" id="Node000006" href="$passworddialog_8cpp.html" title="Implements PasswordDialog: field rows built from templates and entry content, round&#45;trip&#45;safe seriali..." alt="" coords="410,81,583,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="409,39,477,81,472,81,407,44"/>
+<area shape="rect" id="Node000007" href="$totp_8cpp.html" title="Implements Totp: otpauth URI parsing with its length cap and HOTP refusal, RFC 4226 dynamic truncatio..." alt="" coords="608,81,705,109"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="429,32,610,80,605,81,428,38"/>
+<area shape="rect" id="Node000004" href="$otpcodewidget_8cpp.html" title="Implements OtpCodeWidget: builds the code label, copy button and countdown bar, and owns the one&#45;seco..." alt="" coords="73,157,240,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="231,117,176,159,174,154,226,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="293,115,355,156,350,156,291,120"/>
+</map>

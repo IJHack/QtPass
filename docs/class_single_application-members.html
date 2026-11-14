@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_single_application.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">SingleApplication Member List</div></div>
 </div><!--header-->
@@ -101,16 +119,30 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <p>This is the complete list of members for <a class="el" href="class_single_application.html">SingleApplication</a>, including all inherited members.</p>
 <table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a1101486283e5f1580c02f8e1562f195f">_isRunning</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a796b973c0f8cbb128b557bbd9c048010">_uniqueKey</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a6bf78ae9ee5bbbb21e68e5f14d3ca543">becomePrimary</a>()</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a1437fc816f04579f7c4af1927b0967ed">forwardMessage</a>(const QString &amp;message) -&gt; bool</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">isRunning</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a4893f9017498cae49ff2bb6db7f777f7">localServer</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a94cc05f4d37956aded878645854b6b34">maxMessageBytes</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">messageAvailable</a>(const QString &amp;message)</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a>()</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">sendMessage</a>(const QString &amp;message) -&gt; bool</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#aeed9dcbbb9c7d6c8943f977918d1200a">peerIsListening</a>() -&gt; bool</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a>()</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">slot</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">sendMessage</a>(const QString &amp;message) -&gt; bool</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a049e4d9a1ee8290afef91106c402cdda">sharedMemory</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">SingleApplication</a>(int &amp;argc, char *argv[], QString uniqueKey)</td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#aefdefa8280cdb7a65b3447c675b2f0c8">takeoverProbeIntervalMs</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_single_application.html#ac4f2cd982269512e51d763013f318428">takeoverProbes</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_single_application.html#a7fe3d993e578290d1ecd2033d7d5e0d9">timeout</a></td><td class="entry"><a class="el" href="class_single_application.html">SingleApplication</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

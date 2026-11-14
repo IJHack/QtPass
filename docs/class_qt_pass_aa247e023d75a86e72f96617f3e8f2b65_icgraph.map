@@ -1,0 +1,11 @@
+<map id="QtPass::init" name="QtPass::init">
+<area shape="rect" id="Node000001" title="Resolve the password store and the executables and migrate the settings of an older version (fresh&#45;in..." alt="" coords="531,56,625,84"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,61,483,59,484,54,518,61"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#adfa404cc09dade6c0b025d7dc1b240a5" title="Destroy the QtPass instance and clean up signal connections." alt="" coords="321,81,449,109"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="518,78,450,89,449,84,513,78"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="416,14,406,10,385,8,365,10,354,15,351,20,356,30,351,28,346,20,350,11,364,5,385,3,408,5,422,14"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
+</map>

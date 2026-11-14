@@ -1,0 +1,11 @@
+<map id="MainWindow::showShareHelp" name="MainWindow::showShareHelp">
+<area shape="rect" id="Node000001" title="Share menu &quot;What is this?&quot;: the explanation of sharing with GPG." alt="" coords="788,29,1002,57"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a5890dfd116d4da96689e7114dd4e5494" title="Add the Share submenu for the folder under the cursor: the entries are enabled only where a recipient..." alt="" coords="531,29,740,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="770,43,741,46,741,41,775,43"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="250,29,483,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="513,43,484,46,484,41,518,43"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="5,29,202,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="232,52,202,55,202,49,237,52"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="217,32,252,34,247,34,218,37"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="147,14,133,10,103,8,76,10,61,15,57,20,64,29,58,29,52,20,57,11,75,5,104,3,134,5,152,14"/>
+</map>

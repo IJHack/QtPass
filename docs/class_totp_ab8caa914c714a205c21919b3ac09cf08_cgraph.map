@@ -1,0 +1,5 @@
+<map id="Totp::generate" name="Totp::generate">
+<area shape="rect" id="Node000001" title="Generate the code for a given point in time." alt="" coords="5,5,120,33"/>
+<area shape="rect" id="Node000002" href="$class_totp.html#a47445f93d87ea47de27ab8045914686d" title="Time&#45;step counter for a point in time." alt="" coords="168,5,273,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,17,155,19,150,19,120,22"/>
+</map>

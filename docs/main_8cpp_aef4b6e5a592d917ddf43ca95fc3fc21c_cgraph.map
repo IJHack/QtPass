@@ -1,0 +1,4 @@
+<map id="appendWithSpaceIfSuffixNotEmpty" name="appendWithSpaceIfSuffixNotEmpty">
+<area shape="rect" id="Node000001" title="Appends a suffix to a target string, inserting a separating space if the target is not empty." alt="" coords="5,29,213,74"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="69,28,68,19,75,10,88,5,109,3,132,5,146,14,141,14,130,10,109,8,90,10,78,15,73,21,74,30"/>
+</map>

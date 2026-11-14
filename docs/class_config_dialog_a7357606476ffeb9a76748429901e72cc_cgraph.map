@@ -1,0 +1,5 @@
+<map id="ConfigDialog::problemsOf" name="ConfigDialog::problemsOf">
+<area shape="rect" id="Node000001" title="What is wrong with entry&#39;s name, store path and signing keys." alt="" coords="5,5,194,33"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a10a27a2854432e9294934b0ebcb76146" title="Whether a signing&#45;key setting holds only full key fingerprints (40 or 64 hexadecimal characters each,..." alt="" coords="242,5,458,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,17,229,19,223,19,194,22"/>
+</map>

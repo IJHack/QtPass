@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_totp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,8 +112,6 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">Totp Member List</div></div>
 </div><!--header-->
@@ -102,28 +120,32 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <p>This is the complete list of members for <a class="el" href="class_totp.html">Totp</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a01da8b4d496beba96c8836d273ec11c2">Algorithm</a> enum name</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#ab39efcea56e12523a829e15bc51a387e">counter</a>(const Settings &amp;settings, quint64 unixTime) -&gt; quint64</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#ad72b8ecd8fcf17055212f4e07b63d95c">currentUnixTime</a>() -&gt; quint64</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a47445f93d87ea47de27ab8045914686d">counter</a>(const Settings &amp;settings, quint64 unixTime) -&gt; quint64</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a84866e76305152267035b917e7d84bdb">currentUnixTime</a>() -&gt; quint64</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a728431b3cc5983fc47d3a1355ced80f1">DEFAULT_DIGITS</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a2ec915c153fab17c59ca29232cba1ea5">DEFAULT_STEP</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#acd260916c919c39104526b0ccadce8a0">Encoder</a> enum name</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#aa0fdde5c681ddea62a8d0d0bbc995830">generate</a>(const Settings &amp;settings, quint64 unixTime) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#aafc4a27de5d9968b604f499003b083ef">generateNow</a>(const Settings &amp;settings) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a8ea9a640d4fa41abf1d4ac68af2301b2">isValid</a>(const QString &amp;config) -&gt; bool</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#ab8caa914c714a205c21919b3ac09cf08">generate</a>(const Settings &amp;settings, quint64 unixTime) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a48931c8c589844c1b5c6334287931594">generateNow</a>(const Settings &amp;settings) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#af023ce3487d15c2e290419ddd1ea0699">isValid</a>(const QString &amp;config) -&gt; bool</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a79b5e8d618fa81604df1699b2d4b2e9a">MAX_CONFIG_LENGTH</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_totp.html#ae890b9f9d1440b99756ba7c74bd03ae0">MAX_DIGITS</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a1ff6b1d22ea9f2cf5da5fedd1e116505">MAX_STEP</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a28370b47bc9f3c92a981a6fcdb543368">MIN_DIGITS</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#ae84cc73aa9f5f9e1f90032554d0fa85f">normalize</a>(const QString &amp;config, const QString &amp;label={}, const QString &amp;issuer={}) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a4b9e16c21366dc739b9855bbd1fbd7cb">parse</a>(const QString &amp;config) -&gt; std::optional&lt; Settings &gt;</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a2056cea0594ed474c46fc1295dcc001a">secondsRemaining</a>(const Settings &amp;settings, quint64 unixTime) -&gt; uint</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#aaad8df6ff63cde2ee3d13c79a24abdb7">normalize</a>(const QString &amp;config, const QString &amp;label={}, const QString &amp;issuer={}) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#ae6ad2f9cfb9cb54108b8138d660c803b">parse</a>(const QString &amp;config) -&gt; std::optional&lt; Settings &gt;</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#af449a258178c0fdc0f744be9bf2d6103">secondsRemaining</a>(const Settings &amp;settings, quint64 unixTime) -&gt; uint</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a81979cc4e9b6933626ef5c62277649f0">STEAM_DIGITS</a></td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#a0d3e89bdf41b159eebe128efa9b8c5dc">toUri</a>(const Settings &amp;settings) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_totp.html#af5356b79d5e5b93bef2c9713a3ed8ab3">Totp</a>()=default</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_totp.html#a9cae7b2213a242c4bb6fb6dfb5f42351">toUri</a>(const Settings &amp;settings) -&gt; QString</td><td class="entry"><a class="el" href="class_totp.html">Totp</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

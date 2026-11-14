@@ -1,0 +1,9 @@
+<map id="ProgramsWizardPage::updateStatus" name="ProgramsWizardPage::updateStatus">
+<area shape="rect" id="Node000001" title="After an edit: say under the gpg field when it is missing or not executable, allow &quot;use pass&quot; only fo..." alt="" coords="449,40,608,85"/>
+<area shape="rect" id="Node000002" href="$class_programs_wizard_page.html#a5c226f7f248f361f28d7e560b8322449" title="Fill the fields from the settings (autodetection already ran)." alt="" coords="238,5,397,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="431,47,398,43,398,38,436,47"/>
+<area shape="rect" id="Node000003" href="$class_programs_wizard_page.html#a87fc8fe0031c73430b864d5054d16c8b" title="Build the page." alt="" coords="234,75,401,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="436,78,402,86,401,81,431,78"/>
+<area shape="rect" id="Node000004" href="$class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d" title="Build the wizard from the current settings." alt="" coords="5,75,186,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,97,186,100,186,94,220,97"/>
+</map>

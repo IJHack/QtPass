@@ -1,0 +1,11 @@
+<map id="ConfigDialog::getProfiles" name="ConfigDialog::getProfiles">
+<area shape="rect" id="Node000001" title="Return all configured profiles." alt="" coords="707,44,889,72"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a885fd334b9fd0a95ee6ce855afea9d8e" title="For every saved profile whose store was not a profile&#39;s store when the dialog opened: offer to create..." alt="" coords="491,5,659,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="689,44,660,42,660,37,695,44"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#abcea9914e341675611d83dff8b9b3163" title="On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles,..." alt="" coords="249,44,443,72"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="694,62,659,65,491,65,443,64,443,59,491,60,659,60,689,62"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,41,444,48,443,43,473,41"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,44,201,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,58,201,61,201,56,236,58"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="143,29,130,26,103,23,78,25,64,30,60,35,67,44,61,44,55,36,60,26,77,20,103,18,131,20,148,29"/>
+</map>

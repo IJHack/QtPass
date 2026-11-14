@@ -1,0 +1,7 @@
+<map id="src/menubarpeek.h" name="src/menubarpeek.h">
+<area shape="rect" id="Node000001" title="MenuBarPeek: shows the main window&#39;s hidden menu bar while Alt is held or tapped, and hides it again ..." alt="" coords="100,5,246,33"/>
+<area shape="rect" id="Node000002" href="$mainwindow_8cpp.html" title="Implements MainWindow; the backend signal wiring lives in connectBackends() and connectPassSignals(),..." alt="" coords="5,81,159,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,43,100,83,97,78,142,44"/>
+<area shape="rect" id="Node000003" href="$menubarpeek_8cpp.html" title="Implements MenuBarPeek; an application&#45;wide event filter installed in the constructor feeds onKeyPres..." alt="" coords="183,81,344,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,41,250,81,245,80,200,46"/>
+</map>

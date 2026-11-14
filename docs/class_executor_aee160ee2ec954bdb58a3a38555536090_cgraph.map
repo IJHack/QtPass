@@ -1,4 +1,5 @@
 <map id="Executor::cancelNext" name="Executor::cancelNext">
-<area shape="rect" id="Node000001" title="Cancel the next queued command without executing it." alt="" coords="5,29,164,57"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="56,28,52,20,56,11,67,5,85,3,104,5,115,14,110,14,102,10,84,8,68,10,60,14,58,20,62,29"/>
+<area shape="rect" id="Node000001" title="Cancel the next queued command without executing it." alt="" coords="5,5,164,33"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a22b5633f6b06f7f15be77370b5bd2871" title="Emitted, synchronously, when the queue&#39;s head leaves it: just before it is started,..." alt="" coords="212,5,365,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,17,199,19,193,19,164,22"/>
 </map>

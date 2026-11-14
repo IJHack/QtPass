@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -75,6 +80,19 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </ul>
 </div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_func_f.html','',''); });
+</script>
+<div id="container">
 <div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
@@ -101,14 +119,15 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 
 <h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
 <li>FieldLabel()&#160;:&#160;<a class="el" href="class_field_label.html#a02ed94111b21b7f6419fb4e35ead4d62">FieldLabel</a></li>
-<li>fieldsIn()&#160;:&#160;<a class="el" href="class_template_i_o.html#ac5332f90883657224c0444c930c7c150">TemplateIO</a></li>
+<li>fieldsIn()&#160;:&#160;<a class="el" href="class_template_i_o.html#a5396bc2abe581bb25003d9c735ac14fd">TemplateIO</a></li>
+<li>FileContent()&#160;:&#160;<a class="el" href="class_file_content.html#a2deda004001faf4729b45cbc1aa5ca19">FileContent</a></li>
 <li>fileFor()&#160;:&#160;<a class="el" href="class_store_tree.html#a70b4b23a457f2b396a91433aaf9b9437">StoreTree</a></li>
 <li>fileInfo()&#160;:&#160;<a class="el" href="class_store_tree.html#a11258ee615d83fdeee5a23685c407227">StoreTree</a></li>
 <li>fileSystem()&#160;:&#160;<a class="el" href="class_store_tree.html#ab7f72371892ef32cf421282ad7b885f6">StoreTree</a></li>
 <li>filterAcceptsRow()&#160;:&#160;<a class="el" href="class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1">StoreModel</a></li>
-<li>findBinaryInPath()&#160;:&#160;<a class="el" href="class_util.html#aa93547aecfd166a3e0eac955370cc05c">Util</a></li>
-<li>findPasswordStore()&#160;:&#160;<a class="el" href="class_util.html#abfddcff8c37fbb33e86605e4fb7250db">Util</a></li>
-<li>finished()&#160;:&#160;<a class="el" href="class_executor.html#ace810a6d93c74dec7188038210c5a731">Executor</a>, <a class="el" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass</a>, <a class="el" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">NativeGrep</a>, <a class="el" href="class_pass.html#a8efe916aa899deaed23aa445cc9a302f">Pass</a>, <a class="el" href="class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b">RealPass</a></li>
+<li>findBinaryInPath()&#160;:&#160;<a class="el" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util</a></li>
+<li>findPasswordStore()&#160;:&#160;<a class="el" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util</a></li>
+<li>finished()&#160;:&#160;<a class="el" href="class_executor.html#ace810a6d93c74dec7188038210c5a731">Executor</a>, <a class="el" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass</a>, <a class="el" href="class_native_grep.html#a195784ff0ea005b58f4f26beed4be27a">NativeGrep</a>, <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>, <a class="el" href="class_real_pass.html#acd99293fa04b5b21721a75f3afe0fe2b">RealPass</a></li>
 <li>finishedAnyWithPid()&#160;:&#160;<a class="el" href="class_pass.html#a13859dd31b009e6d362546d1c96dc303">Pass</a></li>
 <li>finishedCopy()&#160;:&#160;<a class="el" href="class_pass.html#a64d98203e2f37807ec39ff9fa03e70f3">Pass</a></li>
 <li>finishedGenerateGPGKeys()&#160;:&#160;<a class="el" href="class_pass.html#a296dba6b2dc144cdd95af8da86d2170a">Pass</a></li>
@@ -117,25 +136,38 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <li>finishedGitPush()&#160;:&#160;<a class="el" href="class_pass.html#a835378925ada56acd922899f64e85933">Pass</a></li>
 <li>finishedGrep()&#160;:&#160;<a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">Pass</a></li>
 <li>finishedInit()&#160;:&#160;<a class="el" href="class_pass.html#ac6fe8aec534ce7415eb23d45dca27e63">Pass</a></li>
-<li>finishedInsert()&#160;:&#160;<a class="el" href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83">Pass</a></li>
+<li>finishedInsert()&#160;:&#160;<a class="el" href="class_pass.html#a14d258f93b689ff92cea0d11b136eb83">Pass</a>, <a class="el" href="class_qt_pass.html#a8f03731a98c5de1cc086c10479d63dbb">QtPass</a></li>
+<li>finishEdit()&#160;:&#160;<a class="el" href="class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac">FieldLabel</a></li>
 <li>finishedMove()&#160;:&#160;<a class="el" href="class_pass.html#a662000feacb2400a1b5f6133cce44542">Pass</a></li>
 <li>finishedRemove()&#160;:&#160;<a class="el" href="class_pass.html#af08e80e76ffd6581f35e701e6c8b533e">Pass</a></li>
 <li>finishedShow()&#160;:&#160;<a class="el" href="class_pass.html#a3a1a065e12909518f3898b3557ed714c">Pass</a></li>
+<li>finishLinkCommit()&#160;:&#160;<a class="el" href="class_real_pass.html#a014fcc263c7f47c2ee0163d84b7a3dd7">RealPass</a></li>
+<li>finishReencrypt()&#160;:&#160;<a class="el" href="class_imitate_pass.html#a172222519125f9e053e09a505743d15b">ImitatePass</a></li>
 <li>finishSearch()&#160;:&#160;<a class="el" href="class_grep_search_controller.html#a7ba10cf18a8566d0bb3ff1312bfd5c5c">GrepSearchController</a></li>
+<li>first()&#160;:&#160;<a class="el" href="struct_config_dialog_1_1_profile_problems.html#a6125c12355bc1a1033f9addc61f0ba68">ConfigDialog::ProfileProblems</a></li>
+<li>firstFile()&#160;:&#160;<a class="el" href="class_main_window.html#ae9a674e42e112906d72b37ede211ca4d">MainWindow</a></li>
 <li>FirstRunWizard()&#160;:&#160;<a class="el" href="class_first_run_wizard.html#a6c41409d82a55dc7612b31ccdc9a592d">FirstRunWizard</a></li>
 <li>flagFromString()&#160;:&#160;<a class="el" href="struct_profile.html#a89364a3e36a6f8b6197adc385854e023">Profile</a></li>
 <li>flags()&#160;:&#160;<a class="el" href="class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d">StoreModel</a></li>
 <li>flagToString()&#160;:&#160;<a class="el" href="struct_profile.html#a5e7cc4f12dbd6e0e51a0ef93f9c37e7d">Profile</a></li>
 <li>flashText()&#160;:&#160;<a class="el" href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">MainWindow</a></li>
-<li>folderOf()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a09b1614889db306cfd1efe17acc4ea8c">GpgIdGeneration</a></li>
-<li>formatOutput()&#160;:&#160;<a class="el" href="class_qt_pass.html#a3a911b2dc52f8959aadf21ddbd21960f">QtPass</a></li>
+<li>focusInput()&#160;:&#160;<a class="el" href="class_main_window.html#a6ba35e7bf11ebd5236990a00daa079d7">MainWindow</a></li>
+<li>folderOf()&#160;:&#160;<a class="el" href="class_gpg_id_generation.html#a8400be9a8caa988172707186e9f457d4">GpgIdGeneration</a></li>
+<li>followActiveProfile()&#160;:&#160;<a class="el" href="class_config_dialog.html#ab3751f42ebb07cd299f6ad494ea21c55">ConfigDialog</a></li>
+<li>forgetIfSaved()&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a764964ed0180589399caa5b03504283c">ClipboardManager</a></li>
+<li>formatInsertError()&#160;:&#160;<a class="el" href="class_pass.html#aa7deb8fc813c6652b169d11bb687f613">Pass</a></li>
+<li>formatOutput()&#160;:&#160;<a class="el" href="class_qt_pass.html#a32860d084409d781977736d6fb40d629">QtPass</a></li>
+<li>forwardMessage()&#160;:&#160;<a class="el" href="class_single_application.html#a1437fc816f04579f7c4af1927b0967ed">SingleApplication</a></li>
 <li>fullyValid()&#160;:&#160;<a class="el" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">UserInfo</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

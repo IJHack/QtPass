@@ -1,0 +1,7 @@
+<map id="src/plainmessagebox.cpp" name="src/plainmessagebox.cpp">
+<area shape="rect" id="Node000001" title="Implements the PlainMessageBox helpers; the text format is set before the text so it is never laid ou..." alt="" coords="5,5,192,33"/>
+<area shape="rect" id="Node000002" href="$plainmessagebox_8h.html" title="QMessageBox helpers that force Qt::PlainText so store&#45;controlled names can never be read as rich&#45;text..." alt="" coords="24,81,173,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,31,101,66,96,65,97,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="41,157,156,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,107,101,142,96,140,97,111"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ConfigDialog::onProfileNameEdited" name="ConfigDialog::onProfileNameEdited">
+<area shape="rect" id="Node000001" title="The name field was typed in: store it in the entry and the list item, then validate (duplicates,..." alt="" coords="249,21,457,66"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,43,201,46,201,41,236,43"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="144,14,131,10,103,8,77,10,62,15,59,20,65,29,60,29,54,20,59,11,76,5,103,3,132,5,150,14"/>
+</map>

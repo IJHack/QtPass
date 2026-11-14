@@ -1,0 +1,15 @@
+<map id="RealPass::storeGit" name="RealPass::storeGit">
+<area shape="rect" id="Node000001" title="Run a git command in the store through pass git, blocking." alt="" coords="5,57,145,85"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="193,57,385,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,69,179,70,174,72,145,74"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="433,57,595,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="385,69,420,71,414,71,385,74"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="643,57,809,85"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="596,69,630,71,625,71,596,74"/>
+<area shape="rect" id="Node000005" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="857,5,1075,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="793,54,881,37,886,37,794,59"/>
+<area shape="rect" id="Node000006" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="860,57,1072,85"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="809,69,847,71,842,71,809,74"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="864,109,1068,137"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="794,83,886,106,881,105,793,88"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="GpgIdSigner::haveSecretKey" name="GpgIdSigner::haveSecretKey">
+<area shape="rect" id="Node000001" title="Whether gpg has the secret key that sign() will use, i.e. the first configured key." alt="" coords="5,32,211,60"/>
+<area shape="rect" id="Node000002" href="$class_gpg_id_signer.html#a2157ca742c6ae1d1971a01f0dc7f86f0" title="Whether any signing key is configured at all." alt="" coords="259,5,419,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,31,246,30,241,31,211,37"/>
+<area shape="rect" id="Node000003" href="$class_gpg_id_signer.html#a291af0865f896e7b0f7c2595de6dc3ea" title="Run gpg with args through m_exec." alt="" coords="274,57,404,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,54,261,62,256,63,211,60"/>
+</map>

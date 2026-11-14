@@ -1,0 +1,5 @@
+<map id="ProcessOutputPanel::processName" name="ProcessOutputPanel::processName">
+<area shape="rect" id="Node000001" title="Human&#45;readable command label for a process id." alt="" coords="276,5,426,50"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c" title="Handle generic process output for display in output panel." alt="" coords="5,14,228,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,28,228,30,228,25,263,28"/>
+</map>

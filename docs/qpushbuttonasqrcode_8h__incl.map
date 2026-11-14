@@ -1,0 +1,5 @@
+<map id="src/qpushbuttonasqrcode.h" name="src/qpushbuttonasqrcode.h">
+<area shape="rect" id="Node000001" title="Icon button that asks for a stored secret to be shown as a QR code." alt="" coords="5,5,202,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,81,156,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,32,106,66,101,64,102,36"/>
+</map>

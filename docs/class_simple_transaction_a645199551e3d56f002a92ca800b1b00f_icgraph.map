@@ -1,0 +1,5 @@
+<map id="SimpleTransaction::transactionEnd" name="SimpleTransaction::transactionEnd">
+<area shape="rect" id="Node000001" title="Close the transaction opened by the matching transactionStart()." alt="" coords="254,5,402,50"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass_1_1_transaction_helper.html#a7b512b63d63c4e2339ebfee98404cf04" title="End transaction on destruction." alt="" coords="5,5,206,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,28,206,30,206,25,241,27"/>
+</map>

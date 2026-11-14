@@ -1,0 +1,37 @@
+<map id="KeygenDialog::~KeygenDialog" name="KeygenDialog::~KeygenDialog">
+<area shape="rect" id="Node000001" title="Destroys the dialog and its generated UI." alt="" coords="5,295,226,322"/>
+<area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1" title="Splice a passphrase into a GPG batch template." alt="" coords="274,29,502,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,293,137,249,169,187,214,122,241,92,272,66,282,62,279,66,275,71,245,96,218,125,173,190,142,251,124,295"/>
+<area shape="rect" id="Node000005" href="$class_keygen_dialog.html#afcdfc182f4c3dad57c74e7604131ec83" title="Whether value can go into a GPG batch line as one value." alt="" coords="835,196,1038,224"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="166,292,273,267,420,246,567,231,821,214,817,216,568,236,420,252,274,272,169,296"/>
+<area shape="rect" id="Node000006" href="$class_keygen_dialog.html#aa28f8db828f60edd4195bcc9f9e8cb6e" title="Mirrors the e&#45;mail field into the template&#39;s Name&#45;Email: line." alt="" coords="298,81,478,126"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="124,293,180,218,223,174,272,136,286,130,282,134,275,140,227,178,184,222,128,296"/>
+<area shape="rect" id="Node000008" href="$class_keygen_dialog.html#ac0ebf04c899e95033f560ae4aae5b2f3" title="Mirrors the name field into the template&#39;s Name&#45;Real: line." alt="" coords="298,150,478,195"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="136,292,196,254,272,211,305,199,301,203,275,216,199,258,139,296"/>
+<area shape="rect" id="Node000009" href="$class_keygen_dialog.html#a68eaa387bd0f5f3074636fcfb6a5cc2f" title="First passphrase field edited: re&#45;evaluates whether OK may be enabled. The text itself stays out of t..." alt="" coords="553,372,777,416"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="210,320,539,372,536,376,210,326"/>
+<area shape="rect" id="Node000010" href="$class_keygen_dialog.html#ab6bde78f9ab9d4ccd40a5ec1e2dd087d" title="OK is available when a passphrase is typed twice the same, or when no passphrase was asked for explic..." alt="" coords="828,351,1045,378"/>
+<area shape="poly" id="edge21_Node000001_Node000010" title=" " alt="" coords="225,294,341,285,481,282,631,287,707,294,781,306,839,322,893,344,888,344,838,327,780,311,706,300,631,292,481,287,342,291,227,299"/>
+<area shape="rect" id="Node000011" href="$class_keygen_dialog.html#aec6a86ea8b6fc8eee1c2a49c501198d4" title="Whether the passphrase question has an answer: typed twice the same, or waived with the checkbox...." alt="" coords="1093,453,1286,498"/>
+<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="122,320,142,365,173,424,193,454,217,482,244,508,275,527,329,552,385,570,443,584,502,593,621,598,740,590,852,573,955,549,1044,524,1113,504,1118,503,1046,529,956,555,853,578,740,595,622,603,501,598,442,589,384,575,327,557,272,532,241,512,213,486,189,457,168,426,137,368,121,326"/>
+<area shape="rect" id="Node000012" href="$class_keygen_dialog.html#af674d915b30db393f7dd6c0824ef363d" title="Confirmation field edited: same as on_passphrase1_textChanged()." alt="" coords="276,422,500,467"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="137,320,199,359,275,401,306,416,301,417,272,406,196,363,138,325"/>
+<area shape="rect" id="Node000013" href="$class_keygen_dialog.html#a3a0ea832334cd27c1f74bd5bb65d4258" title="Enable or disable expert mode (the editable batch template)." alt="" coords="279,491,496,518"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="126,320,150,354,183,396,226,440,275,477,286,484,281,484,272,481,222,444,179,400,145,357,125,325"/>
+<area shape="rect" id="Node000014" href="$class_keygen_dialog.html#a5a56db2294c6d4a0a2e7c665ad2a54a1" title="Ticking &quot;no passphrase&quot; clears and disables the passphrase fields and makes OK available; unticking i..." alt="" coords="550,320,780,348"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="226,311,536,326,533,330,227,316"/>
+<area shape="rect" id="Node000003" href="$keygendialog_8cpp.html#a9bdefc87c7639ffbce0526943e36a3ac" title="Whether a batch line is the control statement control." alt="" coords="592,29,739,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="502,41,579,42,574,44,503,46"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="859,120,1014,148"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="476,55,846,117,842,120,477,60"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="619,29,612,20,618,11,636,5,665,3,697,5,716,14,710,15,696,10,665,8,637,10,621,15,617,20,624,29"/>
+<area shape="rect" id="Node000007" href="$class_keygen_dialog.html#a1697fd1a20cad8dd3bd3491120525a25" title="Rewrites every &lt;key&gt;: ... line of the batch template to carry value. Values that fail isBatchValue() ..." alt="" coords="582,152,749,180"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="478,121,589,147,584,149,478,126"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="749,153,846,144,841,146,750,159"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="749,177,835,192,829,194,750,182"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="477,168,568,167,563,169,479,173"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="777,379,815,377,810,378,778,384"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="971,376,1125,446,1120,446,970,382"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="500,421,540,416,535,418,501,427"/>
+<area shape="poly" id="edge20_Node000014_Node000010" title=" " alt="" coords="781,344,815,350,810,351,781,350"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="src/plainmessagebox.h" name="src/plainmessagebox.h">
+<area shape="rect" id="Node000001" title="QMessageBox helpers that force Qt::PlainText so store&#45;controlled names can never be read as rich&#45;text..." alt="" coords="5,5,177,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="34,81,148,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,32,94,66,88,64,89,36"/>
+</map>

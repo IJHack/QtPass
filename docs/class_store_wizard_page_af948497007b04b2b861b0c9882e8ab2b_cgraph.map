@@ -1,0 +1,9 @@
+<map id="StoreWizardPage::updateStatus" name="StoreWizardPage::updateStatus">
+<area shape="rect" id="Node000001" title="After an edit: describe the folder (existing store with its entry count, empty folder,..." alt="" coords="5,57,231,85"/>
+<area shape="rect" id="Node000002" href="$class_first_run_wizard.html#a60461cf05ad3f52e132b9c3860c36848" title="Whether path points at an initialised store." alt="" coords="294,5,466,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,54,294,36,290,38,192,59"/>
+<area shape="rect" id="Node000003" href="$class_store_wizard_page.html#a8089e9bf2ad6987d309fcccfde5b2eff" title="How many keys are ticked on the key page." alt="" coords="279,57,482,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,69,266,71,260,72,231,74"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a01aa652eefff30de7eabdf90c7737974" title="Regular files under dir whose name matches one of nameFilters, found by walking only real directories..." alt="" coords="297,109,464,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,83,295,105,289,106,191,88"/>
+</map>

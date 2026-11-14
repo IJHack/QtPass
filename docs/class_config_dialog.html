@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('class_config_dialog.html','','class_config_dialog-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,15 +112,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="class_config_dialog-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ConfigDialog Class Reference</div></div>
+  <div class="headertitle"><div class="title">ConfigDialog Class Reference<div class="ingroups"><a class="el" href="group__ui.html">Windows and dialogs</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -113,21 +126,29 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 <div id="dynsection-0-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog__inherit__graph.svg" width="115" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for ConfigDialog:</div>
 <div id="dynsection-1-summary" class="dynsummary">
 </div>
 <div id="dynsection-1-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog__coll__graph.svg" width="115" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:ProfileEntry" id="r_ProfileEntry"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One row of the profile list while the dialog is open. A QList rather than the <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b" title="All profiles by name. QMap so iteration order is the name order.">Profiles</a> map so a profile can pass through an empty or duplicate name while it is being typed; <a class="el" href="#abb1e0d5136bd38db9c52bdca8cf22a01" title="Return all configured profiles.">getProfiles()</a> builds the map.  <a href="struct_config_dialog_1_1_profile_entry.html#details">More...</a><br /></td></tr>
+<tr class="memitem:ProfileProblems" id="r_ProfileProblems"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_config_dialog_1_1_profile_problems.html">ProfileProblems</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What is wrong with one profile's fields; empty strings where nothing is.  <a href="struct_config_dialog_1_1_profile_problems.html#details">More...</a><br /></td></tr>
+<tr class="memitem:SigningStores" id="r_SigningStores"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_config_dialog_1_1_signing_stores.html">SigningStores</a></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88795eefbcfcdd86776d1d26a1eee347" id="r_a88795eefbcfcdd86776d1d26a1eee347"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a88795eefbcfcdd86776d1d26a1eee347">ConfigDialog</a> (QWidget *parent)</td></tr>
 <tr class="memdesc:a88795eefbcfcdd86776d1d26a1eee347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> associated with the given main window.  <br /></td></tr>
 <tr class="memitem:af93386c7b55bd8ae35fda6f096d46eb6" id="r_af93386c7b55bd8ae35fda6f096d46eb6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a> (bool useSelection)</td></tr>
 <tr class="memdesc:af93386c7b55bd8ae35fda6f096d46eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable clipboard selection mode.  <br /></td></tr>
-<tr class="memitem:abb1e0d5136bd38db9c52bdca8cf22a01" id="r_abb1e0d5136bd38db9c52bdca8cf22a01"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abb1e0d5136bd38db9c52bdca8cf22a01">getProfiles</a> () -&gt; Profiles</td></tr>
+<tr class="memitem:abb1e0d5136bd38db9c52bdca8cf22a01" id="r_abb1e0d5136bd38db9c52bdca8cf22a01"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#abb1e0d5136bd38db9c52bdca8cf22a01">getProfiles</a> () -&gt; <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a></td></tr>
 <tr class="memdesc:abb1e0d5136bd38db9c52bdca8cf22a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all configured profiles.  <br /></td></tr>
 <tr class="memitem:aac383b23ed9b34eb52918de2b10d9567" id="r_aac383b23ed9b34eb52918de2b10d9567"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aac383b23ed9b34eb52918de2b10d9567">useTrayIcon</a> (bool useSystray)</td></tr>
 <tr class="memdesc:aac383b23ed9b34eb52918de2b10d9567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show or hide the system tray icon.  <br /></td></tr>
@@ -150,19 +171,143 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9510d87bcaf8b95b42d68423133a0932" id="r_a9510d87bcaf8b95b42d68423133a0932"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9510d87bcaf8b95b42d68423133a0932">isFingerprintList</a> (const QString &amp;setting) -&gt; bool</td></tr>
-<tr class="memdesc:a9510d87bcaf8b95b42d68423133a0932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a signing-key setting holds only full key fingerprints (40 or 64 hexadecimal characters each, space separated); empty passes.  <br /></td></tr>
+<tr class="memitem:a10a27a2854432e9294934b0ebcb76146" id="r_a10a27a2854432e9294934b0ebcb76146"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a10a27a2854432e9294934b0ebcb76146">isFingerprintList</a> (const QString &amp;setting) -&gt; bool</td></tr>
+<tr class="memdesc:a10a27a2854432e9294934b0ebcb76146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a signing-key setting holds only full key fingerprints (40 or 64 hexadecimal characters each, space separated); empty passes.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad6420609a0f70cbc8a065a6fbc21dc94" id="r_ad6420609a0f70cbc8a065a6fbc21dc94"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad6420609a0f70cbc8a065a6fbc21dc94">changeEvent</a> (QEvent *event) override</td></tr>
 <tr class="memdesc:ad6420609a0f70cbc8a065a6fbc21dc94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forget the signing keys gpg did not know while the dialog is in the background, and check them again once it is back in front.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:abcea9914e341675611d83dff8b9b3163" id="r_abcea9914e341675611d83dff8b9b3163"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abcea9914e341675611d83dff8b9b3163">on_accepted</a> ()</td></tr>
+<tr class="memdesc:abcea9914e341675611d83dff8b9b3163"><td class="mdescLeft">&#160;</td><td class="mdescRight">On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles, let the active profile follow a rename, and create and initialise the stores of profiles added in this session.  <br /></td></tr>
+<tr class="memitem:a6e92d229bd1e70a1f4e7e8976a469a6a" id="r_a6e92d229bd1e70a1f4e7e8976a469a6a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e92d229bd1e70a1f4e7e8976a469a6a">on_autodetectButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a6e92d229bd1e70a1f4e7e8976a469a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing is found, and choose the pass backend when pass was found.  <br /></td></tr>
+<tr class="memitem:a2650ddbdc272cc7effb0541261a921f3" id="r_a2650ddbdc272cc7effb0541261a921f3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2650ddbdc272cc7effb0541261a921f3">on_radioButtonNative_clicked</a> ()</td></tr>
+<tr class="memdesc:a2650ddbdc272cc7effb0541261a921f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Native (gpg/git) backend chosen: enable its group box, disable pass's.  <br /></td></tr>
+<tr class="memitem:a4ed1aadd50231d08811bb5c5b0bcc0f2" id="r_a4ed1aadd50231d08811bb5c5b0bcc0f2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4ed1aadd50231d08811bb5c5b0bcc0f2">on_radioButtonPass_clicked</a> ()</td></tr>
+<tr class="memdesc:a4ed1aadd50231d08811bb5c5b0bcc0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">pass backend chosen: enable its group box, disable the native one.  <br /></td></tr>
+<tr class="memitem:a1a52ca14165a03beea9340cbce56afd0" id="r_a1a52ca14165a03beea9340cbce56afd0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1a52ca14165a03beea9340cbce56afd0">on_toolButtonGit_clicked</a> ()</td></tr>
+<tr class="memdesc:a1a52ca14165a03beea9340cbce56afd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the git executable in a file dialog; a cancelled dialog turns Git off and disables its checkbox, as a missing git does.  <br /></td></tr>
+<tr class="memitem:ab801a2b12893d85d8eafbe681ae27021" id="r_ab801a2b12893d85d8eafbe681ae27021"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab801a2b12893d85d8eafbe681ae27021">on_toolButtonGpg_clicked</a> ()</td></tr>
+<tr class="memdesc:ab801a2b12893d85d8eafbe681ae27021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the gpg executable in a file dialog; cancel keeps the field.  <br /></td></tr>
+<tr class="memitem:a3c8eaa46778f3979272be6bbce64f91e" id="r_a3c8eaa46778f3979272be6bbce64f91e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c8eaa46778f3979272be6bbce64f91e">on_pushButtonGenerateKey_clicked</a> ()</td></tr>
+<tr class="memdesc:a3c8eaa46778f3979272be6bbce64f91e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> for the gpg shown in the dialog.  <br /></td></tr>
+<tr class="memitem:ac22dcb9077296941812bdb51270fdac7" id="r_ac22dcb9077296941812bdb51270fdac7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac22dcb9077296941812bdb51270fdac7">on_toolButtonPwgen_clicked</a> ()</td></tr>
+<tr class="memdesc:ac22dcb9077296941812bdb51270fdac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the pwgen executable; a choice enables "use pwgen", a cancelled dialog unticks and disables it.  <br /></td></tr>
+<tr class="memitem:a930e754343bae4fccbabe902323a537a" id="r_a930e754343bae4fccbabe902323a537a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a930e754343bae4fccbabe902323a537a">on_toolButtonPass_clicked</a> ()</td></tr>
+<tr class="memdesc:a930e754343bae4fccbabe902323a537a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the pass executable in a file dialog; cancel keeps the field.  <br /></td></tr>
+<tr class="memitem:a454d1350021aa2dc4f7224af944411a5" id="r_a454d1350021aa2dc4f7224af944411a5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a454d1350021aa2dc4f7224af944411a5">on_toolButtonStore_clicked</a> ()</td></tr>
+<tr class="memdesc:a454d1350021aa2dc4f7224af944411a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the password store folder for the pass backend's store path.  <br /></td></tr>
+<tr class="memitem:a755d63ce6853fef53f35b3584ae3336c" id="r_a755d63ce6853fef53f35b3584ae3336c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a755d63ce6853fef53f35b3584ae3336c">on_comboBoxClipboard_activated</a> (int index)</td></tr>
+<tr class="memdesc:a755d63ce6853fef53f35b3584ae3336c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the controls that only mean something with a clipboard (selection, hiding, autoclear) unless "No clipboard" is chosen.  <br /></td></tr>
+<tr class="memitem:a09bc11e245b05410cd8c9084c83f02f2" id="r_a09bc11e245b05410cd8c9084c83f02f2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a09bc11e245b05410cd8c9084c83f02f2">on_passwordCharTemplateSelector_activated</a> (int index)</td></tr>
+<tr class="memdesc:a09bc11e245b05410cd8c9084c83f02f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the chosen character set's characters in the line edit, editable only for the custom set.  <br /></td></tr>
+<tr class="memitem:ac002e1ead832154404e3edf6a41debfc" id="r_ac002e1ead832154404e3edf6a41debfc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac002e1ead832154404e3edf6a41debfc">on_checkBoxSelection_clicked</a> ()</td></tr>
+<tr class="memdesc:ac002e1ead832154404e3edf6a41debfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-apply the clipboard gating for the current clipboard mode.  <br /></td></tr>
+<tr class="memitem:aecb3ede31edbc31bf9e295289f3cef15" id="r_aecb3ede31edbc31bf9e295289f3cef15"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aecb3ede31edbc31bf9e295289f3cef15">on_addButton_clicked</a> ()</td></tr>
+<tr class="memdesc:aecb3ede31edbc31bf9e295289f3cef15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a "New profile" row pointing at the global store path, select it and put the cursor in the name field.  <br /></td></tr>
+<tr class="memitem:a013a0a52437c29cb37ac47d73ed900a6" id="r_a013a0a52437c29cb37ac47d73ed900a6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a013a0a52437c29cb37ac47d73ed900a6">on_deleteButton_clicked</a> ()</td></tr>
+<tr class="memdesc:a013a0a52437c29cb37ac47d73ed900a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the selected profile row (a message when none is); the list's currentRowChanged re-points the form at a neighbour.  <br /></td></tr>
+<tr class="memitem:a59af9a31c3b09e4aa14f0fff5311ef57" id="r_a59af9a31c3b09e4aa14f0fff5311ef57"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a59af9a31c3b09e4aa14f0fff5311ef57">on_profilePathBrowse_clicked</a> ()</td></tr>
+<tr class="memdesc:a59af9a31c3b09e4aa14f0fff5311ef57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick the selected profile's store folder and store it in its entry.  <br /></td></tr>
+<tr class="memitem:a48e28d30f4a3edeeea9b1cb54f1f8f4f" id="r_a48e28d30f4a3edeeea9b1cb54f1f8f4f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a48e28d30f4a3edeeea9b1cb54f1f8f4f">on_checkBoxUseTrayIcon_clicked</a> ()</td></tr>
+<tr class="memdesc:a48e28d30f4a3edeeea9b1cb54f1f8f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hide-on-close and start-minimised are only offered with a tray icon.  <br /></td></tr>
+<tr class="memitem:a96ca92ab55a5269a7d8615a137a877ac" id="r_a96ca92ab55a5269a7d8615a137a877ac"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a96ca92ab55a5269a7d8615a137a877ac">on_checkBoxUseGit_clicked</a> ()</td></tr>
+<tr class="memdesc:a96ca92ab55a5269a7d8615a137a877ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the Git-dependent boxes (add .gpg-id, auto pull/push, and in native mode the parent-repository switch) with "use Git".  <br /></td></tr>
+<tr class="memitem:a60f6395954c6e70c33ad3c6c42260e73" id="r_a60f6395954c6e70c33ad3c6c42260e73"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a60f6395954c6e70c33ad3c6c42260e73">on_checkBoxUsePwgen_clicked</a> ()</td></tr>
+<tr class="memdesc:a60f6395954c6e70c33ad3c6c42260e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable pwgen's flags or the character-set controls, whichever the "use pwgen" box selects; nothing in pass mode, where pass generates.  <br /></td></tr>
+<tr class="memitem:a88d327d76d34dd8cf2c592d8add6ccd9" id="r_a88d327d76d34dd8cf2c592d8add6ccd9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88d327d76d34dd8cf2c592d8add6ccd9">onProfileSelected</a> (int row)</td></tr>
+<tr class="memdesc:a88d327d76d34dd8cf2c592d8add6ccd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The profile list's current row changed: show that profile.  <br /></td></tr>
+<tr class="memitem:ae85c1736edfdde38aee8350ebae8201f" id="r_ae85c1736edfdde38aee8350ebae8201f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae85c1736edfdde38aee8350ebae8201f">onProfileNameEdited</a> (const QString &amp;name)</td></tr>
+<tr class="memdesc:ae85c1736edfdde38aee8350ebae8201f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name field was typed in: store it in the entry and the list item, then validate (duplicates, empty).  <br /></td></tr>
+<tr class="memitem:a7e412007641751f3b162bd5b6a2b80d9" id="r_a7e412007641751f3b162bd5b6a2b80d9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e412007641751f3b162bd5b6a2b80d9">onProfilePathEdited</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a7e412007641751f3b162bd5b6a2b80d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path field was typed in: store it in the entry, validate and refresh the status line.  <br /></td></tr>
+<tr class="memitem:ab31637f94fe25e2179ba916fc50ab9eb" id="r_ab31637f94fe25e2179ba916fc50ab9eb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab31637f94fe25e2179ba916fc50ab9eb">onProfileSigningKeyEdited</a> (const QString &amp;key)</td></tr>
+<tr class="memdesc:ab31637f94fe25e2179ba916fc50ab9eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The signing-key field was typed in: store it in the entry and validate (fingerprints only, shared keys).  <br /></td></tr>
+<tr class="memitem:a945c38fc165bd26def4acbc07576c3c1" id="r_a945c38fc165bd26def4acbc07576c3c1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a945c38fc165bd26def4acbc07576c3c1">onProfileGitToggled</a> ()</td></tr>
+<tr class="memdesc:a945c38fc165bd26def4acbc07576c3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the profile's Git boxes was clicked: all three flags become the profile's own (no longer following the globals), and push and pull are enabled only with Git.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a33efa7532ff400b7790ec7d55884ee90" id="r_a33efa7532ff400b7790ec7d55884ee90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a33efa7532ff400b7790ec7d55884ee90">updateSecretFieldsEnabled</a> ()</td></tr>
+<tr class="memitem:a3afedbe68e00232d5f68382eccfe93cd" id="r_a3afedbe68e00232d5f68382eccfe93cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3afedbe68e00232d5f68382eccfe93cd">loadProfileForm</a> (int row)</td></tr>
+<tr class="memdesc:a3afedbe68e00232d5f68382eccfe93cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show row <code class="param">row's</code> profile in the form (or clear and disable it for -1), with m_loadingForm set so the fields' edited-signals do not write back. The Git boxes show the profile's own flags, else the global ones.  <br /></td></tr>
+<tr class="memitem:a9838b375aed57fa4a92e7670fac90f27" id="r_a9838b375aed57fa4a92e7670fac90f27"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9838b375aed57fa4a92e7670fac90f27">currentEntry</a> () -&gt; <a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a> *</td></tr>
+<tr class="memdesc:a9838b375aed57fa4a92e7670fac90f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entry the form is editing.  <br /></td></tr>
+<tr class="memitem:adf90869f278396a2efc8a03cdc6d450d" id="r_adf90869f278396a2efc8a03cdc6d450d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adf90869f278396a2efc8a03cdc6d450d">updateProfileStatus</a> ()</td></tr>
+<tr class="memdesc:adf90869f278396a2efc8a03cdc6d450d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the status line under the form: the profile's name and cleaned path, marked "New" while the folder does not exist, or a reminder to fill in the required fields.  <br /></td></tr>
+<tr class="memitem:a920010e30f9c4ae45ab046b1b689e290" id="r_a920010e30f9c4ae45ab046b1b689e290"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a920010e30f9c4ae45ab046b1b689e290">setGitPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a920010e30f9c4ae45ab046b1b689e290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show <code class="param">path</code> as the git executable; an empty path disables and turns off "use Git".  <br /></td></tr>
+<tr class="memitem:a68f58b41ba03c59341759473d95c839e" id="r_a68f58b41ba03c59341759473d95c839e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a68f58b41ba03c59341759473d95c839e">setProfiles</a> (<a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a> profiles, const QString &amp;currentProfile)</td></tr>
+<tr class="memdesc:a68f58b41ba03c59341759473d95c839e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the profile list and m_entries from <code class="param">profiles</code>, dropping the empty-named leftover older versions wrote, select <code class="param">currentProfile</code> and validate.  <br /></td></tr>
+<tr class="memitem:a7f3e2d9557dc842724d7754504e9ee0a" id="r_a7f3e2d9557dc842724d7754504e9ee0a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7f3e2d9557dc842724d7754504e9ee0a">usePass</a> (bool usePass)</td></tr>
+<tr class="memdesc:a7f3e2d9557dc842724d7754504e9ee0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tick the pass or the native radio button and enable the matching group box.  <br /></td></tr>
+<tr class="memitem:abad77b747ca028e7b042b995a4620211" id="r_abad77b747ca028e7b042b995a4620211"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abad77b747ca028e7b042b995a4620211">applySettings</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
+<tr class="memdesc:abad77b747ca028e7b042b995a4620211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the dialog's value widgets from an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> struct.  <br /></td></tr>
+<tr class="memitem:ae849e5a0ad73c5a191987b4cb5354410" id="r_ae849e5a0ad73c5a191987b4cb5354410"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae849e5a0ad73c5a191987b4cb5354410">readSettings</a> () -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td></tr>
+<tr class="memdesc:ae849e5a0ad73c5a191987b4cb5354410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> struct from the dialog's widgets.  <br /></td></tr>
+<tr class="memitem:a93a014267e13ce2a518d6ff125bcb172" id="r_a93a014267e13ce2a518d6ff125bcb172"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a93a014267e13ce2a518d6ff125bcb172">setGroupBoxState</a> ()</td></tr>
+<tr class="memdesc:a93a014267e13ce2a518d6ff125bcb172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the group box of the chosen backend and, in pass mode, disable the password-generation controls pass takes care of; in native mode hand them back to <a class="el" href="#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character-set controls, whichever the &quot;use pwgen&quot; box selects; nothing in...">on_checkBoxUsePwgen_clicked()</a>.  <br /></td></tr>
+<tr class="memitem:a8ac46697f885118d2eb8773e22d28d85" id="r_a8ac46697f885118d2eb8773e22d28d85"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ac46697f885118d2eb8773e22d28d85">selectExecutable</a> () -&gt; QString</td></tr>
+<tr class="memdesc:a8ac46697f885118d2eb8773e22d28d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for an existing file in a read-only file dialog.  <br /></td></tr>
+<tr class="memitem:af46ecbc080ed3effc646a2776608bc03" id="r_af46ecbc080ed3effc646a2776608bc03"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af46ecbc080ed3effc646a2776608bc03">selectFolder</a> () -&gt; QString</td></tr>
+<tr class="memdesc:af46ecbc080ed3effc646a2776608bc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for a directory in a directories-only file dialog.  <br /></td></tr>
+<tr class="memitem:aa8acc8fb6a7213f68c4dbe9dac733a6f" id="r_aa8acc8fb6a7213f68c4dbe9dac733a6f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa8acc8fb6a7213f68c4dbe9dac733a6f">criticalMessage</a> (const QString &amp;title, const QString &amp;text)</td></tr>
+<tr class="memdesc:aa8acc8fb6a7213f68c4dbe9dac733a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">QMessageBox::critical with a single OK button. Once a workaround for crashes in Qt 5.4.1 before QApplication::exec(); no caller today.  <br /></td></tr>
+<tr class="memitem:ae4d11811206b82326dca209f35910052" id="r_ae4d11811206b82326dca209f35910052"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae4d11811206b82326dca209f35910052">isQrencodeAvailable</a> (const QString &amp;configuredPath) -&gt; bool</td></tr>
+<tr class="memdesc:ae4d11811206b82326dca209f35910052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether qrencode can run: <code class="param">configuredPath</code> when it is an executable file, else a <span class="tt">qrencode</span> on <a class="el" href="class_util.html" title="Static helpers that have no better home: setting up the process and the Git environment the way pass ...">Util</a>'s PATH, which is then saved as the qrencode executable. Always false on Windows.  <br /></td></tr>
+<tr class="memitem:a20e465aae5c77fb6219fbe6b477fbe0d" id="r_a20e465aae5c77fb6219fbe6b477fbe0d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20e465aae5c77fb6219fbe6b477fbe0d">validate</a> ()</td></tr>
+<tr class="memdesc:a20e465aae5c77fb6219fbe6b477fbe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check every profile (<a class="el" href="#a7357606476ffeb9a76748429901e72cc" title="What is wrong with entry&#39;s name, store path and signing keys.">problemsOf()</a>, <a class="el" href="#a1bffc0693aa2cb44f849aedcde4081be" title="The other profiles, for other stores, whose signing keys share a fingerprint with row row&#39;s.">sharingTheKey()</a>), mark the rows and the form, enable OK only when no profile has a problem, and refresh the pass Git warning.  <br /></td></tr>
+<tr class="memitem:a22ec9ee25af48a65870b3ee28d594a80" id="r_a22ec9ee25af48a65870b3ee28d594a80"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a22ec9ee25af48a65870b3ee28d594a80">updatePassGitWarning</a> ()</td></tr>
+<tr class="memitem:a7357606476ffeb9a76748429901e72cc" id="r_a7357606476ffeb9a76748429901e72cc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7357606476ffeb9a76748429901e72cc">problemsOf</a> (const <a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a> &amp;entry, const QHash&lt; QString, int &gt; &amp;names) const -&gt; <a class="el" href="struct_config_dialog_1_1_profile_problems.html">ProfileProblems</a></td></tr>
+<tr class="memdesc:a7357606476ffeb9a76748429901e72cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">What is wrong with <code class="param">entry's</code> name, store path and signing keys.  <br /></td></tr>
+<tr class="memitem:a4fa75d1922ff11a4da0a89e5b436c267" id="r_a4fa75d1922ff11a4da0a89e5b436c267"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fa75d1922ff11a4da0a89e5b436c267">showProblems</a> (int row, const <a class="el" href="struct_config_dialog_1_1_profile_problems.html">ProfileProblems</a> &amp;problems)</td></tr>
+<tr class="memdesc:a4fa75d1922ff11a4da0a89e5b436c267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark row <code class="param">row</code> of the profile list, and the form fields when it is the row being edited, with <code class="param">problems</code>.  <br /></td></tr>
+<tr class="memitem:a8a0804534596a8293402575b60bf1fcf" id="r_a8a0804534596a8293402575b60bf1fcf"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a8a0804534596a8293402575b60bf1fcf">signingStores</a> () const -&gt; <a class="el" href="struct_config_dialog_1_1_signing_stores.html">SigningStores</a></td></tr>
+<tr class="memdesc:a8a0804534596a8293402575b60bf1fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve every profile's store and fingerprints once.  <br /></td></tr>
+<tr class="memitem:a66b11d5043653178859712ebede770e1" id="r_a66b11d5043653178859712ebede770e1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a66b11d5043653178859712ebede770e1">signerKeys</a> (const QString &amp;signingKey, const QProcessEnvironment &amp;env) const -&gt; QSet&lt; QString &gt;</td></tr>
+<tr class="memdesc:a66b11d5043653178859712ebede770e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">One profile's signing keys as signers: each key as written, plus the primary fingerprint gpg gives for a complete key ID or (sub)key fingerprint.  <br /></td></tr>
+<tr class="memitem:a1bffc0693aa2cb44f849aedcde4081be" id="r_a1bffc0693aa2cb44f849aedcde4081be"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bffc0693aa2cb44f849aedcde4081be">sharingTheKey</a> (int row, const <a class="el" href="struct_config_dialog_1_1_signing_stores.html">SigningStores</a> &amp;resolved) const -&gt; QStringList</td></tr>
+<tr class="memdesc:a1bffc0693aa2cb44f849aedcde4081be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The other profiles, for other stores, whose signing keys share a fingerprint with row <code class="param">row's</code>.  <br /></td></tr>
+<tr class="memitem:a885fd334b9fd0a95ee6ce855afea9d8e" id="r_a885fd334b9fd0a95ee6ce855afea9d8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a885fd334b9fd0a95ee6ce855afea9d8e">initializeNewProfiles</a> (const <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a> &amp;existingProfiles)</td></tr>
+<tr class="memdesc:a885fd334b9fd0a95ee6ce855afea9d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">For every saved profile whose store was not a profile's store when the dialog opened: offer to create the folder and, when it has no <span class="tt">.gpg-id</span>, ask for recipients and initialise it.  <br /></td></tr>
+<tr class="memitem:a2531b9af2841349a0de78466d571c228" id="r_a2531b9af2841349a0de78466d571c228"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2531b9af2841349a0de78466d571c228">ensureProfileFolder</a> (const QString &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a2531b9af2841349a0de78466d571c228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offer to create a new profile's store folder when it is missing.  <br /></td></tr>
+<tr class="memitem:a9a6ab8bd9026c852b5f4e3831db0a6a2" id="r_a9a6ab8bd9026c852b5f4e3831db0a6a2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9a6ab8bd9026c852b5f4e3831db0a6a2">initialiseProfileStore</a> (const QString &amp;name, const <a class="el" href="struct_profile.html">Profile</a> &amp;profile, const QString &amp;path)</td></tr>
+<tr class="memdesc:a9a6ab8bd9026c852b5f4e3831db0a6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for a new profile's recipients and initialise its store with them, keeping the active backend's settings and queue on the active store (#1774).  <br /></td></tr>
+<tr class="memitem:ab929ea2f2dc20e2851eee510d5feb02a" id="r_ab929ea2f2dc20e2851eee510d5feb02a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab929ea2f2dc20e2851eee510d5feb02a">warnAboutSshAuthSockOverride</a> ()</td></tr>
+<tr class="memitem:ab3751f42ebb07cd299f6ad494ea21c55" id="r_ab3751f42ebb07cd299f6ad494ea21c55"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab3751f42ebb07cd299f6ad494ea21c55">followActiveProfile</a> (const <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a> &amp;profiles)</td></tr>
+<tr class="memdesc:ab3751f42ebb07cd299f6ad494ea21c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point the active profile at its new name after a rename (or at none after a deletion), and let its own Git flags replace the global ones, as switching to it does.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a35bda88aa17a961c5683190d99d374f7" id="r_a35bda88aa17a961c5683190d99d374f7"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a35bda88aa17a961c5683190d99d374f7">m_nameTip</a></td></tr>
+<tr class="memitem:ac4f4c0cd0674ec2cceb467d2e5a4e731" id="r_ac4f4c0cd0674ec2cceb467d2e5a4e731"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ac4f4c0cd0674ec2cceb467d2e5a4e731">m_pathTip</a></td></tr>
+<tr class="memitem:abcc0cd3904a519549464465a916b11c6" id="r_abcc0cd3904a519549464465a916b11c6"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#abcc0cd3904a519549464465a916b11c6">m_keyTip</a></td></tr>
+<tr class="memitem:a5bcbd3edb7659a10b98fdeefdd706162" id="r_a5bcbd3edb7659a10b98fdeefdd706162"><td class="memItemLeft">QLabel *&#160;</td><td class="memItemRight"><a class="el" href="#a5bcbd3edb7659a10b98fdeefdd706162">m_sharedKeyWarning</a> = nullptr</td></tr>
+<tr class="memdesc:a5bcbd3edb7659a10b98fdeefdd706162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Below the signing key: the profiles that share it, if any.  <br /></td></tr>
+<tr class="memitem:a88445c315f1570bfcb7a867527874dea" id="r_a88445c315f1570bfcb7a867527874dea"><td class="memItemLeft">QLabel *&#160;</td><td class="memItemRight"><a class="el" href="#a88445c315f1570bfcb7a867527874dea">m_passGitWarning</a> = nullptr</td></tr>
+<tr class="memdesc:a88445c315f1570bfcb7a867527874dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">In the pass box: the stores pass would commit outside of, if any.  <br /></td></tr>
+<tr class="memitem:a4ccba57212e79149d0f1726084f46fb5" id="r_a4ccba57212e79149d0f1726084f46fb5"><td class="memItemLeft">QHash&lt; QString, QString &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a4ccba57212e79149d0f1726084f46fb5">m_primaryOf</a></td></tr>
+<tr class="memitem:a93c7c680886d37da60613c14c9a0b236" id="r_a93c7c680886d37da60613c14c9a0b236"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a93c7c680886d37da60613c14c9a0b236">m_recheckSigners</a> = false</td></tr>
+<tr class="memitem:a02ee4fd4b269da59846fb38b8efda5ee" id="r_a02ee4fd4b269da59846fb38b8efda5ee"><td class="memItemLeft">std::optional&lt; <a class="el" href="struct_app_settings.html">AppSettings</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a02ee4fd4b269da59846fb38b8efda5ee">m_gpgSettings</a></td></tr>
+<tr class="memitem:a270dda538d799ca4e79373f31854e75f" id="r_a270dda538d799ca4e79373f31854e75f"><td class="memItemLeft">QList&lt; <a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a270dda538d799ca4e79373f31854e75f">m_entries</a></td></tr>
+<tr class="memdesc:a270dda538d799ca4e79373f31854e75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The profiles as shown; index == row in profileList.  <br /></td></tr>
+<tr class="memitem:a514c0cbe5f770c2eef82bee516c4672d" id="r_a514c0cbe5f770c2eef82bee516c4672d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a514c0cbe5f770c2eef82bee516c4672d">m_currentEntry</a> = -1</td></tr>
+<tr class="memdesc:a514c0cbe5f770c2eef82bee516c4672d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row whose fields the form shows, -1 for none.  <br /></td></tr>
+<tr class="memitem:a366cccaf889a9aba07bd47747b3b54b4" id="r_a366cccaf889a9aba07bd47747b3b54b4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a366cccaf889a9aba07bd47747b3b54b4">m_loadingForm</a> = false</td></tr>
+<tr class="memitem:a5de66ac7a8a063efdd7c515b1e75e5f3" id="r_a5de66ac7a8a063efdd7c515b1e75e5f3"><td class="memItemLeft">QScopedPointer&lt; Ui::ConfigDialog &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5de66ac7a8a063efdd7c515b1e75e5f3">ui</a></td></tr>
+<tr class="memdesc:a5de66ac7a8a063efdd7c515b1e75e5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The widgets from configdialog.ui.  <br /></td></tr>
+<tr class="memitem:a8bccd621f9d7c7eb7058e7608a106a02" id="r_a8bccd621f9d7c7eb7058e7608a106a02"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a8bccd621f9d7c7eb7058e7608a106a02">m_customPasswordChars</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> handles the configuration interface. </p>
 <p>Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration, template handling, tray icon and autoclear options, and exposes methods to read and update those settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00033">33</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00039">39</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a88795eefbcfcdd86776d1d26a1eee347" name="a88795eefbcfcdd86776d1d26a1eee347"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a88795eefbcfcdd86776d1d26a1eee347">&#9670;&#160;</a></span>ConfigDialog()</h2>
@@ -194,11 +339,13 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00045">45</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
 <div id="dynsection-2-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a88795eefbcfcdd86776d1d26a1eee347_cgraph.svg" width="207" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a88795eefbcfcdd86776d1d26a1eee347_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-3" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary">
@@ -210,6 +357,53 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="abad77b747ca028e7b042b995a4620211" name="abad77b747ca028e7b042b995a4620211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abad77b747ca028e7b042b995a4620211">&#9670;&#160;</a></span>applySettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::applySettings </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>settings</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load the dialog's value widgets from an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> struct. </p>
+<p>Mirrors the legacy per-getter constructor loads. Sets values only; the constructor still handles environment-dependent gating (tray/OTP/qrencode availability, clipboard combo population, primary-selection support) and the profile table. Password-generation and pwgen-path widgets are intentionally not loaded here, matching the previous behaviour. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td>Values to display. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00181">181</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary">
+</div>
+<div id="dynsection-4-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_abad77b747ca028e7b042b995a4620211_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary">
+</div>
+<div id="dynsection-5-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_abad77b747ca028e7b042b995a4620211_icgraph.svg" width="456" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="ad6420609a0f70cbc8a065a6fbc21dc94" name="ad6420609a0f70cbc8a065a6fbc21dc94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6420609a0f70cbc8a065a6fbc21dc94">&#9670;&#160;</a></span>changeEvent()</h2>
 
@@ -241,6 +435,185 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00454">454</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ad6420609a0f70cbc8a065a6fbc21dc94_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa8acc8fb6a7213f68c4dbe9dac733a6f" name="aa8acc8fb6a7213f68c4dbe9dac733a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8acc8fb6a7213f68c4dbe9dac733a6f">&#9670;&#160;</a></span>criticalMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::criticalMessage </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>QMessageBox::critical with a single OK button. Once a workaround for crashes in Qt 5.4.1 before QApplication::exec(); no caller today. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>The box's title. </td></tr>
+    <tr><td class="paramname">text</td><td>The message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00925">925</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9838b375aed57fa4a92e7670fac90f27" name="a9838b375aed57fa4a92e7670fac90f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9838b375aed57fa4a92e7670fac90f27">&#9670;&#160;</a></span>currentEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::currentEntry </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a> *</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The entry the form is editing. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer into m_entries, or nullptr when no row is current. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00780">780</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a9838b375aed57fa4a92e7670fac90f27_icgraph.svg" width="100%" height="573"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a2531b9af2841349a0de78466d571c228" name="a2531b9af2841349a0de78466d571c228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2531b9af2841349a0de78466d571c228">&#9670;&#160;</a></span>ensureProfileFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::ensureProfileFolder </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Offer to create a new profile's store folder when it is missing. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The folder, cleaned. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the folder exists now. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00822">822</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
+</div>
+<div id="dynsection-8-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2531b9af2841349a0de78466d571c228_cgraph.svg" width="623" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
+</div>
+<div id="dynsection-9-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2531b9af2841349a0de78466d571c228_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab3751f42ebb07cd299f6ad494ea21c55" name="ab3751f42ebb07cd299f6ad494ea21c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3751f42ebb07cd299f6ad494ea21c55">&#9670;&#160;</a></span>followActiveProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::followActiveProfile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>profiles</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Point the active profile at its new name after a rename (or at none after a deletion), and let its own Git flags replace the global ones, as switching to it does. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profiles</td><td>The profiles as saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00575">575</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
+</div>
+<div id="dynsection-10-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab3751f42ebb07cd299f6ad494ea21c55_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
+</div>
+<div id="dynsection-11-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab3751f42ebb07cd299f6ad494ea21c55_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a97c5f924a95b30f4d6a60df361c2b3ba" name="a97c5f924a95b30f4d6a60df361c2b3ba"></a>
@@ -253,13 +626,21 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto ConfigDialog::getPasswordConfiguration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
+          <td> -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Read the current password configuration from the dialog controls. </p>
-<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="struct_password_configuration.html" title="Holds the password configuration settings.">PasswordConfiguration</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="struct_password_configuration.html" title="Holds the password generator settings: which character set is selected, the alphabet of every set,...">PasswordConfiguration</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01051">1051</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
+</div>
+<div id="dynsection-12-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a97c5f924a95b30f4d6a60df361c2b3ba_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -273,7 +654,7 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto ConfigDialog::getProfiles </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt;  Profiles</td>
+          <td> -&gt; <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -281,10 +662,123 @@ Protected Member Functions</h2></td></tr>
 <p>Return all configured profiles. </p>
 <dl class="section return"><dt>Returns</dt><dd>Hash of profile name to key-value settings map. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00814">814</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
+</div>
+<div id="dynsection-13-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_abb1e0d5136bd38db9c52bdca8cf22a01_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<a id="a9510d87bcaf8b95b42d68423133a0932" name="a9510d87bcaf8b95b42d68423133a0932"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9510d87bcaf8b95b42d68423133a0932">&#9670;&#160;</a></span>isFingerprintList()</h2>
+<a id="a9a6ab8bd9026c852b5f4e3831db0a6a2" name="a9a6ab8bd9026c852b5f4e3831db0a6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a6ab8bd9026c852b5f4e3831db0a6a2">&#9670;&#160;</a></span>initialiseProfileStore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::initialiseProfileStore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_profile.html">Profile</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>profile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ask for a new profile's recipients and initialise its store with them, keeping the active backend's settings and queue on the active store (#1774). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The profile's name, for titles and messages. </td></tr>
+    <tr><td class="paramname">profile</td><td>The profile. </td></tr>
+    <tr><td class="paramname">path</td><td>Its store folder, cleaned. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00841">841</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
+</div>
+<div id="dynsection-14-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a9a6ab8bd9026c852b5f4e3831db0a6a2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
+</div>
+<div id="dynsection-15-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a9a6ab8bd9026c852b5f4e3831db0a6a2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a885fd334b9fd0a95ee6ce855afea9d8e" name="a885fd334b9fd0a95ee6ce855afea9d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885fd334b9fd0a95ee6ce855afea9d8e">&#9670;&#160;</a></span>initializeNewProfiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::initializeNewProfiles </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>existingProfiles</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>For every saved profile whose store was not a profile's store when the dialog opened: offer to create the folder and, when it has no <span class="tt">.gpg-id</span>, ask for recipients and initialise it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">existingProfiles</td><td>The profiles as they were when the dialog opened. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00875">875</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
+</div>
+<div id="dynsection-16-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a885fd334b9fd0a95ee6ce855afea9d8e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
+</div>
+<div id="dynsection-17-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a885fd334b9fd0a95ee6ce855afea9d8e_icgraph.svg" width="666" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a10a27a2854432e9294934b0ebcb76146" name="a10a27a2854432e9294934b0ebcb76146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10a27a2854432e9294934b0ebcb76146">&#9670;&#160;</a></span>isFingerprintList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +790,7 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto ConfigDialog::isFingerprintList </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>setting</em></span></td><td>)</td>
-          <td> -&gt;  bool</td>
+          <td> -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -314,6 +808,1288 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when every token is a fingerprint. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00333">333</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
+</div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a10a27a2854432e9294934b0ebcb76146_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae4d11811206b82326dca209f35910052" name="ae4d11811206b82326dca209f35910052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4d11811206b82326dca209f35910052">&#9670;&#160;</a></span>isQrencodeAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::isQrencodeAvailable </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>configuredPath</em></span></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether qrencode can run: <code class="param">configuredPath</code> when it is an executable file, else a <span class="tt">qrencode</span> on <a class="el" href="class_util.html" title="Static helpers that have no better home: setting up the process and the Git environment the way pass ...">Util</a>'s PATH, which is then saved as the qrencode executable. Always false on Windows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configuredPath</td><td>The saved qrencode executable, possibly empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when QR codes can be shown. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00931">931</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
+</div>
+<div id="dynsection-19-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae4d11811206b82326dca209f35910052_cgraph.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
+</div>
+<div id="dynsection-20-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae4d11811206b82326dca209f35910052_icgraph.svg" width="440" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3afedbe68e00232d5f68382eccfe93cd" name="a3afedbe68e00232d5f68382eccfe93cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afedbe68e00232d5f68382eccfe93cd">&#9670;&#160;</a></span>loadProfileForm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::loadProfileForm </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show row <code class="param">row's</code> profile in the form (or clear and disable it for -1), with m_loadingForm set so the fields' edited-signals do not write back. The Git boxes show the profile's own flags, else the global ones. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Row in m_entries, or -1 for none. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00789">789</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
+</div>
+<div id="dynsection-21-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a3afedbe68e00232d5f68382eccfe93cd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
+</div>
+<div id="dynsection-22-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a3afedbe68e00232d5f68382eccfe93cd_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="abcea9914e341675611d83dff8b9b3163" name="abcea9914e341675611d83dff8b9b3163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcea9914e341675611d83dff8b9b3163">&#9670;&#160;</a></span>on_accepted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_accepted </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>On OK: warn about a dubious SSH_AUTH_SOCK override, save the settings and the profiles, let the active profile follow a rename, and create and initialise the stores of profiles added in this session. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00595">595</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
+</div>
+<div id="dynsection-23-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_abcea9914e341675611d83dff8b9b3163_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
+</div>
+<div id="dynsection-24-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_abcea9914e341675611d83dff8b9b3163_icgraph.svg" width="448" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aecb3ede31edbc31bf9e295289f3cef15" name="aecb3ede31edbc31bf9e295289f3cef15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb3ede31edbc31bf9e295289f3cef15">&#9670;&#160;</a></span>on_addButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_addButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Append a "New profile" row pointing at the global store path, select it and put the cursor in the name field. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00892">892</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
+</div>
+<div id="dynsection-25-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_aecb3ede31edbc31bf9e295289f3cef15_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a6e92d229bd1e70a1f4e7e8976a469a6a" name="a6e92d229bd1e70a1f4e7e8976a469a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e92d229bd1e70a1f4e7e8976a469a6a">&#9670;&#160;</a></span>on_autodetectButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_autodetectButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing is found, and choose the pass backend when pass was found. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00608">608</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
+</div>
+<div id="dynsection-26-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6e92d229bd1e70a1f4e7e8976a469a6a_cgraph.svg" width="100%" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ac002e1ead832154404e3edf6a41debfc" name="ac002e1ead832154404e3edf6a41debfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac002e1ead832154404e3edf6a41debfc">&#9670;&#160;</a></span>on_checkBoxSelection_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_checkBoxSelection_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Re-apply the clipboard gating for the current clipboard mode. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00754">754</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
+</div>
+<div id="dynsection-27-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac002e1ead832154404e3edf6a41debfc_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
+</div>
+<div id="dynsection-28-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac002e1ead832154404e3edf6a41debfc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a96ca92ab55a5269a7d8615a137a877ac" name="a96ca92ab55a5269a7d8615a137a877ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ca92ab55a5269a7d8615a137a877ac">&#9670;&#160;</a></span>on_checkBoxUseGit_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_checkBoxUseGit_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the Git-dependent boxes (add .gpg-id, auto pull/push, and in native mode the parent-repository switch) with "use Git". </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00987">987</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
+</div>
+<div id="dynsection-29-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a96ca92ab55a5269a7d8615a137a877ac_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a60f6395954c6e70c33ad3c6c42260e73" name="a60f6395954c6e70c33ad3c6c42260e73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f6395954c6e70c33ad3c6c42260e73">&#9670;&#160;</a></span>on_checkBoxUsePwgen_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_checkBoxUsePwgen_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable pwgen's flags or the character-set controls, whichever the "use pwgen" box selects; nothing in pass mode, where pass generates. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01017">1017</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
+</div>
+<div id="dynsection-30-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a60f6395954c6e70c33ad3c6c42260e73_cgraph.svg" width="436" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
+</div>
+<div id="dynsection-31-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a60f6395954c6e70c33ad3c6c42260e73_icgraph.svg" width="100%" height="526"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a48e28d30f4a3edeeea9b1cb54f1f8f4f" name="a48e28d30f4a3edeeea9b1cb54f1f8f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e28d30f4a3edeeea9b1cb54f1f8f4f">&#9670;&#160;</a></span>on_checkBoxUseTrayIcon_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_checkBoxUseTrayIcon_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hide-on-close and start-minimised are only offered with a tray icon. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00964">964</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a755d63ce6853fef53f35b3584ae3336c" name="a755d63ce6853fef53f35b3584ae3336c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a755d63ce6853fef53f35b3584ae3336c">&#9670;&#160;</a></span>on_comboBoxClipboard_activated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_comboBoxClipboard_activated </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the controls that only mean something with a clipboard (selection, hiding, autoclear) unless "No clipboard" is chosen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The combo box row; 0 is "No clipboard". </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00721">721</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
+</div>
+<div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a755d63ce6853fef53f35b3584ae3336c_cgraph.svg" width="462" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
+</div>
+<div id="dynsection-33-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a755d63ce6853fef53f35b3584ae3336c_icgraph.svg" width="100%" height="375"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a013a0a52437c29cb37ac47d73ed900a6" name="a013a0a52437c29cb37ac47d73ed900a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a013a0a52437c29cb37ac47d73ed900a6">&#9670;&#160;</a></span>on_deleteButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_deleteButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove the selected profile row (a message when none is); the list's currentRowChanged re-points the form at a neighbour. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00912">912</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a013a0a52437c29cb37ac47d73ed900a6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a09bc11e245b05410cd8c9084c83f02f2" name="a09bc11e245b05410cd8c9084c83f02f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09bc11e245b05410cd8c9084c83f02f2">&#9670;&#160;</a></span>on_passwordCharTemplateSelector_activated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_passwordCharTemplateSelector_activated </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show the chosen character set's characters in the line edit, editable only for the custom set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>A <a class="el" href="struct_password_configuration.html#a71920e2e29e1beca94502784de561a01" title="Character set options for password generation; also the index into Characters.">PasswordConfiguration::CharacterSet</a> value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01067">1067</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
+</div>
+<div id="dynsection-35-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a09bc11e245b05410cd8c9084c83f02f2_cgraph.svg" width="100%" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a59af9a31c3b09e4aa14f0fff5311ef57" name="a59af9a31c3b09e4aa14f0fff5311ef57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59af9a31c3b09e4aa14f0fff5311ef57">&#9670;&#160;</a></span>on_profilePathBrowse_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_profilePathBrowse_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the selected profile's store folder and store it in its entry. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00904">904</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
+</div>
+<div id="dynsection-36-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a59af9a31c3b09e4aa14f0fff5311ef57_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a3c8eaa46778f3979272be6bbce64f91e" name="a3c8eaa46778f3979272be6bbce64f91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c8eaa46778f3979272be6bbce64f91e">&#9670;&#160;</a></span>on_pushButtonGenerateKey_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_pushButtonGenerateKey_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> for the gpg shown in the dialog. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00701">701</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
+</div>
+<div id="dynsection-37-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a3c8eaa46778f3979272be6bbce64f91e_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a2650ddbdc272cc7effb0541261a921f3" name="a2650ddbdc272cc7effb0541261a921f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2650ddbdc272cc7effb0541261a921f3">&#9670;&#160;</a></span>on_radioButtonNative_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_radioButtonNative_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Native (gpg/git) backend chosen: enable its group box, disable pass's. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00631">631</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
+</div>
+<div id="dynsection-38-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2650ddbdc272cc7effb0541261a921f3_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a4ed1aadd50231d08811bb5c5b0bcc0f2" name="a4ed1aadd50231d08811bb5c5b0bcc0f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed1aadd50231d08811bb5c5b0bcc0f2">&#9670;&#160;</a></span>on_radioButtonPass_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_radioButtonPass_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pass backend chosen: enable its group box, disable the native one. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00633">633</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
+</div>
+<div id="dynsection-39-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4ed1aadd50231d08811bb5c5b0bcc0f2_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a1a52ca14165a03beea9340cbce56afd0" name="a1a52ca14165a03beea9340cbce56afd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a52ca14165a03beea9340cbce56afd0">&#9670;&#160;</a></span>on_toolButtonGit_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_toolButtonGit_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the git executable in a file dialog; a cancelled dialog turns Git off and disables its checkbox, as a missing git does. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00682">682</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
+</div>
+<div id="dynsection-40-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a1a52ca14165a03beea9340cbce56afd0_cgraph.svg" width="100%" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab801a2b12893d85d8eafbe681ae27021" name="ab801a2b12893d85d8eafbe681ae27021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab801a2b12893d85d8eafbe681ae27021">&#9670;&#160;</a></span>on_toolButtonGpg_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_toolButtonGpg_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the gpg executable in a file dialog; cancel keeps the field. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00694">694</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
+</div>
+<div id="dynsection-41-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab801a2b12893d85d8eafbe681ae27021_cgraph.svg" width="484" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a930e754343bae4fccbabe902323a537a" name="a930e754343bae4fccbabe902323a537a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a930e754343bae4fccbabe902323a537a">&#9670;&#160;</a></span>on_toolButtonPass_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_toolButtonPass_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the pass executable in a file dialog; cancel keeps the field. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00706">706</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary">
+</div>
+<div id="dynsection-42-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a930e754343bae4fccbabe902323a537a_cgraph.svg" width="484" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac22dcb9077296941812bdb51270fdac7" name="ac22dcb9077296941812bdb51270fdac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac22dcb9077296941812bdb51270fdac7">&#9670;&#160;</a></span>on_toolButtonPwgen_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_toolButtonPwgen_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the pwgen executable; a choice enables "use pwgen", a cancelled dialog unticks and disables it. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00997">997</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
+</div>
+<div id="dynsection-43-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac22dcb9077296941812bdb51270fdac7_cgraph.svg" width="484" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a454d1350021aa2dc4f7224af944411a5" name="a454d1350021aa2dc4f7224af944411a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454d1350021aa2dc4f7224af944411a5">&#9670;&#160;</a></span>on_toolButtonStore_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::on_toolButtonStore_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pick the password store folder for the pass backend's store path. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00713">713</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary">
+</div>
+<div id="dynsection-44-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a454d1350021aa2dc4f7224af944411a5_cgraph.svg" width="454" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a945c38fc165bd26def4acbc07576c3c1" name="a945c38fc165bd26def4acbc07576c3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a945c38fc165bd26def4acbc07576c3c1">&#9670;&#160;</a></span>onProfileGitToggled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::onProfileGitToggled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>One of the profile's Git boxes was clicked: all three flags become the profile's own (no longer following the globals), and push and pull are enabled only with Git. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01112">1112</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary">
+</div>
+<div id="dynsection-45-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a945c38fc165bd26def4acbc07576c3c1_cgraph.svg" width="440" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary">
+</div>
+<div id="dynsection-46-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a945c38fc165bd26def4acbc07576c3c1_icgraph.svg" width="443" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae85c1736edfdde38aee8350ebae8201f" name="ae85c1736edfdde38aee8350ebae8201f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae85c1736edfdde38aee8350ebae8201f">&#9670;&#160;</a></span>onProfileNameEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::onProfileNameEdited </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The name field was typed in: store it in the entry and the list item, then validate (duplicates, empty). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The text as typed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01079">1079</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary">
+</div>
+<div id="dynsection-47-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae85c1736edfdde38aee8350ebae8201f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary">
+</div>
+<div id="dynsection-48-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae85c1736edfdde38aee8350ebae8201f_icgraph.svg" width="463" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a7e412007641751f3b162bd5b6a2b80d9" name="a7e412007641751f3b162bd5b6a2b80d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e412007641751f3b162bd5b6a2b80d9">&#9670;&#160;</a></span>onProfilePathEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::onProfilePathEdited </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The path field was typed in: store it in the entry, validate and refresh the status line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The text as typed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01092">1092</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary">
+</div>
+<div id="dynsection-49-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7e412007641751f3b162bd5b6a2b80d9_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary">
+</div>
+<div id="dynsection-50-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7e412007641751f3b162bd5b6a2b80d9_icgraph.svg" width="452" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a88d327d76d34dd8cf2c592d8add6ccd9" name="a88d327d76d34dd8cf2c592d8add6ccd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d327d76d34dd8cf2c592d8add6ccd9">&#9670;&#160;</a></span>onProfileSelected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::onProfileSelected </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The profile list's current row changed: show that profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The new row, -1 for none. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01077">1077</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary">
+</div>
+<div id="dynsection-51-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a88d327d76d34dd8cf2c592d8add6ccd9_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary">
+</div>
+<div id="dynsection-52-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a88d327d76d34dd8cf2c592d8add6ccd9_icgraph.svg" width="480" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab31637f94fe25e2179ba916fc50ab9eb" name="ab31637f94fe25e2179ba916fc50ab9eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab31637f94fe25e2179ba916fc50ab9eb">&#9670;&#160;</a></span>onProfileSigningKeyEdited</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::onProfileSigningKeyEdited </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The signing-key field was typed in: store it in the entry and validate (fingerprints only, shared keys). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The text as typed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01102">1102</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-53" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary">
+</div>
+<div id="dynsection-53-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab31637f94fe25e2179ba916fc50ab9eb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary">
+</div>
+<div id="dynsection-54-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab31637f94fe25e2179ba916fc50ab9eb_icgraph.svg" width="472" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a7357606476ffeb9a76748429901e72cc" name="a7357606476ffeb9a76748429901e72cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7357606476ffeb9a76748429901e72cc">&#9670;&#160;</a></span>problemsOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::problemsOf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entry</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QHash&lt; QString, int &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>names</em></span>&#160;) const -&gt; <a class="el" href="struct_config_dialog_1_1_profile_problems.html">ProfileProblems</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>What is wrong with <code class="param">entry's</code> name, store path and signing keys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>The profile to check. </td></tr>
+    <tr><td class="paramname">names</td><td>How many profiles carry each name, for duplicates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The complaints, empty where a field is fine. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00345">345</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-55" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary">
+</div>
+<div id="dynsection-55-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7357606476ffeb9a76748429901e72cc_cgraph.svg" width="464" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary">
+</div>
+<div id="dynsection-56-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7357606476ffeb9a76748429901e72cc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae849e5a0ad73c5a191987b4cb5354410" name="ae849e5a0ad73c5a191987b4cb5354410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae849e5a0ad73c5a191987b4cb5354410">&#9670;&#160;</a></span>readSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::readSettings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> struct from the dialog's widgets. </p>
+<p>Starts from the currently persisted settings and overwrites only the fields this dialog owns, so unrelated keys (window geometry, profiles, etc.) are preserved on save. </p><dl class="section return"><dt>Returns</dt><dd>Settings reflecting the dialog state. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00244">244</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary">
+</div>
+<div id="dynsection-57-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae849e5a0ad73c5a191987b4cb5354410_cgraph.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary">
+</div>
+<div id="dynsection-58-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ae849e5a0ad73c5a191987b4cb5354410_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a8ac46697f885118d2eb8773e22d28d85" name="a8ac46697f885118d2eb8773e22d28d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac46697f885118d2eb8773e22d28d85">&#9670;&#160;</a></span>selectExecutable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::selectExecutable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ask for an existing file in a read-only file dialog. </p>
+<dl class="section return"><dt>Returns</dt><dd>The chosen file, empty when cancelled. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00659">659</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary">
+</div>
+<div id="dynsection-59-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a8ac46697f885118d2eb8773e22d28d85_icgraph.svg" width="484" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="af46ecbc080ed3effc646a2776608bc03" name="af46ecbc080ed3effc646a2776608bc03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46ecbc080ed3effc646a2776608bc03">&#9670;&#160;</a></span>selectFolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::selectFolder </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ask for a directory in a directories-only file dialog. </p>
+<dl class="section return"><dt>Returns</dt><dd>The chosen folder, empty when cancelled. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00670">670</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary">
+</div>
+<div id="dynsection-60-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af46ecbc080ed3effc646a2776608bc03_icgraph.svg" width="454" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a920010e30f9c4ae45ab046b1b689e290" name="a920010e30f9c4ae45ab046b1b689e290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a920010e30f9c4ae45ab046b1b689e290">&#9670;&#160;</a></span>setGitPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::setGitPath </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Show <code class="param">path</code> as the git executable; an empty path disables and turns off "use Git". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The git executable, or empty for none. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00319">319</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary">
+</div>
+<div id="dynsection-61-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a920010e30f9c4ae45ab046b1b689e290_cgraph.svg" width="639" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-62" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-62-summary" class="dynsummary">
+</div>
+<div id="dynsection-62-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a920010e30f9c4ae45ab046b1b689e290_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a93a014267e13ce2a518d6ff125bcb172" name="a93a014267e13ce2a518d6ff125bcb172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a014267e13ce2a518d6ff125bcb172">&#9670;&#160;</a></span>setGroupBoxState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::setGroupBoxState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the group box of the chosen backend and, in pass mode, disable the password-generation controls pass takes care of; in native mode hand them back to <a class="el" href="#a60f6395954c6e70c33ad3c6c42260e73" title="Enable pwgen&#39;s flags or the character-set controls, whichever the &quot;use pwgen&quot; box selects; nothing in...">on_checkBoxUsePwgen_clicked()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00635">635</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-63" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-63-summary" class="dynsummary">
+</div>
+<div id="dynsection-63-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a93a014267e13ce2a518d6ff125bcb172_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-64" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-64-summary" class="dynsummary">
+</div>
+<div id="dynsection-64-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a93a014267e13ce2a518d6ff125bcb172_icgraph.svg" width="100%" height="479"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -340,6 +2116,66 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01038">1038</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-65" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-65-summary" class="dynsummary">
+</div>
+<div id="dynsection-65-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a003ec5de7c29ced34f045f0843d2e95b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a68f58b41ba03c59341759473d95c839e" name="a68f58b41ba03c59341759473d95c839e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f58b41ba03c59341759473d95c839e">&#9670;&#160;</a></span>setProfiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::setProfiles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="profile_8h.html#acc376c3fd7f5d385732533f298b9007b">Profiles</a></td>          <td class="paramname"><span class="paramname"><em>profiles</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>currentProfile</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill the profile list and m_entries from <code class="param">profiles</code>, dropping the empty-named leftover older versions wrote, select <code class="param">currentProfile</code> and validate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profiles</td><td>The saved profiles. </td></tr>
+    <tr><td class="paramname">currentProfile</td><td>The active profile's name, to select its row. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00758">758</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-66" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-66-summary" class="dynsummary">
+</div>
+<div id="dynsection-66-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a68f58b41ba03c59341759473d95c839e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-67" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-67-summary" class="dynsummary">
+</div>
+<div id="dynsection-67-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a68f58b41ba03c59341759473d95c839e_icgraph.svg" width="435" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="a3d42b658f6b8436e9f6ca17059703c0a" name="a3d42b658f6b8436e9f6ca17059703c0a"></a>
@@ -365,6 +2201,329 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01008">1008</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-68" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-68-summary" class="dynsummary">
+</div>
+<div id="dynsection-68-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a3d42b658f6b8436e9f6ca17059703c0a_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-69" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-69-summary" class="dynsummary">
+</div>
+<div id="dynsection-69-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a3d42b658f6b8436e9f6ca17059703c0a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a1bffc0693aa2cb44f849aedcde4081be" name="a1bffc0693aa2cb44f849aedcde4081be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bffc0693aa2cb44f849aedcde4081be">&#9670;&#160;</a></span>sharingTheKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::sharingTheKey </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_config_dialog_1_1_signing_stores.html">SigningStores</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>resolved</em></span>&#160;) const -&gt; QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The other profiles, for other stores, whose signing keys share a fingerprint with row <code class="param">row's</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The profile's row. </td></tr>
+    <tr><td class="paramname">resolved</td><td>What <a class="el" href="#a8a0804534596a8293402575b60bf1fcf" title="Resolve every profile&#39;s store and fingerprints once.">signingStores()</a> gave for this validation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Their names, sorted; empty when none or no key is set. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00475">475</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-70" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-70-summary" class="dynsummary">
+</div>
+<div id="dynsection-70-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a1bffc0693aa2cb44f849aedcde4081be_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a4fa75d1922ff11a4da0a89e5b436c267" name="a4fa75d1922ff11a4da0a89e5b436c267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa75d1922ff11a4da0a89e5b436c267">&#9670;&#160;</a></span>showProblems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::showProblems </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_config_dialog_1_1_profile_problems.html">ProfileProblems</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>problems</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mark row <code class="param">row</code> of the profile list, and the form fields when it is the row being edited, with <code class="param">problems</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>Row in the profile list. </td></tr>
+    <tr><td class="paramname">problems</td><td>What <a class="el" href="#a7357606476ffeb9a76748429901e72cc" title="What is wrong with entry&#39;s name, store path and signing keys.">problemsOf()</a> found for it. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00367">367</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-71" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-71-summary" class="dynsummary">
+</div>
+<div id="dynsection-71-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4fa75d1922ff11a4da0a89e5b436c267_cgraph.svg" width="480" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-72" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-72-summary" class="dynsummary">
+</div>
+<div id="dynsection-72-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4fa75d1922ff11a4da0a89e5b436c267_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a66b11d5043653178859712ebede770e1" name="a66b11d5043653178859712ebede770e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b11d5043653178859712ebede770e1">&#9670;&#160;</a></span>signerKeys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::signerKeys </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>signingKey</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QProcessEnvironment &amp;</td>          <td class="paramname"><span class="paramname"><em>env</em></span>&#160;) const -&gt; QSet&lt; QString &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>One profile's signing keys as signers: each key as written, plus the primary fingerprint gpg gives for a complete key ID or (sub)key fingerprint. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">signingKey</td><td>The profile's signing-key setting. </td></tr>
+    <tr><td class="paramname">env</td><td>The environment gpg looks keys up in (its GPG home). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Upper-case fingerprints and key IDs. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00409">409</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-73" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-73-summary" class="dynsummary">
+</div>
+<div id="dynsection-73-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a66b11d5043653178859712ebede770e1_cgraph.svg" width="100%" height="464"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-74" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-74-summary" class="dynsummary">
+</div>
+<div id="dynsection-74-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a66b11d5043653178859712ebede770e1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a8a0804534596a8293402575b60bf1fcf" name="a8a0804534596a8293402575b60bf1fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a0804534596a8293402575b60bf1fcf">&#9670;&#160;</a></span>signingStores()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ConfigDialog::signingStores </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; <a class="el" href="struct_config_dialog_1_1_signing_stores.html">SigningStores</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel nodiscard">nodiscard</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resolve every profile's store and fingerprints once. </p>
+<dl class="section return"><dt>Returns</dt><dd>One entry per row of m_entries. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00385">385</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-75" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-75-summary" class="dynsummary">
+</div>
+<div id="dynsection-75-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a8a0804534596a8293402575b60bf1fcf_cgraph.svg" width="100%" height="567"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-76" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-76-summary" class="dynsummary">
+</div>
+<div id="dynsection-76-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a8a0804534596a8293402575b60bf1fcf_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a22ec9ee25af48a65870b3ee28d594a80" name="a22ec9ee25af48a65870b3ee28d594a80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ec9ee25af48a65870b3ee28d594a80">&#9670;&#160;</a></span>updatePassGitWarning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::updatePassGitWarning </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Shows m_passGitWarning for the stores <a class="el" href="class_util.html#a158b1927cee3cffacaec8d583fbf72ad" title="The repository above store that pass itself would commit to, if any.">Util::repositoryPassClimbsTo()</a> names, while the pass backend is chosen. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00521">521</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-77" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-77-summary" class="dynsummary">
+</div>
+<div id="dynsection-77-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a22ec9ee25af48a65870b3ee28d594a80_cgraph.svg" width="452" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-78" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-78-summary" class="dynsummary">
+</div>
+<div id="dynsection-78-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a22ec9ee25af48a65870b3ee28d594a80_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="adf90869f278396a2efc8a03cdc6d450d" name="adf90869f278396a2efc8a03cdc6d450d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf90869f278396a2efc8a03cdc6d450d">&#9670;&#160;</a></span>updateProfileStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::updateProfileStatus </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh the status line under the form: the profile's name and cleaned path, marked "New" while the folder does not exist, or a reminder to fill in the required fields. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01124">1124</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-79" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-79-summary" class="dynsummary">
+</div>
+<div id="dynsection-79-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_adf90869f278396a2efc8a03cdc6d450d_cgraph.svg" width="450" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-80" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-80-summary" class="dynsummary">
+</div>
+<div id="dynsection-80-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_adf90869f278396a2efc8a03cdc6d450d_icgraph.svg" width="100%" height="495"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a33efa7532ff400b7790ec7d55884ee90" name="a33efa7532ff400b7790ec7d55884ee90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33efa7532ff400b7790ec7d55884ee90">&#9670;&#160;</a></span>updateSecretFieldsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::updateSecretFieldsEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The secret-fields and every-field checkboxes only while passwords are hidden; the secret words and "Default" only while secret fields are hidden and every field is not. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00734">734</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-81" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-81-summary" class="dynsummary">
+</div>
+<div id="dynsection-81-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a33efa7532ff400b7790ec7d55884ee90_icgraph.svg" width="100%" height="423"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
 <a id="a4dcec976dc9117924ed9c230e9683c9f" name="a4dcec976dc9117924ed9c230e9683c9f"></a>
@@ -389,17 +2548,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00970">970</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-82" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-82-summary" class="dynsummary">
 </div>
-<div id="dynsection-4-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_cgraph.svg" width="166" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-82-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_cgraph.svg" width="412" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary">
+<div id="dynsection-83" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-83-summary" class="dynsummary">
 </div>
-<div id="dynsection-5-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_icgraph.svg" width="166" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-83-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_icgraph.svg" width="100%" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -426,17 +2587,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00979">979</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-84" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-84-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
+<div id="dynsection-84-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_cgraph.svg" width="222" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
+<div id="dynsection-85" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-85-summary" class="dynsummary">
 </div>
-<div id="dynsection-7-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_icgraph.svg" width="222" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-85-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -463,17 +2626,66 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00975">975</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-86" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-86-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-86-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_cgraph.svg" width="170" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<div id="dynsection-87" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-87-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_icgraph.svg" width="170" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-87-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_icgraph.svg" width="662" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a7f3e2d9557dc842724d7754504e9ee0a" name="a7f3e2d9557dc842724d7754504e9ee0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3e2d9557dc842724d7754504e9ee0a">&#9670;&#160;</a></span>usePass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::usePass </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>usePass</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tick the pass or the native radio button and enable the matching group box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usePass</td><td>true for the pass backend. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00327">327</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-88" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-88-summary" class="dynsummary">
+</div>
+<div id="dynsection-88-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7f3e2d9557dc842724d7754504e9ee0a_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-89" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-89-summary" class="dynsummary">
+</div>
+<div id="dynsection-89-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a7f3e2d9557dc842724d7754504e9ee0a_icgraph.svg" width="100%" height="398"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -500,17 +2712,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01030">1030</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-90" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-90-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_cgraph.svg" width="190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-90-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_cgraph.svg" width="436" height="71"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<div id="dynsection-91" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-91-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_icgraph.svg" width="190" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-91-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_icgraph.svg" width="100%" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -537,17 +2751,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00983">983</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-92" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-92-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-92-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_cgraph.svg" width="208" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-93" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-93-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_icgraph.svg" width="208" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-93-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -574,17 +2790,19 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00749">749</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-94" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-94-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_cgraph.svg" width="207" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-94-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<div id="dynsection-95" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-95-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_icgraph.svg" width="207" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-95-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_icgraph.svg" width="450" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -612,16 +2830,448 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00951">951</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-96" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-96-summary" class="dynsummary">
+</div>
+<div id="dynsection-96-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_aac383b23ed9b34eb52918de2b10d9567_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a20e465aae5c77fb6219fbe6b477fbe0d" name="a20e465aae5c77fb6219fbe6b477fbe0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20e465aae5c77fb6219fbe6b477fbe0d">&#9670;&#160;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::validate </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check every profile (<a class="el" href="#a7357606476ffeb9a76748429901e72cc" title="What is wrong with entry&#39;s name, store path and signing keys.">problemsOf()</a>, <a class="el" href="#a1bffc0693aa2cb44f849aedcde4081be" title="The other profiles, for other stores, whose signing keys share a fingerprint with row row&#39;s.">sharingTheKey()</a>), mark the rows and the form, enable OK only when no profile has a problem, and refresh the pass Git warning. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00496">496</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-97" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-97-summary" class="dynsummary">
+</div>
+<div id="dynsection-97-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a20e465aae5c77fb6219fbe6b477fbe0d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-98" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-98-summary" class="dynsummary">
+</div>
+<div id="dynsection-98-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a20e465aae5c77fb6219fbe6b477fbe0d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab929ea2f2dc20e2851eee510d5feb02a" name="ab929ea2f2dc20e2851eee510d5feb02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab929ea2f2dc20e2851eee510d5feb02a">&#9670;&#160;</a></span>warnAboutSshAuthSockOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfigDialog::warnAboutSshAuthSockOverride </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Warn, without refusing, when the SSH_AUTH_SOCK override does not look like a socket; the value is saved as entered either way. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00549">549</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<div id="dynsection-99" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-99-summary" class="dynsummary">
+</div>
+<div id="dynsection-99-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab929ea2f2dc20e2851eee510d5feb02a_cgraph.svg" width="472" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-100" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-100-summary" class="dynsummary">
+</div>
+<div id="dynsection-100-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ab929ea2f2dc20e2851eee510d5feb02a_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a514c0cbe5f770c2eef82bee516c4672d" name="a514c0cbe5f770c2eef82bee516c4672d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514c0cbe5f770c2eef82bee516c4672d">&#9670;&#160;</a></span>m_currentEntry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConfigDialog::m_currentEntry = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Row whose fields the form shows, -1 for none. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00300">300</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a8bccd621f9d7c7eb7058e7608a106a02" name="a8bccd621f9d7c7eb7058e7608a106a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bccd621f9d7c7eb7058e7608a106a02">&#9670;&#160;</a></span>m_customPasswordChars</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ConfigDialog::m_customPasswordChars</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>User-defined custom charset, retained while a builtin set is selected so it is not lost when the line edit shows the builtin's characters instead. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00493">493</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a270dda538d799ca4e79373f31854e75f" name="a270dda538d799ca4e79373f31854e75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270dda538d799ca4e79373f31854e75f">&#9670;&#160;</a></span>m_entries</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="struct_config_dialog_1_1_profile_entry.html">ProfileEntry</a>&gt; ConfigDialog::m_entries</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The profiles as shown; index == row in profileList. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00298">298</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a02ee4fd4b269da59846fb38b8efda5ee" name="a02ee4fd4b269da59846fb38b8efda5ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ee4fd4b269da59846fb38b8efda5ee">&#9670;&#160;</a></span>m_gpgSettings</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="struct_app_settings.html">AppSettings</a>&gt; ConfigDialog::m_gpgSettings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The settings naming the GPG home those lookups run in, read on first use. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00296">296</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="abcc0cd3904a519549464465a916b11c6" name="abcc0cd3904a519549464465a916b11c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc0cd3904a519549464465a916b11c6">&#9670;&#160;</a></span>m_keyTip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ConfigDialog::m_keyTip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Designer tooltip of the signing-key field, put back when <a class="el" href="#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ...">validate()</a> has no complaint about it. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00283">283</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a366cccaf889a9aba07bd47747b3b54b4" name="a366cccaf889a9aba07bd47747b3b54b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a366cccaf889a9aba07bd47747b3b54b4">&#9670;&#160;</a></span>m_loadingForm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConfigDialog::m_loadingForm = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True while <a class="el" href="#a3afedbe68e00232d5f68382eccfe93cd" title="Show row row&#39;s profile in the form (or clear and disable it for -1), with m_loadingForm set so the fi...">loadProfileForm()</a> sets the fields, so their edited-signals do not write back. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00303">303</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a35bda88aa17a961c5683190d99d374f7" name="a35bda88aa17a961c5683190d99d374f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35bda88aa17a961c5683190d99d374f7">&#9670;&#160;</a></span>m_nameTip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ConfigDialog::m_nameTip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Designer tooltip of the profile-name field, put back when <a class="el" href="#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ...">validate()</a> has no complaint about it. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00277">277</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a88445c315f1570bfcb7a867527874dea" name="a88445c315f1570bfcb7a867527874dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88445c315f1570bfcb7a867527874dea">&#9670;&#160;</a></span>m_passGitWarning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* ConfigDialog::m_passGitWarning = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In the pass box: the stores pass would commit outside of, if any. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00287">287</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="ac4f4c0cd0674ec2cceb467d2e5a4e731" name="ac4f4c0cd0674ec2cceb467d2e5a4e731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4f4c0cd0674ec2cceb467d2e5a4e731">&#9670;&#160;</a></span>m_pathTip</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ConfigDialog::m_pathTip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Designer tooltip of the store-path field, put back when <a class="el" href="#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ...">validate()</a> has no complaint about it. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00280">280</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ccba57212e79149d0f1726084f46fb5" name="a4ccba57212e79149d0f1726084f46fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ccba57212e79149d0f1726084f46fb5">&#9670;&#160;</a></span>m_primaryOf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHash&lt;QString, QString&gt; ConfigDialog::m_primaryOf</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel mutable">mutable</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Primary fingerprint per gpg and signing-key token (empty: gpg does not know it), so each key is looked up once, not on every keystroke. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00290">290</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a93c7c680886d37da60613c14c9a0b236" name="a93c7c680886d37da60613c14c9a0b236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c7c680886d37da60613c14c9a0b236">&#9670;&#160;</a></span>m_recheckSigners</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConfigDialog::m_recheckSigners = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>An unknown key was forgotten in the background: <a class="el" href="#a20e465aae5c77fb6219fbe6b477fbe0d" title="Check every profile (problemsOf(), sharingTheKey()), mark the rows and the form, enable OK only when ...">validate()</a> again on return. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00293">293</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a5bcbd3edb7659a10b98fdeefdd706162" name="a5bcbd3edb7659a10b98fdeefdd706162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bcbd3edb7659a10b98fdeefdd706162">&#9670;&#160;</a></span>m_sharedKeyWarning</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* ConfigDialog::m_sharedKeyWarning = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Below the signing key: the profiles that share it, if any. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00285">285</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<a id="a5de66ac7a8a063efdd7c515b1e75e5f3" name="a5de66ac7a8a063efdd7c515b1e75e5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5de66ac7a8a063efdd7c515b1e75e5f3">&#9670;&#160;</a></span>ui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QScopedPointer&lt;Ui::ConfigDialog&gt; ConfigDialog::ui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The widgets from configdialog.ui. </p>
+
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00325">325</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="configdialog_8h_source.html">configdialog.h</a></li>
+<li>src/<a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_config_dialog.html">ConfigDialog</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

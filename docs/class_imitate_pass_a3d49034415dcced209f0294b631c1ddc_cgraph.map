@@ -1,0 +1,22 @@
+<map id="ImitatePass::copyDestination" name="ImitatePass::copyDestination">
+<area shape="rect" id="Node000001" title="The file a copy of src to dest writes: like pass cp, into an existing folder with ...." alt="" coords="5,84,217,112"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="820,5,923,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,81,264,70,416,52,566,37,807,22,802,23,566,43,416,57,265,75,195,86"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="275,84,444,112"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,95,262,97,256,98,218,100"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" title="Resolve destination for move operation." alt="" coords="265,136,454,180"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="171,110,252,131,247,132,171,115"/>
+<area shape="rect" id="Node000004" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="502,109,716,137"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="444,104,489,111,484,111,444,109"/>
+<area shape="rect" id="Node000005" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="544,161,674,189"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="422,110,455,121,479,134,503,146,532,158,527,157,501,151,477,138,453,126,421,115"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="503,57,715,85"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="444,86,490,84,485,85,445,91"/>
+<area shape="rect" id="Node000006" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="799,161,944,189"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="674,173,786,175,781,175,674,178"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="682,54,803,33,808,32,683,59"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="789,57,954,85"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="716,69,776,71,771,71,716,74"/>
+<area shape="rect" id="Node000009" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="764,109,979,137"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="683,83,786,106,780,106,683,88"/>
+</map>

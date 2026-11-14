@@ -1,0 +1,7 @@
+<map id="DeselectableTreeView::DeselectableTreeView" name="DeselectableTreeView::DeselectableTreeView">
+<area shape="rect" id="Node000001" title="Construct the view and arm the single&#45;shot deselect timer." alt="" coords="5,5,179,50"/>
+<area shape="rect" id="Node000002" href="$class_deselectable_tree_view.html#aed82ffca2f0dd0b041dfa51e83f1d113" title="Timer slot: clear the selection and current index and emit emptyClicked(), unless a double&#45;click happ..." alt="" coords="227,5,392,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,25,214,27,209,28,179,30"/>
+<area shape="rect" id="Node000003" href="$class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4" title="Emitted after deselect() has cleared the selection because of a single click on empty space or on a s..." alt="" coords="440,5,605,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,25,427,28,422,28,392,30"/>
+</map>

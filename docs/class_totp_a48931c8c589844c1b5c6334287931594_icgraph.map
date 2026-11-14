@@ -1,0 +1,15 @@
+<map id="Totp::generateNow" name="Totp::generateNow">
+<area shape="rect" id="Node000001" title="Generate the code for the current wall&#45;clock time." alt="" coords="1343,29,1486,57"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#ab7a805923a61f2441932d8d358fb040e" title="Generate a one&#45;time password from decrypted content and copy it. Ignores decrypts of anything but the..." alt="" coords="1092,21,1295,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1325,43,1296,46,1295,41,1330,43"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,29,1044,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1073,43,1044,46,1044,41,1079,43"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,29,756,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="786,43,757,46,757,41,791,43"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,29,483,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,43,484,46,483,41,518,43"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="428,14,414,10,385,8,358,10,343,15,339,20,346,30,341,28,334,20,339,11,357,5,385,3,415,5,433,14"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="269,52,239,55,239,49,274,52"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="254,32,289,34,284,35,254,37"/>
+</map>

@@ -80,7 +80,7 @@
     position: absolute;
     height: 2px;
     width: 24px;
-    background: var(--nav-menu-button-color);
+    background: #364D7C;
     -webkit-transition: all .25s;
     transition: all .25s
 }
@@ -144,21 +144,21 @@
 }
 
 .sm-dox {
-    background-color: var(--nav-menu-background-color)
+    background-color: white
 }
 
 .sm-dox a,.sm-dox a:active,.sm-dox a:focus,.sm-dox a:hover {
     padding: 0 43px 0 12px;
-    font-family: var(--font-family-nav);
+    font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
     font-size: 13px;
     line-height: 36px;
     text-decoration: none;
-    color: var(--nav-text-normal-color);
+    color: #283A5D;
     outline: 0
 }
 
 .sm-dox a:hover {
-    background-color: var(--nav-menu-active-bg);
+    background-color: #DCE2EF;
     border-radius: 5px
 }
 
@@ -216,7 +216,7 @@
 }
 
 .sm-dox ul {
-    background: var(--nav-menu-background-color)
+    background: white
 }
 
 .sm-dox ul a,.sm-dox ul a:active,.sm-dox ul a:focus,.sm-dox ul a:hover {
@@ -224,12 +224,12 @@
     border-left: 8px solid transparent;
     line-height: 36px;
     text-shadow: none;
-    background-color: var(--nav-menu-background-color);
+    background-color: white;
     background-image: none
 }
 
 .sm-dox ul a:hover {
-    background-color: var(--nav-menu-active-bg);
+    background-color: #DCE2EF;
     border-radius: 5px
 }
 
@@ -255,7 +255,7 @@
     width: 12em;
     border: 1px solid #bbb;
     padding: 5px 0;
-    background: var(--nav-menu-background-color);
+    background: white;
     -moz-border-radius: 5px!important;
     -webkit-border-radius: 5px;
     border-radius: 5px!important;
@@ -291,7 +291,7 @@
 }
 
 .sm-dox,.sm-dox a span.sub-arrow {
-    background-color: var(--nav-menu-background-color)
+    background-color: white
 }
 
 .sm-dox {
@@ -308,8 +308,8 @@
     display: inline-block;
     width: 5px;
     height: 5px;
-    border-right: 2px solid var(--nav-arrow-color);
-    border-bottom: 2px solid var(--nav-arrow-color);
+    border-right: 2px solid #B6C4DF;
+    border-bottom: 2px solid #B6C4DF;
     transform: rotate(45deg);
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
@@ -321,14 +321,14 @@
 }
 
 .sm-dox a:hover {
-    background-color: var(--nav-menu-active-bg);
+    background-color: #DCE2EF;
     border-radius: 5px!important
 }
 
 .sm-dox a:hover span.sub-arrow {
-    background-color: var(--nav-menu-active-bg);
-    border-right: 2px solid var(--nav-arrow-selected-color);
-    border-bottom: 2px solid var(--nav-arrow-selected-color)
+    background-color: #DCE2EF;
+    border-right: 2px solid #90A5CE;
+    border-bottom: 2px solid #90A5CE
 }
 
 .sm-dox a.has-submenu {
@@ -352,7 +352,7 @@
     top: -16px;
     left: 31px;
     border-width: 8px;
-    border-color: transparent transparent var(--nav-menu-background-color) transparent
+    border-color: transparent transparent white transparent
 }
 
 .sm-dox ul a span.sub-arrow {
@@ -361,14 +361,14 @@
 }
 
 .sm-dox ul a,.sm-dox ul a.highlighted,.sm-dox ul a:active,.sm-dox ul a:focus,.sm-dox ul a:hover {
-    color: var(--nav-menu-foreground-color);
+    color: #555555;
     background-image: none;
     line-height: normal;
     border: 0!important
 }
 
 .sm-dox ul a:hover {
-    background-color: var(--nav-menu-active-bg);
+    background-color: #DCE2EF;
     border-radius: 5px
 }
 
@@ -377,7 +377,7 @@
     display: none;
     visibility: hidden;
     overflow: hidden;
-    background: var(--nav-menu-background-color);
+    background: white;
     height: 36px
 }
 
@@ -403,13 +403,13 @@
     overflow: hidden;
     border-width: 6px;
     border-style: dashed dashed solid;
-    border-color: transparent transparent var(--nav-menu-foreground-color) transparent
+    border-color: transparent transparent #555555 transparent
 }
 
 .sm-dox span.scroll-down-arrow {
     top: 8px;
     border-style: solid dashed dashed;
-    border-color: var(--nav-menu-foreground-color) transparent transparent transparent
+    border-color: #555555 transparent transparent transparent
 }
 
 .sm-dox.sm-rtl a.has-submenu {
@@ -476,7 +476,7 @@
 }
 
 .sm-dox.sm-vertical ul a.disabled {
-    background: var(--nav-menu-background-color)
+    background: white
 }
 }
 

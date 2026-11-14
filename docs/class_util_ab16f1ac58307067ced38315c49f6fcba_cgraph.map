@@ -1,0 +1,7 @@
+<map id="Util::applyPassProcessDefaults" name="Util::applyPassProcessDefaults">
+<area shape="rect" id="Node000001" title="Set up the process the way pass sets up its own, before anything runs git or gpg or writes into the s..." alt="" coords="5,32,228,60"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a11eb90b4a067feefd84769d336d79b10" title="The umask pass would use for value of PASSWORD_STORE_UMASK." alt="" coords="304,5,432,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,31,291,27,286,28,228,37"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a9f717e2a6f4b5ed7a0ef6f833a80d880" title="The umask every child QtPass starts gets, as pass sets its own." alt="" coords="276,57,460,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,54,262,60,257,60,228,60"/>
+</map>

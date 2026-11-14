@@ -1,0 +1,22 @@
+<map id="StoreTree::proxy" name="StoreTree::proxy">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1085,65,1212,93"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="Handle keyboard shortcuts." alt="" coords="820,5,1027,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1087,60,1036,47,992,36,993,31,1037,42,1092,60"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a6ed67aa63c63c4867166cb21115d64f7" title="Enter in the search box: in content&#45;search mode start (or, for an empty query, cancel) the grep; othe..." alt="" coords="831,57,1016,102"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1067,79,1016,82,1016,77,1072,79"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a661b52ed29bc2ff2b16d973c8306fdca" title="searchTimer fired: filter the tree on the typed words (matched literally, in order,..." alt="" coords="810,127,1037,154"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="1092,98,1037,116,989,129,988,123,1036,111,1087,99"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="531,64,762,92"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="813,79,763,81,763,76,818,78"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="358,63,412,90"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,78,413,79,412,74,518,77"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="425,61,431,54,428,48,413,43,385,41,353,44,339,51,338,53,341,57,360,69,355,69,337,61,333,54,335,47,352,39,385,36,414,38,431,44,436,54,427,65"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#ad3c41db78ea5f1d67d0ffbf7ade2d079" title=" " alt="" coords="558,131,736,158"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="792,142,736,146,736,141,797,142"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,139,483,166"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="539,148,484,152,483,147,544,148"/>
+<area shape="poly" id="edge9_Node000008_Node000008" title=" " alt="" coords="428,123,414,120,385,117,357,119,342,124,338,129,345,139,340,137,333,130,339,120,356,114,385,112,415,114,434,124"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,139,239,166"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="269,161,239,164,239,159,274,161"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="254,141,289,144,284,144,254,146"/>
+</map>

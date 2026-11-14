@@ -1,0 +1,7 @@
+<map id="QtPassSettings::setDialogGeometry" name="QtPassSettings::setDialogGeometry">
+<area shape="rect" id="Node000001" title="Save dialog geometry." alt="" coords="5,5,194,50"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="242,14,444,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,25,229,27,224,28,194,30"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="492,14,715,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,25,479,28,474,28,444,30"/>
+</map>

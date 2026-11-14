@@ -1,0 +1,5 @@
+<map id="ProcessOutputPanel::append" name="ProcessOutputPanel::append">
+<area shape="rect" id="Node000001" title="Append output, one numbered line per non&#45;empty input line." alt="" coords="5,5,156,50"/>
+<area shape="rect" id="Node000002" href="$class_process_output_panel.html#a1e8ed5d1bb9c3ce3568609cbf8d47ea7" title="Drop the oldest text blocks once the document holds more than MaxLines; called after every append()." alt="" coords="204,5,354,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,25,191,27,186,28,156,30"/>
+</map>

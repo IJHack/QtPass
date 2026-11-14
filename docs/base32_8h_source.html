@@ -10,11 +10,16 @@
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -43,7 +48,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="application/json" id="doxygen-config">
 {
   "relPath": "",
-  "generateTreeView": false,
+  "generateTreeView": true,
   "searchEngine": true,
   "serverBasedSearch": false,
   "disableIndex": false,
@@ -74,6 +79,21 @@ document.addEventListener('DOMContentLoaded', codefold.init);
     </li>
   </ul>
 </div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('base32_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -92,56 +112,55 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>src</b></li>  </ul>
-</div>
-</div><!-- top -->
-<div id="doc-content">
 <div class="header">
   <div class="headertitle"><div class="title">base32.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2025 KeePassXC Team &lt;team@keepassxc.org&gt;</span></div>
+<a href="base32_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2025 KeePassXC Team &lt;team@keepassxc.org&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef SRC_BASE32_H_</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define SRC_BASE32_H_</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_base32.html">   28</a></span><span class="keyword">class </span>Base32 {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_base32.html#aa37affa1dea172a0e0df0ccec92f48f2">   36</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#aa37affa1dea172a0e0df0ccec92f48f2">decode</a>(<span class="keyword">const</span> QByteArray &amp;encodedData) -&gt; QByteArray;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_base32.html#a538fcb8ba3afbf0f7e93b0baf609128a">   44</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#a538fcb8ba3afbf0f7e93b0baf609128a">encode</a>(<span class="keyword">const</span> QByteArray &amp;data) -&gt; QByteArray;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_base32.html#a0333781f29fc93e20b3792c243a666db">   52</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#a0333781f29fc93e20b3792c243a666db">addPadding</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      -&gt; QByteArray;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca">   61</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca">removePadding</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      -&gt; QByteArray;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_base32.html#aaf904f4cb4ce14e943cc46416202d827">   74</a></span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#aaf904f4cb4ce14e943cc46416202d827">sanitizeInput</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      -&gt; QByteArray;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  Base32() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef SRC_BASE32_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define SRC_BASE32_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QByteArray&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_base32.html">   34</a></span><span class="keyword">class </span><a class="code hl_function" href="class_base32.html#a79faf2394220266c154ffadbd2e8cd41">Base32</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#aab3feed3644b481794685b42410cf1e1">decode</a>(<span class="keyword">const</span> QByteArray &amp;encodedData) -&gt; QByteArray;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#acf6b12a6850124ad51e39107c312d1ba">encode</a>(<span class="keyword">const</span> QByteArray &amp;data) -&gt; QByteArray;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0">addPadding</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      -&gt; QByteArray;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">removePadding</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      -&gt; QByteArray;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">sanitizeInput</a>(<span class="keyword">const</span> QByteArray &amp;encodedData)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      -&gt; QByteArray;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_base32.html#a79faf2394220266c154ffadbd2e8cd41">   85</a></span>  <a class="code hl_function" href="class_base32.html#a79faf2394220266c154ffadbd2e8cd41">Base32</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif </span><span class="comment">// SRC_BASE32_H_</span></div>
-<div class="ttc" id="aclass_base32_html_a0333781f29fc93e20b3792c243a666db"><div class="ttname"><a href="class_base32.html#a0333781f29fc93e20b3792c243a666db">Base32::addPadding</a></div><div class="ttdeci">static auto addPadding(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Append &#39;=&#39; padding up to a multiple of 8 characters.</div></div>
-<div class="ttc" id="aclass_base32_html_a538fcb8ba3afbf0f7e93b0baf609128a"><div class="ttname"><a href="class_base32.html#a538fcb8ba3afbf0f7e93b0baf609128a">Base32::encode</a></div><div class="ttdeci">static auto encode(const QByteArray &amp;data) -&gt; QByteArray</div><div class="ttdoc">Encode raw bytes as padded RFC 4648 base32.</div></div>
-<div class="ttc" id="aclass_base32_html_aa1f7b5589e29a614a4894b448b90a8ca"><div class="ttname"><a href="class_base32.html#aa1f7b5589e29a614a4894b448b90a8ca">Base32::removePadding</a></div><div class="ttdeci">static auto removePadding(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Strip trailing &#39;=&#39; padding.</div></div>
-<div class="ttc" id="aclass_base32_html_aa37affa1dea172a0e0df0ccec92f48f2"><div class="ttname"><a href="class_base32.html#aa37affa1dea172a0e0df0ccec92f48f2">Base32::decode</a></div><div class="ttdeci">static auto decode(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Decode strict RFC 4648 base32 data.</div></div>
-<div class="ttc" id="aclass_base32_html_aaf904f4cb4ce14e943cc46416202d827"><div class="ttname"><a href="class_base32.html#aaf904f4cb4ce14e943cc46416202d827">Base32::sanitizeInput</a></div><div class="ttdeci">static auto sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Make human-entered base32 text decodable.</div></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif </span><span class="comment">// SRC_BASE32_H_</span></div>
+<div class="ttc" id="aclass_base32_html_a251fbe9bbf3a490d0660690182de2fcb"><div class="ttname"><a href="class_base32.html#a251fbe9bbf3a490d0660690182de2fcb">Base32::sanitizeInput</a></div><div class="ttdeci">static auto sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Make human-entered base32 text decodable.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00305">base32.cpp:305</a></div></div>
+<div class="ttc" id="aclass_base32_html_a79faf2394220266c154ffadbd2e8cd41"><div class="ttname"><a href="class_base32.html#a79faf2394220266c154ffadbd2e8cd41">Base32::Base32</a></div><div class="ttdeci">Base32()=default</div><div class="ttdoc">Static-only class; never instantiated.</div></div>
+<div class="ttc" id="aclass_base32_html_a7d94c98c53b66296c785fe80dbe1c0f0"><div class="ttname"><a href="class_base32.html#a7d94c98c53b66296c785fe80dbe1c0f0">Base32::addPadding</a></div><div class="ttdeci">static auto addPadding(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Append &#39;=&#39; padding up to a multiple of 8 characters.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00275">base32.cpp:275</a></div></div>
+<div class="ttc" id="aclass_base32_html_aab3feed3644b481794685b42410cf1e1"><div class="ttname"><a href="class_base32.html#aab3feed3644b481794685b42410cf1e1">Base32::decode</a></div><div class="ttdeci">static auto decode(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Decode strict RFC 4648 base32 data.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00128">base32.cpp:128</a></div></div>
+<div class="ttc" id="aclass_base32_html_acf6b12a6850124ad51e39107c312d1ba"><div class="ttname"><a href="class_base32.html#acf6b12a6850124ad51e39107c312d1ba">Base32::encode</a></div><div class="ttdeci">static auto encode(const QByteArray &amp;data) -&gt; QByteArray</div><div class="ttdoc">Encode raw bytes as padded RFC 4648 base32.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00191">base32.cpp:191</a></div></div>
+<div class="ttc" id="aclass_base32_html_ad4506c7fc1411529d9b188e7ef9ee90c"><div class="ttname"><a href="class_base32.html#ad4506c7fc1411529d9b188e7ef9ee90c">Base32::removePadding</a></div><div class="ttdeci">static auto removePadding(const QByteArray &amp;encodedData) -&gt; QByteArray</div><div class="ttdoc">Strip trailing &#39;=&#39; padding.</div><div class="ttdef"><b>Definition</b> <a href="base32_8cpp_source.html#l00294">base32.cpp:294</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
-<!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0
-</small></address>
 </div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a href="base32_8h.html">base32.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
+  </ul>
+</div>
 </body>
 </html>

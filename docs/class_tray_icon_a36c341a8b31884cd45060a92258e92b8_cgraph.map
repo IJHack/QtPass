@@ -1,0 +1,5 @@
+<map id="TrayIcon::iconActivated" name="TrayIcon::iconActivated">
+<area shape="rect" id="Node000001" title="Handle activation events from the system tray icon." alt="" coords="5,5,178,33"/>
+<area shape="rect" id="Node000002" href="$class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc" title="Toggle the visibility of the associated main window." alt="" coords="226,5,414,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,17,213,19,207,19,178,22"/>
+</map>

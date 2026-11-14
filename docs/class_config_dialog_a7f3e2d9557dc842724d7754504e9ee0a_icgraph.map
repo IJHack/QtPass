@@ -1,0 +1,11 @@
+<map id="ConfigDialog::usePass" name="ConfigDialog::usePass">
+<area shape="rect" id="Node000001" title="Tick the pass or the native radio button and enable the matching group box." alt="" coords="502,60,666,88"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="622,44,610,41,584,39,560,41,547,45,543,51,549,61,544,58,538,51,543,41,559,35,584,33,611,36,628,45"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#abad77b747ca028e7b042b995a4620211" title="Load the dialog&#39;s value widgets from an AppSettings struct." alt="" coords="251,29,452,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="484,61,452,59,452,54,489,61"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a6e92d229bd1e70a1f4e7e8976a469a6a" title="Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH, keeping a field as it is when nothing..." alt="" coords="249,81,454,126"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="489,86,455,93,454,88,484,86"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a88795eefbcfcdd86776d1d26a1eee347" title="Construct a ConfigDialog associated with the given main window." alt="" coords="5,29,201,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,44,201,46,201,41,237,43"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="144,15,131,10,103,8,77,10,63,15,59,20,66,28,60,29,54,20,59,11,76,5,103,3,132,5,149,13"/>
+</map>

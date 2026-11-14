@@ -1,0 +1,26 @@
+<map id="UsersDialog::on_checkBox_clicked" name="UsersDialog::on_checkBox_clicked">
+<area shape="rect" id="Node000001" title="Handle select all checkbox." alt="" coords="5,126,200,171"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#a9742afa42c3edaec91f62ddcb116002d" title="Populate user list." alt="" coords="248,135,436,162"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,146,234,148,229,149,201,151"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d" title="Apply visual styling to user item." alt="" coords="484,56,703,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,132,483,94,516,87,511,89,485,99,380,137"/>
+<area shape="rect" id="Node000008" href="$class_users_dialog.html#a7c4ef95e4ab5bfd72e93f5dbcf1be189" title="Build display text for user." alt="" coords="495,160,692,188"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="437,155,482,162,477,163,437,161"/>
+<area shape="rect" id="Node000009" href="$class_users_dialog.html#ad8f7dcefe8f44773b5931295c2e35833" title="Check if user passes filter." alt="" coords="500,108,687,136"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="436,136,487,133,482,134,437,141"/>
+<area shape="rect" id="Node000010" href="$class_users_dialog.html#a0506ad62cc53b4e491d4548029511b98" title="Enable OK only while at least one key is ticked (hasSelection())." alt="" coords="486,212,701,240"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="380,160,485,197,517,208,512,207,483,202,379,166"/>
+<area shape="rect" id="Node000004" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="1018,5,1164,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="675,53,751,42,883,29,1006,23,1000,24,884,34,752,47,676,58"/>
+<area shape="rect" id="Node000005" href="$class_users_dialog.html#a248e650a6f68a40a4bd7ea10b5686106" title="Check if GPG key is expired." alt="" coords="751,108,950,136"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="666,82,766,104,761,104,666,87"/>
+<area shape="rect" id="Node000006" href="$struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a" title="Check whether the key has any usable validity level." alt="" coords="787,56,914,84"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="704,67,774,69,769,70,704,72"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="914,54,1004,37,1010,36,915,59"/>
+<area shape="rect" id="Node000007" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="998,57,1184,85"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="914,68,985,70,979,71,914,73"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="687,119,738,122,733,122,688,124"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="665,105,769,86,775,85,666,110"/>
+<area shape="rect" id="Node000011" href="$class_users_dialog.html#adb673bcebad1749f22183ce146b846cd" title="Whether at least one key is ticked." alt="" coords="755,212,946,240"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="701,223,742,226,736,226,701,228"/>
+</map>
