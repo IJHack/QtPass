@@ -4,6 +4,7 @@ var class_password_dialog =
     [ "PasswordDialog", "class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c", null ],
     [ "~PasswordDialog", "class_password_dialog.html#aab4b61c236d0589bd862171c7f8ef72e", null ],
     [ "accept", "class_password_dialog.html#a4f6e842cc9039c5501b95693321ae736", null ],
+    [ "addFieldRow", "class_password_dialog.html#a591e5449bf04ce02f98c7aceca3c5da5", null ],
     [ "applyTemplate", "class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3", null ],
     [ "copied", "class_password_dialog.html#aa09071e9cbd91dddfdaa865ec1b54687", null ],
     [ "cycleTemplate", "class_password_dialog.html#a3be525fe15b6af1939dad714e3244733", null ],

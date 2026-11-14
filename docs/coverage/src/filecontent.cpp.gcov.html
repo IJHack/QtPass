@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 16:57:56</td>
+            <td class="headerValue">2026-11-14 17:53:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -287,10 +287,10 @@
 <span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">         450 :           otp.pick(), remainingLines};</span></span>
 <span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">         150 : }</span></span>
 <span id="L216"><span class="lineNum">     216</span>              : </span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">        3377 : auto FileContent::isOtpFieldName(const QString &amp;name) -&gt; bool {</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">        3390 : auto FileContent::isOtpFieldName(const QString &amp;name) -&gt; bool {</span></span>
 <span id="L218"><span class="lineNum">     218</span>              :   const QString trimmed = name.trimmed();</span>
-<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">       10072 :   return trimmed.compare(QStringLiteral(&quot;OTP&quot;), Qt::CaseInsensitive) == 0 ||</span></span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">        6695 :          trimmed.compare(QStringLiteral(&quot;TOTP&quot;), Qt::CaseInsensitive) == 0;</span></span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">       10109 :   return trimmed.compare(QStringLiteral(&quot;OTP&quot;), Qt::CaseInsensitive) == 0 ||</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">        6719 :          trimmed.compare(QStringLiteral(&quot;TOTP&quot;), Qt::CaseInsensitive) == 0;</span></span>
 <span id="L221"><span class="lineNum">     221</span>              : }</span>
 <span id="L222"><span class="lineNum">     222</span>              : </span>
 <span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">          28 : auto FileContent::isSecretFieldName(const QString &amp;name,</span></span>
@@ -385,7 +385,7 @@
 <span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">           1 :   return remainingLines;</span></span>
 <span id="L313"><span class="lineNum">     313</span>              : }</span>
 <span id="L314"><span class="lineNum">     314</span>              : </span>
-<span id="L315"><span class="lineNum">     315</span> <span class="tlaGNC">         314 : NamedValues::NamedValues() = default;</span></span>
+<span id="L315"><span class="lineNum">     315</span> <span class="tlaGNC">         425 : NamedValues::NamedValues() = default;</span></span>
 <span id="L316"><span class="lineNum">     316</span>              : </span>
 <span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">          48 : NamedValues::NamedValues(std::initializer_list&lt;NamedValue&gt; values)</span></span>
 <span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">          48 :     : QList(values) {}</span></span>
@@ -394,13 +394,13 @@
 <span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">          11 :   return takeNamedValue(name).value;</span></span>
 <span id="L322"><span class="lineNum">     322</span>              : }</span>
 <span id="L323"><span class="lineNum">     323</span>              : </span>
-<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">          34 : auto NamedValues::takeNamedValue(const QString &amp;name) -&gt; NamedValue {</span></span>
-<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          42 :   for (int i = 0; i &lt; length(); ++i) {</span></span>
-<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">          33 :     if (at(i).name == name) {</span></span>
-<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">          25 :       return takeAt(i);</span></span>
+<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">          85 : auto NamedValues::takeNamedValue(const QString &amp;name) -&gt; NamedValue {</span></span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          97 :   for (int i = 0; i &lt; length(); ++i) {</span></span>
+<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">          39 :     if (at(i).name == name) {</span></span>
+<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">          27 :       return takeAt(i);</span></span>
 <span id="L328"><span class="lineNum">     328</span>              :     }</span>
 <span id="L329"><span class="lineNum">     329</span>              :   }</span>
-<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">           9 :   return {};</span></span>
+<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          58 :   return {};</span></span>
 <span id="L331"><span class="lineNum">     331</span>              : }</span>
         </pre>
               </td>

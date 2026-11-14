@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"userinfo_8h.html":[4,0,1,101],
 "userinfo_8h_source.html":[4,0,1,101],
 "usersdialog_8cpp.html":[4,0,1,102],
 "usersdialog_8cpp_source.html":[4,0,1,102],

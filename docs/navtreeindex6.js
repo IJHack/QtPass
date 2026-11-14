@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"rnpcrypto_8h_source.html":[4,0,1,76],
 "secretlineedit_8cpp.html":[4,0,1,77],
 "secretlineedit_8cpp_source.html":[4,0,1,77],
 "secretlineedit_8h.html":[4,0,1,78],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "trayicon_8cpp.html":[4,0,1,99],
 "trayicon_8cpp_source.html":[4,0,1,99],
 "trayicon_8h.html":[4,0,1,100],
-"trayicon_8h_source.html":[4,0,1,100],
-"userinfo_8h.html":[4,0,1,101]
+"trayicon_8h_source.html":[4,0,1,100]
 };

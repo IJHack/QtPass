@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 16:57:56</td>
+            <td class="headerValue">2026-11-14 17:53:18</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -87,14 +87,14 @@
 <span id="L14"><span class="lineNum">      14</span>              : #include &lt;QLineEdit&gt;</span>
 <span id="L15"><span class="lineNum">      15</span>              : #include &lt;QMenu&gt;</span>
 <span id="L16"><span class="lineNum">      16</span>              : </span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">          36 : FieldLabel::FieldLabel(const QString &amp;name, QWidget *parent) : QLabel(parent) {</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">          40 : FieldLabel::FieldLabel(const QString &amp;name, QWidget *parent) : QLabel(parent) {</span></span>
 <span id="L18"><span class="lineNum">      18</span>              :   // A field name comes from the entry, which a shared store's other writers</span>
 <span id="L19"><span class="lineNum">      19</span>              :   // control: as rich text, &lt;img src=&quot;/dev/zero&quot;&gt; would have Qt read that</span>
 <span id="L20"><span class="lineNum">      20</span>              :   // file without end. Plain text before the name is set.</span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          36 :   setTextFormat(Qt::PlainText);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          36 :   setText(name);</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          36 :   setToolTip(tr(&quot;Double-click to rename this field&quot;));</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">          36 : }</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          40 :   setTextFormat(Qt::PlainText);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          40 :   setText(name);</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          40 :   setToolTip(tr(&quot;Double-click to rename this field&quot;));</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">          40 : }</span></span>
 <span id="L25"><span class="lineNum">      25</span>              : </span>
 <span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           2 : void FieldLabel::mouseDoubleClickEvent(QMouseEvent *event) {</span></span>
 <span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           2 :   if (event-&gt;button() == Qt::LeftButton) {</span></span>
@@ -111,7 +111,7 @@
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           2 :   menu.exec(event-&gt;globalPos());</span></span>
 <span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L40"><span class="lineNum">      40</span>              : </span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         108 : FieldLabel::~FieldLabel() { delete m_editor.data(); }</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         120 : FieldLabel::~FieldLabel() { delete m_editor.data(); }</span></span>
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">          13 : void FieldLabel::startEdit() {</span></span>
 <span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          13 :   if (m_editor != nullptr) {</span></span>
