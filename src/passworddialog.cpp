@@ -327,6 +327,23 @@ auto PasswordDialog::resolveNewEntry(QString *problem) const -> QString {
     *problem = tr("That name would resolve outside the password store.");
     return {};
   }
+  // The tree, like `pass ls`, hides names that start with a dot: such an
+  // entry would be saved but never listed.
+  const QStringList parts = rel.split(u'/');
+  if (std::any_of(parts.cbegin(), parts.cend(),
+                  [](const QString &part) { return part.startsWith(u'.'); })) {
+    *problem = tr("A name or folder that starts with a dot would be hidden "
+                  "from the list.");
+    return {};
+  }
+  // Checked here, not only by Insert(): accept() creates the entry's folder
+  // first, and behind a link that folder is outside the store.
+  if (Util::isUnderLink(absolute, m_storeRoot)) {
+    *problem = tr("%1 lies behind a symbolic link or junction, outside the "
+                  "password store.")
+                   .arg(rel);
+    return {};
+  }
   if (QFileInfo::exists(absolute + QStringLiteral(".gpg"))) {
     *problem = tr("An entry called %1 already exists.").arg(rel);
     return {};

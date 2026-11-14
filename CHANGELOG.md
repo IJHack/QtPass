@@ -714,6 +714,16 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   stop at a slash, so such a key dropped out of the search and stayed ticked
   unseen when someone was removed by unticking the rows their name brought
   up. Broken since 1.4.0.
+- Add password and Add folder refuse a name with a part that starts with a
+  dot. The tree hides such names, as `pass ls` does, so the entry or folder
+  was made but never listed.
+- Add password and Add folder refuse a place behind a symbolic link or
+  junction, as Users, Re-encrypt and Delete already did. Add folder made the
+  folder in the link's target, and Add password created the entry's folder
+  there before the save was refused.
+- Add password accepts a name two or more new folders deep (`a/b/entry`). It
+  was refused as "outside the password store", because the check could not
+  climb through folders that do not exist yet.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

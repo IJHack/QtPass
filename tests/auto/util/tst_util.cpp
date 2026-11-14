@@ -3897,6 +3897,13 @@ void tst_util::isPathInStoreHappyPath() {
   // A grandchild.
   QDir(root).mkpath("nested/dir");
   QVERIFY(PathValidator::isPathInStore(root, root + "/nested/dir/bar.gpg"));
+  // Below two folders that do not exist yet, as "a/b/entry" typed into Add
+  // password: cdUp() could not climb through the missing ones.
+  QVERIFY(PathValidator::isPathInStore(root, root + "/new1/new2/baz.gpg"));
+  QCOMPARE(PathValidator::storeRelativePath(root, root + "/new1/new2/baz.gpg"),
+           std::optional<QString>(QStringLiteral("new1/new2/baz.gpg")));
+  QVERIFY(!PathValidator::isPathInStore(
+      root, root + "/new1/new2/../../../outside.gpg"));
 }
 
 /**
