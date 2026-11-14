@@ -235,6 +235,15 @@ private:
    */
   void setSaving(bool saving);
   /**
+   * @brief Whether the insert report now arriving is this dialog's own.
+   *
+   * False when the dialog is not saving. Otherwise it lets the reports of the
+   * inserts that were already pending when save() ran pass first (one per
+   * call), so an earlier dialog's result does not close or fail this one.
+   * @return true when the arriving report belongs to this dialog's insert.
+   */
+  auto isOwnInsertReport() -> bool;
+  /**
    * @brief Say why the entry was not saved and let the user try again; the
    * fields keep what was typed.
    * @param err The reason reported by the backend.
@@ -309,6 +318,9 @@ private:
   bool m_contentLoaded{};
   /// True from accept() starting an insert until the backend reports back.
   bool m_saving{};
+  /// Inserts already pending when save() ran, whose reports must pass before
+  /// one is taken as this dialog's own (counted down in isOwnInsertReport()).
+  int m_insertsAhead{};
   /// Last pwgen mode passed to usePwgen(), so the policy can be re-applied
   /// after setEditorEnabled() re-enables the character-set widgets.
   bool m_usePwgen{};

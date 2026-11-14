@@ -36,6 +36,7 @@ private slots:
   void insertPipesTheValue();
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
+  void insertsPendingCountsTheInsertsYetToReport();
   void signedListIsCheckedAsTheNativeBackendDoes();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
@@ -401,6 +402,24 @@ void tst_realpass::insertThatCannotStartIsNotCreditedWithTheNextWrite() {
   QCOMPARE(critical.count(), 0);
   QVERIFY(!QFile::exists(first));
   QTRY_COMPARE_WITH_TIMEOUT(inserted.count(), 1, 5000);
+}
+
+/**
+ * @brief insertsPending() counts every queued insert until it reports, so a
+ *        PasswordDialog can tell an earlier insert's report from its own.
+ */
+void tst_realpass::insertsPendingCountsTheInsertsYetToReport() {
+  RealPass pass;
+  pass.init(m_settings);
+  pass.updateEnv();
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+  QCOMPARE(pass.insertsPending(), 0);
+  // Queued synchronously, so neither has reported yet.
+  pass.Insert(QStringLiteral("folder/one"), QStringLiteral("v"), false);
+  pass.Insert(QStringLiteral("folder/two"), QStringLiteral("v"), false);
+  QCOMPARE(pass.insertsPending(), 2);
+  QTRY_COMPARE(inserted.count(), 2);
+  QCOMPARE(pass.insertsPending(), 0);
 }
 
 /**

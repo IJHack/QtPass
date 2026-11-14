@@ -181,7 +181,6 @@ auto ImitatePass::recipientsForEntry(const QString &file,
 }
 
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
-  m_insertPlaced = false;
   // The dialog names a new entry relative to the store; gpg used to resolve
   // that in its working directory. Everything below works on the one path.
   file =
@@ -217,6 +216,8 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   const QStringList args =
       encryptArgs({"--batch", "--status-fd", "2"}, pgpg(output), recipients);
   m_pendingInserts.enqueue({std::move(scratch), output, file, overwrite});
+  // Past every refusal: this insert is now queued and will report once.
+  queueInsert();
   executeGpg(PASS_INSERT, args, newValue);
   if (!gitReady()) {
     return;
@@ -1509,6 +1510,11 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
     // failure it fails like a gpg error: git steps cancelled below.
     // No dialog here: it would spin the event loop and run git steps first.
     const PendingInsert pending = m_pendingInserts.dequeue();
+    // The flag answers for this insert, the one whose gpg step just ended, not
+    // for whichever Insert() was called last: with two inserts queued, a gpg
+    // failure of the second must report written=false even though the first
+    // was placed. Cleared here, before placement, and set only on success.
+    m_insertPlaced = false;
     if (exitCode == 0) {
       m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
                                           pending.overwrite, &error);
