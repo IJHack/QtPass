@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief RealPass, the backend that hands every store operation to the `pass`
+ * command-line tool.
+ */
 #ifndef SRC_REALPASS_H_
 #define SRC_REALPASS_H_
 
@@ -228,9 +233,15 @@ public:
    */
   void Insert(QString file, QString newValue, bool overwrite) override;
   /**
-   * @brief Remove password or directory.
-   * @param file Path to remove.
-   * @param isDir true if removing directory.
+   * @brief Remove an entry or folder with `pass rm`.
+   *
+   * A folder that is a link is unlinked here instead, without deleting its
+   * target; that removal is committed only when Git is enabled and the
+   * tracking lookup and index removal both report success.
+   * @param file Store-relative entry path, without `.gpg` for a password
+   *        file.
+   * @param isDir true to remove a directory; false to remove a password
+   *        file.
    */
   void Remove(QString file, bool isDir) override;
   /**

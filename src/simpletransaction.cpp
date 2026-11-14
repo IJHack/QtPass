@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2017 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements SimpleTransaction as a queue of (last process, result)
+ * pairs.
+ */
 #include "simpletransaction.h"
 #include <utility>
 
@@ -8,21 +13,11 @@
 using Enums::INVALID;
 using Enums::PROCESS;
 
-/**
- * @brief Marks the start of a sequence of processes that shall be treated as
- * one operation.
- */
 void SimpleTransaction::transactionStart() {
   qCDebug(lcQtPass) << "START" << transactionDepth;
   transactionDepth++;
 }
 
-/**
- * @brief If called after transactionStart() and before transactionEnd(),
- *        this marks the given process as the next step in the transaction.
- *        Otherwise it marks the process as the only step in the transaction.
- * @param id Process that shall be treated as part of the transaction
- */
 void SimpleTransaction::transactionAdd(PROCESS id) {
   qCDebug(lcQtPass) << "ADD" << transactionDepth << id;
   if (transactionDepth > 0) {
@@ -32,10 +27,6 @@ void SimpleTransaction::transactionAdd(PROCESS id) {
   }
 }
 
-/**
- * @brief Marks the end of the current transaction.
- * @param pid Value that will be used as the result of the transaction
- */
 void SimpleTransaction::transactionEnd(PROCESS pid) {
   qCDebug(lcQtPass) << "END" << transactionDepth;
   if (transactionDepth > 0) {
@@ -47,13 +38,6 @@ void SimpleTransaction::transactionEnd(PROCESS pid) {
   }
 }
 
-/**
- * @brief Checks whether the currently finished process is last in current
- * transaction.
- * @param id The process id to check
- * @return Result of transaction as set by transactionAdd or transactionEnd,
- *         or PROCESS::INVALID if the transaction is not yet over
- */
 auto SimpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
   qCDebug(lcQtPass) << "OVER" << transactionDepth << id;
   if (!transactionQueue.empty() && id == transactionQueue.front().first) {

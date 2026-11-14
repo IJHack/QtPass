@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Pass, the abstract password-store backend that RealPass and
+ * ImitatePass implement, and gpgErrorMessage(), which turns gpg's stderr into
+ * a message for the user.
+ */
 #ifndef SRC_PASS_H_
 #define SRC_PASS_H_
 
@@ -67,7 +73,13 @@ struct ResolvedGpgconfCommand {
 class Pass : public QObject {
   Q_OBJECT
 
+  /** @brief Unused; kept from the time Pass tracked the running wrapper. */
   bool wrapperRunning{false};
+  /**
+   * @brief The environment the store's processes run in: the system
+   * environment plus what updateEnv() sets (PASSWORD_STORE_ variables,
+   * GNUPGHOME, PATH additions, WSLENV). Read through storeEnvironment().
+   */
   QProcessEnvironment env;
 
 protected:
@@ -650,67 +662,136 @@ private:
   QQueue<QString> m_pendingShows;
   /// Inserts that have started queueing but not yet reported; see queueInsert.
   int m_insertsPending = 0;
+  /**
+   * @brief Report a process that exited non-zero; called by finished().
+   *
+   * Always ends in processErrorExit(). A failed insert first emits
+   * insertFailed(), and critical() too when the entry was written and only
+   * a git step after it failed; failed key generation first emits
+   * generateGPGKeysFailed().
+   * @param pid Which kind of process failed.
+   * @param exitCode Its exit code.
+   * @param out Its stdout; not used.
+   * @param err Its stderr, or the Executor's message for a failed start.
+   */
   void handleProcessError(PROCESS pid, int exitCode, const QString &out,
                           const QString &err);
+  /**
+   * @brief Put the translated reason for a failed insert above what gpg
+   * itself printed, leaving out the machine-readable `[GNUPG:]` lines.
+   * @param friendly Message from gpgErrorMessage().
+   * @param err gpg's stderr.
+   * @return @p friendly, followed by the human-readable rest of @p err when
+   *         there is any.
+   */
   auto formatInsertError(const QString &friendly, const QString &err)
       -> QString;
+  /**
+   * @brief Emit the signals for a process that exited with 0; called by
+   * finished() for everything but PASS_SHOW.
+   *
+   * finishedAnyWithPid() goes out only for a process whose output cannot
+   * hold a secret (Enums::processInfo()), then the signal of that kind of
+   * process (finishedGitPull() and so on), if it has one.
+   * @param pid Which kind of process finished.
+   * @param out Its stdout.
+   * @param err Its stderr.
+   */
   void emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                  const QString &err);
-  /// critical() and processErrorExit() for something not part of the
-  /// store; refuseLinkedPath() and refuseFolderOutsideStore() say why.
+  /**
+   * @brief Refuse an operation on something that is not part of the store.
+   *
+   * Emits startingExecuteWrapper(), critical() and processErrorExit(), so
+   * an interface that arms itself when an operation starts is released
+   * again although nothing was started. refuseLinkedPath() and
+   * refuseFolderOutsideStore() say why.
+   * @param why Translated reason, shown to the user.
+   */
   void refuseAsNotPartOfStore(const QString &why);
 
 signals:
   /**
    * @brief Nothing of the store's runs or waits any more (isIdle()).
+   *
+   * Emitted when the command queue drains. The main window re-enables the
+   * profile selector on it: switching stores is held back while commands
+   * for the current one are still queued.
    */
   void idle();
   /**
-   * @brief Emitted before executing a command.
+   * @brief Emitted each time a queued process is about to start, and once
+   * for an operation that is refused before anything starts.
+   *
+   * The main window shows the busy state on it. An operation made of
+   * several processes emits it once per process; the operation then ends
+   * once, with a `finished...` signal or with processErrorExit().
    */
   void startingExecuteWrapper();
   /**
-   * @brief Emit status message.
-   * @param msg Status text.
-   * @param timeout Display duration in milliseconds.
+   * @brief Progress or a non-fatal problem worth a line in the status bar
+   * ("Creating backup commit", "Git pull failed: ...").
+   *
+   * Nothing depends on it being shown; an error the user must see goes out
+   * as critical() instead.
+   * @param msg Translated status text.
+   * @param timeout How long to show it, in milliseconds.
    */
   void statusMsg(const QString &msg, int timeout);
   /**
-   * @brief Emit critical error.
-   * @param title Error dialog title.
-   * @param message Error description.
+   * @brief Something went wrong that the user has to be told about in a
+   * dialog, such as a refused path or a failed backup commit.
+   *
+   * Says only what happened. When it ends an operation, processErrorExit()
+   * follows separately.
+   * @param title Translated dialog title.
+   * @param message Translated description.
    */
   void critical(const QString &title, const QString &message);
 
   /**
-   * @brief Emitted on process error exit.
-   * @param exitCode Process exit code.
-   * @param err Error message or stderr output.
+   * @brief An operation ended in failure: its process exited non-zero,
+   * could not be started or crashed, or the operation was refused.
+   *
+   * The counterpart of the `finished...` signals; exactly one of the two
+   * ends each operation. The main window releases the busy state and shows
+   * @p err in the password pane. insertFailed() and generateGPGKeysFailed()
+   * are emitted before it for those two operations, so their dialogs need
+   * not guess whose failure this is.
+   * @param exitCode Exit code of the process; -1 when it did not exit
+   *        normally, 1 for a refusal.
+   * @param err What to show the user: stderr, or a translated message.
    */
   void processErrorExit(int exitCode, const QString &err);
 
   /**
-   * @brief Emitted when any operation finishes with process ID for filtering.
+   * @brief A process of any kind finished successfully and its output
+   * cannot contain a secret.
+   *
+   * Feeds the process output panel. Processes whose output may hold a
+   * decrypted entry (Enums::processInfo()) never emit it, so a receiver
+   * may log or display @p out and @p err as they are.
    * @param out Standard output from the process.
    * @param err Standard error from the process.
-   * @param pid Process identifier for filtering/display.
+   * @param pid Which kind of process it was.
    */
   void finishedAnyWithPid(const QString &out, const QString &err,
                           Enums::PROCESS pid);
   /**
-   * @brief Emitted when Git init finishes.
+   * @brief `git init` in the store succeeded; the store is a repository
+   * now and the tree is re-read.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedGitInit(const QString &out, const QString &err);
   /**
-   * @brief Emitted when Git pull finishes.
+   * @brief `git pull` succeeded; entries may have changed on disk.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedGitPull(const QString &out, const QString &err);
   /**
-   * @brief Emitted when Git push finishes.
+   * @brief `git push` succeeded.
    * @param out Standard output.
    * @param err Standard error.
    */
@@ -727,37 +808,46 @@ signals:
    */
   void finishedShow(const QString &out, const QString &file);
   /**
-   * @brief Emitted when insert finishes.
-   * @param out Standard output.
+   * @brief An Insert() succeeded: the entry is in the store and, with Git
+   * in use, committed.
+   *
+   * In ImitatePass this ends the whole transaction (gpg, then git add and
+   * commit), not just the gpg step. The password dialog closes on it; a
+   * failure goes out as insertFailed() and processErrorExit() instead.
+   * @param out Standard output of the operation's processes.
    * @param err Standard error.
    */
   void finishedInsert(const QString &out, const QString &err);
   /**
-   * @brief Emitted when remove finishes.
+   * @brief A Remove() succeeded; the entry or folder is gone from the store.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedRemove(const QString &out, const QString &err);
   /**
-   * @brief Emitted when init finishes.
+   * @brief An Init() succeeded: the folder's `.gpg-id` holds the new
+   * recipient list.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedInit(const QString &out, const QString &err);
   /**
-   * @brief Emitted when move finishes.
+   * @brief A Move() succeeded; the entry or folder is under its new name.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedMove(const QString &out, const QString &err);
   /**
-   * @brief Emitted when copy finishes.
+   * @brief A Copy() succeeded; the copy exists beside the original.
    * @param out Standard output.
    * @param err Standard error.
    */
   void finishedCopy(const QString &out, const QString &err);
   /**
-   * @brief Emitted when GPG key generation finishes.
+   * @brief GenerateGPGKeys() succeeded; the new key pair is in the keyring.
+   *
+   * The key generation dialog closes on it. A failure emits
+   * generateGPGKeysFailed() instead.
    * @param out Standard output.
    * @param err Standard error.
    */
@@ -780,7 +870,11 @@ signals:
    */
   void insertFailed(const QString &err, bool written);
   /**
-   * @brief Emitted when grep finishes with matching results.
+   * @brief The newest Grep() is over; an empty list means no entry matched.
+   *
+   * Comes from NativeGrep on both backends and bypasses finished(), since
+   * the matching lines are decrypted content. A search superseded by a
+   * newer one never reports.
    * @param results List of (entry path, matching lines) pairs.
    */
   void finishedGrep(const QList<QPair<QString, QStringList>> &results);
@@ -797,6 +891,9 @@ signals:
  *
  * Declared here so it can be exercised by unit tests without linking the full
  * Pass object.
+ * @param err gpg's stderr, with or without `[GNUPG:]` status lines.
+ * @return A translated message, or an empty string for an error it does
+ *         not recognise.
  */
 QString gpgErrorMessage(const QString &err);
 

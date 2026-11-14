@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief PassBackendFactory, which constructs the two Pass backends on demand
+ * and hands out the one the settings select.
+ */
 #ifndef SRC_PASSBACKENDFACTORY_H_
 #define SRC_PASSBACKENDFACTORY_H_
 
@@ -55,14 +60,21 @@ public:
   static auto isIdle() -> bool;
 
 private:
+  /**
+   * @brief The backend getPass() last selected; null until the first call
+   * and again after invalidate(). Points at one of the two below.
+   */
   static Pass *pass;
   // Go via pointer to avoid dynamic initialization, due to "random"
   // initialization order relative to other globals, especially around QObject
   // metadata dynamic initialization can lead to crashes depending on compiler,
   // linker etc.
+  /** @brief The `pass` backend, constructed on first use. */
   static QScopedPointer<RealPass> realPass;
+  /** @brief The gpg and git backend, constructed on first use. */
   static QScopedPointer<ImitatePass> imitatePass;
 
+  /** @brief Not constructible; the class has only static members. */
   PassBackendFactory() = default;
 };
 

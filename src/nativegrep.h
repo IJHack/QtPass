@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief NativeGrep, the content search that decrypts every entry on a worker
+ * thread instead of running `pass grep`.
+ */
 #ifndef SRC_NATIVEGREP_H_
 #define SRC_NATIVEGREP_H_
 
@@ -161,10 +166,17 @@ private:
   /// is shared with the thread's lambda so it outlives this object if a
   /// search is still winding down when it is destroyed.
   struct Worker {
+    /** @brief The thread the search runs on. */
     QThread *thread;
+    /** @brief Set to ask the search to stop; polled by its gpg runs. */
     std::shared_ptr<std::atomic_bool> cancel;
   };
+  /**
+   * @brief Number of the newest search. A worker reports through finished()
+   * only when its own number still equals this.
+   */
   int m_seq = 0;
+  /** @brief Searches still running, superseded ones included. */
   QList<Worker> m_workers;
 };
 

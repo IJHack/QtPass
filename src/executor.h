@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Executor, the FIFO queue every gpg, git and pass child process of
+ * QtPass goes through, and the WSL command parsing it shares with the
+ * settings code.
+ */
 #ifndef SRC_EXECUTOR_H_
 #define SRC_EXECUTOR_H_
 
@@ -29,42 +35,47 @@ class Executor : public QObject {
    * @brief Execution queue item for non-interactive ordered execution.
    */
   struct ExecQueueItem {
-    /**
-     * @brief id    identifier of process given by the caller
-     */
+    /** @brief Identifier the caller gave; echoed in finished()/error(). */
     int id;
-    /**
-     * @brief app   executable path.
-     */
+    /** @brief Executable as configured; resolved when started. */
     QString app;
-    /**
-     * @brief args  arguments for executable.
-     */
+    /** @brief Arguments for the executable. */
     QStringList args;
-    /**
-     * @brief input     data to write to stdin of process
-     */
+    /** @brief Data written to the process's stdin, then closed. */
     QString input;
-    /**
-     * @brief readStdout    whether to read stdout
-     */
+    /** @brief Whether stdout is captured for finished(). */
     bool readStdout;
     /**
-     * @brief readStderr    whether to read stderr
-     *                      it's read regardless of this setting in case of
-     *                      non-0 return value of process
+     * @brief Whether stderr is captured; it is read regardless when the
+     * process exits non-zero.
      */
     bool readStderr;
-    /**
-     * @brief workingDir    working directory in which the process will be
-     *                      started
-     */
+    /** @brief Working directory to start in; empty for the current one. */
     QString workingDir;
   };
 
+  /**
+   * @brief Commands waiting to run, head first. The head stays queued while
+   * it runs and is dequeued in onProcessFinished().
+   */
   QQueue<ExecQueueItem> m_execQueue;
+  /** @brief The one process object; every queued command reuses it. */
   QProcess m_process;
+  /**
+   * @brief Whether the head of the queue has been started (or is being
+   * dequeued, see dequeuing()) and has not finished yet.
+   */
   bool running{false};
+  /**
+   * @brief Start the head of the queue unless something runs or the queue
+   * is empty.
+   *
+   * Marks the executor running and emits dequeuing() before touching the
+   * item, so a slot there cannot invalidate it. An item with no executable
+   * is failed with a queued error() (an empty command used to wedge the
+   * queue, #1682) and the next one is tried at once. Called after each
+   * execute() and from onProcessFinished().
+   */
   void executeNext();
   /// Post one check for drained(), coalesced: it comes after what is
   /// being emitted now, and fires only when the executor is idle and no
@@ -77,6 +88,13 @@ class Executor : public QObject {
   /**
    * @brief Start @p process running @p app, handling the "wsl " prefix once
    * for both the queued and the blocking path.
+   *
+   * Also applies detachFromTerminal() and the umask from setChildUmask(),
+   * so every child QtPass starts gets both.
+   * @param process Process object to start; configured by the caller.
+   * @param app Executable as configured (see resolveExecutable() and
+   *        parseWslCommand()).
+   * @param args Command arguments.
    */
   static void startProcess(QProcess &process, const QString &app,
                            const QStringList &args);
@@ -84,6 +102,9 @@ class Executor : public QObject {
    * @brief Read what a finished process produced, according to the queue
    * item's readStdout/readStderr flags; stderr is always read on a non-zero
    * exit so the caller can report it.
+   * @param item The queue item the process ran for.
+   * @param exitCode Its exit code.
+   * @return stdout and stderr, each empty when not read.
    */
   auto collectOutput(const ExecQueueItem &item, int exitCode)
       -> std::pair<QString, QString>;
@@ -402,6 +423,16 @@ public:
    */
   auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
 private slots:
+  /**
+   * @brief Finish the running item when its process exits.
+   *
+   * Dequeues the head, collects its output and emits finished() for a
+   * normal exit or error() with exit code -1 for a crash (Qt leaves the
+   * code undefined then, and 0 or 1 would be mistaken for success or
+   * "no matches"), then starts the next item and posts a drained() check.
+   * @param exitCode Exit code reported by QProcess.
+   * @param exitStatus Whether the process exited normally or crashed.
+   */
   void onProcessFinished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
   /**
@@ -410,17 +441,19 @@ signals:
    */
   void drained();
   /**
-   * @brief finished    signal that is emitted when process finishes
-   *
-   * @param id          id of the process
-   * @param exitCode    return code of the process
-   * @param output      stdout produced by the process
-   * @param errout      stderr produced by the process
+   * @brief Emitted when a queued process exits normally, whatever its exit
+   * code; a non-zero code is the receiver's to interpret (Pass does).
+   * @param id Caller-assigned id the item was queued with.
+   * @param exitCode Exit code of the process.
+   * @param output stdout, when the item asked for it; empty otherwise.
+   * @param errout stderr, when the item asked for it or the exit code is
+   *        non-zero.
    */
   void finished(int id, int exitCode, const QString &output,
                 const QString &errout);
   /**
-   * @brief starting    signal that is emitted when process starts
+   * @brief Emitted just before a queued process is started; the main
+   * window shows the busy indicator on it.
    */
   void starting();
   /**
@@ -440,13 +473,13 @@ signals:
    */
   void dequeuing(int id, bool completes);
   /**
-   * @brief error       signal that is emitted when process finishes with an
-   * error
-   *
-   * @param id          id of the process
-   * @param exitCode    return code of the process
-   * @param output      stdout produced by the process
-   * @param errout      stderr produced by the process
+   * @brief Emitted instead of finished() when a queued process could not be
+   * started, had no executable configured, or crashed.
+   * @param id Caller-assigned id the item was queued with.
+   * @param exitCode Always -1; the real code is unknown in these cases.
+   * @param output stdout read so far, when the item asked for it.
+   * @param errout stderr, or a message saying what went wrong when the
+   *        process left none.
    */
   void error(int id, int exitCode, const QString &output,
              const QString &errout);

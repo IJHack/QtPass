@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ClipboardManager and the per-platform clipboard hints that
+ * keep secrets out of clipboard histories.
+ */
 #include "clipboardmanager.h"
 #include "qtpasssettings.h"
 #include "util.h"
@@ -182,11 +187,6 @@ void ClipboardManager::clear() {
   m_otherCopies.clear();
 }
 
-/**
- * @brief Build clipboard MIME data with platform-specific security hints.
- * @param text - Plain text to copy
- * @return QMimeData with text and security hints
- */
 auto buildClipboardMimeData(const QString &text) -> QMimeData * {
   auto *mimeData = new QMimeData();
   mimeData->setText(text);

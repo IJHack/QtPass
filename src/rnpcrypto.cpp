@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements RnpCrypto over RNP's C FFI, with RAII wrappers for its
+ * handles and bounded in-memory input and output.
+ */
 #include "rnpcrypto.h"
 #include "util.h"
 

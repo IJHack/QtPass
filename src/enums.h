@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief The Enums namespace: clipboard behaviour and the identifiers of the
+ * subprocess kinds QtPass queues.
+ */
 #ifndef SRC_ENUMS_H_
 #define SRC_ENUMS_H_
 

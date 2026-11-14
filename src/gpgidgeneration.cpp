@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements the `.gpg-id` generation header and the per-store record
+ * of accepted generations.
+ */
 #include "gpgidgeneration.h"
 #include "qtpasslogging.h"
 #include <QCoreApplication>

@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements RealPass: builds the `pass` command lines and does itself
+ * the few things `pass` must not be trusted with, such as removing a linked
+ * folder without following it.
+ */
 #include "realpass.h"
 #include "executor.h"
 #include "gpgidsigner.h"
@@ -246,13 +252,6 @@ auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
   return hash.result();
 }
 
-/**
- * @brief Remove an entry with pass, unlinking linked folders locally without
- * deleting their targets. Commit a linked folder's removal only when Git is
- * enabled and the tracking lookup and index removal commands report success.
- * @param file Store-relative entry path, without .gpg for a password file.
- * @param isDir true to remove a directory; false to remove a password file.
- */
 void RealPass::Remove(QString file, bool isDir) {
   // Nothing behind a link is the store's to delete.
   if (refuseLinkedPath(isDir ? file : file + ".gpg", LinkScope::ParentsOnly)) {

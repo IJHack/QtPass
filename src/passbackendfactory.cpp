@@ -1,11 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 /**
- * @class PassBackendFactory
- * @brief Pass backend lifecycle implementation.
- *
- * @see passbackendfactory.h
+ * @file
+ * @brief Implements PassBackendFactory. The backends are held through
+ * pointers and constructed on first use, so nothing depends on the
+ * initialisation order of globals.
  */
 
 #include "passbackendfactory.h"

@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief The process table behind Enums::processInfo(); a missing row for a
+ * new Enums::PROCESS value fails the build here.
+ */
 #include "processinfo.h"
 #include <QString>
 

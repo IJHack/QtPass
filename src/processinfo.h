@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Enums::ProcessInfo, the one table that names each kind of subprocess
+ * and says whether its output may carry a secret.
+ */
 #ifndef SRC_PROCESSINFO_H_
 #define SRC_PROCESSINFO_H_
 
