@@ -1170,7 +1170,7 @@ e-mail</source>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் கடை துவக்கப்படவில்லை</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
