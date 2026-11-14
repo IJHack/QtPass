@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Anne Jan Brouwer -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@pagetitle@</title>
+    <link rel="stylesheet" href="@basedir@gcov.css" />
+    <link rel="icon" type="image/svg+xml" href="@basedir@../qtpass-icon.svg" />
+  </head>
+  <body>
+    <header class="site">
+      <a href="@basedir@../index.html">
+        <img src="@basedir@../qtpass-icon.svg" alt="" width="36" height="36" />
+        <span class="name">QtPass</span>
+        <span class="section">Developer documentation</span>
+      </a>
+    </header>
