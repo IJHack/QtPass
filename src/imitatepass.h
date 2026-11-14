@@ -356,6 +356,13 @@ protected:
                                   QString *process_out,
                                   QString *process_err = nullptr) -> int;
   /**
+   * @brief Run git with `-C <store>` in the store, blocking.
+   * @param args The git arguments (without the executable or `-C`).
+   * @param out Receives stdout; may be null.
+   * @return true when git ran and exited 0 (git on and configured).
+   */
+  auto storeGit(const QStringList &args, QString *out) -> bool override;
+  /**
    * @brief Handle process completion.
    * @param id Process identifier.
    * @param exitCode Process exit code.

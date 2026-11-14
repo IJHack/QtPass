@@ -532,6 +532,56 @@ protected:
                                 QString *relative = nullptr) -> bool;
 
   /**
+   * @brief Run a git command in the store's repository, blocking.
+   *
+   * The two backends reach git differently: ImitatePass runs the configured
+   * git with `-C <store>`, RealPass runs `pass git`. The default (no git)
+   * answers false. Used by refuseUnfinishedGitOperation() to ask the
+   * repository its state before an operation changes the store.
+   * @param args The git arguments (without the executable or `-C`).
+   * @param out Receives the command's standard output; may be null.
+   * @return true when git ran and exited 0, false otherwise (git off, the
+   *         store is not a repository, or git failed).
+   */
+  virtual auto storeGit(const QStringList &args, QString *out) -> bool {
+    Q_UNUSED(args);
+    Q_UNUSED(out);
+    return false;
+  }
+
+  /**
+   * @brief Refuse to change the store while git is mid-rebase, -merge,
+   * -cherry-pick or -revert.
+   *
+   * A pull that stopped in a conflict leaves the repository part-way through
+   * an operation. Committing a save or a re-encryption into it lands the
+   * change on a detached HEAD (a later `git rebase --abort` drops it) or
+   * concludes the merge in favour of the local copy (pushing over a
+   * colleague's change). Every store-changing operation calls this at its
+   * entry, next to refuseLinkedPath(), so the change is refused before gpg or
+   * pass runs and the dialog keeps what was typed. Nothing is refused when git
+   * is off, the store is not a repository, or git gives no answer. A HEAD
+   * detached by hand (no operation in progress) is deliberately accepted.
+   * @return true when critical() and processErrorExit() were emitted and the
+   *         caller must stop.
+   */
+  auto refuseUnfinishedGitOperation() -> bool;
+
+  /**
+   * @brief The unfinished git operation in progress in the store, if any.
+   *
+   * The detection behind refuseUnfinishedGitOperation(), without emitting a
+   * refusal: a backend re-checks it when a save's gpg step has finished (a
+   * pull queued before the save, from the asynchronous Update, may have
+   * finished and left a conflict meanwhile) so the entry is not placed or
+   * committed into the operation.
+   * @return A ready-to-show reason naming the operation (rebase, merge,
+   *         cherry-pick or revert), or an empty string when none is in
+   *         progress, git is off, or the store is not a repository.
+   */
+  auto unfinishedGitOperationReason() -> QString;
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.

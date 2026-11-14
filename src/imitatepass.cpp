@@ -85,6 +85,18 @@ auto ImitatePass::translatePathForWsl(const QString &path,
   return Executor::translatePathForWsl(path, exe);
 }
 
+auto ImitatePass::storeGit(const QStringList &args, QString *out) -> bool {
+  if (!m_settings.useGit || m_settings.gitExecutable.isEmpty()) {
+    return false;
+  }
+  // -C the store: executeBlocking sets no working directory, so git would
+  // otherwise run in QtPass's launch directory.
+  const QString store = pgit(m_settings.passStore);
+  return execBlocking(m_settings.gitExecutable,
+                      QStringList{QStringLiteral("-C"), store} + args, out,
+                      nullptr) == 0;
+}
+
 auto ImitatePass::pgit(const QString &path) const -> QString {
   return translatePathForWsl(path, m_settings.gitExecutable);
 }
@@ -190,6 +202,9 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file)) {
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    return;
+  }
   // gpg used to refuse an existing output without --yes; it writes
   // elsewhere now, so the check is ours here, and again at the rename.
   const QFileInfo target(file);
@@ -262,6 +277,9 @@ void ImitatePass::Remove(QString file, bool isDir) {
   }
   // A link itself may go; anything behind one is not the store's to delete.
   if (refuseLinkedPath(file, LinkScope::ParentsOnly)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_REMOVE);
@@ -532,6 +550,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   QString inStore;
   if (refuseLinkedGpgIdFolder(path) ||
       refuseFolderOutsideStore(path, &inStore)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   // From here on in the store's own spelling, the same folder: one spelled
@@ -1004,6 +1025,12 @@ void ImitatePass::reencryptPath(const QString &dir) {
     emit endReencryptPath();
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    // Re-encrypting now would run createBackupCommit()'s `git add -u` and
+    // conclude the stopped merge; refuse before the worker starts.
+    emit endReencryptPath();
+    return;
+  }
   m_reencryptActive = true;
   m_reencryptCancel.store(false);
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
@@ -1032,6 +1059,18 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
   if (!exec.isIdle()) {
     QTimer::singleShot(kReencryptRetryMs, this,
                        [this, dir]() { startReencryptWorker(dir); });
+    return;
+  }
+  // Re-check now the queue is idle: a pull queued earlier through the
+  // asynchronous GitPull() may have finished during the wait and left a
+  // conflict. reencryptPath() checked before scheduling, but that was before
+  // such a pull could run; starting the worker now would let its backup commit
+  // conclude the stopped operation. The refusal already reported it, so finish
+  // as an aborted run (clears m_reencryptActive, emits endReencryptPath).
+  if (refuseUnfinishedGitOperation()) {
+    ReencryptResult result;
+    result.aborted = true;
+    finishReencrypt(result);
     return;
   }
 
@@ -1140,6 +1179,19 @@ auto ImitatePass::recipientsForDir(const QString &fileName,
 auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
   ReencryptResult result;
   if (!pullBeforeReencrypt()) {
+    result.aborted = true;
+    return result;
+  }
+  // The GUI-thread checks ran before this worker's own pull.
+  // pullBeforeReencrypt refuses an unmerged index, but a pull that stopped in a
+  // rebase can leave a rebase-merge/rebase-apply state with no unmerged entry
+  // yet; the backup commit's `git add -u` would then conclude it. Re-check
+  // here, before any write, with the non-emitting detection (the refusal is
+  // reported once, as an aborted run).
+  if (const QString midOp = unfinishedGitOperationReason(); !midOp.isEmpty()) {
+    if (!m_reencryptCancel.load()) {
+      emit critical(tr("Unfinished Git operation"), midOp);
+    }
     result.aborted = true;
     return result;
   }
@@ -1380,6 +1432,9 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    return;
+  }
   TransactionHelper trans(&m_transaction, PASS_MOVE);
   QString destFile = resolveMoveDestination(src, dest, force);
   if (destFile.isEmpty()) {
@@ -1437,6 +1492,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // QFile::copy reads through a link: the target's bytes would become an
   // entry of the store.
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_COPY);
@@ -1516,10 +1574,22 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
     // was placed. Cleared here, before placement, and set only on success.
     m_insertPlaced = false;
     if (exitCode == 0) {
-      m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
-                                          pending.overwrite, &error);
-      if (!m_insertPlaced) {
+      // Insert() checked the repository when the save was requested, but a
+      // pull queued before it (the asynchronous Update button) may have run
+      // and stopped in a conflict while this gpg step encrypted. Placing the
+      // entry and committing it now would land it in the unfinished operation,
+      // where `git rebase --abort` would drop it. Re-check and, if so, fail the
+      // save instead of placing it; the queued git steps are cancelled below.
+      const QString midOp = unfinishedGitOperationReason();
+      if (!midOp.isEmpty()) {
+        error = midOp;
         exitCode = 1;
+      } else {
+        m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
+                                            pending.overwrite, &error);
+        if (!m_insertPlaced) {
+          exitCode = 1;
+        }
       }
     }
   }

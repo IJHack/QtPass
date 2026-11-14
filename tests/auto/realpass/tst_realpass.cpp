@@ -37,6 +37,7 @@ private slots:
   void insertWhoseCommitFailsSaysWhetherTheEntryWasWritten();
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void insertsPendingCountsTheInsertsYetToReport();
+  void refusesToInsertDuringAnUnfinishedMerge();
   void signedListIsCheckedAsTheNativeBackendDoes();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
@@ -420,6 +421,68 @@ void tst_realpass::insertsPendingCountsTheInsertsYetToReport() {
   QCOMPARE(pass.insertsPending(), 2);
   QTRY_COMPARE(inserted.count(), 2);
   QCOMPARE(pass.insertsPending(), 0);
+}
+
+/**
+ * @brief An insert while git is mid-merge is refused before `pass` runs. The
+ *        stand-in `pass git rev-parse --git-path` reports a MERGE_HEAD that
+ *        exists in the store, as real git would during a stopped merge.
+ */
+void tst_realpass::refusesToInsertDuringAnUnfinishedMerge() {
+  QVERIFY(QDir().mkpath(m_store + QStringLiteral(".git")));
+  {
+    QFile marker(m_store + QStringLiteral(".git/MERGE_HEAD"));
+    QVERIFY(marker.open(QIODevice::WriteOnly | QIODevice::Text));
+    marker.write("x\n");
+  }
+  const QString calls =
+      QDir(m_dir.path()).filePath(QStringLiteral("merge-calls.log"));
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(m_store + QStringLiteral(".git/MERGE_HEAD"));
+    QDir(m_store).rmdir(QStringLiteral(".git"));
+    QFile::remove(calls);
+  });
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("merge-pass"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // For the rebase/merge probe, name the markers relative to the store;
+    // MERGE_HEAD exists. Any other pass call is logged, to show none ran.
+    f.write(QStringLiteral(
+                "#!/bin/sh\n"
+                "if [ \"$1\" = git ] && [ \"$2\" = rev-parse ]; then\n"
+                "  printf '%s\\n' .git/rebase-merge .git/rebase-apply "
+                ".git/MERGE_HEAD .git/CHERRY_PICK_HEAD .git/REVERT_HEAD\n"
+                "  exit 0\n"
+                "fi\n"
+                "printf 'CALL\\n' >> '%1'\n"
+                "exit 0\n")
+                .arg(calls)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings s = m_settings;
+  s.useGit = true;
+  s.passExecutable = script;
+  RealPass pass;
+  pass.init(s);
+  pass.updateEnv();
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("newsite"), QStringLiteral("v"), false);
+  QTest::qWait(200);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().contains(QStringLiteral("merge")),
+      qPrintable(criticalSpy.first().at(1).toString()));
+  QCOMPARE(inserted.count(), 0);
+  QVERIFY2(!QFile::exists(calls),
+           "pass insert must not run during the unfinished merge");
 }
 
 /**
@@ -1091,7 +1154,16 @@ void tst_realpass::linkedFolderThatCannotBeUnlinkedReportsDeleteFailed() {
            criticalSpy.first().at(1).toString());
   QCOMPARE(removedSpy.count(), 0);
   QVERIFY2(QFileInfo(shared).isSymLink(), "the link must still be there");
-  QVERIFY2(!QFile::exists(m_log), "pass must not have been asked anything");
+  // The read-only rebase/merge probe (pass git rev-parse) may run; pass must
+  // not be asked to change the store (rm or commit) for a failed unlink.
+  if (QFile::exists(m_log)) {
+    QFile log(m_log);
+    QVERIFY(log.open(QIODevice::ReadOnly | QIODevice::Text));
+    const QString text = QString::fromUtf8(log.readAll());
+    QVERIFY2(!text.contains(QLatin1String("\nrm\n")) &&
+                 !text.contains(QLatin1String("\ncommit\n")),
+             qPrintable("pass was asked to change the store: " + text));
+  }
 }
 
 /**
@@ -1222,10 +1294,6 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
   const QStringList invocations =
       QString::fromUtf8(f.readAll())
           .split(QStringLiteral("CALL\n"), Qt::SkipEmptyParts);
-  // ls-files, rm --cached, the pass.signcommits query (as pass's own
-  // git_commit() asks; the stand-in answers nothing, so no -S), commit, and
-  // the check that nothing is left staged.
-  QCOMPARE(invocations.size(), 5);
   QList<QStringList> argv;
   for (const QString &record : invocations) {
     const QStringList lines =
@@ -1234,8 +1302,17 @@ void tst_realpass::linkedFolderKnownToGitIsForgottenByGitAlone() {
     QVERIFY2(store.startsWith(QStringLiteral("STORE=")),
              qPrintable("record without the store first: " + record));
     QCOMPARE(QDir(store.mid(6)).canonicalPath(), QDir(m_store).canonicalPath());
-    argv << lines.mid(1);
+    const QStringList call = lines.mid(1);
+    // Skip the read-only rebase/merge probe Remove() runs first.
+    if (call.contains(QStringLiteral("rev-parse"))) {
+      continue;
+    }
+    argv << call;
   }
+  // ls-files, rm --cached, the pass.signcommits query (as pass's own
+  // git_commit() asks; the stand-in answers nothing, so no -S), commit, and
+  // the check that nothing is left staged.
+  QCOMPARE(argv.size(), 5);
   QCOMPARE(argv.at(0),
            (QStringList{QStringLiteral("git"), QStringLiteral("ls-files"),
                         QStringLiteral("--"), QStringLiteral("shared")}));

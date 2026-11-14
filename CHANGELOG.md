@@ -683,6 +683,18 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 
 ### Bugfixes
 
+- Saves, deletes, moves, copies and re-encryption are refused while the
+  store's Git repository is in the middle of a rebase, merge, cherry-pick or
+  revert (a pull that stopped in a conflict). QtPass used to keep committing
+  into the unfinished operation without a word: a save landed on a detached
+  HEAD that `git rebase --abort` then dropped, and a re-encryption concluded a
+  stopped merge in favour of the local copy and, with automatic push on,
+  pushed it over a colleague's change. Every store-changing operation now
+  checks the repository first and, when one is in progress, says so and leaves
+  the store untouched (the entry dialog keeps what was typed). Finish or abort
+  the operation with Git first. Nothing is refused when Git is off, the store
+  is not a repository, or Git gives no answer; a HEAD detached by hand is
+  still accepted.
 - One line in a folder's `.gpg-id` that `gpg` cannot read as a key search
   (a bare `0x`, a mistyped key ID, a fingerprint one digit short) no longer
   makes the Users dialog open with none of the folder's real recipients
