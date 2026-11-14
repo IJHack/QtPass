@@ -55,7 +55,18 @@ Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   connect(&exec, &Executor::error, this, &Pass::finished);
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
-  connect(&exec, &Executor::drained, this, &Pass::idle);
+  connect(&exec, &Executor::drained, this, [this] {
+    // Idle means the queue is empty and nothing runs, so no insert is in
+    // flight: force the pending count to zero. A report that never arrived
+    // (the "No such transaction" path in ImitatePass::finished(), or any
+    // later change that drops an insert without reporting) would otherwise
+    // leave the count one too high for the rest of the session, and every
+    // later dialog would take its own report for an earlier one and wait for
+    // ever. Idle cannot fall between a dialog's insertsPending() read and its
+    // own report, since that insert keeps the executor busy.
+    m_insertsPending = 0;
+    emit idle();
+  });
   // Each queued process starts in the environment as the store is then:
   // the Git pin is judged at that moment (dequeuing() comes just before the
   // start, on this thread).

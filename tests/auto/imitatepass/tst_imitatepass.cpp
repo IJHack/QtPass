@@ -49,6 +49,16 @@
 #include "../../../src/imitatepass.h"
 #include "../testsettings.h"
 
+namespace {
+/// Exposes queueInsert() so a test can simulate an insert whose report never
+/// arrives (the "No such transaction" path), to check it heals when the queue
+/// drains.
+class LeakyImitatePass : public ImitatePass {
+public:
+  void leakOneInsertReport() { queueInsert(); }
+};
+} // namespace
+
 class tst_imitatepass : public QObject {
   Q_OBJECT
 
@@ -677,6 +687,7 @@ private Q_SLOTS:
   void insertFailsWhenTheEntryFolderVanishes();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
+  void aLostInsertReportIsHealedWhenTheQueueDrains();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1645,6 +1656,40 @@ void tst_imitatepass::insertsPendingCountsTheInsertsYetToReport() {
   pass.Insert(QStringLiteral("two"), QStringLiteral("b\n"), false);
   QCOMPARE(pass.insertsPending(), 2);
   QTRY_COMPARE(insertSpy.count(), 2);
+  QCOMPARE(pass.insertsPending(), 0);
+#endif
+}
+
+/**
+ * @brief A report that never arrives would leave insertsPending() one too
+ *        high for the session, trapping every later dialog. When the queue
+ *        drains (nothing runs, nothing waits) the count returns to zero.
+ */
+void tst_imitatepass::aLostInsertReportIsHealedWhenTheQueueDrains() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  LeakyImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = false;
+  pass.init(s);
+  // An insert whose report never comes back leaves the count stuck.
+  pass.leakOneInsertReport();
+  QCOMPARE(pass.insertsPending(), 1);
+
+  // Any run that drains the queue clears it: a normal insert, which reports
+  // and then leaves the executor idle.
+  QSignalSpy idleSpy(&pass, &Pass::idle);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("entry"), QStringLiteral("v\n"), false);
+  QTRY_COMPARE(insertSpy.count(), 1);
+  QTRY_VERIFY(idleSpy.count() > 0);
   QCOMPARE(pass.insertsPending(), 0);
 #endif
 }
