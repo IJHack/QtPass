@@ -578,8 +578,28 @@ private:
    */
   void connectPassSignals(Pass *pass);
 
-  /// Make the first entry (depth first) under the store root current.
+  /// Make the entry named exactly as searched current, or else the first
+  /// entry (depth first) under the store root.
   void selectFirstFile();
+  /**
+   * @brief The entry whose name is exactly the search text, if the filtered
+   * tree shows it: `team/bank` for "team/bank", not a folder of that name.
+   * @return Its proxy index, or invalid when no entry is named so.
+   */
+  auto exactMatch() -> QModelIndex;
+  /**
+   * @brief The file an entry named exactly as the search text would be.
+   * @return Its path, or empty when the text is empty or would resolve
+   *         outside the store.
+   */
+  auto exactMatchPath() -> QString;
+  /**
+   * @brief Searches for @p text as qtpass(1) promises for the command line
+   * and for text handed over by another qtpass: the tree is filtered to it
+   * at once, and an entry named exactly so is opened.
+   * @param text The search text.
+   */
+  void applySearchText(const QString &text);
   /**
    * @brief Depth-first search for the first entry under a folder.
    * @param parentIndex Proxy index of the folder to search.

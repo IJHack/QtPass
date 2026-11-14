@@ -42,6 +42,7 @@
 #include <QDialog>
 #include <QDockWidget>
 #include <QFileInfo>
+#include <QFileSystemModel>
 #include <QHBoxLayout>
 #include <QInputDialog>
 #include <QLabel>
@@ -112,7 +113,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  ui->lineEdit->setText(searchText);
+  // Searched as qtpass(1) promises, once the window and its tree are up:
+  // filtered at once and an entry named exactly so opened. Setting the
+  // text here left it to the search timer, which only highlights.
+  if (!searchText.isEmpty()) {
+    QTimer::singleShot(0, this,
+                       [this, searchText] { applySearchText(searchText); });
+  }
 
   // No QApplication::quit() here: before exec() it is a documented no-op.
   // main() checks initSucceeded() and exits before show() instead.
@@ -883,6 +890,12 @@ void MainWindow::on_lineEdit_returnPressed() {
     return;
   }
 
+  // Return within the search delay acts on the text as typed, not on the
+  // tree as the previous text filtered it.
+  if (searchTimer.isActive()) {
+    searchTimer.stop();
+    onTimeoutSearch();
+  }
   if (m_tree->proxy().rowCount() > 0) {
     selectFirstFile();
     on_treeView_clicked(ui->treeView->currentIndex());
@@ -1011,8 +1024,76 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
 }
 
 void MainWindow::selectFirstFile() {
-  QModelIndex index = firstFile(m_tree->rootIndex());
+  // The entry named exactly as typed wins: with folders sorted first, the
+  // depth-first walk found team/bank before bank.
+  QModelIndex index = exactMatch();
+  if (!index.isValid()) {
+    index = firstFile(m_tree->rootIndex());
+  }
   ui->treeView->setCurrentIndex(index);
+}
+
+auto MainWindow::exactMatchPath() -> QString {
+  const QString typed =
+      QDir::fromNativeSeparators(ui->lineEdit->text().trimmed());
+  if (typed.isEmpty()) {
+    return {};
+  }
+  const QString store = QtPassSettings::getPassStore();
+  const QString path =
+      QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
+  if (!PathValidator::isPathInStore(store, path)) {
+    return {};
+  }
+  return path;
+}
+
+auto MainWindow::exactMatch() -> QModelIndex {
+  const QString path = exactMatchPath();
+  if (path.isEmpty()) {
+    return {};
+  }
+  // indexFor() maps through the filter: a row the filter hides is no match.
+  const QModelIndex index = m_tree->indexFor(path);
+  if (!index.isValid() || !m_tree->fileInfo(index).isFile()) {
+    return {};
+  }
+  return index;
+}
+
+void MainWindow::applySearchText(const QString &text) {
+  ui->lineEdit->setText(text);
+  // Filter now, not after the search delay: the timer would leave the tree
+  // as the previous text filtered it.
+  searchTimer.stop();
+  onTimeoutSearch();
+  if (const QModelIndex exact = exactMatch(); exact.isValid()) {
+    on_treeView_clicked(exact);
+    return;
+  }
+  // The tree loads folders in the background: at start, or right after the
+  // window is shown again, an entry that exists may not be in it yet. Try
+  // again as folders finish loading, for a few seconds, unless the search
+  // text has changed meanwhile.
+  const QString path = exactMatchPath();
+  if (path.isEmpty() || !QFileInfo(path).isFile()) {
+    return;
+  }
+  auto *pending = new QObject(this);
+  QTimer::singleShot(5000, pending, &QObject::deleteLater);
+  connect(&m_tree->fileSystem(), &QFileSystemModel::directoryLoaded, pending,
+          [this, pending, text](const QString &) {
+            if (ui->lineEdit->text() != text) {
+              pending->deleteLater();
+              return;
+            }
+            searchTimer.stop();
+            onTimeoutSearch();
+            if (const QModelIndex exact = exactMatch(); exact.isValid()) {
+              pending->deleteLater();
+              on_treeView_clicked(exact);
+            }
+          });
 }
 
 auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
@@ -1226,8 +1307,7 @@ void MainWindow::messageAvailable(const QString &message) {
     focusInput();
   } else {
     ui->treeView->expandAll();
-    ui->lineEdit->setText(message);
-    on_lineEdit_returnPressed();
+    applySearchText(message);
   }
 }
 

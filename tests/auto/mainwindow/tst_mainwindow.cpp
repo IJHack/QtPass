@@ -455,7 +455,10 @@ private Q_SLOTS:
   void deselectLeavesGrepModeWhenResultsAreShown();
   void searchForAFolderWithoutFilesSelectsNothing();
   void enterInTheSearchBoxOpensTheFirstMatch();
+  void enterInTheSearchBoxPrefersTheEntryNamedAsTyped();
+  void enterInsideTheSearchDelayUsesTheTypedText();
   void messageFromAnotherInstanceShowsAndSearches();
+  void messageFromAnotherInstanceOpensOnlyAnExactMatch();
   void configDialogAcceptedReappliesTheSettings();
   void configDialogCancelledChangesNothing();
   void aboutBoxNamesTheProgramAndLicence();
@@ -878,6 +881,27 @@ auto selectEntry(MainWindow *window, const QString &storeDir,
   QTRY_VERIFY_WITH_TIMEOUT_RETURN((src = fs->index(path)).isValid(), 5000,
                                   false);
   tree->setCurrentIndex(proxy->mapFromSource(src));
+  return true;
+}
+
+/// Create <name>.gpg (folders included) in the store and wait until the
+/// tree's model has it; nothing is selected.
+auto addEntry(MainWindow *window, const QString &storeDir, const QString &name)
+    -> bool {
+  const QString path = QDir(storeDir).filePath(name + QStringLiteral(".gpg"));
+  if (!QDir().mkpath(QFileInfo(path).path())) {
+    return false;
+  }
+  QFile f(path);
+  if (!f.open(QIODevice::WriteOnly)) {
+    return false;
+  }
+  f.write("not really encrypted");
+  f.close();
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(fs->index(path).isValid(), 5000, false);
   return true;
 }
 
@@ -3197,10 +3221,96 @@ void tst_mainwindow::enterInTheSearchBoxOpensTheFirstMatch() {
 }
 
 /**
+ * @brief Enter opens the entry named exactly as typed, not the first one the
+ *        filter leaves: with folders sorted first, "bank" used to open
+ *        team/bank.
+ */
+void tst_mainwindow::enterInTheSearchBoxPrefersTheEntryNamedAsTyped() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("team/bank")));
+  treeView()->setCurrentIndex(QModelIndex());
+
+  searchBox()->setText(QStringLiteral("bank"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QCOMPARE(passwordName()->text(), QStringLiteral("bank"));
+
+  // A name below a folder is matched as a whole, too.
+  searchBox()->setText(QStringLiteral("team/bank"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QCOMPARE(passwordName()->text(), QStringLiteral("team/bank"));
+#endif
+}
+
+/**
+ * @brief Enter pressed before the search delay ran acts on the typed text:
+ *        it used to open the first entry of the tree as the previous text
+ *        (here: none) had filtered it.
+ */
+void tst_mainwindow::enterInsideTheSearchDelayUsesTheTypedText() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aaa")));
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("delayed")));
+  treeView()->setCurrentIndex(QModelIndex());
+
+  // No onTimeoutSearch(): the search timer has not run yet. A partial
+  // name, so the exact-match rule cannot cover for the stale filter.
+  searchBox()->setText(QStringLiteral("delay"));
+  QVERIFY(QMetaObject::invokeMethod(
+      m_window.data(), "on_lineEdit_returnPressed", Qt::DirectConnection));
+  QCOMPARE(passwordName()->text(), QStringLiteral("delayed"));
+#endif
+}
+
+/**
+ * @brief Text from a second instance opens an entry only when one is named
+ *        exactly so; otherwise the tree is filtered and the first match is
+ *        selected, not opened.
+ */
+void tst_mainwindow::messageFromAnotherInstanceOpensOnlyAnExactMatch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("partial-name")));
+  treeView()->setCurrentIndex(QModelIndex());
+  passwordName()->clear();
+
+  m_window->messageAvailable(QStringLiteral("partial"));
+  QVERIFY2(passwordName()->text().isEmpty(), "no exact match: nothing opened");
+  QVERIFY2(treeView()->currentIndex().isValid(), "but the match is selected");
+
+  m_window->messageAvailable(QStringLiteral("partial-name"));
+  QCOMPARE(passwordName()->text(), QStringLiteral("partial-name"));
+#endif
+}
+
+/**
  * @brief A message from a second instance brings the window up: empty, it
  *        focuses the search box; with text, it types that into the search
- *        box and presses Enter, which opens the first entry the tree offers
- *        (the filter itself follows on the search timer) and decrypts it.
+ *        box, filters the tree at once and opens the entry named exactly
+ *        so, as qtpass(1) says, and decrypts it.
  */
 void tst_mainwindow::messageFromAnotherInstanceShowsAndSearches() {
 #ifdef Q_OS_WIN
@@ -3224,8 +3334,9 @@ void tst_mainwindow::messageFromAnotherInstanceShowsAndSearches() {
   QVERIFY2(m_window->statusBar()->currentMessage().contains(
                QStringLiteral("Looking for: from-afar")),
            qPrintable(m_window->statusBar()->currentMessage()));
-  QVERIFY2(!passwordName()->text().isEmpty(),
-           "Enter on the query opened an entry");
+  // The tree reloads after the window is shown: the entry opens once its
+  // folder has loaded.
+  QTRY_COMPARE(passwordName()->text(), QStringLiteral("from-afar"));
   QVERIFY2(shown.count() >= 1 || shown.wait(5000), "and decrypted it");
   QCOMPARE(shown.first().at(1).toString(), passwordName()->text());
 #endif

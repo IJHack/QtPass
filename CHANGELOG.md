@@ -735,6 +735,13 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   into its row, any other stays a field row of its own. The rows used to be
   rebuilt empty, and with a single template Ctrl+T did nothing but empty
   them; it now leaves them alone.
+- Enter in the search box opens the entry named exactly as typed: with
+  folders sorted first, "bank" opened team/bank. Enter pressed before the
+  search delay ran acts on the typed text, not on the tree as the previous
+  text filtered it. Search text given on the command line, or handed to a
+  running QtPass, is filtered at once and opens only an entry named exactly
+  so, as qtpass(1) says; at first start it opened nothing, and from a second
+  instance it opened whatever entry came first.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles
