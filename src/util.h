@@ -1,7 +1,6 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 /**
- * @ingroup support
  * @file
  * @brief Util: static helpers for the process environment, binary discovery,
  * store paths, URL safety and the link-safe file operations every write into
