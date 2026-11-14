@@ -69,13 +69,14 @@ var searchData=
   ['statusmsg_66',['statusMsg',['../class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb',1,'Pass']]],
   ['store_67',['store',['../class_store_tree.html#a7900b8e82db6a34d4720c58ffafbf240',1,'StoreTree']]],
   ['storeenvironment_68',['storeEnvironment',['../class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2',1,'Pass']]],
-  ['storeidfor_69',['storeIdFor',['../class_gpg_id_generation.html#afae720f2c34d2c1861b1e2e810b4a135',1,'GpgIdGeneration']]],
-  ['storemodel_70',['StoreModel',['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel']]],
-  ['storerecordfile_71',['storeRecordFile',['../class_gpg_id_generation.html#a6e0bb5a3d0a36742737d9f7d29e714bc',1,'GpgIdGeneration']]],
-  ['storerelativepath_72',['storeRelativePath',['../class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0',1,'PathValidator']]],
-  ['storetree_73',['StoreTree',['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree']]],
-  ['storewizardpage_74',['StoreWizardPage',['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage']]],
-  ['supporteddragactions_75',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_76',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
-  ['synctodisk_77',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
+  ['storegit_69',['storeGit',['../class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32',1,'ImitatePass::storeGit()'],['../class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7',1,'Pass::storeGit()']]],
+  ['storeidfor_70',['storeIdFor',['../class_gpg_id_generation.html#afae720f2c34d2c1861b1e2e810b4a135',1,'GpgIdGeneration']]],
+  ['storemodel_71',['StoreModel',['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel']]],
+  ['storerecordfile_72',['storeRecordFile',['../class_gpg_id_generation.html#a6e0bb5a3d0a36742737d9f7d29e714bc',1,'GpgIdGeneration']]],
+  ['storerelativepath_73',['storeRelativePath',['../class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0',1,'PathValidator']]],
+  ['storetree_74',['StoreTree',['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree']]],
+  ['storewizardpage_75',['StoreWizardPage',['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage']]],
+  ['supporteddragactions_76',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
+  ['supporteddropactions_77',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
+  ['synctodisk_78',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
 ];

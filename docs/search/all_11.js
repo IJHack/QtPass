@@ -92,13 +92,14 @@ var searchData=
   ['store_89',['store',['../struct_gpg_id_generation_1_1_header.html#aa8d8c6bb01a1e658b387e50b9a3f9baf',1,'GpgIdGeneration::Header::store'],['../class_store_tree.html#a7900b8e82db6a34d4720c58ffafbf240',1,'StoreTree::store()']]],
   ['storedragitem_90',['StoreDragItem',['../struct_store_drag_item.html',1,'']]],
   ['storeenvironment_91',['storeEnvironment',['../class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2',1,'Pass']]],
-  ['storeidfor_92',['storeIdFor',['../class_gpg_id_generation.html#afae720f2c34d2c1861b1e2e810b4a135',1,'GpgIdGeneration']]],
-  ['storemodel_93',['StoreModel',['../class_store_model.html',1,'StoreModel'],['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel::StoreModel()']]],
-  ['storerecordfile_94',['storeRecordFile',['../class_gpg_id_generation.html#a6e0bb5a3d0a36742737d9f7d29e714bc',1,'GpgIdGeneration']]],
-  ['storerelativepath_95',['storeRelativePath',['../class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0',1,'PathValidator']]],
-  ['storetree_96',['StoreTree',['../class_store_tree.html',1,'StoreTree'],['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree::StoreTree()']]],
-  ['storewizardpage_97',['StoreWizardPage',['../class_store_wizard_page.html',1,'StoreWizardPage'],['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage::StoreWizardPage()']]],
-  ['supporteddragactions_98',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_99',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
-  ['synctodisk_100',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
+  ['storegit_92',['storeGit',['../class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32',1,'ImitatePass::storeGit()'],['../class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7',1,'Pass::storeGit()']]],
+  ['storeidfor_93',['storeIdFor',['../class_gpg_id_generation.html#afae720f2c34d2c1861b1e2e810b4a135',1,'GpgIdGeneration']]],
+  ['storemodel_94',['StoreModel',['../class_store_model.html',1,'StoreModel'],['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel::StoreModel()']]],
+  ['storerecordfile_95',['storeRecordFile',['../class_gpg_id_generation.html#a6e0bb5a3d0a36742737d9f7d29e714bc',1,'GpgIdGeneration']]],
+  ['storerelativepath_96',['storeRelativePath',['../class_path_validator.html#a10bc672c74cdd476c6f89df5ca8027d0',1,'PathValidator']]],
+  ['storetree_97',['StoreTree',['../class_store_tree.html',1,'StoreTree'],['../class_store_tree.html#a9be3c4a12104973c27e721e08564f6eb',1,'StoreTree::StoreTree()']]],
+  ['storewizardpage_98',['StoreWizardPage',['../class_store_wizard_page.html',1,'StoreWizardPage'],['../class_store_wizard_page.html#a19924f72223de1a13529a9b0cb443a14',1,'StoreWizardPage::StoreWizardPage()']]],
+  ['supporteddragactions_99',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
+  ['supporteddropactions_100',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]],
+  ['synctodisk_101',['syncToDisk',['../class_util.html#ab648b0017acac1869d91ebc924591a24',1,'Util']]]
 ];

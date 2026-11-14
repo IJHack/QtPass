@@ -288,6 +288,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6cca7cd5646a752c16dac59df6e53581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:afea04fa657d65846e2772b0b25c96276" id="r_afea04fa657d65846e2772b0b25c96276"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a> (const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td></tr>
 <tr class="memdesc:afea04fa657d65846e2772b0b25c96276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse recipients for a folder outside the store, as pass refuses a path with <span class="tt">..</span> in it.  <br /></td></tr>
+<tr class="memitem:a5cb7bb449be8c12124b3c3be6d94e3a7" id="r_a5cb7bb449be8c12124b3c3be6d94e3a7"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a5cb7bb449be8c12124b3c3be6d94e3a7">storeGit</a> (const QStringList &amp;args, QString *out) -&gt; bool</td></tr>
+<tr class="memdesc:a5cb7bb449be8c12124b3c3be6d94e3a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a git command in the store's repository, blocking.  <br /></td></tr>
+<tr class="memitem:af1859cdb9fb7f506d92740f3370acd0b" id="r_af1859cdb9fb7f506d92740f3370acd0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af1859cdb9fb7f506d92740f3370acd0b">refuseUnfinishedGitOperation</a> () -&gt; bool</td></tr>
+<tr class="memdesc:af1859cdb9fb7f506d92740f3370acd0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.  <br /></td></tr>
+<tr class="memitem:a433f0bf99f1a4fdd8e56944ff234eb2b" id="r_a433f0bf99f1a4fdd8e56944ff234eb2b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a433f0bf99f1a4fdd8e56944ff234eb2b">unfinishedGitOperationReason</a> () -&gt; QString</td></tr>
+<tr class="memdesc:a433f0bf99f1a4fdd8e56944ff234eb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The unfinished git operation in progress in the store, if any.  <br /></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
@@ -2357,6 +2363,34 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af1859cdb9fb7f506d92740f3370acd0b" name="af1859cdb9fb7f506d92740f3370acd0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1859cdb9fb7f506d92740f3370acd0b">&#9670;&#160;</a></span>refuseUnfinishedGitOperation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::refuseUnfinishedGitOperation </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert. </p>
+<p>A pull that stopped in a conflict leaves the repository part-way through an operation. Committing a save or a re-encryption into it lands the change on a detached HEAD (a later <span class="tt">git rebase --abort</span> drops it) or concludes the merge in favour of the local copy (pushing over a colleague's change). Every store-changing operation calls this at its entry, next to <a class="el" href="#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the...">refuseLinkedPath()</a>, so the change is refused before gpg or pass runs and the dialog keeps what was typed. Nothing is refused when git is off, the store is not a repository, or git gives no answer. A HEAD detached by hand (no operation in progress) is deliberately accepted. </p><dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Emit critical error.">critical()</a> and <a class="el" href="#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit.">processErrorExit()</a> were emitted and the caller must stop. </dd></dl>
+
+</div>
+</div>
 <a id="a5aedb6df7aa57385eb19a78cdbd3e764" name="a5aedb6df7aa57385eb19a78cdbd3e764"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5aedb6df7aa57385eb19a78cdbd3e764">&#9670;&#160;</a></span>Remove()</h2>
 
@@ -2659,6 +2693,77 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0037d3169c1c0fc270270cde4b8d25d2_cgraph.svg" width="407" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a5cb7bb449be8c12124b3c3be6d94e3a7" name="a5cb7bb449be8c12124b3c3be6d94e3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb7bb449be8c12124b3c3be6d94e3a7">&#9670;&#160;</a></span>storeGit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual auto Pass::storeGit </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Run a git command in the store's repository, blocking. </p>
+<p>The two backends reach git differently: <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> runs the configured git with <span class="tt">-C &lt;store&gt;</span>, <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> runs <span class="tt">pass git</span>. The default (no git) answers false. Used by <a class="el" href="#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.">refuseUnfinishedGitOperation()</a> to ask the repository its state before an operation changes the store. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>The git arguments (without the executable or <span class="tt">-C</span>). </td></tr>
+    <tr><td class="paramname">out</td><td>Receives the command's standard output; may be null. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when git ran and exited 0, false otherwise (git off, the store is not a repository, or git failed). </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_imitate_pass.html#ad2f55fd94626cc4a10b69e9dc76e1b32">ImitatePass</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00546">546</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
+<a id="a433f0bf99f1a4fdd8e56944ff234eb2b" name="a433f0bf99f1a4fdd8e56944ff234eb2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433f0bf99f1a4fdd8e56944ff234eb2b">&#9670;&#160;</a></span>unfinishedGitOperationReason()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::unfinishedGitOperationReason </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The unfinished git operation in progress in the store, if any. </p>
+<p>The detection behind <a class="el" href="#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid-rebase, -merge, -cherry-pick or -revert.">refuseUnfinishedGitOperation()</a>, without emitting a refusal: a backend re-checks it when a save's gpg step has finished (a pull queued before the save, from the asynchronous Update, may have finished and left a conflict meanwhile) so the entry is not placed or committed into the operation. </p><dl class="section return"><dt>Returns</dt><dd>A ready-to-show reason naming the operation (rebase, merge, cherry-pick or revert), or an empty string when none is in progress, git is off, or the store is not a repository. </dd></dl>
 
 </div>
 </div>
