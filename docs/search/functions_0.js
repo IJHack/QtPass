@@ -19,13 +19,14 @@ var searchData=
   ['applyframestyle_16',['applyFrameStyle',['../class_password_display_panel.html#af9fbeff3680f3e39dd393d9827c748ee',1,'PasswordDisplayPanel']]],
   ['applypassphrase_17',['applyPassphrase',['../class_keygen_dialog.html#a1286e8e44dcb894081e3e41c9cea21d1',1,'KeygenDialog']]],
   ['applypassprocessdefaults_18',['applyPassProcessDefaults',['../class_util.html#ab16f1ac58307067ced38315c49f6fcba',1,'Util']]],
-  ['applysettings_19',['applySettings',['../class_config_dialog.html#abad77b747ca028e7b042b995a4620211',1,'ConfigDialog']]],
-  ['applytemplate_20',['applyTemplate',['../class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3',1,'PasswordDialog']]],
-  ['applytextbrowsersettings_21',['applyTextBrowserSettings',['../class_main_window.html#ac5705aca84795de049d9a0f0a0d5e3fb',1,'MainWindow']]],
-  ['applyuserstyling_22',['applyUserStyling',['../class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d',1,'UsersDialog']]],
-  ['applywindowflagssettings_23',['applyWindowFlagsSettings',['../class_main_window.html#a8c981247a44bc74f5152c312c15a8a79',1,'MainWindow']]],
-  ['argv_24',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
-  ['askyes_25',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
-  ['attach_26',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
-  ['autoscroll_27',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
+  ['applysearchtext_19',['applySearchText',['../class_main_window.html#a2a80222ef73eb5c6d9350db559787488',1,'MainWindow']]],
+  ['applysettings_20',['applySettings',['../class_config_dialog.html#abad77b747ca028e7b042b995a4620211',1,'ConfigDialog']]],
+  ['applytemplate_21',['applyTemplate',['../class_password_dialog.html#ae2040e83c9d4ddf49ccdc7ce23388ef3',1,'PasswordDialog']]],
+  ['applytextbrowsersettings_22',['applyTextBrowserSettings',['../class_main_window.html#ac5705aca84795de049d9a0f0a0d5e3fb',1,'MainWindow']]],
+  ['applyuserstyling_23',['applyUserStyling',['../class_users_dialog.html#a400f5ae49e827ac46e88be4ae2f7141d',1,'UsersDialog']]],
+  ['applywindowflagssettings_24',['applyWindowFlagsSettings',['../class_main_window.html#a8c981247a44bc74f5152c312c15a8a79',1,'MainWindow']]],
+  ['argv_25',['argv',['../struct_executor_1_1_wsl_command.html#a1810c7113590bc37be94c370a6ac549b',1,'Executor::WslCommand']]],
+  ['askyes_26',['askYes',['../namespace_plain_message_box.html#a8318c464158a9aa6772cc33831c8842d',1,'PlainMessageBox']]],
+  ['attach_27',['attach',['../namespace_window_state_store.html#a616c71d3266f56a544106974e82d2289',1,'WindowStateStore']]],
+  ['autoscroll_28',['autoScroll',['../class_process_output_panel.html#ac2b8edc0a3bd9eb9e0a76a2cb4f76755',1,'ProcessOutputPanel']]]
 ];

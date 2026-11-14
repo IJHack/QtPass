@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"realpass_8h.html":[4,0,1,74],
+"realpass_8h_source.html":[4,0,1,74],
+"rnpcrypto_8cpp.html":[4,0,1,75],
+"rnpcrypto_8cpp_source.html":[4,0,1,75],
+"rnpcrypto_8h.html":[4,0,1,76],
 "rnpcrypto_8h_source.html":[4,0,1,76],
 "secretlineedit_8cpp.html":[4,0,1,77],
 "secretlineedit_8cpp_source.html":[4,0,1,77],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "topics.html":[1],
 "totp_8cpp.html":[4,0,1,97],
 "totp_8cpp_source.html":[4,0,1,97],
-"totp_8h.html":[4,0,1,98],
-"totp_8h_source.html":[4,0,1,98],
-"trayicon_8cpp.html":[4,0,1,99],
-"trayicon_8cpp_source.html":[4,0,1,99],
-"trayicon_8h.html":[4,0,1,100],
-"trayicon_8h_source.html":[4,0,1,100]
+"totp_8h.html":[4,0,1,98]
 };

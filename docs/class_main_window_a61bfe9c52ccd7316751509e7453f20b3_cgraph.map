@@ -1,0 +1,20 @@
+<map id="MainWindow::exactMatch" name="MainWindow::exactMatch">
+<area shape="rect" id="Node000001" title="The entry whose name is exactly the search text, if the filtered tree shows it: team/bank for &quot;team/b..." alt="" coords="5,108,194,136"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a96848c455f3a2925ffb7250282318162" title="The entry file named exactly as the search text, spaces around the text included; failing that,..." alt="" coords="242,108,458,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,119,229,122,223,122,194,124"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="506,81,716,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="458,108,493,107,488,108,459,113"/>
+<area shape="rect" id="Node000008" href="$class_path_validator.html#ab45fab776e795db0071e4561291ca12d" title="Check that a candidate path resolves inside the password store root, after following symlinks and res..." alt="" coords="511,133,711,161"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="459,130,498,136,493,136,459,135"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="778,5,981,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="653,78,764,43,795,38,800,37,765,48,654,83"/>
+<area shape="rect" id="Node000006" href="$class_util.html#aa1d5ab65c22c21fe556ba0251e035f23" title="Create path and any missing parents as pass would." alt="" coords="801,81,958,109"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="717,93,788,95,783,95,717,98"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a8a41d974bdb898a9240be1342d134941" title="Private default constructor to enforce singleton usage and prevent direct instantiation." alt="" coords="1043,5,1266,33"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="981,17,1029,19,1024,19,981,22"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="834,80,827,72,832,63,850,57,880,55,911,57,929,66,924,66,910,62,879,60,851,62,836,67,832,72,839,82"/>
+<area shape="rect" id="Node000007" href="$class_executor.html#a3ee0297a7c8875bfc7d93197463fde5b" title="The umask setChildUmask() set." alt="" coords="1073,81,1236,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="958,93,1060,95,1055,95,958,98"/>
+<area shape="rect" id="Node000009" href="$class_path_validator.html#a3e074708091e613100680afe2e7d4eb7" title="Where candidate lies in the store, judged as isPathInStore() judges it." alt="" coords="764,133,995,161"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="712,145,751,147,746,147,712,150"/>
+</map>

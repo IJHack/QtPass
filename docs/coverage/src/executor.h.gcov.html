@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 19:03:31</td>
+            <td class="headerValue">2026-11-14 20:02:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -102,7 +102,7 @@
 <span id="L29"><span class="lineNum">      29</span>              :  */</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
 <span id="L31"><span class="lineNum">      31</span>              : class Executor : public QObject {</span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          11 :   Q_OBJECT</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          13 :   Q_OBJECT</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : </span>
 <span id="L34"><span class="lineNum">      34</span>              :   /**</span>
 <span id="L35"><span class="lineNum">      35</span>              :    * @struct ExecQueueItem</span>
@@ -495,7 +495,7 @@
 <span id="L422"><span class="lineNum">     422</span>              :    * @brief Whether no command is running and nothing is queued.</span>
 <span id="L423"><span class="lineNum">     423</span>              :    * @return true when the executor has nothing in flight.</span>
 <span id="L424"><span class="lineNum">     424</span>              :    */</span>
-<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         598 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
+<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">         632 :   auto isIdle() const -&gt; bool { return !running &amp;&amp; m_execQueue.isEmpty(); }</span></span>
 <span id="L426"><span class="lineNum">     426</span>              : </span>
 <span id="L427"><span class="lineNum">     427</span>              :   /**</span>
 <span id="L428"><span class="lineNum">     428</span>              :    * @brief Whether a command with process id @p id is queued or running.</span>

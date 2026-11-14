@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 19:03:31</td>
+            <td class="headerValue">2026-11-14 20:02:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">98.6&nbsp;%</td>
@@ -115,55 +115,55 @@
 <span id="L42"><span class="lineNum">      42</span>              : </span>
 <span id="L43"><span class="lineNum">      43</span>              : #include &quot;qtpasslogging.h&quot;</span>
 <span id="L44"><span class="lineNum">      44</span>              : </span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          72 : ConfigDialog::ConfigDialog(QWidget *parent)</span></span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          72 :     : QDialog(parent), ui(new Ui::ConfigDialog) {</span></span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          72 :   ui-&gt;setupUi(this);</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">          73 : ConfigDialog::ConfigDialog(QWidget *parent)</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          73 :     : QDialog(parent), ui(new Ui::ConfigDialog) {</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          73 :   ui-&gt;setupUi(this);</span></span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         144 :   WindowStateStore::attach(*this, QStringLiteral(&quot;configDialog&quot;));</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         146 :   WindowStateStore::attach(*this, QStringLiteral(&quot;configDialog&quot;));</span></span>
 <span id="L50"><span class="lineNum">      50</span>              : </span>
 <span id="L51"><span class="lineNum">      51</span>              :   // setSpecialValueText() in retranslateUi() drops the size hint without</span>
 <span id="L52"><span class="lineNum">      52</span>              :   // telling the layout, which then sizes the box for &quot;0&quot; and shows &quot;ver&quot;.</span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          72 :   ui-&gt;spinBoxAutoclearSeconds-&gt;updateGeometry();</span></span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          72 :   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;updateGeometry();</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          73 :   ui-&gt;spinBoxAutoclearSeconds-&gt;updateGeometry();</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">          73 :   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;updateGeometry();</span></span>
 <span id="L55"><span class="lineNum">      55</span>              : </span>
 <span id="L56"><span class="lineNum">      56</span>              :   // The secret field names only mean something while passwords are hidden.</span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">          72 :   connect(ui-&gt;checkBoxHidePassword, &amp;QCheckBox::toggled, this,</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          98 :           [this] { updateSecretFieldsEnabled(); });</span></span>
-<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          72 :   connect(ui-&gt;checkBoxHideSecretFields, &amp;QCheckBox::toggled, this,</span></span>
-<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         147 :           [this] { updateSecretFieldsEnabled(); });</span></span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          72 :   connect(ui-&gt;checkBoxHideAllFields, &amp;QCheckBox::toggled, this,</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          75 :           [this] { updateSecretFieldsEnabled(); });</span></span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">          72 :   connect(ui-&gt;buttonDefaultSecretFields, &amp;QPushButton::clicked, this, [this] {</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">          73 :   connect(ui-&gt;checkBoxHidePassword, &amp;QCheckBox::toggled, this,</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          99 :           [this] { updateSecretFieldsEnabled(); });</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          73 :   connect(ui-&gt;checkBoxHideSecretFields, &amp;QCheckBox::toggled, this,</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         149 :           [this] { updateSecretFieldsEnabled(); });</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          73 :   connect(ui-&gt;checkBoxHideAllFields, &amp;QCheckBox::toggled, this,</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          76 :           [this] { updateSecretFieldsEnabled(); });</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">          73 :   connect(ui-&gt;buttonDefaultSecretFields, &amp;QPushButton::clicked, this, [this] {</span></span>
 <span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">           2 :     ui-&gt;lineEditSecretFields-&gt;setText(</span></span>
 <span id="L65"><span class="lineNum">      65</span> <span class="tlaGNC">           2 :         AppSettings::defaultSecretFieldNames().join(QStringLiteral(&quot;, &quot;)));</span></span>
 <span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">           1 :   });</span></span>
 <span id="L67"><span class="lineNum">      67</span>              :   // &quot;Seconds&quot; says nothing next to &quot;Never&quot; (the spin box's 0).</span>
 <span id="L68"><span class="lineNum">      68</span>              :   // Restoring is part of clearing: only there when the clipboard is cleared.</span>
-<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">          72 :   connect(ui-&gt;spinBoxAutoclearSeconds, &amp;QSpinBox::valueChanged, this,</span></span>
-<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          72 :           [this](int value) {</span></span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">          73 :   connect(ui-&gt;spinBoxAutoclearSeconds, &amp;QSpinBox::valueChanged, this,</span></span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          73 :           [this](int value) {</span></span>
 <span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          29 :             ui-&gt;labelSeconds-&gt;setVisible(value &gt; 0);</span></span>
 <span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">          29 :             ui-&gt;checkBoxRestoreClipboard-&gt;setVisible(value &gt; 0);</span></span>
 <span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">          29 :           });</span></span>
-<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">          72 :   connect(ui-&gt;spinBoxAutoclearPanelSeconds, &amp;QSpinBox::valueChanged, this,</span></span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">         102 :           [this](int value) { ui-&gt;labelPanelSeconds-&gt;setVisible(value &gt; 0); });</span></span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          72 :   connect(</span></span>
-<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          72 :       ui-&gt;comboBoxFields, &amp;QComboBox::currentIndexChanged, this,</span></span>
-<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         105 :       [this](int index) { ui-&gt;plainTextEditTemplate-&gt;setEnabled(index &gt; 0); });</span></span>
+<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">          73 :   connect(ui-&gt;spinBoxAutoclearPanelSeconds, &amp;QSpinBox::valueChanged, this,</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">         103 :           [this](int value) { ui-&gt;labelPanelSeconds-&gt;setVisible(value &gt; 0); });</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          73 :   connect(</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">          73 :       ui-&gt;comboBoxFields, &amp;QComboBox::currentIndexChanged, this,</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaGNC">         106 :       [this](int index) { ui-&gt;plainTextEditTemplate-&gt;setEnabled(index &gt; 0); });</span></span>
 <span id="L79"><span class="lineNum">      79</span>              : </span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          72 :   const AppSettings s = QtPassSettings::load();</span></span>
-<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          72 :   applySettings(s);</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">          73 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">          73 :   applySettings(s);</span></span>
 <span id="L82"><span class="lineNum">      82</span>              : </span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">          72 :   if (!QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
-<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">          72 :     ui-&gt;checkBoxUseTrayIcon-&gt;setEnabled(false);</span></span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         144 :     ui-&gt;checkBoxUseTrayIcon-&gt;setToolTip(tr(&quot;System tray is not available&quot;));</span></span>
-<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">          72 :     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(false);</span></span>
-<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">          72 :     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(false);</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">          73 :   if (!QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
+<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">          73 :     ui-&gt;checkBoxUseTrayIcon-&gt;setEnabled(false);</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         146 :     ui-&gt;checkBoxUseTrayIcon-&gt;setToolTip(tr(&quot;System tray is not available&quot;));</span></span>
+<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">          73 :     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(false);</span></span>
+<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">          73 :     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(false);</span></span>
 <span id="L88"><span class="lineNum">      88</span>              :   }</span>
 <span id="L89"><span class="lineNum">      89</span>              : </span>
 <span id="L90"><span class="lineNum">      90</span>              :   // Wayland has no client-side &quot;keep above&quot; — Qt::WindowStaysOnTopHint is</span>
 <span id="L91"><span class="lineNum">      91</span>              :   // silently ignored there (stacking belongs to the compositor). Say so</span>
 <span id="L92"><span class="lineNum">      92</span>              :   // instead of offering a checkbox that does nothing.</span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          72 :   if (QGuiApplication::platformName().startsWith(QLatin1String(&quot;wayland&quot;))) {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">          73 :   if (QGuiApplication::platformName().startsWith(QLatin1String(&quot;wayland&quot;))) {</span></span>
 <span id="L94"><span class="lineNum">      94</span> <span class="tlaUNC">           0 :     ui-&gt;checkBoxAlwaysOnTop-&gt;setEnabled(false);</span></span>
 <span id="L95"><span class="lineNum">      95</span> <span class="tlaUNC">           0 :     ui-&gt;checkBoxAlwaysOnTop-&gt;setToolTip(</span></span>
 <span id="L96"><span class="lineNum">      96</span> <span class="tlaUNC">           0 :         tr(&quot;Not available on Wayland; use your compositor's &quot;</span></span>
@@ -176,232 +176,232 @@
 <span id="L103"><span class="lineNum">     103</span>              :   ui-&gt;checkBoxUseQrencode-&gt;hide();</span>
 <span id="L104"><span class="lineNum">     104</span>              : #endif</span>
 <span id="L105"><span class="lineNum">     105</span>              : </span>
-<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">          72 :   if (!isQrencodeAvailable(s.qrencodeExecutable)) {</span></span>
-<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          70 :     ui-&gt;checkBoxUseQrencode-&gt;setEnabled(false);</span></span>
-<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">         140 :     ui-&gt;checkBoxUseQrencode-&gt;setToolTip(tr(&quot;qrencode needs to be installed&quot;));</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">          73 :   if (!isQrencodeAvailable(s.qrencodeExecutable)) {</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">          71 :     ui-&gt;checkBoxUseQrencode-&gt;setEnabled(false);</span></span>
+<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">         142 :     ui-&gt;checkBoxUseQrencode-&gt;setToolTip(tr(&quot;qrencode needs to be installed&quot;));</span></span>
 <span id="L109"><span class="lineNum">     109</span>              :   }</span>
 <span id="L110"><span class="lineNum">     110</span>              : </span>
-<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          72 :   connect(ui-&gt;profileList, &amp;QListWidget::currentRowChanged, this,</span></span>
-<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          72 :           &amp;ConfigDialog::onProfileSelected);</span></span>
-<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">          72 :   connect(ui-&gt;profileName, &amp;QLineEdit::textEdited, this,</span></span>
-<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          72 :           &amp;ConfigDialog::onProfileNameEdited);</span></span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          72 :   connect(ui-&gt;profilePath, &amp;QLineEdit::textEdited, this,</span></span>
-<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">          72 :           &amp;ConfigDialog::onProfilePathEdited);</span></span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          72 :   connect(ui-&gt;profileSigningKey, &amp;QLineEdit::textEdited, this,</span></span>
-<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">         144 :           &amp;ConfigDialog::onProfileSigningKeyEdited);</span></span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         504 :   for (QCheckBox *box :</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">         288 :        {ui-&gt;profileUseGit, ui-&gt;profileAutoPush, ui-&gt;profileAutoPull}) {</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         216 :     connect(box, &amp;QCheckBox::clicked, this, &amp;ConfigDialog::onProfileGitToggled);</span></span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">          73 :   connect(ui-&gt;profileList, &amp;QListWidget::currentRowChanged, this,</span></span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">          73 :           &amp;ConfigDialog::onProfileSelected);</span></span>
+<span id="L113"><span class="lineNum">     113</span> <span class="tlaGNC">          73 :   connect(ui-&gt;profileName, &amp;QLineEdit::textEdited, this,</span></span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">          73 :           &amp;ConfigDialog::onProfileNameEdited);</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">          73 :   connect(ui-&gt;profilePath, &amp;QLineEdit::textEdited, this,</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">          73 :           &amp;ConfigDialog::onProfilePathEdited);</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">          73 :   connect(ui-&gt;profileSigningKey, &amp;QLineEdit::textEdited, this,</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">         146 :           &amp;ConfigDialog::onProfileSigningKeyEdited);</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">         511 :   for (QCheckBox *box :</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">         292 :        {ui-&gt;profileUseGit, ui-&gt;profileAutoPush, ui-&gt;profileAutoPull}) {</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">         219 :     connect(box, &amp;QCheckBox::clicked, this, &amp;ConfigDialog::onProfileGitToggled);</span></span>
 <span id="L122"><span class="lineNum">     122</span>              :   }</span>
-<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         144 :   m_nameTip = ui-&gt;profileName-&gt;toolTip();</span></span>
-<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">         144 :   m_pathTip = ui-&gt;profilePath-&gt;toolTip();</span></span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          72 :   m_keyTip = ui-&gt;profileSigningKey-&gt;toolTip();</span></span>
+<span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">         146 :   m_nameTip = ui-&gt;profileName-&gt;toolTip();</span></span>
+<span id="L124"><span class="lineNum">     124</span> <span class="tlaGNC">         146 :   m_pathTip = ui-&gt;profilePath-&gt;toolTip();</span></span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          73 :   m_keyTip = ui-&gt;profileSigningKey-&gt;toolTip();</span></span>
 <span id="L126"><span class="lineNum">     126</span>              :   // A warning, not a problem: shown under the signing key while another</span>
 <span id="L127"><span class="lineNum">     127</span>              :   // profile, for another store, signs with the same key (#2050).</span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          72 :   m_sharedKeyWarning = new QLabel(this);</span></span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         144 :   m_sharedKeyWarning-&gt;setObjectName(QStringLiteral(&quot;profileSharedKeyWarning&quot;));</span></span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          72 :   m_sharedKeyWarning-&gt;setTextFormat(Qt::PlainText);</span></span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">          72 :   m_sharedKeyWarning-&gt;setWordWrap(true);</span></span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          72 :   m_sharedKeyWarning-&gt;hide();</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          73 :   m_sharedKeyWarning = new QLabel(this);</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         146 :   m_sharedKeyWarning-&gt;setObjectName(QStringLiteral(&quot;profileSharedKeyWarning&quot;));</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          73 :   m_sharedKeyWarning-&gt;setTextFormat(Qt::PlainText);</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">          73 :   m_sharedKeyWarning-&gt;setWordWrap(true);</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">          73 :   m_sharedKeyWarning-&gt;hide();</span></span>
 <span id="L133"><span class="lineNum">     133</span>              :   {</span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          72 :     int row = -1;</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          72 :     QFormLayout::ItemRole role = QFormLayout::FieldRole;</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          72 :     ui-&gt;profileFormLayout-&gt;getWidgetPosition(ui-&gt;profileSigningKey, &amp;row,</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">          73 :     int row = -1;</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">          73 :     QFormLayout::ItemRole role = QFormLayout::FieldRole;</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">          73 :     ui-&gt;profileFormLayout-&gt;getWidgetPosition(ui-&gt;profileSigningKey, &amp;row,</span></span>
 <span id="L137"><span class="lineNum">     137</span>              :                                              &amp;role);</span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          72 :     ui-&gt;profileFormLayout-&gt;insertRow(row + 1, QString(), m_sharedKeyWarning);</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          73 :     ui-&gt;profileFormLayout-&gt;insertRow(row + 1, QString(), m_sharedKeyWarning);</span></span>
 <span id="L139"><span class="lineNum">     139</span>              :   }</span>
 <span id="L140"><span class="lineNum">     140</span>              :   // Under the pass settings: a store pass would commit outside of.</span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          72 :   m_passGitWarning = new QLabel(this);</span></span>
-<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         144 :   m_passGitWarning-&gt;setObjectName(QStringLiteral(&quot;passGitWarning&quot;));</span></span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          72 :   m_passGitWarning-&gt;setTextFormat(Qt::PlainText);</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          72 :   m_passGitWarning-&gt;setWordWrap(true);</span></span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          72 :   m_passGitWarning-&gt;hide();</span></span>
-<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          72 :   ui-&gt;groupBoxPass-&gt;layout()-&gt;addWidget(m_passGitWarning);</span></span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">          72 :   connect(ui-&gt;storePath, &amp;QLineEdit::textChanged, this,</span></span>
-<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         154 :           [this] { updatePassGitWarning(); });</span></span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         216 :   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          73 :   m_passGitWarning = new QLabel(this);</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">         146 :   m_passGitWarning-&gt;setObjectName(QStringLiteral(&quot;passGitWarning&quot;));</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          73 :   m_passGitWarning-&gt;setTextFormat(Qt::PlainText);</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          73 :   m_passGitWarning-&gt;setWordWrap(true);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          73 :   m_passGitWarning-&gt;hide();</span></span>
+<span id="L146"><span class="lineNum">     146</span> <span class="tlaGNC">          73 :   ui-&gt;groupBoxPass-&gt;layout()-&gt;addWidget(m_passGitWarning);</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">          73 :   connect(ui-&gt;storePath, &amp;QLineEdit::textChanged, this,</span></span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">         156 :           [this] { updatePassGitWarning(); });</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         219 :   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());</span></span>
 <span id="L150"><span class="lineNum">     150</span>              : </span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         144 :   ui-&gt;label-&gt;setText(ui-&gt;label-&gt;text() + VERSION);</span></span>
-<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          72 :   ui-&gt;comboBoxClipboard-&gt;clear();</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         146 :   ui-&gt;label-&gt;setText(ui-&gt;label-&gt;text() + VERSION);</span></span>
+<span id="L152"><span class="lineNum">     152</span> <span class="tlaGNC">          73 :   ui-&gt;comboBoxClipboard-&gt;clear();</span></span>
 <span id="L153"><span class="lineNum">     153</span>              : </span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         144 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;No clipboard&quot;));</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         144 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;Always copy to clipboard&quot;));</span></span>
-<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">         144 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;On-demand copy to clipboard&quot;));</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         146 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;No clipboard&quot;));</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         146 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;Always copy to clipboard&quot;));</span></span>
+<span id="L156"><span class="lineNum">     156</span> <span class="tlaGNC">         146 :   ui-&gt;comboBoxClipboard-&gt;addItem(tr(&quot;On-demand copy to clipboard&quot;));</span></span>
 <span id="L157"><span class="lineNum">     157</span>              : </span>
-<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          72 :   int currentIndex = static_cast&lt;int&gt;(s.clipBoardType);</span></span>
-<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">          72 :   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(currentIndex);</span></span>
-<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">          72 :   on_comboBoxClipboard_activated(currentIndex);</span></span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          73 :   int currentIndex = static_cast&lt;int&gt;(s.clipBoardType);</span></span>
+<span id="L159"><span class="lineNum">     159</span> <span class="tlaGNC">          73 :   ui-&gt;comboBoxClipboard-&gt;setCurrentIndex(currentIndex);</span></span>
+<span id="L160"><span class="lineNum">     160</span> <span class="tlaGNC">          73 :   on_comboBoxClipboard_activated(currentIndex);</span></span>
 <span id="L161"><span class="lineNum">     161</span>              : </span>
-<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          72 :   QClipboard *clip = QApplication::clipboard();</span></span>
-<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          72 :   if (!clip-&gt;supportsSelection()) {</span></span>
-<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">          72 :     useSelection(false);</span></span>
-<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">          72 :     ui-&gt;checkBoxSelection-&gt;setVisible(false);</span></span>
+<span id="L162"><span class="lineNum">     162</span> <span class="tlaGNC">          73 :   QClipboard *clip = QApplication::clipboard();</span></span>
+<span id="L163"><span class="lineNum">     163</span> <span class="tlaGNC">          73 :   if (!clip-&gt;supportsSelection()) {</span></span>
+<span id="L164"><span class="lineNum">     164</span> <span class="tlaGNC">          73 :     useSelection(false);</span></span>
+<span id="L165"><span class="lineNum">     165</span> <span class="tlaGNC">          73 :     ui-&gt;checkBoxSelection-&gt;setVisible(false);</span></span>
 <span id="L166"><span class="lineNum">     166</span>              :   } else {</span>
 <span id="L167"><span class="lineNum">     167</span> <span class="tlaUNC">           0 :     useSelection(s.useSelection);</span></span>
 <span id="L168"><span class="lineNum">     168</span>              :   }</span>
 <span id="L169"><span class="lineNum">     169</span>              : </span>
-<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          72 :   connect(ui-&gt;pageList, &amp;QListWidget::currentRowChanged, ui-&gt;pages,</span></span>
-<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         144 :           &amp;QStackedWidget::setCurrentIndex);</span></span>
-<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">         142 :   ui-&gt;pageList-&gt;setCurrentRow(</span></span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">          72 :       Util::configIsValid(s)</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          73 :   connect(ui-&gt;pageList, &amp;QListWidget::currentRowChanged, ui-&gt;pages,</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         146 :           &amp;QStackedWidget::setCurrentIndex);</span></span>
+<span id="L172"><span class="lineNum">     172</span> <span class="tlaGNC">         143 :   ui-&gt;pageList-&gt;setCurrentRow(</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">          73 :       Util::configIsValid(s)</span></span>
 <span id="L174"><span class="lineNum">     174</span>              :           ? 0</span>
 <span id="L175"><span class="lineNum">     175</span>              :           // Programs is what needs fixing when the configuration is not valid.</span>
 <span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">          70 :           : ui-&gt;pages-&gt;indexOf(ui-&gt;pagePrograms));</span></span>
 <span id="L177"><span class="lineNum">     177</span>              : </span>
-<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">          72 :   connect(this, &amp;ConfigDialog::accepted, this, &amp;ConfigDialog::on_accepted);</span></span>
-<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">          72 : }</span></span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">          73 :   connect(this, &amp;ConfigDialog::accepted, this, &amp;ConfigDialog::on_accepted);</span></span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">          73 : }</span></span>
 <span id="L180"><span class="lineNum">     180</span>              : </span>
-<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          72 : void ConfigDialog::applySettings(const AppSettings &amp;settings) {</span></span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          72 :   ui-&gt;passPath-&gt;setText(settings.passExecutable);</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">          72 :   setGitPath(settings.gitExecutable);</span></span>
-<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          72 :   ui-&gt;gpgPath-&gt;setText(settings.gpgExecutable);</span></span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">          72 :   ui-&gt;storePath-&gt;setText(settings.passStore);</span></span>
-<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">          72 :   ui-&gt;sshAuthSockOverride-&gt;setText(settings.sshAuthSockOverride);</span></span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          73 : void ConfigDialog::applySettings(const AppSettings &amp;settings) {</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          73 :   ui-&gt;passPath-&gt;setText(settings.passExecutable);</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">          73 :   setGitPath(settings.gitExecutable);</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">          73 :   ui-&gt;gpgPath-&gt;setText(settings.gpgExecutable);</span></span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">          73 :   ui-&gt;storePath-&gt;setText(settings.passStore);</span></span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">          73 :   ui-&gt;sshAuthSockOverride-&gt;setText(settings.sshAuthSockOverride);</span></span>
 <span id="L187"><span class="lineNum">     187</span>              : </span>
 <span id="L188"><span class="lineNum">     188</span>              :   // One control each: 0 is &quot;Never&quot;, so off and a delay are one setting.</span>
-<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">          72 :   ui-&gt;spinBoxAutoclearSeconds-&gt;setValue(</span></span>
-<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">          72 :       settings.useAutoclear ? settings.autoclearSeconds : 0);</span></span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">          72 :   ui-&gt;labelSeconds-&gt;setVisible(ui-&gt;spinBoxAutoclearSeconds-&gt;value() &gt; 0);</span></span>
-<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxRestoreClipboard-&gt;setChecked(settings.restoreClipboard);</span></span>
-<span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxRestoreClipboard-&gt;setVisible(</span></span>
-<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          72 :       ui-&gt;spinBoxAutoclearSeconds-&gt;value() &gt; 0);</span></span>
-<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">          72 :   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setValue(</span></span>
-<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">          72 :       settings.useAutoclearPanel ? settings.autoclearPanelSeconds : 0);</span></span>
-<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">          72 :   ui-&gt;labelPanelSeconds-&gt;setVisible(ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value() &gt;</span></span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">          73 :   ui-&gt;spinBoxAutoclearSeconds-&gt;setValue(</span></span>
+<span id="L190"><span class="lineNum">     190</span> <span class="tlaGNC">          73 :       settings.useAutoclear ? settings.autoclearSeconds : 0);</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">          73 :   ui-&gt;labelSeconds-&gt;setVisible(ui-&gt;spinBoxAutoclearSeconds-&gt;value() &gt; 0);</span></span>
+<span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxRestoreClipboard-&gt;setChecked(settings.restoreClipboard);</span></span>
+<span id="L193"><span class="lineNum">     193</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxRestoreClipboard-&gt;setVisible(</span></span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          73 :       ui-&gt;spinBoxAutoclearSeconds-&gt;value() &gt; 0);</span></span>
+<span id="L195"><span class="lineNum">     195</span> <span class="tlaGNC">          73 :   ui-&gt;spinBoxAutoclearPanelSeconds-&gt;setValue(</span></span>
+<span id="L196"><span class="lineNum">     196</span> <span class="tlaGNC">          73 :       settings.useAutoclearPanel ? settings.autoclearPanelSeconds : 0);</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">          73 :   ui-&gt;labelPanelSeconds-&gt;setVisible(ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value() &gt;</span></span>
 <span id="L198"><span class="lineNum">     198</span>              :                                     0);</span>
-<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxHidePassword-&gt;setChecked(settings.hidePassword);</span></span>
-<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxHideSecretFields-&gt;setChecked(settings.hideSecretFields);</span></span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxHideAllFields-&gt;setChecked(settings.hideAllFields);</span></span>
-<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          72 :   ui-&gt;lineEditSecretFields-&gt;setText(</span></span>
-<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">         144 :       settings.secretFieldNames.join(QStringLiteral(&quot;, &quot;)));</span></span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          72 :   updateSecretFieldsEnabled();</span></span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxHideContent-&gt;setChecked(settings.hideContent);</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxUseMonospace-&gt;setChecked(settings.useMonospace);</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxDisplayAsIs-&gt;setChecked(settings.displayAsIs);</span></span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxNoLineWrapping-&gt;setChecked(settings.noLineWrapping);</span></span>
-<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAddGPGId-&gt;setChecked(settings.addGPGId);</span></span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxHideOnClose-&gt;setChecked(settings.hideOnClose);</span></span>
-<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxStartMinimized-&gt;setChecked(settings.startMinimized);</span></span>
+<span id="L199"><span class="lineNum">     199</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxHidePassword-&gt;setChecked(settings.hidePassword);</span></span>
+<span id="L200"><span class="lineNum">     200</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxHideSecretFields-&gt;setChecked(settings.hideSecretFields);</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxHideAllFields-&gt;setChecked(settings.hideAllFields);</span></span>
+<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          73 :   ui-&gt;lineEditSecretFields-&gt;setText(</span></span>
+<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">         146 :       settings.secretFieldNames.join(QStringLiteral(&quot;, &quot;)));</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          73 :   updateSecretFieldsEnabled();</span></span>
+<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxHideContent-&gt;setChecked(settings.hideContent);</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxUseMonospace-&gt;setChecked(settings.useMonospace);</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxDisplayAsIs-&gt;setChecked(settings.displayAsIs);</span></span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxNoLineWrapping-&gt;setChecked(settings.noLineWrapping);</span></span>
+<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAddGPGId-&gt;setChecked(settings.addGPGId);</span></span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxHideOnClose-&gt;setChecked(settings.hideOnClose);</span></span>
+<span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxStartMinimized-&gt;setChecked(settings.startMinimized);</span></span>
 <span id="L212"><span class="lineNum">     212</span>              : </span>
-<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAvoidCapitals-&gt;setChecked(settings.avoidCapitals);</span></span>
-<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAvoidNumbers-&gt;setChecked(settings.avoidNumbers);</span></span>
-<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxLessRandom-&gt;setChecked(settings.lessRandom);</span></span>
-<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxUseSymbols-&gt;setChecked(settings.useSymbols);</span></span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          72 :   ui-&gt;plainTextEditTemplate-&gt;setPlainText(settings.passTemplate);</span></span>
+<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAvoidCapitals-&gt;setChecked(settings.avoidCapitals);</span></span>
+<span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAvoidNumbers-&gt;setChecked(settings.avoidNumbers);</span></span>
+<span id="L215"><span class="lineNum">     215</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxLessRandom-&gt;setChecked(settings.lessRandom);</span></span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxUseSymbols-&gt;setChecked(settings.useSymbols);</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          73 :   ui-&gt;plainTextEditTemplate-&gt;setPlainText(settings.passTemplate);</span></span>
 <span id="L218"><span class="lineNum">     218</span>              :   // All fields only applies while templating is on (#1766), so the two</span>
 <span id="L219"><span class="lineNum">     219</span>              :   // switches are one choice of three.</span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">          72 :   ui-&gt;comboBoxFields-&gt;setCurrentIndex(</span></span>
-<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">          72 :       !settings.useTemplate ? 0 : (settings.templateAllFields ? 2 : 1));</span></span>
-<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">          72 :   ui-&gt;plainTextEditTemplate-&gt;setEnabled(settings.useTemplate);</span></span>
-<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAutoPull-&gt;setChecked(settings.autoPull);</span></span>
-<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAutoPush-&gt;setChecked(settings.autoPush);</span></span>
-<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxGitUseParentRepository-&gt;setChecked(</span></span>
-<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          72 :       settings.gitUseParentRepository);</span></span>
-<span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxAlwaysOnTop-&gt;setChecked(settings.alwaysOnTop);</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">          73 :   ui-&gt;comboBoxFields-&gt;setCurrentIndex(</span></span>
+<span id="L221"><span class="lineNum">     221</span> <span class="tlaGNC">          73 :       !settings.useTemplate ? 0 : (settings.templateAllFields ? 2 : 1));</span></span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">          73 :   ui-&gt;plainTextEditTemplate-&gt;setEnabled(settings.useTemplate);</span></span>
+<span id="L223"><span class="lineNum">     223</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAutoPull-&gt;setChecked(settings.autoPull);</span></span>
+<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAutoPush-&gt;setChecked(settings.autoPush);</span></span>
+<span id="L225"><span class="lineNum">     225</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxGitUseParentRepository-&gt;setChecked(</span></span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          73 :       settings.gitUseParentRepository);</span></span>
+<span id="L227"><span class="lineNum">     227</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxAlwaysOnTop-&gt;setChecked(settings.alwaysOnTop);</span></span>
 <span id="L228"><span class="lineNum">     228</span>              : </span>
 <span id="L229"><span class="lineNum">     229</span>              :   // Dependent helpers: set after the plain values above so the enable/disable</span>
 <span id="L230"><span class="lineNum">     230</span>              :   // logic they trigger sees the final widget states.</span>
-<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">          72 :   usePass(settings.usePass);</span></span>
-<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">          72 :   useTrayIcon(settings.useTrayIcon);</span></span>
-<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          72 :   useGit(settings.useGit);</span></span>
-<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          72 :   useOtp(settings.useOtp);</span></span>
-<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          72 :   useGrepSearch(settings.useGrepSearch);</span></span>
-<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">          72 :   useQrencode(settings.useQrencode);</span></span>
+<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">          73 :   usePass(settings.usePass);</span></span>
+<span id="L232"><span class="lineNum">     232</span> <span class="tlaGNC">          73 :   useTrayIcon(settings.useTrayIcon);</span></span>
+<span id="L233"><span class="lineNum">     233</span> <span class="tlaGNC">          73 :   useGit(settings.useGit);</span></span>
+<span id="L234"><span class="lineNum">     234</span> <span class="tlaGNC">          73 :   useOtp(settings.useOtp);</span></span>
+<span id="L235"><span class="lineNum">     235</span> <span class="tlaGNC">          73 :   useGrepSearch(settings.useGrepSearch);</span></span>
+<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">          73 :   useQrencode(settings.useQrencode);</span></span>
 <span id="L237"><span class="lineNum">     237</span>              :   // Before usePwgen (gated on the pwgen path); otherwise readSettings() writes</span>
 <span id="L238"><span class="lineNum">     238</span>              :   // the .ui defaults over the saved configuration on every OK.</span>
-<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">          72 :   setPwgenPath(settings.pwgenExecutable);</span></span>
-<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">          72 :   setPasswordConfiguration(settings.passwordConfiguration);</span></span>
-<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          72 :   usePwgen(settings.usePwgen);</span></span>
-<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">          72 : }</span></span>
+<span id="L239"><span class="lineNum">     239</span> <span class="tlaGNC">          73 :   setPwgenPath(settings.pwgenExecutable);</span></span>
+<span id="L240"><span class="lineNum">     240</span> <span class="tlaGNC">          73 :   setPasswordConfiguration(settings.passwordConfiguration);</span></span>
+<span id="L241"><span class="lineNum">     241</span> <span class="tlaGNC">          73 :   usePwgen(settings.usePwgen);</span></span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">          73 : }</span></span>
 <span id="L243"><span class="lineNum">     243</span>              : </span>
-<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">          23 : auto ConfigDialog::readSettings() -&gt; AppSettings {</span></span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">          24 : auto ConfigDialog::readSettings() -&gt; AppSettings {</span></span>
 <span id="L245"><span class="lineNum">     245</span>              :   // Start from the persisted settings so keys this dialog does not own</span>
 <span id="L246"><span class="lineNum">     246</span>              :   // (window geometry, profiles, etc.) survive the save.</span>
-<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">          23 :   AppSettings settings = QtPassSettings::load();</span></span>
+<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">          24 :   AppSettings settings = QtPassSettings::load();</span></span>
 <span id="L248"><span class="lineNum">     248</span>              : </span>
-<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">          46 :   settings.passExecutable = ui-&gt;passPath-&gt;text();</span></span>
-<span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">          46 :   settings.gitExecutable = ui-&gt;gitPath-&gt;text();</span></span>
-<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">          46 :   settings.gpgExecutable = ui-&gt;gpgPath-&gt;text();</span></span>
-<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">          46 :   settings.sshAuthSockOverride = ui-&gt;sshAuthSockOverride-&gt;text().trimmed();</span></span>
-<span id="L253"><span class="lineNum">     253</span> <span class="tlaGNC">          46 :   settings.passStore = Util::normalizeFolderPath(ui-&gt;storePath-&gt;text());</span></span>
-<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">          23 :   settings.usePass = ui-&gt;radioButtonPass-&gt;isChecked();</span></span>
-<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">          23 :   settings.clipBoardType =</span></span>
-<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">          23 :       static_cast&lt;Enums::ClipBoardType&gt;(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span></span>
-<span id="L257"><span class="lineNum">     257</span> <span class="tlaGNC">          23 :   settings.useSelection = ui-&gt;checkBoxSelection-&gt;isChecked();</span></span>
-<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">          23 :   settings.autoclearSeconds = ui-&gt;spinBoxAutoclearSeconds-&gt;value();</span></span>
-<span id="L259"><span class="lineNum">     259</span> <span class="tlaGNC">          23 :   settings.useAutoclear = settings.autoclearSeconds &gt; 0;</span></span>
-<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">          23 :   settings.restoreClipboard = ui-&gt;checkBoxRestoreClipboard-&gt;isChecked();</span></span>
-<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">          23 :   settings.autoclearPanelSeconds = ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value();</span></span>
-<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">          23 :   settings.useAutoclearPanel = settings.autoclearPanelSeconds &gt; 0;</span></span>
-<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">          23 :   settings.hidePassword = ui-&gt;checkBoxHidePassword-&gt;isChecked();</span></span>
-<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">          23 :   settings.hideSecretFields = ui-&gt;checkBoxHideSecretFields-&gt;isChecked();</span></span>
-<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">          23 :   settings.hideAllFields = ui-&gt;checkBoxHideAllFields-&gt;isChecked();</span></span>
+<span id="L249"><span class="lineNum">     249</span> <span class="tlaGNC">          48 :   settings.passExecutable = ui-&gt;passPath-&gt;text();</span></span>
+<span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">          48 :   settings.gitExecutable = ui-&gt;gitPath-&gt;text();</span></span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">          48 :   settings.gpgExecutable = ui-&gt;gpgPath-&gt;text();</span></span>
+<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">          48 :   settings.sshAuthSockOverride = ui-&gt;sshAuthSockOverride-&gt;text().trimmed();</span></span>
+<span id="L253"><span class="lineNum">     253</span> <span class="tlaGNC">          48 :   settings.passStore = Util::normalizeFolderPath(ui-&gt;storePath-&gt;text());</span></span>
+<span id="L254"><span class="lineNum">     254</span> <span class="tlaGNC">          24 :   settings.usePass = ui-&gt;radioButtonPass-&gt;isChecked();</span></span>
+<span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">          24 :   settings.clipBoardType =</span></span>
+<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">          24 :       static_cast&lt;Enums::ClipBoardType&gt;(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span></span>
+<span id="L257"><span class="lineNum">     257</span> <span class="tlaGNC">          24 :   settings.useSelection = ui-&gt;checkBoxSelection-&gt;isChecked();</span></span>
+<span id="L258"><span class="lineNum">     258</span> <span class="tlaGNC">          24 :   settings.autoclearSeconds = ui-&gt;spinBoxAutoclearSeconds-&gt;value();</span></span>
+<span id="L259"><span class="lineNum">     259</span> <span class="tlaGNC">          24 :   settings.useAutoclear = settings.autoclearSeconds &gt; 0;</span></span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">          24 :   settings.restoreClipboard = ui-&gt;checkBoxRestoreClipboard-&gt;isChecked();</span></span>
+<span id="L261"><span class="lineNum">     261</span> <span class="tlaGNC">          24 :   settings.autoclearPanelSeconds = ui-&gt;spinBoxAutoclearPanelSeconds-&gt;value();</span></span>
+<span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">          24 :   settings.useAutoclearPanel = settings.autoclearPanelSeconds &gt; 0;</span></span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">          24 :   settings.hidePassword = ui-&gt;checkBoxHidePassword-&gt;isChecked();</span></span>
+<span id="L264"><span class="lineNum">     264</span> <span class="tlaGNC">          24 :   settings.hideSecretFields = ui-&gt;checkBoxHideSecretFields-&gt;isChecked();</span></span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">          24 :   settings.hideAllFields = ui-&gt;checkBoxHideAllFields-&gt;isChecked();</span></span>
 <span id="L266"><span class="lineNum">     266</span>              :   // As written, an empty list included (&quot;Default&quot; puts the set back).</span>
-<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">          23 :   settings.secretFieldNames.clear();</span></span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">          24 :   settings.secretFieldNames.clear();</span></span>
 <span id="L268"><span class="lineNum">     268</span>              :   for (const QString &amp;name :</span>
-<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         214 :        ui-&gt;lineEditSecretFields-&gt;text().split(QLatin1Char(','))) {</span></span>
-<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">         168 :     if (!name.trimmed().isEmpty()) {</span></span>
-<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">         156 :       settings.secretFieldNames &lt;&lt; name.trimmed();</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         230 :        ui-&gt;lineEditSecretFields-&gt;text().split(QLatin1Char(','))) {</span></span>
+<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">         182 :     if (!name.trimmed().isEmpty()) {</span></span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">         170 :       settings.secretFieldNames &lt;&lt; name.trimmed();</span></span>
 <span id="L272"><span class="lineNum">     272</span>              :     }</span>
 <span id="L273"><span class="lineNum">     273</span>              :   }</span>
-<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">          23 :   settings.hideContent = ui-&gt;checkBoxHideContent-&gt;isChecked();</span></span>
-<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">          23 :   settings.useMonospace = ui-&gt;checkBoxUseMonospace-&gt;isChecked();</span></span>
-<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">          23 :   settings.displayAsIs = ui-&gt;checkBoxDisplayAsIs-&gt;isChecked();</span></span>
-<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          23 :   settings.noLineWrapping = ui-&gt;checkBoxNoLineWrapping-&gt;isChecked();</span></span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          23 :   settings.addGPGId = ui-&gt;checkBoxAddGPGId-&gt;isChecked();</span></span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">          24 :   settings.hideContent = ui-&gt;checkBoxHideContent-&gt;isChecked();</span></span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">          24 :   settings.useMonospace = ui-&gt;checkBoxUseMonospace-&gt;isChecked();</span></span>
+<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">          24 :   settings.displayAsIs = ui-&gt;checkBoxDisplayAsIs-&gt;isChecked();</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          24 :   settings.noLineWrapping = ui-&gt;checkBoxNoLineWrapping-&gt;isChecked();</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">          24 :   settings.addGPGId = ui-&gt;checkBoxAddGPGId-&gt;isChecked();</span></span>
 <span id="L279"><span class="lineNum">     279</span>              :   // A disabled control (e.g. no system tray) keeps the persisted value</span>
 <span id="L280"><span class="lineNum">     280</span>              :   // instead of clobbering it to false.</span>
-<span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          23 :   if (ui-&gt;checkBoxUseTrayIcon-&gt;isEnabled()) {</span></span>
+<span id="L281"><span class="lineNum">     281</span> <span class="tlaGNC">          24 :   if (ui-&gt;checkBoxUseTrayIcon-&gt;isEnabled()) {</span></span>
 <span id="L282"><span class="lineNum">     282</span> <span class="tlaUNC">           0 :     settings.useTrayIcon = ui-&gt;checkBoxUseTrayIcon-&gt;isChecked();</span></span>
 <span id="L283"><span class="lineNum">     283</span>              :   }</span>
-<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">          23 :   if (ui-&gt;checkBoxHideOnClose-&gt;isEnabled()) {</span></span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">          24 :   if (ui-&gt;checkBoxHideOnClose-&gt;isEnabled()) {</span></span>
 <span id="L285"><span class="lineNum">     285</span> <span class="tlaUNC">           0 :     settings.hideOnClose = ui-&gt;checkBoxHideOnClose-&gt;isChecked();</span></span>
 <span id="L286"><span class="lineNum">     286</span>              :   }</span>
-<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          23 :   if (ui-&gt;checkBoxStartMinimized-&gt;isEnabled()) {</span></span>
+<span id="L287"><span class="lineNum">     287</span> <span class="tlaGNC">          24 :   if (ui-&gt;checkBoxStartMinimized-&gt;isEnabled()) {</span></span>
 <span id="L288"><span class="lineNum">     288</span> <span class="tlaUNC">           0 :     settings.startMinimized = ui-&gt;checkBoxStartMinimized-&gt;isChecked();</span></span>
 <span id="L289"><span class="lineNum">     289</span>              :   }</span>
-<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">          23 :   settings.useGit = ui-&gt;checkBoxUseGit-&gt;isChecked();</span></span>
+<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">          24 :   settings.useGit = ui-&gt;checkBoxUseGit-&gt;isChecked();</span></span>
 <span id="L291"><span class="lineNum">     291</span>              :   // The backends and the auto-pull-on-start read the global keys; #1140</span>
 <span id="L292"><span class="lineNum">     292</span>              :   // started storing these per profile as well and stopped writing the</span>
 <span id="L293"><span class="lineNum">     293</span>              :   // globals, which left both checkboxes without effect.</span>
-<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">          23 :   settings.autoPush = ui-&gt;checkBoxAutoPush-&gt;isChecked();</span></span>
-<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">          23 :   settings.autoPull = ui-&gt;checkBoxAutoPull-&gt;isChecked();</span></span>
-<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">          23 :   settings.gitUseParentRepository =</span></span>
-<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">          23 :       ui-&gt;checkBoxGitUseParentRepository-&gt;isChecked();</span></span>
-<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">          23 :   settings.useOtp = ui-&gt;checkBoxUseOtp-&gt;isChecked();</span></span>
-<span id="L299"><span class="lineNum">     299</span> <span class="tlaGNC">          23 :   settings.useGrepSearch = ui-&gt;checkBoxUseGrepSearch-&gt;isChecked();</span></span>
-<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">          23 :   settings.useQrencode = ui-&gt;checkBoxUseQrencode-&gt;isChecked();</span></span>
-<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">          46 :   settings.pwgenExecutable = ui-&gt;pwgenPath-&gt;text();</span></span>
-<span id="L302"><span class="lineNum">     302</span> <span class="tlaGNC">          23 :   settings.usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span></span>
-<span id="L303"><span class="lineNum">     303</span> <span class="tlaGNC">          23 :   settings.avoidCapitals = ui-&gt;checkBoxAvoidCapitals-&gt;isChecked();</span></span>
-<span id="L304"><span class="lineNum">     304</span> <span class="tlaGNC">          23 :   settings.avoidNumbers = ui-&gt;checkBoxAvoidNumbers-&gt;isChecked();</span></span>
-<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">          23 :   settings.lessRandom = ui-&gt;checkBoxLessRandom-&gt;isChecked();</span></span>
-<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">          23 :   settings.useSymbols = ui-&gt;checkBoxUseSymbols-&gt;isChecked();</span></span>
-<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">          46 :   settings.passwordConfiguration = getPasswordConfiguration();</span></span>
-<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">          23 :   settings.useTemplate = ui-&gt;comboBoxFields-&gt;currentIndex() &gt; 0;</span></span>
-<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">          46 :   settings.passTemplate = ui-&gt;plainTextEditTemplate-&gt;toPlainText();</span></span>
-<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">          23 :   settings.templateAllFields = ui-&gt;comboBoxFields-&gt;currentIndex() == 2;</span></span>
-<span id="L311"><span class="lineNum">     311</span> <span class="tlaGNC">          23 :   settings.alwaysOnTop = ui-&gt;checkBoxAlwaysOnTop-&gt;isChecked();</span></span>
-<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          23 :   settings.version = VERSION;</span></span>
+<span id="L294"><span class="lineNum">     294</span> <span class="tlaGNC">          24 :   settings.autoPush = ui-&gt;checkBoxAutoPush-&gt;isChecked();</span></span>
+<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">          24 :   settings.autoPull = ui-&gt;checkBoxAutoPull-&gt;isChecked();</span></span>
+<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">          24 :   settings.gitUseParentRepository =</span></span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">          24 :       ui-&gt;checkBoxGitUseParentRepository-&gt;isChecked();</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">          24 :   settings.useOtp = ui-&gt;checkBoxUseOtp-&gt;isChecked();</span></span>
+<span id="L299"><span class="lineNum">     299</span> <span class="tlaGNC">          24 :   settings.useGrepSearch = ui-&gt;checkBoxUseGrepSearch-&gt;isChecked();</span></span>
+<span id="L300"><span class="lineNum">     300</span> <span class="tlaGNC">          24 :   settings.useQrencode = ui-&gt;checkBoxUseQrencode-&gt;isChecked();</span></span>
+<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">          48 :   settings.pwgenExecutable = ui-&gt;pwgenPath-&gt;text();</span></span>
+<span id="L302"><span class="lineNum">     302</span> <span class="tlaGNC">          24 :   settings.usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span></span>
+<span id="L303"><span class="lineNum">     303</span> <span class="tlaGNC">          24 :   settings.avoidCapitals = ui-&gt;checkBoxAvoidCapitals-&gt;isChecked();</span></span>
+<span id="L304"><span class="lineNum">     304</span> <span class="tlaGNC">          24 :   settings.avoidNumbers = ui-&gt;checkBoxAvoidNumbers-&gt;isChecked();</span></span>
+<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">          24 :   settings.lessRandom = ui-&gt;checkBoxLessRandom-&gt;isChecked();</span></span>
+<span id="L306"><span class="lineNum">     306</span> <span class="tlaGNC">          24 :   settings.useSymbols = ui-&gt;checkBoxUseSymbols-&gt;isChecked();</span></span>
+<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">          48 :   settings.passwordConfiguration = getPasswordConfiguration();</span></span>
+<span id="L308"><span class="lineNum">     308</span> <span class="tlaGNC">          24 :   settings.useTemplate = ui-&gt;comboBoxFields-&gt;currentIndex() &gt; 0;</span></span>
+<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">          48 :   settings.passTemplate = ui-&gt;plainTextEditTemplate-&gt;toPlainText();</span></span>
+<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">          24 :   settings.templateAllFields = ui-&gt;comboBoxFields-&gt;currentIndex() == 2;</span></span>
+<span id="L311"><span class="lineNum">     311</span> <span class="tlaGNC">          24 :   settings.alwaysOnTop = ui-&gt;checkBoxAlwaysOnTop-&gt;isChecked();</span></span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">          24 :   settings.version = VERSION;</span></span>
 <span id="L313"><span class="lineNum">     313</span>              : </span>
-<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">          23 :   return settings;</span></span>
+<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">          24 :   return settings;</span></span>
 <span id="L315"><span class="lineNum">     315</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L316"><span class="lineNum">     316</span>              : </span>
-<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">         222 : ConfigDialog::~ConfigDialog() = default;</span></span>
+<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">         225 : ConfigDialog::~ConfigDialog() = default;</span></span>
 <span id="L318"><span class="lineNum">     318</span>              : </span>
-<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">          72 : void ConfigDialog::setGitPath(const QString &amp;path) {</span></span>
-<span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">          72 :   ui-&gt;gitPath-&gt;setText(path);</span></span>
-<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">          72 :   ui-&gt;checkBoxUseGit-&gt;setEnabled(!path.isEmpty());</span></span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">          72 :   if (path.isEmpty()) {</span></span>
+<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">          73 : void ConfigDialog::setGitPath(const QString &amp;path) {</span></span>
+<span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">          73 :   ui-&gt;gitPath-&gt;setText(path);</span></span>
+<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">          73 :   ui-&gt;checkBoxUseGit-&gt;setEnabled(!path.isEmpty());</span></span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">          73 :   if (path.isEmpty()) {</span></span>
 <span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">          45 :     useGit(false);</span></span>
 <span id="L324"><span class="lineNum">     324</span>              :   }</span>
-<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          72 : }</span></span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          73 : }</span></span>
 <span id="L326"><span class="lineNum">     326</span>              : </span>
-<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">          73 : void ConfigDialog::usePass(bool usePass) {</span></span>
-<span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">          73 :   ui-&gt;radioButtonNative-&gt;setChecked(!usePass);</span></span>
-<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          73 :   ui-&gt;radioButtonPass-&gt;setChecked(usePass);</span></span>
-<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          73 :   setGroupBoxState();</span></span>
-<span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">          73 : }</span></span>
+<span id="L327"><span class="lineNum">     327</span> <span class="tlaGNC">          74 : void ConfigDialog::usePass(bool usePass) {</span></span>
+<span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">          74 :   ui-&gt;radioButtonNative-&gt;setChecked(!usePass);</span></span>
+<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          74 :   ui-&gt;radioButtonPass-&gt;setChecked(usePass);</span></span>
+<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          74 :   setGroupBoxState();</span></span>
+<span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">          74 : }</span></span>
 <span id="L332"><span class="lineNum">     332</span>              : </span>
 <span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">         135 : auto ConfigDialog::isFingerprintList(const QString &amp;setting) -&gt; bool {</span></span>
 <span id="L334"><span class="lineNum">     334</span>              :   // 40 hex characters for OpenPGP v4 keys, 64 for v5/v6 (gpg 2.5+).</span>
@@ -455,29 +455,29 @@
 <span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">         225 :   ui-&gt;profileSigningKey-&gt;setToolTip(tipOr(problems.key, m_keyTip));</span></span>
 <span id="L383"><span class="lineNum">     383</span>              : }</span>
 <span id="L384"><span class="lineNum">     384</span>              : </span>
-<span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">         201 : auto ConfigDialog::signingStores() const -&gt; SigningStores {</span></span>
+<span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">         203 : auto ConfigDialog::signingStores() const -&gt; SigningStores {</span></span>
 <span id="L386"><span class="lineNum">     386</span>              :   // One folder spelled two ways (through a link, another case on a</span>
 <span id="L387"><span class="lineNum">     387</span>              :   // case-insensitive file system) is one store: compared as the file system</span>
 <span id="L388"><span class="lineNum">     388</span>              :   // resolves it where it exists. Resolved once per validate(), not once per</span>
 <span id="L389"><span class="lineNum">     389</span>              :   // pair of profiles.</span>
-<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">         201 :   SigningStores resolved;</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">         203 :   SigningStores resolved;</span></span>
 <span id="L391"><span class="lineNum">     391</span>              :   // Keys are looked up in the keyring that signs: the configured GPG home,</span>
 <span id="L392"><span class="lineNum">     392</span>              :   // as profiles sign with it, not whatever GNUPGHOME QtPass inherited. The</span>
 <span id="L393"><span class="lineNum">     393</span>              :   // dialog does not edit the home, so the settings are read once, not on</span>
 <span id="L394"><span class="lineNum">     394</span>              :   // every keystroke; the environment is built each time, as the home may</span>
 <span id="L395"><span class="lineNum">     395</span>              :   // only appear meanwhile (a key generated from this dialog).</span>
-<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">         201 :   if (!m_gpgSettings) {</span></span>
-<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">          72 :     m_gpgSettings = QtPassSettings::load();</span></span>
+<span id="L396"><span class="lineNum">     396</span> <span class="tlaGNC">         203 :   if (!m_gpgSettings) {</span></span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">          73 :     m_gpgSettings = QtPassSettings::load();</span></span>
 <span id="L398"><span class="lineNum">     398</span>              :   }</span>
-<span id="L399"><span class="lineNum">     399</span> <span class="tlaGNC">         201 :   const QProcessEnvironment env = ProfileInit::gpgEnvironment(*m_gpgSettings);</span></span>
-<span id="L400"><span class="lineNum">     400</span> <span class="tlaGNC">         333 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
+<span id="L399"><span class="lineNum">     399</span> <span class="tlaGNC">         203 :   const QProcessEnvironment env = ProfileInit::gpgEnvironment(*m_gpgSettings);</span></span>
+<span id="L400"><span class="lineNum">     400</span> <span class="tlaGNC">         335 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
 <span id="L401"><span class="lineNum">     401</span> <span class="tlaGNC">         132 :     const QString real = QFileInfo(entry.profile.path).canonicalFilePath();</span></span>
 <span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">         132 :     resolved.stores &lt;&lt; (real.isEmpty() ? QDir::cleanPath(entry.profile.path)</span></span>
 <span id="L403"><span class="lineNum">     403</span> <span class="tlaGNC">         132 :                                        : real);</span></span>
 <span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">         264 :     resolved.keys &lt;&lt; signerKeys(entry.profile.signingKey, env);</span></span>
 <span id="L405"><span class="lineNum">     405</span>              :   }</span>
-<span id="L406"><span class="lineNum">     406</span> <span class="tlaGNC">         201 :   return resolved;</span></span>
-<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">         201 : }</span></span>
+<span id="L406"><span class="lineNum">     406</span> <span class="tlaGNC">         203 :   return resolved;</span></span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">         203 : }</span></span>
 <span id="L408"><span class="lineNum">     408</span>              : </span>
 <span id="L409"><span class="lineNum">     409</span> <span class="tlaGNC">         132 : auto ConfigDialog::signerKeys(const QString &amp;signingKey,</span></span>
 <span id="L410"><span class="lineNum">     410</span>              :                               const QProcessEnvironment &amp;env) const</span>
@@ -524,22 +524,22 @@
 <span id="L451"><span class="lineNum">     451</span> <span class="tlaGNC">         132 :   return keys;</span></span>
 <span id="L452"><span class="lineNum">     452</span>              : }</span>
 <span id="L453"><span class="lineNum">     453</span>              : </span>
-<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          81 : void ConfigDialog::changeEvent(QEvent *event) {</span></span>
-<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          81 :   QDialog::changeEvent(event);</span></span>
-<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          81 :   if (event-&gt;type() != QEvent::ActivationChange) {</span></span>
+<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          84 : void ConfigDialog::changeEvent(QEvent *event) {</span></span>
+<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          84 :   QDialog::changeEvent(event);</span></span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          84 :   if (event-&gt;type() != QEvent::ActivationChange) {</span></span>
 <span id="L457"><span class="lineNum">     457</span>              :     return;</span>
 <span id="L458"><span class="lineNum">     458</span>              :   }</span>
 <span id="L459"><span class="lineNum">     459</span>              :   // A key is imported somewhere else: a terminal, a key manager, or the</span>
 <span id="L460"><span class="lineNum">     460</span>              :   // key generator this dialog opens. Whatever keyring gpg uses, the dialog</span>
 <span id="L461"><span class="lineNum">     461</span>              :   // is in the background meanwhile, so a key gpg did not know is asked</span>
 <span id="L462"><span class="lineNum">     462</span>              :   // about again on return.</span>
-<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">           9 :   if (!isActiveWindow()) {</span></span>
-<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">           3 :     const auto forgotten = m_primaryOf.removeIf(</span></span>
+<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">          11 :   if (!isActiveWindow()) {</span></span>
+<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">           4 :     const auto forgotten = m_primaryOf.removeIf(</span></span>
 <span id="L465"><span class="lineNum">     465</span>              :         [](const std::pair&lt;const QString &amp;, QString &amp;&gt; &amp;lookup) {</span>
 <span id="L466"><span class="lineNum">     466</span>              :           return lookup.second.isEmpty();</span>
 <span id="L467"><span class="lineNum">     467</span>              :         });</span>
-<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">           4 :     m_recheckSigners = m_recheckSigners || forgotten &gt; 0;</span></span>
-<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">           6 :   } else if (m_recheckSigners) {</span></span>
+<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">           5 :     m_recheckSigners = m_recheckSigners || forgotten &gt; 0;</span></span>
+<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">           7 :   } else if (m_recheckSigners) {</span></span>
 <span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">           1 :     m_recheckSigners = false;</span></span>
 <span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">           1 :     validate();</span></span>
 <span id="L472"><span class="lineNum">     472</span>              :   }</span>
@@ -566,14 +566,14 @@
 <span id="L493"><span class="lineNum">     493</span>              :   return others;</span>
 <span id="L494"><span class="lineNum">     494</span>              : }</span>
 <span id="L495"><span class="lineNum">     495</span>              : </span>
-<span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">         201 : void ConfigDialog::validate() {</span></span>
-<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">         201 :   QHash&lt;QString, int&gt; names;</span></span>
-<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         333 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
+<span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">         203 : void ConfigDialog::validate() {</span></span>
+<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">         203 :   QHash&lt;QString, int&gt; names;</span></span>
+<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">         335 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
 <span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">         132 :     names[entry.name]++;</span></span>
 <span id="L500"><span class="lineNum">     500</span>              :   }</span>
 <span id="L501"><span class="lineNum">     501</span>              :   bool status = true;</span>
-<span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">         201 :   const SigningStores resolved = signingStores();</span></span>
-<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">         333 :   for (int row = 0; row &lt; m_entries.size(); ++row) {</span></span>
+<span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">         203 :   const SigningStores resolved = signingStores();</span></span>
+<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">         335 :   for (int row = 0; row &lt; m_entries.size(); ++row) {</span></span>
 <span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">         132 :     ProfileProblems problems = problemsOf(m_entries.at(row), names);</span></span>
 <span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">         132 :     if (const QStringList others = sharingTheKey(row, resolved);</span></span>
 <span id="L506"><span class="lineNum">     506</span>              :         !others.isEmpty()) {</span>
@@ -587,17 +587,17 @@
 <span id="L514"><span class="lineNum">     514</span> <span class="tlaGNC">         132 :     showProblems(row, problems);</span></span>
 <span id="L515"><span class="lineNum">     515</span> <span class="tlaGNC">         132 :     status = status &amp;&amp; problems.none();</span></span>
 <span id="L516"><span class="lineNum">     516</span> <span class="tlaGNC">         132 :   }</span></span>
-<span id="L517"><span class="lineNum">     517</span> <span class="tlaGNC">         201 :   ui-&gt;buttonBox-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(status);</span></span>
-<span id="L518"><span class="lineNum">     518</span> <span class="tlaGNC">         201 :   updatePassGitWarning();</span></span>
-<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">         201 : }</span></span>
+<span id="L517"><span class="lineNum">     517</span> <span class="tlaGNC">         203 :   ui-&gt;buttonBox-&gt;button(QDialogButtonBox::Ok)-&gt;setEnabled(status);</span></span>
+<span id="L518"><span class="lineNum">     518</span> <span class="tlaGNC">         203 :   updatePassGitWarning();</span></span>
+<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">         203 : }</span></span>
 <span id="L520"><span class="lineNum">     520</span>              : </span>
-<span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">         298 : void ConfigDialog::updatePassGitWarning() {</span></span>
+<span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">         301 : void ConfigDialog::updatePassGitWarning() {</span></span>
 <span id="L522"><span class="lineNum">     522</span>              :   // Built after the first applySettings(); setProfiles() fills it then.</span>
-<span id="L523"><span class="lineNum">     523</span> <span class="tlaGNC">         298 :   if (m_passGitWarning == nullptr) {</span></span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">          72 :     return;</span></span>
+<span id="L523"><span class="lineNum">     523</span> <span class="tlaGNC">         301 :   if (m_passGitWarning == nullptr) {</span></span>
+<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">          73 :     return;</span></span>
 <span id="L525"><span class="lineNum">     525</span>              :   }</span>
-<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         226 :   QStringList warnings;</span></span>
-<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">         226 :   if (ui-&gt;radioButtonPass-&gt;isChecked()) {</span></span>
+<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">         228 :   QStringList warnings;</span></span>
+<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">         228 :   if (ui-&gt;radioButtonPass-&gt;isChecked()) {</span></span>
 <span id="L528"><span class="lineNum">     528</span> <span class="tlaGNC">          22 :     QStringList stores{ui-&gt;storePath-&gt;text()};</span></span>
 <span id="L529"><span class="lineNum">     529</span> <span class="tlaGNC">          13 :     for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
 <span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">           2 :       stores &lt;&lt; entry.profile.path;</span></span>
@@ -615,13 +615,13 @@
 <span id="L542"><span class="lineNum">     542</span>              :       }</span>
 <span id="L543"><span class="lineNum">     543</span>              :     }</span>
 <span id="L544"><span class="lineNum">     544</span>              :   }</span>
-<span id="L545"><span class="lineNum">     545</span> <span class="tlaGNC">         452 :   m_passGitWarning-&gt;setText(warnings.join(QStringLiteral(&quot;\n\n&quot;)));</span></span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         226 :   m_passGitWarning-&gt;setVisible(!warnings.isEmpty());</span></span>
+<span id="L545"><span class="lineNum">     545</span> <span class="tlaGNC">         456 :   m_passGitWarning-&gt;setText(warnings.join(QStringLiteral(&quot;\n\n&quot;)));</span></span>
+<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         228 :   m_passGitWarning-&gt;setVisible(!warnings.isEmpty());</span></span>
 <span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          11 : }</span></span>
 <span id="L548"><span class="lineNum">     548</span>              : </span>
-<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">          23 : void ConfigDialog::warnAboutSshAuthSockOverride() {</span></span>
-<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">          46 :   const QString override = ui-&gt;sshAuthSockOverride-&gt;text().trimmed();</span></span>
-<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">          23 :   if (override.isEmpty()) {</span></span>
+<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">          24 : void ConfigDialog::warnAboutSshAuthSockOverride() {</span></span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">          48 :   const QString override = ui-&gt;sshAuthSockOverride-&gt;text().trimmed();</span></span>
+<span id="L551"><span class="lineNum">     551</span> <span class="tlaGNC">          24 :   if (override.isEmpty()) {</span></span>
 <span id="L552"><span class="lineNum">     552</span>              :     return;</span>
 <span id="L553"><span class="lineNum">     553</span>              :   }</span>
 <span id="L554"><span class="lineNum">     554</span> <span class="tlaGNC">           3 :   QString reason;</span></span>
@@ -645,38 +645,38 @@
 <span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">           6 :           .arg(reason));</span></span>
 <span id="L573"><span class="lineNum">     573</span>              : }</span>
 <span id="L574"><span class="lineNum">     574</span>              : </span>
-<span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">          23 : void ConfigDialog::followActiveProfile(const Profiles &amp;profiles) {</span></span>
+<span id="L575"><span class="lineNum">     575</span> <span class="tlaGNC">          24 : void ConfigDialog::followActiveProfile(const Profiles &amp;profiles) {</span></span>
 <span id="L576"><span class="lineNum">     576</span>              :   // As MainWindow::on_profileBox_currentTextChanged does when switching.</span>
-<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          23 :   AppSettings s = QtPassSettings::load();</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">          24 :   AppSettings s = QtPassSettings::load();</span></span>
 <span id="L578"><span class="lineNum">     578</span>              :   const QString wasActive = s.activeProfile;</span>
-<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">          23 :   QString nowActive;</span></span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          32 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
+<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">          24 :   QString nowActive;</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">          33 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
 <span id="L581"><span class="lineNum">     581</span> <span class="tlaGNC">           9 :     if (!wasActive.isEmpty() &amp;&amp; entry.originalName == wasActive) {</span></span>
 <span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">           1 :       nowActive = entry.name;</span></span>
 <span id="L583"><span class="lineNum">     583</span>              :     }</span>
 <span id="L584"><span class="lineNum">     584</span>              :   }</span>
-<span id="L585"><span class="lineNum">     585</span> <span class="tlaGNC">          23 :   s.activeProfile = nowActive;</span></span>
+<span id="L585"><span class="lineNum">     585</span> <span class="tlaGNC">          24 :   s.activeProfile = nowActive;</span></span>
 <span id="L586"><span class="lineNum">     586</span>              :   const auto active = profiles.constFind(nowActive);</span>
-<span id="L587"><span class="lineNum">     587</span> <span class="tlaGNC">          23 :   if (active != profiles.constEnd()) {</span></span>
+<span id="L587"><span class="lineNum">     587</span> <span class="tlaGNC">          24 :   if (active != profiles.constEnd()) {</span></span>
 <span id="L588"><span class="lineNum">     588</span> <span class="tlaGNC">           1 :     s.useGit = active-&gt;useGit.value_or(s.useGit);</span></span>
 <span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">           1 :     s.autoPush = active-&gt;autoPush.value_or(s.autoPush);</span></span>
 <span id="L590"><span class="lineNum">     590</span> <span class="tlaGNC">           1 :     s.autoPull = active-&gt;autoPull.value_or(s.autoPull);</span></span>
 <span id="L591"><span class="lineNum">     591</span>              :   }</span>
-<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">          23 :   QtPassSettings::save(s);</span></span>
-<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">          23 : }</span></span>
+<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">          24 :   QtPassSettings::save(s);</span></span>
+<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">          24 : }</span></span>
 <span id="L594"><span class="lineNum">     594</span>              : </span>
-<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">          23 : void ConfigDialog::on_accepted() {</span></span>
-<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">          23 :   warnAboutSshAuthSockOverride();</span></span>
-<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          23 :   const Profiles existingProfiles = QtPassSettings::getProfiles();</span></span>
+<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">          24 : void ConfigDialog::on_accepted() {</span></span>
+<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">          24 :   warnAboutSshAuthSockOverride();</span></span>
+<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">          24 :   const Profiles existingProfiles = QtPassSettings::getProfiles();</span></span>
 <span id="L598"><span class="lineNum">     598</span>              :   // Persist via the facade, which also invalidates the cached Pass backend so</span>
 <span id="L599"><span class="lineNum">     599</span>              :   // a changed &quot;use pass&quot; mode takes effect.</span>
-<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">          23 :   QtPassSettings::save(readSettings());</span></span>
+<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">          24 :   QtPassSettings::save(readSettings());</span></span>
 <span id="L601"><span class="lineNum">     601</span>              :   // Profiles are not part of AppSettings yet, so persist them separately.</span>
-<span id="L602"><span class="lineNum">     602</span> <span class="tlaGNC">          23 :   const Profiles profiles = getProfiles();</span></span>
-<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">          23 :   QtPassSettings::setProfiles(profiles);</span></span>
-<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">          23 :   followActiveProfile(profiles);</span></span>
-<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">          23 :   initializeNewProfiles(existingProfiles);</span></span>
-<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          23 : }</span></span>
+<span id="L602"><span class="lineNum">     602</span> <span class="tlaGNC">          24 :   const Profiles profiles = getProfiles();</span></span>
+<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">          24 :   QtPassSettings::setProfiles(profiles);</span></span>
+<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">          24 :   followActiveProfile(profiles);</span></span>
+<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">          24 :   initializeNewProfiles(existingProfiles);</span></span>
+<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          24 : }</span></span>
 <span id="L607"><span class="lineNum">     607</span>              : </span>
 <span id="L608"><span class="lineNum">     608</span> <span class="tlaGNC">           1 : void ConfigDialog::on_autodetectButton_clicked() {</span></span>
 <span id="L609"><span class="lineNum">     609</span> <span class="tlaGNC">           2 :   QString pass = Util::findBinaryInPath(&quot;pass&quot;);</span></span>
@@ -705,13 +705,13 @@
 <span id="L632"><span class="lineNum">     632</span>              : </span>
 <span id="L633"><span class="lineNum">     633</span> <span class="tlaGNC">           5 : void ConfigDialog::on_radioButtonPass_clicked() { setGroupBoxState(); }</span></span>
 <span id="L634"><span class="lineNum">     634</span>              : </span>
-<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">          87 : void ConfigDialog::setGroupBoxState() {</span></span>
-<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">          87 :   bool state = ui-&gt;radioButtonPass-&gt;isChecked();</span></span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">          87 :   ui-&gt;groupBoxNative-&gt;setEnabled(!state);</span></span>
-<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">          87 :   ui-&gt;groupBoxPass-&gt;setEnabled(state);</span></span>
-<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">          87 :   updatePassGitWarning();</span></span>
-<span id="L640"><span class="lineNum">     640</span> <span class="tlaGNC">          87 :   on_checkBoxUseGit_clicked();</span></span>
-<span id="L641"><span class="lineNum">     641</span> <span class="tlaGNC">          87 :   if (state) {</span></span>
+<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">          88 : void ConfigDialog::setGroupBoxState() {</span></span>
+<span id="L636"><span class="lineNum">     636</span> <span class="tlaGNC">          88 :   bool state = ui-&gt;radioButtonPass-&gt;isChecked();</span></span>
+<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">          88 :   ui-&gt;groupBoxNative-&gt;setEnabled(!state);</span></span>
+<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">          88 :   ui-&gt;groupBoxPass-&gt;setEnabled(state);</span></span>
+<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">          88 :   updatePassGitWarning();</span></span>
+<span id="L640"><span class="lineNum">     640</span> <span class="tlaGNC">          88 :   on_checkBoxUseGit_clicked();</span></span>
+<span id="L641"><span class="lineNum">     641</span> <span class="tlaGNC">          88 :   if (state) {</span></span>
 <span id="L642"><span class="lineNum">     642</span> <span class="tlaGNC">           8 :     ui-&gt;spinBoxPasswordLength-&gt;setEnabled(false);</span></span>
 <span id="L643"><span class="lineNum">     643</span> <span class="tlaGNC">           8 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span></span>
 <span id="L644"><span class="lineNum">     644</span> <span class="tlaGNC">           8 :     ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(false);</span></span>
@@ -723,11 +723,11 @@
 <span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">           8 :     ui-&gt;lineEditPasswordChars-&gt;setEnabled(false);</span></span>
 <span id="L651"><span class="lineNum">     651</span>              :   } else {</span>
 <span id="L652"><span class="lineNum">     652</span>              :     // native mode: restore pwgen/charset state from existing handlers</span>
-<span id="L653"><span class="lineNum">     653</span> <span class="tlaGNC">          79 :     ui-&gt;spinBoxPasswordLength-&gt;setEnabled(true);</span></span>
-<span id="L654"><span class="lineNum">     654</span> <span class="tlaGNC">          79 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(!ui-&gt;pwgenPath-&gt;text().isEmpty());</span></span>
-<span id="L655"><span class="lineNum">     655</span> <span class="tlaGNC">          79 :     on_checkBoxUsePwgen_clicked();</span></span>
+<span id="L653"><span class="lineNum">     653</span> <span class="tlaGNC">          80 :     ui-&gt;spinBoxPasswordLength-&gt;setEnabled(true);</span></span>
+<span id="L654"><span class="lineNum">     654</span> <span class="tlaGNC">          80 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(!ui-&gt;pwgenPath-&gt;text().isEmpty());</span></span>
+<span id="L655"><span class="lineNum">     655</span> <span class="tlaGNC">          80 :     on_checkBoxUsePwgen_clicked();</span></span>
 <span id="L656"><span class="lineNum">     656</span>              :   }</span>
-<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">          87 : }</span></span>
+<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">          88 : }</span></span>
 <span id="L658"><span class="lineNum">     658</span>              : </span>
 <span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">           8 : auto ConfigDialog::selectExecutable() -&gt; QString {</span></span>
 <span id="L660"><span class="lineNum">     660</span> <span class="tlaGNC">          16 :   QFileDialog dialog(this);</span></span>
@@ -791,67 +791,67 @@
 <span id="L718"><span class="lineNum">     718</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L719"><span class="lineNum">     719</span>              : </span>
 <span id="L720"><span class="lineNum">     720</span>              : // index 0 is &quot;No clipboard&quot;.</span>
-<span id="L721"><span class="lineNum">     721</span> <span class="tlaGNC">         146 : void ConfigDialog::on_comboBoxClipboard_activated(int index) {</span></span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">         146 :   bool state = index &gt; 0;</span></span>
+<span id="L721"><span class="lineNum">     721</span> <span class="tlaGNC">         148 : void ConfigDialog::on_comboBoxClipboard_activated(int index) {</span></span>
+<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">         148 :   bool state = index &gt; 0;</span></span>
 <span id="L723"><span class="lineNum">     723</span>              : </span>
-<span id="L724"><span class="lineNum">     724</span> <span class="tlaGNC">         146 :   ui-&gt;checkBoxSelection-&gt;setEnabled(state);</span></span>
-<span id="L725"><span class="lineNum">     725</span> <span class="tlaGNC">         146 :   ui-&gt;checkBoxHidePassword-&gt;setEnabled(state);</span></span>
-<span id="L726"><span class="lineNum">     726</span> <span class="tlaGNC">         146 :   updateSecretFieldsEnabled();</span></span>
-<span id="L727"><span class="lineNum">     727</span> <span class="tlaGNC">         146 :   ui-&gt;checkBoxHideContent-&gt;setEnabled(state);</span></span>
-<span id="L728"><span class="lineNum">     728</span> <span class="tlaGNC">         146 :   ui-&gt;labelAutoclear-&gt;setEnabled(state);</span></span>
-<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">         146 :   ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(state);</span></span>
-<span id="L730"><span class="lineNum">     730</span> <span class="tlaGNC">         146 :   ui-&gt;labelSeconds-&gt;setEnabled(state);</span></span>
-<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">         146 :   ui-&gt;checkBoxRestoreClipboard-&gt;setEnabled(state);</span></span>
-<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">         146 : }</span></span>
+<span id="L724"><span class="lineNum">     724</span> <span class="tlaGNC">         148 :   ui-&gt;checkBoxSelection-&gt;setEnabled(state);</span></span>
+<span id="L725"><span class="lineNum">     725</span> <span class="tlaGNC">         148 :   ui-&gt;checkBoxHidePassword-&gt;setEnabled(state);</span></span>
+<span id="L726"><span class="lineNum">     726</span> <span class="tlaGNC">         148 :   updateSecretFieldsEnabled();</span></span>
+<span id="L727"><span class="lineNum">     727</span> <span class="tlaGNC">         148 :   ui-&gt;checkBoxHideContent-&gt;setEnabled(state);</span></span>
+<span id="L728"><span class="lineNum">     728</span> <span class="tlaGNC">         148 :   ui-&gt;labelAutoclear-&gt;setEnabled(state);</span></span>
+<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">         148 :   ui-&gt;spinBoxAutoclearSeconds-&gt;setEnabled(state);</span></span>
+<span id="L730"><span class="lineNum">     730</span> <span class="tlaGNC">         148 :   ui-&gt;labelSeconds-&gt;setEnabled(state);</span></span>
+<span id="L731"><span class="lineNum">     731</span> <span class="tlaGNC">         148 :   ui-&gt;checkBoxRestoreClipboard-&gt;setEnabled(state);</span></span>
+<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">         148 : }</span></span>
 <span id="L733"><span class="lineNum">     733</span>              : </span>
-<span id="L734"><span class="lineNum">     734</span> <span class="tlaGNC">         322 : void ConfigDialog::updateSecretFieldsEnabled() {</span></span>
+<span id="L734"><span class="lineNum">     734</span> <span class="tlaGNC">         326 : void ConfigDialog::updateSecretFieldsEnabled() {</span></span>
 <span id="L735"><span class="lineNum">     735</span>              :   // Each control only while the one it depends on is on: other secrets and</span>
 <span id="L736"><span class="lineNum">     736</span>              :   // every field only while passwords are hidden; the secret words only while</span>
 <span id="L737"><span class="lineNum">     737</span>              :   // other secrets are, and not when every field is hidden anyway.</span>
-<span id="L738"><span class="lineNum">     738</span> <span class="tlaGNC">         551 :   const bool hiding = ui-&gt;checkBoxHidePassword-&gt;isEnabled() &amp;&amp;</span></span>
-<span id="L739"><span class="lineNum">     739</span> <span class="tlaGNC">         229 :                       ui-&gt;checkBoxHidePassword-&gt;isChecked();</span></span>
-<span id="L740"><span class="lineNum">     740</span> <span class="tlaGNC">         322 :   ui-&gt;checkBoxHideAllFields-&gt;setEnabled(hiding);</span></span>
-<span id="L741"><span class="lineNum">     741</span> <span class="tlaGNC">         322 :   const bool all = hiding &amp;&amp; ui-&gt;checkBoxHideAllFields-&gt;isChecked();</span></span>
-<span id="L742"><span class="lineNum">     742</span> <span class="tlaGNC">         322 :   ui-&gt;checkBoxHideSecretFields-&gt;setEnabled(hiding &amp;&amp; !all);</span></span>
+<span id="L738"><span class="lineNum">     738</span> <span class="tlaGNC">         557 :   const bool hiding = ui-&gt;checkBoxHidePassword-&gt;isEnabled() &amp;&amp;</span></span>
+<span id="L739"><span class="lineNum">     739</span> <span class="tlaGNC">         231 :                       ui-&gt;checkBoxHidePassword-&gt;isChecked();</span></span>
+<span id="L740"><span class="lineNum">     740</span> <span class="tlaGNC">         326 :   ui-&gt;checkBoxHideAllFields-&gt;setEnabled(hiding);</span></span>
+<span id="L741"><span class="lineNum">     741</span> <span class="tlaGNC">         326 :   const bool all = hiding &amp;&amp; ui-&gt;checkBoxHideAllFields-&gt;isChecked();</span></span>
+<span id="L742"><span class="lineNum">     742</span> <span class="tlaGNC">         326 :   ui-&gt;checkBoxHideSecretFields-&gt;setEnabled(hiding &amp;&amp; !all);</span></span>
 <span id="L743"><span class="lineNum">     743</span>              :   const bool words =</span>
-<span id="L744"><span class="lineNum">     744</span> <span class="tlaGNC">         322 :       hiding &amp;&amp; !all &amp;&amp; ui-&gt;checkBoxHideSecretFields-&gt;isChecked();</span></span>
-<span id="L745"><span class="lineNum">     745</span> <span class="tlaGNC">         322 :   ui-&gt;lineEditSecretFields-&gt;setEnabled(words);</span></span>
-<span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">         322 :   ui-&gt;buttonDefaultSecretFields-&gt;setEnabled(words);</span></span>
-<span id="L747"><span class="lineNum">     747</span> <span class="tlaGNC">         322 : }</span></span>
+<span id="L744"><span class="lineNum">     744</span> <span class="tlaGNC">         326 :       hiding &amp;&amp; !all &amp;&amp; ui-&gt;checkBoxHideSecretFields-&gt;isChecked();</span></span>
+<span id="L745"><span class="lineNum">     745</span> <span class="tlaGNC">         326 :   ui-&gt;lineEditSecretFields-&gt;setEnabled(words);</span></span>
+<span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">         326 :   ui-&gt;buttonDefaultSecretFields-&gt;setEnabled(words);</span></span>
+<span id="L747"><span class="lineNum">     747</span> <span class="tlaGNC">         326 : }</span></span>
 <span id="L748"><span class="lineNum">     748</span>              : </span>
-<span id="L749"><span class="lineNum">     749</span> <span class="tlaGNC">          74 : void ConfigDialog::useSelection(bool useSelection) {</span></span>
-<span id="L750"><span class="lineNum">     750</span> <span class="tlaGNC">          74 :   ui-&gt;checkBoxSelection-&gt;setChecked(useSelection);</span></span>
-<span id="L751"><span class="lineNum">     751</span> <span class="tlaGNC">          74 :   on_checkBoxSelection_clicked();</span></span>
-<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L749"><span class="lineNum">     749</span> <span class="tlaGNC">          75 : void ConfigDialog::useSelection(bool useSelection) {</span></span>
+<span id="L750"><span class="lineNum">     750</span> <span class="tlaGNC">          75 :   ui-&gt;checkBoxSelection-&gt;setChecked(useSelection);</span></span>
+<span id="L751"><span class="lineNum">     751</span> <span class="tlaGNC">          75 :   on_checkBoxSelection_clicked();</span></span>
+<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L753"><span class="lineNum">     753</span>              : </span>
-<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">          74 : void ConfigDialog::on_checkBoxSelection_clicked() {</span></span>
-<span id="L755"><span class="lineNum">     755</span> <span class="tlaGNC">          74 :   on_comboBoxClipboard_activated(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span></span>
-<span id="L756"><span class="lineNum">     756</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">          75 : void ConfigDialog::on_checkBoxSelection_clicked() {</span></span>
+<span id="L755"><span class="lineNum">     755</span> <span class="tlaGNC">          75 :   on_comboBoxClipboard_activated(ui-&gt;comboBoxClipboard-&gt;currentIndex());</span></span>
+<span id="L756"><span class="lineNum">     756</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L757"><span class="lineNum">     757</span>              : </span>
-<span id="L758"><span class="lineNum">     758</span> <span class="tlaGNC">          72 : void ConfigDialog::setProfiles(Profiles profiles,</span></span>
+<span id="L758"><span class="lineNum">     758</span> <span class="tlaGNC">          73 : void ConfigDialog::setProfiles(Profiles profiles,</span></span>
 <span id="L759"><span class="lineNum">     759</span>              :                                const QString &amp;currentProfile) {</span>
 <span id="L760"><span class="lineNum">     760</span>              :   // remove weird &quot;&quot; key value pairs</span>
-<span id="L761"><span class="lineNum">     761</span> <span class="tlaGNC">          72 :   profiles.remove(QString());</span></span>
+<span id="L761"><span class="lineNum">     761</span> <span class="tlaGNC">          73 :   profiles.remove(QString());</span></span>
 <span id="L762"><span class="lineNum">     762</span>              : </span>
-<span id="L763"><span class="lineNum">     763</span> <span class="tlaGNC">          72 :   m_entries.clear();</span></span>
-<span id="L764"><span class="lineNum">     764</span> <span class="tlaGNC">          72 :   ui-&gt;profileList-&gt;clear();</span></span>
+<span id="L763"><span class="lineNum">     763</span> <span class="tlaGNC">          73 :   m_entries.clear();</span></span>
+<span id="L764"><span class="lineNum">     764</span> <span class="tlaGNC">          73 :   ui-&gt;profileList-&gt;clear();</span></span>
 <span id="L765"><span class="lineNum">     765</span>              :   int currentRow = -1;</span>
-<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">          96 :   for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {</span></span>
+<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">          97 :   for (auto i = profiles.cbegin(); i != profiles.cend(); ++i) {</span></span>
 <span id="L767"><span class="lineNum">     767</span> <span class="tlaGNC">          24 :     if (i.key() == currentProfile) {</span></span>
 <span id="L768"><span class="lineNum">     768</span> <span class="tlaGNC">           9 :       currentRow = m_entries.size();</span></span>
 <span id="L769"><span class="lineNum">     769</span>              :     }</span>
 <span id="L770"><span class="lineNum">     770</span> <span class="tlaGNC">          24 :     m_entries.append({i.key(), i.value(), i.key()});</span></span>
 <span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">          24 :     ui-&gt;profileList-&gt;addItem(i.key());</span></span>
 <span id="L772"><span class="lineNum">     772</span>              :   }</span>
-<span id="L773"><span class="lineNum">     773</span> <span class="tlaGNC">          72 :   ui-&gt;profileList-&gt;setCurrentRow(currentRow);</span></span>
-<span id="L774"><span class="lineNum">     774</span> <span class="tlaGNC">          72 :   if (currentRow &lt; 0) {</span></span>
-<span id="L775"><span class="lineNum">     775</span> <span class="tlaGNC">          63 :     loadProfileForm(-1);</span></span>
+<span id="L773"><span class="lineNum">     773</span> <span class="tlaGNC">          73 :   ui-&gt;profileList-&gt;setCurrentRow(currentRow);</span></span>
+<span id="L774"><span class="lineNum">     774</span> <span class="tlaGNC">          73 :   if (currentRow &lt; 0) {</span></span>
+<span id="L775"><span class="lineNum">     775</span> <span class="tlaGNC">          64 :     loadProfileForm(-1);</span></span>
 <span id="L776"><span class="lineNum">     776</span>              :   }</span>
-<span id="L777"><span class="lineNum">     777</span> <span class="tlaGNC">          72 :   validate();</span></span>
-<span id="L778"><span class="lineNum">     778</span> <span class="tlaGNC">          96 : }</span></span>
+<span id="L777"><span class="lineNum">     777</span> <span class="tlaGNC">          73 :   validate();</span></span>
+<span id="L778"><span class="lineNum">     778</span> <span class="tlaGNC">          97 : }</span></span>
 <span id="L779"><span class="lineNum">     779</span>              : </span>
-<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">         226 : auto ConfigDialog::currentEntry() -&gt; ProfileEntry * {</span></span>
-<span id="L781"><span class="lineNum">     781</span> <span class="tlaGNC">         226 :   if (m_currentEntry &lt; 0 || m_currentEntry &gt;= m_entries.size()) {</span></span>
+<span id="L780"><span class="lineNum">     780</span> <span class="tlaGNC">         228 : auto ConfigDialog::currentEntry() -&gt; ProfileEntry * {</span></span>
+<span id="L781"><span class="lineNum">     781</span> <span class="tlaGNC">         228 :   if (m_currentEntry &lt; 0 || m_currentEntry &gt;= m_entries.size()) {</span></span>
 <span id="L782"><span class="lineNum">     782</span>              :     return nullptr;</span>
 <span id="L783"><span class="lineNum">     783</span>              :   }</span>
 <span id="L784"><span class="lineNum">     784</span> <span class="tlaGNC">         100 :   return &amp;m_entries[m_currentEntry];</span></span>
@@ -859,37 +859,37 @@
 <span id="L786"><span class="lineNum">     786</span>              : </span>
 <span id="L787"><span class="lineNum">     787</span>              : // The Git boxes show the profile's own flags, else the global ones; only a</span>
 <span id="L788"><span class="lineNum">     788</span>              : // click on a box makes the value the profile's own.</span>
-<span id="L789"><span class="lineNum">     789</span> <span class="tlaGNC">          86 : void ConfigDialog::loadProfileForm(int row) {</span></span>
-<span id="L790"><span class="lineNum">     790</span> <span class="tlaGNC">          86 :   m_currentEntry = (row &gt;= 0 &amp;&amp; row &lt; m_entries.size()) ? row : -1;</span></span>
-<span id="L791"><span class="lineNum">     791</span> <span class="tlaGNC">          86 :   const ProfileEntry *entry = currentEntry();</span></span>
-<span id="L792"><span class="lineNum">     792</span> <span class="tlaGNC">          86 :   m_loadingForm = true;</span></span>
-<span id="L793"><span class="lineNum">     793</span> <span class="tlaGNC">          86 :   ui-&gt;profileForm-&gt;setEnabled(entry != nullptr);</span></span>
-<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">          86 :   ui-&gt;deleteButton-&gt;setEnabled(entry != nullptr);</span></span>
-<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         195 :   ui-&gt;profileName-&gt;setText(entry ? entry-&gt;name : QString());</span></span>
-<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">         195 :   ui-&gt;profilePath-&gt;setText(entry ? entry-&gt;profile.path : QString());</span></span>
-<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         109 :   ui-&gt;profileSigningKey-&gt;setText(entry ? entry-&gt;profile.signingKey : QString());</span></span>
+<span id="L789"><span class="lineNum">     789</span> <span class="tlaGNC">          87 : void ConfigDialog::loadProfileForm(int row) {</span></span>
+<span id="L790"><span class="lineNum">     790</span> <span class="tlaGNC">          87 :   m_currentEntry = (row &gt;= 0 &amp;&amp; row &lt; m_entries.size()) ? row : -1;</span></span>
+<span id="L791"><span class="lineNum">     791</span> <span class="tlaGNC">          87 :   const ProfileEntry *entry = currentEntry();</span></span>
+<span id="L792"><span class="lineNum">     792</span> <span class="tlaGNC">          87 :   m_loadingForm = true;</span></span>
+<span id="L793"><span class="lineNum">     793</span> <span class="tlaGNC">          87 :   ui-&gt;profileForm-&gt;setEnabled(entry != nullptr);</span></span>
+<span id="L794"><span class="lineNum">     794</span> <span class="tlaGNC">          87 :   ui-&gt;deleteButton-&gt;setEnabled(entry != nullptr);</span></span>
+<span id="L795"><span class="lineNum">     795</span> <span class="tlaGNC">         197 :   ui-&gt;profileName-&gt;setText(entry ? entry-&gt;name : QString());</span></span>
+<span id="L796"><span class="lineNum">     796</span> <span class="tlaGNC">         197 :   ui-&gt;profilePath-&gt;setText(entry ? entry-&gt;profile.path : QString());</span></span>
+<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">         110 :   ui-&gt;profileSigningKey-&gt;setText(entry ? entry-&gt;profile.signingKey : QString());</span></span>
 <span id="L798"><span class="lineNum">     798</span>              :   const bool useGit =</span>
-<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         109 :       entry &amp;&amp; entry-&gt;profile.useGit.value_or(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">          86 :   ui-&gt;profileUseGit-&gt;setChecked(useGit);</span></span>
-<span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">          86 :   ui-&gt;profileAutoPush-&gt;setChecked(</span></span>
-<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         109 :       entry &amp;&amp;</span></span>
+<span id="L799"><span class="lineNum">     799</span> <span class="tlaGNC">         110 :       entry &amp;&amp; entry-&gt;profile.useGit.value_or(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
+<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">          87 :   ui-&gt;profileUseGit-&gt;setChecked(useGit);</span></span>
+<span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">          87 :   ui-&gt;profileAutoPush-&gt;setChecked(</span></span>
+<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">         110 :       entry &amp;&amp;</span></span>
 <span id="L803"><span class="lineNum">     803</span> <span class="tlaGNC">          23 :       entry-&gt;profile.autoPush.value_or(ui-&gt;checkBoxAutoPush-&gt;isChecked()));</span></span>
-<span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">          86 :   ui-&gt;profileAutoPull-&gt;setChecked(</span></span>
-<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         109 :       entry &amp;&amp;</span></span>
+<span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">          87 :   ui-&gt;profileAutoPull-&gt;setChecked(</span></span>
+<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">         110 :       entry &amp;&amp;</span></span>
 <span id="L806"><span class="lineNum">     806</span> <span class="tlaGNC">          23 :       entry-&gt;profile.autoPull.value_or(ui-&gt;checkBoxAutoPull-&gt;isChecked()));</span></span>
-<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          86 :   ui-&gt;profileAutoPush-&gt;setEnabled(useGit);</span></span>
-<span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          86 :   ui-&gt;profileAutoPull-&gt;setEnabled(useGit);</span></span>
-<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">          86 :   m_loadingForm = false;</span></span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">          86 :   updateProfileStatus();</span></span>
-<span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          86 :   validate();</span></span>
-<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">          86 : }</span></span>
+<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          87 :   ui-&gt;profileAutoPush-&gt;setEnabled(useGit);</span></span>
+<span id="L808"><span class="lineNum">     808</span> <span class="tlaGNC">          87 :   ui-&gt;profileAutoPull-&gt;setEnabled(useGit);</span></span>
+<span id="L809"><span class="lineNum">     809</span> <span class="tlaGNC">          87 :   m_loadingForm = false;</span></span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">          87 :   updateProfileStatus();</span></span>
+<span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          87 :   validate();</span></span>
+<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">          87 : }</span></span>
 <span id="L813"><span class="lineNum">     813</span>              : </span>
-<span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">          50 : auto ConfigDialog::getProfiles() -&gt; Profiles {</span></span>
-<span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">          50 :   Profiles profiles;</span></span>
-<span id="L816"><span class="lineNum">     816</span> <span class="tlaGNC">          72 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
+<span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">          52 : auto ConfigDialog::getProfiles() -&gt; Profiles {</span></span>
+<span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">          52 :   Profiles profiles;</span></span>
+<span id="L816"><span class="lineNum">     816</span> <span class="tlaGNC">          74 :   for (const ProfileEntry &amp;entry : std::as_const(m_entries)) {</span></span>
 <span id="L817"><span class="lineNum">     817</span> <span class="tlaGNC">          22 :     profiles.insert(entry.name, entry.profile);</span></span>
 <span id="L818"><span class="lineNum">     818</span>              :   }</span>
-<span id="L819"><span class="lineNum">     819</span> <span class="tlaGNC">          50 :   return profiles;</span></span>
+<span id="L819"><span class="lineNum">     819</span> <span class="tlaGNC">          52 :   return profiles;</span></span>
 <span id="L820"><span class="lineNum">     820</span>              : }</span>
 <span id="L821"><span class="lineNum">     821</span>              : </span>
 <span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">           6 : auto ConfigDialog::ensureProfileFolder(const QString &amp;path) -&gt; bool {</span></span>
@@ -945,10 +945,10 @@
 <span id="L872"><span class="lineNum">     872</span>              :   }</span>
 <span id="L873"><span class="lineNum">     873</span> <span class="tlaGNC">           3 : }</span></span>
 <span id="L874"><span class="lineNum">     874</span>              : </span>
-<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">          23 : void ConfigDialog::initializeNewProfiles(const Profiles &amp;existingProfiles) {</span></span>
-<span id="L876"><span class="lineNum">     876</span> <span class="tlaGNC">          23 :   const Profiles newProfiles = getProfiles();</span></span>
+<span id="L875"><span class="lineNum">     875</span> <span class="tlaGNC">          24 : void ConfigDialog::initializeNewProfiles(const Profiles &amp;existingProfiles) {</span></span>
+<span id="L876"><span class="lineNum">     876</span> <span class="tlaGNC">          24 :   const Profiles newProfiles = getProfiles();</span></span>
 <span id="L877"><span class="lineNum">     877</span>              :   // QMap iterates in name order.</span>
-<span id="L878"><span class="lineNum">     878</span> <span class="tlaGNC">          55 :   for (auto it = newProfiles.cbegin(); it != newProfiles.cend(); ++it) {</span></span>
+<span id="L878"><span class="lineNum">     878</span> <span class="tlaGNC">          57 :   for (auto it = newProfiles.cbegin(); it != newProfiles.cend(); ++it) {</span></span>
 <span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">           9 :     const QString path = QDir::cleanPath(it.value().path);</span></span>
 <span id="L880"><span class="lineNum">     880</span>              :     // A store that was already a profile when the dialog opened, under this</span>
 <span id="L881"><span class="lineNum">     881</span>              :     // or another name: a rename is not a new store.</span>
@@ -960,7 +960,7 @@
 <span id="L887"><span class="lineNum">     887</span> <span class="tlaGNC">           3 :       initialiseProfileStore(it.key(), it.value(), path);</span></span>
 <span id="L888"><span class="lineNum">     888</span>              :     }</span>
 <span id="L889"><span class="lineNum">     889</span>              :   }</span>
-<span id="L890"><span class="lineNum">     890</span> <span class="tlaGNC">          23 : }</span></span>
+<span id="L890"><span class="lineNum">     890</span> <span class="tlaGNC">          24 : }</span></span>
 <span id="L891"><span class="lineNum">     891</span>              : </span>
 <span id="L892"><span class="lineNum">     892</span> <span class="tlaGNC">           7 : void ConfigDialog::on_addButton_clicked() {</span></span>
 <span id="L893"><span class="lineNum">     893</span> <span class="tlaGNC">           7 :   ProfileEntry entry;</span></span>
@@ -1001,19 +1001,19 @@
 <span id="L928"><span class="lineNum">     928</span>              : </span>
 <span id="L929"><span class="lineNum">     929</span>              : // Looks on Util's PATH (with the macOS and Windows additions) without a</span>
 <span id="L930"><span class="lineNum">     930</span>              : // subprocess; a hit is stored for the QR display, a miss leaves the setting.</span>
-<span id="L931"><span class="lineNum">     931</span> <span class="tlaGNC">          72 : auto ConfigDialog::isQrencodeAvailable(const QString &amp;configuredPath) -&gt; bool {</span></span>
+<span id="L931"><span class="lineNum">     931</span> <span class="tlaGNC">          73 : auto ConfigDialog::isQrencodeAvailable(const QString &amp;configuredPath) -&gt; bool {</span></span>
 <span id="L932"><span class="lineNum">     932</span>              : #ifdef Q_OS_WIN</span>
 <span id="L933"><span class="lineNum">     933</span>              :   Q_UNUSED(configuredPath);</span>
 <span id="L934"><span class="lineNum">     934</span>              :   return false;</span>
 <span id="L935"><span class="lineNum">     935</span>              : #else</span>
-<span id="L936"><span class="lineNum">     936</span> <span class="tlaGNC">          72 :   if (!configuredPath.isEmpty()) {</span></span>
-<span id="L937"><span class="lineNum">     937</span> <span class="tlaGNC">           4 :     const QFileInfo configured(configuredPath);</span></span>
-<span id="L938"><span class="lineNum">     938</span> <span class="tlaGNC">           4 :     if (configured.isFile() &amp;&amp; configured.isExecutable()) {</span></span>
+<span id="L936"><span class="lineNum">     936</span> <span class="tlaGNC">          73 :   if (!configuredPath.isEmpty()) {</span></span>
+<span id="L937"><span class="lineNum">     937</span> <span class="tlaGNC">           5 :     const QFileInfo configured(configuredPath);</span></span>
+<span id="L938"><span class="lineNum">     938</span> <span class="tlaGNC">           5 :     if (configured.isFile() &amp;&amp; configured.isExecutable()) {</span></span>
 <span id="L939"><span class="lineNum">     939</span>              :       return true;</span>
 <span id="L940"><span class="lineNum">     940</span>              :     }</span>
-<span id="L941"><span class="lineNum">     941</span> <span class="tlaGNC">           4 :   }</span></span>
-<span id="L942"><span class="lineNum">     942</span> <span class="tlaGNC">         142 :   const QString found = Util::findBinaryInPath(QStringLiteral(&quot;qrencode&quot;));</span></span>
-<span id="L943"><span class="lineNum">     943</span> <span class="tlaGNC">          71 :   if (found.isEmpty()) {</span></span>
+<span id="L941"><span class="lineNum">     941</span> <span class="tlaGNC">           5 :   }</span></span>
+<span id="L942"><span class="lineNum">     942</span> <span class="tlaGNC">         144 :   const QString found = Util::findBinaryInPath(QStringLiteral(&quot;qrencode&quot;));</span></span>
+<span id="L943"><span class="lineNum">     943</span> <span class="tlaGNC">          72 :   if (found.isEmpty()) {</span></span>
 <span id="L944"><span class="lineNum">     944</span>              :     return false;</span>
 <span id="L945"><span class="lineNum">     945</span>              :   }</span>
 <span id="L946"><span class="lineNum">     946</span> <span class="tlaGNC">           1 :   QtPassSettings::setQrencodeExecutable(found);</span></span>
@@ -1021,8 +1021,8 @@
 <span id="L948"><span class="lineNum">     948</span>              : #endif</span>
 <span id="L949"><span class="lineNum">     949</span>              : }</span>
 <span id="L950"><span class="lineNum">     950</span>              : </span>
-<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">          72 : void ConfigDialog::useTrayIcon(bool useSystray) {</span></span>
-<span id="L952"><span class="lineNum">     952</span> <span class="tlaGNC">          72 :   if (QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
+<span id="L951"><span class="lineNum">     951</span> <span class="tlaGNC">          73 : void ConfigDialog::useTrayIcon(bool useSystray) {</span></span>
+<span id="L952"><span class="lineNum">     952</span> <span class="tlaGNC">          73 :   if (QSystemTrayIcon::isSystemTrayAvailable()) {</span></span>
 <span id="L953"><span class="lineNum">     953</span> <span class="tlaUNC">           0 :     ui-&gt;checkBoxUseTrayIcon-&gt;setChecked(useSystray);</span></span>
 <span id="L954"><span class="lineNum">     954</span> <span class="tlaUNC">           0 :     ui-&gt;checkBoxHideOnClose-&gt;setEnabled(useSystray);</span></span>
 <span id="L955"><span class="lineNum">     955</span> <span class="tlaUNC">           0 :     ui-&gt;checkBoxStartMinimized-&gt;setEnabled(useSystray);</span></span>
@@ -1032,7 +1032,7 @@
 <span id="L959"><span class="lineNum">     959</span> <span class="tlaUNC">           0 :       ui-&gt;checkBoxStartMinimized-&gt;setChecked(false);</span></span>
 <span id="L960"><span class="lineNum">     960</span>              :     }</span>
 <span id="L961"><span class="lineNum">     961</span>              :   }</span>
-<span id="L962"><span class="lineNum">     962</span> <span class="tlaGNC">          72 : }</span></span>
+<span id="L962"><span class="lineNum">     962</span> <span class="tlaGNC">          73 : }</span></span>
 <span id="L963"><span class="lineNum">     963</span>              : </span>
 <span id="L964"><span class="lineNum">     964</span> <span class="tlaGNC">           2 : void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {</span></span>
 <span id="L965"><span class="lineNum">     965</span> <span class="tlaGNC">           2 :   bool state = ui-&gt;checkBoxUseTrayIcon-&gt;isChecked();</span></span>
@@ -1040,32 +1040,32 @@
 <span id="L967"><span class="lineNum">     967</span> <span class="tlaGNC">           2 :   ui-&gt;checkBoxStartMinimized-&gt;setEnabled(state);</span></span>
 <span id="L968"><span class="lineNum">     968</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L969"><span class="lineNum">     969</span>              : </span>
-<span id="L970"><span class="lineNum">     970</span> <span class="tlaGNC">         120 : void ConfigDialog::useGit(bool useGit) {</span></span>
-<span id="L971"><span class="lineNum">     971</span> <span class="tlaGNC">         120 :   ui-&gt;checkBoxUseGit-&gt;setChecked(useGit);</span></span>
-<span id="L972"><span class="lineNum">     972</span> <span class="tlaGNC">         120 :   on_checkBoxUseGit_clicked();</span></span>
-<span id="L973"><span class="lineNum">     973</span> <span class="tlaGNC">         120 : }</span></span>
+<span id="L970"><span class="lineNum">     970</span> <span class="tlaGNC">         121 : void ConfigDialog::useGit(bool useGit) {</span></span>
+<span id="L971"><span class="lineNum">     971</span> <span class="tlaGNC">         121 :   ui-&gt;checkBoxUseGit-&gt;setChecked(useGit);</span></span>
+<span id="L972"><span class="lineNum">     972</span> <span class="tlaGNC">         121 :   on_checkBoxUseGit_clicked();</span></span>
+<span id="L973"><span class="lineNum">     973</span> <span class="tlaGNC">         121 : }</span></span>
 <span id="L974"><span class="lineNum">     974</span>              : </span>
-<span id="L975"><span class="lineNum">     975</span> <span class="tlaGNC">          74 : void ConfigDialog::useOtp(bool useOtp) {</span></span>
-<span id="L976"><span class="lineNum">     976</span> <span class="tlaGNC">          74 :   ui-&gt;checkBoxUseOtp-&gt;setChecked(useOtp);</span></span>
-<span id="L977"><span class="lineNum">     977</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L975"><span class="lineNum">     975</span> <span class="tlaGNC">          75 : void ConfigDialog::useOtp(bool useOtp) {</span></span>
+<span id="L976"><span class="lineNum">     976</span> <span class="tlaGNC">          75 :   ui-&gt;checkBoxUseOtp-&gt;setChecked(useOtp);</span></span>
+<span id="L977"><span class="lineNum">     977</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L978"><span class="lineNum">     978</span>              : </span>
-<span id="L979"><span class="lineNum">     979</span> <span class="tlaGNC">          74 : void ConfigDialog::useGrepSearch(bool useGrepSearch) {</span></span>
-<span id="L980"><span class="lineNum">     980</span> <span class="tlaGNC">          74 :   ui-&gt;checkBoxUseGrepSearch-&gt;setChecked(useGrepSearch);</span></span>
-<span id="L981"><span class="lineNum">     981</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L979"><span class="lineNum">     979</span> <span class="tlaGNC">          75 : void ConfigDialog::useGrepSearch(bool useGrepSearch) {</span></span>
+<span id="L980"><span class="lineNum">     980</span> <span class="tlaGNC">          75 :   ui-&gt;checkBoxUseGrepSearch-&gt;setChecked(useGrepSearch);</span></span>
+<span id="L981"><span class="lineNum">     981</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L982"><span class="lineNum">     982</span>              : </span>
-<span id="L983"><span class="lineNum">     983</span> <span class="tlaGNC">          74 : void ConfigDialog::useQrencode(bool useQrencode) {</span></span>
-<span id="L984"><span class="lineNum">     984</span> <span class="tlaGNC">          74 :   ui-&gt;checkBoxUseQrencode-&gt;setChecked(useQrencode);</span></span>
-<span id="L985"><span class="lineNum">     985</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L983"><span class="lineNum">     983</span> <span class="tlaGNC">          75 : void ConfigDialog::useQrencode(bool useQrencode) {</span></span>
+<span id="L984"><span class="lineNum">     984</span> <span class="tlaGNC">          75 :   ui-&gt;checkBoxUseQrencode-&gt;setChecked(useQrencode);</span></span>
+<span id="L985"><span class="lineNum">     985</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L986"><span class="lineNum">     986</span>              : </span>
-<span id="L987"><span class="lineNum">     987</span> <span class="tlaGNC">         207 : void ConfigDialog::on_checkBoxUseGit_clicked() {</span></span>
-<span id="L988"><span class="lineNum">     988</span> <span class="tlaGNC">         207 :   ui-&gt;checkBoxAddGPGId-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
-<span id="L989"><span class="lineNum">     989</span> <span class="tlaGNC">         207 :   ui-&gt;checkBoxAutoPull-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
-<span id="L990"><span class="lineNum">     990</span> <span class="tlaGNC">         207 :   ui-&gt;checkBoxAutoPush-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
+<span id="L987"><span class="lineNum">     987</span> <span class="tlaGNC">         209 : void ConfigDialog::on_checkBoxUseGit_clicked() {</span></span>
+<span id="L988"><span class="lineNum">     988</span> <span class="tlaGNC">         209 :   ui-&gt;checkBoxAddGPGId-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
+<span id="L989"><span class="lineNum">     989</span> <span class="tlaGNC">         209 :   ui-&gt;checkBoxAutoPull-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
+<span id="L990"><span class="lineNum">     990</span> <span class="tlaGNC">         209 :   ui-&gt;checkBoxAutoPush-&gt;setEnabled(ui-&gt;checkBoxUseGit-&gt;isChecked());</span></span>
 <span id="L991"><span class="lineNum">     991</span>              :   // pass always stops git at the store's parent itself, so the choice only</span>
 <span id="L992"><span class="lineNum">     992</span>              :   // means something in native mode.</span>
-<span id="L993"><span class="lineNum">     993</span> <span class="tlaGNC">         207 :   ui-&gt;checkBoxGitUseParentRepository-&gt;setEnabled(</span></span>
-<span id="L994"><span class="lineNum">     994</span> <span class="tlaGNC">         207 :       ui-&gt;checkBoxUseGit-&gt;isChecked() &amp;&amp; !ui-&gt;radioButtonPass-&gt;isChecked());</span></span>
-<span id="L995"><span class="lineNum">     995</span> <span class="tlaGNC">         207 : }</span></span>
+<span id="L993"><span class="lineNum">     993</span> <span class="tlaGNC">         209 :   ui-&gt;checkBoxGitUseParentRepository-&gt;setEnabled(</span></span>
+<span id="L994"><span class="lineNum">     994</span> <span class="tlaGNC">         209 :       ui-&gt;checkBoxUseGit-&gt;isChecked() &amp;&amp; !ui-&gt;radioButtonPass-&gt;isChecked());</span></span>
+<span id="L995"><span class="lineNum">     995</span> <span class="tlaGNC">         209 : }</span></span>
 <span id="L996"><span class="lineNum">     996</span>              : </span>
 <span id="L997"><span class="lineNum">     997</span> <span class="tlaGNC">           2 : void ConfigDialog::on_toolButtonPwgen_clicked() {</span></span>
 <span id="L998"><span class="lineNum">     998</span> <span class="tlaGNC">           2 :   QString pwgen = selectExecutable();</span></span>
@@ -1078,63 +1078,63 @@
 <span id="L1005"><span class="lineNum">    1005</span>              :   }</span>
 <span id="L1006"><span class="lineNum">    1006</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L1007"><span class="lineNum">    1007</span>              : </span>
-<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">          74 : void ConfigDialog::setPwgenPath(const QString &amp;pwgen) {</span></span>
-<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">          74 :   ui-&gt;pwgenPath-&gt;setText(pwgen);</span></span>
-<span id="L1010"><span class="lineNum">    1010</span> <span class="tlaGNC">          74 :   if (pwgen.isEmpty()) {</span></span>
-<span id="L1011"><span class="lineNum">    1011</span> <span class="tlaGNC">          48 :     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span></span>
-<span id="L1012"><span class="lineNum">    1012</span> <span class="tlaGNC">          48 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span></span>
+<span id="L1008"><span class="lineNum">    1008</span> <span class="tlaGNC">          75 : void ConfigDialog::setPwgenPath(const QString &amp;pwgen) {</span></span>
+<span id="L1009"><span class="lineNum">    1009</span> <span class="tlaGNC">          75 :   ui-&gt;pwgenPath-&gt;setText(pwgen);</span></span>
+<span id="L1010"><span class="lineNum">    1010</span> <span class="tlaGNC">          75 :   if (pwgen.isEmpty()) {</span></span>
+<span id="L1011"><span class="lineNum">    1011</span> <span class="tlaGNC">          49 :     ui-&gt;checkBoxUsePwgen-&gt;setChecked(false);</span></span>
+<span id="L1012"><span class="lineNum">    1012</span> <span class="tlaGNC">          49 :     ui-&gt;checkBoxUsePwgen-&gt;setEnabled(false);</span></span>
 <span id="L1013"><span class="lineNum">    1013</span>              :   }</span>
-<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">          74 :   on_checkBoxUsePwgen_clicked();</span></span>
-<span id="L1015"><span class="lineNum">    1015</span> <span class="tlaGNC">          74 : }</span></span>
+<span id="L1014"><span class="lineNum">    1014</span> <span class="tlaGNC">          75 :   on_checkBoxUsePwgen_clicked();</span></span>
+<span id="L1015"><span class="lineNum">    1015</span> <span class="tlaGNC">          75 : }</span></span>
 <span id="L1016"><span class="lineNum">    1016</span>              : </span>
-<span id="L1017"><span class="lineNum">    1017</span> <span class="tlaGNC">         228 : void ConfigDialog::on_checkBoxUsePwgen_clicked() {</span></span>
-<span id="L1018"><span class="lineNum">    1018</span> <span class="tlaGNC">         228 :   if (ui-&gt;radioButtonPass-&gt;isChecked())</span></span>
+<span id="L1017"><span class="lineNum">    1017</span> <span class="tlaGNC">         231 : void ConfigDialog::on_checkBoxUsePwgen_clicked() {</span></span>
+<span id="L1018"><span class="lineNum">    1018</span> <span class="tlaGNC">         231 :   if (ui-&gt;radioButtonPass-&gt;isChecked())</span></span>
 <span id="L1019"><span class="lineNum">    1019</span>              :     return;</span>
-<span id="L1020"><span class="lineNum">    1020</span> <span class="tlaGNC">         224 :   bool usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span></span>
-<span id="L1021"><span class="lineNum">    1021</span> <span class="tlaGNC">         224 :   ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(usePwgen);</span></span>
-<span id="L1022"><span class="lineNum">    1022</span> <span class="tlaGNC">         224 :   ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(usePwgen);</span></span>
-<span id="L1023"><span class="lineNum">    1023</span> <span class="tlaGNC">         224 :   ui-&gt;checkBoxLessRandom-&gt;setEnabled(usePwgen);</span></span>
-<span id="L1024"><span class="lineNum">    1024</span> <span class="tlaGNC">         224 :   ui-&gt;checkBoxUseSymbols-&gt;setEnabled(usePwgen);</span></span>
-<span id="L1025"><span class="lineNum">    1025</span> <span class="tlaGNC">         224 :   ui-&gt;lineEditPasswordChars-&gt;setEnabled(!usePwgen);</span></span>
-<span id="L1026"><span class="lineNum">    1026</span> <span class="tlaGNC">         224 :   ui-&gt;labelPasswordChars-&gt;setEnabled(!usePwgen);</span></span>
-<span id="L1027"><span class="lineNum">    1027</span> <span class="tlaGNC">         224 :   ui-&gt;passwordCharTemplateSelector-&gt;setEnabled(!usePwgen);</span></span>
+<span id="L1020"><span class="lineNum">    1020</span> <span class="tlaGNC">         227 :   bool usePwgen = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</span></span>
+<span id="L1021"><span class="lineNum">    1021</span> <span class="tlaGNC">         227 :   ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(usePwgen);</span></span>
+<span id="L1022"><span class="lineNum">    1022</span> <span class="tlaGNC">         227 :   ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(usePwgen);</span></span>
+<span id="L1023"><span class="lineNum">    1023</span> <span class="tlaGNC">         227 :   ui-&gt;checkBoxLessRandom-&gt;setEnabled(usePwgen);</span></span>
+<span id="L1024"><span class="lineNum">    1024</span> <span class="tlaGNC">         227 :   ui-&gt;checkBoxUseSymbols-&gt;setEnabled(usePwgen);</span></span>
+<span id="L1025"><span class="lineNum">    1025</span> <span class="tlaGNC">         227 :   ui-&gt;lineEditPasswordChars-&gt;setEnabled(!usePwgen);</span></span>
+<span id="L1026"><span class="lineNum">    1026</span> <span class="tlaGNC">         227 :   ui-&gt;labelPasswordChars-&gt;setEnabled(!usePwgen);</span></span>
+<span id="L1027"><span class="lineNum">    1027</span> <span class="tlaGNC">         227 :   ui-&gt;passwordCharTemplateSelector-&gt;setEnabled(!usePwgen);</span></span>
 <span id="L1028"><span class="lineNum">    1028</span>              : }</span>
 <span id="L1029"><span class="lineNum">    1029</span>              : </span>
-<span id="L1030"><span class="lineNum">    1030</span> <span class="tlaGNC">          75 : void ConfigDialog::usePwgen(bool usePwgen) {</span></span>
-<span id="L1031"><span class="lineNum">    1031</span> <span class="tlaGNC">         150 :   if (ui-&gt;pwgenPath-&gt;text().isEmpty()) {</span></span>
+<span id="L1030"><span class="lineNum">    1030</span> <span class="tlaGNC">          76 : void ConfigDialog::usePwgen(bool usePwgen) {</span></span>
+<span id="L1031"><span class="lineNum">    1031</span> <span class="tlaGNC">         152 :   if (ui-&gt;pwgenPath-&gt;text().isEmpty()) {</span></span>
 <span id="L1032"><span class="lineNum">    1032</span>              :     usePwgen = false;</span>
 <span id="L1033"><span class="lineNum">    1033</span>              :   }</span>
-<span id="L1034"><span class="lineNum">    1034</span> <span class="tlaGNC">          75 :   ui-&gt;checkBoxUsePwgen-&gt;setChecked(usePwgen);</span></span>
-<span id="L1035"><span class="lineNum">    1035</span> <span class="tlaGNC">          75 :   on_checkBoxUsePwgen_clicked();</span></span>
-<span id="L1036"><span class="lineNum">    1036</span> <span class="tlaGNC">          75 : }</span></span>
+<span id="L1034"><span class="lineNum">    1034</span> <span class="tlaGNC">          76 :   ui-&gt;checkBoxUsePwgen-&gt;setChecked(usePwgen);</span></span>
+<span id="L1035"><span class="lineNum">    1035</span> <span class="tlaGNC">          76 :   on_checkBoxUsePwgen_clicked();</span></span>
+<span id="L1036"><span class="lineNum">    1036</span> <span class="tlaGNC">          76 : }</span></span>
 <span id="L1037"><span class="lineNum">    1037</span>              : </span>
-<span id="L1038"><span class="lineNum">    1038</span> <span class="tlaGNC">          76 : void ConfigDialog::setPasswordConfiguration(</span></span>
+<span id="L1038"><span class="lineNum">    1038</span> <span class="tlaGNC">          77 : void ConfigDialog::setPasswordConfiguration(</span></span>
 <span id="L1039"><span class="lineNum">    1039</span>              :     const PasswordConfiguration &amp;config) {</span>
 <span id="L1040"><span class="lineNum">    1040</span>              :   // Retain the custom charset so it survives even when a builtin set is the</span>
 <span id="L1041"><span class="lineNum">    1041</span>              :   // active selection (the line edit then shows the builtin's characters).</span>
-<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">          76 :   m_customPasswordChars = config.Characters[PasswordConfiguration::CUSTOM];</span></span>
-<span id="L1043"><span class="lineNum">    1043</span> <span class="tlaGNC">          76 :   ui-&gt;spinBoxPasswordLength-&gt;setValue(config.length);</span></span>
-<span id="L1044"><span class="lineNum">    1044</span> <span class="tlaGNC">          76 :   ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(config.selected);</span></span>
-<span id="L1045"><span class="lineNum">    1045</span> <span class="tlaGNC">          76 :   if (config.selected != PasswordConfiguration::CUSTOM) {</span></span>
-<span id="L1046"><span class="lineNum">    1046</span> <span class="tlaGNC">          74 :     ui-&gt;lineEditPasswordChars-&gt;setEnabled(false);</span></span>
+<span id="L1042"><span class="lineNum">    1042</span> <span class="tlaGNC">          77 :   m_customPasswordChars = config.Characters[PasswordConfiguration::CUSTOM];</span></span>
+<span id="L1043"><span class="lineNum">    1043</span> <span class="tlaGNC">          77 :   ui-&gt;spinBoxPasswordLength-&gt;setValue(config.length);</span></span>
+<span id="L1044"><span class="lineNum">    1044</span> <span class="tlaGNC">          77 :   ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(config.selected);</span></span>
+<span id="L1045"><span class="lineNum">    1045</span> <span class="tlaGNC">          77 :   if (config.selected != PasswordConfiguration::CUSTOM) {</span></span>
+<span id="L1046"><span class="lineNum">    1046</span> <span class="tlaGNC">          75 :     ui-&gt;lineEditPasswordChars-&gt;setEnabled(false);</span></span>
 <span id="L1047"><span class="lineNum">    1047</span>              :   }</span>
-<span id="L1048"><span class="lineNum">    1048</span> <span class="tlaGNC">          76 :   ui-&gt;lineEditPasswordChars-&gt;setText(config.Characters[config.selected]);</span></span>
-<span id="L1049"><span class="lineNum">    1049</span> <span class="tlaGNC">          76 : }</span></span>
+<span id="L1048"><span class="lineNum">    1048</span> <span class="tlaGNC">          77 :   ui-&gt;lineEditPasswordChars-&gt;setText(config.Characters[config.selected]);</span></span>
+<span id="L1049"><span class="lineNum">    1049</span> <span class="tlaGNC">          77 : }</span></span>
 <span id="L1050"><span class="lineNum">    1050</span>              : </span>
-<span id="L1051"><span class="lineNum">    1051</span> <span class="tlaGNC">          27 : auto ConfigDialog::getPasswordConfiguration() -&gt; PasswordConfiguration {</span></span>
-<span id="L1052"><span class="lineNum">    1052</span> <span class="tlaGNC">          27 :   PasswordConfiguration config;</span></span>
-<span id="L1053"><span class="lineNum">    1053</span> <span class="tlaGNC">          27 :   config.length = ui-&gt;spinBoxPasswordLength-&gt;value();</span></span>
-<span id="L1054"><span class="lineNum">    1054</span> <span class="tlaGNC">          27 :   config.selected = static_cast&lt;PasswordConfiguration::CharacterSet&gt;(</span></span>
-<span id="L1055"><span class="lineNum">    1055</span> <span class="tlaGNC">          27 :       ui-&gt;passwordCharTemplateSelector-&gt;currentIndex());</span></span>
+<span id="L1051"><span class="lineNum">    1051</span> <span class="tlaGNC">          28 : auto ConfigDialog::getPasswordConfiguration() -&gt; PasswordConfiguration {</span></span>
+<span id="L1052"><span class="lineNum">    1052</span> <span class="tlaGNC">          28 :   PasswordConfiguration config;</span></span>
+<span id="L1053"><span class="lineNum">    1053</span> <span class="tlaGNC">          28 :   config.length = ui-&gt;spinBoxPasswordLength-&gt;value();</span></span>
+<span id="L1054"><span class="lineNum">    1054</span> <span class="tlaGNC">          28 :   config.selected = static_cast&lt;PasswordConfiguration::CharacterSet&gt;(</span></span>
+<span id="L1055"><span class="lineNum">    1055</span> <span class="tlaGNC">          28 :       ui-&gt;passwordCharTemplateSelector-&gt;currentIndex());</span></span>
 <span id="L1056"><span class="lineNum">    1056</span>              :   // For a builtin selection the line edit shows the builtin's characters;</span>
 <span id="L1057"><span class="lineNum">    1057</span>              :   // reading it would overwrite the saved custom charset.</span>
-<span id="L1058"><span class="lineNum">    1058</span> <span class="tlaGNC">          27 :   if (config.selected == PasswordConfiguration::CUSTOM) {</span></span>
+<span id="L1058"><span class="lineNum">    1058</span> <span class="tlaGNC">          28 :   if (config.selected == PasswordConfiguration::CUSTOM) {</span></span>
 <span id="L1059"><span class="lineNum">    1059</span>              :     config.Characters[PasswordConfiguration::CUSTOM] =</span>
 <span id="L1060"><span class="lineNum">    1060</span> <span class="tlaGNC">           4 :         ui-&gt;lineEditPasswordChars-&gt;text();</span></span>
 <span id="L1061"><span class="lineNum">    1061</span>              :   } else {</span>
-<span id="L1062"><span class="lineNum">    1062</span> <span class="tlaGNC">          25 :     config.Characters[PasswordConfiguration::CUSTOM] = m_customPasswordChars;</span></span>
+<span id="L1062"><span class="lineNum">    1062</span> <span class="tlaGNC">          26 :     config.Characters[PasswordConfiguration::CUSTOM] = m_customPasswordChars;</span></span>
 <span id="L1063"><span class="lineNum">    1063</span>              :   }</span>
-<span id="L1064"><span class="lineNum">    1064</span> <span class="tlaGNC">          27 :   return config;</span></span>
+<span id="L1064"><span class="lineNum">    1064</span> <span class="tlaGNC">          28 :   return config;</span></span>
 <span id="L1065"><span class="lineNum">    1065</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L1066"><span class="lineNum">    1066</span>              : </span>
 <span id="L1067"><span class="lineNum">    1067</span> <span class="tlaGNC">           2 : void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {</span></span>
@@ -1194,11 +1194,11 @@
 <span id="L1121"><span class="lineNum">    1121</span> <span class="tlaGNC">           1 :   ui-&gt;profileAutoPull-&gt;setEnabled(ui-&gt;profileUseGit-&gt;isChecked());</span></span>
 <span id="L1122"><span class="lineNum">    1122</span>              : }</span>
 <span id="L1123"><span class="lineNum">    1123</span>              : </span>
-<span id="L1124"><span class="lineNum">    1124</span> <span class="tlaGNC">         106 : void ConfigDialog::updateProfileStatus() {</span></span>
-<span id="L1125"><span class="lineNum">    1125</span> <span class="tlaGNC">         106 :   const ProfileEntry *entry = currentEntry();</span></span>
-<span id="L1126"><span class="lineNum">    1126</span> <span class="tlaGNC">         106 :   if (entry == nullptr) {</span></span>
-<span id="L1127"><span class="lineNum">    1127</span> <span class="tlaGNC">          63 :     ui-&gt;statusLabel-&gt;setText(QString());</span></span>
-<span id="L1128"><span class="lineNum">    1128</span> <span class="tlaGNC">          63 :     return;</span></span>
+<span id="L1124"><span class="lineNum">    1124</span> <span class="tlaGNC">         107 : void ConfigDialog::updateProfileStatus() {</span></span>
+<span id="L1125"><span class="lineNum">    1125</span> <span class="tlaGNC">         107 :   const ProfileEntry *entry = currentEntry();</span></span>
+<span id="L1126"><span class="lineNum">    1126</span> <span class="tlaGNC">         107 :   if (entry == nullptr) {</span></span>
+<span id="L1127"><span class="lineNum">    1127</span> <span class="tlaGNC">          64 :     ui-&gt;statusLabel-&gt;setText(QString());</span></span>
+<span id="L1128"><span class="lineNum">    1128</span> <span class="tlaGNC">          64 :     return;</span></span>
 <span id="L1129"><span class="lineNum">    1129</span>              :   }</span>
 <span id="L1130"><span class="lineNum">    1130</span>              : </span>
 <span id="L1131"><span class="lineNum">    1131</span> <span class="tlaGNC">          43 :   QString statusMessage;</span></span>

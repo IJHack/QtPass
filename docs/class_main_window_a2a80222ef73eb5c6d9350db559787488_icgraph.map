@@ -1,0 +1,14 @@
+<map id="MainWindow::applySearchText" name="MainWindow::applySearchText">
+<area shape="rect" id="Node000001" title="Searches for text as qtpass(1) promises for the command line and for text handed over by another qtpa..." alt="" coords="566,68,785,96"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="304,29,500,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="555,65,501,60,501,54,561,65"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b" title="Handle an incoming inter&#45;process message (single&#45;instance mode)." alt="" coords="287,93,518,121"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="553,93,519,99,518,94,548,94"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="448,14,433,10,402,8,374,10,358,15,354,20,361,30,356,28,348,20,354,11,373,5,402,3,434,5,453,14"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,29,239,57"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="286,53,239,55,239,49,292,51"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="254,32,306,34,301,35,255,37"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a7114aa2dd6837734db57667a298dfcc4" title="Application entry point: parses arguments and launches the main window." alt="" coords="95,105,149,133"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="269,113,150,121,149,115,274,112"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="163,104,172,97,169,91,153,86,122,84,88,87,73,94,72,96,75,100,97,112,92,113,71,104,67,97,69,90,86,82,122,79,154,81,172,88,177,98,165,109"/>
+</map>
