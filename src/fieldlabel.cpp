@@ -6,6 +6,7 @@
  *        and its editor in and out of the parent's QFormLayout cell.
  */
 #include "fieldlabel.h"
+#include "secretlineedit.h"
 
 #include <QContextMenuEvent>
 #include <QFormLayout>
@@ -99,7 +100,7 @@ void FieldLabel::finishEdit(bool commit) {
   // A colon would start the value early when the line is written back, and
   // a line break, which QLineEdit keeps from a paste, would end the line.
   const QString name =
-      editor->text().remove(u':').remove(u'\n').remove(u'\r').trimmed();
+      SecretLineEdit::withoutLineBreaks(editor->text().remove(u':')).trimmed();
   auto *form = qobject_cast<QFormLayout *>(parentWidget()->layout());
   int row = -1;
   QFormLayout::ItemRole role{};

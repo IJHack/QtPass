@@ -14,6 +14,7 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QValidator>
+#include <algorithm>
 
 namespace {
 /**
@@ -31,22 +32,36 @@ public:
   using QValidator::QValidator;
 
   /**
-   * @brief Remove CR and LF from @p input.
+   * @brief Remove the line breaks (SecretLineEdit::isLineBreak()) from
+   * @p input.
    * @param input The text the field would hold; corrected in place.
    * @param pos The cursor position; kept behind the character it was behind.
    * @return Always Acceptable: every text is one line once corrected.
    */
   auto validate(QString &input, int &pos) const -> State override {
-    if (!input.contains(u'\n') && !input.contains(u'\r')) {
+    if (std::none_of(input.cbegin(), input.cend(),
+                     &SecretLineEdit::isLineBreak)) {
       return Acceptable;
     }
     const QStringView head = QStringView(input).left(pos);
-    pos -= static_cast<int>(head.count(u'\n') + head.count(u'\r'));
-    input.remove(u'\n').remove(u'\r');
+    pos -= static_cast<int>(std::count_if(head.cbegin(), head.cend(),
+                                          &SecretLineEdit::isLineBreak));
+    input = SecretLineEdit::withoutLineBreaks(input);
     return Acceptable;
   }
 };
 } // namespace
+
+auto SecretLineEdit::isLineBreak(QChar ch) -> bool {
+  const char16_t c = ch.unicode();
+  return c == u'\n' || c == u'\r' || c == u'\u0085' || c == u'\u2028' ||
+         c == u'\u2029';
+}
+
+auto SecretLineEdit::withoutLineBreaks(QString text) -> QString {
+  text.removeIf(&SecretLineEdit::isLineBreak);
+  return text;
+}
 
 SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
   setValidator(new SingleLineValidator(this));
@@ -85,7 +100,13 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
     return;
   }
   if (event->matches(QKeySequence::Paste)) {
-    pasteOneLine(QClipboard::Clipboard);
+    // As QWidgetLineControl: Ctrl+Shift+Insert is a Paste key only with the
+    // X11 key bindings, and there it pastes the primary selection.
+    const bool selection =
+        event->key() == Qt::Key_Insert &&
+        event->modifiers() == (Qt::ControlModifier | Qt::ShiftModifier) &&
+        QApplication::clipboard()->supportsSelection();
+    pasteOneLine(selection ? QClipboard::Selection : QClipboard::Clipboard);
     event->accept();
     return;
   }
@@ -179,9 +200,27 @@ void SecretLineEdit::pasteOneLine(QClipboard::Mode mode) {
   if (isReadOnly()) {
     return;
   }
-  QString text = QApplication::clipboard()->text(mode);
-  text.remove(u'\n').remove(u'\r');
+  const QString text = withoutLineBreaks(QApplication::clipboard()->text(mode));
+  if (text.isEmpty() && !hasSelectedText()) {
+    return;
+  }
   // insert() replaces the selection and records the edit for Undo; with no
   // line break left the validator changes nothing, so the history stays.
+  // QLineEdit::paste() also makes the paste an undo step of its own, apart
+  // from the typing around it; the boundaries do that here.
+  markUndoBoundary();
   insert(text);
+  markUndoBoundary();
+}
+
+void SecretLineEdit::markUndoBoundary() {
+  // QWidgetLineControl::separate(), which QLineEdit::paste() calls, is
+  // private; a cursor move calls it too, and the boundary lands before the
+  // next edit. A selection needs none: removing it sets its own.
+  if (hasSelectedText() || text().isEmpty()) {
+    return;
+  }
+  const int pos = cursorPosition();
+  setCursorPosition(pos > 0 ? pos - 1 : pos + 1);
+  setCursorPosition(pos);
 }

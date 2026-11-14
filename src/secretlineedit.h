@@ -58,6 +58,22 @@ public:
    */
   [[nodiscard]] auto createSecretContextMenu() -> QMenu *;
 
+  /**
+   * @brief Whether @p ch breaks a line: LF, CR, NEL (U+0085), or the Unicode
+   * line and paragraph separators (U+2028, U+2029).
+   * @param ch The character.
+   * @return true for those five.
+   */
+  [[nodiscard]] static auto isLineBreak(QChar ch) -> bool;
+
+  /**
+   * @brief @p text with every line break (see isLineBreak()) removed: what a
+   * one-line field keeps of a paste.
+   * @param text The text.
+   * @return The text on one line.
+   */
+  [[nodiscard]] static auto withoutLineBreaks(QString text) -> QString;
+
 signals:
   /**
    * @brief Selected text was copied out of the line edit.
@@ -127,6 +143,12 @@ private:
    * @param mode Clipboard for Ctrl+V and Paste, Selection for a middle click.
    */
   void pasteOneLine(QClipboard::Mode mode);
+  /**
+   * @brief Ends the current undo step, so that the next edit starts its own,
+   * as QLineEdit::paste() does around a paste. Moves the cursor away and
+   * back, which is the public way to reach QLineEdit's private separate().
+   */
+  void markUndoBoundary();
 };
 
 #endif // SRC_SECRETLINEEDIT_H_

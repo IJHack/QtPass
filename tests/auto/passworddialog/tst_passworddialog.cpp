@@ -147,6 +147,9 @@ private Q_SLOTS:
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
   void pastedLineBreaksStayOutOfTheEntry();
   void pasteWithLineBreaksKeepsUndo();
+  void pasteIsAnUndoStepOfItsOwn();
+  void unicodeLineSeparatorsAreRemoved();
+  void ctrlShiftInsertPastesThePrimarySelection();
   void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
   void fieldLabelDoubleClickStartsTheEdit();
@@ -472,6 +475,94 @@ void tst_passworddialog::pasteWithLineBreaksKeepsUndo() {
   QCOMPARE(login->text(), QStringLiteral("bob"));
   login->undo();
   QCOMPARE(login->text(), QStringLiteral("alice"));
+}
+
+namespace {
+/// The "login" row of a dialog showing "old\nlogin: alice\n".
+auto loginRow(PasswordDialog &d, FakePass &pass) -> SecretLineEdit * {
+  pass.deliverShow(QStringLiteral("old\nlogin: alice\n"));
+  return d.findChild<SecretLineEdit *>(QStringLiteral("login"));
+}
+} // namespace
+
+/**
+ * @brief A paste is an undo step of its own, as QLineEdit::paste() makes it:
+ *        Undo after typing, pasting without a selection and typing again
+ *        takes back one at a time, with or without line breaks to remove.
+ */
+void tst_passworddialog::pasteIsAnUndoStepOfItsOwn() {
+  for (const QString &clip : {QStringLiteral("bob"), QStringLiteral("bob\n")}) {
+    FakePass pass;
+    AppSettings s = allFieldsSettings();
+    s.passTemplate = QStringLiteral("login");
+    PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+    d.show();
+    QVERIFY(QTest::qWaitForWindowExposed(&d));
+    SecretLineEdit *login = loginRow(d, pass);
+    QVERIFY(login != nullptr);
+    login->setFocus();
+    login->end(false);
+    QApplication::clipboard()->setText(clip);
+
+    QTest::keyClick(login, Qt::Key_X);
+    QTest::keySequence(login, QKeySequence(QKeySequence::Paste));
+    QTest::keyClick(login, Qt::Key_Y);
+    QCOMPARE(login->text(), QStringLiteral("alicexboby"));
+    login->undo();
+    QVERIFY2(login->text() == QStringLiteral("alicexbob"), qPrintable(clip));
+    login->undo();
+    QVERIFY2(login->text() == QStringLiteral("alicex"), qPrintable(clip));
+  }
+}
+
+/**
+ * @brief Not only CR and LF: NEL and the Unicode line and paragraph
+ *        separators are line breaks too, and stay out of a field.
+ */
+void tst_passworddialog::unicodeLineSeparatorsAreRemoved() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  SecretLineEdit *login = loginRow(d, pass);
+  QVERIFY(login != nullptr);
+  login->clear();
+  login->insert(QStringLiteral("a\u2028b\u2029c\u0085d"));
+  QCOMPARE(login->text(), QStringLiteral("abcd"));
+  QApplication::clipboard()->setText(QStringLiteral("\u2028e"));
+  login->paste();
+  QCOMPARE(login->text(), QStringLiteral("abcde"));
+}
+
+/**
+ * @brief With the X11 key bindings Ctrl+Shift+Insert is a Paste key that
+ *        pastes the primary selection, not the clipboard. Runs where there
+ *        is a primary selection and those bindings (xcb, generic theme).
+ */
+void tst_passworddialog::ctrlShiftInsertPastesThePrimarySelection() {
+  QClipboard *clipboard = QApplication::clipboard();
+  if (!clipboard->supportsSelection()) {
+    QSKIP("no primary selection on this platform");
+  }
+  const QKeySequence keys(Qt::ControlModifier | Qt::ShiftModifier |
+                          Qt::Key_Insert);
+  if (!QKeySequence::keyBindings(QKeySequence::Paste).contains(keys)) {
+    QSKIP("Ctrl+Shift+Insert is not a Paste key with these key bindings");
+  }
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  SecretLineEdit *login = loginRow(d, pass);
+  QVERIFY(login != nullptr);
+  login->setFocus();
+  login->selectAll();
+  clipboard->setText(QStringLiteral("from-clipboard"), QClipboard::Clipboard);
+  clipboard->setText(QStringLiteral("from-selection\n"), QClipboard::Selection);
+  QTest::keySequence(login, keys);
+  QCOMPARE(login->text(), QStringLiteral("from-selection"));
 }
 
 /**
