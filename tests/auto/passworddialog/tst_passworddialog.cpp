@@ -13,6 +13,7 @@
 
 #include <QAction>
 #include <QCheckBox>
+#include <QClipboard>
 #include <QComboBox>
 #include <QContextMenuEvent>
 #include <QDialog>
@@ -40,6 +41,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passworddialog.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/secretlineedit.h"
 #include "../testpass.h"
 #include "../testsettings.h"
 
@@ -143,6 +145,9 @@ private Q_SLOTS:
   void aFieldRenamedAwayFromOtpStillReportsCopies();
   void fieldLabelRefusesADuplicateName();
   void fieldLabelEscapeCancelsAndRemoveDropsTheRow();
+  void pastedLineBreaksStayOutOfTheEntry();
+  void pasteWithLineBreaksKeepsUndo();
+  void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
   void fieldLabelDoubleClickStartsTheEdit();
   void fieldLabelContextMenuRenamesAndRemoves();
@@ -384,6 +389,112 @@ void tst_passworddialog::fieldLabelRefusesADuplicateName() {
       status->text().contains(QStringLiteral("url")),
       qPrintable("the status label must name the clash: " + status->text()));
   QVERIFY(d.getPassword().contains(QStringLiteral("login: bob\n")));
+}
+
+/**
+ * @brief A paste keeps its line breaks out of the one-line fields. A password
+ *        pasted as "\nhunter2" (a selection that began at the end of the line
+ *        above) was saved as an empty first line with the password below it,
+ *        so Ctrl+C later copied nothing.
+ */
+void tst_passworddialog::pastedLineBreaksStayOutOfTheEntry() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("old\nlogin: alice\n"));
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(password != nullptr && login != nullptr);
+
+  password->clear();
+  QApplication::clipboard()->setText(QStringLiteral("\nhunter2"));
+  password->paste();
+  QCOMPARE(password->text(), QStringLiteral("hunter2"));
+
+  login->clear();
+  login->insert(QStringLiteral("bob\r\nadmin\r\n"));
+  QCOMPARE(login->text(), QStringLiteral("bobadmin"));
+  QCOMPARE(login->cursorPosition(), 8);
+  // A break pasted in the middle keeps the cursor behind what it was behind.
+  login->setCursorPosition(3);
+  login->insert(QStringLiteral("\n-"));
+  QCOMPARE(login->text(), QStringLiteral("bob-admin"));
+  QCOMPARE(login->cursorPosition(), 4);
+
+  const QString written = d.getPassword();
+  QVERIFY2(written.startsWith(QStringLiteral("hunter2\n")),
+           qPrintable(written));
+  QVERIFY2(written.contains(QStringLiteral("login: bob-admin\n")),
+           qPrintable(written));
+}
+
+/**
+ * @brief Removing a paste's line breaks keeps Undo. Left to the validator,
+ *        the correction resets QLineEdit's undo history, so a paste of
+ *        "bob\n" over "alice" could not be undone.
+ */
+void tst_passworddialog::pasteWithLineBreaksKeepsUndo() {
+  FakePass pass;
+  AppSettings s = allFieldsSettings();
+  s.passTemplate = QStringLiteral("login");
+  PasswordDialog d(&pass, s, QStringLiteral("entry.gpg"), false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("old\nlogin: alice\n"));
+  auto *login = d.findChild<SecretLineEdit *>(QStringLiteral("login"));
+  QVERIFY(login != nullptr);
+  QCOMPARE(login->text(), QStringLiteral("alice"));
+  QApplication::clipboard()->setText(QStringLiteral("bob\n"));
+
+  // Ctrl+V over a selection.
+  login->setFocus();
+  login->selectAll();
+  QTest::keySequence(login, QKeySequence(QKeySequence::Paste));
+  QCOMPARE(login->text(), QStringLiteral("bob"));
+  login->undo();
+  QCOMPARE(login->text(), QStringLiteral("alice"));
+
+  // Paste from the context menu.
+  login->selectAll();
+  QMenu *menu = login->createSecretContextMenu();
+  const auto deleteMenu = qScopeGuard([menu] { delete menu; });
+  QAction *paste = nullptr;
+  for (QAction *action : menu->actions()) {
+    if (action->objectName() == QLatin1String("edit-paste")) {
+      paste = action;
+    }
+  }
+  QVERIFY(paste != nullptr);
+  paste->trigger();
+  QCOMPARE(login->text(), QStringLiteral("bob"));
+  login->undo();
+  QCOMPARE(login->text(), QStringLiteral("alice"));
+}
+
+/**
+ * @brief A field name pasted with line breaks is renamed without them; a
+ *        break would end the line the field is written back as.
+ */
+void tst_passworddialog::fieldNameDropsLineBreaks() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\n"));
+  FieldLabel *label = fieldLabel(d, QStringLiteral("login"));
+  QVERIFY(label != nullptr);
+  QSignalSpy renamed(label, &FieldLabel::renamed);
+  label->startEdit();
+  auto *editor = d.findChild<QLineEdit *>(QStringLiteral("fieldNameEditor"));
+  QVERIFY(editor != nullptr);
+  editor->setText(QStringLiteral("user\r\nname\n"));
+  QTest::keyClick(editor, Qt::Key_Return);
+  QCOMPARE(renamed.count(), 1);
+  QCOMPARE(renamed.first().at(1).toString(), QStringLiteral("username"));
 }
 
 /**

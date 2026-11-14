@@ -13,8 +13,44 @@
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMouseEvent>
+#include <QValidator>
 
-SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {}
+namespace {
+/**
+ * @brief Keeps a line edit to the one line it stands for.
+ *
+ * QLineEdit takes the CR and LF of a paste, a drop or an input method as they
+ * come, draws them as blanks and returns them from text(). In the password
+ * dialog a field's line break then ends its line in the entry: a password
+ * pasted as "\nhunter2" was saved as an empty first line. QLineEdit runs its
+ * validator on every change before it reports the new text, and validate()
+ * may correct what it is given.
+ */
+class SingleLineValidator : public QValidator {
+public:
+  using QValidator::QValidator;
+
+  /**
+   * @brief Remove CR and LF from @p input.
+   * @param input The text the field would hold; corrected in place.
+   * @param pos The cursor position; kept behind the character it was behind.
+   * @return Always Acceptable: every text is one line once corrected.
+   */
+  auto validate(QString &input, int &pos) const -> State override {
+    if (!input.contains(u'\n') && !input.contains(u'\r')) {
+      return Acceptable;
+    }
+    const QStringView head = QStringView(input).left(pos);
+    pos -= static_cast<int>(head.count(u'\n') + head.count(u'\r'));
+    input.remove(u'\n').remove(u'\r');
+    return Acceptable;
+  }
+};
+} // namespace
+
+SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
+  setValidator(new SingleLineValidator(this));
+}
 
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();
@@ -28,6 +64,10 @@ auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
     } else if (action->objectName() == QLatin1String("edit-cut")) {
       disconnect(action, &QAction::triggered, this, nullptr);
       connect(action, &QAction::triggered, this, [this] { cutSelection(); });
+    } else if (action->objectName() == QLatin1String("edit-paste")) {
+      disconnect(action, &QAction::triggered, this, nullptr);
+      connect(action, &QAction::triggered, this,
+              [this] { pasteOneLine(QClipboard::Clipboard); });
     }
   }
   return menu;
@@ -41,6 +81,11 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
   }
   if (event->matches(QKeySequence::Cut)) {
     cutSelection();
+    event->accept();
+    return;
+  }
+  if (event->matches(QKeySequence::Paste)) {
+    pasteOneLine(QClipboard::Clipboard);
     event->accept();
     return;
   }
@@ -65,6 +110,14 @@ void SecretLineEdit::keyPressEvent(QKeyEvent *event) {
 }
 
 void SecretLineEdit::mouseReleaseEvent(QMouseEvent *event) {
+  // QLineEdit pastes the primary selection here on a middle click.
+  if (event->button() == Qt::MiddleButton && !isReadOnly() &&
+      QApplication::clipboard()->supportsSelection()) {
+    deselect();
+    pasteOneLine(QClipboard::Selection);
+    event->accept();
+    return;
+  }
   withoutPlainSelectionCopy(
       [this, event] { QLineEdit::mouseReleaseEvent(event); });
   if (event->button() == Qt::LeftButton) {
@@ -120,4 +173,15 @@ void SecretLineEdit::publishSelection() {
   if (QApplication::clipboard()->supportsSelection()) {
     copySelection(QClipboard::Selection);
   }
+}
+
+void SecretLineEdit::pasteOneLine(QClipboard::Mode mode) {
+  if (isReadOnly()) {
+    return;
+  }
+  QString text = QApplication::clipboard()->text(mode);
+  text.remove(u'\n').remove(u'\r');
+  // insert() replaces the selection and records the edit for Undo; with no
+  // line break left the validator changes nothing, so the history stays.
+  insert(text);
 }
