@@ -308,8 +308,12 @@ void UsersDialog::populateList(const QString &filter) {
 
   QString patternString = "*" + filter + "*";
   if (m_cachedPatternString != patternString) {
+    // A user ID is not a path: "*" and "?" must match a "/" as well, or a
+    // key named "ACME A/S" or "(dev/ops)" drops out of the search and stays
+    // ticked unseen while the listed rows are unticked.
     QRegularExpression re(
-        QRegularExpression::wildcardToRegularExpression(patternString),
+        QRegularExpression::wildcardToRegularExpression(
+            patternString, QRegularExpression::NonPathWildcardConversion),
         QRegularExpression::CaseInsensitiveOption);
     if (re.isValid()) {
       m_cachedNameFilter = re;
