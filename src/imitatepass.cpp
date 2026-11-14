@@ -1182,6 +1182,19 @@ auto ImitatePass::reencryptFiles(const QString &dir) -> ReencryptResult {
     result.aborted = true;
     return result;
   }
+  // The GUI-thread checks ran before this worker's own pull.
+  // pullBeforeReencrypt refuses an unmerged index, but a pull that stopped in a
+  // rebase can leave a rebase-merge/rebase-apply state with no unmerged entry
+  // yet; the backup commit's `git add -u` would then conclude it. Re-check
+  // here, before any write, with the non-emitting detection (the refusal is
+  // reported once, as an aborted run).
+  if (const QString midOp = unfinishedGitOperationReason(); !midOp.isEmpty()) {
+    if (!m_reencryptCancel.load()) {
+      emit critical(tr("Unfinished Git operation"), midOp);
+    }
+    result.aborted = true;
+    return result;
+  }
   // reencryptPath() checked the folder before the pull; a pulled commit can
   // have made it, or a folder above it, a link since. Recovery and the walk
   // below would then rename and remove files beyond the store.

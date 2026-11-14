@@ -684,6 +684,7 @@ private Q_SLOTS:
   void reencryptPullsFirstWhenAutoPullIsOn();
   void reencryptGoesOnWhenThePullFailsCleanly();
   void reencryptAbortsWhenThePullLeavesConflicts();
+  void reencryptAbortsWhenTheWorkerPullLeavesARebase();
   void failureDialogListsAtMostFifteenFiles();
   void moveFolderResolvesItsDestination();
   void moveWithForceReplacesTheDestinationWithoutGit();
@@ -5270,6 +5271,49 @@ void tst_imitatepass::reencryptAbortsWhenThePullLeavesConflicts() {
                           return c.contains(QStringLiteral("status"));
                         }),
            "no backup commit is attempted on an unmerged tree");
+#endif
+}
+
+/**
+ * @brief The worker's own auto-pull can stop in a rebase that leaves no
+ *        unmerged index entry, which pullBeforeReencrypt() does not catch. The
+ *        re-check before the backup commit must still abort, so `git add -u`
+ *        does not conclude the rebase.
+ */
+void tst_imitatepass::reencryptAbortsWhenTheWorkerPullLeavesARebase() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake gpg and git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  // The pull succeeds but leaves a rebase-merge directory (no unmerged entry);
+  // rev-parse --git-path answers with the markers so the re-check sees it.
+  const QString arms =
+      QStringLiteral(
+          "  *' pull') mkdir -p '%1/.git/rebase-merge'; exit 0;;\n"
+          "  *'rev-parse '*) printf '%s\\n' .git/rebase-merge "
+          ".git/rebase-apply "
+          ".git/MERGE_HEAD .git/CHERRY_PICK_HEAD .git/REVERT_HEAD; exit 0;;")
+          .arg(storeDir.path());
+  const QString fakeGit = writeScriptedGit(storeDir.path(), gitLog, arms);
+  QVERIFY(!fakeGit.isEmpty());
+  Recorder rec;
+  QList<QStringList> git;
+  int encrypts = 0;
+  QVERIFY(runReencryptWithGit(storeDir.path(), fakeGit, rec, &git, &encrypts,
+                              true));
+  QCOMPARE(encrypts, 0);
+  QCOMPARE(rec.criticals.size(), 1);
+  QVERIFY2(rec.criticals.first().contains(QStringLiteral("rebase")),
+           qPrintable(rec.criticals.first()));
+  QVERIFY2(!hasPush(git), "an aborted run is not pushed");
+  QVERIFY2(std::none_of(git.cbegin(), git.cend(),
+                        [](const QStringList &c) {
+                          return c.contains(QStringLiteral("-u"));
+                        }),
+           "the backup commit's add -u must not run on a stopped rebase");
 #endif
 }
 
