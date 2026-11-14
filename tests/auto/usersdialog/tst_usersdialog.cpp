@@ -71,6 +71,7 @@ private slots:
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
   void unreadableRecipientLineLeavesTheOthersTicked();
+  void unreadableLineStaysMissingWhenAResolvedUidContainsIt();
   void fallbackPerLineLookupIsCappedAndReused();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
@@ -978,6 +979,51 @@ void tst_usersdialog::unreadableRecipientLineLeavesTheOthersTicked() {
   QVERIFY2(
       placeholder->text().contains(QStringLiteral("Key not found in keyring")),
       qPrintable(placeholder->text()));
+  QCOMPARE(placeholder->checkState(), Qt::Checked);
+}
+
+/**
+ * @brief The cached per-line gpg verdict decides a line even when the
+ *        heuristic answersTo() would match it. An unreadable "0x" line stays
+ *        reported missing although a resolved key's UID contains "0x".
+ */
+void tst_usersdialog::unreadableLineStaysMissingWhenAResolvedUidContainsIt() {
+  // A key whose UID contains "0x", listed for its fingerprint; the whole call
+  // and a bare "0x" both abort with exit 2, as real gpg does.
+  const QString listing = QStringLiteral(
+      "pub:u:4096:1:AAAABBBBCCCCDDDD:1700000000:::u:::escarESCA::::::23::0:\n"
+      "fpr:::::::::AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB:\n"
+      "uid:u::::1700000000::HASH::Max 0xface <max@example.org>::::::::::0:\n");
+  AppSettings s = m_settings;
+  s.gpgExecutable = writeGpg(
+      QStringLiteral("gpg-uid-0x"),
+      QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                     "case \"$*\" in *0x*) echo 'gpg: error reading key: "
+                     "Invalid user ID' >&2; exit 2 ;; esac\n"
+                     "cat <<'LISTING'\n") +
+          listing + QStringLiteral("LISTING\nexit 0\n"));
+  QVERIFY(!s.gpgExecutable.isEmpty());
+
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+  QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+  gpgId.write("AAAABBBBCCCCDDDDAAAABBBBCCCCDDDDAAAABBBB\n0x\n");
+  gpgId.close();
+  s.passStore = store.path() + QLatin1Char('/');
+  RecordingPass pass(s);
+  UsersDialog dialog(&pass, s, s.passStore);
+  auto *list = dialog.findChild<QListWidget *>(QStringLiteral("listWidget"));
+  QVERIFY(list != nullptr);
+
+  // Both the placeholder and the "Max 0xface" row carry "0x", so the
+  // placeholder is found by the text only it has.
+  QListWidgetItem *placeholder =
+      itemWithText(list, QStringLiteral("Key not found in keyring"));
+  QVERIFY2(placeholder != nullptr,
+           "the unreadable 0x line must still be reported missing");
+  QVERIFY2(placeholder->text().contains(QStringLiteral("0x")),
+           qPrintable(placeholder->text()));
   QCOMPARE(placeholder->checkState(), Qt::Checked);
 }
 

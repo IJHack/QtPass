@@ -186,20 +186,25 @@ void UsersDialog::selectRecipients(const QStringList &recipients) {
       user.enabled = true;
     }
   }
-  // The match is a fast path, not gpg's resolution: a secondary UID or a
-  // subkey ID resolves in gpg without showing in what it lists. Only what gpg
-  // itself cannot find is reported missing.
+  // Only what gpg itself cannot find is reported missing. The fallback's
+  // per-line answer, when it has one, is gpg's own verdict for that line and
+  // decides it outright. Otherwise the heuristic match is a fast path (a
+  // secondary UID or a subkey ID resolves in gpg without showing in what it
+  // lists), and a per-line gpg call settles anything it does not catch. Taking
+  // the cached answer first also keeps a genuinely unreadable line ("0x")
+  // reported missing even when a resolved key's UID happens to contain it, so
+  // the heuristic answersTo() would otherwise match.
   for (const QString &recipient : recipients) {
-    bool found = std::any_of(resolved.cbegin(), resolved.cend(),
-                             [&recipient](const UserInfo &key) {
-                               return answersTo(key, recipient);
-                             });
-    if (!found) {
-      const auto cached = perLineHasKey.constFind(recipient);
-      if (cached != perLineHasKey.constEnd()) {
-        // The fallback already asked gpg about this exact line.
-        found = cached.value();
-      } else if (lookups++ < kMaxLookups) {
+    bool found = false;
+    const auto cached = perLineHasKey.constFind(recipient);
+    if (cached != perLineHasKey.constEnd()) {
+      found = cached.value();
+    } else {
+      found = std::any_of(resolved.cbegin(), resolved.cend(),
+                          [&recipient](const UserInfo &key) {
+                            return answersTo(key, recipient);
+                          });
+      if (!found && lookups++ < kMaxLookups) {
         found = !m_pass->listKeys(recipient).isEmpty();
       }
     }
