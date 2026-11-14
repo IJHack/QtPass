@@ -217,7 +217,9 @@ HEAD = """<!doctype html>
                 >License</a
               >
               ·
-              <a title="Latest documentation" href="/docs/">API docs</a></small
+              <a title="QtPass developer documentation" href="/docs/"
+                >Developer docs</a
+              ></small
             >
           </p>
         </footer>
