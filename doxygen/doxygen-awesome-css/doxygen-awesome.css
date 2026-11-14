@@ -1135,6 +1135,7 @@ blockquote {
     background: var(--blockquote-background);
     color: var(--blockquote-foreground);
     border-left: 0;
+    overflow: visible;
     border-radius: var(--border-radius-medium);
     overflow: visible;
     position: relative;
@@ -1263,6 +1264,7 @@ div.toc li a.aboveActive {
         float: none;
         width: auto;
         margin: 0 0 var(--spacing-medium) 0;
+        position: relative;
         top: 0;
         position: relative;
         border: 1px solid var(--separator-color);
@@ -2167,7 +2169,7 @@ div.dynheader img[src="closed.png"] {
         display: block;
         text-align: left;
         padding-left: var(--spacing-large);
-        margin: 0 calc(0px - var(--spacing-large));
+        margin: 0 calc(0px - var(--spacing-large)) 0 calc(0px - var(--spacing-large));
         border-right: none;
         border-left: none;
         border-radius: 0;
@@ -2636,6 +2638,7 @@ div.contents .toc,
 */
 
 doxygen-awesome-dark-mode-toggle {
+    display: inline-block;
     margin: 0 0 0 var(--spacing-small);
     padding: 0;
     width: var(--searchbar-height);
