@@ -178,6 +178,7 @@ private Q_SLOTS:
   void unknownDefaultTemplateFallsBackToTheFirst();
   void reloadAndTemplateChangeKeepEachFieldOnce();
   void typedValuesSurviveATemplateSwitch();
+  void emptyStoredFieldSurvivesATemplateSwitch();
   void ctrlTWithOneTemplateKeepsTheRows();
   void typedOtpStaysMarkedAcrossATemplateSwitch();
   void otpFieldFlagsAnInvalidSecret();
@@ -1758,6 +1759,25 @@ void tst_passworddialog::reloadAndTemplateChangeKeepEachFieldOnce() {
  *        of template: a field the new template has goes into its row, any
  *        other stays a field row, and switching back puts it back.
  */
+/**
+ * @brief A stored field with no value ("recovery:"), which an unedited save
+ *        writes back verbatim, also survives a template switch in an edit:
+ *        its row is empty, but it has a source line.
+ */
+void tst_passworddialog::emptyStoredFieldSurvivesATemplateSwitch() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  pass.deliverShow(QStringLiteral("secret\nlogin: bob\nrecovery:\n"));
+  QVERIFY(d.getPassword().contains(QStringLiteral("\nrecovery:\n")));
+
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("wifi"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  const QString written = d.getPassword();
+  QCOMPARE(written.count(QStringLiteral("\nrecovery:\n")), 1);
+  QCOMPARE(written.count(QStringLiteral("\nlogin: bob\n")), 1);
+}
+
 void tst_passworddialog::typedValuesSurviveATemplateSwitch() {
   FakePass pass;
   PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
