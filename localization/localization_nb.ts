@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bruk et Git-repository i en mappe over lageret</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 signerer med samme nøkkel for et annet lager. En mottakerliste som er signert for ett av disse lagrene, godtas i det andre: bruk en egen signeringsnøkkel for hvert lager som har ulike mottakere.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass committer endringer i %1 til Git-repositoriet i %2: med et kolon i stien til lageret kan ikke pass begrense Git til lageret. Kjør &quot;git init&quot; i lageret, eller bruk innebygd Git/GPG.</translation>
+        <translation type="unfinished">pass committer endringer i %1 til Git-repositoriet i %2: med et kolon i stien til lageret kan pass ikke begrense Git til lageret. Kjør &quot;git init&quot; i lageret, eller bruk innebygd Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1222,19 +1222,19 @@ e-post</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listen inneholder mer enn én lager-ID-linje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lager-ID-linjen er feilformatert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Listen inneholder en linje med ID, men ikke en linje som viser hvordan den ble generert.</translation>
+        <translation type="unfinished">Listen inneholder en lager-ID-linje, men ingen generasjonslinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1302,7 +1302,7 @@ e-post</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Den signerte mottakerlisten %1 har ingen lager-ID-linje, mens denne enheten kjenner dette lageret ved ID-en %2: den kan ha blitt skrevet for et annet lager og kopiert hit, eller av en eldre QtPass. En som har signeringsnøkkelen, kommer videre ved å åpne Brukere, velge mottakerne på nytt og lagre, noe som skriver lager-ID-linjen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1547,7 +1547,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Passordlagringsplassen har filer som ikke er sammenslått. Løs konflikten med Git før du krypterer på nytt.</translation>
+        <translation type="unfinished">Passordlagerets Git-repository har filer som ikke er flettet. Løs konflikten med Git før du krypterer på nytt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2647,7 +2647,7 @@ Utløpsdato: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">En mappe som starter med et punkt vil være skjult fra listen: %1</translation>
+        <translation type="unfinished">En mappe som begynner med et punktum, ville bli skjult i listen: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2958,12 +2958,12 @@ Fortsette?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Passordlagringens Git-repositor er midt i en %1. Fullfør eller avbryt den med Git før du endrer passordlagringen, ellers kan det du endrer forsvinne.</translation>
+        <translation type="unfinished">Passordlagerets Git-repository er midt i en %1. Fullfør eller avbryt den med Git før du endrer passordlageret, ellers kan endringene dine gå tapt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Passordlageret oppdateres (en Git-operasjon er i gang). Vent til den er ferdig, og prøv deretter igjen.</translation>
+        <translation type="unfinished">Passordlageret oppdateres (en Git pull pågår). Vent til den er ferdig, og prøv deretter igjen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3151,12 +3151,12 @@ Fortsette?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Et navn eller en mappe som begynner med et punktum, vil bli skjult fra listen.</translation>
+        <translation type="unfinished">Et navn eller en mappe som begynner med et punktum, ville bli skjult i listen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 ligger bak en symbolsk lenke eller sammenkobling, utenfor passordlagringen.</translation>
+        <translation type="unfinished">%1 ligger bak en symbolsk lenke eller et koblingspunkt, utenfor passordlageret.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3595,7 +3595,7 @@ og slå på Git under Innstillinger etterpå.</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
-        <translation type="unfinished">Hver endring blir en commit; en mappe som ennå ikke er et depot, får ett</translation>
+        <translation type="unfinished">Hver endring blir en commit; en mappe som ennå ikke er et repository, får et</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="431"/>

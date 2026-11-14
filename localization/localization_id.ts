@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Satu nama kolom per baris. Baris seperti &quot;# secret: pin, cvv&quot; menandai kolom yang disembunyikan seperti kata sandi selama &quot;Sembunyikan kata sandi&quot; aktif. Baris yang sama berfungsi di file .templates milik penyimpanan, dan di sana berlaku untuk setiap entri dalam penyimpanan, bukan hanya yang dibuat dengan templat tersebut.</translation>
+        <translation type="unfinished">Satu nama kolom per baris. Baris seperti &quot;# secret: pin, cvv&quot; menandai kolom yang disembunyikan seperti kata sandi selama &quot;Sembunyikan kata sandi&quot; aktif. Baris yang sama berfungsi di berkas .templates milik penyimpanan, dan di sana berlaku untuk setiap entri dalam penyimpanan, bukan hanya yang dibuat dengan templat tersebut.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -767,7 +767,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 menandatangani dengan kunci yang sama untuk penyimpanan lain. Daftar penerima yang ditandatangani untuk salah satu penyimpanan ini juga diterima di penyimpanan lainnya: gunakan kunci penandatangan tersendiri untuk setiap penyimpanan yang penerimanya berbeda.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1217,19 +1217,19 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar ini memuat lebih dari satu baris ID penyimpanan.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Baris ID penyimpanan salah bentuk: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar ini memuat baris ID penyimpanan tetapi tidak memuat baris generasi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1291,13 +1291,13 @@ Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Daftar penerima yang ditandatangani %1 ditulis untuk penyimpanan kata sandi lain (ID penyimpanan %2; perangkat ini mengenal penyimpanan ini sebagai %3) dan tidak digunakan. Mungkin saja daftar ini disalin ke sini dari penyimpanan yang ditandatangani dengan kunci yang sama. Jika penyimpanan ini ternyata disiapkan ulang, menghapus %4 akan membuat perangkat ini melupakan ID penyimpanan yang dikenalnya.</translation>
+        <translation type="unfinished">Daftar penerima bertanda tangan %1 ditulis untuk penyimpanan kata sandi lain (ID penyimpanan %2; perangkat ini mengenal penyimpanan ini sebagai %3) dan tidak digunakan. Daftar ini mungkin disalin ke sini dari penyimpanan yang ditandatangani dengan kunci yang sama. Jika penyimpanan ini ternyata disiapkan ulang, menghapus %4 akan membuat perangkat ini melupakan ID penyimpanan yang dikenalnya.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Daftar penerima bertanda tangan %1 tidak memuat baris ID penyimpanan, padahal perangkat ini mengenal penyimpanan ini dengan ID %2: daftar ini mungkin ditulis untuk penyimpanan lain lalu disalin ke sini, atau ditulis oleh QtPass versi lama. Pemegang kunci penandatangan dapat melanjutkan dengan membuka Pengguna, memilih ulang penerima, lalu menyimpan, yang akan menulis baris ID penyimpanan.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1542,7 +1542,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Repositori Git dari penyimpanan kata sandi memiliki file yang belum digabungkan. Selesaikan konflik dengan Git sebelum melakukan enkripsi ulang.</translation>
+        <translation type="unfinished">Repositori Git dari penyimpanan kata sandi memiliki berkas yang belum digabungkan. Selesaikan konflik dengan Git sebelum melakukan enkripsi ulang.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2910,7 +2910,7 @@ Lanjutkan?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Repositori Git dari penyimpanan kata sandi berada di tengah proses %1. Selesaikan atau batalkan proses tersebut menggunakan Git sebelum mengubah pengaturan penyimpanan kata sandi, karena perubahan yang Anda lakukan mungkin hilang.</translation>
+        <translation type="unfinished">Repositori Git dari penyimpanan kata sandi sedang berada di tengah proses %1. Selesaikan atau batalkan proses tersebut dengan Git sebelum mengubah penyimpanan kata sandi; jika tidak, perubahan yang Anda buat mungkin hilang.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3108,7 +3108,7 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 terletak di balik sebuah tautan simbolis atau persimpangan, di luar penyimpanan kata sandi.</translation>
+        <translation type="unfinished">%1 berada di balik tautan simbolik atau junction, di luar penyimpanan kata sandi.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

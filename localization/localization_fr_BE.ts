@@ -65,7 +65,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;key&quot; cache &quot;API key&quot;, pas &quot;keyboard layout&quot;. Il préfère donc en cacher trop : &quot;Public key&quot; et &quot;Password hint&quot; sont cachés aussi ; retirez un mot pour les afficher.</translation>
+        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;key&quot; cache &quot;API key&quot;, pas &quot;keyboard layout&quot;. Dans le doute, le champ est donc caché : &quot;Public key&quot; et &quot;Password hint&quot; le sont aussi ; retirez un mot pour les afficher.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -239,7 +239,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Lorsque le presse-papiers est effacé, rétablissez ce qui s&apos;y trouvait avant la copie, comme le fait &quot;pass -c&quot;, sauf si autre chose a été copié entre-temps. Texte uniquement : la mise en forme n&apos;est pas restaurée. Ce texte reste en mémoire jusque-là. Dans les cas où le presse-papiers ne peut être lu sans focus (certains bureaux Wayland), il est effacé à la place.</translation>
+        <translation type="unfinished">Lorsque le presse-papiers est effacé, rétablir ce qui s&apos;y trouvait avant la copie, comme le fait &quot;pass -c&quot;, sauf si autre chose a été copié entre-temps. Texte uniquement : la mise en forme n&apos;est pas restaurée. Ce texte reste en mémoire jusque-là. Dans les cas où le presse-papiers ne peut être lu sans focus (certains bureaux Wayland), il est effacé à la place.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -831,7 +831,7 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utilisez celui situé dans un dossier au-dessus. Désactivé par défaut, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers dot) ne soit jamais commité ou poussé accidentellement. Git natif uniquement : pass s&apos;arrête toujours au niveau du magasin.</translation>
+        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utiliser celui d&apos;un dossier au-dessus. Désactivé par défaut, comme pour pass, afin qu&apos;un magasin situé dans un autre dépôt (des dotfiles, par exemple) n&apos;y soit jamais commité ou poussé par erreur. Git natif uniquement : pass s&apos;arrête toujours au magasin.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1340,7 +1340,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La liste de destinataires signée %1 a été écrite pour un autre magasin de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici depuis un magasin signé avec la même clé. Si ce magasin a plutôt été configuré à nouveau, supprimer %4 fait oublier les ID de magasin que cet appareil connaît.</translation>
+        <translation type="unfinished">La liste de destinataires signée %1 a été écrite pour un autre magasin de mots de passe (identifiant du magasin %2 ; cet appareil connaît ce magasin sous l&apos;identifiant %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici depuis un magasin signé avec la même clé. Si ce magasin a plutôt été recréé, supprimer %4 efface les identifiants de magasin que cet appareil connaît.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
@@ -3116,7 +3116,7 @@ Continuez&#x202f;?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Le dépôt Git du magasin de mots de passe est au milieu d&apos;un %1. Terminez ou annulez l&apos;opération avec Git avant de modifier le magasin, sinon vos modifications pourraient être perdues.</translation>
+        <translation type="unfinished">Une opération %1 est en cours dans le dépôt Git du magasin de mots de passe. Terminez-la ou annulez-la avec Git avant de modifier le magasin de mots de passe, sinon vos modifications risquent d&apos;être perdues.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>

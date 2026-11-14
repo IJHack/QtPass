@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Mọi trường nằm sau nút &quot;Mắt&quot;, không chỉ là các bí mật: cho màn hình chia sẻ và trình bày. Các ghi chú dưới các trường và mã OTP vẫn hiển thị; chức năng &quot;Ẩn nội dung&quot; cũng ẩn chúng.</translation>
+        <translation type="unfinished">Mọi trường nằm sau nút hình con mắt, không chỉ các trường bí mật: dùng khi chia sẻ màn hình và thuyết trình. Ghi chú bên dưới các trường và mã OTP vẫn hiển thị; &quot;Ẩn nội dung&quot; sẽ ẩn cả chúng.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -767,7 +767,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ký bằng cùng một khóa cho một kho khác. Danh sách người nhận được ký cho một trong các kho này cũng được chấp nhận ở kho kia: hãy dùng một khóa ký riêng cho mỗi kho có người nhận khác nhau.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1217,19 +1217,19 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách có nhiều hơn một dòng ID kho.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dòng ID kho sai định dạng: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách có dòng ID kho nhưng không có dòng thế hệ.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1297,7 +1297,7 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Danh sách người nhận đã ký %1 không có dòng ID kho, trong khi thiết bị này biết kho này qua ID %2: có thể nó được ghi cho một kho khác rồi sao chép về đây, hoặc được ghi bởi một QtPass cũ hơn. Người giữ khóa ký có thể vượt qua bằng cách mở hộp thoại Người dùng, chọn lại người nhận từ đầu và lưu, việc này sẽ ghi dòng ID kho.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1542,7 +1542,7 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Kho lưu trữ Git của trình quản lý mật khẩu có các file chưa được hợp nhất. Hãy giải quyết xung đột bằng Git trước khi mã hóa lại.</translation>
+        <translation type="unfinished">Kho Git của kho mật khẩu có các tệp chưa được hợp nhất. Hãy giải quyết xung đột bằng Git trước khi mã hóa lại.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2610,7 +2610,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Thùng chứa ẩn</translation>
+        <translation type="unfinished">Thư mục ẩn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
@@ -2922,12 +2922,12 @@ Tiếp tục?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Kho lưu trữ mật khẩu đang ở giữa quá trình %1. Hãy hoàn thành hoặc hủy bỏ nó bằng Git trước khi thay đổi kho lưu trữ mật khẩu, nếu không những thay đổi có thể bị mất.</translation>
+        <translation type="unfinished">Kho Git của kho mật khẩu đang dở dang một thao tác %1. Hãy hoàn tất hoặc hủy bỏ nó bằng Git trước khi thay đổi kho mật khẩu, nếu không những gì bạn thay đổi có thể bị mất.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Cơ sở dữ liệu mật khẩu đang được cập nhật (quá trình Git pull đang diễn ra). Vui lòng chờ cho đến khi quá trình hoàn thành, sau đó thử lại.</translation>
+        <translation type="unfinished">Kho mật khẩu đang được cập nhật (đang chạy Git pull). Hãy chờ đến khi hoàn tất rồi thử lại.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3120,7 +3120,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 nằm sau một liên kết tượng trưng hoặc nút kết nối, bên ngoài kho mật khẩu.</translation>
+        <translation type="unfinished">%1 nằm sau một liên kết tượng trưng hoặc junction, bên ngoài kho mật khẩu.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

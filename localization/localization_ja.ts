@@ -584,7 +584,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">すべてのフィールドを非表示にする</translation>
+        <translation type="unfinished">すべてのフィールドを隠す</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -1261,19 +1261,19 @@ URL
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">このリストには、複数の店舗IDが含まれています。</translation>
+        <translation type="unfinished">リストにストア ID 行が複数あります。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">ストアIDの行が不正: %1</translation>
+        <translation type="unfinished">ストア ID 行の形式が不正です: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">このリストにはストアIDの情報は含まれていますが、生成に関する情報は含まれていません。</translation>
+        <translation type="unfinished">リストにストア ID 行はありますが、世代行がありません。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1341,7 +1341,7 @@ URL
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">署名された受信者リスト %1 には、ストアIDの行が含まれていませんが、このデバイスはストアIDを使ってこのストアを認識しています (%2): これは別のストアのために書かれ、ここにコピーされたものでも、古いQtPassのものでもない可能性があります。署名キーを持つユーザーは、「ユーザー」を選択し、新しい受信者を追加して保存することで、ストアIDの行を書き込むことができます。</translation>
+        <translation type="unfinished">署名済み受信者リスト %1 にはストア ID 行がありませんが、このデバイスはこのストアを ID %2 で認識しています: 別のストア用に書かれてここにコピーされたか、古い QtPass で書かれた可能性があります。署名キーの所有者が「ユーザー」を開き、受信者を選択し直して保存すれば、この状態を解消できます。その際にストア ID 行が書き込まれます。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1586,7 +1586,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">パスワードの保管場所にあるGitリポジトリには、まだマージされていないファイルが存在します。再暗号化する前に、Gitを使用してファイルの競合を解決してください。</translation>
+        <translation type="unfinished">パスワードストアの Git リポジトリにマージされていないファイルがあります。再暗号化する前に Git で競合を解決してください。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2827,12 +2827,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">隠しフォルダ</translation>
+        <translation type="unfinished">隠しフォルダー</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">ドット（.）で始まるフォルダは、リストから非表示になります。 %1</translation>
+        <translation type="unfinished">ドット (.) で始まるフォルダーはリストに表示されなくなります: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3147,12 +3147,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">パスワード保管所のGitリポジトリは、現在%1の処理中です。パスワード保管所を変更する前に、Gitを使って完了または中止してください。そうしないと、変更によってデータが失われる可能性があります。</translation>
+        <translation type="unfinished">パスワードストアの Git リポジトリは %1 の途中です。パスワードストアを変更する前に Git で完了または中止してください。そうしないと、変更内容が失われる可能性があります。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">パスワードの保存場所が更新されています（Git pull が実行中です）。完了するまでお待ちください。その後、再度お試しください。</translation>
+        <translation type="unfinished">パスワードストアを更新しています (Git pull を実行中です)。完了するまで待ってから、もう一度お試しください。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3340,7 +3340,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">ドット（.）で始まる名前やフォルダは、リストから非表示になります。</translation>
+        <translation type="unfinished">ドット (.) で始まる名前やフォルダーはリストに表示されなくなります。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>

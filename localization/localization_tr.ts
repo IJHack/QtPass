@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Göz simgesinin arkasındaki tüm alanlar, sırlarla sınırlı değil: paylaşılan ekranlar ve sunum için. Alanların altındaki notlar ve OTP kodu görünür kalır; &quot;İçeriği gizle&quot; de onları gizler.</translation>
+        <translation type="unfinished">Yalnızca sırları değil, tüm alanları göz düğmesinin arkasına gizler: paylaşılan ekranlar ve sunumlar için. Alanların altındaki notlar ve OTP kodu görünür kalır; &quot;İçeriği gizle&quot; bunları da gizler.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1221,19 +1221,19 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Bu listede birden fazla depo kimliği bulunuyor.</translation>
+        <translation type="unfinished">Listede birden fazla depo kimliği satırı var.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Depo ID satırı hatalı: %1</translation>
+        <translation type="unfinished">Depo kimliği satırı hatalı biçimlendirilmiş: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Bu liste, bir depolama kimliği içeriyor ancak oluşturma kimliği içermiyor.</translation>
+        <translation type="unfinished">Listede bir depo kimliği satırı var ancak nesil satırı yok.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1295,13 +1295,13 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">İmzalayanların listesi %1, başka bir parola deposu (depo ID %2; bu cihazı bu depoyu %3 olarak biliyor) için yazılmıştır ve kullanılmamaktadır. Aynı anahtar ile imzalanmış bir yerden kopyalanmış olabilir. Eğer bu depo yeniden yapılandırılırsa, %4&apos;ü kaldırmak, cihazın bildiği depo ID&apos;lerini unutmasına neden olur.</translation>
+        <translation type="unfinished">İmzalı alıcı listesi %1 başka bir parola deposu için yazılmış (depo kimliği %2; bu cihaz bu depoyu %3 olarak tanıyor) ve kullanılmıyor. Aynı anahtarla imzalanan bir depodan buraya kopyalanmış olabilir. Bunun yerine bu depo yeniden kurulduysa, %4 kaldırılırsa bu cihazın bildiği depo kimlikleri unutulur.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">İmzalayan alıcı listesi %1, &quot;Depo ID&quot; satırını içermiyor; ancak bu cihaz, depoyu kimliğiyle %2 biliyor: Belki de başka bir depoya ait ve buraya kopyalanmış veya eski bir qtPass tarafından oluşturulmuş olabilir. İmzalama anahtarına sahip kişi, Kullanıcılar&apos;ı açarak, alıcıları yeniden seçip kaydetmek suretiyle bu bilgiyi elde ediyor; bu da &quot;Depo ID&quot; satırını yazıyor.</translation>
+        <translation type="unfinished">İmzalı alıcı listesi %1 depo kimliği satırı içermiyor, oysa bu cihaz bu depoyu %2 kimliğiyle tanıyor: liste başka bir depo için yazılıp buraya kopyalanmış ya da eski bir QtPass tarafından yazılmış olabilir. İmzalama anahtarını elinde bulunduran biri için çıkış yolu, Kullanıcılar&apos;ı açmak, alıcıları yeniden seçmek ve kaydetmektir; bu, depo kimliği satırını yazar.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1546,7 +1546,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Parola deposunun Git deposunda birleştirilmemiş dosyalar bulunuyor. Parolayı yeniden şifrelemeden önce, Git ile çelişkileri çözün.</translation>
+        <translation type="unfinished">Parola deposunun Git deposunda birleştirilmemiş dosyalar var. Yeniden şifrelemeden önce çakışmayı Git ile çözün.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2685,7 +2685,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Bir klasör, listeden gizlenir: %1</translation>
+        <translation type="unfinished">Nokta ile başlayan bir klasör listede gizlenir: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2906,7 +2906,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">pwgen (&quot;%1&quot;) çalıştıramadı. Ayarlarda pwgen programını kontrol edin veya &quot;pwgen&apos;i kullan&quot; seçeneğini kapatın.</translation>
+        <translation type="unfinished">pwgen çalıştırılamadı (&quot;%1&quot;). Ayarlarda pwgen programını kontrol edin veya &quot;pwgen&apos;i kullan&quot; seçeneğini kapatın.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3205,12 +3205,12 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Adı veya klasörü, nokta ile başlayanlar listeden gizlenecektir.</translation>
+        <translation type="unfinished">Nokta ile başlayan bir ad veya klasör listede gizlenir.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1, parol deposunun dışındaki ve sembolik bir bağlantı veya geçidin arkasında yer alır.</translation>
+        <translation type="unfinished">%1, parola deposunun dışında, bir sembolik bağlantının veya birleşim noktasının arkasında bulunuyor.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

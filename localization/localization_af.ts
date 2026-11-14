@@ -1262,19 +1262,19 @@ e-pos</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die lys bevat meer as een stoor-ID-reël.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Die ID-lyn vir die stoor is foutief: %1</translation>
+        <translation type="unfinished">Die stoor-ID-reël is misvorm: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Die lys bevat &apos;n lyn met &apos;n ID, maar geen lyn vir generasie nie.</translation>
+        <translation type="unfinished">Die lys bevat &apos;n stoor-ID-reël, maar geen generasiereël nie.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1342,7 +1342,7 @@ e-pos</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Die lys met die ondertekenende ontvanger, %1, bevat geen &quot;Stoor ID&quot;-lyn, terwyl hierdie toestel hierdie &quot;Stoor&quot; ken deur sy ID %2: dit is moontlik vir &apos;n ander &quot;Stoor&quot; wat daar geskep is en hier gekopieer is, of deur &apos;n ouer QtPass. Die persoon met die ondertekeningsleutel kan toegang kry deur &quot;Gebruikers&quot; oop te maak, die ontvangers weer te kies en te &quot;Stoor&quot;, wat dan die &quot;Stoor ID&quot;-lyn skryf.</translation>
+        <translation type="unfinished">Die ondertekende ontvangerslys %1 bevat geen stoor-ID-reël nie, terwyl hierdie toestel hierdie stoor aan sy ID %2 ken: dit is moontlik vir &apos;n ander stoor geskryf en hierheen gekopieer, of deur &apos;n ouer QtPass. &apos;n Houer van die ondertekeningsleutel kom hier verby deur Gebruikers te open, die ontvangers opnuut te kies en te stoor, wat die stoor-ID-reël skryf.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1587,7 +1587,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Die Git-repo van die wagwoordstoor bevat lêere wat nog nie geintegras het nie. Los die konflik met Git op voor jy weer enkripteer.</translation>
+        <translation type="unfinished">Die Git-repositorie van die wagwoordstoor het onsaamgevoegde lêers. Los die konflik met Git op voordat jy herenkripteer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2847,12 +2847,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Verste konfolder</translation>
+        <translation type="unfinished">Versteekte lêergids</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">&apos;n Lêergids wat met &apos;n punt begin, sal uit die lys verberg word: %1</translation>
+        <translation type="unfinished">&apos;n Lêergids wat met &apos;n punt begin, sou uit die lys versteek word: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3056,7 +3056,7 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Wagwoordgenerering is nie suksesvol nie</translation>
+        <translation type="unfinished">Wagwoordgenerering het misluk</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3167,12 +3167,12 @@ Gaan voort?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Die Git-repo van die wagwoordstoor is in die middel van &apos;n %1. Maak dit voltooi of beëindig dit met Git voor jy die wagwoordstoor verander, anders kan wat jy verander, verdwyn.</translation>
+        <translation type="unfinished">Die Git-repositorie van die wagwoordstoor is in die middel van &apos;n %1. Voltooi of staak dit met Git voordat jy die wagwoordstoor verander, anders kan jou veranderinge verlore gaan.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Die wagwoordstoor word opdater. (’n Git-trek is in gang). Wacht totdat dit voltooi is, en probeer dan weer.</translation>
+        <translation type="unfinished">Die wagwoordstoor word tans opgedateer (&apos;n Git pull is aan die gang). Wag totdat dit klaar is en probeer dan weer.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3360,12 +3360,12 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">&apos;n Naam of lêergids wat met &apos;n punt begin, sal uit die lys verberg word.</translation>
+        <translation type="unfinished">&apos;n Naam of lêergids wat met &apos;n punt begin, sou uit die lys versteek word.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 is agter &apos;n simboliese skakel of kruispunt, buig van die wagwoordstoor.</translation>
+        <translation type="unfinished">%1 lê agter &apos;n simboliese skakel of junction, buite die wagwoordstoor.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

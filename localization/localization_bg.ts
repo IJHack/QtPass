@@ -584,7 +584,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Скрий всяко поле</translation>
+        <translation type="unfinished">Скриване на всички полета</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Когато хранилището за пароли няма собствено Git хранилище, да се използва това в папка над него. Изключено по подразбиране, както при pass, така че хранилище за пароли, намиращо се в друго Git хранилище (например dotfiles), никога да не бъде записано в къмит или изпратено там по погрешка. Само за нативен Git: pass винаги спира при хранилището за пароли.</translation>
+        <translation type="unfinished">Когато хранилището за пароли няма собствен Git репозиторий, да се използва този в папка над него. Изключено по подразбиране, както при pass, така че хранилище за пароли в друг репозиторий (например dotfiles) никога да не бъде къмитнато или изпратено там по погрешка. Само за нативен Git: pass винаги спира при хранилището за пароли.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 подписва със същия ключ и за друго хранилище. Списък с получатели, подписан за едното от тези хранилища, се приема и в другото: използвайте отделен ключ за подписване за всяко хранилище с различни получатели.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass записва промените в %1 в Git хранилището в %2: при двоеточие в пътя на хранилището за пароли pass не може да ограничи Git до него. Изпълнете &quot;git init&quot; в хранилището за пароли или използвайте нативен Git/GPG.</translation>
+        <translation type="unfinished">pass къмитва промените в %1 в Git репозитория в %2: при двоеточие в пътя на хранилището за пароли pass не може да ограничи Git до хранилището. Изпълнете &quot;git init&quot; в хранилището за пароли или използвайте нативен Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1262,19 +1262,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът съдържа повече от един ред с идентификатор на хранилището.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Редът с идентификатор на хранилището е неправилно оформен: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът съдържа ред с идентификатор на хранилището, но не и ред за поколение.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1342,7 +1342,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Списъкът с подписани получатели %1 не съдържа ред със идентификатор на хранилището, докато това устройство го познава по неговия идентификатор %2: може би е бил предназначен за друго хранилище и копиран тук, или от по-стара версия на QtPass. Притежателят на ключа за подписи се придвижва чрез отваряне на &quot;Потребители&quot;, избиране отново на получателите и запазване, което пише реда с идентификатор на хранилището.</translation>
+        <translation type="unfinished">Подписаният списък с получатели %1 не съдържа ред с идентификатор на хранилището, а това устройство познава хранилището по неговия идентификатор %2: списъкът може да е записан за друго хранилище и копиран тук или да е записан от по-стара версия на QtPass. Притежател на ключа за подписване може да продължи, като отвори „Потребители“, избере получателите наново и запази, което записва реда с идентификатор на хранилището.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1587,7 +1587,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Git репозиторият на хранилището съдържа необединени файлове. Разрешете конфликта с Git, преди да шифровате отново.</translation>
+        <translation type="unfinished">Git репозиторият на хранилището за пароли съдържа неслети файлове. Разрешете конфликта с Git, преди да криптирате повторно.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1706,7 +1706,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 е, или се крие зад, символичен линк или връзка след извличане. Това към какво сочи не е част от хранилището на паролите и остава непроменено.</translation>
+        <translation type="unfinished">След pull %1 е символна връзка или junction, или се намира зад такава. Това, към което тя сочи, не е част от хранилището за пароли и остава непокътнато.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2804,7 +2804,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Папка, започваща с точка, ще бъде скрита от списъка: %1</translation>
+        <translation type="unfinished">Папка, чието име започва с точка, би била скрита от списъка: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3138,7 +3138,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Актуализиране в процес</translation>
+        <translation type="unfinished">Актуализацията е в ход</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3321,7 +3321,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Име или папка, започващи с точка, ще бъдат скрити от списъка.</translation>
+        <translation type="unfinished">Име или папка, започващи с точка, биха били скрити от списъка.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>

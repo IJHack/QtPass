@@ -1331,7 +1331,7 @@ URL
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Потписана листа прималаца %1 не садржи ред са ИД-јем складишта, а овај уређај зна ово складиште по ИД-ју %2: можда је написана за друго складиште и копирана овде, или ју је написао старији QtPass. Власник кључа за потписивање то решава тако што отвори Кориснике, поново изабере примаоце и сачува, чиме се уписује ред са ИД-јем складишта.</translation>
+        <translation type="unfinished">Потписана листа прималаца %1 не садржи ред са ИД-јем складишта, а овај уређај зна ово складиште по ИД-ју %2: можда је написана за друго складиште и копирана овде, или ју је написао старији QtPass. Власник кључа за потписивање пролази даље тако што отвори „Корисници“, поново изабере примаоце и сачува, чиме се уписује ред са ИД-јем складишта.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1696,7 +1696,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 је, или се налази иза, симболичке везе или споја након извучења. Оно ка шта указује није део складишта лозинки и остаје нетакнуто.</translation>
+        <translation type="unfinished">%1 је након pull симболичка веза или тачка спајања, или се налази иза такве везе. Оно на шта та веза показује није део складишта лозинки и остаје нетакнуто.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -3350,7 +3350,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 се налази иза симболичке везе или споја, ван складишта лозинки.</translation>
+        <translation type="unfinished">%1 се налази иза симболичке везе или тачке спајања, ван складишта лозинки.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

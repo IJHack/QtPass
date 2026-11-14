@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Wurden, skieden troch komma&apos;s. In fjild telt mei as de namme ien derfan as hiele wurden befettet, mei haad- of lytse letters: &quot;key&quot; ferberget &quot;API key&quot;, net &quot;keyboard layout&quot;. Der wurdt dus leaver tefolle ferburgen: ek &quot;Public key&quot; en &quot;Password hint&quot; wurde ferburgen; helje in wurd fuort om se te toanen.</translation>
+        <translation type="unfinished">Wurden, skieden troch komma&apos;s. In fjild telt mei as de namme ien derfan as hiele wurden befettet, los fan haad- of lytse letters: &quot;key&quot; ferberget &quot;API key&quot;, net &quot;keyboard layout&quot;. Der wurdt dus leaver tefolle ferburgen: ek &quot;Public key&quot; en &quot;Password hint&quot; wurde ferburgen; helje in wurd fuort om se te toanen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -604,12 +604,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Ien fjildnamme per rigel. In rigel lykas &quot;# secret: pin, cvv&quot; markearret fjilden dy&apos;t krekt as it wachtwurd ferburgen wurde, salang&apos;t &quot;Wachtwurd ferbergje&quot; oan stiet. Deselde rigel wurket ek yn it .templates-bestân fan de opslach, dêr&apos;t er foar elke yngong fan de opslach jildt, net allinnich foar dy&apos;t mei dat sjabloan makke binne.</translation>
+        <translation type="unfinished">Ien fjildnamme per rigel. In rigel lykas &quot;# secret: pin, cvv&quot; markearret fjilden dy&apos;t krekt as it wachtwurd ferburgen wurde, salang&apos;t &quot;Wachtwurd ferbergje&quot; oan stiet. Deselde rigel wurket ek yn it .templates-bestân fan de opslach, dêr&apos;t er foar elke ynfier fan de opslach jildt, net allinnich foar dy&apos;t mei dat sjabloan makke binne.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">As de opslach gjin eigen Git-repository hat, brûk dan dy yn in map derboppe. Standert út, lykas by pass, sadat in opslach binnen in oar repository (dotfiles, bygelyks) dêr nea by fersin commit of pusht wurdt. Allinnich Ynboude Git: pass stopt altyd by de opslach.</translation>
+        <translation type="unfinished">As de opslach gjin eigen Git-repository hat, brûk dan dat yn in map derboppe. Standert út, lykas by pass, sadat in opslach binnen in oar repository (dotfiles, bygelyks) dêr nea by fersin commit of pusht wurdt. Allinnich ynboude Git: pass stopt altyd by de opslach.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ûndertekenet mei deselde kaai foar in oare opslach. In ûntfangerslist dy&apos;t foar ien fan dizze opslaggen ûndertekene is, wurdt yn de oare akseptearre: brûk in aparte undertekeningskaai foar elke opslach wêrfan de ûntfangers ferskille.</translation>
+        <translation type="unfinished">%1 ûndertekenet mei deselde kaai foar in oare opslach. In ûntfangerslist dy&apos;t foar ien fan dizze opslaggen ûndertekene is, wurdt yn de oare akseptearre: brûk in aparte ûndertekeningskaai foar elke opslach wêrfan&apos;t de ûntfangers ferskille.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass commit feroarings yn %1 nei it Git-repository yn %2: mei in dûbele punt yn it paad fan de opslach kin pass Git net ta de opslach beheine. Fier &quot;git init&quot; út yn de opslach, of brûk Ynboude Git/GPG.</translation>
+        <translation type="unfinished">pass commit feroarings yn %1 nei it Git-repository yn %2: mei in dûbele punt yn it paad fan de opslach kin pass Git net ta de opslach beheine. Fier &quot;git init&quot; út yn de opslach, of brûk ynboude Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1336,13 +1336,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">De lyst fan de oantekende ontvanger %1 wie skreaan foar in oare wachtwurdopslach (opslag-ID %2; dit apparaat kent it as %3) en wurdt net brûwd. It kin hier kopiearre wurde út in opslag dy&apos;t mei dezelfde key is ûnderteken. As it dêrmei wer ynstallearre waard, dan fergets fjerjen fan %4 de opslag-ID&apos;s dy&apos;t dit apparaat kent.</translation>
+        <translation type="unfinished">De ûndertekene ûntfangerslist %1 is skreaun foar in oare wachtwurdopslach (opslach-ID %2; dit apparaat kent dizze opslach as %3) en wurdt net brûkt. Mooglik is er hjirhinne kopiearre út in opslach dy&apos;t mei deselde kaai ûndertekene is. As dizze opslach ynstee opnij ynrjochte is, ferjit it fuortsmiten fan %4 de opslach-ID&apos;s dy&apos;t dit apparaat ken.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">De ûndertekene list fan ûntfangers %1 hat gjin opslach-ID-rigel, wylst dit apparaat dizze opslach ken ûnder ID %2: de list is miskien foar in oare opslach skreaun en hjirhinne kopiearre, of troch in âldere QtPass. Wa&apos;t de ûndertekeningskaai hat, komt fierder troch Brûkers te iepenjen, de ûntfangers opnij te kiezen en op te slaan; dat skriuwt de opslach-ID-rigel.</translation>
+        <translation type="unfinished">De ûndertekene ûntfangerslist %1 hat gjin opslach-ID-rigel, wylst dit apparaat dizze opslach ken ûnder syn ID %2: de list is mooglik foar in oare opslach skreaun en hjirhinne kopiearre, of troch in âldere QtPass. In hâlder fan de ûndertekeningskaai komt fierder troch Brûkers te iepenjen, de ûntfangers opnij te selektearjen en te bewarjen, wat de opslach-ID-rigel skriuwt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1587,7 +1587,7 @@ Jo sille gjin nij tafoege wachtwurden ûntsiferje kinne!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">De Git-repository fan de wachtwurdopslach hat bestannen dy&apos;t net gearfoege binne. Los it konflikt op mei Git foardat jo opnij fersiferje.</translation>
+        <translation type="unfinished">It Git-repository fan de wachtwurdopslach hat bestannen dy&apos;t net gearfoege binne. Los it konflikt op mei Git foardat jo opnij fersiferje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -3084,7 +3084,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Wachtwurdgenerator mislukke</translation>
+        <translation type="unfinished">Wachtwurd generearje mislearre</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3195,12 +3195,12 @@ Trochgean?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">De Git-repository fan de wachtwurdopslach is midden yn in %1. Rûn dy ôf of brek dy ôf mei Git foardat jo de wachtwurdopslach feroarje, oars kinne jo wizigings ferlern gean.</translation>
+        <translation type="unfinished">It Git-repository fan de wachtwurdopslach is midden yn in %1. Rûn dy ôf of brek dy ôf mei Git foardat jo de wachtwurdopslach feroarje, oars kinne jo feroarings ferlern gean.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Wachtwurdopslach is opdaterje (in Git pull is yn gang). Wart oant it klear is, en dan try derweer.</translation>
+        <translation type="unfinished">De wachtwurdopslach wurdt bywurke (der is in Git pull dwaande). Wachtsje oant dat klear is en besykje it dan opnij.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3393,7 +3393,7 @@ Trochgean?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 leit efter in symboalyske keppeling of junction, bûten de wachtwurdopslach.</translation>
+        <translation type="unfinished">%1 leit efter in symbolyske keppeling of junction, bûten de wachtwurdopslach.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3434,8 +3434,8 @@ Trochgean?</translation>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Dit item hat %n rigel, te folle om hjir te bewurkjen.</numerusform>
-            <numerusform>Dit item hat %n rigels, te folle om hjir te bewurkjen.</numerusform>
+            <numerusform>Dizze ynfier hat %n rigel, te folle om hjir te bewurkjen.</numerusform>
+            <numerusform>Dizze ynfier hat %n rigels, te folle om hjir te bewurkjen.</numerusform>
         </translation>
     </message>
 </context>

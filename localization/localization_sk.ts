@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Všetky polia za tlačidlom &quot;Oko&quot;, nielen tajné informácie: pre zdieľané obrazovky a prezentácie. Poznámky pod jednotlivými poliami a kód OTP zostávajú viditeľné; funkcia &quot;Skryť obsah&quot; ich tiež skrýva.</translation>
+        <translation type="unfinished">Všetky polia skryté za tlačidlom s okom, nielen tajné údaje: pre zdieľané obrazovky a prezentácie. Poznámky pod poľami a kód OTP zostávajú viditeľné; &quot;Skryť obsah&quot; skryje aj tie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1263,19 +1263,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam obsahuje viac ako jeden riadok s ID úložiska.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Riadok s ID úložiska má nesprávny formát: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zoznam obsahuje riadok s ID úložiska, ale žiadny riadok generácie.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1343,7 +1343,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Podpísaný zoznam príjemcov %1 neobsahuje riadok s ID úložiska, hoci toto zariadenie pozná toto úložisko podľa jeho ID %2: zoznam mohol byť zapísaný pre iné úložisko a skopírovaný sem, alebo ho zapísal starší QtPass. Držiteľ podpisového kľúča to prekoná tak, že otvorí Uživatelia, nanovo vyberie príjemcov a uloží ich, čím sa zapíše riadok s ID úložiska.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1588,7 +1588,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Úložisko Git, kde je uložené heslo, obsahuje súbory, ktoré neboli zmergané. Vyriešte konflikt v Gitu pred znovušifrovaním.</translation>
+        <translation type="unfinished">Repozitár Git úložiska hesiel obsahuje nezlúčené súbory. Pred opätovným šifrovaním vyriešte konflikt v Gite.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1708,7 +1708,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 je, alebo ukrýva sa za, symbolickým odkazom alebo pripojením po vytvorení. To, kam ukazuje, nie je súčasťou správy a zostáva nezmenené.</translation>
+        <translation type="unfinished">%1 je po stiahnutí (pull) symbolický odkaz alebo spojenie (junction), alebo sa nachádza za takým odkazom. Cieľ odkazu nie je súčasťou úložiska hesiel a zostane nedotknutý.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2876,12 +2876,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Skrytá priečina</translation>
+        <translation type="unfinished">Skrytý adresár</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Zložka, ktorá začína bodom, bude skrytá zo zoznamu: %1</translation>
+        <translation type="unfinished">Adresár, ktorého názov začína bodkou, by bol v zozname skrytý: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3085,7 +3085,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Generovanie hesla neúspešné</translation>
+        <translation type="unfinished">Generovanie hesla zlyhalo</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3196,17 +3196,17 @@ Pokračovať?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Úložisko Git v správnom riadení hesiel je aktuálne v stave %1. Dokončte ho alebo ho zrušte pomocou Git, pred tým, ako budete meniť úložisko hesiel, inak môžete stratiť uložené údaje.</translation>
+        <translation type="unfinished">Repozitár Git úložiska hesiel je uprostred operácie %1. Pred zmenou úložiska hesiel ju dokončite alebo zrušte pomocou Gitu, inak sa vaše zmeny môžu stratiť.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Úložisko hesiel sa aktualizuje (prebieha Git pull). Počkajte, kým to nebude hotové, a potom skúste to znovu.</translation>
+        <translation type="unfinished">Úložisko hesiel sa aktualizuje (prebieha Git pull). Počkajte, kým sa aktualizácia dokončí, a potom to skúste znova.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Aktualizácia v priebehu</translation>
+        <translation type="unfinished">Prebieha aktualizácia</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3389,12 +3389,12 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Meno alebo priečinok, ktoré začínajú bodom, budú skryté zo zoznamu.</translation>
+        <translation type="unfinished">Názov alebo adresár, ktorý začína bodkou, by bol v zozname skrytý.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 sa nachádza za symbolickým odkazom alebo uzlom, mimo uložiště hesiel.</translation>
+        <translation type="unfinished">%1 sa nachádza za symbolickým odkazom alebo spojením (junction), mimo úložiska hesiel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3435,9 +3435,9 @@ Pokračovať?</translation>
         <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
-            <numerusform>Táto položka má %n riadok, príliš veľa na úpravu tu.</numerusform>
-            <numerusform>Táto položka má %n riadky, príliš veľa na úpravu tu.</numerusform>
-            <numerusform>Táto položka má %n riadkov, príliš veľa na úpravu tu.</numerusform>
+            <numerusform>Táto položka má %n riadok, to je príliš veľa na úpravy na tomto mieste.</numerusform>
+            <numerusform>Táto položka má %n riadky, to je príliš veľa na úpravy na tomto mieste.</numerusform>
+            <numerusform>Táto položka má %n riadkov, to je príliš veľa na úpravy na tomto mieste.</numerusform>
         </translation>
     </message>
 </context>

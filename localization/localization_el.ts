@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Λέξεις, χωρισμένες με κόμματα. Ένα πεδίο μετράει όταν το όνομά του περιέχει μία από αυτές ως ολόκληρες λέξεις, ανεξαρτήτως πεζών ή κεφαλαίων: το &quot;key&quot; κρύβει το &quot;API key&quot;, όχι το &quot;keyboard layout&quot;. Έτσι προτιμά να κρύβει περισσότερα: τα &quot;Public key&quot; και &quot;Password hint&quot; κρύβονται επίσης· αφαιρέστε μια λέξη για να εμφανιστούν.</translation>
+        <translation type="unfinished">Λέξεις, χωρισμένες με κόμματα. Ένα πεδίο μετράει όταν το όνομά του περιέχει μία από αυτές ως ολόκληρες λέξεις, ανεξαρτήτως πεζών ή κεφαλαίων: το &quot;key&quot; κρύβει το &quot;API key&quot;, όχι το &quot;keyboard layout&quot;. Έτσι προτιμά να κρύβει περισσότερα παρά λιγότερα: τα &quot;Public key&quot; και &quot;Password hint&quot; κρύβονται επίσης· αφαιρέστε μια λέξη για να εμφανιστούν.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Κάθε πεδίο πίσω από το κουμπί &quot;Οπτική Προβολή&quot;, όχι μόνο τα μυστικά: για κοινές οθόνες και παρουσιάσεις. Οι σημειώσεις κάτω από τα πεδία και ο κωδικός OTP παραμένουν ορατοί, ενώ η επιλογή &quot;Απόκρυψη περιεχομένου&quot; τους κρύβει επίσης.</translation>
+        <translation type="unfinished">Κάθε πεδίο πίσω από το κουμπί με το μάτι, όχι μόνο τα μυστικά: για κοινόχρηστες οθόνες και παρουσιάσεις. Οι σημειώσεις κάτω από τα πεδία και ο κωδικός OTP παραμένουν ορατά· η επιλογή &quot;Απόκρυψη περιεχομένου&quot; κρύβει και αυτά.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -705,7 +705,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 υπογράφει με το ίδιο κλειδί για άλλον χώρο αποθήκευσης. Μια λίστα παραληπτών υπογεγραμμένη για έναν από αυτούς τους χώρους αποθήκευσης γίνεται δεκτή και στον άλλο: χρησιμοποιήστε ξεχωριστό κλειδί υπογραφής για κάθε χώρο αποθήκευσης με διαφορετικούς παραλήπτες.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1222,19 +1222,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα περιέχει περισσότερες από μία γραμμές αναγνωριστικού χώρου αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η γραμμή αναγνωριστικού χώρου αποθήκευσης έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η λίστα περιέχει γραμμή αναγνωριστικού χώρου αποθήκευσης, αλλά όχι γραμμή γενιάς.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1296,13 +1296,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Η λίστα με τους υπογεγραμμένους αποδέκτες %1 έχει καταχωρηθεί σε άλλο αποθηκευτικό χώρο (ID αποθηκευτικού χώρου %2, το οποίο γνωρίζει αυτόν τον αποθηκευτικό χώρο ως %3) και δεν χρησιμοποιείται. Ίσως να έχει αντιγραφεί εδώ από έναν αποθηκευτικό χώρο που υπογράφτηκε με το ίδιο κλειδί. Εάν ο αποθηκευτικός χώρος αυτός επαναρυθμιστεί, η αφαίρεση του %4 θα ξεχάσει τα ID αποθηκευτικών χώρων που γνωρίζει αυτή η συσκευή.</translation>
+        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 γράφτηκε για άλλον χώρο αποθήκευσης κωδικών πρόσβασης (αναγνωριστικό χώρου αποθήκευσης %2· αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης ως %3) και δεν χρησιμοποιείται. Μπορεί να αντιγράφηκε εδώ από έναν χώρο αποθήκευσης που υπογράφεται με το ίδιο κλειδί. Αν αντίθετα αυτός ο χώρος αποθήκευσης ρυθμίστηκε από την αρχή, η αφαίρεση του %4 ξεχνά τα αναγνωριστικά χώρων αποθήκευσης που γνωρίζει αυτή η συσκευή.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή αναγνωριστικού του χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: μπορεί να γράφτηκε για άλλον χώρο αποθήκευσης και να αντιγράφηκε εδώ, ή από παλαιότερο QtPass. Ο κάτοχος του κλειδιού υπογραφής μπορεί να συνεχίσει ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους παραλήπτες και αποθηκεύοντας, κάτι που γράφει τη γραμμή αναγνωριστικού.</translation>
+        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή αναγνωριστικού χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: μπορεί να γράφτηκε για άλλον χώρο αποθήκευσης και να αντιγράφηκε εδώ, ή να γράφτηκε από παλαιότερο QtPass. Ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους «Χρήστες», επιλέγοντας εκ νέου τους παραλήπτες και αποθηκεύοντας, κάτι που γράφει τη γραμμή αναγνωριστικού χώρου αποθήκευσης.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1547,7 +1547,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Το αποθετήριο Git του διαχειριστή κωδικών πρόσβασης περιέχει αρχεία που δεν έχουν συγχωνευτεί. Λύστε τη σύγκρουση με το Git πριν από την επανακρυπτογράφηση.</translation>
+        <translation type="unfinished">Το αποθετήριο Git του χώρου αποθήκευσης κωδικών πρόσβασης περιέχει αρχεία που δεν έχουν συγχωνευτεί. Επιλύστε τη σύγκρουση με το Git πριν από την επανακρυπτογράφηση.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1628,7 +1628,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Δεν ήταν δυνατός ο έλεγχος για μη συγχωνευμένα αρχεία στην αποθήκη μετά το pull. Ελέγξτε την με το git πριν από την επανακρυπτογράφηση.</translation>
+        <translation type="unfinished">Δεν ήταν δυνατός ο έλεγχος του χώρου αποθήκευσης για μη συγχωνευμένα αρχεία μετά το pull. Ελέγξτε τον με το git πριν από την επανακρυπτογράφηση.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1666,7 +1666,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 είναι, ή βρίσκεται πίσω, ενός συμβολικού συνδέσμου ή διακλάδωσης μετά την εξαγωγή. Αυτό που δείχνει δεν αποτελεί μέρος του αποθετηρίου κωδικών πρόσβασης και αφήνεται ανέπαφο.</translation>
+        <translation type="unfinished">Μετά το pull, το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και παραμένει ανέπαφος.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2646,12 +2646,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Κρυφό φάκελο</translation>
+        <translation type="unfinished">Κρυφός φάκελος</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Ένα φάκελο που ξεκινά με ένα τελεία θα είναι κρυφό από τη λίστα: %1</translation>
+        <translation type="unfinished">Ένας φάκελος που ξεκινά με τελεία θα ήταν κρυμμένος από τη λίστα: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2981,12 +2981,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Το αποθετήριο Git του διαχειριστή κωδικών πρόσβασης βρίσκεται στη μέση μιας %1. Ολοκληρώστε ή ακυρώστε το με το Git πριν αλλάξετε τον διαχειριστή κωδικών πρόσβασης, αλλιώς αυτά που αλλάζετε μπορεί να χαθούν.</translation>
+        <translation type="unfinished">Το αποθετήριο Git του χώρου αποθήκευσης κωδικών πρόσβασης βρίσκεται στη μέση ενός %1. Ολοκληρώστε ή ακυρώστε το με το Git πριν αλλάξετε τον χώρο αποθήκευσης κωδικών πρόσβασης, αλλιώς όσα αλλάξετε μπορεί να χαθούν.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Η αποθήκευση κωδικών πρόσβασης ενημερώνεται (ένα Git έλξη βρίσκεται σε εξέλιξη). Περιμένετε μέχρι να ολοκληρωθεί, και μετά δοκιμάστε ξανά.</translation>
+        <translation type="unfinished">Ο χώρος αποθήκευσης κωδικών πρόσβασης ενημερώνεται (εκτελείται Git pull). Περιμένετε μέχρι να ολοκληρωθεί και μετά δοκιμάστε ξανά.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3174,12 +3174,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Ένα όνομα ή φάκελο που ξεκινά με ένα κόμμα θα ήταν κρυφό από τη λίστα.</translation>
+        <translation type="unfinished">Ένα όνομα ή ένας φάκελος που ξεκινά με τελεία θα ήταν κρυμμένο από τη λίστα.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">Το %1 βρίσκεται πίσω από έναν συμβολικό σύνδεσμο ή διασύνδεση, εκτός αποθήκης κωδικών πρόσβασης.</translation>
+        <translation type="unfinished">Το %1 βρίσκεται πίσω από συμβολικό σύνδεσμο ή junction, εκτός του χώρου αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

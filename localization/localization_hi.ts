@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">जब स्टोर के पास अपनी कोई Git रिपॉजिटरी न हो, तो उसके ऊपर वाले फ़ोल्डर में मौजूद रिपॉजिटरी का उपयोग करें। pass की तरह ही डिफ़ॉल्ट रूप से बंद, ताकि किसी दूसरी रिपॉजिटरी (जैसे dotfiles) के अंदर का स्टोर गलती से कभी वहाँ कमिट या पुश न हो। केवल नेटिव Git: pass हमेशा स्टोर पर ही रुकता है।</translation>
+        <translation type="unfinished">जब स्टोर की अपनी कोई गिट रिपॉजिटरी न हो, तो उसके ऊपर वाले फ़ोल्डर की रिपॉजिटरी का उपयोग करें। pass की तरह डिफ़ॉल्ट रूप से बंद, ताकि किसी दूसरी रिपॉजिटरी (जैसे dotfiles) के अंदर का स्टोर गलती से कभी वहाँ कमिट या पुश न हो। केवल नेटिव गिट: pass हमेशा स्टोर पर ही रुकता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">आँख के बटन के पीछे का हर फ़ील्ड, केवल गुप्त जानकारी ही नहीं: साझा स्क्रीन और प्रस्तुतियों के लिए। फ़ील्ड के नीचे के नोट्स और OTP कोड दिखाई देते रहते हैं; &quot;सामग्री छिपाएं&quot; उन्हें भी छिपा देता है।</translation>
+        <translation type="unfinished">हर फ़ील्ड आँख वाले बटन के पीछे छिपा रहता है, केवल गुप्त फ़ील्ड ही नहीं: साझा स्क्रीन और प्रस्तुति के लिए। फ़ील्ड के नीचे के नोट्स और OTP कोड दिखाई देते रहते हैं; &quot;सामग्री छिपाएं&quot; उन्हें भी छिपा देता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass %1 में किए गए बदलावों को %2 की Git रिपॉजिटरी में कमिट करता है: स्टोर के पथ में कोलन होने पर pass, Git को स्टोर तक सीमित नहीं रख सकता। स्टोर में &quot;git init&quot; चलाएँ, या नेटिव Git/GPG का उपयोग करें।</translation>
+        <translation type="unfinished">pass %1 में किए गए बदलावों को %2 की गिट रिपॉजिटरी में कमिट करता है: स्टोर के पथ में कोलन होने पर pass गिट को स्टोर तक सीमित नहीं रख सकता। स्टोर में &quot;git init&quot; चलाएँ, या नेटिव गिट/जीपीजी का उपयोग करें।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">इस सूची में एक से अधिक स्टोर आईडी लाइनें मौजूद हैं।</translation>
+        <translation type="unfinished">इस सूची में एक से अधिक स्टोर आईडी पंक्तियाँ हैं।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">स्टोर आईडी पंक्ति गलत रूप से दी गई है: %1</translation>
+        <translation type="unfinished">स्टोर आईडी पंक्ति का प्रारूप गलत है: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">इस सूची में एक स्टोर आईडी है, लेकिन कोई जनरेशन लाइन नहीं।</translation>
+        <translation type="unfinished">इस सूची में स्टोर आईडी पंक्ति है, लेकिन कोई जनरेशन पंक्ति नहीं है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1292,13 +1292,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 किसी अन्य पासवर्ड स्टोर के लिए लिखी गई थी (स्टोर आईडी %2; यह डिवाइस इस स्टोर को %3 के रूप में जानता है) और इसका उपयोग नहीं किया जा रहा है। संभवतः इसे उसी कुंजी से हस्ताक्षरित किसी स्टोर से यहाँ कॉपी किया गया था। यदि इसके बजाय इस स्टोर को दोबारा स्थापित किया गया था, तो %4 को हटाने से वे स्टोर आईडी भूल जाती हैं जिन्हें यह डिवाइस जानता है।</translation>
+        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 किसी अन्य पासवर्ड स्टोर के लिए लिखी गई थी (स्टोर आईडी %2; यह डिवाइस इस स्टोर को %3 के रूप में जानता है) और इसका उपयोग नहीं किया जाता। हो सकता है कि इसे उसी कुंजी से हस्ताक्षरित किसी स्टोर से यहाँ कॉपी किया गया हो। यदि इसके बजाय यह स्टोर दोबारा सेट अप किया गया था, तो %4 को हटाने पर यह डिवाइस अपनी जानी हुई स्टोर आईडी भूल जाता है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">हस्ताक्षरकर्ता की सूची %1 में कोई स्टोर आईडी पंक्ति नहीं है, जबकि यह डिवाइस इस स्टोर को उसके आईडी %2 से पहचानता है: संभवतः इसे किसी अन्य स्टोर के लिए लिखा गया था और यहां कॉपी किया गया था, या किसी पुराने QtPass द्वारा। हस्ताक्षर कुंजी धारक &quot;उपयोगकर्ता&quot; खोलकर, फिर से प्राप्तकर्ताओं का चयन करके और सहेजकर प्रवेश करते हैं, जिससे स्टोर आईडी पंक्ति लिखी जाती है।</translation>
+        <translation type="unfinished">हस्ताक्षरित प्राप्तकर्ता सूची %1 में कोई स्टोर आईडी पंक्ति नहीं है, जबकि यह डिवाइस इस स्टोर को उसकी आईडी %2 से जानता है: हो सकता है कि इसे किसी अन्य स्टोर के लिए लिखकर यहाँ कॉपी किया गया हो, या किसी पुराने QtPass ने लिखा हो। हस्ताक्षर कुंजी का धारक &quot;उपयोगकर्ता&quot; खोलकर, प्राप्तकर्ताओं को फिर से चुनकर और सहेजकर आगे बढ़ सकता है; इससे स्टोर आईडी पंक्ति लिख दी जाती है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1543,7 +1543,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">पासवर्ड स्टोर की Git रिपॉजिटरी में ऐसे फाइलें हैं जिन्हें मर्ज नहीं किया गया है। फिर से एन्क्रिप्ट करने से पहले, Git का उपयोग करके टकराव को हल करें।</translation>
+        <translation type="unfinished">पासवर्ड स्टोर की गिट रिपॉजिटरी में ऐसी फ़ाइलें हैं जो मर्ज नहीं हुई हैं। फिर से एन्क्रिप्ट करने से पहले गिट से टकराव हल करें।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">छिपा फ़ोल्डर</translation>
+        <translation type="unfinished">छिपा हुआ फ़ोल्डर</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">एक फ़ोल्डर जो एक डॉट से शुरू होता है, वह सूची से छिपा रहेगा: %1</translation>
+        <translation type="unfinished">डॉट से शुरू होने वाला फ़ोल्डर सूची में छिपा रहेगा: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2819,7 +2819,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">पासवर्ड जनरेशन विफल</translation>
+        <translation type="unfinished">पासवर्ड उत्पन्न करना विफल रहा</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -2930,12 +2930,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">पासवर्ड स्टोर की Git रिपॉजिटरी एक %1 के बीच में है। पासवर्ड स्टोर को बदलने से पहले, Git का उपयोग करके इसे पूरा करें या रद्द करें, अन्यथा जो भी बदलाव आप करेंगे वह खो सकते हैं।</translation>
+        <translation type="unfinished">पासवर्ड स्टोर की गिट रिपॉजिटरी में एक %1 अधूरा है। पासवर्ड स्टोर बदलने से पहले गिट से इसे पूरा या रद्द करें, नहीं तो आपके बदलाव खो सकते हैं।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">पासवर्ड स्टोरेज को अपडेट किया जा रहा है (एक &quot;गिट पुल&quot; चल रहा है)। जब तक यह पूरा न हो जाए, तब तक प्रतीक्षा करें, फिर दोबारा प्रयास करें।</translation>
+        <translation type="unfinished">पासवर्ड स्टोर अपडेट किया जा रहा है (गिट पुल चल रहा है)। इसके पूरा होने तक प्रतीक्षा करें, फिर दोबारा प्रयास करें।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">नाम या फ़ोल्डर जो एक डॉट से शुरू होता है, वह सूची से छिपा रहेगा।</translation>
+        <translation type="unfinished">डॉट से शुरू होने वाला नाम या फ़ोल्डर सूची में छिपा रहेगा।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 एक सिम्बॉलिक लिंक या जंक्शन के पीछे है, पासवर्ड स्टोर के बाहर।</translation>
+        <translation type="unfinished">%1 एक सिम्बॉलिक लिंक या जंक्शन के पीछे, पासवर्ड स्टोर के बाहर स्थित है।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

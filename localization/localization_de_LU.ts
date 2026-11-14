@@ -280,7 +280,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines davon als ganze Wörter enthält, unabhängig von Groß- und Kleinschreibung: &quot;key&quot; versteckt &quot;API key&quot;, nicht &quot;keyboard layout&quot;. Im Zweifel wird also eher zu viel versteckt: &quot;Public key&quot; und &quot;Password hint&quot; werden ebenfalls versteckt; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
+        <translation type="unfinished">Wörter, durch Kommas getrennt. Ein Feld zählt, wenn sein Name eines davon als ganzes Wort enthält, unabhängig von Groß- und Kleinschreibung: &quot;key&quot; blendet &quot;API key&quot; aus, nicht &quot;keyboard layout&quot;. Im Zweifel wird also eher zu viel ausgeblendet: &quot;Public key&quot; und &quot;Password hint&quot; werden ebenfalls ausgeblendet; entfernen Sie ein Wort, um sie anzuzeigen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1000"/>
@@ -1342,7 +1342,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicher-ID-Zeile, obwohl dieses Gerät diesen Speicher unter der ID %2 kennt: Sie wurde vielleicht für einen anderen Speicher geschrieben und hierher kopiert, oder von einem älteren QtPass. Wer den Signierschlüssel hat, kommt weiter, indem er Benutzer öffnet, die Empfänger neu auswählt und speichert; das schreibt die Speicher-ID-Zeile.</translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicher-ID-Zeile, obwohl dieses Gerät diesen Passwortspeicher unter seiner ID %2 kennt: Sie wurde vielleicht für einen anderen Passwortspeicher geschrieben und hierher kopiert oder von einem älteren QtPass. Ein Inhaber des Signaturschlüssels kommt weiter, indem er „Benutzer“ öffnet, die Empfänger neu auswählt und speichert; dadurch wird die Speicher-ID-Zeile geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2680,8 +2680,8 @@ Die Wiederverschlüsselung wurde nicht abgeschlossen, daher sind einige oder all
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Die erste %n Übereinstimmung wird angezeigt; für den Rest genauer suchen.</numerusform>
-            <numerusform>Die ersten %n Übereinstimmungen werden angezeigt; für den Rest genauer suchen.</numerusform>
+            <numerusform>Die erste %n Übereinstimmung wird angezeigt; suchen Sie genauer, um den Rest zu sehen.</numerusform>
+            <numerusform>Die ersten %n Übereinstimmungen werden angezeigt; suchen Sie genauer, um den Rest zu sehen.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -3286,7 +3286,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 liegt hinter einem symbolischen Link oder einer Junction, außerhalb des Passwortspeichers.</translation>
+        <translation type="unfinished">%1 liegt hinter einer symbolischen Verknüpfung oder Junction, außerhalb des Passwortspeichers.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

@@ -1346,7 +1346,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">De ondertekende ontvangerslijst %1 bevat geen opslag-ID-regel, terwijl dit apparaat deze opslag kent onder ID %2: de lijst is misschien voor een andere opslag geschreven en hierheen gekopieerd, of door een oudere QtPass. Wie de ondertekeningssleutel heeft, komt verder door Gebruikers te openen, de ontvangers opnieuw te kiezen en op te slaan; dat schrijft de opslag-ID-regel.</translation>
+        <translation type="unfinished">De ondertekende ontvangerslijst %1 bevat geen opslag-ID-regel, terwijl dit apparaat deze opslag kent onder zijn ID %2: de lijst is misschien voor een andere opslag geschreven en hierheen gekopieerd, of door een oudere QtPass. Een houder van de ondertekeningssleutel komt hier voorbij door het venster Gebruikers te openen, de ontvangers opnieuw te kiezen en op te slaan, waarbij de opslag-ID-regel wordt geschreven.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1591,7 +1591,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">De Git-repository van de opslag heeft bestanden die niet zijn samengevoegd. Los het conflict op met Git voordat je opnieuw versleutelt.</translation>
+        <translation type="unfinished">De Git-repository van de opslag heeft niet-samengevoegde bestanden. Los het conflict op met Git voordat u herversleutelt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1672,7 +1672,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation>Kon na de pull niet controleren of de opslag niet-samengevoegde bestanden bevat. Controleer hem met git voordat je opnieuw versleutelt.</translation>
+        <translation type="unfinished">Kon na de pull niet controleren of de opslag niet-samengevoegde bestanden bevat. Controleer de opslag met Git voordat u opnieuw versleutelt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -2631,7 +2631,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je %1 wil verwijderen?</translation>
+        <translation type="unfinished">Weet u zeker dat u %1 wilt verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1117"/>
@@ -2833,7 +2833,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
-        <translation>Weet je zeker dat je %1 en de gehele inhoud wil verwijderen?</translation>
+        <translation type="unfinished">Weet u zeker dat u %1 en de volledige inhoud wilt verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
@@ -3210,7 +3210,7 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">De Git-repository van de opslag zit midden in een %1. Voltooi of annuleer die met Git voordat je de opslag wijzigt, anders kunnen je wijzigingen verloren gaan.</translation>
+        <translation type="unfinished">De Git-repository van de opslag zit midden in een %1. Voltooi of annuleer die met Git voordat u de opslag wijzigt, anders kunnen uw wijzigingen verloren gaan.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3240,7 +3240,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation>%1 kan niet worden gelezen als een lijst met ontvangers (een gewone bestand van maximaal %2), dus er is niets vooraf geselecteerd. Controleer het voordat je hier de ontvangers kiest: OK schrijft een nieuwe lijst over het bestaande bestand.</translation>
+        <translation type="unfinished">%1 kan niet worden gelezen als een lijst met ontvangers (een gewoon bestand van maximaal %2), dus er is niets vooraf geselecteerd. Controleer het voordat u hier de ontvangers kiest: OK schrijft er een nieuwe lijst overheen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3378,7 +3378,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
-        <translation>Het item wordt nog opgeslagen. Het venster toch sluiten? Als het opslaan daarna mislukt, gaat wat je hebt getypt verloren.</translation>
+        <translation type="unfinished">Het item wordt nog opgeslagen. Het venster toch sluiten? Als het opslaan daarna mislukt, gaat wat u hebt getypt verloren.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="273"/>

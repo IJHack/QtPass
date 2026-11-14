@@ -585,12 +585,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Nascondi ogni campo</translation>
+        <translation type="unfinished">Nascondi tutti i campi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Ogni campo dietro il pulsante &quot;Occhio&quot;, non solo i segreti: per condivisione dello schermo e presentazioni. Le note sotto i campi e il codice OTP rimangono visibili; la funzione &quot;Nascondi contenuto&quot; li nasconde anch&apos;essa.</translation>
+        <translation type="unfinished">Tutti i campi dietro il pulsante a forma di occhio, non solo i segreti: per schermi condivisi e presentazioni. Le note sotto i campi e il codice OTP restano visibili; &quot;Nascondi contenuto&quot; nasconde anche questi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -728,7 +728,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass registra le modifiche di %1 nel repository Git in %2: con i due punti nel percorso dell&apos;archivio, pass non può limitare Git all&apos;archivio. Esegui &quot;git init&quot; nell&apos;archivio, oppure usa Git/GPG nativa.</translation>
+        <translation type="unfinished">pass registra le modifiche di %1 nel repository Git in %2: con i due punti nel percorso dell&apos;archivio, pass non può limitare Git all&apos;archivio. Esegui &quot;git init&quot; nell&apos;archivio, oppure usa Git/GPG nativi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1263,19 +1263,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;elenco contiene più di una riga dell&apos;ID dell&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La riga dell&apos;ID dell&apos;archivio è malformata: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L&apos;elenco contiene una riga dell&apos;ID dell&apos;archivio ma nessuna riga di generazione.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1337,13 +1337,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">L&apos;elenco dei destinatari firmato %1 è stato scritto per un altro archivio password (ID dell&apos;archivio %2; questo dispositivo conosce questo archivio come %3) e non viene usato. Potrebbe essere stato copiato qui da un archivio firmato con la stessa chiave. Se invece questo archivio è stato configurato di nuovo, rimuovere %4 fa dimenticare gli ID degli archivi che questo dispositivo conosce.</translation>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 è stato scritto per un altro archivio password (ID dell&apos;archivio %2; questo dispositivo conosce questo archivio come %3) e non viene usato. Potrebbe essere stato copiato qui da un archivio firmato con la stessa chiave. Se invece questo archivio è stato configurato di nuovo, rimuovendo %4 si dimenticano gli ID degli archivi che questo dispositivo conosce.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Lista dei destinatari firmati %1 non contiene la riga &quot;ID archivio&quot;, mentre questo dispositivo conosce l&apos;archivio tramite il suo ID %2: potrebbe essere stata creata per un altro archivio e copiata qui, oppure da una versione precedente di QtPass. Chi possiede la chiave di firma può accedere aprendo &quot;Utenti&quot;, selezionando i destinatari nuovamente e salvando, che scrive la riga &quot;ID archivio&quot;.</translation>
+        <translation type="unfinished">L&apos;elenco firmato dei destinatari %1 non contiene alcuna riga dell&apos;ID dell&apos;archivio, mentre questo dispositivo conosce l&apos;archivio tramite il suo ID %2: potrebbe essere stato scritto per un altro archivio e copiato qui, oppure da una versione precedente di QtPass. Chi possiede la chiave di firma supera il blocco aprendo Utenti, selezionando da capo i destinatari e salvando, il che scrive la riga dell&apos;ID dell&apos;archivio.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1588,7 +1588,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Il repository Git del gestore di password contiene file non uniti. Risolvi il conflitto con Git prima di rieseguire la crittografia.</translation>
+        <translation type="unfinished">Il repository Git dell&apos;archivio password contiene file con conflitti di merge non risolti. Risolvi il conflitto con Git prima di ricifrare.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2884,7 +2884,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Una cartella che inizia con un punto sarà nascosta dall&apos;elenco: %1</translation>
+        <translation type="unfinished">Una cartella che inizia con un punto sarebbe nascosta nell&apos;elenco: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3199,12 +3199,12 @@ Continuare?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Il repository Git del gestore di password è in fase di %1. Completalo o annulla l&apos;operazione con Git prima di modificare il gestore, altrimenti ciò che hai modificato potrebbe andare perso.</translation>
+        <translation type="unfinished">Nel repository Git dell&apos;archivio password è in corso un %1. Completalo o interrompilo con Git prima di modificare l&apos;archivio password, altrimenti le modifiche potrebbero andare perse.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Il database delle password viene aggiornato (è in corso un&apos;operazione di &quot;Git pull&quot;). Aspetti che sia terminato, quindi riprova.</translation>
+        <translation type="unfinished">L&apos;archivio password è in fase di aggiornamento (è in corso un Git pull). Attendi che sia terminato, quindi riprova.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3392,12 +3392,12 @@ Continuare?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Un nome o una cartella che inizia con un punto sarebbero nascosti dall&apos;elenco.</translation>
+        <translation type="unfinished">Un nome o una cartella che inizia con un punto sarebbe nascosto nell&apos;elenco.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 si trova dietro un collegamento simbolico o una &quot;giunzione&quot;, al di fuori del database dei password.</translation>
+        <translation type="unfinished">%1 si trova dietro un collegamento simbolico o una giunzione, al di fuori dell&apos;archivio password.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

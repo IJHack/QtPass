@@ -595,7 +595,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">A szem gomb mögötti minden mező, nem csak a titkok: megosztott képernyőhöz és bemutatáshoz. A mezők alatti megjegyzések és az OTP-kód láthatók maradnak; az &quot;Oldal elrejtése&quot; azokat is elrejti.</translation>
+        <translation type="unfinished">Minden mezőt a szem gomb mögé rejt, nem csak a titkokat: megosztott képernyőhöz és bemutatáshoz. A mezők alatti megjegyzések és az OTP-kód láthatók maradnak; az &quot;Oldal elrejtése&quot; azokat is elrejti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -615,7 +615,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Ha a jelszótárolónak nincs saját Git-tárolója, a felette lévő mappában találhatót használja. Alapértelmezés szerint kikapcsolva, ahogy a pass esetében is, így egy másik Git-tárolóban (például dotfiles) lévő jelszótároló soha nem kerül oda tévedésből véglegesítésre vagy feltöltésre. Csak natív Git esetén: a pass mindig megáll a jelszótárolónál.</translation>
+        <translation type="unfinished">Ha a jelszótárolónak nincs saját Git-adattára, a felette lévő mappában találhatót használja. Alapértelmezés szerint kikapcsolva, ahogy a pass esetében is, így egy másik adattárban (például dotfiles) lévő jelszótároló soha nem kerül oda tévedésből véglegesítésre vagy feltöltésre. Csak natív Git esetén: a pass mindig megáll a jelszótárolónál.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -738,7 +738,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">A pass a(z) %1 változásait a(z) %2 helyen lévő Git-tárolóba véglegesíti: ha a jelszótároló útvonalában kettőspont van, a pass nem tudja a Gitet a jelszótárolóra korlátozni. Futtassa a &quot;git init&quot; parancsot a jelszótárolóban, vagy használja a natív Git/GPG-t.</translation>
+        <translation type="unfinished">A pass a(z) %1 változásait a(z) %2 helyen lévő Git-adattárba véglegesíti: ha a jelszótároló útvonalában kettőspont van, a pass nem tudja a Gitet a jelszótárolóra korlátozni. Futtassa a &quot;git init&quot; parancsot a jelszótárolóban, vagy használja a natív Git/GPG-t.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1257,19 +1257,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">A lista több, mint egy webshop azonosítót tartalmaz.</translation>
+        <translation type="unfinished">A lista egynél több tárolóazonosító-sort tartalmaz.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">A &quot;Tárhely azonosító&quot; sor helytelen formázása: %1</translation>
+        <translation type="unfinished">A tárolóazonosító-sor hibás formátumú: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">A lista tartalmaz egy az üzlet azonosítóját, de nincs a létrehozás jelzése.</translation>
+        <translation type="unfinished">A lista tartalmaz tárolóazonosító-sort, de generációsort nem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1337,7 +1337,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">A listában szereplő, aláírt felhasználó %1 nem tartalmaz azonosító sornak, míg ez a eszköz ismerné ezt az azonosítót %2: talán egy másik alkalmazás vagy régebbi QtPass írta, és ide másolták. Az aláírókulcs birtokló felhasználó a &quot;Felhasználók&quot; menüpontban keresve, újat kiválasztva, majd mentve, így az azonosító sor kerül be.</translation>
+        <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz tárolóazonosító-sort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóval ismeri: lehet, hogy egy másik tárolóhoz készült, és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy léphet túl ezen, hogy megnyitja a Felhasználók ablakot, újra kijelöli a címzetteket, és menti őket; ez kiírja a tárolóazonosító-sort.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1588,7 +1588,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">A jelszótároló Git-tárolójában nem egyesített fájlok vannak. Az újratitkosítás előtt oldja fel az ütközést Gittel.</translation>
+        <translation type="unfinished">A jelszótároló Git-adattárában nem egyesített fájlok vannak. Az újratitkosítás előtt oldja fel az ütközést Gittel.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1700,7 +1700,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">A %1 egy szimbolikus hivatkozás vagy csomópont, amely a &quot;pulld&quot; után létrejön. Amihez pontosan a hivatkozás kapcsolódik, az nem része a jelszó tárolónak, és így változatlanul marad.</translation>
+        <translation type="unfinished">A(z) %1 a pull után szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, és érintetlen marad.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2715,7 +2715,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Egy mappát, amely ponttal kezdődik, a listáról elrejtjük: %1</translation>
+        <translation type="unfinished">A ponttal kezdődő mappa rejtve lenne a listában: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2925,12 +2925,12 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Jelszó generálása sikertelen</translation>
+        <translation type="unfinished">A jelszó generálása sikertelen</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Nem sikerült a pwgen futtatása (&quot;%1&quot;). Ellenőrizze a pwgen programot a beállítások menüjében, vagy kapcsolja ki az &quot;pwgen használata&quot; opciót.</translation>
+        <translation type="unfinished">Nem sikerült futtatni a pwgen programot (&quot;%1&quot;). Ellenőrizze a pwgen programot a beállításokban, vagy kapcsolja ki a &quot;pwgen használata&quot; beállítást.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3036,12 +3036,12 @@ Folytatja?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">A jelszótároló Git-tárolója egy %1 közepén tart. Fejezze be vagy szakítsa meg Gittel, mielőtt módosítja a jelszótárolót, különben a módosításai elveszhetnek.</translation>
+        <translation type="unfinished">A jelszótároló Git-adattára egy %1 művelet közepén tart. Fejezze be vagy szakítsa meg Gittel, mielőtt módosítja a jelszótárolót, különben a módosításai elveszhetnek.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Jelszó tárolás frissítése (Git pull folyamatban). Várjon, amíg befejeződik a frissítés, majd próbálja újra.</translation>
+        <translation type="unfinished">A jelszótároló frissítése folyamatban van (Git pull fut). Várjon, amíg befejeződik, majd próbálja újra.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3229,12 +3229,12 @@ Folytatja?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Egy név vagy mappa, amely ponttal kezdődik, a listáról eltűnik.</translation>
+        <translation type="unfinished">A ponttal kezdődő név vagy mappa rejtve lenne a listában.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 egy szimbolikus hivatkozás vagy csomópont mögött található, amely a jelszó tárolón kívül van.</translation>
+        <translation type="unfinished">A(z) %1 szimbolikus link vagy junction mögött található, a jelszótárolón kívül.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

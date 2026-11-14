@@ -710,7 +710,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass schreift Ännerungen an %1 an de Git-Repository an %2: mat engem Doppelpunkt am Pad vum Späicher kann pass Git net op de Späicher beschränken. Féier &quot;git init&quot; am Späicher aus, oder benotz Gebierteg Git/GPG.</translation>
+        <translation type="unfinished">pass committéiert Ännerungen an %1 an de Git-Repository an %2: mat engem Doppelpunkt am Pad vum Späicher kann pass Git net op de Späicher beschränken. Féiert &quot;git init&quot; am Späicher aus, oder benotzt natiivt Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1222,19 +1222,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Dës Liste enthält mehr als eine Zeile mat einer Speicher-ID.</translation>
+        <translation type="unfinished">D&apos;Lëscht enthält méi wéi eng Späicher-ID-Zeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Die Zeile mit der ID zum Speicher ist fehlerhaft: %1</translation>
+        <translation type="unfinished">D&apos;Späicher-ID-Zeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Dës Liste enthält eine Zeile mat der ID, aber keine mit der Erstellungsdatum.</translation>
+        <translation type="unfinished">D&apos;Lëscht enthält eng Späicher-ID-Zeil, awer keng Generatiounszeil.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1296,13 +1296,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 gouf fir en anere Passwuertspäicher geschriwwen (Späicher-ID %2; dësen Apparat kennt dëse Späicher als %3) a gëtt net benotzt. Si kéint vun engem Späicher heihi kopéiert gi sinn, dee mam selwechte Schlëssel ënnerschriwwe gouf. Wann dëse Späicher amplaz nei ageriicht gouf, da gi mam Läsche vun %4 d&apos;Späicher-IDe vergiess, déi dësen Apparat kennt.</translation>
+        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 gouf fir en anere Passwuertspäicher geschriwwen (Späicher-ID %2; dësen Apparat kennt dëse Späicher als %3) a gëtt net benotzt. Si kéint vun engem Späicher heihinner kopéiert gi sinn, dee mam selwechte Schlëssel ënnerschriwwe gouf. Wann dëse Späicher amplaz nei ageriicht gouf, da gi mam Läsche vun %4 d&apos;Späicher-IDe vergiess, déi dësen Apparat kennt.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Dësch vun de Empfänger mat Ännerschrëft %1 enthält keng Zeil mam Späicher-ID, während dëst Gerät den Späicher duerf mat senger ID %2: et ass méiglech datt et fir en aneren Spächer geschriift gien ass a hei kopiert gouw, oder duerno vum QtPass. De Besëtzer vum Ännerschrëtt kënnt d&apos;Benotzer op, de Empfänger nei auszesetzen a ze spären, wat dës Zeil mam Spächer-ID schriift.</translation>
+        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Späicher-ID-Zeil, obwuel dësen Apparat dëse Späicher ënner senger ID %2 kennt: si kéint fir en anere Späicher geschriwwen an heihinner kopéiert gi sinn, oder vun enger eelerer QtPass-Versioun. Een, deen den Ënnerschrëftsschlëssel huet, kënnt weider, andeems en &quot;Benotzer&quot; opmécht, d&apos;Empfänger nei auswielt a späichert; dobäi gëtt d&apos;Späicher-ID-Zeil geschriwwen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1547,7 +1547,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De Git-Repository vum Passwuertspäicher huet net zesummegefouert Dateien. Léist de Konflikt mat Git, ier Dir nei verschlësselt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1586,7 +1586,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Onfäerdeg Git-Operatioun</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2647,12 +2647,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Dossier versteckt</translation>
+        <translation type="unfinished">Verstoppten Dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Un dossier qui commence par un point serait caché de la liste: %1</translation>
+        <translation type="unfinished">En Dossier, deen mat engem Punkt ufänkt, wier an der Lëscht verstoppt: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2862,7 +2862,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Passwuert Generatioun missluppt</translation>
+        <translation type="unfinished">Passwuertgeneratioun ass gescheitert</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -2973,12 +2973,12 @@ Weider?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">De Git-Repository vum Passwuertspäicher ass mëtten an engem %1. Schléisst dee mat Git of oder briecht en of, ier Dir de Passwuertspäicher ännert, soss kéint dat, wat Dir ännert, verluer goen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Passwuertspäicher ass aktualiséiert (e Git pull ass am Gang). Warte bis et komplett, dann probiere esou.</translation>
+        <translation type="unfinished">De Passwuertspäicher gëtt aktualiséiert (e Git pull ass am Gaang). Waart, bis en fäerdeg ass, a probéiert et dann nach eng Kéier.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -2988,7 +2988,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Onfäerdeg Git-Operatioun</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
@@ -3166,12 +3166,12 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Eis ass eng Numm oder Dossier, deen mat &apos;nem Punkt anfännt, wär aus der Liste verbuer.</translation>
+        <translation type="unfinished">En Numm oder Dossier, deen mat engem Punkt ufänkt, wier an der Lëscht verstoppt.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 befindet sich hinter einem symbolischen Link oder einer Verknüpfung, außerhalb des Passwuertspäichers.</translation>
+        <translation type="unfinished">%1 läit hannert engem symbolesche Link oder enger Junction, ausserhalb vum Passwuertspäicher.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

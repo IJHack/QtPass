@@ -1223,19 +1223,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Lista zawiera więcej niż jedną linię identyfikującą magazyn.</translation>
+        <translation type="unfinished">Lista zawiera więcej niż jedną linię identyfikatora magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Wiersz z identyfikatorem magazynu jest nieprawidłowy: %1</translation>
+        <translation type="unfinished">Linia identyfikatora magazynu ma nieprawidłowy format: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Lista zawiera linię identyfikującą magazyn, ale nie linię generacji.</translation>
+        <translation type="unfinished">Lista zawiera linię identyfikatora magazynu, ale nie zawiera linii generacji.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1303,7 +1303,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Lista odbiorców z podpisem %1 nie zawiera linii identyfikującej magazyn, podczas gdy to urządzenie zna ten magazyn dzięki jego identyfikatorowi %2: może być wpisany dla innego magazynu i skopiowany tutaj, lub przez starszą wersję QtPass. Osoba posiadająca klucz podpisu może uzyskać dostęp, otwierając sekcję Użytkownicy, wybierając odbiorców ponownie i zapisując, co doda linię identyfikującą magazyn.</translation>
+        <translation type="unfinished">Podpisana lista odbiorców %1 nie zawiera linii identyfikatora magazynu, choć to urządzenie zna ten magazyn po jego identyfikatorze %2: lista mogła zostać zapisana dla innego magazynu i skopiowana tutaj albo przez starszą wersję QtPass. Posiadacz klucza podpisującego może przejść dalej, otwierając okno Użytkownicy, ponownie wybierając odbiorców i zapisując, co powoduje zapis linii identyfikatora magazynu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -3216,7 +3216,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 znajduje się za symbolicznym linkiem lub węzłem, poza magazynem haseł.</translation>
+        <translation type="unfinished">%1 znajduje się za dowiązaniem symbolicznym lub punktem połączenia (junction), poza magazynem haseł.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

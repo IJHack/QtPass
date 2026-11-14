@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kada spremište nema vlastiti Git repozitorij, koristi se onaj u mapi iznad njega. Zadano isključeno, kao i kod naredbe pass, tako da se spremište unutar drugog repozitorija (npr. dotfiles) nikad greškom ondje ne commita niti pusha. Samo izvorni Git: pass uvijek staje na spremištu.</translation>
+        <translation type="unfinished">Kada spremište nema vlastiti Git repozitorij, koristi se onaj u mapi iznad njega. Zadano isključeno, kao i kod naredbe pass, tako da se spremište unutar drugog repozitorija (npr. dotfiles) nikad greškom ondje ne commita niti pusha. Samo Git vlastitog sustava: pass uvijek staje na spremištu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 potpisuje koristeći isti ključ za drugo spremište. Lista primatelja koja je potpisana za jedno od ovih spremišta se prihvaća u drugom: koristite zaseban ključ za potpisivanje za svako spremište čije su primatelji različite.</translation>
+        <translation type="unfinished">%1 potpisuje istim ključem i za drugo spremište. Popis primatelja potpisan za jedno od tih spremišta prihvaća se i u drugom: za svako spremište s različitim primateljima koristite zaseban ključ za potpisivanje.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass commita promjene u %1 u Git repozitorij u %2: s dvotočkom u stazi spremišta pass ne može ograničiti Git na spremište. Pokrenite &quot;git init&quot; u spremištu ili koristite Git/GPG vlastitog sustava.</translation>
+        <translation type="unfinished">pass commita promjene u %1 u Git repozitorij u %2: s dvotočkom u putanji spremišta pass ne može ograničiti Git na spremište. Pokrenite &quot;git init&quot; u spremištu ili koristite Git/GPG vlastitog sustava.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1263,19 +1263,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Lista sadrži više od jedne linije s ID-om spremišta.</translation>
+        <translation type="unfinished">Popis sadrži više od jednog retka s ID-om spremišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Red &quot;ID spremišta&quot; je neispravan: %1</translation>
+        <translation type="unfinished">Redak s ID-om spremišta nije ispravno oblikovan: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Lista sadrži redak s ID-om spremišta, ali ne i redak s generacijom.</translation>
+        <translation type="unfinished">Popis sadrži redak s ID-om spremišta, ali ne i redak generacije.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1343,7 +1343,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Lista primatelja s potpisom %1 ne sadrži redak s ID-om spremišta, dok ovo uređaje poznaje po svom ID-u %2: možda je bio namjenjen drugom spremištu i kopiran ovdje, ili od starije verzije qtPass. Osoba koja posjeduje ključ za potpisivanje može doći do liste primatelja otvaranjem korisnika, izabravanjem primatelja i spremanjem, što piše redak s ID-om spremišta.</translation>
+        <translation type="unfinished">Potpisani popis primatelja %1 nema redak s ID-om spremišta, a ovaj uređaj poznaje ovo spremište po njegovom ID-u %2: popis je možda zapisan za drugo spremište i kopiran ovamo ili ga je zapisala starija verzija programa QtPass. Imatelj ključa za potpisivanje može nastaviti tako da otvori Korisnike, ponovno odabere primatelje i spremi, čime se zapisuje redak s ID-om spremišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1588,7 +1588,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Spremište lozinki ima datoteke koje nisu spajane. Rješite konflikt s Git-om prije ponovnog enkripcije.</translation>
+        <translation type="unfinished">Git repozitorij spremišta lozinki ima nespojene datoteke. Riješite sukob u Gitu prije ponovnog šifriranja.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1708,7 +1708,7 @@ Nećeš moći dešifrirati novododane lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 je, ili se nalazi iza, simbolskog linka ili spoja nakon izvlačenja. Ono što to pokazuje nije dio spremišta lozinki i ostaje neotkriveno.</translation>
+        <translation type="unfinished">%1 je nakon pulla simbolička poveznica ili spojna točka, ili se nalazi iza takve. Ono na što pokazuje nije dio spremišta lozinki i ostaje netaknuto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2881,7 +2881,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Mapa koja započinje s točkom bit će skrojena iz popisa: %1</translation>
+        <translation type="unfinished">Mapa čiji naziv počinje točkom bila bi skrivena na popisu: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3196,7 +3196,7 @@ Nastaviti?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Spremište lozinki ima Git repozitorij u sredini procesa %1. Završite ili poništite ga pomoću Git-a prije promjene spremišta lozinki, inače se mogu izgubiti podaci.</translation>
+        <translation type="unfinished">Git repozitorij spremišta lozinki nalazi se usred operacije %1. Završite je ili prekinite pomoću Gita prije mijenjanja spremišta lozinki, inače se vaše promjene mogu izgubiti.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3389,12 +3389,12 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Ime ili mapa koja započinje s točkom, biće skriena iz popisa.</translation>
+        <translation type="unfinished">Naziv ili mapa koji počinju točkom bili bi skriveni na popisu.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 se nalazi iza simbolskog linka ili spoja, izvan spremišta lozinki.</translation>
+        <translation type="unfinished">%1 se nalazi iza simboličke poveznice ili spojne točke, izvan spremišta lozinki.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

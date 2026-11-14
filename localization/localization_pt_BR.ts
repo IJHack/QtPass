@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utilize um repositório Git em uma pasta acima do local de armazenamento</translation>
+        <translation type="unfinished">Usar um repositório Git em uma pasta acima do repositório de senhas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -659,7 +659,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 assina com a mesma chave para outro repositório de senhas. Uma lista de destinatários assinada para um desses repositórios é aceita no outro: use uma chave de assinatura separada para cada repositório cujos destinatários sejam diferentes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1144,13 +1144,13 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Falhado para criar password-store em: %1</translation>
+        <translation type="unfinished">Falha ao criar o repositório de senhas em: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Password-store não foi inicializada</translation>
+        <translation type="unfinished">Repositório de senhas não inicializado</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1242,19 +1242,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista contém mais de uma linha de ID do repositório.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A linha de ID do repositório está malformada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista contém uma linha de ID do repositório, mas nenhuma linha de geração.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1322,7 +1322,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha de ID do repositório, embora este dispositivo conheça este repositório pelo ID %2: ela pode ter sido escrita para outro repositório e copiada para cá, ou por uma versão mais antiga do QtPass. Um portador da chave de assinatura consegue prosseguir abrindo Usuários, selecionando os destinatários novamente e salvando, o que grava a linha de ID do repositório.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1567,7 +1567,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">O repositório Git do gerenciador de senhas contém arquivos não mesclados. Resolva o conflito com o Git antes de re-criptografar.</translation>
+        <translation type="unfinished">O repositório Git do repositório de senhas tem arquivos não mesclados. Resolva o conflito com o Git antes de criptografar novamente.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1648,7 +1648,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Não foi possível verificar se o armazenamento tem arquivos não mesclados após o pull. Verifique-o com git antes de criptografar novamente.</translation>
+        <translation type="unfinished">Não foi possível verificar se o repositório de senhas tem arquivos não mesclados após o Git pull. Verifique-o com git antes de criptografar novamente.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1686,7 +1686,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 é, ou se encontra por trás, um link simbólico ou junção após a extração. O que isso aponta não faz parte do gerenciador de senhas e permanece intocado.</translation>
+        <translation type="unfinished">%1 é um link simbólico ou junção, ou está atrás de um, após o Git pull. O destino do link não faz parte do repositório de senhas e permanece intacto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2756,7 +2756,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Uma pasta que começa com um ponto seria oculta da lista: %1</translation>
+        <translation type="unfinished">Uma pasta que começa com um ponto ficaria oculta na lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -2844,8 +2844,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Mostrando a primeira correspondência (%n); uma pesquisa mais específica mostra o restante.</numerusform>
-            <numerusform>Mostrando as primeiras %n correspondências; uma pesquisa mais específica mostra o restante.</numerusform>
+            <numerusform>Mostrando a primeira correspondência (%n); faça uma pesquisa mais específica para ver o restante.</numerusform>
+            <numerusform>Mostrando as primeiras %n correspondências; faça uma pesquisa mais específica para ver o restante.</numerusform>
         </translation>
     </message>
     <message>
@@ -3110,12 +3110,12 @@ Continua?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">O repositório Git do gerenciador de senhas está no meio de uma %1. Finalize ou cancele-o usando o Git antes de alterar o gerenciador, caso contrário, as alterações podem ser perdidas.</translation>
+        <translation type="unfinished">O repositório Git do repositório de senhas está no meio de um %1. Conclua-o ou cancele-o com o Git antes de alterar o repositório de senhas; caso contrário, o que você alterar pode ser perdido.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">O armazenamento de senhas está sendo atualizado (uma operação Git pull está em andamento). Aguarde até que a atualização seja concluída, e tente novamente.</translation>
+        <translation type="unfinished">O repositório de senhas está sendo atualizado (há um Git pull em andamento). Aguarde até que termine e tente novamente.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3303,12 +3303,12 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Um nome ou pasta que comece com um ponto seria oculto da lista.</translation>
+        <translation type="unfinished">Um nome ou pasta que comece com um ponto ficaria oculto na lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">O %1 está oculto atrás de um link simbólico ou junção, fora do armazenamento de senhas.</translation>
+        <translation type="unfinished">%1 está atrás de um link simbólico ou junção, fora do repositório de senhas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3534,7 +3534,7 @@ Continua?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation type="unfinished">Mostrar password</translation>
+        <translation type="unfinished">Mostrar senha</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>

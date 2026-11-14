@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Brug et Git-repository i en mappe over lageret</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -584,12 +584,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Skjul hvert felt</translation>
+        <translation type="unfinished">Skjul alle felter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Alle felter bag &quot;Vis/Skjul&quot;-knappen, ikke kun hemmelighederne: for delte skærme og præsentationer. Noterne under felterne og OTP-koden forbliver synlige; &quot;Skjul indhold&quot; skjuler dem også.</translation>
+        <translation type="unfinished">Alle felter bag øje-knappen, ikke kun hemmelighederne: til delte skærme og præsentationer. Noterne under felterne og OTP-koden forbliver synlige; &quot;Skjul indhold&quot; skjuler også dem.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 signerer med samme nøgle for et andet lager. En modtagerliste, der er signeret for ét af disse lagre, accepteres i det andet: brug en separat signeringsnøgle for hvert lager, hvis modtagere er forskellige.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1262,19 +1262,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listen indeholder mere end én lager-ID-linje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lager-ID-linjen er forkert udformet: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Listen indeholder en lager-ID-linje, men ingen generationslinje.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1336,13 +1336,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Den signerede modtagerliste %1 er skrevet til en anden password-opbevaring (opbevarings-ID %2; dette enhed kender denne opbevaring som %3) og bruges ikke. Den kan være kopieret herfra fra en opbevaring, der er signeret med samme nøgle. Hvis denne opbevaring blev opsat igen, vil sletning af %4 glemme de opbevarings-ID&apos;er, som denne enhed kender.</translation>
+        <translation type="unfinished">Den signerede modtagerliste %1 er skrevet til et andet kodeordslager (lager-ID %2; denne enhed kender dette lager som %3) og bruges ikke. Den kan være kopieret hertil fra et lager, der er signeret med samme nøgle. Hvis dette lager i stedet er blevet sat op igen, glemmer sletning af %4 de lager-ID&apos;er, som denne enhed kender.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Den signerede modtagerliste %1 har ingen lager-ID-linje, mens denne enhed kender dette lager under dets ID %2: den kan være skrevet til et andet lager og kopieret hertil, eller af en ældre QtPass. En indehaver af signeringsnøglen kommer videre ved at åbne Brugere, vælge modtagerne på ny og gemme, hvilket skriver lager-ID-linjen.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1432,7 +1432,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 er ikke inde i password-opbevaringen, eller et mappenavn indeholder et linjeskift eller en anden kontrolkarakter, som en signeret liste ikke kan registrere.</translation>
+        <translation type="unfinished">%1 er ikke inde i kodeordslageret, eller et mappenavn undervejs indeholder et linjeskift eller et andet kontroltegn, som en signeret liste ikke kan registrere.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1587,7 +1587,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Password-lagerets Git-repository indeholder filer, der ikke er blevet samlet. Løs konflikten med Git, før du genkrypterer.</translation>
+        <translation type="unfinished">Kodeordslagerets Git-repository har filer, der ikke er flettet. Løs konflikten med Git, før du genkrypterer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1626,7 +1626,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Ufærdig Git-operation</translation>
+        <translation type="unfinished">Uafsluttet Git-operation</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2842,7 +2842,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">En mappe, der starter med et punktum, vil være skjult fra listen: %1</translation>
+        <translation type="unfinished">En mappe, der starter med et punktum, ville være skjult i listen: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3056,7 +3056,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Kodeordgenerering mislykkedes</translation>
+        <translation type="unfinished">Generering af kodeord mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3130,7 +3130,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 er ikke gemt i password-opbevaringen. Modtagere er sat for opbevaringen eller en mappe i den.</translation>
+        <translation type="unfinished">%1 er ikke inde i kodeordslageret. Modtagere angives for lageret eller en mappe i det.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3167,12 +3167,12 @@ Fortsætte?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Password-lagerets Git-repository er midt i en %1. Afslut eller annuller det med Git, før du ændrer password-lageret, ellers kan de ændringer, du foretager, forsvinde.</translation>
+        <translation type="unfinished">Kodeordslagerets Git-repository er midt i en %1. Afslut eller afbryd den med Git, før du ændrer kodeordslageret, ellers kan dine ændringer gå tabt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Kodeopbevaringen opdateres (en Git-træk er i gang). Vent til den er færdig, og prøv så igen.</translation>
+        <translation type="unfinished">Kodeordslageret bliver opdateret (en Git pull er i gang). Vent, til den er færdig, og prøv så igen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3182,7 +3182,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Ufærdig Git-operation</translation>
+        <translation type="unfinished">Uafsluttet Git-operation</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
@@ -3360,12 +3360,12 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Et navn eller en mappe, der starter med et punktum, vil være skjult fra listen.</translation>
+        <translation type="unfinished">Et navn eller en mappe, der starter med et punktum, ville være skjult i listen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 er skjult bag en symbolsk link eller forbindelse, uden for password-opbevaringen.</translation>
+        <translation type="unfinished">%1 ligger bag et symbolsk link eller en junction, uden for kodeordslageret.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">যখন স্টোরটির নিজস্ব কোনো Git রিপোজিটরি থাকে না, তখন এর উপরের ফোল্ডারের রিপোজিটরিটি ব্যবহার করুন। pass-এর মতোই ডিফল্টভাবে বন্ধ, যাতে অন্য রিপোজিটরির (যেমন dotfiles) মধ্যে থাকা স্টোর কখনো ভুল করে সেখানে কমিট বা পুশ না হয়। শুধুমাত্র নেটিভ Git: pass সবসময় স্টোরেই থেমে যায়।</translation>
+        <translation type="unfinished">যখন স্টোরের নিজস্ব কোনো গিট রিপোজিটরি থাকে না, তখন এর উপরের কোনো ফোল্ডারের রিপোজিটরিটি ব্যবহার করুন। pass-এর মতোই ডিফল্টভাবে বন্ধ, যাতে অন্য রিপোজিটরির (যেমন dotfiles) মধ্যে থাকা স্টোর কখনো ভুল করে সেখানে কমিট বা পুশ না হয়। শুধুমাত্র নেটিভ গিট: pass সবসময় স্টোরেই থেমে যায়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">প্রতিটি ক্ষেত্র লুকান</translation>
+        <translation type="unfinished">প্রতিটি ফিল্ড লুকান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">চোখের আইকনের পেছনের প্রতিটি ক্ষেত্র, শুধুমাত্র গোপনীয় বিষয় নয়: শেয়ার করা স্ক্রিন এবং উপস্থাপনার জন্য। ক্ষেত্রগুলোর নিচে থাকা নোট এবং OTP কোড দৃশ্যমান থাকবে; &quot;কনটেন্ট লুকান&quot; সেটিও লুকাবে।</translation>
+        <translation type="unfinished">শুধু গোপন তথ্য নয়, প্রতিটি ফিল্ড চোখের বোতামের আড়ালে: শেয়ার করা স্ক্রিন ও উপস্থাপনার জন্য। ফিল্ডগুলোর নিচের নোট এবং OTP কোড দৃশ্যমান থাকে; &quot;কনটেন্ট লুকান&quot; সেগুলোও লুকায়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass %1-এর পরিবর্তনগুলো %2-এ থাকা Git রিপোজিটরিতে কমিট করে: স্টোরের পাথে কোলন থাকলে pass Git-কে স্টোরের মধ্যে সীমাবদ্ধ রাখতে পারে না। স্টোরে &quot;git init&quot; চালান, অথবা নেটিভ Git/GPG ব্যবহার করুন।</translation>
+        <translation type="unfinished">pass %1-এর পরিবর্তনগুলো %2-এ থাকা গিট রিপোজিটরিতে কমিট করে: স্টোরের পাথে কোলন থাকলে pass গিটকে স্টোরের মধ্যে সীমাবদ্ধ রাখতে পারে না। স্টোরে &quot;git init&quot; চালান, অথবা নেটিভ Git/GPG ব্যবহার করুন।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">এই তালিকায় একাধিক স্টোর আইডি নম্বর রয়েছে।</translation>
+        <translation type="unfinished">এই তালিকায় একাধিক স্টোর আইডি লাইন রয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্টোর আইডি লাইনটি ত্রুটিপূর্ণ: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">এই তালিকায় একটি স্টোর আইডি নম্বর রয়েছে, কিন্তু কোনো জেনারেশন নম্বর নেই।</translation>
+        <translation type="unfinished">এই তালিকায় একটি স্টোর আইডি লাইন আছে, কিন্তু কোনো জেনারেশন লাইন নেই।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1292,13 +1292,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 অন্য একটি পাসওয়ার্ড স্টোরের জন্য লেখা হয়েছে (স্টোর আইডি %2; এই ডিভাইসটি এই স্টোরকে %3 নামে জানে) এবং এটি ব্যবহার করা হচ্ছে না। এটি হয়তো একই কী দিয়ে স্বাক্ষরিত কোনো স্টোর থেকে এখানে কপি করা হয়েছে। যদি এর বদলে এই স্টোরটি নতুন করে সেট আপ করা হয়ে থাকে, তাহলে %4 সরিয়ে দিলে এই ডিভাইসের জানা স্টোর আইডিগুলি মুছে যায়।</translation>
+        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1 অন্য একটি পাসওয়ার্ড স্টোরের জন্য লেখা হয়েছিল (স্টোর আইডি %2; এই ডিভাইস এই স্টোরকে %3 নামে চেনে) এবং এটি ব্যবহার করা হয় না। এটি হয়তো একই কী দিয়ে স্বাক্ষরিত কোনো স্টোর থেকে এখানে কপি করা হয়েছে। যদি এর বদলে এই স্টোরটি নতুন করে সেট আপ করা হয়ে থাকে, তাহলে %4 সরিয়ে দিলে এই ডিভাইস তার জানা স্টোর আইডিগুলি ভুলে যায়।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বাক্ষরিত প্রাপক তালিকা %1-এ কোনো স্টোর আইডি লাইন নেই, অথচ এই ডিভাইস এই স্টোরকে এর আইডি %2 দিয়ে চেনে: এটি হয়তো অন্য কোনো স্টোরের জন্য লিখে এখানে কপি করা হয়েছে, অথবা পুরোনো কোনো QtPass এটি লিখেছে। স্বাক্ষর কী-এর ধারক &quot;ব্যবহারকারীরা&quot; খুলে, প্রাপকদের নতুন করে নির্বাচন করে এবং সংরক্ষণ করে এটি পার হতে পারেন; এতে স্টোর আইডি লাইনটি লেখা হয়।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1543,7 +1543,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">পাসওয়ার্ড সংরক্ষণের গিট রিপোজিটরিতে এমন কিছু ফাইল আছে যেগুলো এখনও মার্জ করা হয়নি। পুনরায় এনক্রিপ্ট করার আগে, গিট ব্যবহার করে বিরোধগুলো সমাধান করুন।</translation>
+        <translation type="unfinished">পাসওয়ার্ড স্টোরের গিট রিপোজিটরিতে এমন কিছু ফাইল আছে যেগুলো মার্জ করা হয়নি। পুনরায় এনক্রিপ্ট করার আগে গিট দিয়ে বিরোধটি সমাধান করুন।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1993,7 +1993,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">অকার্যকর ইনপুট</translation>
+        <translation type="unfinished">অবৈধ ইনপুট</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
@@ -2611,7 +2611,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">যে ফোল্ডারটি একটি ডট (•) দিয়ে শুরু হয়, সেটি তালিকা থেকে লুকানো থাকবে: %1</translation>
+        <translation type="unfinished">ডট দিয়ে শুরু হওয়া ফোল্ডার তালিকায় লুকানো থাকবে: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2816,7 +2816,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">pwgen (&quot;%1&quot;) চালানোর জন্য অক্ষম। সেটিংস-এ pwgen প্রোগ্রামটি পরীক্ষা করুন, অথবা &quot;pwgen ব্যবহার করুন&quot; অপশনটি বন্ধ করে দিন।</translation>
+        <translation type="unfinished">pwgen (&quot;%1&quot;) চালানো যায়নি। সেটিংসে pwgen প্রোগ্রামটি পরীক্ষা করুন, অথবা &quot;pwgen ব্যবহার&quot; বন্ধ করুন।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -2927,7 +2927,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">পাসওয়ার্ড স্টোরটি আপডেট করা হচ্ছে (একটি Git পুল চলছে)। এটি শেষ না হওয়া পর্যন্ত অপেক্ষা করুন, তারপর আবার চেষ্টা করুন।</translation>
+        <translation type="unfinished">পাসওয়ার্ড স্টোরটি আপডেট করা হচ্ছে (গিট পুল চলছে)। এটি শেষ না হওয়া পর্যন্ত অপেক্ষা করুন, তারপর আবার চেষ্টা করুন।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3115,12 +3115,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">নাম অথবা ফোল্ডার, যা একটি ডট দিয়ে শুরু হয়, সেটি তালিকা থেকে লুকানো থাকবে।</translation>
+        <translation type="unfinished">ডট দিয়ে শুরু হওয়া নাম বা ফোল্ডার তালিকায় লুকানো থাকবে।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 একটি সিম্বলিক লিঙ্ক বা জাংশনের পিছনে রয়েছে, পাসওয়ার্ড স্টোরের বাইরে।</translation>
+        <translation type="unfinished">%1 পাসওয়ার্ড স্টোরের বাইরে, একটি সিম্বলিক লিংক বা জাংশনের পেছনে রয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

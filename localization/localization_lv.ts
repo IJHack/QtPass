@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Katrs lauks aiz acs pogas, ne tikai noslēpumi: koplietotiem ekrāniem un prezentācijām. Piezīmes zem laukiem un OTP kods paliek redzami; &quot;Slēpt saturu&quot; paslēpj arī tos.</translation>
+        <translation type="unfinished">Visi lauki aiz acs pogas, ne tikai noslēpumi: koplietotiem ekrāniem un prezentācijām. Piezīmes zem laukiem un OTP kods paliek redzami; &quot;Slēpt saturu&quot; paslēpj arī tos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantot Git repozitoriju mapē virs glabātuves</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -767,7 +767,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 paraksta ar to pašu atslēgu citai glabātuvei. Saņēmēju saraksts, kas parakstīts vienai no šīm glabātuvēm, tiek pieņemts arī otrā: izmantojiet atsevišķu parakstīšanas atslēgu katrai glabātuvei, kurai ir atšķirīgi saņēmēji.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1219,19 +1219,19 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sarakstā ir vairāk nekā viena glabātuves ID rinda.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Glabātuves ID rinda ir nepareizi noformēta: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sarakstā ir glabātuves ID rinda, bet nav paaudzes rindas.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1299,7 +1299,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Parakstīto saņēmēju saraksts %1 neatrod &quot;Uzglabāšanas ID&quot; rindu, bet šis ierīcis atzīs to pēc ID %2: tas varētu būt rakstīts citai uzglabāšanas vietai un kopēts šeit, vai arī veciem QtPass. Parakstīšanas atslēgas īpašnieks iegūst piekļuvi, izmantojot &quot;Lietotāji&quot;, jaunu saņēmēju izvēli un saglabošanu, kas ieraksta &quot;Uzglabāšanas ID&quot; rindu.</translation>
+        <translation type="unfinished">Parakstītajā saņēmēju sarakstā %1 nav glabātuves ID rindas, lai gan šī ierīce pazīst šo glabātuvi pēc tās ID %2: iespējams, tas ir rakstīts citai glabātuvei un nokopēts šeit, vai arī to rakstījis vecāks QtPass. Parakstīšanas atslēgas turētājs to var atrisināt, atverot sadaļu Lietotāji, no jauna izvēloties saņēmējus un saglabājot, kas ieraksta glabātuves ID rindu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1497,7 +1497,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nav iekļauts paroles glabāšanas vietā, vai faila nosaukums, kas atrodas ceļā, satur starplikus vai citas kontrolkaraktērus, ko parakstīta saraksta nevar ierakstīt.</translation>
+        <translation type="unfinished">%1 neatrodas paroļu glabātuvē, vai arī kādas ceļā esošas mapes nosaukumā ir rindas pārtraukums vai cita vadības rakstzīme, ko parakstīts saraksts nevar ierakstīt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1544,7 +1544,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Paroles glabāšanas Git repozitorijā ir nesamainīti faili. Pirms atkārtotas šifrēšanas, atrisini konfliktu ar Git.</translation>
+        <translation type="unfinished">Paroļu glabātuves Git repozitorijā ir neapvienoti faili. Pirms pāršifrēšanas atrisiniet konfliktu ar Git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1664,7 +1664,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ir, vai atrodas simboliskās saites vai savienojuma vietā pēc izvēršanas. Kas uz to rāda, nav daļa no paroles glabātāja un paliek neatkarīgs.</translation>
+        <translation type="unfinished">%1 pēc saņemšanas (pull) ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiek atstāts neskarts.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2614,12 +2614,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Slēpts mapi</translation>
+        <translation type="unfinished">Slēpta mape</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Folderis, kas sākas ar punktu, būs neievietots sarakstā: %1</translation>
+        <translation type="unfinished">Mape, kas sākas ar punktu, sarakstā būtu paslēpta: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2926,17 +2926,17 @@ Turpināt?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Paroles glabāšanas Git repozitorijs atrodas %1. Pabeidziet vai pārtrauciet to, izmantojot Git, pirms maināt paroles glabāšanas funkciju, jo citādi jūs varat zaudēt datus.</translation>
+        <translation type="unfinished">Paroļu glabātuves Git repozitorijā ir nepabeigta operācija %1. Pabeidziet vai pārtrauciet to ar Git, pirms maināt paroļu glabātuvi, citādi jūsu izmaiņas var tikt zaudētas.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Paroles glabāšanas vietē ir atjaunināta (notiek Git saņemšana). Uzgaidi, līdz tas būs beidzies, un tad mēģini vēlreiz.</translation>
+        <translation type="unfinished">Paroļu glabātuve tiek atjaunināta (notiek Git saņemšana). Uzgaidiet, līdz tā beigsies, un tad mēģiniet vēlreiz.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Atjaunināšana notiek</translation>
+        <translation type="unfinished">Notiek atjaunināšana</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3119,12 +3119,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Vārds vai mapi, kas sākas ar punktu, būs slēpts no saraksta.</translation>
+        <translation type="unfinished">Nosaukums vai mape, kas sākas ar punktu, sarakstā būtu paslēpta.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 atrodas simboliskās saites vai savienojuma aiz, ārpus paroles glabāšanas vietas.</translation>
+        <translation type="unfinished">%1 atrodas aiz simboliskas saites vai savienojuma punkta, ārpus paroļu glabātuves.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

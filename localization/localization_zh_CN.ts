@@ -592,7 +592,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">当密码库没有自己的 Git 仓库时，使用位于其上一级的那个。默认情况下关闭，就像 pass 一样，因此一个位于另一个仓库（例如 dotfiles）中的密码库永远不会被错误地提交或推送。仅限原生 Git：pass 始终停留在密码库处。</translation>
+        <translation type="unfinished">当密码库没有自己的 Git 仓库时，使用其上级文件夹中的仓库。与 pass 一样默认关闭，这样位于另一个仓库（例如 dotfiles）中的密码库就不会被误提交或推送到那里。仅限原生 Git：pass 始终止步于密码库。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -701,7 +701,7 @@ email</source>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass 会将 %1 中的更改提交到位于 %2 的 Git 仓库：密码库路径中含有冒号时，pass 无法将 Git 限定在密码库内。请在密码库中运行 &quot;git init&quot;，或使用本地 Git/GPG。</translation>
+        <translation type="unfinished">pass 会将 %1 中的更改提交到位于 %2 的 Git 仓库：密码库路径中含有冒号时，pass 无法将 Git 限定在密码库内。请在密码库中运行 &quot;git init&quot;，或使用原生 Git/GPG。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1265,19 +1265,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">该列表包含多个存储ID。</translation>
+        <translation type="unfinished">该列表包含多个密码库 ID 行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">密码库 ID 格式错误：%1</translation>
+        <translation type="unfinished">密码库 ID 行格式错误：%1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">该列表包含一个存储ID，但没有生成信息。</translation>
+        <translation type="unfinished">该列表包含密码库 ID 行，但没有世代行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1339,13 +1339,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">已签名的收件人列表 %1 是为另一个密码库编写的（密码库 ID %2；此设备将该密码库识别为 %3），因此未被使用。它可能是从使用相同密钥签名的密码库复制到这里的。如果实际上是重新设置了此密码库，删除 %4 会让此设备忘记它所知道的密码库 ID。</translation>
+        <translation type="unfinished">已签名的接收者列表 %1 是为另一个密码库写入的（密码库 ID %2；本设备所知的此密码库为 %3），因此未被使用。它可能是从使用相同密钥签名的密码库复制到这里的。如果实际上是此密码库被重新设置过，删除 %4 会让本设备忘记它所知道的密码库 ID。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">签署过的收件人列表 %1 没有包含存储ID行，而这个设备通过ID %2 知道该存储：它可能原本是为其他存储编写的，然后复制到这里，或者是由旧版本的QtPass创建的。拥有签名密钥的人员可以通过打开“用户”，重新选择收件人并保存来添加存储ID行。</translation>
+        <translation type="unfinished">已签名的接收者列表 %1 没有密码库 ID 行，而本设备通过 ID %2 识别此密码库：它可能是为另一个密码库写入后复制到这里的，也可能是由旧版 QtPass 写入的。签名密钥的持有者可以通过打开“用户”、重新选择接收者并保存来解决此问题，这会写入密码库 ID 行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1553,7 +1553,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 无法作为收件人列表读取（大小不超过 %2 的常规文件）。</translation>
+        <translation type="unfinished">%1 无法作为接收者列表读取（须为不超过 %2 的常规文件）。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1590,7 +1590,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">密码库的Git仓库包含未合并的文件。在重新加密之前，请使用Git解决冲突。</translation>
+        <translation type="unfinished">密码库的 Git 仓库包含未合并的文件。请在重新加密之前使用 Git 解决冲突。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2835,7 +2835,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">以点号开头的文件或文件夹将从列表中隐藏：%1</translation>
+        <translation type="unfinished">以点号开头的文件夹会在列表中隐藏：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3048,7 +3048,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">无法运行 pwgen (&quot;%1&quot;)。请检查设置中的 pwgen 程序，或者关闭 &quot;使用 pwgen&quot; 功能。</translation>
+        <translation type="unfinished">无法运行 pwgen（&quot;%1&quot;）。请检查设置中的 pwgen 程序，或关闭“使用 pwgen”。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3154,12 +3154,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">密码库的Git仓库正处于%1状态。 在更改密码库之前，请使用Git完成或中止该操作。 否则，你所做的更改可能会丢失。</translation>
+        <translation type="unfinished">密码库的 Git 仓库正处于 %1 过程中。请先用 Git 完成或中止该操作，再更改密码库，否则所做的更改可能会丢失。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">密码库正在更新（Git pull 过程）。请耐心等待，完成后再尝试。</translation>
+        <translation type="unfinished">密码库正在更新（正在执行 Git pull）。请等待完成后再试。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3184,7 +3184,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 无法作为收件人列表读取（大小不超过 %2 的常规文件），因此没有预先选中任何项。在此选择收件人之前请先检查它：OK 会用新列表覆盖它。</translation>
+        <translation type="unfinished">%1 无法作为接收者列表读取（须为不超过 %2 的常规文件），因此未预选任何接收者。在此选择接收者之前请先检查它：按 OK 会用新列表覆盖它。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3347,12 +3347,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">一个以点开头，或者以文件夹命名的条目，将从列表中隐藏。</translation>
+        <translation type="unfinished">以点号开头的名称或文件夹会在列表中隐藏。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 隐藏在符号链接或连接处，位于密码库之外。</translation>
+        <translation type="unfinished">%1 位于符号链接或目录联接之后，在密码库之外。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

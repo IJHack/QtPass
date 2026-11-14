@@ -512,7 +512,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass effectue des commits dans %1 vers le dépôt Git en %2 : avec un point-virgule dans le chemin, pass ne peut pas accéder au dépôt Git. Exécutez &quot;git init&quot; dans le dossier, ou utilisez Git/GPG Native.</translation>
+        <translation type="unfinished">pass commite les modifications de %1 dans le dépôt Git situé dans %2 : comme le chemin du magasin contient un deux-points, pass ne peut pas restreindre Git au magasin. Exécutez &quot;git init&quot; dans le magasin, ou utilisez Git/GPG natif.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1344,7 +1344,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La liste des destinataires signés %1 a été créée pour un autre gestionnaire de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous le nom %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici à partir d&apos;un magasin signé avec la même clé. Si ce magasin était réinstallé, supprimer %4 effacerait les ID des magasins que cet appareil connaît.</translation>
+        <translation type="unfinished">La liste de destinataires signée %1 a été écrite pour un autre magasin de mots de passe (identifiant du magasin %2 ; cet appareil connaît ce magasin sous l&apos;identifiant %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici depuis un magasin signé avec la même clé. Si ce magasin a plutôt été recréé, supprimer %4 efface les identifiants de magasin que cet appareil connaît.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
@@ -1923,7 +1923,7 @@ Le re-chiffrement ne s&apos;est pas terminé : certaines entrées, voire toutes,
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">La taille de %1 est supérieure à celle d&apos;un fichier de clé.</translation>
+        <translation type="unfinished">%1 est trop volumineux pour être un fichier de clé.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -3127,7 +3127,7 @@ Continuer&#x202f;?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Le dépôt Git du magasin de mots de passe est au milieu d&apos;un %1. Terminez ou annulez l&apos;opération avec Git avant de modifier le magasin, sinon vos modifications pourraient être perdues.</translation>
+        <translation type="unfinished">Une opération %1 est en cours dans le dépôt Git du magasin de mots de passe. Terminez-la ou annulez-la avec Git avant de modifier le magasin de mots de passe, sinon vos modifications risquent d&apos;être perdues.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>

@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">آنکھ کے بٹن کے پیچھے کی ہر فیلڈ، ان میں سے صرف رازات نہیں: شیئرڈ اسکرینز اور پیش کرنے کے لیے۔ فیلڈز کے نیچے دیے گئے نوٹ اور OTP کوڈ نمایاں رہتے ہیں؛ &quot;مواد چھپائیں&quot; بھی ان کو چھپا دیتا ہے۔</translation>
+        <translation type="unfinished">صرف راز والی فیلڈز ہی نہیں، ہر فیلڈ آنکھ والے بٹن کے پیچھے: مشترکہ اسکرینز اور پریزنٹیشن کے لیے۔ فیلڈز کے نیچے کے نوٹس اور OTP کوڈ نظر آتے رہتے ہیں؛ &quot;مواد چھپائیں&quot; انہیں بھی چھپا دیتا ہے۔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">یہ فہرست ایک سے زیادہ اسٹور آئی ڈی کی لائنز پر مشتمل ہے۔</translation>
+        <translation type="unfinished">اس فہرست میں ایک سے زیادہ اسٹور آئی ڈی سطریں ہیں۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">اسٹور آئی ڈی کا ردیف غیر درست ہے: %1</translation>
+        <translation type="unfinished">اسٹور آئی ڈی سطر کی ساخت غلط ہے: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">یہ فہرست ایک اسٹور آئی ڈی کا نشان رکھتی ہے، لیکن کوئی نیا ترتیب پیدا کرنے کا نشان نہیں۔</translation>
+        <translation type="unfinished">اس فہرست میں اسٹور آئی ڈی سطر ہے، لیکن کوئی جنریشن سطر نہیں۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1292,13 +1292,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 کسی دوسرے پاس ورڈ اسٹور کے لیے لکھی گئی تھی (اسٹور ID %2؛ یہ ڈیوائس اس اسٹور کو %3 کے طور پر جانتی ہے) اور استعمال نہیں کی جاتی۔ ہو سکتا ہے اسے اسی کلید سے دستخط شدہ کسی اسٹور سے یہاں کاپی کیا گیا ہو۔ اگر اس کے بجائے یہ اسٹور دوبارہ ترتیب دیا گیا تھا، تو %4 کو ہٹانے سے وہ اسٹور IDs بھلا دی جاتی ہیں جو یہ ڈیوائس جانتی ہے۔</translation>
+        <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 کسی دوسرے پاس ورڈ اسٹور کے لیے لکھی گئی تھی (اسٹور آئی ڈی %2؛ یہ ڈیوائس اس اسٹور کو %3 کے طور پر جانتی ہے) اور استعمال نہیں کی جاتی۔ ہو سکتا ہے اسے اسی کلید سے دستخط شدہ کسی اسٹور سے یہاں کاپی کیا گیا ہو۔ اگر اس کے بجائے یہ اسٹور دوبارہ ترتیب دیا گیا تھا، تو %4 کو ہٹانے سے یہ ڈیوائس اپنی جانی ہوئی اسٹور آئی ڈیز بھول جاتی ہے۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">دستخطی کلید کے ساتھ، یہ صارف کی فہرست %1 میں اسٹور آئی ڈی کا نشان نہیں ہے، جبکہ اس ڈیوائس کو یہ اسٹور آئی ڈی سے پتہ چلتا ہے %2: ممکن ہے کہ اسے کسی اور اسٹور کے لیے لکھا گیا ہو اور یہاں کپی کیا گیا ہو، یا ایک پرانی QtPass کے ذریعے۔ دستخطی کلید کی مالک، صارفین کو کھول کر، نئے طور پر وصول کنندگان کا انتخاب کر کے اور محفوظ کر کے اس تک رسائی حاصل کرتا ہے، جس سے اسٹور آئی ڈی کا نشان لکھا جاتا ہے۔</translation>
+        <translation type="unfinished">دستخط شدہ وصول کنندگان کی فہرست %1 میں کوئی اسٹور آئی ڈی سطر نہیں ہے، جبکہ یہ ڈیوائس اس اسٹور کو اس کی آئی ڈی %2 سے جانتی ہے: ممکن ہے اسے کسی دوسرے اسٹور کے لیے لکھ کر یہاں کاپی کیا گیا ہو، یا کسی پرانے QtPass نے لکھا ہو۔ دستخطی کلید رکھنے والا &quot;صارفین&quot; کھول کر، وصول کنندگان کو نئے سرے سے منتخب کر کے اور محفوظ کر کے آگے بڑھ سکتا ہے؛ اس سے اسٹور آئی ڈی سطر لکھ دی جاتی ہے۔</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1543,7 +1543,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">اسٹور کی Git ریپازٹری میں ایسی فائلیں ہیں جو ابھی مرج نہیں ہوئیں۔ دوبارہ انکرپٹ کرنے سے پہلے Git سے تنازع حل کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ اسٹور کی Git ریپازٹری میں ایسی فائلیں ہیں جو مرج نہیں ہوئیں۔ دوبارہ انکرپٹ کرنے سے پہلے Git سے تنازع حل کریں۔</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1993,7 +1993,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
-        <translation type="unfinished">معلومات غیر درست</translation>
+        <translation type="unfinished">غیر درست ان پٹ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">چھپا ہوا فولدر</translation>
+        <translation type="unfinished">چھپا ہوا فولڈر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">ایک فولڈر جو ایک نقطے سے شروع ہوتا ہے، وہ فہرست سے پوشیدہ رہے گا۔ %1</translation>
+        <translation type="unfinished">نقطے سے شروع ہونے والا فولڈر فہرست میں چھپا رہے گا: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2930,12 +2930,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">اسٹور کی Git ریپازٹری ایک %1 کے درمیان ہے۔ اسٹور میں تبدیلی سے پہلے اسے Git سے مکمل یا منسوخ کریں، ورنہ آپ کی تبدیلیاں ضائع ہو سکتی ہیں۔</translation>
+        <translation type="unfinished">پاس ورڈ اسٹور کی Git ریپازٹری میں ایک %1 ادھورا ہے۔ پاس ورڈ اسٹور میں تبدیلی سے پہلے اسے Git سے مکمل یا منسوخ کریں، ورنہ آپ کی تبدیلیاں ضائع ہو سکتی ہیں۔</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">پاس ورڈ اسٹور اپ ڈیٹ ہو رہا ہے (ایک Git pull جاری ہے)۔ اس کے مکمل ہونے کا انتظار کریں، پھر دوبارہ کوشش کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ اسٹور اپ ڈیٹ ہو رہا ہے (Git پل جاری ہے)۔ اس کے مکمل ہونے کا انتظار کریں، پھر دوبارہ کوشش کریں۔</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">ایک ایسا نام یا فولڈر جو ایک پرنٹ سے شروع ہوتا ہے، وہ فہرست سے پوشیدہ ہوگا۔</translation>
+        <translation type="unfinished">نقطے سے شروع ہونے والا نام یا فولڈر فہرست میں چھپا رہے گا۔</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 ایک علامتیکی لنک یا جیوکشن کے پیچھے موجود ہے، جو پاس ورڈ اسٹور سے باہر ہے۔</translation>
+        <translation type="unfinished">%1 کسی سمبولک لنک یا جنکشن کے پیچھے، پاس ورڈ اسٹور سے باہر ہے۔</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

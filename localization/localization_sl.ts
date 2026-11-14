@@ -517,7 +517,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Skrij vsak polje</translation>
+        <translation type="unfinished">Skrij vsa polja</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -767,7 +767,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 podpisuje z istim ključem tudi za drugo shrambo. Seznam prejemnikov, podpisan za eno od teh shramb, je sprejet tudi v drugi: za vsako shrambo z drugačnimi prejemniki uporabite ločen podpisni ključ.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1220,19 +1220,19 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam vsebuje več kot eno vrstico z ID-jem shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vrstica z ID-jem shrambe je napačno oblikovana: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Seznam vsebuje ID, vendar ne generacijsko številko.</translation>
+        <translation type="unfinished">Seznam vsebuje vrstico z ID-jem shrambe, a nima vrstice generacije.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1300,7 +1300,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Seznam prejemnikov, ki so bili podpisani, %1 ne vsebuje vrstice z ID-jem shranjevanja, medtem ko to naprave pozna po ID-ju %2: mogoče je bilo shranjeno za drugo mesto in kopirano tukaj, ali pa za starejše QtPass. Oseb s podpisnim ključem se prične z odprtjem Uporabniki, izbiro prejemnikov in shranjevanjem, kar doda vrstico z ID-jem shranjevanja.</translation>
+        <translation type="unfinished">Podpisani seznam prejemnikov %1 nima vrstice z ID-jem shrambe, ta naprava pa to shrambo pozna po njenem ID-ju %2: seznam je bil morda zapisan za drugo shrambo in sem skopiran ali pa ga je zapisal starejši QtPass. Imetnik podpisnega ključa to odpravi tako, da odpre Uporabnike, znova izbere prejemnike in shrani, s čimer se zapiše vrstica z ID-jem shrambe.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1545,7 +1545,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Arhiv Git, kjer so shranjeni gesla, vsebuje datoteke, ki še niso bile združene. Rešite konflikt z Gitom, preden ponovno zakodujete.</translation>
+        <translation type="unfinished">Repozitorij Git shrambe gesel vsebuje nezdružene datoteke. Pred ponovnim šifriranjem razrešite spor z Gitom.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1666,7 +1666,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 je, ali se skriva za, simbolni povez in po izvajanju. Kaj to kaže, ni del shranjevanja gesel in ostane neposredno.</translation>
+        <translation type="unfinished">%1 je po povleku (pull) simbolna povezava ali spojna točka ali pa leži za njo. Tisto, na kar kaže, ni del shrambe gesel in ostane nedotaknjeno.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2627,7 +2627,7 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Mapa, ki se začne z dotom, bo skrita iz seznama: %1</translation>
+        <translation type="unfinished">Mapa, katere ime se začne s piko, bi bila na seznamu skrita: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2934,17 +2934,17 @@ Nadaljujem?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Git repozitorij upravnika gesel je v procesu %1. Končajte ali prekličte ta proces z Gitom, preden spremenite upravnik gesel, sicer lahko izgubite podatke.</translation>
+        <translation type="unfinished">Repozitorij Git shrambe gesel je sredi operacije %1. Preden spremenite shrambo gesel, jo z Gitom dokončajte ali prekinite, sicer se lahko vaše spremembe izgubijo.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Geslov register se posodablja (je v teku Git povlek). Čakajte, da se zaključi, nato pa poskusajte znova.</translation>
+        <translation type="unfinished">Shramba gesel se posodablja (poteka Git pull). Počakajte, da se konča, nato poskusite znova.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Posodaba v teku</translation>
+        <translation type="unfinished">Posodabljanje poteka</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3127,12 +3127,12 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Ime ali mapa, ki se začne z dotom, bi bila skrita iz seznama.</translation>
+        <translation type="unfinished">Ime ali mapa, ki se začne s piko, bi bila na seznamu skrita.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 se skriva za simboličnim povezom ali priključkom, zunaj shranjevalnika gesel.</translation>
+        <translation type="unfinished">%1 leži za simbolno povezavo ali spojno točko, zunaj shrambe gesel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

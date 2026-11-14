@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">ਜਦੋਂ ਸਟੋਰ ਦੀ ਆਪਣੀ ਕੋਈ Git ਰਿਪੋਜ਼ਟਰੀ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਾਲੀ ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ। ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ, pass ਵਾਂਗ, ਤਾਂ ਜੋ ਕਿਸੇ ਹੋਰ ਰਿਪੋਜ਼ਟਰੀ (ਜਿਵੇਂ dotfiles) ਦੇ ਅੰਦਰਲਾ ਸਟੋਰ ਗਲਤੀ ਨਾਲ ਕਦੇ ਉੱਥੇ ਕਮਿੱਟ ਜਾਂ ਪੁਸ਼ ਨਾ ਹੋਵੇ। ਸਿਰਫ਼ ਨੇਟਿਵ Git: pass ਹਮੇਸ਼ਾ ਸਟੋਰ &apos;ਤੇ ਰੁਕ ਜਾਂਦਾ ਹੈ।</translation>
+        <translation type="unfinished">ਜਦੋਂ ਸਟੋਰ ਦੀ ਆਪਣੀ ਕੋਈ ਗਿਟ ਰਿਪੋਜ਼ਟਰੀ ਨਾ ਹੋਵੇ, ਤਾਂ ਇਸ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਾਲੀ ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ। pass ਵਾਂਗ ਮੂਲ ਰੂਪ ਵਿੱਚ ਬੰਦ, ਤਾਂ ਜੋ ਕਿਸੇ ਹੋਰ ਰਿਪੋਜ਼ਟਰੀ (ਜਿਵੇਂ dotfiles) ਦੇ ਅੰਦਰਲਾ ਸਟੋਰ ਗਲਤੀ ਨਾਲ ਕਦੇ ਉੱਥੇ ਕਮਿੱਟ ਜਾਂ ਪੁਸ਼ ਨਾ ਹੋਵੇ। ਸਿਰਫ਼ ਅਸਲੀ ਗਿਟ: pass ਹਮੇਸ਼ਾ ਸਟੋਰ &apos;ਤੇ ਹੀ ਰੁਕਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -512,12 +512,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">ਸਾਰੀਆਂ ਖਾਣਿਆਂ ਨੂੰ ਲੁਕਾਓ</translation>
+        <translation type="unfinished">ਹਰ ਫੀਲਡ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">ਅੱਖ ਵਾਲੇ ਬਟਨ ਦੇ ਪਿੱਛੇ ਹਰ ਖੇਤਰ, ਸਿਰਫ਼ ਗੁਪਤ ਜਾਣਕਾਰੀ ਹੀ ਨਹੀਂ: ਸਾਂਝੀਆਂ ਸਕ੍ਰੀਨਾਂ ਅਤੇ ਪੇਸ਼ਕਾਰੀ ਲਈ। ਖੇਤਰਾਂ ਦੇ ਹੇਠਾਂ ਵਾਲੇ ਨੋਟ ਅਤੇ OTP ਕੋਡ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿੰਦੇ ਹਨ; &quot;ਸਮੱਗਰੀ ਲੁਕਾਓ&quot; ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਲੁਕਾ ਦਿੰਦਾ ਹੈ।</translation>
+        <translation type="unfinished">ਸਿਰਫ਼ ਗੁਪਤ ਫੀਲਡ ਹੀ ਨਹੀਂ, ਹਰ ਫੀਲਡ ਅੱਖ ਵਾਲੇ ਬਟਨ ਦੇ ਪਿੱਛੇ: ਸਾਂਝੀਆਂ ਸਕ੍ਰੀਨਾਂ ਅਤੇ ਪੇਸ਼ਕਾਰੀ ਲਈ। ਫੀਲਡਾਂ ਦੇ ਹੇਠਾਂ ਵਾਲੇ ਨੋਟ ਅਤੇ OTP ਕੋਡ ਦਿਖਾਈ ਦਿੰਦੇ ਰਹਿੰਦੇ ਹਨ; &quot;ਸਮੱਗਰੀ ਲੁਕਾਓ&quot; ਉਨ੍ਹਾਂ ਨੂੰ ਵੀ ਲੁਕਾ ਦਿੰਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -547,7 +547,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">ਸਟੋਰ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਿੱਚ Git ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ</translation>
+        <translation type="unfinished">ਸਟੋਰ ਤੋਂ ਉੱਪਰਲੇ ਫੋਲਡਰ ਵਿੱਚ ਗਿਟ ਰਿਪੋਜ਼ਟਰੀ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -768,7 +768,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass %1 ਵਿਚਲੀਆਂ ਤਬਦੀਲੀਆਂ ਨੂੰ %2 ਵਿਚਲੀ Git ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਕਮਿੱਟ ਕਰਦਾ ਹੈ: ਸਟੋਰ ਦੇ ਮਾਰਗ ਵਿੱਚ ਕੋਲਨ ਹੋਣ &apos;ਤੇ pass, Git ਨੂੰ ਸਟੋਰ ਤੱਕ ਸੀਮਤ ਨਹੀਂ ਰੱਖ ਸਕਦਾ। ਸਟੋਰ ਵਿੱਚ &quot;git init&quot; ਚਲਾਓ, ਜਾਂ ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ ਵਰਤੋ।</translation>
+        <translation type="unfinished">pass %1 ਵਿਚਲੀਆਂ ਤਬਦੀਲੀਆਂ ਨੂੰ %2 ਵਿਚਲੀ ਗਿਟ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਕਮਿੱਟ ਕਰਦਾ ਹੈ: ਸਟੋਰ ਦੇ ਮਾਰਗ ਵਿੱਚ ਕੋਲਨ ਹੋਣ &apos;ਤੇ pass ਗਿਟ ਨੂੰ ਸਟੋਰ ਤੱਕ ਸੀਮਤ ਨਹੀਂ ਰੱਖ ਸਕਦਾ। ਸਟੋਰ ਵਿੱਚ &quot;git init&quot; ਚਲਾਓ, ਜਾਂ ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ ਵਰਤੋ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1214,19 +1214,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਸ ਸੂਚੀ ਵਿੱਚ ਇੱਕ ਤੋਂ ਵੱਧ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨਾਂ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਦਾ ਰੂਪ ਗਲਤ ਹੈ: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਸ ਸੂਚੀ ਵਿੱਚ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਹੈ, ਪਰ ਕੋਈ ਜਨਰੇਸ਼ਨ ਲਾਈਨ ਨਹੀਂ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1288,13 +1288,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਕਿਸੇ ਹੋਰ ਪਾਸਵਰਡ ਸਟੋਰ ਲਈ ਲਿਖੀ ਗਈ ਸੀ (ਸਟੋਰ ID %2; ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ %3 ਵਜੋਂ ਜਾਣਦਾ ਹੈ) ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਸਨੂੰ ਉਸੇ ਕੁੰਜੀ ਨਾਲ ਦਸਤਖਤ ਕੀਤੇ ਕਿਸੇ ਸਟੋਰ ਤੋਂ ਇੱਥੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ ਹੋਵੇ। ਜੇਕਰ ਇਸਦੀ ਬਜਾਏ ਇਹ ਸਟੋਰ ਮੁੜ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਸੀ, ਤਾਂ %4 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਉਹ ਸਟੋਰ ID ਭੁੱਲ ਜਾਂਦੇ ਹਨ ਜੋ ਇਹ ਡਿਵਾਈਸ ਜਾਣਦਾ ਹੈ।</translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਕਿਸੇ ਹੋਰ ਪਾਸਵਰਡ ਸਟੋਰ ਲਈ ਲਿਖੀ ਗਈ ਸੀ (ਸਟੋਰ ਆਈਡੀ %2; ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ %3 ਵਜੋਂ ਜਾਣਦਾ ਹੈ) ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕੀਤੀ ਜਾਂਦੀ। ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਸਨੂੰ ਉਸੇ ਕੁੰਜੀ ਨਾਲ ਦਸਤਖਤ ਕੀਤੇ ਕਿਸੇ ਸਟੋਰ ਤੋਂ ਇੱਥੇ ਕਾਪੀ ਕੀਤਾ ਗਿਆ ਹੋਵੇ। ਜੇਕਰ ਇਸਦੀ ਬਜਾਏ ਇਹ ਸਟੋਰ ਮੁੜ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਸੀ, ਤਾਂ %4 ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਇਹ ਡਿਵਾਈਸ ਉਹ ਸਟੋਰ ਆਈਡੀਆਂ ਭੁੱਲ ਜਾਂਦਾ ਹੈ ਜੋ ਇਹ ਜਾਣਦਾ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਦਸਤਖਤ ਕੀਤੀ ਪ੍ਰਾਪਤਕਰਤਾ ਸੂਚੀ %1 ਵਿੱਚ ਕੋਈ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਨਹੀਂ ਹੈ, ਜਦਕਿ ਇਹ ਡਿਵਾਈਸ ਇਸ ਸਟੋਰ ਨੂੰ ਇਸਦੀ ਆਈਡੀ %2 ਨਾਲ ਜਾਣਦਾ ਹੈ: ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਇਹ ਕਿਸੇ ਹੋਰ ਸਟੋਰ ਲਈ ਲਿਖ ਕੇ ਇੱਥੇ ਕਾਪੀ ਕੀਤੀ ਗਈ ਹੋਵੇ, ਜਾਂ ਕਿਸੇ ਪੁਰਾਣੇ QtPass ਨੇ ਲਿਖੀ ਹੋਵੇ। ਦਸਤਖਤ ਕੁੰਜੀ ਵਾਲਾ ਵਿਅਕਤੀ &quot;ਵਿਸ਼ਵਾਸੀ&quot; ਖੋਲ੍ਹ ਕੇ, ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਨੂੰ ਨਵੇਂ ਸਿਰਿਓਂ ਚੁਣ ਕੇ ਅਤੇ ਸੇਵ ਕਰਕੇ ਅੱਗੇ ਵਧ ਸਕਦਾ ਹੈ; ਇਸ ਨਾਲ ਸਟੋਰ ਆਈਡੀ ਲਾਈਨ ਲਿਖੀ ਜਾਂਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1539,7 +1539,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ ਦੀ ਗਿਟ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਅਜਿਹੀਆਂ ਫਾਈਲਾਂ ਹਨ ਜੋ ਮਰਜ ਨਹੀਂ ਹੋਈਆਂ। ਦੁਬਾਰਾ ਐਨਕ੍ਰਿਪਟ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਗਿਟ ਨਾਲ ਟਕਰਾਅ ਹੱਲ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1578,7 +1578,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਅਧੂਰੀ ਗਿਟ ਕਾਰਵਾਈ</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2608,12 +2608,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਲੁਕਿਆ ਹੋਇਆ ਫੋਲਡਰ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਬਿੰਦੂ (.) ਨਾਲ ਸ਼ੁਰੂ ਹੋਣ ਵਾਲਾ ਫੋਲਡਰ ਸੂਚੀ ਵਿੱਚ ਲੁਕਿਆ ਰਹੇਗਾ: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2809,12 +2809,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਬਣਾਉਣਾ ਅਸਫਲ ਰਿਹਾ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pwgen (&quot;%1&quot;) ਚਲਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ। ਸੈੱਟਿੰਗਜ਼ ਵਿੱਚ pwgen ਪ੍ਰੋਗਰਾਮ ਦੀ ਜਾਂਚ ਕਰੋ, ਜਾਂ &quot;pwgen ਵਰਤੋਂ ਕਰੋ&quot; ਬੰਦ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -2871,7 +2871,7 @@ Continue?</source>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">ਐਂਟਰੀ ਸਟੋਰ ਵਿੱਚ ਸੇਵ ਹੋ ਗਈ ਹੈ, ਪਰ ਇਸਨੂੰ git ਵਿੱਚ ਦਰਜ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ। ਜੋ ਰਿਪੋਰਟ ਕੀਤਾ ਗਿਆ:
+        <translation type="unfinished">ਐਂਟਰੀ ਸਟੋਰ ਵਿੱਚ ਸੇਵ ਹੋ ਗਈ ਹੈ, ਪਰ ਇਸਨੂੰ ਗਿਟ ਵਿੱਚ ਦਰਜ ਕਰਨਾ ਅਸਫਲ ਰਿਹਾ। ਜੋ ਰਿਪੋਰਟ ਕੀਤਾ ਗਿਆ:
 
 %1</translation>
     </message>
@@ -2920,22 +2920,22 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ ਦੀ ਗਿਟ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਇੱਕ %1 ਅਧੂਰਾ ਹੈ। ਪਾਸਵਰਡ ਸਟੋਰ ਬਦਲਣ ਤੋਂ ਪਹਿਲਾਂ ਗਿਟ ਨਾਲ ਇਸਨੂੰ ਪੂਰਾ ਕਰੋ ਜਾਂ ਰੱਦ ਕਰੋ, ਨਹੀਂ ਤਾਂ ਤੁਹਾਡੀਆਂ ਤਬਦੀਲੀਆਂ ਗੁੰਮ ਹੋ ਸਕਦੀਆਂ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਟੋਰ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ (ਗਿਟ ਪੁੱਲ ਚੱਲ ਰਿਹਾ ਹੈ)। ਇਸਦੇ ਪੂਰਾ ਹੋਣ ਤੱਕ ਉਡੀਕ ਕਰੋ, ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਅੱਪਡੇਟ ਜਾਰੀ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਅਧੂਰੀ ਗਿਟ ਕਾਰਵਾਈ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
@@ -3113,12 +3113,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਬਿੰਦੂ (.) ਨਾਲ ਸ਼ੁਰੂ ਹੋਣ ਵਾਲਾ ਨਾਮ ਜਾਂ ਫੋਲਡਰ ਸੂਚੀ ਵਿੱਚ ਲੁਕਿਆ ਰਹੇਗਾ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਪਾਸਵਰਡ ਸਟੋਰ ਤੋਂ ਬਾਹਰ, ਕਿਸੇ ਸਿੰਬੋਲਿਕ ਲਿੰਕ ਜਾਂ ਜੰਕਸ਼ਨ ਦੇ ਪਿੱਛੇ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3491,7 +3491,7 @@ Continue?</source>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">ਲਿੰਕ %1 ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਅਤੇ git ਹੁਣ ਇਸਨੂੰ ਟ੍ਰੈਕ ਨਹੀਂ ਕਰਦਾ, ਪਰ ਕਮਿੱਟ ਅਸਫਲ ਰਿਹਾ: %2</translation>
+        <translation type="unfinished">ਲਿੰਕ %1 ਹਟਾ ਦਿੱਤਾ ਗਿਆ ਅਤੇ ਗਿਟ ਹੁਣ ਇਸਨੂੰ ਟ੍ਰੈਕ ਨਹੀਂ ਕਰਦਾ, ਪਰ ਕਮਿੱਟ ਅਸਫਲ ਰਿਹਾ: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

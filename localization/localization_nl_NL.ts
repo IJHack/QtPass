@@ -3361,7 +3361,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation>Sjabloon voor het veld uit het .templates-bestand van de store. Met Ctrl+T schakelt u over naar het volgende sjabloon.</translation>
+        <translation type="unfinished">Veldsjabloon uit het .templates-bestand van de opslag. Met Ctrl+T schakel je over naar het volgende sjabloon.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>

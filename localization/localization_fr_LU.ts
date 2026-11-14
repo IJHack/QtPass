@@ -65,7 +65,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;key&quot; cache &quot;API key&quot;, pas &quot;keyboard layout&quot;. Il préfère donc en cacher trop : &quot;Public key&quot; et &quot;Password hint&quot; sont cachés aussi ; retirez un mot pour les afficher.</translation>
+        <translation type="unfinished">Mots, séparés par des virgules. Un champ compte quand son nom contient l&apos;un d&apos;eux comme mot entier, sans tenir compte de la casse : &quot;key&quot; cache &quot;API key&quot;, pas &quot;keyboard layout&quot;. Dans le doute, le champ est donc caché : &quot;Public key&quot; et &quot;Password hint&quot; le sont aussi ; retirez un mot pour les afficher.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -508,7 +508,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass effectue des commits dans %1 vers le dépôt Git en %2 : avec un point-virgule dans le chemin, pass ne peut pas accéder au dépôt Git. Exécutez &quot;git init&quot; dans le dossier, ou utilisez Git/GPG Native.</translation>
+        <translation type="unfinished">pass commite les modifications de %1 dans le dépôt Git situé dans %2 : comme le chemin du magasin contient un deux-points, pass ne peut pas restreindre Git au magasin. Exécutez &quot;git init&quot; dans le magasin, ou utilisez Git/GPG natif.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -826,12 +826,12 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Un nom de champ par ligne. Une ligne comme &quot;# secret: pin, cvv&quot; indique les champs à cacher, comme le mot de passe, lorsque &quot;Masquer le mot de passe&quot; est activé. La même ligne fonctionne dans le fichier .templates du magasin, où elle s&apos;applique à chaque entrée du magasin, et non seulement à celles créées avec ce modèle.</translation>
+        <translation type="unfinished">Un nom de champ par ligne. Une ligne comme &quot;# secret: pin, cvv&quot; indique les champs à cacher, comme le mot de passe, lorsque &quot;Masquer le mot de passe&quot; est activé. La même ligne fonctionne dans le fichier .templates du magasin, où elle s&apos;applique à chaque entrée du magasin, et non seulement à celles créées avec ce template.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utilisez celui situé dans un dossier au-dessus. Désactivé par défaut, comme pour pass, afin qu&apos;un magasin contenu dans un autre dépôt (par exemple, des fichiers dot) ne soit jamais commité ou poussé accidentellement. Git natif uniquement : pass s&apos;arrête toujours au niveau du magasin.</translation>
+        <translation type="unfinished">Lorsque le magasin n&apos;a pas de dépôt Git propre, utiliser celui d&apos;un dossier au-dessus. Désactivé par défaut, comme pour pass, afin qu&apos;un magasin situé dans un autre dépôt (des dotfiles, par exemple) n&apos;y soit jamais commité ou poussé par erreur. Git natif uniquement : pass s&apos;arrête toujours au magasin.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -1340,7 +1340,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La liste des destinataires signés %1 a été créée pour un autre gestionnaire de mots de passe (ID du magasin %2 ; cet appareil connaît ce magasin sous le nom %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici à partir d&apos;un magasin signé avec la même clé. Si ce magasin était réinstallé, supprimer %4 effacerait les ID des magasins que cet appareil connaît.</translation>
+        <translation type="unfinished">La liste de destinataires signée %1 a été écrite pour un autre magasin de mots de passe (identifiant du magasin %2 ; cet appareil connaît ce magasin sous l&apos;identifiant %3) et n&apos;est pas utilisée. Elle a peut-être été copiée ici depuis un magasin signé avec la même clé. Si ce magasin a plutôt été recréé, supprimer %4 efface les identifiants de magasin que cet appareil connaît.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
@@ -3060,7 +3060,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sauvé, mais pas enregistré</translation>
+        <translation type="unfinished">Enregistré, mais pas commité</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -3116,7 +3116,7 @@ Continuez&#x202f;?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Le dépôt Git du magasin de mots de passe est au milieu d&apos;un %1. Terminez ou annulez l&apos;opération avec Git avant de modifier le magasin, sinon vos modifications pourraient être perdues.</translation>
+        <translation type="unfinished">Une opération %1 est en cours dans le dépôt Git du magasin de mots de passe. Terminez-la ou annulez-la avec Git avant de modifier le magasin de mots de passe, sinon vos modifications risquent d&apos;être perdues.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>

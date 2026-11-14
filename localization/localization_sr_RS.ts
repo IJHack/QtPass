@@ -1343,7 +1343,7 @@ e-pošta</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Potpisana lista primalaca %1 ne sadrži red sa ID-jem skladišta, a ovaj uređaj zna ovo skladište po ID-ju %2: možda je napisana za drugo skladište i kopirana ovde, ili ju je napisao stariji QtPass. Vlasnik ključa za potpisivanje to rešava tako što otvori Korisnike, ponovo izabere primaoce i sačuva, čime se upisuje red sa ID-jem skladišta.</translation>
+        <translation type="unfinished">Potpisana lista primalaca %1 ne sadrži red sa ID-jem skladišta, a ovaj uređaj zna ovo skladište po ID-ju %2: možda je napisana za drugo skladište i kopirana ovde, ili ju je napisao stariji QtPass. Vlasnik ključa za potpisivanje ovo prevazilazi tako što otvori Korisnike, ponovo izabere primaoce i sačuva, čime se upisuje red sa ID-jem skladišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1708,7 +1708,7 @@ Nećete moći da dekriptujete nove dodate lozinke!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 je, ili se nalazi iza, simbolskog linka ili veze nakon izvlačenja. Ono čemu to pokazuje nije deo skladišta lozinki i ostaje neotkriveno.</translation>
+        <translation type="unfinished">%1 je nakon pull-a simbolička veza ili tačka spajanja, ili se nalazi iza nje. Ono na šta ta veza pokazuje nije deo skladišta lozinki i ostaje netaknuto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2079,7 +2079,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">Ime i lozinka ne smeju da sadrže prelome linija.</translation>
+        <translation type="unfinished">Ime i lozinka ne smeju da sadrže prelome redova.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -3362,7 +3362,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 se nalazi iza simboličke veze ili spoja, van skladišta lozinki.</translation>
+        <translation type="unfinished">%1 se nalazi iza simboličke veze ili tačke spajanja, van skladišta lozinki.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

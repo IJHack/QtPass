@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">스토어 폴더 위에 있는 폴더 내에서 Git 저장소를 사용</translation>
+        <translation type="unfinished">비밀번호 저장소 상위 폴더에 있는 Git 저장소 사용</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">스토어에 자체 Git 저장소가 없으면 상위 폴더에 있는 Git 저장소를 사용합니다. pass와 마찬가지로 기본적으로 꺼져 있어서, 다른 저장소(예: dotfiles) 안에 있는 스토어가 실수로 그곳에 커밋되거나 푸시되는 일이 없습니다. 네이티브 Git 전용: pass는 항상 스토어에서 멈춥니다.</translation>
+        <translation type="unfinished">비밀번호 저장소에 자체 Git 저장소가 없으면 상위 폴더에 있는 Git 저장소를 사용합니다. pass와 마찬가지로 기본적으로 꺼져 있으므로, 다른 Git 저장소(예: dotfiles) 안에 있는 비밀번호 저장소가 실수로 그곳에 커밋되거나 푸시되는 일이 없습니다. 네이티브 Git 전용: pass는 항상 비밀번호 저장소에서 멈춥니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -718,7 +718,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass가 %1의 변경 사항을 %2에 있는 Git 저장소에 커밋합니다: 스토어 경로에 콜론이 있으면 pass가 Git을 스토어 안으로 제한할 수 없습니다. 스토어에서 &quot;git init&quot;을 실행하거나 네이티브 Git/GPG를 사용하세요.</translation>
+        <translation type="unfinished">pass가 %1의 변경 사항을 %2에 있는 Git 저장소에 커밋합니다: 비밀번호 저장소 경로에 콜론이 있으면 pass가 Git을 비밀번호 저장소 안으로 제한할 수 없습니다. 비밀번호 저장소에서 &quot;git init&quot;을 실행하거나 네이티브 Git/GPG를 사용하세요.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1261,19 +1261,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">목록에는 여러 개의 스토어 ID 정보가 포함되어 있습니다.</translation>
+        <translation type="unfinished">목록에 저장소 ID 줄이 두 개 이상 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">스토어 ID 라인이 잘못되었습니다: %1</translation>
+        <translation type="unfinished">저장소 ID 줄의 형식이 잘못되었습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">목록에는 스토어 ID만 표시되어 있고, 생성 정보는 표시되지 않습니다.</translation>
+        <translation type="unfinished">목록에 저장소 ID 줄은 있지만 세대 줄이 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1341,7 +1341,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">서명된 수신자 목록 %1에는 저장 ID 라인이 없지만, 이 장치는 해당 저장소를 ID %2로 인식합니다. 따라서, 이는 다른 저장소에 대한 정보가 담긴 것이고 여기에 복사되었거나, 이전 버전의 QtPass에 의해 작성되었을 가능성이 있습니다. 서명 키를 소유한 사용자는 &quot;사용자&quot; 메뉴에서 수신자를 다시 선택하고 저장하는 방식으로 해당 정보를 얻을 수 있으며, 이 과정에서 저장 ID 라인이 기록됩니다.</translation>
+        <translation type="unfinished">서명된 수신자 목록 %1에는 저장소 ID 줄이 없지만, 이 장치는 이 저장소를 ID %2(으)로 알고 있습니다: 다른 저장소를 위해 작성된 뒤 여기로 복사되었거나, 이전 버전의 QtPass가 작성했을 수 있습니다. 서명 키 보유자는 &apos;사용자&apos;를 열어 수신자를 다시 선택하고 저장하면 이 상태를 벗어날 수 있으며, 그러면 저장소 ID 줄이 기록됩니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -3178,7 +3178,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1은(는) 수신자 목록(최대 %2 크기의 일반 파일)으로 읽을 수 없으므로 미리 선택된 항목이 없습니다. 여기서 수신자를 선택하기 전에 확인하십시오. OK를 누르면 그 위에 새 목록을 씁니다.</translation>
+        <translation type="unfinished">%1은(는) 수신자 목록(최대 %2 크기의 일반 파일)으로 읽을 수 없으므로 미리 선택된 항목이 없습니다. 여기서 수신자를 선택하기 전에 확인하십시오. &apos;확인&apos;을 누르면 그 위에 새 목록을 씁니다.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3346,7 +3346,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1은 비밀번호 저장 위치 밖, 심볼릭 링크 또는 자 표시로 숨겨져 있습니다.</translation>
+        <translation type="unfinished">%1은(는) 심볼릭 링크 또는 정션 뒤, 비밀번호 저장소 밖에 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

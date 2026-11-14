@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">فیلدهایی که رازها را نیز نگهداری می‌کنند، نه فقط رمز عبور: فیلدی که نام آن یکی از این کلمات است. خاموش: فقط رمز عبور پنهان می‌شود.</translation>
+        <translation type="unfinished">مخفی کردن فیلدهایی که رازی در خود دارند، نه فقط رمز عبور: فیلدی که نامش یکی از این کلمات را در بر دارد. خاموش: فقط رمز عبور مخفی می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -517,12 +517,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">پنهان کردن هر فیلد</translation>
+        <translation type="unfinished">مخفی کردن همه فیلدها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">هر فیلدی که پشت دکمه چشم است، نه فقط رازها: برای صفحه‌های اشتراکی و ارائه. یادداشت‌های زیر فیلدها و کد OTP همچنان قابل مشاهده می‌مانند؛ &quot;مخفی کردن محتوا&quot; آن‌ها را هم پنهان می‌کند.</translation>
+        <translation type="unfinished">همه فیلدها پشت دکمه چشم، نه فقط رازها: برای صفحه‌های اشتراکی و ارائه. یادداشت‌های زیر فیلدها و کد OTP قابل مشاهده می‌مانند؛ &quot;مخفی کردن محتوا&quot; آن‌ها را هم مخفی می‌کند.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -767,12 +767,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 با همان کلید برای مخزن دیگری امضا می‌کند. لیست گیرندگانی که برای یکی از این مخزن‌ها امضا شده باشد، در دیگری هم پذیرفته می‌شود: برای هر مخزنی که گیرندگانش متفاوت است، از کلید امضای جداگانه‌ای استفاده کنید.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass تغییرات %1 را در مخزن Git واقع در %2 ثبت می‌کند: با وجود دونقطه در مسیر مخزن رمز عبور، pass نمی‌تواند Git را به آن محدود کند. در مخزن رمز عبور &quot;git init&quot; را اجرا کنید، یا از بومی Git/GPG استفاده کنید.</translation>
+        <translation type="unfinished">pass تغییرات %1 را در مخزن Git واقع در %2 ثبت می‌کند: با وجود دونقطه در مسیر مخزن رمز عبور، pass نمی‌تواند Git را به آن محدود کند. در مخزن رمز عبور &quot;git init&quot; را اجرا کنید، یا از Git/GPG بومی استفاده کنید.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1217,19 +1217,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این لیست بیش از یک خط شناسه مخزن دارد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">خط شناسه مخزن ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این لیست خط شناسه مخزن دارد اما خط نسل ندارد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1297,7 +1297,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">فهرست امضاشدهٔ گیرندگان %1 خط شناسهٔ مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسهٔ %2 می‌شناسد: شاید برای مخزن دیگری نوشته و اینجا کپی شده باشد، یا توسط نسخهٔ قدیمی‌تر QtPass. دارندهٔ کلید امضا می‌تواند با باز کردن کاربران، انتخاب دوبارهٔ گیرندگان و ذخیره کردن ادامه دهد؛ این کار خط شناسهٔ مخزن را می‌نویسد.</translation>
+        <translation type="unfinished">لیست امضاشده گیرندگان %1 خط شناسه مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسه %2 می‌شناسد: شاید برای مخزن دیگری نوشته و به اینجا کپی شده باشد، یا نسخه قدیمی‌تری از QtPass آن را نوشته باشد. راه عبور یکی از دارندگان کلید امضا از این مانع این است: باز کردن «کاربران»، انتخاب دوباره گیرندگان و ذخیره کردن، که خط شناسه مخزن را می‌نویسد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1542,7 +1542,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">مخزن Git رمز عبور فایل‌هایی دارد که هنوز ادغام نشده‌اند. پیش از رمزگذاری دوباره، تعارض را با Git حل کنید.</translation>
+        <translation type="unfinished">مخزن Git مربوط به مخزن رمز عبور فایل‌هایی دارد که ادغام نشده‌اند. پیش از رمزگذاری دوباره، تعارض را با Git حل کنید.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2610,7 +2610,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">آب‌دار</translation>
+        <translation type="unfinished">پوشه مخفی</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
@@ -2811,7 +2811,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">تولید رمز عبور ناموفق</translation>
+        <translation type="unfinished">تولید رمز عبور ناموفق بود</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -2922,12 +2922,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">مخزن Git رمز عبور در میانهٔ یک %1 است. پیش از تغییر مخزن رمز عبور، آن را با Git تمام یا لغو کنید، وگرنه ممکن است تغییرات شما از دست برود.</translation>
+        <translation type="unfinished">مخزن Git مربوط به مخزن رمز عبور در میانه یک عملیات %1 است. پیش از تغییر مخزن رمز عبور، آن را با Git تمام یا لغو کنید، وگرنه ممکن است تغییرات شما از دست برود.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">ذخیره رمز عبور در حال به‌روزرسانی است (در حال انجام یک دریافت Git). منتظر بمانید تا تکمیل شود، سپس دوباره امتحان کنید.</translation>
+        <translation type="unfinished">مخزن رمز عبور در حال به‌روزرسانی است (یک Git pull در حال انجام است). منتظر بمانید تا تمام شود، سپس دوباره امتحان کنید.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3120,7 +3120,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 در پشت یک پیوند نمادین یا اتصال، خارج از محل ذخیره رمز عبور قرار دارد.</translation>
+        <translation type="unfinished">%1 پشت یک پیوند نمادین یا junction، خارج از مخزن رمز عبور قرار دارد.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

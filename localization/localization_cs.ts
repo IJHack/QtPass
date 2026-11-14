@@ -388,7 +388,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 podepisuje stejným klíčem i pro jiné úložiště. Seznam příjemců podepsaný pro jedno z těchto úložišť je přijat i v druhém: pro každé úložiště, jehož příjemci se liší, použijte samostatný podpisový klíč.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1259,19 +1259,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam obsahuje více než jeden řádek s ID úložiště.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Řádek s ID úložiště má chybný tvar: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam obsahuje řádek s ID úložiště, ale žádný řádek s generací.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1339,7 +1339,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Seznam adresátů s digitálním podpisem %1 neobsahuje řádek se ID úložiště, zatímco toto zařízení zná úložiště podle jeho ID %2: mohlo být vytvořeno pro jiné úložiště a zkopírováno sem, nebo pomocí starší verze qtpass. Osoba, která má k dispozici podpisový klíč, se dostane tím, že otevře Uživatelé, vybere adresáty znovu a uloží, což přidá řádek s ID úložiště.</translation>
+        <translation type="unfinished">Podepsaný seznam příjemců %1 neobsahuje řádek s ID úložiště, přestože toto zařízení zná toto úložiště podle jeho ID %2: seznam mohl být zapsán pro jiné úložiště a zkopírován sem, nebo starší verzí QtPass. Držitel podpisového klíče to vyřeší tak, že otevře dialog Uživatelé, znovu vybere příjemce a uloží je; tím se zapíše řádek s ID úložiště.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1584,7 +1584,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Heslový úložiště má soubory, které nebyly sloučeny. Vyřešte konflikt pomocí Gitu před opětovným šifrováním.</translation>
+        <translation type="unfinished">Repozitář Git úložiště hesel obsahuje nesloučené soubory. Před opětovným šifrováním vyřešte konflikt pomocí Gitu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1704,7 +1704,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 je, nebo se nachází za, symboickým odkazem nebo uzlem po vytvoření. To, kam ukazuje, není součástí úložiště hesel a zůstává nezměněno.</translation>
+        <translation type="unfinished">%1 je po stažení (pull) symbolický odkaz nebo bod spojení (junction), nebo se za takovým odkazem nachází. To, kam odkaz vede, není součástí úložiště hesel a zůstane nedotčeno.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2813,7 +2813,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Seznam skrytí složek, které začínají tečkou: %1</translation>
+        <translation type="unfinished">Složka, jejíž název začíná tečkou, by byla v seznamu skrytá: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3022,7 +3022,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Nemožné spustit pwgen (&quot;%1&quot;). Zkontrolujte program pwgen v nastavení, nebo vypněte možnost &quot;Použít pwgen&quot;.</translation>
+        <translation type="unfinished">Nepodařilo se spustit pwgen (&quot;%1&quot;). Zkontrolujte program pwgen v nastavení, nebo vypněte možnost &quot;Použít pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3128,17 +3128,17 @@ Pokračovat?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Heslový úložiště je v polovině %1. Dokončete nebo zrušte proces pomocí Git, než změníte heslové úložiště, jinak mohou být data ztracena.</translation>
+        <translation type="unfinished">Repozitář Git úložiště hesel je uprostřed operace %1. Než změníte úložiště hesel, dokončete ji nebo zrušte pomocí Gitu, jinak se vaše změny mohou ztratit.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Úložiště hesel se aktualizuje (probíhá Git pull). Počkejte, až to bude dokončeno, a poté zkuste znovu.</translation>
+        <translation type="unfinished">Úložiště hesel se aktualizuje (probíhá Git pull). Počkejte, až aktualizace skončí, a pak to zkuste znovu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Aktualizace probíhá</translation>
+        <translation type="unfinished">Probíhá aktualizace</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3321,12 +3321,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Název nebo složka, který začíná tečkou, by byl skrytý z seznamu.</translation>
+        <translation type="unfinished">Název nebo složka začínající tečkou by byly v seznamu skryté.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 se nachází za symboickým odkazem nebo uzlem, mimo úložiště hesel.</translation>
+        <translation type="unfinished">%1 se nachází za symbolickým odkazem nebo bodem spojení (junction), mimo úložiště hesel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

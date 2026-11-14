@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Historial de còpies d&apos;escriptori restaurat</translation>
+        <translation type="unfinished">S&apos;ha restaurat el porta-retalls</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Paraules, separades per comes. Un camp compta quan el seu nom conté alguna d&apos;elles com a paraules senceres, sense distingir majúscules de minúscules: &quot;key&quot; oculta &quot;API key&quot;, però no &quot;keyboard layout&quot;. Per tant, tendeix a ocultar massa: &quot;Public key&quot; i &quot;Password hint&quot; també s&apos;oculten; treu una paraula per mostrar-los.</translation>
+        <translation type="unfinished">Paraules, separades per comes. Un camp compta quan el seu nom conté alguna d&apos;elles com a paraula sencera, sense distingir majúscules de minúscules: &quot;key&quot; oculta &quot;API key&quot;, però no &quot;keyboard layout&quot;. Per tant, tendeix a ocultar massa: &quot;Public key&quot; i &quot;Password hint&quot; també s&apos;oculten; traieu una paraula per mostrar-los.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilitza un repositori Git d&apos;una carpeta superior al magatzem</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -584,7 +584,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Ocultar cada camp</translation>
+        <translation type="unfinished">Oculta tots els camps</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -604,7 +604,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Un nom de camp per línia. Una línia com &quot;# secret: pin, cvv&quot; marca els camps que s&apos;han d&apos;amagar com la contrasenya mentre &quot;Oculta la contrasenya&quot; està activat. La mateixa línia funciona al fitxer .templates del magatzem, on afecta cada entrada del magatzem, no només les creades amb aquesta plantilla.</translation>
+        <translation type="unfinished">Un nom de camp per línia. Una línia com &quot;# secret: pin, cvv&quot; marca els camps que s&apos;han d&apos;ocultar com la contrasenya mentre &quot;Oculta la contrasenya&quot; està activat. La mateixa línia funciona al fitxer .templates del magatzem, on afecta cada entrada del magatzem, no només les creades amb aquesta plantilla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 signa amb la mateixa clau per a un altre magatzem. Una llista de destinataris signada per a un d&apos;aquests magatzems s&apos;accepta a l&apos;altre: utilitzeu una clau de signatura diferent per a cada magatzem amb destinataris diferents.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1262,19 +1262,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista conté més d&apos;una línia d&apos;ID del magatzem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La línia d&apos;ID del magatzem té un format incorrecte: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">La llista inclou una línia amb l&apos;ID del magatzem, però no una línia de generació.</translation>
+        <translation type="unfinished">La llista conté una línia d&apos;ID del magatzem però cap línia de generació.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1336,13 +1336,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">La llista de destinataris signats %1 va ser escrita per a un altre gestor de contrasenyes (ID del gestor: %2; aquest dispositiu el coneix com a %3) i no s&apos;utilitza. Pot haver estat copiada aquí des d&apos;un gestor que estigui signat amb la mateixa clau. Si en comptes, es configurés de nou, eliminar %4 oblidaria els ID del gestor que aquest dispositiu coneix.</translation>
+        <translation type="unfinished">La llista de destinataris signada %1 es va escriure per a un altre magatzem de contrasenyes (ID del magatzem %2; aquest dispositiu coneix aquest magatzem com a %3) i no s&apos;utilitza. Pot ser que s&apos;hagi copiat aquí des d&apos;un magatzem signat amb la mateixa clau. Si, en canvi, aquest magatzem s&apos;ha tornat a configurar, suprimir %4 fa oblidar els ID de magatzem que coneix aquest dispositiu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">La llista de destinataris signats %1 no inclou la línia d&apos;ID del magatzem, mentre que aquest dispositiu coneix el magatzem per la seva ID %2: potser va ser escrita per a un altre magatzem i copiada aquí, o per una versió antiga de QtPass. La persona que té la clau de signatura accedeix obrint Usuaris, seleccionant els destinataris de nou i guardant-los, cosa que escriu la línia d&apos;ID del magatzem.</translation>
+        <translation type="unfinished">La llista de destinataris signada %1 no conté cap línia d&apos;ID del magatzem, mentre que aquest dispositiu coneix aquest magatzem pel seu ID %2: pot ser que s&apos;hagi escrit per a un altre magatzem i s&apos;hagi copiat aquí, o que l&apos;hagi escrit una versió antiga de QtPass. Qui tingui la clau de signatura ho pot resoldre obrint Usuaris, seleccionant de nou els destinataris i desant, cosa que escriu la línia d&apos;ID del magatzem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1587,7 +1587,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">El repositori Git del gestor de contrasenyes té fitxers que no s&apos;han integrat. Resoldre el conflicte amb Git abans de tornar a encriptar.</translation>
+        <translation type="unfinished">El repositori Git del magatzem de contrasenyes té fitxers sense fusionar. Resoleu el conflicte amb Git abans de tornar a xifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2852,7 +2852,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Una carpeta que comenci amb un punt seria oculta de la llista: %1</translation>
+        <translation type="unfinished">Una carpeta que comenci amb un punt quedaria oculta a la llista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3167,12 +3167,12 @@ Voleu continuar?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">El repositori Git del gestor de contrasenyes es troba al mig d&apos;un %1. Termina-ho o cancel·la-lo amb Git abans de canviar el gestor de contrasenyes, ja que si ho fas, pot ser que perdis les dades.</translation>
+        <translation type="unfinished">Hi ha un %1 en curs al repositori Git del magatzem de contrasenyes. Acabeu-lo o interrompeu-lo amb Git abans de modificar el magatzem de contrasenyes, o podríeu perdre els canvis que feu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">S&apos;està actualitzant l&apos;emmagatzemat de contrasenyes (s&apos;està executant un &quot;Git pull&quot;). Espereu que s&apos;acabi, i després torneu a provar.</translation>
+        <translation type="unfinished">S&apos;està actualitzant el magatzem de contrasenyes (hi ha un Git pull en curs). Espereu que acabi i torneu-ho a provar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3360,12 +3360,12 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Un nom o carpeta que comenci amb un punt seria amagat de la llista.</translation>
+        <translation type="unfinished">Un nom o una carpeta que comenci amb un punt quedaria ocult a la llista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 es troba darrere d&apos;un enllaç simbòlic o un punt de junció, fora del dipòsit de contrasenyes.</translation>
+        <translation type="unfinished">%1 es troba darrere d&apos;un enllaç simbòlic o un punt de junció, fora del magatzem de contrasenyes.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

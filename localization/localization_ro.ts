@@ -584,7 +584,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Ascunde fiecare câmp</translation>
+        <translation type="unfinished">Ascunde toate câmpurile</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -609,7 +609,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Când depozitul de parole nu are propriul său depozit Git, se folosește cel dintr-un folder de deasupra lui. Dezactivat implicit, la fel ca la pass, astfel încât un depozit de parole aflat în interiorul altui depozit Git (dotfiles, de exemplu) să nu fie niciodată commitat sau împins acolo din greșeală. Doar Git nativ: pass se oprește întotdeauna la depozitul de parole.</translation>
+        <translation type="unfinished">Când depozitul de parole nu are propriul său depozit Git, se folosește cel dintr-un dosar de deasupra lui. Dezactivat implicit, la fel ca la pass, astfel încât un depozit de parole aflat în interiorul altui depozit Git (dotfiles, de exemplu) să nu fie niciodată commitat sau împins acolo din greșeală. Doar Git nativ: pass se oprește întotdeauna la depozitul de parole.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 semnează cu aceeași cheie pentru un alt depozit. O listă de destinatari semnată pentru unul dintre aceste depozite este acceptată în celălalt: folosiți o cheie de semnare separată pentru fiecare depozit cu destinatari diferiți.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1263,19 +1263,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista conține mai mult de o linie de ID al depozitului.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linia de ID al depozitului are un format greșit: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista conține o linie de ID al depozitului, dar nicio linie de generație.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1337,13 +1337,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">Lista de destinatari semată %1 a fost creată pentru un alt manager de parole (ID-ul depozitului %2; acest dispozitiv îl recunoaște ca pe %3) și nu este utilizată. Poate fi fost copiată aici dintr-un depozit semat cu aceeași cheie. Dacă, în schimb, acest depozit ar fi fost recreat, eliminarea lui %4 va face uitare ID-urile de depozite pe care acest dispozitiv le cunoaște.</translation>
+        <translation type="unfinished">Lista semnată de destinatari %1 a fost scrisă pentru un alt depozit de parole (ID-ul depozitului %2; acest dispozitiv cunoaște acest depozit ca %3) și nu este folosită. Este posibil să fi fost copiată aici dintr-un depozit semnat cu aceeași cheie. Dacă, în schimb, acest depozit a fost configurat din nou, ștergerea lui %4 face ca acest dispozitiv să uite ID-urile de depozit pe care le cunoaște.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Lista semnată de destinatari %1 nu conține un rând cu ID-ul depozitului, deși acest dispozitiv cunoaște acest depozit după ID-ul %2: poate a fost scrisă pentru alt depozit și copiată aici, sau de un QtPass mai vechi. Deținătorul cheii de semnare poate continua deschizând utilizatori, alegând din nou destinatarii și salvând, ceea ce scrie rândul cu ID-ul depozitului.</translation>
+        <translation type="unfinished">Lista semnată de destinatari %1 nu conține nicio linie de ID al depozitului, deși acest dispozitiv cunoaște acest depozit după ID-ul %2: este posibil să fi fost scrisă pentru alt depozit și copiată aici, sau de o versiune mai veche de QtPass. Un deținător al cheii de semnare poate depăși situația deschizând Utilizatori, selectând din nou destinatarii și salvând, ceea ce scrie linia de ID al depozitului.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1433,7 +1433,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nu se află în depozitul de parole, sau numele unui folder de pe parcurs conține un sfârșit de linie sau alt caracter de control, pe care o listă semnată nu îl poate înregistra.</translation>
+        <translation type="unfinished">%1 nu se află în depozitul de parole, sau numele unui dosar de pe parcurs conține un salt de linie sau alt caracter de control, pe care o listă semnată nu îl poate înregistra.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1588,7 +1588,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Depozitul Git al managerului de parole conține fișiere care nu au fost integrate. Rezolvă conflictul cu Git înainte de a re-cripta.</translation>
+        <translation type="unfinished">Depozitul Git al depozitului de parole conține fișiere neîmbinate. Rezolvați conflictul cu Git înainte de recriptare.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2844,12 +2844,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Folder ascuns</translation>
+        <translation type="unfinished">Dosar ascuns</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Un folder care începe cu un punct va fi ascuns din listă: %1</translation>
+        <translation type="unfinished">Un dosar care începe cu un punct ar fi ascuns în listă: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3053,7 +3053,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Crearea parolei a eșuat</translation>
+        <translation type="unfinished">Generarea parolei a eșuat</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3164,12 +3164,12 @@ Continuați?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Depozitul Git al managerului de parole este în prezent în curs de %1. Finalizați sau anulați-l folosind Git înainte de a schimba managerul de parole, altfel, modificările efectuate ar putea fi pierdute.</translation>
+        <translation type="unfinished">Depozitul Git al depozitului de parole este în mijlocul unei operații %1. Finalizați-o sau anulați-o cu Git înainte de a modifica depozitul de parole, altfel modificările făcute s-ar putea pierde.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Stocul de parole este actualizat (un proces Git este în desfășurare). Așteptați până se finalizează, apoi încercați din nou.</translation>
+        <translation type="unfinished">Depozitul de parole este în curs de actualizare (un Git pull este în desfășurare). Așteptați până se termină, apoi încercați din nou.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3357,7 +3357,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Un nume sau folder care începe cu un punct ar fi ascuns din listă.</translation>
+        <translation type="unfinished">Un nume sau un dosar care începe cu un punct ar fi ascuns în listă.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>

@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">คำ คั่นด้วยเครื่องหมายจุลภาค ฟิลด์จะถูกนับเมื่อชื่อของฟิลด์มีคำใดคำหนึ่งเป็นคำเต็ม ไม่ว่าจะเป็นตัวพิมพ์ใหญ่หรือตัวพิมพ์เล็ก: &quot;key&quot; จะซ่อน &quot;API key&quot; แต่ไม่ซ่อน &quot;keyboard layout&quot; ดังนั้นจึงมักซ่อนมากเกินไป: &quot;Public key&quot; และ &quot;Password hint&quot; จะถูกซ่อนด้วย ให้เอาคำออกเพื่อแสดงฟิลด์เหล่านั้น</translation>
+        <translation type="unfinished">คำ คั่นด้วยเครื่องหมายจุลภาค ฟิลด์จะถูกนับเมื่อชื่อของฟิลด์มีคำใดคำหนึ่งเป็นคำเต็ม ไม่ว่าจะเป็นตัวพิมพ์ใหญ่หรือตัวพิมพ์เล็ก: &quot;key&quot; จะซ่อน &quot;API key&quot; แต่ไม่ซ่อน &quot;keyboard layout&quot; ดังนั้นจึงยอมซ่อนมากเกินไปไว้ก่อน: &quot;Public key&quot; และ &quot;Password hint&quot; จะถูกซ่อนด้วย ให้เอาคำออกเพื่อแสดงฟิลด์เหล่านั้น</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">เมื่อที่เก็บรหัสผ่านไม่มี Git repository ของตัวเอง ให้ใช้ repository ในโฟลเดอร์ที่อยู่เหนือขึ้นไป ปิดไว้เป็นค่าเริ่มต้นเช่นเดียวกับ pass เพื่อไม่ให้ที่เก็บรหัสผ่านที่อยู่ภายใน repository อื่น (เช่น dotfiles) ถูกคอมมิตหรือพุชไปที่นั่นโดยไม่ตั้งใจ เฉพาะ Git แบบเนทีฟเท่านั้น: pass จะหยุดที่ที่เก็บรหัสผ่านเสมอ</translation>
+        <translation type="unfinished">เมื่อที่เก็บรหัสผ่านไม่มีที่เก็บ Git ของตัวเอง ให้ใช้ที่เก็บ Git ในโฟลเดอร์ที่อยู่เหนือขึ้นไป ปิดไว้เป็นค่าเริ่มต้นเช่นเดียวกับ pass เพื่อไม่ให้ที่เก็บรหัสผ่านที่อยู่ภายในที่เก็บ Git อื่น (เช่น dotfiles) ถูกคอมมิตหรือพุชไปที่นั่นโดยไม่ตั้งใจ เฉพาะ Git แบบเนทีฟเท่านั้น: pass จะหยุดที่ที่เก็บรหัสผ่านเสมอ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -471,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">เมื่อล้างคลิปบอร์ด ให้คืนสิ่งที่อยู่ในคลิปบอร์ดก่อนการคัดลอก เช่นเดียวกับที่ pass -c ทำ เว้นแต่จะมีการคัดลอกสิ่งอื่นในระหว่างนั้น เฉพาะข้อความเท่านั้น: จะไม่คืนค่าการจัดรูปแบบ ข้อความนั้นจะอยู่ในหน่วยความจำจนถึงตอนนั้น ในกรณีที่อ่านคลิปบอร์ดไม่ได้หากไม่มีโฟกัส (เดสก์ท็อป Wayland บางตัว) จะล้างคลิปบอร์ดแทน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -512,12 +512,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">ซ่อนทุกช่อง</translation>
+        <translation type="unfinished">ซ่อนทุกฟิลด์</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">ทุกช่องที่อยู่หลังปุ่มรูปตา ไม่ใช่เฉพาะข้อมูลลับ: สำหรับการแชร์หน้าจอและการนำเสนอ หมายเหตุใต้ช่องต่างๆ และรหัส OTP จะยังคงมองเห็นได้ &quot;ซ่อนเนื้อหา&quot; จะซ่อนสิ่งเหล่านั้นด้วย</translation>
+        <translation type="unfinished">ทุกฟิลด์ที่อยู่หลังปุ่มรูปตา ไม่ใช่เฉพาะข้อมูลลับ: สำหรับการแชร์หน้าจอและการนำเสนอ หมายเหตุใต้ฟิลด์และรหัส OTP จะยังคงมองเห็นได้ &quot;ซ่อนเนื้อหา&quot; จะซ่อนสิ่งเหล่านั้นด้วย</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -547,7 +547,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">ใช้ Git repository ในโฟลเดอร์ที่อยู่เหนือตำแหน่งการจัดเก็บ</translation>
+        <translation type="unfinished">ใช้ที่เก็บ Git ในโฟลเดอร์ที่อยู่เหนือที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -763,7 +763,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ลงนามด้วยกุญแจเดียวกันสำหรับที่เก็บรหัสผ่านอื่น รายชื่อผู้รับที่ลงนามสำหรับที่เก็บหนึ่งจะได้รับการยอมรับในอีกที่เก็บหนึ่งด้วย: ให้ใช้กุญแจลงนามแยกกันสำหรับแต่ละที่เก็บที่มีผู้รับต่างกัน</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1213,19 +1213,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายชื่อนี้มีบรรทัด ID ที่เก็บมากกว่าหนึ่งบรรทัด</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">บรรทัด ID ที่เก็บมีรูปแบบไม่ถูกต้อง: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายชื่อนี้มีบรรทัด ID ที่เก็บแต่ไม่มีบรรทัดรุ่น</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1287,13 +1287,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">รายการผู้รับที่ลงลายเซ็น %1 ถูกเขียนขึ้นสำหรับที่เก็บรหัสผ่านอื่น (ID ที่เก็บ %2; อุปกรณ์นี้รู้จักที่เก็บนี้ว่าเป็น %3) และไม่ได้ใช้งาน การคัดลอกข้อมูลนี้อาจเกิดขึ้นจากที่เก็บซึ่งลงลายเซ็นด้วยกุญแจเดียวกัน หากเราตั้งค่าที่เก็บใหม่แทน การลบ %4 จะทำให้อุปกรณ์ลืม ID ที่เก็บ ซึ่งอุปกรณ์นี้รู้จัก</translation>
+        <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ถูกเขียนขึ้นสำหรับที่เก็บรหัสผ่านอื่น (ID ที่เก็บ %2; อุปกรณ์นี้รู้จักที่เก็บนี้ในชื่อ %3) จึงไม่ถูกนำมาใช้ รายชื่อนี้อาจถูกคัดลอกมาจากที่เก็บที่ลงนามด้วยกุญแจเดียวกัน หากที่เก็บนี้ถูกตั้งค่าใหม่แทน การลบ %4 จะทำให้อุปกรณ์นี้ลืม ID ที่เก็บที่รู้จัก</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">รายชื่อผู้รับที่ลงนามแล้ว %1 ไม่มีบรรทัด ID ที่เก็บ ในขณะที่อุปกรณ์นี้รู้จักที่เก็บนี้ด้วย ID %2: รายชื่อนี้อาจถูกเขียนสำหรับที่เก็บอื่นแล้วคัดลอกมาไว้ที่นี่ หรือเขียนโดย QtPass รุ่นเก่า ผู้ถือกุญแจลงนามสามารถดำเนินการต่อได้โดยเปิดผู้ใช้ เลือกผู้รับใหม่อีกครั้งแล้วบันทึก ซึ่งจะเขียนบรรทัด ID ที่เก็บ</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1538,7 +1538,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">ที่เก็บ Git ของผู้จัดการรหัสผ่านมีไฟล์ที่ไม่ได้รับการรวม ควรแก้ไขความขัดแย้งด้วย Git ก่อนที่จะเข้ารหัสใหม่</translation>
+        <translation type="unfinished">ที่เก็บ Git ของที่เก็บรหัสผ่านมีไฟล์ที่ยังไม่ได้รวม โปรดแก้ไขความขัดแย้งด้วย Git ก่อนเข้ารหัสใหม่</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2807,7 +2807,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">รหัสผ่านไม่สามารถสร้างได้</translation>
+        <translation type="unfinished">การสร้างรหัสผ่านล้มเหลว</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -2918,12 +2918,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">แหล่งเก็บข้อมูล Git ของผู้จัดการรหัสผ่านอยู่ในช่วง %1 โปรดเสร็จสิ้นหรือยกเลิกการเปลี่ยนแปลงด้วย Git ก่อนที่จะเปลี่ยนผู้จัดการรหัสผ่าน มิฉะนั้น ข้อมูลที่เปลี่ยนแปลงไปอาจสูญหาย</translation>
+        <translation type="unfinished">ที่เก็บ Git ของที่เก็บรหัสผ่านอยู่ระหว่างการ %1 โปรดทำให้เสร็จหรือยกเลิกด้วย Git ก่อนเปลี่ยนแปลงที่เก็บรหัสผ่าน มิฉะนั้นสิ่งที่คุณเปลี่ยนแปลงอาจสูญหาย</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">การจัดเก็บรหัสผ่านกำลังได้รับการอัปเดต (กระบวนการ Git pull กำลังดำเนินการอยู่) โปรดรอจนกว่าจะเสร็จสมบูรณ์ จากนั้นลองอีกครั้ง</translation>
+        <translation type="unfinished">ที่เก็บรหัสผ่านกำลังอัปเดต (กำลังดำเนินการ Git pull) โปรดรอจนกว่าจะเสร็จ แล้วลองอีกครั้ง</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>

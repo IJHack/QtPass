@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">كلمات مفصولة بفواصل. يُحتسب الحقل عندما يحتوي اسمه على إحداها ككلمات كاملة، بأحرف كبيرة أو صغيرة: &quot;key&quot; تخفي &quot;API key&quot;، وليس &quot;keyboard layout&quot;. لذا يميل إلى إخفاء أكثر من اللازم: &quot;Public key&quot; و &quot;Password hint&quot; يُخفيان أيضًا؛ احذف كلمة لإظهارهما.</translation>
+        <translation type="unfinished">كلمات مفصولة بفواصل. يُحتسب الحقل حين يتضمن اسمه إحداها ككلمات كاملة، بصرف النظر عن حالة الأحرف: &quot;key&quot; تُخفي &quot;API key&quot; لا &quot;keyboard layout&quot;. لذا يميل إلى إخفاء أكثر من اللازم: يُخفى أيضًا &quot;Public key&quot; و&quot;Password hint&quot;؛ احذف كلمة لإظهارهما.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="508"/>
@@ -312,7 +312,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">عندما لا يحتوي المخزن على مستودع Git خاص به، استخدم المستودع الموجود في المجلد أعلاه. الوضع الافتراضي: كما هو الحال مع &quot;pass&quot;، فإن أي مخزن موجود داخل مستودع آخر (مثل ملفات النظام) لن يتم الالتزام به أو دفعه عن طريق الخطأ. استخدام Git الأصلي فقط: &quot;pass&quot; يتوقف دائمًا عند المخزن.</translation>
+        <translation type="unfinished">عندما لا يكون للمخزن مستودع Git خاص به، استخدم المستودع الموجود في مجلد أعلى منه. معطّل افتراضيًا، كما في pass، حتى لا يُودَع مخزن موجود داخل مستودع آخر (dotfiles مثلًا) أو يُدفع إليه بالخطأ أبدًا. مع Git الأصلي فقط: يتوقف pass دائمًا عند المخزن.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -493,7 +493,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">كل الحقول الموجودة خلف زر &quot;العين&quot;، وليس فقط الأسرار: للمشاركة وعرض المحتوى. الملاحظات أسفل الحقول ورمز التحقق لمرة واحدة تظل مرئية؛ &quot;إخفاء المحتوى&quot; يخفيها أيضًا.</translation>
+        <translation type="unfinished">كل الحقول خلف زر العين، لا الأسرار فقط: للشاشات المشتركة والعروض التقديمية. تبقى الملاحظات أسفل الحقول ورمز OTP مرئية؛ و&quot;إخفاء المحتوى&quot; يُخفيها أيضًا.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1091,8 +1091,8 @@ e-mail</translation>
         <translation type="unfinished">
             <numerusform>… %n سطر إضافي غير معروض</numerusform>
             <numerusform>… سطر إضافي واحد (%n) غير معروض</numerusform>
-            <numerusform>… سطران إضافيان (%n) غير معروض</numerusform>
-            <numerusform>… %n أسطر إضافية غير معروض</numerusform>
+            <numerusform>… سطران إضافيان (%n) غير معروضين</numerusform>
+            <numerusform>… %n أسطر إضافية غير معروضة</numerusform>
             <numerusform>… %n سطرًا إضافيًا غير معروض</numerusform>
             <numerusform>… %n سطر إضافي غير معروض</numerusform>
         </translation>
@@ -1222,19 +1222,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">القائمة تحتوي على أكثر من سطر لـ &quot;معرف المخزن&quot;.</translation>
+        <translation type="unfinished">تحتوي القائمة على أكثر من سطر معرّف مخزن واحد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">عبارة &quot;معرف المخزن&quot; غير صحيحة: %1</translation>
+        <translation type="unfinished">صيغة سطر معرّف المخزن غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">القائمة تحتوي على سطر بمعرف &quot;مخزن&quot;، ولكن لا يوجد سطر لإنشاء.</translation>
+        <translation type="unfinished">تحتوي القائمة على سطر معرّف مخزن لكن دون سطر جيل.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1296,13 +1296,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">قائمة المستلمين الموقعة %1 كتبت لمكان تخزين كلمات المرور آخر (معرف المكان %2؛ هذا الجهاز يعرف هذا المكان باسم %3) وهي غير مستخدمة. قد تكون تم نسخها هنا من مكان مخزن موقع باستخدام نفس المفتاح. إذا تم إعادة إعداد هذا المكان بدلاً من ذلك، فإن حذف %4 سيفقد معرفات الأماكن التي يعرفها هذا الجهاز.</translation>
+        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 كُتبت لمخزن كلمات مرور آخر (معرّف المخزن %2؛ ويعرف هذا الجهاز هذا المخزن باسم %3)، ولذلك لا تُستخدم. ربما نُسخت إلى هنا من مخزن موقَّع بالمفتاح نفسه. أما إذا كان هذا المخزن قد أُعدّ من جديد، فإن إزالة %4 تمحو معرّفات المخازن التي يعرفها هذا الجهاز.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">قائمة المستلمين الموقعة %1 لا تحتوي على سطر معرف المخزن، بينما يعرف هذا الجهاز المخزن بمعرفه %2: قد يكون تم كتابته لمكان آخر ثم نسخه هنا، أو بواسطة نسخة قديمة من QtPass. الشخص الذي يمتلك مفتاح التوقيع يمكنه الوصول إلى قائمة المستخدمين، واختيار المستلمين مرة أخرى وحفظها، مما يؤدي إلى كتابة سطر معرف المخزن.</translation>
+        <translation type="unfinished">قائمة المستلمين الموقَّعة %1 لا تحتوي على سطر معرّف المخزن، في حين يعرف هذا الجهاز هذا المخزن بمعرّفه %2: ربما كُتبت لمخزن آخر ونُسخت إلى هنا، أو كتبها إصدار أقدم من QtPass. يتجاوز حامل مفتاح التوقيع ذلك بفتح «المستخدمون» وتحديد المستلمين من جديد والحفظ، مما يكتب سطر معرّف المخزن.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1670,7 +1670,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 هو، أو يكمن خلف، رابط رمزي أو وصلة بعد السحب. ما الذي يشير إليه ليس جزءًا من مخزن كلمات المرور ويترك دون لمس.</translation>
+        <translation type="unfinished">%1 رابط رمزي أو نقطة وصل، أو يقع خلف أحدهما، بعد السحب. ما يشير إليه ذلك ليس جزءًا من مخزن كلمات المرور ويُترك دون تغيير.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2634,7 +2634,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">المجلد المخفي</translation>
+        <translation type="unfinished">مجلد مخفي</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
@@ -2969,7 +2969,7 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">مخزن كلمات المرور الخاص بـ Git موجود في منتصف عملية %1. قم بإكمالها أو إلغائها باستخدام Git قبل تغيير مخزن كلمات المرور، وإلا فقد تفقد البيانات.</translation>
+        <translation type="unfinished">مستودع Git الخاص بمخزن كلمات المرور في منتصف عملية %1. أكملها أو ألغِها باستخدام Git قبل تغيير مخزن كلمات المرور، وإلا فقد تضيع التغييرات التي تجريها.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3162,12 +3162,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">إسم أو مجلد يبدأ بنقطة (.) سيتم إخفاؤه من القائمة.</translation>
+        <translation type="unfinished">الاسم أو المجلد الذي يبدأ بنقطة سيكون مخفيًا من القائمة.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">يقع %1 خلف رابط رمزي أو وصلة، خارجًا عن مخزن كلمات المرور.</translation>
+        <translation type="unfinished">يقع %1 خلف رابط رمزي أو نقطة وصل، خارج مخزن كلمات المرور.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

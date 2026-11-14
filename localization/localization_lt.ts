@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Kai slaptažodžių saugykla neturi savo Git saugyklos, naudoti tą, kuri yra aukščiau esančiame aplanke. Pagal numatytuosius nustatymus išjungta, kaip ir pass, todėl slaptažodžių saugyklos, esančios kitoje Git saugykloje (pavyzdžiui, dotfiles), pakeitimai niekada per klaidą nebus ten įrašyti (commit) ar išsiųsti (push). Tik vietiniam Git: pass visada sustoja ties slaptažodžių saugykla.</translation>
+        <translation type="unfinished">Kai slaptažodžių saugykla neturi savo Git repozitorijos, naudoti tą, kuri yra aukščiau esančiame aplanke. Pagal numatytuosius nustatymus išjungta, kaip ir pass, todėl slaptažodžių saugykla, esanti kitoje repozitorijoje (pavyzdžiui, dotfiles), niekada per klaidą nebus ten įrašyta (commit) ar išsiųsta (push). Tik vietiniam Git: pass visada sustoja ties slaptažodžių saugykla.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Naudokite Git repozitoriją, esantį failų sąvyme, kuris yra gretimame kataloge</translation>
+        <translation type="unfinished">Naudoti Git repozitoriją aplanke virš saugyklos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -772,7 +772,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass įrašo %1 pakeitimus į Git saugyklą, esančią %2: kai slaptažodžių saugyklos kelyje yra dvitaškis, pass negali apriboti Git šia saugykla. Slaptažodžių saugykloje paleiskite &quot;git init&quot; arba naudokite vietinį Git/GPG.</translation>
+        <translation type="unfinished">pass įrašo %1 pakeitimus į Git repozitoriją, esančią %2: kai slaptažodžių saugyklos kelyje yra dvitaškis, pass negali apriboti Git tik šia saugykla. Slaptažodžių saugykloje paleiskite &quot;git init&quot; arba naudokite vietinį Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1219,19 +1219,19 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sąraše yra daugiau nei viena saugyklos ID eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Mažinamas ID eilutė yra netinkama: %1</translation>
+        <translation type="unfinished">Saugyklos ID eilutė netaisyklinga: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sąraše yra saugyklos ID eilutė, bet nėra kartos eilutės.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1299,7 +1299,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Pasirašyto gavėjų sąraše %1 nėra &quot;Saugojimo ID&quot; eilutės, tačiau šis įrenginys žino šį saugojimą pagal jo ID %2: galbūt tai buvo parašyta kitam saugojimui ir kopijuota čia, arba senesniam qtPass. Pasirašymo rakto savininkas gali patekti atidarydami &quot;Vartotojai&quot;, pasirinkdami gavėjus iš naujo ir išsaugodami, kuriuo metu būtų įrašyta &quot;Saugojimo ID&quot; eilutė.</translation>
+        <translation type="unfinished">Pasirašytame gavėjų sąraše %1 nėra saugyklos ID eilutės, nors šis įrenginys šią saugyklą žino pagal jos ID %2: galbūt sąrašas buvo įrašytas kitai saugyklai ir nukopijuotas čia, arba jį įrašė senesnė QtPass versija. Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“, iš naujo pasirinkęs gavėjus ir išsaugojęs – taip įrašoma saugyklos ID eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1497,7 +1497,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 nėra slaptažodžių saugykloje, arba failo pavadinimas turi nutraukimo ar kitą kontrolės simbolį, kuriuo pasižymota sąrašas negali užrašyti.</translation>
+        <translation type="unfinished">%1 nėra slaptažodžių saugykloje, arba kelyje esančio aplanko pavadinime yra eilutės lūžis ar kitas valdymo simbolis, kurio pasirašytas sąrašas negali įrašyti.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="613"/>
@@ -1544,7 +1544,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Slaptažodžių saugyklos Git repozitorijoje yra nesusiejami failai. Išsprękite konfliktą naudodamiesi Git prieš vėl užšifruojant.</translation>
+        <translation type="unfinished">Slaptažodžių saugyklos Git repozitorijoje yra nesulietų failų. Prieš šifruodami iš naujo, išspręskite konfliktą naudodami Git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1664,7 +1664,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 yra, arba yra paslėpta simbolinė nuoroda ar jungtys po atidarymo. Kur ji linka – tai nėra saugoma slaptažodžių sąraše ir lieka nepaliota.</translation>
+        <translation type="unfinished">%1 po gavimo (pull) yra simbolinė nuoroda ar jungtis arba yra pasiekiamas per tokią. Tai, į ką ji rodo, nėra slaptažodžių saugyklos dalis ir paliekama nepaliesta.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2614,12 +2614,12 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished">Slaptas katalogas</translation>
+        <translation type="unfinished">Paslėptas aplankas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Failų sąveina, kuri prasideda tašku, būtų paslėpta iš sąrašo: %1</translation>
+        <translation type="unfinished">Aplankas, kurio pavadinimas prasideda tašku, sąraše būtų paslėptas: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2815,12 +2815,12 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Slaptažodžio sukūrimas nepavyko</translation>
+        <translation type="unfinished">Nepavyko sugeneruoti slaptažodžio</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Nepavyko paleisti &quot;pwgen&quot; programą (&quot;%1&quot;). Patikrinkite &quot;pwgen&quot; programą nustatymais, arba išjunkite funkcija &quot;Naudoti pwgen&quot;.</translation>
+        <translation type="unfinished">Nepavyko paleisti pwgen (&quot;%1&quot;). Patikrinkite pwgen programą nustatymuose arba išjunkite &quot;Naudoti pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -2926,17 +2926,17 @@ Tęsti?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Slaptažodžių saugyklos Git repozitorius yra tarp %1. Baigkite arba nutraukite jį naudodami Git, prieš keisdami slaptažodžių saugyklą, nes tai gali sukelti duomenų netekimą.</translation>
+        <translation type="unfinished">Slaptažodžių saugyklos Git repozitorijoje yra nebaigta operacija %1. Prieš keisdami slaptažodžių saugyklą, baikite arba nutraukite ją naudodami Git, nes kitaip jūsų pakeitimai gali būti prarasti.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Slaptažodžių saugykla yra atnaujinama (vyksta &quot;Git gavimas&quot;). Palaukitis, kol procesas bus baigtas, tada bandykite dar kartą.</translation>
+        <translation type="unfinished">Slaptažodžių saugykla atnaujinama (vyksta Git gavimas). Palaukite, kol tai bus baigta, tada bandykite dar kartą.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished">Atnaujinimas vyksta</translation>
+        <translation type="unfinished">Vyksta atnaujinimas</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
@@ -3119,12 +3119,12 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Vardas arba folderis, kuris prasideda tašku, būtų paslėptas iš sąrašo.</translation>
+        <translation type="unfinished">Pavadinimas arba aplankas, prasidedantis tašku, sąraše būtų paslėptas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 yra paslėptas simbolinės nuorodos arba jungties, esančios už slaptažodžių saugyklos.</translation>
+        <translation type="unfinished">%1 yra už simbolinės nuorodos arba jungties, už slaptažodžių saugyklos ribų.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

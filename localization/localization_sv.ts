@@ -1314,7 +1314,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Den signerade mottagarlistan %1 innehåller ingen rad med utrymmets ID, fast den här enheten känner utrymmet under ID %2: den kan ha skrivits för ett annat utrymme och kopierats hit, eller av en äldre QtPass. Den som har signeringsnyckeln kommer vidare genom att öppna Användare, välja mottagarna på nytt och spara, vilket skriver raden med utrymmets ID.</translation>
+        <translation type="unfinished">Den signerade mottagarlistan %1 innehåller ingen rad med utrymmets ID, trots att den här enheten känner till utrymmet under dess ID %2: den kan ha skrivits för ett annat utrymme och kopierats hit, eller av en äldre QtPass. Den som har signeringsnyckeln kommer vidare genom att öppna Användare, välja mottagarna på nytt och spara, vilket skriver raden med utrymmets ID.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1559,7 +1559,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Lösenordsutrymmets Git-förråd har filer som inte är sammanfogade. Lös konflikten med Git innan du krypterar om.</translation>
+        <translation type="unfinished">Lösenordsutrymmets Git-arkiv har filer som inte är sammanfogade. Lös konflikten med Git innan du krypterar om.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1598,7 +1598,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Ofullständig Git-operation</translation>
+        <translation type="unfinished">Oavslutad Git-operation</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2978,12 +2978,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Lösenordgenerering misslyckades</translation>
+        <translation type="unfinished">Lösenordsgenerering misslyckades</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Kunde inte köra &quot;pwgen&quot; (&quot;%1&quot;). Kontrollera &quot;pwgen&quot;-programmet under inställningar, eller stäng av &quot;Använd pwgen&quot;.</translation>
+        <translation type="unfinished">Kunde inte köra pwgen (&quot;%1&quot;). Kontrollera pwgen-programmet i inställningarna, eller stäng av &quot;Använd pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3089,12 +3089,12 @@ Fortsätta?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Lösenordsutrymmet använder ett Git-repository mitt i en %1. Slutför eller avbryt den med Git innan du ändrar lösenordsutrymmet, annars kan dina ändringar gå förlorade.</translation>
+        <translation type="unfinished">Lösenordsutrymmets Git-arkiv är mitt i en %1. Slutför eller avbryt den med Git innan du ändrar lösenordsutrymmet, annars kan dina ändringar gå förlorade.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Lösenordsutrymmet uppdateras (en Git pull är igång). Vänta tills det har slutförts, och försök sedan igen.</translation>
+        <translation type="unfinished">Lösenordsutrymmet uppdateras (en Git pull pågår). Vänta tills den är klar och försök sedan igen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3104,7 +3104,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">Ofullständig Git-operation</translation>
+        <translation type="unfinished">Oavslutad Git-operation</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
@@ -3287,7 +3287,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 finns bakom en symbolisk länk eller korsning, utanför lösenordsutrymmet.</translation>
+        <translation type="unfinished">%1 ligger bakom en symbolisk länk eller knutpunkt, utanför lösenordsutrymmet.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

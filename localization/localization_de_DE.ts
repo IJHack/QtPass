@@ -613,7 +613,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass committet Änderungen in %1 in das Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Kennwortspeichers kann pass Git nicht auf den Kennwortspeicher beschränken. Führe &quot;git init&quot; im Kennwortspeicher aus, oder verwende natives Git/GPG.</translation>
+        <translation type="unfinished">pass committet Änderungen in %1 in das Git-Repository in %2: Mit einem Doppelpunkt im Pfad des Kennwortspeichers kann pass Git nicht auf den Kennwortspeicher beschränken. Führen Sie &quot;git init&quot; im Kennwortspeicher aus oder verwenden Sie natives Git/GPG.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1347,7 +1347,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicher-ID-Zeile, obwohl dieses Gerät diesen Speicher unter der ID %2 kennt: Sie wurde vielleicht für einen anderen Speicher geschrieben und hierher kopiert, oder von einem älteren QtPass. Wer den Signierschlüssel hat, kommt weiter, indem er Benutzer öffnet, die Empfänger neu auswählt und speichert; das schreibt die Speicher-ID-Zeile.</translation>
+        <translation type="unfinished">Die signierte Empfängerliste %1 enthält keine Speicher-ID-Zeile, obwohl dieses Gerät diesen Kennwortspeicher unter seiner ID %2 kennt: Sie wurde vielleicht für einen anderen Kennwortspeicher geschrieben und hierher kopiert oder von einem älteren QtPass. Ein Inhaber des Signierschlüssels kommt weiter, indem er „Benutzer“ öffnet, die Empfänger neu auswählt und speichert; dadurch wird die Speicher-ID-Zeile geschrieben.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1592,7 +1592,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Das Git-Repository des Passwortspeichers enthält nicht zusammengeführte Dateien. Lösen Sie den Konflikt mit Git, bevor Sie neu verschlüsseln.</translation>
+        <translation type="unfinished">Das Git-Repository des Kennwortspeichers enthält nicht zusammengeführte Dateien. Lösen Sie den Konflikt mit Git, bevor Sie neu verschlüsseln.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -3019,7 +3019,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Passwortgenerierung fehlgeschlagen</translation>
+        <translation type="unfinished">Kennwortgenerierung fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
@@ -3130,12 +3130,12 @@ Fortfahren?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Das Git-Repository des Passwortspeichers befindet sich mitten in einem %1. Schließen Sie den Vorgang mit Git ab oder brechen Sie ihn ab, bevor Sie den Passwortspeicher ändern, sonst können Ihre Änderungen verloren gehen.</translation>
+        <translation type="unfinished">Das Git-Repository des Kennwortspeichers befindet sich mitten in einem %1. Schließen Sie den Vorgang mit Git ab oder brechen Sie ihn ab, bevor Sie den Kennwortspeicher ändern, sonst können Ihre Änderungen verloren gehen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Der Passwortspeicher wird aktualisiert (ein Git-Pull läuft). Warten Sie, bis er abgeschlossen ist, und versuchen Sie es dann erneut.</translation>
+        <translation type="unfinished">Der Kennwortspeicher wird aktualisiert (ein Git-Pull läuft). Warten Sie, bis er abgeschlossen ist, und versuchen Sie es dann erneut.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3328,7 +3328,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 liegt hinter einem symbolischen Link oder einer Junction, außerhalb des Passwortspeichers.</translation>
+        <translation type="unfinished">%1 liegt hinter einer symbolischen Verknüpfung oder Junction, außerhalb des Kennwortspeichers.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

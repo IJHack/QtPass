@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Rejesha nakali iliyoko kwenye kope</translation>
+        <translation type="unfinished">Rejesha yaliyokuwa kwenye ubao wa kunakili awali</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -547,7 +547,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Tumia &quot;Git repository&quot; katika folda inayofuatia eneo la kuhifadhia</translation>
+        <translation type="unfinished">Tumia hazina ya Git iliyo katika folda juu ya hifadhi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -768,7 +768,7 @@ barua pepe</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass huhifadhi mabadiliko ya %1 kwenye hazina ya Git iliyoko %2: kukiwa na nukta mbili (:) katika njia ya hifadhi, pass haiwezi kuibana Git ndani ya hifadhi. Endesha &quot;git init&quot; ndani ya hifadhi, au tumia Git/GPG Asili.</translation>
+        <translation type="unfinished">pass hufanya commit ya mabadiliko ya %1 kwenye hazina ya Git iliyoko %2: kukiwa na nukta mbili (:) katika njia ya hifadhi, pass haiwezi kuibana Git ndani ya hifadhi. Endesha &quot;git init&quot; ndani ya hifadhi, au tumia Git/GPG Asili.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1220,7 +1220,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Mstari wa kitambulisho cha hifadhi una hitilafu: %1</translation>
+        <translation type="unfinished">Mstari wa kitambulisho cha hifadhi una muundo usio sahihi: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
@@ -1294,7 +1294,7 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Orodha ya wapokeaji iliyotiwa sahihi %1 haina mstari wa kitambulisho cha hifadhi, ilhali kifaa hiki kinaijua hifadhi hii kwa kitambulisho chake %2: huenda iliandikwa kwa hifadhi nyingine na kunakiliwa hapa, au na QtPass ya zamani. Mwenye ufunguo wa kutia sahihi anaweza kuendelea kwa kufungua Watumiaji, kuchagua wapokeaji upya na kuhifadhi, jambo linaloandika mstari wa kitambulisho cha hifadhi.</translation>
+        <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 haina mstari wa kitambulisho cha hifadhi, ilhali kifaa hiki kinaijua hifadhi hii kwa kitambulisho chake %2: huenda iliandikwa kwa ajili ya hifadhi nyingine kisha ikanakiliwa hapa, au iliandikwa na QtPass ya zamani. Mwenye funguo ya kusaini anaweza kuendelea kwa kufungua Watumiaji, kuchagua wapokeaji upya na kuhifadhi, jambo linaloandika mstari wa kitambulisho cha hifadhi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1658,7 +1658,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ni, au iko nyuma, eneo la kipeponi au mkutano baada ya kukamata. Kile kinachoelekeza si sehemu ya kuhifadhi nenosiri na hukimbwa.</translation>
+        <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction baada ya kuvuta. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2554,13 +2554,13 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/mainwindow.cpp" line="963"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… zaidi ya matanano katika kipengele hiki</translation>
+        <translation type="unfinished">… mechi zaidi katika ingizo hili</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Inaonyesha tokeo la kwanza (%n); tafuta kitu mahususi zaidi ili kuona mengine.</numerusform>
+            <numerusform>Inaonyesha tokeo %n la kwanza; tafuta kitu mahususi zaidi ili kuona mengine.</numerusform>
             <numerusform>Inaonyesha matokeo %n ya kwanza; tafuta kitu mahususi zaidi ili kuona mengine.</numerusform>
         </translation>
     </message>
@@ -2870,7 +2870,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Imedhaminiwa, lakini hayajawasilishwa</translation>
+        <translation type="unfinished">Imehifadhiwa, haijafanyiwa commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2931,7 +2931,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Hifadhi ya manenosiri inasasishwa (Git pull inaendelea). Subiri hadi ikamilike, kisha jaribu tena.</translation>
+        <translation type="unfinished">Hifadhi ya nenosiri inasasishwa (Git pull inaendelea). Subiri hadi ikamilike, kisha ujaribu tena.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3124,7 +3124,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 iko nyuma ya kiungo cha ishara au makutano, nje ya hifadhi ya manenosiri.</translation>
+        <translation type="unfinished">%1 iko nyuma ya kiungo cha ishara au junction, nje ya hifadhi ya nenosiri.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

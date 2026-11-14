@@ -344,7 +344,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">స్టోర్‌కు సొంత Git రిపోజిటరీ లేనప్పుడు, దాని పైన ఉన్న ఫోల్డర్‌లోని రిపోజిటరీని ఉపయోగించండి. pass లో లాగే డిఫాల్ట్‌గా ఆఫ్‌లో ఉంటుంది, కాబట్టి మరొక రిపోజిటరీ (ఉదాహరణకు dotfiles) లోపల ఉన్న స్టోర్ పొరపాటున అక్కడ కమిట్ లేదా పుష్ చేయబడదు. స్థానిక Git మాత్రమే: pass ఎల్లప్పుడూ స్టోర్ వద్దే ఆగుతుంది.</translation>
+        <translation type="unfinished">స్టోర్‌కు సొంత గిట్ రిపోజిటరీ లేనప్పుడు, దాని పైన ఉన్న ఫోల్డర్‌లోని రిపోజిటరీని ఉపయోగించండి. pass లో లాగే డిఫాల్ట్‌గా ఆఫ్‌లో ఉంటుంది, కాబట్టి మరొక రిపోజిటరీ (ఉదాహరణకు dotfiles) లోపల ఉన్న స్టోర్ పొరపాటున ఎప్పుడూ అక్కడ కమిట్ లేదా పుష్ చేయబడదు. స్థానిక గిట్ మాత్రమే: pass ఎల్లప్పుడూ స్టోర్ వద్దే ఆగుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">క్లిప్‌బోర్డ్ క్లియర్ అయినప్పుడు, pass -c చేసినట్లుగా, కాపీ చేయడానికి ముందు దానిపై ఉన్నదాన్ని తిరిగి ఉంచండి, ఈలోగా వేరే ఏదైనా కాపీ చేయబడితే తప్ప. టెక్స్ట్ మాత్రమే: ఫార్మాటింగ్ పునరుద్ధరించబడదు. అప్పటి వరకు ఆ టెక్స్ట్ మెమరీలో ఉంటుంది. ఫోకస్ లేకుండా క్లిప్‌బోర్డ్‌ను చదవలేని చోట (కొన్ని Wayland డెస్క్‌టాప్‌లు), దానికి బదులుగా అది క్లియర్ చేయబడుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -522,7 +522,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">కన్ను బటన్ వెనుక ఉన్న ప్రతి ఫీల్డ్, రహస్యాలు మాత్రమే కాదు: స్క్రీన్ షేరింగ్ మరియు ప్రెజెంటేషన్‌ల కోసం. ఫీల్డ్‌ల కింద ఉన్న గమనికలు మరియు OTP కోడ్ కనిపిస్తూనే ఉంటాయి; &quot;కంటెంట్ దాచు&quot; వాటిని కూడా దాస్తుంది.</translation>
+        <translation type="unfinished">రహస్యాలు మాత్రమే కాదు, ప్రతి ఫీల్డ్ కన్ను బటన్ వెనుక దాగి ఉంటుంది: షేర్ చేసిన స్క్రీన్‌లు మరియు ప్రెజెంటేషన్‌ల కోసం. ఫీల్డ్‌ల కింద ఉన్న గమనికలు మరియు OTP కోడ్ కనిపిస్తూనే ఉంటాయి; &quot;కంటెంట్ దాచు&quot; వాటిని కూడా దాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -772,7 +772,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass %1 లోని మార్పులను %2 లోని Git రిపోజిటరీకి కమిట్ చేస్తుంది: స్టోర్ మార్గంలో కోలన్ ఉంటే, pass Git ను స్టోర్‌కు పరిమితం చేయలేదు. స్టోర్‌లో &quot;git init&quot; ను అమలు చేయండి, లేదా స్థానిక Git/GPG ని ఉపయోగించండి.</translation>
+        <translation type="unfinished">pass %1 లోని మార్పులను %2 లోని గిట్ రిపోజిటరీకి కమిట్ చేస్తుంది: స్టోర్ మార్గంలో కోలన్ ఉంటే, pass గిట్‌ను స్టోర్‌కు పరిమితం చేయలేదు. స్టోర్‌లో &quot;git init&quot; ను అమలు చేయండి, లేదా స్థానిక Git/GPG ని ఉపయోగించండి.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">ఈ జాబితాలో ఒకటి కంటే ఎక్కువ స్టోర్ ఐడీలు ఉన్నాయి.</translation>
+        <translation type="unfinished">ఈ జాబితాలో ఒకటి కంటే ఎక్కువ స్టోర్ ఐడీ పంక్తులు ఉన్నాయి.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">స్టోర్ ఐడీ లైన్ సరిగా లేదు: %1</translation>
+        <translation type="unfinished">స్టోర్ ఐడీ పంక్తి తప్పు రూపంలో ఉంది: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">జాబితాలో స్టోర్ ఐడీ పంక్తి ఉంది కానీ జనరేషన్ పంక్తి లేదు.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1292,13 +1292,13 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 మరొక పాస్‌వర్డ్ స్టోర్ కోసం వ్రాయబడింది (స్టోర్ ID %2; ఈ పరికరానికి ఈ స్టోర్ %3 గా తెలుసు), కాబట్టి ఉపయోగించబడదు. ఇది అదే కీతో సంతకం చేయబడిన స్టోర్ నుండి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు. అలా కాకుండా ఈ స్టోర్ మళ్లీ సెటప్ చేయబడి ఉంటే, %4 ను తీసివేయడం వలన ఈ పరికరానికి తెలిసిన స్టోర్ ID లు మరచిపోబడతాయి.</translation>
+        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 మరొక పాస్‌వర్డ్ స్టోర్ కోసం వ్రాయబడింది (స్టోర్ ఐడీ %2; ఈ పరికరానికి ఈ స్టోర్ %3 గా తెలుసు) మరియు ఉపయోగించబడదు. ఇది అదే కీతో సంతకం చేయబడిన స్టోర్ నుండి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు. అలా కాకుండా ఈ స్టోర్ మళ్లీ సెటప్ చేయబడి ఉంటే, %4 ను తీసివేస్తే ఈ పరికరం తనకు తెలిసిన స్టోర్ ఐడీలను మరచిపోతుంది.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1లో స్టోర్ ఐడీ లేదు, కానీ ఈ పరికరం దాని ద్వారా స్టోర్‌ను గుర్తిస్తుంది %2: ఇది వేరే స్టోర్ కోసం ఉద్దేశించినదిగా మరియు ఇక్కడ కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass ద్వారా. సంతకం కీని కలిగి ఉన్న వ్యక్తి వినియోగదారులను తెరిచి, గ్రహీతలను మళ్లీ ఎంచుకుని, సేవ్ చేయడం ద్వారా ప్రవేశిస్తారు, ఇది స్టోర్ ఐడీ లైన్‌ను వ్రాస్తుంది.</translation>
+        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1 లో స్టోర్ ఐడీ పంక్తి లేదు, అయితే ఈ పరికరానికి ఈ స్టోర్ దాని ఐడీ %2 ద్వారా తెలుసు: ఇది వేరే స్టోర్ కోసం వ్రాసి ఇక్కడికి కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass దీన్ని వ్రాసి ఉండవచ్చు. సంతకం కీ కలిగిన వ్యక్తి &quot;వినియోగదారులు&quot; తెరిచి, గ్రహీతలను కొత్తగా ఎంచుకుని, సేవ్ చేయడం ద్వారా ముందుకు సాగవచ్చు; అది స్టోర్ ఐడీ పంక్తిని వ్రాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1543,7 +1543,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ నిల్వలోని Git రిపోజిటరీలో ఏకీకరణ చేయని ఫైళ్లు ఉన్నాయి. మళ్లీ ఎన్‌క్రిప్ట్ చేసే ముందు, Gitతో వివాదాన్ని పరిష్కరించండి.</translation>
+        <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ యొక్క గిట్ రిపోజిటరీలో విలీనం కాని ఫైళ్లు ఉన్నాయి. మళ్లీ ఎన్‌క్రిప్ట్ చేసే ముందు గిట్‌తో వైరుధ్యాన్ని పరిష్కరించండి.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1582,7 +1582,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="1008"/>
         <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">అసంపూర్ణ Git ఆపరేషన్</translation>
+        <translation type="unfinished">అసంపూర్ణ గిట్ ఆపరేషన్</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1021"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">దాచిన ఫోల్డర్</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">డాట్ (.) తో మొదలయ్యే ఫోల్డర్ జాబితా నుండి దాచబడుతుంది: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -2930,12 +2930,12 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">పాస్‌వర్డ్ ని భద్రపరిచే Git రిపోజిటరీ, %1 దశలో ఉంది. పాస్‌వర్డ్ ని మార్చే ముందు, Git ద్వారా పూర్తి చేయండి లేదా రద్దు చేయండి. లేకపోతే, మీరు చేసిన మార్పులు కోల్పోయే ప్రమాదం ఉంది.</translation>
+        <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ యొక్క గిట్ రిపోజిటరీ ఒక %1 మధ్యలో ఉంది. పాస్‌వర్డ్ స్టోర్‌ను మార్చే ముందు గిట్‌తో దాన్ని పూర్తి చేయండి లేదా రద్దు చేయండి, లేకపోతే మీరు చేసే మార్పులు కోల్పోవచ్చు.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ నిల్వ నవీకరించబడుతోంది (ఒక గిట్ పుల్ జరుగుతోంది). అది పూర్తయ్యే వరకు వేచి ఉండండి, ఆపై మళ్లీ ప్రయత్నించండి.</translation>
+        <translation type="unfinished">పాస్‌వర్డ్ స్టోర్ నవీకరించబడుతోంది (గిట్ పుల్ జరుగుతోంది). అది పూర్తయ్యే వరకు వేచి ఉండండి, ఆపై మళ్లీ ప్రయత్నించండి.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -2945,7 +2945,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished">అసంపూర్ణ Git ఆపరేషన్</translation>
+        <translation type="unfinished">అసంపూర్ణ గిట్ ఆపరేషన్</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">ఒక పేరు లేదా ఫోల్డర్, ఇది డాట్ (.) తో మొదలైతే, అది జాబితా నుండి దాచబడుతుంది.</translation>
+        <translation type="unfinished">డాట్ (.) తో మొదలయ్యే పేరు లేదా ఫోల్డర్ జాబితా నుండి దాచబడుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">పాస్‌వర్డ్ నిల్వ చేయబడిన ప్రదేశానికి వెలుపల, ఒక సింబాలిక్ లింక్ లేదా జంక్షన్ వెనుక %1 దాగి ఉంది.</translation>
+        <translation type="unfinished">%1 పాస్‌వర్డ్ స్టోర్ వెలుపల, ఒక సింబాలిక్ లింక్ లేదా జంక్షన్ వెనుక ఉంది.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

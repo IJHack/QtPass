@@ -158,7 +158,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Cuando el portapapeles se borra, restaure lo que había antes de la copia, tal como lo hace &quot;pass&quot; -c, a menos que algo más haya sido copiado en ese momento. Solo texto: el formato no se restaura. Ese texto permanece en memoria hasta entonces. En aquellos casos donde el portapapeles no puede ser leído sin foco (algunas escritorias Wayland), este se borra en su lugar.</translation>
+        <translation type="unfinished">Cuando se borra el portapapeles, se vuelve a poner lo que había antes de la copia, como hace pass -c, a menos que entretanto se haya copiado otra cosa. Solo texto: el formato no se restaura. Ese texto permanece en memoria hasta entonces. Donde el portapapeles no se puede leer sin foco (algunos escritorios Wayland), se borra en su lugar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -199,12 +199,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Ocultar cada campo</translation>
+        <translation type="unfinished">Ocultar todos los campos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Cada campo detrás del botón con el icono de un ojo, no solo los secretos: para pantallas compartidas y presentaciones. Las notas debajo de los campos y el código OTP siguen visibles; &quot;Ocultar contenido&quot; también los oculta.</translation>
+        <translation type="unfinished">Todos los campos detrás del botón del ojo, no solo los secretos: para pantallas compartidas y presentaciones. Las notas debajo de los campos y el código OTP siguen visibles; &quot;Ocultar contenido&quot; también los oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cuando el almacén no tiene un repositorio Git propio, usar el de una carpeta superior. Desactivado por defecto, igual que en pass, para que un almacén dentro de otro repositorio (dotfiles, por ejemplo) nunca se confirme ni se suba ahí por error. Solo Git nativo: pass siempre se detiene en el almacén.</translation>
+        <translation type="unfinished">Cuando el almacén no tiene un repositorio Git propio, usar el de una carpeta superior. Desactivado por defecto, igual que en pass, para que un almacén dentro de otro repositorio (dotfiles, por ejemplo) nunca se confirme ni se envíe ahí por error. Solo Git nativo: pass siempre se detiene en el almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -545,7 +545,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utiliza un repositorio de Git en una carpeta ubicada por encima del almacenamiento</translation>
+        <translation type="unfinished">Usar un repositorio Git en una carpeta superior al almacén</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -765,7 +765,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 firma con la misma clave para otro almacén. Una lista de destinatarios firmada para uno de estos almacenes se acepta en el otro: usa una clave de firma distinta para cada almacén cuyos destinatarios sean diferentes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1234,19 +1234,19 @@ dirección de correo</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista contiene más de una línea de ID del almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La línea de ID del almacén está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista contiene una línea de ID del almacén pero ninguna línea de generación.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1314,7 +1314,7 @@ dirección de correo</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">La lista de destinatarios firmados %1 no contiene la línea de ID del almacenamiento, mientras que este dispositivo conoce el almacenamiento por su ID %2: podría haber sido escrita para otro almacenamiento y copiada aquí, o por una versión anterior de QtPass. Alguien que posea la clave de firma puede acceder abriendo &quot;Usuarios&quot;, seleccionando los destinatarios nuevamente y guardando, lo cual escribe la línea de ID del almacenamiento.</translation>
+        <translation type="unfinished">La lista de destinatarios firmada %1 no contiene ninguna línea de ID del almacén, aunque este dispositivo conoce este almacén por su ID %2: puede haberse escrito para otro almacén y copiado aquí, o con una versión anterior de QtPass. Quien tenga la clave de firma puede resolverlo abriendo Usuarios, volviendo a seleccionar los destinatarios y guardando, lo que escribe la línea de ID del almacén.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1404,7 +1404,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">El %1 no está dentro del almacenamiento de contraseñas, o un nombre de carpeta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
+        <translation type="unfinished">%1 no está dentro del almacén de contraseñas, o un nombre de carpeta en la ruta contiene un salto de línea u otro carácter de control, que una lista firmada no puede registrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1450,7 +1450,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
-        <translation type="unfinished">Error en git pull: %1</translation>
+        <translation type="unfinished">Falló la incorporación desde Git: %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="189"/>
@@ -1630,12 +1630,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="1175"/>
         <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed</source>
-        <translation type="unfinished">Error en git pull</translation>
+        <translation type="unfinished">Falló la incorporación desde Git</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">No se pudo comprobar si el almacén tiene archivos sin fusionar tras el pull. Compruébalo con git antes de volver a cifrar.</translation>
+        <translation type="unfinished">No se pudo comprobar si el almacén tiene archivos sin fusionar después de la incorporación desde Git. Compruébalo con git antes de volver a cifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -1645,7 +1645,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation type="unfinished">Error en git pull; volviendo a cifrar el almacén tal como está</translation>
+        <translation type="unfinished">Falló la incorporación desde Git; se vuelve a cifrar el almacén tal como está</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1197"/>
@@ -1673,7 +1673,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 es, o se encuentra detrás de, un enlace simbólico o una unión después de extraerlos. Lo que apunta a no forma parte del almacenamiento de contraseñas y permanece sin tocar.</translation>
+        <translation type="unfinished">%1 es un enlace simbólico o una unión de directorios, o está detrás de uno, después de la incorporación desde Git. Su destino no forma parte del almacén de contraseñas y se deja intacto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -2636,8 +2636,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Se muestra la primera coincidencia (%n); una búsqueda más específica muestra el resto.</numerusform>
-            <numerusform>Se muestran las primeras %n coincidencias; una búsqueda más específica muestra el resto.</numerusform>
+            <numerusform>Se muestra la primera coincidencia (%n); busca algo más específico para ver el resto.</numerusform>
+            <numerusform>Se muestran las primeras %n coincidencias; busca algo más específico para ver el resto.</numerusform>
         </translation>
     </message>
     <message>
@@ -2655,7 +2655,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Una carpeta que comience con un punto, no aparecerá en la lista: %1</translation>
+        <translation type="unfinished">Una carpeta que empiece con un punto quedaría oculta en la lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3007,12 +3007,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">La generación de contraseña falló</translation>
+        <translation type="unfinished">No se pudo generar la contraseña</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">No se pudo ejecutar pwgen (&quot;%1&quot;). Verifique el programa pwgen en la configuración, o desactive &quot;Usar pwgen&quot;.</translation>
+        <translation type="unfinished">No se pudo ejecutar pwgen (&quot;%1&quot;). Revisa el programa pwgen en los ajustes o desactiva &quot;Usar pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3118,12 +3118,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">El repositorio Git del gestor de contraseñas está en medio de un %1. Termine o interrumpa este proceso usando Git antes de cambiar el gestor, ya que lo que cambie podría perderse.</translation>
+        <translation type="unfinished">El repositorio Git del almacén de contraseñas está en medio de un %1. Termínalo o cancélalo con Git antes de cambiar el almacén de contraseñas; si no, lo que cambies podría perderse.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">La base de datos de contraseñas se está actualizando (se está realizando una incorporación desde Git). Espere a que finalice, y luego intente nuevamente.</translation>
+        <translation type="unfinished">El almacén de contraseñas se está actualizando (hay una incorporación desde Git en curso). Espera a que termine y vuelve a intentarlo.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3311,12 +3311,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Un nombre o carpeta que comience con un punto, estaría oculto de la lista.</translation>
+        <translation type="unfinished">Un nombre o una carpeta que empiece con un punto quedaría oculto en la lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 se encuentra oculto detrás de un enlace simbólico o una unión, fuera del almacén de contraseñas.</translation>
+        <translation type="unfinished">%1 está detrás de un enlace simbólico o una unión de directorios, fuera del almacén de contraseñas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>

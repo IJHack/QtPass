@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Käytä Git-tietovarastoa kansiossa, joka sijaitsee kaupan yläpuolella</translation>
+        <translation type="unfinished">Käytä varaston yläpuolisen kansion Git-tietovarastoa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -713,12 +713,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 käyttää samaa avainta toiselle varastolle. Toinen varasto hyväksyy vastaanottajaluettelon, joka on allekirjoitettu yhdellä näistä varastoista: käytä erillistä allekairjoitusavainta jokaiselle varastolle, joiden vastaanottajat ovat erilaiset.</translation>
+        <translation type="unfinished">%1 allekirjoittaa samalla avaimella toista varastoa varten. Toista näistä varastoista varten allekirjoitettu vastaanottajaluettelo hyväksytään myös toisessa: käytä erillistä allekirjoitusavainta jokaiselle varastolle, jonka vastaanottajat eroavat.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass tallentaa kohteen %1 muutokset Git-tietovarastoon kohteessa %2: kun säilön polussa on kaksoispiste, pass ei voi rajata Gitiä säilöön. Suorita säilössä &quot;git init&quot; tai käytä natiivia Git/GPG:tä.</translation>
+        <translation type="unfinished">pass commitoi kohteen %1 muutokset Git-tietovarastoon kohteessa %2: koska varaston polussa on kaksoispiste, pass ei voi rajata Gitiä varastoon. Suorita varastossa &quot;git init&quot; tai käytä natiivia Git/GPG:tä.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1133,8 +1133,8 @@ sähköposti</translation>
         <location filename="../src/filecontent.cpp" line="126"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
-            <numerusform>… %n rivi lisää ei näy</numerusform>
-            <numerusform>… %n riviä lisää ei näy</numerusform>
+            <numerusform>… vielä %n rivi näyttämättä</numerusform>
+            <numerusform>… vielä %n riviä näyttämättä</numerusform>
         </translation>
     </message>
 </context>
@@ -1170,7 +1170,7 @@ sähköposti</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Salasanasäilöä ei käyttöönotettu</translation>
+        <translation type="unfinished">Salasanavarastoa ei ole alustettu</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1262,19 +1262,19 @@ sähköposti</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Luettelossa on useampi kuin yksi kaupan ID-rivi.</translation>
+        <translation type="unfinished">Luettelossa on useampi kuin yksi varaston tunnisterivi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">Kaupan ID-rivin muoto on virheellinen: %1</translation>
+        <translation type="unfinished">Varaston tunnisterivi on muodoltaan virheellinen: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">Luettelossa on kaupan ID-rivi, mutta ei luontiriviä.</translation>
+        <translation type="unfinished">Luettelossa on varaston tunnisterivi mutta ei sukupolviriviä.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1342,7 +1342,7 @@ sähköposti</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">Allekirjoitetun vastaanottajien luettelo %1 ei sisällä myymälän ID-riviä, kun taas tämä laite tunnistaa myymälän sen ID:n avulla %2: Se on voinut olla tarkoitettu toiselle myymälälle ja kopioitu tänne, tai vanhemmalle qtPassille. Allekirjoitusavaimen haltija pääsee käsiksi avaamalla Käyttäjät-osiosta, valitsemalla vastaanottajat uudelleen ja tallentamalla, mikä kirjoittaa myymälän ID-rivin.</translation>
+        <translation type="unfinished">Allekirjoitetussa vastaanottajaluettelossa %1 ei ole varaston tunnisteriviä, vaikka tämä laite tuntee tämän varaston tunnisteella %2: se on voitu kirjoittaa toista varastoa varten ja kopioida tänne, tai sen on kirjoittanut vanhempi QtPass. Allekirjoitusavaimen haltija pääsee eteenpäin avaamalla Käyttäjät-ikkunan, valitsemalla vastaanottajat uudelleen ja tallentamalla, mikä kirjoittaa varaston tunnisterivin.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1587,7 +1587,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Salasanan tallennusmajan Git-repositoriossa on yhdistämättömiä tiedostoja. Ratkaise ristiriita Git:in avulla ennen kuin salaat tiedot uudelleen.</translation>
+        <translation type="unfinished">Salasanavaraston Git-tietovarastossa on yhdistämättömiä tiedostoja. Ratkaise ristiriita Gitillä ennen kuin salaat tiedot uudelleen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1668,12 +1668,12 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Pullin jälkeen ei voitu tarkistaa, onko säilössä yhdistämättömiä tiedostoja. Tarkista se gitillä ennen uudelleensalausta.</translation>
+        <translation type="unfinished">Pullin jälkeen ei voitu tarkistaa, onko varastossa yhdistämättömiä tiedostoja. Tarkista se gitillä ennen uudelleensalausta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation type="unfinished">Pull jätti säilöön yhdistämättömiä tiedostoja. Ratkaise ristiriita ennen uudelleensalausta.</translation>
+        <translation type="unfinished">Pull jätti varastoon yhdistämättömiä tiedostoja. Ratkaise ristiriita ennen uudelleensalausta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1186"/>
@@ -2841,7 +2841,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished">Kansio, joka alkaa pisteellä, ei näy listalla: %1</translation>
+        <translation type="unfinished">Pisteellä alkava kansio ei näkyisi luettelossa: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3156,12 +3156,12 @@ Jatketaanko?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Salasanan tallennuspaikan Git-repositorio on keskellä %1. Lopeta tai peruuta se Git:n avulla ennen salasanan tallennuspaikan muuttamista, jotta et menetä mitään.</translation>
+        <translation type="unfinished">Salasanavaraston Git-tietovarastossa on kesken toiminto %1. Viimeistele tai keskeytä se Gitillä ennen kuin muutat salasanavarastoa, tai muutoksesi voivat kadota.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">Salasanan tallennus on päivittämässä (Git pull -prosessi käynnissä). Odota, että se on valmis, ja yritä sitten uudelleen.</translation>
+        <translation type="unfinished">Salasanavarastoa päivitetään (Git pull on käynnissä). Odota, kunnes se on valmis, ja yritä sitten uudelleen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3349,12 +3349,12 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished">Nimi tai kansio, joka alkaa pisteellä, piilotetaan listalta.</translation>
+        <translation type="unfinished">Pisteellä alkava nimi tai kansio ei näkyisi luettelossa.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 piiloutuu symbolisen linkin tai -kohdan taakse, joka sijaitsee salasanatallennuksen ulkopuolella.</translation>
+        <translation type="unfinished">%1 sijaitsee symbolisen linkin tai liitospisteen takana, salasanavaraston ulkopuolella.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
