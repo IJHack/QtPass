@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 използва същия ключ за друг магазин. Списъкът с получатели, подписан за един от тези магазини, се приема и в другия: използвайте отделен ключ за подписи за всеки магазин, чиито получатели са различни.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1342,7 +1342,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Списъкът с подписани получатели %1 не съдържа ред със идентификатор на хранилището, докато това устройство го познава по неговия идентификатор %2: може би е бил предназначен за друго хранилище и копиран тук, или от по-стара версия на QtPass. Притежателят на ключа за подписи се придвижва чрез отваряне на &quot;Потребители&quot;, избиране отново на получателите и запазване, което пише реда с идентификатор на хранилището.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2799,12 +2799,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скрита папка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Папка, започваща с точка, ще бъде скрита от списъка: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3321,12 +3321,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Име или папка, започващи с точка, ще бъдат скрити от списъка.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 се намира зад символна връзка или junction, извън хранилището за пароли.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

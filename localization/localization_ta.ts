@@ -498,7 +498,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1259"/>
         <source>pass</source>
-        <translation>கணவாய்</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">கண் பொத்தானுக்குப் பின்னால் உள்ள ஒவ்வொரு புலமும், ரகசியங்கள் மட்டுமல்ல: பகிரப்பட்ட திரைகள் மற்றும் விளக்கங்களுக்கு. புலங்களுக்குக் கீழே உள்ள குறிப்புகள் மற்றும் OTP குறியீடு தெரியும்; &quot;உள்ளடக்கத்தை மறை&quot; என்பது அவற்றையும் மறைக்கும்.</translation>
+        <translation type="unfinished">கண் பொத்தானுக்குப் பின்னால் உள்ள ஒவ்வொரு புலமும், ரகசியங்கள் மட்டுமல்ல: பகிரப்பட்ட திரைகள் மற்றும் விளக்கங்களுக்கு. புலங்களுக்குக் கீழே உள்ள குறிப்புகள் மற்றும் OTP குறியீடு தெரியும்; &quot;உள்ளடக்கத்தை மறைக்கவும்&quot; என்பது அவற்றையும் மறைக்கும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1170,7 +1170,7 @@ e-mail</source>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">கடவுச்சொல் கடை துவக்கப்படவில்லை</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1262,7 +1262,7 @@ e-mail</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த பட்டியலில் ஒன்றுக்கும் மேற்பட்ட ஸ்டோர் ஐடி வரிசைகள் உள்ளன.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
@@ -1316,7 +1316,7 @@ e-mail</source>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
-        <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 தலைமுறை %2 ஆக உள்ளது; இது QtPass இங்கு கடைசியாக ஏற்றுக்கொண்ட தலைமுறை %3 ஐ விடப் பழையது. அதை வேறு யாரோ மீண்டும் வைத்திருக்கலாம். %4</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="680"/>
@@ -1342,7 +1342,7 @@ e-mail</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கையொப்பமிடும் பெறுநர் பட்டியல் %1-ல் எந்த சேமிப்பு அடையாளமும் இல்லை, ஆனால் இந்த சாதனம் அதன் மூலம் சேமிப்பைப் புரிந்து கொள்கிறது %2: இது வேறொரு சேமிப்பிற்காக எழுதப்பட்டு இங்கே நகலெடுக்கப்பட்டிருக்கலாம், அல்லது பழைய QtPass மூலம். கையொப்பமிட உதவும் விசையை வைத்திருப்பவர் பயனர்களைத் தேர்ந்தெடுத்துச் சேமிப்பதன் மூலம் அணுக முடியும், இதன் விளைவாக சேமிப்பு அடையாள வரி சேர்க்கப்படும்.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2868,12 +2868,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மறைக்கப்பட்ட கோப்புறை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புள்ளி (.) என்ற எழுத்துடன் தொடங்கும் ஒரு கோப்புறையை பட்டியலில் இருந்து மறைக்கலாம்: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3381,12 +3381,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புள்ளி எழுத்துடன் தொடங்கும் பெயர் அல்லது கோப்புறையை பட்டியலில் இருந்து மறைக்க முடியும்.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 என்பது கடவுச்சொல் சேமிப்பகத்திற்கு வெளியே, ஒரு குறியீட்டு இணை அல்லது சந்திக்கு பின்னால் அமைந்துள்ளது.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>
@@ -3540,7 +3540,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
-        <translation type="unfinished">கணவாய்</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="222"/>

@@ -1265,19 +1265,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该列表包含多个存储ID。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">密码库 ID 格式错误：%1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该列表包含一个存储ID，但没有生成信息。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1345,7 +1345,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">签署过的收件人列表 %1 没有包含存储ID行，而这个设备通过ID %2 知道该存储：它可能原本是为其他存储编写的，然后复制到这里，或者是由旧版本的QtPass创建的。拥有签名密钥的人员可以通过打开“用户”，重新选择收件人并保存来添加存储ID行。</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2830,12 +2830,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">隐藏文件夹</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">以点号开头的文件或文件夹将从列表中隐藏：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3347,12 +3347,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">一个以点开头，或者以文件夹命名的条目，将从列表中隐藏。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 隐藏在符号链接或连接处，位于密码库之外。</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

@@ -1225,7 +1225,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mažinamas ID eilutė yra netinkama: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
@@ -1299,7 +1299,7 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirašyto gavėjų sąraše %1 nėra &quot;Saugojimo ID&quot; eilutės, tačiau šis įrenginys žino šį saugojimą pagal jo ID %2: galbūt tai buvo parašyta kitam saugojimui ir kopijuota čia, arba senesniam qtPass. Pasirašymo rakto savininkas gali patekti atidarydami &quot;Vartotojai&quot;, pasirinkdami gavėjus iš naujo ir išsaugodami, kuriuo metu būtų įrašyta &quot;Saugojimo ID&quot; eilutė.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2614,12 +2614,12 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slaptas katalogas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failų sąveina, kuri prasideda tašku, būtų paslėpta iš sąrašo: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3119,12 +3119,12 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vardas arba folderis, kuris prasideda tašku, būtų paslėptas iš sąrašo.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 yra paslėptas simbolinės nuorodos arba jungties, esančios už slaptažodžių saugyklos.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

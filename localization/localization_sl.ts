@@ -767,7 +767,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 podpiše z enakim ključem za drugo trgovino. Seznam prejemnikov, ki je bil podpisan za eno od teh trgovin, je sprejet v drugi: uporabite ločen podpisni ključ za vsako trgovino, kjer imajo različni prejemniki.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1232,7 +1232,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam vsebuje ID, vendar ne generacijsko številko.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1300,7 +1300,7 @@ Vrednost bo še vedno shranjena, kot je vnesena.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam prejemnikov, ki so bili podpisani, %1 ne vsebuje vrstice z ID-jem shranjevanja, medtem ko to naprave pozna po ID-ju %2: mogoče je bilo shranjeno za drugo mesto in kopirano tukaj, ali pa za starejše QtPass. Oseb s podpisnim ključem se prične z odprtjem Uporabniki, izbiro prejemnikov in shranjevanjem, kar doda vrstico z ID-jem shranjevanja.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2622,12 +2622,12 @@ Ponovno šifriranje se ni končalo, zato so nekateri ali vsi vnosi še vedno ši
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrita mapa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa, ki se začne z dotom, bo skrita iz seznama: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3127,12 +3127,12 @@ Nadaljujem?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime ali mapa, ki se začne z dotom, bi bila skrita iz seznama.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 se skriva za simboličnim povezom ali priključkom, zunaj shranjevalnika gesel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

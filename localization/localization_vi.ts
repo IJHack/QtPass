@@ -767,7 +767,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 sử dụng cùng một khóa để ký cho cửa hàng khác. Danh sách người nhận đã ký cho một trong các cửa hàng này được chấp nhận ở cửa hàng kia: hãy sử dụng một khóa ký riêng cho mỗi cửa hàng, đặc biệt khi danh sách người nhận của các cửa hàng khác nhau.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -2610,12 +2610,12 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thùng chứa ẩn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Một thư mục bắt đầu bằng dấu chấm sẽ bị ẩn khỏi danh sách: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3115,12 +3115,12 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Một tên hoặc thư mục bắt đầu bằng dấu chấm sẽ bị ẩn khỏi danh sách.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nằm sau một liên kết tượng trưng hoặc nút kết nối, bên ngoài kho mật khẩu.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

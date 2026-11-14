@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">కాపీ చేసిన తర్వాత, క్లిప్‌బోర్డ్‌ను క్లియర్ చేసినప్పుడు, తిరిగి ఉంచడానికి ప్రయత్నించండి. అయితే, ఇంతకు ముందు కాపీ చేయకపోతేనే ఇది పనిచేస్తుంది. టెక్స్ట్ మాత్రమే: ఫార్మాటింగ్ పునరుద్ధరించబడదు. ఆ టెక్స్ట్ మెమరీలో నిల్వ ఉంటుంది, ఫోకస్ లేకుండా చదవలేని క్లిప్‌బోర్డ్ కోసం, దీనిని క్లియర్ చేస్తారు (కొన్ని వేలాండ్ డెస్క్‌టాప్‌లు).</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఈ జాబితాలో ఒకటి కంటే ఎక్కువ స్టోర్ ఐడీలు ఉన్నాయి.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">స్టోర్ ఐడీ లైన్ సరిగా లేదు: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఈ జాబితాలో ఒక స్టోర్ ఐడీ ఉంది, కానీ ఉత్పత్తికి సంబంధించిన సమాచారం లేదు.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1298,7 +1298,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">సంతకం చేసిన గ్రహీతల జాబితా %1లో స్టోర్ ఐడీ లేదు, కానీ ఈ పరికరం దాని ద్వారా స్టోర్‌ను గుర్తిస్తుంది %2: ఇది వేరే స్టోర్ కోసం ఉద్దేశించినదిగా మరియు ఇక్కడ కాపీ చేయబడి ఉండవచ్చు, లేదా పాత QtPass ద్వారా. సంతకం కీని కలిగి ఉన్న వ్యక్తి వినియోగదారులను తెరిచి, గ్రహీతలను మళ్లీ ఎంచుకుని, సేవ్ చేయడం ద్వారా ప్రవేశిస్తారు, ఇది స్టోర్ ఐడీ లైన్‌ను వ్రాస్తుంది.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">గుర్తించబడని ఫోల్డర్</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">దోషంతో ప్రారంభమయ్యే ఫోల్డర్ జాబితా నుండి దాచబడుతుంది: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఒక పేరు లేదా ఫోల్డర్, ఇది డాట్ (.) తో మొదలైతే, అది జాబితా నుండి దాచబడుతుంది.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పాస్‌వర్డ్ నిల్వ చేయబడిన ప్రదేశానికి వెలుపల, ఒక సింబాలిక్ లింక్ లేదా జంక్షన్ వెనుక %1 దాగి ఉంది.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

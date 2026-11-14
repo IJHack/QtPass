@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utiliza un repositorio de Git nunha carpeta que estea por encima da tenda</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -1295,13 +1295,13 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A liña de ID da tendencia está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista ten unha liña de ID, pero non unha liña de xeración.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1369,7 +1369,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A lista de destinatarios asinados %1 non ten unha liña de ID de almacenamento, mentres que este dispositivo coñece o almacenamento por seu ID %2: pode ser que se escriba para outro almacenamento e se copie aquí, ou por un QtPass máis antigo. Un titular da clave de sinatura accede abrindo Usuarios, seleccionando os destinatarios de novo e guardando, o que escribe a liña de ID do almacenamento.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2807,12 +2807,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasta oculta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un directorio que comece cun punto estaría oculto na lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3326,12 +3326,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nome ou carpeta que comece cun punto estaría oculto da lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 atópase detrás dun enlace ou conexión simbólica, fóra do repositorio de contrasinais.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

@@ -1222,19 +1222,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista përmban më shumë se një linjë ID të depos.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Linja me ID-n e depozit është e formatuare gabim: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista përfshin një linjë ID të depos, por nuk ka asnjë linjë krijimi.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista e marrcës me nënshkrim %1 nuk përfshin linjën me ID të depos, ndërsa ky dispozitive e njeh depon sipas ID-it %2: ajo mund të jetë shkruar për një depo tjetër dhe kopjuar këtu, ose nga një version më i vjetër i QtPass. Një pronar i çelësit të nënshkrimit hyen duke hapur Përdoruesit, duke zgjedhur marrcat sër shkëlqyer dhe duke ruajtur, e cila shkruan linjën me ID të depos.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2647,12 +2647,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dosja e fshehur</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Një dosë që fillohet me një vendos, do të ndonjë nga lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3166,12 +3166,12 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Një emër ose dosë që fillohet me një vendos, do të ndonjë nga lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ndodhet pas një lidhje simbolike ose këndon, jashtë depojës së fjalëkalimeve.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

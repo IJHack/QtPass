@@ -1222,19 +1222,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">القائمة تحتوي على أكثر من سطر لـ &quot;معرف المخزن&quot;.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">عبارة &quot;معرف المخزن&quot; غير صحيحة: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">القائمة تحتوي على سطر بمعرف &quot;مخزن&quot;، ولكن لا يوجد سطر لإنشاء.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قائمة المستلمين الموقعة %1 لا تحتوي على سطر معرف المخزن، بينما يعرف هذا الجهاز المخزن بمعرفه %2: قد يكون تم كتابته لمكان آخر ثم نسخه هنا، أو بواسطة نسخة قديمة من QtPass. الشخص الذي يمتلك مفتاح التوقيع يمكنه الوصول إلى قائمة المستخدمين، واختيار المستلمين مرة أخرى وحفظها، مما يؤدي إلى كتابة سطر معرف المخزن.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1547,7 +1547,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">مخزن كلمات المرور يحتوي على ملفات غير مدمجة. قم بحل التعارض باستخدام Git قبل إعادة التشفير.</translation>
+        <translation type="unfinished">مستودع Git الخاص بمخزن كلمات المرور يحتوي على ملفات غير مدمجة. قم بحل التعارض باستخدام Git قبل إعادة التشفير.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2634,12 +2634,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المجلد المخفي</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مجلد يبدأ بنقطة سيكون مخفيًا من القائمة: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3162,12 +3162,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">إسم أو مجلد يبدأ بنقطة (.) سيتم إخفاؤه من القائمة.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يقع %1 خلف رابط رمزي أو وصلة، خارجًا عن مخزن كلمات المرور.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

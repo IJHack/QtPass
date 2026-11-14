@@ -767,7 +767,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 menandatangani menggunakan kunci yang sama untuk toko lain. Daftar penerima yang ditandatangani untuk salah satu toko ini diterima di toko lainnya: gunakan kunci penandatangan terpisah untuk setiap toko, terutama jika daftar penerimanya berbeda.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -2598,12 +2598,12 @@ Enkripsi ulang tidak selesai, sehingga sebagian atau semua entri masih dienkrips
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Folder tersembunyi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sebuah folder yang dimulai dengan titik akan disembunyikan dari daftar: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3103,12 +3103,12 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nama atau folder yang dimulai dengan titik akan disembunyikan dari daftar.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 terletak di balik sebuah tautan simbolis atau persimpangan, di luar penyimpanan kata sandi.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

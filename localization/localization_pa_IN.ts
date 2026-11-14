@@ -395,7 +395,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1259"/>
         <source>pass</source>
-        <translation>ਪੱਸਵਰਡ</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1272"/>
@@ -3272,7 +3272,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
-        <translation type="unfinished">ਪੱਸਵਰਡ</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="222"/>

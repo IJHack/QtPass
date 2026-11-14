@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Brug et Git-repository i en mappe, der er placeret over butikken</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 bruger den samme nøgle for en anden butik. En liste over modtagere, der er signeret for en af disse butikker, accepteres i den anden: brug en separat signeringsnøgle for hver butik, hvis modtagere adskiller sig.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -2837,12 +2837,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skjult mappe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">En mappe, der starter med et punktum, vil være skjult fra listen: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3360,12 +3360,12 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Et navn eller en mappe, der starter med et punktum, vil være skjult fra listen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 er skjult bag en symbolsk link eller forbindelse, uden for password-opbevaringen.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

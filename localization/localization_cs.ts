@@ -388,7 +388,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 podepisuje pomocí stejného klíče pro jiný obchod. Seznam příjemců, který byl podepsán pro jeden z těchto obchodů, je akceptován v druhém: použijte samostatný podpise klíč pro každý obchod, jehož příjemci se liší.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1339,7 +1339,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam adresátů s digitálním podpisem %1 neobsahuje řádek se ID úložiště, zatímco toto zařízení zná úložiště podle jeho ID %2: mohlo být vytvořeno pro jiné úložiště a zkopírováno sem, nebo pomocí starší verze qtpass. Osoba, která má k dispozici podpisový klíč, se dostane tím, že otevře Uživatelé, vybere adresáty znovu a uloží, což přidá řádek s ID úložiště.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2808,12 +2808,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrytá složka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seznam skrytí složek, které začínají tečkou: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3321,12 +3321,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Název nebo složka, který začíná tečkou, by byl skrytý z seznamu.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 se nachází za symboickým odkazem nebo uzlem, mimo úložiště hesel.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

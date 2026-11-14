@@ -498,7 +498,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1259"/>
         <source>pass</source>
-        <translation>පසු</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -3472,7 +3472,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
-        <translation type="unfinished">පසු</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="222"/>

@@ -476,7 +476,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">जब क्लिपबोर्ड साफ़ किया जाता है, तो &quot;पास&quot; -c करता है जैसे कि पहले वहां क्या था उसे वापस रखें, जब तक कि बीच में कुछ और कॉपी न की गई हो। केवल पाठ: फ़ॉर्मेटिंग बहाल नहीं की जाती। वह पाठ तब तक स्मृति में रहता है। जहां क्लिपबोर्ड को ध्यान दिए बिना पढ़ा नहीं जा सकता (कुछ वेलैंड डेस्कटॉप), वहां इसे साफ़ कर दिया जाता है।</translation>
+        <translation type="unfinished">जब क्लिपबोर्ड साफ़ किया जाता है, तो pass -c करता है जैसे कि पहले वहां क्या था उसे वापस रखें, जब तक कि बीच में कुछ और कॉपी न की गई हो। केवल पाठ: फ़ॉर्मेटिंग बहाल नहीं की जाती। वह पाठ तब तक स्मृति में रहता है। जहां क्लिपबोर्ड को ध्यान दिए बिना पढ़ा नहीं जा सकता (कुछ वेलैंड डेस्कटॉप), वहां इसे साफ़ कर दिया जाता है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -512,7 +512,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">डिफॉल्ट शब्दों को फिर से जोड़ें: पिन, कार्ड कोड, की, टोकन और इसी तरह के।</translation>
+        <translation type="unfinished">डिफ़ॉल्ट शब्द वापस रखें: पिन, कार्ड कोड, कुंजियाँ, टोकन, रिकवरी कोड और इसी तरह के।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">इस सूची में एक से अधिक स्टोर आईडी लाइनें मौजूद हैं।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्टोर आईडी पंक्ति गलत रूप से दी गई है: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">इस सूची में एक स्टोर आईडी है, लेकिन कोई जनरेशन लाइन नहीं।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1298,7 +1298,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">हस्ताक्षरकर्ता की सूची %1 में कोई स्टोर आईडी पंक्ति नहीं है, जबकि यह डिवाइस इस स्टोर को उसके आईडी %2 से पहचानता है: संभवतः इसे किसी अन्य स्टोर के लिए लिखा गया था और यहां कॉपी किया गया था, या किसी पुराने QtPass द्वारा। हस्ताक्षर कुंजी धारक &quot;उपयोगकर्ता&quot; खोलकर, फिर से प्राप्तकर्ताओं का चयन करके और सहेजकर प्रवेश करते हैं, जिससे स्टोर आईडी पंक्ति लिखी जाती है।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">छिपा फ़ोल्डर</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">एक फ़ोल्डर जो एक डॉट से शुरू होता है, वह सूची से छिपा रहेगा: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">नाम या फ़ोल्डर जो एक डॉट से शुरू होता है, वह सूची से छिपा रहेगा।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 एक सिम्बॉलिक लिंक या जंक्शन के पीछे है, पासवर्ड स्टोर के बाहर।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

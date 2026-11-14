@@ -659,7 +659,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 assina com a mesma chave para outra loja. Uma lista de destinatários assinada para uma dessas lojas é aceita na outra: utilize uma chave de assinatura separada para cada loja, cujo destinatário seja diferente.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -2751,12 +2751,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasta oculta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Uma pasta que começa com um ponto seria oculta da lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3303,12 +3303,12 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Um nome ou pasta que comece com um ponto seria oculto da lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O %1 está oculto atrás de um link simbólico ou junção, fora do armazenamento de senhas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

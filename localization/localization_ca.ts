@@ -245,7 +245,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utilitza un repositori Git en una carpeta que estigui a dalt de la botiga</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Tots els camps que hi ha darrere del botó &quot;Ocultar&quot;, no només els secrets: per a pantalles compartides i presentacions. Les notes que hi ha sota els camps i el codi OTP romanen visibles; &quot;Ocultar contingut&quot; també les oculta.</translation>
+        <translation type="unfinished">Tots els camps darrere del botó de l&apos;ull, no només els secrets: per a pantalles compartides i presentacions. Les notes sota els camps i el codi OTP romanen visibles; &quot;Oculta el contingut&quot; també les oculta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 signa amb la mateixa clau per a una altra botiga. Una llista de destinataris que s&apos;han signat per a una d&apos;aquestes botigues és acceptada a l&apos;altra: utilitza una clau de signatura separada per a cada botiga, on els destinataris siguin diferents.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1274,7 +1274,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista inclou una línia amb l&apos;ID del magatzem, però no una línia de generació.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1342,7 +1342,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La llista de destinataris signats %1 no inclou la línia d&apos;ID del magatzem, mentre que aquest dispositiu coneix el magatzem per la seva ID %2: potser va ser escrita per a un altre magatzem i copiada aquí, o per una versió antiga de QtPass. La persona que té la clau de signatura accedeix obrint Usuaris, seleccionant els destinataris de nou i guardant-los, cosa que escriu la línia d&apos;ID del magatzem.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2847,12 +2847,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Carpeta oculta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Una carpeta que comenci amb un punt seria oculta de la llista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1554"/>
@@ -3360,12 +3360,12 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nom o carpeta que comenci amb un punt seria amagat de la llista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 es troba darrere d&apos;un enllaç simbòlic o un punt de junció, fora del dipòsit de contrasenyes.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

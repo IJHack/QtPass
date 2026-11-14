@@ -400,7 +400,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1259"/>
         <source>pass</source>
-        <translation>पास</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1272"/>
@@ -652,7 +652,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1541"/>
         <source>Full 40-character key fingerprint, as pass requires</source>
-        <translation type="unfinished">पास ला आवश्यक असलेला पूर्ण 40-अक्षरी की फिंगरप्रिंट</translation>
+        <translation type="unfinished">pass ला आवश्यक असलेला पूर्ण 40-अक्षरी की फिंगरप्रिंट</translation>
     </message>
     <message>
         <source>Git settings for this profile; they replace the ones on the Settings tab while it is active</source>
@@ -968,7 +968,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>Operations run through pass.</source>
-        <translation type="unfinished">कार्ये पास द्वारे चालतात.</translation>
+        <translation type="unfinished">कार्ये pass द्वारे चालतात.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="502"/>
@@ -1218,19 +1218,19 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">या यादीमध्ये एकापेक्षा जास्त स्टोअर आयडी नोंदी आहेत.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">स्टोअर आयडी ओळ चुकीच्या स्वरूपात आहे: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">या यादीमध्ये स्टोअर आयडी आहे, परंतु जनरेशनचा कोणताही ओळ नाही.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1298,7 +1298,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">साइन केलेल्या प्राप्तकर्त्यांची यादी %1 मध्ये स्टोअर आयडीचा ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या आयडीने ओळखते: %2: हे कदाचित दुसऱ्या स्टोअरसाठी तयार केले गेले आणि येथे कॉपी केले गेले असेल, किंवा जुन्या QtPass साठी. ज्या व्यक्तीकडे साइनिंग की आहे, ते वापरकर्त्यांना उघडून, नवीन प्राप्तकर्त्यांची निवड करून आणि सेव्ह करून प्रवेश मिळवतात, ज्यामुळे स्टोअर आयडीचा ओळ लिहिला जातो.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2618,12 +2618,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">लपवलेला फोल्डर</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">दोन अंकांनी सुरू होणारे फोल्डर या सूचीमधून लपवलेले असतील: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3123,12 +3123,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">नाव किंवा फोल्डर जे एका डॉटने (•) सुरू होते, ते या यादीतून लपवलेले असतील.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 हे सिम्बॉलिक लिंक किंवा जंक्शनच्या मागे आहे, पासवर्ड स्टोअरच्या बाहेर.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>
@@ -3247,7 +3247,7 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="207"/>
         <source>Use the pass command-line tool</source>
-        <translation type="unfinished">पास कमांड-लाइन साधन वापरा</translation>
+        <translation type="unfinished">pass कमांड-लाइन साधन वापरा</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="209"/>
@@ -3282,12 +3282,12 @@ Continue?</source>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
-        <translation type="unfinished">पास</translation>
+        <translation type="unfinished">pass</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
-        <translation type="unfinished">gpg आणि git थेट वापरण्याऐवजी प्रत्येक कार्यासाठी पास स्क्रिप्ट चालवा</translation>
+        <translation type="unfinished">gpg आणि git थेट वापरण्याऐवजी प्रत्येक कार्यासाठी pass स्क्रिप्ट चालवा</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="262"/>

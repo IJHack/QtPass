@@ -1261,19 +1261,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">목록에는 여러 개의 스토어 ID 정보가 포함되어 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">스토어 ID 라인이 잘못되었습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">목록에는 스토어 ID만 표시되어 있고, 생성 정보는 표시되지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1341,7 +1341,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">서명된 수신자 목록 %1에는 저장 ID 라인이 없지만, 이 장치는 해당 저장소를 ID %2로 인식합니다. 따라서, 이는 다른 저장소에 대한 정보가 담긴 것이고 여기에 복사되었거나, 이전 버전의 QtPass에 의해 작성되었을 가능성이 있습니다. 서명 키를 소유한 사용자는 &quot;사용자&quot; 메뉴에서 수신자를 다시 선택하고 저장하는 방식으로 해당 정보를 얻을 수 있으며, 이 과정에서 저장 ID 라인이 기록됩니다.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2828,12 +2828,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">숨겨진 폴더</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">점(.)으로 시작하는 폴더는 목록에서 숨겨집니다: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3148,7 +3148,7 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">비밀번호 저장소의 Git 저장소는 현재 %1 단계에 있습니다. 비밀번호 저장소를 변경하기 전에, 또는 변경하는 작업이 완료되거나 취소될 때까지 Git을 사용하여 진행하거나 중단하십시오. 그렇지 않으면 변경된 내용이 손실될 수 있습니다.</translation>
+        <translation type="unfinished">비밀번호 저장소의 Git 저장소가 %1 작업 도중에 있습니다. 비밀번호 저장소를 변경하기 전에 Git으로 이 작업을 완료하거나 중단하십시오. 그렇지 않으면 변경한 내용이 손실될 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3341,12 +3341,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">점(.)으로 시작하는 이름이나 폴더는 목록에서 숨겨집니다.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1은 비밀번호 저장 위치 밖, 심볼릭 링크 또는 자 표시로 숨겨져 있습니다.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

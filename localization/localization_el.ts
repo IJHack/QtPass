@@ -705,7 +705,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 υπογράφει με το ίδιο κλειδί για ένα άλλο κατάστημα. Μια λίστα παραλήπτων που έχει υπογραφεί για ένα από αυτά τα καταστήματα, γίνεται αποδεκτή στο άλλο: χρησιμοποιήστε ξεχωριστό κλειδί υπογραφής για κάθε κατάστημα, όπου οι παραλήπτες διαφέρουν.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1302,7 +1302,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή αναγνωριστικού του χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: μπορεί να γράφτηκε για άλλον χώρο αποθήκευσης και να αντιγράφηκε εδώ, ή από παλαιότερο QtPass. Ο κάτοχος του κλειδιού υπογραφής μπορεί να συνεχίσει ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους παραλήπτες και αποθηκεύοντας, κάτι που γράφει τη γραμμή αναγνωριστικού.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2646,12 +2646,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κρυφό φάκελο</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα φάκελο που ξεκινά με ένα τελεία θα είναι κρυφό από τη λίστα: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -2981,7 +2981,7 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Το αποθετήριο Git του διαχειριστή κωδικών πρόσβασης βρίσκεται στη μέση μιας %1. Ολοκληρώστε ή ακυβώστε το με το Git πριν αλλάξετε τον διαχειριστή κωδικών πρόσβασης, αλλιώς αυτά που αλλάζετε μπορεί να χαθούν.</translation>
+        <translation type="unfinished">Το αποθετήριο Git του διαχειριστή κωδικών πρόσβασης βρίσκεται στη μέση μιας %1. Ολοκληρώστε ή ακυρώστε το με το Git πριν αλλάξετε τον διαχειριστή κωδικών πρόσβασης, αλλιώς αυτά που αλλάζετε μπορεί να χαθούν.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3174,12 +3174,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ένα όνομα ή φάκελο που ξεκινά με ένα κόμμα θα ήταν κρυφό από τη λίστα.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 βρίσκεται πίσω από έναν συμβολικό σύνδεσμο ή διασύνδεση, εκτός αποθήκης κωδικών πρόσβασης.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

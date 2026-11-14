@@ -551,7 +551,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Izmantojiet Git repozitoriju, kas atrodas mapā, kas ir zem veikala</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -767,7 +767,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 paraksta ar to pašu atslēgu citai veikala. Saņēmēju saraksts, kas parakstīts vienam no šiem veikaliem, tiek pieņemts otrajā: izmantojiet atšķirīgus parakstīšanas atslēgas katram veikalam, kuru saņēmēji ir dažādi.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1299,7 +1299,7 @@ Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parakstīto saņēmēju saraksts %1 neatrod &quot;Uzglabāšanas ID&quot; rindu, bet šis ierīcis atzīs to pēc ID %2: tas varētu būt rakstīts citai uzglabāšanas vietai un kopēts šeit, vai arī veciem QtPass. Parakstīšanas atslēgas īpašnieks iegūst piekļuvi, izmantojot &quot;Lietotāji&quot;, jaunu saņēmēju izvēli un saglabošanu, kas ieraksta &quot;Uzglabāšanas ID&quot; rindu.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2614,12 +2614,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slēpts mapi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Folderis, kas sākas ar punktu, būs neievietots sarakstā: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3119,12 +3119,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vārds vai mapi, kas sākas ar punktu, būs slēpts no saraksta.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 atrodas simboliskās saites vai savienojuma aiz, ārpus paroles glabāšanas vietas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

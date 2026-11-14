@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Svaka polja iza gumba &quot;Oko&quot;, a ne samo tajne: za dijeljenje zaslona i prezentacije. Bilješke ispod polja, kao i OTP kôd ostaju vidljive; funkcija &quot;Sakrij sadržaj&quot; također sakriva te.</translation>
+        <translation type="unfinished">Svako polje iza gumba s okom, ne samo tajne: za dijeljenje zaslona i prezentacije. Bilješke ispod polja i OTP kôd ostaju vidljivi; &quot;Sakrij sadržaj&quot; skriva i njih.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1263,19 +1263,19 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista sadrži više od jedne linije s ID-om spremišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Red &quot;ID spremišta&quot; je neispravan: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista sadrži redak s ID-om spremišta, ali ne i redak s generacijom.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1343,7 +1343,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista primatelja s potpisom %1 ne sadrži redak s ID-om spremišta, dok ovo uređaje poznaje po svom ID-u %2: možda je bio namjenjen drugom spremištu i kopiran ovdje, ili od starije verzije qtPass. Osoba koja posjeduje ključ za potpisivanje može doći do liste primatelja otvaranjem korisnika, izabravanjem primatelja i spremanjem, što piše redak s ID-om spremišta.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2876,12 +2876,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skrivena mapa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mapa koja započinje s točkom bit će skrojena iz popisa: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3389,12 +3389,12 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime ili mapa koja započinje s točkom, biće skriena iz popisa.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 se nalazi iza simbolskog linka ili spoja, izvan spremišta lozinki.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

@@ -765,7 +765,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 firma utilizando la misma clave para otra tienda. Una lista de destinatarios firmada para una de estas tiendas es aceptada en la otra: utilice una clave de firma separada para cada tienda cuyo destinatario difiera.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1314,7 +1314,7 @@ dirección de correo</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La lista de destinatarios firmados %1 no contiene la línea de ID del almacenamiento, mientras que este dispositivo conoce el almacenamiento por su ID %2: podría haber sido escrita para otro almacenamiento y copiada aquí, o por una versión anterior de QtPass. Alguien que posea la clave de firma puede acceder abriendo &quot;Usuarios&quot;, seleccionando los destinatarios nuevamente y guardando, lo cual escribe la línea de ID del almacenamiento.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2650,12 +2650,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Carpeta oculta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Una carpeta que comience con un punto, no aparecerá en la lista: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3311,12 +3311,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nombre o carpeta que comience con un punto, estaría oculto de la lista.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 se encuentra oculto detrás de un enlace simbólico o una unión, fuera del almacén de contraseñas.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

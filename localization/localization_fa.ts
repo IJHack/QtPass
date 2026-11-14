@@ -767,7 +767,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 با کلید امضای یکسان برای فروشگاه دیگری امضا می‌کند. لیست گیرندگان که برای یکی از این فروشگاه‌ها امضا شده، در فروشگاه دیگر پذیرفته می‌شود: از کلید امضای جداگانه برای هر فروشگاهی استفاده کنید که گیرنده‌های آن متفاوت باشند.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1297,7 +1297,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">فهرست امضاشدهٔ گیرندگان %1 خط شناسهٔ مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسهٔ %2 می‌شناسد: شاید برای مخزن دیگری نوشته و اینجا کپی شده باشد، یا توسط نسخهٔ قدیمی‌تر QtPass. دارندهٔ کلید امضا می‌تواند با باز کردن کاربران، انتخاب دوبارهٔ گیرندگان و ذخیره کردن ادامه دهد؛ این کار خط شناسهٔ مخزن را می‌نویسد.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2610,12 +2610,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">آب‌دار</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">یک پوشه که با نقطه شروع می‌شود، از لیست پنهان خواهد شد: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3115,12 +3115,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">یک نام یا پوشه که با نقطه شروع شود، از لیست پنهان خواهد شد.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 در پشت یک پیوند نمادین یا اتصال، خارج از محل ذخیره رمز عبور قرار دارد.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

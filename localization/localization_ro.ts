@@ -589,7 +589,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Fiecare câmp din spatele butonului &quot;Ochi&quot;, nu doar secretele: pentru ecrane partajate și prezentări. Notele de sub câmpuri și codul OTP rămân vizibile; funcția &quot;Ascunde&quot; le ascunde, de asemenea.</translation>
+        <translation type="unfinished">Fiecare câmp din spatele butonului cu ochi, nu doar secretele: pentru ecrane partajate și prezentări. Notele de sub câmpuri și codul OTP rămân vizibile; &quot;Ascundeți conținutul&quot; le ascunde și pe acestea.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -713,7 +713,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 semnează cu aceeași cheie pentru un alt magazin. O listă de destinatari semnată pentru unul dintre aceste magazine este acceptată în celălalt: folosiți o cheie de semnătură separată pentru fiecare magazin, unde lista de destinatarii diferă.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -1343,7 +1343,7 @@ e-mail</translation>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lista semnată de destinatari %1 nu conține un rând cu ID-ul depozitului, deși acest dispozitiv cunoaște acest depozit după ID-ul %2: poate a fost scrisă pentru alt depozit și copiată aici, sau de un QtPass mai vechi. Deținătorul cheii de semnare poate continua deschizând utilizatori, alegând din nou destinatarii și salvând, ceea ce scrie rândul cu ID-ul depozitului.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -2844,12 +2844,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Folder ascuns</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un folder care începe cu un punct va fi ascuns din listă: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1581"/>
@@ -3357,12 +3357,12 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Un nume sau folder care începe cu un punct ar fi ascuns din listă.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 se află în spatele unei legături simbolice sau al unei joncțiuni, în afara depozitului de parole.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

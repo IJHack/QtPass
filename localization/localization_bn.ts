@@ -1218,7 +1218,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই তালিকায় একাধিক স্টোর আইডি নম্বর রয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
@@ -1230,7 +1230,7 @@ The value will still be saved as entered.</source>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই তালিকায় একটি স্টোর আইডি নম্বর রয়েছে, কিন্তু কোনো জেনারেশন নম্বর নেই।</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -2606,12 +2606,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লুকানো ফোল্ডার</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যে ফোল্ডারটি একটি ডট (•) দিয়ে শুরু হয়, সেটি তালিকা থেকে লুকানো থাকবে: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3115,12 +3115,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নাম অথবা ফোল্ডার, যা একটি ডট দিয়ে শুরু হয়, সেটি তালিকা থেকে লুকানো থাকবে।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 একটি সিম্বলিক লিঙ্ক বা জাংশনের পিছনে রয়েছে, পাসওয়ার্ড স্টোরের বাইরে।</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>

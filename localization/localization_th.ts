@@ -471,7 +471,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">เมื่อคลิปบอร์ดถูกล้าง, ให้ใส่ข้อมูลเดิมกลับเข้าไปเหมือนตอนก่อนคัดลอก, ยกเว้นว่ามีการคัดลอกข้อมูลอื่นในช่วงนั้น ข้อมูลเท่านั้น: การจัดรูปแบบจะไม่ได้รับการกู้คืน ข้อมูลนั้นจะยังคงอยู่ในหน่วยความจำจนถึงจุดนั้น ในสถานการณ์ที่คลิปบอร์ดไม่สามารถอ่านได้โดยไม่มีการโฟกัส (บางเดสก์ท็อป Wayland), จะมีการล้างคลิปบอร์ดแทน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
@@ -763,7 +763,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 ลงนามด้วยกุญแจเดียวกันสำหรับร้านค้าอื่น: รายชื่อผู้รับที่ลงนามสำหรับร้านค้าหนึ่งจะได้รับการยอมรับในอีกร้านหนึ่ง: ใช้วันละกุญแจลงนามแยกกัน สำหรับแต่ละร้านค้าที่มีผู้รับที่แตกต่างกัน</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
@@ -2606,12 +2606,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Hidden folder</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">โฟลเดอร์ที่ซ่อนไว้</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1547"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">โฟลเดอร์ที่เริ่มต้นด้วยจุด จะถูกซ่อนจากรายการ: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
@@ -3111,12 +3111,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.cpp" line="335"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ชื่อหรือโฟลเดอร์ที่เริ่มต้นด้วยจุด จะถูกซ่อนออกจากรายการ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="342"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 อยู่หลังลิงก์สัญลักษณ์หรือจังก์ชัน ภายนอกที่เก็บรหัสผ่าน</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="348"/>
