@@ -174,6 +174,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the next queued command without executing it.  <br /></td></tr>
 <tr class="memitem:a3c5acbcdb1b3be56c5ef7082678698af" id="r_a3c5acbcdb1b3be56c5ef7082678698af"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3c5acbcdb1b3be56c5ef7082678698af">isIdle</a> () const -&gt; bool</td></tr>
 <tr class="memdesc:a3c5acbcdb1b3be56c5ef7082678698af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether no command is running and nothing is queued.  <br /></td></tr>
+<tr class="memitem:a77fc56acc6ba0d9efd0e50fbbd71b002" id="r_a77fc56acc6ba0d9efd0e50fbbd71b002"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a77fc56acc6ba0d9efd0e50fbbd71b002">hasQueued</a> (int id) const -&gt; bool</td></tr>
+<tr class="memdesc:a77fc56acc6ba0d9efd0e50fbbd71b002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a command with process id <code class="param">id</code> is queued or running.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -1228,6 +1230,42 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_ace810a6d93c74dec7188038210c5a731_icgraph.svg" width="100%" height="436"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+
+</div>
+</div>
+<a id="a77fc56acc6ba0d9efd0e50fbbd71b002" name="a77fc56acc6ba0d9efd0e50fbbd71b002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77fc56acc6ba0d9efd0e50fbbd71b002">&#9670;&#160;</a></span>hasQueued()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::hasQueued </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a command with process id <code class="param">id</code> is queued or running. </p>
+<p>The running command stays at the head of the queue until it finishes, so one scan covers both the queued and the running one. Used to refuse a store change while a Git pull is still in flight, whose conflict a call-time check could not yet see. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The process id to look for (an <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69" title="Identifies different subprocess operations used in QtPass.">Enums::PROCESS</a> value). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true when the queue holds a command with that id. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00437">437</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 
 </div>
 </div>

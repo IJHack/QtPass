@@ -1,84 +1,89 @@
 <map id="ImitatePass::Remove" name="ImitatePass::Remove">
-<area shape="rect" id="Node000001" title="Remove password." alt="" coords="5,411,165,439"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="753,74,856,102"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,410,99,363,123,297,159,225,183,191,211,160,240,137,271,117,338,86,410,67,484,57,557,54,625,57,740,73,735,75,625,62,557,60,485,62,411,72,340,91,273,121,243,141,215,164,187,194,164,227,128,299,104,365,92,412"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="230,360,370,388"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,408,225,390,221,394,148,413"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="454,411,630,439"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,422,440,423,437,427,166,428"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" title="Commit changes to git." alt="" coords="213,514,387,542"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="106,437,155,467,214,499,233,508,228,509,212,503,153,472,107,442"/>
-<area shape="rect" id="Node000019" href="$class_imitate_pass.html#af337264de66506f7f949169654aa267d" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="477,564,607,592"/>
-<area shape="poly" id="edge31_Node000001_Node000019" title=" " alt="" coords="96,437,142,495,175,526,214,551,276,572,341,583,405,586,464,587,459,588,404,592,340,588,274,577,212,555,172,531,138,499,95,442"/>
-<area shape="rect" id="Node000022" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="218,615,382,643"/>
-<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="94,437,139,512,173,556,214,595,234,608,229,609,211,599,169,560,134,515,93,442"/>
-<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3" title="Check whether git already tracks a file in the store." alt="" coords="218,462,382,490"/>
-<area shape="poly" id="edge28_Node000001_Node000024" title=" " alt="" coords="146,437,226,456,221,459,147,442"/>
-<area shape="rect" id="Node000025" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="732,284,877,312"/>
-<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="102,409,150,376,180,359,212,346,254,336,310,327,445,313,718,299,714,303,446,318,310,332,255,341,213,352,182,364,153,380,106,412"/>
-<area shape="rect" id="Node000026" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="215,232,384,260"/>
-<area shape="poly" id="edge32_Node000001_Node000026" title=" " alt="" coords="98,409,147,360,211,303,264,267,261,271,214,307,150,364,102,412"/>
-<area shape="rect" id="Node000032" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="448,87,636,131"/>
-<area shape="poly" id="edge40_Node000001_Node000032" title=" " alt="" coords="89,410,104,372,130,321,165,267,187,241,211,219,263,185,320,158,378,138,435,125,431,128,379,143,322,163,266,189,214,223,191,245,169,270,134,324,109,374,94,412"/>
-<area shape="rect" id="Node000035" href="$class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c" title="Remove dir and everything in it, the way rm &#45;rf does: a symbolic link or NTFS junction,..." alt="" coords="235,691,364,719"/>
-<area shape="poly" id="edge46_Node000001_Node000035" title=" " alt="" coords="91,436,109,478,135,534,170,596,215,652,254,684,249,683,211,656,166,599,130,537,104,480,91,442"/>
-<area shape="rect" id="Node000005" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="722,411,887,439"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="630,422,709,424,704,426,631,428"/>
-<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="760,410,753,402,758,392,776,387,805,385,835,387,853,396,848,396,834,392,804,390,777,392,762,397,758,402,765,411"/>
-<area shape="poly" id="edge20_Node000006_Node000004" title=" " alt="" coords="351,511,386,499,446,472,504,445,499,448,449,476,388,503,354,516"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac" title="The start of a git commit for the store: &quot;commit&quot;, and &quot;&#45;S&quot; when git config pass.signcommits is true ..." alt="" coords="450,512,634,540"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="387,525,437,526,432,528,388,530"/>
-<area shape="poly" id="edge21_Node000006_Node000019" title=" " alt="" coords="369,539,464,561,459,562,369,545"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a24c6c475f51730a9e784ce3117e49ee0" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="709,463,900,491"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="619,509,715,494,709,495,620,514"/>
-<area shape="rect" id="Node000009" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1223,514,1415,542"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="900,484,1210,516,1205,517,900,489"/>
-<area shape="rect" id="Node000015" href="$class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" title="The environment QtPass runs the store&#39;s processes in." alt="" coords="980,412,1154,440"/>
-<area shape="poly" id="edge15_Node000008_Node000015" title=" " alt="" coords="879,460,980,443,974,444,881,465"/>
-<area shape="rect" id="Node000016" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="1232,438,1406,466"/>
-<area shape="poly" id="edge19_Node000008_Node000016" title=" " alt="" coords="900,470,1220,456,1214,457,901,475"/>
-<area shape="rect" id="Node000010" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1464,514,1626,542"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1416,525,1451,527,1446,528,1416,530"/>
-<area shape="rect" id="Node000011" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1675,514,1840,542"/>
-<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1627,525,1662,528,1656,528,1627,530"/>
-<area shape="rect" id="Node000012" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1888,512,2106,540"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1840,525,1875,527,1870,527,1840,530"/>
-<area shape="rect" id="Node000013" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1891,564,2103,592"/>
-<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="1826,539,1916,561,1911,561,1826,545"/>
-<area shape="rect" id="Node000014" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1895,460,2099,488"/>
-<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="1822,511,1914,493,1920,492,1823,516"/>
-<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1155,432,1220,441,1215,442,1155,438"/>
-<area shape="rect" id="Node000017" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="1463,438,1627,466"/>
-<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="1406,449,1451,451,1445,452,1406,454"/>
-<area shape="rect" id="Node000018" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="1700,438,1814,466"/>
-<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="1627,449,1688,451,1682,452,1627,454"/>
-<area shape="rect" id="Node000020" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="709,556,900,601"/>
-<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="607,576,696,578,691,579,608,581"/>
-<area shape="rect" id="Node000021" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="960,564,1175,592"/>
-<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="900,576,947,578,941,579,901,581"/>
-<area shape="poly" id="edge24_Node000021_Node000009" title=" " alt="" coords="1139,561,1229,546,1234,545,1140,567"/>
-<area shape="poly" id="edge25_Node000021_Node000013" title=" " alt="" coords="1175,576,1878,578,1873,579,1176,581"/>
-<area shape="rect" id="Node000023" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="480,616,605,644"/>
-<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="382,627,467,630,461,630,382,632"/>
-<area shape="poly" id="edge29_Node000024_Node000008" title=" " alt="" coords="382,473,695,475,691,478,382,479"/>
-<area shape="rect" id="Node000027" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="435,207,649,235"/>
-<area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="384,235,422,232,418,235,386,240"/>
-<area shape="rect" id="Node000028" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="478,259,607,287"/>
-<area shape="poly" id="edge34_Node000026_Node000028" title=" " alt="" coords="384,253,464,263,460,265,386,258"/>
-<area shape="rect" id="Node000029" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="436,155,648,183"/>
-<area shape="poly" id="edge36_Node000026_Node000029" title=" " alt="" coords="335,230,434,193,466,186,462,189,436,198,337,234"/>
-<area shape="poly" id="edge35_Node000028_Node000025" title=" " alt="" coords="607,277,719,289,714,291,608,282"/>
-<area shape="poly" id="edge37_Node000029_Node000002" title=" " alt="" coords="615,152,648,141,672,127,696,112,741,99,736,102,698,117,675,131,650,146,618,157"/>
-<area shape="rect" id="Node000030" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="722,126,887,154"/>
-<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="648,155,709,149,704,152,650,160"/>
-<area shape="rect" id="Node000031" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="697,178,912,206"/>
-<area shape="poly" id="edge39_Node000029_Node000031" title=" " alt="" coords="648,176,684,180,679,182,649,181"/>
-<area shape="poly" id="edge41_Node000032_Node000002" title=" " alt="" coords="635,99,740,92,735,94,637,104"/>
-<area shape="poly" id="edge42_Node000032_Node000030" title=" " alt="" coords="635,117,709,127,704,129,637,123"/>
-<area shape="poly" id="edge43_Node000032_Node000031" title=" " alt="" coords="616,129,650,141,698,163,727,173,721,174,696,167,648,146,617,135"/>
-<area shape="rect" id="Node000033" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="700,5,909,50"/>
-<area shape="poly" id="edge44_Node000032_Node000033" title=" " alt="" coords="616,84,718,54,713,57,618,88"/>
-<area shape="rect" id="Node000034" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="1012,14,1122,42"/>
-<area shape="poly" id="edge45_Node000033_Node000034" title=" " alt="" coords="908,25,999,27,994,29,910,30"/>
-<area shape="poly" id="edge47_Node000035_Node000035" title=" " alt="" coords="263,690,257,682,262,673,276,667,300,665,325,667,340,676,335,676,324,672,300,670,278,672,265,677,262,682,268,692"/>
+<area shape="rect" id="Node000001" title="Remove password." alt="" coords="5,368,165,396"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="753,43,856,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,368,95,316,117,241,134,200,154,160,180,123,211,91,240,68,272,50,341,23,413,8,488,3,560,5,629,13,742,37,737,39,628,19,560,11,488,8,414,13,342,28,275,54,243,73,214,95,184,126,159,163,138,203,122,243,101,317,91,369"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="230,343,370,371"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,370,217,365,213,368,166,375"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="454,394,630,421"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,384,440,400,437,404,165,389"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" title="Commit changes to git." alt="" coords="213,444,387,472"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="126,394,246,437,242,440,127,399"/>
+<area shape="rect" id="Node000019" href="$class_imitate_pass.html#af337264de66506f7f949169654aa267d" title="Translate path for git when WSL&#45;routed: wraps in wslpath substitution, otherwise returns path unchang..." alt="" coords="477,547,607,575"/>
+<area shape="poly" id="edge31_Node000001_Node000019" title=" " alt="" coords="93,394,112,425,138,464,172,503,214,533,275,556,340,568,404,571,464,571,459,572,404,576,340,573,274,561,211,538,169,507,134,467,107,428,93,399"/>
+<area shape="rect" id="Node000022" href="$class_imitate_pass.html#a667dcc58337f142307a3f98aaaed8219" title="gitConfigured() plus a status message when git is enabled but no executable is configured." alt="" coords="218,598,382,625"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="92,394,110,431,135,480,170,532,214,577,232,590,227,591,211,581,166,535,131,483,105,434,92,399"/>
+<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a568cee878638fa0cbc4c862060ea35b3" title="Check whether git already tracks a file in the store." alt="" coords="218,496,382,524"/>
+<area shape="poly" id="edge28_Node000001_Node000024" title=" " alt="" coords="100,394,150,437,181,461,214,481,230,490,225,491,211,486,178,465,146,441,101,399"/>
+<area shape="rect" id="Node000025" href="$class_util.html#aa9ae92951eb0e849c1e4f35d10c4192d" title="Whether path names a symbolic link or NTFS junction, with or without a trailing separator (which woul..." alt="" coords="732,292,877,320"/>
+<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="112,366,159,345,212,329,311,316,447,309,719,305,714,308,447,314,311,322,213,334,160,350,116,370"/>
+<area shape="rect" id="Node000026" href="$class_pass.html#a6cca7cd5646a752c16dac59df6e53581" title="Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the..." alt="" coords="215,160,384,188"/>
+<area shape="poly" id="edge32_Node000001_Node000026" title=" " alt="" coords="92,367,138,298,172,256,211,217,252,193,248,197,214,221,176,259,142,301,97,369"/>
+<area shape="rect" id="Node000032" href="$class_pass.html#a273c43add4c728d419585f642bce24d4" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="454,43,630,71"/>
+<area shape="poly" id="edge40_Node000001_Node000032" title=" " alt="" coords="87,367,100,324,125,265,161,201,184,172,211,147,264,113,323,88,383,72,441,63,437,66,384,77,325,93,267,117,214,151,188,176,165,204,129,267,106,326,92,369"/>
+<area shape="rect" id="Node000033" href="$class_pass.html#af1859cdb9fb7f506d92740f3370acd0b" title="Refuse to change the store while git is mid&#45;rebase, &#45;merge, &#45;cherry&#45;pick or &#45;revert." alt="" coords="448,198,636,243"/>
+<area shape="poly" id="edge44_Node000001_Node000033" title=" " alt="" coords="99,366,146,325,178,303,212,285,266,264,324,248,435,229,431,232,325,253,268,269,214,290,181,308,150,329,103,369"/>
+<area shape="rect" id="Node000036" href="$class_util.html#a1fb5c7c915c11a832a9d5a338f8d6b8c" title="Remove dir and everything in it, the way rm &#45;rf does: a symbolic link or NTFS junction,..." alt="" coords="235,674,364,701"/>
+<area shape="poly" id="edge50_Node000001_Node000036" title=" " alt="" coords="90,394,107,440,132,503,168,572,190,605,215,635,232,651,254,666,248,665,229,655,211,639,185,608,163,574,127,505,102,442,90,399"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="722,394,887,421"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="630,405,709,407,704,408,631,410"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="760,392,753,385,758,375,776,369,805,367,835,369,853,378,848,378,834,375,804,372,777,374,762,379,758,384,765,394"/>
+<area shape="poly" id="edge20_Node000006_Node000004" title=" " alt="" coords="368,441,460,424,455,426,370,446"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a4b215c41496b7ab0479878e357bc4dac" title="The start of a git commit for the store: &quot;commit&quot;, and &quot;&#45;S&quot; when git config pass.signcommits is true ..." alt="" coords="450,446,634,473"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="387,456,437,458,432,460,388,461"/>
+<area shape="poly" id="edge21_Node000006_Node000019" title=" " alt="" coords="352,470,388,482,449,509,504,539,499,539,446,514,386,487,353,475"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a24c6c475f51730a9e784ce3117e49ee0" title="Executor::executeBlocking() for the re&#45;encryption helpers." alt="" coords="709,446,900,473"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="634,457,696,459,691,460,635,462"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Run a command synchronously and return its exit code." alt="" coords="1223,496,1415,524"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="900,466,1210,499,1205,500,900,471"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a0037d3169c1c0fc270270cde4b8d25d2" title="The environment QtPass runs the store&#39;s processes in." alt="" coords="980,395,1154,423"/>
+<area shape="poly" id="edge15_Node000008_Node000015" title=" " alt="" coords="879,442,980,425,974,427,881,448"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#ab81d7dbed9e18a9368c2be06876c4630" title="base with GIT_DIR and GIT_WORK_TREE as the store is now (Util::gitStoreVariables()),..." alt="" coords="1232,420,1406,448"/>
+<area shape="poly" id="edge19_Node000008_Node000016" title=" " alt="" coords="900,452,1220,438,1214,440,901,457"/>
+<area shape="rect" id="Node000010" href="$class_executor.html#ae60746042ffc5c3eb343a2911a6bb896" title="Shared blocking run: start process, optionally feed input on stdin, wait, and capture stdout/stderr...." alt="" coords="1464,496,1626,524"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1416,507,1451,510,1446,510,1416,513"/>
+<area shape="rect" id="Node000011" href="$class_executor.html#a79e2b04e8eb852c4ddcbf3e3f1928f10" title="Start process running app, handling the &quot;wsl &quot; prefix once for both the queued and the blocking path." alt="" coords="1675,496,1840,524"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1627,507,1662,510,1656,510,1627,513"/>
+<area shape="rect" id="Node000012" href="$class_executor.html#ae6200004e4ffabc8eb35b63f419ef492" title="Make process start its child without a controlling terminal." alt="" coords="1888,495,2106,523"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1840,507,1875,509,1870,510,1840,512"/>
+<area shape="rect" id="Node000013" href="$class_executor.html#aec74cb83e3072dbf74a5f09681f4716c" title="Parse a configured executable as a WSL command." alt="" coords="1891,547,2103,575"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="1826,522,1916,543,1911,543,1826,527"/>
+<area shape="rect" id="Node000014" href="$class_executor.html#a96a40ee14be47ac090dea92e621d7be7" title="The one rule for turning a configured executable into what runs." alt="" coords="1895,443,2099,471"/>
+<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="1822,493,1914,475,1920,474,1823,498"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1155,415,1220,424,1215,424,1155,420"/>
+<area shape="rect" id="Node000017" href="$class_util.html#a98271dbaefe09960e1eaded52fed2694" title="The variables that keep git in store&#39;s own repository, never one above it: GIT_CEILING_DIRECTORIES (g..." alt="" coords="1463,420,1627,448"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="1406,431,1451,434,1445,434,1406,437"/>
+<area shape="rect" id="Node000018" href="$class_util.html#afd0e45a8685dd277e6f3d51c361e0b03" title="GIT_CEILING_DIRECTORIES for a store, as pass sets it." alt="" coords="1700,420,1814,448"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="1627,431,1688,434,1682,434,1627,437"/>
+<area shape="rect" id="Node000020" href="$class_imitate_pass.html#a9e2ce295e8353748e93fcc7f4776a7b8" title="Translate path for the given exe when WSL&#45;routed: wraps in wslpath substitution, otherwise returns pa..." alt="" coords="709,538,900,583"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="607,558,696,560,691,561,608,563"/>
+<area shape="rect" id="Node000021" href="$class_executor.html#a5440c036f0ef72157c9cd1d6dff43f86" title="Translate a native path for a WSL&#45;routed executable." alt="" coords="960,547,1175,575"/>
+<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="900,558,947,560,941,561,901,563"/>
+<area shape="poly" id="edge24_Node000021_Node000009" title=" " alt="" coords="1139,544,1229,528,1234,527,1140,549"/>
+<area shape="poly" id="edge25_Node000021_Node000013" title=" " alt="" coords="1175,558,1878,560,1873,561,1176,563"/>
+<area shape="rect" id="Node000023" href="$class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb" title="Progress or a non&#45;fatal problem worth a line in the status bar (&quot;Creating backup commit&quot;,..." alt="" coords="480,599,605,627"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="382,609,467,612,461,613,382,614"/>
+<area shape="poly" id="edge29_Node000024_Node000008" title=" " alt="" coords="381,504,508,495,649,482,712,476,706,477,650,487,508,501,382,509"/>
+<area shape="rect" id="Node000027" href="$class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7" title="Whether path is spelled through the target of a store root that is itself a link, rather than from th..." alt="" coords="435,147,649,175"/>
+<area shape="poly" id="edge33_Node000026_Node000027" title=" " alt="" coords="384,167,422,166,417,169,386,172"/>
+<area shape="rect" id="Node000028" href="$class_util.html#a303cdce7f33f076823a0581defb52ca4" title="Whether the way from storeRoot down to path passes through a symbolic link or NTFS junction: path its..." alt="" coords="478,267,607,295"/>
+<area shape="poly" id="edge34_Node000026_Node000028" title=" " alt="" coords="320,186,372,220,436,253,465,264,460,266,434,258,370,224,321,191"/>
+<area shape="rect" id="Node000029" href="$class_pass.html#a587c7c2f547746e11e668cdb769f0f69" title="Refuse an operation on something that is not part of the store." alt="" coords="436,95,648,123"/>
+<area shape="poly" id="edge36_Node000026_Node000029" title=" " alt="" coords="348,157,434,133,470,125,465,128,436,138,351,162"/>
+<area shape="poly" id="edge35_Node000028_Node000025" title=" " alt="" coords="607,284,719,297,714,298,607,290"/>
+<area shape="poly" id="edge37_Node000029_Node000002" title=" " alt="" coords="615,92,741,68,736,71,617,97"/>
+<area shape="rect" id="Node000030" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="722,147,887,175"/>
+<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="615,121,719,142,714,144,616,126"/>
+<area shape="rect" id="Node000031" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="697,95,912,123"/>
+<area shape="poly" id="edge39_Node000029_Node000031" title=" " alt="" coords="648,106,684,108,679,110,650,111"/>
+<area shape="poly" id="edge41_Node000032_Node000002" title=" " alt="" coords="629,54,740,56,735,58,631,59"/>
+<area shape="poly" id="edge42_Node000032_Node000030" title=" " alt="" coords="621,68,651,81,666,94,676,107,684,120,699,132,713,141,708,141,696,136,680,124,671,110,662,98,648,86,622,74"/>
+<area shape="poly" id="edge43_Node000032_Node000031" title=" " alt="" coords="615,69,719,90,714,92,616,74"/>
+<area shape="poly" id="edge45_Node000033_Node000002" title=" " alt="" coords="631,196,648,184,658,172,665,160,670,134,676,107,684,94,696,81,715,69,740,62,736,65,718,74,699,85,688,97,681,109,676,135,670,161,663,175,651,188,634,200"/>
+<area shape="poly" id="edge46_Node000033_Node000030" title=" " alt="" coords="635,197,728,177,724,180,637,202"/>
+<area shape="poly" id="edge47_Node000033_Node000031" title=" " alt="" coords="625,196,648,184,662,172,671,159,680,146,696,133,713,127,708,130,699,138,684,149,675,162,666,175,651,188,628,200"/>
+<area shape="rect" id="Node000034" href="$class_pass.html#a433f0bf99f1a4fdd8e56944ff234eb2b" title="The unfinished git operation in progress in the store, if any." alt="" coords="700,198,909,243"/>
+<area shape="poly" id="edge48_Node000033_Node000034" title=" " alt="" coords="635,218,688,220,683,222,637,223"/>
+<area shape="rect" id="Node000035" href="$class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7" title="Run a git command in the store&#39;s repository, blocking." alt="" coords="1012,207,1122,235"/>
+<area shape="poly" id="edge49_Node000034_Node000035" title=" " alt="" coords="908,218,999,220,994,221,910,223"/>
+<area shape="poly" id="edge51_Node000036_Node000036" title=" " alt="" coords="263,672,257,665,262,655,276,649,300,647,325,649,340,659,335,658,324,655,300,652,278,654,265,659,262,664,268,674"/>
 </map>

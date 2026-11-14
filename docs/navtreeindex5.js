@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"functions_func_o.html":[3,3,1,13],
+"functions_func_p.html":[3,3,1,14],
 "functions_func_q.html":[3,3,1,15],
 "functions_func_r.html":[3,3,1,16],
 "functions_func_s.html":[3,3,1,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "secretlineedit_8cpp_source.html":[4,0,1,77],
 "secretlineedit_8h.html":[4,0,1,78],
 "secretlineedit_8h_source.html":[4,0,1,78],
-"secretplaintextedit_8cpp.html":[4,0,1,79],
-"secretplaintextedit_8cpp_source.html":[4,0,1,79],
-"secretplaintextedit_8h.html":[4,0,1,80]
+"secretplaintextedit_8cpp.html":[4,0,1,79]
 };

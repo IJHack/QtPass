@@ -207,6 +207,7 @@ var group__backend =
       [ "refuseAsNotPartOfStore", "class_pass.html#a587c7c2f547746e11e668cdb769f0f69", null ],
       [ "refuseFolderOutsideStore", "class_pass.html#afea04fa657d65846e2772b0b25c96276", null ],
       [ "refuseLinkedPath", "class_pass.html#a6cca7cd5646a752c16dac59df6e53581", null ],
+      [ "refusePendingPull", "class_pass.html#a273c43add4c728d419585f642bce24d4", null ],
       [ "refuseSkippedGpgId", "class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb", null ],
       [ "refuseUnfinishedGitOperation", "class_pass.html#af1859cdb9fb7f506d92740f3370acd0b", null ],
       [ "Remove", "class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764", null ],

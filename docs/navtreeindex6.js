@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"secretplaintextedit_8cpp_source.html":[4,0,1,79],
+"secretplaintextedit_8h.html":[4,0,1,80],
 "secretplaintextedit_8h_source.html":[4,0,1,80],
 "secrettextbrowser_8cpp.html":[4,0,1,81],
 "secrettextbrowser_8cpp_source.html":[4,0,1,81],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "usersdialog_8cpp.html":[4,0,1,102],
 "usersdialog_8cpp_source.html":[4,0,1,102],
 "usersdialog_8h.html":[4,0,1,103],
-"usersdialog_8h_source.html":[4,0,1,103],
-"util_8cpp.html":[4,0,1,104],
-"util_8cpp_source.html":[4,0,1,104]
+"usersdialog_8h_source.html":[4,0,1,103]
 };

@@ -21,6 +21,7 @@ var class_executor =
     [ "executeBlocking", "class_executor.html#a15bdb2a88cfa90134bbf8601eef4055e", null ],
     [ "executeNext", "class_executor.html#ae71c92047b8337f770294e84211d850f", null ],
     [ "finished", "class_executor.html#ace810a6d93c74dec7188038210c5a731", null ],
+    [ "hasQueued", "class_executor.html#a77fc56acc6ba0d9efd0e50fbbd71b002", null ],
     [ "isIdle", "class_executor.html#a3c5acbcdb1b3be56c5ef7082678698af", null ],
     [ "onProcessFinished", "class_executor.html#a5bb1a5d03be735f01c38aebd04b5c36c", null ],
     [ "parseWslCommand", "class_executor.html#aec74cb83e3072dbf74a5f09681f4716c", null ],

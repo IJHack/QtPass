@@ -1,0 +1,9 @@
+<map id="Pass::refusePendingPull" name="Pass::refusePendingPull">
+<area shape="rect" id="Node000001" title="Refuse a store change while a Git pull is still queued or running." alt="" coords="5,57,181,85"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9" title="Something went wrong that the user has to be told about in a dialog, such as a refused path or a fail..." alt="" coords="285,5,387,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,54,272,32,267,35,162,59"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="An operation ended in failure: its process exited non&#45;zero, could not be started or crashed,..." alt="" coords="254,57,418,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,69,241,70,236,72,181,74"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted each time a queued process is about to start, and by the refusals that go on to emit processE..." alt="" coords="229,109,443,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,83,255,105,250,106,161,88"/>
+</map>

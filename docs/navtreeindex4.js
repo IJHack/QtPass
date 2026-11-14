@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2":[1,3,7,7],
+"class_store_model.html#a18097d60174b1d370e13d6a04ab7847f":[1,3,7,2],
 "class_store_model.html#a1d113aadab8e115cdd963f2246333664":[1,3,7,0],
 "class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5":[1,3,7,11],
 "class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691":[1,3,7,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "functions_func_k.html":[3,3,1,9],
 "functions_func_l.html":[3,3,1,10],
 "functions_func_m.html":[3,3,1,11],
-"functions_func_n.html":[3,3,1,12],
-"functions_func_o.html":[3,3,1,13],
-"functions_func_p.html":[3,3,1,14]
+"functions_func_n.html":[3,3,1,12]
 };
