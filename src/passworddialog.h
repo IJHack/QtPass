@@ -20,6 +20,7 @@ class PasswordDialog;
 
 class Pass;
 class FieldLabel;
+struct NamedValue;
 class QAction;
 class QLineEdit;
 class SecretLineEdit;
@@ -247,6 +248,15 @@ private:
    * @param line A password or field editor just created.
    */
   void reportCopies(SecretLineEdit *line);
+  /**
+   * @brief Adds a row for a field outside the template: a FieldLabel that
+   * can be renamed or removed, and a line edit holding the value as stored.
+   * @param field The field's name, value and verbatim source line.
+   * @param previous The widget before it in the tab order.
+   * @return The new line edit, also appended to m_otherLines.
+   */
+  auto addFieldRow(const NamedValue &field, QWidget *previous)
+      -> SecretLineEdit *;
   /**
    * @brief Locate the field that holds the one-time password configuration.
    * @return The matching QLineEdit, or nullptr when the entry has no OTP field.

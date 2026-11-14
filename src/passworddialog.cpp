@@ -35,6 +35,7 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QSet>
 #include <QShortcut>
 #include <QSignalBlocker>
 #include <QTextDocument>
@@ -420,34 +421,7 @@ void PasswordDialog::setPassword(const QString &password) {
   }
   m_otherLines.clear();
   for (const NamedValue &nv : std::as_const(namedValues)) {
-    auto *line = new SecretLineEdit();
-    reportCopies(line);
-    line->setObjectName(nv.name);
-    line->setStoredText(nv.value);
-    line->setProperty(kOriginalLineProperty, nv.originalLine);
-    auto *label = new FieldLabel(nv.name);
-    label->setBuddy(line);
-    ui->formLayout->addRow(label, line);
-    setTabOrder(previous, line);
-    m_otherLines.append(line);
-    previous = line;
-    // Both widgets are rows of the form; removeRow() deletes them together,
-    // so a rename or removal that arrives afterwards finds no receiver.
-    connect(label, &FieldLabel::renamed, this,
-            [this, line, label](const QString &, const QString &to) {
-              renameField(line, label, to);
-            });
-    connect(label, &FieldLabel::removeRequested, this,
-            [this, line] { removeField(line); });
-    // The visible way to remove the field; the context menu is the other.
-    auto *remove = line->addAction(
-        QIcon::fromTheme(QStringLiteral("edit-delete"),
-                         QIcon(QStringLiteral(":/icons/edit-delete.svg"))),
-        QLineEdit::TrailingPosition);
-    remove->setObjectName(QStringLiteral("removeFieldAction"));
-    remove->setToolTip(tr("Remove field"));
-    connect(remove, &QAction::triggered, this,
-            [this, line] { removeField(line); });
+    previous = addFieldRow(nv, previous);
   }
 
   // setPlainText, not insertPlainText: re-populating must replace the body,
@@ -666,20 +640,32 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_fields = TemplateIO::fieldsIn(rawFields);
   m_templating = useTemplate;
 
-  for (QLineEdit *line : std::as_const(m_templateLines)) {
-    ui->formLayout->removeRow(line);
-  }
-  m_templateLines.clear();
+  // removeRow() deletes the line edits, text and all, so what the rows hold
+  // is carried over: switching the template, or Ctrl+T (which with a single
+  // template rebuilds the same rows), used to empty everything typed into
+  // them. A value the new template has a row for goes there; any other stays
+  // a field row of its own, so nothing is dropped and nothing is doubled.
+  NamedValues held;
+  QSet<QString> otpTyped;
+  const auto holdAndRemove = [this, &held,
+                              &otpTyped](QList<QLineEdit *> &lines) {
+    for (QLineEdit *line : std::as_const(lines)) {
+      if (!line->text().isEmpty()) {
+        held.append({line->objectName(), line->text(),
+                     line->property(kOriginalLineProperty).toString()});
+        if (line->property(kOtpEditedProperty).toBool()) {
+          otpTyped.insert(line->objectName());
+        }
+      }
+      ui->formLayout->removeRow(line);
+    }
+    lines.clear();
+  };
+  holdAndRemove(m_templateLines);
+  holdAndRemove(m_otherLines);
 
-  // Defensively remove all rows tracked in m_otherLines to prevent accumulation
-  // when cycling templates or applying new templates after setPassword
-  for (QLineEdit *line : std::as_const(m_otherLines)) {
-    ui->formLayout->removeRow(line);
-  }
-  m_otherLines.clear();
-
+  QWidget *previous = ui->checkBoxShow;
   if (m_templating) {
-    QWidget *previous = ui->checkBoxShow;
     for (const QString &field : std::as_const(m_fields)) {
       if (field.isEmpty()) {
         continue;
@@ -693,11 +679,28 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       label->setTextFormat(Qt::PlainText);
       label->setText(field);
       line->setObjectName(field);
+      const NamedValue kept = held.takeNamedValue(field);
+      if (!kept.name.isEmpty()) {
+        line->setStoredText(kept.value);
+        line->setProperty(kOriginalLineProperty, kept.originalLine);
+        if (otpTyped.contains(field)) {
+          line->setProperty(kOtpEditedProperty, true);
+        }
+      }
       ui->formLayout->addRow(label, line);
       setTabOrder(previous, line);
       m_templateLines.append(line);
       previous = line;
     }
+  }
+  for (const NamedValue &field : std::as_const(held)) {
+    SecretLineEdit *line = addFieldRow(field, previous);
+    // A typed OTP value keeps its mark in a field row too, so save() still
+    // turns a bare secret into an otpauth:// URI.
+    if (otpTyped.contains(field.name)) {
+      line->setProperty(kOtpEditedProperty, true);
+    }
+    previous = line;
   }
 
   hookOtpField();
@@ -705,6 +708,38 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
 
 void PasswordDialog::reportCopies(SecretLineEdit *line) {
   connect(line, &SecretLineEdit::copied, this, &PasswordDialog::copied);
+}
+
+auto PasswordDialog::addFieldRow(const NamedValue &field, QWidget *previous)
+    -> SecretLineEdit * {
+  auto *line = new SecretLineEdit();
+  reportCopies(line);
+  line->setObjectName(field.name);
+  line->setStoredText(field.value);
+  line->setProperty(kOriginalLineProperty, field.originalLine);
+  auto *label = new FieldLabel(field.name);
+  label->setBuddy(line);
+  ui->formLayout->addRow(label, line);
+  setTabOrder(previous, line);
+  m_otherLines.append(line);
+  // Both widgets are rows of the form; removeRow() deletes them together,
+  // so a rename or removal that arrives afterwards finds no receiver.
+  connect(label, &FieldLabel::renamed, this,
+          [this, line, label](const QString &, const QString &to) {
+            renameField(line, label, to);
+          });
+  connect(label, &FieldLabel::removeRequested, this,
+          [this, line] { removeField(line); });
+  // The visible way to remove the field; the context menu is the other.
+  auto *remove = line->addAction(
+      QIcon::fromTheme(QStringLiteral("edit-delete"),
+                       QIcon(QStringLiteral(":/icons/edit-delete.svg"))),
+      QLineEdit::TrailingPosition);
+  remove->setObjectName(QStringLiteral("removeFieldAction"));
+  remove->setToolTip(tr("Remove field"));
+  connect(remove, &QAction::triggered, this,
+          [this, line] { removeField(line); });
+  return line;
 }
 
 void PasswordDialog::templateAll(bool templateAll) {
@@ -793,6 +828,11 @@ void PasswordDialog::cycleTemplate() {
     nextIdx = 0;
   } else {
     nextIdx = (currentIdx + 1) % names.size();
+  }
+  // With a single template there is nothing to switch to: leave the rows,
+  // and the cursor in them, alone.
+  if (names.at(nextIdx) == m_currentTemplateName) {
+    return;
   }
   applyTemplate(names.at(nextIdx));
 }
