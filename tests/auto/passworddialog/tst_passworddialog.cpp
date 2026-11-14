@@ -131,6 +131,7 @@ private Q_SLOTS:
   void newEntryStartsEditable();
   void nameRowOnlyForANewEntryWithALocation();
   void newEntryNameIsValidatedAsTyped();
+  void newEntryNameRefusesHiddenAndLinkedPlaces();
   void acceptResolvesTheNameAndCreatesItsFolder();
   void showCheckBoxTogglesPasswordEcho();
   void templateRowHiddenWithoutTemplates();
@@ -572,6 +573,46 @@ void tst_passworddialog::nameRowOnlyForANewEntryWithALocation() {
   fresh.setNewEntryLocation(QDir::tempPath(), {QString()}, QString());
   QVERIFY(fresh.findChild<QWidget *>(QStringLiteral("nameRow"))
               ->isVisibleTo(&fresh));
+}
+
+/**
+ * @brief A name the tree would hide (a part starting with a dot) and one
+ *        behind a link (whose folder accept() would create in the link's
+ *        target) keep OK off, with the reason in the status line.
+ */
+void tst_passworddialog::newEntryNameRefusesHiddenAndLinkedPlaces() {
+  QTemporaryDir store;
+  QVERIFY(QDir(store.path()).mkpath(QStringLiteral("target")));
+  FakePass pass;
+  const AppSettings s = QtPassSettings::load();
+  PasswordDialog d(&pass, s, QString(), true);
+  d.setNewEntryLocation(store.path(), {QString()}, QString());
+  auto *name = d.findChild<QLineEdit *>(QStringLiteral("nameEdit"));
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+  QVERIFY(name != nullptr && status != nullptr);
+
+  for (const QString &hidden :
+       {QStringLiteral(".hidden"), QStringLiteral("sub/.dir/entry")}) {
+    name->setText(hidden);
+    QVERIFY2(!okButton(d)->isEnabled(), qPrintable(hidden));
+    QVERIFY2(status->text().contains(QStringLiteral("dot")),
+             qPrintable(status->text()));
+  }
+
+  name->setText(QStringLiteral("visible"));
+  QVERIFY(okButton(d)->isEnabled());
+
+#ifndef Q_OS_WIN
+  // A link to another folder of the store passes the store-boundary check.
+  QVERIFY(QFile::link(QDir(store.path()).filePath(QStringLiteral("target")),
+                      QDir(store.path()).filePath(QStringLiteral("inlink"))));
+  name->setText(QStringLiteral("inlink/entry"));
+  QVERIFY2(!okButton(d)->isEnabled(), "behind a link");
+  QVERIFY2(status->text().contains(QStringLiteral("symbolic link")),
+           qPrintable(status->text()));
+  name->setText(QStringLiteral("inlink/new/entry"));
+  QVERIFY2(!okButton(d)->isEnabled(), "a new folder behind a link");
+#endif
 }
 
 /**

@@ -39,12 +39,16 @@ auto PathValidator::storeRelativePath(const QString &storeRoot,
     tail.prepend(fi.fileName());
     while (!parent.exists()) {
       tail.prepend(parent.dirName());
-      // The filesystem root always exists, so the loop terminates there
-      // before cdUp() can fail; this guard is defensive against a
-      // pathological QDir that can neither exist nor ascend.
-      if (!parent.cdUp()) {
+      // Up by name, not cdUp(): cdUp() refuses to move into a folder that
+      // does not exist either, so a new entry two missing folders deep
+      // ("a/b/entry") used to count as outside the store. The filesystem
+      // root always exists, so the loop ends there; the guard is defensive
+      // against a path that can neither exist nor ascend.
+      const QString up = QFileInfo(parent.absolutePath()).path();
+      if (up == parent.absolutePath()) {
         return std::nullopt;
       }
+      parent.setPath(up);
     }
     const QString parentCanon = parent.canonicalPath();
     if (parentCanon.isEmpty()) {

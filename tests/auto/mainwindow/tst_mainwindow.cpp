@@ -472,6 +472,7 @@ private Q_SLOTS:
   void shareMenuReencryptAsksFirst();
   void addFolderCreatesItWithAGpgId();
   void addFolderRefusesEscapesAndDuplicates();
+  void addFolderRefusesHiddenAndLinkedPlaces();
   void renameFolderMovesIt();
   void renamePasswordMovesIt();
   void deleteNeedsASelection();
@@ -4108,6 +4109,48 @@ void tst_mainwindow::addFolderCreatesItWithAGpgId() {
   }
   QCOMPARE(store.entryList(QStringList{QStringLiteral("brand-*")}, QDir::Dirs),
            QStringList{QStringLiteral("brand-new")});
+}
+
+/**
+ * @brief A folder the tree would hide (a name starting with a dot) and one
+ *        behind a link (made in the link's target, not the store) are
+ *        refused, and nothing is created.
+ */
+void tst_mainwindow::addFolderRefusesHiddenAndLinkedPlaces() {
+  treeView()->setCurrentIndex(QModelIndex());
+  const QDir store(m_storeDir.path());
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral(".hidden")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 2);
+    COMPARE_BOX_TITLES(driver.boxTitles,
+                       QStringList{QStringLiteral("Hidden folder")});
+  }
+  QVERIFY2(!QFileInfo::exists(store.filePath(QStringLiteral(".hidden"))),
+           "no hidden folder is created");
+
+#ifndef Q_OS_WIN
+  // A link to another folder of the store passes the store-boundary check;
+  // only the link check stops a folder from being made in its target.
+  QVERIFY(store.mkpath(QStringLiteral("target")));
+  const QString link = store.filePath(QStringLiteral("inlink"));
+  QVERIFY(QFile::link(store.filePath(QStringLiteral("target")), link));
+  const auto removeLink = qScopeGuard([&link, &store] {
+    QFile::remove(link);
+    QDir(store.filePath(QStringLiteral("target"))).removeRecursively();
+  });
+  {
+    ModalDriver driver(typeIntoInputDialog(QStringLiteral("inlink/made")));
+    QVERIFY(QMetaObject::invokeMethod(m_window.data(), "addFolder",
+                                      Qt::DirectConnection));
+    QCOMPARE(driver.seen, 2);
+    COMPARE_BOX_TITLES(driver.boxTitles, QStringList{QStringLiteral(
+                                             "Not a folder of the store")});
+  }
+  QVERIFY2(!QFileInfo::exists(store.filePath(QStringLiteral("target/made"))),
+           "nothing is created behind the link");
+#endif
 }
 
 /**

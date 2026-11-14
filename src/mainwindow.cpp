@@ -1532,6 +1532,23 @@ void MainWindow::addFolder() {
   if (!confirmPathInStore(newdir)) {
     return;
   }
+  // Behind a link the folder would be made outside the store, as Users,
+  // Re-encrypt and Delete already refuse.
+  if (refuseLinkedFolder(newdir)) {
+    return;
+  }
+  // The tree, like `pass ls`, hides names that start with a dot.
+  const QStringList parts =
+      QDir(s.passStore).relativeFilePath(newdir).split(u'/');
+  if (std::any_of(parts.cbegin(), parts.cend(), [](const QString &part) {
+        return part != u'.' && part.startsWith(u'.');
+      })) {
+    PlainMessageBox::warning(this, tr("Hidden folder"),
+                             tr("A folder that starts with a dot would be "
+                                "hidden from the list: %1")
+                                 .arg(newdir));
+    return;
+  }
   // Exists already: an error, as QDir::mkdir() made it before.
   if (QFileInfo::exists(newdir) || !Util::mkpathForStore(newdir)) {
     PlainMessageBox::warning(this, tr("Error"),
