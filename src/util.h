@@ -25,9 +25,18 @@ class QFileDevice;
 /// Milliseconds in a second, for timers set from a setting in seconds.
 constexpr int MS_PER_SECOND = 1000;
 
-/*!
-    \class Util
-    \brief Some static utilities to be used elsewhere.
+/**
+ * @class Util
+ * @ingroup support
+ * @brief Static helpers that have no better home: setting up the process
+ * and the Git environment the way pass does, finding binaries and the
+ * default store, path and URL handling, and file operations that refuse to
+ * follow links.
+ *
+ * Nothing here keeps state apart from the cached process environment, and
+ * nothing depends on a widget or a model. Store-boundary checks live in
+ * PathValidator, SSH agent discovery in SshAuthSock and template files in
+ * TemplateIO.
  */
 class Util {
 public:

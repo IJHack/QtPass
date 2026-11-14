@@ -263,7 +263,13 @@ private:
 /**
  * @class DoneWizardPage
  * @ingroup ui
- * @brief A summary and the two preferences worth asking on day one.
+ * @brief Last page: a summary of what Finish will do and the two
+ * preferences worth asking on day one.
+ *
+ * The summary names the store and says whether it is used as it is or set
+ * up for the ticked keys, with or without Git. The two checkboxes are
+ * "hide passwords until asked" and "show an icon in the system tray";
+ * everything else is left to the settings dialog.
  */
 class DoneWizardPage : public QWizardPage {
   Q_OBJECT

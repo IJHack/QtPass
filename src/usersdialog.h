@@ -62,7 +62,7 @@ public:
   UsersDialog(Pass *pass, const AppSettings &s, QString dir,
               Preselect preselect, QWidget *parent = nullptr);
   /**
-   * @brief Destructor.
+   * @brief Destroys the dialog and its generated form.
    */
   ~UsersDialog() override;
 

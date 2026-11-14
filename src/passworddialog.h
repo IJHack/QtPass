@@ -29,10 +29,16 @@ class QWidget;
 /**
  * @class PasswordDialog
  * @ingroup ui
- * @brief Dialog for inserting and editing passwords, optionally using
- * templates.
+ * @brief Dialog for creating a password entry or editing an existing one.
  *
- * Manages UI for entering, generating, and templating password-related fields.
+ * The first line is the password, with a generator beside it; below it are
+ * one field per template line when templates are in use, and a free text
+ * box for everything else. For an existing entry the dialog asks the
+ * backend to Show() it and fills the fields when the content arrives. On OK
+ * it puts the entry together again and calls Pass::Insert(), then stays
+ * open with its fields locked until the backend reports: it closes on
+ * Pass::finishedInsert() and gives the fields back with the reason on
+ * Pass::insertFailed(), so a failed save never loses what was typed.
  */
 class PasswordDialog : public QDialog {
   Q_OBJECT

@@ -402,11 +402,12 @@ protected:
 
 public:
   /**
-   * @brief Construct ImitatePass instance.
+   * @brief Construct the backend and connect its content search.
    */
   ImitatePass();
   /**
-   * @brief Destructor.
+   * @brief Cancel a running content search, and cancel and join a running
+   * re-encryption worker, before the members they use go away.
    */
   ~ImitatePass() override;
 
@@ -502,11 +503,18 @@ public:
 
 signals:
   /**
-   * @brief Emitted before starting re-encryption.
+   * @brief A reencryptPath() run is about to start its worker thread.
+   *
+   * The main window disables the interface and shows a progress dialog
+   * with a Cancel button on it. Always followed by endReencryptPath().
    */
   void startReencryptPath();
   /**
-   * @brief Emitted after finishing re-encryption.
+   * @brief A reencryptPath() run is over, whether it finished, failed, was
+   * cancelled or was refused; the main window releases the interface.
+   *
+   * Also emitted without a preceding startReencryptPath() when the folder
+   * is refused before anything starts.
    */
   void endReencryptPath();
   /**
