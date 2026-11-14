@@ -3206,7 +3206,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>비밀번호</translation>
     </message>
@@ -3294,97 +3294,97 @@ Continue?</source>
         <translation type="unfinished">저장소의 .templates 파일에 있는 필드 템플릿입니다. Ctrl+T를 누르면 다음 템플릿으로 전환됩니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">새 비밀번호</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation type="unfinished">복호화 중…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">저장 중…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">아직 저장 중</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">항목을 아직 저장하는 중입니다. 그래도 대화 상자를 닫으시겠습니까? 이후 저장에 실패하면 입력한 내용이 사라집니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">저장되지 않음: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">항목 이름을 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">이름은 /로 끝날 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">이 이름은 비밀번호 저장소 밖을 가리키게 됩니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">점(.)으로 시작하는 이름이나 폴더는 목록에서 숨겨집니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1은 비밀번호 저장 위치 밖, 심볼릭 링크 또는 자 표시로 숨겨져 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1(이)라는 항목이 이미 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1은(는) 폴더입니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 폴더를 만들 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">필드 제거</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1(이)라는 필드가 이미 있습니다.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI 또는 base32 비밀 키</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">잘못된 OTP 비밀 키</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>이 항목에는 %n 줄이 있는데, 여기에서는 편집하기에는 너무 많습니다.</numerusform>

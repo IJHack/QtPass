@@ -3268,7 +3268,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>Wachtwoord</translation>
     </message>
@@ -3356,97 +3356,97 @@ Doorgaan?</translation>
         <translation>Veldsjabloon uit het .templates-bestand van de wachtwoordopslag. Ctrl+T schakelt naar het volgende.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation>Nieuw wachtwoord</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation>Ontsleutelen…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation>Opslaan…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation>Nog aan het opslaan</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation>Het item wordt nog opgeslagen. Het venster toch sluiten? Als het opslaan daarna mislukt, gaat wat je hebt getypt verloren.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation>Niet opgeslagen: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation>Geef het item een naam.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation>Een naam kan niet eindigen op /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation>Die naam zou buiten de wachtwoordopslag uitkomen.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">Een naam of map die met een punt begint, zou in de lijst verborgen blijven.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 ligt achter een symbolische koppeling of junction, buiten de wachtwoordopslag.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation>Er bestaat al een item met de naam %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation>%1 is een map.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation>Kon de map %1 niet aanmaken.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation>Veld verwijderen</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation>Er bestaat al een veld met de naam %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth://URI of base32-geheim</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation>Ongeldig OTP-geheim</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation>
             <numerusform>Dit item heeft %n regel, te veel om hier te bewerken.</numerusform>

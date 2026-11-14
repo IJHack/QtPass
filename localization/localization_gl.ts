@@ -3191,7 +3191,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>Contrasinal</translation>
     </message>
@@ -3279,97 +3279,97 @@ Continuar?</translation>
         <translation>Modelo de campo desde o ficheiro .templates do almacén. Ctrl+T cambia ao seguinte.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">Novo contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation>Descifrando…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">Gardando…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">Aínda se está a gardar</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">A entrada aínda se está a gardar. Pechar o diálogo igualmente? Se despois falla o gardado, perderase o que escribiches.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Non gardado: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Dálle un nome á entrada.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nome non pode rematar en /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Ese nome apuntaría fóra do almacén de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">Un nome ou carpeta que comece cun punto estaría oculto da lista.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 atópase detrás dun enlace ou conexión simbólica, fóra do repositorio de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Xa existe unha entrada chamada %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 é un cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Non se puido crear o cartafol %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">Eliminar campo</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Xa existe un campo chamado %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>Secreto otpauth:// URI ou base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation>Secreto OTP non válido</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Esta entrada ten %n liña, demasiadas para editala aquí.</numerusform>

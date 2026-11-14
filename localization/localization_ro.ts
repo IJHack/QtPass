@@ -3222,7 +3222,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>parolă</translation>
     </message>
@@ -3310,97 +3310,97 @@ Continuați?</translation>
         <translation type="unfinished">Șablon de câmpuri din fișierul .templates al depozitului. Ctrl+T trece la următorul.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">Parolă nouă</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Se decriptează…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">Se salvează…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">Încă se salvează</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">Intrarea încă se salvează. Închideți totuși dialogul? Dacă salvarea eșuează apoi, ce ați tastat se va pierde.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Nesalvat: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Dați intrării un nume.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nume nu se poate termina cu /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Acest nume ar duce în afara depozitului de parole.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">Un nume sau folder care începe cu un punct ar fi ascuns din listă.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 se află în spatele unei legături simbolice sau al unei joncțiuni, în afara depozitului de parole.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Există deja o intrare numită %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 este un dosar.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Dosarul %1 nu a putut fi creat.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">Eliminați câmpul</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Există deja un câmp numit %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// sau secret base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Secret OTP nevalid</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Această intrare are %n linie, prea multe pentru a fi editată aici.</numerusform>

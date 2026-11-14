@@ -2980,7 +2980,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>Mật khẩu</translation>
     </message>
@@ -3068,97 +3068,97 @@ Tiếp tục?</translation>
         <translation type="unfinished">Mẫu trường từ tệp .templates của kho. Ctrl+T chuyển sang mẫu tiếp theo.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">Mật khẩu mới</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Đang giải mã…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">Đang lưu…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">Vẫn đang lưu</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">Mục vẫn đang được lưu. Vẫn đóng hộp thoại? Nếu sau đó việc lưu thất bại, những gì bạn đã nhập sẽ bị mất.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Chưa lưu: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Hãy đặt tên cho mục này.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Tên không được kết thúc bằng /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Tên đó sẽ trỏ ra ngoài kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">Một tên hoặc thư mục bắt đầu bằng dấu chấm sẽ bị ẩn khỏi danh sách.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 nằm sau một liên kết tượng trưng hoặc nút kết nối, bên ngoài kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một mục có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 là một thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Không thể tạo thư mục %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">Xóa trường</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một trường có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// hoặc bí mật base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Bí mật OTP không hợp lệ</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Cột này có %n dòng, quá nhiều để chỉnh sửa ở đây.</numerusform>

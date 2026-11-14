@@ -2980,7 +2980,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="386"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>পাসওয়ার্ড</translation>
     </message>
@@ -3068,97 +3068,97 @@ Continue?</source>
         <translation type="unfinished">স্টোরের .templates ফাইল থেকে ফিল্ড টেমপ্লেট। Ctrl+T পরবর্তীটিতে যায়।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">নতুন পাসওয়ার্ড</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation type="unfinished">ডিক্রিপ্ট করা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">সংরক্ষণ করা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">এখনও সংরক্ষণ হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">এন্ট্রিটি এখনও সংরক্ষণ করা হচ্ছে। তবুও ডায়ালগটি বন্ধ করবেন? যদি এরপর সংরক্ষণ ব্যর্থ হয়, আপনি যা টাইপ করেছেন তা হারিয়ে যাবে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">সংরক্ষিত হয়নি: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">এন্ট্রিটির একটি নাম দিন।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">নাম / দিয়ে শেষ হতে পারে না।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">ওই নামটি পাসওয়ার্ড স্টোরের বাইরে গিয়ে পড়বে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
         <source>A name or folder that starts with a dot would be hidden from the list.</source>
         <translation type="unfinished">নাম অথবা ফোল্ডার, যা একটি ডট দিয়ে শুরু হয়, সেটি তালিকা থেকে লুকানো থাকবে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="342"/>
+        <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
         <translation type="unfinished">%1 একটি সিম্বলিক লিঙ্ক বা জাংশনের পিছনে রয়েছে, পাসওয়ার্ড স্টোরের বাইরে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="348"/>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 নামে একটি এন্ট্রি ইতিমধ্যে রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="352"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 একটি ফোল্ডার।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="382"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 ফোল্ডারটি তৈরি করা যায়নি।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="448"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">ফিল্ড সরান</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="467"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 নামে একটি ফিল্ড ইতিমধ্যে রয়েছে।</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="553"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI অথবা base32 সিক্রেট</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="590"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">অবৈধ OTP সিক্রেট</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="822"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>এই এন্ট্রিতে %nটি লাইন আছে, এখানে সম্পাদনা করার জন্য অনেক বেশি।</numerusform>
