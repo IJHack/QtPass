@@ -4,22 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="70"/>
+        <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
         <translation>Kopiert til utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="178"/>
+        <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
         <translation type="unfinished">Kopiert tekst gjenopprettet</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="179"/>
+        <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
         <translation>Utklippstavle tømt</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="180"/>
+        <location filename="../src/clipboardmanager.cpp" line="185"/>
         <source>Clipboard not cleared</source>
         <translation>Utklippstavle ikke tømt</translation>
     </message>
@@ -654,7 +654,7 @@
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt;-versjon </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="78"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
         <translation>Systemkurv er ikke tilgjengelig</translation>
     </message>
@@ -663,7 +663,7 @@
         <translation type="vanished">OTP-utvidelsen for Pass må installeres</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="108"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode må installeres</translation>
     </message>
@@ -672,68 +672,68 @@
         <translation type="vanished">Ingen utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="147"/>
+        <location filename="../src/configdialog.cpp" line="154"/>
         <source>No clipboard</source>
         <translation type="unfinished">Ingen utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="148"/>
+        <location filename="../src/configdialog.cpp" line="155"/>
         <source>Always copy to clipboard</source>
         <translation>Alltid kopier til utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="149"/>
+        <location filename="../src/configdialog.cpp" line="156"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopier til utklippstavlen ved behov</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
-        <location filename="../src/configdialog.cpp" line="348"/>
+        <location filename="../src/configdialog.cpp" line="350"/>
+        <location filename="../src/configdialog.cpp" line="355"/>
         <source>This field is required</source>
         <translation>Dette feltet er påkrevd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="345"/>
+        <location filename="../src/configdialog.cpp" line="352"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">En annen profil har allerede dette navnet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="354"/>
+        <location filename="../src/configdialog.cpp" line="361"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Bare fulle nøkkelfingeravtrykk (40 eller 64 heksadesimale tegn), adskilt med mellomrom</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="501"/>
+        <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 signerer med samme nøkkel for en annen butikk. En liste over mottakere som er signert for en av disse butikkene, blir akseptert i den andre: bruk en egen signeringsnøkkel for hver butikk, der mottakerne er forskjellige.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="529"/>
+        <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass committer endringer i %1 til Git-repositoriet i %2: med et kolon i stien til lageret kan ikke pass begrense Git til lageret. Kjør &quot;git init&quot; i lageret, eller bruk innebygd Git/GPG.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="552"/>
+        <location filename="../src/configdialog.cpp" line="559"/>
         <source>The path does not exist.</source>
         <translation>Banen finnes ikke.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="555"/>
+        <location filename="../src/configdialog.cpp" line="562"/>
         <source>The path is not readable.</source>
         <translation>Banen er ikke lesbar.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="558"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Banen er ikke en Unix-domenesokkel.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="569"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Potensielt ugyldig SSH_AUTH_SOCK-overstyring</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -746,37 +746,37 @@ The value will still be saved as entered.</source>
 Verdien vil fortsatt bli lagret som oppgitt.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="820"/>
+        <location filename="../src/configdialog.cpp" line="827"/>
         <source>Create profile directory?</source>
         <translation>Opprette profilkatalog?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Vil du opprette et passordlager på %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="828"/>
+        <location filename="../src/configdialog.cpp" line="835"/>
         <source>Could not create profile directory: %1</source>
         <translation>Kunne ikke opprette profilkatalog: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="852"/>
+        <location filename="../src/configdialog.cpp" line="859"/>
         <source>Select recipients for %1</source>
         <translation>Velg mottakere for %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="861"/>
+        <location filename="../src/configdialog.cpp" line="868"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">Kunne ikke initialisere profilen %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="864"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Profile %1</source>
         <translation type="unfinished">Profil %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="887"/>
+        <location filename="../src/configdialog.cpp" line="894"/>
         <source>New profile</source>
         <translation>Ny profil</translation>
     </message>
@@ -785,12 +785,12 @@ Verdien vil fortsatt bli lagret som oppgitt.</translation>
         <translation type="vanished">Ny profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="908"/>
+        <location filename="../src/configdialog.cpp" line="915"/>
         <source>No profile selected</source>
         <translation>Ingen profil valgt</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="909"/>
+        <location filename="../src/configdialog.cpp" line="916"/>
         <source>No profile selected to delete</source>
         <translation>Ingen profil valgt for sletting</translation>
     </message>
@@ -819,12 +819,12 @@ Verdien vil fortsatt bli lagret som oppgitt.</translation>
         <translation type="vanished">Vil du opprette et passordlager på %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="827"/>
+        <location filename="../src/configdialog.cpp" line="834"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="89"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Ikke tilgjengelig på Wayland; bruk vindusbehandlerens vindusregel «hold over» i stedet</translation>
     </message>
@@ -841,17 +841,17 @@ Verdien vil fortsatt bli lagret som oppgitt.</translation>
         <translation type="vanished">Mappen %1 ser ikke ut til å være et passordlager, eller er ennå ikke i gang.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1128"/>
+        <location filename="../src/configdialog.cpp" line="1135"/>
         <source>New profile: %1 at %2</source>
         <translation>Ny profil: %1 på %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1130"/>
+        <location filename="../src/configdialog.cpp" line="1137"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 på %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1133"/>
+        <location filename="../src/configdialog.cpp" line="1140"/>
         <source>Fill in all required fields</source>
         <translation>Fyll ut alle obligatoriske felt</translation>
     </message>
@@ -920,62 +920,62 @@ e-post</translation>
 <context>
     <name>DoneWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="466"/>
+        <location filename="../src/firstrunwizard.cpp" line="471"/>
         <source>Hide passwords until asked</source>
         <translation type="unfinished">Skjul passord til du ber om å se dem</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="467"/>
+        <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Show an icon in the system tray</source>
         <translation type="unfinished">Vis et ikon i systemkurven</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="468"/>
+        <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Ready</source>
         <translation type="unfinished">Klar</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="469"/>
+        <location filename="../src/firstrunwizard.cpp" line="474"/>
         <source>Everything else can be changed later in Settings.</source>
         <translation type="unfinished">Alt annet kan endres senere under Innstillinger.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="476"/>
+        <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>Show the password line as dots; Show password reveals it</source>
         <translation type="unfinished">Vis passordlinjen som prikker; Vis passord avslører den</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="487"/>
+        <location filename="../src/firstrunwizard.cpp" line="492"/>
         <source>Store: %1</source>
         <translation type="unfinished">Lager: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="489"/>
+        <location filename="../src/firstrunwizard.cpp" line="494"/>
         <source>It is already a password store and is used as it is.</source>
         <translation type="unfinished">Det er allerede et passordlager og brukes som det er.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="491"/>
+        <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
         <translation type="unfinished">Det settes opp for de avkryssede nøklene og legges under Git.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="493"/>
+        <location filename="../src/firstrunwizard.cpp" line="498"/>
         <source>It will be set up for the ticked keys.</source>
         <translation type="unfinished">Det settes opp for de avkryssede nøklene.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="495"/>
+        <location filename="../src/firstrunwizard.cpp" line="500"/>
         <source>GnuPG: %1</source>
         <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="496"/>
+        <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>Operations run through pass.</source>
         <translation type="unfinished">Operasjoner kjøres gjennom pass.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="497"/>
+        <location filename="../src/firstrunwizard.cpp" line="502"/>
         <source>Operations run through gpg and git directly.</source>
         <translation type="unfinished">Operasjoner kjøres direkte gjennom gpg og git.</translation>
     </message>
@@ -1033,12 +1033,12 @@ e-post</translation>
         <translation type="vanished">Lagre til fil…</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="28"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="27"/>
         <source>Public key for %1</source>
         <translation>Offentlig nøkkel for %1</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="67"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="51"/>
         <source>Copied!</source>
         <translation>Kopiert!</translation>
     </message>
@@ -1047,24 +1047,24 @@ e-post</translation>
         <translation type="vanished">Lagre offentlig nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="83"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="90"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="100"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="63"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="70"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="80"/>
         <source>Save public key</source>
         <translation>Lagre offentlig nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="84"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
         <translation>ASCII-armored nøkkel (*.asc);;Alle filer (*)</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="91"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
         <source>Could not open %1 for writing: %2</source>
         <translation>Kunne ikke åpne %1 for skriving: %2</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="101"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
         <source>Could not write to %1: %2</source>
         <translation>Kunne ikke skrive til %1: %2</translation>
     </message>
@@ -1072,17 +1072,17 @@ e-post</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="17"/>
+        <location filename="../src/fieldlabel.cpp" line="22"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Dobbeltklikk for å gi dette feltet nytt navn</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="30"/>
+        <location filename="../src/fieldlabel.cpp" line="35"/>
         <source>Rename field…</source>
         <translation type="unfinished">Gi felt nytt navn…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="31"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Remove field</source>
         <translation type="unfinished">Fjern felt</translation>
     </message>
@@ -1090,7 +1090,7 @@ e-post</translation>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="93"/>
+        <location filename="../src/filecontent.cpp" line="126"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… %n linje til vises ikke</numerusform>
@@ -1101,44 +1101,44 @@ e-post</translation>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="44"/>
+        <location filename="../src/firstrunwizard.cpp" line="49"/>
         <source>Browse</source>
         <translation type="unfinished">Bla gjennom</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="67"/>
-        <location filename="../src/firstrunwizard.cpp" line="73"/>
+        <location filename="../src/firstrunwizard.cpp" line="72"/>
+        <location filename="../src/firstrunwizard.cpp" line="78"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished">Velkommen til QtPass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="76"/>
+        <location filename="../src/firstrunwizard.cpp" line="81"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
         <translation type="unfinished">QtPass er et grafisk grensesnitt for &lt;i&gt;pass&lt;/i&gt;, den standard passordbehandleren for Unix: hvert passord er en fil kryptert med GnuPG, lagret i en mappe du kan legge under Git.&lt;br&gt;&lt;br&gt;De neste sidene finner GnuPG, sørger for at du har en nøkkel å kryptere til, og velger mappen passordene dine ligger i. Ingenting skrives før du trykker Fullfør.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="128"/>
+        <location filename="../src/firstrunwizard.cpp" line="133"/>
         <source>Error</source>
         <translation type="unfinished">Feil</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="129"/>
+        <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished">Klarte ikke å opprette passordlager på: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="147"/>
-        <location filename="../src/firstrunwizard.cpp" line="171"/>
+        <location filename="../src/firstrunwizard.cpp" line="152"/>
+        <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
         <translation type="unfinished">Passordlageret er ikke i gang</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="154"/>
+        <location filename="../src/firstrunwizard.cpp" line="159"/>
         <source>Password store</source>
         <translation type="unfinished">Passordlager</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="155"/>
+        <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
         <translation type="unfinished">%1 inneholder allerede krypterte filer; de ble ikke rekryptert til de avkryssede nøklene. Åpne Brukere etter oppstart for å gjøre det.</translation>
     </message>
@@ -1146,108 +1146,108 @@ e-post</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="194"/>
+        <location filename="../src/gpgidgeneration.cpp" line="199"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene, %1, kan ikke nås.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="203"/>
+        <location filename="../src/gpgidgeneration.cpp" line="208"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene, %1, kan ikke leses. Signerte mottakerlister godtas ikke før det er reparert eller fjernet (fjernes det, glemmes det som ble godtatt tidligere).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="225"/>
-        <location filename="../src/gpgidgeneration.cpp" line="238"/>
+        <location filename="../src/gpgidgeneration.cpp" line="230"/>
+        <location filename="../src/gpgidgeneration.cpp" line="243"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene, %1, kan ikke skrives.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="292"/>
+        <location filename="../src/gpgidgeneration.cpp" line="297"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene, %1, kunne ikke låses: et annet QtPass bruker det kanskje, eller mappen det ligger i kan ikke skrives til.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished">Listen inneholder mer enn én lagerlinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished">Lagerlinjen er feilformatert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Listen inneholder mer enn én generasjonslinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="467"/>
+        <location filename="../src/gpgidgeneration.cpp" line="472"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Generasjonslinjen er feilformatert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="473"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Listen inneholder mer enn én mappelinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="489"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Mappelinjen er feilformatert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="493"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Overskriftslinjen er feilformatert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="521"/>
+        <location filename="../src/gpgidgeneration.cpp" line="526"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Listen inneholder en generasjonslinje, men ingen mappelinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="527"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished">Listen inneholder en lagerlinje, men ingen generasjonslinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="682"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 er ikke til å stole på: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="609"/>
+        <location filename="../src/gpgidgeneration.cpp" line="614"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 ble skrevet for mappen &quot;%2&quot; i lageret, ikke for &quot;%3&quot;, og brukes ikke. Den kan ha blitt kopiert hit av noen andre; hvis mappen i stedet ble flyttet eller fikk nytt navn, kan en som har signeringsnøkkelen åpne Brukere på den og lagre mottakerne, noe som binder listen til der den ligger nå.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="627"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Generasjon %1 er den høyeste som finnes, så ingen nyere liste kan skrives her: fjernes %2, glemmes det denne enheten har godtatt tidligere, og deretter kommer en som har signeringsnøkkelen videre ved å åpne Brukere og %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="629"/>
+        <location filename="../src/gpgidgeneration.cpp" line="634"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">En som har signeringsnøkkelen kommer videre ved å åpne Brukere og %1, noe som skriver generasjon %2. Fjernes %3, glemmes det denne enheten har godtatt tidligere.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="646"/>
+        <location filename="../src/gpgidgeneration.cpp" line="651"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 har ingen generasjonslinje, mens generasjon %2 ble godtatt her tidligere. pass skriver ingen generasjonslinje (heller ikke gjennom QtPass sin pass-backend), og det gjorde heller ikke QtPass før 2.0; uten en slik linje kan listen også ha blitt skrevet for en annen mappe i lageret og kopiert hit. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="655"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">velge mottakerne på nytt og lagre</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 inneholder ingen lagerlinje, mens denne enheten kjenner dette lageret ved ID-en %2: den kan ha blitt skrevet for et annet lager og kopiert hit, eller av en eldre QtPass. En som har signeringsnøkkelen, løser dette ved å åpne Brukere, velge mottakerne på nytt og lagre, noe som skriver lagerlinjen.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="856"/>
+        <location filename="../src/gpgidgeneration.cpp" line="863"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene, %1, har gått videre til generasjon %2 mens generasjon %3 ble skrevet.</translation>
     </message>
@@ -1260,32 +1260,32 @@ e-post</translation>
         <translation type="obsolete">Den signerte mottakerlisten %1 har ingen generasjonslinje, mens generasjon %2 ble godtatt her tidligere. pass skriver ingen generasjonslinje (heller ikke gjennom QtPass sin pass-backend), og det gjorde ikke QtPass før 2.0 heller. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="665"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 er generasjon %2, eldre enn generasjon %3, den siste QtPass godtok her. Den kan ha blitt lagt tilbake av noen andre. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="667"/>
+        <location filename="../src/gpgidgeneration.cpp" line="672"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">lagre mottakerne: mottakerne som er forhåndsvalgt der, er denne listens, så fjern først alle som ikke lenger skal ha tilgang</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="732"/>
+        <location filename="../src/gpgidgeneration.cpp" line="737"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 er generasjon %2, samme generasjon som en annen liste denne enheten har godtatt tidligere. Enten lagret to enheter mottakere samtidig (Git vil da ha vist konflikten), eller så ble en autentisk liste av den generasjonen byttet inn. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="740"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">sjekke mottakerne og lagre</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <location filename="../src/gpgidgeneration.cpp" line="771"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 ble skrevet for et annet passordlager (lager-ID %2; denne enheten kjenner dette lageret som %3) og brukes ikke. Den kan ha blitt kopiert hit fra et lager som er signert med samme nøkkel. Hvis dette lageret i stedet ble satt opp på nytt, vil fjerning av %4 få enheten til å glemme lager-ID-ene den kjenner.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="824"/>
+        <location filename="../src/gpgidgeneration.cpp" line="831"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Mottakerlisten %1 har nådd generasjon %2, den høyeste som finnes; listen kan ikke skrives.</translation>
     </message>
@@ -1293,17 +1293,17 @@ e-post</translation>
 <context>
     <name>GpgIdSigner</name>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="75"/>
+        <location filename="../src/gpgidsigner.cpp" line="79"/>
         <source>the recipient list is not valid UTF-8</source>
         <translation type="unfinished">mottakerlisten er ikke gyldig UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="102"/>
+        <location filename="../src/gpgidsigner.cpp" line="106"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg skrev ingen signatur</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <location filename="../src/gpgidsigner.cpp" line="116"/>
         <source>the new signature does not verify as one of the signing keys</source>
         <translation type="unfinished">den nye signaturen kan ikke verifiseres som laget med en av signeringsnøklene</translation>
     </message>
@@ -1311,130 +1311,130 @@ e-post</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="416"/>
-        <location filename="../src/imitatepass.cpp" line="601"/>
-        <location filename="../src/realpass.cpp" line="87"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
+        <location filename="../src/imitatepass.cpp" line="629"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Signature for %1 is invalid.</source>
         <translation>Signaturen for %1 er ugyldig.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="876"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="904"/>
         <source>Can not edit</source>
         <translation>Kan ikke redigere</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Cannot add</source>
         <translation type="unfinished">Kan ikke legge til</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 finnes allerede.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="877"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
+        <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Kan ikke lese krypteringsnøkkelen som skal brukes, .gpg-id filen mangler eller er ugyldig.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="832"/>
+        <location filename="../src/pass.cpp" line="942"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Kan ikke kontrollere mottakerlisten</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="834"/>
+        <location filename="../src/pass.cpp" line="944"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Det kan ikke avgjøres om %2 ble fjernet, så ingenting ble kryptert.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="841"/>
+        <location filename="../src/pass.cpp" line="951"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Mottakerliste mangler</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="842"/>
+        <location filename="../src/pass.cpp" line="952"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">Den signerte mottakerlisten %1 mangler eller er ikke en vanlig fil. QtPass faller ikke tilbake på listen i en overordnet mappe for den: den listen ble ikke signert for denne mappen. Hvis det ligger en lenke under det navnet, fjern den. Åpne deretter Brukere for den mappen og lagre mottakerne, noe som skriver og signerer en ny liste.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="210"/>
+        <location filename="../src/imitatepass.cpp" line="230"/>
         <source>Cannot write</source>
         <translation type="unfinished">Kan ikke skrive</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="211"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Kan ikke opprette en midlertidig mappe: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="316"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">%1 er ikke lagret i passordbeholderen, eller et mappens navn inneholder en linjeskift eller et annet kontrolltegn, som en signert liste ikke kan registrere.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="407"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
         <source>GPG signing failed!</source>
         <translation>GPG-signering mislyktes!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="434"/>
         <source>Failed to sign %1.</source>
         <translation>Klarte ikke å signere %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="546"/>
+        <location filename="../src/imitatepass.cpp" line="574"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">Mottakerne ble ikke endret</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="547"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">En rekryptering pågår fortsatt. Vent til den er ferdig, og lagre deretter mottakerne på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="553"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>No signing key!</source>
         <translation>Ingen signeringsnøkkel!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="554"/>
+        <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Ingen av de hemmelige signeringsnøklene er tilgjengelige.
 Du vil ikke kunne endre brukerlisten!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="346"/>
-        <location filename="../src/imitatepass.cpp" line="374"/>
-        <location filename="../src/imitatepass.cpp" line="508"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="533"/>
         <source>Cannot update</source>
         <translation>Kan ikke oppdatere</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="118"/>
+        <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull mislyktes: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="415"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
-        <location filename="../src/realpass.cpp" line="91"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
+        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="784"/>
+        <location filename="../src/realpass.cpp" line="97"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Sjekk signaturen til .gpg-id-filen!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="273"/>
+        <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Delete failed</source>
         <translation type="unfinished">Sletting mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="274"/>
+        <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Kunne ikke fjerne lenken %1.</translation>
     </message>
@@ -1451,81 +1451,81 @@ Du vil ikke kunne endre brukerlisten!</translation>
         <translation type="obsolete">Kunne ikke skrive %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="388"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">Mottakerliste skrevet, men ikke registrert</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Lagre mottakerne en gang til for å komme videre.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
         <translation>Sjekk valgte brukere!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Ingen av de valgte nøklene har en hemmelig nøkkel tilgjengelig.
 Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="435"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">Klarte ikke å signere %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="509"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Kunne ikke fjerne den gamle signaturen %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="613"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git avsluttet med kode %1.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="624"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 kan ikke leses som en liste over mottakere (en vanlig fil på maks %2).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="638"/>
         <location filename="../src/imitatepass.cpp" line="666"/>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="694"/>
+        <location filename="../src/imitatepass.cpp" line="702"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Rest fra en tidligere rekryptering</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="639"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 er ikke en vanlig fil og ble ikke gjenopprettet. Se på den og fjern den, og rekrypter så på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="667"/>
+        <location filename="../src/imitatepass.cpp" line="695"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%1 finnes ved siden av %2. Begge er krypterte kopier av oppføringen; sjekk hvilken du vil beholde og slett den andre, og rekrypter så på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">Gjenopprettet %1 fra sikkerhetskopien en avbrutt rekryptering etterlot.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 mangler, og sikkerhetskopien %2 kunne ikke få tilbake navnet sitt. Gi den nytt navn manuelt, og rekrypter så på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="945"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 kunne ikke rekrypteres: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1323"/>
         <source>Re-encryption failed</source>
         <translation>Rekryptering mislyktes</translation>
     </message>
@@ -1542,75 +1542,86 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         <translation type="obsolete">Kunne ikke fjerne sikkerhetskopien %1 etter rekrypteringen; den kan trygt slettes.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="928"/>
+        <location filename="../src/imitatepass.cpp" line="982"/>
         <source>Creating backup commit</source>
         <translation>Oppretter sikkerhetskopi-commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
-        <location filename="../src/imitatepass.cpp" line="952"/>
+        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>Backup commit failed</source>
         <translation>Sikkerhetskopiering mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
+        <location filename="../src/imitatepass.cpp" line="997"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Kunne ikke inspisere git-status. Ny kryptering ble avbrutt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="953"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <source>The store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Rekrypteringen ble avbrutt fordi en git-sikkerhetskopi ikke kunne opprettes.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="991"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">En rekryptering er allerede i gang</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="998"/>
+        <location filename="../src/imitatepass.cpp" line="1069"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Ikke en mappe i lageret</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="999"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller et koblingspunkt. Det den peker til, er ikke en del av passordlageret og ble ikke rekryptert.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Re-krypterer fra mappen %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1072"/>
-        <location filename="../src/imitatepass.cpp" line="1248"/>
+        <location filename="../src/imitatepass.cpp" line="1161"/>
+        <location filename="../src/imitatepass.cpp" line="1350"/>
         <source>Updating password-store</source>
         <translation>Oppdater passordslager</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
-        <location filename="../src/imitatepass.cpp" line="1091"/>
+        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1180"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1086"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Kunne ikke sjekke om lageret har ufusjonerte filer etter pull. Sjekk det med git før du krypterer på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1092"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">Etter git pull inneholder lageret filer som ikke er slått sammen. Løs konflikten før du rekrypterer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1185"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull mislyktes, re-krypterer lageret som det er</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1107"/>
+        <location filename="../src/imitatepass.cpp" line="1196"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n oppføring hoppet over: en symbolsk lenke, et koblingspunkt eller en spesialfil er ikke en del av lageret.</numerusform>
@@ -1618,27 +1629,27 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1217"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID-verifisering mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Kunne ikke bekrefte .gpg-id for katalogen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1149"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ikke en del av lageret</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1150"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller et koblingspunkt etter Git pull. Det den peker til, er ikke en del av passordlageret og blir ikke rørt.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1321"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... og %n til</numerusform>
@@ -1646,7 +1657,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1324"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n fil kunne ikke krypteres på nytt:</numerusform>
@@ -1654,18 +1665,18 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Rekryptering avbrutt: %1 av %2 filer sjekket, %3 kryptert på nytt, %4 mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1295"/>
-        <location filename="../src/imitatepass.cpp" line="1304"/>
+        <location filename="../src/imitatepass.cpp" line="1397"/>
+        <location filename="../src/imitatepass.cpp" line="1406"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Mottakerne ble ikke committet</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1678,7 +1689,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Endringen er ennå ikke committet eller pushet. Rett Git-problemet, og commit deretter endringene, eller lagre mottakerne på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1305"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1691,12 +1702,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt kryptert til de forrige mottakerne, som fortsatt kan lese dem. Ingenting ble committet eller pushet. Rett Git-problemet, og lagre deretter mottakerne på nytt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1482"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Kjørbar fil for Git er ikke satt opp, hopper over git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
+        <location filename="../src/imitatepass.cpp" line="1671"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">gpg skrev ingen chiffertekst for %1.</translation>
     </message>
@@ -1725,17 +1736,17 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
         <translation type="vanished">Klarte ikke å kryptere %1 på nytt</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1339"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Rekryptering fullført: %1 lyktes, %2 mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1344"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Rekryptering fullført: %1 filer kryptert på nytt</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1353"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Pusher ikke: %n fil kunne ikke krypteres på nytt</numerusform>
@@ -1743,14 +1754,14 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1404"/>
-        <location filename="../src/imitatepass.cpp" line="1448"/>
+        <location filename="../src/imitatepass.cpp" line="1513"/>
+        <location filename="../src/imitatepass.cpp" line="1560"/>
         <source>Copy failed</source>
         <translation type="unfinished">Kopiering mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1405"/>
-        <location filename="../src/imitatepass.cpp" line="1449"/>
+        <location filename="../src/imitatepass.cpp" line="1514"/>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">Kunne ikke kopiere %1 til %2.</translation>
     </message>
@@ -1781,7 +1792,7 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="44"/>
+        <location filename="../src/importkeydialog.cpp" line="58"/>
         <source>Import GPG key</source>
         <translation>Importer GPG-nøkkel</translation>
     </message>
@@ -1801,7 +1812,7 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
         <translation>Importer</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-armored GPG-nøkkel</translation>
     </message>
@@ -1814,12 +1825,12 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
         <translation type="vanished">Importer nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="62"/>
+        <location filename="../src/importkeydialog.cpp" line="76"/>
         <source>Could not open file: %1</source>
         <translation>Kunne ikke åpne filen: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="87"/>
+        <location filename="../src/importkeydialog.cpp" line="101"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ser ikke ut som en ASCII-armored GPG-nøkkel. Konverter den først med &lt;code&gt;gpg --armor --export&lt;/code&gt;, eller lim inn den armored blokken via &lt;b&gt;Fra utklippstavle&lt;/b&gt;.</translation>
     </message>
@@ -1828,38 +1839,38 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
         <translation type="vanished">%1 ser ikke ut som en ASCII-armored GPG-nøkkel. Konverter den først med &lt;code&gt;gpg --armor --export&lt;/code&gt;, eller lim inn den armored blokken via &lt;b&gt;Fra utklippstavle&lt;/b&gt;.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>All files</source>
         <translation>Alle filer</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="61"/>
-        <location filename="../src/importkeydialog.cpp" line="74"/>
-        <location filename="../src/importkeydialog.cpp" line="86"/>
-        <location filename="../src/importkeydialog.cpp" line="186"/>
-        <location filename="../src/importkeydialog.cpp" line="190"/>
+        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="88"/>
+        <location filename="../src/importkeydialog.cpp" line="100"/>
+        <location filename="../src/importkeydialog.cpp" line="200"/>
+        <location filename="../src/importkeydialog.cpp" line="204"/>
         <source>Import key</source>
         <translation>Importer nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 er større enn en nøkkelfil kan være.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="134"/>
+        <location filename="../src/importkeydialog.cpp" line="148"/>
         <source>GPG import failed:
 %1</source>
         <translation>GPG-import mislyktes:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="144"/>
+        <location filename="../src/importkeydialog.cpp" line="158"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>Klarte ikke å lese den importerte nøkkel-ID-en fra GPG-utdataen.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="191"/>
+        <location filename="../src/importkeydialog.cpp" line="205"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">Offentlig nøkkel %1 er importert. Kontroller fingeravtrykket med eieren før du krypterer til den: at en nøkkel er importert, sier ingenting om hvem som har den.</translation>
     </message>
@@ -1871,32 +1882,32 @@ Rekrypteringen ble ikke fullført, så noen eller alle oppføringer er fortsatt 
 <context>
     <name>KeyWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="288"/>
+        <location filename="../src/firstrunwizard.cpp" line="293"/>
         <source>Generate a new key pair…</source>
         <translation type="unfinished">Generer et nytt nøkkelpar…</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="290"/>
+        <location filename="../src/firstrunwizard.cpp" line="295"/>
         <source>Your key</source>
         <translation type="unfinished">Din nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="291"/>
+        <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
         <translation type="unfinished">Passord krypteres til GnuPG-nøkler. Kryss av nøklene som skal kunne åpne et nytt lager; du trenger minst én med den hemmelige delen på denne maskinen.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="319"/>
+        <location filename="../src/firstrunwizard.cpp" line="324"/>
         <source>expired</source>
         <translation type="unfinished">utløpt</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="321"/>
+        <location filename="../src/firstrunwizard.cpp" line="326"/>
         <source>not usable</source>
         <translation type="unfinished">ikke brukbar</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="334"/>
+        <location filename="../src/firstrunwizard.cpp" line="339"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
         <translation type="unfinished">GnuPG har ingen hemmelig nøkkel ennå. Generer en her, eller importer den eksisterende nøkkelen din med gpg først.</translation>
     </message>
@@ -1996,47 +2007,47 @@ Utløpsdato: 0
         <translation>For ekspertalternativer, sjekk ut &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG-manualen&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="176"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
         <translation type="unfinished">Ugyldig inndata</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="177"/>
+        <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
         <translation type="unfinished">Navnet og passordfrasen kan ikke inneholde linjeskift.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="182"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
         <translation>Ugyldig navn</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="183"/>
+        <location filename="../src/keygendialog.cpp" line="197"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Navnet må ha minst 5 tegn.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="193"/>
+        <location filename="../src/keygendialog.cpp" line="207"/>
         <source>Invalid email</source>
         <translation>Ugyldig e-post</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="194"/>
+        <location filename="../src/keygendialog.cpp" line="208"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="216"/>
+        <location filename="../src/keygendialog.cpp" line="230"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre en annen handling (skriv på tastaturet, flytt musen, bruk diskene) under primtallsgenerering; dette gir generatoren for tilfeldige tall en bedre sjanse til å erverve seg nok entropi.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="237"/>
+        <location filename="../src/keygendialog.cpp" line="251"/>
         <source>No password store backend available</source>
         <translation type="unfinished">Ingen backend for passordlager er tilgjengelig</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="271"/>
+        <location filename="../src/keygendialog.cpp" line="285"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">Nøkkelgenerering mislyktes: %1</translation>
     </message>
@@ -2222,7 +2233,7 @@ Utløpsdato: 0
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1454"/>
+        <location filename="../src/mainwindow.cpp" line="1470"/>
         <source>Add password</source>
         <translation>Legg til passord</translation>
     </message>
@@ -2234,21 +2245,21 @@ Utløpsdato: 0
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
         <translation>Legg til mappe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1461"/>
+        <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Edit</source>
         <translation>Rediger</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1473"/>
+        <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
         <translation>Slett</translation>
     </message>
@@ -2289,8 +2300,8 @@ Utløpsdato: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="720"/>
-        <location filename="../src/mainwindow.cpp" line="898"/>
+        <location filename="../src/mainwindow.cpp" line="731"/>
+        <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Search password</source>
         <translation>Søk etter passord</translation>
     </message>
@@ -2332,7 +2343,7 @@ Utløpsdato: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="1471"/>
         <source>Users</source>
         <translation>Brukere</translation>
     </message>
@@ -2350,7 +2361,7 @@ Utløpsdato: 0
         <translation type="vanished">Oppsett</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="406"/>
+        <location filename="../src/mainwindow.cpp" line="412"/>
         <source>Welcome to QtPass %1</source>
         <translation>Velkommen til QtPass %1</translation>
     </message>
@@ -2359,14 +2370,14 @@ Utløpsdato: 0
         <translation type="vanished">Prosessutdata</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="534"/>
-        <location filename="../src/mainwindow.cpp" line="544"/>
+        <location filename="../src/mainwindow.cpp" line="540"/>
+        <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
         <translation>Oppdater passordslager</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="632"/>
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Content hidden</source>
         <translation>Innhold skjult</translation>
     </message>
@@ -2375,7 +2386,7 @@ Utløpsdato: 0
         <translation type="vanished">Passord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
+        <location filename="../src/mainwindow.cpp" line="212"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Operasjonen tok for lang tid; grensesnittet aktiveres igjen.</translation>
     </message>
@@ -2384,20 +2395,20 @@ Utløpsdato: 0
         <translation type="vanished">Engangskode</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="669"/>
+        <location filename="../src/mainwindow.cpp" line="680"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Kunne ikke dekryptere denne passordoppføringen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
-        <location filename="../src/mainwindow.cpp" line="698"/>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="709"/>
+        <location filename="../src/mainwindow.cpp" line="1191"/>
         <source>OTP code copied to clipboard</source>
         <translation>Engangskode kopiert til utklippstavlen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
-        <location filename="../src/mainwindow.cpp" line="1163"/>
+        <location filename="../src/mainwindow.cpp" line="711"/>
+        <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>No OTP code found in this password entry</source>
         <translation>Ingen engangskode funnet i denne passordoppføringen</translation>
     </message>
@@ -2406,27 +2417,27 @@ Utløpsdato: 0
         <translation type="vanished">Passord og innhold skjult</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="791"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>About QtPass</source>
         <translation type="unfinished">Om QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="792"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Et grafisk grensesnitt for flere plattformer til &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, den standard Unix-passordbehandleren.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Kildekode og feilrapporter&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Opphavsrett &amp;copy; 2014&amp;ndash;%2 IJhack. Lisensiert under &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versjon 3&lt;/a&gt; eller senere.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="809"/>
+        <location filename="../src/mainwindow.cpp" line="820"/>
         <source>Looking for: %1</source>
         <translation>Ser etter: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="854"/>
+        <location filename="../src/mainwindow.cpp" line="870"/>
         <source>Searching…</source>
         <translation>Søker…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="880"/>
+        <location filename="../src/mainwindow.cpp" line="896"/>
         <source>Search content (regex)</source>
         <translation>Søk i innhold (regex)</translation>
     </message>
@@ -2435,17 +2446,17 @@ Utløpsdato: 0
         <translation type="obsolete">Innholdssøk bruker grunnleggende regulære uttrykk etter POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="884"/>
+        <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Innholdssøk bruker Perl-kompatible regulære uttrykk (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="923"/>
+        <location filename="../src/mainwindow.cpp" line="939"/>
         <source>No matches found.</source>
         <translation>Ingen treff funnet.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="983"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Fant %n treff</numerusform>
@@ -2453,7 +2464,7 @@ Utløpsdato: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>i %n oppføring.</numerusform>
@@ -2461,12 +2472,12 @@ Utløpsdato: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Invalid name</source>
         <translation type="unfinished">Ugyldig navn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Det navnet ville peke utenfor passordlageret. Velg et annet navn.</translation>
     </message>
@@ -2481,7 +2492,7 @@ Utløpsdato: 0
 (Vil bli plassert i %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Password and content hidden</source>
         <translation>Passord og innhold skjult</translation>
     </message>
@@ -2490,12 +2501,12 @@ Utløpsdato: 0
         <translation type="vanished"> og hele innholdet?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <location filename="../src/mainwindow.cpp" line="1124"/>
         <source>Delete link?</source>
         <translation type="unfinished">Slett lenke?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1109"/>
+        <location filename="../src/mainwindow.cpp" line="1125"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 er en symbolsk lenke eller et koblingspunkt. Fjerne lenken? Det den peker til, blir ikke rørt.</translation>
     </message>
@@ -2504,12 +2515,12 @@ Utløpsdato: 0
         <translation type="vanished"> og hele innholdet? &lt;br&gt;&lt;strong&gt;Merk: Det er uventede filer i den angitte mappen, sjekk dem før du fortsetter.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1117"/>
         <source>Delete folder?</source>
         <translation>Slett mappe?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
         <translation>Slett passord?</translation>
     </message>
@@ -2518,43 +2529,43 @@ Utløpsdato: 0
         <translation type="vanished">Er du sikker på at du vil slette %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1158"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>No password selected for OTP generation</source>
         <translation>Ingen passord valgt for generering av engangskode</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1310"/>
         <source>Profile changed to %1</source>
         <translation>Profil endret til %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1452"/>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>Open folder with file manager</source>
         <translation>Åpne med filbehandleren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1483"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder</source>
         <translation>Gi mappe nytt navn</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1486"/>
         <source>Rename password</source>
         <translation>Gi nytt navn til passord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Share</source>
         <translation>Del</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… flere funn i denne posten</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Viser det første %n treffet; søk etter noe mer spesifikt for å se resten.</numerusform>
@@ -2562,115 +2573,115 @@ Utløpsdato: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Er du sikker på at du vil slette %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1085"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Er du sikker på at du vil slette %1 og hele innholdet?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Merk: Det er uventede filer i den angitte mappen, sjekk dem før du fortsetter.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1433"/>
         <source>Re-encrypt all passwords</source>
         <translation>Re-krypter alle passord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1422"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>Export my public key...</source>
         <translation>Eksporter min offentlige nøkkel…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Add recipient...</source>
         <translation>Legg til mottaker…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1447"/>
         <source>What is this?</source>
         <translation>Hva er dette?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1505"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>New folder</source>
         <translation type="unfinished">Ny mappe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1506"/>
+        <location filename="../src/mainwindow.cpp" line="1522"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Ny mappe: 
 (Vil bli plassert i %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder to: </source>
         <translation>Endre navn på mappe til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file to: </source>
         <translation>Endre filnavn til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1642"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Denne oppføringen inneholder en OTP-hemmelighet, ikke et passord</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1695"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Re-krypterer passord...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Cancel</source>
         <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1704"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Avbryter rekryptering</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1693"/>
+        <location filename="../src/mainwindow.cpp" line="1715"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Re-krypterer passord: %1 av %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>Export public key</source>
         <translation>Eksporter offentlig nøkkel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1737"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksporter din offentlige nøkkel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnøkkel er konfigurert. Sett en i QtPass-innstillingene &amp;gt; GPG-nøkler, eller kjør dette i et terminalvindu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send deretter filen til lagkameratene dine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1784"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Ikke en mappe i lageret</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1763"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller et koblingspunkt. Det den peker til, er ikke en del av passordlageret og blir ikke rørt.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1793"/>
         <source>Sharing passwords with GPG</source>
         <translation>Dele passord med GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1794"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Dele passord med GPG&lt;/h3&gt;&lt;p&gt;For å dele passord med andre brukere:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksporter din offentlige nøkkel&lt;/b&gt; og send den til lagkameratene&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importer lagkameratenes offentlige nøkler&lt;/b&gt; til ditt GPG-nøkkelknippe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-krypter passord&lt;/b&gt; slik at alle mottakere kan dekryptere dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Bare personer som har en tilsvarende hemmelig nøkkel kan dekryptere passordene.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Bruk samme GPG-nøkkel for alle delte mapper.&lt;/p&gt;&lt;p&gt;Se OSS for flere detaljer.&lt;/p&gt;</translation>
     </message>
@@ -2683,7 +2694,7 @@ Utløpsdato: 0
         <translation type="vanished">&lt;h3&gt;Eksporter din offentlige nøkkel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnøkkel er konfigurert. Sett en i QtPass-innstillingene &amp;gt; GPG-nøkler, eller kjør dette i et terminalvindu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send deretter filen til lagkameratene dine.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1734"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2692,7 +2703,7 @@ Utløpsdato: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1758"/>
         <source>No output from gpg.</source>
         <translation>Ingen utdata fra gpg.</translation>
     </message>
@@ -2715,24 +2726,24 @@ Utløpsdato: 0
 (Vil bli plassert i %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
-        <location filename="../src/mainwindow.cpp" line="1536"/>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1552"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Failed to create folder: %1</source>
         <translation>Kunne ikke lage mappe: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1553"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Klarte ikke å opprette .gpg-id-filen i: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file</source>
         <translation>Gi fil nytt navn</translation>
     </message>
@@ -2745,18 +2756,18 @@ Utløpsdato: 0
         <translation type="vanished">Endre filnavn til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1634"/>
+        <location filename="../src/mainwindow.cpp" line="1656"/>
         <source>Directory does not exist: %1</source>
         <translation>Mappen finnes ikke: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
+        <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Re-encrypt passwords</source>
         <translation>Krypter passord på nytt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1643"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2776,7 +2787,7 @@ Fortsette?</translation>
 <context>
     <name>OtpCodeWidget</name>
     <message>
-        <location filename="../src/otpcodewidget.cpp" line="67"/>
+        <location filename="../src/otpcodewidget.cpp" line="68"/>
         <source>Seconds until the OTP code changes</source>
         <translation type="unfinished">Sekunder til engangskoden endres</translation>
     </message>
@@ -2784,77 +2795,87 @@ Fortsette?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="181"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">Den konfigurerte GPG-hjemmemappen %1 finnes ikke, bruker standardnøkkelringen</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="189"/>
+        <location filename="../src/pass.cpp" line="208"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">Den konfigurerte GPG-hjemmemappen %1 finnes ikke, bruker GNUPGHOME %2 fra miljøet</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
         <translation>Ugyldig passordlengde</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="203"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Kan ikke generere passord med null lengde.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="238"/>
+        <location filename="../src/pass.cpp" line="250"/>
+        <source>Password generation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="251"/>
+        <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="265"/>
         <source>No characters chosen</source>
         <translation>Ingen tegn valgt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="239"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan ikke generere passord, det er ingen tegn å velge mellom satt i konfigurasjonen!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="377"/>
-        <location filename="../src/pass.cpp" line="378"/>
+        <location filename="../src/pass.cpp" line="404"/>
+        <location filename="../src/pass.cpp" line="405"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Ingen kjørbar GPG-fil er satt opp</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="448"/>
-        <location filename="../src/pass.cpp" line="467"/>
+        <location filename="../src/pass.cpp" line="475"/>
+        <location filename="../src/pass.cpp" line="494"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Kryptering mislyktes: GPG-nøkkelen er utløpt. Forny eller erstatt den.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="453"/>
-        <location filename="../src/pass.cpp" line="472"/>
+        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="499"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Kryptering mislyktes: GPG-nøkkelen er trukket tilbake.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="457"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="484"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Kryptering mislyktes: mottakerens GPG-nøkkel ble ikke funnet eller er ugyldig. Sjekk at nøkkel-ID-en i .gpg-id er korrekt og importert.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="461"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="488"/>
+        <location filename="../src/pass.cpp" line="517"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Kryptering mislyktes. Sjekk at GPG-nøkkelen din er gyldig.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">Kryptering mislyktes: en mottakers GPG-nøkkel kan ikke brukes. Den kan være utløpt eller tilbakekalt, mangle en krypteringsundernøkkel eller ikke være klarert; meldingen fra gpg nedenfor sier hvilken.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="534"/>
+        <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
         <translation type="unfinished">Lagret, ikke commitert</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -2863,47 +2884,93 @@ Fortsette?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="779"/>
+        <location filename="../src/pass.cpp" line="812"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 er, eller ligger bak, en symbolsk lenke eller et koblingspunkt. Det den peker til, er ikke en del av passordlageret og blir ikke rørt.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="796"/>
+        <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">%1 er ikke lagret i passordlageret. Mottakerne er satt for lageret eller en mappe inni.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="806"/>
+        <location filename="../src/pass.cpp" line="844"/>
+        <location filename="../src/pass.cpp" line="845"/>
+        <source>rebase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="846"/>
+        <source>merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="847"/>
+        <source>cherry-pick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="848"/>
+        <source>revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="853"/>
+        <source>cherry-pick or revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="875"/>
+        <source>The store&apos;s Git repository is in the middle of a %1. Finish or abort it with git before changing the store, or what you change may be lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="888"/>
+        <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="893"/>
+        <source>Update in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="907"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="916"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Ikke en del av lageret</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="901"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">Generasjonsregisteret for mottakerlistene kan ikke leses.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="983"/>
+        <location filename="../src/pass.cpp" line="1093"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 kan ikke leses som en mottakerliste (en vanlig fil på maks %2), så ingen mottakere er forhåndsvalgt. Sjekk listen før du velger mottakere her: OK skriver over den med en ny liste.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1004"/>
+        <location filename="../src/pass.cpp" line="1114"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Mottakerlisten %1 mangler eller er ikke en vanlig fil, så ingenting er forhåndsvalgt: listen i en overordnet mappe ble ikke signert for denne. Velg mottakerne for denne mappen selv; OK skriver og signerer en ny liste.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1009"/>
+        <location filename="../src/pass.cpp" line="1119"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Ingenting er forhåndsvalgt: det kan ikke avgjøres om %2 ble fjernet.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1024"/>
+        <location filename="../src/pass.cpp" line="1134"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">Mottakerlisten %1 kan ikke verifiseres mot signeringsnøkkelen, så ingenting er forhåndsvalgt: lagring ville signere det som måtte stå i den. Velg mottakerne selv; OK skriver og signerer en ny liste.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="948"/>
+        <location filename="../src/pass.cpp" line="1058"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Ingenting er forhåndsvalgt: lagring ville signere det som måtte stå i den. Velg mottakerne selv.</translation>
     </message>
@@ -2913,7 +2980,7 @@ Fortsette?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="340"/>
+        <location filename="../src/passworddialog.cpp" line="369"/>
         <source>Password</source>
         <translation>Passord</translation>
     </message>
@@ -3001,87 +3068,87 @@ Fortsette?</translation>
         <translation type="unfinished">Feltmal fra .templates-filen i passordlageret. Ctrl+T bytter til den neste.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="86"/>
+        <location filename="../src/passworddialog.cpp" line="96"/>
         <source>New password</source>
         <translation type="unfinished">Nytt passord</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="107"/>
+        <location filename="../src/passworddialog.cpp" line="117"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Dekrypterer…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="192"/>
+        <location filename="../src/passworddialog.cpp" line="207"/>
         <source>Saving…</source>
         <translation type="unfinished">Lagrer…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="225"/>
+        <location filename="../src/passworddialog.cpp" line="254"/>
         <source>Still saving</source>
         <translation type="unfinished">Lagrer fortsatt</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="226"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">Oppføringen lagres fortsatt. Lukke dialogen likevel? Hvis lagringen så mislykkes, går det du har skrevet tapt.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="243"/>
+        <location filename="../src/passworddialog.cpp" line="272"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Ikke lagret: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="285"/>
+        <location filename="../src/passworddialog.cpp" line="314"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Gi oppføringen et navn.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="289"/>
+        <location filename="../src/passworddialog.cpp" line="318"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Et navn kan ikke slutte på /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="298"/>
+        <location filename="../src/passworddialog.cpp" line="327"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Det navnet ville peke utenfor passordlageret.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="302"/>
+        <location filename="../src/passworddialog.cpp" line="331"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">En oppføring med navnet %1 finnes allerede.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="306"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 er en mappe.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="336"/>
+        <location filename="../src/passworddialog.cpp" line="365"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Kunne ikke opprette mappen %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="393"/>
+        <location filename="../src/passworddialog.cpp" line="425"/>
         <source>Remove field</source>
         <translation type="unfinished">Fjern felt</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="412"/>
+        <location filename="../src/passworddialog.cpp" line="444"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Et felt med navnet %1 finnes allerede.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="498"/>
+        <location filename="../src/passworddialog.cpp" line="530"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth://-URI eller base32-hemmelighet</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="535"/>
+        <location filename="../src/passworddialog.cpp" line="567"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Ugyldig OTP-hemmelighet</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="744"/>
+        <location filename="../src/passworddialog.cpp" line="799"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Denne oppføringen har %n linje, for mange til å redigere her.</numerusform>
@@ -3096,17 +3163,17 @@ Fortsette?</translation>
         <translation type="obsolete">Prosessutdata</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="13"/>
+        <location filename="../src/processoutputpanel.cpp" line="18"/>
         <source>Process output</source>
         <translation>Prosessutdata</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="26"/>
+        <location filename="../src/processoutputpanel.cpp" line="31"/>
         <source>Clear</source>
         <translation type="unfinished">Tøm</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="27"/>
+        <location filename="../src/processoutputpanel.cpp" line="32"/>
         <source>Clear output</source>
         <translation type="unfinished">Tøm utdata</translation>
     </message>
@@ -3114,12 +3181,12 @@ Fortsette?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="96"/>
+        <location filename="../src/profileinit.cpp" line="101"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">Kunne ikke opprette %1.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="155"/>
+        <location filename="../src/profileinit.cpp" line="160"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 inneholder allerede %n kryptert fil; den ble ikke kryptert på nytt. Bytt til profilen og åpne Brukere for å gjøre det.</numerusform>
@@ -3127,12 +3194,12 @@ Fortsette?</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="173"/>
+        <location filename="../src/profileinit.cpp" line="178"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">Ingen mottaker valgt; %1 ble ikke skrevet.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="237"/>
+        <location filename="../src/profileinit.cpp" line="242"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">Kunne ikke signere %1 med %2.</translation>
     </message>
@@ -3141,18 +3208,18 @@ Fortsette?</translation>
         <translation type="obsolete">Kunne ikke skrive %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="239"/>
+        <location filename="../src/profileinit.cpp" line="244"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">Kunne ikke signere %1 med %2: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="249"/>
+        <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">Den konfigurerte GPG-hjemmekatalogen %1 finnes ikke.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="271"/>
-        <location filename="../src/profileinit.cpp" line="303"/>
+        <location filename="../src/profileinit.cpp" line="276"/>
+        <location filename="../src/profileinit.cpp" line="308"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">git %1 mislyktes i %2: %3</translation>
     </message>
@@ -3160,57 +3227,57 @@ Fortsette?</translation>
 <context>
     <name>ProgramsWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="202"/>
+        <location filename="../src/firstrunwizard.cpp" line="207"/>
         <source>Use the pass command-line tool</source>
         <translation type="unfinished">Bruk kommandolinjeverktøyet pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="204"/>
+        <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Programs</source>
         <translation type="unfinished">Programmer</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="205"/>
+        <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
         <translation type="unfinished">GnuPG tar seg av krypteringen. pass og Git er valgfrie; QtPass kan gjøre jobben deres selv.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="209"/>
+        <location filename="../src/firstrunwizard.cpp" line="214"/>
         <source>Select executable</source>
         <translation type="unfinished">Velg kjørbar fil</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="210"/>
+        <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>All files (*)</source>
         <translation type="unfinished">Alle filer (*)</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="212"/>
+        <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>GnuPG</source>
         <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="215"/>
+        <location filename="../src/firstrunwizard.cpp" line="220"/>
         <source>Git</source>
         <translation type="unfinished">Git</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="216"/>
+        <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
         <translation type="unfinished">pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="217"/>
+        <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
         <translation type="unfinished">Kjør pass-skriptet for hver operasjon i stedet for å kalle gpg og git direkte</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="257"/>
+        <location filename="../src/firstrunwizard.cpp" line="262"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
         <translation type="unfinished">GnuPG ble ikke funnet. Installer det (gpg eller gpg2) og oppgi plasseringen her.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="260"/>
+        <location filename="../src/firstrunwizard.cpp" line="265"/>
         <source>%1 is not an executable file.</source>
         <translation type="unfinished">%1 er ikke en kjørbar fil.</translation>
     </message>
@@ -3218,26 +3285,27 @@ Fortsette?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="170"/>
-        <location filename="../main/main.cpp" line="174"/>
+        <location filename="../main/main.cpp" line="148"/>
+        <location filename="../main/main.cpp" line="152"/>
         <source>LTR</source>
         <translation>VTH</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="75"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="183"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="217"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="201"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="241"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
         <source>Password</source>
         <translation type="unfinished">Passord</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="160"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="180"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">Åpne %1 i nettleseren</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="343"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="356"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
         <source>OTP code</source>
         <translation>Engangskode</translation>
     </message>
@@ -3246,7 +3314,7 @@ Fortsette?</translation>
         <translation type="obsolete">Engangskode</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Ingen engangskode funnet i denne passordoppføringen</translation>
     </message>
@@ -3254,8 +3322,8 @@ Fortsette?</translation>
 <context>
     <name>QPushButtonAsQRCode</name>
     <message>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="16"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="17"/>
         <source>Show as QR code</source>
         <translation type="unfinished">Vis som QR-kode</translation>
     </message>
@@ -3263,16 +3331,16 @@ Fortsette?</translation>
 <context>
     <name>QPushButtonShowPassword</name>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="22"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="23"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="19"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="20"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
         <translation type="unfinished">Vis passord</translation>
     </message>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="32"/>
         <source>Hide password</source>
         <translation type="unfinished">Skjul passord</translation>
     </message>
@@ -3280,8 +3348,8 @@ Fortsette?</translation>
 <context>
     <name>QPushButtonWithClipboard</name>
     <message>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="20"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="21"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">Kopier til utklippstavle</translation>
     </message>
@@ -3347,7 +3415,7 @@ Fortsette?</translation>
         <translation type="vanished">Generering av GPG-nøkkelpar mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="182"/>
+        <location filename="../src/qtpass.cpp" line="138"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG-nøkkelparet ble generert</translation>
     </message>
@@ -3364,22 +3432,22 @@ Fortsette?</translation>
         <translation type="vanished">Kopiert til utklippstavle</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="169"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">Kunne ikke starte qrencode: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="235"/>
+        <location filename="../src/qtpass.cpp" line="177"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode ble ikke ferdig i tide</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="247"/>
+        <location filename="../src/qtpass.cpp" line="189"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode krasjet</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="248"/>
+        <location filename="../src/qtpass.cpp" line="190"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode avsluttet med kode %1</translation>
     </message>
@@ -3387,38 +3455,38 @@ Fortsette?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="143"/>
+        <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">Kontrollerer mottakerlister under %1…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="269"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Kunne ikke fjerne lenken %1.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="251"/>
+        <location filename="../src/realpass.cpp" line="270"/>
         <source>Delete failed</source>
         <translation type="unfinished">Sletting mislyktes</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="301"/>
+        <location filename="../src/realpass.cpp" line="320"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">Lenken %1 ble fjernet, men git kunne ikke registrere det: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="303"/>
-        <location filename="../src/realpass.cpp" line="353"/>
+        <location filename="../src/realpass.cpp" line="322"/>
+        <location filename="../src/realpass.cpp" line="372"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">Sletting ufullstendig</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="350"/>
+        <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">Lenken %1 ble fjernet, og Git følger ikke lenger den, men commit-operasjonen mislyktes: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="477"/>
+        <location filename="../src/realpass.cpp" line="502"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">Søk krever at den kjørbare filen for GPG er satt opp.</translation>
     </message>
@@ -3430,12 +3498,12 @@ Fortsette?</translation>
         <translation type="vanished">tving overskriving?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="290"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>Force overwrite?</source>
         <translation>Tving overskriving?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="296"/>
         <source>overwrite %1 with %2?</source>
         <translation>overskriv %1 med %2?</translation>
     </message>
@@ -3443,32 +3511,32 @@ Fortsette?</translation>
 <context>
     <name>StoreWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="364"/>
+        <location filename="../src/firstrunwizard.cpp" line="369"/>
         <source>Keep the store under Git</source>
         <translation type="unfinished">Hold lageret under Git</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="366"/>
+        <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Password store</source>
         <translation type="unfinished">Passordlager</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="367"/>
+        <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
         <translation type="unfinished">Mappen passordene dine ligger i. Et eksisterende lager brukes som det er; en tom eller manglende mappe settes opp for nøklene du krysset av.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="371"/>
+        <location filename="../src/firstrunwizard.cpp" line="376"/>
         <source>Folder</source>
         <translation type="unfinished">Mappe</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="373"/>
+        <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Velg mappe for passordlageret</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="398"/>
+        <location filename="../src/firstrunwizard.cpp" line="403"/>
         <source>Git has no name and e-mail to commit with yet. Run
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
@@ -3479,17 +3547,17 @@ git config --global user.email deg@example.org
 og slå på Git under Innstillinger etterpå.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="402"/>
+        <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
         <translation type="unfinished">Hver endring blir en commit; en mappe som ennå ikke er et depot, får ett</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="426"/>
+        <location filename="../src/firstrunwizard.cpp" line="431"/>
         <source>Enter a folder.</source>
         <translation type="unfinished">Oppgi en mappe.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/firstrunwizard.cpp" line="430"/>
+        <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
             <numerusform>Et eksisterende passordlager med %n oppføring.</numerusform>
@@ -3497,22 +3565,22 @@ og slå på Git under Innstillinger etterpå.</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="433"/>
+        <location filename="../src/firstrunwizard.cpp" line="438"/>
         <source>An empty folder; it will be set up as a password store.</source>
         <translation type="unfinished">En tom mappe; den settes opp som et passordlager.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="434"/>
+        <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
         <translation type="unfinished">Denne mappen er ennå ikke et passordlager; en .gpg-id for de avkryssede nøklene skrives inn i den.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="437"/>
+        <location filename="../src/firstrunwizard.cpp" line="442"/>
         <source>The folder does not exist yet; it will be created.</source>
         <translation type="unfinished">Mappen finnes ikke ennå; den blir opprettet.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="441"/>
+        <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">Gå tilbake og kryss av minst én nøkkel å kryptere det til.</translation>
     </message>
@@ -3520,32 +3588,32 @@ og slå på Git under Innstillinger etterpå.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="36"/>
+        <location filename="../src/trayicon.cpp" line="41"/>
         <source>&amp;Show</source>
         <translation>&amp;Vis</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="38"/>
+        <location filename="../src/trayicon.cpp" line="43"/>
         <source>&amp;Hide</source>
         <translation>&amp;Skjul</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="41"/>
+        <location filename="../src/trayicon.cpp" line="46"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimer</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="44"/>
+        <location filename="../src/trayicon.cpp" line="49"/>
         <source>Ma&amp;ximize</source>
         <translation>Maks&amp;imer</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="47"/>
+        <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Restore</source>
         <translation>&amp;Gjenopprett</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="50"/>
+        <location filename="../src/trayicon.cpp" line="55"/>
         <source>&amp;Quit</source>
         <translation>&amp;Avslutt</translation>
     </message>
@@ -3617,42 +3685,42 @@ Vanlige oppføringer har en klarert krypteringsnøkkel; velg disse for å la and
         <translation type="vanished">Kan ikke hente nøkkelliste</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>Nøkkelliste mangler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kunne ikke hente liste over tilgjengelige GPG-nøkler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="181"/>
+        <location filename="../src/usersdialog.cpp" line="220"/>
         <source>Key not found in keyring</source>
         <translation>Nøkkel ikke funnet i nøkkelring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="325"/>
+        <location filename="../src/usersdialog.cpp" line="364"/>
         <source>created</source>
         <translation>opprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="329"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>expires</source>
         <translation>utløper</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="352"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[INVALID] </source>
         <translation>[UGYLDIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="348"/>
+        <location filename="../src/usersdialog.cpp" line="387"/>
         <source>[EXPIRED] </source>
         <translation>[UTLØPT] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="356"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[PARTIAL] </source>
         <translation>[DELVIS] </translation>
     </message>
@@ -3660,34 +3728,34 @@ Vanlige oppføringer har en klarert krypteringsnøkkel; velg disse for å la and
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="1080"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Kan ikke opprette en midlertidig fil ved siden av %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="984"/>
-        <location filename="../src/util.cpp" line="1063"/>
-        <location filename="../src/util.cpp" line="1093"/>
+        <location filename="../src/util.cpp" line="1092"/>
+        <location filename="../src/util.cpp" line="1171"/>
+        <location filename="../src/util.cpp" line="1201"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">Kan ikke skrive %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="999"/>
+        <location filename="../src/util.cpp" line="1107"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Kunne ikke erstatte %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1004"/>
+        <location filename="../src/util.cpp" line="1112"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 finnes allerede.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1006"/>
+        <location filename="../src/util.cpp" line="1114"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Kunne ikke skrive %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1050"/>
+        <location filename="../src/util.cpp" line="1158"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 ble byttet ut med en annen fil mens den ble skrevet.</translation>
     </message>
@@ -3696,12 +3764,12 @@ Vanlige oppføringer har en klarert krypteringsnøkkel; velg disse for å la and
         <translation type="obsolete">%1 ble erstattet av en lenke mens den ble skrevet.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1076"/>
+        <location filename="../src/util.cpp" line="1184"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">Kan ikke lese %1.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1086"/>
+        <location filename="../src/util.cpp" line="1194"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">Kan ikke lese %1: %2</translation>
     </message>

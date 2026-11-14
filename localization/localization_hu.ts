@@ -4,22 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="70"/>
+        <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
         <translation>a vágólapra másolt</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="178"/>
+        <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
         <translation type="unfinished">A másolás/bemásolás visszaállítva</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="179"/>
+        <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
         <translation>Vágólap tiszta</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="180"/>
+        <location filename="../src/clipboardmanager.cpp" line="185"/>
         <source>Clipboard not cleared</source>
         <translation>A vágólap nincs kiürítve</translation>
     </message>
@@ -682,7 +682,7 @@ e-mail</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzió </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="78"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
         <translation>A tálca nem érhető el</translation>
     </message>
@@ -691,7 +691,7 @@ e-mail</translation>
         <translation type="vanished">A Pass OTP kiterjesztést telepíteni kell</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="108"/>
         <source>qrencode needs to be installed</source>
         <translation>A qrencode-t telepíteni kell</translation>
     </message>
@@ -700,68 +700,68 @@ e-mail</translation>
         <translation type="vanished">Nincs vágólap</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="147"/>
+        <location filename="../src/configdialog.cpp" line="154"/>
         <source>No clipboard</source>
         <translation type="unfinished">Nincs vágólap</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="148"/>
+        <location filename="../src/configdialog.cpp" line="155"/>
         <source>Always copy to clipboard</source>
         <translation>Mindig másolja a vágólapra</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="149"/>
+        <location filename="../src/configdialog.cpp" line="156"/>
         <source>On-demand copy to clipboard</source>
         <translation>Igény szerinti másolás a vágólapra</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
-        <location filename="../src/configdialog.cpp" line="348"/>
+        <location filename="../src/configdialog.cpp" line="350"/>
+        <location filename="../src/configdialog.cpp" line="355"/>
         <source>This field is required</source>
         <translation>Ez a mező kötelező</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="345"/>
+        <location filename="../src/configdialog.cpp" line="352"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">Egy másik profilnak már ez a neve</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="354"/>
+        <location filename="../src/configdialog.cpp" line="361"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">Csak teljes kulcsujjlenyomatok (40 vagy 64 hexadecimális karakter), szóközzel elválasztva</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="501"/>
+        <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 ugyanazzal a kulccsal ír alá egy másik tárolóhoz. Az e tárolók egyikéhez aláírt címzettlistát a másik is elfogadja: használjon külön aláírókulcsot minden olyan tárolóhoz, amelynek címzettjei eltérnek.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="529"/>
+        <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">A pass a(z) %1 változásait a(z) %2 helyen lévő Git-tárolóba véglegesíti: ha a jelszótároló útvonalában kettőspont van, a pass nem tudja a Gitet a jelszótárolóra korlátozni. Futtassa a &quot;git init&quot; parancsot a jelszótárolóban, vagy használja a natív Git/GPG-t.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="552"/>
+        <location filename="../src/configdialog.cpp" line="559"/>
         <source>The path does not exist.</source>
         <translation>Az elérési út nem létezik.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="555"/>
+        <location filename="../src/configdialog.cpp" line="562"/>
         <source>The path is not readable.</source>
         <translation>Az elérési út nem olvasható.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="558"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>Az elérési út nem Unix domain socket.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="569"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>Az SSH_AUTH_SOCK felülírás esetleg érvénytelen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -774,37 +774,37 @@ The value will still be saved as entered.</source>
 Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="820"/>
+        <location filename="../src/configdialog.cpp" line="827"/>
         <source>Create profile directory?</source>
         <translation>Profilkönyvtár létrehozása?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Létrehoz egy jelszótárolót itt: %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="828"/>
+        <location filename="../src/configdialog.cpp" line="835"/>
         <source>Could not create profile directory: %1</source>
         <translation>A profilkönyvtár nem hozható létre: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="852"/>
+        <location filename="../src/configdialog.cpp" line="859"/>
         <source>Select recipients for %1</source>
         <translation>Válassza ki a(z) %1 címzettjeit</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="861"/>
+        <location filename="../src/configdialog.cpp" line="868"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">A(z) %1 profil nem inicializálható</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="864"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Profile %1</source>
         <translation type="unfinished">%1 profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="887"/>
+        <location filename="../src/configdialog.cpp" line="894"/>
         <source>New profile</source>
         <translation>Új profil</translation>
     </message>
@@ -813,12 +813,12 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
         <translation type="vanished">Új profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="908"/>
+        <location filename="../src/configdialog.cpp" line="915"/>
         <source>No profile selected</source>
         <translation>Nincs kiválasztott profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="909"/>
+        <location filename="../src/configdialog.cpp" line="916"/>
         <source>No profile selected to delete</source>
         <translation>Nincs kijelölve törölhető profil</translation>
     </message>
@@ -847,12 +847,12 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
         <translation type="vanished">Szeretne jelszótárolót létrehozni a (z) %1 helyen?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="827"/>
+        <location filename="../src/configdialog.cpp" line="834"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="89"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Wayland alatt nem érhető el; használja helyette a kompozitor „mindig felül” ablakszabályát</translation>
     </message>
@@ -869,17 +869,17 @@ Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
         <translation type="vanished">A(z) %1 mappa nem tűnik jelszótárolónak, vagy még nincs inicializálva.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1128"/>
+        <location filename="../src/configdialog.cpp" line="1135"/>
         <source>New profile: %1 at %2</source>
         <translation>Új profil: %1 itt: %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1130"/>
+        <location filename="../src/configdialog.cpp" line="1137"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 itt: %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1133"/>
+        <location filename="../src/configdialog.cpp" line="1140"/>
         <source>Fill in all required fields</source>
         <translation>Töltse ki az összes kötelező mezőt</translation>
     </message>
@@ -956,62 +956,62 @@ e-mail</translation>
 <context>
     <name>DoneWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="466"/>
+        <location filename="../src/firstrunwizard.cpp" line="471"/>
         <source>Hide passwords until asked</source>
         <translation type="unfinished">Jelszavak elrejtése, amíg nem kéri</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="467"/>
+        <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Show an icon in the system tray</source>
         <translation type="unfinished">Ikon megjelenítése a rendszertálcán</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="468"/>
+        <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Ready</source>
         <translation type="unfinished">Kész</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="469"/>
+        <location filename="../src/firstrunwizard.cpp" line="474"/>
         <source>Everything else can be changed later in Settings.</source>
         <translation type="unfinished">Minden más később módosítható a Beállításokban.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="476"/>
+        <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>Show the password line as dots; Show password reveals it</source>
         <translation type="unfinished">A jelszósor pontokként jelenik meg; a Jelszó megjelenítése fedi fel</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="487"/>
+        <location filename="../src/firstrunwizard.cpp" line="492"/>
         <source>Store: %1</source>
         <translation type="unfinished">Tároló: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="489"/>
+        <location filename="../src/firstrunwizard.cpp" line="494"/>
         <source>It is already a password store and is used as it is.</source>
         <translation type="unfinished">Ez már egy jelszótároló, és változtatás nélkül lesz használva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="491"/>
+        <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
         <translation type="unfinished">A bejelölt kulcsokhoz lesz beállítva, és Git alá kerül.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="493"/>
+        <location filename="../src/firstrunwizard.cpp" line="498"/>
         <source>It will be set up for the ticked keys.</source>
         <translation type="unfinished">A bejelölt kulcsokhoz lesz beállítva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="495"/>
+        <location filename="../src/firstrunwizard.cpp" line="500"/>
         <source>GnuPG: %1</source>
         <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="496"/>
+        <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>Operations run through pass.</source>
         <translation type="unfinished">A műveletek a pass programon keresztül futnak.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="497"/>
+        <location filename="../src/firstrunwizard.cpp" line="502"/>
         <source>Operations run through gpg and git directly.</source>
         <translation type="unfinished">A műveletek közvetlenül a gpg és a git programokon keresztül futnak.</translation>
     </message>
@@ -1069,12 +1069,12 @@ e-mail</translation>
         <translation type="vanished">Mentés fájlba…</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="28"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="27"/>
         <source>Public key for %1</source>
         <translation>%1 nyilvános kulcsa</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="67"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="51"/>
         <source>Copied!</source>
         <translation>Másolva!</translation>
     </message>
@@ -1083,24 +1083,24 @@ e-mail</translation>
         <translation type="vanished">Nyilvános kulcs mentése</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="83"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="90"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="100"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="63"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="70"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="80"/>
         <source>Save public key</source>
         <translation>Nyilvános kulcs mentése</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="84"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
         <translation>ASCII-armored kulcs (*.asc);;Minden fájl (*)</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="91"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
         <source>Could not open %1 for writing: %2</source>
         <translation>%1 nem nyitható meg írásra: %2</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="101"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
         <source>Could not write to %1: %2</source>
         <translation>Nem sikerült írni ide: %1: %2</translation>
     </message>
@@ -1108,17 +1108,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="17"/>
+        <location filename="../src/fieldlabel.cpp" line="22"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Kattintson duplán a mező átnevezéséhez</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="30"/>
+        <location filename="../src/fieldlabel.cpp" line="35"/>
         <source>Rename field…</source>
         <translation type="unfinished">Mező átnevezése…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="31"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Remove field</source>
         <translation type="unfinished">Mező eltávolítása</translation>
     </message>
@@ -1126,7 +1126,7 @@ e-mail</translation>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="93"/>
+        <location filename="../src/filecontent.cpp" line="126"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… további %n sor, amelyeket nem jelenít meg</numerusform>
@@ -1136,44 +1136,44 @@ e-mail</translation>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="44"/>
+        <location filename="../src/firstrunwizard.cpp" line="49"/>
         <source>Browse</source>
         <translation type="unfinished">Tallózás</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="67"/>
-        <location filename="../src/firstrunwizard.cpp" line="73"/>
+        <location filename="../src/firstrunwizard.cpp" line="72"/>
+        <location filename="../src/firstrunwizard.cpp" line="78"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished">Üdvözöljük a QtPass-ban</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="76"/>
+        <location filename="../src/firstrunwizard.cpp" line="81"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
         <translation type="unfinished">A QtPass a &lt;i&gt;pass&lt;/i&gt;, a szabványos Unix jelszókezelő grafikus felülete: minden jelszó egy GnuPG-vel titkosított fájl egy mappában, amelyet Git alá helyezhet.&lt;br&gt;&lt;br&gt;A következő oldalak megkeresik a GnuPG-t, gondoskodnak arról, hogy legyen kulcsa a titkosításhoz, és kiválasztják a jelszavait tartalmazó mappát. Semmi sem íródik ki, amíg meg nem nyomja a Befejezés gombot.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="128"/>
+        <location filename="../src/firstrunwizard.cpp" line="133"/>
         <source>Error</source>
         <translation type="unfinished">Hiba</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="129"/>
+        <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished">Nem sikerült létrehozni a jelszótárolót a következő címen: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="147"/>
-        <location filename="../src/firstrunwizard.cpp" line="171"/>
+        <location filename="../src/firstrunwizard.cpp" line="152"/>
+        <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
         <translation type="unfinished">A jelszótároló nem inicializálódott</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="154"/>
+        <location filename="../src/firstrunwizard.cpp" line="159"/>
         <source>Password store</source>
         <translation type="unfinished">Jelszótároló</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="155"/>
+        <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
         <translation type="unfinished">A(z) %1 már tartalmaz titkosított fájlokat; ezek nem lettek újratitkosítva a bejelölt kulcsokhoz. Ehhez indítás után nyissa meg a Felhasználók ablakot.</translation>
     </message>
@@ -1181,108 +1181,108 @@ e-mail</translation>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="194"/>
+        <location filename="../src/gpgidgeneration.cpp" line="199"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása (%1) nem érhető el.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="203"/>
+        <location filename="../src/gpgidgeneration.cpp" line="208"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása (%1) nem olvasható. Aláírt címzettlisták addig nem fogadhatók el, amíg a nyilvántartást ki nem javítják vagy el nem távolítják (az eltávolítással ez az eszköz elfelejti, mit fogadott el korábban).</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="225"/>
-        <location filename="../src/gpgidgeneration.cpp" line="238"/>
+        <location filename="../src/gpgidgeneration.cpp" line="230"/>
+        <location filename="../src/gpgidgeneration.cpp" line="243"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása (%1) nem írható.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="292"/>
+        <location filename="../src/gpgidgeneration.cpp" line="297"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartását (%1) nem sikerült zárolni: lehet, hogy egy másik QtPass használja, vagy a mappája nem írható.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished">A lista egynél több tárolósort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished">A tárolósor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">A lista egynél több generációsort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="467"/>
+        <location filename="../src/gpgidgeneration.cpp" line="472"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">A generációsor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="473"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">A lista egynél több mappasort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="489"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">A mappasor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="493"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">A fejlécsor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="521"/>
+        <location filename="../src/gpgidgeneration.cpp" line="526"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">A lista tartalmaz generációsort, de mappasort nem.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="527"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished">A lista tartalmaz tárolósort, de generációs sort nem.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="682"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista nem megbízható: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="609"/>
+        <location filename="../src/gpgidgeneration.cpp" line="614"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a jelszótároló „%2” mappájához készült, nem a(z) „%3” mappához, ezért nem lesz felhasználva. Lehet, hogy valaki más másolta ide; ha viszont a mappát áthelyezték vagy átnevezték, az aláírókulcs birtokosa megnyitja rajta a Felhasználók ablakot, és menti a címzetteket, ami a listát a jelenlegi helyéhez köti.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="627"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">A(z) %1. generáció a lehető legmagasabb, ezért itt újabb lista már nem írható ki: a(z) %2 eltávolításával ez az eszköz elfelejti, mit fogadott el korábban; ezután az aláírókulcs birtokosa úgy léphet túl ezen, hogy megnyitja a Felhasználók ablakot, és %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="629"/>
+        <location filename="../src/gpgidgeneration.cpp" line="634"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Az aláírókulcs birtokosa úgy léphet túl ezen, hogy megnyitja a Felhasználók ablakot, és %1; a mentés a(z) %2. generációt írja ki. A(z) %3 eltávolításával ez az eszköz elfelejti, mit fogadott el korábban.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="646"/>
+        <location filename="../src/gpgidgeneration.cpp" line="651"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz generációsort, miközben itt korábban már elfogadták a(z) %2. generációt. A pass nem ír generációsort (a QtPass pass háttérrendszerén keresztül sem), és a 2.0 előtti QtPass sem írt; generációsor nélkül a lista akár a jelszótároló egy másik mappájához is készülhetett, és onnan másolhatták ide. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="655"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">újra kijelöli a címzetteket, és menti őket</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz tárolósort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóján ismeri: lehet, hogy egy másik tárolóhoz készült és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy jut tovább, hogy megnyitja a &quot;Felhasználók&quot; ablakot, újra kiválasztja a címzetteket, és ment, ami beírja a tárolósort.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="856"/>
+        <location filename="../src/gpgidgeneration.cpp" line="863"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása (%1) továbblépett a(z) %2. generációra, miközben a(z) %3. generáció kiírása folyamatban volt.</translation>
     </message>
@@ -1295,32 +1295,32 @@ e-mail</translation>
         <translation type="obsolete">A(z) %1 aláírt címzettlista nem tartalmaz generációsort, miközben itt korábban már elfogadták a(z) %2. generációt. A pass nem ír generációsort (a QtPass pass háttérrendszerén keresztül sem), és a 2.0 előtti QtPass sem írt. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="665"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a(z) %2. generáció, amely régebbi a(z) %3. generációnál, az utolsónál, amelyet a QtPass itt elfogadott. Lehet, hogy valaki más állította vissza. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="667"/>
+        <location filename="../src/gpgidgeneration.cpp" line="672"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">menti a címzetteket: az ott előre kijelölt címzettek ennek a listának a címzettjei, ezért először távolítsa el azokat, akiknek már nem szabad hozzáférniük</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="732"/>
+        <location filename="../src/gpgidgeneration.cpp" line="737"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a(z) %2. generáció, ugyanaz a generáció, mint egy másik listáé, amelyet ez az eszköz korábban elfogadott. Vagy két eszköz egyszerre mentette a címzetteket (a Git ekkor már jelezte az ütközést), vagy egy hiteles, ugyanebből a generációból való listát cseréltek be. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="740"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">ellenőrzi a címzetteket, és menti őket</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <location filename="../src/gpgidgeneration.cpp" line="771"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista egy másik jelszótárolóhoz készült (tárolóazonosító: %2; ez az eszköz ezt a tárolót %3 néven ismeri), ezért nincs használatban. Lehet, hogy egy ugyanazzal a kulccsal aláírt tárolóból másolták ide. Ha viszont ezt a tárolót újra beállították, a(z) %4 eltávolítása elfelejteti az eszköz által ismert tárolóazonosítókat.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="824"/>
+        <location filename="../src/gpgidgeneration.cpp" line="831"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">A(z) %1 címzettlista elérte a(z) %2. generációt, a lehető legmagasabbat; a lista nem írható ki.</translation>
     </message>
@@ -1328,17 +1328,17 @@ e-mail</translation>
 <context>
     <name>GpgIdSigner</name>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="75"/>
+        <location filename="../src/gpgidsigner.cpp" line="79"/>
         <source>the recipient list is not valid UTF-8</source>
         <translation type="unfinished">a címzettlista nem érvényes UTF-8</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="102"/>
+        <location filename="../src/gpgidsigner.cpp" line="106"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">a gpg nem írt ki aláírást</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <location filename="../src/gpgidsigner.cpp" line="116"/>
         <source>the new signature does not verify as one of the signing keys</source>
         <translation type="unfinished">az új aláírás egyik aláírókulccsal sem ellenőrizhető</translation>
     </message>
@@ -1346,126 +1346,126 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1072"/>
-        <location filename="../src/imitatepass.cpp" line="1248"/>
+        <location filename="../src/imitatepass.cpp" line="1161"/>
+        <location filename="../src/imitatepass.cpp" line="1350"/>
         <source>Updating password-store</source>
         <translation>Jelszó-tároló frissítése</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="876"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="904"/>
         <source>Can not edit</source>
         <translation>Nem lehet szerkeszteni</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="416"/>
-        <location filename="../src/imitatepass.cpp" line="601"/>
-        <location filename="../src/realpass.cpp" line="87"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
+        <location filename="../src/imitatepass.cpp" line="629"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Signature for %1 is invalid.</source>
         <translation>A(z) %1 aláírása érvénytelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="877"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
+        <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nem sikerült beolvasni a használandó titkosítási kulcsot, a .gpg-id fájl hiányzik vagy érvénytelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="316"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">A jelszó tárolóban nem található a megadott %1, vagy egy mappan belül lévő név, ami szakaszra osztja a tartalmat, vagy más irányító karaktert tartalmaz, amit aláírt lista nem tud rögzíteni.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="407"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
         <source>GPG signing failed!</source>
         <translation>GPG aláírás sikertelen!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="434"/>
         <source>Failed to sign %1.</source>
         <translation>%1 aláírása sikertelen.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="553"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>No signing key!</source>
         <translation>Nincs aláíró kulcs!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="554"/>
+        <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Egyik titkos aláírókulcs sem érhető el.
 A felhasználói listát nem fogja tudni módosítani!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="346"/>
-        <location filename="../src/imitatepass.cpp" line="374"/>
-        <location filename="../src/imitatepass.cpp" line="508"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="533"/>
         <source>Cannot update</source>
         <translation>Nem frissíthető</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="118"/>
+        <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">A Git pull sikertelen: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Cannot add</source>
         <translation type="unfinished">Nem adható hozzá</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">A(z) %1 már létezik.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="415"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
-        <location filename="../src/realpass.cpp" line="91"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
+        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="784"/>
+        <location filename="../src/realpass.cpp" line="97"/>
         <source>Check .gpg-id file signature!</source>
         <translation>Ellenőrizd a .gpg-id fájl aláírását!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="832"/>
+        <location filename="../src/pass.cpp" line="942"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">A címzettlista nem ellenőrizhető</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="834"/>
+        <location filename="../src/pass.cpp" line="944"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Nem állapítható meg, hogy a(z) %2 el lett-e távolítva, ezért semmi sem lett titkosítva.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="841"/>
+        <location filename="../src/pass.cpp" line="951"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Hiányzik a címzettlista</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="842"/>
+        <location filename="../src/pass.cpp" line="952"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista hiányzik, vagy nem szabályos fájl. A QtPass ilyenkor nem használja helyette egy szülőmappa listáját: az a lista nem ehhez a mappához lett aláírva. Ha ezen a néven egy link található, távolítsa el. Ezután nyissa meg a Felhasználók ablakot az adott mappához, és mentse a címzettjeit, ami új listát ír ki és ír alá.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="210"/>
+        <location filename="../src/imitatepass.cpp" line="230"/>
         <source>Cannot write</source>
         <translation type="unfinished">Nem írható</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="211"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">Nem hozható létre ideiglenes könyvtár: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="273"/>
+        <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Delete failed</source>
         <translation type="unfinished">A törlés sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="274"/>
+        <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nem sikerült eltávolítani a(z) %1 linket.</translation>
     </message>
@@ -1482,91 +1482,91 @@ A felhasználói listát nem fogja tudni módosítani!</translation>
         <translation type="obsolete">Nem sikerült írni a(z) %1 fájlt: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="388"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">A címzettlista kiírva, de a nyilvántartásban nem rögzítve</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 Hogy túllépjen ezen, mentse még egyszer a címzetteket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
         <translation>Kiválasztott felhasználók ellenőrzése!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>A kiválasztott kulcsok egyikében sincs titkos kulcs.
 Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="435"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">A(z) %1 aláírása sikertelen: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="509"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">Nem sikerült eltávolítani a régi %1 aláírást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="546"/>
+        <location filename="../src/imitatepass.cpp" line="574"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">A címzettek nem változtak</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="547"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">Még fut egy újratitkosítás. Várja meg, amíg befejeződik, majd mentse újra a címzetteket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="613"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">A Git %1 kóddal lépett ki.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="624"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">A %1-t nem lehet címzett listának értelmezni (ez egy átlagos fájl, amely maximum %2 karakterből áll).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="638"/>
         <location filename="../src/imitatepass.cpp" line="666"/>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="694"/>
+        <location filename="../src/imitatepass.cpp" line="702"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">Egy korábbi újratitkosításból maradt vissza</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="639"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 nem szabályos fájl, ezért nem lett visszaállítva. Nézze meg és távolítsa el, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="667"/>
+        <location filename="../src/imitatepass.cpp" line="695"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 a(z) %2 mellett létezik. Mindkettő a bejegyzés titkosított másolata; ellenőrizze, melyikre van szüksége, törölje a másikat, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">A(z) %1 visszaállítva a megszakadt újratitkosítás által hagyott biztonsági mentésből.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">A(z) %1 hiányzik, és a(z) %2 biztonsági mentését nem sikerült visszanevezni. Nevezze át kézzel, majd futtassa újra az újratitkosítást.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="945"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">A(z) %1 újratitkosítása nem sikerült: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1323"/>
         <source>Re-encryption failed</source>
         <translation>Az újratitkosítás sikertelen</translation>
     </message>
@@ -1583,121 +1583,132 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
         <translation type="obsolete">Az újratitkosítás után nem sikerült eltávolítani a(z) %1 biztonsági mentést; biztonságosan törölhető.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="928"/>
+        <location filename="../src/imitatepass.cpp" line="982"/>
         <source>Creating backup commit</source>
         <translation>Biztonsági mentés véglegesítése</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
-        <location filename="../src/imitatepass.cpp" line="952"/>
+        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>Backup commit failed</source>
         <translation>A biztonsági mentés véglegesítése sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
+        <location filename="../src/imitatepass.cpp" line="997"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>Nem sikerült ellenőrizni a git állapotát. Az újratitkosítás megszakítva.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="953"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <source>The store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Az újratitkosítás megszakadt, mert nem sikerült git biztonsági mentést létrehozni.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="991"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">Már fut egy újratitkosítás</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="998"/>
+        <location filename="../src/imitatepass.cpp" line="1069"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nem a tárolóhoz tartozó mappa</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="999"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, ezért nem lett újratitkosítva.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Új titkosítás a (z) %1 mappából</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
-        <location filename="../src/imitatepass.cpp" line="1091"/>
+        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1180"/>
         <source>Git pull failed</source>
         <translation type="unfinished">A Git pull sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1086"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">A pull után nem sikerült ellenőrizni, hogy a tárolóban vannak-e nem egyesített fájlok. Az újratitkosítás előtt ellenőrizze git-tel.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1092"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">A pull után egyesítetlen fájlok maradtak a tárolóban. Oldja fel az ütközést az újratitkosítás előtt.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1185"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">A Git pull sikertelen, a tároló a jelenlegi állapotában lesz újratitkosítva</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1107"/>
+        <location filename="../src/imitatepass.cpp" line="1196"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n bejegyzés kihagyva: a szimbolikus link, junction vagy speciális fájl nem része a tárolónak.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1217"/>
         <source>GPG ID verification failed</source>
         <translation>GPG-azonosító ellenőrzése sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Nem sikerült ellenőrizni a könyvtár .gpg-id fájlját.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1149"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nem része a tárolónak</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1150"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">A %1 egy szimbolikus hivatkozás vagy csomópont, amely a &quot;pulld&quot; után létrejön. Amihez pontosan a hivatkozás kapcsolódik, az nem része a jelszó tárolónak, és így változatlanul marad.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1321"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... és további %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1324"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n fájlt nem sikerült újratitkosítani:</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">Újratitkosítás megszakítva: %2 fájlból %1 ellenőrizve, %3 újratitkosítva, %4 sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1295"/>
-        <location filename="../src/imitatepass.cpp" line="1304"/>
+        <location filename="../src/imitatepass.cpp" line="1397"/>
+        <location filename="../src/imitatepass.cpp" line="1406"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">A címzettek nincsenek véglegesítve</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1710,7 +1721,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 A változás még nincs véglegesítve és feltöltve. Javítsa ki a Git-problémát, majd véglegesítse a változásokat, vagy mentse újra a címzetteket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1305"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1723,12 +1734,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés még mindig a korábbi címzettek számára van titkosítva, akik továbbra is el tudják olvasni őket. Semmi sem lett véglegesítve vagy feltöltve. Javítsa ki a Git-problémát, majd mentse újra a címzetteket.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1482"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">A Git végrehajtható fájlja nincs beállítva, a git kihagyva</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
+        <location filename="../src/imitatepass.cpp" line="1671"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">A gpg nem írt ki titkosított szöveget a(z) %1 fájlhoz.</translation>
     </message>
@@ -1757,31 +1768,31 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
         <translation type="vanished">Nem sikerült újra titkosítani %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1339"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Újratitkosítás befejezve: %1 sikeres, %2 sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1344"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Újratitkosítás befejezve: %1 fájl újratitkosítva</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1353"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>Nincs push: %n fájl újratitkosítása sikertelen</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1404"/>
-        <location filename="../src/imitatepass.cpp" line="1448"/>
+        <location filename="../src/imitatepass.cpp" line="1513"/>
+        <location filename="../src/imitatepass.cpp" line="1560"/>
         <source>Copy failed</source>
         <translation type="unfinished">A másolás sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1405"/>
-        <location filename="../src/imitatepass.cpp" line="1449"/>
+        <location filename="../src/imitatepass.cpp" line="1514"/>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1 másolása ide: %2 sikertelen.</translation>
     </message>
@@ -1812,7 +1823,7 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="44"/>
+        <location filename="../src/importkeydialog.cpp" line="58"/>
         <source>Import GPG key</source>
         <translation>GPG-kulcs importálása</translation>
     </message>
@@ -1832,7 +1843,7 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
         <translation>Importálás</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-armored GPG-kulcs</translation>
     </message>
@@ -1845,12 +1856,12 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
         <translation type="vanished">Kulcs importálása</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="62"/>
+        <location filename="../src/importkeydialog.cpp" line="76"/>
         <source>Could not open file: %1</source>
         <translation>A fájl nem nyitható meg: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="87"/>
+        <location filename="../src/importkeydialog.cpp" line="101"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 nem tűnik ASCII-armored GPG-kulcsnak. Először alakítsa át a &lt;code&gt;gpg --armor --export&lt;/code&gt; paranccsal, vagy illessze be az ASCII-armored blokkot a &lt;b&gt;Vágólapról&lt;/b&gt; lehetőséggel.</translation>
     </message>
@@ -1859,38 +1870,38 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
         <translation type="vanished">%1 nem tűnik ASCII-armored GPG-kulcsnak. Először alakítsa át a &lt;code&gt;gpg --armor --export&lt;/code&gt; paranccsal, vagy illessze be az ASCII-armored blokkot a &lt;b&gt;Vágólapról&lt;/b&gt; lehetőséggel.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>All files</source>
         <translation>Minden fájl</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="61"/>
-        <location filename="../src/importkeydialog.cpp" line="74"/>
-        <location filename="../src/importkeydialog.cpp" line="86"/>
-        <location filename="../src/importkeydialog.cpp" line="186"/>
-        <location filename="../src/importkeydialog.cpp" line="190"/>
+        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="88"/>
+        <location filename="../src/importkeydialog.cpp" line="100"/>
+        <location filename="../src/importkeydialog.cpp" line="200"/>
+        <location filename="../src/importkeydialog.cpp" line="204"/>
         <source>Import key</source>
         <translation>Kulcs importálása</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">Az %1 fájl nagyobb, mint egy kulcsfájl lehet.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="134"/>
+        <location filename="../src/importkeydialog.cpp" line="148"/>
         <source>GPG import failed:
 %1</source>
         <translation>A GPG-importálás meghiúsult:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="144"/>
+        <location filename="../src/importkeydialog.cpp" line="158"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>Az importált kulcs azonosítója nem olvasható ki a GPG kimenetéből.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="191"/>
+        <location filename="../src/importkeydialog.cpp" line="205"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">A(z) %1 nyilvános kulcs importálva. Mielőtt erre a kulcsra titkosítana, egyeztesse az ujjlenyomatát a tulajdonosával: egy kulcs importálása semmit nem mond arról, hogy ki birtokolja.</translation>
     </message>
@@ -1902,32 +1913,32 @@ Az újratitkosítás nem fejeződött be, így egyes vagy az összes bejegyzés 
 <context>
     <name>KeyWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="288"/>
+        <location filename="../src/firstrunwizard.cpp" line="293"/>
         <source>Generate a new key pair…</source>
         <translation type="unfinished">Új kulcspár generálása…</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="290"/>
+        <location filename="../src/firstrunwizard.cpp" line="295"/>
         <source>Your key</source>
         <translation type="unfinished">Az Ön kulcsa</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="291"/>
+        <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
         <translation type="unfinished">A jelszavak GnuPG-kulcsokhoz vannak titkosítva. Jelölje be azokat a kulcsokat, amelyekkel az új tároló megnyitható legyen; legalább egy olyan kell, amelynek titkos fele ezen a gépen van.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="319"/>
+        <location filename="../src/firstrunwizard.cpp" line="324"/>
         <source>expired</source>
         <translation type="unfinished">lejárt</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="321"/>
+        <location filename="../src/firstrunwizard.cpp" line="326"/>
         <source>not usable</source>
         <translation type="unfinished">nem használható</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="334"/>
+        <location filename="../src/firstrunwizard.cpp" line="339"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
         <translation type="unfinished">A GnuPG-nek még nincs titkos kulcsa. Generáljon egyet itt, vagy előbb importálja meglévő kulcsát a gpg segítségével.</translation>
     </message>
@@ -2027,47 +2038,47 @@ Lejárat-dátum: 0
         <translation>Szakértői lehetőségekért tekintse meg a &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kézikönyvet&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="176"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
         <translation type="unfinished">Érvénytelen bemenet</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="177"/>
+        <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
         <translation type="unfinished">A név és a jelszó nem tartalmazhat szakaszváltást.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="182"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
         <translation>Érvénytelen név</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="183"/>
+        <location filename="../src/keygendialog.cpp" line="197"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>A névnek legalább 5 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="193"/>
+        <location filename="../src/keygendialog.cpp" line="207"/>
         <source>Invalid email</source>
         <translation>Érvénytelen emailcím</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="194"/>
+        <location filename="../src/keygendialog.cpp" line="208"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>A beírt e-mail cím nem érvényes e-mail cím.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="216"/>
+        <location filename="../src/keygendialog.cpp" line="230"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ez a művelet néhány percet vehet igénybe. &lt;br /&gt; Sok véletlen bájtot kell generálnunk. Jó ötlet, ha az első generálés során végezzünk más műveleteket is (írja be a billentyűzetet, mozgassa az egeret, használja a lemezeket); ez nagyobb esélyt ad a véletlenszám-generátor számára, hogy nagyobb legyen az entrópia.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="237"/>
+        <location filename="../src/keygendialog.cpp" line="251"/>
         <source>No password store backend available</source>
         <translation type="unfinished">Nem érhető el jelszótároló-háttérrendszer</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="271"/>
+        <location filename="../src/keygendialog.cpp" line="285"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">A kulcsgenerálás sikertelen: %1</translation>
     </message>
@@ -2081,8 +2092,8 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="720"/>
-        <location filename="../src/mainwindow.cpp" line="898"/>
+        <location filename="../src/mainwindow.cpp" line="731"/>
+        <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Search password</source>
         <translation>Jelszó keresése</translation>
     </message>
@@ -2139,8 +2150,8 @@ Lejárat-dátum: 0
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="534"/>
-        <location filename="../src/mainwindow.cpp" line="544"/>
+        <location filename="../src/mainwindow.cpp" line="540"/>
+        <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
         <translation>Jelszó-tároló frissítése</translation>
     </message>
@@ -2149,8 +2160,8 @@ Lejárat-dátum: 0
         <translation type="vanished">Vágólap tiszta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="632"/>
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Content hidden</source>
         <translation>Oldal elrejtve</translation>
     </message>
@@ -2357,7 +2368,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1454"/>
+        <location filename="../src/mainwindow.cpp" line="1470"/>
         <source>Add password</source>
         <translation>Jelszóhozzáadás</translation>
     </message>
@@ -2369,21 +2380,21 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
         <translation>Mappa hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1461"/>
+        <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Edit</source>
         <translation>Szerkesztése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1473"/>
+        <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
         <translation>Töröl</translation>
     </message>
@@ -2417,7 +2428,7 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="1471"/>
         <source>Users</source>
         <translation>Felhasználók</translation>
     </message>
@@ -2427,7 +2438,7 @@ Lejárat-dátum: 0
         <translation>Jelszó olvasásának engedélyezése a mappában</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="406"/>
+        <location filename="../src/mainwindow.cpp" line="412"/>
         <source>Welcome to QtPass %1</source>
         <translation>Üdvözöljük a QtPass-ban %1</translation>
     </message>
@@ -2444,15 +2455,15 @@ Lejárat-dátum: 0
         <translation type="vanished">OTP kód</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
-        <location filename="../src/mainwindow.cpp" line="698"/>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="709"/>
+        <location filename="../src/mainwindow.cpp" line="1191"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP kód másolva a vágólapra</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
-        <location filename="../src/mainwindow.cpp" line="1163"/>
+        <location filename="../src/mainwindow.cpp" line="711"/>
+        <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>No OTP code found in this password entry</source>
         <translation>Nem található OTP kód ebben a jelszóbejegyzésben</translation>
     </message>
@@ -2461,22 +2472,22 @@ Lejárat-dátum: 0
         <translation type="vanished">Jelszó és tartalom elrejtve</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="809"/>
+        <location filename="../src/mainwindow.cpp" line="820"/>
         <source>Looking for: %1</source>
         <translation>Keresés: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="854"/>
+        <location filename="../src/mainwindow.cpp" line="870"/>
         <source>Searching…</source>
         <translation>Keresés…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="880"/>
+        <location filename="../src/mainwindow.cpp" line="896"/>
         <source>Search content (regex)</source>
         <translation>Tartalom keresése (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="923"/>
+        <location filename="../src/mainwindow.cpp" line="939"/>
         <source>No matches found.</source>
         <translation>Nincs egyezés.</translation>
     </message>
@@ -2487,27 +2498,27 @@ Lejárat-dátum: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
+        <location filename="../src/mainwindow.cpp" line="212"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">A művelet túllépte az időkorlátot; a felület újra engedélyezve.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="669"/>
+        <location filename="../src/mainwindow.cpp" line="680"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Ez a jelszóbejegyzés nem fejthető vissza</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Password and content hidden</source>
         <translation>Jelszó és tartalom elrejtve</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="791"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>About QtPass</source>
         <translation type="unfinished">A QtPass névjegye</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="792"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Többplatformos grafikus felület a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, a szabványos Unix jelszókezelő számára.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Forráskód és hibajelentések&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. A &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 3. verziója&lt;/a&gt; vagy bármely későbbi verziója szerint licencelve.&lt;/p&gt;</translation>
     </message>
@@ -2516,31 +2527,31 @@ Lejárat-dátum: 0
         <translation type="obsolete">A tartalomkeresés POSIX alap reguláris kifejezéseket használ (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="884"/>
+        <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">A tartalomkeresés Perl-kompatibilis reguláris kifejezéseket használ (PCRE).</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="983"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n találat</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n bejegyzésben.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Invalid name</source>
         <translation type="unfinished">Érvénytelen név</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Ez a név a jelszótárolón kívülre mutatna. Válasszon másik nevet.</translation>
     </message>
@@ -2559,12 +2570,12 @@ Lejárat-dátum: 0
         <translation type="vanished"> és a teljes tartalom?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <location filename="../src/mainwindow.cpp" line="1124"/>
         <source>Delete link?</source>
         <translation type="unfinished">Link törlése?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1109"/>
+        <location filename="../src/mainwindow.cpp" line="1125"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction. Eltávolítja a linket? Amire mutat, érintetlen marad.</translation>
     </message>
@@ -2573,12 +2584,12 @@ Lejárat-dátum: 0
         <translation type="vanished"> és a teljes tartalom? &lt;br&gt;&lt;strong&gt;Figyelem: váratlan fájlok vannak a megadott mappában, ellenőrizze őket a folytatás előtt.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1117"/>
         <source>Delete folder?</source>
         <translation>Mappa törlése?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
         <translation>Jelszó törlése?</translation>
     </message>
@@ -2587,158 +2598,158 @@ Lejárat-dátum: 0
         <translation type="vanished">Biztosan törölni szeretnéd ezt: %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1158"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>No password selected for OTP generation</source>
         <translation>Nincs kiválasztva jelszó az OTP generálásához</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1310"/>
         <source>Profile changed to %1</source>
         <translation>Profil módosítva erre %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1452"/>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>Open folder with file manager</source>
         <translation>Mappa megnyitása fájlkezelővel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1483"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder</source>
         <translation>Mappa átnevezése</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1486"/>
         <source>Rename password</source>
         <translation>Jelszó átnevezése</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Share</source>
         <translation>Megosztás</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… több találat ebben az bejegyzésben</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Az első %n találatot jeleníti meg; szűkítve a keresést, hogy többet lásson.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Biztosan törölni szeretné ezt: %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1085"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Biztosan törölni szeretné ezt: %1, a teljes tartalmával együtt?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Figyelem: a megadott mappában váratlan fájlok vannak, folytatás előtt ellenőrizze őket.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1433"/>
         <source>Re-encrypt all passwords</source>
         <translation>Az összes jelszó újratitkosítása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1422"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>Export my public key...</source>
         <translation>Saját nyilvános kulcs exportálása…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Add recipient...</source>
         <translation>Címzett hozzáadása…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1447"/>
         <source>What is this?</source>
         <translation>Mi ez?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1505"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>New folder</source>
         <translation type="unfinished">Új mappa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1506"/>
+        <location filename="../src/mainwindow.cpp" line="1522"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Új mappa:
 (A következő mappába kerül: %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder to: </source>
         <translation>Mappa átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file to: </source>
         <translation>Fájl átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1642"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Ez a bejegyzés OTP-titkot tartalmaz, nem jelszót</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1695"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Jelszavak újratitkosítása...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégse</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1704"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Újratitkosítás megszakítása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1693"/>
+        <location filename="../src/mainwindow.cpp" line="1715"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Jelszavak újratitkosítása: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>Export public key</source>
         <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1737"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1784"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nem a tárolóhoz tartozó mappa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1763"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, és érintetlen marad.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1793"/>
         <source>Sharing passwords with GPG</source>
         <translation>Jelszavak megosztása GPG-vel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1794"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Jelszavak megosztása GPG-vel&lt;/h3&gt;&lt;p&gt;Jelszavak megosztása más felhasználókkal:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportálja a nyilvános kulcsát&lt;/b&gt; és küldje el a csapattagoknak&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importálja a csapattagok nyilvános kulcsait&lt;/b&gt; a GPG-kulcstartójába&lt;/li&gt;&lt;li&gt;&lt;b&gt;Titkosítsa újra a jelszavakat&lt;/b&gt;, hogy minden címzett vissza tudja fejteni&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Csak a megfelelő titkos kulccsal rendelkezők tudják visszafejteni a jelszavakat.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Használja ugyanazt a GPG-kulcsot minden megosztott mappához.&lt;/p&gt;&lt;p&gt;Lásd a GYIK-et a részletekért.&lt;/p&gt;</translation>
     </message>
@@ -2751,7 +2762,7 @@ Lejárat-dátum: 0
         <translation type="vanished">&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1734"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2760,7 +2771,7 @@ Lejárat-dátum: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1758"/>
         <source>No output from gpg.</source>
         <translation>Nincs kimenet a gpg-től.</translation>
     </message>
@@ -2783,24 +2794,24 @@ Lejárat-dátum: 0
 (A következő mappába kerül: %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
-        <location filename="../src/mainwindow.cpp" line="1536"/>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1552"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Failed to create folder: %1</source>
         <translation>Nem sikerült létrehozni a következő mappát: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1553"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Nem sikerült létrehozni a .gpg-id fájlt itt: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file</source>
         <translation>Fájl átnevezése</translation>
     </message>
@@ -2813,18 +2824,18 @@ Lejárat-dátum: 0
         <translation type="vanished">Fájl átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1634"/>
+        <location filename="../src/mainwindow.cpp" line="1656"/>
         <source>Directory does not exist: %1</source>
         <translation>A könyvtár nem létezik: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
+        <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Re-encrypt passwords</source>
         <translation>Jelszavak újratitkosítása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1643"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2854,7 +2865,7 @@ Folytatja?</translation>
 <context>
     <name>OtpCodeWidget</name>
     <message>
-        <location filename="../src/otpcodewidget.cpp" line="67"/>
+        <location filename="../src/otpcodewidget.cpp" line="68"/>
         <source>Seconds until the OTP code changes</source>
         <translation type="unfinished">Másodpercek az OTP-kód váltásáig</translation>
     </message>
@@ -2862,77 +2873,87 @@ Folytatja?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="181"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">A beállított GPG home könyvtár (%1) nem létezik, az alapértelmezett kulcstartó lesz használva</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="189"/>
+        <location filename="../src/pass.cpp" line="208"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">A beállított GPG home könyvtár (%1) nem létezik, a környezeti GNUPGHOME (%2) lesz használva</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
         <translation>Érvénytelen jelszóhossz</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="203"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>Nem lehet nulla hosszúságú jelszót generálni.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="238"/>
+        <location filename="../src/pass.cpp" line="250"/>
+        <source>Password generation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="251"/>
+        <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="265"/>
         <source>No characters chosen</source>
         <translation>Nincsenek kiválasztott karakterek</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="239"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nem sikerült jelszót generálni, nincsenek karakterek beállítva a konfigurációban!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="377"/>
-        <location filename="../src/pass.cpp" line="378"/>
+        <location filename="../src/pass.cpp" line="404"/>
+        <location filename="../src/pass.cpp" line="405"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">Nincs beállítva GPG végrehajtható fájl</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="448"/>
-        <location filename="../src/pass.cpp" line="467"/>
+        <location filename="../src/pass.cpp" line="475"/>
+        <location filename="../src/pass.cpp" line="494"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>A titkosítás sikertelen: a GPG-kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="453"/>
-        <location filename="../src/pass.cpp" line="472"/>
+        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="499"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>A titkosítás sikertelen: a GPG-kulcsot visszavonták.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="457"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="484"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>A titkosítás sikertelen: a címzett GPG-kulcsa nem található vagy érvénytelen. Ellenőrizze, hogy a .gpg-id fájlban szereplő kulcsazonosító helyes-e, és importálva van-e.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="461"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="488"/>
+        <location filename="../src/pass.cpp" line="517"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>A titkosítás sikertelen. Ellenőrizze, hogy a GPG-kulcsa érvényes-e.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">A titkosítás sikertelen: egy címzett GPG-kulcsa nem használható. Lehet, hogy lejárt vagy visszavonták, nincs titkosító alkulcsa, vagy nem megbízható; az alábbi gpg-üzenet megmondja, melyik.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="534"/>
+        <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
         <translation type="unfinished">Mentve, de nem commitelve</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -2941,47 +2962,93 @@ Folytatja?</translation>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="779"/>
+        <location filename="../src/pass.cpp" line="812"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, és érintetlen marad.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="796"/>
+        <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">A %1 nem található a jelszó tárolón. A foglalat vagy a tároló/tartalomhoz tartozó mapp beállított, hogy ki kapja az információt.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="806"/>
+        <location filename="../src/pass.cpp" line="844"/>
+        <location filename="../src/pass.cpp" line="845"/>
+        <source>rebase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="846"/>
+        <source>merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="847"/>
+        <source>cherry-pick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="848"/>
+        <source>revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="853"/>
+        <source>cherry-pick or revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="875"/>
+        <source>The store&apos;s Git repository is in the middle of a %1. Finish or abort it with git before changing the store, or what you change may be lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="888"/>
+        <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="893"/>
+        <source>Update in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="907"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="916"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Nem része a tárolónak</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="901"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása nem olvasható.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="983"/>
+        <location filename="../src/pass.cpp" line="1093"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">A(z) %1 nem olvasható címzettlistaként (legfeljebb %2 méretű szabályos fájl), ezért semmi sincs előre kijelölve. Ellenőrizze, mielőtt itt címzetteket választ: az OK új listát ír a helyére.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1004"/>
+        <location filename="../src/pass.cpp" line="1114"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">A(z) %1 címzettlista hiányzik, vagy nem szabályos fájl, ezért semmi sincs előre kijelölve: egy szülőmappa listája nem ehhez a mappához lett aláírva. Válassza ki saját maga a mappa címzettjeit; az OK új listát ír ki és ír alá.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1009"/>
+        <location filename="../src/pass.cpp" line="1119"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Semmi sincs előre kijelölve: nem állapítható meg, hogy a(z) %2 el lett-e távolítva.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1024"/>
+        <location filename="../src/pass.cpp" line="1134"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">A(z) %1 címzettlista nem ellenőrizhető az aláírókulccsal, ezért semmi sincs előre kijelölve: a mentés bármit aláírna, ami a listában van. Válassza ki a címzetteket saját maga; az OK új listát ír ki és ír alá.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="948"/>
+        <location filename="../src/pass.cpp" line="1058"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 Semmi sincs előre kijelölve: a mentés bármit aláírna, ami a listában van. Válassza ki a címzetteket saját maga.</translation>
     </message>
@@ -2991,7 +3058,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="340"/>
+        <location filename="../src/passworddialog.cpp" line="369"/>
         <source>Password</source>
         <translation>Jelszó</translation>
     </message>
@@ -3079,87 +3146,87 @@ Folytatja?</translation>
         <translation type="unfinished">Mezősablon a tároló .templates fájljából. A Ctrl+T a következőre vált.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="86"/>
+        <location filename="../src/passworddialog.cpp" line="96"/>
         <source>New password</source>
         <translation type="unfinished">Új jelszó</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="107"/>
+        <location filename="../src/passworddialog.cpp" line="117"/>
         <source>Decrypting…</source>
         <translation type="unfinished">Visszafejtés…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="192"/>
+        <location filename="../src/passworddialog.cpp" line="207"/>
         <source>Saving…</source>
         <translation type="unfinished">Mentés…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="225"/>
+        <location filename="../src/passworddialog.cpp" line="254"/>
         <source>Still saving</source>
         <translation type="unfinished">Mentés folyamatban</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="226"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">A bejegyzés mentése még folyamatban van. Mégis bezárja a párbeszédablakot? Ha a mentés ezután sikertelen, elvész, amit begépelt.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="243"/>
+        <location filename="../src/passworddialog.cpp" line="272"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Nincs mentve: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="285"/>
+        <location filename="../src/passworddialog.cpp" line="314"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Adjon nevet a bejegyzésnek.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="289"/>
+        <location filename="../src/passworddialog.cpp" line="318"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">A név nem végződhet / jelre.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="298"/>
+        <location filename="../src/passworddialog.cpp" line="327"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Ez a név a jelszótárolón kívülre mutatna.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="302"/>
+        <location filename="../src/passworddialog.cpp" line="331"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Már létezik %1 nevű bejegyzés.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="306"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">A(z) %1 egy mappa.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="336"/>
+        <location filename="../src/passworddialog.cpp" line="365"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Nem sikerült létrehozni a(z) %1 mappát.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="393"/>
+        <location filename="../src/passworddialog.cpp" line="425"/>
         <source>Remove field</source>
         <translation type="unfinished">Mező eltávolítása</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="412"/>
+        <location filename="../src/passworddialog.cpp" line="444"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Már létezik %1 nevű mező.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="498"/>
+        <location filename="../src/passworddialog.cpp" line="530"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI vagy base32 titok</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="535"/>
+        <location filename="../src/passworddialog.cpp" line="567"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Érvénytelen OTP-titok</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="744"/>
+        <location filename="../src/passworddialog.cpp" line="799"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Ez az bejegyzés %n sorból áll, ami túl sok ahhoz, hogy ide szerkeszd.</numerusform>
@@ -3173,17 +3240,17 @@ Folytatja?</translation>
         <translation type="obsolete">Folyamat kimenete</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="13"/>
+        <location filename="../src/processoutputpanel.cpp" line="18"/>
         <source>Process output</source>
         <translation>Folyamat kimenete</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="26"/>
+        <location filename="../src/processoutputpanel.cpp" line="31"/>
         <source>Clear</source>
         <translation type="unfinished">Törlés</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="27"/>
+        <location filename="../src/processoutputpanel.cpp" line="32"/>
         <source>Clear output</source>
         <translation type="unfinished">Kimenet törlése</translation>
     </message>
@@ -3191,24 +3258,24 @@ Folytatja?</translation>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="96"/>
+        <location filename="../src/profileinit.cpp" line="101"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">A(z) %1 nem hozható létre.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="155"/>
+        <location filename="../src/profileinit.cpp" line="160"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>A(z) %1 már tartalmaz %n titkosított fájlt; ezek nem lettek újratitkosítva. Ehhez váltson a profilra, és nyissa meg a Felhasználók ablakot.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="173"/>
+        <location filename="../src/profileinit.cpp" line="178"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">Nincs címzett kiválasztva; a(z) %1 nem lett kiírva.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="237"/>
+        <location filename="../src/profileinit.cpp" line="242"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">A(z) %1 aláírása a(z) %2 kulccsal sikertelen.</translation>
     </message>
@@ -3217,18 +3284,18 @@ Folytatja?</translation>
         <translation type="obsolete">A(z) %1 nem írható: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="239"/>
+        <location filename="../src/profileinit.cpp" line="244"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">A(z) %1 aláírása a(z) %2 kulccsal sikertelen: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="249"/>
+        <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">A konfigurált GPG otthoni könyvtár %1 nem létezik.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="271"/>
-        <location filename="../src/profileinit.cpp" line="303"/>
+        <location filename="../src/profileinit.cpp" line="276"/>
+        <location filename="../src/profileinit.cpp" line="308"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">A git %1 parancs sikertelen a(z) %2 mappában: %3</translation>
     </message>
@@ -3236,57 +3303,57 @@ Folytatja?</translation>
 <context>
     <name>ProgramsWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="202"/>
+        <location filename="../src/firstrunwizard.cpp" line="207"/>
         <source>Use the pass command-line tool</source>
         <translation type="unfinished">A pass parancssori eszköz használata</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="204"/>
+        <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Programs</source>
         <translation type="unfinished">Programok</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="205"/>
+        <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
         <translation type="unfinished">A titkosítást a GnuPG végzi. A pass és a Git nem kötelező; a QtPass maga is el tudja végezni a munkájukat.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="209"/>
+        <location filename="../src/firstrunwizard.cpp" line="214"/>
         <source>Select executable</source>
         <translation type="unfinished">Végrehajtható fájl kiválasztása</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="210"/>
+        <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>All files (*)</source>
         <translation type="unfinished">Minden fájl (*)</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="212"/>
+        <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>GnuPG</source>
         <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="215"/>
+        <location filename="../src/firstrunwizard.cpp" line="220"/>
         <source>Git</source>
         <translation type="unfinished">Git</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="216"/>
+        <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
         <translation type="unfinished">pass</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="217"/>
+        <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
         <translation type="unfinished">Minden művelethez a pass szkript fusson a gpg és a git közvetlen hívása helyett</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="257"/>
+        <location filename="../src/firstrunwizard.cpp" line="262"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
         <translation type="unfinished">A GnuPG nem található. Telepítse (gpg vagy gpg2), és adja meg itt a helyét.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="260"/>
+        <location filename="../src/firstrunwizard.cpp" line="265"/>
         <source>%1 is not an executable file.</source>
         <translation type="unfinished">A(z) %1 nem végrehajtható fájl.</translation>
     </message>
@@ -3294,26 +3361,27 @@ Folytatja?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="170"/>
-        <location filename="../main/main.cpp" line="174"/>
+        <location filename="../main/main.cpp" line="148"/>
+        <location filename="../main/main.cpp" line="152"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="75"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="183"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="217"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="201"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="241"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
         <source>Password</source>
         <translation type="unfinished">Jelszó</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="160"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="180"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1 megnyitása böngészőben</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="343"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="356"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
         <source>OTP code</source>
         <translation>OTP kód</translation>
     </message>
@@ -3322,7 +3390,7 @@ Folytatja?</translation>
         <translation type="obsolete">OTP kód</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Nem található OTP kód ebben a jelszóbejegyzésben</translation>
     </message>
@@ -3330,8 +3398,8 @@ Folytatja?</translation>
 <context>
     <name>QPushButtonAsQRCode</name>
     <message>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="16"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="17"/>
         <source>Show as QR code</source>
         <translation type="unfinished">Megjelenítés QR-kódként</translation>
     </message>
@@ -3339,16 +3407,16 @@ Folytatja?</translation>
 <context>
     <name>QPushButtonShowPassword</name>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="22"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="23"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="19"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="20"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
         <translation type="unfinished">Jelszó megjelenítése</translation>
     </message>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="32"/>
         <source>Hide password</source>
         <translation type="unfinished">Jelszó elrejtése</translation>
     </message>
@@ -3356,8 +3424,8 @@ Folytatja?</translation>
 <context>
     <name>QPushButtonWithClipboard</name>
     <message>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="20"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="21"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">Másolás a vágólapra</translation>
     </message>
@@ -3393,7 +3461,7 @@ Folytatja?</translation>
         <translation type="vanished">GPG kulcspár generálása sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="182"/>
+        <location filename="../src/qtpass.cpp" line="138"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG kulcspár sikeresen generálva</translation>
     </message>
@@ -3406,22 +3474,22 @@ Folytatja?</translation>
         <translation type="vanished">a vágólapra másolt</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="169"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">A qrencode indítása sikertelen: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="235"/>
+        <location filename="../src/qtpass.cpp" line="177"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">A qrencode nem fejeződött be időben</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="247"/>
+        <location filename="../src/qtpass.cpp" line="189"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">A qrencode összeomlott</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="248"/>
+        <location filename="../src/qtpass.cpp" line="190"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">A qrencode %1 kóddal lépett ki</translation>
     </message>
@@ -3463,38 +3531,38 @@ Folytatja?</translation>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="143"/>
+        <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">A fogadó listák ellenőrzése a %1-en…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="269"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">Nem sikerült eltávolítani a(z) %1 linket.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="251"/>
+        <location filename="../src/realpass.cpp" line="270"/>
         <source>Delete failed</source>
         <translation type="unfinished">A törlés sikertelen</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="301"/>
+        <location filename="../src/realpass.cpp" line="320"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">A(z) %1 hivatkozás eltávolítva, de a git nem tudta rögzíteni: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="303"/>
-        <location filename="../src/realpass.cpp" line="353"/>
+        <location filename="../src/realpass.cpp" line="322"/>
+        <location filename="../src/realpass.cpp" line="372"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">A törlés nem teljes</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="350"/>
+        <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">A %1 hivatkozás eltávolítva lett, és a git többé nem nyomon követi, de a commit sikertelen: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="477"/>
+        <location filename="../src/realpass.cpp" line="502"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">A kereséshez be kell állítani a GPG végrehajtható fájlt.</translation>
     </message>
@@ -3506,12 +3574,12 @@ Folytatja?</translation>
         <translation type="vanished">kényszerített felülírás?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="290"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>Force overwrite?</source>
         <translation>Kényszerített felülírás?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="296"/>
         <source>overwrite %1 with %2?</source>
         <translation>felülírja a(z) %1 részt %2-vel?</translation>
     </message>
@@ -3519,32 +3587,32 @@ Folytatja?</translation>
 <context>
     <name>StoreWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="364"/>
+        <location filename="../src/firstrunwizard.cpp" line="369"/>
         <source>Keep the store under Git</source>
         <translation type="unfinished">A tároló Git alatt tartása</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="366"/>
+        <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Password store</source>
         <translation type="unfinished">Jelszótároló</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="367"/>
+        <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
         <translation type="unfinished">A jelszavait tartalmazó mappa. A meglévő tároló változtatás nélkül lesz használva; az üres vagy hiányzó mappa a bejelölt kulcsokhoz lesz beállítva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="371"/>
+        <location filename="../src/firstrunwizard.cpp" line="376"/>
         <source>Folder</source>
         <translation type="unfinished">Mappa</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="373"/>
+        <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">Válassza ki a jelszótároló mappáját</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="398"/>
+        <location filename="../src/firstrunwizard.cpp" line="403"/>
         <source>Git has no name and e-mail to commit with yet. Run
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
@@ -3555,39 +3623,39 @@ git config --global user.email on@example.org
 parancsokat, majd kapcsolja be a Gitet a Beállításokban.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="402"/>
+        <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
         <translation type="unfinished">Minden változtatásból commit lesz; az a mappa, amely még nem Git-tároló, kap egyet</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="426"/>
+        <location filename="../src/firstrunwizard.cpp" line="431"/>
         <source>Enter a folder.</source>
         <translation type="unfinished">Adjon meg egy mappát.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/firstrunwizard.cpp" line="430"/>
+        <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
             <numerusform>Meglévő jelszótároló %n bejegyzéssel.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="433"/>
+        <location filename="../src/firstrunwizard.cpp" line="438"/>
         <source>An empty folder; it will be set up as a password store.</source>
         <translation type="unfinished">Üres mappa; jelszótárolóként lesz beállítva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="434"/>
+        <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
         <translation type="unfinished">Ez a mappa még nem jelszótároló; a bejelölt kulcsokhoz tartozó .gpg-id fájl lesz beleírva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="437"/>
+        <location filename="../src/firstrunwizard.cpp" line="442"/>
         <source>The folder does not exist yet; it will be created.</source>
         <translation type="unfinished">A mappa még nem létezik; létre lesz hozva.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="441"/>
+        <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">Lépjen vissza, és jelöljön be legalább egy kulcsot, amelyhez titkosítani kell.</translation>
     </message>
@@ -3595,32 +3663,32 @@ parancsokat, majd kapcsolja be a Gitet a Beállításokban.</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="36"/>
+        <location filename="../src/trayicon.cpp" line="41"/>
         <source>&amp;Show</source>
         <translation>&amp;Megmutat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="38"/>
+        <location filename="../src/trayicon.cpp" line="43"/>
         <source>&amp;Hide</source>
         <translation>&amp;Elrejt</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="41"/>
+        <location filename="../src/trayicon.cpp" line="46"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimalizálás</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="44"/>
+        <location filename="../src/trayicon.cpp" line="49"/>
         <source>Ma&amp;ximize</source>
         <translation>Ma&amp;ximalizálás</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="47"/>
+        <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Restore</source>
         <translation>&amp;Visszaállítás</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="50"/>
+        <location filename="../src/trayicon.cpp" line="55"/>
         <source>&amp;Quit</source>
         <translation>&amp;Kilépés</translation>
     </message>
@@ -3678,42 +3746,42 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <translation>GPG-kulcs importálása fájlból vagy vágólapról</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>Hiányzó kulcslista</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nem sikerült lekérni az elérhető GPG-kulcsok listáját</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="181"/>
+        <location filename="../src/usersdialog.cpp" line="220"/>
         <source>Key not found in keyring</source>
         <translation>Kulcs nem található a kulcstartóban</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="325"/>
+        <location filename="../src/usersdialog.cpp" line="364"/>
         <source>created</source>
         <translation>létrehozva</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="329"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>expires</source>
         <translation>lejár</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="352"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[INVALID] </source>
         <translation>[ÉRVÉNYTELEN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="348"/>
+        <location filename="../src/usersdialog.cpp" line="387"/>
         <source>[EXPIRED] </source>
         <translation>[LEJÁRT] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="356"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[PARTIAL] </source>
         <translation>[RÉSZLEGES] </translation>
     </message>
@@ -3721,34 +3789,34 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="1080"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">Nem hozható létre ideiglenes fájl a(z) %1 mellett: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="984"/>
-        <location filename="../src/util.cpp" line="1063"/>
-        <location filename="../src/util.cpp" line="1093"/>
+        <location filename="../src/util.cpp" line="1092"/>
+        <location filename="../src/util.cpp" line="1171"/>
+        <location filename="../src/util.cpp" line="1201"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">A(z) %1 nem írható: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="999"/>
+        <location filename="../src/util.cpp" line="1107"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">Nem sikerült lecserélni a(z) %1 fájlt.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1004"/>
+        <location filename="../src/util.cpp" line="1112"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">A(z) %1 már létezik.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1006"/>
+        <location filename="../src/util.cpp" line="1114"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">Nem sikerült írni a(z) %1 fájlt.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1050"/>
+        <location filename="../src/util.cpp" line="1158"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">A(z) %1 fájlt írás közben egy másik fájlra cserélték.</translation>
     </message>
@@ -3757,12 +3825,12 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <translation type="obsolete">A(z) %1 fájlt írás közben egy linkre cserélték.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1076"/>
+        <location filename="../src/util.cpp" line="1184"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">A(z) %1 nem olvasható.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1086"/>
+        <location filename="../src/util.cpp" line="1194"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">A(z) %1 nem olvasható: %2</translation>
     </message>

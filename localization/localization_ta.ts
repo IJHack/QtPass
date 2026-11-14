@@ -4,22 +4,22 @@
 <context>
     <name>ClipboardManager</name>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="70"/>
+        <location filename="../src/clipboardmanager.cpp" line="75"/>
         <source>Copied to clipboard</source>
         <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="178"/>
+        <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
         <translation type="unfinished">கட்டாயத்தில் உள்ள உள்ளடக்கம் மீட்டமைக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="179"/>
+        <location filename="../src/clipboardmanager.cpp" line="184"/>
         <source>Clipboard cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/clipboardmanager.cpp" line="180"/>
+        <location filename="../src/clipboardmanager.cpp" line="185"/>
         <source>Clipboard not cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்படவில்லை</translation>
     </message>
@@ -680,68 +680,68 @@ email</translation>
         <translation type="vanished">இடைநிலைப்பலகை இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="147"/>
+        <location filename="../src/configdialog.cpp" line="154"/>
         <source>No clipboard</source>
         <translation type="unfinished">இடைநிலைப்பலகை இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="148"/>
+        <location filename="../src/configdialog.cpp" line="155"/>
         <source>Always copy to clipboard</source>
         <translation>எப்போதும் இடைநிலைப்பலகைக்கு நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="149"/>
+        <location filename="../src/configdialog.cpp" line="156"/>
         <source>On-demand copy to clipboard</source>
         <translation>இடைநிலைப்பலகைக்கு ஆன்-டிமாண்ட் நகல்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="343"/>
-        <location filename="../src/configdialog.cpp" line="348"/>
+        <location filename="../src/configdialog.cpp" line="350"/>
+        <location filename="../src/configdialog.cpp" line="355"/>
         <source>This field is required</source>
         <translation>இந்த புலம் தேவை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="345"/>
+        <location filename="../src/configdialog.cpp" line="352"/>
         <source>Another profile already has this name</source>
         <translation type="unfinished">இந்தப் பெயர் ஏற்கனவே வேறொரு சுயவிவரத்திற்கு உள்ளது</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="354"/>
+        <location filename="../src/configdialog.cpp" line="361"/>
         <source>Full key fingerprints only (40 or 64 hexadecimal characters), separated by spaces</source>
         <translation type="unfinished">முழு சாவி கைரேகைகள் மட்டும் (40 அல்லது 64 பதினறும எழுத்துகள்), இடைவெளிகளால் பிரிக்கப்பட்டவை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="501"/>
+        <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
         <translation type="unfinished">%1 வேறொரு ஸ்டோருக்கு அதே விசையைப் பயன்படுத்தி கையொப்பமிடுகிறார். இந்த ஸ்டோர்களில் ஒன்றுக்கு கையொப்பமிடப்பட்ட ஒரு பட்டியல், மற்றொன்றில் ஏற்றுக்கொள்ளப்படுகிறது: ஒவ்வொரு ஸ்டோருக்கும் வெவ்வேறு பெறுநர்களைக் கொண்டால், தனித்தனியான கையொப்பமிடும் விசையைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="529"/>
+        <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
         <translation type="unfinished">pass ஆனது %1 இல் உள்ள மாற்றங்களை %2 இல் உள்ள Git களஞ்சியத்தில் கமிட் செய்கிறது: சேமிப்பகத்தின் பாதையில் முக்காற்புள்ளி இருந்தால், pass ஆல் Git ஐ சேமிப்பகத்திற்குள் மட்டுப்படுத்த முடியாது. சேமிப்பகத்தில் &quot;git init&quot; ஐ இயக்கவும், அல்லது சொந்த Git/GPG ஐப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="552"/>
+        <location filename="../src/configdialog.cpp" line="559"/>
         <source>The path does not exist.</source>
         <translation>பாதை இல்லை.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="555"/>
+        <location filename="../src/configdialog.cpp" line="562"/>
         <source>The path is not readable.</source>
         <translation>பாதை படிக்க முடியாதது.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="558"/>
+        <location filename="../src/configdialog.cpp" line="565"/>
         <source>The path is not a Unix domain socket.</source>
         <translation>பாதை Unix domain socket அல்ல.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="562"/>
+        <location filename="../src/configdialog.cpp" line="569"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
         <translation>சாத்தியமான தவறான SSH_AUTH_SOCK மேலெழுதுதல்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="563"/>
+        <location filename="../src/configdialog.cpp" line="570"/>
         <source>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
@@ -754,37 +754,37 @@ The value will still be saved as entered.</source>
 மதிப்பு உள்ளிட்டபடி இன்னும் சேமிக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="820"/>
+        <location filename="../src/configdialog.cpp" line="827"/>
         <source>Create profile directory?</source>
         <translation>சுயவிவரக் கோப்பகத்தை உருவாக்கவா?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>%1 இல் கடவுச்சொல் சேமிப்பை உருவாக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="828"/>
+        <location filename="../src/configdialog.cpp" line="835"/>
         <source>Could not create profile directory: %1</source>
         <translation>சுயவிவரக் கோப்பகத்தை உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="852"/>
+        <location filename="../src/configdialog.cpp" line="859"/>
         <source>Select recipients for %1</source>
         <translation>%1 க்கான பெறுநர்களைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="861"/>
+        <location filename="../src/configdialog.cpp" line="868"/>
         <source>Could not initialise profile %1</source>
         <translation type="unfinished">சுயவிவரம் %1 ஐத் துவக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="864"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Profile %1</source>
         <translation type="unfinished">சுயவிவரம் %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="887"/>
+        <location filename="../src/configdialog.cpp" line="894"/>
         <source>New profile</source>
         <translation>புதிய சுயவிவரம்</translation>
     </message>
@@ -793,12 +793,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">புதிய சுயவிவரம்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="908"/>
+        <location filename="../src/configdialog.cpp" line="915"/>
         <source>No profile selected</source>
         <translation>எந்த சுயவிவரமும் தேர்ந்தெடுக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="909"/>
+        <location filename="../src/configdialog.cpp" line="916"/>
         <source>No profile selected to delete</source>
         <translation>நீக்க எந்த சுயவிவரமும் தேர்ந்தெடுக்கப்படவில்லை</translation>
     </message>
@@ -819,12 +819,12 @@ The value will still be saved as entered.</source>
         <translation type="vanished">கடவுச்சொல்-கடையை %1 இல் உருவாக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="827"/>
+        <location filename="../src/configdialog.cpp" line="834"/>
         <source>Error</source>
         <translation>பிழை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="89"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>Not available on Wayland; use your compositor&apos;s &quot;keep above&quot; window rule instead</source>
         <translation type="unfinished">Wayland இல் கிடைக்காது; அதற்குப் பதிலாக உங்கள் கம்போசிட்டரின் &quot;மேலே வைத்திரு&quot; (keep above) சாளர விதியைப் பயன்படுத்தவும்</translation>
     </message>
@@ -841,17 +841,17 @@ The value will still be saved as entered.</source>
         <translation type="vanished">%1 கோப்புறை கடவுச்சொல் கடையாகத் தெரியவில்லை அல்லது இன்னும் துவக்கப்படவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1128"/>
+        <location filename="../src/configdialog.cpp" line="1135"/>
         <source>New profile: %1 at %2</source>
         <translation>புதிய சுயவிவரம்: %1, %2 இல்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1130"/>
+        <location filename="../src/configdialog.cpp" line="1137"/>
         <source>Profile: %1 at %2</source>
         <translation>சுயவிவரம்: %1, %2 இல்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1133"/>
+        <location filename="../src/configdialog.cpp" line="1140"/>
         <source>Fill in all required fields</source>
         <translation>தேவையான அனைத்து புலங்களையும் நிரப்பவும்</translation>
     </message>
@@ -866,7 +866,7 @@ The value will still be saved as entered.</source>
         <translation>ஆட்டோடெடெக்ட்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="78"/>
+        <location filename="../src/configdialog.cpp" line="85"/>
         <source>System tray is not available</source>
         <translation>கணினி தட்டு கிடைக்கவில்லை</translation>
     </message>
@@ -875,7 +875,7 @@ The value will still be saved as entered.</source>
         <translation type="vanished">பாச் OTP நீட்டிப்பு நிறுவப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="108"/>
         <source>qrencode needs to be installed</source>
         <translation>Qrencode நிறுவப்பட வேண்டும்</translation>
     </message>
@@ -960,62 +960,62 @@ e-mail</source>
 <context>
     <name>DoneWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="466"/>
+        <location filename="../src/firstrunwizard.cpp" line="471"/>
         <source>Hide passwords until asked</source>
         <translation type="unfinished">கேட்கும் வரை கடவுச்சொற்களை மறை</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="467"/>
+        <location filename="../src/firstrunwizard.cpp" line="472"/>
         <source>Show an icon in the system tray</source>
         <translation type="unfinished">கணினித் தட்டில் ஒரு சின்னத்தைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="468"/>
+        <location filename="../src/firstrunwizard.cpp" line="473"/>
         <source>Ready</source>
         <translation type="unfinished">தயார்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="469"/>
+        <location filename="../src/firstrunwizard.cpp" line="474"/>
         <source>Everything else can be changed later in Settings.</source>
         <translation type="unfinished">மற்ற அனைத்தையும் பின்னர் அமைப்புகளில் மாற்றலாம்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="476"/>
+        <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>Show the password line as dots; Show password reveals it</source>
         <translation type="unfinished">கடவுச்சொல் வரியைப் புள்ளிகளாகக் காட்டும்; &quot;கடவுச்சொல்லைக் காட்டு&quot; அதை வெளிப்படுத்தும்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="487"/>
+        <location filename="../src/firstrunwizard.cpp" line="492"/>
         <source>Store: %1</source>
         <translation type="unfinished">சேமிப்பகம்: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="489"/>
+        <location filename="../src/firstrunwizard.cpp" line="494"/>
         <source>It is already a password store and is used as it is.</source>
         <translation type="unfinished">இது ஏற்கனவே ஒரு கடவுச்சொல் சேமிப்பகம்; இருக்கும் நிலையிலேயே பயன்படுத்தப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="491"/>
+        <location filename="../src/firstrunwizard.cpp" line="496"/>
         <source>It will be set up for the ticked keys and put under Git.</source>
         <translation type="unfinished">இது தேர்வு செய்த சாவிகளுக்காக அமைக்கப்பட்டு, Git கீழ் வைக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="493"/>
+        <location filename="../src/firstrunwizard.cpp" line="498"/>
         <source>It will be set up for the ticked keys.</source>
         <translation type="unfinished">இது தேர்வு செய்த சாவிகளுக்காக அமைக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="495"/>
+        <location filename="../src/firstrunwizard.cpp" line="500"/>
         <source>GnuPG: %1</source>
         <translation type="unfinished">GnuPG: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="496"/>
+        <location filename="../src/firstrunwizard.cpp" line="501"/>
         <source>Operations run through pass.</source>
         <translation type="unfinished">செயல்பாடுகள் pass வழியாக இயங்கும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="497"/>
+        <location filename="../src/firstrunwizard.cpp" line="502"/>
         <source>Operations run through gpg and git directly.</source>
         <translation type="unfinished">செயல்பாடுகள் gpg மற்றும் git வழியாக நேரடியாக இயங்கும்.</translation>
     </message>
@@ -1073,12 +1073,12 @@ e-mail</source>
         <translation type="vanished">கோப்பில் சேமி…</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="28"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="27"/>
         <source>Public key for %1</source>
         <translation>%1 க்கான பொதுச் சாவி</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="67"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="51"/>
         <source>Copied!</source>
         <translation>நகலெடுக்கப்பட்டது!</translation>
     </message>
@@ -1087,24 +1087,24 @@ e-mail</source>
         <translation type="vanished">பொதுச் சாவியை சேமி</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="83"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="90"/>
-        <location filename="../src/exportpublickeydialog.cpp" line="100"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="63"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="70"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="80"/>
         <source>Save public key</source>
         <translation>பொதுச் சாவியை சேமி</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="84"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="64"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
         <translation>ASCII-armored சாவி (*.asc);;அனைத்து கோப்புகள் (*)</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="91"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="71"/>
         <source>Could not open %1 for writing: %2</source>
         <translation>எழுதுவதற்கு %1 ஐ திறக்க முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/exportpublickeydialog.cpp" line="101"/>
+        <location filename="../src/exportpublickeydialog.cpp" line="81"/>
         <source>Could not write to %1: %2</source>
         <translation>%1 இல் எழுத முடியவில்லை: %2</translation>
     </message>
@@ -1112,17 +1112,17 @@ e-mail</source>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="17"/>
+        <location filename="../src/fieldlabel.cpp" line="22"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">இந்தப் புலத்தை மறுபெயரிட இருமுறை கிளிக் செய்யவும்</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="30"/>
+        <location filename="../src/fieldlabel.cpp" line="35"/>
         <source>Rename field…</source>
         <translation type="unfinished">புலத்தை மறுபெயரிடு…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="31"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Remove field</source>
         <translation type="unfinished">புலத்தை நீக்கு</translation>
     </message>
@@ -1130,7 +1130,7 @@ e-mail</source>
 <context>
     <name>FileContent</name>
     <message numerus="yes">
-        <location filename="../src/filecontent.cpp" line="93"/>
+        <location filename="../src/filecontent.cpp" line="126"/>
         <source>… %n more line(s) not shown</source>
         <translation type="unfinished">
             <numerusform>… மேலும் %n வரி காட்டப்படவில்லை</numerusform>
@@ -1141,44 +1141,44 @@ e-mail</source>
 <context>
     <name>FirstRunWizard</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="44"/>
+        <location filename="../src/firstrunwizard.cpp" line="49"/>
         <source>Browse</source>
         <translation type="unfinished">உலாவு</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="67"/>
-        <location filename="../src/firstrunwizard.cpp" line="73"/>
+        <location filename="../src/firstrunwizard.cpp" line="72"/>
+        <location filename="../src/firstrunwizard.cpp" line="78"/>
         <source>Welcome to QtPass</source>
         <translation type="unfinished">QtPass க்கு வருக</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="76"/>
+        <location filename="../src/firstrunwizard.cpp" line="81"/>
         <source>QtPass is a graphical front-end for &lt;i&gt;pass&lt;/i&gt;, the standard Unix password manager: every password is a file encrypted with GnuPG, kept in a folder you can put under Git.&lt;br&gt;&lt;br&gt;The next pages find GnuPG, make sure you have a key to encrypt to and pick the folder your passwords live in. Nothing is written until you press Finish.</source>
         <translation type="unfinished">QtPass என்பது நிலையான Unix கடவுச்சொல் மேலாளரான &lt;i&gt;pass&lt;/i&gt;-க்கான வரைகலை முகப்பு: ஒவ்வொரு கடவுச்சொல்லும் GnuPG மூலம் குறியாக்கம் செய்யப்பட்ட ஒரு கோப்பு; அது நீங்கள் Git கீழ் வைக்கக்கூடிய ஒரு கோப்புறையில் சேமிக்கப்படுகிறது.&lt;br&gt;&lt;br&gt;அடுத்த பக்கங்கள் GnuPG-ஐக் கண்டறிந்து, குறியாக்கம் செய்ய உங்களிடம் ஒரு சாவி இருப்பதை உறுதி செய்து, உங்கள் கடவுச்சொற்கள் இருக்கும் கோப்புறையைத் தேர்ந்தெடுக்கும். நீங்கள் முடி என்பதை அழுத்தும் வரை எதுவும் எழுதப்படாது.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="128"/>
+        <location filename="../src/firstrunwizard.cpp" line="133"/>
         <source>Error</source>
         <translation type="unfinished">பிழை</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="129"/>
+        <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished">கடவுச்சொல் களஞ்சியத்தை இங்கு உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="147"/>
-        <location filename="../src/firstrunwizard.cpp" line="171"/>
+        <location filename="../src/firstrunwizard.cpp" line="152"/>
+        <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
         <translation type="unfinished">கடவுச்சொல் கடை துவக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="154"/>
+        <location filename="../src/firstrunwizard.cpp" line="159"/>
         <source>Password store</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகம்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="155"/>
+        <location filename="../src/firstrunwizard.cpp" line="160"/>
         <source>%1 already contains encrypted files; they were not re-encrypted to the ticked keys. Open Users after the start to do that.</source>
         <translation type="unfinished">%1 இல் ஏற்கனவே குறியாக்கம் செய்யப்பட்ட கோப்புகள் உள்ளன; அவை தேர்வு செய்த சாவிகளுக்கு மீண்டும் குறியாக்கம் செய்யப்படவில்லை. அதைச் செய்ய, தொடங்கிய பிறகு பயனர்கள் என்பதைத் திறக்கவும்.</translation>
     </message>
@@ -1186,108 +1186,108 @@ e-mail</source>
 <context>
     <name>GpgIdGeneration</name>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="194"/>
+        <location filename="../src/gpgidgeneration.cpp" line="199"/>
         <source>The generation record of the recipient lists, %1, cannot be accessed.</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேடான %1 ஐ அணுக முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="203"/>
+        <location filename="../src/gpgidgeneration.cpp" line="208"/>
         <source>The generation record of the recipient lists, %1, is not readable. Signed recipient lists are not accepted until it is repaired or removed (which forgets what was accepted before).</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேடான %1 ஐப் படிக்க முடியவில்லை. அது சரிசெய்யப்படும் அல்லது நீக்கப்படும் வரை (நீக்கினால் முன்பு ஏற்றுக்கொண்டது மறக்கப்படும்) கையொப்பமிடப்பட்ட பெறுநர் பட்டியல்கள் ஏற்றுக்கொள்ளப்படாது.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="225"/>
-        <location filename="../src/gpgidgeneration.cpp" line="238"/>
+        <location filename="../src/gpgidgeneration.cpp" line="230"/>
+        <location filename="../src/gpgidgeneration.cpp" line="243"/>
         <source>The generation record of the recipient lists, %1, cannot be written.</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேடான %1 ஐ எழுத முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="292"/>
+        <location filename="../src/gpgidgeneration.cpp" line="297"/>
         <source>The generation record of the recipient lists, %1, could not be locked: another QtPass may be using it, or its folder cannot be written.</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேடான %1 ஐப் பூட்ட முடியவில்லை: வேறொரு QtPass அதைப் பயன்படுத்திக் கொண்டிருக்கலாம், அல்லது அதன் கோப்புறையில் எழுத முடியாமல் இருக்கலாம்.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="445"/>
+        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
         <translation type="unfinished">பட்டியலில் ஒன்றுக்கு மேற்பட்ட சேமிப்பக வரிகள் உள்ளன.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
         <translation type="unfinished">சேமிப்பக வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="459"/>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">பட்டியலில் ஒன்றுக்கு மேற்பட்ட தலைமுறை வரிகள் உள்ளன.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="467"/>
+        <location filename="../src/gpgidgeneration.cpp" line="472"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">தலைமுறை வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="473"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">பட்டியலில் ஒன்றுக்கு மேற்பட்ட கோப்புறை வரிகள் உள்ளன.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="484"/>
+        <location filename="../src/gpgidgeneration.cpp" line="489"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">கோப்புறை வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="488"/>
+        <location filename="../src/gpgidgeneration.cpp" line="493"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">தலைப்பு வரி தவறான வடிவத்தில் உள்ளது: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="521"/>
+        <location filename="../src/gpgidgeneration.cpp" line="526"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">பட்டியலில் தலைமுறை வரி உள்ளது, ஆனால் கோப்புறை வரி இல்லை.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="527"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
         <translation type="unfinished">பட்டியலில் சேமிப்பக வரி உள்ளது, ஆனால் தலைமுறை வரி இல்லை.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="682"/>
+        <location filename="../src/gpgidgeneration.cpp" line="687"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 நம்பத் தகுந்தது அல்ல: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="609"/>
+        <location filename="../src/gpgidgeneration.cpp" line="614"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 சேமிப்பகத்தின் &quot;%2&quot; கோப்புறைக்காக எழுதப்பட்டது, &quot;%3&quot; க்காக அல்ல; அதனால் அது பயன்படுத்தப்படவில்லை. அதை வேறு யாரோ இங்கு நகலெடுத்திருக்கலாம்; அதற்குப் பதிலாக கோப்புறை நகர்த்தப்பட்டிருந்தாலோ மறுபெயரிடப்பட்டிருந்தாலோ, கையொப்பமிடும் விசையை வைத்திருப்பவர் அந்தக் கோப்புறையில் &quot;பயனர்கள்&quot; ஐத் திறந்து பெறுநர்களைச் சேமித்தால், பட்டியல் இப்போது இருக்கும் இடத்துடன் பிணைக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="622"/>
+        <location filename="../src/gpgidgeneration.cpp" line="627"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">தலைமுறை %1 என்பதே இருக்கக்கூடிய அதிகபட்சம்; அதனால் இங்கு அதைவிடப் புதிய பட்டியலை எழுத முடியாது. %2 ஐ நீக்கினால், இந்தச் சாதனம் முன்பு ஏற்றுக்கொண்டது மறக்கப்படும்; அதன் பிறகு கையொப்பமிடும் விசையை வைத்திருப்பவர் இதைக் கடந்து செல்ல, &quot;பயனர்கள்&quot; ஐத் திறந்து %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="629"/>
+        <location filename="../src/gpgidgeneration.cpp" line="634"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">கையொப்பமிடும் விசையை வைத்திருப்பவர் இதைக் கடந்து செல்ல, &quot;பயனர்கள்&quot; ஐத் திறந்து %1; அந்தச் சேமிப்பு தலைமுறை %2 ஐ எழுதும். %3 ஐ நீக்கினால், இந்தச் சாதனம் முன்பு ஏற்றுக்கொண்டது மறக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="646"/>
+        <location filename="../src/gpgidgeneration.cpp" line="651"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 இல் தலைமுறை வரி இல்லை; ஆனால் தலைமுறை %2 இங்கு முன்பு ஏற்றுக்கொள்ளப்பட்டது. pass தலைமுறை வரியை எழுதுவதில்லை (QtPass இன் pass பின்தளம் வழியாகவும் இல்லை); 2.0 க்கு முந்தைய QtPass உம் எழுதவில்லை. அந்த வரி இல்லாததால், இந்தப் பட்டியல் சேமிப்பகத்தின் வேறொரு கோப்புறைக்காக எழுதப்பட்டு இங்கு நகலெடுக்கப்பட்டிருக்கவும் கூடும். %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="655"/>
+        <location filename="../src/gpgidgeneration.cpp" line="660"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">பெறுநர்களைப் புதிதாகத் தேர்ந்தெடுத்துச் சேமிக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="780"/>
+        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 இல் சேமிப்பக வரி இல்லை, ஆனால் இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை அதன் ஐடி %2 மூலம் அறிந்துள்ளது: இது வேறொரு சேமிப்பகத்திற்காக எழுதப்பட்டு இங்கே நகலெடுக்கப்பட்டிருக்கலாம், அல்லது பழைய QtPass ஆல் எழுதப்பட்டிருக்கலாம். கையொப்ப விசையை வைத்திருப்பவர் பயனர்கள் என்பதைத் திறந்து, பெறுநர்களைப் புதிதாகத் தேர்ந்தெடுத்துச் சேமிப்பதன் மூலம் இதைத் தீர்க்கலாம்; அது சேமிப்பக வரியை எழுதும்.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="856"/>
+        <location filename="../src/gpgidgeneration.cpp" line="863"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேடான %1, தலைமுறை %3 எழுதப்பட்டுக் கொண்டிருந்தபோதே தலைமுறை %2 க்கு நகர்ந்துவிட்டது.</translation>
     </message>
@@ -1300,32 +1300,32 @@ e-mail</source>
         <translation type="obsolete">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 இல் தலைமுறை வரி இல்லை; ஆனால் தலைமுறை %2 இங்கு முன்பு ஏற்றுக்கொள்ளப்பட்டது. pass தலைமுறை வரியை எழுதுவதில்லை (QtPass இன் pass பின்தளம் வழியாகவும் இல்லை); 2.0 க்கு முந்தைய QtPass உம் எழுதவில்லை. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="665"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 தலைமுறை %2 ஆக உள்ளது; இது QtPass இங்கு கடைசியாக ஏற்றுக்கொண்ட தலைமுறை %3 ஐ விடப் பழையது. அதை வேறு யாரோ மீண்டும் வைத்திருக்கலாம். %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="667"/>
+        <location filename="../src/gpgidgeneration.cpp" line="672"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">பெறுநர்களைச் சேமிக்க வேண்டும்: அங்கு முன்னரே தேர்ந்தெடுக்கப்பட்டிருக்கும் பெறுநர்கள் இந்தப் பட்டியலினுடையவர்கள், அதனால் இனி அணுகல் இருக்கக் கூடாத எவரையும் முதலில் நீக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="732"/>
+        <location filename="../src/gpgidgeneration.cpp" line="737"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 தலைமுறை %2 ஆக உள்ளது; இந்தச் சாதனம் முன்பு ஏற்றுக்கொண்ட வேறொரு பட்டியலும் அதே தலைமுறையே. ஒன்று, இரண்டு சாதனங்கள் ஒரே நேரத்தில் பெறுநர்களைச் சேமித்திருக்கலாம் (Git அந்த முரண்பாட்டைக் காட்டியிருக்கும்); அல்லது, அந்தத் தலைமுறையின் உண்மையான வேறொரு பட்டியல் மாற்றி வைக்கப்பட்டிருக்கலாம். %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="740"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">பெறுநர்களைச் சரிபார்த்துச் சேமிக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="764"/>
+        <location filename="../src/gpgidgeneration.cpp" line="771"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 வேறொரு கடவுச்சொல் சேமிப்பகத்திற்காக எழுதப்பட்டது (சேமிப்பக ஐடி %2; இந்தச் சாதனம் இந்தச் சேமிப்பகத்தை %3 என அறிந்துள்ளது), எனவே அது பயன்படுத்தப்படவில்லை. அதே விசையால் கையொப்பமிடப்பட்ட சேமிப்பகத்திலிருந்து அது இங்கே நகலெடுக்கப்பட்டிருக்கலாம். மாறாக இந்தச் சேமிப்பகம் மீண்டும் அமைக்கப்பட்டிருந்தால், %4 ஐ நீக்குவது இந்தச் சாதனம் அறிந்துள்ள சேமிப்பக ஐடிகளை மறக்கச் செய்யும்.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="824"/>
+        <location filename="../src/gpgidgeneration.cpp" line="831"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">பெறுநர் பட்டியல் %1 தலைமுறை %2 ஐ அடைந்துவிட்டது; அதுவே இருக்கக்கூடிய அதிகபட்சம். பட்டியலை எழுத முடியாது.</translation>
     </message>
@@ -1333,17 +1333,17 @@ e-mail</source>
 <context>
     <name>GpgIdSigner</name>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="75"/>
+        <location filename="../src/gpgidsigner.cpp" line="79"/>
         <source>the recipient list is not valid UTF-8</source>
         <translation type="unfinished">பெறுநர் பட்டியல் செல்லுபடியான UTF-8 அல்ல</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="102"/>
+        <location filename="../src/gpgidsigner.cpp" line="106"/>
         <source>gpg wrote no signature</source>
         <translation type="unfinished">gpg எந்தக் கையொப்பத்தையும் எழுதவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/gpgidsigner.cpp" line="112"/>
+        <location filename="../src/gpgidsigner.cpp" line="116"/>
         <source>the new signature does not verify as one of the signing keys</source>
         <translation type="unfinished">புதிய கையொப்பம் கையொப்பமிடும் விசைகளில் ஒன்றினுடையது எனச் சரிபார்க்கப்படவில்லை</translation>
     </message>
@@ -1351,130 +1351,130 @@ e-mail</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="416"/>
-        <location filename="../src/imitatepass.cpp" line="601"/>
-        <location filename="../src/realpass.cpp" line="87"/>
+        <location filename="../src/imitatepass.cpp" line="441"/>
+        <location filename="../src/imitatepass.cpp" line="629"/>
+        <location filename="../src/realpass.cpp" line="93"/>
         <source>Signature for %1 is invalid.</source>
         <translation>%1 க்கான கையொப்பம் தவறானது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="175"/>
-        <location filename="../src/imitatepass.cpp" line="876"/>
+        <location filename="../src/imitatepass.cpp" line="193"/>
+        <location filename="../src/imitatepass.cpp" line="904"/>
         <source>Can not edit</source>
         <translation>திருத்த முடியாது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>Cannot add</source>
         <translation type="unfinished">சேர்க்க முடியாது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="198"/>
+        <location filename="../src/imitatepass.cpp" line="218"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="176"/>
-        <location filename="../src/imitatepass.cpp" line="877"/>
+        <location filename="../src/imitatepass.cpp" line="194"/>
+        <location filename="../src/imitatepass.cpp" line="905"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>பயன்படுத்த குறியாக்க விசையைப் படிக்க முடியவில்லை, .gpg-id கோப்பு காணவில்லை அல்லது செல்லாது.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="832"/>
+        <location filename="../src/pass.cpp" line="942"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">பெறுநர் பட்டியலைச் சரிபார்க்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="834"/>
+        <location filename="../src/pass.cpp" line="944"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 %2 அகற்றப்பட்டதா என்பதைக் கண்டறிய முடியவில்லை, எனவே எதுவும் குறியாக்கம் செய்யப்படவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="841"/>
+        <location filename="../src/pass.cpp" line="951"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">பெறுநர் பட்டியல் காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="842"/>
+        <location filename="../src/pass.cpp" line="952"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">கையொப்பமிடப்பட்ட பெறுநர் பட்டியல் %1 காணவில்லை அல்லது அது ஒரு சாதாரணக் கோப்பு அல்ல. அதற்குப் பதிலாக QtPass பெற்றோர் கோப்புறையின் பட்டியலைப் பயன்படுத்தாது: அந்தப் பட்டியல் இந்தக் கோப்புறைக்காகக் கையொப்பமிடப்படவில்லை. அந்தப் பெயரில் ஓர் இணைப்பு இருந்தால், அதை அகற்றவும். பின்னர் அந்தக் கோப்புறைக்கு பயனர்கள் சாளரத்தைத் திறந்து அதன் பெறுநர்களைச் சேமிக்கவும்; இது புதிய பட்டியலை எழுதிக் கையொப்பமிடும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="210"/>
+        <location filename="../src/imitatepass.cpp" line="230"/>
         <source>Cannot write</source>
         <translation type="unfinished">எழுத முடியாது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="211"/>
+        <location filename="../src/imitatepass.cpp" line="231"/>
         <source>Cannot create a temporary directory: %1</source>
         <translation type="unfinished">தற்காலிகக் கோப்பகத்தை உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="316"/>
+        <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தில் %1 இல்லை, அல்லது பாதையில் உள்ள கோப்புறையின் பெயர் ஒரு புதிய வரியைக் கொண்டிருக்கலாம் அல்லது வேறு கட்டுப்பாட்டு எழுத்தை கொண்டிருக்கலாம். இது கையொப்பமிடப்பட்ட பட்டியலில் பதிவு செய்ய முடியாது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="407"/>
+        <location filename="../src/imitatepass.cpp" line="432"/>
         <source>GPG signing failed!</source>
         <translation>GPG கையொப்பமிடல் தோல்வியடைந்தது!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="409"/>
+        <location filename="../src/imitatepass.cpp" line="434"/>
         <source>Failed to sign %1.</source>
         <translation>%1-க்கு கையொப்பமிட முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="546"/>
+        <location filename="../src/imitatepass.cpp" line="574"/>
         <source>Recipients not changed</source>
         <translation type="unfinished">பெறுநர்கள் மாற்றப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="547"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>A re-encryption is still running. Wait until it has finished, then save the recipients again.</source>
         <translation type="unfinished">ஒரு மீள் குறியாக்கம் இன்னும் இயங்கிக் கொண்டிருக்கிறது. அது முடியும் வரை காத்திருந்து, பின்னர் பெறுநர்களை மீண்டும் சேமிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="553"/>
+        <location filename="../src/imitatepass.cpp" line="581"/>
         <source>No signing key!</source>
         <translation>கையொப்பமிடும் விசை இல்லை!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="554"/>
+        <location filename="../src/imitatepass.cpp" line="582"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>ரகசிய கையொப்பமிடும் விசைகள் எதுவும் கிடைக்கவில்லை.
  நீங்கள் பயனர் பட்டியலை மாற்ற முடியாது!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="315"/>
         <location filename="../src/imitatepass.cpp" line="340"/>
-        <location filename="../src/imitatepass.cpp" line="346"/>
-        <location filename="../src/imitatepass.cpp" line="374"/>
-        <location filename="../src/imitatepass.cpp" line="508"/>
+        <location filename="../src/imitatepass.cpp" line="365"/>
+        <location filename="../src/imitatepass.cpp" line="371"/>
+        <location filename="../src/imitatepass.cpp" line="399"/>
+        <location filename="../src/imitatepass.cpp" line="533"/>
         <source>Cannot update</source>
         <translation>புதுப்பிக்க முடியாது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="118"/>
+        <location filename="../src/imitatepass.cpp" line="136"/>
         <source>Git pull failed: %1</source>
         <translation type="unfinished">Git pull தோல்வியடைந்தது: %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="171"/>
-        <location filename="../src/imitatepass.cpp" line="415"/>
-        <location filename="../src/imitatepass.cpp" line="756"/>
-        <location filename="../src/realpass.cpp" line="91"/>
+        <location filename="../src/imitatepass.cpp" line="189"/>
+        <location filename="../src/imitatepass.cpp" line="440"/>
+        <location filename="../src/imitatepass.cpp" line="784"/>
+        <location filename="../src/realpass.cpp" line="97"/>
         <source>Check .gpg-id file signature!</source>
         <translation>சரிபார்க்கவும் .gpg-id கோப்பு கையொப்பம்!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="273"/>
+        <location filename="../src/imitatepass.cpp" line="298"/>
         <source>Delete failed</source>
         <translation type="unfinished">நீக்குதல் தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="274"/>
+        <location filename="../src/imitatepass.cpp" line="299"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">இணைப்பு %1-ஐ நீக்க முடியவில்லை.</translation>
     </message>
@@ -1491,81 +1491,81 @@ You will not be able to change the user list!</source>
         <translation type="obsolete">%1 ஐ எழுத முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="388"/>
+        <location filename="../src/imitatepass.cpp" line="413"/>
         <source>Recipient list written, but not recorded</source>
         <translation type="unfinished">பெறுநர் பட்டியல் எழுதப்பட்டது, ஆனால் பதிவு செய்யப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="389"/>
+        <location filename="../src/imitatepass.cpp" line="414"/>
         <source>%1 Save the recipients once more to get through.</source>
         <translation type="unfinished">%1 இதைக் கடந்து செல்ல, பெறுநர்களை மீண்டும் ஒருமுறை சேமிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="394"/>
+        <location filename="../src/imitatepass.cpp" line="419"/>
         <source>Check selected users!</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட பயனர்களை சரிபார்க்கவும்!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="395"/>
+        <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட விசைகள் எதுவும் ரகசிய விசை கிடைக்கவில்லை.
  புதிதாக சேர்க்கப்பட்ட எந்த கடவுச்சொற்களையும் நீங்கள் மறைகுறியாக்க முடியாது!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="410"/>
+        <location filename="../src/imitatepass.cpp" line="435"/>
         <source>Failed to sign %1: %2</source>
         <translation type="unfinished">%1 க்கு கையொப்பமிட முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="509"/>
+        <location filename="../src/imitatepass.cpp" line="534"/>
         <source>Failed to remove the old signature %1.</source>
         <translation type="unfinished">பழைய கையொப்பம் %1 ஐ நீக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="585"/>
+        <location filename="../src/imitatepass.cpp" line="613"/>
         <source>Git exited with code %1.</source>
         <translation type="unfinished">Git குறியீடு %1 உடன் முடிந்தது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="624"/>
+        <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
         <translation type="unfinished">%1 ஐ பெறுநர் பட்டியலில் படிக்க முடியாது (இது அதிகபட்சமாக %2 அளவுள்ள ஒரு சாதாரண கோப்பு).</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="638"/>
         <location filename="../src/imitatepass.cpp" line="666"/>
-        <location filename="../src/imitatepass.cpp" line="674"/>
+        <location filename="../src/imitatepass.cpp" line="694"/>
+        <location filename="../src/imitatepass.cpp" line="702"/>
         <source>Leftover from an earlier re-encryption</source>
         <translation type="unfinished">முந்தைய மீள் குறியாக்கத்தின் எச்சம்</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="639"/>
+        <location filename="../src/imitatepass.cpp" line="667"/>
         <source>%1 is not a regular file and was not restored. Look at it and remove it, then re-encrypt again.</source>
         <translation type="unfinished">%1 ஒரு சாதாரணக் கோப்பு அல்ல; அது மீட்டமைக்கப்படவில்லை. அதைச் சரிபார்த்து நீக்கிய பின், மீண்டும் குறியாக்கம் செய்யவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="667"/>
+        <location filename="../src/imitatepass.cpp" line="695"/>
         <source>%1 exists next to %2. Both are encrypted copies of the entry; check which one you want and delete the other, then re-encrypt again.</source>
         <translation type="unfinished">%2 அருகில் %1 உள்ளது. இரண்டும் இந்தப் பதிவின் குறியாக்கம் செய்யப்பட்ட நகல்கள்; எது தேவை என்பதைச் சரிபார்த்து மற்றொன்றை நீக்கிய பின், மீண்டும் குறியாக்கம் செய்யவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
         <source>Restored %1 from the backup an interrupted re-encryption left behind.</source>
         <translation type="unfinished">இடையில் நிறுத்தப்பட்ட மீள் குறியாக்கம் விட்டுச் சென்ற காப்புப்பிரதியிலிருந்து %1 மீட்டமைக்கப்பட்டது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="703"/>
         <source>%1 is missing and its backup %2 could not be renamed back. Rename it by hand, then re-encrypt again.</source>
         <translation type="unfinished">%1 காணவில்லை, அதன் காப்புப்பிரதி %2 ஐ மீண்டும் பழைய பெயருக்கு மாற்ற முடியவில்லை. அதைக் கைமுறையாக மறுபெயரிட்ட பின், மீண்டும் குறியாக்கம் செய்யவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="917"/>
+        <location filename="../src/imitatepass.cpp" line="945"/>
         <source>%1 could not be re-encrypted: %2</source>
         <translation type="unfinished">%1 ஐ மீண்டும் குறியாக்க முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1221"/>
+        <location filename="../src/imitatepass.cpp" line="1323"/>
         <source>Re-encryption failed</source>
         <translation>மீள் குறியாக்கம் தோல்வியடைந்தது</translation>
     </message>
@@ -1582,75 +1582,86 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation type="obsolete">மீண்டும் குறியாக்கம் செய்த பின் காப்புப்பிரதி %1 ஐ நீக்க முடியவில்லை; அதை நீக்குவது பாதுகாப்பானது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="928"/>
+        <location filename="../src/imitatepass.cpp" line="982"/>
         <source>Creating backup commit</source>
         <translation>வர்த்தக விடுதலை உருவாக்குக</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="942"/>
-        <location filename="../src/imitatepass.cpp" line="952"/>
+        <location filename="../src/imitatepass.cpp" line="996"/>
+        <location filename="../src/imitatepass.cpp" line="1019"/>
         <source>Backup commit failed</source>
         <translation>காப்புப்பிரதி உறுதிப்படுத்தல் தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="943"/>
+        <location filename="../src/imitatepass.cpp" line="997"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation>கிட் நிலையை சரிபார்க்க முடியவில்லை. மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="953"/>
+        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <source>The store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>கிட் காப்புப்பிரதியை உருவாக்க முடியாததால் மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="991"/>
+        <location filename="../src/imitatepass.cpp" line="1062"/>
         <source>A re-encryption is already running</source>
         <translation type="unfinished">ஒரு மீள் குறியாக்கம் ஏற்கனவே இயங்கிக் கொண்டிருக்கிறது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="998"/>
+        <location filename="../src/imitatepass.cpp" line="1069"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">சேமிப்பகத்தின் கோப்புறை அல்ல</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="999"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation type="unfinished">%1 ஒரு குறியீட்டு இணைப்பு அல்லது ஜங்ஷனாக இருக்கிறது, அல்லது அத்தகைய ஒன்றின் பின்னால் உள்ளது. அது சுட்டும் இடம் கடவுச்சொல் சேமிப்பகத்தின் பகுதி அல்ல; அது மீண்டும் குறியாக்கம் செய்யப்படவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1008"/>
+        <location filename="../src/imitatepass.cpp" line="1085"/>
         <source>Re-encrypting from folder %1</source>
         <translation>கோப்புறை %1 இலிருந்து மீண்டும் மறைகுறியாக்குதல்</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1072"/>
-        <location filename="../src/imitatepass.cpp" line="1248"/>
+        <location filename="../src/imitatepass.cpp" line="1161"/>
+        <location filename="../src/imitatepass.cpp" line="1350"/>
         <source>Updating password-store</source>
         <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
-        <location filename="../src/imitatepass.cpp" line="1091"/>
+        <location filename="../src/imitatepass.cpp" line="1174"/>
+        <location filename="../src/imitatepass.cpp" line="1180"/>
         <source>Git pull failed</source>
         <translation type="unfinished">Git pull தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1086"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">pull-க்குப் பிறகு களஞ்சியத்தில் இணைக்கப்படாத கோப்புகள் உள்ளதா என்று சரிபார்க்க முடியவில்லை. மீண்டும் மறையாக்கம் செய்வதற்கு முன் git மூலம் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1092"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation type="unfinished">இழுத்தலுக்குப் பின் சேமிப்பகத்தில் ஒன்றிணைக்கப்படாத கோப்புகள் உள்ளன. மீண்டும் குறியாக்கம் செய்வதற்கு முன் முரண்பாட்டைத் தீர்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1096"/>
+        <location filename="../src/imitatepass.cpp" line="1185"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation type="unfinished">Git pull தோல்வியடைந்தது, சேமிப்பகத்தை இருக்கும் நிலையிலேயே மீண்டும் குறியாக்கம் செய்கிறது</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1107"/>
+        <location filename="../src/imitatepass.cpp" line="1196"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation type="unfinished">
             <numerusform>%n பதிவு தவிர்க்கப்பட்டது: குறியீட்டு இணைப்பு, ஜங்ஷன் அல்லது சிறப்புக் கோப்பு சேமிப்பகத்தின் பகுதி அல்ல.</numerusform>
@@ -1658,27 +1669,27 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1128"/>
+        <location filename="../src/imitatepass.cpp" line="1217"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID சரிபார்ப்பு தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1129"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>இந்த கோப்புறைக்கு .gpg-id ஐ சரிபார்க்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1149"/>
+        <location filename="../src/imitatepass.cpp" line="1251"/>
         <source>Not part of the store</source>
         <translation type="unfinished">சேமிப்பகத்தின் பகுதி அல்ல</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1150"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">இங்கு, &quot;%1&quot; என்பது ஒரு குறியீட்டு இணைப்பு அல்லது சந்திப்பைக் குறிக்கிறது. அதை மீட்டெடுத்த பிறகு, அது எதையேனும் சுட்டிக்காட்டலாம். ஆனால் அது கடவுச்சொல் சேமிப்பகத்தின் ஒரு பகுதியாக இல்லை. மேலும் இது அப்படியே விட்டுவிடப்படுகிறது.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1219"/>
+        <location filename="../src/imitatepass.cpp" line="1321"/>
         <source>... and %n more</source>
         <translation type="unfinished">
             <numerusform>... மேலும் %n</numerusform>
@@ -1686,7 +1697,7 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1222"/>
+        <location filename="../src/imitatepass.cpp" line="1324"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation type="unfinished">
             <numerusform>%n கோப்பை மீண்டும் குறியாக்கம் செய்ய முடியவில்லை:</numerusform>
@@ -1694,18 +1705,18 @@ You will not be able to decrypt any newly added passwords!</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1228"/>
+        <location filename="../src/imitatepass.cpp" line="1330"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation type="unfinished">மீள் குறியாக்கம் ரத்து செய்யப்பட்டது: %2 கோப்புகளில் %1 சரிபார்க்கப்பட்டன, %3 மீண்டும் குறியாக்கம் செய்யப்பட்டன, %4 தோல்வியடைந்தன</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1295"/>
-        <location filename="../src/imitatepass.cpp" line="1304"/>
+        <location filename="../src/imitatepass.cpp" line="1397"/>
+        <location filename="../src/imitatepass.cpp" line="1406"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">பெறுநர்கள் கமிட் செய்யப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1296"/>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1718,7 +1729,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 மாற்றம் இன்னும் கமிட் செய்யப்படவில்லை, புஷ் செய்யப்படவும் இல்லை. Git சிக்கலைச் சரிசெய்து, பின்னர் மாற்றங்களைக் கமிட் செய்யவும், அல்லது பெறுநர்களை மீண்டும் சேமிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1305"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1731,12 +1742,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 மீள் குறியாக்கம் முடிவடையவில்லை, எனவே சில அல்லது அனைத்துப் பதிவுகளும் இன்னும் முந்தைய பெறுநர்களுக்காகவே குறியாக்கம் செய்யப்பட்டுள்ளன; அவர்களால் இன்னும் அவற்றைப் படிக்க முடியும். எதுவும் கமிட் அல்லது புஷ் செய்யப்படவில்லை. Git சிக்கலைச் சரிசெய்து, பின்னர் பெறுநர்களை மீண்டும் சேமிக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1482"/>
+        <location filename="../src/imitatepass.cpp" line="1594"/>
         <source>Git executable not configured, skipping git</source>
         <translation type="unfinished">Git இயங்குகோப்பு அமைக்கப்படவில்லை, git தவிர்க்கப்படுகிறது</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1542"/>
+        <location filename="../src/imitatepass.cpp" line="1671"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation type="unfinished">%1 க்காக gpg குறியாக்கப்பட்ட உரை எதையும் எழுதவில்லை.</translation>
     </message>
@@ -1765,17 +1776,17 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ஐ மீண்டும் மறைகுறியாக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1237"/>
+        <location filename="../src/imitatepass.cpp" line="1339"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>மறு-குறியாக்கம் முடிந்தது: %1 வெற்றி, %2 தோல்வி</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1344"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>இரண்டாம் குறியாக்கல் முடிவுபட்டது: %1 பயன்பாடுகள் இரண்டாம் குறியாக்கல் செய்யப்பட்டன</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1353"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation type="unfinished">
             <numerusform>புஷ் செய்யப்படவில்லை: %n கோப்பை மீண்டும் குறியாக்கம் செய்ய முடியவில்லை</numerusform>
@@ -1783,14 +1794,14 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1404"/>
-        <location filename="../src/imitatepass.cpp" line="1448"/>
+        <location filename="../src/imitatepass.cpp" line="1513"/>
+        <location filename="../src/imitatepass.cpp" line="1560"/>
         <source>Copy failed</source>
         <translation type="unfinished">நகலெடுக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1405"/>
-        <location filename="../src/imitatepass.cpp" line="1449"/>
+        <location filename="../src/imitatepass.cpp" line="1514"/>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>Could not copy %1 to %2.</source>
         <translation type="unfinished">%1-ஐ %2-க்கு நகலெடுக்க முடியவில்லை.</translation>
     </message>
@@ -1821,7 +1832,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
-        <location filename="../src/importkeydialog.cpp" line="44"/>
+        <location filename="../src/importkeydialog.cpp" line="58"/>
         <source>Import GPG key</source>
         <translation>GPG சாவியை இறக்குமதி செய்</translation>
     </message>
@@ -1841,7 +1852,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation>இறக்குமதி</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>ASCII-armored GPG key</source>
         <translation>ASCII-armored GPG சாவி</translation>
     </message>
@@ -1854,12 +1865,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">சாவியை இறக்குமதி செய்</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="62"/>
+        <location filename="../src/importkeydialog.cpp" line="76"/>
         <source>Could not open file: %1</source>
         <translation>கோப்பைத் திறக்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="87"/>
+        <location filename="../src/importkeydialog.cpp" line="101"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From clipboard&lt;/b&gt;.</source>
         <translation type="unfinished">%1 ASCII-armored GPG சாவியாகத் தோன்றவில்லை. முதலில் &lt;code&gt;gpg --armor --export&lt;/code&gt; கட்டளையால் மாற்றவும், அல்லது armored தொகுதியை &lt;b&gt;இடைநிலைப்பலகையிலிருந்து&lt;/b&gt; வழியாக ஒட்டவும்.</translation>
     </message>
@@ -1868,38 +1879,38 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">%1 ASCII-armored GPG சாவியாகத் தோன்றவில்லை. முதலில் &lt;code&gt;gpg --armor --export&lt;/code&gt; கட்டளையால் மாற்றவும், அல்லது armored தொகுதியை &lt;b&gt;கிளிப்போர்டிலிருந்து&lt;/b&gt; வழியாக ஒட்டவும்.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="45"/>
+        <location filename="../src/importkeydialog.cpp" line="59"/>
         <source>All files</source>
         <translation>அனைத்து கோப்புகள்</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="61"/>
-        <location filename="../src/importkeydialog.cpp" line="74"/>
-        <location filename="../src/importkeydialog.cpp" line="86"/>
-        <location filename="../src/importkeydialog.cpp" line="186"/>
-        <location filename="../src/importkeydialog.cpp" line="190"/>
+        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="88"/>
+        <location filename="../src/importkeydialog.cpp" line="100"/>
+        <location filename="../src/importkeydialog.cpp" line="200"/>
+        <location filename="../src/importkeydialog.cpp" line="204"/>
         <source>Import key</source>
         <translation>சாவியை இறக்குமதி செய்</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="75"/>
+        <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
         <translation type="unfinished">%1 என்பது ஒரு கீ கோப்பிற்கான அளவை விட பெரியது.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="134"/>
+        <location filename="../src/importkeydialog.cpp" line="148"/>
         <source>GPG import failed:
 %1</source>
         <translation>GPG இறக்குமதி தோல்வியடைந்தது:
 %1</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="144"/>
+        <location filename="../src/importkeydialog.cpp" line="158"/>
         <source>Could not parse imported key id from GPG output.</source>
         <translation>GPG வெளியீட்டிலிருந்து இறக்குமதி செய்யப்பட்ட சாவி ஐடியை பகுக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/importkeydialog.cpp" line="191"/>
+        <location filename="../src/importkeydialog.cpp" line="205"/>
         <source>Public key %1 imported. Check its fingerprint with its owner before encrypting to it: importing a key says nothing about who holds it.</source>
         <translation type="unfinished">பொதுச் சாவி %1 இறக்குமதி செய்யப்பட்டது. அதற்குக் குறியாக்கம் செய்வதற்கு முன் அதன் கைரேகையை அதன் உரிமையாளரிடம் சரிபார்க்கவும்: ஒரு சாவியை இறக்குமதி செய்வது அது யாரிடம் உள்ளது என்பதைப் பற்றி எதுவும் கூறாது.</translation>
     </message>
@@ -1911,32 +1922,32 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 <context>
     <name>KeyWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="288"/>
+        <location filename="../src/firstrunwizard.cpp" line="293"/>
         <source>Generate a new key pair…</source>
         <translation type="unfinished">புதிய சாவி ஜோடியை உருவாக்கு…</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="290"/>
+        <location filename="../src/firstrunwizard.cpp" line="295"/>
         <source>Your key</source>
         <translation type="unfinished">உங்கள் சாவி</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="291"/>
+        <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
         <translation type="unfinished">கடவுச்சொற்கள் GnuPG சாவிகளுக்குக் குறியாக்கம் செய்யப்படுகின்றன. புதிய சேமிப்பகத்தைத் திறக்க முடிய வேண்டிய சாவிகளைத் தேர்வு செய்யவும்; இந்தக் கணினியில் ரகசியப் பகுதி உள்ள சாவி குறைந்தது ஒன்றாவது தேவை.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="319"/>
+        <location filename="../src/firstrunwizard.cpp" line="324"/>
         <source>expired</source>
         <translation type="unfinished">காலாவதியானது</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="321"/>
+        <location filename="../src/firstrunwizard.cpp" line="326"/>
         <source>not usable</source>
         <translation type="unfinished">பயன்படுத்த முடியாதது</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="334"/>
+        <location filename="../src/firstrunwizard.cpp" line="339"/>
         <source>GnuPG has no secret key yet. Generate one here, or import your existing key with gpg first.</source>
         <translation type="unfinished">GnuPG-இல் இன்னும் ரகசியச் சாவி எதுவும் இல்லை. இங்கே ஒன்றை உருவாக்கவும், அல்லது முதலில் gpg மூலம் உங்கள் இருக்கும் சாவியை இறக்குமதி செய்யவும்.</translation>
     </message>
@@ -2068,47 +2079,47 @@ Expire-Date: 0
         <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="176"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>Invalid input</source>
         <translation type="unfinished">தவறான உள்ளீடு</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="177"/>
+        <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
         <translation type="unfinished">பெயர் மற்றும் கடவுச்சொற்றொடரில் புதிய வரி இருக்கக்கூடாது.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="182"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>Invalid name</source>
         <translation>தவறான பெயர்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="183"/>
+        <location filename="../src/keygendialog.cpp" line="197"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>பெயர் குறைந்தது 5 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="193"/>
+        <location filename="../src/keygendialog.cpp" line="207"/>
         <source>Invalid email</source>
         <translation>தவறான மின்னஞ்சல்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="194"/>
+        <location filename="../src/keygendialog.cpp" line="208"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>நீங்கள் தட்டச்சு செய்த மின்னஞ்சல் முகவரி சரியான மின்னஞ்சல் முகவரி அல்ல.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="216"/>
+        <location filename="../src/keygendialog.cpp" line="230"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>இந்தச் செயல்பாடு சில நிமிடங்கள் ஆகலாம். &lt;br /&gt;நாம் சீரற்ற பைட்டுகளை நிறைய உருவாக்க வேண்டும். முதன்மையான தலைமுறையின்போது வேறுசில செயல்களைச் செய்வது (விசைப்பலகையில் தட்டச்சு செய்க, சுட்டியை நகர்த்தவும், வட்டுகளைப் பயன்படுத்தவும்) ஒரு நல்ல யோசனை; இது சீரற்ற எண் செனரேட்டருக்கு போதுமான என்ட்ரோபியைப் பெற சிறந்த வாய்ப்பை வழங்குகிறது.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="237"/>
+        <location filename="../src/keygendialog.cpp" line="251"/>
         <source>No password store backend available</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகப் பின்தளம் எதுவும் கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="271"/>
+        <location filename="../src/keygendialog.cpp" line="285"/>
         <source>Key generation failed: %1</source>
         <translation type="unfinished">சாவி உருவாக்கம் தோல்வியடைந்தது: %1</translation>
     </message>
@@ -2127,14 +2138,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1461"/>
+        <location filename="../src/mainwindow.cpp" line="1477"/>
         <source>Edit</source>
         <translation>தொகு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1473"/>
+        <location filename="../src/mainwindow.cpp" line="1489"/>
         <source>Delete</source>
         <translation>நீக்கு</translation>
     </message>
@@ -2222,7 +2233,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1455"/>
+        <location filename="../src/mainwindow.cpp" line="1471"/>
         <source>Users</source>
         <translation>பயனர்கள்</translation>
     </message>
@@ -2252,8 +2263,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="720"/>
-        <location filename="../src/mainwindow.cpp" line="898"/>
+        <location filename="../src/mainwindow.cpp" line="731"/>
+        <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Search password</source>
         <translation>கடவுச்சொல்லைத் தேடுங்கள்</translation>
     </message>
@@ -2454,7 +2465,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="406"/>
+        <location filename="../src/mainwindow.cpp" line="412"/>
         <source>Welcome to QtPass %1</source>
         <translation>Qtpass %1 க்கு வருக</translation>
     </message>
@@ -2493,8 +2504,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="534"/>
-        <location filename="../src/mainwindow.cpp" line="544"/>
+        <location filename="../src/mainwindow.cpp" line="540"/>
+        <location filename="../src/mainwindow.cpp" line="550"/>
         <source>Updating password-store</source>
         <translation>கடவுச்சொல்-கடையை புதுப்பித்தல்</translation>
     </message>
@@ -2511,8 +2522,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="632"/>
-        <location filename="../src/mainwindow.cpp" line="949"/>
+        <location filename="../src/mainwindow.cpp" line="650"/>
+        <location filename="../src/mainwindow.cpp" line="965"/>
         <source>Content hidden</source>
         <translation>உள்ளடக்கம் மறைக்கப்பட்டுள்ளது</translation>
     </message>
@@ -2561,12 +2572,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="809"/>
+        <location filename="../src/mainwindow.cpp" line="820"/>
         <source>Looking for: %1</source>
         <translation>தேடுவது: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="967"/>
+        <location filename="../src/mainwindow.cpp" line="983"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n பொருத்தம் கிடைத்தது</numerusform>
@@ -2596,17 +2607,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">%1 %2 ஐ நீக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1077"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
         <translation>கடவுச்சொல்லை நீக்கவா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1078"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">%1 ஐ நீக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1117"/>
         <source>Delete folder?</source>
         <translation>கோப்புறையை நீக்கவா?</translation>
     </message>
@@ -2631,26 +2642,26 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1310"/>
         <source>Profile changed to %1</source>
         <translation>சுயவிவரம் %1 ஆக மாற்றப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1452"/>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>Open folder with file manager</source>
         <translation>கோப்பு மேலாளருடன் கோப்புறையைத் திறக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1469"/>
         <source>Add folder</source>
         <translation>கோப்புறையைச் சேர்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1454"/>
+        <location filename="../src/mainwindow.cpp" line="1470"/>
         <source>Add password</source>
         <translation>கடவுச்சொல்லைச் சேர்க்கவும்</translation>
     </message>
@@ -2665,7 +2676,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
+        <location filename="../src/mainwindow.cpp" line="212"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">செயல்பாட்டின் நேரம் முடிந்தது; இடைமுகம் மீண்டும் இயக்கப்படுகிறது.</translation>
     </message>
@@ -2674,45 +2685,45 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">செயலாக்க வெளியீடு</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="669"/>
+        <location filename="../src/mainwindow.cpp" line="680"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">இந்தக் கடவுச்சொல் பதிவை மறைநீக்கம் செய்ய முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
-        <location filename="../src/mainwindow.cpp" line="698"/>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="691"/>
+        <location filename="../src/mainwindow.cpp" line="709"/>
+        <location filename="../src/mainwindow.cpp" line="1191"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP குறியீடு கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
-        <location filename="../src/mainwindow.cpp" line="1163"/>
+        <location filename="../src/mainwindow.cpp" line="711"/>
+        <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>No OTP code found in this password entry</source>
         <translation>இந்த கடவுச்சொல் பதிவில் OTP குறியீடு எதுவும் கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="735"/>
         <source>Password and content hidden</source>
         <translation>கடவுச்சொல் மற்றும் உள்ளடக்கம் மறைக்கப்பட்டுள்ளன</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="791"/>
+        <location filename="../src/mainwindow.cpp" line="802"/>
         <source>About QtPass</source>
         <translation type="unfinished">QtPass பற்றி</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="792"/>
+        <location filename="../src/mainwindow.cpp" line="803"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;நிலையான Unix கடவுச்சொல் மேலாளரான &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; க்கான பல்தள GUI.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;மூலக் குறியீடு மற்றும் சிக்கல்கள்&lt;/a&gt;&lt;/p&gt;&lt;p&gt;பதிப்புரிமை &amp;copy; 2014&amp;ndash;%2 IJhack. &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL பதிப்பு 3&lt;/a&gt; அல்லது அதற்குப் பிந்தைய பதிப்பின் கீழ் உரிமம் பெற்றது.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="854"/>
+        <location filename="../src/mainwindow.cpp" line="870"/>
         <source>Searching…</source>
         <translation>தேடுகிறது…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="880"/>
+        <location filename="../src/mainwindow.cpp" line="896"/>
         <source>Search content (regex)</source>
         <translation>உள்ளடக்கத்தைத் தேடு (regex)</translation>
     </message>
@@ -2721,17 +2732,17 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">உள்ளடக்கத் தேடல் POSIX அடிப்படை வழக்கமான வெளிப்பாடுகளைப் பயன்படுத்துகிறது (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="884"/>
+        <location filename="../src/mainwindow.cpp" line="900"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">உள்ளடக்கத் தேடல் Perl-இணக்க வழக்கமான வெளிப்பாடுகளை (PCRE) பயன்படுத்துகிறது.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="923"/>
+        <location filename="../src/mainwindow.cpp" line="939"/>
         <source>No matches found.</source>
         <translation>பொருத்தங்கள் எதுவும் கிடைக்கவில்லை.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="969"/>
+        <location filename="../src/mainwindow.cpp" line="985"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>%n உள்ளீட்டில்.</numerusform>
@@ -2739,53 +2750,53 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1025"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Invalid name</source>
         <translation type="unfinished">தவறான பெயர்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1026"/>
+        <location filename="../src/mainwindow.cpp" line="1042"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">அந்தப் பெயர் கடவுச்சொல் சேமிப்பகத்திற்கு வெளியே சுட்டும். வேறு பெயரைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <location filename="../src/mainwindow.cpp" line="1124"/>
         <source>Delete link?</source>
         <translation type="unfinished">இணைப்பை நீக்கவா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1109"/>
+        <location filename="../src/mainwindow.cpp" line="1125"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ஒரு குறியீட்டு இணைப்பு அல்லது ஜங்ஷன். இணைப்பை நீக்கவா? அது சுட்டும் இடம் அப்படியே விடப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1158"/>
+        <location filename="../src/mainwindow.cpp" line="1174"/>
         <source>No password selected for OTP generation</source>
         <translation>OTP உருவாக்கப்படுத்துவதற்கு இயல்பாக அமைந்த கடவுச்சொல் என்ன இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1483"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder</source>
         <translation>கோப்புறை மறுபெயரிடுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1486"/>
         <source>Rename password</source>
         <translation>கடவுச்சொல்லை மறுபெயரிடுங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1407"/>
+        <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Share</source>
         <translation>பகிர்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="963"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… இந்த பதிவில் இன்னும் பல பொருத்தங்கள் உள்ளன</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="962"/>
+        <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>முதல் %n பொருத்தம் காட்டப்படுகிறது; மீதியைக் காண இன்னும் குறிப்பாகத் தேடவும்.</numerusform>
@@ -2793,110 +2804,110 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1085"/>
+        <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">%1 மற்றும் அதன் முழு உள்ளடக்கத்தையும் நீக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">கவனம்: கொடுக்கப்பட்ட கோப்புறையில் எதிர்பாராத கோப்புகள் உள்ளன, தொடர்வதற்கு முன் அவற்றைச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1433"/>
         <source>Re-encrypt all passwords</source>
         <translation>அனைத்து கடவுச்சொற்களையும் மீண்டும் என்க்ரிப்ட் செய்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1422"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>Export my public key...</source>
         <translation>எனது பொதுச் சாவியை ஏற்றுமதி செய்…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Add recipient...</source>
         <translation>பெறுநரைச் சேர்…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1447"/>
         <source>What is this?</source>
         <translation>இது என்ன?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1505"/>
+        <location filename="../src/mainwindow.cpp" line="1521"/>
         <source>New folder</source>
         <translation type="unfinished">புதிய கோப்புறை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1506"/>
+        <location filename="../src/mainwindow.cpp" line="1522"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>புதிய கோப்புறை:
  ( %1 இல் வைக்கப்படும்)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1548"/>
+        <location filename="../src/mainwindow.cpp" line="1564"/>
         <source>Rename folder to: </source>
         <translation>கோப்புறையை மறுபெயரிடுங்கள்: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file to: </source>
         <translation>கோப்பை மறுபெயரிடுங்கள்: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1642"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">இந்தப் பதிவில் கடவுச்சொல் அல்ல, OTP ரகசியம் உள்ளது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1695"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்கிறது...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1674"/>
+        <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Cancel</source>
         <translation type="unfinished">ரத்துசெய்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1704"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">மீள் குறியாக்கம் ரத்து செய்யப்படுகிறது</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1693"/>
+        <location filename="../src/mainwindow.cpp" line="1715"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்கிறது: %2 இல் %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
-        <location filename="../src/mainwindow.cpp" line="1733"/>
+        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1755"/>
         <source>Export public key</source>
         <translation>பொதுச் சாவியை ஏற்றுமதி செய்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1737"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;உங்கள் பொதுச் சாவியை ஏற்றுமதி செய்யுங்கள்&lt;/h3&gt;&lt;p&gt;கையெழுத்திட எந்தச் சாவியும் அமைக்கப்படவில்லை. QtPass அமைப்புகள் &amp;gt; GPG சாவிகள் இல் ஒன்றை அமைக்கவும், அல்லது முனையத்தில் இதை இயக்கவும்:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;பின்னர் கோப்பை உங்கள் குழு உறுப்பினர்களுக்கு அனுப்பவும்.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1762"/>
+        <location filename="../src/mainwindow.cpp" line="1784"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">சேமிப்பகத்தின் கோப்புறை அல்ல</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1763"/>
+        <location filename="../src/mainwindow.cpp" line="1785"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ஒரு குறியீட்டு இணைப்பு அல்லது ஜங்ஷனாக இருக்கிறது, அல்லது அத்தகைய ஒன்றின் பின்னால் உள்ளது. அது சுட்டும் இடம் கடவுச்சொல் சேமிப்பகத்தின் பகுதி அல்ல; அது அப்படியே விடப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1771"/>
+        <location filename="../src/mainwindow.cpp" line="1793"/>
         <source>Sharing passwords with GPG</source>
         <translation>GPG உடன் கடவுச்சொற்களைப் பகிர்தல்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1794"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG உடன் கடவுச்சொற்களைப் பகிர்தல்&lt;/h3&gt;&lt;p&gt;மற்ற பயனர்களுடன் கடவுச்சொற்களைப் பகிர:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;உங்கள் பொதுச் சாவியை ஏற்றுமதி செய்து&lt;/b&gt; குழு உறுப்பினர்களுக்கு அனுப்பவும்&lt;/li&gt;&lt;li&gt;&lt;b&gt;குழு உறுப்பினர்களின் பொதுச் சாவிகளை இறக்குமதி செய்து&lt;/b&gt; உங்கள் GPG சாவித்தொகுப்பில் சேர்க்கவும்&lt;/li&gt;&lt;li&gt;&lt;b&gt;கடவுச்சொற்களை மீண்டும் என்க்ரிப்ட் செய்யவும்&lt;/b&gt;, இதனால் அனைத்து பெறுநர்களும் டிக்ரிப்ட் செய்ய முடியும்&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;பொருந்தும் ரகசிய சாவியை வைத்திருக்கும் நபர்களால் மட்டுமே கடவுச்சொற்களை டிக்ரிப்ட் செய்ய முடியும்.&lt;/p&gt;&lt;p&gt;&lt;b&gt;குறிப்பு:&lt;/b&gt; அனைத்து பகிரப்பட்ட கோப்புறைகளுக்கும் ஒரே GPG சாவியைப் பயன்படுத்தவும்.&lt;/p&gt;&lt;p&gt;மேலும் விவரங்களுக்கு FAQ ஐப் பார்க்கவும்.&lt;/p&gt;</translation>
     </message>
@@ -2909,7 +2920,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;உங்கள் பொதுச் சாவியை ஏற்றுமதி செய்யுங்கள்&lt;/h3&gt;&lt;p&gt;கையெழுத்திட எந்தச் சாவியும் அமைக்கப்படவில்லை. QtPass அமைப்புகள் &amp;gt; GPG சாவிகள் இல் ஒன்றை அமைக்கவும், அல்லது முனையத்தில் இதை இயக்கவும்:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;பின்னர் கோப்பை உங்கள் குழு உறுப்பினர்களுக்கு அனுப்பவும்.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1734"/>
+        <location filename="../src/mainwindow.cpp" line="1756"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2918,7 +2929,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
+        <location filename="../src/mainwindow.cpp" line="1758"/>
         <source>No output from gpg.</source>
         <translation>gpg இலிருந்து வெளியீடு இல்லை.</translation>
     </message>
@@ -2935,24 +2946,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">மீண்டும் மறைகுறியாக்கு</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
-        <location filename="../src/mainwindow.cpp" line="1536"/>
-        <location filename="../src/mainwindow.cpp" line="1633"/>
+        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1552"/>
+        <location filename="../src/mainwindow.cpp" line="1655"/>
         <source>Error</source>
         <translation>பிழை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Failed to create folder: %1</source>
         <translation>%1 கோப்பகத்தை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
+        <location filename="../src/mainwindow.cpp" line="1553"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id கோப்பை உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1603"/>
         <source>Rename file</source>
         <translation>கோப்பை மறுபெயரிடுங்கள்</translation>
     </message>
@@ -2965,18 +2976,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">கோப்பை மறுபெயரிடுங்கள்: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1634"/>
+        <location filename="../src/mainwindow.cpp" line="1656"/>
         <source>Directory does not exist: %1</source>
         <translation>கோப்பகம் %1 இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
-        <location filename="../src/mainwindow.cpp" line="1675"/>
+        <location filename="../src/mainwindow.cpp" line="1664"/>
+        <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Re-encrypt passwords</source>
         <translation>கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1643"/>
+        <location filename="../src/mainwindow.cpp" line="1665"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3006,7 +3017,7 @@ Continue?</source>
 <context>
     <name>OtpCodeWidget</name>
     <message>
-        <location filename="../src/otpcodewidget.cpp" line="67"/>
+        <location filename="../src/otpcodewidget.cpp" line="68"/>
         <source>Seconds until the OTP code changes</source>
         <translation type="unfinished">OTP குறியீடு மாற எஞ்சிய நொடிகள்</translation>
     </message>
@@ -3014,77 +3025,87 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="181"/>
+        <location filename="../src/pass.cpp" line="200"/>
         <source>Configured GPG home %1 does not exist, using the default keyring</source>
         <translation type="unfinished">உள்ளமைக்கப்பட்ட GPG முகப்புக் கோப்பகம் %1 இல்லை, இயல்புநிலை சாவித்தொகுப்பு பயன்படுத்தப்படுகிறது</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="189"/>
+        <location filename="../src/pass.cpp" line="208"/>
         <source>Configured GPG home %1 does not exist, using GNUPGHOME %2 from the environment</source>
         <translation type="unfinished">உள்ளமைக்கப்பட்ட GPG முகப்புக் கோப்பகம் %1 இல்லை, சூழலிலிருந்து GNUPGHOME %2 பயன்படுத்தப்படுகிறது</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="202"/>
+        <location filename="../src/pass.cpp" line="221"/>
         <source>Invalid password length</source>
         <translation>தவறான கடவுச்சொல் நீளம்</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="203"/>
+        <location filename="../src/pass.cpp" line="222"/>
         <source>Can&apos;t generate password with zero length.</source>
         <translation>பூஜ்ய நீளக் கடவுச்சொல்லை உருவாக்க முடியாது.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="238"/>
+        <location filename="../src/pass.cpp" line="250"/>
+        <source>Password generation failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="251"/>
+        <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="265"/>
         <source>No characters chosen</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட எழுத்துக்கள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="239"/>
+        <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>கடவுச்சொல்லை உருவாக்க முடியாது, உள்ளமைவில் அமைக்கப்பட்டவற்றிலிருந்து தேர்வு செய்ய எழுத்துக்கள் எதுவும் இல்லை!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="377"/>
-        <location filename="../src/pass.cpp" line="378"/>
+        <location filename="../src/pass.cpp" line="404"/>
+        <location filename="../src/pass.cpp" line="405"/>
         <source>No GPG executable configured</source>
         <translation type="unfinished">GPG இயங்குகோப்பு எதுவும் அமைக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="448"/>
-        <location filename="../src/pass.cpp" line="467"/>
+        <location filename="../src/pass.cpp" line="475"/>
+        <location filename="../src/pass.cpp" line="494"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: GPG சாவியின் காலாவதி ஆகிவிட்டது. சாவியைப் புதுப்பிக்கவும் அல்லது மாற்றவும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="453"/>
-        <location filename="../src/pass.cpp" line="472"/>
+        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="499"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: GPG சாவி ரத்து செய்யப்பட்டுள்ளது.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="457"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="484"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: பெறுநரின் GPG சாவி கிடைக்கவில்லை அல்லது தவறானது. .gpg-id இல் உள்ள சாவி ஐடி சரியானது மற்றும் இறக்குமதி செய்யப்பட்டுள்ளதா எனச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="461"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="488"/>
+        <location filename="../src/pass.cpp" line="517"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது. உங்கள் GPG சாவி செல்லுபடியாகுமா எனச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="480"/>
+        <location filename="../src/pass.cpp" line="507"/>
         <source>Encryption failed: a recipient&apos;s GPG key cannot be used. It may have expired or been revoked, have no encryption subkey, or not be trusted; gpg&apos;s message below says which.</source>
         <translation type="unfinished">மறையாக்கம் தோல்வியடைந்தது: ஒரு பெறுநரின் GPG விசையைப் பயன்படுத்த முடியாது. அது காலாவதியாகியிருக்கலாம் அல்லது திரும்பப் பெறப்பட்டிருக்கலாம், மறையாக்க துணை விசை இல்லாமல் இருக்கலாம், அல்லது நம்பகமானதாக இல்லாமல் இருக்கலாம்; கீழே உள்ள gpg செய்தி எது என்று கூறுகிறது.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="534"/>
+        <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
         <translation type="unfinished">சேமிக்கப்பட்டது, ஆனால் உறுதிப்படுத்தப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
@@ -3093,47 +3114,93 @@ Continue?</source>
 %1</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="779"/>
+        <location filename="../src/pass.cpp" line="812"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ஒரு குறியீட்டு இணைப்பு அல்லது ஜங்ஷனாக இருக்கிறது, அல்லது அத்தகைய ஒன்றின் பின்னால் உள்ளது. அது சுட்டும் இடம் கடவுச்சொல் சேமிப்பகத்தின் பகுதி அல்ல; அது அப்படியே விடப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="796"/>
+        <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகத்தில் %1 இல்லை. சேமிப்பகம் அல்லது அதில் உள்ள ஒரு கோப்புறையில் பெறுநர்கள் அமைக்கப்பட்டிருக்கிறார்கள்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="806"/>
+        <location filename="../src/pass.cpp" line="844"/>
+        <location filename="../src/pass.cpp" line="845"/>
+        <source>rebase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="846"/>
+        <source>merge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="847"/>
+        <source>cherry-pick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="848"/>
+        <source>revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="853"/>
+        <source>cherry-pick or revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="875"/>
+        <source>The store&apos;s Git repository is in the middle of a %1. Finish or abort it with git before changing the store, or what you change may be lost.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="888"/>
+        <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="893"/>
+        <source>Update in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="907"/>
+        <source>Unfinished Git operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="916"/>
         <source>Not part of the store</source>
         <translation type="unfinished">சேமிப்பகத்தின் பகுதி அல்ல</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="901"/>
+        <location filename="../src/pass.cpp" line="1011"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">பெறுநர் பட்டியல்களின் தலைமுறைப் பதிவேட்டைப் படிக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="983"/>
+        <location filename="../src/pass.cpp" line="1093"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1-ஐ பெறுநர் பட்டியலில் படிக்க முடியாது (இது அதிகபட்சமாக %2 அளவுள்ள ஒரு சாதாரண கோப்பு), எனவே எந்த பெறுநரும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை. இங்கே பெறுநர்களைத் தேர்ந்தெடுக்கும் முன், இதைச் சரிபாருங்கள்: &quot;சரி&quot; என்பது புதிய பட்டியலை உருவாக்கும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1004"/>
+        <location filename="../src/pass.cpp" line="1114"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">பெறுநர் பட்டியல் %1 காணவில்லை அல்லது அது ஒரு சாதாரணக் கோப்பு அல்ல, எனவே எதுவும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை: பெற்றோர் கோப்புறையின் பட்டியல் இந்தக் கோப்புறைக்காகக் கையொப்பமிடப்படவில்லை. இந்தக் கோப்புறையின் பெறுநர்களை நீங்களே தேர்ந்தெடுக்கவும்; OK புதிய பட்டியலை எழுதிக் கையொப்பமிடும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1009"/>
+        <location filename="../src/pass.cpp" line="1119"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 எதுவும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை: %2 அகற்றப்பட்டதா என்பதைக் கண்டறிய முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1024"/>
+        <location filename="../src/pass.cpp" line="1134"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">பெறுநர் பட்டியல் %1 ஐக் கையொப்பமிடும் விசையால் சரிபார்க்க முடியவில்லை; அதனால் எதுவும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை: சேமித்தால், அதில் இருப்பது எதுவாயினும் கையொப்பமிடப்பட்டுவிடும். பெறுநர்களை நீங்களே தேர்ந்தெடுக்கவும்; OK புதிய பட்டியலை எழுதிக் கையொப்பமிடும்.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="948"/>
+        <location filename="../src/pass.cpp" line="1058"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation type="unfinished">%1 எதுவும் முன்னரே தேர்ந்தெடுக்கப்படவில்லை: சேமித்தால், அதில் இருப்பது எதுவாயினும் கையொப்பமிடப்பட்டுவிடும். பெறுநர்களை நீங்களே தேர்ந்தெடுக்கவும்.</translation>
     </message>
@@ -3143,7 +3210,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="340"/>
+        <location filename="../src/passworddialog.cpp" line="369"/>
         <source>Password</source>
         <translation>கடவுச்சொல்</translation>
     </message>
@@ -3231,87 +3298,87 @@ Continue?</source>
         <translation type="unfinished">சேமிப்பகத்தின் .templates கோப்பிலிருந்து புல வார்ப்புரு. Ctrl+T அடுத்ததற்கு மாற்றும்.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="86"/>
+        <location filename="../src/passworddialog.cpp" line="96"/>
         <source>New password</source>
         <translation type="unfinished">புதிய கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="107"/>
+        <location filename="../src/passworddialog.cpp" line="117"/>
         <source>Decrypting…</source>
         <translation type="unfinished">மறைநீக்கம் செய்கிறது…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="192"/>
+        <location filename="../src/passworddialog.cpp" line="207"/>
         <source>Saving…</source>
         <translation type="unfinished">சேமிக்கிறது…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="225"/>
+        <location filename="../src/passworddialog.cpp" line="254"/>
         <source>Still saving</source>
         <translation type="unfinished">இன்னும் சேமிக்கிறது</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="226"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">பதிவு இன்னும் சேமிக்கப்படுகிறது. இருந்தாலும் உரையாடலை மூடவா? அதன் பிறகு சேமிப்பு தோல்வியடைந்தால், நீங்கள் தட்டச்சு செய்தது இழக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="243"/>
+        <location filename="../src/passworddialog.cpp" line="272"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">சேமிக்கப்படவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="285"/>
+        <location filename="../src/passworddialog.cpp" line="314"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">பதிவுக்கு ஒரு பெயரைக் கொடுக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="289"/>
+        <location filename="../src/passworddialog.cpp" line="318"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">பெயர் / உடன் முடிய முடியாது.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="298"/>
+        <location filename="../src/passworddialog.cpp" line="327"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">அந்தப் பெயர் கடவுச்சொல் சேமிப்பகத்திற்கு வெளியே சுட்டும்.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="302"/>
+        <location filename="../src/passworddialog.cpp" line="331"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 என்ற பெயரில் ஒரு பதிவு ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="306"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ஒரு கோப்புறை.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="336"/>
+        <location filename="../src/passworddialog.cpp" line="365"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">%1 கோப்புறையை உருவாக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="393"/>
+        <location filename="../src/passworddialog.cpp" line="425"/>
         <source>Remove field</source>
         <translation type="unfinished">புலத்தை நீக்கு</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="412"/>
+        <location filename="../src/passworddialog.cpp" line="444"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 என்ற பெயரில் ஒரு புலம் ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="498"/>
+        <location filename="../src/passworddialog.cpp" line="530"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI அல்லது base32 ரகசியம்</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="535"/>
+        <location filename="../src/passworddialog.cpp" line="567"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">தவறான OTP ரகசியம்</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="744"/>
+        <location filename="../src/passworddialog.cpp" line="799"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>இந்த உள்ளீட்டில் %n வரி உள்ளது, இங்கே தொகுக்க மிக அதிகம்.</numerusform>
@@ -3326,17 +3393,17 @@ Continue?</source>
         <translation type="obsolete">செயலாக்க வெளியீடு</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="13"/>
+        <location filename="../src/processoutputpanel.cpp" line="18"/>
         <source>Process output</source>
         <translation>செயலாக்க வெளியீடு</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="26"/>
+        <location filename="../src/processoutputpanel.cpp" line="31"/>
         <source>Clear</source>
         <translation type="unfinished">அழி</translation>
     </message>
     <message>
-        <location filename="../src/processoutputpanel.cpp" line="27"/>
+        <location filename="../src/processoutputpanel.cpp" line="32"/>
         <source>Clear output</source>
         <translation type="unfinished">வெளியீட்டை அழி</translation>
     </message>
@@ -3344,12 +3411,12 @@ Continue?</source>
 <context>
     <name>ProfileInit</name>
     <message>
-        <location filename="../src/profileinit.cpp" line="96"/>
+        <location filename="../src/profileinit.cpp" line="101"/>
         <source>Could not create %1.</source>
         <translation type="unfinished">%1 ஐ உருவாக்க முடியவில்லை.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/profileinit.cpp" line="155"/>
+        <location filename="../src/profileinit.cpp" line="160"/>
         <source>%1 already contains %n encrypted file(s); they were not re-encrypted. Switch to the profile and open Users to do that.</source>
         <translation type="unfinished">
             <numerusform>%1 இல் ஏற்கனவே %n குறியாக்கப்பட்ட கோப்பு உள்ளது; அது மீண்டும் குறியாக்கம் செய்யப்படவில்லை. அதைச் செய்ய, சுயவிவரத்திற்கு மாறி பயனர்கள் என்பதைத் திறக்கவும்.</numerusform>
@@ -3357,12 +3424,12 @@ Continue?</source>
         </translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="173"/>
+        <location filename="../src/profileinit.cpp" line="178"/>
         <source>No recipient selected; %1 was not written.</source>
         <translation type="unfinished">பெறுநர் எவரும் தேர்ந்தெடுக்கப்படவில்லை; %1 எழுதப்படவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="237"/>
+        <location filename="../src/profileinit.cpp" line="242"/>
         <source>Could not sign %1 with %2.</source>
         <translation type="unfinished">%2 மூலம் %1 க்கு கையொப்பமிட முடியவில்லை.</translation>
     </message>
@@ -3371,18 +3438,18 @@ Continue?</source>
         <translation type="obsolete">%1 ஐ எழுத முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="239"/>
+        <location filename="../src/profileinit.cpp" line="244"/>
         <source>Could not sign %1 with %2: %3</source>
         <translation type="unfinished">%2 ஐக் கொண்டு %1-க்கு கையொப்பமிட முடியவில்லை: %3</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="249"/>
+        <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
         <translation type="unfinished">அமைக்கப்பட்ட GPG முகவரி %1 இல்லை.</translation>
     </message>
     <message>
-        <location filename="../src/profileinit.cpp" line="271"/>
-        <location filename="../src/profileinit.cpp" line="303"/>
+        <location filename="../src/profileinit.cpp" line="276"/>
+        <location filename="../src/profileinit.cpp" line="308"/>
         <source>git %1 failed in %2: %3</source>
         <translation type="unfinished">%2 இல் git %1 தோல்வியடைந்தது: %3</translation>
     </message>
@@ -3390,57 +3457,57 @@ Continue?</source>
 <context>
     <name>ProgramsWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="202"/>
+        <location filename="../src/firstrunwizard.cpp" line="207"/>
         <source>Use the pass command-line tool</source>
         <translation type="unfinished">pass கட்டளைவரிக் கருவியைப் பயன்படுத்து</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="204"/>
+        <location filename="../src/firstrunwizard.cpp" line="209"/>
         <source>Programs</source>
         <translation type="unfinished">திட்டங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="205"/>
+        <location filename="../src/firstrunwizard.cpp" line="210"/>
         <source>GnuPG does the encrypting. pass and Git are optional; QtPass can do their work itself.</source>
         <translation type="unfinished">GnuPG குறியாக்கத்தைச் செய்கிறது. pass மற்றும் Git விருப்பத்தேர்வு; அவற்றின் வேலையை QtPass தானே செய்ய முடியும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="209"/>
+        <location filename="../src/firstrunwizard.cpp" line="214"/>
         <source>Select executable</source>
         <translation type="unfinished">இயங்குகோப்பைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="210"/>
+        <location filename="../src/firstrunwizard.cpp" line="215"/>
         <source>All files (*)</source>
         <translation type="unfinished">அனைத்து கோப்புகள் (*)</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="212"/>
+        <location filename="../src/firstrunwizard.cpp" line="217"/>
         <source>GnuPG</source>
         <translation type="unfinished">GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="215"/>
+        <location filename="../src/firstrunwizard.cpp" line="220"/>
         <source>Git</source>
         <translation type="unfinished">கிட்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="216"/>
+        <location filename="../src/firstrunwizard.cpp" line="221"/>
         <source>pass</source>
         <translation type="unfinished">கணவாய்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="217"/>
+        <location filename="../src/firstrunwizard.cpp" line="222"/>
         <source>Run the pass script for every operation instead of calling gpg and git directly</source>
         <translation type="unfinished">gpg மற்றும் git ஐ நேரடியாக அழைப்பதற்குப் பதிலாக ஒவ்வொரு செயல்பாட்டிற்கும் pass ஸ்கிரிப்டை இயக்கு</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="257"/>
+        <location filename="../src/firstrunwizard.cpp" line="262"/>
         <source>GnuPG was not found. Install it (gpg or gpg2) and enter its location here.</source>
         <translation type="unfinished">GnuPG கிடைக்கவில்லை. அதை (gpg அல்லது gpg2) நிறுவி, அதன் இருப்பிடத்தை இங்கே உள்ளிடவும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="260"/>
+        <location filename="../src/firstrunwizard.cpp" line="265"/>
         <source>%1 is not an executable file.</source>
         <translation type="unfinished">%1 ஒரு இயங்குகோப்பு அல்ல.</translation>
     </message>
@@ -3448,26 +3515,27 @@ Continue?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="170"/>
-        <location filename="../main/main.cpp" line="174"/>
+        <location filename="../main/main.cpp" line="148"/>
+        <location filename="../main/main.cpp" line="152"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="75"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="183"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="217"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="95"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="201"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="241"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
         <source>Password</source>
         <translation type="unfinished">கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="160"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="180"/>
         <source>Open %1 in browser</source>
         <translation type="unfinished">%1-ஐ உலாவியில் திற</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="343"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="356"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
         <source>OTP code</source>
         <translation>OTP குறியீடு</translation>
     </message>
@@ -3476,7 +3544,7 @@ Continue?</source>
         <translation type="obsolete">OTP குறியீடு</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="344"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">இந்த கடவுச்சொல் பதிவில் OTP குறியீடு எதுவும் கிடைக்கவில்லை</translation>
     </message>
@@ -3484,8 +3552,8 @@ Continue?</source>
 <context>
     <name>QPushButtonAsQRCode</name>
     <message>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="20"/>
-        <location filename="../src/qpushbuttonasqrcode.cpp" line="21"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="16"/>
+        <location filename="../src/qpushbuttonasqrcode.cpp" line="17"/>
         <source>Show as QR code</source>
         <translation type="unfinished">QR குறியீடாகக் காட்டு</translation>
     </message>
@@ -3493,16 +3561,16 @@ Continue?</source>
 <context>
     <name>QPushButtonShowPassword</name>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="22"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="23"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="43"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="44"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="19"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="20"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
         <translation type="unfinished">கடவுச்சொல்லைக் காட்டு</translation>
     </message>
     <message>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="38"/>
-        <location filename="../src/qpushbuttonshowpassword.cpp" line="39"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
+        <location filename="../src/qpushbuttonshowpassword.cpp" line="32"/>
         <source>Hide password</source>
         <translation type="unfinished">கடவுச்சொல்லை மறைக்கவும்</translation>
     </message>
@@ -3510,8 +3578,8 @@ Continue?</source>
 <context>
     <name>QPushButtonWithClipboard</name>
     <message>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="23"/>
-        <location filename="../src/qpushbuttonwithclipboard.cpp" line="24"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="20"/>
+        <location filename="../src/qpushbuttonwithclipboard.cpp" line="21"/>
         <source>Copy to clipboard</source>
         <translation type="unfinished">கிளிப்போர்டுக்கு நகலெடு</translation>
     </message>
@@ -3577,7 +3645,7 @@ Continue?</source>
         <translation type="vanished">GPG விசை ஜோடி உருவாக்கம் தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="182"/>
+        <location filename="../src/qtpass.cpp" line="138"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG சூத்திரங்கள் உருவாக்கப்பட்டது</translation>
     </message>
@@ -3594,22 +3662,22 @@ Continue?</source>
         <translation type="vanished">இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="169"/>
         <source>Could not start qrencode: %1</source>
         <translation type="unfinished">qrencode-ஐத் தொடங்க முடியவில்லை: %1</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="235"/>
+        <location filename="../src/qtpass.cpp" line="177"/>
         <source>qrencode did not finish in time</source>
         <translation type="unfinished">qrencode சரியான நேரத்தில் முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="247"/>
+        <location filename="../src/qtpass.cpp" line="189"/>
         <source>qrencode crashed</source>
         <translation type="unfinished">qrencode செயலிழந்தது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="248"/>
+        <location filename="../src/qtpass.cpp" line="190"/>
         <source>qrencode exited with code %1</source>
         <translation type="unfinished">qrencode குறியீடு %1 உடன் முடிந்தது</translation>
     </message>
@@ -3617,38 +3685,38 @@ Continue?</source>
 <context>
     <name>RealPass</name>
     <message>
-        <location filename="../src/realpass.cpp" line="143"/>
+        <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
         <translation type="unfinished">பெறநர் பட்டியல்களை %1-ல் சரிபார்க்கப்படுகிறது…</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="250"/>
+        <location filename="../src/realpass.cpp" line="269"/>
         <source>Could not remove the link %1.</source>
         <translation type="unfinished">இணைப்பு %1-ஐ நீக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="251"/>
+        <location filename="../src/realpass.cpp" line="270"/>
         <source>Delete failed</source>
         <translation type="unfinished">நீக்குதல் தோல்வியடைந்தது</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="301"/>
+        <location filename="../src/realpass.cpp" line="320"/>
         <source>The link %1 was removed, but git could not record it: %2</source>
         <translation type="unfinished">இணைப்பு %1 அகற்றப்பட்டது, ஆனால் git அதைப் பதிவு செய்ய முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="303"/>
-        <location filename="../src/realpass.cpp" line="353"/>
+        <location filename="../src/realpass.cpp" line="322"/>
+        <location filename="../src/realpass.cpp" line="372"/>
         <source>Delete incomplete</source>
         <translation type="unfinished">நீக்கம் முழுமையடையவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="350"/>
+        <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
         <translation type="unfinished">%1 என்ற இணைப்பு நீக்கப்பட்டது, மேலும் இது git-ஆ கண்காணிக்கப்படவில்லை. ஆனால் கமிட் தோல்வியடைந்தது: %2</translation>
     </message>
     <message>
-        <location filename="../src/realpass.cpp" line="477"/>
+        <location filename="../src/realpass.cpp" line="502"/>
         <source>Search needs the GPG executable to be configured.</source>
         <translation type="unfinished">தேடலுக்கு GPG இயங்குகோப்பு அமைக்கப்பட்டிருக்க வேண்டும்.</translation>
     </message>
@@ -3660,12 +3728,12 @@ Continue?</source>
         <translation type="vanished">ஃபோர்ச் ஓவர்ரைட்?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="290"/>
+        <location filename="../src/storemodel.cpp" line="295"/>
         <source>Force overwrite?</source>
         <translation>வலுக்கட்டாயமாக மேலெழுதவா?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="291"/>
+        <location filename="../src/storemodel.cpp" line="296"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 ஐ %2 உடன் மேலெழுதவா?</translation>
     </message>
@@ -3673,32 +3741,32 @@ Continue?</source>
 <context>
     <name>StoreWizardPage</name>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="364"/>
+        <location filename="../src/firstrunwizard.cpp" line="369"/>
         <source>Keep the store under Git</source>
         <translation type="unfinished">சேமிப்பகத்தை Git கீழ் வை</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="366"/>
+        <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Password store</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகம்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="367"/>
+        <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
         <translation type="unfinished">உங்கள் கடவுச்சொற்கள் இருக்கும் கோப்புறை. ஏற்கனவே உள்ள சேமிப்பகம் இருக்கும் நிலையிலேயே பயன்படுத்தப்படும்; காலியான அல்லது இல்லாத கோப்புறை நீங்கள் தேர்வு செய்த சாவிகளுக்காக அமைக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="371"/>
+        <location filename="../src/firstrunwizard.cpp" line="376"/>
         <source>Folder</source>
         <translation type="unfinished">கோப்புறை</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="373"/>
+        <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
         <translation type="unfinished">கடவுச்சொல் சேமிப்பகக் கோப்புறையைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="398"/>
+        <location filename="../src/firstrunwizard.cpp" line="403"/>
         <source>Git has no name and e-mail to commit with yet. Run
 git config --global user.name &quot;Your Name&quot;
 git config --global user.email you@example.org
@@ -3709,17 +3777,17 @@ git config --global user.email you@example.org
 பின்னர் அமைப்புகளில் Git-ஐ இயக்கவும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="402"/>
+        <location filename="../src/firstrunwizard.cpp" line="407"/>
         <source>Every change becomes a commit; a folder that is no repository yet gets one</source>
         <translation type="unfinished">ஒவ்வொரு மாற்றமும் ஒரு கமிட் ஆகும்; இன்னும் களஞ்சியமாக இல்லாத கோப்புறைக்கு ஒன்று உருவாக்கப்படும்</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="426"/>
+        <location filename="../src/firstrunwizard.cpp" line="431"/>
         <source>Enter a folder.</source>
         <translation type="unfinished">ஒரு கோப்புறையை உள்ளிடவும்.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/firstrunwizard.cpp" line="430"/>
+        <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
             <numerusform>%n பதிவு உள்ள ஏற்கனவே இருக்கும் கடவுச்சொல் சேமிப்பகம்.</numerusform>
@@ -3727,22 +3795,22 @@ git config --global user.email you@example.org
         </translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="433"/>
+        <location filename="../src/firstrunwizard.cpp" line="438"/>
         <source>An empty folder; it will be set up as a password store.</source>
         <translation type="unfinished">காலியான கோப்புறை; இது கடவுச்சொல் சேமிப்பகமாக அமைக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="434"/>
+        <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
         <translation type="unfinished">இந்தக் கோப்புறை இன்னும் கடவுச்சொல் சேமிப்பகம் அல்ல; தேர்வு செய்த சாவிகளுக்கான .gpg-id இதில் எழுதப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="437"/>
+        <location filename="../src/firstrunwizard.cpp" line="442"/>
         <source>The folder does not exist yet; it will be created.</source>
         <translation type="unfinished">இந்தக் கோப்புறை இன்னும் இல்லை; இது உருவாக்கப்படும்.</translation>
     </message>
     <message>
-        <location filename="../src/firstrunwizard.cpp" line="441"/>
+        <location filename="../src/firstrunwizard.cpp" line="446"/>
         <source>Go back and tick at least one key to encrypt it to.</source>
         <translation type="unfinished">பின்சென்று, குறியாக்கம் செய்ய குறைந்தது ஒரு சாவியையாவது தேர்வு செய்யவும்.</translation>
     </message>
@@ -3750,32 +3818,32 @@ git config --global user.email you@example.org
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="36"/>
+        <location filename="../src/trayicon.cpp" line="41"/>
         <source>&amp;Show</source>
         <translation>(&amp;S) காட்டு</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="38"/>
+        <location filename="../src/trayicon.cpp" line="43"/>
         <source>&amp;Hide</source>
         <translation>(&amp;H) மறை</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="41"/>
+        <location filename="../src/trayicon.cpp" line="46"/>
         <source>Mi&amp;nimize</source>
         <translation>(&amp;N) Minimize</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="44"/>
+        <location filename="../src/trayicon.cpp" line="49"/>
         <source>Ma&amp;ximize</source>
         <translation>(&amp;X) Maximize</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="47"/>
+        <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Restore</source>
         <translation>(&amp;R) மீட்டமை</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="50"/>
+        <location filename="../src/trayicon.cpp" line="55"/>
         <source>&amp;Quit</source>
         <translation>(&amp;Q) வெளியேறு</translation>
     </message>
@@ -3865,42 +3933,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="71"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>கீலிச்ட் காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>கிடைக்கக்கூடிய சிபிசி விசைகளின் பட்டியலைப் பெற முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="181"/>
+        <location filename="../src/usersdialog.cpp" line="220"/>
         <source>Key not found in keyring</source>
         <translation>கீ கெய்ரிங்கில் காணப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="325"/>
+        <location filename="../src/usersdialog.cpp" line="364"/>
         <source>created</source>
         <translation>உருவாக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="329"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>expires</source>
         <translation>காலாவதியாகிறது</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="352"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[INVALID] </source>
         <translation>[தவறான] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="348"/>
+        <location filename="../src/usersdialog.cpp" line="387"/>
         <source>[EXPIRED] </source>
         <translation>[காலாவதியான] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="356"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[PARTIAL] </source>
         <translation>[பகுதி] </translation>
     </message>
@@ -3908,34 +3976,34 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
 <context>
     <name>Util</name>
     <message>
-        <location filename="../src/util.cpp" line="972"/>
+        <location filename="../src/util.cpp" line="1080"/>
         <source>Cannot create a temporary file next to %1: %2</source>
         <translation type="unfinished">%1 அருகில் தற்காலிகக் கோப்பை உருவாக்க முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="984"/>
-        <location filename="../src/util.cpp" line="1063"/>
-        <location filename="../src/util.cpp" line="1093"/>
+        <location filename="../src/util.cpp" line="1092"/>
+        <location filename="../src/util.cpp" line="1171"/>
+        <location filename="../src/util.cpp" line="1201"/>
         <source>Cannot write %1: %2</source>
         <translation type="unfinished">%1 ஐ எழுத முடியவில்லை: %2</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="999"/>
+        <location filename="../src/util.cpp" line="1107"/>
         <source>Failed to replace %1.</source>
         <translation type="unfinished">%1 ஐ மாற்ற முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1004"/>
+        <location filename="../src/util.cpp" line="1112"/>
         <source>%1 already exists.</source>
         <translation type="unfinished">%1 ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1006"/>
+        <location filename="../src/util.cpp" line="1114"/>
         <source>Failed to write %1.</source>
         <translation type="unfinished">%1 ஐ எழுத முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1050"/>
+        <location filename="../src/util.cpp" line="1158"/>
         <source>%1 was swapped for another file while it was written.</source>
         <translation type="unfinished">%1 எழுதப்பட்டுக் கொண்டிருந்தபோதே வேறொரு கோப்பால் மாற்றப்பட்டது.</translation>
     </message>
@@ -3944,12 +4012,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="obsolete">%1 எழுதப்பட்டுக் கொண்டிருந்தபோதே ஒரு இணைப்பால் மாற்றப்பட்டது.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1076"/>
+        <location filename="../src/util.cpp" line="1184"/>
         <source>Cannot read %1.</source>
         <translation type="unfinished">%1 ஐப் படிக்க முடியவில்லை.</translation>
     </message>
     <message>
-        <location filename="../src/util.cpp" line="1086"/>
+        <location filename="../src/util.cpp" line="1194"/>
         <source>Cannot read %1: %2</source>
         <translation type="unfinished">%1 ஐப் படிக்க முடியவில்லை: %2</translation>
     </message>
