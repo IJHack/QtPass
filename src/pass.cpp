@@ -888,9 +888,9 @@ auto Pass::unfinishedGitOperationReason() -> QString {
     }
     //: %1 is a Git command name: rebase, merge, cherry-pick, revert, or
     //: "cherry-pick or revert".
-    return tr("The store's Git repository is in the middle of a %1. Finish or "
-              "abort it with Git before changing the store, or what you change "
-              "may be lost.")
+    return tr("The password store's Git repository is in the middle of a %1. "
+              "Finish or abort it with Git before changing the password store, "
+              "or what you change may be lost.")
         .arg(markers.at(static_cast<size_t>(i)).second);
   }
   return {};

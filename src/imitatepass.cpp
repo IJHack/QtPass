@@ -1006,8 +1006,9 @@ auto ImitatePass::createBackupCommit() -> bool {
   if (listsUnmergedPath(statusOut)) {
     if (!m_reencryptCancel.load())
       emit critical(tr("Unfinished Git operation"),
-                    tr("The store's Git repository has unmerged files. "
-                       "Resolve the conflict with Git before re-encrypting."));
+                    tr("The password store's Git repository has unmerged "
+                       "files. Resolve the conflict with Git before "
+                       "re-encrypting."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {
