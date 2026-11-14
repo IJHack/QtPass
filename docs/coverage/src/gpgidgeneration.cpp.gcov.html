@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 18:11:14</td>
+            <td class="headerValue">2026-11-14 19:03:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -520,429 +520,439 @@
 <span id="L447"><span class="lineNum">     447</span>              :                     std::optional&lt;QString&gt; &amp;store) -&gt; QString {</span>
 <span id="L448"><span class="lineNum">     448</span> <span class="tlaGNC">         403 :   if (line.startsWith(GpgIdGeneration::kStorePrefix)) {</span></span>
 <span id="L449"><span class="lineNum">     449</span> <span class="tlaGNC">          73 :     if (store) {</span></span>
-<span id="L450"><span class="lineNum">     450</span>              :       return QCoreApplication::translate(</span>
-<span id="L451"><span class="lineNum">     451</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one store line.&quot;);</span></span>
-<span id="L452"><span class="lineNum">     452</span>              :     }</span>
-<span id="L453"><span class="lineNum">     453</span> <span class="tlaGNC">          72 :     const QByteArray value = line.mid(GpgIdGeneration::kStorePrefix.size());</span></span>
-<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">          72 :     if (isStoreId(value)) {</span></span>
-<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">          67 :       store = QString::fromLatin1(value);</span></span>
-<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          67 :       return {};</span></span>
-<span id="L457"><span class="lineNum">     457</span>              :     }</span>
-<span id="L458"><span class="lineNum">     458</span> <span class="tlaGNC">          10 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
-<span id="L459"><span class="lineNum">     459</span>              :                                        &quot;The store line is malformed: %1&quot;)</span>
-<span id="L460"><span class="lineNum">     460</span> <span class="tlaGNC">          10 :         .arg(QString::fromUtf8(line));</span></span>
-<span id="L461"><span class="lineNum">     461</span>              :   }</span>
-<span id="L462"><span class="lineNum">     462</span> <span class="tlaGNC">         330 :   if (line.startsWith(GpgIdGeneration::kGenerationPrefix)) {</span></span>
-<span id="L463"><span class="lineNum">     463</span> <span class="tlaGNC">         167 :     if (generation) {</span></span>
-<span id="L464"><span class="lineNum">     464</span>              :       return QCoreApplication::translate(</span>
-<span id="L465"><span class="lineNum">     465</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one generation line.&quot;);</span></span>
-<span id="L466"><span class="lineNum">     466</span>              :     }</span>
-<span id="L467"><span class="lineNum">     467</span>              :     generation =</span>
-<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">         332 :         generationDigits(line.mid(GpgIdGeneration::kGenerationPrefix.size()));</span></span>
-<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">         166 :     if (generation) {</span></span>
-<span id="L470"><span class="lineNum">     470</span> <span class="tlaGNC">         158 :       return {};</span></span>
-<span id="L471"><span class="lineNum">     471</span>              :     }</span>
-<span id="L472"><span class="lineNum">     472</span> <span class="tlaGNC">          16 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
-<span id="L473"><span class="lineNum">     473</span>              :                                        &quot;The generation line is malformed: %1&quot;)</span>
-<span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">          16 :         .arg(QString::fromUtf8(line));</span></span>
-<span id="L475"><span class="lineNum">     475</span>              :   }</span>
-<span id="L476"><span class="lineNum">     476</span> <span class="tlaGNC">         163 :   if (line.startsWith(GpgIdGeneration::kFolderPrefix)) {</span></span>
-<span id="L477"><span class="lineNum">     477</span> <span class="tlaGNC">         160 :     if (folder) {</span></span>
-<span id="L478"><span class="lineNum">     478</span>              :       return QCoreApplication::translate(</span>
-<span id="L479"><span class="lineNum">     479</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one folder line.&quot;);</span></span>
-<span id="L480"><span class="lineNum">     480</span>              :     }</span>
-<span id="L481"><span class="lineNum">     481</span> <span class="tlaGNC">         159 :     const QByteArray value = line.mid(GpgIdGeneration::kFolderPrefix.size());</span></span>
-<span id="L482"><span class="lineNum">     482</span>              :     // A control character (a second \r of &quot;\r\r\n&quot;, a tab, a NUL) is not</span>
-<span id="L483"><span class="lineNum">     483</span>              :     // part of a folder name QtPass writes, and would not survive being</span>
-<span id="L484"><span class="lineNum">     484</span>              :     // written back: header() ends the line, parse() strips one \r.</span>
-<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">         159 :     if (!value.isEmpty() &amp;&amp; !hasControl(value)) {</span></span>
-<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">         154 :       folder = QString::fromUtf8(value);</span></span>
-<span id="L487"><span class="lineNum">     487</span> <span class="tlaGNC">         154 :       return {};</span></span>
-<span id="L488"><span class="lineNum">     488</span>              :     }</span>
-<span id="L489"><span class="lineNum">     489</span> <span class="tlaGNC">          10 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
-<span id="L490"><span class="lineNum">     490</span>              :                                        &quot;The folder line is malformed: %1&quot;)</span>
-<span id="L491"><span class="lineNum">     491</span> <span class="tlaGNC">          10 :         .arg(QString::fromUtf8(line));</span></span>
-<span id="L492"><span class="lineNum">     492</span>              :   }</span>
-<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">           6 :   return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
-<span id="L494"><span class="lineNum">     494</span>              :                                      &quot;The header line is malformed: %1&quot;)</span>
-<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">           6 :       .arg(QString::fromUtf8(line));</span></span>
-<span id="L496"><span class="lineNum">     496</span>              : }</span>
-<span id="L497"><span class="lineNum">     497</span>              : </span>
-<span id="L498"><span class="lineNum">     498</span>              : } // namespace</span>
-<span id="L499"><span class="lineNum">     499</span>              : </span>
-<span id="L500"><span class="lineNum">     500</span> <span class="tlaGNC">         185 : auto GpgIdGeneration::parse(const QByteArray &amp;contents, QString *error)</span></span>
-<span id="L501"><span class="lineNum">     501</span>              :     -&gt; std::optional&lt;Header&gt; {</span>
-<span id="L502"><span class="lineNum">     502</span> <span class="tlaGNC">         185 :   std::optional&lt;qint64&gt; generation;</span></span>
-<span id="L503"><span class="lineNum">     503</span> <span class="tlaGNC">         185 :   std::optional&lt;QString&gt; folder;</span></span>
-<span id="L504"><span class="lineNum">     504</span> <span class="tlaGNC">         185 :   std::optional&lt;QString&gt; store;</span></span>
-<span id="L505"><span class="lineNum">     505</span> <span class="tlaGNC">        1103 :   for (const QByteArray &amp;rawLine : contents.split('\n')) {</span></span>
-<span id="L506"><span class="lineNum">     506</span>              :     QByteArray line = rawLine;</span>
-<span id="L507"><span class="lineNum">     507</span>              :     if (line.endsWith('\r')) {</span>
-<span id="L508"><span class="lineNum">     508</span> <span class="tlaGNC">           3 :       line.chop(1);</span></span>
-<span id="L509"><span class="lineNum">     509</span>              :     }</span>
-<span id="L510"><span class="lineNum">     510</span>              :     // Only a line under our name is ours; any other comment is somebody</span>
-<span id="L511"><span class="lineNum">     511</span>              :     // else's. But a near miss under the same name is suspicious, not</span>
-<span id="L512"><span class="lineNum">     512</span>              :     // ignorable.</span>
-<span id="L513"><span class="lineNum">     513</span> <span class="tlaGNC">         757 :     if (!line.startsWith(kOurComment)) {</span></span>
-<span id="L514"><span class="lineNum">     514</span> <span class="tlaGNC">         354 :       continue;</span></span>
+<span id="L450"><span class="lineNum">     450</span>              :       //: The store ID line is the line of a signed recipient list (.gpg-id)</span>
+<span id="L451"><span class="lineNum">     451</span>              :       //: that names the password store by its ID. &quot;Store&quot; is the password</span>
+<span id="L452"><span class="lineNum">     452</span>              :       //: store, not a shop.</span>
+<span id="L453"><span class="lineNum">     453</span>              :       return QCoreApplication::translate(</span>
+<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one store ID line.&quot;);</span></span>
+<span id="L455"><span class="lineNum">     455</span>              :     }</span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">          72 :     const QByteArray value = line.mid(GpgIdGeneration::kStorePrefix.size());</span></span>
+<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">          72 :     if (isStoreId(value)) {</span></span>
+<span id="L458"><span class="lineNum">     458</span> <span class="tlaGNC">          67 :       store = QString::fromLatin1(value);</span></span>
+<span id="L459"><span class="lineNum">     459</span> <span class="tlaGNC">          67 :       return {};</span></span>
+<span id="L460"><span class="lineNum">     460</span>              :     }</span>
+<span id="L461"><span class="lineNum">     461</span>              :     //: The store ID line is the line of a signed recipient list (.gpg-id)</span>
+<span id="L462"><span class="lineNum">     462</span>              :     //: that names the password store by its ID. &quot;Store&quot; is the password</span>
+<span id="L463"><span class="lineNum">     463</span>              :     //: store, not a shop.</span>
+<span id="L464"><span class="lineNum">     464</span> <span class="tlaGNC">          10 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
+<span id="L465"><span class="lineNum">     465</span>              :                                        &quot;The store ID line is malformed: %1&quot;)</span>
+<span id="L466"><span class="lineNum">     466</span> <span class="tlaGNC">          10 :         .arg(QString::fromUtf8(line));</span></span>
+<span id="L467"><span class="lineNum">     467</span>              :   }</span>
+<span id="L468"><span class="lineNum">     468</span> <span class="tlaGNC">         330 :   if (line.startsWith(GpgIdGeneration::kGenerationPrefix)) {</span></span>
+<span id="L469"><span class="lineNum">     469</span> <span class="tlaGNC">         167 :     if (generation) {</span></span>
+<span id="L470"><span class="lineNum">     470</span>              :       return QCoreApplication::translate(</span>
+<span id="L471"><span class="lineNum">     471</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one generation line.&quot;);</span></span>
+<span id="L472"><span class="lineNum">     472</span>              :     }</span>
+<span id="L473"><span class="lineNum">     473</span>              :     generation =</span>
+<span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">         332 :         generationDigits(line.mid(GpgIdGeneration::kGenerationPrefix.size()));</span></span>
+<span id="L475"><span class="lineNum">     475</span> <span class="tlaGNC">         166 :     if (generation) {</span></span>
+<span id="L476"><span class="lineNum">     476</span> <span class="tlaGNC">         158 :       return {};</span></span>
+<span id="L477"><span class="lineNum">     477</span>              :     }</span>
+<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">          16 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
+<span id="L479"><span class="lineNum">     479</span>              :                                        &quot;The generation line is malformed: %1&quot;)</span>
+<span id="L480"><span class="lineNum">     480</span> <span class="tlaGNC">          16 :         .arg(QString::fromUtf8(line));</span></span>
+<span id="L481"><span class="lineNum">     481</span>              :   }</span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">         163 :   if (line.startsWith(GpgIdGeneration::kFolderPrefix)) {</span></span>
+<span id="L483"><span class="lineNum">     483</span> <span class="tlaGNC">         160 :     if (folder) {</span></span>
+<span id="L484"><span class="lineNum">     484</span>              :       return QCoreApplication::translate(</span>
+<span id="L485"><span class="lineNum">     485</span> <span class="tlaGNC">           1 :           &quot;GpgIdGeneration&quot;, &quot;The list carries more than one folder line.&quot;);</span></span>
+<span id="L486"><span class="lineNum">     486</span>              :     }</span>
+<span id="L487"><span class="lineNum">     487</span> <span class="tlaGNC">         159 :     const QByteArray value = line.mid(GpgIdGeneration::kFolderPrefix.size());</span></span>
+<span id="L488"><span class="lineNum">     488</span>              :     // A control character (a second \r of &quot;\r\r\n&quot;, a tab, a NUL) is not</span>
+<span id="L489"><span class="lineNum">     489</span>              :     // part of a folder name QtPass writes, and would not survive being</span>
+<span id="L490"><span class="lineNum">     490</span>              :     // written back: header() ends the line, parse() strips one \r.</span>
+<span id="L491"><span class="lineNum">     491</span> <span class="tlaGNC">         159 :     if (!value.isEmpty() &amp;&amp; !hasControl(value)) {</span></span>
+<span id="L492"><span class="lineNum">     492</span> <span class="tlaGNC">         154 :       folder = QString::fromUtf8(value);</span></span>
+<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">         154 :       return {};</span></span>
+<span id="L494"><span class="lineNum">     494</span>              :     }</span>
+<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">          10 :     return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
+<span id="L496"><span class="lineNum">     496</span>              :                                        &quot;The folder line is malformed: %1&quot;)</span>
+<span id="L497"><span class="lineNum">     497</span> <span class="tlaGNC">          10 :         .arg(QString::fromUtf8(line));</span></span>
+<span id="L498"><span class="lineNum">     498</span>              :   }</span>
+<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">           6 :   return QCoreApplication::translate(&quot;GpgIdGeneration&quot;,</span></span>
+<span id="L500"><span class="lineNum">     500</span>              :                                      &quot;The header line is malformed: %1&quot;)</span>
+<span id="L501"><span class="lineNum">     501</span> <span class="tlaGNC">           6 :       .arg(QString::fromUtf8(line));</span></span>
+<span id="L502"><span class="lineNum">     502</span>              : }</span>
+<span id="L503"><span class="lineNum">     503</span>              : </span>
+<span id="L504"><span class="lineNum">     504</span>              : } // namespace</span>
+<span id="L505"><span class="lineNum">     505</span>              : </span>
+<span id="L506"><span class="lineNum">     506</span> <span class="tlaGNC">         185 : auto GpgIdGeneration::parse(const QByteArray &amp;contents, QString *error)</span></span>
+<span id="L507"><span class="lineNum">     507</span>              :     -&gt; std::optional&lt;Header&gt; {</span>
+<span id="L508"><span class="lineNum">     508</span> <span class="tlaGNC">         185 :   std::optional&lt;qint64&gt; generation;</span></span>
+<span id="L509"><span class="lineNum">     509</span> <span class="tlaGNC">         185 :   std::optional&lt;QString&gt; folder;</span></span>
+<span id="L510"><span class="lineNum">     510</span> <span class="tlaGNC">         185 :   std::optional&lt;QString&gt; store;</span></span>
+<span id="L511"><span class="lineNum">     511</span> <span class="tlaGNC">        1103 :   for (const QByteArray &amp;rawLine : contents.split('\n')) {</span></span>
+<span id="L512"><span class="lineNum">     512</span>              :     QByteArray line = rawLine;</span>
+<span id="L513"><span class="lineNum">     513</span>              :     if (line.endsWith('\r')) {</span>
+<span id="L514"><span class="lineNum">     514</span> <span class="tlaGNC">           3 :       line.chop(1);</span></span>
 <span id="L515"><span class="lineNum">     515</span>              :     }</span>
-<span id="L516"><span class="lineNum">     516</span> <span class="tlaGNC">         403 :     const QString complaint = takeHeaderLine(line, generation, folder, store);</span></span>
-<span id="L517"><span class="lineNum">     517</span> <span class="tlaGNC">         403 :     if (complaint.isEmpty()) {</span></span>
-<span id="L518"><span class="lineNum">     518</span>              :       continue;</span>
-<span id="L519"><span class="lineNum">     519</span>              :     }</span>
-<span id="L520"><span class="lineNum">     520</span> <span class="tlaGNC">          24 :     if (error)</span></span>
-<span id="L521"><span class="lineNum">     521</span> <span class="tlaGNC">          24 :       *error = complaint;</span></span>
-<span id="L522"><span class="lineNum">     522</span> <span class="tlaGNC">          24 :     return std::nullopt;</span></span>
-<span id="L523"><span class="lineNum">     523</span>              :   }</span>
-<span id="L524"><span class="lineNum">     524</span> <span class="tlaGNC">         161 :   if (generation &amp;&amp; !folder) {</span></span>
-<span id="L525"><span class="lineNum">     525</span> <span class="tlaGNC">           1 :     if (error)</span></span>
-<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The list carries a generation line but no folder line.&quot;);</span></span>
-<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
-<span id="L528"><span class="lineNum">     528</span>              :   }</span>
-<span id="L529"><span class="lineNum">     529</span>              :   // QtPass writes the store line only with the other two.</span>
-<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         160 :   if (store &amp;&amp; !generation) {</span></span>
+<span id="L516"><span class="lineNum">     516</span>              :     // Only a line under our name is ours; any other comment is somebody</span>
+<span id="L517"><span class="lineNum">     517</span>              :     // else's. But a near miss under the same name is suspicious, not</span>
+<span id="L518"><span class="lineNum">     518</span>              :     // ignorable.</span>
+<span id="L519"><span class="lineNum">     519</span> <span class="tlaGNC">         757 :     if (!line.startsWith(kOurComment)) {</span></span>
+<span id="L520"><span class="lineNum">     520</span> <span class="tlaGNC">         354 :       continue;</span></span>
+<span id="L521"><span class="lineNum">     521</span>              :     }</span>
+<span id="L522"><span class="lineNum">     522</span> <span class="tlaGNC">         403 :     const QString complaint = takeHeaderLine(line, generation, folder, store);</span></span>
+<span id="L523"><span class="lineNum">     523</span> <span class="tlaGNC">         403 :     if (complaint.isEmpty()) {</span></span>
+<span id="L524"><span class="lineNum">     524</span>              :       continue;</span>
+<span id="L525"><span class="lineNum">     525</span>              :     }</span>
+<span id="L526"><span class="lineNum">     526</span> <span class="tlaGNC">          24 :     if (error)</span></span>
+<span id="L527"><span class="lineNum">     527</span> <span class="tlaGNC">          24 :       *error = complaint;</span></span>
+<span id="L528"><span class="lineNum">     528</span> <span class="tlaGNC">          24 :     return std::nullopt;</span></span>
+<span id="L529"><span class="lineNum">     529</span>              :   }</span>
+<span id="L530"><span class="lineNum">     530</span> <span class="tlaGNC">         161 :   if (generation &amp;&amp; !folder) {</span></span>
 <span id="L531"><span class="lineNum">     531</span> <span class="tlaGNC">           1 :     if (error)</span></span>
-<span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The list carries a store line but no generation line.&quot;);</span></span>
+<span id="L532"><span class="lineNum">     532</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The list carries a generation line but no folder line.&quot;);</span></span>
 <span id="L533"><span class="lineNum">     533</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
 <span id="L534"><span class="lineNum">     534</span>              :   }</span>
-<span id="L535"><span class="lineNum">     535</span> <span class="tlaGNC">         159 :   Header header;</span></span>
-<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         159 :   header.generation = generation.value_or(0);</span></span>
-<span id="L537"><span class="lineNum">     537</span>              :   header.folder = folder;</span>
-<span id="L538"><span class="lineNum">     538</span>              :   header.store = store;</span>
-<span id="L539"><span class="lineNum">     539</span>              :   return header;</span>
-<span id="L540"><span class="lineNum">     540</span>              : }</span>
-<span id="L541"><span class="lineNum">     541</span>              : </span>
-<span id="L542"><span class="lineNum">     542</span> <span class="tlaGNC">         111 : auto GpgIdGeneration::header(qint64 generation, const QString &amp;folder,</span></span>
-<span id="L543"><span class="lineNum">     543</span>              :                              const QString &amp;store) -&gt; QByteArray {</span>
-<span id="L544"><span class="lineNum">     544</span> <span class="tlaGNC">         222 :   QByteArray lines = kGenerationPrefix + QByteArray::number(generation) + '\n' +</span></span>
-<span id="L545"><span class="lineNum">     545</span> <span class="tlaGNC">         222 :                      kFolderPrefix + folder.toUtf8() + '\n';</span></span>
-<span id="L546"><span class="lineNum">     546</span> <span class="tlaGNC">         111 :   if (!store.isEmpty()) {</span></span>
-<span id="L547"><span class="lineNum">     547</span> <span class="tlaGNC">          86 :     lines += kStorePrefix + store.toLatin1() + '\n';</span></span>
-<span id="L548"><span class="lineNum">     548</span>              :   }</span>
-<span id="L549"><span class="lineNum">     549</span> <span class="tlaGNC">         111 :   return lines;</span></span>
-<span id="L550"><span class="lineNum">     550</span>              : }</span>
-<span id="L551"><span class="lineNum">     551</span>              : </span>
-<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">         111 : auto GpgIdGeneration::withHeader(qint64 generation, const QString &amp;folder,</span></span>
-<span id="L553"><span class="lineNum">     553</span>              :                                  const QByteArray &amp;recipients,</span>
-<span id="L554"><span class="lineNum">     554</span>              :                                  const QString &amp;store) -&gt; QByteArray {</span>
-<span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">         222 :   return header(generation, folder, store) + recipients;</span></span>
-<span id="L556"><span class="lineNum">     556</span>              : }</span>
-<span id="L557"><span class="lineNum">     557</span>              : </span>
-<span id="L558"><span class="lineNum">     558</span> <span class="tlaGNC">         133 : auto GpgIdGeneration::folderOf(const QString &amp;gpgIdFile,</span></span>
-<span id="L559"><span class="lineNum">     559</span>              :                                const QString &amp;storeRoot)</span>
-<span id="L560"><span class="lineNum">     560</span>              :     -&gt; std::optional&lt;QString&gt; {</span>
-<span id="L561"><span class="lineNum">     561</span> <span class="tlaGNC">         133 :   return relativeFolder(gpgIdFile, storeRoot);</span></span>
-<span id="L562"><span class="lineNum">     562</span>              : }</span>
-<span id="L563"><span class="lineNum">     563</span>              : </span>
-<span id="L564"><span class="lineNum">     564</span> <span class="tlaGNC">         356 : auto GpgIdGeneration::key(const QString &amp;gpgIdFile) -&gt; QString {</span></span>
-<span id="L565"><span class="lineNum">     565</span> <span class="tlaGNC">         356 :   const QFileInfo info(gpgIdFile);</span></span>
-<span id="L566"><span class="lineNum">     566</span>              :   // canonicalFilePath() is empty for a file that does not exist yet (a new</span>
-<span id="L567"><span class="lineNum">     567</span>              :   // profile's list): its folder does, so canonicalise that and append.</span>
-<span id="L568"><span class="lineNum">     568</span> <span class="tlaGNC">         356 :   QString canonical = info.canonicalFilePath();</span></span>
-<span id="L569"><span class="lineNum">     569</span> <span class="tlaGNC">         356 :   if (canonical.isEmpty()) {</span></span>
-<span id="L570"><span class="lineNum">     570</span> <span class="tlaGNC">          88 :     const QString dir = info.absoluteDir().canonicalPath();</span></span>
-<span id="L571"><span class="lineNum">     571</span> <span class="tlaGNC">         263 :     canonical = (dir.isEmpty() ? info.absolutePath() : dir) + QLatin1Char('/') +</span></span>
-<span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">         264 :                 info.fileName();</span></span>
-<span id="L573"><span class="lineNum">     573</span>              :   }</span>
-<span id="L574"><span class="lineNum">     574</span> <span class="tlaGNC">         712 :   canonical = QDir::fromNativeSeparators(canonical);</span></span>
-<span id="L575"><span class="lineNum">     575</span>              : #ifdef Q_OS_WIN</span>
-<span id="L576"><span class="lineNum">     576</span>              :   canonical = canonical.toLower();</span>
-<span id="L577"><span class="lineNum">     577</span>              : #endif</span>
-<span id="L578"><span class="lineNum">     578</span>              :   return QString::fromLatin1(</span>
-<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">         356 :       QCryptographicHash::hash(canonical.toUtf8(), QCryptographicHash::Sha256)</span></span>
-<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">        1068 :           .toHex());</span></span>
-<span id="L581"><span class="lineNum">     581</span> <span class="tlaGNC">         356 : }</span></span>
-<span id="L582"><span class="lineNum">     582</span>              : </span>
-<span id="L583"><span class="lineNum">     583</span> <span class="tlaGNC">          11 : auto GpgIdGeneration::recordFile() -&gt; QString { return recordPath(); }</span></span>
-<span id="L584"><span class="lineNum">     584</span>              : </span>
-<span id="L585"><span class="lineNum">     585</span> <span class="tlaGNC">           1 : auto GpgIdGeneration::storeRecordFile() -&gt; QString { return storesPath(); }</span></span>
-<span id="L586"><span class="lineNum">     586</span>              : </span>
-<span id="L587"><span class="lineNum">     587</span> <span class="tlaGNC">         126 : auto GpgIdGeneration::digest(const QByteArray &amp;contents) -&gt; QString {</span></span>
-<span id="L588"><span class="lineNum">     588</span>              :   return QString::fromLatin1(</span>
-<span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">         252 :       QCryptographicHash::hash(contents, QCryptographicHash::Sha256).toHex());</span></span>
-<span id="L590"><span class="lineNum">     590</span>              : }</span>
-<span id="L591"><span class="lineNum">     591</span>              : </span>
-<span id="L592"><span class="lineNum">     592</span> <span class="tlaGNC">          43 : auto GpgIdGeneration::remembered(const QString &amp;gpgIdFile, QString *error)</span></span>
-<span id="L593"><span class="lineNum">     593</span>              :     -&gt; std::optional&lt;qint64&gt; {</span>
-<span id="L594"><span class="lineNum">     594</span> <span class="tlaGNC">          43 :   Transaction t;</span></span>
-<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">          43 :   if (!t.ok(error)) {</span></span>
-<span id="L596"><span class="lineNum">     596</span> <span class="tlaGNC">           3 :     return std::nullopt;</span></span>
-<span id="L597"><span class="lineNum">     597</span>              :   }</span>
-<span id="L598"><span class="lineNum">     598</span> <span class="tlaGNC">          40 :   return t.generation(key(gpgIdFile));</span></span>
-<span id="L599"><span class="lineNum">     599</span> <span class="tlaGNC">          43 : }</span></span>
-<span id="L600"><span class="lineNum">     600</span>              : </span>
-<span id="L601"><span class="lineNum">     601</span> <span class="tlaGNC">         107 : auto GpgIdGeneration::boundToItsFolder(const QString &amp;gpgIdFile,</span></span>
-<span id="L602"><span class="lineNum">     602</span>              :                                        const Header &amp;header,</span>
-<span id="L603"><span class="lineNum">     603</span>              :                                        const QString &amp;storeRoot, QString *error)</span>
-<span id="L604"><span class="lineNum">     604</span>              :     -&gt; bool {</span>
-<span id="L605"><span class="lineNum">     605</span> <span class="tlaGNC">         107 :   if (!header.folder) {</span></span>
-<span id="L606"><span class="lineNum">     606</span>              :     return true;</span>
-<span id="L607"><span class="lineNum">     607</span>              :   }</span>
-<span id="L608"><span class="lineNum">     608</span> <span class="tlaGNC">          99 :   const std::optional&lt;QString&gt; here = folderOf(gpgIdFile, storeRoot);</span></span>
-<span id="L609"><span class="lineNum">     609</span> <span class="tlaGNC">          99 :   if (here &amp;&amp; *here == *header.folder) {</span></span>
-<span id="L610"><span class="lineNum">     610</span>              :     return true;</span>
-<span id="L611"><span class="lineNum">     611</span>              :   }</span>
-<span id="L612"><span class="lineNum">     612</span> <span class="tlaGNC">           6 :   if (error)</span></span>
-<span id="L613"><span class="lineNum">     613</span>              :     *error =</span>
-<span id="L614"><span class="lineNum">     614</span> <span class="tlaGNC">           6 :         tr(&quot;The signed recipient list %1 was written for the folder &quot;</span></span>
-<span id="L615"><span class="lineNum">     615</span>              :            &quot;\&quot;%2\&quot; of the store, not for \&quot;%3\&quot;, and is not used. It &quot;</span>
-<span id="L616"><span class="lineNum">     616</span>              :            &quot;may have been copied here by someone else; if the folder &quot;</span>
-<span id="L617"><span class="lineNum">     617</span>              :            &quot;was moved or renamed instead, a holder of the signing key &quot;</span>
-<span id="L618"><span class="lineNum">     618</span>              :            &quot;opens Users on it and saves the recipients, which binds &quot;</span>
-<span id="L619"><span class="lineNum">     619</span>              :            &quot;the list to where it is now.&quot;)</span>
-<span id="L620"><span class="lineNum">     620</span> <span class="tlaGNC">          12 :             .arg(gpgIdFile, *header.folder, here.value_or(QStringLiteral(&quot;?&quot;)));</span></span>
-<span id="L621"><span class="lineNum">     621</span>              :   return false;</span>
-<span id="L622"><span class="lineNum">     622</span>              : }</span>
-<span id="L623"><span class="lineNum">     623</span>              : </span>
-<span id="L624"><span class="lineNum">     624</span> <span class="tlaGNC">          22 : auto GpgIdGeneration::wayThrough(qint64 last, const QString &amp;recordPath,</span></span>
-<span id="L625"><span class="lineNum">     625</span>              :                                  const QString &amp;saving) -&gt; QString {</span>
-<span id="L626"><span class="lineNum">     626</span> <span class="tlaGNC">          22 :   if (last &gt;= kMaxGeneration) {</span></span>
-<span id="L627"><span class="lineNum">     627</span> <span class="tlaGNC">           2 :     return tr(&quot;Generation %1 is the highest there is, so no newer list &quot;</span></span>
-<span id="L628"><span class="lineNum">     628</span>              :               &quot;can be written here: removing %2 forgets what this device &quot;</span>
-<span id="L629"><span class="lineNum">     629</span>              :               &quot;accepted before, after which a holder of the signing key &quot;</span>
-<span id="L630"><span class="lineNum">     630</span>              :               &quot;gets through by opening Users and %3.&quot;)</span>
-<span id="L631"><span class="lineNum">     631</span> <span class="tlaGNC">           4 :         .arg(last)</span></span>
-<span id="L632"><span class="lineNum">     632</span> <span class="tlaGNC">           2 :         .arg(recordPath, saving);</span></span>
-<span id="L633"><span class="lineNum">     633</span>              :   }</span>
-<span id="L634"><span class="lineNum">     634</span> <span class="tlaGNC">          20 :   return tr(&quot;A holder of the signing key gets through by opening Users &quot;</span></span>
-<span id="L635"><span class="lineNum">     635</span>              :             &quot;and %1, which writes generation %2. Removing %3 forgets what &quot;</span>
-<span id="L636"><span class="lineNum">     636</span>              :             &quot;this device accepted before.&quot;)</span>
-<span id="L637"><span class="lineNum">     637</span> <span class="tlaGNC">          40 :       .arg(saving)</span></span>
-<span id="L638"><span class="lineNum">     638</span> <span class="tlaGNC">          60 :       .arg(last + 1)</span></span>
-<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">          20 :       .arg(recordPath);</span></span>
-<span id="L640"><span class="lineNum">     640</span>              : }</span>
-<span id="L641"><span class="lineNum">     641</span>              : </span>
-<span id="L642"><span class="lineNum">     642</span> <span class="tlaGNC">          18 : auto GpgIdGeneration::staleList(const QString &amp;gpgIdFile, const Header &amp;header,</span></span>
-<span id="L643"><span class="lineNum">     643</span>              :                                 qint64 last, const QString &amp;recordPath,</span>
-<span id="L644"><span class="lineNum">     644</span>              :                                 QString *error) -&gt; Verdict {</span>
-<span id="L645"><span class="lineNum">     645</span> <span class="tlaGNC">          18 :   if (!header.folder) {</span></span>
-<span id="L646"><span class="lineNum">     646</span>              :     // Below what was accepted here and with no folder line to say it was</span>
-<span id="L647"><span class="lineNum">     647</span>              :     // written here at all: an authentic headerless pair from any folder's</span>
-<span id="L648"><span class="lineNum">     648</span>              :     // history would pass as this folder's rollback otherwise.</span>
-<span id="L649"><span class="lineNum">     649</span> <span class="tlaGNC">           3 :     if (error)</span></span>
-<span id="L650"><span class="lineNum">     650</span>              :       *error =</span>
-<span id="L651"><span class="lineNum">     651</span> <span class="tlaGNC">           3 :           tr(&quot;The signed recipient list %1 carries no generation line, &quot;</span></span>
-<span id="L652"><span class="lineNum">     652</span>              :              &quot;while generation %2 was accepted here before. pass writes no &quot;</span>
-<span id="L653"><span class="lineNum">     653</span>              :              &quot;generation line (also through QtPass's pass backend), nor did &quot;</span>
-<span id="L654"><span class="lineNum">     654</span>              :              &quot;QtPass before 2.0; without one the list may also have been &quot;</span>
-<span id="L655"><span class="lineNum">     655</span>              :              &quot;written for another folder of the store and copied here. %3&quot;)</span>
-<span id="L656"><span class="lineNum">     656</span> <span class="tlaGNC">           6 :               .arg(gpgIdFile)</span></span>
-<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">           6 :               .arg(last)</span></span>
-<span id="L658"><span class="lineNum">     658</span> <span class="tlaGNC">           9 :               .arg(</span></span>
-<span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">           3 :                   wayThrough(last, recordPath,</span></span>
-<span id="L660"><span class="lineNum">     660</span> <span class="tlaGNC">           3 :                              tr(&quot;selecting the recipients afresh and saving&quot;)));</span></span>
-<span id="L661"><span class="lineNum">     661</span> <span class="tlaGNC">           3 :     return Verdict::Unbound;</span></span>
-<span id="L662"><span class="lineNum">     662</span>              :   }</span>
-<span id="L663"><span class="lineNum">     663</span> <span class="tlaGNC">          15 :   if (error)</span></span>
-<span id="L664"><span class="lineNum">     664</span>              :     *error =</span>
-<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">          15 :         tr(&quot;The signed recipient list %1 is generation %2, older than &quot;</span></span>
-<span id="L666"><span class="lineNum">     666</span>              :            &quot;generation %3, the last one QtPass accepted here. It may have &quot;</span>
-<span id="L667"><span class="lineNum">     667</span>              :            &quot;been put back by someone else. %4&quot;)</span>
-<span id="L668"><span class="lineNum">     668</span> <span class="tlaGNC">          30 :             .arg(gpgIdFile)</span></span>
-<span id="L669"><span class="lineNum">     669</span> <span class="tlaGNC">          30 :             .arg(header.generation)</span></span>
-<span id="L670"><span class="lineNum">     670</span> <span class="tlaGNC">          30 :             .arg(last)</span></span>
-<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">          30 :             .arg(wayThrough(last, recordPath,</span></span>
-<span id="L672"><span class="lineNum">     672</span> <span class="tlaGNC">          15 :                             tr(&quot;saving the recipients: the preselected &quot;</span></span>
-<span id="L673"><span class="lineNum">     673</span>              :                                &quot;recipients there are this list's, so remove &quot;</span>
-<span id="L674"><span class="lineNum">     674</span>              :                                &quot;anyone who should no longer have access &quot;</span>
-<span id="L675"><span class="lineNum">     675</span>              :                                &quot;first&quot;)));</span>
-<span id="L676"><span class="lineNum">     676</span>              :   return Verdict::Rollback;</span>
-<span id="L677"><span class="lineNum">     677</span>              : }</span>
-<span id="L678"><span class="lineNum">     678</span>              : </span>
-<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">         109 : auto GpgIdGeneration::accept(const QString &amp;gpgIdFile,</span></span>
-<span id="L680"><span class="lineNum">     680</span>              :                              const QByteArray &amp;contents,</span>
-<span id="L681"><span class="lineNum">     681</span>              :                              const QString &amp;storeRoot, QString *error)</span>
-<span id="L682"><span class="lineNum">     682</span>              :     -&gt; Verdict {</span>
-<span id="L683"><span class="lineNum">     683</span> <span class="tlaGNC">         109 :   QString why;</span></span>
-<span id="L684"><span class="lineNum">     684</span> <span class="tlaGNC">         109 :   const std::optional&lt;Header&gt; header = parse(contents, &amp;why);</span></span>
-<span id="L685"><span class="lineNum">     685</span> <span class="tlaGNC">         109 :   if (!header) {</span></span>
-<span id="L686"><span class="lineNum">     686</span> <span class="tlaGNC">           2 :     if (error)</span></span>
-<span id="L687"><span class="lineNum">     687</span> <span class="tlaGNC">           2 :       *error = tr(&quot;The signed recipient list %1 is not one to trust: %2&quot;)</span></span>
-<span id="L688"><span class="lineNum">     688</span> <span class="tlaGNC">           4 :                    .arg(gpgIdFile, why);</span></span>
-<span id="L689"><span class="lineNum">     689</span> <span class="tlaGNC">           2 :     return Verdict::Malformed;</span></span>
-<span id="L690"><span class="lineNum">     690</span>              :   }</span>
-<span id="L691"><span class="lineNum">     691</span>              :   // A pair is only valid where it was written for: copied into another</span>
-<span id="L692"><span class="lineNum">     692</span>              :   // folder it is a rollback in disguise (that folder's first list).</span>
-<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">         107 :   if (!boundToItsFolder(gpgIdFile, *header, storeRoot, error)) {</span></span>
-<span id="L694"><span class="lineNum">     694</span>              :     return Verdict::WrongFolder;</span>
-<span id="L695"><span class="lineNum">     695</span>              :   }</span>
-<span id="L696"><span class="lineNum">     696</span> <span class="tlaGNC">         101 :   Transaction t;</span></span>
-<span id="L697"><span class="lineNum">     697</span> <span class="tlaGNC">         101 :   if (!t.ok(error)) {</span></span>
-<span id="L698"><span class="lineNum">     698</span>              :     return Verdict::RecordUnavailable;</span>
-<span id="L699"><span class="lineNum">     699</span>              :   }</span>
-<span id="L700"><span class="lineNum">     700</span> <span class="tlaGNC">          95 :   const QString k = key(gpgIdFile);</span></span>
-<span id="L701"><span class="lineNum">     701</span> <span class="tlaGNC">          95 :   const qint64 last = t.generation(k);</span></span>
-<span id="L702"><span class="lineNum">     702</span> <span class="tlaGNC">          95 :   const qint64 generation = header-&gt;generation;</span></span>
-<span id="L703"><span class="lineNum">     703</span> <span class="tlaGNC">          95 :   const QString bytes = digest(contents);</span></span>
-<span id="L704"><span class="lineNum">     704</span>              :   // Before anything that could preselect the list's recipients (a rollback</span>
-<span id="L705"><span class="lineNum">     705</span>              :   // is recovered through the Users dialog): a list of another store is no</span>
-<span id="L706"><span class="lineNum">     706</span>              :   // history of this one.</span>
-<span id="L707"><span class="lineNum">     707</span> <span class="tlaGNC">          95 :   const QString storeKey = key(storeRoot);</span></span>
-<span id="L708"><span class="lineNum">     708</span> <span class="tlaGNC">          95 :   const std::optional&lt;QString&gt; pinned = t.store(storeKey);</span></span>
-<span id="L709"><span class="lineNum">     709</span> <span class="tlaGNC">         121 :   if (pinned &amp;&amp; !ofThisStore(gpgIdFile, *header, *pinned,</span></span>
-<span id="L710"><span class="lineNum">     710</span> <span class="tlaGNC">         147 :                              generation == last &amp;&amp; t.digest(k) == bytes,</span></span>
-<span id="L711"><span class="lineNum">     711</span>              :                              t.storesFile, error)) {</span>
-<span id="L712"><span class="lineNum">     712</span>              :     return Verdict::WrongStore;</span>
-<span id="L713"><span class="lineNum">     713</span>              :   }</span>
-<span id="L714"><span class="lineNum">     714</span>              :   // First sight of the store's id, on a list that is otherwise accepted.</span>
-<span id="L715"><span class="lineNum">     715</span> <span class="tlaGNC">          64 :   const auto pinHere = [&amp;]() {</span></span>
-<span id="L716"><span class="lineNum">     716</span> <span class="tlaGNC">          64 :     if (pinned || !header-&gt;store) {</span></span>
-<span id="L717"><span class="lineNum">     717</span>              :       return true;</span>
-<span id="L718"><span class="lineNum">     718</span>              :     }</span>
-<span id="L719"><span class="lineNum">     719</span> <span class="tlaGNC">           3 :     return t.pinStore(storeKey, *header-&gt;store, error);</span></span>
-<span id="L720"><span class="lineNum">     720</span> <span class="tlaGNC">          90 :   };</span></span>
-<span id="L721"><span class="lineNum">     721</span> <span class="tlaGNC">          90 :   if (generation &lt; last) {</span></span>
-<span id="L722"><span class="lineNum">     722</span> <span class="tlaGNC">          18 :     return staleList(gpgIdFile, *header, last, t.path, error);</span></span>
-<span id="L723"><span class="lineNum">     723</span>              :   }</span>
-<span id="L724"><span class="lineNum">     724</span> <span class="tlaGNC">          72 :   if (generation == 0) {</span></span>
-<span id="L725"><span class="lineNum">     725</span>              :     // pass writes headerless lists on every change, so differing bytes here</span>
-<span id="L726"><span class="lineNum">     726</span>              :     // are normal, not a conflict. Generation 0 has no freshness to keep</span>
-<span id="L727"><span class="lineNum">     727</span>              :     // (SECURITY.md).</span>
-<span id="L728"><span class="lineNum">     728</span> <span class="tlaGNC">           5 :     return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;</span></span>
-<span id="L729"><span class="lineNum">     729</span>              :   }</span>
-<span id="L730"><span class="lineNum">     730</span> <span class="tlaGNC">          67 :   if (generation == last) {</span></span>
-<span id="L731"><span class="lineNum">     731</span>              :     // Same generation, different bytes: two devices both made 19 from 18</span>
-<span id="L732"><span class="lineNum">     732</span>              :     // (Git's conflict), or a swap. A record without a digest (an unrecorded</span>
-<span id="L733"><span class="lineNum">     733</span>              :     // reservation) takes these bytes as the ones.</span>
-<span id="L734"><span class="lineNum">     734</span> <span class="tlaGNC">          38 :     const std::optional&lt;QString&gt; known = t.digest(k);</span></span>
-<span id="L735"><span class="lineNum">     735</span> <span class="tlaGNC">          38 :     if (known &amp;&amp; *known != bytes) {</span></span>
-<span id="L736"><span class="lineNum">     736</span> <span class="tlaGNC">           8 :       if (error)</span></span>
-<span id="L737"><span class="lineNum">     737</span> <span class="tlaGNC">           4 :         *error = tr(&quot;The signed recipient list %1 is generation %2, the same &quot;</span></span>
-<span id="L738"><span class="lineNum">     738</span>              :                     &quot;generation as a different list this device accepted &quot;</span>
-<span id="L739"><span class="lineNum">     739</span>              :                     &quot;before. Either two devices saved recipients at the same &quot;</span>
-<span id="L740"><span class="lineNum">     740</span>              :                     &quot;time (Git will have shown the conflict), or an authentic &quot;</span>
-<span id="L741"><span class="lineNum">     741</span>              :                     &quot;list of that generation was swapped in. %3&quot;)</span>
-<span id="L742"><span class="lineNum">     742</span> <span class="tlaGNC">           8 :                      .arg(gpgIdFile)</span></span>
-<span id="L743"><span class="lineNum">     743</span> <span class="tlaGNC">           8 :                      .arg(generation)</span></span>
-<span id="L744"><span class="lineNum">     744</span> <span class="tlaGNC">           8 :                      .arg(wayThrough(last, t.path,</span></span>
-<span id="L745"><span class="lineNum">     745</span> <span class="tlaGNC">           8 :                                      tr(&quot;checking the recipients and saving&quot;)));</span></span>
-<span id="L746"><span class="lineNum">     746</span> <span class="tlaGNC">           8 :       return Verdict::Conflict;</span></span>
-<span id="L747"><span class="lineNum">     747</span>              :     }</span>
-<span id="L748"><span class="lineNum">     748</span> <span class="tlaGNC">          30 :     if (known) {</span></span>
-<span id="L749"><span class="lineNum">     749</span> <span class="tlaGNC">          27 :       return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;</span></span>
-<span id="L750"><span class="lineNum">     750</span>              :     }</span>
-<span id="L751"><span class="lineNum">     751</span>              :   }</span>
-<span id="L752"><span class="lineNum">     752</span>              :   // The pin first: a generation recorded with the pin's write failing would</span>
-<span id="L753"><span class="lineNum">     753</span>              :   // leave the store unpinned for the next list, another store's included.</span>
-<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">          32 :   if (!pinHere() || !t.remember(k, generation, bytes, error)) {</span></span>
-<span id="L755"><span class="lineNum">     755</span> <span class="tlaUNC">           0 :     return Verdict::RecordUnavailable;</span></span>
-<span id="L756"><span class="lineNum">     756</span>              :   }</span>
-<span id="L757"><span class="lineNum">     757</span>              :   return Verdict::Accepted;</span>
-<span id="L758"><span class="lineNum">     758</span> <span class="tlaGNC">         101 : }</span></span>
-<span id="L759"><span class="lineNum">     759</span>              : </span>
-<span id="L760"><span class="lineNum">     760</span> <span class="tlaGNC">          26 : auto GpgIdGeneration::ofThisStore(const QString &amp;gpgIdFile,</span></span>
-<span id="L761"><span class="lineNum">     761</span>              :                                   const Header &amp;header, const QString &amp;pinned,</span>
-<span id="L762"><span class="lineNum">     762</span>              :                                   bool alreadyAccepted,</span>
-<span id="L763"><span class="lineNum">     763</span>              :                                   const QString &amp;recordPath, QString *error)</span>
-<span id="L764"><span class="lineNum">     764</span>              :     -&gt; bool {</span>
-<span id="L765"><span class="lineNum">     765</span> <span class="tlaGNC">          26 :   if (header.store) {</span></span>
-<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">          23 :     if (*header.store == pinned) {</span></span>
-<span id="L767"><span class="lineNum">     767</span>              :       return true;</span>
-<span id="L768"><span class="lineNum">     768</span>              :     }</span>
-<span id="L769"><span class="lineNum">     769</span> <span class="tlaGNC">           4 :     if (error)</span></span>
-<span id="L770"><span class="lineNum">     770</span>              :       *error =</span>
-<span id="L771"><span class="lineNum">     771</span> <span class="tlaGNC">           2 :           tr(&quot;The signed recipient list %1 was written for another password &quot;</span></span>
-<span id="L772"><span class="lineNum">     772</span>              :              &quot;store (store ID %2; this device knows this store as %3) and is &quot;</span>
-<span id="L773"><span class="lineNum">     773</span>              :              &quot;not used. It may have been copied here from a store signed &quot;</span>
-<span id="L774"><span class="lineNum">     774</span>              :              &quot;with the same key. If this store was set up again instead, &quot;</span>
-<span id="L775"><span class="lineNum">     775</span>              :              &quot;removing %4 forgets the store IDs this device knows.&quot;)</span>
-<span id="L776"><span class="lineNum">     776</span> <span class="tlaGNC">           4 :               .arg(gpgIdFile, *header.store, pinned, recordPath);</span></span>
-<span id="L777"><span class="lineNum">     777</span> <span class="tlaGNC">           4 :     return false;</span></span>
-<span id="L778"><span class="lineNum">     778</span>              :   }</span>
-<span id="L779"><span class="lineNum">     779</span>              :   // No store line: a list without a generation (pass) has none to carry,</span>
-<span id="L780"><span class="lineNum">     780</span>              :   // and one this device accepted before it had a store id still is what it</span>
-<span id="L781"><span class="lineNum">     781</span>              :   // was. Anything new must say which store it is for.</span>
-<span id="L782"><span class="lineNum">     782</span> <span class="tlaGNC">           3 :   if (header.generation == 0 || alreadyAccepted) {</span></span>
-<span id="L783"><span class="lineNum">     783</span>              :     return true;</span>
-<span id="L784"><span class="lineNum">     784</span>              :   }</span>
-<span id="L785"><span class="lineNum">     785</span> <span class="tlaGNC">           1 :   if (error)</span></span>
-<span id="L786"><span class="lineNum">     786</span>              :     *error =</span>
-<span id="L787"><span class="lineNum">     787</span> <span class="tlaGNC">           1 :         tr(&quot;The signed recipient list %1 carries no store line, while this &quot;</span></span>
-<span id="L788"><span class="lineNum">     788</span>              :            &quot;device knows this store by its ID %2: it may have been written &quot;</span>
-<span id="L789"><span class="lineNum">     789</span>              :            &quot;for another store and copied here, or by an older QtPass. A &quot;</span>
-<span id="L790"><span class="lineNum">     790</span>              :            &quot;holder of the signing key gets through by opening Users, &quot;</span>
-<span id="L791"><span class="lineNum">     791</span>              :            &quot;selecting the recipients afresh and saving, which writes the &quot;</span>
-<span id="L792"><span class="lineNum">     792</span>              :            &quot;store line.&quot;)</span>
-<span id="L793"><span class="lineNum">     793</span> <span class="tlaGNC">           2 :             .arg(gpgIdFile, pinned);</span></span>
-<span id="L794"><span class="lineNum">     794</span>              :   return false;</span>
-<span id="L795"><span class="lineNum">     795</span>              : }</span>
-<span id="L796"><span class="lineNum">     796</span>              : </span>
-<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">          42 : auto GpgIdGeneration::storeIdFor(const QString &amp;storeRoot,</span></span>
-<span id="L798"><span class="lineNum">     798</span>              :                                  const std::optional&lt;QString&gt; &amp;onDisk,</span>
-<span id="L799"><span class="lineNum">     799</span>              :                                  QString *error) -&gt; std::optional&lt;QString&gt; {</span>
-<span id="L800"><span class="lineNum">     800</span> <span class="tlaGNC">          42 :   Transaction t;</span></span>
-<span id="L801"><span class="lineNum">     801</span> <span class="tlaGNC">          42 :   if (!t.ok(error)) {</span></span>
-<span id="L802"><span class="lineNum">     802</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
-<span id="L803"><span class="lineNum">     803</span>              :   }</span>
-<span id="L804"><span class="lineNum">     804</span> <span class="tlaGNC">          41 :   const QString storeKey = key(storeRoot);</span></span>
-<span id="L805"><span class="lineNum">     805</span> <span class="tlaGNC">          41 :   if (const std::optional&lt;QString&gt; pinned = t.store(storeKey)) {</span></span>
-<span id="L806"><span class="lineNum">     806</span>              :     return pinned;</span>
-<span id="L807"><span class="lineNum">     807</span>              :   }</span>
-<span id="L808"><span class="lineNum">     808</span>              :   // Joining a store that has an id already: take it over, rather than</span>
-<span id="L809"><span class="lineNum">     809</span>              :   // giving the store a second one every other device would refuse.</span>
-<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">           3 :   const QString id = onDisk &amp;&amp; isStoreId(onDisk-&gt;toLatin1())</span></span>
-<span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          26 :                          ? *onDisk</span></span>
-<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">          50 :                          : QUuid::createUuid().toString(QUuid::Id128).toLower();</span></span>
-<span id="L813"><span class="lineNum">     813</span> <span class="tlaGNC">          26 :   if (!t.pinStore(storeKey, id, error)) {</span></span>
-<span id="L814"><span class="lineNum">     814</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
-<span id="L815"><span class="lineNum">     815</span>              :   }</span>
-<span id="L816"><span class="lineNum">     816</span>              :   return id;</span>
-<span id="L817"><span class="lineNum">     817</span> <span class="tlaGNC">          42 : }</span></span>
-<span id="L818"><span class="lineNum">     818</span>              : </span>
-<span id="L819"><span class="lineNum">     819</span> <span class="tlaGNC">          46 : auto GpgIdGeneration::reserveNext(const QString &amp;gpgIdFile,</span></span>
-<span id="L820"><span class="lineNum">     820</span>              :                                   std::optional&lt;qint64&gt; verifiedOnDisk,</span>
-<span id="L821"><span class="lineNum">     821</span>              :                                   QString *error) -&gt; std::optional&lt;qint64&gt; {</span>
-<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          46 :   Transaction t;</span></span>
-<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          46 :   if (!t.ok(error)) {</span></span>
-<span id="L824"><span class="lineNum">     824</span> <span class="tlaGNC">           2 :     return std::nullopt;</span></span>
+<span id="L535"><span class="lineNum">     535</span>              :   // QtPass writes the store line only with the other two.</span>
+<span id="L536"><span class="lineNum">     536</span> <span class="tlaGNC">         160 :   if (store &amp;&amp; !generation) {</span></span>
+<span id="L537"><span class="lineNum">     537</span> <span class="tlaGNC">           1 :     if (error)</span></span>
+<span id="L538"><span class="lineNum">     538</span>              :       //: The store ID line names the password store by its ID; see the</span>
+<span id="L539"><span class="lineNum">     539</span>              :       //: other store ID line messages.</span>
+<span id="L540"><span class="lineNum">     540</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The list carries a store ID line but no generation line.&quot;);</span></span>
+<span id="L541"><span class="lineNum">     541</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
+<span id="L542"><span class="lineNum">     542</span>              :   }</span>
+<span id="L543"><span class="lineNum">     543</span> <span class="tlaGNC">         159 :   Header header;</span></span>
+<span id="L544"><span class="lineNum">     544</span> <span class="tlaGNC">         159 :   header.generation = generation.value_or(0);</span></span>
+<span id="L545"><span class="lineNum">     545</span>              :   header.folder = folder;</span>
+<span id="L546"><span class="lineNum">     546</span>              :   header.store = store;</span>
+<span id="L547"><span class="lineNum">     547</span>              :   return header;</span>
+<span id="L548"><span class="lineNum">     548</span>              : }</span>
+<span id="L549"><span class="lineNum">     549</span>              : </span>
+<span id="L550"><span class="lineNum">     550</span> <span class="tlaGNC">         111 : auto GpgIdGeneration::header(qint64 generation, const QString &amp;folder,</span></span>
+<span id="L551"><span class="lineNum">     551</span>              :                              const QString &amp;store) -&gt; QByteArray {</span>
+<span id="L552"><span class="lineNum">     552</span> <span class="tlaGNC">         222 :   QByteArray lines = kGenerationPrefix + QByteArray::number(generation) + '\n' +</span></span>
+<span id="L553"><span class="lineNum">     553</span> <span class="tlaGNC">         222 :                      kFolderPrefix + folder.toUtf8() + '\n';</span></span>
+<span id="L554"><span class="lineNum">     554</span> <span class="tlaGNC">         111 :   if (!store.isEmpty()) {</span></span>
+<span id="L555"><span class="lineNum">     555</span> <span class="tlaGNC">          86 :     lines += kStorePrefix + store.toLatin1() + '\n';</span></span>
+<span id="L556"><span class="lineNum">     556</span>              :   }</span>
+<span id="L557"><span class="lineNum">     557</span> <span class="tlaGNC">         111 :   return lines;</span></span>
+<span id="L558"><span class="lineNum">     558</span>              : }</span>
+<span id="L559"><span class="lineNum">     559</span>              : </span>
+<span id="L560"><span class="lineNum">     560</span> <span class="tlaGNC">         111 : auto GpgIdGeneration::withHeader(qint64 generation, const QString &amp;folder,</span></span>
+<span id="L561"><span class="lineNum">     561</span>              :                                  const QByteArray &amp;recipients,</span>
+<span id="L562"><span class="lineNum">     562</span>              :                                  const QString &amp;store) -&gt; QByteArray {</span>
+<span id="L563"><span class="lineNum">     563</span> <span class="tlaGNC">         222 :   return header(generation, folder, store) + recipients;</span></span>
+<span id="L564"><span class="lineNum">     564</span>              : }</span>
+<span id="L565"><span class="lineNum">     565</span>              : </span>
+<span id="L566"><span class="lineNum">     566</span> <span class="tlaGNC">         133 : auto GpgIdGeneration::folderOf(const QString &amp;gpgIdFile,</span></span>
+<span id="L567"><span class="lineNum">     567</span>              :                                const QString &amp;storeRoot)</span>
+<span id="L568"><span class="lineNum">     568</span>              :     -&gt; std::optional&lt;QString&gt; {</span>
+<span id="L569"><span class="lineNum">     569</span> <span class="tlaGNC">         133 :   return relativeFolder(gpgIdFile, storeRoot);</span></span>
+<span id="L570"><span class="lineNum">     570</span>              : }</span>
+<span id="L571"><span class="lineNum">     571</span>              : </span>
+<span id="L572"><span class="lineNum">     572</span> <span class="tlaGNC">         356 : auto GpgIdGeneration::key(const QString &amp;gpgIdFile) -&gt; QString {</span></span>
+<span id="L573"><span class="lineNum">     573</span> <span class="tlaGNC">         356 :   const QFileInfo info(gpgIdFile);</span></span>
+<span id="L574"><span class="lineNum">     574</span>              :   // canonicalFilePath() is empty for a file that does not exist yet (a new</span>
+<span id="L575"><span class="lineNum">     575</span>              :   // profile's list): its folder does, so canonicalise that and append.</span>
+<span id="L576"><span class="lineNum">     576</span> <span class="tlaGNC">         356 :   QString canonical = info.canonicalFilePath();</span></span>
+<span id="L577"><span class="lineNum">     577</span> <span class="tlaGNC">         356 :   if (canonical.isEmpty()) {</span></span>
+<span id="L578"><span class="lineNum">     578</span> <span class="tlaGNC">          88 :     const QString dir = info.absoluteDir().canonicalPath();</span></span>
+<span id="L579"><span class="lineNum">     579</span> <span class="tlaGNC">         263 :     canonical = (dir.isEmpty() ? info.absolutePath() : dir) + QLatin1Char('/') +</span></span>
+<span id="L580"><span class="lineNum">     580</span> <span class="tlaGNC">         264 :                 info.fileName();</span></span>
+<span id="L581"><span class="lineNum">     581</span>              :   }</span>
+<span id="L582"><span class="lineNum">     582</span> <span class="tlaGNC">         712 :   canonical = QDir::fromNativeSeparators(canonical);</span></span>
+<span id="L583"><span class="lineNum">     583</span>              : #ifdef Q_OS_WIN</span>
+<span id="L584"><span class="lineNum">     584</span>              :   canonical = canonical.toLower();</span>
+<span id="L585"><span class="lineNum">     585</span>              : #endif</span>
+<span id="L586"><span class="lineNum">     586</span>              :   return QString::fromLatin1(</span>
+<span id="L587"><span class="lineNum">     587</span> <span class="tlaGNC">         356 :       QCryptographicHash::hash(canonical.toUtf8(), QCryptographicHash::Sha256)</span></span>
+<span id="L588"><span class="lineNum">     588</span> <span class="tlaGNC">        1068 :           .toHex());</span></span>
+<span id="L589"><span class="lineNum">     589</span> <span class="tlaGNC">         356 : }</span></span>
+<span id="L590"><span class="lineNum">     590</span>              : </span>
+<span id="L591"><span class="lineNum">     591</span> <span class="tlaGNC">          11 : auto GpgIdGeneration::recordFile() -&gt; QString { return recordPath(); }</span></span>
+<span id="L592"><span class="lineNum">     592</span>              : </span>
+<span id="L593"><span class="lineNum">     593</span> <span class="tlaGNC">           1 : auto GpgIdGeneration::storeRecordFile() -&gt; QString { return storesPath(); }</span></span>
+<span id="L594"><span class="lineNum">     594</span>              : </span>
+<span id="L595"><span class="lineNum">     595</span> <span class="tlaGNC">         126 : auto GpgIdGeneration::digest(const QByteArray &amp;contents) -&gt; QString {</span></span>
+<span id="L596"><span class="lineNum">     596</span>              :   return QString::fromLatin1(</span>
+<span id="L597"><span class="lineNum">     597</span> <span class="tlaGNC">         252 :       QCryptographicHash::hash(contents, QCryptographicHash::Sha256).toHex());</span></span>
+<span id="L598"><span class="lineNum">     598</span>              : }</span>
+<span id="L599"><span class="lineNum">     599</span>              : </span>
+<span id="L600"><span class="lineNum">     600</span> <span class="tlaGNC">          43 : auto GpgIdGeneration::remembered(const QString &amp;gpgIdFile, QString *error)</span></span>
+<span id="L601"><span class="lineNum">     601</span>              :     -&gt; std::optional&lt;qint64&gt; {</span>
+<span id="L602"><span class="lineNum">     602</span> <span class="tlaGNC">          43 :   Transaction t;</span></span>
+<span id="L603"><span class="lineNum">     603</span> <span class="tlaGNC">          43 :   if (!t.ok(error)) {</span></span>
+<span id="L604"><span class="lineNum">     604</span> <span class="tlaGNC">           3 :     return std::nullopt;</span></span>
+<span id="L605"><span class="lineNum">     605</span>              :   }</span>
+<span id="L606"><span class="lineNum">     606</span> <span class="tlaGNC">          40 :   return t.generation(key(gpgIdFile));</span></span>
+<span id="L607"><span class="lineNum">     607</span> <span class="tlaGNC">          43 : }</span></span>
+<span id="L608"><span class="lineNum">     608</span>              : </span>
+<span id="L609"><span class="lineNum">     609</span> <span class="tlaGNC">         107 : auto GpgIdGeneration::boundToItsFolder(const QString &amp;gpgIdFile,</span></span>
+<span id="L610"><span class="lineNum">     610</span>              :                                        const Header &amp;header,</span>
+<span id="L611"><span class="lineNum">     611</span>              :                                        const QString &amp;storeRoot, QString *error)</span>
+<span id="L612"><span class="lineNum">     612</span>              :     -&gt; bool {</span>
+<span id="L613"><span class="lineNum">     613</span> <span class="tlaGNC">         107 :   if (!header.folder) {</span></span>
+<span id="L614"><span class="lineNum">     614</span>              :     return true;</span>
+<span id="L615"><span class="lineNum">     615</span>              :   }</span>
+<span id="L616"><span class="lineNum">     616</span> <span class="tlaGNC">          99 :   const std::optional&lt;QString&gt; here = folderOf(gpgIdFile, storeRoot);</span></span>
+<span id="L617"><span class="lineNum">     617</span> <span class="tlaGNC">          99 :   if (here &amp;&amp; *here == *header.folder) {</span></span>
+<span id="L618"><span class="lineNum">     618</span>              :     return true;</span>
+<span id="L619"><span class="lineNum">     619</span>              :   }</span>
+<span id="L620"><span class="lineNum">     620</span> <span class="tlaGNC">           6 :   if (error)</span></span>
+<span id="L621"><span class="lineNum">     621</span>              :     *error =</span>
+<span id="L622"><span class="lineNum">     622</span> <span class="tlaGNC">           6 :         tr(&quot;The signed recipient list %1 was written for the folder &quot;</span></span>
+<span id="L623"><span class="lineNum">     623</span>              :            &quot;\&quot;%2\&quot; of the store, not for \&quot;%3\&quot;, and is not used. It &quot;</span>
+<span id="L624"><span class="lineNum">     624</span>              :            &quot;may have been copied here by someone else; if the folder &quot;</span>
+<span id="L625"><span class="lineNum">     625</span>              :            &quot;was moved or renamed instead, a holder of the signing key &quot;</span>
+<span id="L626"><span class="lineNum">     626</span>              :            &quot;opens Users on it and saves the recipients, which binds &quot;</span>
+<span id="L627"><span class="lineNum">     627</span>              :            &quot;the list to where it is now.&quot;)</span>
+<span id="L628"><span class="lineNum">     628</span> <span class="tlaGNC">          12 :             .arg(gpgIdFile, *header.folder, here.value_or(QStringLiteral(&quot;?&quot;)));</span></span>
+<span id="L629"><span class="lineNum">     629</span>              :   return false;</span>
+<span id="L630"><span class="lineNum">     630</span>              : }</span>
+<span id="L631"><span class="lineNum">     631</span>              : </span>
+<span id="L632"><span class="lineNum">     632</span> <span class="tlaGNC">          22 : auto GpgIdGeneration::wayThrough(qint64 last, const QString &amp;recordPath,</span></span>
+<span id="L633"><span class="lineNum">     633</span>              :                                  const QString &amp;saving) -&gt; QString {</span>
+<span id="L634"><span class="lineNum">     634</span> <span class="tlaGNC">          22 :   if (last &gt;= kMaxGeneration) {</span></span>
+<span id="L635"><span class="lineNum">     635</span> <span class="tlaGNC">           2 :     return tr(&quot;Generation %1 is the highest there is, so no newer list &quot;</span></span>
+<span id="L636"><span class="lineNum">     636</span>              :               &quot;can be written here: removing %2 forgets what this device &quot;</span>
+<span id="L637"><span class="lineNum">     637</span>              :               &quot;accepted before, after which a holder of the signing key &quot;</span>
+<span id="L638"><span class="lineNum">     638</span>              :               &quot;gets through by opening Users and %3.&quot;)</span>
+<span id="L639"><span class="lineNum">     639</span> <span class="tlaGNC">           4 :         .arg(last)</span></span>
+<span id="L640"><span class="lineNum">     640</span> <span class="tlaGNC">           2 :         .arg(recordPath, saving);</span></span>
+<span id="L641"><span class="lineNum">     641</span>              :   }</span>
+<span id="L642"><span class="lineNum">     642</span> <span class="tlaGNC">          20 :   return tr(&quot;A holder of the signing key gets through by opening Users &quot;</span></span>
+<span id="L643"><span class="lineNum">     643</span>              :             &quot;and %1, which writes generation %2. Removing %3 forgets what &quot;</span>
+<span id="L644"><span class="lineNum">     644</span>              :             &quot;this device accepted before.&quot;)</span>
+<span id="L645"><span class="lineNum">     645</span> <span class="tlaGNC">          40 :       .arg(saving)</span></span>
+<span id="L646"><span class="lineNum">     646</span> <span class="tlaGNC">          60 :       .arg(last + 1)</span></span>
+<span id="L647"><span class="lineNum">     647</span> <span class="tlaGNC">          20 :       .arg(recordPath);</span></span>
+<span id="L648"><span class="lineNum">     648</span>              : }</span>
+<span id="L649"><span class="lineNum">     649</span>              : </span>
+<span id="L650"><span class="lineNum">     650</span> <span class="tlaGNC">          18 : auto GpgIdGeneration::staleList(const QString &amp;gpgIdFile, const Header &amp;header,</span></span>
+<span id="L651"><span class="lineNum">     651</span>              :                                 qint64 last, const QString &amp;recordPath,</span>
+<span id="L652"><span class="lineNum">     652</span>              :                                 QString *error) -&gt; Verdict {</span>
+<span id="L653"><span class="lineNum">     653</span> <span class="tlaGNC">          18 :   if (!header.folder) {</span></span>
+<span id="L654"><span class="lineNum">     654</span>              :     // Below what was accepted here and with no folder line to say it was</span>
+<span id="L655"><span class="lineNum">     655</span>              :     // written here at all: an authentic headerless pair from any folder's</span>
+<span id="L656"><span class="lineNum">     656</span>              :     // history would pass as this folder's rollback otherwise.</span>
+<span id="L657"><span class="lineNum">     657</span> <span class="tlaGNC">           3 :     if (error)</span></span>
+<span id="L658"><span class="lineNum">     658</span>              :       *error =</span>
+<span id="L659"><span class="lineNum">     659</span> <span class="tlaGNC">           3 :           tr(&quot;The signed recipient list %1 carries no generation line, &quot;</span></span>
+<span id="L660"><span class="lineNum">     660</span>              :              &quot;while generation %2 was accepted here before. pass writes no &quot;</span>
+<span id="L661"><span class="lineNum">     661</span>              :              &quot;generation line (also through QtPass's pass backend), nor did &quot;</span>
+<span id="L662"><span class="lineNum">     662</span>              :              &quot;QtPass before 2.0; without one the list may also have been &quot;</span>
+<span id="L663"><span class="lineNum">     663</span>              :              &quot;written for another folder of the store and copied here. %3&quot;)</span>
+<span id="L664"><span class="lineNum">     664</span> <span class="tlaGNC">           6 :               .arg(gpgIdFile)</span></span>
+<span id="L665"><span class="lineNum">     665</span> <span class="tlaGNC">           6 :               .arg(last)</span></span>
+<span id="L666"><span class="lineNum">     666</span> <span class="tlaGNC">           9 :               .arg(</span></span>
+<span id="L667"><span class="lineNum">     667</span> <span class="tlaGNC">           3 :                   wayThrough(last, recordPath,</span></span>
+<span id="L668"><span class="lineNum">     668</span> <span class="tlaGNC">           3 :                              tr(&quot;selecting the recipients afresh and saving&quot;)));</span></span>
+<span id="L669"><span class="lineNum">     669</span> <span class="tlaGNC">           3 :     return Verdict::Unbound;</span></span>
+<span id="L670"><span class="lineNum">     670</span>              :   }</span>
+<span id="L671"><span class="lineNum">     671</span> <span class="tlaGNC">          15 :   if (error)</span></span>
+<span id="L672"><span class="lineNum">     672</span>              :     *error =</span>
+<span id="L673"><span class="lineNum">     673</span> <span class="tlaGNC">          15 :         tr(&quot;The signed recipient list %1 is generation %2, older than &quot;</span></span>
+<span id="L674"><span class="lineNum">     674</span>              :            &quot;generation %3, the last one QtPass accepted here. It may have &quot;</span>
+<span id="L675"><span class="lineNum">     675</span>              :            &quot;been put back by someone else. %4&quot;)</span>
+<span id="L676"><span class="lineNum">     676</span> <span class="tlaGNC">          30 :             .arg(gpgIdFile)</span></span>
+<span id="L677"><span class="lineNum">     677</span> <span class="tlaGNC">          30 :             .arg(header.generation)</span></span>
+<span id="L678"><span class="lineNum">     678</span> <span class="tlaGNC">          30 :             .arg(last)</span></span>
+<span id="L679"><span class="lineNum">     679</span> <span class="tlaGNC">          30 :             .arg(wayThrough(last, recordPath,</span></span>
+<span id="L680"><span class="lineNum">     680</span> <span class="tlaGNC">          15 :                             tr(&quot;saving the recipients: the preselected &quot;</span></span>
+<span id="L681"><span class="lineNum">     681</span>              :                                &quot;recipients there are this list's, so remove &quot;</span>
+<span id="L682"><span class="lineNum">     682</span>              :                                &quot;anyone who should no longer have access &quot;</span>
+<span id="L683"><span class="lineNum">     683</span>              :                                &quot;first&quot;)));</span>
+<span id="L684"><span class="lineNum">     684</span>              :   return Verdict::Rollback;</span>
+<span id="L685"><span class="lineNum">     685</span>              : }</span>
+<span id="L686"><span class="lineNum">     686</span>              : </span>
+<span id="L687"><span class="lineNum">     687</span> <span class="tlaGNC">         109 : auto GpgIdGeneration::accept(const QString &amp;gpgIdFile,</span></span>
+<span id="L688"><span class="lineNum">     688</span>              :                              const QByteArray &amp;contents,</span>
+<span id="L689"><span class="lineNum">     689</span>              :                              const QString &amp;storeRoot, QString *error)</span>
+<span id="L690"><span class="lineNum">     690</span>              :     -&gt; Verdict {</span>
+<span id="L691"><span class="lineNum">     691</span> <span class="tlaGNC">         109 :   QString why;</span></span>
+<span id="L692"><span class="lineNum">     692</span> <span class="tlaGNC">         109 :   const std::optional&lt;Header&gt; header = parse(contents, &amp;why);</span></span>
+<span id="L693"><span class="lineNum">     693</span> <span class="tlaGNC">         109 :   if (!header) {</span></span>
+<span id="L694"><span class="lineNum">     694</span> <span class="tlaGNC">           2 :     if (error)</span></span>
+<span id="L695"><span class="lineNum">     695</span> <span class="tlaGNC">           2 :       *error = tr(&quot;The signed recipient list %1 is not one to trust: %2&quot;)</span></span>
+<span id="L696"><span class="lineNum">     696</span> <span class="tlaGNC">           4 :                    .arg(gpgIdFile, why);</span></span>
+<span id="L697"><span class="lineNum">     697</span> <span class="tlaGNC">           2 :     return Verdict::Malformed;</span></span>
+<span id="L698"><span class="lineNum">     698</span>              :   }</span>
+<span id="L699"><span class="lineNum">     699</span>              :   // A pair is only valid where it was written for: copied into another</span>
+<span id="L700"><span class="lineNum">     700</span>              :   // folder it is a rollback in disguise (that folder's first list).</span>
+<span id="L701"><span class="lineNum">     701</span> <span class="tlaGNC">         107 :   if (!boundToItsFolder(gpgIdFile, *header, storeRoot, error)) {</span></span>
+<span id="L702"><span class="lineNum">     702</span>              :     return Verdict::WrongFolder;</span>
+<span id="L703"><span class="lineNum">     703</span>              :   }</span>
+<span id="L704"><span class="lineNum">     704</span> <span class="tlaGNC">         101 :   Transaction t;</span></span>
+<span id="L705"><span class="lineNum">     705</span> <span class="tlaGNC">         101 :   if (!t.ok(error)) {</span></span>
+<span id="L706"><span class="lineNum">     706</span>              :     return Verdict::RecordUnavailable;</span>
+<span id="L707"><span class="lineNum">     707</span>              :   }</span>
+<span id="L708"><span class="lineNum">     708</span> <span class="tlaGNC">          95 :   const QString k = key(gpgIdFile);</span></span>
+<span id="L709"><span class="lineNum">     709</span> <span class="tlaGNC">          95 :   const qint64 last = t.generation(k);</span></span>
+<span id="L710"><span class="lineNum">     710</span> <span class="tlaGNC">          95 :   const qint64 generation = header-&gt;generation;</span></span>
+<span id="L711"><span class="lineNum">     711</span> <span class="tlaGNC">          95 :   const QString bytes = digest(contents);</span></span>
+<span id="L712"><span class="lineNum">     712</span>              :   // Before anything that could preselect the list's recipients (a rollback</span>
+<span id="L713"><span class="lineNum">     713</span>              :   // is recovered through the Users dialog): a list of another store is no</span>
+<span id="L714"><span class="lineNum">     714</span>              :   // history of this one.</span>
+<span id="L715"><span class="lineNum">     715</span> <span class="tlaGNC">          95 :   const QString storeKey = key(storeRoot);</span></span>
+<span id="L716"><span class="lineNum">     716</span> <span class="tlaGNC">          95 :   const std::optional&lt;QString&gt; pinned = t.store(storeKey);</span></span>
+<span id="L717"><span class="lineNum">     717</span> <span class="tlaGNC">         121 :   if (pinned &amp;&amp; !ofThisStore(gpgIdFile, *header, *pinned,</span></span>
+<span id="L718"><span class="lineNum">     718</span> <span class="tlaGNC">         147 :                              generation == last &amp;&amp; t.digest(k) == bytes,</span></span>
+<span id="L719"><span class="lineNum">     719</span>              :                              t.storesFile, error)) {</span>
+<span id="L720"><span class="lineNum">     720</span>              :     return Verdict::WrongStore;</span>
+<span id="L721"><span class="lineNum">     721</span>              :   }</span>
+<span id="L722"><span class="lineNum">     722</span>              :   // First sight of the store's id, on a list that is otherwise accepted.</span>
+<span id="L723"><span class="lineNum">     723</span> <span class="tlaGNC">          64 :   const auto pinHere = [&amp;]() {</span></span>
+<span id="L724"><span class="lineNum">     724</span> <span class="tlaGNC">          64 :     if (pinned || !header-&gt;store) {</span></span>
+<span id="L725"><span class="lineNum">     725</span>              :       return true;</span>
+<span id="L726"><span class="lineNum">     726</span>              :     }</span>
+<span id="L727"><span class="lineNum">     727</span> <span class="tlaGNC">           3 :     return t.pinStore(storeKey, *header-&gt;store, error);</span></span>
+<span id="L728"><span class="lineNum">     728</span> <span class="tlaGNC">          90 :   };</span></span>
+<span id="L729"><span class="lineNum">     729</span> <span class="tlaGNC">          90 :   if (generation &lt; last) {</span></span>
+<span id="L730"><span class="lineNum">     730</span> <span class="tlaGNC">          18 :     return staleList(gpgIdFile, *header, last, t.path, error);</span></span>
+<span id="L731"><span class="lineNum">     731</span>              :   }</span>
+<span id="L732"><span class="lineNum">     732</span> <span class="tlaGNC">          72 :   if (generation == 0) {</span></span>
+<span id="L733"><span class="lineNum">     733</span>              :     // pass writes headerless lists on every change, so differing bytes here</span>
+<span id="L734"><span class="lineNum">     734</span>              :     // are normal, not a conflict. Generation 0 has no freshness to keep</span>
+<span id="L735"><span class="lineNum">     735</span>              :     // (SECURITY.md).</span>
+<span id="L736"><span class="lineNum">     736</span> <span class="tlaGNC">           5 :     return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;</span></span>
+<span id="L737"><span class="lineNum">     737</span>              :   }</span>
+<span id="L738"><span class="lineNum">     738</span> <span class="tlaGNC">          67 :   if (generation == last) {</span></span>
+<span id="L739"><span class="lineNum">     739</span>              :     // Same generation, different bytes: two devices both made 19 from 18</span>
+<span id="L740"><span class="lineNum">     740</span>              :     // (Git's conflict), or a swap. A record without a digest (an unrecorded</span>
+<span id="L741"><span class="lineNum">     741</span>              :     // reservation) takes these bytes as the ones.</span>
+<span id="L742"><span class="lineNum">     742</span> <span class="tlaGNC">          38 :     const std::optional&lt;QString&gt; known = t.digest(k);</span></span>
+<span id="L743"><span class="lineNum">     743</span> <span class="tlaGNC">          38 :     if (known &amp;&amp; *known != bytes) {</span></span>
+<span id="L744"><span class="lineNum">     744</span> <span class="tlaGNC">           8 :       if (error)</span></span>
+<span id="L745"><span class="lineNum">     745</span> <span class="tlaGNC">           4 :         *error = tr(&quot;The signed recipient list %1 is generation %2, the same &quot;</span></span>
+<span id="L746"><span class="lineNum">     746</span>              :                     &quot;generation as a different list this device accepted &quot;</span>
+<span id="L747"><span class="lineNum">     747</span>              :                     &quot;before. Either two devices saved recipients at the same &quot;</span>
+<span id="L748"><span class="lineNum">     748</span>              :                     &quot;time (Git will have shown the conflict), or an authentic &quot;</span>
+<span id="L749"><span class="lineNum">     749</span>              :                     &quot;list of that generation was swapped in. %3&quot;)</span>
+<span id="L750"><span class="lineNum">     750</span> <span class="tlaGNC">           8 :                      .arg(gpgIdFile)</span></span>
+<span id="L751"><span class="lineNum">     751</span> <span class="tlaGNC">           8 :                      .arg(generation)</span></span>
+<span id="L752"><span class="lineNum">     752</span> <span class="tlaGNC">           8 :                      .arg(wayThrough(last, t.path,</span></span>
+<span id="L753"><span class="lineNum">     753</span> <span class="tlaGNC">           8 :                                      tr(&quot;checking the recipients and saving&quot;)));</span></span>
+<span id="L754"><span class="lineNum">     754</span> <span class="tlaGNC">           8 :       return Verdict::Conflict;</span></span>
+<span id="L755"><span class="lineNum">     755</span>              :     }</span>
+<span id="L756"><span class="lineNum">     756</span> <span class="tlaGNC">          30 :     if (known) {</span></span>
+<span id="L757"><span class="lineNum">     757</span> <span class="tlaGNC">          27 :       return pinHere() ? Verdict::Accepted : Verdict::RecordUnavailable;</span></span>
+<span id="L758"><span class="lineNum">     758</span>              :     }</span>
+<span id="L759"><span class="lineNum">     759</span>              :   }</span>
+<span id="L760"><span class="lineNum">     760</span>              :   // The pin first: a generation recorded with the pin's write failing would</span>
+<span id="L761"><span class="lineNum">     761</span>              :   // leave the store unpinned for the next list, another store's included.</span>
+<span id="L762"><span class="lineNum">     762</span> <span class="tlaGNC">          32 :   if (!pinHere() || !t.remember(k, generation, bytes, error)) {</span></span>
+<span id="L763"><span class="lineNum">     763</span> <span class="tlaUNC">           0 :     return Verdict::RecordUnavailable;</span></span>
+<span id="L764"><span class="lineNum">     764</span>              :   }</span>
+<span id="L765"><span class="lineNum">     765</span>              :   return Verdict::Accepted;</span>
+<span id="L766"><span class="lineNum">     766</span> <span class="tlaGNC">         101 : }</span></span>
+<span id="L767"><span class="lineNum">     767</span>              : </span>
+<span id="L768"><span class="lineNum">     768</span> <span class="tlaGNC">          26 : auto GpgIdGeneration::ofThisStore(const QString &amp;gpgIdFile,</span></span>
+<span id="L769"><span class="lineNum">     769</span>              :                                   const Header &amp;header, const QString &amp;pinned,</span>
+<span id="L770"><span class="lineNum">     770</span>              :                                   bool alreadyAccepted,</span>
+<span id="L771"><span class="lineNum">     771</span>              :                                   const QString &amp;recordPath, QString *error)</span>
+<span id="L772"><span class="lineNum">     772</span>              :     -&gt; bool {</span>
+<span id="L773"><span class="lineNum">     773</span> <span class="tlaGNC">          26 :   if (header.store) {</span></span>
+<span id="L774"><span class="lineNum">     774</span> <span class="tlaGNC">          23 :     if (*header.store == pinned) {</span></span>
+<span id="L775"><span class="lineNum">     775</span>              :       return true;</span>
+<span id="L776"><span class="lineNum">     776</span>              :     }</span>
+<span id="L777"><span class="lineNum">     777</span> <span class="tlaGNC">           4 :     if (error)</span></span>
+<span id="L778"><span class="lineNum">     778</span>              :       *error =</span>
+<span id="L779"><span class="lineNum">     779</span> <span class="tlaGNC">           2 :           tr(&quot;The signed recipient list %1 was written for another password &quot;</span></span>
+<span id="L780"><span class="lineNum">     780</span>              :              &quot;store (store ID %2; this device knows this store as %3) and is &quot;</span>
+<span id="L781"><span class="lineNum">     781</span>              :              &quot;not used. It may have been copied here from a store signed &quot;</span>
+<span id="L782"><span class="lineNum">     782</span>              :              &quot;with the same key. If this store was set up again instead, &quot;</span>
+<span id="L783"><span class="lineNum">     783</span>              :              &quot;removing %4 forgets the store IDs this device knows.&quot;)</span>
+<span id="L784"><span class="lineNum">     784</span> <span class="tlaGNC">           4 :               .arg(gpgIdFile, *header.store, pinned, recordPath);</span></span>
+<span id="L785"><span class="lineNum">     785</span> <span class="tlaGNC">           4 :     return false;</span></span>
+<span id="L786"><span class="lineNum">     786</span>              :   }</span>
+<span id="L787"><span class="lineNum">     787</span>              :   // No store line: a list without a generation (pass) has none to carry,</span>
+<span id="L788"><span class="lineNum">     788</span>              :   // and one this device accepted before it had a store id still is what it</span>
+<span id="L789"><span class="lineNum">     789</span>              :   // was. Anything new must say which store it is for.</span>
+<span id="L790"><span class="lineNum">     790</span> <span class="tlaGNC">           3 :   if (header.generation == 0 || alreadyAccepted) {</span></span>
+<span id="L791"><span class="lineNum">     791</span>              :     return true;</span>
+<span id="L792"><span class="lineNum">     792</span>              :   }</span>
+<span id="L793"><span class="lineNum">     793</span> <span class="tlaGNC">           1 :   if (error)</span></span>
+<span id="L794"><span class="lineNum">     794</span>              :     *error =</span>
+<span id="L795"><span class="lineNum">     795</span>              :         //: The store ID line is the line of a signed recipient list that</span>
+<span id="L796"><span class="lineNum">     796</span>              :         //: names the password store by its ID (%2 here).</span>
+<span id="L797"><span class="lineNum">     797</span> <span class="tlaGNC">           1 :         tr(&quot;The signed recipient list %1 carries no store ID line, while this &quot;</span></span>
+<span id="L798"><span class="lineNum">     798</span>              :            &quot;device knows this store by its ID %2: it may have been written &quot;</span>
+<span id="L799"><span class="lineNum">     799</span>              :            &quot;for another store and copied here, or by an older QtPass. A &quot;</span>
+<span id="L800"><span class="lineNum">     800</span>              :            &quot;holder of the signing key gets through by opening Users, &quot;</span>
+<span id="L801"><span class="lineNum">     801</span>              :            &quot;selecting the recipients afresh and saving, which writes the &quot;</span>
+<span id="L802"><span class="lineNum">     802</span>              :            &quot;store ID line.&quot;)</span>
+<span id="L803"><span class="lineNum">     803</span> <span class="tlaGNC">           2 :             .arg(gpgIdFile, pinned);</span></span>
+<span id="L804"><span class="lineNum">     804</span>              :   return false;</span>
+<span id="L805"><span class="lineNum">     805</span>              : }</span>
+<span id="L806"><span class="lineNum">     806</span>              : </span>
+<span id="L807"><span class="lineNum">     807</span> <span class="tlaGNC">          42 : auto GpgIdGeneration::storeIdFor(const QString &amp;storeRoot,</span></span>
+<span id="L808"><span class="lineNum">     808</span>              :                                  const std::optional&lt;QString&gt; &amp;onDisk,</span>
+<span id="L809"><span class="lineNum">     809</span>              :                                  QString *error) -&gt; std::optional&lt;QString&gt; {</span>
+<span id="L810"><span class="lineNum">     810</span> <span class="tlaGNC">          42 :   Transaction t;</span></span>
+<span id="L811"><span class="lineNum">     811</span> <span class="tlaGNC">          42 :   if (!t.ok(error)) {</span></span>
+<span id="L812"><span class="lineNum">     812</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
+<span id="L813"><span class="lineNum">     813</span>              :   }</span>
+<span id="L814"><span class="lineNum">     814</span> <span class="tlaGNC">          41 :   const QString storeKey = key(storeRoot);</span></span>
+<span id="L815"><span class="lineNum">     815</span> <span class="tlaGNC">          41 :   if (const std::optional&lt;QString&gt; pinned = t.store(storeKey)) {</span></span>
+<span id="L816"><span class="lineNum">     816</span>              :     return pinned;</span>
+<span id="L817"><span class="lineNum">     817</span>              :   }</span>
+<span id="L818"><span class="lineNum">     818</span>              :   // Joining a store that has an id already: take it over, rather than</span>
+<span id="L819"><span class="lineNum">     819</span>              :   // giving the store a second one every other device would refuse.</span>
+<span id="L820"><span class="lineNum">     820</span> <span class="tlaGNC">           3 :   const QString id = onDisk &amp;&amp; isStoreId(onDisk-&gt;toLatin1())</span></span>
+<span id="L821"><span class="lineNum">     821</span> <span class="tlaGNC">          26 :                          ? *onDisk</span></span>
+<span id="L822"><span class="lineNum">     822</span> <span class="tlaGNC">          50 :                          : QUuid::createUuid().toString(QUuid::Id128).toLower();</span></span>
+<span id="L823"><span class="lineNum">     823</span> <span class="tlaGNC">          26 :   if (!t.pinStore(storeKey, id, error)) {</span></span>
+<span id="L824"><span class="lineNum">     824</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
 <span id="L825"><span class="lineNum">     825</span>              :   }</span>
-<span id="L826"><span class="lineNum">     826</span> <span class="tlaGNC">          44 :   const QString k = key(gpgIdFile);</span></span>
-<span id="L827"><span class="lineNum">     827</span> <span class="tlaGNC">          44 :   const qint64 last = t.generation(k);</span></span>
-<span id="L828"><span class="lineNum">     828</span>              :   const qint64 base = qMax(last, verifiedOnDisk.value_or(0));</span>
-<span id="L829"><span class="lineNum">     829</span> <span class="tlaGNC">          44 :   if (base &gt;= kMaxGeneration) {</span></span>
-<span id="L830"><span class="lineNum">     830</span> <span class="tlaGNC">           2 :     if (error)</span></span>
-<span id="L831"><span class="lineNum">     831</span> <span class="tlaGNC">           2 :       *error = tr(&quot;The recipient list %1 has reached generation %2, the &quot;</span></span>
-<span id="L832"><span class="lineNum">     832</span>              :                   &quot;highest there is; the list cannot be written.&quot;)</span>
-<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">           4 :                    .arg(gpgIdFile)</span></span>
-<span id="L834"><span class="lineNum">     834</span> <span class="tlaGNC">           6 :                    .arg(base);</span></span>
-<span id="L835"><span class="lineNum">     835</span> <span class="tlaGNC">           2 :     return std::nullopt;</span></span>
-<span id="L836"><span class="lineNum">     836</span>              :   }</span>
-<span id="L837"><span class="lineNum">     837</span> <span class="tlaGNC">          42 :   const qint64 generation = base + 1;</span></span>
-<span id="L838"><span class="lineNum">     838</span>              :   // No digest until the bytes are written: the previous generation's must</span>
-<span id="L839"><span class="lineNum">     839</span>              :   // not pass for this one's.</span>
-<span id="L840"><span class="lineNum">     840</span> <span class="tlaGNC">          84 :   if (!t.remember(k, generation, QString(), error)) {</span></span>
-<span id="L841"><span class="lineNum">     841</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
-<span id="L842"><span class="lineNum">     842</span>              :   }</span>
-<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">          42 :   return generation;</span></span>
-<span id="L844"><span class="lineNum">     844</span> <span class="tlaGNC">          46 : }</span></span>
-<span id="L845"><span class="lineNum">     845</span>              : </span>
-<span id="L846"><span class="lineNum">     846</span> <span class="tlaGNC">          32 : auto GpgIdGeneration::recordWritten(const QString &amp;gpgIdFile,</span></span>
-<span id="L847"><span class="lineNum">     847</span>              :                                     const QByteArray &amp;contents, QString *error)</span>
-<span id="L848"><span class="lineNum">     848</span>              :     -&gt; bool {</span>
-<span id="L849"><span class="lineNum">     849</span> <span class="tlaGNC">          32 :   const std::optional&lt;Header&gt; header = parse(contents, error);</span></span>
-<span id="L850"><span class="lineNum">     850</span> <span class="tlaGNC">          32 :   if (!header) {</span></span>
-<span id="L851"><span class="lineNum">     851</span>              :     return false;</span>
+<span id="L826"><span class="lineNum">     826</span>              :   return id;</span>
+<span id="L827"><span class="lineNum">     827</span> <span class="tlaGNC">          42 : }</span></span>
+<span id="L828"><span class="lineNum">     828</span>              : </span>
+<span id="L829"><span class="lineNum">     829</span> <span class="tlaGNC">          46 : auto GpgIdGeneration::reserveNext(const QString &amp;gpgIdFile,</span></span>
+<span id="L830"><span class="lineNum">     830</span>              :                                   std::optional&lt;qint64&gt; verifiedOnDisk,</span>
+<span id="L831"><span class="lineNum">     831</span>              :                                   QString *error) -&gt; std::optional&lt;qint64&gt; {</span>
+<span id="L832"><span class="lineNum">     832</span> <span class="tlaGNC">          46 :   Transaction t;</span></span>
+<span id="L833"><span class="lineNum">     833</span> <span class="tlaGNC">          46 :   if (!t.ok(error)) {</span></span>
+<span id="L834"><span class="lineNum">     834</span> <span class="tlaGNC">           2 :     return std::nullopt;</span></span>
+<span id="L835"><span class="lineNum">     835</span>              :   }</span>
+<span id="L836"><span class="lineNum">     836</span> <span class="tlaGNC">          44 :   const QString k = key(gpgIdFile);</span></span>
+<span id="L837"><span class="lineNum">     837</span> <span class="tlaGNC">          44 :   const qint64 last = t.generation(k);</span></span>
+<span id="L838"><span class="lineNum">     838</span>              :   const qint64 base = qMax(last, verifiedOnDisk.value_or(0));</span>
+<span id="L839"><span class="lineNum">     839</span> <span class="tlaGNC">          44 :   if (base &gt;= kMaxGeneration) {</span></span>
+<span id="L840"><span class="lineNum">     840</span> <span class="tlaGNC">           2 :     if (error)</span></span>
+<span id="L841"><span class="lineNum">     841</span> <span class="tlaGNC">           2 :       *error = tr(&quot;The recipient list %1 has reached generation %2, the &quot;</span></span>
+<span id="L842"><span class="lineNum">     842</span>              :                   &quot;highest there is; the list cannot be written.&quot;)</span>
+<span id="L843"><span class="lineNum">     843</span> <span class="tlaGNC">           4 :                    .arg(gpgIdFile)</span></span>
+<span id="L844"><span class="lineNum">     844</span> <span class="tlaGNC">           6 :                    .arg(base);</span></span>
+<span id="L845"><span class="lineNum">     845</span> <span class="tlaGNC">           2 :     return std::nullopt;</span></span>
+<span id="L846"><span class="lineNum">     846</span>              :   }</span>
+<span id="L847"><span class="lineNum">     847</span> <span class="tlaGNC">          42 :   const qint64 generation = base + 1;</span></span>
+<span id="L848"><span class="lineNum">     848</span>              :   // No digest until the bytes are written: the previous generation's must</span>
+<span id="L849"><span class="lineNum">     849</span>              :   // not pass for this one's.</span>
+<span id="L850"><span class="lineNum">     850</span> <span class="tlaGNC">          84 :   if (!t.remember(k, generation, QString(), error)) {</span></span>
+<span id="L851"><span class="lineNum">     851</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
 <span id="L852"><span class="lineNum">     852</span>              :   }</span>
-<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">          32 :   Transaction t;</span></span>
-<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">          32 :   if (!t.ok(error)) {</span></span>
-<span id="L855"><span class="lineNum">     855</span>              :     return false;</span>
-<span id="L856"><span class="lineNum">     856</span>              :   }</span>
-<span id="L857"><span class="lineNum">     857</span> <span class="tlaGNC">          32 :   const QString k = key(gpgIdFile);</span></span>
-<span id="L858"><span class="lineNum">     858</span> <span class="tlaGNC">          32 :   const qint64 last = t.generation(k);</span></span>
-<span id="L859"><span class="lineNum">     859</span> <span class="tlaGNC">          32 :   if (header-&gt;generation != last) {</span></span>
-<span id="L860"><span class="lineNum">     860</span>              :     // Not the generation reserved last: something else moved the record in</span>
-<span id="L861"><span class="lineNum">     861</span>              :     // between; whatever is there is not overwritten with these bytes.</span>
-<span id="L862"><span class="lineNum">     862</span> <span class="tlaGNC">           1 :     if (error)</span></span>
-<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The generation record of the recipient lists, %1, has &quot;</span></span>
-<span id="L864"><span class="lineNum">     864</span>              :                   &quot;moved on to generation %2 while generation %3 was being &quot;</span>
-<span id="L865"><span class="lineNum">     865</span>              :                   &quot;written.&quot;)</span>
-<span id="L866"><span class="lineNum">     866</span> <span class="tlaGNC">           2 :                    .arg(t.path)</span></span>
-<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">           2 :                    .arg(last)</span></span>
-<span id="L868"><span class="lineNum">     868</span> <span class="tlaGNC">           3 :                    .arg(header-&gt;generation);</span></span>
-<span id="L869"><span class="lineNum">     869</span> <span class="tlaGNC">           1 :     return false;</span></span>
-<span id="L870"><span class="lineNum">     870</span>              :   }</span>
-<span id="L871"><span class="lineNum">     871</span> <span class="tlaGNC">          62 :   return t.remember(k, last, digest(contents), error);</span></span>
-<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">          32 : }</span></span>
+<span id="L853"><span class="lineNum">     853</span> <span class="tlaGNC">          42 :   return generation;</span></span>
+<span id="L854"><span class="lineNum">     854</span> <span class="tlaGNC">          46 : }</span></span>
+<span id="L855"><span class="lineNum">     855</span>              : </span>
+<span id="L856"><span class="lineNum">     856</span> <span class="tlaGNC">          32 : auto GpgIdGeneration::recordWritten(const QString &amp;gpgIdFile,</span></span>
+<span id="L857"><span class="lineNum">     857</span>              :                                     const QByteArray &amp;contents, QString *error)</span>
+<span id="L858"><span class="lineNum">     858</span>              :     -&gt; bool {</span>
+<span id="L859"><span class="lineNum">     859</span> <span class="tlaGNC">          32 :   const std::optional&lt;Header&gt; header = parse(contents, error);</span></span>
+<span id="L860"><span class="lineNum">     860</span> <span class="tlaGNC">          32 :   if (!header) {</span></span>
+<span id="L861"><span class="lineNum">     861</span>              :     return false;</span>
+<span id="L862"><span class="lineNum">     862</span>              :   }</span>
+<span id="L863"><span class="lineNum">     863</span> <span class="tlaGNC">          32 :   Transaction t;</span></span>
+<span id="L864"><span class="lineNum">     864</span> <span class="tlaGNC">          32 :   if (!t.ok(error)) {</span></span>
+<span id="L865"><span class="lineNum">     865</span>              :     return false;</span>
+<span id="L866"><span class="lineNum">     866</span>              :   }</span>
+<span id="L867"><span class="lineNum">     867</span> <span class="tlaGNC">          32 :   const QString k = key(gpgIdFile);</span></span>
+<span id="L868"><span class="lineNum">     868</span> <span class="tlaGNC">          32 :   const qint64 last = t.generation(k);</span></span>
+<span id="L869"><span class="lineNum">     869</span> <span class="tlaGNC">          32 :   if (header-&gt;generation != last) {</span></span>
+<span id="L870"><span class="lineNum">     870</span>              :     // Not the generation reserved last: something else moved the record in</span>
+<span id="L871"><span class="lineNum">     871</span>              :     // between; whatever is there is not overwritten with these bytes.</span>
+<span id="L872"><span class="lineNum">     872</span> <span class="tlaGNC">           1 :     if (error)</span></span>
+<span id="L873"><span class="lineNum">     873</span> <span class="tlaGNC">           1 :       *error = tr(&quot;The generation record of the recipient lists, %1, has &quot;</span></span>
+<span id="L874"><span class="lineNum">     874</span>              :                   &quot;moved on to generation %2 while generation %3 was being &quot;</span>
+<span id="L875"><span class="lineNum">     875</span>              :                   &quot;written.&quot;)</span>
+<span id="L876"><span class="lineNum">     876</span> <span class="tlaGNC">           2 :                    .arg(t.path)</span></span>
+<span id="L877"><span class="lineNum">     877</span> <span class="tlaGNC">           2 :                    .arg(last)</span></span>
+<span id="L878"><span class="lineNum">     878</span> <span class="tlaGNC">           3 :                    .arg(header-&gt;generation);</span></span>
+<span id="L879"><span class="lineNum">     879</span> <span class="tlaGNC">           1 :     return false;</span></span>
+<span id="L880"><span class="lineNum">     880</span>              :   }</span>
+<span id="L881"><span class="lineNum">     881</span> <span class="tlaGNC">          62 :   return t.remember(k, last, digest(contents), error);</span></span>
+<span id="L882"><span class="lineNum">     882</span> <span class="tlaGNC">          32 : }</span></span>
         </pre>
               </td>
             </tr>

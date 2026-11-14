@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 18:11:14</td>
+            <td class="headerValue">2026-11-14 19:03:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -435,14 +435,14 @@
 <span id="L362"><span class="lineNum">     362</span>              :     }</span>
 <span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">         965 :     return true;</span></span>
 <span id="L364"><span class="lineNum">     364</span>              :   }</span>
-<span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">         752 :   while (!process.waitForFinished(</span></span>
+<span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">         754 :   while (!process.waitForFinished(</span></span>
 <span id="L366"><span class="lineNum">     366</span>              :       deadline.isForever()</span>
 <span id="L367"><span class="lineNum">     367</span>              :           ? kBlockingCancelPollMs</span>
 <span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">           3 :           : qMin(kBlockingCancelPollMs, msecsLeft(deadline)))) {</span></span>
-<span id="L369"><span class="lineNum">     369</span> <span class="tlaGNC">          20 :     if (process.state() == QProcess::NotRunning) {</span></span>
+<span id="L369"><span class="lineNum">     369</span> <span class="tlaGNC">          21 :     if (process.state() == QProcess::NotRunning) {</span></span>
 <span id="L370"><span class="lineNum">     370</span>              :       return true;</span>
 <span id="L371"><span class="lineNum">     371</span>              :     }</span>
-<span id="L372"><span class="lineNum">     372</span> <span class="tlaGNC">          27 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
+<span id="L372"><span class="lineNum">     372</span> <span class="tlaGNC">          28 :     if (cancel-&gt;load() || deadline.hasExpired()) {</span></span>
 <span id="L373"><span class="lineNum">     373</span> <span class="tlaGNC">           7 :       stopBlocking(process);</span></span>
 <span id="L374"><span class="lineNum">     374</span> <span class="tlaGNC">           7 :       return false;</span></span>
 <span id="L375"><span class="lineNum">     375</span>              :     }</span>
