@@ -13,8 +13,44 @@
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMouseEvent>
+#include <QValidator>
 
-SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {}
+namespace {
+/**
+ * @brief Keeps a line edit to the one line it stands for.
+ *
+ * QLineEdit takes the CR and LF of a paste, a drop or an input method as they
+ * come, draws them as blanks and returns them from text(). In the password
+ * dialog a field's line break then ends its line in the entry: a password
+ * pasted as "\nhunter2" was saved as an empty first line. QLineEdit runs its
+ * validator on every change before it reports the new text, and validate()
+ * may correct what it is given.
+ */
+class SingleLineValidator : public QValidator {
+public:
+  using QValidator::QValidator;
+
+  /**
+   * @brief Remove CR and LF from @p input.
+   * @param input The text the field would hold; corrected in place.
+   * @param pos The cursor position; kept behind the character it was behind.
+   * @return Always Acceptable: every text is one line once corrected.
+   */
+  auto validate(QString &input, int &pos) const -> State override {
+    if (!input.contains(u'\n') && !input.contains(u'\r')) {
+      return Acceptable;
+    }
+    const QStringView head = QStringView(input).left(pos);
+    pos -= static_cast<int>(head.count(u'\n') + head.count(u'\r'));
+    input.remove(u'\n').remove(u'\r');
+    return Acceptable;
+  }
+};
+} // namespace
+
+SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
+  setValidator(new SingleLineValidator(this));
+}
 
 auto SecretLineEdit::createSecretContextMenu() -> QMenu * {
   QMenu *menu = createStandardContextMenu();

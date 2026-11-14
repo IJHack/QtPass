@@ -96,8 +96,10 @@ void FieldLabel::finishEdit(bool commit) {
   // the pointer first so the second call finds nothing to do.
   QLineEdit *editor = m_editor;
   m_editor = nullptr;
-  // A colon would start the value early when the line is written back.
-  const QString name = editor->text().remove(u':').trimmed();
+  // A colon would start the value early when the line is written back, and
+  // a line break, which QLineEdit keeps from a paste, would end the line.
+  const QString name =
+      editor->text().remove(u':').remove(u'\n').remove(u'\r').trimmed();
   auto *form = qobject_cast<QFormLayout *>(parentWidget()->layout());
   int row = -1;
   QFormLayout::ItemRole role{};
