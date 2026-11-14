@@ -459,6 +459,9 @@ private Q_SLOTS:
   void enterInsideTheSearchDelayUsesTheTypedText();
   void messageFromAnotherInstanceShowsAndSearches();
   void messageFromAnotherInstanceOpensOnlyAnExactMatch();
+  void anExactMatchKeepsSpacesInTheName();
+  void messageFromAnotherInstanceLeavesContentSearch();
+  void newSearchTextCancelsAWaitingOpen();
   void configDialogAcceptedReappliesTheSettings();
   void configDialogCancelledChangesNothing();
   void aboutBoxNamesTheProgramAndLicence();
@@ -3307,6 +3310,104 @@ void tst_mainwindow::messageFromAnotherInstanceOpensOnlyAnExactMatch() {
 }
 
 /**
+ * @brief An entry whose name begins with a space is matched as named: " bank"
+ *        opened bank, since the text was trimmed. Spaces typed around a name
+ *        that has none still find it.
+ */
+void tst_mainwindow::anExactMatchKeepsSpacesInTheName() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("bank")));
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral(" bank")));
+  treeView()->setCurrentIndex(QModelIndex());
+
+  m_window->messageAvailable(QStringLiteral(" bank"));
+  QCOMPARE(passwordName()->text(), QStringLiteral(" bank"));
+
+  m_window->messageAvailable(QStringLiteral("bank "));
+  QCOMPARE(passwordName()->text(), QStringLiteral("bank"));
+#endif
+}
+
+/**
+ * @brief Text from a second instance is a name search: content search is
+ *        left, so its results no longer cover the tree and further typing
+ *        filters names.
+ */
+void tst_mainwindow::messageFromAnotherInstanceLeavesContentSearch() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch, [](AppSettings &s) {
+             s.useGrepSearch = true;
+           }).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("named-search")));
+  auto *grep = m_window->findChild<QToolButton *>(QStringLiteral("grepButton"));
+  QVERIFY(grep != nullptr);
+  grep->setChecked(true);
+
+  m_window->messageAvailable(QStringLiteral("named-search"));
+  QVERIFY2(!grep->isChecked(), "content search is left");
+  QCOMPARE(searchBox()->text(), QStringLiteral("named-search"));
+  QCOMPARE(passwordName()->text(), QStringLiteral("named-search"));
+#endif
+}
+
+/**
+ * @brief An open still waiting for the tree to load is cancelled by any new
+ *        search text, also when the text is typed back to the same name:
+ *        that search only highlights, it never asked to open.
+ */
+void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aaa")));
+  // Written straight to disk: the tree does not have it yet, so the open
+  // has to wait for the folder to load.
+  QFile f(QDir(m_storeDir.path()).filePath(QStringLiteral("waited.gpg")));
+  QVERIFY(f.open(QIODevice::WriteOnly));
+  f.write("not really encrypted");
+  f.close();
+  passwordName()->clear();
+
+  m_window->messageAvailable(QStringLiteral("waited"));
+  QVERIFY2(passwordName()->text().isEmpty(), "the tree has not loaded it yet");
+  searchBox()->setText(QStringLiteral("other"));
+  searchBox()->setText(QStringLiteral("waited"));
+
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(treeView()->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  QTRY_VERIFY_WITH_TIMEOUT(fs->index(f.fileName()).isValid(), 5000);
+  QTest::qWait(500);
+  QVERIFY2(passwordName()->text().isEmpty(),
+           qPrintable(QStringLiteral("typing only highlights, opened: ") +
+                      passwordName()->text()));
+
+  // Control: unchallenged, the waiting open does land.
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aab")));
+  QFile g(QDir(m_storeDir.path()).filePath(QStringLiteral("waited2.gpg")));
+  QVERIFY(g.open(QIODevice::WriteOnly));
+  g.write("not really encrypted");
+  g.close();
+  m_window->messageAvailable(QStringLiteral("waited2"));
+  QTRY_COMPARE_WITH_TIMEOUT(passwordName()->text(), QStringLiteral("waited2"),
+                            5000);
+#endif
+}
+
+/**
  * @brief A message from a second instance brings the window up: empty, it
  *        focuses the search box; with text, it types that into the search
  *        box, filters the tree at once and opens the entry named exactly
@@ -3337,6 +3438,7 @@ void tst_mainwindow::messageFromAnotherInstanceShowsAndSearches() {
   // The tree reloads after the window is shown: the entry opens once its
   // folder has loaded.
   QTRY_COMPARE(passwordName()->text(), QStringLiteral("from-afar"));
+  QVERIFY2(treeView()->currentIndex().isValid(), "the opened entry is current");
   QVERIFY2(shown.count() >= 1 || shown.wait(5000), "and decrypted it");
   QCOMPARE(shown.first().at(1).toString(), passwordName()->text());
 #endif

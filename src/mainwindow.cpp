@@ -113,14 +113,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  // Searched as qtpass(1) promises, once the window and its tree are up:
-  // filtered at once and an entry named exactly so opened. Setting the
-  // text here left it to the search timer, which only highlights.
-  if (!searchText.isEmpty()) {
-    QTimer::singleShot(0, this,
-                       [this, searchText] { applySearchText(searchText); });
-  }
-
   // No QApplication::quit() here: before exec() it is a documented no-op.
   // main() checks initSucceeded() and exits before show() instead.
   m_qtPass->init();
@@ -133,6 +125,16 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   }
   m_freshStart = false;
   m_initSucceeded = true;
+
+  // Searched as qtpass(1) promises, once the window and its tree are up:
+  // filtered at once and an entry named exactly so opened. Setting the
+  // text here left it to the search timer, which only highlights. Queued
+  // only now: from before the configuration loop, a wizard's nested event
+  // loop ran it while no store was set yet.
+  if (!searchText.isEmpty()) {
+    QTimer::singleShot(0, this,
+                       [this, searchText] { applySearchText(searchText); });
+  }
 
   // Initial focus is set in showEvent(): a 10 ms QTimer here could fire
   // before the window was realised (queued ActivationChange, nested exec() in
@@ -1034,18 +1036,21 @@ void MainWindow::selectFirstFile() {
 }
 
 auto MainWindow::exactMatchPath() -> QString {
-  const QString typed =
-      QDir::fromNativeSeparators(ui->lineEdit->text().trimmed());
-  if (typed.isEmpty()) {
-    return {};
-  }
+  const QString text = QDir::fromNativeSeparators(ui->lineEdit->text());
   const QString store = QtPassSettings::getPassStore();
-  const QString path =
-      QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
-  if (!PathValidator::isPathInStore(store, path)) {
-    return {};
+  // A name may begin or end with a space: " bank" is that entry, not bank.
+  // Only when no entry is named so are spaces around the text dropped.
+  for (const QString &typed : {text, text.trimmed()}) {
+    if (typed.isEmpty()) {
+      continue;
+    }
+    const QString path =
+        QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
+    if (PathValidator::isPathInStore(store, path) && QFileInfo(path).isFile()) {
+      return path;
+    }
   }
-  return path;
+  return {};
 }
 
 auto MainWindow::exactMatch() -> QModelIndex {
@@ -1062,38 +1067,57 @@ auto MainWindow::exactMatch() -> QModelIndex {
 }
 
 void MainWindow::applySearchText(const QString &text) {
+  // A name search: content search, left on, kept its results over the tree
+  // and ignored the text.
+  if (ui->grepButton->isChecked()) {
+    ui->grepButton->setChecked(false);
+  }
+  delete m_pendingOpen;
   ui->lineEdit->setText(text);
   // Filter now, not after the search delay: the timer would leave the tree
   // as the previous text filtered it.
   searchTimer.stop();
   onTimeoutSearch();
   if (const QModelIndex exact = exactMatch(); exact.isValid()) {
-    on_treeView_clicked(exact);
+    openExactMatch(exact);
     return;
   }
   // The tree loads folders in the background: at start, or right after the
   // window is shown again, an entry that exists may not be in it yet. Try
   // again as folders finish loading, for a few seconds, unless the search
-  // text has changed meanwhile.
-  const QString path = exactMatchPath();
-  if (path.isEmpty() || !QFileInfo(path).isFile()) {
+  // text changes meanwhile: any change ends the wait, even one typed back to
+  // this text, which is a new search that has not asked to open anything.
+  if (exactMatchPath().isEmpty()) {
     return;
   }
   auto *pending = new QObject(this);
+  m_pendingOpen = pending;
   QTimer::singleShot(5000, pending, &QObject::deleteLater);
+  // Disconnected at once: with deleteLater() alone, a folder that finished
+  // loading before the deletion still ran the open, or ran it twice.
+  const auto stop = [this, pending] {
+    disconnect(&m_tree->fileSystem(), nullptr, pending, nullptr);
+    disconnect(ui->lineEdit, nullptr, pending, nullptr);
+    pending->deleteLater();
+  };
+  connect(ui->lineEdit, &QLineEdit::textChanged, pending, stop);
   connect(&m_tree->fileSystem(), &QFileSystemModel::directoryLoaded, pending,
-          [this, pending, text](const QString &) {
-            if (ui->lineEdit->text() != text) {
-              pending->deleteLater();
-              return;
-            }
+          [this, stop](const QString &) {
             searchTimer.stop();
             onTimeoutSearch();
             if (const QModelIndex exact = exactMatch(); exact.isValid()) {
-              pending->deleteLater();
-              on_treeView_clicked(exact);
+              stop();
+              openExactMatch(exact);
             }
           });
+}
+
+void MainWindow::openExactMatch(const QModelIndex &index) {
+  // Made current here, not left to the filter pass before: the tree may have
+  // moved its current row since, and with none on_treeView_clicked() only
+  // names the entry without decrypting it.
+  ui->treeView->setCurrentIndex(index);
+  on_treeView_clicked(index);
 }
 
 auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {

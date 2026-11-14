@@ -532,6 +532,9 @@ private:
   /// Progress/cancel dialog shown between startReencryptPath() and
   /// endReencryptPath(); QPointer so a closed dialog reads back as null.
   QPointer<QProgressDialog> m_reencryptProgress;
+  /// The open applySearchText() waits to make until the tree has loaded the
+  /// entry; QPointer so an ended or cancelled wait reads back as null.
+  QPointer<QObject> m_pendingOpen;
   /// True between startReencryptPath() and endReencryptPath(). While set,
   /// setUiElementsEnabled(true) is ignored so the git completions queued by
   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface
@@ -588,9 +591,9 @@ private:
    */
   auto exactMatch() -> QModelIndex;
   /**
-   * @brief The file an entry named exactly as the search text would be.
-   * @return Its path, or empty when the text is empty or would resolve
-   *         outside the store.
+   * @brief The entry file named exactly as the search text, spaces around
+   * the text included; failing that, named as the text without them.
+   * @return Its path, or empty when no such file is in the store.
    */
   auto exactMatchPath() -> QString;
   /**
@@ -600,6 +603,11 @@ private:
    * @param text The search text.
    */
   void applySearchText(const QString &text);
+  /**
+   * @brief Makes @p index current and opens it, as a click on it would.
+   * @param index Proxy index of the entry exactMatch() found.
+   */
+  void openExactMatch(const QModelIndex &index);
   /**
    * @brief Depth-first search for the first entry under a folder.
    * @param parentIndex Proxy index of the folder to search.
