@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:52:56</td>
+            <td class="headerValue">2026-11-14 16:57:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryMed">80.0&nbsp;%</td>
@@ -82,20 +82,20 @@
 <span id="L9"><span class="lineNum">       9</span>              : #include &lt;QTimer&gt;</span>
 <span id="L10"><span class="lineNum">      10</span>              : #include &lt;utility&gt;</span>
 <span id="L11"><span class="lineNum">      11</span>              : </span>
-<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">          39 : QPushButtonWithClipboard::QPushButtonWithClipboard(QString textToCopy,</span></span>
-<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          39 :                                                    QWidget *parent)</span></span>
+<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">          40 : QPushButtonWithClipboard::QPushButtonWithClipboard(QString textToCopy,</span></span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          40 :                                                    QWidget *parent)</span></span>
 <span id="L14"><span class="lineNum">      14</span>              :     : QPushButton(parent), textToCopy(std::move(textToCopy)),</span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          78 :       iconEdit(QIcon::fromTheme(&quot;edit-copy&quot;, QIcon(&quot;:/icons/edit-copy.svg&quot;))),</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          39 :       iconEditPushed(</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         117 :           QIcon::fromTheme(&quot;document-new&quot;, QIcon(&quot;:/icons/document-new.svg&quot;))) {</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">          39 :   setIcon(iconEdit);</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          80 :       iconEdit(QIcon::fromTheme(&quot;edit-copy&quot;, QIcon(&quot;:/icons/edit-copy.svg&quot;))),</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          40 :       iconEditPushed(</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         120 :           QIcon::fromTheme(&quot;document-new&quot;, QIcon(&quot;:/icons/document-new.svg&quot;))) {</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">          40 :   setIcon(iconEdit);</span></span>
 <span id="L19"><span class="lineNum">      19</span>              :   // Icon-only: give screen readers and hovering users a name.</span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">          78 :   setToolTip(tr(&quot;Copy to clipboard&quot;));</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          39 :   setAccessibleName(tr(&quot;Copy to clipboard&quot;));</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          39 :   setForegroundRole(QPalette::ButtonText);</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          39 :   connect(this, &amp;QPushButton::clicked, this,</span></span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">          39 :           &amp;QPushButtonWithClipboard::buttonClicked);</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">          39 : }</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">          80 :   setToolTip(tr(&quot;Copy to clipboard&quot;));</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          40 :   setAccessibleName(tr(&quot;Copy to clipboard&quot;));</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          40 :   setForegroundRole(QPalette::ButtonText);</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          40 :   connect(this, &amp;QPushButton::clicked, this,</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">          40 :           &amp;QPushButtonWithClipboard::buttonClicked);</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">          40 : }</span></span>
 <span id="L26"><span class="lineNum">      26</span>              : </span>
 <span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           9 : auto QPushButtonWithClipboard::getTextToCopy() const -&gt; QString {</span></span>
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           9 :   return textToCopy;</span></span>

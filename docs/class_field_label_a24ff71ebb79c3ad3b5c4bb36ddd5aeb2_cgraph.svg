@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="1030" data-view-height="134" data-section-id="dynsection-3">
+<svg id="graph" class="graph" data-view-width="1249" data-view-height="134" data-section-id="dynsection-3">
 <g id="viewport">
 <title>FieldLabel::contextMenuEvent</title>
 <!-- Node1 -->
@@ -77,19 +77,19 @@
 </a>
 </g>
 </g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e" target="_top" xlink:title="Open the in&#45;place editor over the label.">
+<!-- Node9 -->
+<g id="Node000009" class="node">
+<title>Node9</title>
+<g id="a_Node000009"><a xlink:href="class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e" target="_top" xlink:title="Open the in&#45;place editor over the label.">
 <polygon fill="white" stroke="#666666" points="713.12,-42.71 600.38,-42.71 600.38,-21.96 713.12,-21.96 713.12,-42.71"/>
 <text xml:space="preserve" text-anchor="middle" x="656.75" y="-29.21" font-family="Helvetica,sans-Serif" font-size="10.00">FieldLabel::startEdit</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge10_Node000001_Node000007" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<g id="a_edge10_Node000001_Node000007"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge12_Node000001_Node000009" class="edge">
+<title>Node1&#45;&gt;Node9</title>
+<g id="a_edge12_Node000001_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M124.97,-43.47C208.32,-23.6 399.12,14.69 558.75,-6.33 576.9,-8.72 596.48,-13.53 613.26,-18.36"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="611.81,-21.58 622.39,-21.08 613.81,-14.87 611.81,-21.58"/>
 </a>
@@ -132,28 +132,28 @@
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge6_Node000002_Node000004" class="edge">
+<g id="edge8_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<g id="a_edge6_Node000002_Node000004"><a xlink:title=" ">
+<g id="a_edge8_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M359.96,-57.78C464.03,-62.28 644.63,-70.09 743.11,-74.35"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="742.76,-77.84 752.9,-74.78 743.06,-70.85 742.76,-77.84"/>
 </a>
 </g>
 </g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70" target="_top" xlink:title="A left double&#45;click starts editing the name.">
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="class_field_label.html#ab888cb34aab13458b37ac20c5c491b70" target="_top" xlink:title="A left double&#45;click starts editing the name.">
 <polygon fill="white" stroke="#666666" points="558.75,-49.08 395.75,-49.08 395.75,-15.58 558.75,-15.58 558.75,-49.08"/>
 <text xml:space="preserve" text-anchor="start" x="403.75" y="-35.58" font-family="Helvetica,sans-Serif" font-size="10.00">FieldLabel::mouseDoubleClick</text>
 <text xml:space="preserve" text-anchor="middle" x="477.25" y="-22.83" font-family="Helvetica,sans-Serif" font-size="10.00">Event</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node6 -->
-<g id="edge7_Node000002_Node000006" class="edge">
-<title>Node2&#45;&gt;Node6</title>
-<g id="a_edge7_Node000002_Node000006"><a xlink:title=" ">
+<!-- Node2&#45;&gt;Node8 -->
+<g id="edge9_Node000002_Node000008" class="edge">
+<title>Node2&#45;&gt;Node8</title>
+<g id="a_edge9_Node000002_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M360.04,-45.38C367.96,-44.49 376.05,-43.59 384.08,-42.68"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="384.33,-46.18 393.87,-41.58 383.55,-39.22 384.33,-46.18"/>
 </a>
@@ -172,8 +172,8 @@
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" target="_top" xlink:title="The user typed a different name and confirmed it.">
-<polygon fill="white" stroke="#666666" points="1022.25,-87.71 907.25,-87.71 907.25,-66.96 1022.25,-66.96 1022.25,-87.71"/>
-<text xml:space="preserve" text-anchor="middle" x="964.75" y="-74.21" font-family="Helvetica,sans-Serif" font-size="10.00">FieldLabel::renamed</text>
+<polygon fill="white" stroke="#666666" points="1039.12,-110.71 924.12,-110.71 924.12,-89.96 1039.12,-89.96 1039.12,-110.71"/>
+<text xml:space="preserve" text-anchor="middle" x="981.62" y="-97.21" font-family="Helvetica,sans-Serif" font-size="10.00">FieldLabel::renamed</text>
 </a>
 </g>
 </g>
@@ -181,24 +181,61 @@
 <g id="edge5_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge5_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M871.47,-77.33C879.43,-77.33 887.67,-77.33 895.8,-77.33"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="895.66,-80.83 905.66,-77.33 895.66,-73.83 895.66,-80.83"/>
+<path fill="none" stroke="#63b8ff" d="M871.34,-85.25C884.58,-87.07 898.79,-89.04 912.44,-90.92"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="911.86,-94.37 922.24,-92.27 912.81,-87.44 911.86,-94.37"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" target="_top" xlink:title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste.">
+<polygon fill="white" stroke="#666666" points="1056,-72.08 907.25,-72.08 907.25,-38.58 1056,-38.58 1056,-72.08"/>
+<text xml:space="preserve" text-anchor="start" x="915.25" y="-58.58" font-family="Helvetica,sans-Serif" font-size="10.00">SecretLineEdit::withoutLine</text>
+<text xml:space="preserve" text-anchor="middle" x="981.62" y="-45.83" font-family="Helvetica,sans-Serif" font-size="10.00">Breaks</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node6 -->
+<g id="edge6_Node000004_Node000006" class="edge">
+<title>Node4&#45;&gt;Node6</title>
+<g id="a_edge6_Node000004_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M871.34,-69.76C879.24,-68.72 887.48,-67.63 895.74,-66.54"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="896.04,-70.03 905.49,-65.25 895.12,-63.09 896.04,-70.03"/>
+</a>
+</g>
+</g>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" target="_top" xlink:title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,...">
+<polygon fill="white" stroke="#666666" points="1240.75,-65.71 1092,-65.71 1092,-44.96 1240.75,-44.96 1240.75,-65.71"/>
+<text xml:space="preserve" text-anchor="middle" x="1166.38" y="-52.21" font-family="Helvetica,sans-Serif" font-size="10.00">SecretLineEdit::isLineBreak</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
-<g id="edge8_Node000006_Node000007" class="edge">
+<g id="edge7_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
-<g id="a_edge8_Node000006_Node000007"><a xlink:title=" ">
+<g id="a_edge7_Node000006_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1056.43,-55.33C1064.22,-55.33 1072.18,-55.33 1080.08,-55.33"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1080.08,-58.83 1090.08,-55.33 1080.08,-51.83 1080.08,-58.83"/>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node9 -->
+<g id="edge10_Node000008_Node000009" class="edge">
+<title>Node8&#45;&gt;Node9</title>
+<g id="a_edge10_Node000008_Node000009"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M559.21,-32.33C569.02,-32.33 578.97,-32.33 588.55,-32.33"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="588.52,-35.83 598.52,-32.33 588.52,-28.83 588.52,-35.83"/>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node4 -->
-<g id="edge9_Node000007_Node000004" class="edge">
-<title>Node7&#45;&gt;Node4</title>
-<g id="a_edge9_Node000007_Node000004"><a xlink:title=" ">
+<!-- Node9&#45;&gt;Node4 -->
+<g id="edge11_Node000009_Node000004" class="edge">
+<title>Node9&#45;&gt;Node4</title>
+<g id="a_edge11_Node000009_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M694.7,-43.11C715.44,-49.16 741.55,-56.78 763.87,-63.29"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="762.79,-66.62 773.37,-66.06 764.75,-59.9 762.79,-66.62"/>
 </a>

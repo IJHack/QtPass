@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2ac47c93cf49de211bba5d62d65225f128":[1,4,6,0,1],
+"class_ssh_auth_sock.html#a5d4accd5e9b9f2461de8d3565fa336d8":[1,4,6,2],
+"class_ssh_auth_sock.html#aa5db3a45da13ec228c035d199d4dd1ff":[1,4,6,1],
+"class_store_model.html":[1,3,7],
+"class_store_model.html#a02542fddfeea1874e849c0bb1d94f6c1":[1,3,7,5],
 "class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2":[1,3,7,7],
 "class_store_model.html#a18097d60174b1d370e13d6a04ab7847f":[1,3,7,2],
 "class_store_model.html#a1d113aadab8e115cdd963f2246333664":[1,3,7,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "functions_func_e.html":[3,3,1,4],
 "functions_func_f.html":[3,3,1,5],
 "functions_func_g.html":[3,3,1,6],
-"functions_func_h.html":[3,3,1,7],
-"functions_func_i.html":[3,3,1,8],
-"functions_func_k.html":[3,3,1,9],
-"functions_func_l.html":[3,3,1,10],
-"functions_func_m.html":[3,3,1,11],
-"functions_func_n.html":[3,3,1,12]
+"functions_func_h.html":[3,3,1,7]
 };

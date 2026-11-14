@@ -1,5 +1,10 @@
 var NAVTREEINDEX6 =
 {
+"secretlineedit_8cpp.html":[4,0,1,77],
+"secretlineedit_8cpp_source.html":[4,0,1,77],
+"secretlineedit_8h.html":[4,0,1,78],
+"secretlineedit_8h_source.html":[4,0,1,78],
+"secretplaintextedit_8cpp.html":[4,0,1,79],
 "secretplaintextedit_8cpp_source.html":[4,0,1,79],
 "secretplaintextedit_8h.html":[4,0,1,80],
 "secretplaintextedit_8h_source.html":[4,0,1,80],
@@ -244,10 +249,5 @@ var NAVTREEINDEX6 =
 "trayicon_8cpp_source.html":[4,0,1,99],
 "trayicon_8h.html":[4,0,1,100],
 "trayicon_8h_source.html":[4,0,1,100],
-"userinfo_8h.html":[4,0,1,101],
-"userinfo_8h_source.html":[4,0,1,101],
-"usersdialog_8cpp.html":[4,0,1,102],
-"usersdialog_8cpp_source.html":[4,0,1,102],
-"usersdialog_8h.html":[4,0,1,103],
-"usersdialog_8h_source.html":[4,0,1,103]
+"userinfo_8h.html":[4,0,1,101]
 };

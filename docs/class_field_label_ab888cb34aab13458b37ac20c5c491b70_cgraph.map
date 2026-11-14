@@ -1,9 +1,13 @@
 <map id="FieldLabel::mouseDoubleClickEvent" name="FieldLabel::mouseDoubleClickEvent">
-<area shape="rect" id="Node000001" title="A left double&#45;click starts editing the name." alt="" coords="5,5,223,50"/>
-<area shape="rect" id="Node000002" href="$class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e" title="Open the in&#45;place editor over the label." alt="" coords="271,14,421,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,25,258,28,253,28,223,30"/>
-<area shape="rect" id="Node000003" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="469,14,624,42"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,25,456,28,451,28,422,30"/>
-<area shape="rect" id="Node000004" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="672,14,826,42"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="625,25,660,28,654,28,625,30"/>
+<area shape="rect" id="Node000001" title="A left double&#45;click starts editing the name." alt="" coords="5,28,223,72"/>
+<area shape="rect" id="Node000002" href="$class_field_label.html#adae9f17d579fe091fe9ea94a8ba4719e" title="Open the in&#45;place editor over the label." alt="" coords="271,36,421,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,47,258,49,253,50,223,52"/>
+<area shape="rect" id="Node000003" href="$class_field_label.html#a8ffd88532b8137846c84d7c8812d64ac" title="Close the editor, putting the label back in its place." alt="" coords="469,36,624,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,47,456,50,451,50,422,52"/>
+<area shape="rect" id="Node000004" href="$class_field_label.html#aa6c313a70722faead0ca8abf7c2abd00" title="The user typed a different name and confirmed it." alt="" coords="695,5,848,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="624,37,677,32,682,31,625,42"/>
+<area shape="rect" id="Node000005" href="$class_secret_line_edit.html#a4137ccc5a0080d0e4892006745ca9f3d" title="text with every line break (see isLineBreak()) removed: what a one&#45;line field keeps of a paste." alt="" coords="672,57,871,102"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="625,57,660,64,654,64,624,63"/>
+<area shape="rect" id="Node000006" href="$class_secret_line_edit.html#aaffec2fbdc78aea02c002f3dee79736a" title="Whether ch breaks a line: LF, CR, NEL (U+0085), or the Unicode line and paragraph separators (U+2028,..." alt="" coords="919,65,1117,93"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="871,77,905,79,900,79,871,82"/>
 </map>

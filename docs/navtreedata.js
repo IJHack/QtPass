@@ -68,10 +68,10 @@ var NAVTREEINDEX =
 "class_gpg_id_generation.html#aed2c33b54281cbd539752f1090ecb2e4",
 "class_main_window.html#ab7a805923a61f2441932d8d358fb040e",
 "class_password_display_panel.html#a63f3df891d869b0cc854ebb652b8ade7",
-"class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2",
-"functions_func_o.html",
-"secretplaintextedit_8cpp_source.html",
-"util_8cpp.html"
+"class_ssh_auth_sock.html#a35b8c125fcc1d0a8166271436057d5b2ac47c93cf49de211bba5d62d65225f128",
+"functions_func_i.html",
+"secretlineedit_8cpp.html",
+"userinfo_8h_source.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

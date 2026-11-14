@@ -1,19 +1,26 @@
 <map id="src/fieldlabel.cpp" name="src/fieldlabel.cpp">
-<area shape="rect" id="Node000001" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="386,5,518,33"/>
-<area shape="rect" id="Node000002" href="$fieldlabel_8h.html" title="FieldLabel: the in&#45;place renamable, removable name label of a key: value field in PasswordDialog." alt="" coords="40,81,133,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="386,36,149,83,148,78,386,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="157,81,312,109"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="410,34,288,78,287,73,415,33"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="336,81,445,109"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="443,32,413,71,409,67,439,35"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="468,81,561,109"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="464,31,496,70,491,69,462,36"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="585,81,668,109"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="483,31,584,75,579,75,483,36"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="693,81,760,109"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="501,31,680,80,675,81,501,36"/>
+<area shape="rect" id="Node000001" title="Implements FieldLabel; startEdit() and finishEdit() swap the label and its editor in and out of the p..." alt="" coords="505,5,636,33"/>
+<area shape="rect" id="Node000002" href="$fieldlabel_8h.html" title="FieldLabel: the in&#45;place renamable, removable name label of a key: value field in PasswordDialog." alt="" coords="88,81,181,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,34,197,86,196,80,505,29"/>
+<area shape="rect" id="Node000005" href="$secretlineedit_8h.html" title="QLineEdit whose copies, cuts and primary&#45;selection fills carry the secret clipboard hints and are rep..." alt="" coords="296,81,418,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="535,33,411,78,409,73,530,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="425,157,508,184"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="542,33,510,55,483,82,472,111,468,143,464,139,467,110,479,80,506,51,537,35"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="493,81,648,109"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="572,32,573,67,568,64,569,36"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="672,81,781,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="599,31,688,74,682,74,598,36"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="804,81,897,109"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="621,31,792,77,787,78,620,36"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="921,81,988,109"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="636,28,758,48,908,80,903,80,757,53,636,33"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,157,72,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,108,57,145,53,142,76,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,108,69,149,66,145,115,110"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="96,157,173,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="96,107,120,144,115,144,94,112"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="136,107,137,142,132,140,133,111"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="197,157,290,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="339,108,278,151,275,146,334,110"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="377,107,437,148,432,147,376,112"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="314,157,400,184"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="359,107,359,143,355,139,355,111"/>
 </map>
