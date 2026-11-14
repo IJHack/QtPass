@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Self-refreshing widget showing an entry's current TOTP code with a
+ * countdown bar and optional copy button.
+ */
 #ifndef SRC_OTPCODEWIDGET_H_
 #define SRC_OTPCODEWIDGET_H_
 
@@ -69,13 +74,24 @@ signals:
   void copyRequested(const QString &text);
 
 private:
+  /** @brief Validated TOTP parameters for the entry; fixed at construction. */
   Totp::Settings m_settings;
+  /** @brief Copy button, or nullptr when built without one; child widget
+   * whose text is kept equal to @ref m_code. */
   QPushButtonWithClipboard *m_copyButton{nullptr};
+  /** @brief Shows the current code; child widget. */
   QLabel *m_codeLabel{nullptr};
+  /** @brief Countdown bar from `step` down to 1 second; child widget. */
   QProgressBar *m_progress{nullptr};
+  /** @brief The code last rendered, ungrouped. */
   QString m_code;
+  /** @brief Time-step counter @ref m_code was generated for; a tick only
+   * regenerates when the counter changes. */
   quint64 m_counter{0};
+  /** @brief Seconds left on @ref m_code as of the last refresh(). */
   uint m_secondsRemaining{0};
+  /** @brief False until the first refresh(), which must generate a code
+   * regardless of @ref m_counter. */
   bool m_hasCode{false};
 };
 

@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements SecretPlainTextEdit::createMimeDataFromSelection(), the
+ * single hook through which all copies leave the editor.
+ */
 #include "secretplaintextedit.h"
 #include "clipboardmanager.h"
 #include <QTextCursor>

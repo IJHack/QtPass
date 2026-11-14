@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements SecretLineEdit: the four copy paths (Ctrl+C, Cut, context
+ * menu, X11 primary selection) routed through buildClipboardMimeData().
+ */
 #include "secretlineedit.h"
 #include "clipboardmanager.h"
 #include <QAction>

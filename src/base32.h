@@ -1,6 +1,11 @@
 // SPDX-FileCopyrightText: 2025 KeePassXC Team <team@keepassxc.org>
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Strict RFC 4648 base32 codec plus the input sanitizer that makes
+ * human-typed TOTP secrets decodable.
+ */
 #ifndef SRC_BASE32_H_
 #define SRC_BASE32_H_
 
@@ -75,6 +80,7 @@ public:
       -> QByteArray;
 
 private:
+  /** @brief Static-only class; never instantiated. */
   Base32() = default;
 };
 

@@ -1,16 +1,13 @@
 // SPDX-FileCopyrightText: 2020 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements QPushButtonShowPassword: the echo-mode toggle and the
+ * matching icon and tooltip swap.
+ */
 #include "qpushbuttonshowpassword.h"
 #include <QTimer>
 
-/**
- * @brief QPushButtonAsQRCode::QPushButtonAsQRCode
- *  basic constructor
- * @param textToCopy
- *  the text to display as qrcode
- * @param parent
- *  the parent window
- */
 QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
                                                  QWidget *parent)
     : QPushButton(parent),
@@ -27,10 +24,6 @@ QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
   this->line = line;
 }
 
-/**
- * @brief QPushButtonAsQRCode::buttonClicked handles clicked event by
- * emitting clicked(QString) with string provided to constructor
- */
 void QPushButtonShowPassword::buttonClicked(bool /*unused*/) {
   if (this->line->echoMode() == QLineEdit::Password) {
     this->line->setEchoMode(QLineEdit::Normal);

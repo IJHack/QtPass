@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QLineEdit whose copies, cuts and primary-selection fills carry the
+ * secret clipboard hints and are reported for autoclear.
+ */
 #ifndef SRC_SECRETLINEEDIT_H_
 #define SRC_SECRETLINEEDIT_H_
 
@@ -82,9 +87,33 @@ protected:
   void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
+  /**
+   * @brief Puts the selection on the clipboard or in the primary selection
+   * as secret-marked MIME data and emits copied(). Does nothing in Password
+   * echo mode or without a selection, as QLineEdit::copy() itself.
+   * @param mode Clipboard for Ctrl+C and Copy, Selection for the X11 primary
+   * selection.
+   */
   void copySelection(QClipboard::Mode mode);
+  /**
+   * @brief Copies the selection through copySelection() and then deletes it.
+   * Does nothing when read-only or without a selection, as QLineEdit::cut().
+   */
   void cutSelection();
+  /**
+   * @brief Runs a base-class event handler so that it cannot fill the primary
+   * selection with plain text: in a read-only field in Normal echo mode the
+   * handler runs under Password mode, which makes QLineEdit skip the copy
+   * without moving cursor or selection. Editable fields run the handler as is
+   * and rely on publishSelection() replacing the plain copy at once.
+   * @param handler The base handler call, e.g. `QLineEdit::keyPressEvent`.
+   */
   void withoutPlainSelectionCopy(const std::function<void()> &handler);
+  /**
+   * @brief Fills the X11 primary selection with the marked selection, on
+   * platforms that have one; called after a handled key or a left-button
+   * release, where QLineEdit would have copied plain text.
+   */
   void publishSelection();
 };
 

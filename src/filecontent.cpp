@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements FileContent::parse() as a single streaming pass over the
+ * entry, with the field cap, the display-line cap and the OTP candidate
+ * search, plus the cached secret-field-name matcher.
+ */
 #include "filecontent.h"
 #include <QRegularExpression>
 
@@ -11,15 +17,23 @@
 
 #include <utility>
 
-/// Shorthand for the public FileContent::isOtpUriValue.
+/**
+ * @brief Shorthand for the public FileContent::isOtpUriValue.
+ * @param value A line or field value.
+ * @return true when it is an `otpauth://` URI.
+ */
 static auto isOtpUri(const QString &value) -> bool {
   return FileContent::isOtpUriValue(value);
 }
 
-// The parsed display leaves out anything carrying a TOTP shared secret: a
-// bare `otpauth://` line, an `OTP:`/`TOTP:` field, or any field whose value
-// is an otpauth URI. "Display the file's content as-is" bypasses this filter
-// and shows the entry raw.
+/**
+ * @brief Whether a body line carries a TOTP shared secret and must stay out
+ * of the parsed display: a bare `otpauth://` line, an `OTP:`/`TOTP:` field,
+ * or any field whose value is an otpauth URI. "Display the file's content
+ * as-is" bypasses this filter and shows the entry raw.
+ * @param line One line of the entry body.
+ * @return true when the line is kept out of getRemainingDataForDisplay().
+ */
 static auto isLineHidden(const QString &line) -> bool {
   if (isOtpUri(line)) {
     return true;
@@ -40,11 +54,14 @@ namespace {
  * `OTP:` line the template did not promote to a field.
  */
 struct OtpCandidates {
-  QString field;
-  QString bareLine;
-  QString remainingField;
+  QString field;          ///< Value of the first OTP-named or URI-valued field.
+  QString bareLine;       ///< First bare `otpauth://` line (password line too).
+  QString remainingField; ///< Value of the first `OTP:` line left as text.
 
-  /// The first of the three that was found.
+  /**
+   * @brief The first of the three that was found.
+   * @return The configuration string, or empty when none was found.
+   */
   auto pick() const -> QString {
     if (!field.isEmpty()) {
       return field;
@@ -53,9 +70,18 @@ struct OtpCandidates {
   }
 };
 
-// Takes `line` as a field when the template lists it, "Template all fields"
-// is on and the value is not a URL, or `alsoField` asks for its name;
-// records any OTP configuration in `otp`.
+/**
+ * @brief Takes @p line as a field when the template lists it, "Template all
+ * fields" is on and the value is not a URL, or @p alsoField asks for its
+ * name; records any OTP configuration in @p otp either way.
+ * @param line One line of the entry body.
+ * @param templateFields Field names the template promotes.
+ * @param allFields The "Template all fields" setting.
+ * @param alsoField Extra predicate on the trimmed name; may be empty.
+ * @param namedValues Receives the field when it is taken.
+ * @param otp Receives the first OTP candidate of each kind.
+ * @return true when the line became a field and is not remaining text.
+ */
 auto takeNamedValue(const QString &line, const QStringList &templateFields,
                     bool allFields,
                     const std::function<bool(const QString &)> &alsoField,
@@ -86,7 +112,11 @@ auto takeNamedValue(const QString &line, const QStringList &templateFields,
   return true;
 }
 
-/// The line ending a text cut at FileContent::kMaxDisplayLines.
+/**
+ * @brief The line ending a text cut at FileContent::kMaxDisplayLines.
+ * @param count How many lines were left out.
+ * @return The translated "… %n more line(s) not shown" line.
+ */
 auto moreLinesNotShown(qsizetype count) -> QString {
   // The count in a variable of its own: lupdate up to 6.8 loses a
   // translate() call with template arguments among its arguments and would

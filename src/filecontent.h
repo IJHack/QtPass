@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Parser for a decrypted password entry: password line, `key: value`
+ * fields, remaining text and the OTP configuration.
+ */
 #ifndef SRC_FILECONTENT_H_
 #define SRC_FILECONTENT_H_
 
@@ -32,6 +37,14 @@ struct NamedValue {
   QString originalLine;
 };
 
+/**
+ * @brief Two fields are equal when name and value match; originalLine is
+ * formatting, not content, and is left out so tests can compare against
+ * literals.
+ * @param a One field.
+ * @param b The other field.
+ * @return true when both name and value are equal.
+ */
 inline bool operator==(const NamedValue &a, const NamedValue &b) {
   return a.name == b.name && a.value == b.value;
 }
@@ -42,6 +55,7 @@ inline bool operator==(const NamedValue &a, const NamedValue &b) {
  */
 class NamedValues : public QList<NamedValue> {
 public:
+  /** @brief Construct an empty list. */
   NamedValues();
   /**
    * @brief Construct a NamedValues list from an initializer list.
@@ -225,14 +239,31 @@ public:
   [[nodiscard]] auto getOtpUri() const -> QString;
 
 private:
+  /**
+   * @brief Assemble a parsed entry; only parse() calls this.
+   * @param password The first line.
+   * @param namedValues The fields promoted out of the body.
+   * @param remainingData The body lines that did not become fields.
+   * @param remainingDataDisplay @p remainingData without secret-bearing
+   *        lines, cut at kMaxDisplayLines.
+   * @param otpUri The OTP configuration found, or empty.
+   * @param remainingLines Line count of @p remainingData.
+   */
   FileContent(QString password, NamedValues namedValues, QString remainingData,
               QString remainingDataDisplay, QString otpUri,
               qsizetype remainingLines);
 
+  /** @brief The first line of the entry, verbatim. */
   QString password;
+  /** @brief Fields in order of appearance, template fields first. */
   NamedValues namedValues;
-  QString remainingData, remainingDataDisplay;
+  /** @brief Body lines that are not fields, joined with newlines; complete. */
+  QString remainingData, remainingDataDisplay; /**< remainingData for the
+      panel: OTP-bearing lines and hidden secrets left out, at most
+      kMaxDisplayLines lines plus a "more" line. */
+  /** @brief Raw OTP configuration (URI or bare base32), or empty. */
   QString otpUri;
+  /** @brief Number of lines in remainingData. */
   qsizetype remainingLines = 0;
 };
 

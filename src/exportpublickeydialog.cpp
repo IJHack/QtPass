@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ExportPublicKeyDialog: key-id sanitising for the suggested
+ * file name, the clipboard copy with its "Copied!" flash and the QSaveFile
+ * write.
+ */
 #include "exportpublickeydialog.h"
 #include "ui_exportpublickeydialog.h"
 
@@ -13,13 +19,6 @@
 #include <QTextStream>
 #include <QTimer>
 
-/**
- * @brief ExportPublicKeyDialog::ExportPublicKeyDialog populate the dialog
- *        with the supplied armored key text.
- * @param keyId GPG key identifier shown in the header.
- * @param armoredKey ASCII-armored public key text.
- * @param parent Optional parent widget.
- */
 ExportPublicKeyDialog::ExportPublicKeyDialog(const QString &keyId,
                                              const QString &armoredKey,
                                              QWidget *parent)
@@ -32,18 +31,8 @@ ExportPublicKeyDialog::ExportPublicKeyDialog(const QString &keyId,
   m_copyButtonOriginalText = ui->copyButton->text();
 }
 
-/**
- * @brief ExportPublicKeyDialog::~ExportPublicKeyDialog basic destructor.
- */
 ExportPublicKeyDialog::~ExportPublicKeyDialog() = default;
 
-/**
- * @brief ExportPublicKeyDialog::sanitizeKeyIdForFilename keep only the
- *        first whitespace-separated token of keyId and strip any character
- *        that is not in [A-Za-z0-9_-].
- * @param keyId Raw identifier (possibly multi-key, possibly user-supplied).
- * @return Filename-safe token, empty if no characters survive.
- */
 auto ExportPublicKeyDialog::sanitizeKeyIdForFilename(const QString &keyId)
     -> QString {
   static const QRegularExpression whitespace(QStringLiteral("\\s+"));
@@ -57,11 +46,6 @@ auto ExportPublicKeyDialog::sanitizeKeyIdForFilename(const QString &keyId)
   return token;
 }
 
-/**
- * @brief ExportPublicKeyDialog::on_copyButton_clicked copy the armored key
- *        text to the system clipboard and briefly relabel the button so the
- *        user gets visible feedback.
- */
 void ExportPublicKeyDialog::on_copyButton_clicked() {
   QApplication::clipboard()->setText(ui->plainTextEdit->toPlainText());
   ui->copyButton->setText(tr("Copied!"));
@@ -70,10 +54,6 @@ void ExportPublicKeyDialog::on_copyButton_clicked() {
   });
 }
 
-/**
- * @brief ExportPublicKeyDialog::on_saveButton_clicked prompt for a
- *        destination and write the armored key to that file.
- */
 void ExportPublicKeyDialog::on_saveButton_clicked() {
   QString safeKeyId = sanitizeKeyIdForFilename(m_keyId);
   QString defaultName = safeKeyId.isEmpty()

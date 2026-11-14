@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Icon button that asks for a stored secret to be shown as a QR code.
+ */
 #ifndef SRC_QPUSHBUTTONASQRCODE_H_
 #define SRC_QPUSHBUTTONASQRCODE_H_
 
@@ -8,6 +12,12 @@
 /**
  * @class QPushButtonAsQRCode
  * @brief QPushButton that presents a text payload as a QR code action.
+ *
+ * The button is icon-only (theme icon `qrcode`) and carries the text of the
+ * field it sits next to. It does not render the QR code itself: on activation
+ * it re-emits `clicked(const QString&)` with the stored text. The owning
+ * PasswordDisplayPanel passes that on, and QtPass::showTextAsQRCode() opens
+ * the QR dialog.
  */
 class QWidget;
 class QPushButtonAsQRCode : public QPushButton {
@@ -41,10 +51,16 @@ signals:
   void clicked(const QString &text);
 
 private:
+  /**
+   * @brief Connected to `QPushButton::clicked(bool)`; re-emits the overload
+   * carrying the stored text so receivers do not need to look it up.
+   */
   void buttonClicked(bool);
 
 private:
+  /** @brief Text to be rendered as a QR code; set by the owning panel. */
   QString textToCopy;
+  /** @brief The `qrcode` icon shown on the button. */
   QIcon iconEdit;
 };
 
