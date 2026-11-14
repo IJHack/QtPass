@@ -113,7 +113,8 @@ CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfi
 
 - Every symbol must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable: private members, slots, member variables and enum values included.
 - Each file starts with a `@file` block, and each class carries an `@ingroup` for one of the topics in `doxygen/groups.dox`.
-- The header block is the contract. A block on the definition in the `.cpp` is plain prose about the implementation, without `@brief`/`@param`/`@return` (repeating them is a warning).
+- The header block is the contract. For a function declared in a header, a block on the definition in the `.cpp` is plain prose about the implementation, without `@brief`/`@param`/`@return` (repeating them is a warning).
+- A function that exists only in a `.cpp` file, such as a `static` helper, has no header block, so its full `@brief`/`@param`/`@return` block goes on the definition.
 - The landing page is `doxygen/mainpage.md`.
 
 ```bash

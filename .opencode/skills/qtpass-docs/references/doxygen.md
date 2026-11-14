@@ -52,10 +52,14 @@ What to write:
   what its name already says. For a signal: when it is emitted and what the
   receiver should do. For a slot: what triggers it and what it changes. For a
   member variable: what it holds, who owns it, any invariant.
-- **A block on the definition in the `.cpp` is about the implementation.**
-  Write it as plain paragraphs with no `@brief`, `@param` or `@return`;
-  Doxygen appends it to the description from the header. Repeating a `@param`
-  there is a warning ("has multiple @param documentation sections").
+- **For a function declared in a header, a block on the definition in the
+  `.cpp` is about the implementation.** Write it as plain paragraphs with no
+  `@brief`, `@param` or `@return`; Doxygen appends it to the description from
+  the header. Repeating a `@param` there is a warning ("has multiple @param
+  documentation sections").
+- **A function that exists only in a `.cpp` file keeps its full block.** A
+  `static` helper has no header declaration, so `@brief`, `@param` and
+  `@return` go on the definition.
 - **Every file starts with a `@file` block** right after the SPDX lines.
   Without it Doxygen silently drops the file's free functions, enums and
   constants, documented or not.

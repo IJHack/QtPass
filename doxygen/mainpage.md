@@ -138,9 +138,13 @@ What a comment needs:
 - The block in the header is the contract: what the thing does, when a signal
   is emitted and what the receiver should do, what a member holds and who owns
   it. Say what the name does not already say.
-- A block on the definition in the `.cpp` file is for how it works. Write it
-  as plain paragraphs without `@brief`, `@param` or `@return`; Doxygen appends
-  it to the description from the header.
+- For a function declared in a header, a block on the definition in the
+  `.cpp` file is for how it works. Write it as plain paragraphs without
+  `@brief`, `@param` or `@return`; Doxygen appends it to the description from
+  the header.
+- A function that exists only in a `.cpp` file, such as a `static` helper, has
+  no header block. Its full block, with `@brief`, `@param` and `@return`, goes
+  on the definition.
 - Each file starts with a `@file` block, and each class belongs to one topic
   through `@ingroup`.
 
