@@ -51,12 +51,15 @@
   --panel: #f1f4f8;
   --accent: #19528a;
 
-  /* Coverage levels, as genhtml grades them: high, medium and low. */
-  --hi: #2f8a57;
+  /*
+   * Coverage levels, as genhtml grades them: high, medium and low. Each is
+   * also text on its tint and on the page, so keep it above 4.5:1 on both.
+   */
+  --hi: #22703f;
   --hi-tint: #e2f2e8;
-  --med: #b7791f;
+  --med: #8a5a12;
   --med-tint: #fbefd9;
-  --lo: #c0392b;
+  --lo: #a8321f;
   --lo-tint: #fbe3e0;
 }
 
