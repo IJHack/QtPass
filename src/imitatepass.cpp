@@ -949,6 +949,32 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   return commitReencrypted(fileName);
 }
 
+namespace {
+/**
+ * @brief Whether `git status --porcelain` output lists an unmerged path.
+ *
+ * Porcelain v1 marks one with the status letters DD, AU, UD, UA, DU, AA or
+ * UU: a conflict that a merge, rebase, cherry-pick or `git stash pop` left
+ * unresolved.
+ * @param porcelain The output of `git status --porcelain`.
+ * @return true when at least one path is unmerged.
+ */
+auto listsUnmergedPath(const QString &porcelain) -> bool {
+  const QStringList lines = porcelain.split(u'\n', Qt::SkipEmptyParts);
+  for (const QString &line : lines) {
+    if (line.size() < 2) {
+      continue;
+    }
+    const QChar x = line.at(0);
+    const QChar y = line.at(1);
+    if (x == u'U' || y == u'U' || (x == y && (x == u'A' || x == u'D'))) {
+      return true;
+    }
+  }
+  return false;
+}
+} // namespace
+
 auto ImitatePass::createBackupCommit() -> bool {
   if (!reencryptUsesGit()) {
     return true;
@@ -969,6 +995,19 @@ auto ImitatePass::createBackupCommit() -> bool {
       emit critical(
           tr("Backup commit failed"),
           tr("Could not inspect git status. Re-encryption was aborted."));
+    return false;
+  }
+  // An unresolved conflict needs no merge or rebase in progress: a
+  // `git stash pop` that conflicted leaves none of the markers the earlier
+  // checks look for. `add -u` would record the work tree, conflict markers
+  // and all, as the resolution, and the backup commit would be pushed.
+  // The repository-wide status, not `ls-files` (which stops at the store's
+  // folder): `add -u` stages a repository above the store as a whole.
+  if (listsUnmergedPath(statusOut)) {
+    if (!m_reencryptCancel.load())
+      emit critical(tr("Unfinished Git operation"),
+                    tr("The store's Git repository has unmerged files. "
+                       "Resolve the conflict with Git before re-encrypting."));
     return false;
   }
   if (!statusOut.trimmed().isEmpty()) {

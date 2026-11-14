@@ -694,6 +694,7 @@ private Q_SLOTS:
   void insertFailsWhenTheEntryFolderVanishes();
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToReencryptDuringAnUnfinishedRebase();
+  void reencryptRefusesToCommitAStashPopConflict();
   void refusesToInsertDuringASequencerState();
   void refusesASaveWhenAConflictAppearsWhileEncrypting();
   void refusesToRemoveWhileAPullIsInFlight();
@@ -1672,6 +1673,84 @@ void tst_imitatepass::refusesToReencryptDuringAnUnfinishedRebase() {
       criticalSpy.first().at(1).toString().contains(QStringLiteral("rebase")),
       qPrintable(criticalSpy.first().at(1).toString()));
   QVERIFY2(!QFile::exists(logPath), "no re-encryption gpg must run");
+#endif
+}
+
+/**
+ * @brief A `git stash pop` that conflicts leaves unmerged files but no
+ *        MERGE_HEAD or rebase directory. Re-encryption must refuse instead of
+ *        committing the conflict markers as its backup.
+ */
+void tst_imitatepass::reencryptRefusesToCommitAStashPopConflict() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString notes = QDir(storeDir.path()).filePath(QStringLiteral("notes"));
+  const auto writeNotes = [&notes](const QByteArray &text) {
+    QFile f(notes);
+    return f.open(QIODevice::WriteOnly | QIODevice::Truncate) &&
+           f.write(text) == text.size();
+  };
+  QVERIFY(writeNotes("base\n"));
+  QVERIFY(commitStoreToRealGit(git, storeDir.path()));
+  // Stash one change, commit another to the same line, then pop the stash.
+  QVERIFY(writeNotes("stashed\n"));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("stash"), QStringLiteral("-q")}),
+           0);
+  QVERIFY(writeNotes("committed\n"));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("commit"), QStringLiteral("-qam"),
+                       QStringLiteral("other")}),
+           0);
+  QVERIFY(runRealGit(git, storeDir.path(),
+                     {QStringLiteral("stash"), QStringLiteral("pop")}) != 0);
+  QString status;
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("status"), QStringLiteral("--porcelain")},
+                      &status),
+           0);
+  QVERIFY2(status.contains(QStringLiteral("UU notes")), qPrintable(status));
+  // None of the markers the entry-time check looks for.
+  QVERIFY(!QFile::exists(
+      QDir(storeDir.path()).filePath(QStringLiteral(".git/MERGE_HEAD"))));
+  const int commitsBefore = commitCount(git, storeDir.path());
+  QVERIFY(commitsBefore > 0);
+
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(15000));
+  QCoreApplication::processEvents();
+
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().contains(QStringLiteral("unmerged")),
+      qPrintable(criticalSpy.first().at(1).toString()));
+  QCOMPARE(commitCount(git, storeDir.path()), commitsBefore);
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("status"), QStringLiteral("--porcelain")},
+                      &status),
+           0);
+  QVERIFY2(status.contains(QStringLiteral("UU notes")), qPrintable(status));
+  QVERIFY(encryptCalls(loggedCalls(logPath)).isEmpty());
 #endif
 }
 
