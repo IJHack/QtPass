@@ -36,3 +36,10 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = ["2015 Anne Jan Brouwer", "2011 Morgan Leborgne"]
 SPDX-License-Identifier = "MIT"
 
+# Doxygen Awesome v2.4.1, https://github.com/jothepro/doxygen-awesome-css,
+# vendored unmodified as the stylesheet of the generated documentation.
+[[annotations]]
+path = "doxygen/doxygen-awesome-css/*"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2025 jothepro"
+SPDX-License-Identifier = "MIT"

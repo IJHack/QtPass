@@ -1,13 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 /**
- * @class SettingsSerializer
- * @brief AppSettings <-> QSettings mapping implementation.
- *
- * @see settingsserializer.h
+ * @file
+ * @brief Implements SettingsSerializer: one SettingsConstants key per
+ * AppSettings field, with the defaults applied in load() and the obsolete
+ * WebDAV keys dropped in save().
  */
-
 #include "settingsserializer.h"
 #include "settingsconstants.h"
 

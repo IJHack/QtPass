@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QtPassSettings, the QSettings singleton behind every saved setting,
+ * the profiles and the Pass backend accessors.
+ */
 #ifndef SRC_QTPASSSETTINGS_H_
 #define SRC_QTPASSSETTINGS_H_
 
@@ -20,6 +25,7 @@
 
 /**
  * @class QtPassSettings
+ * @ingroup settings
  * @brief Singleton that stores QtPass settings, handles persistence and
  * defaults.
  *
@@ -41,6 +47,12 @@ private:
    */
   explicit QtPassSettings() = delete;
 
+  /**
+   * @brief Settings in an explicit file: the portable `qtpass.ini` next to
+   * the executable, which getInstance() prefers when it exists.
+   * @param organization The file's path (QSettings' file-name constructor).
+   * @param format The file's format; IniFormat for the portable file.
+   */
   QtPassSettings(const QString &organization, const QSettings::Format format)
       : QSettings(organization, format) {}
   /**
@@ -50,6 +62,9 @@ private:
    * always uses NativeFormat; going through the explicit-format constructor
    * keeps the production default (NativeFormat) while letting the test
    * suites redirect settings to an ini file in a temporary directory.
+   * @param organization The organisation the settings are filed under
+   *        ("IJHack").
+   * @param application The application name ("QtPass").
    */
   QtPassSettings(const QString &organization, const QString &application)
       : QSettings(QSettings::defaultFormat(), QSettings::UserScope,
@@ -57,7 +72,10 @@ private:
 
   ~QtPassSettings() override = default;
 
+  /// Whether getInstance() has chosen the store and built m_instance.
   static bool initialized;
+  /// The one instance, built on the first getInstance() and kept for the
+  /// life of the process.
   static QtPassSettings *m_instance;
 
 public:

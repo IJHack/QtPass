@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements GpgIdSigner on top of gpg's `--status-fd` output.
+ */
 #include "gpgidsigner.h"
 
 #include "executor.h"

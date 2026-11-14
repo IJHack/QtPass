@@ -1,10 +1,16 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief GrepSearchController: the mode/busy/cancelled state machine behind
+ *        MainWindow's content search.
+ */
 #ifndef SRC_GREPSEARCHCONTROLLER_H_
 #define SRC_GREPSEARCHCONTROLLER_H_
 
 /**
  * @class GrepSearchController
+ * @ingroup ui
  * @brief State machine for MainWindow's content-search (grep) mode.
  *
  * Extracted from MainWindow, where the search state lived in three loose

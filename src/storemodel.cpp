@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements StoreModel and the StoreDragItem stream operators; the
+ *        drop validation lives in executeDropAction().
+ */
 #include "storemodel.h"
 #include "pass.h"
 #include "pathvalidator.h"

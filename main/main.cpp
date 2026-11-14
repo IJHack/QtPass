@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Program entry point: command-line parsing, the single-instance hand-
+ * over, translations and the main window.
+ */
 
 #include "mainwindow.h"
 #include "qtpasssettings.h"
@@ -13,33 +18,6 @@
 #include <QDir>
 #include <QTranslator>
 #include <QtWidgets>
-
-/**
- * @mainpage QtPass
- *
- * @section intro_sec Introduction
- *
- * QtPass is a multi-platform GUI for pass, the standard unix password manager.
- *
- * https://qtpass.org/
- *
- * @section install_sec Installation
- *
- * @subsection dependencies Dependencies
- *
- * - QtPass requires Qt 6.8 or later.
- * - The Linguist package is required to compile the translations.
- * - For use of the fallback icons the SVG library is required.
- *
- * At runtime the only real dependency is gpg2 but to make the most of it,
- * you'll need git and pass too.
- *
- * @subsection source From source
- *
- * On most *nix systems all you need is:
- *
- * `qmake6 && make && make install`
- */
 
 /**
  * @brief Joins all arguments from index @p start onward into a space-separated

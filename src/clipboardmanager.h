@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief ClipboardManager, which puts secrets on the clipboard and removes
+ * them again, and the MIME data that marks them as secrets.
+ */
 #ifndef SRC_CLIPBOARDMANAGER_H_
 #define SRC_CLIPBOARDMANAGER_H_
 
@@ -29,6 +34,7 @@ static inline auto dwordBytes(quint32 value) -> QByteArray {
 
 /**
  * @class ClipboardManager
+ * @ingroup secrets
  * @brief Puts secrets on the system clipboard and takes them off again.
  *
  * Remembers what it copied so the autoclear timer (and the quit handler)
@@ -106,14 +112,27 @@ signals:
   void statusMessage(const QString &message);
 
 private:
+  /**
+   * @brief Single-shot autoclear timer; started by copyText() when the
+   * autoclear setting is on, and calls clear() when it fires.
+   */
   QTimer m_clearTimer;
+  /**
+   * @brief The secret copyText() last put on the clipboard; clear() removes
+   * the clipboard content only while it still equals this.
+   */
   QString m_clippedText;
   /// What was on the clipboard and in the selection before copyText() first
   /// put a secret there, for clear() to put back (restoreClipboard). Text
   /// only, as pass -c keeps it; absent when nothing was saved.
   std::optional<QString> m_previousClipboard;
+  /** @brief As m_previousClipboard, for the X11 primary selection. */
   std::optional<QString> m_previousSelection;
-  /// Empty a saved previous text equal to @p text, now copied as a secret.
+  /**
+   * @brief Empty a saved previous text equal to @p text, now copied as a
+   * secret, so clear() does not put the secret back.
+   * @param text The text that has just been copied as a secret.
+   */
   void forgetIfSaved(const QString &text);
   QStringList m_otherCopies; ///< trackCopied() texts, cleared with the rest
 };

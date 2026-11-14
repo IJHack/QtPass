@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief UsersDialog, the recipient picker for a folder's `.gpg-id`.
+ */
 #ifndef SRC_USERSDIALOG_H_
 #define SRC_USERSDIALOG_H_
 
@@ -21,6 +25,7 @@ class QListWidgetItem;
 
 /**
  * @class UsersDialog
+ * @ingroup keys
  * @brief Dialog for selecting GPG recipients for password encryption.
  *
  * UsersDialog allows users to select which GPG keys to encrypt passwords to.
@@ -57,7 +62,7 @@ public:
   UsersDialog(Pass *pass, const AppSettings &s, QString dir,
               Preselect preselect, QWidget *parent = nullptr);
   /**
-   * @brief Destructor.
+   * @brief Destroys the dialog and its generated form.
    */
   ~UsersDialog() override;
 
@@ -126,12 +131,14 @@ private slots:
   void selectImportedKey(const QString &importedKey);
 
 private:
+  /// The widgets from usersdialog.ui.
   QScopedPointer<Ui::UsersDialog> ui;
   Pass *m_pass;               /**< Active Pass backend */
   QString m_passStore;        /**< Password store root path */
   QString m_gpgExe;           /**< GPG executable path */
   QList<UserInfo> m_userList; /**< List of available GPG users */
   bool m_initOnAccept{true};  /**< Whether accept() runs Pass::Init. */
+  /// Enable OK only while at least one key is ticked (hasSelection()).
   void updateOkButton();
   QString m_dir;                               /**< Password store directory */
   Preselect m_preselect = Preselect::FromList; /**< What opens ticked */
@@ -143,6 +150,8 @@ private:
   mutable bool m_cachedDateTimeValid =
       false; /**< Whether cached date/time is valid */
 
+  /// Attach WindowStateStore, which restores the dialog's saved geometry
+  /// now and saves it under "usersDialog" when the dialog closes.
   void restoreDialogState();
 
   /**

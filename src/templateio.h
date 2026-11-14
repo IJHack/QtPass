@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief TemplateIO: the store's `.templates` and `.default_template` files
+ * and the `# secret:` marker in template text.
+ */
 #ifndef SRC_TEMPLATEIO_H_
 #define SRC_TEMPLATEIO_H_
 
@@ -9,6 +14,7 @@
 
 /**
  * @class TemplateIO
+ * @ingroup store
  * @brief Read and write password-store template configuration.
  *
  * Extracted from Util. Owns the `.templates` INI-style file (named template

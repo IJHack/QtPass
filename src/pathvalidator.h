@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief PathValidator: is a path inside the password store, and how is it
+ * spelled relative to the store root.
+ */
 #ifndef SRC_PATHVALIDATOR_H_
 #define SRC_PATHVALIDATOR_H_
 
@@ -8,6 +13,7 @@
 
 /**
  * @class PathValidator
+ * @ingroup store
  * @brief Password-store path-boundary checks.
  *
  * Extracted from Util. Guards file/folder create, rename, and drag-drop

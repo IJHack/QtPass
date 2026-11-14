@@ -56,7 +56,8 @@ make -j4 && make check
    in one area can break another suite.
 3. Confirm the new test fails against the unfixed code at least once.
 4. Format and document: `clang-format --style=file -i <changed files>`; if a
-   header's public API changed, `doxygen Doxyfile` must print nothing.
+   class, function or member was added or its signature changed,
+   `doxygen Doxyfile >/dev/null` must print nothing.
 
 Only move on when the full `make check` passes.
 

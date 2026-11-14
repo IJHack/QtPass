@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements KeygenDialog: form validation, splicing the passphrase
+ * into the GPG batch the way gpg itself reads it, and the one-attempt
+ * connections to the Pass backend.
+ */
 #include "keygendialog.h"
 #include "configdialog.h"
 #include "pass.h"
@@ -100,8 +106,16 @@ void KeygenDialog::replace(const QString &key, const QString &value) {
   ui->plainTextEdit->setPlainText(clear.join("\n"));
 }
 
-// Matches the way gpg's read_parameter_file does: leading whitespace skipped,
-// keyword ends at the first whitespace, case-insensitive.
+/**
+ * @brief Whether a batch line is the control statement @p control.
+ *
+ * Matches the way gpg's read_parameter_file does: leading whitespace skipped,
+ * keyword ends at the first whitespace, case-insensitive.
+ * @param line One line of the batch template.
+ * @param control The statement to look for, e.g. `%no-protection`.
+ * @return true when the line is that statement, alone or followed by
+ *         whitespace.
+ */
 static bool isControlStatement(const QString &line, const QString &control) {
   const QString trimmed = line.trimmed();
   if (!trimmed.startsWith(control, Qt::CaseInsensitive))

@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief One named password store (Profile) and the name-to-profile map
+ * (Profiles) the settings trade in.
+ */
 #ifndef SRC_PROFILE_H_
 #define SRC_PROFILE_H_
 
@@ -9,6 +14,7 @@
 
 /**
  * @struct Profile
+ * @ingroup settings
  * @brief One named password store: where it is, how its .gpg-id is signed
  *        and, optionally, its own Git switches.
  *

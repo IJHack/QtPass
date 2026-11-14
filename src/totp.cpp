@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 /**
- * @class Totp
- * @brief RFC 6238 TOTP implementation.
+ * @file
+ * @brief Implements Totp: otpauth URI parsing with its length cap and HOTP
+ * refusal, RFC 4226 dynamic truncation, Steam encoding and URI round-tripping.
  *
  * @see totp.h
  */
@@ -102,11 +103,6 @@ auto parsePositiveUInt(const QString &value, uint fallback) -> uint {
 
 } // namespace
 
-/**
- * @brief Parse an OTP configuration string.
- * @param config URI or bare base32 secret.
- * @return Validated settings, or std::nullopt when the secret is unusable.
- */
 auto Totp::parse(const QString &config) -> std::optional<Settings> {
   // Checked before anything else sees it (trimmed() copies it, QUrl and
   // QUrlQuery would make a crafted URI of tens of MiB tens of millions of
@@ -202,42 +198,19 @@ auto Totp::parse(const QString &config) -> std::optional<Settings> {
   return settings;
 }
 
-/**
- * @brief Convenience validity test, for UI feedback.
- * @param config URI or bare base32 secret.
- * @return true when parse() would succeed.
- */
 auto Totp::isValid(const QString &config) -> bool {
   return parse(config).has_value();
 }
 
-/**
- * @brief Time-step counter for a point in time.
- * @param settings Validated settings.
- * @param unixTime Seconds since the Unix epoch.
- * @return `unixTime / settings.step`.
- */
 auto Totp::counter(const Settings &settings, quint64 unixTime) -> quint64 {
   return unixTime / settings.step;
 }
 
-/**
- * @brief Seconds until the code for @p unixTime expires.
- * @param settings Validated settings.
- * @param unixTime Seconds since the Unix epoch.
- * @return A value in 1..settings.step.
- */
 auto Totp::secondsRemaining(const Settings &settings, quint64 unixTime)
     -> uint {
   return settings.step - static_cast<uint>(unixTime % settings.step);
 }
 
-/**
- * @brief Generate the code for a given point in time.
- * @param settings Validated settings.
- * @param unixTime Seconds since the Unix epoch.
- * @return The code, exactly Settings::digits characters long.
- */
 auto Totp::generate(const Settings &settings, quint64 unixTime) -> QString {
   const quint64 bigEndianCounter = qToBigEndian(counter(settings, unixTime));
   const QByteArray message(reinterpret_cast<const char *>(&bigEndianCounter),
@@ -283,20 +256,10 @@ auto Totp::generate(const Settings &settings, quint64 unixTime) -> QString {
       .rightJustified(static_cast<int>(settings.digits), QLatin1Char('0'));
 }
 
-/**
- * @brief Generate the code for the current wall-clock time.
- * @param settings Validated settings.
- * @return The current code.
- */
 auto Totp::generateNow(const Settings &settings) -> QString {
   return generate(settings, currentUnixTime());
 }
 
-/**
- * @brief Serialise settings as a canonical otpauth URI.
- * @param settings Validated settings.
- * @return An `otpauth://totp/...` URI.
- */
 auto Totp::toUri(const Settings &settings) -> QString {
   const QString label =
       settings.label.isEmpty() ? QStringLiteral("QtPass") : settings.label;
@@ -330,13 +293,6 @@ auto Totp::toUri(const Settings &settings) -> QString {
   return uri;
 }
 
-/**
- * @brief Normalise a user-entered value to a canonical otpauth URI.
- * @param config URI or bare base32 secret.
- * @param label Fallback label, used when @p config carries none.
- * @param issuer Fallback issuer, used when @p config carries none.
- * @return A canonical URI, or an empty string when @p config is not valid.
- */
 auto Totp::normalize(const QString &config, const QString &label,
                      const QString &issuer) -> QString {
   const std::optional<Settings> settings = parse(config);
@@ -359,10 +315,6 @@ auto Totp::normalize(const QString &config, const QString &label,
   return uri;
 }
 
-/**
- * @brief Current wall-clock time.
- * @return Seconds since the Unix epoch (UTC).
- */
 auto Totp::currentUnixTime() -> quint64 {
   return static_cast<quint64>(QDateTime::currentSecsSinceEpoch());
 }

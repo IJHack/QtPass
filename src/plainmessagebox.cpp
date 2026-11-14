@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements the PlainMessageBox helpers; the text format is set before
+ * the text so it is never laid out as rich text.
+ */
 #include "plainmessagebox.h"
 
 auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,

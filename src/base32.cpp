@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 /**
- * @class Base32
- * @brief RFC 4648 base32 codec implementation.
+ * @file
+ * @brief Implements the Base32 codec: quantum-by-quantum decode and encode
+ * loops with the tail-shape table that fixes KeePassXC's mis-padded cases.
  *
  * Conforms to RFC 4648, see https://tools.ietf.org/html/rfc4648. Ported from
  * KeePassXC `src/core/Base32.cpp`; the differences are documented at each
@@ -19,21 +20,38 @@
 
 namespace {
 
+/**
+ * @name Top-symbol masks
+ * Mask selecting the top 5 bits of an encode quantum of the given width; the
+ * encoder shifts it down 5 bits per output symbol. A full input group is 40
+ * bits; the short final group is widened to 10, 20, 25 or 35 bits.
+ * @{
+ */
 constexpr quint64 MASK_40BIT = quint64(0xF8) << 32;
 constexpr quint64 MASK_35BIT = quint64(0x7C0000000);
 constexpr quint64 MASK_25BIT = quint64(0x1F00000);
 constexpr quint64 MASK_20BIT = quint64(0xF8000);
 constexpr quint64 MASK_10BIT = quint64(0x3E0);
+/** @} */
 
+/** @brief The 32 RFC 4648 symbols, indexed by 5-bit value. */
 constexpr char kAlphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+/** @brief Alphabet position of '2', the first digit symbol. */
 constexpr quint8 ALPH_POS_2 = 26;
 
+/** @brief ASCII code of '2', the lowest digit symbol. */
 constexpr quint8 ASCII_2 = static_cast<quint8>('2');
+/** @brief ASCII code of '7', the highest digit symbol. */
 constexpr quint8 ASCII_7 = static_cast<quint8>('7');
+/** @brief ASCII code of 'A', the first letter symbol. */
 constexpr quint8 ASCII_A = static_cast<quint8>('A');
+/** @brief ASCII code of 'Z', the last upper-case letter symbol. */
 constexpr quint8 ASCII_Z = static_cast<quint8>('Z');
+/** @brief ASCII code of 'a'; lower case is folded onto upper case. */
 constexpr quint8 ASCII_a = static_cast<quint8>('a');
+/** @brief ASCII code of 'z', the last lower-case letter symbol. */
 constexpr quint8 ASCII_z = static_cast<quint8>('z');
+/** @brief ASCII code of '=', the padding character. */
 constexpr quint8 ASCII_EQ = static_cast<quint8>('=');
 
 /**
@@ -107,11 +125,6 @@ auto symbolValue(quint8 ch) -> std::optional<quint8> {
 
 } // namespace
 
-/**
- * @brief Decode strict RFC 4648 base32 data.
- * @param encodedData Padded base32 text whose length is a multiple of 8.
- * @return Decoded bytes, or an empty QByteArray on any error.
- */
 auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
   // Strict: a well-formed base32 string is always padded to a multiple of 8.
   if (encodedData.isEmpty() || encodedData.size() % 8 != 0) {
@@ -175,11 +188,6 @@ auto Base32::decode(const QByteArray &encodedData) -> QByteArray {
   return data;
 }
 
-/**
- * @brief Encode raw bytes as padded RFC 4648 base32.
- * @param data Raw bytes to encode.
- * @return Upper-case padded base32 text, empty when @p data is empty.
- */
 auto Base32::encode(const QByteArray &data) -> QByteArray {
   if (data.isEmpty()) {
     return {};
@@ -264,11 +272,6 @@ auto Base32::encode(const QByteArray &data) -> QByteArray {
   return encodedData;
 }
 
-/**
- * @brief Append '=' padding up to a multiple of 8 characters.
- * @param encodedData Unpadded or partially padded base32 text.
- * @return Padded text, unchanged for impossible length remainders.
- */
 auto Base32::addPadding(const QByteArray &encodedData) -> QByteArray {
   if (encodedData.isEmpty() || encodedData.size() % 8 == 0) {
     return encodedData;
@@ -288,11 +291,6 @@ auto Base32::addPadding(const QByteArray &encodedData) -> QByteArray {
   return newEncodedData;
 }
 
-/**
- * @brief Strip trailing '=' padding.
- * @param encodedData Padded base32 text.
- * @return Text without padding, unchanged when not a multiple of 8.
- */
 auto Base32::removePadding(const QByteArray &encodedData) -> QByteArray {
   if (encodedData.isEmpty() || encodedData.size() % 8 != 0) {
     return encodedData; // return the same bad input
@@ -304,11 +302,6 @@ auto Base32::removePadding(const QByteArray &encodedData) -> QByteArray {
   return newEncodedData;
 }
 
-/**
- * @brief Make human-entered base32 text decodable.
- * @param encodedData Raw user input.
- * @return Sanitized, padded base32 text.
- */
 auto Base32::sanitizeInput(const QByteArray &encodedData) -> QByteArray {
   if (encodedData.isEmpty()) {
     return encodedData;

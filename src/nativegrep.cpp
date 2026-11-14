@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements NativeGrep: the store walk, the per-file gpg runs and the
+ * hand-over of results from the worker thread.
+ */
 #include "nativegrep.h"
 #include "executor.h"
 #include "pass.h"

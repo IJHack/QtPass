@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QTextBrowser for showing decrypted entry text that marks everything
+ * copied out of it as a secret.
+ */
 #ifndef SRC_SECRETTEXTBROWSER_H_
 #define SRC_SECRETTEXTBROWSER_H_
 
@@ -7,6 +12,7 @@
 
 /**
  * @class SecretTextBrowser
+ * @ingroup secrets
  * @brief A QTextBrowser for decrypted entry text: whatever is copied out of
  * it is marked as a secret and reported for autoclear.
  *

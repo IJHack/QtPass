@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief UserInfo, one GPG key as listed by gpg, with the selection flag the
+ * recipient dialogs use.
+ */
 #ifndef SRC_USERINFO_H_
 #define SRC_USERINFO_H_
 
@@ -8,6 +13,7 @@
 
 /**
  * @struct UserInfo
+ * @ingroup keys
  * @brief Stores GPG key info including validity, creation date, and more.
  */
 struct UserInfo {

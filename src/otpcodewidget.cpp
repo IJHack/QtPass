@@ -2,8 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 /**
- * @class OtpCodeWidget
- * @brief Live one-time password display implementation.
+ * @file
+ * @brief Implements OtpCodeWidget: builds the code label, copy button and
+ * countdown bar, and owns the one-second refresh timer.
  *
  * @see otpcodewidget.h
  */

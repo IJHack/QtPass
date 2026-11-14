@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief RnpCrypto, in-process OpenPGP encryption and decryption through the
+ * RNP library.
+ */
 #ifndef SRC_RNPCRYPTO_H_
 #define SRC_RNPCRYPTO_H_
 
@@ -14,6 +19,7 @@ struct rnp_ffi_st;
 
 /**
  * @class RnpCrypto
+ * @ingroup backend
  * @brief OpenPGP encryption and decryption in-process, through RNP.
  *
  * A spike towards a backend that needs no gpg, git or pass binary (#2005):
@@ -277,8 +283,17 @@ public:
   auto loadKeyring(const QString &dir, QString *error = nullptr) -> bool;
 
 private:
+  /**
+   * @brief RNP's handle holding this object's keyring; null when RNP could
+   * not be initialised, and every operation then fails with an error.
+   */
   rnp_ffi_st *m_ffi = nullptr;
+  /**
+   * @brief Asked for the passphrase of a locked secret key during
+   * decryption; set with setPassphraseProvider(), empty for none.
+   */
   PassphraseProvider m_passphrase;
+  /** @brief Largest plaintext decrypt() returns, in bytes. */
   qint64 m_maxPlaintext = kMaxPlaintextBytes;
 };
 

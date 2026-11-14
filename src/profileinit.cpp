@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ProfileInit; the environments its gpg and git processes
+ * run in are built by withGpgHome() and gitEnvironment() here.
+ */
 #include "profileinit.h"
 #include "appsettings.h"
 #include "executor.h"

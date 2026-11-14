@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ImportKeyDialog: the guarded key-file read, the blocking
+ * `gpg --import` call and the status-line parser for the imported key id.
+ */
 #include "importkeydialog.h"
 #include "plainmessagebox.h"
 #include "util.h"
@@ -19,13 +24,22 @@
 
 // Locale-independent: gpg's machine-readable status output via --status-fd 1.
 // See doc/DETAILS in the GnuPG source for IMPORT_OK / IMPORTED grammar.
+// Doxygen reads `Type name(args);` as a function, so these three constants
+// are hidden from it and described here instead.
+/// @cond
+// `[GNUPG:] IMPORT_OK <reason> <fingerprint>`: captures the full fingerprint,
+// the preferred identifier.
 static const QRegularExpression
     IMPORT_OK_RE(QStringLiteral(R"(\[GNUPG:\] IMPORT_OK \d+ ([0-9A-Fa-f]+))"));
+// `[GNUPG:] IMPORTED <keyid> <userid>`: captures the 16-hex long key id, tried
+// after IMPORT_OK_RE.
 static const QRegularExpression
     IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]{16}))"));
-// Fallback for the human-readable (English-locale) line.
+// Fallback for the human-readable (English-locale) `gpg: key <id>: ...
+// imported` line, last resort when no status line was seen.
 static const QRegularExpression KEY_IMPORTED_FALLBACK(
     QStringLiteral(R"(gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
+/// @endcond
 
 ImportKeyDialog::ImportKeyDialog(const QString &gpgExe, QWidget *parent)
     : QDialog(parent), ui(new Ui::ImportKeyDialog), m_gpgExe(gpgExe) {

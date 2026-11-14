@@ -121,7 +121,7 @@ Emphasis style must be consistent per file (MD049): if the file uses `_x_`, do n
 
 ### Doxygen
 
-CI pins Doxygen 1.18.0 and fails on any warning, which appears as `error:`. Every public symbol in a header needs `/** @brief ... */` with `@param`/`@return`. Common causes and the full settings: read [references/doxygen.md](references/doxygen.md) when the Documentation job is red.
+CI pins Doxygen 1.18.0 and fails on any warning, which appears as `error:`. Every symbol needs `/** @brief ... */` with `@param`/`@return`, private members, member variables and enum values included, and `.cpp` files are scanned too. Common causes and the full settings: read [references/doxygen.md](references/doxygen.md) when the Documentation job is red.
 
 Other tools (gitleaks, shfmt, clangd, IDE setup): read [references/other-linters.md](references/other-linters.md) when one of those fails or you set up an editor.
 
@@ -139,7 +139,7 @@ npx prettier --check "**/*.md" "**/*.yml"
 git diff --name-only origin/main -- '*.md' | xargs -r npx -p textlint \
   -p textlint-rule-terminology -p textlint-rule-common-misspellings textlint
 
-# 4. Doxygen, if headers changed (any output means CI fails)
+# 4. Doxygen, if C++ files changed (any output means CI fails)
 doxygen Doxyfile 2>&1 >/dev/null | grep -iE "warn|error"
 
 # 5. Rebase on latest main, then push

@@ -1,13 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-
 /**
- * @class TemplateIO
- * @brief Read and write password-store template configuration implementation.
- *
- * @see templateio.h
+ * @file
+ * @brief Implements TemplateIO; template files are read through
+ * readTemplateFile(), which refuses anything but a small regular file.
  */
-
 #include "templateio.h"
 #include "util.h"
 

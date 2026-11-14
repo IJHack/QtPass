@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief GpgIdSigner, which signs a store's `.gpg-id` and verifies an existing
+ * `.gpg-id.sig` against the configured signing keys.
+ */
 #ifndef SRC_GPGIDSIGNER_H_
 #define SRC_GPGIDSIGNER_H_
 
@@ -9,6 +14,7 @@
 
 /**
  * @class GpgIdSigner
+ * @ingroup keys
  * @brief The detached signature on a store's `.gpg-id`: whether the
  * configured signing key is usable, signing the file, and checking that an
  * existing `.gpg-id.sig` was made by one of the configured keys.
@@ -142,10 +148,24 @@ public:
   static auto validSigFingerprints(const QString &statusOutput) -> QStringList;
 
 private:
+  /** @brief The gpg executable, as configured. */
   QString m_gpg;
+  /**
+   * @brief The configured signing keys. The first one signs; a signature by
+   * any of them verifies.
+   */
   QStringList m_keys;
+  /** @brief How gpg is run; replaced by a fake in the unit tests. */
   Exec m_exec;
 
+  /**
+   * @brief Run gpg with @p args through m_exec.
+   * @param args Arguments for gpg.
+   * @param out If non-null, receives stdout.
+   * @param err If non-null, receives stderr.
+   * @param input Data for gpg's stdin; empty for none.
+   * @return gpg's exit code.
+   */
   auto run(const QStringList &args, QString *out = nullptr,
            QString *err = nullptr, const QString &input = QString()) const
       -> int;

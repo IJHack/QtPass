@@ -14,14 +14,16 @@ Any output means CI fails. With `WARN_AS_ERROR = FAIL_ON_WARNINGS` the problems 
 
 ## Enforced settings
 
-| Setting            | Value               | Effect                                  |
-| ------------------ | ------------------- | --------------------------------------- |
-| `INPUT`            | `. main/main.cpp`   | Whole tree, recursive                   |
-| `FILE_PATTERNS`    | `*.h`               | Only headers are scanned                |
-| `EXTRACT_ALL`      | `NO`                | Needed for `WARN_NO_PARAMDOC` to report |
-| `WARN_NO_PARAMDOC` | `YES`               | Missing `@param`/`@return` is a warning |
-| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS`  | Any warning fails the job               |
-| `GENERATE_XML`     | `YES` (into `xml/`) | Input for coverxygen                    |
+| Setting                  | Value                   | Effect                                         |
+| ------------------------ | ----------------------- | ---------------------------------------------- |
+| `INPUT`                  | `. doxygen/mainpage.md` | Whole tree, recursive, plus the landing page   |
+| `FILE_PATTERNS`          | `*.h *.cpp *.dox`       | Headers and sources are scanned                |
+| `EXTRACT_ALL`            | `NO`                    | Needed for `WARN_NO_PARAMDOC` to report        |
+| `EXTRACT_PRIVATE`        | `YES`                   | Private members need doc blocks too            |
+| `WARN_IF_UNDOC_ENUM_VAL` | `YES`                   | Every enum value needs a doc comment           |
+| `WARN_NO_PARAMDOC`       | `YES`                   | Missing `@param`/`@return` is a warning        |
+| `WARN_AS_ERROR`          | `FAIL_ON_WARNINGS`      | Any warning fails the job                      |
+| `GENERATE_XML`           | `NO`                    | Turn on per run for coverxygen, as shown below |
 
 ## Comment style
 
@@ -40,14 +42,16 @@ int frobnicate(int count);
 - **Orphaned doc block**: a `/** */` that is not directly above its declaration gets attached to the wrong symbol. Move it.
 - **Missing `@return`** on a non-void function.
 - **Qt signals**: also need named parameters and `@param` lines.
-- **Undocumented struct fields and operators**: every public member needs a doc comment.
+- **Undocumented members**: every member needs a doc comment, private ones, member variables and enum values included.
+- **`has multiple @param documentation sections`**: the `.cpp` definition repeats the header's `@param`. Keep the tags in the header only; a `.cpp` block is plain prose about the implementation.
 - **Unknown `@word`**: Doxygen treats any `@word` as a command. Write `@brief Like ...`, not `@like`.
 
 ## Coverage report (optional)
 
-`GENERATE_XML` is already on, so after `doxygen Doxyfile`:
+`GENERATE_XML` is off in the `Doxyfile`; switch it on for one run:
 
 ```bash
+(cat Doxyfile; echo "GENERATE_XML = YES") | doxygen - >/dev/null
 pip install coverxygen
 python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
 ```

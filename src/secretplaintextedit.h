@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QPlainTextEdit for editing decrypted entry text that marks everything
+ * copied out of it as a secret.
+ */
 #ifndef SRC_SECRETPLAINTEXTEDIT_H_
 #define SRC_SECRETPLAINTEXTEDIT_H_
 
@@ -7,6 +12,7 @@
 
 /**
  * @class SecretPlainTextEdit
+ * @ingroup secrets
  * @brief A QPlainTextEdit for decrypted entry text being edited: whatever is
  * copied or cut out of it is marked as a secret and reported for autoclear.
  *

@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements SecretTextBrowser::createMimeDataFromSelection(), copying
+ * plain text only so no unmarked HTML reaches the clipboard.
+ */
 #include "secrettextbrowser.h"
 #include "clipboardmanager.h"
 #include <QTextDocumentFragment>

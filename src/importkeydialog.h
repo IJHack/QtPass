@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Dialog that imports an ASCII-armored GPG public key from a file or
+ * the clipboard by running `gpg --import`.
+ */
 #ifndef SRC_IMPORTKEYDIALOG_H_
 #define SRC_IMPORTKEYDIALOG_H_
 
@@ -13,6 +18,7 @@ class ImportKeyDialog;
 
 /**
  * @class ImportKeyDialog
+ * @ingroup keys
  * @brief Dialog for importing GPG keys from file or clipboard.
  *
  * Allows users to import GPG public keys without leaving QtPass.
@@ -28,6 +34,7 @@ public:
    * @param parent Optional parent widget.
    */
   explicit ImportKeyDialog(const QString &gpgExe, QWidget *parent = nullptr);
+  /** @brief Destroys the dialog and its generated UI. */
   ~ImportKeyDialog() override;
 
   /**
@@ -51,32 +58,58 @@ public:
 
 private slots:
   /**
-   * @brief Handle file picker button click.
+   * @brief "From file" button: picks a file, reads it as a regular file of at
+   * most 16 MiB, requires the `-----BEGIN PGP` armor header and loads the
+   * text into the input field. Binary keyrings are refused with a hint to
+   * `gpg --armor --export` first.
    */
   void on_fileButton_clicked();
 
   /**
-   * @brief Handle paste button click.
+   * @brief "From clipboard" button: replaces the input field with the
+   * clipboard text, unless the clipboard is empty.
    */
   void on_pasteButton_clicked();
 
   /**
-   * @brief Handle import confirmation.
+   * @brief "Import" button: runs importFromString() on the trimmed input and
+   * closes the dialog with `accept()` on success.
    */
   void on_importButton_clicked();
 
   /**
-   * @brief Update UI state based on input field.
+   * @brief Enables the Import button only while the input field holds
+   * non-blank text.
    */
   void on_inputTextEdit_textChanged();
 
 private:
+  /** @brief Generated form (`importkeydialog.ui`); owned. */
   QScopedPointer<Ui::ImportKeyDialog> ui;
+  /** @brief Key id or fingerprint of the last successful import; empty until
+   * then. Read back through importedKeyId(). */
   QString m_importedKeyId;
+  /** @brief Path of the gpg binary to run; empty means plain `gpg` on PATH. */
   QString m_gpgExe;
 
+  /**
+   * @brief Feeds @p input to `gpg --status-fd 1 --import --batch --yes` via
+   * Executor::executeBlocking() and records the imported key id.
+   * @param input Armored key text, trimmed.
+   * @return true when gpg exited with 0 and a key id could be parsed from its
+   *         output; false after showError() otherwise.
+   */
   auto importFromString(const QString &input) -> bool;
+  /**
+   * @brief Shows @p message in a plain-text warning box (gpg's stderr quotes
+   * user IDs, which must not be read as markup).
+   * @param message The error text.
+   */
   void showError(const QString &message);
+  /**
+   * @brief Shows the "imported, now verify the fingerprint" information box.
+   * @param keyId The imported key id or fingerprint.
+   */
   void showSuccess(const QString &keyId);
 };
 #endif // SRC_IMPORTKEYDIALOG_H_

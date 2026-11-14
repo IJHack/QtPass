@@ -1,11 +1,17 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief QMessageBox helpers that force Qt::PlainText so store-controlled names
+ * can never be read as rich-text markup.
+ */
 #ifndef SRC_PLAINMESSAGEBOX_H_
 #define SRC_PLAINMESSAGEBOX_H_
 
 #include <QMessageBox>
 
 /**
+ * @ingroup ui
  * @brief Message boxes whose text is shown as the text it is.
  *
  * QMessageBox's static helpers read their text as rich text when it looks

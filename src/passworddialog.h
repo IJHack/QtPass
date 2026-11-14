@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Dialog for creating or editing one password entry, including the
+ * generator, template fields, OTP handling and the asynchronous save.
+ */
 #ifndef SRC_PASSWORDDIALOG_H_
 #define SRC_PASSWORDDIALOG_H_
 
@@ -23,10 +28,17 @@ class QWidget;
 
 /**
  * @class PasswordDialog
- * @brief Dialog for inserting and editing passwords, optionally using
- * templates.
+ * @ingroup ui
+ * @brief Dialog for creating a password entry or editing an existing one.
  *
- * Manages UI for entering, generating, and templating password-related fields.
+ * The first line is the password, with a generator beside it; below it are
+ * one field per template line when templates are in use, and a free text
+ * box for everything else. For an existing entry the dialog asks the
+ * backend to Show() it and fills the fields when the content arrives. On OK
+ * it puts the entry together again and calls Pass::Insert(), then stays
+ * open with its fields locked until the backend reports: it closes on
+ * Pass::finishedInsert() and gives the fields back with the reason on
+ * Pass::insertFailed(), so a failed save never loses what was typed.
  */
 class PasswordDialog : public QDialog {
   Q_OBJECT
@@ -49,6 +61,10 @@ public:
    */
   PasswordDialog(Pass *pass, const AppSettings &s, QString file,
                  const bool &isNew, QWidget *parent = nullptr);
+  /**
+   * @brief Hides the window before QDialog tears it down, so the focus-out
+   * emitted on hiding cannot reach slots of a half-destroyed dialog.
+   */
   ~PasswordDialog() override;
 
   /**
@@ -167,8 +183,13 @@ public slots:
   void cycleTemplate();
 
   /**
-   * @brief Populate the dialog's password field from pass show output.
-   * @param output Output from the pass show command.
+   * @brief Populate the dialog from a decrypted entry (Pass::finishedShow).
+   *
+   * Entries with more than FileContent::kMaxDisplayLines lines are not loaded
+   * at all; the status label says so and the editor stays locked.
+   * @param output Decrypted content of the entry.
+   * @param file The entry the output belongs to; output for any other entry
+   *        than the one being edited is ignored. Empty means unspecified.
    */
   void setPass(const QString &output, const QString &file = QString());
 
@@ -181,7 +202,18 @@ private slots:
    * @param show true to display the password in clear text.
    */
   void setPasswordVisible(bool show);
+  /**
+   * @brief "Generate" button: asks the backend for a password of the chosen
+   * length from the selected character set (Pass::generatePassword, which
+   * runs pwgen when that mode is on) and puts it in the password field. An
+   * empty result leaves the field alone.
+   */
   void on_createPasswordButton_clicked();
+  /**
+   * @brief Connected to QDialog::rejected: blanks the password and field
+   * widgets so the decrypted secret does not linger in a dialog that is
+   * being discarded.
+   */
   void on_rejected();
 
   /**
@@ -209,7 +241,11 @@ private slots:
   void onShowError(int exitCode, const QString &err);
 
 private:
-  /// Reports what is copied out of @p line through copied().
+  /**
+   * @brief Forwards the line edit's SecretLineEdit::copied to this dialog's
+   * copied(), so every copy out of any field reaches ClipboardManager.
+   * @param line A password or field editor just created.
+   */
   void reportCopies(SecretLineEdit *line);
   /**
    * @brief Locate the field that holds the one-time password configuration.
@@ -279,10 +315,16 @@ private:
    */
   void normalizeOtpField();
 
+  /** @brief Generated form (`passworddialog.ui`); owned. */
   QScopedPointer<Ui::PasswordDialog> ui;
+  /** @brief Generator settings: character sets and default length. */
   PasswordConfiguration m_passConfig;
+  /** @brief Backend for Show, Insert and generatePassword; not owned. */
   Pass *m_pass{nullptr};
+  /** @brief Field names of the current template, in template order. */
   QStringList m_fields;
+  /** @brief Entry path relative to the store, without `.gpg`; empty for a
+   * new entry until accept() resolves the typed name. */
   QString m_file;
   /// Absolute store root while a new entry is being named; empty otherwise.
   QString m_storeRoot;
@@ -296,10 +338,20 @@ private:
    * @return The relative entry path, or an empty string on a problem.
    */
   auto resolveNewEntry(QString *problem) const -> QString;
+  /**
+   * @brief Re-runs resolveNewEntry() as the user types or picks a folder:
+   * shows the problem (if any) in the status label and enables OK only for a
+   * usable name.
+   */
   void validateNewEntry();
   /**
    * @brief Give a `key: value` field a new key (#132). Refused, with the
    *        reason in the status label, when another field has that name.
+   *        Re-runs hookOtpField(), as the field may have become or stopped
+   *        being the OTP one.
+   * @param line The field's editor; its object name is the key.
+   * @param label The field's label, updated to show the new key.
+   * @param to The new key.
    */
   void renameField(QLineEdit *line, FieldLabel *label, const QString &to);
   /**
@@ -307,10 +359,17 @@ private:
    * are deleted once control is back in the event loop: the request comes
    * from the line's own trailing action or its label's context menu, both
    * still on the stack.
+   * @param line The field's editor, one of m_otherLines.
    */
   void removeField(QLineEdit *line);
+  /** @brief Whether template fields get widgets of their own (the
+   * "Use template" setting). */
   bool m_templating{};
+  /** @brief Whether every `key: value` line becomes a field (the "Template
+   * all fields" setting), as given to FileContent::parse(). */
   bool m_allFields{};
+  /** @brief True when creating an entry, false when editing one; decides
+   * whether the name row and the decrypt-before-edit lock apply. */
   bool m_isNew{};
   /// True once the existing entry's decrypted content has been loaded, so
   /// save() can refuse to overwrite it with empty fields before the
@@ -324,11 +383,16 @@ private:
   /// Last pwgen mode passed to usePwgen(), so the policy can be re-applied
   /// after setEditorEnabled() re-enables the character-set widgets.
   bool m_usePwgen{};
+  /// Editors for the template's fields, in template order; rebuilt by
+  /// setTemplate(). Their labels are plain QLabels: the names are fixed.
   QList<QLineEdit *> m_templateLines;
   /// Fields that came from the entry rather than the template; their names
   /// are the user's, so their labels are FieldLabels that can be renamed.
   QList<QLineEdit *> m_otherLines;
+  /// Named templates from `.templates`, name to field list, as given to
+  /// setAvailableTemplates(); empty when the store has none.
   QHash<QString, QStringList> m_availableTemplates;
+  /// Name of the template currently applied; cycleTemplate() steps from it.
   QString m_currentTemplateName;
   /// Ctrl+T, created once templates are available; owned by the dialog.
   QShortcut *m_templateShortcut{nullptr};
@@ -344,7 +408,17 @@ private:
   /// the new one.
   QPointer<QLineEdit> m_otpLine;
 
+  /**
+   * @brief Switch to a named template: records it, selects it in the combo
+   * box and rebuilds the field rows through setTemplate(). Unknown names
+   * are ignored, and nothing changes while a save is in flight.
+   * @param templateName A key of m_availableTemplates.
+   */
   void applyTemplate(const QString &templateName);
+  /**
+   * @brief Hides the template row until setAvailableTemplates() fills it and
+   * wires the combo box so that a user selection calls applyTemplate().
+   */
   void setupTemplateBox();
 };
 

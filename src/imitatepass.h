@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief ImitatePass, the backend that does what `pass` does by running gpg
+ * and git itself.
+ */
 #ifndef SRC_IMITATEPASS_H_
 #define SRC_IMITATEPASS_H_
 
@@ -19,6 +24,7 @@ class QThread;
 
 /**
  * @class ImitatePass
+ * @ingroup backend
  * @brief Implementation that imitates 'pass' when the real tool is unavailable.
  *
  * ImitatePass provides a complete password store implementation using direct
@@ -299,7 +305,9 @@ public:
    * @brief RAII helper for wrapping operations in transactions.
    */
   class TransactionHelper {
+    /** @brief The transaction being bracketed; not owned. */
     SimpleTransaction *m_transaction;
+    /** @brief What the transaction reports as once its last step ends. */
     PROCESS m_result;
 
   public:
@@ -394,11 +402,12 @@ protected:
 
 public:
   /**
-   * @brief Construct ImitatePass instance.
+   * @brief Construct the backend and connect its content search.
    */
   ImitatePass();
   /**
-   * @brief Destructor.
+   * @brief Cancel a running content search, and cancel and join a running
+   * re-encryption worker, before the members they use go away.
    */
   ~ImitatePass() override;
 
@@ -494,11 +503,18 @@ public:
 
 signals:
   /**
-   * @brief Emitted before starting re-encryption.
+   * @brief A reencryptPath() run is about to start its worker thread.
+   *
+   * The main window disables the interface and shows a progress dialog
+   * with a Cancel button on it. Always followed by endReencryptPath().
    */
   void startReencryptPath();
   /**
-   * @brief Emitted after finishing re-encryption.
+   * @brief A reencryptPath() run is over, whether it finished, failed, was
+   * cancelled or was refused; the main window releases the interface.
+   *
+   * Also emitted without a preceding startReencryptPath() when the folder
+   * is refused before anything starts.
    */
   void endReencryptPath();
   /**
@@ -544,6 +560,10 @@ private:
   SimpleTransaction m_transaction;
   /// Background search over the decrypted store; relays to finishedGrep.
   NativeGrep m_grep;
+  /**
+   * @brief stdout of the steps of the transaction in flight, collected by
+   * finished() and handed on, then cleared, when its last step ends.
+   */
   QString m_transactionOutput;
 
   /// An Insert() whose gpg is running or queued: the private directory gpg
@@ -551,11 +571,16 @@ private:
   /// existing entry may be replaced. Consumed by finished() when the gpg
   /// step ends; one per Insert(), in order.
   struct PendingInsert {
+    /** @brief The private directory gpg writes into; removed with this. */
     std::shared_ptr<QTemporaryDir> scratch;
+    /** @brief The ciphertext file gpg writes, inside @ref scratch. */
     QString output;
+    /** @brief The entry's path in the store, where @ref output goes. */
     QString file;
+    /** @brief Whether an entry already at @ref file may be replaced. */
     bool overwrite = false;
   };
+  /** @brief The inserts whose gpg step has not ended yet, oldest first. */
   QQueue<PendingInsert> m_pendingInserts;
   /// The insert whose gpg step ended last placed its entry in the store; its
   /// git steps may still fail. Set per gpg completion in finished(), not per
@@ -594,6 +619,10 @@ private:
   /// only thing shared with the worker: its QProcess is not thread-safe and
   /// is never touched from another thread.
   std::atomic<bool> m_reencryptCancel{false};
+  /**
+   * @brief The re-encryption worker while it runs, null otherwise. The
+   * destructor sets m_reencryptCancel and joins it.
+   */
   QThread *m_reencryptThread = nullptr;
   /**
    * @brief Start the worker thread once the Executor queue is idle.

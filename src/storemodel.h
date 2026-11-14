@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief StoreModel, the filtering/sorting proxy over the store's
+ *        QFileSystemModel, and StoreDragItem, the payload of a tree drag.
+ */
 #ifndef SRC_STOREMODEL_H_
 #define SRC_STOREMODEL_H_
 
@@ -7,24 +12,18 @@
 #include <QSortFilterProxyModel>
 #include <optional>
 
-/**
- * @class StoreModel
- * @brief QSortFilterProxyModel for filtering and displaying password store.
- *
- * StoreModel wraps QFileSystemModel to provide password store-specific
- * filtering and display functionality. It handles:
- * - Hiding .gpg-id files from display
- * - Removing .gpg extension from file names
- * - Supporting drag and drop operations
- * - Custom sorting (directories before files)
- */
 class Pass;
 class QFileSystemModel;
 
 /**
  * @struct StoreDragItem
+ * @ingroup store
  * @brief What a drag from the store tree carries: the kind of the dragged
  * item and its path.
+ *
+ * Travels as the `kStoreDragMimeType` payload
+ * (`application/vnd.qtpass.store-item`), serialised by operator<<() and read
+ * back by operator>>().
  */
 struct StoreDragItem {
   /**
@@ -62,28 +61,68 @@ auto operator<<(QDataStream &out, const StoreDragItem &info) -> QDataStream &;
  */
 auto operator>>(QDataStream &in, StoreDragItem &info) -> QDataStream &;
 
-/**
- * @brief The one MIME type the store tree drags: a serialised
- * StoreDragItem.
- */
+/// @cond DOXYGEN_MISPARSES_CONSTEXPR_INIT
+// The one MIME type the store tree drags: a serialised StoreDragItem (see the
+// struct's documentation). Hidden from Doxygen, which reads the
+// constructor-style initialiser as a function taking a string literal.
 inline constexpr QLatin1StringView
     kStoreDragMimeType("application/vnd.qtpass.store-item");
+/// @endcond
 
+/**
+ * @class StoreModel
+ * @ingroup store
+ * @brief QSortFilterProxyModel for filtering and displaying password store.
+ *
+ * StoreModel wraps QFileSystemModel to provide password store-specific
+ * filtering and display functionality. It handles:
+ * - Hiding the `.git` directory from display
+ * - Removing .gpg extension from file names
+ * - Supporting drag and drop operations
+ * - Custom sorting (directories before files)
+ */
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
 
 private:
+  /**
+   * @brief The wrapped file system model, set by setModelAndStore(); null
+   *        until then, which makes showThis() hide everything.
+   */
   QFileSystemModel *fs;
+  /**
+   * @brief Store root used to make paths relative for filtering and for the
+   *        drop boundary check.
+   */
   QString store;
+  /**
+   * @brief Backend that performs drag-and-drop Move/Copy; not owned, null
+   *        until setPass(), in which case drops are refused.
+   */
   Pass *m_pass{nullptr};
 
   /**
    * @brief Decode the drag payload from @p data.
+   * @param data MIME data of the drop; may be null.
    * @return The payload, or nothing when @p data is null, carries no payload
    * of ours, or the payload does not deserialise cleanly.
    */
   static auto parseDropData(const QMimeData *data)
       -> std::optional<StoreDragItem>;
+
+  /**
+   * @brief Resolve a validated drop into a Move or Copy.
+   *
+   * Both endpoints must resolve inside the store after symlink resolution
+   * (the payload could be crafted). A directory is dropped into the target
+   * folder; a file onto a folder goes into it, a file onto a file asks the
+   * user before overwriting.
+   * @param info The decoded drag payload.
+   * @param action Qt::MoveAction or Qt::CopyAction.
+   * @param parent Proxy index of the drop target.
+   * @return true once the operation has been dispatched to the backend;
+   *         false for an escaping path, an unknown kind or a bad target.
+   */
   auto executeDropAction(const StoreDragItem &info, Qt::DropAction action,
                          const QModelIndex &parent) -> bool;
   /**

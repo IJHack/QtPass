@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements PasswordDialog: field rows built from templates and entry
+ * content, round-trip-safe serialisation in getPassword(), OTP validation and
+ * the locked-while-saving insert protocol.
+ */
 #include "passworddialog.h"
 #include "fieldlabel.h"
 #include "filecontent.h"

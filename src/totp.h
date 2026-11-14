@@ -1,6 +1,11 @@
 // SPDX-FileCopyrightText: 2025 KeePassXC Team <team@keepassxc.org>
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief RFC 6238 TOTP: otpauth URI parsing, code generation and canonical
+ * re-serialisation.
+ */
 #ifndef SRC_TOTP_H_
 #define SRC_TOTP_H_
 
@@ -13,6 +18,7 @@
 
 /**
  * @class Totp
+ * @ingroup store
  * @brief RFC 6238 time-based one-time password generation.
  *
  * Ported and trimmed from KeePassXC (`src/core/Totp.cpp`). QtPass stores TOTP
@@ -170,6 +176,7 @@ public:
   [[nodiscard]] static auto currentUnixTime() -> quint64;
 
 private:
+  /** @brief Static-only class; never instantiated. */
   Totp() = default;
 };
 

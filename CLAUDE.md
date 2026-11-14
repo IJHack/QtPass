@@ -109,7 +109,13 @@ When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with 
 
 ## Doxygen
 
-CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). Every public symbol in a header must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable.
+CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). The docs are for contributors, not an API reference: `EXTRACT_PRIVATE` is on and `.cpp` files are parsed.
+
+- Every symbol must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable: private members, slots, member variables and enum values included.
+- Each file starts with a `@file` block, and each class carries an `@ingroup` for one of the topics in `doxygen/groups.dox`.
+- The header block is the contract. For a function declared in a header, a block on the definition in the `.cpp` is plain prose about the implementation, without `@brief`/`@param`/`@return` (repeating them is a warning).
+- A function that exists only in a `.cpp` file, such as a `static` helper, has no header block, so its full `@brief`/`@param`/`@return` block goes on the definition.
+- The landing page is `doxygen/mainpage.md`.
 
 ```bash
 # Check locally: progress goes to stdout, warnings to stderr, and any
@@ -117,7 +123,7 @@ CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfi
 doxygen Doxyfile >/dev/null
 ```
 
-Common pitfalls: unnamed parameters in declarations, orphaned doc blocks not immediately above their declaration, missing `@return` on non-void functions.
+Common pitfalls: unnamed parameters in declarations, orphaned doc blocks not immediately above their declaration, missing `@return` on non-void functions, `@param` repeated on the `.cpp` definition, "QtPass" in prose auto-linking to the `QtPass` class (write `%QtPass` for the application).
 
 ## Localization
 

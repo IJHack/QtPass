@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements QtPass; init() holds the settings migrations run on every
+ *        start-up and showTextAsQRCode() drives the qrencode process.
+ */
 #include "qtpass.h"
 #include "executor.h"
 #include "imitatepass.h"
@@ -14,10 +19,6 @@
 
 #include "qtpasslogging.h"
 
-/**
- * @brief Constructs a QtPass instance and listens to both backends.
- * @param parent Owner.
- */
 QtPass::QtPass(QObject *parent) : QObject(parent), m_clipboard(this) {
   // Both implementations are wired up: the active one can change through the
   // configuration dialog, and reconnecting on every switch is not worth it.
@@ -25,15 +26,8 @@ QtPass::QtPass(QObject *parent) : QObject(parent), m_clipboard(this) {
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 }
 
-/**
- * @brief QtPass::~QtPass destroy!
- */
 QtPass::~QtPass() = default;
 
-/**
- * @brief QtPass::init make sure we are ready to go as soon as
- * possible
- */
 void QtPass::init() {
   QString passStore = QtPassSettings::getPassStore(Util::findPasswordStore());
   QtPassSettings::setPassStore(passStore);
@@ -87,11 +81,6 @@ void QtPass::init() {
   QtPassSettings::setVersion(VERSION);
 }
 
-/**
- * @brief Connects the completion signals of one backend to the slots that
- * turn them into output, status and "finished" signals.
- * @param pass The pass instance to connect
- */
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
   connect(pass, &Pass::finishedGitInit, this, &QtPass::passStoreChanged);
@@ -106,13 +95,6 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
           &QtPass::onKeyGenerationComplete);
 }
 
-/**
- * @brief Show a process' stderr in colour: red for a failure, dark grey for
- * the chatter a successful command prints (see issue #111). Nothing is shown
- * for empty output.
- * @param exitCode The exit code
- * @param error The error message
- */
 void QtPass::reportError(int exitCode, const QString &error) {
   if (error.isEmpty()) {
     return;
@@ -124,22 +106,11 @@ void QtPass::reportError(int exitCode, const QString &error) {
       QStringLiteral("</span><br />")));
 }
 
-/**
- * @brief Handles process error exit.
- * @param exitCode The exit code
- * @param error The error message
- */
 void QtPass::processErrorExit(int exitCode, const QString &error) {
   reportError(exitCode, error);
   emit operationFinished();
 }
 
-/**
- * @brief A background process has finished: show its stdout, and its stderr
- * as grey chatter (a zero exit code is assumed here).
- * @param output stdout from a process
- * @param errout stderr from a process
- */
 void QtPass::processFinished(const QString &output, const QString &errout) {
   // A silent command (git push with nothing to push, say) has nothing to
   // show; re-setting the browser's HTML for it would only reset its scroll.
@@ -150,32 +121,17 @@ void QtPass::processFinished(const QString &output, const QString &errout) {
   emit operationFinished();
 }
 
-/**
- * @brief Called when pass store has changed.
- * @param output Output from the process
- * @param errout Error output
- */
 void QtPass::passStoreChanged(const QString &output, const QString &errout) {
   processFinished(output, errout);
   doGitPush();
 }
 
-/**
- * @brief Called when an insert operation has finished.
- * @param output Output from the process
- * @param errout Error output
- */
 void QtPass::finishedInsert(const QString &output, const QString &errout) {
   processFinished(output, errout);
   doGitPush();
   emit entryInserted();
 }
 
-/**
- * @brief Called when GPG key generation is complete.
- * @param output Standard output from the key generation process
- * @param errout Standard error output from the key generation process
- */
 void QtPass::onKeyGenerationComplete(const QString &output,
                                      const QString &errout) {
   // The KeygenDialog listens to the same signal and closes itself.
@@ -183,13 +139,6 @@ void QtPass::onKeyGenerationComplete(const QString &output,
   processFinished(output, errout);
 }
 
-/**
- * @brief Turn process output into HTML for the text browser.
- * @param output The text to display
- * @param prefix Optional prefix to prepend to the output
- * @param postfix Optional postfix to append to the output
- * @return The HTML.
- */
 auto QtPass::formatOutput(QString output, const QString &prefix,
                           const QString &postfix) -> QString {
   // Escapes and links only launchable http(s) URLs; anything else stays
@@ -199,19 +148,12 @@ auto QtPass::formatOutput(QString output, const QString &prefix,
   return prefix + output + postfix;
 }
 
-/**
- * @brief Ask for a git push when the settings want one after every change.
- */
 void QtPass::doGitPush() {
   if (QtPassSettings::isAutoPush()) {
     emit pushRequested();
   }
 }
 
-/**
- * @brief displays the text as qrcode
- * @param text
- */
 void QtPass::showTextAsQRCode(const QString &text) {
   const AppSettings s = QtPassSettings::load();
   const QString qrExe = s.qrencodeExecutable.isEmpty()
@@ -256,13 +198,6 @@ void QtPass::showTextAsQRCode(const QString &text) {
   }
 }
 
-/**
- * @brief QtPass::createQRCodePopup creates a popup dialog with the given QR
- * code image. This is extracted for testability. The caller is responsible
- * for showing and managing the popup lifecycle.
- * @param image The QR code pixmap to display
- * @return The created popup dialog
- */
 QDialog *QtPass::createQRCodePopup(const QPixmap &image) {
   auto *popup = new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint);
   popup->setAttribute(Qt::WA_DeleteOnClose);

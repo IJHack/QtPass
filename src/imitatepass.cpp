@@ -1,5 +1,11 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements ImitatePass: the gpg and git command sequences behind each
+ * operation, the transactions that group them, and the re-encryption worker
+ * thread.
+ */
 #include "imitatepass.h"
 #include "executor.h"
 #include "gpgidgeneration.h"
@@ -980,6 +986,10 @@ auto ImitatePass::createBackupCommit() -> bool {
   return true;
 }
 
+/**
+ * @brief Outcome of one reencryptPath() run; filled on the worker thread
+ * and consumed by finishReencrypt() on the owning thread.
+ */
 struct ImitatePass::ReencryptResult {
   int total = 0;          ///< `.gpg` files found under the directory.
   int checked = 0;        ///< Files whose recipients were inspected.

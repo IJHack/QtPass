@@ -97,13 +97,17 @@ heading format, section names, MD024 markers and the lint traps.
 
 ## Doxygen comments
 
-Every public symbol in a header needs a `/** @brief ... */` block with
-`@param` for each parameter and `@return` for non-void functions. CI fails on
-any Doxygen warning. Read [references/doxygen.md](references/doxygen.md) when
-the `docs` job fails, for the Doxyfile settings, the local check and the
-mistakes that cause warnings.
+The Doxygen site is contributor documentation, not an API reference, so
+every symbol needs a `/** @brief ... */` block: classes, functions, signals,
+slots, member variables and enum values, private ones included, with `@param`
+for each parameter and `@return` for non-void functions. Every file starts
+with a `@file` block and every class has an `@ingroup`. CI fails on any
+Doxygen warning. Read [references/doxygen.md](references/doxygen.md) when the
+`docs` job fails, when adding a class or file, or when editing the landing
+page, for the Doxyfile settings, the local check and the mistakes that cause
+warnings.
 
-Quick check before pushing a header change:
+Quick check before pushing a change to a header or source file:
 
 ```bash
 doxygen Doxyfile >/dev/null   # anything printed, or a non-zero exit, fails CI

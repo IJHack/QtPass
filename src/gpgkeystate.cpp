@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements the colon-listing parser: record classification, one
+ * handler per record type, and primary-fingerprint lookup.
+ */
 #include "gpgkeystate.h"
 #include "gpgkeystate_p.h"
 
@@ -8,22 +13,24 @@
 #include <QDateTime>
 #include <QRegularExpression>
 
+/** @brief Fewest fields a record must have to be read at all. */
 constexpr int GPG_MIN_FIELDS = 10;
+/** @brief Field index of the validity letter (`u`, `f`, `r`, ...). */
 constexpr int GPG_FIELD_VALIDITY = 1;
+/** @brief Field index of the key ID. */
 constexpr int GPG_FIELD_KEY_ID = 4;
+/** @brief Field index of the creation time, in seconds since the epoch. */
 constexpr int GPG_FIELD_CREATED = 5;
+/** @brief Field index of the expiry time; empty for a key without one. */
 constexpr int GPG_FIELD_EXPIRY = 6;
+/** @brief Field index of the user ID. */
 constexpr int GPG_FIELD_USERID = 9;
-/// Field 9 of an `fpr` record: the fingerprint, in the slot the user ID
-/// occupies in a `uid` record.
+/**
+ * @brief Field 9 of an `fpr` record: the fingerprint, in the slot the user
+ * ID occupies in a `uid` record.
+ */
 constexpr int GPG_FIELD_FINGERPRINT = 9;
 
-/**
- * @brief Classify a GPG colon output record type
- * @param record_type The first field of a GPG colon record (e.g., "pub", "sec",
- * "uid")
- * @return The corresponding GpgRecordType enum value
- */
 auto classifyRecord(const QString &record_type) -> GpgRecordType {
   if (record_type == "pub") {
     return GpgRecordType::Pub;
@@ -49,12 +56,6 @@ auto classifyRecord(const QString &record_type) -> GpgRecordType {
   return GpgRecordType::Unknown;
 }
 
-/**
- * @brief Handle a pub or sec record in GPG colon output
- * @param props The colon-split fields of the record
- * @param secret True if this is a secret key record (sec)
- * @param current_user UserInfo to populate with key data
- */
 void handlePubSecRecord(const QStringList &props, bool secret,
                         UserInfo &current_user) {
   if (props.size() < GPG_MIN_FIELDS) {
@@ -92,11 +93,6 @@ void handleUidRecord(const QStringList &props, UserInfo &current_user) {
   current_user.name = props[GPG_FIELD_USERID];
 }
 
-/**
- * @brief Handle an fpr (fingerprint) record in GPG colon output
- * @param props The colon-split fields of the record
- * @param current_user UserInfo to update with fingerprint if it matches key
- */
 void handleFprRecord(const QStringList &props, UserInfo &current_user) {
   if (props.size() < GPG_MIN_FIELDS) {
     return;
@@ -113,12 +109,6 @@ void handleFprRecord(const QStringList &props, UserInfo &current_user) {
   }
 }
 
-/**
- * @brief Parse GPG --with-colons output into a list of UserInfo
- * @param output Raw output from GPG --with-colons --with-fingerprint
- * @param secret True if parsing secret keys (--list-secret-keys)
- * @return QList of parsed UserInfo objects
- */
 auto parseGpgColonOutput(const QString &output, bool secret)
     -> QList<UserInfo> {
   QList<UserInfo> users;
@@ -167,23 +157,6 @@ auto parseGpgColonOutput(const QString &output, bool secret)
   return users;
 }
 
-/**
- * @brief The primary key fingerprint of the key that @p key names.
- *
- * gpg accepts a signature by a subkey for its primary key, and verification
- * here takes either fingerprint from VALIDSIG: a key written as a subkey's
- * fingerprint, or as a key ID, signs as its primary key. Only the block that
- * holds @p key is taken, whatever else gpg printed; when several do (a short
- * ID, which collides easily), none is.
- * @param output Raw output from GPG --with-colons --with-fingerprint
- *        --with-subkey-fingerprint --list-keys.
- * @param key A fingerprint (40 or 64 hex) or a key ID (8 or 16 hex),
- *        optionally with 0x; any case. A key ID is matched against the
- *        record's own key ID, so it works for v4 keys (the fingerprint's
- *        tail) and v5/v6 keys (its head) alike.
- * @return The primary fingerprint in upper case, or empty when no block, or
- *         more than one, in @p output holds @p key.
- */
 auto primaryFingerprintOf(const QString &output, const QString &key)
     -> QString {
   QString wanted = key.trimmed().toUpper();

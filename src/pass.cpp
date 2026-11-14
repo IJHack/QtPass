@@ -1,5 +1,12 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements what both backends share: the environment the store's
+ * processes run in, the refusals for links and paths outside the store, `.gpg-
+ * id` lookup, and Pass::finished(), which routes each finished process to its
+ * signal.
+ */
 #include "pass.h"
 
 #include "gpgidgeneration.h"

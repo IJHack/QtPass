@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements TrayIcon; the tray is only set up when
+ *        QSystemTrayIcon::isSystemTrayAvailable() says there is one.
+ */
 #include "trayicon.h"
 #include <QAction>
 #include <QApplication>

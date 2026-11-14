@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Rollback detection for signed `.gpg-id` files: the generation counter
+ * and the record of what was last seen.
+ */
 #ifndef SRC_GPGIDGENERATION_H_
 #define SRC_GPGIDGENERATION_H_
 
@@ -8,6 +13,7 @@
 #include <optional>
 
 /**
+ * @ingroup keys
  * @brief Rollback detection for signed `.gpg-id` files.
  *
  * A signature proves that a recipient list is authentic and unmodified; it

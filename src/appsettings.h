@@ -1,5 +1,9 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief AppSettings, the value object holding every flat QtPass setting.
+ */
 #ifndef SRC_APPSETTINGS_H_
 #define SRC_APPSETTINGS_H_
 
@@ -14,6 +18,7 @@
 
 /**
  * @struct AppSettings
+ * @ingroup settings
  * @brief Plain value-object holding all flat QtPass configuration.
  *
  * One field per persisted setting, with the same defaults the legacy

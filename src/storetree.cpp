@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements StoreTree; setStore() is where the file system model,
+ *        the proxy and the view are re-rooted together.
+ */
 #include "storetree.h"
 #include "util.h"
 #include <QDir>

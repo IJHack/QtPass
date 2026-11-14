@@ -1,5 +1,10 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+/**
+ * @file
+ * @brief Implements FirstRunWizard and its pages; the store is created and
+ * initialised in FirstRunWizard::initialiseStore() on Finish.
+ */
 #include "firstrunwizard.h"
 #include "executor.h"
 #include "gpgkeystate.h"
