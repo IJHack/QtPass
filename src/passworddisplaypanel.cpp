@@ -120,7 +120,20 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
                                     const QString &value,
                                     const AppSettings &s) {
   QString trimmedField = field.trimmed();
-  QString trimmedValue = value.trimmed();
+  // The password keeps its surrounding whitespace: a space or tab is a valid
+  // part of a secret, and trimming it would copy and save a different password
+  // than the one stored. A trailing carriage return is dropped, so a file
+  // saved with CRLF line endings does not show or copy a stray `\r`. Every
+  // other field is still trimmed for display.
+  QString displayValue;
+  if (trimmedField == QObject::tr("Password")) {
+    displayValue = value;
+    if (displayValue.endsWith(QLatin1Char('\r'))) {
+      displayValue.chop(1);
+    }
+  } else {
+    displayValue = value.trimmed();
+  }
 
   // Scope every rule to the widget type so the transparent background does not
   // cascade into the field's standard context menu (a child QMenu), which would
@@ -134,7 +147,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   QHBoxLayout *frameLayout = qobject_cast<QHBoxLayout *>(frame->layout());
   if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel =
-        new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
+        new QPushButtonWithClipboard(displayValue, m_widgetParent);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
             &PasswordDisplayPanel::copyRequested);
 
@@ -143,7 +156,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   }
 
   if (s.useQrencode) {
-    auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, m_widgetParent);
+    auto *qrbutton = new QPushButtonAsQRCode(displayValue, m_widgetParent);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, this,
             &PasswordDisplayPanel::qrRequested);
     qrbutton->setStyleSheet(buttonStyle);
@@ -156,7 +169,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // Never on the password field: its value is a secret and must not be
   // surfaced in a tooltip or handed to the browser.
   if (trimmedField != QObject::tr("Password") &&
-      Util::isLaunchableWebUrl(trimmedValue)) {
+      Util::isLaunchableWebUrl(displayValue)) {
     auto *urlButton = new QPushButton(m_widgetParent);
     urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
                                         QIcon(":/icons/open-url.svg")));
@@ -174,15 +187,15 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     urlButton->setToolTip(
         QStringLiteral("<qt style=\"white-space:nowrap\">%1</qt>")
             .arg(QObject::tr("Open %1 in browser")
-                     .arg(trimmedValue.toHtmlEscaped())));
+                     .arg(displayValue.toHtmlEscaped())));
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
-    connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
+    connect(urlButton, &QPushButton::clicked, this, [displayValue]() {
       // Re-validate before launching (defence in depth: the value is
       // immutable here, but never hand an unvalidated string to the OS
       // URL handler).
-      if (Util::isLaunchableWebUrl(trimmedValue)) {
-        QDesktopServices::openUrl(QUrl(trimmedValue));
+      if (Util::isLaunchableWebUrl(displayValue)) {
+        QDesktopServices::openUrl(QUrl(displayValue));
       }
     });
     frame->layout()->addWidget(urlButton);
@@ -205,7 +218,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     connect(passwordLineEdit, &SecretLineEdit::copied, this,
             &PasswordDisplayPanel::textCopied);
     passwordLineEdit->setObjectName(trimmedField);
-    passwordLineEdit->setText(trimmedValue);
+    passwordLineEdit->setText(displayValue);
     passwordLineEdit->setReadOnly(true);
     passwordLineEdit->setStyleSheet(lineStyle);
     passwordLineEdit->setContentsMargins(0, 0, 0, 0);
@@ -234,13 +247,13 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
       // text, because setOpenExternalLinks() would hand them straight to the
       // OS URL handler on click.
       bool linked = false;
-      const QString linkedText = Util::linkifyUrls(trimmedValue, &linked);
+      const QString linkedText = Util::linkifyUrls(displayValue, &linked);
       if (!linked) {
         // Nothing to link, so show the value as-is. Escaping it and calling
         // setText() only rendered as rich text when the value happened to
         // contain a '<'; otherwise "&", '"' and ">" came out as HTML entities
         // and a password such as `a&b` read `a&amp;b` on screen.
-        contentTextBrowser->setPlainText(trimmedValue);
+        contentTextBrowser->setPlainText(displayValue);
       } else {
         // Always HTML here: the text is escaped and carries anchor tags, so
         // do not leave the interpretation to setText()'s auto-detection.
