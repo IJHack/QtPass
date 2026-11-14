@@ -694,6 +694,7 @@ private Q_SLOTS:
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToReencryptDuringAnUnfinishedRebase();
   void refusesToInsertDuringASequencerState();
+  void refusesASaveWhenAConflictAppearsWhileEncrypting();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -1713,6 +1714,82 @@ void tst_imitatepass::refusesToInsertDuringASequencerState() {
            qPrintable(criticalSpy.first().at(1).toString()));
   QCOMPARE(insertSpy.count(), 0);
   QVERIFY2(!QFile::exists(logPath), "gpg must not run");
+#endif
+}
+
+/**
+ * @brief The call-time check cannot see a pull queued before the save (the
+ *        asynchronous Update) that finishes in a conflict while the save's gpg
+ *        step runs. The entry is then re-checked when gpg finishes and not
+ *        placed or committed into the unfinished operation; the save fails with
+ *        the fields kept, rather than closing as saved.
+ */
+void tst_imitatepass::refusesASaveWhenAConflictAppearsWhileEncrypting() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("init"), QStringLiteral("-q")}),
+           0);
+  // A fake gpg that writes the ciphertext and, while doing so, drops a
+  // MERGE_HEAD: a pull queued before the save finished in a conflict while
+  // this gpg ran. The call-time check passed; the re-check at gpg completion
+  // must catch it.
+  const QString script =
+      QDir(storeDir.path()).filePath(QStringLiteral("conflicting-gpg.sh"));
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    f.write(QStringLiteral(
+                "#!/bin/sh\n"
+                "outfile=''; prev=''; mode=''\n"
+                "for a in \"$@\"; do\n"
+                "  case \"$a\" in -eq) mode=encrypt;; esac\n"
+                "  [ \"$prev\" = '--output' ] && outfile=\"$a\"\n"
+                "  prev=\"$a\"\n"
+                "done\n"
+                "[ \"$mode\" = encrypt ] || exit 0\n"
+                "cat >/dev/null\n"
+                "printf 'ciphertext\\n' > \"$outfile\"\n"
+                "printf '%s\\n' 0000000000000000000000000000000000000000 > "
+                "'%1/.git/MERGE_HEAD'\n"
+                "exit 0\n")
+                .arg(storeDir.path())
+                .toUtf8());
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), script);
+  s.useGit = true;
+  s.gitExecutable = git;
+  pass.init(s);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  pass.Insert(QStringLiteral("newsite"), QStringLiteral("v\n"), false);
+  QVERIFY(failedSpy.count() > 0 || failedSpy.wait(15000));
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(!failedSpy.first().at(1).toBool(),
+           "nothing was placed into the unfinished merge");
+  QVERIFY2(failedSpy.first().at(0).toString().contains(QStringLiteral("merge")),
+           qPrintable(failedSpy.first().at(0).toString()));
+  QVERIFY2(!QFileInfo::exists(QDir(storeDir.path()).filePath("newsite.gpg")),
+           "the entry must not be placed into the unfinished merge");
+  QString log;
+  runRealGit(git, storeDir.path(),
+             {QStringLiteral("log"), QStringLiteral("--oneline"),
+              QStringLiteral("--all")},
+             &log);
+  QVERIFY2(!log.contains(QStringLiteral("newsite")),
+           qPrintable("the save must not have been committed: " + log));
 #endif
 }
 

@@ -825,9 +825,9 @@ auto Pass::refuseFolderOutsideStore(const QString &folder, QString *relative)
   return true;
 }
 
-auto Pass::refuseUnfinishedGitOperation() -> bool {
+auto Pass::unfinishedGitOperationReason() -> QString {
   if (!m_settings.useGit) {
-    return false;
+    return {};
   }
   // One git call names the path of each marker file or directory, whether or
   // not it exists; the backend runs it in the store (ImitatePass with
@@ -853,7 +853,7 @@ auto Pass::refuseUnfinishedGitOperation() -> bool {
   if (!storeGit(args, &out)) {
     // Git is off, the store is not a repository, or git could not be asked:
     // nothing is refused, as the operation would run anyway.
-    return false;
+    return {};
   }
   const QStringList paths = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
   for (int i = 0; i < paths.size() && i < static_cast<int>(markers.size());
@@ -865,20 +865,26 @@ auto Pass::refuseUnfinishedGitOperation() -> bool {
     if (!QFileInfo::exists(full)) {
       continue;
     }
-    const QString why =
-        tr("The store's Git repository is in the middle of a %1. Finish or "
-           "abort it with git before changing the store, or what you change "
-           "may be lost.")
-            .arg(markers.at(static_cast<size_t>(i)).second);
-    // Like refuseAsNotPartOfStore(): the interface arms when an operation
-    // starts and is released by finished()/processErrorExit(); a refusal
-    // starts nothing, so it emits both ends.
-    emit startingExecuteWrapper();
-    emit critical(tr("Unfinished Git operation"), why);
-    emit processErrorExit(1, why);
-    return true;
+    return tr("The store's Git repository is in the middle of a %1. Finish or "
+              "abort it with git before changing the store, or what you change "
+              "may be lost.")
+        .arg(markers.at(static_cast<size_t>(i)).second);
   }
-  return false;
+  return {};
+}
+
+auto Pass::refuseUnfinishedGitOperation() -> bool {
+  const QString why = unfinishedGitOperationReason();
+  if (why.isEmpty()) {
+    return false;
+  }
+  // Like refuseAsNotPartOfStore(): the interface arms when an operation starts
+  // and is released by finished()/processErrorExit(); a refusal starts
+  // nothing, so it emits both ends.
+  emit startingExecuteWrapper();
+  emit critical(tr("Unfinished Git operation"), why);
+  emit processErrorExit(1, why);
+  return true;
 }
 
 void Pass::refuseAsNotPartOfStore(const QString &why) {

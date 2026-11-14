@@ -568,6 +568,20 @@ protected:
   auto refuseUnfinishedGitOperation() -> bool;
 
   /**
+   * @brief The unfinished git operation in progress in the store, if any.
+   *
+   * The detection behind refuseUnfinishedGitOperation(), without emitting a
+   * refusal: a backend re-checks it when a save's gpg step has finished (a
+   * pull queued before the save, from the asynchronous Update, may have
+   * finished and left a conflict meanwhile) so the entry is not placed or
+   * committed into the operation.
+   * @return A ready-to-show reason naming the operation (rebase, merge,
+   *         cherry-pick or revert), or an empty string when none is in
+   *         progress, git is off, or the store is not a repository.
+   */
+  auto unfinishedGitOperationReason() -> QString;
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.

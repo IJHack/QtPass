@@ -1561,10 +1561,22 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
     // was placed. Cleared here, before placement, and set only on success.
     m_insertPlaced = false;
     if (exitCode == 0) {
-      m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
-                                          pending.overwrite, &error);
-      if (!m_insertPlaced) {
+      // Insert() checked the repository when the save was requested, but a
+      // pull queued before it (the asynchronous Update button) may have run
+      // and stopped in a conflict while this gpg step encrypted. Placing the
+      // entry and committing it now would land it in the unfinished operation,
+      // where `git rebase --abort` would drop it. Re-check and, if so, fail the
+      // save instead of placing it; the queued git steps are cancelled below.
+      const QString midOp = unfinishedGitOperationReason();
+      if (!midOp.isEmpty()) {
+        error = midOp;
         exitCode = 1;
+      } else {
+        m_insertPlaced = placeEncryptedFile(pending.output, pending.file,
+                                            pending.overwrite, &error);
+        if (!m_insertPlaced) {
+          exitCode = 1;
+        }
       }
     }
   }
