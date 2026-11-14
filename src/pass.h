@@ -722,8 +722,8 @@ signals:
    */
   void idle();
   /**
-   * @brief Emitted each time a queued process is about to start, and once
-   * for an operation that is refused before anything starts.
+   * @brief Emitted each time a queued process is about to start, and by
+   * the refusals that go on to emit processErrorExit().
    *
    * The main window shows the busy state on it. An operation made of
    * several processes emits it once per process; the operation then ends
@@ -744,8 +744,12 @@ signals:
    * @brief Something went wrong that the user has to be told about in a
    * dialog, such as a refused path or a failed backup commit.
    *
-   * Says only what happened. When it ends an operation, processErrorExit()
-   * follows separately.
+   * Says only what happened; it does not by itself mean an operation is
+   * over. Every failure reported through the command queue goes on to
+   * processErrorExit(), and so do some refusals. Other checks made before
+   * anything is queued, such as an entry that already exists or a
+   * recipient list that cannot be used, emit this signal and nothing
+   * else.
    * @param title Translated dialog title.
    * @param message Translated description.
    */
@@ -755,20 +759,26 @@ signals:
    * @brief An operation ended in failure: its process exited non-zero,
    * could not be started or crashed, or the operation was refused.
    *
-   * The counterpart of the `finished...` signals: every operation ends in
-   * one or the other. The main window releases the busy state and shows
-   * @p err in the password pane. One case emits both: when RealPass has
-   * removed a linked folder but could not commit that, this signal is
-   * followed by finishedRemove(), because the store did change.
+   * The counterpart of the `finished...` signals for an operation that
+   * queued a command: it ends in one or the other. The main window
+   * releases the busy state and shows @p err in the password pane. One
+   * case emits both: when RealPass has removed a linked folder but could
+   * not commit that, this signal is followed by finishedRemove(), because
+   * the store did change.
+   *
+   * Before anything is queued the paths differ, so a caller must not wait
+   * for this signal after every call. A path behind a link and an
+   * unfinished Git operation are refused with startingExecuteWrapper(),
+   * critical() and this signal. Other early checks, such as an entry that
+   * already exists, emit critical() alone and return.
    *
    * insertFailed() and generateGPGKeysFailed() are emitted before this
    * signal whenever their operation fails through a queued command, be it
    * a non-zero exit, a crash or a process that could not be started, so
    * their dialogs need not guess whose failure it is.
    * generateGPGKeysFailed() also comes first when no gpg executable is
-   * configured and nothing is queued at all. A refusal made before
-   * anything is queued, such as a path behind a link or an unfinished Git
-   * operation, emits this signal without either of them.
+   * configured and nothing is queued at all. A refusal that reaches this
+   * signal without queuing anything emits neither of them.
    * @param exitCode Exit code of the process; -1 when it did not exit
    *        normally, 1 for a refusal.
    * @param err What to show the user: stderr, or a translated message.
@@ -823,8 +833,10 @@ signals:
    * in use, committed.
    *
    * In ImitatePass this ends the whole transaction (gpg, then git add and
-   * commit), not just the gpg step. The password dialog closes on it; a
-   * failure goes out as insertFailed() and processErrorExit() instead.
+   * commit), not just the gpg step. The password dialog closes on it. A
+   * failure reported through the command queue goes out as insertFailed()
+   * and processErrorExit() instead; an insert refused before anything is
+   * queued emits neither this signal nor insertFailed().
    * @param out Standard output of the operation's processes.
    * @param err Standard error.
    */
