@@ -267,9 +267,23 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
                                     const QString &value,
                                     const AppSettings &s) {
   const QString trimmedField = field.trimmed();
-  const QString trimmedValue = value.trimmed();
+  // The password row keeps its value exactly: a leading or trailing space is
+  // part of the password, so the copy button, QR code and revealed text must
+  // return what is stored, as Ctrl+C on the tree and the edit dialog do. Only
+  // a trailing CR from a CRLF-stored entry is dropped — it is a line ending,
+  // not part of the secret. Every other row is `name: value`, where the
+  // whitespace around the value is layout and is trimmed.
+  QString displayValue;
+  if (trimmedField == QObject::tr("Password")) {
+    displayValue = value;
+    if (displayValue.endsWith(QLatin1Char('\r'))) {
+      displayValue.chop(1);
+    }
+  } else {
+    displayValue = value.trimmed();
+  }
   QFrame *frame = createFieldFrame();
-  addActionButtons(frame->layout(), trimmedField, trimmedValue, s);
+  addActionButtons(frame->layout(), trimmedField, displayValue, s);
   const QString lineStyle =
       s.useMonospace
           ? "QLineEdit, QTextBrowser { border-style: none; background: "
@@ -279,10 +293,10 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   // The password, and with it the other secrets an entry holds (a PIN, a
   // CVV, an API key, what a template marks): behind the eye button too.
   if (hides(trimmedField, s)) {
-    addHiddenPassword(frame->layout(), trimmedField, trimmedValue, lineStyle);
+    addHiddenPassword(frame->layout(), trimmedField, displayValue, lineStyle);
   } else {
     SecretTextBrowser *browser =
-        valueBrowser(trimmedField, trimmedValue, lineStyle);
+        valueBrowser(trimmedField, displayValue, lineStyle);
     connect(browser, &SecretTextBrowser::copied, this,
             &PasswordDisplayPanel::textCopied);
     frame->layout()->addWidget(browser);
