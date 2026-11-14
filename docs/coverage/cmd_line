@@ -1,1 +1,1 @@
-genhtml --demangle-cpp -o docs/coverage/ docs/coverage/.lcov.total
+genhtml --demangle-cpp --flat --prefix /home/runner/work/QtPass/QtPass --title QtPass --header-title 'QtPass test coverage' --html-prolog /home/runner/work/QtPass/QtPass/doxygen/coverage-prolog.html.in --css-file /home/runner/work/QtPass/QtPass/doxygen/coverage.css -o docs/coverage/ docs/coverage/.lcov.total

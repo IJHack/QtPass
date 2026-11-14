@@ -1,17 +1,24 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Anne Jan Brouwer -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <html lang="en">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - .lcov.total - src/mainwindow.cpp</title>
-  <link rel="stylesheet" type="text/css" href="../gcov.css">
-</head>
-
-<body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LCOV - QtPass - src/mainwindow.cpp</title>
+    <link rel="stylesheet" href="../gcov.css" />
+    <link rel="icon" type="image/svg+xml" href="../../qtpass-icon.svg" />
+  </head>
+  <body>
+    <header class="site">
+      <a href="../../index.html">
+        <img src="../../qtpass-icon.svg" alt="" width="36" height="36" />
+        <span class="name">QtPass</span>
+        <span class="section">Developer documentation</span>
+      </a>
+    </header>
           <table width="100%" border=0 cellspacing=0 cellpadding=0>
-            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="title">QtPass test coverage</td></tr>
             <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
 
             <tr>
@@ -19,7 +26,7 @@
                 <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - mainwindow.cpp<span style="font-size: 80%;"> (source / <a href="mainwindow.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - src/mainwindow.cpp<span style="font-size: 80%;"> (source / <a href="mainwindow.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="5%"></td>
             <td width="5%" class="headerCovTableHead">Coverage</td>
@@ -28,7 +35,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">.lcov.total</td>
+            <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">97.8&nbsp;%</td>
@@ -37,7 +44,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td class="headerValue">2026-11-14 12:34:49</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -372,14 +379,14 @@
 <span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">          43 :   m_firstShowCompleted = true;</span></span>
 <span id="L311"><span class="lineNum">     311</span>              : }</span>
 <span id="L312"><span class="lineNum">     312</span>              : </span>
-<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">        5799 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
-<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">        5799 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
+<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">        5802 : auto MainWindow::event(QEvent *event) -&gt; bool {</span></span>
+<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">        5802 :   if (event-&gt;type() == QEvent::ApplicationPaletteChange) {</span></span>
 <span id="L315"><span class="lineNum">     315</span> <span class="tlaGNC">          11 :     m_themeSwitched = true;</span></span>
 <span id="L316"><span class="lineNum">     316</span>              :     // Breeze may re-stamp the bars before this arrives (Plasma 6 does):</span>
 <span id="L317"><span class="lineNum">     317</span>              :     // their PaletteChange then found no switch yet, so check them now too.</span>
 <span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">          11 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L319"><span class="lineNum">     319</span>              :   }</span>
-<span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">        5799 :   return QMainWindow::event(event);</span></span>
+<span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">        5802 :   return QMainWindow::event(event);</span></span>
 <span id="L321"><span class="lineNum">     321</span>              : }</span>
 <span id="L322"><span class="lineNum">     322</span>              : </span>
 <span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">         175 : void MainWindow::changeEvent(QEvent *event) {</span></span>
@@ -1410,8 +1417,8 @@
 <span id="L1348"><span class="lineNum">    1348</span>              :   }</span>
 <span id="L1349"><span class="lineNum">    1349</span> <span class="tlaGNC">           2 : }</span></span>
 <span id="L1350"><span class="lineNum">    1350</span>              : </span>
-<span id="L1351"><span class="lineNum">    1351</span> <span class="tlaGNC">        5225 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
-<span id="L1352"><span class="lineNum">    1352</span> <span class="tlaGNC">        5225 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
+<span id="L1351"><span class="lineNum">    1351</span> <span class="tlaGNC">        5226 : auto MainWindow::eventFilter(QObject *obj, QEvent *event) -&gt; bool {</span></span>
+<span id="L1352"><span class="lineNum">    1352</span> <span class="tlaGNC">        5226 :   if ((obj == ui-&gt;toolBar || obj == menuBar()) &amp;&amp;</span></span>
 <span id="L1353"><span class="lineNum">    1353</span>              :       event-&gt;type() == QEvent::PaletteChange) {</span>
 <span id="L1354"><span class="lineNum">    1354</span>              :     // Breeze gives these bars a &quot;header&quot; palette and, after a runtime</span>
 <span id="L1355"><span class="lineNum">    1355</span>              :     // light/dark switch, stamps the previous theme's colours back from a</span>
@@ -1419,13 +1426,13 @@
 <span id="L1357"><span class="lineNum">    1357</span>              :     // re-enter the style while it is still applying its palette.</span>
 <span id="L1358"><span class="lineNum">    1358</span> <span class="tlaGNC">          36 :     QTimer::singleShot(0, this, &amp;MainWindow::dropStaleToolsAreaPalettes);</span></span>
 <span id="L1359"><span class="lineNum">    1359</span>              :   }</span>
-<span id="L1360"><span class="lineNum">    1360</span> <span class="tlaGNC">        5225 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
+<span id="L1360"><span class="lineNum">    1360</span> <span class="tlaGNC">        5226 :   if (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</span></span>
 <span id="L1361"><span class="lineNum">    1361</span> <span class="tlaGNC">           1 :     auto *key = dynamic_cast&lt;QKeyEvent *&gt;(event);</span></span>
 <span id="L1362"><span class="lineNum">    1362</span> <span class="tlaGNC">           1 :     if (key != nullptr &amp;&amp; key-&gt;key() == Qt::Key_Down) {</span></span>
 <span id="L1363"><span class="lineNum">    1363</span> <span class="tlaGNC">           1 :       ui-&gt;treeView-&gt;setFocus();</span></span>
 <span id="L1364"><span class="lineNum">    1364</span>              :     }</span>
 <span id="L1365"><span class="lineNum">    1365</span>              :   }</span>
-<span id="L1366"><span class="lineNum">    1366</span> <span class="tlaGNC">        5225 :   return QObject::eventFilter(obj, event);</span></span>
+<span id="L1366"><span class="lineNum">    1366</span> <span class="tlaGNC">        5226 :   return QObject::eventFilter(obj, event);</span></span>
 <span id="L1367"><span class="lineNum">    1367</span>              : }</span>
 <span id="L1368"><span class="lineNum">    1368</span>              : </span>
 <span id="L1369"><span class="lineNum">    1369</span>              : // Only once the application palette changed (see m_themeSwitched): a bar</span>
