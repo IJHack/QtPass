@@ -833,12 +833,17 @@ auto Pass::refuseUnfinishedGitOperation() -> bool {
   // not it exists; the backend runs it in the store (ImitatePass with
   // `-C <store>`, RealPass through `pass git`). The markers, paired with the
   // operation each one means, in the order git prints them back.
-  const std::array<std::pair<QLatin1String, QString>, 5> markers{{
+  const std::array<std::pair<QLatin1String, QString>, 6> markers{{
       {QLatin1String("rebase-merge"), tr("rebase")},
       {QLatin1String("rebase-apply"), tr("rebase")},
       {QLatin1String("MERGE_HEAD"), tr("merge")},
       {QLatin1String("CHERRY_PICK_HEAD"), tr("cherry-pick")},
       {QLatin1String("REVERT_HEAD"), tr("revert")},
+      // A multi-commit cherry-pick or revert keeps its sequencer state after a
+      // conflict resolution is committed, when CHERRY_PICK_HEAD/REVERT_HEAD is
+      // already gone but `--continue` has more commits to apply. Checked last,
+      // so the specific head above names the operation when it is still there.
+      {QLatin1String("sequencer"), tr("cherry-pick or revert")},
   }};
   QStringList args{QStringLiteral("rev-parse")};
   for (const auto &marker : markers) {

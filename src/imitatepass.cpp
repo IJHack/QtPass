@@ -1061,6 +1061,18 @@ void ImitatePass::startReencryptWorker(const QString &dir) {
                        [this, dir]() { startReencryptWorker(dir); });
     return;
   }
+  // Re-check now the queue is idle: a pull queued earlier through the
+  // asynchronous GitPull() may have finished during the wait and left a
+  // conflict. reencryptPath() checked before scheduling, but that was before
+  // such a pull could run; starting the worker now would let its backup commit
+  // conclude the stopped operation. The refusal already reported it, so finish
+  // as an aborted run (clears m_reencryptActive, emits endReencryptPath).
+  if (refuseUnfinishedGitOperation()) {
+    ReencryptResult result;
+    result.aborted = true;
+    finishReencrypt(result);
+    return;
+  }
 
   // The worker calls member functions, so `this` must outlive it: the
   // destructor cancels and joins m_reencryptThread. `self` only guards the

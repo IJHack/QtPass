@@ -693,6 +693,7 @@ private Q_SLOTS:
   void insertFailsWhenTheEntryFolderVanishes();
   void refusesToInsertDuringAnUnfinishedMerge();
   void refusesToReencryptDuringAnUnfinishedRebase();
+  void refusesToInsertDuringASequencerState();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -1668,6 +1669,50 @@ void tst_imitatepass::refusesToReencryptDuringAnUnfinishedRebase() {
       criticalSpy.first().at(1).toString().contains(QStringLiteral("rebase")),
       qPrintable(criticalSpy.first().at(1).toString()));
   QVERIFY2(!QFile::exists(logPath), "no re-encryption gpg must run");
+#endif
+}
+
+/**
+ * @brief A multi-commit cherry-pick or revert keeps its sequencer state after
+ *        a conflict resolution is committed, with no CHERRY_PICK_HEAD/
+ *        REVERT_HEAD left; a save during it must still be refused.
+ */
+void tst_imitatepass::refusesToInsertDuringASequencerState() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("init"), QStringLiteral("-q")}),
+           0);
+  // A sequencer directory, with no per-commit head: a stopped multi-commit
+  // cherry-pick or revert mid-sequence.
+  QVERIFY(QDir(storeDir.path()).mkpath(QStringLiteral(".git/sequencer")));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("newsite"), QStringLiteral("v\n"), false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QVERIFY2(criticalSpy.first().at(1).toString().contains(
+               QStringLiteral("cherry-pick or revert")),
+           qPrintable(criticalSpy.first().at(1).toString()));
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(!QFile::exists(logPath), "gpg must not run");
 #endif
 }
 

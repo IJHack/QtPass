@@ -692,8 +692,8 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   pushed it over a colleague's change. Every store-changing operation now
   checks the repository first and, when one is in progress, says so and leaves
   the store untouched (the entry dialog keeps what was typed). Finish or abort
-  the operation with git first. Nothing is refused when Git is off, the store
-  is not a repository, or git gives no answer; a HEAD detached by hand is
+  the operation with Git first. Nothing is refused when Git is off, the store
+  is not a repository, or Git gives no answer; a HEAD detached by hand is
   still accepted.
 - One line in a folder's `.gpg-id` that `gpg` cannot read as a key search
   (a bare `0x`, a mistyped key ID, a fingerprint one digit short) no longer
