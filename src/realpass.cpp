@@ -169,6 +169,18 @@ auto RealPass::refuseUnverifiedTree(const QString &dir, bool onlyListsWithin,
   return false;
 }
 
+auto RealPass::storeGit(const QStringList &args, QString *out) -> bool {
+  if (!m_settings.useGit) {
+    return false;
+  }
+  // `pass git` runs git in the store with PASSWORD_STORE_DIR set, as the
+  // store's other quick lookups do; its exit code is git's own.
+  QString err;
+  return Executor::executeBlocking(
+             exec.environment(), m_settings.passExecutable,
+             QStringList{QStringLiteral("git")} + args, out, &err) == 0;
+}
+
 void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file + ".gpg")) {
     return;
@@ -178,6 +190,9 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
                           ? file + ".gpg"
                           : QDir(m_settings.passStore).filePath(file) + ".gpg");
   if (refuseUnverifiedList(entry)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   m_insertQueue.enqueue(entry);
@@ -241,6 +256,9 @@ auto RealPass::entryFingerprint(const QString &path) -> QByteArray {
 void RealPass::Remove(QString file, bool isDir) {
   // Nothing behind a link is the store's to delete.
   if (refuseLinkedPath(isDir ? file : file + ".gpg", LinkScope::ParentsOnly)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   // pass rm turns a folder into "<folder>/" and rm -rf then follows a link
@@ -394,6 +412,9 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
                            QDir(inStore).filePath(QStringLiteral(".gpg-id")))) {
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    return;
+  }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   for (const UserInfo &user : users) {
     if (user.enabled) {
@@ -450,6 +471,9 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
                                : dest) ||
       (srcFileInfo.isDir() && refuseUnverifiedTree(src, true)) ||
       (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
 

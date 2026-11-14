@@ -85,6 +85,18 @@ auto ImitatePass::translatePathForWsl(const QString &path,
   return Executor::translatePathForWsl(path, exe);
 }
 
+auto ImitatePass::storeGit(const QStringList &args, QString *out) -> bool {
+  if (!m_settings.useGit || m_settings.gitExecutable.isEmpty()) {
+    return false;
+  }
+  // -C the store: executeBlocking sets no working directory, so git would
+  // otherwise run in QtPass's launch directory.
+  const QString store = pgit(m_settings.passStore);
+  return execBlocking(m_settings.gitExecutable,
+                      QStringList{QStringLiteral("-C"), store} + args, out,
+                      nullptr) == 0;
+}
+
 auto ImitatePass::pgit(const QString &path) const -> QString {
   return translatePathForWsl(path, m_settings.gitExecutable);
 }
@@ -190,6 +202,9 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseLinkedPath(file)) {
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    return;
+  }
   // gpg used to refuse an existing output without --yes; it writes
   // elsewhere now, so the check is ours here, and again at the rename.
   const QFileInfo target(file);
@@ -262,6 +277,9 @@ void ImitatePass::Remove(QString file, bool isDir) {
   }
   // A link itself may go; anything behind one is not the store's to delete.
   if (refuseLinkedPath(file, LinkScope::ParentsOnly)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_REMOVE);
@@ -532,6 +550,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   QString inStore;
   if (refuseLinkedGpgIdFolder(path) ||
       refuseFolderOutsideStore(path, &inStore)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   // From here on in the store's own spelling, the same folder: one spelled
@@ -1004,6 +1025,12 @@ void ImitatePass::reencryptPath(const QString &dir) {
     emit endReencryptPath();
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    // Re-encrypting now would run createBackupCommit()'s `git add -u` and
+    // conclude the stopped merge; refuse before the worker starts.
+    emit endReencryptPath();
+    return;
+  }
   m_reencryptActive = true;
   m_reencryptCancel.store(false);
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
@@ -1380,6 +1407,9 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
+  if (refuseUnfinishedGitOperation()) {
+    return;
+  }
   TransactionHelper trans(&m_transaction, PASS_MOVE);
   QString destFile = resolveMoveDestination(src, dest, force);
   if (destFile.isEmpty()) {
@@ -1437,6 +1467,9 @@ void ImitatePass::Copy(const QString src, const QString dest,
   // QFile::copy reads through a link: the target's bytes would become an
   // entry of the store.
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
+    return;
+  }
+  if (refuseUnfinishedGitOperation()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_COPY);

@@ -104,6 +104,14 @@ class RealPass : public Pass {
   auto refuseUnverifiedList(const QString &file) -> bool;
 
   /**
+   * @brief Run a git command in the store through `pass git`, blocking.
+   * @param args The git arguments (without `git`).
+   * @param out Receives stdout; may be null.
+   * @return true when `pass git` ran and exited 0 (git on).
+   */
+  auto storeGit(const QStringList &args, QString *out) -> bool override;
+
+  /**
    * @brief For a folder pass is about to re-encrypt in a move or copy:
    * refuse when the signed list of one of its entries (every one pass's
    * walk takes, hidden ones included) is not one QtPass accepts where it

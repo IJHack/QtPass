@@ -356,7 +356,13 @@ class tst_imitatepass : public QObject {
       return calls;
     for (const QString &line :
          QString::fromUtf8(f.readAll()).split(QLatin1Char('\n')))
-      if (!line.isEmpty() && !line.contains(QLatin1String("pass.signcommits")))
+      // The read-only "is a rebase/merge in progress?" probe
+      // (refuseUnfinishedGitOperation()) runs before every store-changing op;
+      // it is not part of what these tests count. The dedicated guard tests
+      // check it through its refusal, not the git log.
+      if (!line.isEmpty() &&
+          !line.contains(QLatin1String("pass.signcommits")) &&
+          !line.contains(QLatin1String("--git-path")))
         calls << line.split(QLatin1Char(' '), Qt::SkipEmptyParts);
     return calls;
   }
@@ -685,6 +691,8 @@ private Q_SLOTS:
   void copyFailsWhenTheDestinationFolderDoesNotExist();
   void insertFailsWhenGpgWritesNoCiphertext();
   void insertFailsWhenTheEntryFolderVanishes();
+  void refusesToInsertDuringAnUnfinishedMerge();
+  void refusesToReencryptDuringAnUnfinishedRebase();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -1567,6 +1575,99 @@ void tst_imitatepass::insertReportsTheEntryWrittenWhenGitFails() {
   QVERIFY2(failedSpy.first().at(1).toBool(),
            "the entry was placed before git failed");
   QVERIFY(QFileInfo::exists(QDir(storeDir.path()).filePath("new.gpg")));
+#endif
+}
+
+/**
+ * @brief A save while git is mid-merge (a pull stopped in a conflict) is
+ *        refused before gpg runs, so nothing is committed into the unfinished
+ *        operation and the dialog keeps what was typed.
+ */
+void tst_imitatepass::refusesToInsertDuringAnUnfinishedMerge() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("init"), QStringLiteral("-q")}),
+           0);
+  // A MERGE_HEAD marks a merge the pull left half-done.
+  {
+    QFile marker(QDir(storeDir.path())
+                     .filePath(QStringLiteral(".git/"
+                                              "MERGE_HEAD")));
+    QVERIFY(marker.open(QIODevice::WriteOnly | QIODevice::Text));
+    marker.write("0000000000000000000000000000000000000000\n");
+  }
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(QStringLiteral("newsite"), QStringLiteral("v\n"), false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().contains(QStringLiteral("merge")),
+      qPrintable(criticalSpy.first().at(1).toString()));
+  QCOMPARE(insertSpy.count(), 0);
+  QVERIFY2(!QFileInfo::exists(QDir(storeDir.path()).filePath("newsite.gpg")),
+           "nothing is written during the unfinished merge");
+  QVERIFY2(!QFile::exists(logPath), "gpg must not run");
+#endif
+}
+
+/**
+ * @brief A re-encryption while git is mid-rebase is refused before the worker
+ *        starts, so its backup commit cannot conclude the stopped operation.
+ */
+void tst_imitatepass::refusesToReencryptDuringAnUnfinishedRebase() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a real git and a shell-script fake gpg");
+#else
+  const QString git = QStandardPaths::findExecutable(QStringLiteral("git"));
+  if (git.isEmpty()) {
+    QSKIP("needs a real git");
+  }
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  QCOMPARE(runRealGit(git, storeDir.path(),
+                      {QStringLiteral("init"), QStringLiteral("-q")}),
+           0);
+  // A rebase-merge directory marks a stopped rebase.
+  QVERIFY(QDir(storeDir.path()).mkpath(QStringLiteral(".git/rebase-merge")));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = true;
+  s.gitExecutable = git;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy endSpy(&pass, &ImitatePass::endReencryptPath);
+  pass.reencryptPath(storeDir.path());
+  QVERIFY(endSpy.count() > 0 || endSpy.wait(5000));
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Unfinished Git operation"));
+  QVERIFY2(
+      criticalSpy.first().at(1).toString().contains(QStringLiteral("rebase")),
+      qPrintable(criticalSpy.first().at(1).toString()));
+  QVERIFY2(!QFile::exists(logPath), "no re-encryption gpg must run");
 #endif
 }
 
@@ -3944,8 +4045,10 @@ void tst_imitatepass::removeReportsALinkItCannotUnlink() {
   QVERIFY2(criticalSpy.first().at(1).toString().contains(
                QStringLiteral("Could not remove the link")),
            qPrintable(criticalSpy.first().at(1).toString()));
-  QVERIFY2(!QFile::exists(gitLog),
-           "git must not be asked about a failed unlink");
+  // The read-only rebase/merge probe may run; git must not be asked to forget
+  // (rm/commit) a link whose unlink failed.
+  QVERIFY2(loggedCalls(gitLog).isEmpty(),
+           "git must not be asked to forget a link whose unlink failed");
   QVERIFY(QFileInfo(outsideDir.path()).isDir());
 #endif
 }

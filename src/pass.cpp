@@ -19,6 +19,7 @@
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QTextStream>
+#include <array>
 #include <optional>
 #include <utility>
 
@@ -822,6 +823,57 @@ auto Pass::refuseFolderOutsideStore(const QString &folder, QString *relative)
          "store or a folder in it.")
           .arg(QDir::toNativeSeparators(QDir::cleanPath(folder))));
   return true;
+}
+
+auto Pass::refuseUnfinishedGitOperation() -> bool {
+  if (!m_settings.useGit) {
+    return false;
+  }
+  // One git call names the path of each marker file or directory, whether or
+  // not it exists; the backend runs it in the store (ImitatePass with
+  // `-C <store>`, RealPass through `pass git`). The markers, paired with the
+  // operation each one means, in the order git prints them back.
+  const std::array<std::pair<QLatin1String, QString>, 5> markers{{
+      {QLatin1String("rebase-merge"), tr("rebase")},
+      {QLatin1String("rebase-apply"), tr("rebase")},
+      {QLatin1String("MERGE_HEAD"), tr("merge")},
+      {QLatin1String("CHERRY_PICK_HEAD"), tr("cherry-pick")},
+      {QLatin1String("REVERT_HEAD"), tr("revert")},
+  }};
+  QStringList args{QStringLiteral("rev-parse")};
+  for (const auto &marker : markers) {
+    args << QStringLiteral("--git-path") << marker.first;
+  }
+  QString out;
+  if (!storeGit(args, &out)) {
+    // Git is off, the store is not a repository, or git could not be asked:
+    // nothing is refused, as the operation would run anyway.
+    return false;
+  }
+  const QStringList paths = out.split(QLatin1Char('\n'), Qt::SkipEmptyParts);
+  for (int i = 0; i < paths.size() && i < static_cast<int>(markers.size());
+       ++i) {
+    const QString path = paths.at(i).trimmed();
+    const QString full = QDir::isAbsolutePath(path)
+                             ? path
+                             : QDir(m_settings.passStore).filePath(path);
+    if (!QFileInfo::exists(full)) {
+      continue;
+    }
+    const QString why =
+        tr("The store's Git repository is in the middle of a %1. Finish or "
+           "abort it with git before changing the store, or what you change "
+           "may be lost.")
+            .arg(markers.at(static_cast<size_t>(i)).second);
+    // Like refuseAsNotPartOfStore(): the interface arms when an operation
+    // starts and is released by finished()/processErrorExit(); a refusal
+    // starts nothing, so it emits both ends.
+    emit startingExecuteWrapper();
+    emit critical(tr("Unfinished Git operation"), why);
+    emit processErrorExit(1, why);
+    return true;
+  }
+  return false;
 }
 
 void Pass::refuseAsNotPartOfStore(const QString &why) {
