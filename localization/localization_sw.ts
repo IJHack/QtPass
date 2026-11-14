@@ -1064,17 +1064,17 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Bofya mara mbili kubadilisha jina la sehemu hii</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Badilisha jina la sehemu…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Ondoa sehemu</translation>
     </message>
@@ -1159,87 +1159,101 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation type="unfinished">Rekodi ya vizazi ya orodha za wapokeaji, %1, haikuweza kufungwa: QtPass nyingine inaweza kuwa inaitumia, au folda yake haiwezi kuandikwa.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Orodha ina zaidi ya mstari mmoja wa hifadhi.</translation>
+        <translation type="obsolete">Orodha ina zaidi ya mstari mmoja wa hifadhi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Mstari wa hifadhi una muundo usio sahihi: %1</translation>
+        <translation type="obsolete">Mstari wa hifadhi una muundo usio sahihi: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Orodha ina zaidi ya mstari mmoja wa kizazi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Mstari wa kizazi una muundo usio sahihi: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Orodha ina zaidi ya mstari mmoja wa folda.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Mstari wa folda una muundo usio sahihi: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Mstari wa kichwa una muundo usio sahihi: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Orodha ina mstari wa kizazi lakini haina mstari wa folda.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Orodha ina mstari wa hifadhi lakini haina mstari wa kizazi.</translation>
+        <translation type="obsolete">Orodha ina mstari wa hifadhi lakini haina mstari wa kizazi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 si ya kuaminika: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 iliandikwa kwa folda &quot;%2&quot; ya hifadhi, si kwa &quot;%3&quot;, na haitumiki. Inawezekana ilinakiliwa hapa na mtu mwingine; ikiwa badala yake folda ilihamishwa au kubadilishwa jina, mwenye funguo ya kusaini hufungua Watumiaji kwenye folda hiyo na kuhifadhi wapokeaji, jambo linalofunga orodha kwenye mahali ilipo sasa.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Kizazi %1 ndicho cha juu kabisa kilichopo, kwa hivyo orodha mpya zaidi haiwezi kuandikwa hapa: kuondoa %2 kunafanya kifaa hiki kisahau kile kilichokubaliwa hapo awali, na baada ya hapo mwenye funguo ya kusaini anaweza kuendelea kwa kufungua Watumiaji na %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Mwenye funguo ya kusaini anaweza kuendelea kwa kufungua Watumiaji na %1, jambo linaloandika kizazi %2. Kuondoa %3 kunafanya kifaa hiki kisahau kile kilichokubaliwa hapo awali.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 haina mstari wa kizazi, ilhali kizazi %2 kilikubaliwa hapa hapo awali. pass haiandiki mstari wa kizazi (pia kupitia backend ya pass ya QtPass), na QtPass kabla ya 2.0 pia haikuuandika; bila mstari huo orodha inaweza pia kuwa iliandikwa kwa folda nyingine ya hifadhi na kunakiliwa hapa. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">kuchagua wapokeaji upya na kuhifadhi</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Orodha ya wapokeaji iliyotiwa saini %1 haina mstari wa hifadhi, ilhali kifaa hiki kinaijua hifadhi hii kwa kitambulisho chake %2: huenda iliandikwa kwa ajili ya hifadhi nyingine na kunakiliwa hapa, au iliandikwa na QtPass ya zamani. Mwenye ufunguo wa kusaini hutatua hili kwa kufungua Watumiaji, kuchagua wapokeaji upya na kuhifadhi, jambo linaloandika mstari wa hifadhi.</translation>
+        <translation type="obsolete">Orodha ya wapokeaji iliyotiwa saini %1 haina mstari wa hifadhi, ilhali kifaa hiki kinaijua hifadhi hii kwa kitambulisho chake %2: huenda iliandikwa kwa ajili ya hifadhi nyingine na kunakiliwa hapa, au iliandikwa na QtPass ya zamani. Mwenye ufunguo wa kusaini hutatua hili kwa kufungua Watumiaji, kuchagua wapokeaji upya na kuhifadhi, jambo linaloandika mstari wa hifadhi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Rekodi ya vizazi ya orodha za wapokeaji, %1, imesonga hadi kizazi %2 wakati kizazi %3 kilikuwa kikiandikwa.</translation>
     </message>
@@ -1252,32 +1266,38 @@ Thamani bado itahifadhiwa kama ilivyowekwa.</translation>
         <translation type="obsolete">Orodha ya wapokeaji iliyosainiwa %1 haina mstari wa kizazi, ilhali kizazi %2 kilikubaliwa hapa hapo awali. pass haiandiki mstari wa kizazi (pia kupitia backend ya pass ya QtPass), na QtPass kabla ya 2.0 pia haikuuandika. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 ni kizazi %2, cha zamani kuliko kizazi %3, cha mwisho ambacho QtPass ilikubali hapa. Inawezekana ilirudishwa na mtu mwingine. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">kuhifadhi wapokeaji: wapokeaji walioteuliwa awali humo ni wa orodha hii, kwa hivyo ondoa kwanza mtu yeyote ambaye hapaswi kuwa na ufikiaji tena</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyosainiwa %1 ni kizazi %2, kizazi kile kile cha orodha tofauti ambayo kifaa hiki kilikubali hapo awali. Ama vifaa viwili vilihifadhi wapokeaji kwa wakati mmoja (Git itakuwa imeonyesha mgongano), au orodha halisi ya kizazi hicho iliwekwa badala yake. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">kukagua wapokeaji na kuhifadhi</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Orodha ya wapokeaji iliyotiwa saini %1 iliandikwa kwa ajili ya hifadhi nyingine ya nenosiri (kitambulisho cha hifadhi %2; kifaa hiki kinaijua hifadhi hii kama %3) na haitumiki. Huenda ilinakiliwa hapa kutoka kwenye hifadhi iliyotiwa saini kwa ufunguo uleule. Ikiwa badala yake hifadhi hii ilisanidiwa upya, kuondoa %4 kunafanya kifaa hiki kisahau vitambulisho vya hifadhi kinavyovijua.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Orodha ya wapokeaji %1 imefikia kizazi %2, cha juu kabisa kilichopo; orodha haiwezi kuandikwa.</translation>
     </message>
@@ -2517,7 +2537,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Badilisha jina la folda</translation>
     </message>
@@ -2592,38 +2612,48 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Badilisha Jina la Faili Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Hamisha Funguo ya Umma</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Hamisha Funguo Yako ya Umma&lt;/h3&gt;&lt;p&gt;Hakuna funguo ya kusaini iliyosanidiwa. Weka moja katika Mipangilio ya QtPass &amp;gt; Funguo za GPG, au endesha hii katika kituo:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;kitambulisho-chako-cha-funguo&amp;gt;&lt;/pre&gt;&lt;p&gt;Kisha tuma faili kwa wenzako wa timu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Si folda ya hifadhi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Kushiriki Nenosiri kwa GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Kushiriki Nenosiri kwa GPG&lt;/h3&gt;&lt;p&gt;Ili kushiriki nenosiri na watumiaji wengine:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Hamisha funguo yako ya umma&lt;/b&gt; na uitume kwa wenzako wa timu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Leta funguo za umma za wenzako&lt;/b&gt; katika pete yako ya funguo za GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Simba fiche tena nenosiri&lt;/b&gt; ili wapokeaji wote waweze kuzisimua&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ni watu wanaofanana na funguo ya siri pekee wanaoweza kusimua nenosiri.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Kidokezo:&lt;/b&gt; Tumia funguo sawa ya GPG kwa folda zote zinazoshirikishwa.&lt;/p&gt;&lt;p&gt;Angalia FAQ kwa maelezo zaidi.&lt;/p&gt;</translation>
     </message>
@@ -2634,29 +2664,29 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Kosa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Imeshindwa kuunda folda: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Imeshindwa kuunda faili ya .gpg-id katika: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Badilisha Jina la Folda Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Badilisha jina la faili</translation>
     </message>
@@ -2669,23 +2699,23 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Badilisha Jina la Faili Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Ingizo hili lina siri ya OTP, si nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Saraka haipo: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Simba fiche tena nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2702,22 +2732,22 @@ Hii inaweza kuandika upya faili nyingi na haiwezi kutenduliwa nyuma kwa urahisi.
 Endelea?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Inasimba fiche tena nenosiri...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Ghairi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Inaghairi usimbaji fiche tena</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Inasimba fiche tena nenosiri: %1 kati ya %2</translation>
     </message>
@@ -2730,7 +2760,7 @@ Endelea?</translation>
         <translation type="vanished">&lt;h3&gt;Hamisha Funguo Yako ya Umma&lt;/h3&gt;&lt;p&gt;Hakuna funguo ya kusaini iliyosanidiwa. Weka moja katika Mipangilio ya QtPass &amp;gt; Funguo za GPG, au endesha hii katika kituo:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;kitambulisho-chako-cha-funguo&amp;gt;&lt;/pre&gt;&lt;p&gt;Kisha tuma faili kwa wenzako wa timu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2739,7 +2769,7 @@ Endelea?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Hakuna matokeo kutoka gpg.</translation>
     </message>
@@ -2954,7 +2984,7 @@ Endelea?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Nenosiri</translation>
     </message>
@@ -3087,42 +3117,52 @@ Endelea?</translation>
         <translation type="unfinished">Jina hilo lingeelekeza nje ya hifadhi ya nenosiri.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Ingizo linaloitwa %1 tayari lipo.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 ni folda.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Haikuweza kuunda folda %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Ondoa sehemu</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Sehemu inayoitwa %1 tayari ipo.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI ya otpauth:// au siri ya base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Siri ya OTP si sahihi</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Ingizo hili lina mstari %n, mingi mno kuhariri hapa.</numerusform>
@@ -3268,7 +3308,7 @@ Endelea?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">Nenosiri</translation>
     </message>
@@ -3278,8 +3318,8 @@ Endelea?</translation>
         <translation type="unfinished">Fungua %1 kwenye kivinjari</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>Msimbo wa OTP</translation>
     </message>
@@ -3288,7 +3328,7 @@ Endelea?</translation>
         <translation type="obsolete">Msimbo wa OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Hakuna msimbo wa OTP uliokutwa katika ingizo hili la nenosiri</translation>
     </message>
@@ -3656,27 +3696,27 @@ Maingizo ya [INVALID] na [EXPIRED] hayawezi kusimbwa fiche kwayo; maingizo ya [P
         <translation>Funguo haikupatikana katika pete ya funguo</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>iliundwa</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>inaisha</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[SI SAHIHI] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[IMEISHA MUDA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[YA SEHEMU] </translation>
     </message>

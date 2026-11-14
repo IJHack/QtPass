@@ -1112,17 +1112,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Dobbeltklik for at omdøbe dette felt</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Omdøb felt…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Fjern felt</translation>
     </message>
@@ -1207,87 +1207,101 @@ e-mail</translation>
         <translation type="unfinished">Generationsregistret for modtagerlisterne, %1, kunne ikke låses: en anden QtPass bruger det måske, eller der kan ikke skrives i dets mappe.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Listen indeholder mere end én lagerlinje.</translation>
+        <translation type="obsolete">Listen indeholder mere end én lagerlinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Lagerlinjen er forkert udformet: %1</translation>
+        <translation type="obsolete">Lagerlinjen er forkert udformet: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Listen indeholder mere end én generationslinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Generationslinjen er forkert udformet: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Listen indeholder mere end én mappelinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Mappelinjen er forkert udformet: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Headerlinjen er forkert udformet: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Listen indeholder en generationslinje, men ingen mappelinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Listen indeholder en lagerlinje, men ingen generationslinje.</translation>
+        <translation type="obsolete">Listen indeholder en lagerlinje, men ingen generationslinje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Den signerede modtagerliste %1 er ikke til at stole på: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Den signerede modtagerliste %1 blev skrevet til mappen &quot;%2&quot; i lageret, ikke til &quot;%3&quot;, og bruges ikke. Den kan være kopieret hertil af en anden; hvis mappen i stedet er blevet flyttet eller omdøbt, kan en indehaver af signeringsnøglen åbne Brugere på den og gemme modtagerne, hvilket binder listen til det sted, hvor den ligger nu.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Generation %1 er den højeste, der findes, så ingen nyere liste kan skrives her: fjernes %2, glemmer denne enhed, hvad den tidligere har accepteret, hvorefter en indehaver af signeringsnøglen kommer videre ved at åbne Brugere og %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">En indehaver af signeringsnøglen kommer videre ved at åbne Brugere og %1, hvilket skriver generation %2. Fjernes %3, glemmer denne enhed, hvad den tidligere har accepteret.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Den signerede modtagerliste %1 har ingen generationslinje, mens generation %2 tidligere er blevet accepteret her. pass skriver ingen generationslinje (heller ikke via QtPass&apos; pass-backend), og det gjorde QtPass før 2.0 heller ikke; uden en sådan kan listen også være skrevet til en anden mappe i lageret og kopieret hertil. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">vælge modtagerne på ny og gemme</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Den signerede modtagerliste %1 indeholder ingen lagerlinje, mens denne enhed kender dette lager på dets ID %2: den kan være skrevet til et andet lager og kopieret hertil, eller af en ældre QtPass. En indehaver af signeringsnøglen kommer videre ved at åbne Brugere, vælge modtagerne på ny og gemme, hvilket skriver lagerlinjen.</translation>
+        <translation type="obsolete">Den signerede modtagerliste %1 indeholder ingen lagerlinje, mens denne enhed kender dette lager på dets ID %2: den kan være skrevet til et andet lager og kopieret hertil, eller af en ældre QtPass. En indehaver af signeringsnøglen kommer videre ved at åbne Brugere, vælge modtagerne på ny og gemme, hvilket skriver lagerlinjen.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Generationsregistret for modtagerlisterne, %1, er gået videre til generation %2, mens generation %3 blev skrevet.</translation>
     </message>
@@ -1300,32 +1314,38 @@ e-mail</translation>
         <translation type="obsolete">Den signerede modtagerliste %1 har ingen generationslinje, mens generation %2 tidligere er blevet accepteret her. pass skriver ingen generationslinje (heller ikke via QtPass&apos; pass-backend), og det gjorde QtPass før 2.0 heller ikke. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Den signerede modtagerliste %1 er generation %2, ældre end generation %3, som er den seneste, QtPass har accepteret her. Den kan være lagt tilbage af en anden. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">gemme modtagerne: de forvalgte modtagere dér er denne listes, så fjern først alle, der ikke længere skal have adgang</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Den signerede modtagerliste %1 er generation %2, samme generation som en anden liste, denne enhed tidligere har accepteret. Enten har to enheder gemt modtagere samtidig (Git har i så fald vist konflikten), eller også er en autentisk liste fra den generation blevet sat ind i stedet. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">kontrollere modtagerne og gemme</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Den signerede modtagerliste %1 er skrevet til en anden password-opbevaring (opbevarings-ID %2; dette enhed kender denne opbevaring som %3) og bruges ikke. Den kan være kopieret herfra fra en opbevaring, der er signeret med samme nøgle. Hvis denne opbevaring blev opsat igen, vil sletning af %4 glemme de opbevarings-ID&apos;er, som denne enhed kender.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Modtagerlisten %1 har nået generation %2, den højeste der findes; listen kan ikke skrives.</translation>
     </message>
@@ -2693,7 +2713,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Omdøb mappe</translation>
     </message>
@@ -2815,65 +2835,75 @@ p, li { white-space: pre-wrap; }
 (Vil blive placeret i %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Fejl</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Kunne ikke oprette mappe: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Kunne ikke oprette .gpg-id-fil i: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Omdøb mappe til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Omdøb fil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Omdøb fil til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Eksportér offentlig nøgle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksporter din offentlige nøgle&lt;/h3&gt;&lt;p&gt;Der er ikke konfigureret nogen signeringsnøgle. Angiv en i QtPass-indstillinger &gt; GPG-nøgler, eller kør dette i en terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send derefter filen til dine holdkammerater.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Ikke en mappe i lageret</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 er, eller ligger bag, et symbolsk link eller en junction. Det, der peges på, er ikke en del af kodeordslageret og bliver ikke rørt.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Deling af adgangskoder med GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Deling af adgangskoder med GPG&lt;/h3&gt;&lt;p&gt;Sådan deler du adgangskoder med andre brugere:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksporter din offentlige nøgle&lt;/b&gt; og send den til dine holdkammerater&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importer holdkammeraters offentlige nøgler&lt;/b&gt; til din GPG-nøglering&lt;/li&gt;&lt;li&gt;&lt;b&gt;Genkrypter adgangskoder&lt;/b&gt;, så alle modtagere kan dekryptere dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Kun personer, der har en matchende hemmelig nøgle, kan dekryptere adgangskoderne.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Brug den samme GPG-nøgle til alle delte mapper.&lt;/p&gt;&lt;p&gt;Se ofte stillede spørgsmål for at få flere oplysninger.&lt;/p&gt;</translation>
     </message>
@@ -2896,23 +2926,23 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Omdøb fil til: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Denne post indeholder en OTP-hemmelighed, ikke en adgangskode</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Mappen findes ikke: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Krypter adgangskoder igen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2929,22 +2959,22 @@ Dette kan omskrive mange filer og kan ikke nemt fortrydes.
 Fortsætte?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Genkrypterer kodeord...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuller</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Annullerer genkryptering</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Genkrypterer kodeord: %1 af %2</translation>
     </message>
@@ -2957,7 +2987,7 @@ Fortsætte?</translation>
         <translation type="vanished">&lt;h3&gt;Eksporter din offentlige nøgle&lt;/h3&gt;&lt;p&gt;Der er ikke konfigureret nogen signeringsnøgle. Angiv en i QtPass-indstillinger &gt; GPG-nøgler, eller kør dette i en terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Send derefter filen til dine holdkammerater.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2966,7 +2996,7 @@ Fortsætte?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Intet output fra gpg.</translation>
     </message>
@@ -3195,7 +3225,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Kodeord</translation>
     </message>
@@ -3328,42 +3358,52 @@ Fortsætte?</translation>
         <translation type="unfinished">Det navn ville pege uden for kodeordslageret.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Der findes allerede en post med navnet %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 er en mappe.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Kunne ikke oprette mappen %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Fjern felt</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Der findes allerede et felt med navnet %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth://-URI eller base32-hemmelighed</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation>Ugyldig OTP-hemmelighed</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Denne post har %n linje, for mange til at redigere her.</numerusform>
@@ -3509,7 +3549,7 @@ Fortsætte?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation>Kodeord</translation>
     </message>
@@ -3519,8 +3559,8 @@ Fortsætte?</translation>
         <translation>Åbn %1 i browser</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP-kode</translation>
     </message>
@@ -3529,7 +3569,7 @@ Fortsætte?</translation>
         <translation type="vanished">OTP-kode</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation>Ingen OTP-kode fundet i denne adgangskodepost</translation>
     </message>
@@ -3933,27 +3973,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation>Nøgle ikke fundet i nøglering</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>oprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>udløber</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[UGYLDIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[UDLØBET] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[DELVIS] </translation>
     </message>

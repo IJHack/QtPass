@@ -1068,17 +1068,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">برای تغییر نام این فیلد دوبار کلیک کنید</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">تغییر نام فیلد…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">حذف فیلد</translation>
     </message>
@@ -1162,87 +1162,101 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">سابقه نسل لیست‌های گیرندگان، %1، را نمی‌توان قفل کرد: ممکن است QtPass دیگری در حال استفاده از آن باشد، یا نوشتن در پوشه آن ممکن نیست.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">این لیست بیش از یک خط مخزن دارد.</translation>
+        <translation type="obsolete">این لیست بیش از یک خط مخزن دارد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">خط مخزن ساختار نادرستی دارد: %1</translation>
+        <translation type="obsolete">خط مخزن ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">این لیست بیش از یک خط نسل دارد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">خط نسل ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">این لیست بیش از یک خط پوشه دارد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">خط پوشه ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">خط سرآیند ساختار نادرستی دارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">این لیست خط نسل دارد اما خط پوشه ندارد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">این لیست خط مخزن دارد اما خط نسل ندارد.</translation>
+        <translation type="obsolete">این لیست خط مخزن دارد اما خط نسل ندارد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 قابل اعتماد نیست: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 برای پوشه «%2» مخزن نوشته شده است، نه برای «%3»، و استفاده نمی‌شود. ممکن است شخص دیگری آن را به اینجا کپی کرده باشد؛ اگر در عوض پوشه جابه‌جا شده یا تغییر نام داده است، یکی از دارندگان کلید امضا «کاربران» را روی آن باز می‌کند و گیرندگان را ذخیره می‌کند، که لیست را به محل فعلی آن پیوند می‌دهد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">نسل %1 بالاترین نسل ممکن است، پس هیچ لیست جدیدتری را نمی‌توان در اینجا نوشت: حذف %2 باعث می‌شود آنچه این دستگاه پیش از این پذیرفته بود فراموش شود، و پس از آن راه عبور یکی از دارندگان کلید امضا از این مانع این است: باز کردن «کاربران» و %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">راه عبور یکی از دارندگان کلید امضا از این مانع، که نسل %2 را می‌نویسد، این است: باز کردن «کاربران» و %1. حذف %3 باعث می‌شود آنچه این دستگاه پیش از این پذیرفته بود فراموش شود.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 خط نسل ندارد، در حالی که نسل %2 پیش از این در اینجا پذیرفته شده بود. pass خط نسل نمی‌نویسد (از طریق بک‌اند pass در QtPass هم همین‌طور)، و QtPass پیش از نسخه 2.0 نیز نمی‌نوشت؛ بدون خط نسل، ممکن است این لیست برای پوشه دیگری از مخزن نوشته و به اینجا کپی شده باشد. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">انتخاب دوباره گیرندگان و ذخیره کردن</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">لیست امضاشده گیرندگان %1 خط مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسه %2 می‌شناسد: ممکن است برای مخزن دیگری نوشته و به اینجا کپی شده باشد، یا QtPass قدیمی‌تری آن را نوشته باشد. دارنده کلید امضا با باز کردن کاربران، انتخاب دوباره گیرندگان و ذخیره کردن از این وضعیت عبور می‌کند؛ این کار خط مخزن را می‌نویسد.</translation>
+        <translation type="obsolete">لیست امضاشده گیرندگان %1 خط مخزن ندارد، در حالی که این دستگاه این مخزن را با شناسه %2 می‌شناسد: ممکن است برای مخزن دیگری نوشته و به اینجا کپی شده باشد، یا QtPass قدیمی‌تری آن را نوشته باشد. دارنده کلید امضا با باز کردن کاربران، انتخاب دوباره گیرندگان و ذخیره کردن از این وضعیت عبور می‌کند؛ این کار خط مخزن را می‌نویسد.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">سابقه نسل لیست‌های گیرندگان، %1، در حالی که نسل %3 نوشته می‌شد به نسل %2 پیش رفته است.</translation>
     </message>
@@ -1255,32 +1269,38 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">لیست امضاشده گیرندگان %1 خط نسل ندارد، در حالی که نسل %2 پیش از این در اینجا پذیرفته شده بود. pass خط نسل نمی‌نویسد (از طریق بک‌اند pass در QtPass هم همین‌طور)، و QtPass پیش از نسخه 2.0 نیز نمی‌نوشت. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 نسل %2 است، قدیمی‌تر از نسل %3، آخرین نسلی که QtPass در اینجا پذیرفته است. ممکن است شخص دیگری آن را بازگردانده باشد. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">ذخیره گیرندگان: گیرندگان از پیش انتخاب‌شده در آنجا همان گیرندگان این لیست هستند، پس ابتدا هر کسی را که دیگر نباید دسترسی داشته باشد حذف کنید</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 نسل %2 است، همان نسل لیست دیگری که این دستگاه پیش از این پذیرفته بود. یا دو دستگاه هم‌زمان گیرندگان را ذخیره کرده‌اند (Git تعارض را نشان داده است)، یا لیستی معتبر از آن نسل به جای آن گذاشته شده است. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">بررسی گیرندگان و ذخیره کردن</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">لیست امضاشده گیرندگان %1 برای مخزن رمز عبور دیگری نوشته شده است (شناسه مخزن %2؛ این دستگاه این مخزن را با %3 می‌شناسد) و استفاده نمی‌شود. ممکن است از مخزنی که با همان کلید امضا شده به اینجا کپی شده باشد. اگر در عوض این مخزن دوباره راه‌اندازی شده است، حذف %4 باعث می‌شود شناسه‌های مخزنی که این دستگاه می‌شناسد فراموش شوند.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">لیست گیرندگان %1 به نسل %2 رسیده است که بالاترین نسل ممکن است؛ نمی‌توان لیست را نوشت.</translation>
     </message>
@@ -2514,7 +2534,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>تغییر نام پوشه</translation>
     </message>
@@ -2588,38 +2608,48 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>تغییر نام فایل به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>صادرات کلید عمومی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;صادرات کلید عمومی شما&lt;/h3&gt;&lt;p&gt;کلید امضا پیکربندی نشده است. یکی را در تنظیمات QtPass &amp;gt; کلیدهای GPG تنظیم کنید، یا این دستور را در ترمینال اجرا کنید:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;سپس فایل را برای همتیمی‌های خود ارسال کنید.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">پوشه‌ای از مخزن نیست</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 یک پیوند نمادین یا junction است یا پشت یکی از آن‌ها قرار دارد. مقصد آن پیوند بخشی از مخزن رمز عبور نیست و دست‌نخورده می‌ماند.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>اشتراک‌گذاری رمزهای عبور با GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;اشتراک‌گذاری رمزهای عبور با GPG&lt;/h3&gt;&lt;p&gt;برای اشتراک‌گذاری رمزهای عبور با سایر کاربران:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;کلید عمومی خود را صادر کنید&lt;/b&gt; و برای همتیمی‌ها ارسال کنید&lt;/li&gt;&lt;li&gt;&lt;b&gt;کلیدهای عمومی همتیمی‌ها را وارد کنید&lt;/b&gt; به دسته‌کلیدهای GPG خود&lt;/li&gt;&lt;li&gt;&lt;b&gt;رمزهای عبور را رمزنگاری مجدد کنید&lt;/b&gt; تا همه گیرندگان بتوانند آنها را رمزگشایی کنند&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط افرادی که کلید خصوصی مطابق دارند می‌توانند رمزهای عبور را رمزگشایی کنند.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نکته:&lt;/b&gt; از همان کلید GPG برای تمام پوشه‌های اشتراکی استفاده کنید.&lt;/p&gt;&lt;p&gt;برای جزئیات بیشتر به سوالات متداول مراجعه کنید.&lt;/p&gt;</translation>
     </message>
@@ -2630,29 +2660,29 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>ایجاد پوشه ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>ایجاد فایل .gpg-id در %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>تغییر نام پوشه به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>تغییر نام فایل</translation>
     </message>
@@ -2665,23 +2695,23 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">تغییر نام فایل به: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">این ورودی حاوی راز OTP است، نه رمز عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>پوشه وجود ندارد: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>رمزنگاری مجدد رمزهای عبور</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2698,22 +2728,22 @@ Continue?</source>
 ادامه؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">در حال رمزنگاری مجدد رمزهای عبور...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">لغو</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">در حال لغو رمزنگاری مجدد</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">در حال رمزنگاری مجدد رمزهای عبور: %1 از %2</translation>
     </message>
@@ -2726,7 +2756,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;صادرات کلید عمومی شما&lt;/h3&gt;&lt;p&gt;کلید امضا پیکربندی نشده است. یکی را در تنظیمات QtPass &amp;gt; کلیدهای GPG تنظیم کنید، یا این دستور را در ترمینال اجرا کنید:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;سپس فایل را برای همتیمی‌های خود ارسال کنید.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2735,7 +2765,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>هیچ خروجی از gpg وجود ندارد.</translation>
     </message>
@@ -2950,7 +2980,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>رمز عبور</translation>
     </message>
@@ -3083,42 +3113,52 @@ Continue?</source>
         <translation type="unfinished">این نام به مسیری خارج از مخزن رمز عبور اشاره می‌کند.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">ورودی‌ای با نام %1 از قبل وجود دارد.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 یک پوشه است.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">ایجاد پوشه %1 ممکن نبود.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">حذف فیلد</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">فیلدی با نام %1 از قبل وجود دارد.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">نشانی otpauth:// یا راز base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">راز OTP نامعتبر</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>این بخش %n خط دارد، که ویرایش آن در اینجا امکان‌پذیر نیست.</numerusform>
@@ -3262,7 +3302,7 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">رمز عبور</translation>
     </message>
@@ -3272,8 +3312,8 @@ Continue?</source>
         <translation type="unfinished">باز کردن %1 در مرورگر</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>کد OTP</translation>
     </message>
@@ -3282,7 +3322,7 @@ Continue?</source>
         <translation type="obsolete">کد OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">هیچ کد OTP در این ورودی رمز عبور یافت نشد</translation>
     </message>
@@ -3649,27 +3689,27 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>کلید در دسته‌کلید یافت نشد</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>ایجاد شده</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>منقضی می‌شود</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[نامعتبر] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[منقضی شده] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[جزئی] </translation>
     </message>

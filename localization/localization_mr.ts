@@ -1068,17 +1068,17 @@ The value will still be saved as entered.</source>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">या फील्डचे नाव बदलण्यासाठी डबल-क्लिक करा</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">फील्डचे नाव बदला…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">फील्ड काढा</translation>
     </message>
@@ -1163,87 +1163,101 @@ The value will still be saved as entered.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, लॉक करता आली नाही: दुसरे QtPass ती वापरत असू शकते, किंवा तिच्या फोल्डरमध्ये लिहिता येत नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त स्टोअर ओळी आहेत.</translation>
+        <translation type="obsolete">सूचीमध्ये एकापेक्षा जास्त स्टोअर ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">स्टोअर ओळीमध्ये त्रुटी आहे: %1</translation>
+        <translation type="obsolete">स्टोअर ओळीमध्ये त्रुटी आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त पिढी ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">पिढी ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">सूचीमध्ये एकापेक्षा जास्त फोल्डर ओळी आहेत.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">फोल्डर ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">हेडर ओळ सदोष आहे: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">सूचीमध्ये पिढी ओळ आहे, पण फोल्डर ओळ नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">सूचीमध्ये स्टोअर ओळ आहे, पण पिढी ओळ नाही.</translation>
+        <translation type="obsolete">सूचीमध्ये स्टोअर ओळ आहे, पण पिढी ओळ नाही.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 विश्वास ठेवण्यासारखी नाही: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 स्टोअरच्या &quot;%2&quot; फोल्डरसाठी लिहिली गेली होती, &quot;%3&quot; साठी नाही, आणि ती वापरली जात नाही. ती कदाचित दुसऱ्या कोणीतरी येथे कॉपी केली असावी; त्याऐवजी फोल्डर हलवले किंवा त्याचे नाव बदलले गेले असल्यास, स्वाक्षरी की धारक त्यावर &quot;वापरकर्ते&quot; उघडून प्राप्तकर्ते जतन करतो, ज्यामुळे सूची ती आता जिथे आहे तिथे बांधली जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">पिढी %1 ही सर्वोच्च आहे, त्यामुळे येथे त्यापेक्षा नवी सूची लिहिता येत नाही: %2 काढून टाकल्यास या डिव्हाइसने आधी काय स्वीकारले होते ते विसरले जाते, आणि त्यानंतर स्वाक्षरी की धारकाचा पुढे जाण्याचा मार्ग म्हणजे &quot;वापरकर्ते&quot; उघडणे आणि %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">स्वाक्षरी की धारकाचा पुढे जाण्याचा मार्ग (ज्यामुळे पिढी %2 लिहिली जाते) म्हणजे &quot;वापरकर्ते&quot; उघडणे आणि %1. %3 काढून टाकल्यास या डिव्हाइसने आधी काय स्वीकारले होते ते विसरले जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये पिढी ओळ नाही, तर येथे आधी पिढी %2 स्वीकारली गेली होती. pass पिढी ओळ लिहीत नाही (QtPass च्या pass बॅकएंडद्वारेही नाही), आणि 2.0 पूर्वीचे QtPass देखील लिहीत नव्हते; पिढी ओळ नसल्यास ही सूची स्टोअरच्या दुसऱ्या फोल्डरसाठी लिहून येथे कॉपी केली गेली असण्याचीही शक्यता आहे. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">प्राप्तकर्ते नव्याने निवडून जतन करणे</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये स्टोअर ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या ID %2 ने ओळखते: ती कदाचित दुसऱ्या स्टोअरसाठी लिहून येथे कॉपी केली गेली असेल, किंवा जुन्या QtPass ने लिहिली असेल. स्वाक्षरी की धारक वापरकर्ते उघडून, प्राप्तकर्ते नव्याने निवडून आणि जतन करून यातून मार्ग काढतो; त्यामुळे स्टोअर ओळ लिहिली जाते.</translation>
+        <translation type="obsolete">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये स्टोअर ओळ नाही, तर हे डिव्हाइस या स्टोअरला त्याच्या ID %2 ने ओळखते: ती कदाचित दुसऱ्या स्टोअरसाठी लिहून येथे कॉपी केली गेली असेल, किंवा जुन्या QtPass ने लिहिली असेल. स्वाक्षरी की धारक वापरकर्ते उघडून, प्राप्तकर्ते नव्याने निवडून आणि जतन करून यातून मार्ग काढतो; त्यामुळे स्टोअर ओळ लिहिली जाते.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूच्यांची पिढी नोंद, %1, पिढी %3 लिहिली जात असताना पिढी %2 वर पुढे गेली आहे.</translation>
     </message>
@@ -1256,32 +1270,38 @@ The value will still be saved as entered.</source>
         <translation type="obsolete">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 मध्ये पिढी ओळ नाही, तर येथे आधी पिढी %2 स्वीकारली गेली होती. pass पिढी ओळ लिहीत नाही (QtPass च्या pass बॅकएंडद्वारेही नाही), आणि 2.0 पूर्वीचे QtPass देखील लिहीत नव्हते. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 ही पिढी %2 आहे, जी QtPass ने येथे शेवटी स्वीकारलेल्या पिढी %3 पेक्षा जुनी आहे. ती कदाचित दुसऱ्या कोणीतरी परत ठेवली असावी. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">प्राप्तकर्ते जतन करणे: तेथे आधीच निवडलेले प्राप्तकर्ते या सूचीतील असतात, म्हणून ज्यांना यापुढे प्रवेश नसावा त्यांना आधी काढून टाका</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 ही पिढी %2 आहे, जी या डिव्हाइसने आधी स्वीकारलेल्या एका वेगळ्या सूचीचीच पिढी आहे. एकतर दोन डिव्हाइसनी एकाच वेळी प्राप्तकर्ते जतन केले (गिटने संघर्ष दाखवला असेल), किंवा त्या पिढीची एक अस्सल सूची येथे बदलून ठेवली गेली. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">प्राप्तकर्ते तपासून जतन करणे</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">स्वाक्षरीकृत प्राप्तकर्ता सूची %1 दुसऱ्या पासवर्ड स्टोअरसाठी लिहिली गेली होती (स्टोअर ID %2; हे डिव्हाइस या स्टोअरला %3 म्हणून ओळखते) आणि ती वापरली जात नाही. ती कदाचित त्याच कीने स्वाक्षरी केलेल्या स्टोअरमधून येथे कॉपी केली गेली असेल. त्याऐवजी हे स्टोअर पुन्हा सेट केले गेले असेल, तर %4 काढून टाकल्यास या डिव्हाइसला माहीत असलेले स्टोअर ID विसरले जातात.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">प्राप्तकर्ता सूची %1 पिढी %2 वर पोहोचली आहे, जी सर्वोच्च आहे; सूची लिहिता येत नाही.</translation>
     </message>
@@ -2526,7 +2546,7 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>फोल्डरचे नाव बदला</translation>
     </message>
@@ -2596,38 +2616,48 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 मध्ये ठेवले जाईल )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>फाइलचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>सार्वजनिक की निर्यात करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;तुमची सार्वजनिक की निर्यात करा&lt;/h3&gt;&lt;p&gt;कोणतीही स्वाक्षरी की कॉन्फिगर केलेली नाही. QtPass सेटिंग्ज &amp;gt; जीपीजी की मध्ये एक सेट करा, किंवा टर्मिनलमध्ये हे चालवा:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;नंतर फाइल तुमच्या सहकाऱ्यांना पाठवा.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">स्टोअरचा फोल्डर नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ही एक सिम्बॉलिक लिंक किंवा जंक्शन आहे, किंवा अशा लिंकच्या मागे आहे. ती ज्याकडे निर्देश करते ते पासवर्ड स्टोअरचा भाग नाही आणि ते तसेच राहील.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>जीपीजीसह पासवर्ड शेअर करणे</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;जीपीजीसह पासवर्ड शेअर करणे&lt;/h3&gt;&lt;p&gt;इतर वापरकर्त्यांसह पासवर्ड शेअर करण्यासाठी:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;तुमची सार्वजनिक की निर्यात करा&lt;/b&gt; आणि सहकाऱ्यांना पाठवा&lt;/li&gt;&lt;li&gt;&lt;b&gt;सहकाऱ्यांच्या सार्वजनिक की आयात करा&lt;/b&gt; तुमच्या जीपीजी कीरिंगमध्ये&lt;/li&gt;&lt;li&gt;&lt;b&gt;पासवर्ड पुन्हा-एन्क्रिप्ट करा&lt;/b&gt; जेणेकरून सर्व प्राप्तकर्ते त्यांना डिक्रिप्ट करू शकतील&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;केवळ जुळणारी गुप्त की असलेले लोक पासवर्ड डिक्रिप्ट करू शकतात.&lt;/p&gt;&lt;p&gt;&lt;b&gt;टीप:&lt;/b&gt; सर्व शेअर केलेल्या फोल्डरसाठी समान जीपीजी की वापरा.&lt;/p&gt;&lt;p&gt;अधिक तपशीलांसाठी FAQ पहा.&lt;/p&gt;</translation>
     </message>
@@ -2638,29 +2668,29 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 (%1 मध्ये ठेवला जाईल)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>त्रुटी</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>फोल्डर तयार करण्यात अयशस्वी: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>%1 मध्ये .gpg-id फाइल तयार करण्यात अयशस्वी</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>फोल्डरचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>फाइलचे नाव बदला</translation>
     </message>
@@ -2673,23 +2703,23 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
         <translation type="vanished">फाइलचे नाव बदला: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">या एंट्रीमध्ये OTP सीक्रेट आहे, पासवर्ड नाही</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>डिरेक्टरी अस्तित्वात नाही: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>पासवर्ड पुन्हा-एन्क्रिप्ट करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2706,22 +2736,22 @@ Continue?</source>
 सुरू ठेवायचे?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">पासवर्ड पुन्हा-एन्क्रिप्ट करत आहे...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">रद्द करा</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">पुन्हा-एन्क्रिप्शन रद्द करत आहे</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">पासवर्ड पुन्हा-एन्क्रिप्ट करत आहे: %2 पैकी %1</translation>
     </message>
@@ -2734,7 +2764,7 @@ Continue?</source>
         <translation type="vanished">&lt;h3&gt;तुमची सार्वजनिक की निर्यात करा&lt;/h3&gt;&lt;p&gt;कोणतीही स्वाक्षरी की कॉन्फिगर केलेली नाही. QtPass सेटिंग्ज &amp;gt; जीपीजी की मध्ये एक सेट करा, किंवा टर्मिनलमध्ये हे चालवा:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;नंतर फाइल तुमच्या सहकाऱ्यांना पाठवा.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2743,7 +2773,7 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>gpg कडून कोणतेही आउटपुट नाही.</translation>
     </message>
@@ -2958,7 +2988,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>पासवर्ड</translation>
     </message>
@@ -3091,42 +3121,52 @@ Continue?</source>
         <translation type="unfinished">हे नाव पासवर्ड स्टोअरच्या बाहेर निर्देश करेल.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">%1 नावाची एंट्री आधीपासून अस्तित्वात आहे.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 हे फोल्डर आहे.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">फोल्डर %1 तयार करता आले नाही.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">फील्ड काढा</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">%1 नावाचे फील्ड आधीपासूनच अस्तित्वात आहे.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI किंवा base32 सीक्रेट</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">अवैध OTP सीक्रेट</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>या नोंदीत %n ओळ आहे, येथे संपादित करण्यासाठी खूप जास्त.</numerusform>
@@ -3272,7 +3312,7 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">पासवर्ड</translation>
     </message>
@@ -3282,8 +3322,8 @@ Continue?</source>
         <translation type="unfinished">%1 ब्राउझरमध्ये उघडा</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP कोड</translation>
     </message>
@@ -3292,7 +3332,7 @@ Continue?</source>
         <translation type="obsolete">OTP कोड</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">या पासवर्ड एंट्रीमध्ये कोणताही OTP कोड सापडला नाही</translation>
     </message>
@@ -3660,27 +3700,27 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>कीरिंगमध्ये की सापडली नाही</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>तयार केले</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>कालबाह्य</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[अवैध] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[कालबाह्य] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[आंशिक] </translation>
     </message>

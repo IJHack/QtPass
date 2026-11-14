@@ -1072,17 +1072,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Κάντε διπλό κλικ για να μετονομάσετε αυτό το πεδίο</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Μετονομασία πεδίου…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Αφαίρεση πεδίου</translation>
     </message>
@@ -1167,87 +1167,101 @@ e-mail</translation>
         <translation type="unfinished">Το μητρώο γενιών των λιστών παραληπτών, %1, δεν μπόρεσε να κλειδωθεί: μπορεί να το χρησιμοποιεί ένα άλλο QtPass, ή δεν είναι δυνατή η εγγραφή στον φάκελό του.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Η λίστα περιέχει περισσότερες από μία γραμμές χώρου αποθήκευσης.</translation>
+        <translation type="obsolete">Η λίστα περιέχει περισσότερες από μία γραμμές χώρου αποθήκευσης.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Η γραμμή χώρου αποθήκευσης έχει λανθασμένη μορφή: %1</translation>
+        <translation type="obsolete">Η γραμμή χώρου αποθήκευσης έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Η λίστα περιέχει περισσότερες από μία γραμμές γενιάς.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Η γραμμή γενιάς έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Η λίστα περιέχει περισσότερες από μία γραμμές φακέλου.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Η γραμμή φακέλου έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Η γραμμή κεφαλίδας έχει λανθασμένη μορφή: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Η λίστα περιέχει γραμμή γενιάς αλλά όχι γραμμή φακέλου.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Η λίστα περιέχει γραμμή χώρου αποθήκευσης, αλλά όχι γραμμή γενιάς.</translation>
+        <translation type="obsolete">Η λίστα περιέχει γραμμή χώρου αποθήκευσης, αλλά όχι γραμμή γενιάς.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν είναι αξιόπιστη: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 γράφτηκε για τον φάκελο «%2» του χώρου αποθήκευσης, όχι για τον «%3», και δεν χρησιμοποιείται. Μπορεί να αντιγράφηκε εδώ από κάποιον άλλο· αν αντίθετα ο φάκελος μετακινήθηκε ή μετονομάστηκε, ένας κάτοχος του κλειδιού υπογραφής ανοίγει τους «Χρήστες» σε αυτόν και αποθηκεύει τους παραλήπτες, κάτι που συνδέει τη λίστα με τη θέση όπου βρίσκεται τώρα.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Η γενιά %1 είναι η υψηλότερη δυνατή, οπότε δεν μπορεί να γραφτεί εδώ νεότερη λίστα: η αφαίρεση του %2 ξεχνά όσα είχε αποδεχτεί προηγουμένως αυτή η συσκευή, και έπειτα ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους «Χρήστες» και %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους «Χρήστες» και %1, κάτι που γράφει τη γενιά %2. Η αφαίρεση του %3 ξεχνά όσα είχε αποδεχτεί προηγουμένως αυτή η συσκευή.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή γενιάς, ενώ η γενιά %2 είχε γίνει δεκτή εδώ προηγουμένως. Το pass δεν γράφει γραμμή γενιάς (ούτε μέσω του συστήματος υποστήριξης pass του QtPass), όπως δεν έγραφε ούτε το QtPass πριν από την έκδοση 2.0· χωρίς αυτήν, η λίστα μπορεί επίσης να γράφτηκε για άλλον φάκελο του χώρου αποθήκευσης και να αντιγράφηκε εδώ. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">επιλέγοντας εκ νέου τους παραλήπτες και αποθηκεύοντας</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: ίσως γράφτηκε για άλλον χώρο αποθήκευσης και αντιγράφηκε εδώ, ή γράφτηκε από παλαιότερο QtPass. Ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους παραλήπτες και αποθηκεύοντας, οπότε γράφεται η γραμμή χώρου αποθήκευσης.</translation>
+        <translation type="obsolete">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή χώρου αποθήκευσης, ενώ αυτή η συσκευή γνωρίζει αυτόν τον χώρο αποθήκευσης με το αναγνωριστικό %2: ίσως γράφτηκε για άλλον χώρο αποθήκευσης και αντιγράφηκε εδώ, ή γράφτηκε από παλαιότερο QtPass. Ένας κάτοχος του κλειδιού υπογραφής το ξεπερνά ανοίγοντας τους Χρήστες, επιλέγοντας ξανά τους παραλήπτες και αποθηκεύοντας, οπότε γράφεται η γραμμή χώρου αποθήκευσης.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Το μητρώο γενιών των λιστών παραληπτών, %1, προχώρησε στη γενιά %2 ενώ γραφόταν η γενιά %3.</translation>
     </message>
@@ -1260,32 +1274,38 @@ e-mail</translation>
         <translation type="obsolete">Η υπογεγραμμένη λίστα παραληπτών %1 δεν περιέχει γραμμή γενιάς, ενώ η γενιά %2 είχε γίνει δεκτή εδώ προηγουμένως. Το pass δεν γράφει γραμμή γενιάς (ούτε μέσω του συστήματος υποστήριξης pass του QtPass), όπως δεν έγραφε ούτε το QtPass πριν από την έκδοση 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 είναι γενιά %2, παλαιότερη από τη γενιά %3, την τελευταία που αποδέχτηκε εδώ το QtPass. Μπορεί να επανατοποθετήθηκε από κάποιον άλλο. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">αποθηκεύοντας τους παραλήπτες: οι προεπιλεγμένοι παραλήπτες εκεί είναι αυτής της λίστας, οπότε αφαιρέστε πρώτα όποιον δεν θα πρέπει πλέον να έχει πρόσβαση</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Η υπογεγραμμένη λίστα παραληπτών %1 είναι γενιά %2, η ίδια γενιά με μια διαφορετική λίστα που αυτή η συσκευή αποδέχτηκε προηγουμένως. Είτε δύο συσκευές αποθήκευσαν παραλήπτες ταυτόχρονα (το Git θα έχει εμφανίσει τη σύγκρουση), είτε μια αυθεντική λίστα εκείνης της γενιάς τοποθετήθηκε στη θέση της. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">ελέγχοντας τους παραλήπτες και αποθηκεύοντας</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Η λίστα με τους υπογεγραμμένους αποδέκτες %1 έχει καταχωρηθεί σε άλλο αποθηκευτικό χώρο (ID αποθηκευτικού χώρου %2, το οποίο γνωρίζει αυτόν τον αποθηκευτικό χώρο ως %3) και δεν χρησιμοποιείται. Ίσως να έχει αντιγραφεί εδώ από έναν αποθηκευτικό χώρο που υπογράφτηκε με το ίδιο κλειδί. Εάν ο αποθηκευτικός χώρος αυτός επαναρυθμιστεί, η αφαίρεση του %4 θα ξεχάσει τα ID αποθηκευτικών χώρων που γνωρίζει αυτή η συσκευή.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Η λίστα παραληπτών %1 έχει φτάσει στη γενιά %2, την υψηλότερη δυνατή· η λίστα δεν μπορεί να γραφτεί.</translation>
     </message>
@@ -2554,7 +2574,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Μετονομασία φακέλου</translation>
     </message>
@@ -2624,63 +2644,73 @@ Expire-Date: 0
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Μετονομασία φακέλου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Άκυρο</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Ακύρωση επανακρυπτογράφησης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Επανακρυπτογράφηση κωδικών πρόσβασης: %1 από %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Εξαγωγή δημόσιου κλειδιού</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Δεν είναι φάκελος του χώρου αποθήκευσης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">Το %1 είναι συμβολικός σύνδεσμος ή junction, ή βρίσκεται πίσω από έναν τέτοιο σύνδεσμο. Ο προορισμός του δεν αποτελεί μέρος του χώρου αποθήκευσης κωδικών πρόσβασης και παραμένει ανέπαφος.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Κοινή χρήση κωδικών με GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
     </message>
@@ -2697,7 +2727,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2706,7 +2736,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Καμία έξοδος από το gpg.</translation>
     </message>
@@ -2729,24 +2759,24 @@ Expire-Date: 0
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Σφάλμα</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Αποτυχία δημιουργίας φακέλου: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Αποτυχία δημιουργίας αρχείου .gpg-id στο: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Μετονομασία αρχείου</translation>
     </message>
@@ -2764,23 +2794,23 @@ Expire-Date: 0
         <translation type="vanished">Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Αυτή η καταχώρηση περιέχει μυστικό OTP, όχι κωδικό πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Ο φάκελος δεν υπάρχει: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Επανακρυπτογράφηση κωδικών πρόσβασης</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3009,7 +3039,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Κωδικός πρόσβασης</translation>
     </message>
@@ -3142,42 +3172,52 @@ Continue?</source>
         <translation type="unfinished">Αυτό το όνομα θα οδηγούσε εκτός του χώρου αποθήκευσης κωδικών πρόσβασης.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Υπάρχει ήδη καταχώριση με το όνομα %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">Το %1 είναι φάκελος.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Δεν ήταν δυνατή η δημιουργία του φακέλου %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Αφαίρεση πεδίου</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Υπάρχει ήδη πεδίο με το όνομα %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// ή μυστικό base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Μη έγκυρο μυστικό OTP</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Αυτή η καταχώριση έχει %n γραμμή, πάρα πολλές για επεξεργασία εδώ.</numerusform>
@@ -3323,7 +3363,7 @@ Continue?</source>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">Κωδικός πρόσβασης</translation>
     </message>
@@ -3333,8 +3373,8 @@ Continue?</source>
         <translation type="unfinished">Άνοιγμα %1 στο πρόγραμμα περιήγησης</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>Κωδικός OTP</translation>
     </message>
@@ -3343,7 +3383,7 @@ Continue?</source>
         <translation type="obsolete">Κωδικός OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Κανένας κωδικός OTP που βρέθηκε σε αυτόν τον κωδικό πρόσβασης</translation>
     </message>
@@ -3715,27 +3755,27 @@ Plain entries have a trusted encryption key, select these to allow other people 
         <translation>Δεν βρέθηκε κλειδί στο μπρελόκ</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>δημιουργήθηκε</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>λήγει</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[ΑΚΥΡΟΣ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[ΛΗΓΜΕΝΟ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[ΜΕΡΙΚΟΣ] </translation>
     </message>

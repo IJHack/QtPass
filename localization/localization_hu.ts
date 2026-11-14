@@ -1108,17 +1108,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Kattintson duplán a mező átnevezéséhez</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Mező átnevezése…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Mező eltávolítása</translation>
     </message>
@@ -1202,87 +1202,101 @@ e-mail</translation>
         <translation type="unfinished">A címzettlisták generációs nyilvántartását (%1) nem sikerült zárolni: lehet, hogy egy másik QtPass használja, vagy a mappája nem írható.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">A lista egynél több tárolósort tartalmaz.</translation>
+        <translation type="obsolete">A lista egynél több tárolósort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">A tárolósor hibás formátumú: %1</translation>
+        <translation type="obsolete">A tárolósor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">A lista egynél több generációsort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">A generációsor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">A lista egynél több mappasort tartalmaz.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">A mappasor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">A fejlécsor hibás formátumú: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">A lista tartalmaz generációsort, de mappasort nem.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">A lista tartalmaz tárolósort, de generációs sort nem.</translation>
+        <translation type="obsolete">A lista tartalmaz tárolósort, de generációs sort nem.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista nem megbízható: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a jelszótároló „%2” mappájához készült, nem a(z) „%3” mappához, ezért nem lesz felhasználva. Lehet, hogy valaki más másolta ide; ha viszont a mappát áthelyezték vagy átnevezték, az aláírókulcs birtokosa megnyitja rajta a Felhasználók ablakot, és menti a címzetteket, ami a listát a jelenlegi helyéhez köti.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">A(z) %1. generáció a lehető legmagasabb, ezért itt újabb lista már nem írható ki: a(z) %2 eltávolításával ez az eszköz elfelejti, mit fogadott el korábban; ezután az aláírókulcs birtokosa úgy léphet túl ezen, hogy megnyitja a Felhasználók ablakot, és %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Az aláírókulcs birtokosa úgy léphet túl ezen, hogy megnyitja a Felhasználók ablakot, és %1; a mentés a(z) %2. generációt írja ki. A(z) %3 eltávolításával ez az eszköz elfelejti, mit fogadott el korábban.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz generációsort, miközben itt korábban már elfogadták a(z) %2. generációt. A pass nem ír generációsort (a QtPass pass háttérrendszerén keresztül sem), és a 2.0 előtti QtPass sem írt; generációsor nélkül a lista akár a jelszótároló egy másik mappájához is készülhetett, és onnan másolhatták ide. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">újra kijelöli a címzetteket, és menti őket</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">A(z) %1 aláírt címzettlista nem tartalmaz tárolósort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóján ismeri: lehet, hogy egy másik tárolóhoz készült és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy jut tovább, hogy megnyitja a &quot;Felhasználók&quot; ablakot, újra kiválasztja a címzetteket, és ment, ami beírja a tárolósort.</translation>
+        <translation type="obsolete">A(z) %1 aláírt címzettlista nem tartalmaz tárolósort, miközben ez az eszköz ezt a tárolót a(z) %2 azonosítóján ismeri: lehet, hogy egy másik tárolóhoz készült és ide másolták, vagy egy régebbi QtPass írta. Az aláírókulcs birtokosa úgy jut tovább, hogy megnyitja a &quot;Felhasználók&quot; ablakot, újra kiválasztja a címzetteket, és ment, ami beírja a tárolósort.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">A címzettlisták generációs nyilvántartása (%1) továbblépett a(z) %2. generációra, miközben a(z) %3. generáció kiírása folyamatban volt.</translation>
     </message>
@@ -1295,32 +1309,38 @@ e-mail</translation>
         <translation type="obsolete">A(z) %1 aláírt címzettlista nem tartalmaz generációsort, miközben itt korábban már elfogadták a(z) %2. generációt. A pass nem ír generációsort (a QtPass pass háttérrendszerén keresztül sem), és a 2.0 előtti QtPass sem írt. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a(z) %2. generáció, amely régebbi a(z) %3. generációnál, az utolsónál, amelyet a QtPass itt elfogadott. Lehet, hogy valaki más állította vissza. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">menti a címzetteket: az ott előre kijelölt címzettek ennek a listának a címzettjei, ezért először távolítsa el azokat, akiknek már nem szabad hozzáférniük</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista a(z) %2. generáció, ugyanaz a generáció, mint egy másik listáé, amelyet ez az eszköz korábban elfogadott. Vagy két eszköz egyszerre mentette a címzetteket (a Git ekkor már jelezte az ütközést), vagy egy hiteles, ugyanebből a generációból való listát cseréltek be. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">ellenőrzi a címzetteket, és menti őket</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">A(z) %1 aláírt címzettlista egy másik jelszótárolóhoz készült (tárolóazonosító: %2; ez az eszköz ezt a tárolót %3 néven ismeri), ezért nincs használatban. Lehet, hogy egy ugyanazzal a kulccsal aláírt tárolóból másolták ide. Ha viszont ezt a tárolót újra beállították, a(z) %4 eltávolítása elfelejteti az eszköz által ismert tárolóazonosítókat.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">A(z) %1 címzettlista elérte a(z) %2. generációt, a lehető legmagasabbat; a lista nem írható ki.</translation>
     </message>
@@ -2614,7 +2634,7 @@ Lejárat-dátum: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Mappa átnevezése</translation>
     </message>
@@ -2688,68 +2708,78 @@ Lejárat-dátum: 0
 (A következő mappába kerül: %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Mappa átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Fájl átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Ez a bejegyzés OTP-titkot tartalmaz, nem jelszót</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Jelszavak újratitkosítása...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Mégse</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Újratitkosítás megszakítása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Jelszavak újratitkosítása: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nem a tárolóhoz tartozó mappa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">A(z) %1 szimbolikus link vagy junction, illetve ilyen mögött található. Amire az mutat, nem része a jelszótárolónak, és érintetlen marad.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Jelszavak megosztása GPG-vel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Jelszavak megosztása GPG-vel&lt;/h3&gt;&lt;p&gt;Jelszavak megosztása más felhasználókkal:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportálja a nyilvános kulcsát&lt;/b&gt; és küldje el a csapattagoknak&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importálja a csapattagok nyilvános kulcsait&lt;/b&gt; a GPG-kulcstartójába&lt;/li&gt;&lt;li&gt;&lt;b&gt;Titkosítsa újra a jelszavakat&lt;/b&gt;, hogy minden címzett vissza tudja fejteni&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Csak a megfelelő titkos kulccsal rendelkezők tudják visszafejteni a jelszavakat.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Használja ugyanazt a GPG-kulcsot minden megosztott mappához.&lt;/p&gt;&lt;p&gt;Lásd a GYIK-et a részletekért.&lt;/p&gt;</translation>
     </message>
@@ -2762,7 +2792,7 @@ Lejárat-dátum: 0
         <translation type="vanished">&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2771,7 +2801,7 @@ Lejárat-dátum: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Nincs kimenet a gpg-től.</translation>
     </message>
@@ -2794,24 +2824,24 @@ Lejárat-dátum: 0
 (A következő mappába kerül: %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Hiba</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Nem sikerült létrehozni a következő mappát: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Nem sikerült létrehozni a .gpg-id fájlt itt: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Fájl átnevezése</translation>
     </message>
@@ -2824,18 +2854,18 @@ Lejárat-dátum: 0
         <translation type="vanished">Fájl átnevezése erre: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>A könyvtár nem létezik: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Jelszavak újratitkosítása</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3064,7 +3094,7 @@ Folytatja?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Jelszó</translation>
     </message>
@@ -3197,42 +3227,52 @@ Folytatja?</translation>
         <translation type="unfinished">Ez a név a jelszótárolón kívülre mutatna.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Már létezik %1 nevű bejegyzés.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">A(z) %1 egy mappa.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Nem sikerült létrehozni a(z) %1 mappát.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Mező eltávolítása</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Már létezik %1 nevű mező.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI vagy base32 titok</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Érvénytelen OTP-titok</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Ez az bejegyzés %n sorból áll, ami túl sok ahhoz, hogy ide szerkeszd.</numerusform>
@@ -3376,7 +3416,7 @@ Folytatja?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">Jelszó</translation>
     </message>
@@ -3386,8 +3426,8 @@ Folytatja?</translation>
         <translation type="unfinished">%1 megnyitása böngészőben</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP kód</translation>
     </message>
@@ -3396,7 +3436,7 @@ Folytatja?</translation>
         <translation type="obsolete">OTP kód</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Nem található OTP kód ebben a jelszóbejegyzésben</translation>
     </message>
@@ -3767,27 +3807,27 @@ Az [ÉRVÉNYTELEN] és [LEJÁRT] bejegyzésekhez nem lehet titkosítani; a [RÉS
         <translation>Kulcs nem található a kulcstartóban</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>létrehozva</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>lejár</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[ÉRVÉNYTELEN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[LEJÁRT] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[RÉSZLEGES] </translation>
     </message>

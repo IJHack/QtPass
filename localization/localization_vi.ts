@@ -1068,17 +1068,17 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Nhấp đúp để đổi tên trường này</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Đổi tên trường…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Xóa trường</translation>
     </message>
@@ -1162,87 +1162,101 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <translation type="unfinished">Không thể khóa bản ghi thế hệ của các danh sách người nhận, %1: có thể một QtPass khác đang sử dụng nó, hoặc không thể ghi vào thư mục chứa nó.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Danh sách chứa nhiều hơn một dòng kho mật khẩu.</translation>
+        <translation type="obsolete">Danh sách chứa nhiều hơn một dòng kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Dòng kho mật khẩu sai định dạng: %1</translation>
+        <translation type="obsolete">Dòng kho mật khẩu sai định dạng: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Danh sách có nhiều hơn một dòng thế hệ.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Dòng thế hệ sai định dạng: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Danh sách có nhiều hơn một dòng thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Dòng thư mục sai định dạng: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Dòng tiêu đề sai định dạng: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Danh sách có dòng thế hệ nhưng không có dòng thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Danh sách có dòng kho mật khẩu nhưng không có dòng thế hệ.</translation>
+        <translation type="obsolete">Danh sách có dòng kho mật khẩu nhưng không có dòng thế hệ.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 không đáng tin cậy: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 được ghi cho thư mục &quot;%2&quot; của kho, không phải cho &quot;%3&quot;, nên không được sử dụng. Có thể ai đó đã sao chép nó vào đây; nếu thực ra thư mục đã được di chuyển hoặc đổi tên, người giữ khóa ký hãy mở hộp thoại Người dùng trên thư mục đó và lưu người nhận, việc này sẽ gắn danh sách với vị trí hiện tại của nó.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Thế hệ %1 là mức cao nhất có thể, nên không thể ghi danh sách mới hơn ở đây: xóa %2 sẽ làm thiết bị này quên những gì nó đã chấp nhận trước đây, sau đó người giữ khóa ký có thể vượt qua bằng cách mở hộp thoại Người dùng và %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Người giữ khóa ký có thể vượt qua bằng cách mở hộp thoại Người dùng và %1, việc này sẽ ghi thế hệ %2. Xóa %3 sẽ làm thiết bị này quên những gì nó đã chấp nhận trước đây.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 không có dòng thế hệ, trong khi thế hệ %2 đã được chấp nhận ở đây trước đó. pass không ghi dòng thế hệ (kể cả qua backend pass của QtPass), và QtPass trước phiên bản 2.0 cũng vậy; không có dòng này, danh sách cũng có thể đã được ghi cho một thư mục khác của kho rồi bị sao chép vào đây. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">chọn lại người nhận từ đầu rồi lưu</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Danh sách người nhận đã ký %1 không có dòng kho mật khẩu, trong khi thiết bị này biết kho này qua ID %2: có thể nó đã được ghi cho một kho khác rồi sao chép về đây, hoặc do một QtPass cũ hơn ghi. Người giữ khóa ký xử lý bằng cách mở Người dùng, chọn lại người nhận và lưu, thao tác này sẽ ghi dòng kho mật khẩu.</translation>
+        <translation type="obsolete">Danh sách người nhận đã ký %1 không có dòng kho mật khẩu, trong khi thiết bị này biết kho này qua ID %2: có thể nó đã được ghi cho một kho khác rồi sao chép về đây, hoặc do một QtPass cũ hơn ghi. Người giữ khóa ký xử lý bằng cách mở Người dùng, chọn lại người nhận và lưu, thao tác này sẽ ghi dòng kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Bản ghi thế hệ của các danh sách người nhận, %1, đã chuyển sang thế hệ %2 trong khi thế hệ %3 đang được ghi.</translation>
     </message>
@@ -1255,32 +1269,38 @@ Giá trị vẫn sẽ được lưu như đã nhập.</translation>
         <translation type="obsolete">Danh sách người nhận đã ký %1 không có dòng thế hệ, trong khi thế hệ %2 đã được chấp nhận ở đây trước đó. pass không ghi dòng thế hệ (kể cả qua backend pass của QtPass), và QtPass trước phiên bản 2.0 cũng vậy. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 là thế hệ %2, cũ hơn thế hệ %3, thế hệ gần nhất mà QtPass đã chấp nhận ở đây. Có thể ai đó đã đưa bản cũ này trở lại. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">lưu người nhận: những người nhận được chọn sẵn ở đó là của danh sách này, nên trước hết hãy bỏ những ai không còn được phép truy cập</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 là thế hệ %2, cùng thế hệ với một danh sách khác mà thiết bị này đã chấp nhận trước đây. Hoặc là hai thiết bị đã lưu người nhận cùng lúc (Git hẳn đã hiển thị xung đột), hoặc là một danh sách xác thực của thế hệ đó đã bị tráo vào. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">kiểm tra người nhận rồi lưu</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Danh sách người nhận đã ký %1 được ghi cho một kho mật khẩu khác (ID kho %2; thiết bị này biết kho này là %3) và không được sử dụng. Có thể nó đã được sao chép về đây từ một kho được ký bằng cùng một khóa. Còn nếu kho này đã được thiết lập lại, việc xóa %4 sẽ quên các ID kho mà thiết bị này biết.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Danh sách người nhận %1 đã đạt đến thế hệ %2, mức cao nhất có thể; không thể ghi danh sách.</translation>
     </message>
@@ -2514,7 +2534,7 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Đổi tên thư mục</translation>
     </message>
@@ -2588,38 +2608,48 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Đổi tên tệp thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Xuất khóa công khai</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Không phải thư mục của kho</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 là, hoặc nằm sau, một liên kết tượng trưng hoặc junction. Nơi liên kết đó trỏ tới không thuộc kho mật khẩu và sẽ được giữ nguyên.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Chia sẻ mật khẩu với GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Chia sẻ mật khẩu với GPG&lt;/h3&gt;&lt;p&gt;Để chia sẻ mật khẩu với người dùng khác:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Xuất khóa công khai của bạn&lt;/b&gt; và gửi cho đồng đội&lt;/li&gt;&lt;li&gt;&lt;b&gt;Nhập khóa công khai của đồng đội&lt;/b&gt; vào kho khóa GPG của bạn&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mã hóa lại mật khẩu&lt;/b&gt; để tất cả người nhận có thể giải mã chúng&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Chỉ những người có khóa bí mật khớp mới có thể giải mã mật khẩu.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Mẹo:&lt;/b&gt; Sử dụng cùng một khóa GPG cho tất cả các thư mục được chia sẻ.&lt;/p&gt;&lt;p&gt;Xem FAQ để biết thêm chi tiết.&lt;/p&gt;</translation>
     </message>
@@ -2630,29 +2660,29 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Lỗi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Không thể tạo thư mục: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Không thể tạo tệp .gpg-id trong: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Đổi tên thư mục thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Đổi tên tệp</translation>
     </message>
@@ -2665,23 +2695,23 @@ Việc mã hóa lại chưa hoàn tất, nên một số hoặc tất cả các 
         <translation type="vanished">Đổi tên tệp thành: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Mục này chứa bí mật OTP, không phải mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Thư mục không tồn tại: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Mã hóa lại mật khẩu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2698,22 +2728,22 @@ Continue?</source>
 Tiếp tục?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Đang mã hóa lại mật khẩu...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Hủy</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Đang hủy mã hóa lại</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Đang mã hóa lại mật khẩu: %1 trên %2</translation>
     </message>
@@ -2726,7 +2756,7 @@ Tiếp tục?</translation>
         <translation type="vanished">&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2735,7 +2765,7 @@ Tiếp tục?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Không có đầu ra từ gpg.</translation>
     </message>
@@ -2950,7 +2980,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Mật khẩu</translation>
     </message>
@@ -3083,42 +3113,52 @@ Tiếp tục?</translation>
         <translation type="unfinished">Tên đó sẽ trỏ ra ngoài kho mật khẩu.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một mục có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 là một thư mục.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Không thể tạo thư mục %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Xóa trường</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Đã tồn tại một trường có tên %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">URI otpauth:// hoặc bí mật base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Bí mật OTP không hợp lệ</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Cột này có %n dòng, quá nhiều để chỉnh sửa ở đây.</numerusform>
@@ -3262,7 +3302,7 @@ Tiếp tục?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">Mật khẩu</translation>
     </message>
@@ -3272,8 +3312,8 @@ Tiếp tục?</translation>
         <translation type="unfinished">Mở %1 trong trình duyệt</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>Mã OTP</translation>
     </message>
@@ -3282,7 +3322,7 @@ Tiếp tục?</translation>
         <translation type="obsolete">Mã OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Không tìm thấy mã OTP trong mục mật khẩu này</translation>
     </message>
@@ -3649,27 +3689,27 @@ Không thể mã hóa cho các mục [KHÔNG HỢP LỆ] và [HẾT HẠN]; các
         <translation>Không tìm thấy khóa trong kho khóa</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>đã tạo</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>hết hạn</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[KHÔNG HỢP LỆ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[HẾT HẠN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[MỘT PHẦN] </translation>
     </message>

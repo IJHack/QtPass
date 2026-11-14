@@ -1072,17 +1072,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation>Klikoni dy herë për të riemërtuar këtë fushë</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation>Riemërto fushën…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation>Hiq fushën</translation>
     </message>
@@ -1167,87 +1167,101 @@ e-mail</translation>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, nuk u bllokua dot: mund të jetë duke e përdorur një QtPass tjetër, ose dosja e tij nuk mund të shkruhet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Lista përmban më shumë se një rresht depoje.</translation>
+        <translation type="obsolete">Lista përmban më shumë se një rresht depoje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Rreshti i depos është i keqformuar: %1</translation>
+        <translation type="obsolete">Rreshti i depos është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation>Lista përmban më shumë se një rresht gjenerate.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation>Rreshti i gjeneratës është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation>Lista përmban më shumë se një rresht dosjeje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation>Rreshti i dosjes është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation>Rreshti i kokës është i keqformuar: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Lista përmban një rresht gjenerate, por asnjë rresht dosjeje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Lista përmban një rresht depoje, por asnjë rresht gjenerimi.</translation>
+        <translation type="obsolete">Lista përmban një rresht depoje, por asnjë rresht gjenerimi.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Lista e nënshkruar e marrësve %1 nuk është për t&apos;u besuar: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Lista e nënshkruar e marrësve %1 u shkrua për dosjen &quot;%2&quot; të depos, jo për &quot;%3&quot;, dhe nuk përdoret. Mund të jetë kopjuar këtu nga dikush tjetër; nëse dosja përkundrazi u zhvendos ose u riemërtua, një mbajtës i çelësit të nënshkrimit hap Përdoruesit në të dhe ruan marrësit, gjë që e lidh listën me vendin ku ndodhet tani.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Gjenerata %1 është më e larta që ekziston, prandaj këtu nuk mund të shkruhet asnjë listë më e re: heqja e %2 harron atë që kjo pajisje pranoi më parë, pas së cilës një mbajtës i çelësit të nënshkrimit e kalon këtë pengesë duke hapur Përdoruesit dhe %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Një mbajtës i çelësit të nënshkrimit e kalon këtë pengesë duke hapur Përdoruesit dhe %1, gjë që shkruan gjeneratën %2. Heqja e %3 harron atë që kjo pajisje pranoi më parë.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Lista e nënshkruar e marrësve %1 nuk përmban rresht gjenerate, ndërsa këtu më parë ishte pranuar gjenerata %2. pass nuk shkruan rresht gjenerate (as përmes backend-it pass të QtPass), dhe as QtPass para versionit 2.0; pa një të tillë, lista mund të jetë shkruar edhe për një dosje tjetër të depos dhe të jetë kopjuar këtu. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>duke zgjedhur marrësit nga e para dhe duke ruajtur</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Lista e nënshkruar e marrësve %1 nuk përmban rresht depoje, ndërsa kjo pajisje e njeh këtë depo me ID-në %2: mund të jetë shkruar për një depo tjetër dhe të jetë kopjuar këtu, ose nga një QtPass më i vjetër. Mbajtësi i çelësit të nënshkrimit kalon duke hapur &quot;Përdoruesit&quot;, duke zgjedhur marrësit nga e para dhe duke ruajtur, gjë që shkruan rreshtin e depos.</translation>
+        <translation type="obsolete">Lista e nënshkruar e marrësve %1 nuk përmban rresht depoje, ndërsa kjo pajisje e njeh këtë depo me ID-në %2: mund të jetë shkruar për një depo tjetër dhe të jetë kopjuar këtu, ose nga një QtPass më i vjetër. Mbajtësi i çelësit të nënshkrimit kalon duke hapur &quot;Përdoruesit&quot;, duke zgjedhur marrësit nga e para dhe duke ruajtur, gjë që shkruan rreshtin e depos.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Regjistri i gjeneratave të listave të marrësve, %1, ka kaluar në gjeneratën %2 ndërsa po shkruhej gjenerata %3.</translation>
     </message>
@@ -1260,32 +1274,38 @@ e-mail</translation>
         <translation type="obsolete">Lista e nënshkruar e marrësve %1 nuk përmban rresht gjenerate, ndërsa këtu më parë ishte pranuar gjenerata %2. pass nuk shkruan rresht gjenerate (as përmes backend-it pass të QtPass), dhe as QtPass para versionit 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Lista e nënshkruar e marrësve %1 është gjenerata %2, më e vjetër se gjenerata %3, e fundit që QtPass pranoi këtu. Mund të jetë rikthyer nga dikush tjetër. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>duke ruajtur marrësit: marrësit e parazgjedhur atje janë ata të kësaj liste, prandaj hiqni më parë këdo që nuk duhet të ketë më qasje</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Lista e nënshkruar e marrësve %1 është gjenerata %2, e njëjta gjeneratë si një listë tjetër që kjo pajisje pranoi më parë. Ose dy pajisje ruajtën marrësit në të njëjtën kohë (Git do ta ketë shfaqur konfliktin), ose në vend të saj u fut një listë autentike e asaj gjenerate. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation>duke kontrolluar marrësit dhe duke ruajtur</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Lista e nënshkruar e marrësve %1 është shkruar për një depo tjetër fjalëkalimesh (ID-ja e depos %2; kjo pajisje e njeh këtë depo si %3) dhe nuk përdoret. Mund të jetë kopjuar këtu nga një depo e nënshkruar me të njëjtin çelës. Nëse në vend të kësaj kjo depo është konfiguruar sërish, heqja e %4 fshin ID-të e depove që njeh kjo pajisje.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Lista e marrësve %1 ka arritur gjeneratën %2, më të lartën që ekziston; lista nuk mund të shkruhet.</translation>
     </message>
@@ -2550,7 +2570,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Riemërtoni dosjen</translation>
     </message>
@@ -2625,68 +2645,78 @@ Expire-Date: 0
 (Do të vendoset brenda %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Riemërtoni Dosjen ne: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Riemërtoni Skedarin ne : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Kjo hyrje përmban një sekret OTP, jo një fjalëkalim</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation>Po rienkriptohen fjalëkalimet...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation>Anulo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation>Po anulohet ri-enkriptimi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Po rienkriptohen fjalëkalimet: %1 nga %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Eksporto çelësin publik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportoni çelësin tuaj publik&lt;/h3&gt;&lt;p&gt;Nuk është konfiguruar asnjë çelës nënshkrimi. Caktoni një te Cilësimet e QtPass &amp;gt; Çelësat GPG, ose ekzekutoni këtë në një terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Pastaj dërgojini skedarin anëtarëve të ekipit tuaj.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation>Nuk është dosje e depos</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 është një lidhje simbolike ose junction, ose ndodhet pas një të tille. Ajo ku çon lidhja nuk është pjesë e depos së fjalëkalimeve dhe nuk preket.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Ndarja e fjalëkalimeve me GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ndarja e fjalëkalimeve me GPG&lt;/h3&gt;&lt;p&gt;Për të ndarë fjalëkalime me përdorues të tjerë:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportoni çelësin tuaj publik&lt;/b&gt; dhe dërgojeni te anëtarët e ekipit&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importoni çelësat publikë të anëtarëve të ekipit&lt;/b&gt; në keyring-un tuaj GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Rikriptojini fjalëkalimet&lt;/b&gt; që të gjithë marrësit të mund t&apos;i dekriptojnë&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vetëm personat që kanë një çelës të fshehtë të përputhshëm mund t&apos;i dekriptojnë fjalëkalimet.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Këshillë:&lt;/b&gt; Përdorni të njëjtin çelës GPG për të gjitha dosjet e ndara.&lt;/p&gt;&lt;p&gt;Shihni FAQ për më shumë detaje.&lt;/p&gt;</translation>
     </message>
@@ -2699,7 +2729,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Eksportoni çelësin tuaj publik&lt;/h3&gt;&lt;p&gt;Nuk është konfiguruar asnjë çelës nënshkrimi. Caktoni një te Cilësimet e QtPass &amp;gt; Çelësat GPG, ose ekzekutoni këtë në një terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Pastaj dërgojini skedarin anëtarëve të ekipit tuaj.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2708,7 +2738,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Nuk ka dalje nga gpg.</translation>
     </message>
@@ -2731,24 +2761,24 @@ Expire-Date: 0
 (Do të vendoset brenda %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Gabim</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Dështoi në krijimin e dosjes: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Dështoi në krijimin e skedarit .gpg-id në: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Riemërtoni skedarin</translation>
     </message>
@@ -2761,18 +2791,18 @@ Expire-Date: 0
         <translation type="vanished">Riemërtoni Skedarin ne : </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Drejtoria nuk ekziston: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Rikripto fjalëkalimet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3001,7 +3031,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Fjalëkalim</translation>
     </message>
@@ -3134,42 +3164,52 @@ Të vazhdohet?</translation>
         <translation>Ai emër do të çonte jashtë depos së fjalëkalimeve.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation>Një zë me emrin %1 ekziston tashmë.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation>%1 është një dosje.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation>Dosja %1 nuk u krijua dot.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation>Hiq fushën</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation>Një fushë me emrin %1 ekziston tashmë.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>URI otpauth:// ose sekret base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation>Sekret OTP i pavlefshëm</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Ky zë ka %n rresht, tepër për t&apos;u modifikuar këtu.</numerusform>
@@ -3316,7 +3356,7 @@ Të vazhdohet?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation>Fjalëkalim</translation>
     </message>
@@ -3326,8 +3366,8 @@ Të vazhdohet?</translation>
         <translation>Hape %1 në shfletues</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>Kodi OTP</translation>
     </message>
@@ -3336,7 +3376,7 @@ Të vazhdohet?</translation>
         <translation type="vanished">Kodi OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation>Nuk u gjet asnjë kod OTP në këtë hyrje fjalëkalimi</translation>
     </message>
@@ -3732,27 +3772,27 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation>çelësi nuk u gjet në keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>krijuar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>skadon</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[I PAVLEFSHËM] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[SKADUAR] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[PJESËRISHT] </translation>
     </message>

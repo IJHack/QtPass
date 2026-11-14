@@ -1068,17 +1068,17 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Dukart spustelėkite, kad pervadintumėte šį lauką</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Pervadinti lauką…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Pašalinti lauką</translation>
     </message>
@@ -1164,87 +1164,101 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <translation type="unfinished">Nepavyko užrakinti gavėjų sąrašų kartų registro %1: jį galbūt naudoja kita QtPass programa arba į jo aplanką negalima rašyti.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Sąraše yra daugiau nei viena saugyklos eilutė.</translation>
+        <translation type="obsolete">Sąraše yra daugiau nei viena saugyklos eilutė.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Saugyklos eilutė netaisyklinga: %1</translation>
+        <translation type="obsolete">Saugyklos eilutė netaisyklinga: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">Sąraše yra daugiau nei viena kartos eilutė.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">Kartos eilutė netaisyklinga: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">Sąraše yra daugiau nei viena aplanko eilutė.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">Aplanko eilutė netaisyklinga: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">Antraštės eilutė netaisyklinga: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">Sąraše yra kartos eilutė, bet nėra aplanko eilutės.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Sąraše yra saugyklos eilutė, bet nėra kartos eilutės.</translation>
+        <translation type="obsolete">Sąraše yra saugyklos eilutė, bet nėra kartos eilutės.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 nėra patikimas: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 buvo įrašytas saugyklos aplankui „%2“, o ne „%3“, todėl jis nenaudojamas. Jį čia galėjo nukopijuoti kas nors kitas; jei aplankas buvo perkeltas arba pervadintas, pasirašymo rakto turėtojas tame aplanke atveria „Vartotojai“ ir išsaugo gavėjus – taip sąrašas susiejamas su dabartine jo vieta.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">Karta %1 yra aukščiausia galima, todėl naujesnio sąrašo čia įrašyti nebegalima: pašalinus %2, pamirštama, ką šis įrenginys anksčiau priėmė, o po to pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“ ir %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“ ir %1 – taip įrašoma karta %2. Pašalinus %3, pamirštama, ką šis įrenginys anksčiau priėmė.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">Pasirašytame gavėjų sąraše %1 nėra kartos eilutės, o čia anksčiau buvo priimta karta %2. pass kartos eilutės nerašo (taip pat ir naudojamas per QtPass), nerašė jos ir QtPass iki 2.0 versijos; be jos sąrašas galėjo būti įrašytas ir kitam saugyklos aplankui bei nukopijuotas čia. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">iš naujo pasirinkęs bei išsaugojęs gavėjus</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Pasirašytame gavėjų sąraše %1 nėra saugyklos eilutės, nors šis įrenginys šią saugyklą žino pagal jos ID %2: galbūt sąrašas buvo parašytas kitai saugyklai ir nukopijuotas čia arba jį parašė senesnė QtPass versija. Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“, iš naujo pasirinkęs gavėjus ir išsaugojęs – taip įrašoma saugyklos eilutė.</translation>
+        <translation type="obsolete">Pasirašytame gavėjų sąraše %1 nėra saugyklos eilutės, nors šis įrenginys šią saugyklą žino pagal jos ID %2: galbūt sąrašas buvo parašytas kitai saugyklai ir nukopijuotas čia arba jį parašė senesnė QtPass versija. Pasirašymo rakto turėtojas tai išsprendžia atvėręs „Vartotojai“, iš naujo pasirinkęs gavėjus ir išsaugojęs – taip įrašoma saugyklos eilutė.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">Gavėjų sąrašų kartų registras %1 perėjo į kartą %2, kol buvo rašoma karta %3.</translation>
     </message>
@@ -1257,32 +1271,38 @@ Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
         <translation type="obsolete">Pasirašytame gavėjų sąraše %1 nėra kartos eilutės, o čia anksčiau buvo priimta karta %2. pass kartos eilutės nerašo (taip pat ir naudojamas per QtPass), nerašė jos ir QtPass iki 2.0 versijos. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 yra %2 kartos – senesnis nei karta %3, paskutinė, kurią QtPass čia priėmė. Jį čia galėjo sugrąžinti kas nors kitas. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">išsaugojęs gavėjus: ten iš anksto pažymėti gavėjai yra šio sąrašo gavėjai, todėl pirmiausia pašalinkite visus, kurie nebeturėtų turėti prieigos</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 yra %2 kartos – tos pačios kartos kaip ir kitas sąrašas, kurį šis įrenginys anksčiau priėmė. Arba du įrenginiai išsaugojo gavėjus tuo pačiu metu (Git bus parodęs konfliktą), arba čia buvo įdėtas autentiškas tos kartos sąrašas. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">patikrinęs bei išsaugojęs gavėjus</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Pasirašytas gavėjų sąrašas %1 buvo parašytas kitai slaptažodžių saugyklai (saugyklos ID %2; šis įrenginys šią saugyklą žino kaip %3) ir nenaudojamas. Galbūt jis buvo nukopijuotas čia iš saugyklos, pasirašytos tuo pačiu raktu. Jei vietoj to ši saugykla buvo sukurta iš naujo, pašalinus %4 pamirštami šiam įrenginiui žinomi saugyklų ID.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">Gavėjų sąrašas %1 pasiekė kartą %2 – aukščiausią galimą; sąrašo įrašyti nebegalima.</translation>
     </message>
@@ -2516,7 +2536,7 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Pervadinti aplanką</translation>
     </message>
@@ -2592,38 +2612,48 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
 (Bus patalpintas %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Pervadinti failą į: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Eksportuoti viešąjį raktą</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportuokite savo viešąjį raktą&lt;/h3&gt;&lt;p&gt;Nesukonfigūruotas pasirašymo raktas. Nustatykite jį QtPass Nustatymai &amp;gt; GPG raktai arba paleiskite tai terminale:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsų-rakto-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tada nusiųskite failą savo komandos nariams.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Ne saugyklos aplankas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 yra simbolinė nuoroda ar jungtis arba yra pasiekiamas per tokią. Tai, į ką ji rodo, nėra slaptažodžių saugyklos dalis ir lieka nepaliesta.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Slaptažodžių dalijimas su GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Slaptažodžių dalijimas su GPG&lt;/h3&gt;&lt;p&gt;Paleiskite slaptažodžius kitoms asmenims:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportuokite savo viešąjį slaptažodį&lt;/b&gt; ir siųskite jį kompanijams&lt;/li&gt;&lt;li&gt;&lt;b&gt;Įeikite kompanijų viešus slaptažodžius&lt;/b&gt; į Jūsų GPG atmintį&lt;/li&gt;&lt;li&gt;&lt;b&gt;Papildomai šifruokite slaptažodžius&lt;/b&gt;, kad visi gavėjai galėtų jį dešifruoti&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tik tiems, kurie turi atitinkamą privatus slaptažodį, galima dešifruoti slaptažodžius.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Puiki idėja:&lt;/b&gt; Naudojant vieną GPG slaptažodį visiems dalijamams katalogams.&lt;/p&gt;&lt;p&gt;Peržiūrėkite FAQ, kad gautumėte daugiau informacijos.&lt;/p&gt;</translation>
     </message>
@@ -2634,29 +2664,29 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
 (Bus patalpintas %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Klaida</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Nepavyko sukurti aplankio: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Nepavyko sukurti .gpg-id failo: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Pervadinti aplanką į: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Pervadinti failą</translation>
     </message>
@@ -2669,23 +2699,23 @@ Pakartotinis šifravimas nebaigtas, todėl kai kurie ar visi įrašai vis dar u�
         <translation type="vanished">Pervadinti failą į: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Šiame įraše yra OTP paslaptis, o ne slaptažodis</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Aplanko nėra egzistuojančio: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Iš naujo užšifruokite slaptažodžius</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2702,22 +2732,22 @@ Tai gali perrašyti daug failų ir negali būti lengvai atšaukta.
 Tęsti?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Slaptažodžiai užšifruojami iš naujo...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation type="unfinished">Atšaukti</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Atšaukiamas pakartotinis šifravimas</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Slaptažodžiai užšifruojami iš naujo: %1 iš %2</translation>
     </message>
@@ -2730,7 +2760,7 @@ Tęsti?</translation>
         <translation type="vanished">&lt;h3&gt;Eksportuokite savo viešąjį raktą&lt;/h3&gt;&lt;p&gt;Nesukonfigūruotas pasirašymo raktas. Nustatykite jį QtPass Nustatymai &amp;gt; GPG raktai arba paleiskite tai terminale:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsų-rakto-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tada nusiųskite failą savo komandos nariams.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2739,7 +2769,7 @@ Tęsti?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>gpg neturėjo išvesties.</translation>
     </message>
@@ -2954,7 +2984,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Slaptažodis</translation>
     </message>
@@ -3087,42 +3117,52 @@ Tęsti?</translation>
         <translation type="unfinished">Šis pavadinimas nurodytų vietą už slaptažodžių saugyklos ribų.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Įrašas pavadinimu %1 jau egzistuoja.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 yra aplankas.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Nepavyko sukurti aplanko %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation type="unfinished">Pašalinti lauką</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Laukas pavadinimu %1 jau egzistuoja.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation type="unfinished">otpauth:// URI arba base32 paslaptis</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation type="unfinished">Netinkama OTP paslaptis</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Šiame įraše yra %n eilutė, per daug, kad būtų galima redaguoti čia.</numerusform>
@@ -3270,7 +3310,7 @@ Tęsti?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation type="unfinished">Slaptažodis</translation>
     </message>
@@ -3280,8 +3320,8 @@ Tęsti?</translation>
         <translation type="unfinished">Atverti %1 naršyklėje</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP kodas</translation>
     </message>
@@ -3290,7 +3330,7 @@ Tęsti?</translation>
         <translation type="obsolete">OTP kodas</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation type="unfinished">Nėra OTP kodų šio slaptažodžio įrašyje</translation>
     </message>
@@ -3659,27 +3699,27 @@ Paprasti įrašai turi patikimą šifravimo raktą – pasirinkite juos, kad lei
         <translation>Nėra rasti šifravimo raktas</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>sukurta</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>baigiasi</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[NEGALIOJA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[GALIOJIMAS NEBEGALIOJA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[DALINIS] </translation>
     </message>

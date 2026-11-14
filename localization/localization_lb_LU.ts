@@ -1072,17 +1072,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation>Duebelklickt, fir dëst Feld ëmzebenennen</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation>Feld ëmbenennen…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation>Feld ewechhuelen</translation>
     </message>
@@ -1167,87 +1167,101 @@ e-mail</translation>
         <translation>De Generatiounsregister vun den Empfängerlëschten, %1, konnt net gespaart ginn: vläicht benotzt en anere QtPass e grad, oder säin Dossier kann net geschriwwe ginn.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">D&apos;Lëscht enthält méi wéi eng Späicherzeil.</translation>
+        <translation type="obsolete">D&apos;Lëscht enthält méi wéi eng Späicherzeil.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">D&apos;Späicherzeil ass falsch formatéiert: %1</translation>
+        <translation type="obsolete">D&apos;Späicherzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation>D&apos;Lëscht enthält méi wéi eng Generatiounszeil.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation>D&apos;Generatiounszeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation>D&apos;Lëscht enthält méi wéi eng Dossierzeil.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation>D&apos;Dossierzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation>D&apos;Kappzeil ass falsch formatéiert: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>D&apos;Lëscht enthält eng Generatiounszeil, awer keng Dossierzeil.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">D&apos;Lëscht enthält eng Späicherzeil, awer keng Generatiounszeil.</translation>
+        <translation type="obsolete">D&apos;Lëscht enthält eng Späicherzeil, awer keng Generatiounszeil.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass net vertrauenswierdeg: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>Déi ënnerschriwwen Empfängerlëscht %1 gouf fir den Dossier &quot;%2&quot; vum Späicher geschriwwen, net fir &quot;%3&quot;, a gëtt net benotzt. Si kéint vun engem aneren heihinner kopéiert gi sinn; wann den Dossier amplaz verréckelt oder ëmbenannt gouf, mécht een, deen den Ënnerschrëftsschlëssel huet, &quot;Benotzer&quot; op deem Dossier op a späichert d&apos;Empfänger, wat d&apos;Lëscht un déi Plaz bënnt, wou se elo ass.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>Generatioun %1 ass déi héchst, déi et gëtt, dofir kann hei keng nei Lëscht méi geschriwwe ginn: gëtt %2 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet; duerno kënnt een, deen den Ënnerschrëftsschlëssel huet, weider, andeems en &quot;Benotzer&quot; opmécht an %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>Een, deen den Ënnerschrëftsschlëssel huet, kënnt hei weider, andeems en &quot;Benotzer&quot; opmécht an %1; beim Späichere gëtt Generatioun %2 geschriwwen. Gëtt %3 geläscht, vergësst dësen Apparat, wat e virdrun akzeptéiert huet.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Generatiounszeil, obwuel hei virdrun Generatioun %2 akzeptéiert gouf. pass schreift keng Generatiounszeil (och net iwwer de pass-Backend vu QtPass), a QtPass virun 2.0 huet dat och net gemaach; ouni esou eng Zeil kéint d&apos;Lëscht och fir en aneren Dossier vum Späicher geschriwwen an heihinner kopéiert gi sinn. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>d&apos;Empfänger vun Neiem auswielt a späichert</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Späicherzeil, obwuel dësen Apparat dëse Späicher ënner senger ID %2 kennt: si kéint fir en anere Späicher geschriwwen an heihi kopéiert gi sinn, oder vun engem eelere QtPass stamen. Wien den Ënnerschrëftsschlëssel huet, léist dat, andeems e Benotzer opmécht, d&apos;Empfänger nei auswielt a späichert, wouduerch d&apos;Späicherzeil geschriwwe gëtt.</translation>
+        <translation type="obsolete">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Späicherzeil, obwuel dësen Apparat dëse Späicher ënner senger ID %2 kennt: si kéint fir en anere Späicher geschriwwen an heihi kopéiert gi sinn, oder vun engem eelere QtPass stamen. Wien den Ënnerschrëftsschlëssel huet, léist dat, andeems e Benotzer opmécht, d&apos;Empfänger nei auswielt a späichert, wouduerch d&apos;Späicherzeil geschriwwe gëtt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>De Generatiounsregister vun den Empfängerlëschten, %1, ass op Generatioun %2 weidergaangen, wärend Generatioun %3 geschriwwe gouf.</translation>
     </message>
@@ -1260,32 +1274,38 @@ e-mail</translation>
         <translation type="obsolete">Déi ënnerschriwwen Empfängerlëscht %1 enthält keng Generatiounszeil, obwuel hei virdrun Generatioun %2 akzeptéiert gouf. pass schreift keng Generatiounszeil (och net iwwer de pass-Backend vu QtPass), a QtPass virun 2.0 huet dat och net gemaach. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, méi al wéi Generatioun %3, déi lescht, déi QtPass hei akzeptéiert huet. Si kéint vun engem aneren zréckgesat gi sinn. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>d&apos;Empfänger späichert: d&apos;Empfänger, déi do virausgewielt sinn, sinn déi vun dëser Lëscht, dofir huelt fir d&apos;éischt jiddereen ewech, dee keen Zougang méi soll hunn</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>Déi ënnerschriwwen Empfängerlëscht %1 ass Generatioun %2, déi selwecht Generatioun wéi eng aner Lëscht, déi dësen Apparat virdrun akzeptéiert huet. Entweder hunn zwee Apparater gläichzäiteg Empfänger gespäichert (Git wäert de Konflikt gewisen hunn), oder eng authentesch Lëscht vun där Generatioun gouf ënnergeschubst. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation>d&apos;Empfänger kontrolléiert a späichert</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
         <translation type="unfinished">Déi ënnerschriwwen Empfängerlëscht %1 gouf fir en anere Passwuertspäicher geschriwwen (Späicher-ID %2; dësen Apparat kennt dëse Späicher als %3) a gëtt net benotzt. Si kéint vun engem Späicher heihi kopéiert gi sinn, dee mam selwechte Schlëssel ënnerschriwwe gouf. Wann dëse Späicher amplaz nei ageriicht gouf, da gi mam Läsche vun %4 d&apos;Späicher-IDe vergiess, déi dësen Apparat kennt.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>D&apos;Empfängerlëscht %1 huet Generatioun %2 erreecht, déi héchst, déi et gëtt; d&apos;Lëscht kann net geschriwwe ginn.</translation>
     </message>
@@ -2550,7 +2570,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Dossier ëmbenennen</translation>
     </message>
@@ -2625,68 +2645,78 @@ Expire-Date: 0
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Numm vun der Folder ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Numm vun der Datei ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Dës Eingabe enthält en OTP-Geheimnis, kee Passwuert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation>Passwierder ginn nei verschlësselt...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation>Ofbriechen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation>Nei-Verschlësselung gëtt ofgebrach</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Passwierder ginn nei verschlësselt: %1 vun %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Ëffentleche Schlëssel exportéieren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation>Keen Dossier vum Späicher</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Passwierder mat GPG deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Passwierder mat GPG deelen&lt;/h3&gt;&lt;p&gt;Fir Passwierder mat anere Benotzer ze deelen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportéiert Ären ëffentleche Schlëssel&lt;/b&gt; an schéckt en un Är Teammemberen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importéiert d&apos;ëffentlech Schlësselen vun Ären Teammemberen&lt;/b&gt; an Äre GPG-Schlësselbond&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlësselt d&apos;Passwierder nei&lt;/b&gt; sou datt all Empfänger se entschlësselen kann&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nëmme Persounen mat engem passende geheime Schlëssel kënnen d&apos;Passwierder entschlësselen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Benotzt deeselwechte GPG-Schlëssel fir all gedeelt Dossieren.&lt;/p&gt;&lt;p&gt;Kuckt d&apos;FAQ fir méi Detailer.&lt;/p&gt;</translation>
     </message>
@@ -2699,7 +2729,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2708,7 +2738,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Keng Ausgab vum gpg.</translation>
     </message>
@@ -2731,24 +2761,24 @@ Expire-Date: 0
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Feeler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Konnt den Dossier net erstellen: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Konnt d&apos;.gpg-id Datei net erstellen an: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Rename Datei</translation>
     </message>
@@ -2761,18 +2791,18 @@ Expire-Date: 0
         <translation type="vanished">Numm vun der Datei ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Verzeichnis existéiert net: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Passwierder nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3001,7 +3031,7 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="386"/>
         <source>Password</source>
         <translation>Passwuert</translation>
     </message>
@@ -3134,42 +3164,52 @@ Weider?</translation>
         <translation>Dësen Numm géif ausserhalb vum Passwuertspäicher landen.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="335"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="342"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="348"/>
         <source>An entry called %1 already exists.</source>
         <translation>Eng Androung mam Numm %1 gëtt et schonn.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="352"/>
         <source>%1 is a folder.</source>
         <translation>%1 ass en Dossier.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="382"/>
         <source>Could not create the folder %1.</source>
         <translation>Den Dossier %1 konnt net erstallt ginn.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="448"/>
         <source>Remove field</source>
         <translation>Feld ewechhuelen</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="467"/>
         <source>A field called %1 already exists.</source>
         <translation>E Feld mam Numm %1 gëtt et schonn.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="553"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth://-URI oder Base32-Geheimnis</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="590"/>
         <source>Invalid OTP secret</source>
         <translation>Ongëltegt OTP-Geheimnis</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="822"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Dësen Entrag huet %n Zeil, ze vill fir en hei z&apos;änneren.</numerusform>
@@ -3315,7 +3355,7 @@ Weider?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation>Passwuert</translation>
     </message>
@@ -3325,8 +3365,8 @@ Weider?</translation>
         <translation>%1 am Browser opmaachen</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP Code</translation>
     </message>
@@ -3335,7 +3375,7 @@ Weider?</translation>
         <translation type="obsolete">OTP Code</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation>Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
     </message>
@@ -3731,27 +3771,27 @@ Red Entréen sinn net valabel, Dir kënnt dës net verschlësselen.</translation
         <translation>Schlëssel net am Keyring fonnt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>erstallt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>leeft of</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[ONGËLTIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[OFLAF] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[DEELFEST] </translation>
     </message>
