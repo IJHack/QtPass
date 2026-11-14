@@ -198,7 +198,7 @@ void RealPass::Insert(QString file, QString newValue, bool overwrite) {
   if (refuseUnverifiedList(entry)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   m_insertQueue.enqueue(entry);
@@ -257,7 +257,7 @@ void RealPass::Remove(QString file, bool isDir) {
   if (refuseLinkedPath(isDir ? file : file + ".gpg", LinkScope::ParentsOnly)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   // pass rm turns a folder into "<folder>/" and rm -rf then follows a link
@@ -411,7 +411,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
                            QDir(inStore).filePath(QStringLiteral(".gpg-id")))) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
@@ -472,7 +472,7 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
       (destFileInfo.isDir() && refuseUnverifiedTree(dest, false))) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
 

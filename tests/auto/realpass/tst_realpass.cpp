@@ -38,6 +38,7 @@ private slots:
   void insertThatCannotStartIsNotCreditedWithTheNextWrite();
   void insertsPendingCountsTheInsertsYetToReport();
   void refusesToInsertDuringAnUnfinishedMerge();
+  void refusesToInsertWhileAPullIsInFlight();
   void signedListIsCheckedAsTheNativeBackendDoes();
   void removeFileAndFolder();
   void initWritesEnabledKeysRelativeToTheStore();
@@ -483,6 +484,61 @@ void tst_realpass::refusesToInsertDuringAnUnfinishedMerge() {
   QCOMPARE(inserted.count(), 0);
   QVERIFY2(!QFile::exists(calls),
            "pass insert must not run during the unfinished merge");
+}
+
+/**
+ * @brief `pass insert` commits by itself, so there is no point to re-check
+ *        after a queued pull; an insert is refused while a pull is still in
+ *        flight, so its conflict cannot swallow the entry.
+ */
+void tst_realpass::refusesToInsertWhileAPullIsInFlight() {
+  const QString script =
+      QDir(m_dir.path()).filePath(QStringLiteral("sleeping-pull-pass"));
+  const QString calls =
+      QDir(m_dir.path()).filePath(QStringLiteral("pull-calls.log"));
+  const auto cleanup = qScopeGuard([&] {
+    QFile::remove(script);
+    QFile::remove(calls);
+  });
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // `git pull` sleeps so it is still in flight; `git rev-parse` answers with
+    // paths that do not exist (no unfinished operation). Anything else is
+    // logged, to show no insert ran.
+    f.write(QStringLiteral(
+                "#!/bin/sh\n"
+                "if [ \"$1\" = git ] && [ \"$2\" = pull ]; then sleep 5; "
+                "exit 0; fi\n"
+                "if [ \"$1\" = git ] && [ \"$2\" = rev-parse ]; then\n"
+                "  printf '%s\\n' .git/rebase-merge .git/rebase-apply "
+                ".git/MERGE_HEAD .git/CHERRY_PICK_HEAD .git/REVERT_HEAD\n"
+                "  exit 0\n"
+                "fi\n"
+                "printf 'CALL\\n' >> '%1'\n"
+                "exit 0\n")
+                .arg(calls)
+                .toUtf8());
+    f.close();
+    QVERIFY(f.setPermissions(QFile::ReadOwner | QFile::WriteOwner |
+                             QFile::ExeOwner));
+  }
+  AppSettings s = m_settings;
+  s.useGit = true;
+  s.passExecutable = script;
+  RealPass pass;
+  pass.init(s);
+  pass.updateEnv();
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy inserted(&pass, &Pass::finishedInsert);
+  pass.GitPull();
+  pass.Insert(QStringLiteral("folder/new"), QStringLiteral("v"), false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Update in progress"));
+  QCOMPARE(inserted.count(), 0);
+  QVERIFY2(!QFile::exists(calls),
+           "pass insert must not run while a pull is in flight");
 }
 
 /**
