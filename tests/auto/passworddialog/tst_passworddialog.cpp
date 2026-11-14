@@ -95,6 +95,10 @@ public:
   QString insertedContent;
   bool insertedOverwrite = false;
 
+  /// Count one insert as already queued and not yet reported, standing in for
+  /// an earlier dialog's save that a hanging queue let close while pending.
+  void pretendInsertAhead() { queueInsert(); }
+
   /// Answer the last Show() with @p out, or another entry's decrypt when
   /// @p file is given.
   void deliverShow(const QString &out, const QString &file = QString()) {
@@ -151,6 +155,8 @@ private Q_SLOTS:
   void failedInsertKeepsWhatWasTyped();
   void refusedInsertKeepsWhatWasTyped();
   void savingLocksTheDialogUntilTheResult();
+  void anEarlierInsertsResultIsNotTaken();
+  void anEarlierInsertsFailureIsNotTaken();
   void newEntryWrittenBeforeAFailedGitStepCloses();
   void existingEntryWrittenBeforeAFailedGitStepCloses();
   void anotherWritersEntryIsNotThisOne();
@@ -1144,6 +1150,65 @@ void tst_passworddialog::savingLocksTheDialogUntilTheResult() {
   d.accept();
   QVERIFY2(pass.inserted.isEmpty(), "no second insert while one runs");
 
+  emit pass.finishedInsert(QString(), QString());
+  QCOMPARE(accepted.size(), 1);
+}
+
+/**
+ * @brief A hanging queue can let an earlier dialog close while its insert is
+ *        still queued (#1965), so two inserts can be in flight. The earlier
+ *        one's finishedInsert must not close this dialog, which would take its
+ *        success for this entry's and lose what was typed if this insert then
+ *        fails. Only this dialog's own report closes it.
+ */
+void tst_passworddialog::anEarlierInsertsResultIsNotTaken() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.pretendInsertAhead(); // an earlier dialog's save is still queued
+  pass.holdResult = true;    // our own insert does not report yet
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+
+  okButton(d)->click();
+  QVERIFY(accepted.isEmpty());
+
+  // The earlier insert reports first; it is not this dialog's.
+  emit pass.finishedInsert(QString(), QString());
+  QVERIFY2(accepted.isEmpty(),
+           "an earlier insert's success must not close this dialog");
+  QVERIFY2(!okButton(d)->isEnabled(), "this dialog is still saving");
+
+  // This dialog's own insert then reports and closes it.
+  emit pass.finishedInsert(QString(), QString());
+  QCOMPARE(accepted.size(), 1);
+}
+
+/**
+ * @brief The other direction: an earlier insert's failure must not be shown
+ *        as this dialog's "Not saved" and must not unlock it; this dialog
+ *        keeps waiting for its own report.
+ */
+void tst_passworddialog::anEarlierInsertsFailureIsNotTaken() {
+  QTemporaryDir store;
+  FakePass pass;
+  pass.pretendInsertAhead();
+  pass.holdResult = true;
+  PasswordDialog d(&pass, QtPassSettings::load(), QString(), true);
+  typeNewEntry(d, store.path());
+  QSignalSpy accepted(&d, &QDialog::accepted);
+  auto *status = d.findChild<QLabel *>(QStringLiteral("statusLabel"));
+
+  okButton(d)->click();
+
+  // The earlier insert fails; this dialog must not adopt the failure.
+  emit pass.insertFailed(QStringLiteral("earlier failed"), false);
+  QVERIFY2(!status->text().contains(QStringLiteral("Not saved")),
+           qPrintable(status->text()));
+  QVERIFY2(!okButton(d)->isEnabled(), "this dialog is still saving");
+  QVERIFY(accepted.isEmpty());
+
+  // This dialog's own insert succeeds and closes it.
   emit pass.finishedInsert(QString(), QString());
   QCOMPARE(accepted.size(), 1);
 }

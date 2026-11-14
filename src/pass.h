@@ -168,6 +168,17 @@ public:
    */
   virtual void Insert(QString file, QString value, bool force) = 0;
   /**
+   * @brief How many inserts have started queueing but not yet reported.
+   *
+   * One Insert() still in the command queue, or running, counts here until its
+   * PASS_INSERT result goes out. A PasswordDialog reads this just before its
+   * own Insert() so it can tell an earlier insert's report (which it is also
+   * connected to, once a hanging queue let it open while its save was still
+   * pending) from its own.
+   * @return The number of inserts awaiting their report.
+   */
+  [[nodiscard]] auto insertsPending() const -> int { return m_insertsPending; }
+  /**
    * @brief Remove password file or directory.
    * @param file Path to remove.
    * @param isDir true if removing a directory.
@@ -447,6 +458,16 @@ protected:
    * @param file The Show() argument.
    */
   void queueShow(const QString &file) { m_pendingShows.enqueue(file); }
+  /**
+   * @brief Count one insert that has started queueing but not yet reported.
+   *
+   * Backends call this where Insert() queues its work, past every refusal;
+   * Pass::finished() counts it off again when the insert reports. Each queued
+   * insert reports once, as a PASS_INSERT, so the count tracks the inserts in
+   * flight. A dialog reads insertsPending() before its own Insert() to learn
+   * how many earlier reports are not its own.
+   */
+  void queueInsert() { ++m_insertsPending; }
   /** @brief What refuseLinkedPath() judges. */
   enum class LinkScope {
     /** @brief The entry itself and every folder above it in the store. */
@@ -577,6 +598,8 @@ protected slots:
 private:
   /// Files of the Show() calls still in flight, oldest first.
   QQueue<QString> m_pendingShows;
+  /// Inserts that have started queueing but not yet reported; see queueInsert.
+  int m_insertsPending = 0;
   void handleProcessError(PROCESS pid, int exitCode, const QString &out,
                           const QString &err);
   auto formatInsertError(const QString &friendly, const QString &err)

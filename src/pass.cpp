@@ -511,6 +511,12 @@ void Pass::finished(int id, int exitCode, const QString &out,
   if (pid == PASS_SHOW && !m_pendingShows.isEmpty()) {
     shownFile = m_pendingShows.dequeue();
   }
+  // Count this insert off, success or failure, before its result goes out, so
+  // insertsPending() tracks the inserts still awaiting a report. Each insert
+  // reaches here once as PASS_INSERT.
+  if (pid == PASS_INSERT && m_insertsPending > 0) {
+    --m_insertsPending;
+  }
 
   if (exitCode != 0) {
     handleProcessError(pid, exitCode, out, err);

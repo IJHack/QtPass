@@ -550,8 +550,10 @@ private:
     bool overwrite = false;
   };
   QQueue<PendingInsert> m_pendingInserts;
-  /// The last Insert()'s entry was placed in the store; its git steps may
-  /// still fail.
+  /// The insert whose gpg step ended last placed its entry in the store; its
+  /// git steps may still fail. Set per gpg completion in finished(), not per
+  /// Insert() call, so a second queued insert's failure is not reported with
+  /// an earlier insert's answer.
   bool m_insertPlaced = false;
 
   /**

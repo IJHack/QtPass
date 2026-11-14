@@ -175,6 +175,11 @@ void PasswordDialog::save() {
               [&refusal](const QString &, const QString &message) {
                 refusal = message;
               });
+  // Reports from inserts already queued (an earlier dialog that a hanging
+  // queue let close while its save was still pending) must pass before one is
+  // taken as this dialog's own. The count is read before our own Insert()
+  // queues, so it does not include it.
+  m_insertsAhead = m_pass->insertsPending();
   m_pass->Insert(m_file, newValue, !m_isNew);
   disconnect(refused);
   if (m_saving && !refusal.isEmpty()) {
@@ -196,10 +201,24 @@ void PasswordDialog::setSaving(bool saving) {
   ui->statusLabel->setText(saving ? tr("Saving…") : QString());
 }
 
-void PasswordDialog::onInsertFinished() {
-  // Only one insert can be in flight while this modal dialog waits: an
-  // earlier dialog closed only once its own had reported.
+auto PasswordDialog::isOwnInsertReport() -> bool {
   if (!m_saving) {
+    return false;
+  }
+  // Since a hanging queue can let a dialog close while its insert is still
+  // queued (#1965), more than one insert can be in flight, and neither
+  // finishedInsert nor insertFailed says which it is. The Executor runs the
+  // queue in order, so the first m_insertsAhead reports belong to inserts
+  // queued before this dialog's; let them pass before taking one as our own.
+  if (m_insertsAhead > 0) {
+    --m_insertsAhead;
+    return false;
+  }
+  return true;
+}
+
+void PasswordDialog::onInsertFinished() {
+  if (!isOwnInsertReport()) {
     return;
   }
   setSaving(false);
@@ -207,7 +226,7 @@ void PasswordDialog::onInsertFinished() {
 }
 
 void PasswordDialog::onInsertFailed(const QString &err, bool written) {
-  if (!m_saving) {
+  if (!isOwnInsertReport()) {
     return;
   }
   setSaving(false);

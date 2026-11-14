@@ -675,6 +675,8 @@ private Q_SLOTS:
   void copyFailsWhenTheDestinationFolderDoesNotExist();
   void insertFailsWhenGpgWritesNoCiphertext();
   void insertFailsWhenTheEntryFolderVanishes();
+  void queuedInsertGpgFailureReportsNotWritten();
+  void insertsPendingCountsTheInsertsYetToReport();
 };
 
 void tst_imitatepass::initTestCase() { isolateTestSettings(); }
@@ -1554,6 +1556,96 @@ void tst_imitatepass::insertReportsTheEntryWrittenWhenGitFails() {
   QVERIFY2(failedSpy.first().at(1).toBool(),
            "the entry was placed before git failed");
   QVERIFY(QFileInfo::exists(QDir(storeDir.path()).filePath("new.gpg")));
+#endif
+}
+
+/**
+ * @brief With two inserts queued, a gpg failure of the second must report
+ *        written=false even though the first was placed. The "placed" flag is
+ *        the answer of the insert whose gpg step just ended, not of whichever
+ *        Insert() was called last.
+ */
+void tst_imitatepass::queuedInsertGpgFailureReportsNotWritten() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString counter = QDir(storeDir.path()).filePath("gpg-calls");
+  const QString script = QDir(storeDir.path()).filePath("first-ok-gpg.sh");
+  {
+    QFile f(script);
+    QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Text));
+    // Encrypt: the first call writes the ciphertext and exits 0, the second
+    // fails in gpg (exit 2). Decrypt is not used here.
+    f.write(
+        QStringLiteral("#!/bin/sh\n"
+                       "outfile=''; prev=''; mode=''\n"
+                       "for a in \"$@\"; do\n"
+                       "  case \"$a\" in -eq) mode=encrypt;; esac\n"
+                       "  [ \"$prev\" = '--output' ] && outfile=\"$a\"\n"
+                       "  prev=\"$a\"\n"
+                       "done\n"
+                       "[ \"$mode\" = encrypt ] || exit 0\n"
+                       "cat >/dev/null\n"
+                       "n=$(cat '%1' 2>/dev/null || echo 0); n=$((n+1)); "
+                       "echo $n > '%1'\n"
+                       "if [ \"$n\" = 1 ]; then printf 'ciphertext\\n' > "
+                       "\"$outfile\"; exit 0; fi\n"
+                       "echo 'gpg: Bob: skipped: No public key' >&2\nexit 2\n")
+            .arg(counter)
+            .toUtf8());
+    f.close();
+    QVERIFY(QFile::setPermissions(script, QFile::ReadOwner | QFile::WriteOwner |
+                                              QFile::ExeOwner));
+  }
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), script);
+  s.useGit = false;
+  pass.init(s);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy failedSpy(&pass, &Pass::insertFailed);
+  // Both queued before either gpg runs: the executor holds the second behind
+  // the first.
+  pass.Insert(QStringLiteral("first"), QStringLiteral("a\n"), false);
+  pass.Insert(QStringLiteral("second"), QStringLiteral("b\n"), false);
+  QTRY_COMPARE(insertSpy.count(), 1);
+  QTRY_COMPARE(failedSpy.count(), 1);
+  QVERIFY2(!failedSpy.first().at(1).toBool(),
+           "the second insert's gpg failed: nothing of it was written");
+  QVERIFY(QFileInfo::exists(QDir(storeDir.path()).filePath("first.gpg")));
+  QVERIFY2(!QFileInfo::exists(QDir(storeDir.path()).filePath("second.gpg")),
+           "the failed second insert placed no entry");
+#endif
+}
+
+/**
+ * @brief insertsPending() counts every queued insert until it reports, so a
+ *        dialog can tell an earlier insert's report from its own.
+ */
+void tst_imitatepass::insertsPendingCountsTheInsertsYetToReport() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as a fake gpg");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 0));
+  const QString logPath = QDir(storeDir.path()).filePath("gpg-argv.log");
+  const QString fakeGpg = writeRecordingGpg(storeDir.path(), logPath);
+  QVERIFY(!fakeGpg.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), fakeGpg);
+  s.useGit = false;
+  pass.init(s);
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QCOMPARE(pass.insertsPending(), 0);
+  // Queued synchronously, so neither has reported yet.
+  pass.Insert(QStringLiteral("one"), QStringLiteral("a\n"), false);
+  pass.Insert(QStringLiteral("two"), QStringLiteral("b\n"), false);
+  QCOMPARE(pass.insertsPending(), 2);
+  QTRY_COMPARE(insertSpy.count(), 2);
+  QCOMPARE(pass.insertsPending(), 0);
 #endif
 }
 

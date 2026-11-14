@@ -729,7 +729,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   showing "Saving…"; on failure the fields come back with the reason.
   Cancel, Esc and closing the window still work while it waits, after asking,
   so a save that never reports (an unanswered PIN prompt) cannot trap you. Enter
-  in a field-name editor also no longer saves and closes the whole dialog
+  in a field-name editor also no longer saves and closes the whole dialog.
+  Giving up one such pending save and starting another no longer lets the
+  first one's result close or fail the second dialog: each dialog now waits
+  for its own insert's report, and the native backend reports "saved, not
+  committed" only for the insert that was really placed
   ([#1944](https://github.com/IJHack/QtPass/issues/1944))
 - The autoclear boxes in Settings showed "ver" instead of "Never": the
   layout sized them for "0", because Qt does not tell the layout when the
