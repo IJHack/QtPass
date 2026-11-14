@@ -48,7 +48,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="477"/>
         <source>Words, separated by commas. A field counts when its name holds one of them as whole words, in any case: &quot;key&quot; hides &quot;API key&quot;, not &quot;keyboard layout&quot;. So it would rather hide too much: &quot;Public key&quot; and &quot;Password hint&quot; are hidden too; take a word out to show them.</source>
-        <translation type="unfinished">Palabras, separadas por comas. Un campo conta cando o seu nome contén algunha delas como palabras completas, sen distinguir maiúsculas de minúsculas: &quot;key&quot; oculta &quot;API key&quot;, pero non &quot;keyboard layout&quot;. Así que tende a ocultar de máis: &quot;Public key&quot; e &quot;Password hint&quot; tamén se ocultan; quite unha palabra para mostralos.</translation>
+        <translation type="unfinished">Palabras, separadas por comas. Un campo conta cando o seu nome contén algunha delas como palabras completas, sen distinguir maiúsculas de minúsculas: &quot;key&quot; oculta &quot;API key&quot;, pero non &quot;keyboard layout&quot;. Así que tende a ocultar de máis: &quot;Public key&quot; e &quot;Password hint&quot; tamén se ocultan; quita unha palabra para mostralos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Cando o almacén non ten un repositorio Git propio, usar o que estea nunha carpeta superior. Desactivado por defecto, como en pass, para que un almacén dentro doutro repositorio (por exemplo, dotfiles) nunca se confirme nin se envíe alí por erro. Só Git nativo: pass sempre se detén no almacén.</translation>
+        <translation type="unfinished">Cando o almacén non ten un repositorio Git propio, usar o que estea nun cartafol superior. Desactivado por defecto, como en pass, para que un almacén dentro doutro repositorio (por exemplo, dotfiles) nunca se confirme nin se envíe alí por erro. Só Git nativo: pass sempre se detén no almacén.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
@@ -477,7 +477,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Agochar os campos que conten un segredo, non só o contrasinal: un campo cuxo nome contén unha destas palabras. Desactivado: só o contrasinal está oculto.</translation>
+        <translation type="unfinished">Agochar tamén os campos que conteñen un segredo, non só o contrasinal: un campo cuxo nome contén unha destas palabras. Desactivado: só se oculta o contrasinal.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
         <source>Hide every field</source>
-        <translation type="unfinished">Agochar cada campo</translation>
+        <translation type="unfinished">Ocultar todos os campos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Utiliza un repositorio de Git nunha carpeta que estea por encima da tenda</translation>
+        <translation type="unfinished">Usar un repositorio Git nun cartafol superior ao almacén</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -705,12 +705,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 asina coa mesma clave para outro almacén. Unha lista de destinatarios asinada para un destes almacéns acéptase no outro: use unha clave de sinatura distinta para cada almacén cuxos destinatarios sexan diferentes.</translation>
+        <translation type="unfinished">%1 asina coa mesma chave para outro almacén. Unha lista de destinatarios asinada para un destes almacéns acéptase no outro: usa unha chave de sinatura distinta para cada almacén cuxos destinatarios sexan diferentes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">pass confirma os cambios de %1 no repositorio Git de %2: con dous puntos na ruta do almacén, pass non pode limitar Git ao almacén. Execute &quot;git init&quot; no almacén, ou use Git/GPG nativos.</translation>
+        <translation type="unfinished">pass confirma os cambios de %1 no repositorio Git de %2: con dous puntos na ruta do almacén, pass non pode limitar Git ao almacén. Executa &quot;git init&quot; no almacén ou usa Git/GPG nativos.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -1139,17 +1139,17 @@ e-mail</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation type="unfinished">Fai dobre clic para cambiar o nome a este campo</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation type="unfinished">Cambiar nome ao campo…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation type="unfinished">Eliminar campo</translation>
     </message>
@@ -1234,87 +1234,101 @@ e-mail</translation>
         <translation type="unfinished">O rexistro de xeracións das listas de destinatarios, %1, non se puido bloquear: pode que outro QtPass o estea usando, ou que non se poida escribir no seu cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">A lista contén máis dunha liña de almacén.</translation>
+        <translation type="obsolete">A lista contén máis dunha liña de almacén.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">A liña de almacén está mal formada: %1</translation>
+        <translation type="obsolete">A liña de almacén está mal formada: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation type="unfinished">A lista contén máis dunha liña de xeración.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation type="unfinished">A liña de xeración está mal formada: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation type="unfinished">A lista contén máis dunha liña de cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation type="unfinished">A liña de cartafol está mal formada: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation type="unfinished">A liña de cabeceira está mal formada: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation type="unfinished">A lista contén unha liña de xeración pero ningunha liña de cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">A lista ten unha liña de almacén, pero non unha liña de xeración.</translation>
+        <translation type="obsolete">A lista ten unha liña de almacén, pero non unha liña de xeración.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation type="unfinished">A lista de destinatarios asinada %1 non é de fiar: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation type="unfinished">A lista de destinatarios asinada %1 escribiuse para o cartafol «%2» do almacén, non para «%3», e non se usa. Pode que outra persoa a copiase aquí; se, en cambio, o cartafol se moveu ou se lle cambiou o nome, quen teña a chave de sinatura abre Usuarios nel e garda os destinatarios, o que vincula a lista ao lugar onde está agora.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished">A lista contén máis dunha liña de ID do almacén.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished">A liña de ID do almacén está mal formada: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished">A lista contén unha liña de ID do almacén pero ningunha liña de xeración.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation type="unfinished">A xeración %1 é a máis alta que existe, así que aquí non se pode escribir ningunha lista máis nova: eliminar %2 fai que este dispositivo esqueza o que aceptara antes, e despois diso quen teña a chave de sinatura pode resolvelo abrindo Usuarios e %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation type="unfinished">Quen teña a chave de sinatura pode resolvelo abrindo Usuarios e %1, o que escribe a xeración %2. Eliminar %3 fai que este dispositivo esqueza o que aceptara antes.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation type="unfinished">A lista de destinatarios asinada %1 non contén ningunha liña de xeración, mentres que aquí xa se aceptara a xeración %2. pass non escribe ningunha liña de xeración (tampouco a través do backend pass de QtPass), nin o facía QtPass antes da 2.0; sen ela, pode que a lista tamén se escribise para outro cartafol do almacén e se copiase aquí. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation type="unfinished">seleccionando de novo os destinatarios e gardando</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">A lista de destinatarios asinada %1 non ten liña de almacén, mentres que este dispositivo coñece este almacén polo seu ID %2: puido escribirse para outro almacén e copiarse aquí, ou escribiuna un QtPass máis antigo. Un titular da clave de sinatura resólveo abrindo Usuarios, seleccionando de novo os destinatarios e gardando, o que escribe a liña de almacén.</translation>
+        <translation type="obsolete">A lista de destinatarios asinada %1 non ten liña de almacén, mentres que este dispositivo coñece este almacén polo seu ID %2: puido escribirse para outro almacén e copiarse aquí, ou escribiuna un QtPass máis antigo. Un titular da clave de sinatura resólveo abrindo Usuarios, seleccionando de novo os destinatarios e gardando, o que escribe a liña de almacén.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation type="unfinished">O rexistro de xeracións das listas de destinatarios, %1, pasou á xeración %2 mentres se escribía a xeración %3.</translation>
     </message>
@@ -1327,32 +1341,38 @@ e-mail</translation>
         <translation type="obsolete">A lista de destinatarios asinada %1 non contén ningunha liña de xeración, mentres que aquí xa se aceptara a xeración %2. pass non escribe ningunha liña de xeración (tampouco a través do backend pass de QtPass), nin o facía QtPass antes da 2.0. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation type="unfinished">A lista de destinatarios asinada %1 é da xeración %2, anterior á xeración %3, a última que QtPass aceptou aquí. Pode que outra persoa a volvese poñer. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation type="unfinished">gardando os destinatarios: os destinatarios preseleccionados alí son os desta lista, así que elimina primeiro a quen xa non deba ter acceso</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation type="unfinished">A lista de destinatarios asinada %1 é da xeración %2, a mesma xeración que outra lista distinta que este dispositivo aceptara antes. Ou ben dous dispositivos gardaron os destinatarios ao mesmo tempo (Git terá mostrado o conflito), ou ben se puxo no seu lugar unha lista auténtica desa xeración. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation type="unfinished">comprobando os destinatarios e gardando</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">A lista de destinatarios asinada %1 escribiuse para outro almacén de contrasinais (ID do almacén %2; este dispositivo coñece este almacén como %3) e non se usa. Puido copiarse aquí desde un almacén asinado coa mesma clave. Se en cambio este almacén se configurou de novo, eliminar %4 esquece os ID de almacén que este dispositivo coñece.</translation>
+        <translation type="unfinished">A lista de destinatarios asinada %1 escribiuse para outro almacén de contrasinais (ID do almacén %2; este dispositivo coñece este almacén como %3) e non se usa. Puido copiarse aquí desde un almacén asinado coa mesma chave. Se, en cambio, este almacén se configurou de novo, eliminar %4 fai que este dispositivo esqueza os ID de almacén que coñece.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished">A lista de destinatarios asinada %1 non contén ningunha liña de ID do almacén, mentres que este dispositivo coñece este almacén polo seu ID %2: pode que se escribise para outro almacén e se copiase aquí, ou que a escribise un QtPass máis antigo. Quen teña a chave de sinatura pode resolvelo abrindo Usuarios, seleccionando de novo os destinatarios e gardando, o que escribe a liña de ID do almacén.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation type="unfinished">A lista de destinatarios %1 chegou á xeración %2, a máis alta que existe; non se pode escribir a lista.</translation>
     </message>
@@ -1405,7 +1425,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">O %1 non está dentro do repositorio de contraseñas, ou un nome de carpeta que contén un salto de liña ou outro carácter de control, o que unha lista asinalada non pode gravar.</translation>
+        <translation type="unfinished">%1 non está dentro do almacén de contrasinais, ou un nome de cartafol do camiño contén un salto de liña ou outro carácter de control, que unha lista asinada non pode rexistrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1600,7 +1620,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">O repositorio Git do almacen de contraseñas ten arquivos que non se integraron. Resolve o conflito con Git antes de re-encriptar.</translation>
+        <translation type="unfinished">O repositorio Git do almacén de contrasinais ten ficheiros sen fusionar. Resolve o conflito con Git antes de volver cifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1713,7 +1733,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 é, ou está detrás, un enlace simbólico ou bifurcación despois de ser extraído. O que isto apunta non forma parte do almacenamento de contraseñas e permanece inalterado.</translation>
+        <translation type="unfinished">%1 é unha ligazón simbólica ou unha unión, ou está detrás dunha, despois do Git pull. Aquilo ao que apunta non forma parte do almacén de contrasinais e queda intacto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1922,7 +1942,7 @@ A re-cifraxe non rematou, así que algunhas ou todas as entradas seguen cifradas
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">O tamaño de %1 é maior do que o permitido para un ficheiro de clave.</translation>
+        <translation type="unfinished">%1 é máis grande do que pode ser un ficheiro de chave.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2710,7 +2730,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Cambiar nome ao cartafol</translation>
     </message>
@@ -2733,8 +2753,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="978"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
-            <numerusform>Móstrase a primeira coincidencia (%n); unha busca máis específica mostra o resto.</numerusform>
-            <numerusform>Móstranse as primeiras %n coincidencias; unha busca máis específica mostra o resto.</numerusform>
+            <numerusform>Móstrase a primeira coincidencia (%n); fai unha busca máis específica para ver o resto.</numerusform>
+            <numerusform>Móstranse as primeiras %n coincidencias; fai unha busca máis específica para ver o resto.</numerusform>
         </translation>
     </message>
     <message>
@@ -2785,68 +2805,78 @@ p, li { white-space: pre-wrap; }
 (situarase en %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished">Cartafol oculto</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished">Un cartafol que comece cun punto quedaría oculto na lista: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Novo nome do cartafol: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Novo nome do ficheiro: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Esta entrada contén unha configuración OTP, non un contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation>Volvendo a cifrar os contrasinais…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation>Cancelando a nova cifraxe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Volvendo a cifrar os contrasinais: %1 de %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Exportar chave pública</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exporta a túa chave pública&lt;/h3&gt;&lt;p&gt;Non hai ningunha chave de sinatura configurada. Configura unha en Axustes de QtPass &amp;gt; chaves GPG, ou executa isto nun terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Logo envía o ficheiro aos teus compañeiros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Non é un cartafol do almacén</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 é unha ligazón simbólica ou unha unión, ou está detrás dunha. Aquilo ao que apunta non forma parte do almacén de contrasinais e queda intacto.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>Compartir contrasinais con GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Compartir contrasinais con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contrasinais con outros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta a túa chave pública&lt;/b&gt; e envíaa aos compañeiros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa as chaves públicas dos compañeiros&lt;/b&gt; ao teu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifra de novo os contrasinais&lt;/b&gt; para que todos os destinatarios poidan descifralos&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Só as persoas que teñan unha chave secreta correspondente poden descifrar os contrasinais.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Suxestión:&lt;/b&gt; Usa a mesma chave GPG para todos os cartafoles compartidos.&lt;/p&gt;&lt;p&gt;Consulta as preguntas frecuentes para máis detalles.&lt;/p&gt;</translation>
     </message>
@@ -2859,7 +2889,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;Exporta a túa chave pública&lt;/h3&gt;&lt;p&gt;Non hai ningunha chave de sinatura configurada. Configura unha en Axustes de QtPass &amp;gt; chaves GPG, ou executa isto nun terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Logo envía o ficheiro aos teus compañeiros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2868,7 +2898,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>Sen saída de gpg.</translation>
     </message>
@@ -2891,24 +2921,24 @@ p, li { white-space: pre-wrap; }
 (situarase en %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Fallou a creación do cartafol: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Fallo ao crear o ficheiro .gpg-id en: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Cambiar nome ao ficheiro</translation>
     </message>
@@ -2921,18 +2951,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Novo nome do ficheiro: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>O directorio non existe: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Volver cifrar os contrasinais</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2992,12 +3022,12 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished">Xeración de contrasinais fallida</translation>
+        <translation type="unfinished">Fallou a creación do contrasinal</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">Non foi posible executar pwgen (&quot;%1&quot;). Verifique o programa pwgen nas configuracións, ou desactiva &quot;Usar pwgen&quot;.</translation>
+        <translation type="unfinished">Non foi posible executar pwgen (&quot;%1&quot;). Revisa o programa pwgen nos axustes ou desactiva &quot;Usar pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3047,14 +3077,14 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Guardado, pero non commitado</translation>
+        <translation type="unfinished">Gardado, sen facer commit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">A entrada foi guardada, pero gravaro no repositorio Git fallou. O que se informou:
+        <translation type="unfinished">A entrada gardouse no almacén, pero fallou o rexistro en git. O que se informou:
 
 %1</translation>
     </message>
@@ -3066,7 +3096,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 non está almacenado dentro do sistema de contraseñas. Os destinatarios están configurados para o almacén ou un directorio dentro del.</translation>
+        <translation type="unfinished">%1 non está dentro do almacén de contrasinais. Os destinatarios configúranse para o almacén ou para un cartafol dentro del.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3103,12 +3133,12 @@ Continuar?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">O repositorio Git do almacenamento de contraseñas está no centro dun %1. Terminao ou abortaolo co Git antes de cambiar o almacenamento de contraseñas, xa que o que cambies pode perderse.</translation>
+        <translation type="unfinished">O repositorio Git do almacén de contrasinais está no medio dun %1. Remátao ou cancélao con Git antes de cambiar o almacén de contrasinais; se non, o que cambies pode perderse.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">O almacenamento de contraseñas está a ser actualizado (un &quot;Git pull&quot; está en curso). Aguarde ata que finalice, e tente de novo.</translation>
+        <translation type="unfinished">O almacén de contrasinais estase a actualizar (hai un Git pull en curso). Agarda a que remate e téntao de novo.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3133,7 +3163,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">Non é posible ler %1 como unha lista de destinatarios (un ficheiro normal de ata %2), polo que nada está preseleccionado. Comprobeo antes de escoller os destinatarios aquí: &quot;OK&quot; sobrescreve a nova lista.</translation>
+        <translation type="unfinished">Non é posible ler %1 como unha lista de destinatarios (un ficheiro normal de ata %2), polo que non hai nada preseleccionado. Compróbao antes de escoller os destinatarios aquí: OK escribe unha lista nova enriba dela.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3161,7 +3191,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>Contrasinal</translation>
     </message>
@@ -3249,87 +3279,97 @@ Continuar?</translation>
         <translation>Modelo de campo desde o ficheiro .templates do almacén. Ctrl+T cambia ao seguinte.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation type="unfinished">Novo contrasinal</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation>Descifrando…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation type="unfinished">Gardando…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation type="unfinished">Aínda se está a gardar</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation type="unfinished">A entrada aínda se está a gardar. Pechar o diálogo igualmente? Se despois falla o gardado, perderase o que escribiches.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation type="unfinished">Non gardado: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation type="unfinished">Dálle un nome á entrada.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation type="unfinished">Un nome non pode rematar en /.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation type="unfinished">Ese nome apuntaría fóra do almacén de contrasinais.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished">Un nome ou cartafol que comece cun punto quedaría oculto na lista.</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="343"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished">%1 está detrás dunha ligazón simbólica ou dunha unión, fóra do almacén de contrasinais.</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation type="unfinished">Xa existe unha entrada chamada %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation type="unfinished">%1 é un cartafol.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation type="unfinished">Non se puido crear o cartafol %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation type="unfinished">Eliminar campo</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation type="unfinished">Xa existe un campo chamado %1.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>Secreto otpauth:// URI ou base32</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation>Secreto OTP non válido</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Esta entrada ten %n liña, demasiadas para editala aquí.</numerusform>
@@ -3475,7 +3515,7 @@ Continuar?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation>Contrasinal</translation>
     </message>
@@ -3485,8 +3525,8 @@ Continuar?</translation>
         <translation>Abrir %1 no navegador</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>Código OTP</translation>
     </message>
@@ -3495,7 +3535,7 @@ Continuar?</translation>
         <translation type="vanished">Código OTP</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation>Non se atopa código OTP nesta entrada de contrasinal</translation>
     </message>
@@ -3664,7 +3704,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">O enlace %1 foi eliminado e `git` xa non o segue, pero a operación fallou: %2</translation>
+        <translation type="unfinished">Eliminouse a ligazón %1 e git xa non a segue, pero fallou o commit: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>
@@ -3877,27 +3917,27 @@ As entradas con [NON VÁLIDA] ou [CADUCADA] non se poden cifrar; as entradas [PA
         <translation>Non se atopan claves no anel de claves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[NON VÁLIDA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[CADUCADA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[PARCIAL] </translation>
     </message>

@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="499"/>
         <source>Every field behind the eye button, not only the secrets: for shared screens and presenting. The notes below the fields and the OTP code stay visible; &quot;Hide content&quot; hides those too.</source>
-        <translation type="unfinished">Göz simgesinin arkasındaki tüm alanlar, sırlarla sınırlı değil: paylaşılan ekranlar ve sunum için. Alanların altındaki notlar ve OTP kodu görünür kalır; &quot;İçeriği gizle&quot; de onları gizler.</translation>
+        <translation type="unfinished">Yalnızca sırları değil, tüm alanları göz düğmesinin arkasına gizler: paylaşılan ekranlar ve sunumlar için. Alanların altındaki notlar ve OTP kodu görünür kalır; &quot;İçeriği gizle&quot; bunları da gizler.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="557"/>
@@ -1072,17 +1072,17 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
 <context>
     <name>FieldLabel</name>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="22"/>
+        <location filename="../src/fieldlabel.cpp" line="23"/>
         <source>Double-click to rename this field</source>
         <translation>Bu alanı yeniden adlandırmak için çift tıklayın</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="35"/>
+        <location filename="../src/fieldlabel.cpp" line="36"/>
         <source>Rename field…</source>
         <translation>Alanı yeniden adlandır…</translation>
     </message>
     <message>
-        <location filename="../src/fieldlabel.cpp" line="36"/>
+        <location filename="../src/fieldlabel.cpp" line="37"/>
         <source>Remove field</source>
         <translation>Alanı kaldır</translation>
     </message>
@@ -1166,87 +1166,101 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <translation>Alıcı listelerinin nesil kaydı olan %1 kilitlenemedi: başka bir QtPass onu kullanıyor olabilir ya da klasörüne yazılamıyor.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="450"/>
         <source>The list carries more than one store line.</source>
-        <translation type="unfinished">Bu liste, birden fazla depo satırı içeriyor.</translation>
+        <translation type="obsolete">Bu liste, birden fazla depo satırı içeriyor.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="458"/>
         <source>The store line is malformed: %1</source>
-        <translation type="unfinished">Depo satırı hatalı: %1</translation>
+        <translation type="obsolete">Depo satırı hatalı: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <location filename="../src/gpgidgeneration.cpp" line="470"/>
         <source>The list carries more than one generation line.</source>
         <translation>Listede birden fazla nesil satırı var.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="472"/>
+        <location filename="../src/gpgidgeneration.cpp" line="478"/>
         <source>The generation line is malformed: %1</source>
         <translation>Nesil satırı hatalı biçimlendirilmiş: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="478"/>
+        <location filename="../src/gpgidgeneration.cpp" line="484"/>
         <source>The list carries more than one folder line.</source>
         <translation>Listede birden fazla klasör satırı var.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="489"/>
+        <location filename="../src/gpgidgeneration.cpp" line="495"/>
         <source>The folder line is malformed: %1</source>
         <translation>Klasör satırı hatalı biçimlendirilmiş: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="493"/>
+        <location filename="../src/gpgidgeneration.cpp" line="499"/>
         <source>The header line is malformed: %1</source>
         <translation>Başlık satırı hatalı biçimlendirilmiş: %1</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="526"/>
+        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a generation line but no folder line.</source>
         <translation>Listede bir nesil satırı var ancak klasör satırı yok.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="532"/>
         <source>The list carries a store line but no generation line.</source>
-        <translation type="unfinished">Bu liste bir depo satırı içeriyor ancak nesil satırı içermiyor.</translation>
+        <translation type="obsolete">Bu liste bir depo satırı içeriyor ancak nesil satırı içermiyor.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="687"/>
+        <location filename="../src/gpgidgeneration.cpp" line="695"/>
         <source>The signed recipient list %1 is not one to trust: %2</source>
         <translation>İmzalı alıcı listesi %1 güvenilir bir liste değil: %2</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="614"/>
+        <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
         <translation>İmzalı alıcı listesi %1, deponun &quot;%3&quot; klasörü için değil &quot;%2&quot; klasörü için yazılmış ve kullanılmıyor. Başka biri tarafından buraya kopyalanmış olabilir; klasör bunun yerine taşınmış ya da yeniden adlandırılmışsa, imzalama anahtarını elinde bulunduran biri bu klasörde Kullanıcılar&apos;ı açıp alıcıları kaydeder; bu, listeyi şu anki konumuna bağlar.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="627"/>
+        <location filename="../src/gpgidgeneration.cpp" line="453"/>
+        <source>The list carries more than one store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished">Listede birden fazla depo kimliği satırı var.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="464"/>
+        <source>The store ID line is malformed: %1</source>
+        <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
+        <translation type="unfinished">Depo kimliği satırı hatalı biçimlendirilmiş: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="540"/>
+        <source>The list carries a store ID line but no generation line.</source>
+        <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
+        <translation type="unfinished">Listede bir depo kimliği satırı var ancak nesil satırı yok.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="635"/>
         <source>Generation %1 is the highest there is, so no newer list can be written here: removing %2 forgets what this device accepted before, after which a holder of the signing key gets through by opening Users and %3.</source>
         <translation>%1. nesil olabilecek en yüksek nesil olduğundan buraya daha yeni bir liste yazılamaz: %2 kaldırılırsa bu cihazın daha önce neyi kabul ettiği unutulur; bundan sonra imzalama anahtarını elinde bulunduran biri için çıkış yolu, Kullanıcılar&apos;ı açmak ve %3.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="634"/>
+        <location filename="../src/gpgidgeneration.cpp" line="642"/>
         <source>A holder of the signing key gets through by opening Users and %1, which writes generation %2. Removing %3 forgets what this device accepted before.</source>
         <translation>İmzalama anahtarını elinde bulunduran biri için çıkış yolu, Kullanıcılar&apos;ı açmak ve %1. Kaydetme işlemi %2. nesli yazar. %3 kaldırılırsa bu cihazın daha önce neyi kabul ettiği unutulur.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="651"/>
+        <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
         <translation>İmzalı alıcı listesi %1 nesil satırı içermiyor; oysa daha önce burada %2. nesil kabul edilmişti. pass nesil satırı yazmaz (QtPass&apos;in pass arka ucu üzerinden de yazmaz); QtPass de 2.0&apos;dan önce yazmıyordu; nesil satırı olmayan bir liste deponun başka bir klasörü için yazılıp buraya kopyalanmış da olabilir. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="660"/>
+        <location filename="../src/gpgidgeneration.cpp" line="668"/>
         <source>selecting the recipients afresh and saving</source>
         <translation>alıcıları yeniden seçip kaydetmek</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="787"/>
         <source>The signed recipient list %1 carries no store line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store line.</source>
-        <translation type="unfinished">İmzalı alıcı listesi %1 depo satırı içermiyor, oysa bu cihaz bu depoyu %2 kimliğiyle tanıyor: liste başka bir depo için yazılıp buraya kopyalanmış ya da daha eski bir QtPass tarafından yazılmış olabilir. İmzalama anahtarının sahibi, Kullanıcılar&apos;ı açıp alıcıları yeniden seçerek ve kaydederek bunu aşar; bu işlem depo satırını yazar.</translation>
+        <translation type="obsolete">İmzalı alıcı listesi %1 depo satırı içermiyor, oysa bu cihaz bu depoyu %2 kimliğiyle tanıyor: liste başka bir depo için yazılıp buraya kopyalanmış ya da daha eski bir QtPass tarafından yazılmış olabilir. İmzalama anahtarının sahibi, Kullanıcılar&apos;ı açıp alıcıları yeniden seçerek ve kaydederek bunu aşar; bu işlem depo satırını yazar.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="863"/>
+        <location filename="../src/gpgidgeneration.cpp" line="873"/>
         <source>The generation record of the recipient lists, %1, has moved on to generation %2 while generation %3 was being written.</source>
         <translation>Alıcı listelerinin nesil kaydı olan %1, %3. nesil yazılırken %2. nesle geçti.</translation>
     </message>
@@ -1259,32 +1273,38 @@ Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
         <translation type="obsolete">İmzalı alıcı listesi %1 nesil satırı içermiyor; oysa daha önce burada %2. nesil kabul edilmişti. pass nesil satırı yazmaz (QtPass&apos;in pass arka ucu üzerinden de yazmaz); QtPass de 2.0&apos;dan önce yazmıyordu. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="665"/>
+        <location filename="../src/gpgidgeneration.cpp" line="673"/>
         <source>The signed recipient list %1 is generation %2, older than generation %3, the last one QtPass accepted here. It may have been put back by someone else. %4</source>
         <translation>İmzalı alıcı listesi %1, %2. nesil; bu, QtPass&apos;in burada en son kabul ettiği %3. nesilden daha eski. Başka biri tarafından geri konmuş olabilir. %4</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="672"/>
+        <location filename="../src/gpgidgeneration.cpp" line="680"/>
         <source>saving the recipients: the preselected recipients there are this list&apos;s, so remove anyone who should no longer have access first</source>
         <translation>alıcıları kaydetmek: oradaki önceden seçili alıcılar bu listenin alıcılarıdır; bu nedenle önce artık erişimi olmaması gereken herkesi kaldırın</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="737"/>
+        <location filename="../src/gpgidgeneration.cpp" line="745"/>
         <source>The signed recipient list %1 is generation %2, the same generation as a different list this device accepted before. Either two devices saved recipients at the same time (Git will have shown the conflict), or an authentic list of that generation was swapped in. %3</source>
         <translation>İmzalı alıcı listesi %1, %2. nesil; bu cihaz daha önce aynı nesilden farklı bir liste kabul etmişti. Ya iki cihaz alıcıları aynı anda kaydetmiş (Git çakışmayı göstermiş olmalı) ya da o nesle ait gerçek bir liste yerine konmuş. %3</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="745"/>
+        <location filename="../src/gpgidgeneration.cpp" line="753"/>
         <source>checking the recipients and saving</source>
         <translation>alıcıları kontrol edip kaydetmek</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="771"/>
+        <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">İmzalayanların listesi %1, başka bir parola deposu (depo ID %2; bu cihazı bu depoyu %3 olarak biliyor) için yazılmıştır ve kullanılmamaktadır. Aynı anahtar ile imzalanmış bir yerden kopyalanmış olabilir. Eğer bu depo yeniden yapılandırılırsa, %4&apos;ü kaldırmak, cihazın bildiği depo ID&apos;lerini unutmasına neden olur.</translation>
+        <translation type="unfinished">İmzalı alıcı listesi %1 başka bir parola deposu için yazılmış (depo kimliği %2; bu cihaz bu depoyu %3 olarak tanıyor) ve kullanılmıyor. Aynı anahtarla imzalanan bir depodan buraya kopyalanmış olabilir. Bunun yerine bu depo yeniden kurulduysa, %4 kaldırılırsa bu cihazın bildiği depo kimlikleri unutulur.</translation>
     </message>
     <message>
-        <location filename="../src/gpgidgeneration.cpp" line="831"/>
+        <location filename="../src/gpgidgeneration.cpp" line="797"/>
+        <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
+        <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
+        <translation type="unfinished">İmzalı alıcı listesi %1 depo kimliği satırı içermiyor, oysa bu cihaz bu depoyu %2 kimliğiyle tanıyor: liste başka bir depo için yazılıp buraya kopyalanmış ya da eski bir QtPass tarafından yazılmış olabilir. İmzalama anahtarını elinde bulunduran biri için çıkış yolu, Kullanıcılar&apos;ı açmak, alıcıları yeniden seçmek ve kaydetmektir; bu, depo kimliği satırını yazar.</translation>
+    </message>
+    <message>
+        <location filename="../src/gpgidgeneration.cpp" line="841"/>
         <source>The recipient list %1 has reached generation %2, the highest there is; the list cannot be written.</source>
         <translation>Alıcı listesi %1, olabilecek en yüksek nesil olan %2. nesle ulaştı; liste yazılamıyor.</translation>
     </message>
@@ -1526,7 +1546,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">Parola deposunun Git deposunda birleştirilmemiş dosyalar bulunuyor. Parolayı yeniden şifrelemeden önce, Git ile çelişkileri çözün.</translation>
+        <translation type="unfinished">Parola deposunun Git deposunda birleştirilmemiş dosyalar var. Yeniden şifrelemeden önce çakışmayı Git ile çözün.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -2584,7 +2604,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder</source>
         <translation>Klasörü yeniden adlandır</translation>
     </message>
@@ -2658,68 +2678,78 @@ Expire-Date: 0
 (%1 içine konulacak)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <source>Hidden folder</source>
+        <translation type="unfinished">Gizli klasör</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <source>A folder that starts with a dot would be hidden from the list: %1</source>
+        <translation type="unfinished">Nokta ile başlayan bir klasör listede gizlenir: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1581"/>
         <source>Rename folder to: </source>
         <translation>Klasörü Yeniden Adlandır: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file to: </source>
         <translation>Dosyayı Yeniden Adlandır: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1642"/>
+        <location filename="../src/mainwindow.cpp" line="1659"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Bu girdi bir parola değil, bir OTP şifresi içerir</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1695"/>
+        <location filename="../src/mainwindow.cpp" line="1712"/>
         <source>Re-encrypting passwords...</source>
         <translation>Parolalar yeniden şifreleniyor...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1713"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1704"/>
+        <location filename="../src/mainwindow.cpp" line="1721"/>
         <source>Cancelling re-encryption</source>
         <translation>Yeniden şifreleme iptal ediliyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1715"/>
+        <location filename="../src/mainwindow.cpp" line="1732"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Parolalar yeniden şifreleniyor: %1 / %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1736"/>
-        <location filename="../src/mainwindow.cpp" line="1755"/>
+        <location filename="../src/mainwindow.cpp" line="1753"/>
+        <location filename="../src/mainwindow.cpp" line="1772"/>
         <source>Export public key</source>
         <translation>Açık Anahtarı Dışa Aktar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1737"/>
+        <location filename="../src/mainwindow.cpp" line="1754"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Genel Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Yapılandırılmış bir imzalama anahtarı yok. QtPass Ayarları &amp;gt; GPG anahtarları içinden bir tane ayarlayın veya bunu bir terminalde çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1784"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Not a folder of the store</source>
         <translation>Depoya ait bir klasör değil</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1785"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 bir sembolik bağlantı ya da birleşim noktasıdır veya böyle bir bağlantının arkasında bulunuyor. Bağlantının işaret ettiği hedef parola deposunun parçası değildir ve olduğu gibi bırakılır.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1793"/>
+        <location filename="../src/mainwindow.cpp" line="1810"/>
         <source>Sharing passwords with GPG</source>
         <translation>GPG ile Parola Paylaşımı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1794"/>
+        <location filename="../src/mainwindow.cpp" line="1811"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG ile Parolaları Paylaşma&lt;/h3&gt;&lt;p&gt;Diğer kullanıcılarla parolaları paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Genel anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın genel anahtarlarını içe aktarın&lt;/b&gt; GPG anahtarlık halkanıza&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar şifresini çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Yalnızca eşleşen gizli anahtara sahip kişiler parolaların şifresini çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS sayfasına bakın.&lt;/p&gt;</translation>
     </message>
@@ -2732,7 +2762,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Genel Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Yapılandırılmış bir imzalama anahtarı yok. QtPass Ayarları &amp;gt; GPG anahtarları içinden bir tane ayarlayın veya bunu bir terminalde çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1756"/>
+        <location filename="../src/mainwindow.cpp" line="1773"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2741,7 +2771,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1758"/>
+        <location filename="../src/mainwindow.cpp" line="1775"/>
         <source>No output from gpg.</source>
         <translation>gpg&apos;den çıktı yok.</translation>
     </message>
@@ -2780,24 +2810,24 @@ Expire-Date: 0
 (%1 içine konulacak)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1537"/>
-        <location filename="../src/mainwindow.cpp" line="1552"/>
-        <location filename="../src/mainwindow.cpp" line="1655"/>
+        <location filename="../src/mainwindow.cpp" line="1554"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
+        <location filename="../src/mainwindow.cpp" line="1672"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1555"/>
         <source>Failed to create folder: %1</source>
         <translation>Klasör oluşturulamadı: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1553"/>
+        <location filename="../src/mainwindow.cpp" line="1570"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>.gpg-id dosyası oluşturmak için başarısız oldu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1603"/>
+        <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Rename file</source>
         <translation>Dosyayı yeniden adlandır</translation>
     </message>
@@ -2810,18 +2840,18 @@ Expire-Date: 0
         <translation type="vanished">Dosyayı Yeniden Adlandır: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1656"/>
+        <location filename="../src/mainwindow.cpp" line="1673"/>
         <source>Directory does not exist: %1</source>
         <translation>Dizin mevcut değil: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1664"/>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1681"/>
+        <location filename="../src/mainwindow.cpp" line="1714"/>
         <source>Re-encrypt passwords</source>
         <translation>Parolaları yeniden şifrele</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1665"/>
+        <location filename="../src/mainwindow.cpp" line="1682"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2876,7 +2906,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished">pwgen (&quot;%1&quot;) çalıştıramadı. Ayarlarda pwgen programını kontrol edin veya &quot;pwgen&apos;i kullan&quot; seçeneğini kapatın.</translation>
+        <translation type="unfinished">pwgen çalıştırılamadı (&quot;%1&quot;). Ayarlarda pwgen programını kontrol edin veya &quot;pwgen&apos;i kullan&quot; seçeneğini kapatın.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -2982,7 +3012,7 @@ Devam edilsin mi?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">Parola deposunun Git deposu, %1 işleminin ortasındadır. Parola deposunu değiştirmeden önce, veya değiştirdikten sonra, Git ile işlemi tamamlayın veya iptal edin; aksi takdirde değişiklikleriniz kaybolabilir.</translation>
+        <translation type="unfinished">Parola deposunun Git deposu bir %1 işleminin ortasında. Parola deposunu değiştirmeden önce bu işlemi Git ile tamamlayın veya iptal edin; aksi takdirde yaptığınız değişiklikler kaybolabilir.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
@@ -3040,7 +3070,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="120"/>
-        <location filename="../src/passworddialog.cpp" line="369"/>
+        <location filename="../src/passworddialog.cpp" line="387"/>
         <source>Password</source>
         <translation>Parola</translation>
     </message>
@@ -3128,87 +3158,97 @@ Devam edilsin mi?</translation>
         <translation>Deponun .templates dosyasındaki alan şablonu. Ctrl+T bir sonrakine geçer.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="96"/>
+        <location filename="../src/passworddialog.cpp" line="97"/>
         <source>New password</source>
         <translation>Yeni parola</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="117"/>
+        <location filename="../src/passworddialog.cpp" line="118"/>
         <source>Decrypting…</source>
         <translation>Şifre çözülüyor…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="207"/>
+        <location filename="../src/passworddialog.cpp" line="208"/>
         <source>Saving…</source>
         <translation>Kaydediliyor…</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="254"/>
+        <location filename="../src/passworddialog.cpp" line="255"/>
         <source>Still saving</source>
         <translation>Hâlâ kaydediliyor</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="255"/>
+        <location filename="../src/passworddialog.cpp" line="256"/>
         <source>The entry is still being saved. Close the dialog anyway? If saving then fails, what you typed is lost.</source>
         <translation>Girdi hâlâ kaydediliyor. Yine de pencere kapatılsın mı? Kaydetme sonra başarısız olursa yazdıklarınız kaybolur.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="272"/>
+        <location filename="../src/passworddialog.cpp" line="273"/>
         <source>Not saved: %1</source>
         <translation>Kaydedilmedi: %1</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="314"/>
+        <location filename="../src/passworddialog.cpp" line="315"/>
         <source>Give the entry a name.</source>
         <translation>Girdiye bir ad verin.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="318"/>
+        <location filename="../src/passworddialog.cpp" line="319"/>
         <source>A name cannot end in /.</source>
         <translation>Bir ad / ile bitemez.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="327"/>
+        <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
         <translation>Bu ad parola deposunun dışını gösterir.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="331"/>
+        <location filename="../src/passworddialog.cpp" line="336"/>
+        <source>A name or folder that starts with a dot would be hidden from the list.</source>
+        <translation type="unfinished">Nokta ile başlayan bir ad veya klasör listede gizlenir.</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="343"/>
+        <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
+        <translation type="unfinished">%1, parola deposunun dışında, bir sembolik bağlantının veya birleşim noktasının arkasında bulunuyor.</translation>
+    </message>
+    <message>
+        <location filename="../src/passworddialog.cpp" line="349"/>
         <source>An entry called %1 already exists.</source>
         <translation>%1 adlı bir girdi zaten var.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="335"/>
+        <location filename="../src/passworddialog.cpp" line="353"/>
         <source>%1 is a folder.</source>
         <translation>%1 bir klasör.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="365"/>
+        <location filename="../src/passworddialog.cpp" line="383"/>
         <source>Could not create the folder %1.</source>
         <translation>%1 klasörü oluşturulamadı.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="425"/>
+        <location filename="../src/passworddialog.cpp" line="741"/>
         <source>Remove field</source>
         <translation>Alanı kaldır</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="444"/>
+        <location filename="../src/passworddialog.cpp" line="441"/>
         <source>A field called %1 already exists.</source>
         <translation>%1 adında bir alan zaten var.</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="530"/>
+        <location filename="../src/passworddialog.cpp" line="527"/>
         <source>otpauth:// URI or base32 secret</source>
         <translation>otpauth:// URI veya base32 şifresi</translation>
     </message>
     <message>
-        <location filename="../src/passworddialog.cpp" line="567"/>
+        <location filename="../src/passworddialog.cpp" line="564"/>
         <source>Invalid OTP secret</source>
         <translation>Geçersiz OTP şifresi</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/passworddialog.cpp" line="799"/>
+        <location filename="../src/passworddialog.cpp" line="864"/>
         <source>This entry has %n line(s), too many to edit here.</source>
         <translation type="unfinished">
             <numerusform>Bu giriş, %n satıra sahip ve burada düzenlemek için çok uzun.</numerusform>
@@ -3352,7 +3392,7 @@ Devam edilsin mi?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="95"/>
         <location filename="../src/passworddisplaypanel.cpp" line="201"/>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="281"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
         <translation>Parola</translation>
     </message>
@@ -3362,8 +3402,8 @@ Devam edilsin mi?</translation>
         <translation>%1&apos;i tarayıcıda aç</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="381"/>
-        <location filename="../src/passworddisplaypanel.cpp" line="394"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="383"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="396"/>
         <source>OTP code</source>
         <translation>OTP Kodu</translation>
     </message>
@@ -3372,7 +3412,7 @@ Devam edilsin mi?</translation>
         <translation type="vanished">OTP Kodu</translation>
     </message>
     <message>
-        <location filename="../src/passworddisplaypanel.cpp" line="382"/>
+        <location filename="../src/passworddisplaypanel.cpp" line="384"/>
         <source>No OTP code found in this password entry</source>
         <translation>Bu parola girdisinde OTP kodu bulunamadı</translation>
     </message>
@@ -3753,27 +3793,27 @@ Normal girdilerin güvenilir bir şifreleme anahtarı vardır; başkalarının �
         <translation>Anahtar anahtarlıkta bulunamadı</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="364"/>
+        <location filename="../src/usersdialog.cpp" line="368"/>
         <source>created</source>
         <translation>oluşturuldu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="368"/>
+        <location filename="../src/usersdialog.cpp" line="372"/>
         <source>expires</source>
         <translation>süresi doluyor</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="391"/>
+        <location filename="../src/usersdialog.cpp" line="395"/>
         <source>[INVALID] </source>
         <translation>[GEÇERSİZ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="387"/>
+        <location filename="../src/usersdialog.cpp" line="391"/>
         <source>[EXPIRED] </source>
         <translation>[SÜRESİ DOLMUŞ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="395"/>
+        <location filename="../src/usersdialog.cpp" line="399"/>
         <source>[PARTIAL] </source>
         <translation>[KISMİ] </translation>
     </message>
