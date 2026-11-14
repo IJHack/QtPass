@@ -151,7 +151,17 @@ auto answersTo(const UserInfo &key, const QString &recipient) -> bool {
 
 void UsersDialog::selectRecipients(const QStringList &recipients) {
   // One gpg call resolves every recipient, by key ID or by email/UID.
-  const QList<UserInfo> resolved = m_pass->listKeys(recipients);
+  QList<UserInfo> resolved = m_pass->listKeys(recipients);
+  if (resolved.isEmpty() && recipients.size() > 1) {
+    // One line gpg cannot read as a key search ("0x", a fingerprint one
+    // digit short) aborts that whole call with exit code 2, so nothing is
+    // listed for the other lines, whose keys are in the keyring all the same.
+    // Asked for one by one they still resolve; only the unreadable line is
+    // reported missing by the loop below, as an unknown key already is.
+    for (const QString &recipient : recipients) {
+      resolved += m_pass->listKeys(recipient);
+    }
+  }
   for (UserInfo &user : m_userList) {
     if (std::any_of(resolved.cbegin(), resolved.cend(),
                     [&user](const UserInfo &key) {
