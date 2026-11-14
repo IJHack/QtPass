@@ -16,6 +16,7 @@ namespace Enums {
 
 /**
  * @struct ProcessInfo
+ * @ingroup process
  * @brief What QtPass knows about one kind of subprocess: what to call it and
  * whether its output may carry a secret.
  *

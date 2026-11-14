@@ -22,6 +22,7 @@ class QThread;
 
 /**
  * @class NativeGrep
+ * @ingroup backend
  * @brief Full-text search over a password store without `pass grep`: every
  * `.gpg` file is decrypted with gpg on a worker thread and its lines matched
  * against a QRegularExpression. Only the newest search may report; a search

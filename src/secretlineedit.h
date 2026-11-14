@@ -16,6 +16,7 @@ class QMenu;
 
 /**
  * @class SecretLineEdit
+ * @ingroup secrets
  * @brief A QLineEdit for a password that can be shown: whatever is copied out
  * of it is marked as a secret and reported for autoclear.
  *

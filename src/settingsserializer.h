@@ -14,6 +14,7 @@ class QSettings;
 
 /**
  * @class SettingsSerializer
+ * @ingroup settings
  * @brief Maps AppSettings to and from a QSettings store.
  *
  * Pure, side-effect-free translation between the flat AppSettings value object

@@ -22,6 +22,7 @@ class Pass;
 
 /**
  * @class KeygenDialog
+ * @ingroup keys
  * @brief Handles GPG keypair generation.
  *
  * The form asks for a name, an e-mail address and a passphrase typed twice

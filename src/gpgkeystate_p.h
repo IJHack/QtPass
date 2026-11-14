@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /**
  * @file
+ * @ingroup keys
  * @brief Record handlers of the gpg colon-listing parser, declared separately
  * only so the unit tests can call them; not for use outside gpgkeystate.cpp.
  */

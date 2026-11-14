@@ -18,6 +18,7 @@
 
 /**
  * @class Totp
+ * @ingroup store
  * @brief RFC 6238 time-based one-time password generation.
  *
  * Ported and trimmed from KeePassXC (`src/core/Totp.cpp`). QtPass stores TOTP

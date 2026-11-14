@@ -23,6 +23,7 @@ class QPushButton;
 
 /**
  * @class FirstRunWizard
+ * @ingroup ui
  * @brief The first start of QtPass: find GnuPG (and pass and Git), make sure
  * there is a secret key, pick or create the password store. Replaces the
  * chain of message boxes ConfigDialog::wizard() used to run before showing
@@ -110,6 +111,7 @@ private:
 
 /**
  * @class ProgramsWizardPage
+ * @ingroup ui
  * @brief Where gpg, pass and git are; gpg is required, the rest optional. A
  * stored path that no longer runs is replaced by what PATH has.
  */
@@ -155,6 +157,7 @@ private:
 
 /**
  * @class KeyWizardPage
+ * @ingroup ui
  * @brief The secret keys gpg knows; a new pair can be generated here. The
  * enabled ones become the recipients of a store that still has to be
  * initialised.
@@ -206,6 +209,7 @@ private:
 
 /**
  * @class StoreWizardPage
+ * @ingroup ui
  * @brief The folder the passwords live in: an existing store is used as-is,
  * a folder without `.gpg-id` (or no folder) is initialised on Finish. The
  * Git box lives here because its sensible default depends on the folder: on
@@ -258,6 +262,7 @@ private:
 
 /**
  * @class DoneWizardPage
+ * @ingroup ui
  * @brief A summary and the two preferences worth asking on day one.
  */
 class DoneWizardPage : public QWizardPage {

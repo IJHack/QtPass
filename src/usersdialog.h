@@ -25,6 +25,7 @@ class QListWidgetItem;
 
 /**
  * @class UsersDialog
+ * @ingroup keys
  * @brief Dialog for selecting GPG recipients for password encryption.
  *
  * UsersDialog allows users to select which GPG keys to encrypt passwords to.

@@ -12,6 +12,7 @@
 
 /**
  * @class QPushButtonWithClipboard
+ * @ingroup secrets
  * @brief QPushButton that stores a text payload and emits it when activated.
  *
  * The button does not touch the clipboard itself. On activation it briefly
@@ -60,8 +61,9 @@ private slots:
   /**
    * @brief Connected to `QPushButton::clicked(bool)`; shows the pushed icon,
    * arms the revert timer and re-emits `clicked` with the stored text.
+   * @param checked Unused; the button is not checkable.
    */
-  void buttonClicked(bool);
+  void buttonClicked(bool checked);
 
 private:
   /** @brief Text handed to receivers on click; set by the owning panel. */

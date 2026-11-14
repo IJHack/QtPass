@@ -17,6 +17,7 @@ class Pass;
 
 /**
  * @class PassBackendFactory
+ * @ingroup backend
  * @brief Owns the Pass backend lifecycle (RealPass vs ImitatePass).
  *
  * Extracted from QtPassSettings, which conflated settings storage with

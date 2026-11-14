@@ -28,6 +28,7 @@ class GpgIdSigner;
 
 /**
  * @struct ResolvedGpgconfCommand
+ * @ingroup backend
  * @brief Represents a command invocation for gpgconf operations.
  *
  * On Unix this is typically just the gpgconf binary; on Windows/WSL it may be
@@ -48,6 +49,7 @@ struct ResolvedGpgconfCommand {
 
 /**
  * @class Pass
+ * @ingroup backend
  * @brief Abstract base class for password store operations.
  *
  * Pass provides an abstraction layer for password management, supporting both

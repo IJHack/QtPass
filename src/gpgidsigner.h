@@ -14,6 +14,7 @@
 
 /**
  * @class GpgIdSigner
+ * @ingroup keys
  * @brief The detached signature on a store's `.gpg-id`: whether the
  * configured signing key is usable, signing the file, and checking that an
  * existing `.gpg-id.sig` was made by one of the configured keys.

@@ -92,7 +92,7 @@ and back, and the rules about secrets. Keep it in step with
 [CLAUDE.md's Architecture section](../../../../CLAUDE.md#architecture) when the
 architecture changes. `doxygen/groups.dox` holds the `@defgroup` blocks.
 
-The stylesheet in `doxygen/doxygen-awesome-css/` is vendored unmodified
+The style sheet in `doxygen/doxygen-awesome-css/` is vendored unmodified
 (version and license are recorded in `REUSE.toml`) and excluded from the
 linters. Update it by replacing the files, not by editing them.
 

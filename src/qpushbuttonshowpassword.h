@@ -14,6 +14,7 @@
 class QWidget;
 /**
  * @class QPushButtonShowPassword
+ * @ingroup secrets
  * @brief QPushButton that toggles visibility of an associated QLineEdit.
  *
  * The button is icon-only and bound to one QLineEdit for its lifetime. Each
@@ -46,8 +47,9 @@ private slots:
   /**
    * @brief Connected to `QPushButton::clicked(bool)`; flips the echo mode of
    * @ref line and updates icon, tooltip and accessible name accordingly.
+   * @param checked Unused; the state is read from the line edit.
    */
-  void buttonClicked(bool);
+  void buttonClicked(bool checked);
 
 private:
   /** @brief `view-visible` icon shown while the password is hidden. */

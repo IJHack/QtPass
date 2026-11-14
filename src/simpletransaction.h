@@ -13,6 +13,7 @@
 
 /**
  * @class SimpleTransaction
+ * @ingroup backend
  * @brief Tracks a sequence of processes that should be treated as one atomic
  * operation.
  *

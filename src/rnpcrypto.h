@@ -19,6 +19,7 @@ struct rnp_ffi_st;
 
 /**
  * @class RnpCrypto
+ * @ingroup backend
  * @brief OpenPGP encryption and decryption in-process, through RNP.
  *
  * A spike towards a backend that needs no gpg, git or pass binary (#2005):

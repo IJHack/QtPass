@@ -24,6 +24,7 @@ class QThread;
 
 /**
  * @class ImitatePass
+ * @ingroup backend
  * @brief Implementation that imitates 'pass' when the real tool is unavailable.
  *
  * ImitatePass provides a complete password store implementation using direct

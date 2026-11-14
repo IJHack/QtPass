@@ -29,6 +29,7 @@ class QLabel;
 
 /**
  * @class ConfigDialog
+ * @ingroup ui
  * @brief The ConfigDialog handles the configuration interface.
  *
  * Presents controls for profiles, generation tools (pwgen/pass),

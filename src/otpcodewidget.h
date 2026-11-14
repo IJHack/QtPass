@@ -18,6 +18,7 @@ class QPushButtonWithClipboard;
 
 /**
  * @class OtpCodeWidget
+ * @ingroup secrets
  * @brief Live one-time password display: code, copy button and countdown.
  *
  * Rendered by PasswordDisplayPanel as the value side of the "OTP code" row. It

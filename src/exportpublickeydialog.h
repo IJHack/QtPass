@@ -18,6 +18,7 @@ class ExportPublicKeyDialog;
 
 /**
  * @class ExportPublicKeyDialog
+ * @ingroup keys
  * @brief Dialog showing an ASCII-armored public GPG key for sharing.
  *
  * Displays the armored key text and offers Copy-to-Clipboard and

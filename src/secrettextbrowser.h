@@ -12,6 +12,7 @@
 
 /**
  * @class SecretTextBrowser
+ * @ingroup secrets
  * @brief A QTextBrowser for decrypted entry text: whatever is copied out of
  * it is marked as a secret and reported for autoclear.
  *

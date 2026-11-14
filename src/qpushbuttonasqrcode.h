@@ -11,6 +11,7 @@
 
 /**
  * @class QPushButtonAsQRCode
+ * @ingroup secrets
  * @brief QPushButton that presents a text payload as a QR code action.
  *
  * The button is icon-only (theme icon `qrcode`) and carries the text of the
@@ -54,8 +55,9 @@ private:
   /**
    * @brief Connected to `QPushButton::clicked(bool)`; re-emits the overload
    * carrying the stored text so receivers do not need to look it up.
+   * @param checked Unused; the button is not checkable.
    */
-  void buttonClicked(bool);
+  void buttonClicked(bool checked);
 
 private:
   /** @brief Text to be rendered as a QR code; set by the owning panel. */

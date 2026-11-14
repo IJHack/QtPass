@@ -12,6 +12,7 @@
 
 /**
  * @struct PasswordConfiguration
+ * @ingroup store
  * @brief Holds the password generator settings: which character set is
  * selected, the alphabet of every set, and the password length.
  *

@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 /**
  * @file
+ * @ingroup keys
  * @brief Parsing of `gpg --with-colons` key listings into UserInfo records.
  */
 #ifndef SRC_GPGKEYSTATE_H_

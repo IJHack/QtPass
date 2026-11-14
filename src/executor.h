@@ -19,6 +19,7 @@
 
 /**
  * @class Executor
+ * @ingroup process
  * @brief Runs non-interactive external commands in FIFO order using a single
  * QProcess.
  *

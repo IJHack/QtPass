@@ -13,6 +13,7 @@
 #include <optional>
 
 /**
+ * @ingroup keys
  * @brief Rollback detection for signed `.gpg-id` files.
  *
  * A signature proves that a recipient list is authentic and unmodified; it

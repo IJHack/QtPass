@@ -13,6 +13,7 @@
 
 /**
  * @struct UserInfo
+ * @ingroup keys
  * @brief Stores GPG key info including validity, creation date, and more.
  */
 struct UserInfo {

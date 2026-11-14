@@ -11,6 +11,7 @@
 #include <QMessageBox>
 
 /**
+ * @ingroup ui
  * @brief Message boxes whose text is shown as the text it is.
  *
  * QMessageBox's static helpers read their text as rich text when it looks

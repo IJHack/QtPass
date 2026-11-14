@@ -34,6 +34,7 @@ static inline auto dwordBytes(quint32 value) -> QByteArray {
 
 /**
  * @class ClipboardManager
+ * @ingroup secrets
  * @brief Puts secrets on the system clipboard and takes them off again.
  *
  * Remembers what it copied so the autoclear timer (and the quit handler)

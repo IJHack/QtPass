@@ -12,6 +12,7 @@
 
 /**
  * @class SecretPlainTextEdit
+ * @ingroup secrets
  * @brief A QPlainTextEdit for decrypted entry text being edited: whatever is
  * copied or cut out of it is marked as a secret and reported for autoclear.
  *

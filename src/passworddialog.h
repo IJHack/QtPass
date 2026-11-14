@@ -28,6 +28,7 @@ class QWidget;
 
 /**
  * @class PasswordDialog
+ * @ingroup ui
  * @brief Dialog for inserting and editing passwords, optionally using
  * templates.
  *

@@ -14,6 +14,7 @@
 
 /**
  * @struct Profile
+ * @ingroup settings
  * @brief One named password store: where it is, how its .gpg-id is signed
  *        and, optionally, its own Git switches.
  *

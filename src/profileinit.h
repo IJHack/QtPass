@@ -18,6 +18,7 @@ struct UserInfo;
 
 /**
  * @class ProfileInit
+ * @ingroup settings
  * @brief Turn a directory into a password store without going through the
  *        Pass backend of the currently active store.
  *

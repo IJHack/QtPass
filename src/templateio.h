@@ -14,6 +14,7 @@
 
 /**
  * @class TemplateIO
+ * @ingroup store
  * @brief Read and write password-store template configuration.
  *
  * Extracted from Util. Owns the `.templates` INI-style file (named template

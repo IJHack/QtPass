@@ -18,6 +18,7 @@ class ImportKeyDialog;
 
 /**
  * @class ImportKeyDialog
+ * @ingroup keys
  * @brief Dialog for importing GPG keys from file or clipboard.
  *
  * Allows users to import GPG public keys without leaving QtPass.

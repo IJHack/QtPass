@@ -13,6 +13,7 @@
 
 /**
  * @class Base32
+ * @ingroup store
  * @brief RFC 4648 base32 codec, used for TOTP shared secrets.
  *
  * Ported from KeePassXC (`src/core/Base32.cpp`). decode() is deliberately

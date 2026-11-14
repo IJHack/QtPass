@@ -12,6 +12,7 @@
 
 /**
  * @namespace Enums
+ * @ingroup process
  * @brief Enumerators for QtPass configuration and runtime operations.
  */
 namespace Enums {

@@ -13,6 +13,7 @@
 
 /**
  * @class SshAuthSock
+ * @ingroup settings
  * @brief SSH_AUTH_SOCK discovery and validation for child processes.
  *
  * Extracted from Util. GUI-launched applications don't inherit shell-set

@@ -18,6 +18,7 @@
 
 /**
  * @struct AppSettings
+ * @ingroup settings
  * @brief Plain value-object holding all flat QtPass configuration.
  *
  * One field per persisted setting, with the same defaults the legacy

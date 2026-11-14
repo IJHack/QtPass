@@ -13,6 +13,7 @@
 
 /**
  * @class PathValidator
+ * @ingroup store
  * @brief Password-store path-boundary checks.
  *
  * Extracted from Util. Guards file/folder create, rename, and drag-drop

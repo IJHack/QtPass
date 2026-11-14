@@ -25,6 +25,7 @@
 
 /**
  * @class QtPassSettings
+ * @ingroup settings
  * @brief Singleton that stores QtPass settings, handles persistence and
  * defaults.
  *

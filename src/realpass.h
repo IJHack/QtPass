@@ -17,6 +17,7 @@ class GpgIdSigner;
 
 /**
  * @class RealPass
+ * @ingroup backend
  * @brief Implementation of Pass that wraps the 'pass' command-line tool.
  *
  * RealPass delegates all password store operations to the external 'pass'

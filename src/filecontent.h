@@ -15,6 +15,7 @@
 
 /**
  * @struct NamedValue
+ * @ingroup store
  * @brief A name/value pair parsed from a password file field.
  */
 struct NamedValue {
@@ -50,6 +51,7 @@ inline bool operator==(const NamedValue &a, const NamedValue &b) {
 }
 
 /**
+ * @ingroup store
  * @brief The NamedValues class is mostly a list of NamedValue
  * but also has a method to take a specific NamedValue pair out of the list.
  */
@@ -81,6 +83,7 @@ public:
 
 /**
  * @class FileContent
+ * @ingroup store
  * @brief Represents the parsed contents of a password file.
  *
  * Splits the file into a password line, named key/value fields, and
