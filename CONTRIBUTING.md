@@ -13,11 +13,12 @@ problems to <help@qtpass.org>.
 - **Build it:** see [README.md's "From Source" section](README.md#from-source)
   for dependencies and the one-line `qmake6 && make` build. [Windows.md](Windows.md)
   covers Windows specifically.
-- **Find your way around:** [CLAUDE.md's Architecture section](CLAUDE.md#architecture)
-  has an overview of the two backends (`RealPass`/`ImitatePass`), the core
-  classes and how they connect. It is written for AI agents working on this
-  repository, but it is just as useful as a map for a human reading the code
-  for the first time.
+- **Find your way around:** the [developer documentation](https://qtpass.org/docs/)
+  starts with an overview of the two backends (`RealPass`/`ImitatePass`), how
+  an operation flows through the code and where to begin reading, and
+  documents every class down to its private members.
+  [CLAUDE.md's Architecture section](CLAUDE.md#architecture) is a shorter map
+  of the same ground, written for AI agents working on this repository.
 - **Find something to work on:** issues labelled
   [`good first issue`](https://github.com/IJHack/QtPass/labels/good%20first%20issue)
   or [`help wanted`](https://github.com/IJHack/QtPass/labels/help%20wanted) are

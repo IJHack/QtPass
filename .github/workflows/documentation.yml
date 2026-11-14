@@ -40,7 +40,8 @@ jobs:
             tests:
               - "tests/**"
             docs:
-              - "docs/**"
+              - "Doxyfile"
+              - "doxygen/**"
 
   docs:
     name: Build, with code coverage

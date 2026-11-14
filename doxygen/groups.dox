@@ -1,0 +1,67 @@
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+/**
+ * @defgroup backend Password store backends
+ * @brief The operations on a password store and the two ways %QtPass carries
+ * them out.
+ *
+ * Pass is the interface the rest of the program uses. RealPass implements it
+ * with the `pass` tool, ImitatePass with `gpg` and `git` directly.
+ * PassBackendFactory decides which one is active.
+ */
+
+/**
+ * @defgroup process Running external programs
+ * @brief The queue every child process goes through, and what %QtPass knows
+ * about each kind of process.
+ *
+ * Executor starts `gpg`, `git` and `pass` one after another and reports each
+ * exit. Enums::PROCESS names the kinds of process; Enums::ProcessInfo says
+ * how each is labelled and whether its output may hold a secret.
+ */
+
+/**
+ * @defgroup keys Keys and recipients
+ * @brief GPG keys, the `.gpg-id` recipient lists and their signatures.
+ *
+ * Reading gpg's key listings, choosing who an entry is encrypted for, signing
+ * and verifying `.gpg-id`, and the dialogs for generating, importing and
+ * exporting keys.
+ */
+
+/**
+ * @defgroup store Store tree and entries
+ * @brief The password store as files on disk: the tree shown in the main
+ * window, path checks, and the content of an entry.
+ *
+ * StoreTree and StoreModel present the store folder. PathValidator keeps
+ * operations inside it. FileContent parses a decrypted entry into password,
+ * template fields and the rest; Totp computes one-time codes from it.
+ */
+
+/**
+ * @defgroup settings Settings and profiles
+ * @brief Configuration: what is stored, how it is loaded and saved, and the
+ * profiles that name several stores.
+ */
+
+/**
+ * @defgroup ui Windows and dialogs
+ * @brief The main window, its panels and helpers, and the dialogs.
+ */
+
+/**
+ * @defgroup secrets Handling secrets in the interface
+ * @brief The clipboard and the widgets that are allowed to hold a decrypted
+ * secret.
+ *
+ * These exist so that a secret is not left on the clipboard, in a clipboard
+ * history or in the X11 primary selection. New code that shows or copies a
+ * secret should use them rather than plain Qt widgets.
+ */
+
+/**
+ * @defgroup support Application support
+ * @brief Start-up, single-instance handling, logging and general helpers.
+ */

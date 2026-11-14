@@ -113,10 +113,12 @@ jobs:
       # accepts KEY=value lines — no comments, no blank lines, alphabetical
       # order (dotenv-linter rule). Rationale for the non-obvious vars:
       #
-      # FILTER_REGEX_EXCLUDE=^(localization|tests/fuzz/corpus)/ — skips
-      #   translation files from all linters (codespell isn't language-aware
-      #   and flags valid Afrikaans/etc. words as English typos), and the
-      #   fuzzer seed inputs, which are raw bytes on purpose. The .codespellrc
+      # FILTER_REGEX_EXCLUDE=^(localization|tests/fuzz/corpus|doxygen/doxygen-awesome-css)/
+      #   — skips translation files from all linters (codespell isn't
+      #   language-aware and flags valid Afrikaans/etc. words as English
+      #   typos), the fuzzer seed inputs, which are raw bytes on purpose, and
+      #   the vendored Doxygen stylesheet, which stays as upstream ships it
+      #   so it can be updated by replacing the files. The .codespellrc
       #   `skip` directive can't do this because super-linter passes files
       #   individually to codespell, bypassing its file-discovery layer.
       # STRIP_DEFAULT_WORKSPACE_FOR_REGEX=true — make FILTER_REGEX_*

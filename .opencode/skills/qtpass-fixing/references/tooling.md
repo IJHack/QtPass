@@ -26,11 +26,12 @@ trust CI and see the `qtpass-linting` skill.
 
 ## Doxygen
 
-CI fails on any Doxygen warning. A fix that adds or changes a public symbol in
-a header needs a `/** @brief ... */` block with `@param`/`@return`:
+CI fails on any Doxygen warning. A fix that adds or changes a class, function
+or member, private ones included, needs a `/** @brief ... */` block with
+`@param`/`@return` in the header:
 
 ```bash
-doxygen Doxyfile   # any output means CI will fail
+doxygen Doxyfile >/dev/null   # any output means CI will fail
 ```
 
 ## clangd and compile_commands.json

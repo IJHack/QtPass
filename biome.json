@@ -1,7 +1,12 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
   "files": {
-    "includes": ["**", "!localization", "!CHANGELOG.md"]
+    "includes": [
+      "**",
+      "!localization",
+      "!CHANGELOG.md",
+      "!doxygen/doxygen-awesome-css"
+    ]
   },
   "formatter": {
     "indentStyle": "space",
