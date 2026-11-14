@@ -840,16 +840,30 @@ auto Pass::unfinishedGitOperationReason() -> QString {
   // not it exists; the backend runs it in the store (ImitatePass with
   // `-C <store>`, RealPass through `pass git`). The markers, paired with the
   // operation each one means, in the order git prints them back.
+  // The names are Git's own commands, which the user then runs with --abort or
+  // --continue; the translator comments say so.
   const std::array<std::pair<QLatin1String, QString>, 6> markers{{
+      //: The Git command `git rebase`, inserted into "in the middle of a %1".
+      //: Best kept as Git's command name.
       {QLatin1String("rebase-merge"), tr("rebase")},
+      //: The Git command `git rebase`, inserted into "in the middle of a %1".
+      //: Best kept as Git's command name.
       {QLatin1String("rebase-apply"), tr("rebase")},
+      //: The Git command `git merge`, inserted into "in the middle of a %1".
+      //: Best kept as Git's command name.
       {QLatin1String("MERGE_HEAD"), tr("merge")},
+      //: The Git command `git cherry-pick`, inserted into "in the middle of a
+      //: %1". Best kept as Git's command name.
       {QLatin1String("CHERRY_PICK_HEAD"), tr("cherry-pick")},
+      //: The Git command `git revert`, inserted into "in the middle of a %1".
+      //: Best kept as Git's command name.
       {QLatin1String("REVERT_HEAD"), tr("revert")},
       // A multi-commit cherry-pick or revert keeps its sequencer state after a
       // conflict resolution is committed, when CHERRY_PICK_HEAD/REVERT_HEAD is
       // already gone but `--continue` has more commits to apply. Checked last,
       // so the specific head above names the operation when it is still there.
+      //: The Git commands `git cherry-pick` and `git revert`, inserted into
+      //: "in the middle of a %1". Best kept as Git's command names.
       {QLatin1String("sequencer"), tr("cherry-pick or revert")},
   }};
   QStringList args{QStringLiteral("rev-parse")};
@@ -872,9 +886,11 @@ auto Pass::unfinishedGitOperationReason() -> QString {
     if (!QFileInfo::exists(full)) {
       continue;
     }
-    return tr("The store's Git repository is in the middle of a %1. Finish or "
-              "abort it with git before changing the store, or what you change "
-              "may be lost.")
+    //: %1 is a Git command name: rebase, merge, cherry-pick, revert, or
+    //: "cherry-pick or revert".
+    return tr("The password store's Git repository is in the middle of a %1. "
+              "Finish or abort it with Git before changing the password store, "
+              "or what you change may be lost.")
         .arg(markers.at(static_cast<size_t>(i)).second);
   }
   return {};
