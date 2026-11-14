@@ -1041,6 +1041,50 @@ void MainWindow::selectFirstFile() {
   ui->treeView->setCurrentIndex(index);
 }
 
+namespace {
+/**
+ * @brief @p path with each part below @p store spelled as stored on disk.
+ *
+ * Where the file system ignores case, "Bank.gpg" exists while the file is
+ * bank.gpg, and the tree knows the entry only by that spelling.
+ * @param store The store folder.
+ * @param path An existing file in the store.
+ * @return @p path itself when every part is spelled as stored, otherwise
+ *         the path with the stored spelling.
+ */
+auto spelledAsStored(const QString &store, const QString &path) -> QString {
+  const QStringList parts = QDir(store).relativeFilePath(path).split(
+      QLatin1Char('/'), Qt::SkipEmptyParts);
+  QDir dir(store);
+  bool respelled = false;
+  for (int i = 0; i < parts.size(); ++i) {
+    const bool leaf = i == parts.size() - 1;
+    const QStringList names =
+        dir.entryList((leaf ? QDir::Files : QDir::Dirs) | QDir::Hidden |
+                      QDir::NoDotAndDotDot);
+    QString name = parts.at(i);
+    if (!names.contains(name)) {
+      const auto stored = std::find_if(
+          names.cbegin(), names.cend(), [&name](const QString &candidate) {
+            return candidate.compare(name, Qt::CaseInsensitive) == 0;
+          });
+      if (stored == names.cend()) {
+        return path;
+      }
+      name = *stored;
+      respelled = true;
+    }
+    if (leaf) {
+      return respelled ? QDir::cleanPath(dir.filePath(name)) : path;
+    }
+    if (!dir.cd(name)) {
+      return path;
+    }
+  }
+  return path;
+}
+} // namespace
+
 auto MainWindow::exactMatchPath() -> QString {
   const QString text = QDir::fromNativeSeparators(ui->lineEdit->text());
   const QString store = QtPassSettings::getPassStore();
@@ -1053,7 +1097,7 @@ auto MainWindow::exactMatchPath() -> QString {
     const QString path =
         QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
     if (PathValidator::isPathInStore(store, path) && QFileInfo(path).isFile()) {
-      return path;
+      return spelledAsStored(store, path);
     }
   }
   return {};

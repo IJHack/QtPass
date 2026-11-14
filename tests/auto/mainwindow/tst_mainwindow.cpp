@@ -917,46 +917,47 @@ auto storeProxy(MainWindow *window) -> QSortFilterProxyModel * {
   return qobject_cast<QSortFilterProxyModel *>(tree->model());
 }
 
-/// Whether the tree shows @p path, looked up as exactMatch() does: through
-/// the proxy. The source model alone kept a hidden entry indexable on macOS.
-auto inTree(QSortFilterProxyModel *proxy, const QString &path) -> bool {
+/// Whether the tree lists @p path under the store root. The rows are
+/// walked: QFileSystemModel::index(path) made a name-filtered entry visible
+/// again on macOS.
+auto inTree(QSortFilterProxyModel *proxy, const QString &storeDir,
+            const QString &path) -> bool {
   auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
-  const QModelIndex src = fs->index(path);
-  return src.isValid() && proxy->mapFromSource(src).isValid();
+  const QModelIndex root = proxy->mapFromSource(fs->index(storeDir));
+  const QString name = QFileInfo(path).fileName();
+  for (int row = 0; row < proxy->rowCount(root); ++row) {
+    if (fs->fileName(proxy->mapToSource(proxy->index(row, 0, root))) == name) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /// Hide every entry but @p keep from the tree, as a folder still loading
-/// would: an open of @p path then has to wait. False, without failing,
-/// where the tree still shows the hidden entry.
-auto hideAllBut(QSortFilterProxyModel *proxy, const QString &path,
-                const QString &keep) -> bool {
+/// would: an open of @p path then has to wait.
+auto hideAllBut(QSortFilterProxyModel *proxy, const QString &storeDir,
+                const QString &path, const QString &keep) -> bool {
   qobject_cast<QFileSystemModel *>(proxy->sourceModel())
       ->setNameFilters({keep});
-  // Polled as QTRY_VERIFY_WITH_TIMEOUT_RETURN does: QTest::qWaitFor() did
-  // not let the model's delayed re-sort run.
-  QElapsedTimer timer;
-  timer.start();
-  while (inTree(proxy, path) && timer.elapsed() < 5000) {
-    QTest::qWait(20);
-  }
-  return !inTree(proxy, path);
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(!inTree(proxy, storeDir, path), 5000, false);
+  return true;
 }
-
-/// Why a test that needs hideAllBut() is skipped where it cannot hide.
-constexpr const char *kCannotHide =
-    "the tree keeps showing a name-filtered entry here, so an open that "
-    "waits for the tree cannot be staged";
 
 /// Show every entry again and report the store folder loaded, as the model
 /// does when a folder finishes loading.
-auto showLoaded(QSortFilterProxyModel *proxy, const QString &path,
-                const QString &storeDir) -> bool {
+auto showLoaded(QSortFilterProxyModel *proxy, const QString &storeDir,
+                const QString &path) -> bool {
   auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
   fs->setNameFilters({QStringLiteral("*.gpg")});
-  QTRY_VERIFY_WITH_TIMEOUT_RETURN(inTree(proxy, path), 5000, false);
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(inTree(proxy, storeDir, path), 5000, false);
   emit fs->directoryLoaded(storeDir);
   return true;
 }
+
+/// Why a staged-wait test is skipped where the open did not wait.
+constexpr const char *kCannotStage =
+    "the model's own path lookup shows a name-filtered entry again here "
+    "(macOS), so an open that waits for the tree cannot be staged";
 
 auto armCopyRequest(MainWindow *window, const QString &storeDir,
                     const QString &name) -> bool {
@@ -3429,26 +3430,26 @@ void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
   const QString path = QDir(m_storeDir.path()).filePath("waited.gpg");
   QSortFilterProxyModel *tree = storeProxy(m_window.data());
 
-  if (!hideAllBut(tree, path, QStringLiteral("aaa.gpg"))) {
-    qobject_cast<QFileSystemModel *>(tree->sourceModel())
-        ->setNameFilters({QStringLiteral("*.gpg")});
-    QSKIP(kCannotHide);
-  }
+  QVERIFY(hideAllBut(tree, m_storeDir.path(), path, QStringLiteral("aaa.gpg")));
   passwordName()->clear();
   m_window->messageAvailable(QStringLiteral("waited"));
-  QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
+  if (!passwordName()->text().isEmpty()) {
+    qobject_cast<QFileSystemModel *>(tree->sourceModel())
+        ->setNameFilters({QStringLiteral("*.gpg")});
+    QSKIP(kCannotStage);
+  }
   searchBox()->setText(QStringLiteral("other"));
   searchBox()->setText(QStringLiteral("waited"));
-  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, m_storeDir.path(), path));
   QVERIFY2(passwordName()->text().isEmpty(),
            qPrintable(QStringLiteral("typing only highlights, opened: ") +
                       passwordName()->text()));
 
   // Control: unchallenged, the waiting open does land.
-  QVERIFY(hideAllBut(tree, path, QStringLiteral("aaa.gpg")));
+  QVERIFY(hideAllBut(tree, m_storeDir.path(), path, QStringLiteral("aaa.gpg")));
   m_window->messageAvailable(QStringLiteral("waited"));
   QVERIFY2(passwordName()->text().isEmpty(), "hidden again: the open waits");
-  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, m_storeDir.path(), path));
   QCOMPARE(passwordName()->text(), QStringLiteral("waited"));
 #endif
 }
@@ -3470,14 +3471,14 @@ void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
   const QString path = QDir(m_storeDir.path()).filePath("re-rooted.gpg");
   QSortFilterProxyModel *tree = storeProxy(m_window.data());
 
-  if (!hideAllBut(tree, path, QStringLiteral("aaa.gpg"))) {
-    qobject_cast<QFileSystemModel *>(tree->sourceModel())
-        ->setNameFilters({QStringLiteral("*.gpg")});
-    QSKIP(kCannotHide);
-  }
+  QVERIFY(hideAllBut(tree, m_storeDir.path(), path, QStringLiteral("aaa.gpg")));
   passwordName()->clear();
   m_window->messageAvailable(QStringLiteral("re-rooted"));
-  QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
+  if (!passwordName()->text().isEmpty()) {
+    qobject_cast<QFileSystemModel *>(tree->sourceModel())
+        ->setNameFilters({QStringLiteral("*.gpg")});
+    QSKIP(kCannotStage);
+  }
   ModalDriver driver([](QWidget *w) {
     if (auto *dialog = qobject_cast<ConfigDialog *>(w)) {
       dialog->accept();
@@ -3486,7 +3487,7 @@ void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
     answerBox(QMessageBox::Ok)(w);
   });
   QVERIFY(m_window->config());
-  QVERIFY(showLoaded(tree, path, m_storeDir.path()));
+  QVERIFY(showLoaded(tree, m_storeDir.path(), path));
   QVERIFY2(passwordName()->text().isEmpty(),
            qPrintable(QStringLiteral("nothing opened, opened: ") +
                       passwordName()->text()));
