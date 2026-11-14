@@ -1,0 +1,343 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+/*
+ * The qtpass.org look for the test coverage report: `make lcov` hands this to
+ * genhtml (--css-file), which writes it as docs/coverage/gcov.css in place of
+ * its own style sheet. The class names are genhtml's (lcov 2.0 and later).
+ *
+ * The fonts are the site's own Lato: the report is published at
+ * qtpass.org/docs/coverage/, two levels below /fonts/. A local build falls
+ * back to the next font in the stack. The colours are the site's
+ * (stylesheets/styles.css on the gh-pages branch) and doxygen/qtpass-theme.css.
+ */
+
+/* stylelint-disable selector-class-pattern -- the class names are genhtml's */
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../fonts/lato-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../../fonts/lato-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../../fonts/lato-latin-900-normal.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #fafbfc;
+  --ink: #1f2933;
+  --ink-strong: #111820;
+  --muted: #5b6772;
+  --rule: #dde3ea;
+  --panel: #f1f4f8;
+  --accent: #19528a;
+
+  /*
+   * Coverage levels, as genhtml grades them: high, medium and low. Each is
+   * also text on its tint and on the page, so keep it above 4.5:1 on both.
+   */
+  --hi: #22703f;
+  --hi-tint: #e2f2e8;
+  --med: #8a5a12;
+  --med-tint: #fbefd9;
+  --lo: #a8321f;
+  --lo-tint: #fbe3e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181d;
+    --ink: #d9dee4;
+    --ink-strong: #f1f4f7;
+    --muted: #98a3ae;
+    --rule: #2a323b;
+    --panel: #1c232b;
+    --accent: #6ea8e8;
+    --hi: #5cb784;
+    --hi-tint: #1b3326;
+    --med: #e0a84a;
+    --med-tint: #3a2f1a;
+    --lo: #ec7063;
+    --lo-tint: #3d2121;
+  }
+}
+
+body {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a:link,
+a:visited,
+a:active {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* genhtml centres its file and function tables at 80 %; line them up with
+   the summary above instead. */
+table[width="80%"] {
+  width: 100%;
+}
+
+/* The prolog's header: the site's logo beside a heavy name. */
+header.site a {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--ink-strong);
+}
+
+header.site .name {
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+header.site .section {
+  color: var(--muted);
+}
+
+td.title {
+  padding: 1.25rem 0 0.75rem;
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--ink-strong);
+  text-align: left;
+}
+
+td.ruler {
+  height: 1px;
+  padding: 0;
+  background: var(--rule);
+}
+
+td.ruler img {
+  display: none;
+}
+
+/* The summary above each table. */
+td.headerItem {
+  padding: 0.15rem 0.6rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+td.headerValue {
+  padding: 0.15rem 0.6rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+}
+
+td.headerCovTableHead {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+td.headerCovTableEntry,
+td.headerCovTableEntryHi,
+td.headerCovTableEntryMed,
+td.headerCovTableEntryLo {
+  padding: 0.15rem 0.6rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  background: var(--panel);
+  border: 2px solid var(--bg);
+}
+
+td.headerCovTableEntryHi {
+  font-weight: 700;
+  color: var(--hi);
+  background: var(--hi-tint);
+}
+
+td.headerCovTableEntryMed {
+  font-weight: 700;
+  color: var(--med);
+  background: var(--med-tint);
+}
+
+td.headerCovTableEntryLo {
+  font-weight: 700;
+  color: var(--lo);
+  background: var(--lo-tint);
+}
+
+/* The file and function tables. */
+td.tableHead {
+  padding: 0.4rem 0.6rem;
+  font-weight: 700;
+  color: var(--ink-strong);
+  text-align: center;
+  background: var(--panel);
+  border-bottom: 1px solid var(--rule);
+}
+
+span.tableHeadSort img {
+  vertical-align: middle;
+  opacity: 0.5;
+}
+
+td.coverFile,
+td.coverFn {
+  padding: 0.3rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+
+td.coverFn {
+  font-family:
+    ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+td.coverBar {
+  padding: 0.3rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/*
+ * genhtml draws each bar as two images, the covered part in emerald, amber or
+ * ruby and the rest in snow. Push the picture out of each image's box so only
+ * its background shows, and colour that.
+ */
+td.coverBarOutline {
+  padding: 0;
+  line-height: 0;
+  background: var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+td.coverBarOutline img {
+  height: 8px;
+  object-position: -1000px 0;
+}
+
+td.coverBarOutline img[src="emerald.png"] {
+  background: var(--hi);
+}
+
+td.coverBarOutline img[src="amber.png"] {
+  background: var(--med);
+}
+
+td.coverBarOutline img[src="ruby.png"] {
+  background: var(--lo);
+}
+
+td.coverBarOutline img[src="snow.png"] {
+  background: transparent;
+}
+
+td.coverNumDflt,
+td.coverPerHi,
+td.coverPerMed,
+td.coverPerLo,
+td.coverFnHi,
+td.coverFnLo,
+td.coverFnAlias,
+td.coverFnAliasHi,
+td.coverFnAliasLo {
+  padding: 0.3rem 0.6rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule);
+}
+
+td.coverPerHi,
+td.coverFnHi,
+td.coverFnAliasHi {
+  color: var(--hi);
+}
+
+td.coverPerMed {
+  font-weight: 700;
+  color: var(--med);
+  background: var(--med-tint);
+}
+
+td.coverPerLo,
+td.coverFnLo,
+td.coverFnAliasLo {
+  font-weight: 700;
+  color: var(--lo);
+  background: var(--lo-tint);
+}
+
+td.versionInfo {
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* The annotated source. */
+pre.sourceHeading,
+pre.source {
+  margin: 0;
+  font-family:
+    ui-monospace, "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+pre.sourceHeading {
+  padding: 0.4rem 0;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+pre.source {
+  overflow-x: auto;
+}
+
+span.lineNum {
+  display: inline-block;
+  padding-right: 0.5rem;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+span.tlaGNC {
+  background: var(--hi-tint);
+}
+
+span.tlaUNC {
+  background: var(--lo-tint);
+}

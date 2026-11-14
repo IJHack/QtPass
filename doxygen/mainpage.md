@@ -152,3 +152,5 @@ What a comment needs:
 
 Building, testing and the pull request workflow are described in
 [CONTRIBUTING.md](https://github.com/IJHack/QtPass/blob/main/CONTRIBUTING.md).
+The [test coverage report](coverage/index.html) shows which lines of `src/`
+the tests run; it is rebuilt with these pages on every change to `main`.
