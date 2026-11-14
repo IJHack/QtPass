@@ -42,6 +42,7 @@
 #include <QDialog>
 #include <QDockWidget>
 #include <QFileInfo>
+#include <QFileSystemModel>
 #include <QHBoxLayout>
 #include <QInputDialog>
 #include <QLabel>
@@ -112,8 +113,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  ui->lineEdit->setText(searchText);
-
   // No QApplication::quit() here: before exec() it is a documented no-op.
   // main() checks initSucceeded() and exits before show() instead.
   m_qtPass->init();
@@ -126,6 +125,16 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   }
   m_freshStart = false;
   m_initSucceeded = true;
+
+  // Searched as qtpass(1) promises, once the window and its tree are up:
+  // filtered at once and an entry named exactly so opened. Setting the
+  // text here left it to the search timer, which only highlights. Queued
+  // only now: from before the configuration loop, a wizard's nested event
+  // loop ran it while no store was set yet.
+  if (!searchText.isEmpty()) {
+    QTimer::singleShot(0, this,
+                       [this, searchText] { applySearchText(searchText); });
+  }
 
   // Initial focus is set in showEvent(): a 10 ms QTimer here could fire
   // before the window was realised (queued ActivationChange, nested exec() in
@@ -503,6 +512,10 @@ auto MainWindow::config() -> bool {
 
   updateProfileBox();
   const AppSettings s = QtPassSettings::load();
+  // An open still waiting for the tree was asked of the old view; once
+  // re-rooted, it would find that name in the new store. A profile switch
+  // ends it by clearing the search text.
+  delete m_pendingOpen;
   m_tree->setStore(s.passStore);
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
@@ -832,7 +845,9 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
 }
 
 void MainWindow::onTimeoutSearch() {
-  QString query = ui->lineEdit->text();
+  // The tree matches slash-separated paths: on Windows, team\bank typed is
+  // team/bank, as exactMatchPath() reads it too.
+  QString query = QDir::fromNativeSeparators(ui->lineEdit->text());
 
   if (query.isEmpty()) {
     ui->treeView->collapseAll();
@@ -883,6 +898,12 @@ void MainWindow::on_lineEdit_returnPressed() {
     return;
   }
 
+  // Return within the search delay acts on the text as typed, not on the
+  // tree as the previous text filtered it.
+  if (searchTimer.isActive()) {
+    searchTimer.stop();
+    onTimeoutSearch();
+  }
   if (m_tree->proxy().rowCount() > 0) {
     selectFirstFile();
     on_treeView_clicked(ui->treeView->currentIndex());
@@ -1011,8 +1032,98 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
 }
 
 void MainWindow::selectFirstFile() {
-  QModelIndex index = firstFile(m_tree->rootIndex());
+  // The entry named exactly as typed wins: with folders sorted first, the
+  // depth-first walk found team/bank before bank.
+  QModelIndex index = exactMatch();
+  if (!index.isValid()) {
+    index = firstFile(m_tree->rootIndex());
+  }
   ui->treeView->setCurrentIndex(index);
+}
+
+auto MainWindow::exactMatchPath() -> QString {
+  const QString text = QDir::fromNativeSeparators(ui->lineEdit->text());
+  const QString store = QtPassSettings::getPassStore();
+  // A name may begin or end with a space: " bank" is that entry, not bank.
+  // Only when no entry is named so are spaces around the text dropped.
+  for (const QString &typed : {text, text.trimmed()}) {
+    if (typed.isEmpty()) {
+      continue;
+    }
+    const QString path =
+        QDir::cleanPath(QDir(store).filePath(typed + QStringLiteral(".gpg")));
+    if (PathValidator::isPathInStore(store, path) && QFileInfo(path).isFile()) {
+      return path;
+    }
+  }
+  return {};
+}
+
+auto MainWindow::exactMatch() -> QModelIndex {
+  const QString path = exactMatchPath();
+  if (path.isEmpty()) {
+    return {};
+  }
+  // indexFor() maps through the filter: a row the filter hides is no match.
+  const QModelIndex index = m_tree->indexFor(path);
+  if (!index.isValid() || !m_tree->fileInfo(index).isFile()) {
+    return {};
+  }
+  return index;
+}
+
+void MainWindow::applySearchText(const QString &text) {
+  // A name search: content search, left on, kept its results over the tree
+  // and ignored the text.
+  if (ui->grepButton->isChecked()) {
+    ui->grepButton->setChecked(false);
+  }
+  delete m_pendingOpen;
+  ui->lineEdit->setText(text);
+  // Filter now, not after the search delay: the timer would leave the tree
+  // as the previous text filtered it.
+  searchTimer.stop();
+  onTimeoutSearch();
+  if (const QModelIndex exact = exactMatch(); exact.isValid()) {
+    openExactMatch(exact);
+    return;
+  }
+  // The tree loads folders in the background: at start, or right after the
+  // window is shown again, an entry that exists may not be in it yet. Try
+  // again as folders finish loading, for a few seconds, unless the search
+  // text changes meanwhile: any change ends the wait, even one typed back to
+  // this text, which is a new search that has not asked to open anything.
+  if (exactMatchPath().isEmpty()) {
+    return;
+  }
+  auto *pending = new QObject(this);
+  m_pendingOpen = pending;
+  QTimer::singleShot(5000, pending, &QObject::deleteLater);
+  // Disconnected at once: with deleteLater() alone, a folder that finished
+  // loading before the deletion still ran the open, or ran it twice.
+  const auto stop = [this, pending] {
+    disconnect(&m_tree->fileSystem(), nullptr, pending, nullptr);
+    disconnect(ui->lineEdit, nullptr, pending, nullptr);
+    pending->deleteLater();
+  };
+  connect(ui->lineEdit, &QLineEdit::textChanged, pending, stop);
+  connect(&m_tree->fileSystem(), &QFileSystemModel::directoryLoaded, pending,
+          [this, stop](const QString &) {
+            searchTimer.stop();
+            onTimeoutSearch();
+            if (const QModelIndex exact = exactMatch(); exact.isValid()) {
+              stop();
+              openExactMatch(exact);
+            }
+          });
+}
+
+void MainWindow::openExactMatch(const QModelIndex &index) {
+  // Made current here, not left to the filter pass before: the tree may have
+  // moved its current row since, and with none on_treeView_clicked() only
+  // names the entry without decrypting it.
+  ui->treeView->setCurrentIndex(index);
+  on_treeView_clicked(index);
 }
 
 auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
@@ -1226,8 +1337,7 @@ void MainWindow::messageAvailable(const QString &message) {
     focusInput();
   } else {
     ui->treeView->expandAll();
-    ui->lineEdit->setText(message);
-    on_lineEdit_returnPressed();
+    applySearchText(message);
   }
 }
 
