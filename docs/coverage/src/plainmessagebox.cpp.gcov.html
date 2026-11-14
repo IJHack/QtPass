@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:20:55</td>
+            <td class="headerValue">2026-11-14 15:52:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -80,20 +80,20 @@
 <span id="L7"><span class="lineNum">       7</span>              :  */</span>
 <span id="L8"><span class="lineNum">       8</span>              : #include &quot;plainmessagebox.h&quot;</span>
 <span id="L9"><span class="lineNum">       9</span>              : </span>
-<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC">          21 : auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,</span></span>
+<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC">          23 : auto PlainMessageBox::show(QWidget *parent, QMessageBox::Icon icon,</span></span>
 <span id="L11"><span class="lineNum">      11</span>              :                            const QString &amp;title, const QString &amp;text,</span>
 <span id="L12"><span class="lineNum">      12</span>              :                            QMessageBox::StandardButtons buttons)</span>
 <span id="L13"><span class="lineNum">      13</span>              :     -&gt; QMessageBox::StandardButton {</span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">          21 :   QMessageBox box(parent);</span></span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          21 :   box.setIcon(icon);</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          21 :   box.setWindowTitle(title);</span></span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">          23 :   QMessageBox box(parent);</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          23 :   box.setIcon(icon);</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">          23 :   box.setWindowTitle(title);</span></span>
 <span id="L17"><span class="lineNum">      17</span>              :   // Before the text: set afterwards, the text would already have been laid</span>
 <span id="L18"><span class="lineNum">      18</span>              :   // out as rich text once.</span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">          21 :   box.setTextFormat(Qt::PlainText);</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">          21 :   box.setText(text);</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          21 :   box.setStandardButtons(buttons);</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          42 :   return static_cast&lt;QMessageBox::StandardButton&gt;(box.exec());</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          21 : }</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">          23 :   box.setTextFormat(Qt::PlainText);</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">          23 :   box.setText(text);</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">          23 :   box.setStandardButtons(buttons);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">          46 :   return static_cast&lt;QMessageBox::StandardButton&gt;(box.exec());</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          23 : }</span></span>
 <span id="L24"><span class="lineNum">      24</span>              : </span>
 <span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">           7 : auto PlainMessageBox::askYes(QWidget *parent, const QString &amp;title,</span></span>
 <span id="L26"><span class="lineNum">      26</span>              :                              const QString &amp;text) -&gt; bool {</span>
@@ -101,15 +101,15 @@
 <span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           7 :               QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes;</span></span>
 <span id="L29"><span class="lineNum">      29</span>              : }</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           7 : void PlainMessageBox::warning(QWidget *parent, const QString &amp;title,</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           8 : void PlainMessageBox::warning(QWidget *parent, const QString &amp;title,</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :                               const QString &amp;text) {</span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           7 :   show(parent, QMessageBox::Warning, title, text);</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           7 : }</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           8 :   show(parent, QMessageBox::Warning, title, text);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           8 : }</span></span>
 <span id="L35"><span class="lineNum">      35</span>              : </span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">           7 : void PlainMessageBox::critical(QWidget *parent, const QString &amp;title,</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">           8 : void PlainMessageBox::critical(QWidget *parent, const QString &amp;title,</span></span>
 <span id="L37"><span class="lineNum">      37</span>              :                                const QString &amp;text) {</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           7 :   show(parent, QMessageBox::Critical, title, text);</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           7 : }</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           8 :   show(parent, QMessageBox::Critical, title, text);</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           8 : }</span></span>
         </pre>
               </td>
             </tr>

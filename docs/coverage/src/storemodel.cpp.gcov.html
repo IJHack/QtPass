@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:20:55</td>
+            <td class="headerValue">2026-11-14 15:52:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -115,58 +115,58 @@
 <span id="L42"><span class="lineNum">      42</span>              : }</span>
 <span id="L43"><span class="lineNum">      43</span>              : </span>
 <span id="L44"><span class="lineNum">      44</span>              : // Filter approach via http://www.qtcentre.org/threads/46471-QTreeView-Filter</span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         174 : StoreModel::StoreModel() { fs = nullptr; }</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">         175 : StoreModel::StoreModel() { fs = nullptr; }</span></span>
 <span id="L46"><span class="lineNum">      46</span>              : </span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         137 : void StoreModel::setPass(Pass *pass) { m_pass = pass; }</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">         138 : void StoreModel::setPass(Pass *pass) { m_pass = pass; }</span></span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        4678 : auto StoreModel::filterAcceptsRow(int sourceRow,</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        4788 : auto StoreModel::filterAcceptsRow(int sourceRow,</span></span>
 <span id="L50"><span class="lineNum">      50</span>              :                                   const QModelIndex &amp;sourceParent) const</span>
 <span id="L51"><span class="lineNum">      51</span>              :     -&gt; bool {</span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">        4678 :   QModelIndex index = sourceModel()-&gt;index(sourceRow, 0, sourceParent);</span></span>
-<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">        4678 :   return showThis(index);</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">        4788 :   QModelIndex index = sourceModel()-&gt;index(sourceRow, 0, sourceParent);</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">        4788 :   return showThis(index);</span></span>
 <span id="L54"><span class="lineNum">      54</span>              : }</span>
 <span id="L55"><span class="lineNum">      55</span>              : </span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">        7082 : auto StoreModel::showThis(const QModelIndex &amp;index) const -&gt; bool {</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">        7207 : auto StoreModel::showThis(const QModelIndex &amp;index) const -&gt; bool {</span></span>
 <span id="L57"><span class="lineNum">      57</span>              :   bool retVal = false;</span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">        7082 :   if (fs == nullptr) {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">        7207 :   if (fs == nullptr) {</span></span>
 <span id="L59"><span class="lineNum">      59</span>              :     return retVal;</span>
 <span id="L60"><span class="lineNum">      60</span>              :   }</span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">        6945 :   if (sourceModel()-&gt;rowCount(index) &gt; 0) {</span></span>
-<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">        2497 :     for (int nChild = 0; nChild &lt; sourceModel()-&gt;rowCount(index); ++nChild) {</span></span>
-<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">        2403 :       QModelIndex childIndex = sourceModel()-&gt;index(nChild, 0, index);</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">        7069 :   if (sourceModel()-&gt;rowCount(index) &gt; 0) {</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">        2512 :     for (int nChild = 0; nChild &lt; sourceModel()-&gt;rowCount(index); ++nChild) {</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">        2418 :       QModelIndex childIndex = sourceModel()-&gt;index(nChild, 0, index);</span></span>
 <span id="L64"><span class="lineNum">      64</span>              :       if (!childIndex.isValid()) {</span>
 <span id="L65"><span class="lineNum">      65</span>              :         break;</span>
 <span id="L66"><span class="lineNum">      66</span>              :       }</span>
-<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">        2403 :       retVal = showThis(childIndex);</span></span>
-<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">        2403 :       if (retVal) {</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">        2418 :       retVal = showThis(childIndex);</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">        2418 :       if (retVal) {</span></span>
 <span id="L69"><span class="lineNum">      69</span>              :         break;</span>
 <span id="L70"><span class="lineNum">      70</span>              :       }</span>
 <span id="L71"><span class="lineNum">      71</span>              :     }</span>
 <span id="L72"><span class="lineNum">      72</span>              :   } else {</span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">        5423 :     QModelIndex useIndex = sourceModel()-&gt;index(index.row(), 0, index.parent());</span></span>
-<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">        5423 :     QString path = fs-&gt;filePath(useIndex);</span></span>
-<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">       10846 :     path = QDir(store).relativeFilePath(path);</span></span>
-<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">       10846 :     if (path.startsWith(&quot;.git&quot;)) {</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">        5532 :     QModelIndex useIndex = sourceModel()-&gt;index(index.row(), 0, index.parent());</span></span>
+<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">        5532 :     QString path = fs-&gt;filePath(useIndex);</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">       11064 :     path = QDir(store).relativeFilePath(path);</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">       11064 :     if (path.startsWith(&quot;.git&quot;)) {</span></span>
 <span id="L77"><span class="lineNum">      77</span>              :       return false;</span>
 <span id="L78"><span class="lineNum">      78</span>              :     }</span>
-<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">        5422 :     path.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">        5422 :     retVal = path.contains(filterRegularExpression());</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">        5531 :     path.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">        5531 :     retVal = path.contains(filterRegularExpression());</span></span>
 <span id="L81"><span class="lineNum">      81</span>              :   }</span>
 <span id="L82"><span class="lineNum">      82</span>              :   return retVal;</span>
 <span id="L83"><span class="lineNum">      83</span>              : }</span>
 <span id="L84"><span class="lineNum">      84</span>              : </span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         168 : void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         169 : void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,</span></span>
 <span id="L86"><span class="lineNum">      86</span>              :                                   const QString &amp;passStore) {</span>
-<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">         168 :   setSourceModel(sourceModel);</span></span>
-<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">         168 :   fs = sourceModel;</span></span>
-<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">         168 :   store = passStore;</span></span>
-<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">         168 : }</span></span>
+<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">         169 :   setSourceModel(sourceModel);</span></span>
+<span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">         169 :   fs = sourceModel;</span></span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">         169 :   store = passStore;</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">         169 : }</span></span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         196 : auto StoreModel::rootIndexFor(const QString &amp;path) -&gt; QModelIndex {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         196 :   if (fs == nullptr) {</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         197 : auto StoreModel::rootIndexFor(const QString &amp;path) -&gt; QModelIndex {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         197 :   if (fs == nullptr) {</span></span>
 <span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">           1 :     return {};</span></span>
 <span id="L95"><span class="lineNum">      95</span>              :   }</span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         390 :   return mapFromSource(fs-&gt;setRootPath(QDir::cleanPath(path)));</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         392 :   return mapFromSource(fs-&gt;setRootPath(QDir::cleanPath(path)));</span></span>
 <span id="L97"><span class="lineNum">      97</span>              : }</span>
 <span id="L98"><span class="lineNum">      98</span>              : </span>
 <span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          10 : void StoreModel::setStore(const QString &amp;passStore) {</span></span>
@@ -181,22 +181,22 @@
 <span id="L108"><span class="lineNum">     108</span>              : #endif</span>
 <span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">          10 : }</span></span>
 <span id="L110"><span class="lineNum">     110</span>              : </span>
-<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">       15824 : auto StoreModel::data(const QModelIndex &amp;index, int role) const -&gt; QVariant {</span></span>
+<span id="L111"><span class="lineNum">     111</span> <span class="tlaGNC">       15912 : auto StoreModel::data(const QModelIndex &amp;index, int role) const -&gt; QVariant {</span></span>
 <span id="L112"><span class="lineNum">     112</span>              :   if (!index.isValid()) {</span>
 <span id="L113"><span class="lineNum">     113</span>              :     return {};</span>
 <span id="L114"><span class="lineNum">     114</span>              :   }</span>
 <span id="L115"><span class="lineNum">     115</span>              : </span>
 <span id="L116"><span class="lineNum">     116</span>              :   QVariant initial_value;</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">       15823 :   initial_value = QSortFilterProxyModel::data(index, role);</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">       15911 :   initial_value = QSortFilterProxyModel::data(index, role);</span></span>
 <span id="L118"><span class="lineNum">     118</span>              : </span>
-<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">       15823 :   if (role == Qt::DisplayRole) {</span></span>
-<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        2079 :     QString name = initial_value.toString();</span></span>
-<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">        2079 :     name.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
-<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">        2079 :     initial_value.setValue(name);</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">       15911 :   if (role == Qt::DisplayRole) {</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">        2090 :     QString name = initial_value.toString();</span></span>
+<span id="L121"><span class="lineNum">     121</span> <span class="tlaGNC">        2090 :     name.replace(Util::endsWithGpg(), &quot;&quot;);</span></span>
+<span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">        2090 :     initial_value.setValue(name);</span></span>
 <span id="L123"><span class="lineNum">     123</span>              :   }</span>
 <span id="L124"><span class="lineNum">     124</span>              : </span>
 <span id="L125"><span class="lineNum">     125</span>              :   return initial_value;</span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">       15823 : }</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">       15911 : }</span></span>
 <span id="L127"><span class="lineNum">     127</span>              : </span>
 <span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">           1 : auto StoreModel::supportedDropActions() const -&gt; Qt::DropActions {</span></span>
 <span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">           1 :   return Qt::CopyAction | Qt::MoveAction;</span></span>
@@ -206,8 +206,8 @@
 <span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">           1 :   return Qt::CopyAction | Qt::MoveAction;</span></span>
 <span id="L134"><span class="lineNum">     134</span>              : }</span>
 <span id="L135"><span class="lineNum">     135</span>              : </span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">        7105 : auto StoreModel::flags(const QModelIndex &amp;index) const -&gt; Qt::ItemFlags {</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">        7105 :   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">        7356 : auto StoreModel::flags(const QModelIndex &amp;index) const -&gt; Qt::ItemFlags {</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">        7356 :   Qt::ItemFlags defaultFlags = QSortFilterProxyModel::flags(index);</span></span>
 <span id="L138"><span class="lineNum">     138</span>              : </span>
 <span id="L139"><span class="lineNum">     139</span>              :   if (index.isValid()) {</span>
 <span id="L140"><span class="lineNum">     140</span>              :     return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;</span>
@@ -388,21 +388,21 @@
 <span id="L315"><span class="lineNum">     315</span>              :   return true;</span>
 <span id="L316"><span class="lineNum">     316</span>              : }</span>
 <span id="L317"><span class="lineNum">     317</span>              : </span>
-<span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">        9056 : auto StoreModel::lessThan(const QModelIndex &amp;source_left,</span></span>
+<span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">        9434 : auto StoreModel::lessThan(const QModelIndex &amp;source_left,</span></span>
 <span id="L319"><span class="lineNum">     319</span>              :                           const QModelIndex &amp;source_right) const -&gt; bool {</span>
 <span id="L320"><span class="lineNum">     320</span>              : /* matches logic in QFileSystemModelSorter::compareNodes() */</span>
 <span id="L321"><span class="lineNum">     321</span>              : #ifndef Q_OS_MAC</span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">        9056 :   if (fs &amp;&amp; (source_left.column() == 0 || source_left.column() == 1)) {</span></span>
-<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">        9056 :     bool leftD = fs-&gt;isDir(source_left);</span></span>
-<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">        9056 :     bool rightD = fs-&gt;isDir(source_right);</span></span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">        9434 :   if (fs &amp;&amp; (source_left.column() == 0 || source_left.column() == 1)) {</span></span>
+<span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">        9434 :     bool leftD = fs-&gt;isDir(source_left);</span></span>
+<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">        9434 :     bool rightD = fs-&gt;isDir(source_right);</span></span>
 <span id="L325"><span class="lineNum">     325</span>              : </span>
-<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">        9056 :     if (leftD ^ rightD) {</span></span>
+<span id="L326"><span class="lineNum">     326</span> <span class="tlaGNC">        9434 :     if (leftD ^ rightD) {</span></span>
 <span id="L327"><span class="lineNum">     327</span>              :       return leftD;</span>
 <span id="L328"><span class="lineNum">     328</span>              :     }</span>
 <span id="L329"><span class="lineNum">     329</span>              :   }</span>
 <span id="L330"><span class="lineNum">     330</span>              : #endif</span>
 <span id="L331"><span class="lineNum">     331</span>              : </span>
-<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">        7302 :   return QSortFilterProxyModel::lessThan(source_left, source_right);</span></span>
+<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">        7584 :   return QSortFilterProxyModel::lessThan(source_left, source_right);</span></span>
 <span id="L333"><span class="lineNum">     333</span>              : }</span>
         </pre>
               </td>

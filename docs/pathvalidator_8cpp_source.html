@@ -157,62 +157,66 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('pathvalidator_
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    tail.prepend(fi.fileName());</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">while</span> (!parent.exists()) {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      tail.prepend(parent.dirName());</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="comment">// The filesystem root always exists, so the loop terminates there</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="comment">// before cdUp() can fail; this guard is defensive against a</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="comment">// pathological QDir that can neither exist nor ascend.</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keywordflow">if</span> (!parent.cdUp()) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> QString parentCanon = parent.canonicalPath();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (parentCanon.isEmpty()) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="comment">// Up by name, not cdUp(): cdUp() refuses to move into a folder that</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="comment">// does not exist either, so a new entry two missing folders deep</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="comment">// (&quot;a/b/entry&quot;) used to count as outside the store. The filesystem</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="comment">// root always exists, so the loop ends there; the guard is defensive</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <span class="comment">// against a path that can neither exist nor ascend.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keyword">const</span> QString up = QFileInfo(parent.absolutePath()).path();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">if</span> (up == parent.absolutePath()) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      parent.setPath(up);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    resolved = QDir::cleanPath(parentCanon + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>) +</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                               tail.join(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>)));</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (resolved.isEmpty()) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> QString parentCanon = parent.canonicalPath();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (parentCanon.isEmpty()) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    resolved = QDir::cleanPath(parentCanon + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>) +</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                               tail.join(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>)));</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordflow">if</span> (resolved == rootCanon) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> QString();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (!resolved.startsWith(rootCanon + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>))) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordflow">return</span> resolved.mid(rootCanon.size() + 1);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">if</span> (resolved.isEmpty()) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">if</span> (resolved == rootCanon) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">if</span> (!resolved.startsWith(rootCanon + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>))) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> resolved.mid(rootCanon.size() + 1);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">   69</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator::isTargetSpelled</a>(<span class="keyword">const</span> QString &amp;storeRoot,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                    <span class="keyword">const</span> QString &amp;path) -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">if</span> (storeRoot.isEmpty() || !QDir::isAbsolutePath(path)) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> cs = Qt::CaseInsensitive;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> cs = Qt::CaseSensitive;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">const</span> QString root = QDir::cleanPath(storeRoot);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">const</span> QString canonical = QDir(root).canonicalPath();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">if</span> (canonical.isEmpty() || canonical.compare(root, cs) == 0) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">const</span> <span class="keyword">auto</span> atOrUnder = [cs](<span class="keyword">const</span> QString &amp;p, <span class="keyword">const</span> QString &amp;dir) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> QString prefix =</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        dir.endsWith(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>)) ? dir : dir + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">return</span> p.compare(dir, cs) == 0 || p.startsWith(prefix, cs);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  };</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keyword">const</span> QString cleaned = QDir::cleanPath(path);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordflow">return</span> !atOrUnder(cleaned, root) &amp;&amp; atOrUnder(cleaned, canonical);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">   73</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator::isTargetSpelled</a>(<span class="keyword">const</span> QString &amp;storeRoot,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                                    <span class="keyword">const</span> QString &amp;path) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">if</span> (storeRoot.isEmpty() || !QDir::isAbsolutePath(path)) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> cs = Qt::CaseInsensitive;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> cs = Qt::CaseSensitive;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">const</span> QString root = QDir::cleanPath(storeRoot);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">const</span> QString canonical = QDir(root).canonicalPath();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">if</span> (canonical.isEmpty() || canonical.compare(root, cs) == 0) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keyword">const</span> <span class="keyword">auto</span> atOrUnder = [cs](<span class="keyword">const</span> QString &amp;p, <span class="keyword">const</span> QString &amp;dir) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">const</span> QString prefix =</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        dir.endsWith(QLatin1Char(<span class="charliteral">&#39;/&#39;</span>)) ? dir : dir + QLatin1Char(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> p.compare(dir, cs) == 0 || p.startsWith(prefix, cs);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  };</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">const</span> QString cleaned = QDir::cleanPath(path);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">return</span> !atOrUnder(cleaned, root) &amp;&amp; atOrUnder(cleaned, canonical);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
 <div class="ttc" id="aclass_path_validator_html_a3e074708091e613100680afe2e7d4eb7"><div class="ttname"><a href="class_path_validator.html#a3e074708091e613100680afe2e7d4eb7">PathValidator::storeRelativePath</a></div><div class="ttdeci">static auto storeRelativePath(const QString &amp;storeRoot, const QString &amp;candidate) -&gt; std::optional&lt; QString &gt;</div><div class="ttdoc">Where candidate lies in the store, judged as isPathInStore() judges it.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">pathvalidator.cpp:18</a></div></div>
 <div class="ttc" id="aclass_path_validator_html_ab45fab776e795db0071e4561291ca12d"><div class="ttname"><a href="class_path_validator.html#ab45fab776e795db0071e4561291ca12d">PathValidator::isPathInStore</a></div><div class="ttdeci">static auto isPathInStore(const QString &amp;storeRoot, const QString &amp;candidate) -&gt; bool</div><div class="ttdoc">Check that a candidate path resolves inside the password store root, after following symlinks and res...</div><div class="ttdef"><b>Definition</b> <a href="#l00013">pathvalidator.cpp:13</a></div></div>
-<div class="ttc" id="aclass_path_validator_html_aef01daad215a9c0ffb7b0bbaaada4fa7"><div class="ttname"><a href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator::isTargetSpelled</a></div><div class="ttdeci">static auto isTargetSpelled(const QString &amp;storeRoot, const QString &amp;path) -&gt; bool</div><div class="ttdoc">Whether path is spelled through the target of a store root that is itself a link, rather than from th...</div><div class="ttdef"><b>Definition</b> <a href="#l00069">pathvalidator.cpp:69</a></div></div>
+<div class="ttc" id="aclass_path_validator_html_aef01daad215a9c0ffb7b0bbaaada4fa7"><div class="ttname"><a href="class_path_validator.html#aef01daad215a9c0ffb7b0bbaaada4fa7">PathValidator::isTargetSpelled</a></div><div class="ttdeci">static auto isTargetSpelled(const QString &amp;storeRoot, const QString &amp;path) -&gt; bool</div><div class="ttdoc">Whether path is spelled through the target of a store root that is itself a link, rather than from th...</div><div class="ttdef"><b>Definition</b> <a href="#l00073">pathvalidator.cpp:73</a></div></div>
 <div class="ttc" id="apathvalidator_8h_html"><div class="ttname"><a href="pathvalidator_8h.html">pathvalidator.h</a></div><div class="ttdoc">PathValidator: is a path inside the password store, and how is it spelled relative to the store root.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

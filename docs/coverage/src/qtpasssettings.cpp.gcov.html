@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:20:55</td>
+            <td class="headerValue">2026-11-14 15:52:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">97.0&nbsp;%</td>
@@ -101,8 +101,8 @@
 <span id="L28"><span class="lineNum">      28</span>              : QtPassSettings *QtPassSettings::m_instance = nullptr;</span>
 <span id="L29"><span class="lineNum">      29</span>              : // Portable mode: a qtpass.ini next to the executable wins over the platform</span>
 <span id="L30"><span class="lineNum">      30</span>              : // settings store.</span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">        8334 : auto QtPassSettings::getInstance() -&gt; QtPassSettings * {</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">        8334 :   if (!QtPassSettings::initialized) {</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">        8381 : auto QtPassSettings::getInstance() -&gt; QtPassSettings * {</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">        8381 :   if (!QtPassSettings::initialized) {</span></span>
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">          15 :     QString portable_ini = QCoreApplication::applicationDirPath() +</span></span>
 <span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          15 :                            QDir::separator() + &quot;qtpass.ini&quot;;</span></span>
 <span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          15 :     if (QFile(portable_ini).exists()) {</span></span>
@@ -114,44 +114,44 @@
 <span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">          15 :     initialized = true;</span></span>
 <span id="L42"><span class="lineNum">      42</span>              :   }</span>
 <span id="L43"><span class="lineNum">      43</span>              : </span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">        8334 :   return m_instance;</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">        8381 :   return m_instance;</span></span>
 <span id="L45"><span class="lineNum">      45</span>              : }</span>
 <span id="L46"><span class="lineNum">      46</span>              : </span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        2557 : auto QtPassSettings::load() -&gt; AppSettings {</span></span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">        2557 :   AppSettings s = SettingsSerializer::load(*getInstance());</span></span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        2557 :   if (!s.passStore.isEmpty()) {</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">        4260 :     s.passStore = QDir::cleanPath(QDir(s.passStore).absolutePath());</span></span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">        2130 :     if (!s.passStore.endsWith('/'))</span></span>
-<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">        2097 :       s.passStore += '/';</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">        2577 : auto QtPassSettings::load() -&gt; AppSettings {</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">        2577 :   AppSettings s = SettingsSerializer::load(*getInstance());</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">        2577 :   if (!s.passStore.isEmpty()) {</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">        4296 :     s.passStore = QDir::cleanPath(QDir(s.passStore).absolutePath());</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">        2148 :     if (!s.passStore.endsWith('/'))</span></span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">        2115 :       s.passStore += '/';</span></span>
 <span id="L53"><span class="lineNum">      53</span>              :   }</span>
-<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">        2557 :   return s;</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">        2577 :   return s;</span></span>
 <span id="L55"><span class="lineNum">      55</span> <span class="tlaUNC">           0 : }</span></span>
 <span id="L56"><span class="lineNum">      56</span>              : </span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         765 : void QtPassSettings::save(const AppSettings &amp;settings) {</span></span>
-<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         765 :   SettingsSerializer::save(*getInstance(), settings);</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         768 : void QtPassSettings::save(const AppSettings &amp;settings) {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">         768 :   SettingsSerializer::save(*getInstance(), settings);</span></span>
 <span id="L59"><span class="lineNum">      59</span>              :   // The &quot;use pass&quot; mode may have changed; rebuild the backend on next use.</span>
-<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         765 :   PassBackendFactory::invalidate();</span></span>
-<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">         765 : }</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         768 :   PassBackendFactory::invalidate();</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">         768 : }</span></span>
 <span id="L62"><span class="lineNum">      62</span>              : </span>
 <span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">          13 : auto QtPassSettings::getPasswordConfiguration() -&gt; PasswordConfiguration {</span></span>
 <span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">          13 :   return SettingsSerializer::loadPasswordConfiguration(*getInstance());</span></span>
 <span id="L65"><span class="lineNum">      65</span>              : }</span>
 <span id="L66"><span class="lineNum">      66</span>              : </span>
-<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">         276 : auto QtPassSettings::getProfiles() -&gt; Profiles {</span></span>
-<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">         276 :   getInstance()-&gt;beginGroup(SettingsConstants::profile);</span></span>
-<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">         276 :   Profiles profiles;</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">         277 : auto QtPassSettings::getProfiles() -&gt; Profiles {</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">         277 :   getInstance()-&gt;beginGroup(SettingsConstants::profile);</span></span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">         277 :   Profiles profiles;</span></span>
 <span id="L70"><span class="lineNum">      70</span>              : </span>
 <span id="L71"><span class="lineNum">      71</span>              :   // migration from version &lt;= v1.3.2: profiles datastructure</span>
-<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         276 :   QStringList childKeys = getInstance()-&gt;childKeys();</span></span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">         276 :   for (const auto &amp;key : std::as_const(childKeys)) {</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         277 :   QStringList childKeys = getInstance()-&gt;childKeys();</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">         277 :   for (const auto &amp;key : std::as_const(childKeys)) {</span></span>
 <span id="L74"><span class="lineNum">      74</span> <span class="tlaUNC">           0 :     Profile profile;</span></span>
 <span id="L75"><span class="lineNum">      75</span> <span class="tlaUNC">           0 :     profile.path = getInstance()-&gt;value(key).toString();</span></span>
 <span id="L76"><span class="lineNum">      76</span> <span class="tlaUNC">           0 :     profiles.insert(key, profile);</span></span>
 <span id="L77"><span class="lineNum">      77</span>              :   }</span>
 <span id="L78"><span class="lineNum">      78</span>              :   // /migration from version &lt;= v1.3.2</span>
 <span id="L79"><span class="lineNum">      79</span>              : </span>
-<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         276 :   QStringList childGroups = getInstance()-&gt;childGroups();</span></span>
-<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         335 :   for (const auto &amp;group : std::as_const(childGroups)) {</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         277 :   QStringList childGroups = getInstance()-&gt;childGroups();</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         336 :   for (const auto &amp;group : std::as_const(childGroups)) {</span></span>
 <span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">          59 :     Profile profile;</span></span>
 <span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         118 :     profile.path = getInstance()-&gt;value(group + &quot;/path&quot;).toString();</span></span>
 <span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">         118 :     profile.signingKey = getInstance()-&gt;value(group + &quot;/signingKey&quot;).toString();</span></span>
@@ -164,9 +164,9 @@
 <span id="L91"><span class="lineNum">      91</span> <span class="tlaGNC">          59 :     profiles.insert(group, profile);</span></span>
 <span id="L92"><span class="lineNum">      92</span>              :   }</span>
 <span id="L93"><span class="lineNum">      93</span>              : </span>
-<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         276 :   getInstance()-&gt;endGroup();</span></span>
+<span id="L94"><span class="lineNum">      94</span> <span class="tlaGNC">         277 :   getInstance()-&gt;endGroup();</span></span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
-<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         276 :   return profiles;</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         277 :   return profiles;</span></span>
 <span id="L97"><span class="lineNum">      97</span>              : }</span>
 <span id="L98"><span class="lineNum">      98</span>              : </span>
 <span id="L99"><span class="lineNum">      99</span> <span class="tlaGNC">          84 : void QtPassSettings::setProfiles(const Profiles &amp;profiles) {</span></span>
@@ -195,37 +195,37 @@
 <span id="L122"><span class="lineNum">     122</span> <span class="tlaGNC">          84 :   getInstance()-&gt;endGroup();</span></span>
 <span id="L123"><span class="lineNum">     123</span> <span class="tlaGNC">          84 : }</span></span>
 <span id="L124"><span class="lineNum">     124</span>              : </span>
-<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">         498 : auto QtPassSettings::getPass() -&gt; Pass * {</span></span>
-<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         498 :   return PassBackendFactory::getPass();</span></span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">         501 : auto QtPassSettings::getPass() -&gt; Pass * {</span></span>
+<span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">         501 :   return PassBackendFactory::getPass();</span></span>
 <span id="L127"><span class="lineNum">     127</span>              : }</span>
 <span id="L128"><span class="lineNum">     128</span>              : </span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         138 : auto QtPassSettings::getVersion(const QString &amp;defaultValue) -&gt; QString {</span></span>
-<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         138 :   return getInstance()</span></span>
-<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">         276 :       -&gt;value(SettingsConstants::version, defaultValue)</span></span>
-<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">         276 :       .toString();</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">         139 : auto QtPassSettings::getVersion(const QString &amp;defaultValue) -&gt; QString {</span></span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">         139 :   return getInstance()</span></span>
+<span id="L131"><span class="lineNum">     131</span> <span class="tlaGNC">         278 :       -&gt;value(SettingsConstants::version, defaultValue)</span></span>
+<span id="L132"><span class="lineNum">     132</span> <span class="tlaGNC">         278 :       .toString();</span></span>
 <span id="L133"><span class="lineNum">     133</span>              : }</span>
-<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         136 : void QtPassSettings::setVersion(const QString &amp;version) {</span></span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         136 :   getInstance()-&gt;setValue(SettingsConstants::version, version);</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         136 : }</span></span>
+<span id="L134"><span class="lineNum">     134</span> <span class="tlaGNC">         137 : void QtPassSettings::setVersion(const QString &amp;version) {</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         137 :   getInstance()-&gt;setValue(SettingsConstants::version, version);</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         137 : }</span></span>
 <span id="L137"><span class="lineNum">     137</span>              : </span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">         143 : auto QtPassSettings::getGeometry(const QByteArray &amp;defaultValue) -&gt; QByteArray {</span></span>
-<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">         143 :   return getInstance()</span></span>
-<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">         286 :       -&gt;value(SettingsConstants::geometry, defaultValue)</span></span>
-<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">         286 :       .toByteArray();</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">         144 : auto QtPassSettings::getGeometry(const QByteArray &amp;defaultValue) -&gt; QByteArray {</span></span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">         144 :   return getInstance()</span></span>
+<span id="L140"><span class="lineNum">     140</span> <span class="tlaGNC">         288 :       -&gt;value(SettingsConstants::geometry, defaultValue)</span></span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">         288 :       .toByteArray();</span></span>
 <span id="L142"><span class="lineNum">     142</span>              : }</span>
-<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         138 : void QtPassSettings::setGeometry(const QByteArray &amp;geometry) {</span></span>
-<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">         138 :   getInstance()-&gt;setValue(SettingsConstants::geometry, geometry);</span></span>
-<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         138 : }</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">         139 : void QtPassSettings::setGeometry(const QByteArray &amp;geometry) {</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">         139 :   getInstance()-&gt;setValue(SettingsConstants::geometry, geometry);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">         139 : }</span></span>
 <span id="L146"><span class="lineNum">     146</span>              : </span>
-<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         141 : auto QtPassSettings::getSavestate(const QByteArray &amp;defaultValue)</span></span>
+<span id="L147"><span class="lineNum">     147</span> <span class="tlaGNC">         142 : auto QtPassSettings::getSavestate(const QByteArray &amp;defaultValue)</span></span>
 <span id="L148"><span class="lineNum">     148</span>              :     -&gt; QByteArray {</span>
-<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         141 :   return getInstance()</span></span>
-<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         282 :       -&gt;value(SettingsConstants::savestate, defaultValue)</span></span>
-<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         282 :       .toByteArray();</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaGNC">         142 :   return getInstance()</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">         284 :       -&gt;value(SettingsConstants::savestate, defaultValue)</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         284 :       .toByteArray();</span></span>
 <span id="L152"><span class="lineNum">     152</span>              : }</span>
-<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">         134 : void QtPassSettings::setSavestate(const QByteArray &amp;saveState) {</span></span>
-<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         134 :   getInstance()-&gt;setValue(SettingsConstants::savestate, saveState);</span></span>
-<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         134 : }</span></span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">         135 : void QtPassSettings::setSavestate(const QByteArray &amp;saveState) {</span></span>
+<span id="L154"><span class="lineNum">     154</span> <span class="tlaGNC">         135 :   getInstance()-&gt;setValue(SettingsConstants::savestate, saveState);</span></span>
+<span id="L155"><span class="lineNum">     155</span> <span class="tlaGNC">         135 : }</span></span>
 <span id="L156"><span class="lineNum">     156</span>              : </span>
 <span id="L157"><span class="lineNum">     157</span> <span class="tlaGNC">         142 : auto QtPassSettings::getDialogGeometry(const QString &amp;key,</span></span>
 <span id="L158"><span class="lineNum">     158</span>              :                                        const QByteArray &amp;defaultValue)</span>
@@ -240,57 +240,57 @@
 <span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          70 :                           geometry);</span></span>
 <span id="L168"><span class="lineNum">     168</span> <span class="tlaGNC">          35 : }</span></span>
 <span id="L169"><span class="lineNum">     169</span>              : </span>
-<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">         118 : void QtPassSettings::setUsePass(const bool &amp;usePass) {</span></span>
-<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         118 :   getInstance()-&gt;setValue(SettingsConstants::usePass, usePass);</span></span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">         119 : void QtPassSettings::setUsePass(const bool &amp;usePass) {</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">         119 :   getInstance()-&gt;setValue(SettingsConstants::usePass, usePass);</span></span>
 <span id="L172"><span class="lineNum">     172</span>              :   // Backend selection changed: force re-selection on next getPass().</span>
-<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         118 :   PassBackendFactory::invalidate();</span></span>
-<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         118 : }</span></span>
+<span id="L173"><span class="lineNum">     173</span> <span class="tlaGNC">         119 :   PassBackendFactory::invalidate();</span></span>
+<span id="L174"><span class="lineNum">     174</span> <span class="tlaGNC">         119 : }</span></span>
 <span id="L175"><span class="lineNum">     175</span>              : </span>
-<span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">         160 : auto QtPassSettings::getAutoclearSeconds(const int &amp;defaultValue) -&gt; int {</span></span>
-<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">         160 :   return getInstance()</span></span>
-<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">         320 :       -&gt;value(SettingsConstants::autoclearSeconds, defaultValue)</span></span>
-<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">         320 :       .toInt();</span></span>
+<span id="L176"><span class="lineNum">     176</span> <span class="tlaGNC">         161 : auto QtPassSettings::getAutoclearSeconds(const int &amp;defaultValue) -&gt; int {</span></span>
+<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">         161 :   return getInstance()</span></span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">         322 :       -&gt;value(SettingsConstants::autoclearSeconds, defaultValue)</span></span>
+<span id="L179"><span class="lineNum">     179</span> <span class="tlaGNC">         322 :       .toInt();</span></span>
 <span id="L180"><span class="lineNum">     180</span>              : }</span>
 <span id="L181"><span class="lineNum">     181</span>              : // Creates the directory if missing; the result always ends in a separator.</span>
-<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">         287 : auto QtPassSettings::getPassStore(const QString &amp;defaultValue) -&gt; QString {</span></span>
-<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         287 :   QString returnValue = getInstance()</span></span>
-<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         574 :                             -&gt;value(SettingsConstants::passStore, defaultValue)</span></span>
-<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">         287 :                             .toString();</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">         291 : auto QtPassSettings::getPassStore(const QString &amp;defaultValue) -&gt; QString {</span></span>
+<span id="L183"><span class="lineNum">     183</span> <span class="tlaGNC">         291 :   QString returnValue = getInstance()</span></span>
+<span id="L184"><span class="lineNum">     184</span> <span class="tlaGNC">         582 :                             -&gt;value(SettingsConstants::passStore, defaultValue)</span></span>
+<span id="L185"><span class="lineNum">     185</span> <span class="tlaGNC">         291 :                             .toString();</span></span>
 <span id="L186"><span class="lineNum">     186</span>              : </span>
-<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         574 :   returnValue = QDir(returnValue).absolutePath();</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">         582 :   returnValue = QDir(returnValue).absolutePath();</span></span>
 <span id="L188"><span class="lineNum">     188</span>              : </span>
 <span id="L189"><span class="lineNum">     189</span>              :   // ensure directory exists if never used pass or misconfigured.</span>
 <span id="L190"><span class="lineNum">     190</span>              :   // otherwise process-&gt;setWorkingDirectory(passStore); will fail on execution.</span>
-<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         287 :   if (!QDir(returnValue).exists()) {</span></span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">         291 :   if (!QDir(returnValue).exists()) {</span></span>
 <span id="L192"><span class="lineNum">     192</span> <span class="tlaGNC">           3 :     if (!Util::mkpathForStore(returnValue)) {</span></span>
 <span id="L193"><span class="lineNum">     193</span> <span class="tlaUNC">           0 :       qWarning() &lt;&lt; &quot;Failed to create password store directory:&quot; &lt;&lt; returnValue;</span></span>
 <span id="L194"><span class="lineNum">     194</span>              :     }</span>
 <span id="L195"><span class="lineNum">     195</span>              :   }</span>
 <span id="L196"><span class="lineNum">     196</span>              : </span>
-<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         574 :   if (!returnValue.endsWith(&quot;/&quot;) &amp;&amp; !returnValue.endsWith(QDir::separator())) {</span></span>
-<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">         287 :     returnValue += QDir::separator();</span></span>
+<span id="L197"><span class="lineNum">     197</span> <span class="tlaGNC">         582 :   if (!returnValue.endsWith(&quot;/&quot;) &amp;&amp; !returnValue.endsWith(QDir::separator())) {</span></span>
+<span id="L198"><span class="lineNum">     198</span> <span class="tlaGNC">         291 :     returnValue += QDir::separator();</span></span>
 <span id="L199"><span class="lineNum">     199</span>              :   }</span>
 <span id="L200"><span class="lineNum">     200</span>              : </span>
-<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">         287 :   return returnValue;</span></span>
+<span id="L201"><span class="lineNum">     201</span> <span class="tlaGNC">         291 :   return returnValue;</span></span>
 <span id="L202"><span class="lineNum">     202</span>              : }</span>
-<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">         287 : void QtPassSettings::setPassStore(const QString &amp;passStore) {</span></span>
-<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">         287 :   getInstance()-&gt;setValue(SettingsConstants::passStore, passStore);</span></span>
-<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">         287 : }</span></span>
-<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         134 : void QtPassSettings::initExecutables() {</span></span>
-<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         134 :   AppSettings s = QtPassSettings::load();</span></span>
-<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">         134 :   if (s.passExecutable.isEmpty())</span></span>
-<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">         268 :     s.passExecutable = Util::findBinaryInPath(&quot;pass&quot;);</span></span>
-<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">         134 :   if (s.gitExecutable.isEmpty())</span></span>
+<span id="L203"><span class="lineNum">     203</span> <span class="tlaGNC">         289 : void QtPassSettings::setPassStore(const QString &amp;passStore) {</span></span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">         289 :   getInstance()-&gt;setValue(SettingsConstants::passStore, passStore);</span></span>
+<span id="L205"><span class="lineNum">     205</span> <span class="tlaGNC">         289 : }</span></span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">         135 : void QtPassSettings::initExecutables() {</span></span>
+<span id="L207"><span class="lineNum">     207</span> <span class="tlaGNC">         135 :   AppSettings s = QtPassSettings::load();</span></span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">         135 :   if (s.passExecutable.isEmpty())</span></span>
+<span id="L209"><span class="lineNum">     209</span> <span class="tlaGNC">         270 :     s.passExecutable = Util::findBinaryInPath(&quot;pass&quot;);</span></span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">         135 :   if (s.gitExecutable.isEmpty())</span></span>
 <span id="L211"><span class="lineNum">     211</span> <span class="tlaGNC">          12 :     s.gitExecutable = Util::findBinaryInPath(&quot;git&quot;);</span></span>
-<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         134 :   if (s.gpgExecutable.isEmpty()) {</span></span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">         135 :   if (s.gpgExecutable.isEmpty()) {</span></span>
 <span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">           4 :     s.gpgExecutable = Util::findBinaryInPath(&quot;gpg2&quot;);</span></span>
 <span id="L214"><span class="lineNum">     214</span> <span class="tlaGNC">           2 :     if (s.gpgExecutable.isEmpty())</span></span>
 <span id="L215"><span class="lineNum">     215</span> <span class="tlaUNC">           0 :       s.gpgExecutable = Util::findBinaryInPath(&quot;gpg&quot;);</span></span>
 <span id="L216"><span class="lineNum">     216</span>              :   }</span>
-<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         134 :   if (s.pwgenExecutable.isEmpty())</span></span>
-<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         266 :     s.pwgenExecutable = Util::findBinaryInPath(&quot;pwgen&quot;);</span></span>
-<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">         134 :   QtPassSettings::save(s);</span></span>
-<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">         134 : }</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">         135 :   if (s.pwgenExecutable.isEmpty())</span></span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">         268 :     s.pwgenExecutable = Util::findBinaryInPath(&quot;pwgen&quot;);</span></span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">         135 :   QtPassSettings::save(s);</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">         135 : }</span></span>
 <span id="L221"><span class="lineNum">     221</span> <span class="tlaUNC">           0 : auto QtPassSettings::getPassExecutable(const QString &amp;defaultValue) -&gt; QString {</span></span>
 <span id="L222"><span class="lineNum">     222</span> <span class="tlaUNC">           0 :   return getInstance()</span></span>
 <span id="L223"><span class="lineNum">     223</span> <span class="tlaUNC">           0 :       -&gt;value(SettingsConstants::passExecutable, defaultValue)</span></span>
@@ -315,14 +315,14 @@
 <span id="L242"><span class="lineNum">     242</span>              :   }</span>
 <span id="L243"><span class="lineNum">     243</span>              :   return storedValue;</span>
 <span id="L244"><span class="lineNum">     244</span>              : }</span>
-<span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">         133 : auto QtPassSettings::isUseGrepSearch(const bool &amp;defaultValue) -&gt; bool {</span></span>
-<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">         133 :   return getInstance()</span></span>
-<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">         266 :       -&gt;value(SettingsConstants::useGrepSearch, defaultValue)</span></span>
-<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">         266 :       .toBool();</span></span>
+<span id="L245"><span class="lineNum">     245</span> <span class="tlaGNC">         134 : auto QtPassSettings::isUseGrepSearch(const bool &amp;defaultValue) -&gt; bool {</span></span>
+<span id="L246"><span class="lineNum">     246</span> <span class="tlaGNC">         134 :   return getInstance()</span></span>
+<span id="L247"><span class="lineNum">     247</span> <span class="tlaGNC">         268 :       -&gt;value(SettingsConstants::useGrepSearch, defaultValue)</span></span>
+<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">         268 :       .toBool();</span></span>
 <span id="L249"><span class="lineNum">     249</span>              : }</span>
 <span id="L250"><span class="lineNum">     250</span>              : </span>
-<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">         267 : auto QtPassSettings::isUseOtp(const bool &amp;defaultValue) -&gt; bool {</span></span>
-<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">         267 :   return getInstance()-&gt;value(SettingsConstants::useOtp, defaultValue).toBool();</span></span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">         268 : auto QtPassSettings::isUseOtp(const bool &amp;defaultValue) -&gt; bool {</span></span>
+<span id="L252"><span class="lineNum">     252</span> <span class="tlaGNC">         268 :   return getInstance()-&gt;value(SettingsConstants::useOtp, defaultValue).toBool();</span></span>
 <span id="L253"><span class="lineNum">     253</span>              : }</span>
 <span id="L254"><span class="lineNum">     254</span>              : </span>
 <span id="L255"><span class="lineNum">     255</span> <span class="tlaGNC">           1 : void QtPassSettings::setQrencodeExecutable(const QString &amp;qrencodeExecutable) {</span></span>
@@ -335,10 +335,10 @@
 <span id="L262"><span class="lineNum">     262</span> <span class="tlaGNC">           4 :       -&gt;value(SettingsConstants::hideOnClose, defaultValue)</span></span>
 <span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">           4 :       .toBool();</span></span>
 <span id="L264"><span class="lineNum">     264</span>              : }</span>
-<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         142 : auto QtPassSettings::isAlwaysOnTop(const bool &amp;defaultValue) -&gt; bool {</span></span>
-<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">         142 :   return getInstance()</span></span>
-<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">         284 :       -&gt;value(SettingsConstants::alwaysOnTop, defaultValue)</span></span>
-<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">         284 :       .toBool();</span></span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         143 : auto QtPassSettings::isAlwaysOnTop(const bool &amp;defaultValue) -&gt; bool {</span></span>
+<span id="L266"><span class="lineNum">     266</span> <span class="tlaGNC">         143 :   return getInstance()</span></span>
+<span id="L267"><span class="lineNum">     267</span> <span class="tlaGNC">         286 :       -&gt;value(SettingsConstants::alwaysOnTop, defaultValue)</span></span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">         286 :       .toBool();</span></span>
 <span id="L269"><span class="lineNum">     269</span>              : }</span>
 <span id="L270"><span class="lineNum">     270</span>              : </span>
 <span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">           8 : auto QtPassSettings::isAutoPush(const bool &amp;defaultValue) -&gt; bool {</span></span>
@@ -347,16 +347,16 @@
 <span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">          16 :       .toBool();</span></span>
 <span id="L275"><span class="lineNum">     275</span>              : }</span>
 <span id="L276"><span class="lineNum">     276</span>              : </span>
-<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">         306 : auto QtPassSettings::isShowProcessOutput(const bool &amp;defaultValue) -&gt; bool {</span></span>
-<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">         306 :   return getInstance()</span></span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">         612 :       -&gt;value(SettingsConstants::showProcessOutput, defaultValue)</span></span>
-<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">         612 :       .toBool();</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">         308 : auto QtPassSettings::isShowProcessOutput(const bool &amp;defaultValue) -&gt; bool {</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">         308 :   return getInstance()</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">         616 :       -&gt;value(SettingsConstants::showProcessOutput, defaultValue)</span></span>
+<span id="L280"><span class="lineNum">     280</span> <span class="tlaGNC">         616 :       .toBool();</span></span>
 <span id="L281"><span class="lineNum">     281</span>              : }</span>
-<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">         285 : auto QtPassSettings::getRealPass() -&gt; RealPass * {</span></span>
-<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">         285 :   return PassBackendFactory::getRealPass();</span></span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">         287 : auto QtPassSettings::getRealPass() -&gt; RealPass * {</span></span>
+<span id="L283"><span class="lineNum">     283</span> <span class="tlaGNC">         287 :   return PassBackendFactory::getRealPass();</span></span>
 <span id="L284"><span class="lineNum">     284</span>              : }</span>
-<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         411 : auto QtPassSettings::getImitatePass() -&gt; ImitatePass * {</span></span>
-<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">         411 :   return PassBackendFactory::getImitatePass();</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         414 : auto QtPassSettings::getImitatePass() -&gt; ImitatePass * {</span></span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">         414 :   return PassBackendFactory::getImitatePass();</span></span>
 <span id="L287"><span class="lineNum">     287</span>              : }</span>
 <span id="L288"><span class="lineNum">     288</span>              : </span>
 <span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">         134 : auto QtPassSettings::backendsIdle() -&gt; bool {</span></span>

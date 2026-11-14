@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-14 15:20:55</td>
+            <td class="headerValue">2026-11-14 15:52:56</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -87,47 +87,47 @@
 <span id="L14"><span class="lineNum">      14</span>              : #include &lt;QTextEdit&gt;</span>
 <span id="L15"><span class="lineNum">      15</span>              : #include &lt;QToolButton&gt;</span>
 <span id="L16"><span class="lineNum">      16</span>              : </span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         140 : ProcessOutputPanel::ProcessOutputPanel(QWidget *parent)</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         140 :     : QDockWidget(tr(&quot;Process output&quot;), parent) {</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         280 :   setObjectName(QStringLiteral(&quot;processOutputDock&quot;));</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         140 :   setFeatures(QDockWidget::DockWidgetMovable |</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">         141 : ProcessOutputPanel::ProcessOutputPanel(QWidget *parent)</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         141 :     : QDockWidget(tr(&quot;Process output&quot;), parent) {</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         282 :   setObjectName(QStringLiteral(&quot;processOutputDock&quot;));</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         141 :   setFeatures(QDockWidget::DockWidgetMovable |</span></span>
 <span id="L21"><span class="lineNum">      21</span>              :               QDockWidget::DockWidgetFloatable);</span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         140 :   setAllowedAreas(Qt::BottomDockWidgetArea | Qt::TopDockWidgetArea);</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">         141 :   setAllowedAreas(Qt::BottomDockWidgetArea | Qt::TopDockWidgetArea);</span></span>
 <span id="L23"><span class="lineNum">      23</span>              : </span>
-<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         140 :   auto *contents = new QWidget(this);</span></span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         280 :   contents-&gt;setObjectName(QStringLiteral(&quot;processOutputWidget&quot;));</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         140 :   auto *layout = new QHBoxLayout(contents);</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         280 :   layout-&gt;setObjectName(QStringLiteral(&quot;processOutputLayout&quot;));</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         140 :   layout-&gt;setContentsMargins(0, 0, 0, 0);</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         140 :   m_clearButton = new QToolButton(contents);</span></span>
-<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         280 :   m_clearButton-&gt;setObjectName(QStringLiteral(&quot;clearOutputButton&quot;));</span></span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         280 :   m_clearButton-&gt;setText(tr(&quot;Clear&quot;));</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         140 :   m_clearButton-&gt;setToolTip(tr(&quot;Clear output&quot;));</span></span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         140 :   layout-&gt;addWidget(m_clearButton);</span></span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         140 :   m_edit = new QTextEdit(contents);</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         280 :   m_edit-&gt;setObjectName(QStringLiteral(&quot;processOutputEdit&quot;));</span></span>
-<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         140 :   m_edit-&gt;setReadOnly(true);</span></span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         140 :   m_edit-&gt;setAcceptRichText(false);</span></span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         140 :   layout-&gt;addWidget(m_edit);</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         140 :   setWidget(contents);</span></span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         141 :   auto *contents = new QWidget(this);</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         282 :   contents-&gt;setObjectName(QStringLiteral(&quot;processOutputWidget&quot;));</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">         141 :   auto *layout = new QHBoxLayout(contents);</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">         282 :   layout-&gt;setObjectName(QStringLiteral(&quot;processOutputLayout&quot;));</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">         141 :   layout-&gt;setContentsMargins(0, 0, 0, 0);</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         141 :   m_clearButton = new QToolButton(contents);</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         282 :   m_clearButton-&gt;setObjectName(QStringLiteral(&quot;clearOutputButton&quot;));</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         282 :   m_clearButton-&gt;setText(tr(&quot;Clear&quot;));</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         141 :   m_clearButton-&gt;setToolTip(tr(&quot;Clear output&quot;));</span></span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">         141 :   layout-&gt;addWidget(m_clearButton);</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">         141 :   m_edit = new QTextEdit(contents);</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">         282 :   m_edit-&gt;setObjectName(QStringLiteral(&quot;processOutputEdit&quot;));</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">         141 :   m_edit-&gt;setReadOnly(true);</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">         141 :   m_edit-&gt;setAcceptRichText(false);</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">         141 :   layout-&gt;addWidget(m_edit);</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">         141 :   setWidget(contents);</span></span>
 <span id="L40"><span class="lineNum">      40</span>              : </span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         140 :   connect(m_clearButton, &amp;QToolButton::clicked, this,</span></span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         140 :           &amp;ProcessOutputPanel::clear);</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">         141 :   connect(m_clearButton, &amp;QToolButton::clicked, this,</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">         141 :           &amp;ProcessOutputPanel::clear);</span></span>
 <span id="L43"><span class="lineNum">      43</span>              : </span>
 <span id="L44"><span class="lineNum">      44</span>              :   // Hysteresis: while the user is actively dragging the slider, don't</span>
 <span id="L45"><span class="lineNum">      45</span>              :   // touch m_autoScroll on every tick — a brief overshoot at maximum</span>
 <span id="L46"><span class="lineNum">      46</span>              :   // would silently re-arm auto-scroll without an explicit release. Only</span>
 <span id="L47"><span class="lineNum">      47</span>              :   // commit on slider release. Wheel/keyboard scroll never sets</span>
 <span id="L48"><span class="lineNum">      48</span>              :   // isSliderDown(), so they still update immediately.</span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         140 :   QScrollBar *bar = m_edit-&gt;verticalScrollBar();</span></span>
-<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">         140 :   connect(bar, &amp;QScrollBar::valueChanged, this, [this, bar]() {</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">         141 :   QScrollBar *bar = m_edit-&gt;verticalScrollBar();</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">         141 :   connect(bar, &amp;QScrollBar::valueChanged, this, [this, bar]() {</span></span>
 <span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">         116 :     if (bar-&gt;isSliderDown())</span></span>
 <span id="L52"><span class="lineNum">      52</span>              :       return;</span>
 <span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         113 :     m_autoScroll = bar-&gt;value() &gt;= bar-&gt;maximum();</span></span>
 <span id="L54"><span class="lineNum">      54</span>              :   });</span>
-<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">         140 :   connect(bar, &amp;QScrollBar::sliderReleased, this,</span></span>
-<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">         142 :           [this, bar]() { m_autoScroll = bar-&gt;value() &gt;= bar-&gt;maximum(); });</span></span>
-<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         140 : }</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">         141 :   connect(bar, &amp;QScrollBar::sliderReleased, this,</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaGNC">         143 :           [this, bar]() { m_autoScroll = bar-&gt;value() &gt;= bar-&gt;maximum(); });</span></span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         141 : }</span></span>
 <span id="L58"><span class="lineNum">      58</span>              : </span>
 <span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          20 : void ProcessOutputPanel::append(const QString &amp;output, bool isError,</span></span>
 <span id="L60"><span class="lineNum">      60</span>              :                                 const QString &amp;linePrefix) {</span>
