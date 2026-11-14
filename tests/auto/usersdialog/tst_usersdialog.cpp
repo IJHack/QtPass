@@ -71,6 +71,7 @@ private slots:
   void emptyKeyringRejectsTheDialogWithACriticalBox();
   void unknownRecipientIsListedAsNotFoundAndTicked();
   void unreadableRecipientLineLeavesTheOthersTicked();
+  void fallbackPerLineLookupIsCappedAndReused();
   void recipientByShortOrLongIdIsNotListedAsNotFound();
   void unusableKeysAreHiddenUntilAskedForAndThenBadged();
   void unusableRecipientsAreShownAndCanBeRemoved();
@@ -978,6 +979,89 @@ void tst_usersdialog::unreadableRecipientLineLeavesTheOthersTicked() {
       placeholder->text().contains(QStringLiteral("Key not found in keyring")),
       qPrintable(placeholder->text()));
   QCOMPARE(placeholder->checkState(), Qt::Checked);
+}
+
+/**
+ * @brief The per-line fallback must stay bounded. A fresh clone or a team
+ *        store can have every recipient's key missing from the keyring; with
+ *        one unreadable line the batched gpg call fails and the fallback asks
+ *        per line. It is capped at kMaxLookups and shares that budget and its
+ *        results with the missing-key loop, which must not ask gpg about the
+ *        same line a second time.
+ */
+void tst_usersdialog::fallbackPerLineLookupIsCappedAndReused() {
+  // Build a store whose .gpg-id holds @p missing unknown fingerprints and one
+  // unreadable "0x" line, open the Users dialog on it, and count the gpg calls
+  // that carried a recipient (a fingerprint or "0x"); the whole-keyring and
+  // secret-key calls carry neither and are not counted.
+  const auto callsFor = [this](int missing) -> int {
+    const QString counter =
+        QDir(m_dir.path()).filePath(QStringLiteral("lookups-%1").arg(missing));
+    QFile::remove(counter);
+    AppSettings s = m_settings;
+    s.gpgExecutable = writeGpg(
+        QStringLiteral("gpg-counting-%1").arg(missing),
+        QStringLiteral("case \"$*\" in *--list-secret-keys*) exit 0 ;; esac\n"
+                       "case \"$*\" in *FACE*|*0x*) echo x >> '") +
+            counter +
+            QStringLiteral(
+                "' ;; esac\n"
+                "case \"$*\" in *0x*) echo 'gpg: error reading key: Invalid "
+                "user ID' >&2; exit 2 ;; esac\n"
+                // An unknown fingerprint: gpg lists nothing and exits 0.
+                "case \"$*\" in *FACE*) exit 0 ;; esac\n"
+                "cat <<'LISTING'\n") +
+            QString::fromLatin1(kColonListing) +
+            QStringLiteral("LISTING\nexit 0\n"));
+    if (s.gpgExecutable.isEmpty()) {
+      return -1;
+    }
+    QTemporaryDir store;
+    if (!store.isValid()) {
+      return -1;
+    }
+    QByteArray body;
+    for (int i = 1; i <= missing; ++i) {
+      // "FACE" + 36 hex digits = a 40-char fingerprint not in the keyring.
+      body += QStringLiteral("FACE%1\n")
+                  .arg(i, 36, 16, QLatin1Char('0'))
+                  .toLatin1();
+    }
+    body += "0x\n";
+    QFile gpgId(QDir(store.path()).filePath(QStringLiteral(".gpg-id")));
+    if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {
+      return -1;
+    }
+    gpgId.write(body);
+    gpgId.close();
+    s.passStore = store.path() + QLatin1Char('/');
+    RecordingPass pass(s);
+    UsersDialog dialog(&pass, s, s.passStore);
+    QFile log(counter);
+    if (!log.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      return 0;
+    }
+    return static_cast<int>(log.readAll().count('x'));
+  };
+
+  // Five missing lines plus "0x" is six recipients, all looked up under the
+  // cap: 1 batched call (fails on "0x") + 6 per-line. The missing-key loop
+  // reuses those six results, so it adds nothing; without the reuse it would
+  // ask gpg about them again until the shared budget runs out (1 + 6 + 4 = 11).
+  const int few = callsFor(5);
+  QVERIFY2(few >= 0, "fallback harness failed to run");
+  QVERIFY2(few <= 7, qPrintable(QStringLiteral("gpg calls for 5 lines: %1 "
+                                               "(reuse missing?)")
+                                    .arg(few)));
+
+  // Fifteen missing lines: the per-line budget stops the fallback at
+  // kMaxLookups = 10, so 1 batched + 10 per-line at most. Uncapped it would be
+  // 1 + 15 + 10 = 26.
+  const int many = callsFor(15);
+  QVERIFY2(many >= 0, "fallback harness failed to run");
+  QVERIFY2(many <= 11, qPrintable(QStringLiteral("gpg calls for 15 lines: %1 "
+                                                 "(cap missing?)")
+                                      .arg(many)));
 }
 
 namespace {
