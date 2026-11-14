@@ -260,46 +260,46 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="keywordtype">bool</span> overwrite = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>  };</div>
 <div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>  QQueue&lt;PendingInsert&gt; m_pendingInserts;</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>  <span class="keywordtype">bool</span> m_insertPlaced = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span></div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  <span class="keyword">auto</span> placeEncryptedFile(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file,</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>                          <span class="keywordtype">bool</span> overwrite, QString *error) -&gt; bool;</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span></div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>  <span class="keyword">struct </span>ReencryptResult;</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>  <span class="keywordtype">bool</span> m_reencryptActive = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>  std::atomic&lt;bool&gt; m_reencryptCancel{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  QThread *m_reencryptThread = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>  <span class="keywordtype">void</span> startReencryptWorker(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>  <span class="keyword">auto</span> reencryptFiles(<span class="keyword">const</span> QString &amp;dir) -&gt; ReencryptResult;</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>  <span class="keyword">auto</span> pullBeforeReencrypt() -&gt; bool;</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  <span class="keyword">auto</span> entriesToReencrypt(<span class="keyword">const</span> QString &amp;dir) -&gt; QStringList;</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  <span class="keyword">auto</span> recipientsForDir(<span class="keyword">const</span> QString &amp;fileName,</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>                        QHash&lt;QString, QStringList&gt; &amp;verified,</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>                        QStringList &amp;gpgId, ReencryptResult &amp;result) -&gt; bool;</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  <span class="keyword">auto</span> recoverReencryptLeftovers(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  <span class="keywordtype">void</span> dropStaleTemporary(<span class="keyword">const</span> QString &amp;path);</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>  <span class="keyword">auto</span> restoreBackup(<span class="keyword">const</span> QString &amp;path) -&gt; bool;</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  <span class="keywordtype">void</span> reportUnrestorable(<span class="keyword">const</span> QString &amp;path);</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>  <span class="keywordtype">void</span> finishReencrypt(<span class="keyword">const</span> ReencryptResult &amp;result);</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span></div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>  <span class="keyword">struct </span>UncommittedGpgId {</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    QString folder;   </div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    QString gitError; </div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>  };</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>  std::optional&lt;UncommittedGpgId&gt; m_uncommittedGpgId;</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>  <span class="keyword">auto</span> reencryptUsesGit() const -&gt; <span class="keywordtype">bool</span>;</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>  <span class="keywordtype">void</span> reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>  <span class="keywordtype">void</span> reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                              <span class="keywordtype">bool</span> reencrypted);</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span></div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>  auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>      -&gt; QString;</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>  auto pgit(const QString &amp;path) const -&gt; QString;</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>  auto pgpg(const QString &amp;path) const -&gt; QString;</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>};</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>  <span class="keywordtype">bool</span> m_insertPlaced = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span></div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>  <span class="keyword">auto</span> placeEncryptedFile(<span class="keyword">const</span> QString &amp;output, <span class="keyword">const</span> QString &amp;file,</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>                          <span class="keywordtype">bool</span> overwrite, QString *error) -&gt; bool;</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span></div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>  <span class="keyword">struct </span>ReencryptResult;</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  <span class="keywordtype">bool</span> m_reencryptActive = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  std::atomic&lt;bool&gt; m_reencryptCancel{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>  QThread *m_reencryptThread = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>  <span class="keywordtype">void</span> startReencryptWorker(<span class="keyword">const</span> QString &amp;dir);</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>  <span class="keyword">auto</span> reencryptFiles(<span class="keyword">const</span> QString &amp;dir) -&gt; ReencryptResult;</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  <span class="keyword">auto</span> pullBeforeReencrypt() -&gt; bool;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  <span class="keyword">auto</span> entriesToReencrypt(<span class="keyword">const</span> QString &amp;dir) -&gt; QStringList;</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  <span class="keyword">auto</span> recipientsForDir(<span class="keyword">const</span> QString &amp;fileName,</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>                        QHash&lt;QString, QStringList&gt; &amp;verified,</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>                        QStringList &amp;gpgId, ReencryptResult &amp;result) -&gt; bool;</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>  <span class="keyword">auto</span> recoverReencryptLeftovers(<span class="keyword">const</span> QString &amp;dir) -&gt; bool;</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  <span class="keywordtype">void</span> dropStaleTemporary(<span class="keyword">const</span> QString &amp;path);</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>  <span class="keyword">auto</span> restoreBackup(<span class="keyword">const</span> QString &amp;path) -&gt; bool;</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  <span class="keywordtype">void</span> reportUnrestorable(<span class="keyword">const</span> QString &amp;path);</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>  <span class="keywordtype">void</span> finishReencrypt(<span class="keyword">const</span> ReencryptResult &amp;result);</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span></div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>  <span class="keyword">struct </span>UncommittedGpgId {</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    QString folder;   </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    QString gitError; </div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>  };</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>  std::optional&lt;UncommittedGpgId&gt; m_uncommittedGpgId;</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>  <span class="keyword">auto</span> reencryptUsesGit() const -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>  <span class="keywordtype">void</span> reencryptWithoutGit(const QString &amp;dir, const QString &amp;gitError);</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>  <span class="keywordtype">void</span> reportUncommittedGpgId(const QString &amp;dir, const QString &amp;gitError,</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                              <span class="keywordtype">bool</span> reencrypted);</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span></div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>  auto translatePathForWsl(const QString &amp;path, const QString &amp;exe) const</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>      -&gt; QString;</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  auto pgit(const QString &amp;path) const -&gt; QString;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>  auto pgpg(const QString &amp;path) const -&gt; QString;</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>};</div>
 </div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="preprocessor">#endif </span><span class="comment">// SRC_IMITATEPASS_H_</span></div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span> </div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span><span class="preprocessor">#endif </span><span class="comment">// SRC_IMITATEPASS_H_</span></div>
 <div class="ttc" id="aclass_gpg_id_signer_html"><div class="ttname"><a href="class_gpg_id_signer.html">GpgIdSigner</a></div><div class="ttdoc">The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...</div><div class="ttdef"><b>Definition</b> <a href="gpgidsigner_8h_source.html#l00022">gpgidsigner.h:22</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_1_1_transaction_helper_html_a6ec9134c9e606f93ad7adb598d6b233d"><div class="ttname"><a href="class_imitate_pass_1_1_transaction_helper.html#a6ec9134c9e606f93ad7adb598d6b233d">ImitatePass::TransactionHelper::TransactionHelper</a></div><div class="ttdeci">TransactionHelper(SimpleTransaction *trans, PROCESS result)</div><div class="ttdoc">Start transaction.</div><div class="ttdef"><b>Definition</b> <a href="#l00311">imitatepass.h:311</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_1_1_transaction_helper_html_a7b512b63d63c4e2339ebfee98404cf04"><div class="ttname"><a href="class_imitate_pass_1_1_transaction_helper.html#a7b512b63d63c4e2339ebfee98404cf04">ImitatePass::TransactionHelper::~TransactionHelper</a></div><div class="ttdeci">~TransactionHelper()</div><div class="ttdoc">End transaction on destruction.</div><div class="ttdef"><b>Definition</b> <a href="#l00318">imitatepass.h:318</a></div></div>

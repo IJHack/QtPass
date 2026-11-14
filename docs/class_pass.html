@@ -194,6 +194,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6520ffa669cd7934091934b24593d99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show decrypted password file.  <br /></td></tr>
 <tr class="memitem:a86ad2005a6517f9c304a9e156755778c" id="r_a86ad2005a6517f9c304a9e156755778c"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a86ad2005a6517f9c304a9e156755778c">Insert</a> (QString file, QString value, bool force)=0</td></tr>
 <tr class="memdesc:a86ad2005a6517f9c304a9e156755778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert or update password.  <br /></td></tr>
+<tr class="memitem:aa4e8d6d0d817903ae20ddadc3c34657e" id="r_aa4e8d6d0d817903ae20ddadc3c34657e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa4e8d6d0d817903ae20ddadc3c34657e">insertsPending</a> () const -&gt; int</td></tr>
+<tr class="memdesc:aa4e8d6d0d817903ae20ddadc3c34657e"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many inserts have started queueing but not yet reported.  <br /></td></tr>
 <tr class="memitem:a5aedb6df7aa57385eb19a78cdbd3e764" id="r_a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a> (QString file, bool isDir)=0</td></tr>
 <tr class="memdesc:a5aedb6df7aa57385eb19a78cdbd3e764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove password file or directory.  <br /></td></tr>
 <tr class="memitem:a386cbd930f4feac9275170912d45b3a3" id="r_a386cbd930f4feac9275170912d45b3a3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a386cbd930f4feac9275170912d45b3a3">Move</a> (const QString srcDir, const QString dest, const bool force)=0</td></tr>
@@ -280,6 +282,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a6097de48d30068d8a73f7dc80ff01de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the insert that just failed had put its entry in the store before a later step failed. The backend that writes the entry knows; this default says no.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
 <tr class="memdesc:a36a6f3e2815272e10ff895edc487d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remember what a <a class="el" href="#a6520ffa669cd7934091934b24593d99c" title="Show decrypted password file.">Show()</a> asked for, so its completion can say so.  <br /></td></tr>
+<tr class="memitem:af2bb81415b1f19148f9837de0cd545c7" id="r_af2bb81415b1f19148f9837de0cd545c7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af2bb81415b1f19148f9837de0cd545c7">queueInsert</a> ()</td></tr>
+<tr class="memdesc:af2bb81415b1f19148f9837de0cd545c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count one insert that has started queueing but not yet reported.  <br /></td></tr>
 <tr class="memitem:a6cca7cd5646a752c16dac59df6e53581" id="r_a6cca7cd5646a752c16dac59df6e53581"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6cca7cd5646a752c16dac59df6e53581">refuseLinkedPath</a> (const QString &amp;path, <a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106">LinkScope</a> scope=<a class="el" href="#aef20faec56cbdf08fa1530f7bb7ba106a9dfea5717834feff13a2ac97b9d63b1d">LinkScope::EntryAndParents</a>, <a class="el" href="#a4a2fc7833af61945b684295de61894cd">PathSpelling</a> spelling=<a class="el" href="#a4a2fc7833af61945b684295de61894cda61aa63eb3ac1c3408640463ee5fe8aa3">PathSpelling::Configured</a>) -&gt; bool</td></tr>
 <tr class="memdesc:a6cca7cd5646a752c16dac59df6e53581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse an operation on something that is, or lies behind, a symbolic link or NTFS junction inside the store.  <br /></td></tr>
 <tr class="memitem:afea04fa657d65846e2772b0b25c96276" id="r_afea04fa657d65846e2772b0b25c96276"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#afea04fa657d65846e2772b0b25c96276">refuseFolderOutsideStore</a> (const QString &amp;folder, QString *relative=nullptr) -&gt; bool</td></tr>
@@ -372,7 +376,7 @@ Protected Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00451">451</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00472">472</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -404,7 +408,7 @@ Protected Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00461">461</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00482">482</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1777,6 +1781,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aa4e8d6d0d817903ae20ddadc3c34657e" name="aa4e8d6d0d817903ae20ddadc3c34657e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e8d6d0d817903ae20ddadc3c34657e">&#9670;&#160;</a></span>insertsPending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::insertsPending </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel nodiscard">nodiscard</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How many inserts have started queueing but not yet reported. </p>
+<p>One <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> still in the command queue, or running, counts here until its PASS_INSERT result goes out. A <a class="el" href="class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates.">PasswordDialog</a> reads this just before its own <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> so it can tell an earlier insert's report (which it is also connected to, once a hanging queue let it open while its save was still pending) from its own. </p><dl class="section return"><dt>Returns</dt><dd>The number of inserts awaiting their report. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00180">180</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a id="a6097de48d30068d8a73f7dc80ff01de0" name="a6097de48d30068d8a73f7dc80ff01de0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6097de48d30068d8a73f7dc80ff01de0">&#9670;&#160;</a></span>insertWritten()</h2>
 
@@ -1811,7 +1845,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#a54b0d821ced68089162fd3872087e7ec">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00436">436</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00447">447</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -1841,7 +1875,7 @@ Protected Attributes</h2></td></tr>
 <p>Whether no gpg, git or pass of this backend runs or waits. </p>
 <dl class="section return"><dt>Returns</dt><dd>true when its executor is idle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00398">398</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00409">409</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -2098,6 +2132,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af2bb81415b1f19148f9837de0cd545c7" name="af2bb81415b1f19148f9837de0cd545c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2bb81415b1f19148f9837de0cd545c7">&#9670;&#160;</a></span>queueInsert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pass::queueInsert </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Count one insert that has started queueing but not yet reported. </p>
+<p>Backends call this where <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> queues its work, past every refusal; <a class="el" href="#a8efe916aa899deaed23aa445cc9a302f" title="Handle process completion.">Pass::finished()</a> counts it off again when the insert reports. Each queued insert reports once, as a PASS_INSERT, so the count tracks the inserts in flight. A dialog reads <a class="el" href="#aa4e8d6d0d817903ae20ddadc3c34657e" title="How many inserts have started queueing but not yet reported.">insertsPending()</a> before its own <a class="el" href="#a86ad2005a6517f9c304a9e156755778c" title="Insert or update password.">Insert()</a> to learn how many earlier reports are not its own. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00470">470</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+
+</div>
+</div>
 <a id="a36a6f3e2815272e10ff895edc487d388" name="a36a6f3e2815272e10ff895edc487d388"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36a6f3e2815272e10ff895edc487d388">&#9670;&#160;</a></span>queueShow()</h2>
 
@@ -2129,7 +2193,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00449">449</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00460">460</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -2739,7 +2803,7 @@ Protected Attributes</h2></td></tr>
 <p>Most bytes of plaintext a gpg decryption may produce. </p>
 <p>An OpenPGP message is compressed, so a small entry in a shared store can decompress to gigabytes; gpg stops at this many (&ndash;max-output) instead of filling <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a>'s memory. Far above any real entry. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00252">252</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00263">263</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
