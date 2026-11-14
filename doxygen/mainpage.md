@@ -79,9 +79,9 @@ Showing an entry, step by step:
 5. MainWindow, the QtPass glue object and the open dialogs are connected to those signals and
    update what the user sees.
 
-Each operation ends exactly once, in a `finished...` signal or in
-Pass::processErrorExit(). Code that disables part of the interface while an
-operation runs relies on that.
+Every operation ends in a `finished...` signal or in Pass::processErrorExit().
+Code that disables part of the interface while an operation runs relies on
+that to be released again.
 
 A few things do not go through the queue. Executor::executeBlocking() runs a
 process and waits; it is for worker threads and for short probes. NativeGrep,

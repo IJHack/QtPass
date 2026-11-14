@@ -727,7 +727,7 @@ signals:
    *
    * The main window shows the busy state on it. An operation made of
    * several processes emits it once per process; the operation then ends
-   * once, with a `finished...` signal or with processErrorExit().
+   * with a `finished...` signal or with processErrorExit().
    */
   void startingExecuteWrapper();
   /**
@@ -755,15 +755,20 @@ signals:
    * @brief An operation ended in failure: its process exited non-zero,
    * could not be started or crashed, or the operation was refused.
    *
-   * The counterpart of the `finished...` signals; exactly one of the two
-   * ends each operation. The main window releases the busy state and shows
-   * @p err in the password pane.
+   * The counterpart of the `finished...` signals: every operation ends in
+   * one or the other. The main window releases the busy state and shows
+   * @p err in the password pane. One case emits both: when RealPass has
+   * removed a linked folder but could not commit that, this signal is
+   * followed by finishedRemove(), because the store did change.
    *
-   * When an insert or a key generation started a process and that process
-   * failed, insertFailed() or generateGPGKeysFailed() is emitted before
-   * this signal, so their dialogs need not guess whose failure it is. An
-   * operation refused before anything started (a path outside the store,
-   * say) emits this signal without either of the two.
+   * insertFailed() and generateGPGKeysFailed() are emitted before this
+   * signal whenever their operation fails through a queued command, be it
+   * a non-zero exit, a crash or a process that could not be started, so
+   * their dialogs need not guess whose failure it is.
+   * generateGPGKeysFailed() also comes first when no gpg executable is
+   * configured and nothing is queued at all. A refusal made before
+   * anything is queued, such as a path behind a link or an unfinished Git
+   * operation, emits this signal without either of them.
    * @param exitCode Exit code of the process; -1 when it did not exit
    *        normally, 1 for a refusal.
    * @param err What to show the user: stderr, or a translated message.
