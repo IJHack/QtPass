@@ -694,7 +694,13 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
     }
   }
   for (const NamedValue &field : std::as_const(held)) {
-    previous = addFieldRow(field, previous);
+    SecretLineEdit *line = addFieldRow(field, previous);
+    // A typed OTP value keeps its mark in a field row too, so save() still
+    // turns a bare secret into an otpauth:// URI.
+    if (otpTyped.contains(field.name)) {
+      line->setProperty(kOtpEditedProperty, true);
+    }
+    previous = line;
   }
 
   hookOtpField();

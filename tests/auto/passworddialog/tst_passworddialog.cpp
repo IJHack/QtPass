@@ -179,6 +179,7 @@ private Q_SLOTS:
   void reloadAndTemplateChangeKeepEachFieldOnce();
   void typedValuesSurviveATemplateSwitch();
   void ctrlTWithOneTemplateKeepsTheRows();
+  void typedOtpStaysMarkedAcrossATemplateSwitch();
   void otpFieldFlagsAnInvalidSecret();
   void otpWarningSurvivesAReloadOnlyOnce();
   void otpUriIsNormalisedOnLeavingTheField();
@@ -1791,6 +1792,44 @@ void tst_passworddialog::typedValuesSurviveATemplateSwitch() {
  * @brief With a single template Ctrl+T has nothing to switch to and leaves
  *        the rows alone; it used to rebuild them empty.
  */
+/**
+ * @brief A bare OTP secret typed into the OTP row, still focused, when the
+ *        template switches to one without that field, lands in a field row
+ *        that keeps the typed-in mark, so the save still writes it as an
+ *        otpauth:// URI.
+ */
+void tst_passworddialog::typedOtpStaysMarkedAcrossATemplateSwitch() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("github.com"),
+                   true);
+  d.setAvailableTemplates({{QStringLiteral("otp"), {QStringLiteral("OTP")}},
+                           {QStringLiteral("web"), {QStringLiteral("login")}}},
+                          QStringLiteral("otp"));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  auto *otp = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY(otp != nullptr);
+  otp->setFocus();
+  // Typed, not set: textEdited is what marks the value as the user's. No
+  // Return, which would turn it into a URI at once.
+  QTest::keyClicks(otp, QStringLiteral("JBSWY3DPEHPK3PXP"));
+
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+  box->setCurrentText(QStringLiteral("web"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  auto *moved = d.findChild<QLineEdit *>(QStringLiteral("OTP"));
+  QVERIFY2(moved != nullptr, "the OTP value stays, in a field row");
+
+  d.accept();
+  QVERIFY2(pass.insertedContent.contains(
+               QStringLiteral("OTP: otpauth://totp/github.com?")),
+           qPrintable(pass.insertedContent));
+  QVERIFY(
+      pass.insertedContent.contains(QStringLiteral("secret=JBSWY3DPEHPK3PXP")));
+}
+
 void tst_passworddialog::ctrlTWithOneTemplateKeepsTheRows() {
   FakePass pass;
   PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
