@@ -149,6 +149,7 @@ private Q_SLOTS:
   void pasteWithLineBreaksKeepsUndo();
   void pasteIsAnUndoStepOfItsOwn();
   void unicodeLineSeparatorsAreRemoved();
+  void storedSeparatorsSurviveAnUneditedSave();
   void ctrlShiftInsertPastesThePrimarySelection();
   void fieldNameDropsLineBreaks();
   void templateFieldsKeepPlainLabels();
@@ -532,6 +533,27 @@ void tst_passworddialog::unicodeLineSeparatorsAreRemoved() {
   QApplication::clipboard()->setText(QStringLiteral("\u2028e"));
   login->paste();
   QCOMPARE(login->text(), QStringLiteral("abcde"));
+}
+
+/**
+ * @brief The line-break filter is for what the user types or pastes, not for
+ *        what the entry holds: a password and a field with NEL, U+2028 or
+ *        U+2029 inside load as they are, and a save without edits writes
+ *        the entry back unchanged.
+ */
+void tst_passworddialog::storedSeparatorsSurviveAnUneditedSave() {
+  FakePass pass;
+  PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
+                   false);
+  const QString entry =
+      QStringLiteral("pa\u2028ss\u0085word\nlogin: a\u2029b\nnotes\n");
+  pass.deliverShow(entry);
+  auto *password = d.findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(password != nullptr && login != nullptr);
+  QCOMPARE(password->text(), QStringLiteral("pa\u2028ss\u0085word"));
+  QCOMPARE(login->text(), QStringLiteral("a\u2029b"));
+  QCOMPARE(d.getPassword(), entry);
 }
 
 /**

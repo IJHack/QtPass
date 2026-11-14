@@ -254,7 +254,9 @@ void PasswordDisplayPanel::addHiddenPassword(QLayout *layout,
   connect(passwordLineEdit, &SecretLineEdit::copied, this,
           &PasswordDisplayPanel::textCopied);
   passwordLineEdit->setObjectName(field);
-  passwordLineEdit->setText(value);
+  // As stored: the line-break filter is for input, and the eye button and a
+  // copy must show and copy the password the entry holds.
+  passwordLineEdit->setStoredText(value);
   passwordLineEdit->setReadOnly(true);
   passwordLineEdit->setStyleSheet(lineStyle);
   passwordLineEdit->setContentsMargins(0, 0, 0, 0);

@@ -691,6 +691,13 @@ void tst_passworddisplaypanel::passwordRowKeepsSurroundingWhitespace() {
   auto *edit = m_parent->findChild<QLineEdit *>(QStringLiteral("Password"));
   QVERIFY2(edit != nullptr, "the hidden password renders into a QLineEdit");
   QCOMPARE(edit->text(), QStringLiteral(" hunter2 "));
+  // The line edit drops line breaks from what is typed or pasted, but not
+  // from the stored value it is given to show.
+  m_panel->clear();
+  m_panel->displayFields(QStringLiteral("pa\u2028ss"), NamedValues{}, s);
+  edit = m_parent->findChild<QLineEdit *>(QStringLiteral("Password"));
+  QVERIFY(edit != nullptr);
+  QCOMPARE(edit->text(), QStringLiteral("pa\u2028ss"));
 
   // A trailing CR from a CRLF-stored entry is a line ending, not part of the
   // secret, and is the one thing dropped.

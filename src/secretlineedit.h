@@ -74,6 +74,18 @@ public:
    */
   [[nodiscard]] static auto withoutLineBreaks(QString text) -> QString;
 
+  /**
+   * @brief Shows a value read from the entry exactly as it is stored.
+   *
+   * setText() runs the line-break filter too (QLineEdit validates every
+   * change), which would alter a stored value with a NEL or a Unicode
+   * separator inside before the user touched it, and an unedited save would
+   * write the altered value back. The filter is for typed and pasted input,
+   * so it is set aside for this one setText().
+   * @param text The stored value.
+   */
+  void setStoredText(const QString &text);
+
 signals:
   /**
    * @brief Selected text was copied out of the line edit.

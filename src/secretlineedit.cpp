@@ -63,6 +63,15 @@ auto SecretLineEdit::withoutLineBreaks(QString text) -> QString {
   return text;
 }
 
+void SecretLineEdit::setStoredText(const QString &text) {
+  // setValidator() only swaps the pointer; nothing is checked again when the
+  // filter comes back, so the stored text stays as it is until edited.
+  const QValidator *filter = validator();
+  setValidator(nullptr);
+  setText(text);
+  setValidator(filter);
+}
+
 SecretLineEdit::SecretLineEdit(QWidget *parent) : QLineEdit(parent) {
   setValidator(new SingleLineValidator(this));
 }
