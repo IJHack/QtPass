@@ -724,6 +724,12 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
 - Add password accepts a name two or more new folders deep (`a/b/entry`). It
   was refused as "outside the password store", because the check could not
   climb through folders that do not exist yet.
+- The password and the field rows of the password dialog drop the line
+  breaks of a paste or a drop, and so does a field's new name. A password
+  pasted with the line break in front (a selection that began at the end of
+  the line above) was saved as an empty first line with the password below:
+  Ctrl+C then copied nothing and said it had, and the password showed in the
+  text under the fields, also with "Hide password" on.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

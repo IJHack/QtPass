@@ -58,6 +58,34 @@ public:
    */
   [[nodiscard]] auto createSecretContextMenu() -> QMenu *;
 
+  /**
+   * @brief Whether @p ch breaks a line: LF, CR, NEL (U+0085), or the Unicode
+   * line and paragraph separators (U+2028, U+2029).
+   * @param ch The character.
+   * @return true for those five.
+   */
+  [[nodiscard]] static auto isLineBreak(QChar ch) -> bool;
+
+  /**
+   * @brief @p text with every line break (see isLineBreak()) removed: what a
+   * one-line field keeps of a paste.
+   * @param text The text.
+   * @return The text on one line.
+   */
+  [[nodiscard]] static auto withoutLineBreaks(QString text) -> QString;
+
+  /**
+   * @brief Shows a value read from the entry exactly as it is stored.
+   *
+   * setText() runs the line-break filter too (QLineEdit validates every
+   * change), which would alter a stored value with a NEL or a Unicode
+   * separator inside before the user touched it, and an unedited save would
+   * write the altered value back. The filter is for typed and pasted input,
+   * so it is set aside for this one setText().
+   * @param text The stored value.
+   */
+  void setStoredText(const QString &text);
+
 signals:
   /**
    * @brief Selected text was copied out of the line edit.
@@ -116,6 +144,23 @@ private:
    * release, where QLineEdit would have copied plain text.
    */
   void publishSelection();
+  /**
+   * @brief Pastes the clipboard or the primary selection with its line
+   * breaks removed, as one undoable edit. Does nothing when read-only.
+   *
+   * The validator would remove them too, but a correction it makes resets
+   * QLineEdit's undo history; removing them before the insert keeps Undo
+   * for Ctrl+V, Paste and a middle click. Drops and input methods still go
+   * through the validator alone.
+   * @param mode Clipboard for Ctrl+V and Paste, Selection for a middle click.
+   */
+  void pasteOneLine(QClipboard::Mode mode);
+  /**
+   * @brief Ends the current undo step, so that the next edit starts its own,
+   * as QLineEdit::paste() does around a paste. Moves the cursor away and
+   * back, which is the public way to reach QLineEdit's private separate().
+   */
+  void markUndoBoundary();
 };
 
 #endif // SRC_SECRETLINEEDIT_H_

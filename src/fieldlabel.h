@@ -50,7 +50,8 @@ signals:
   /**
    * @brief The user typed a different name and confirmed it.
    * @param from the name before, still shown until the receiver accepts
-   * @param to the new name, trimmed, never empty, without a colon
+   * @param to the new name, trimmed, never empty, without a colon or a line
+   * break
    */
   void renamed(const QString &from, const QString &to);
   /**

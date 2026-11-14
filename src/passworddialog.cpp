@@ -395,13 +395,19 @@ void PasswordDialog::setPassword(const QString &password) {
   FileContent fileContent =
       FileContent::parse(password, m_templating ? m_fields : QStringList(),
                          m_templating && m_allFields);
-  ui->lineEditPassword->setText(fileContent.getPassword());
+  // As stored, past the line-break filter for input: an unedited save must
+  // write the entry back exactly.
+  ui->lineEditPassword->setStoredText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;
   NamedValues namedValues = fileContent.getNamedValues();
   for (QLineEdit *line : std::as_const(m_templateLines)) {
     const NamedValue nv = namedValues.takeNamedValue(line->objectName());
-    line->setText(nv.value);
+    if (auto *secret = qobject_cast<SecretLineEdit *>(line)) {
+      secret->setStoredText(nv.value);
+    } else {
+      line->setText(nv.value);
+    }
     line->setProperty(kOriginalLineProperty, nv.originalLine);
     // The value is the entry's again, whatever the user typed before this
     // reload: not a value normalizeOtpField() may rewrite.
@@ -417,7 +423,7 @@ void PasswordDialog::setPassword(const QString &password) {
     auto *line = new SecretLineEdit();
     reportCopies(line);
     line->setObjectName(nv.name);
-    line->setText(nv.value);
+    line->setStoredText(nv.value);
     line->setProperty(kOriginalLineProperty, nv.originalLine);
     auto *label = new FieldLabel(nv.name);
     label->setBuddy(line);
