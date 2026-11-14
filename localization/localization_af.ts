@@ -1380,22 +1380,22 @@ e-pos</translation>
         <translation>Kon nie die koderingsleutel lees om te gebruik nie .gpg-id lêer ontbreek of ongeldig.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="942"/>
+        <location filename="../src/pass.cpp" line="958"/>
         <source>Cannot check the recipient list</source>
         <translation>Kan nie die ontvangerslys nagaan nie</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="944"/>
+        <location filename="../src/pass.cpp" line="960"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation>%1 Of %2 verwyder is, kan nie vasgestel word nie, dus is niks geënkripteer nie.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="951"/>
+        <location filename="../src/pass.cpp" line="967"/>
         <source>Recipient list missing</source>
         <translation>Ontvangerslys ontbreek</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="952"/>
+        <location filename="../src/pass.cpp" line="968"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation>Die ondertekende ontvangerslys %1 ontbreek of is nie &apos;n gewone lêer nie. QtPass val daarvoor nie terug op die lys van &apos;n ouerlêergids nie: daardie lys is nie vir hierdie lêergids onderteken nie. As daar &apos;n skakel onder daardie naam is, verwyder dit. Open dan Gebruikers vir daardie lêergids en stoor sy ontvangers; dit skryf en onderteken &apos;n nuwe lys.</translation>
     </message>
@@ -1565,7 +1565,12 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
         <translation>%1 kon nie herenkripteer word nie: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1323"/>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
+        <translation type="unfinished">Die Git-repo van die wagwoordstoor bevat lêere wat nog nie geintegras het nie. Los die konflik met Git op voor jy weer enkripteer.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1324"/>
         <source>Re-encryption failed</source>
         <translation>Herenkripsie het misluk</translation>
     </message>
@@ -1588,7 +1593,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
-        <location filename="../src/imitatepass.cpp" line="1019"/>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Backup commit failed</source>
         <translation>Rugsteuntoewyding het misluk</translation>
     </message>
@@ -1599,69 +1604,64 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1008"/>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Onvolledige Git-operasie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
-        <source>The store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="1020"/>
+        <location filename="../src/imitatepass.cpp" line="1021"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>Herenkripsie is gestaak omdat &apos;n git-rugsteun nie geskep kon word nie.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1062"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>A re-encryption is already running</source>
         <translation>&apos;n Herenkripsie is reeds aan die gang</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1069"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>Not a folder of the store</source>
         <translation>Nie &apos;n lêergids van die stoor nie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 is, of lê agter, &apos;n simboliese skakel of junction. Waarna dit wys, is nie deel van die wagwoordstoor nie en is nie herenkripteer nie.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Herenkriptering van lêergids %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1161"/>
-        <location filename="../src/imitatepass.cpp" line="1350"/>
+        <location filename="../src/imitatepass.cpp" line="1162"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
         <translation>Opdatering van wagwoordberging</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1174"/>
-        <location filename="../src/imitatepass.cpp" line="1180"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed</source>
         <translation>Git pull het misluk</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation>Kon nie ná die pull nagaan of die winkel onsamegevoegde lêers het nie. Kontroleer dit met git voordat jy herenkripteer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>Die pull het die wagwoordstoor met onsaamgevoegde lêers gelaat. Los die konflik op voordat jy herenkripteer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1185"/>
+        <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>Git pull het misluk; die wagwoordstoor word herenkripteer soos dit is</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1196"/>
+        <location filename="../src/imitatepass.cpp" line="1197"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>%n inskrywing oorgeslaan: &apos;n simboliese skakel, junction of spesiale lêer is nie deel van die stoor nie.</numerusform>
@@ -1669,27 +1669,27 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>GPG ID verification failed</source>
         <translation>GPG ID-verifikasie het misluk</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Kon nie .gpg-id vir gids verifieer nie.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>Not part of the store</source>
         <translation>Nie deel van die stoor nie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 is, of lê agter, &apos;n simboliese skakel of kruispunt na die uittrek. Wat dit na wys, is nie deel van die wagwoordstoor nie en word onveranderd gelê.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1321"/>
+        <location filename="../src/imitatepass.cpp" line="1322"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... en %n meer</numerusform>
@@ -1697,7 +1697,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1324"/>
+        <location filename="../src/imitatepass.cpp" line="1325"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>%n lêer kon nie herenkripteer word nie:</numerusform>
@@ -1705,18 +1705,18 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <location filename="../src/imitatepass.cpp" line="1331"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Herenkripsie gekanselleer: %1 van %2 lêers nagegaan, %3 herenkripteer, %4 misluk</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1397"/>
-        <location filename="../src/imitatepass.cpp" line="1406"/>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
         <source>Recipients not committed</source>
         <translation>Ontvangers nie gecommit nie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1398"/>
+        <location filename="../src/imitatepass.cpp" line="1399"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1729,7 +1729,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 Die verandering is nog nie gecommit of gepush nie. Los die Git-probleem op en commit dan die veranderinge, of stoor die ontvangers weer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1407"/>
+        <location filename="../src/imitatepass.cpp" line="1408"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1742,12 +1742,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 Die herenkripsie is nie voltooi nie, dus is sommige of alle inskrywings nog na die vorige ontvangers geënkripteer, wat hulle steeds kan lees. Niks is gecommit of gepush nie. Los die Git-probleem op en stoor dan die ontvangers weer.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1594"/>
+        <location filename="../src/imitatepass.cpp" line="1595"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Uitvoerbare git-lêer is nie opgestel nie; git word oorgeslaan</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1671"/>
+        <location filename="../src/imitatepass.cpp" line="1672"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>gpg het geen syferteks vir %1 geskryf nie.</translation>
     </message>
@@ -1776,17 +1776,17 @@ Die herenkripsie is nie voltooi nie, dus is sommige of alle inskrywings nog na d
         <translation type="vanished">Kon nie %1 herenkripteer nie</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1339"/>
+        <location filename="../src/imitatepass.cpp" line="1340"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Herenkripsie voltooi: %1 het geslaag, %2 het misluk</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1344"/>
+        <location filename="../src/imitatepass.cpp" line="1345"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Herenkripsie voltooi: %1 lêers herenkripteer</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1353"/>
+        <location filename="../src/imitatepass.cpp" line="1354"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Push word oorgeslaan: %n lêer kon nie herenkripteer word nie</numerusform>
@@ -1794,14 +1794,14 @@ Die herenkripsie is nie voltooi nie, dus is sommige of alle inskrywings nog na d
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1513"/>
-        <location filename="../src/imitatepass.cpp" line="1560"/>
+        <location filename="../src/imitatepass.cpp" line="1514"/>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>Copy failed</source>
         <translation>Kopiëring het misluk</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1514"/>
-        <location filename="../src/imitatepass.cpp" line="1561"/>
+        <location filename="../src/imitatepass.cpp" line="1515"/>
+        <location filename="../src/imitatepass.cpp" line="1562"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Kon nie %1 na %2 kopieer nie.</translation>
     </message>
@@ -3026,12 +3026,12 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Wagwoordgenerering is nie suksesvol nie</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nie moeg om pwgen (&quot;%1&quot;) uit te voer nie. Kyk na die pwgen program in die instellings, of skakel &quot;Gebruik pwgen&quot; af.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3103,83 +3103,89 @@ Gaan voort?</translation>
         <translation>%1 is nie in die wagwoordstoor nie. Ontvangers is ingestel vir die stoor of &apos;n lêergids daarin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="844"/>
-        <location filename="../src/pass.cpp" line="845"/>
-        <source>rebase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/pass.cpp" line="846"/>
-        <source>merge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/pass.cpp" line="847"/>
-        <source>cherry-pick</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/pass.cpp" line="848"/>
+        <location filename="../src/pass.cpp" line="851"/>
+        <source>rebase</source>
+        <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="854"/>
+        <source>merge</source>
+        <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>cherry-pick</source>
+        <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="860"/>
         <source>revert</source>
+        <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="853"/>
+        <location filename="../src/pass.cpp" line="867"/>
         <source>cherry-pick or revert</source>
+        <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="875"/>
-        <source>The store&apos;s Git repository is in the middle of a %1. Finish or abort it with git before changing the store, or what you change may be lost.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/pass.cpp" line="891"/>
+        <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
+        <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
+        <translation type="unfinished">Die Git-repo van die wagwoordstoor is in die middel van &apos;n %1. Maak dit voltooi of beëindig dit met Git voor jy die wagwoordstoor verander, anders kan wat jy verander, verdwyn.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="888"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Die wagwoordstoor word opdater. (’n Git-trek is in gang). Wacht totdat dit voltooi is, en probeer dan weer.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="893"/>
+        <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opdatering aan die gang</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="907"/>
+        <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Onvolledige Git-operasie</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="916"/>
+        <location filename="../src/pass.cpp" line="932"/>
         <source>Not part of the store</source>
         <translation>Nie deel van die stoor nie</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1011"/>
+        <location filename="../src/pass.cpp" line="1027"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation>Die generasierekord van die ontvangerslyste kan nie gelees word nie.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1093"/>
+        <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation>%1 kan nie as &apos;n ontvangerslys lees word (een gewone lêer van hoogstens %2), dus is niks vooraf geselekteer nie. Kyk dit na voor jy ontvangers hier kies: OK skryf &apos;n nuwe lys oor die vorige.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1114"/>
+        <location filename="../src/pass.cpp" line="1130"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Die ontvangerslys %1 ontbreek of is nie &apos;n gewone lêer nie, so niks is vooraf gekies nie: die lys van &apos;n ouerlêergids is nie vir hierdie een onderteken nie. Kies self hierdie lêergids se ontvangers; OK skryf en onderteken &apos;n nuwe lys.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1119"/>
+        <location filename="../src/pass.cpp" line="1135"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation>%1 Niks is vooraf gekies nie: of %2 verwyder is, kan nie vasgestel word nie.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1134"/>
+        <location filename="../src/pass.cpp" line="1150"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>Die ontvangerslys %1 verifieer nie teen die ondertekeningsleutel nie, so niks is vooraf gekies nie: stoor sou onderteken wat ook al daarin staan. Kies self die ontvangers; OK skryf en onderteken &apos;n nuwe lys.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1058"/>
+        <location filename="../src/pass.cpp" line="1074"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Niks is vooraf gekies nie: stoor sou onderteken wat ook al daarin staan. Kies self die ontvangers.</translation>
     </message>

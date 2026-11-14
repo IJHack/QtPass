@@ -1360,22 +1360,22 @@ e-mail</translation>
         <translation>Não foi possível ler a chave de cifragem a ser utilizada, o ficheiro .gpg-id não existe ou é inválido.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="942"/>
+        <location filename="../src/pass.cpp" line="958"/>
         <source>Cannot check the recipient list</source>
         <translation type="unfinished">Não é possível verificar a lista de destinatários</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="944"/>
+        <location filename="../src/pass.cpp" line="960"/>
         <source>%1 Whether %2 was removed cannot be told, so nothing was encrypted.</source>
         <translation type="unfinished">%1 Não é possível saber se %2 foi removido, por isso nada foi cifrado.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="951"/>
+        <location filename="../src/pass.cpp" line="967"/>
         <source>Recipient list missing</source>
         <translation type="unfinished">Lista de destinatários em falta</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="952"/>
+        <location filename="../src/pass.cpp" line="968"/>
         <source>The signed recipient list %1 is missing or is not a regular file. QtPass does not fall back to a parent folder&apos;s list for it: that list was not signed for this folder. If a link is under that name, remove it. Then open Users for that folder and save its recipients, which writes and signs a fresh list.</source>
         <translation type="unfinished">A lista de destinatários assinada %1 não existe ou não é um ficheiro normal. O QtPass não recorre à lista de uma pasta superior em vez dela: essa lista não foi assinada para esta pasta. Se existir uma ligação com esse nome, remova-a. Depois abra Utilizadores para essa pasta e guarde os respetivos destinatários, o que escreve e assina uma lista nova.</translation>
     </message>
@@ -1545,7 +1545,12 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
         <translation>Não foi possível recifrar %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1323"/>
+        <location filename="../src/imitatepass.cpp" line="1009"/>
+        <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
+        <translation type="unfinished">O repositório Git do armazém de palavras-passe contém ficheiros não integrados. Resolva o conflito com o Git antes de re-encriptar.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="1324"/>
         <source>Re-encryption failed</source>
         <translation>Falha na recifragem</translation>
     </message>
@@ -1568,7 +1573,7 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="996"/>
-        <location filename="../src/imitatepass.cpp" line="1019"/>
+        <location filename="../src/imitatepass.cpp" line="1020"/>
         <source>Backup commit failed</source>
         <translation>Commit de backup falhou</translation>
     </message>
@@ -1579,69 +1584,64 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1008"/>
-        <location filename="../src/imitatepass.cpp" line="1242"/>
+        <location filename="../src/imitatepass.cpp" line="1243"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operação Git incompleta</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1009"/>
-        <source>The store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="1020"/>
+        <location filename="../src/imitatepass.cpp" line="1021"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation>A recifragem foi abortada porque não foi possível criar uma cópia de segurança git.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1062"/>
+        <location filename="../src/imitatepass.cpp" line="1063"/>
         <source>A re-encryption is already running</source>
         <translation>Já está uma recifragem em curso</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1069"/>
+        <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>Not a folder of the store</source>
         <translation>Não é uma pasta do armazém</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1070"/>
+        <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
         <translation>%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do armazém de palavras-passe e não foi recifrado.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1085"/>
+        <location filename="../src/imitatepass.cpp" line="1086"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Recifrar a partir da pasta %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1161"/>
-        <location filename="../src/imitatepass.cpp" line="1350"/>
+        <location filename="../src/imitatepass.cpp" line="1162"/>
+        <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
         <translation>A atualizar a password-store</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1174"/>
-        <location filename="../src/imitatepass.cpp" line="1180"/>
+        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1181"/>
         <source>Git pull failed</source>
         <translation>O Git pull falhou</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1175"/>
+        <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
         <translation type="unfinished">Não foi possível verificar se o arquivo tem ficheiros não integrados após o pull. Verifique-o com o git antes de voltar a cifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1181"/>
+        <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
         <translation>O pull deixou o armazém com ficheiros por fundir. Resolva o conflito antes de recifrar.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1185"/>
+        <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
         <translation>O Git pull falhou, a recifrar o armazém tal como está</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1196"/>
+        <location filename="../src/imitatepass.cpp" line="1197"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
         <translation>
             <numerusform>%n entrada ignorada: uma ligação simbólica, junção ou ficheiro especial não faz parte do armazém.</numerusform>
@@ -1649,27 +1649,27 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1217"/>
+        <location filename="../src/imitatepass.cpp" line="1218"/>
         <source>GPG ID verification failed</source>
         <translation>Falha na verificação do ID GPG</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1218"/>
+        <location filename="../src/imitatepass.cpp" line="1219"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation>Não foi possível verificar .gpg-id para o diretório.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1251"/>
+        <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>Not part of the store</source>
         <translation type="unfinished">Não faz parte do armazém</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1252"/>
+        <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 é, ou está por trás, um link simbólico ou junção após a extração. O que isso aponta não faz parte do armazém de palavras-passe e permanece intocado.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1321"/>
+        <location filename="../src/imitatepass.cpp" line="1322"/>
         <source>... and %n more</source>
         <translation>
             <numerusform>... e mais %n</numerusform>
@@ -1677,7 +1677,7 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1324"/>
+        <location filename="../src/imitatepass.cpp" line="1325"/>
         <source>%n file(s) could not be re-encrypted:</source>
         <translation>
             <numerusform>Não foi possível recifrar %n ficheiro:</numerusform>
@@ -1685,18 +1685,18 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1330"/>
+        <location filename="../src/imitatepass.cpp" line="1331"/>
         <source>Re-encryption cancelled: %1 of %2 files checked, %3 re-encrypted, %4 failed</source>
         <translation>Recifragem cancelada: %1 de %2 ficheiros verificados, %3 recifrados, %4 falharam</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1397"/>
-        <location filename="../src/imitatepass.cpp" line="1406"/>
+        <location filename="../src/imitatepass.cpp" line="1398"/>
+        <location filename="../src/imitatepass.cpp" line="1407"/>
         <source>Recipients not committed</source>
         <translation type="unfinished">Destinatários sem commit</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1398"/>
+        <location filename="../src/imitatepass.cpp" line="1399"/>
         <source>The recipients of %1 were changed and its entries were re-encrypted to them, but the Git commit failed:
 
 %2
@@ -1709,7 +1709,7 @@ The change is not committed or pushed yet. Fix the Git problem, then commit the 
 A alteração ainda não teve commit nem push. Corrija o problema do Git e depois faça o commit das alterações ou guarde novamente os destinatários.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1407"/>
+        <location filename="../src/imitatepass.cpp" line="1408"/>
         <source>The recipients of %1 were changed, but the Git commit failed:
 
 %2
@@ -1722,12 +1722,12 @@ Re-encryption did not complete, so some or all entries are still encrypted to th
 A recifragem não foi concluída, por isso algumas ou todas as entradas continuam cifradas para os destinatários anteriores, que ainda as conseguem ler. Nada teve commit nem push. Corrija o problema do Git e depois guarde novamente os destinatários.</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1594"/>
+        <location filename="../src/imitatepass.cpp" line="1595"/>
         <source>Git executable not configured, skipping git</source>
         <translation>Executável do Git não configurado, a ignorar o git</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1671"/>
+        <location filename="../src/imitatepass.cpp" line="1672"/>
         <source>gpg wrote no ciphertext for %1.</source>
         <translation>O gpg não escreveu nenhum texto cifrado para %1.</translation>
     </message>
@@ -1756,17 +1756,17 @@ A recifragem não foi concluída, por isso algumas ou todas as entradas continua
         <translation type="vanished">Falha ao recifrar %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1339"/>
+        <location filename="../src/imitatepass.cpp" line="1340"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation>Recifragem concluída: %1 bem-sucedida, %2 falhou</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1344"/>
+        <location filename="../src/imitatepass.cpp" line="1345"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation>Recifragem concluída: %1 ficheiros re-cifrados</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/imitatepass.cpp" line="1353"/>
+        <location filename="../src/imitatepass.cpp" line="1354"/>
         <source>Not pushing: %n file(s) failed to re-encrypt</source>
         <translation>
             <numerusform>Não será feito push: falha ao recifrar %n ficheiro</numerusform>
@@ -1774,14 +1774,14 @@ A recifragem não foi concluída, por isso algumas ou todas as entradas continua
         </translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1513"/>
-        <location filename="../src/imitatepass.cpp" line="1560"/>
+        <location filename="../src/imitatepass.cpp" line="1514"/>
+        <location filename="../src/imitatepass.cpp" line="1561"/>
         <source>Copy failed</source>
         <translation>Falha ao copiar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="1514"/>
-        <location filename="../src/imitatepass.cpp" line="1561"/>
+        <location filename="../src/imitatepass.cpp" line="1515"/>
+        <location filename="../src/imitatepass.cpp" line="1562"/>
         <source>Could not copy %1 to %2.</source>
         <translation>Não foi possível copiar %1 para %2.</translation>
     </message>
@@ -2962,12 +2962,12 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="250"/>
         <source>Password generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falhou a geração da palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="251"/>
         <source>Could not run pwgen (&quot;%1&quot;). Check the pwgen program in the settings, or turn &quot;Use pwgen&quot; off.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não foi possível executar o pwgen (&quot;%1&quot;). Verifique o programa pwgen nas configurações, ou desative a opção &quot;Usar pwgen&quot;.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="265"/>
@@ -3039,83 +3039,89 @@ Continua?</translation>
         <translation type="unfinished">%1 não está dentro do armazém de palavras-passe. Os destinatários estão definidos para o armazém ou uma pasta nele.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="844"/>
-        <location filename="../src/pass.cpp" line="845"/>
-        <source>rebase</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/pass.cpp" line="846"/>
-        <source>merge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/pass.cpp" line="847"/>
-        <source>cherry-pick</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/pass.cpp" line="848"/>
+        <location filename="../src/pass.cpp" line="851"/>
+        <source>rebase</source>
+        <extracomment>The Git command `git rebase`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="854"/>
+        <source>merge</source>
+        <extracomment>The Git command `git merge`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="857"/>
+        <source>cherry-pick</source>
+        <extracomment>The Git command `git cherry-pick`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="860"/>
         <source>revert</source>
+        <extracomment>The Git command `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command name.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="853"/>
+        <location filename="../src/pass.cpp" line="867"/>
         <source>cherry-pick or revert</source>
+        <extracomment>The Git commands `git cherry-pick` and `git revert`, inserted into &quot;in the middle of a %1&quot;. Best kept as Git&apos;s command names.</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="875"/>
-        <source>The store&apos;s Git repository is in the middle of a %1. Finish or abort it with git before changing the store, or what you change may be lost.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../src/pass.cpp" line="891"/>
+        <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
+        <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
+        <translation type="unfinished">O repositório Git do armazém de palavras-passe está no meio de um %1. Finalize ou cancele-o com o Git antes de alterar o armazém, caso contrário, as alterações podem ser perdidas.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="888"/>
+        <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">O armazém de palavras-passe está a ser atualizado (uma operação Git pull está em andamento). Espere até que termine, e tente novamente.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="893"/>
+        <location filename="../src/pass.cpp" line="909"/>
         <source>Update in progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atualização em curso</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="907"/>
+        <location filename="../src/pass.cpp" line="923"/>
         <source>Unfinished Git operation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Operação Git incompleta</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="916"/>
+        <location filename="../src/pass.cpp" line="932"/>
         <source>Not part of the store</source>
         <translation>Não faz parte do armazém</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1011"/>
+        <location filename="../src/pass.cpp" line="1027"/>
         <source>The generation record of the recipient lists cannot be read.</source>
         <translation type="unfinished">O registo de gerações das listas de destinatários não pode ser lido.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1093"/>
+        <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
         <translation type="unfinished">%1 não pode ser lido como uma lista de destinatários (um ficheiro regular com no máximo %2), portanto, nada é pré-selecionado. Verifique antes de escolher os destinatários aqui: OK escreve uma nova lista sobre ela.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1114"/>
+        <location filename="../src/pass.cpp" line="1130"/>
         <source>The recipient list %1 is missing or is not a regular file, so nothing is preselected: the list of a parent folder was not signed for this one. Select this folder&apos;s recipients yourself; OK writes and signs a fresh list.</source>
         <translation type="unfinished">A lista de destinatários %1 não existe ou não é um ficheiro normal, por isso nada está pré-selecionado: a lista de uma pasta superior não foi assinada para esta. Selecione manualmente os destinatários desta pasta; OK escreve e assina uma lista nova.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1119"/>
+        <location filename="../src/pass.cpp" line="1135"/>
         <source>%1 Nothing is preselected: whether %2 was removed cannot be told.</source>
         <translation type="unfinished">%1 Nada está pré-selecionado: não é possível saber se %2 foi removido.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1134"/>
+        <location filename="../src/pass.cpp" line="1150"/>
         <source>The recipient list %1 does not verify against the signing key, so nothing is preselected: saving would sign whatever is in it. Select the recipients yourself; OK writes and signs a fresh list.</source>
         <translation>A lista de destinatários %1 não passa a verificação com a chave de assinatura, por isso nada está pré-selecionado: guardar assinaria o que quer que lá esteja. Selecione os destinatários manualmente; OK escreve e assina uma lista nova.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="1058"/>
+        <location filename="../src/pass.cpp" line="1074"/>
         <source>%1 Nothing is preselected: saving would sign whatever is in it. Select the recipients yourself.</source>
         <translation>%1 Nada está pré-selecionado: guardar assinaria o que quer que lá esteja. Selecione os destinatários manualmente.</translation>
     </message>
