@@ -880,6 +880,21 @@ auto Pass::unfinishedGitOperationReason() -> QString {
   return {};
 }
 
+auto Pass::refusePendingPull() -> bool {
+  if (!m_settings.useGit || !exec.hasQueued(Enums::GIT_PULL)) {
+    return false;
+  }
+  const QString why =
+      tr("The password store is being updated (a Git pull is in progress). "
+         "Wait until it has finished, then try again.");
+  // Like refuseAsNotPartOfStore(): the interface arms when an operation starts
+  // and is released by processErrorExit(); a refusal starts nothing.
+  emit startingExecuteWrapper();
+  emit critical(tr("Update in progress"), why);
+  emit processErrorExit(1, why);
+  return true;
+}
+
 auto Pass::refuseUnfinishedGitOperation() -> bool {
   const QString why = unfinishedGitOperationReason();
   if (why.isEmpty()) {

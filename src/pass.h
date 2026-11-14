@@ -596,6 +596,21 @@ protected:
   auto unfinishedGitOperationReason() -> QString;
 
   /**
+   * @brief Refuse a store change while a Git pull is still queued or running.
+   *
+   * An operation checks the repository when it is requested, but a pull queued
+   * before it (the asynchronous Update) has not run yet, so a conflict it will
+   * cause is not visible. For operations that commit without a later point to
+   * re-check (every delete, move and copy, and the `pass` backend, whose
+   * single `pass insert` commits by itself), refuse while the pull is in
+   * flight so the change cannot land in the conflict it leaves. Nothing is
+   * refused when Git is off or no pull is pending.
+   * @return true when critical() and processErrorExit() were emitted and the
+   *         caller must stop.
+   */
+  auto refusePendingPull() -> bool;
+
+  /**
    * @brief Execute external wrapper command.
    * @param id Process identifier.
    * @param app Executable path.

@@ -694,7 +694,10 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the store untouched (the entry dialog keeps what was typed). Finish or abort
   the operation with Git first. Nothing is refused when Git is off, the store
   is not a repository, or Git gives no answer; a HEAD detached by hand is
-  still accepted.
+  still accepted. A conflict a still-running Update (Git pull) is about to
+  cause is covered too: a save re-checks after it encrypts, re-encryption
+  re-checks before its backup commit, and a delete, move or copy (and anything
+  on the `pass` backend) is refused while the pull is still in flight.
 - One line in a folder's `.gpg-id` that `gpg` cannot read as a key search
   (a bare `0x`, a mistyped key ID, a fingerprint one digit short) no longer
   makes the Users dialog open with none of the folder's real recipients

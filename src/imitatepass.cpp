@@ -285,7 +285,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
   if (refuseLinkedPath(file, LinkScope::ParentsOnly)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_REMOVE);
@@ -1442,7 +1442,7 @@ void ImitatePass::Move(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_MOVE);
@@ -1504,7 +1504,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
   if (refuseLinkedPath(src) || refuseLinkedPath(dest)) {
     return;
   }
-  if (refuseUnfinishedGitOperation()) {
+  if (refuseUnfinishedGitOperation() || refusePendingPull()) {
     return;
   }
   TransactionHelper trans(&m_transaction, PASS_COPY);

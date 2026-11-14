@@ -423,6 +423,26 @@ public:
    * @return true when the executor has nothing in flight.
    */
   auto isIdle() const -> bool { return !running && m_execQueue.isEmpty(); }
+
+  /**
+   * @brief Whether a command with process id @p id is queued or running.
+   *
+   * The running command stays at the head of the queue until it finishes, so
+   * one scan covers both the queued and the running one. Used to refuse a
+   * store change while a Git pull is still in flight, whose conflict a
+   * call-time check could not yet see.
+   * @param id The process id to look for (an Enums::PROCESS value).
+   * @return true when the queue holds a command with that id.
+   */
+  auto hasQueued(int id) const -> bool {
+    for (const ExecQueueItem &item : m_execQueue) {
+      if (item.id == id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 private slots:
   /**
    * @brief Finish the running item when its process exits.

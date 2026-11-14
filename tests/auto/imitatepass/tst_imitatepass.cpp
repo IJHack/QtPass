@@ -696,6 +696,7 @@ private Q_SLOTS:
   void refusesToReencryptDuringAnUnfinishedRebase();
   void refusesToInsertDuringASequencerState();
   void refusesASaveWhenAConflictAppearsWhileEncrypting();
+  void refusesToRemoveWhileAPullIsInFlight();
   void queuedInsertGpgFailureReportsNotWritten();
   void insertsPendingCountsTheInsertsYetToReport();
   void aLostInsertReportIsHealedWhenTheQueueDrains();
@@ -1791,6 +1792,42 @@ void tst_imitatepass::refusesASaveWhenAConflictAppearsWhileEncrypting() {
              &log);
   QVERIFY2(!log.contains(QStringLiteral("newsite")),
            qPrintable("the save must not have been committed: " + log));
+#endif
+}
+
+/**
+ * @brief Delete, move and copy have no point to re-check after a queued pull,
+ *        so they are refused while a pull is still in flight: its conflict,
+ *        which a call-time check cannot see yet, cannot swallow the change.
+ */
+void tst_imitatepass::refusesToRemoveWhileAPullIsInFlight() {
+#ifdef Q_OS_WIN
+  QSKIP("uses shell scripts as fake git");
+#else
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+  QVERIFY(populateStore(storeDir.path(), 1));
+  const QString gitLog = QDir(storeDir.path()).filePath("git-argv.log");
+  // The pull sleeps, so it is still in flight (its completion is not delivered)
+  // when Remove runs synchronously right after.
+  const QString fakeGit = writeScriptedGit(
+      storeDir.path(), gitLog, QStringLiteral("  *' pull') sleep 5;;"));
+  QVERIFY(!fakeGit.isEmpty());
+  ImitatePass pass;
+  AppSettings s = settingsFor(storeDir.path(), unstartableGpg());
+  s.useGit = true;
+  s.gitExecutable = fakeGit;
+  pass.init(s);
+  QSignalSpy criticalSpy(&pass, &Pass::critical);
+  QSignalSpy removedSpy(&pass, &Pass::finishedRemove);
+  pass.GitPull();
+  pass.Remove(QStringLiteral("entry0"), false);
+  QCOMPARE(criticalSpy.count(), 1);
+  QCOMPARE(criticalSpy.first().at(0).toString(),
+           QStringLiteral("Update in progress"));
+  QCOMPARE(removedSpy.count(), 0);
+  QVERIFY2(QFileInfo::exists(QDir(storeDir.path()).filePath("entry0.gpg")),
+           "the entry must not be removed while a pull is in flight");
 #endif
 }
 
