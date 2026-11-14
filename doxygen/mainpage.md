@@ -48,8 +48,8 @@ returns; the result arrives later as a signal.
 @dot
 digraph flow {
 rankdir=LR;
-node [shape=box, fontname=Helvetica, fontsize=10];
-edge [fontname=Helvetica, fontsize=9];
+node [shape=box, fontname=Helvetica, fontsize=12, margin="0.15,0.1"];
+edge [fontname=Helvetica, fontsize=11];
 ui [label="MainWindow\nor a dialog", URL="@ref MainWindow"];
 pass [label="Pass\n(RealPass / ImitatePass)", URL="@ref Pass"];
 exec [label="Executor\nFIFO queue", URL="@ref Executor"];
