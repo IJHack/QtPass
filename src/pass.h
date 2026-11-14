@@ -871,10 +871,13 @@ signals:
    */
   void generateGPGKeysFailed(const QString &err);
   /**
-   * @brief Emitted when an Insert() fails after it started a process,
-   *        alongside the generic processErrorExit(); lets the password
-   *        dialog keep what was typed and say why, without reacting to any
-   *        other command failing meanwhile.
+   * @brief Emitted when an Insert() fails through a queued command, before
+   *        the generic processErrorExit(): the process exited non-zero,
+   *        crashed or could not be started, or the entry could not be put in
+   *        place afterwards. Lets the password dialog keep what was typed
+   *        and say why, without reacting to any other command failing
+   *        meanwhile. An insert refused before anything is queued does not
+   *        emit it.
    * @param err What gpg, pass or the placement of the entry reported.
    * @param written true when this insert did put the entry in the store and
    *        only a later step (git add or commit) failed.
