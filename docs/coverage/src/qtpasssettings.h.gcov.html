@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/qtpasssettings.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - qtpasssettings.h<span style="font-size: 80%;"> (source / <a href="qtpasssettings.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">60.0&nbsp;%</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">3</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntry">2</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief QtPassSettings, the QSettings singleton behind every saved setting,</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * the profiles and the Pass backend accessors.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #ifndef SRC_QTPASSSETTINGS_H_</span>
+<span id="L9"><span class="lineNum">       9</span>              : #define SRC_QTPASSSETTINGS_H_</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &quot;appsettings.h&quot;</span>
+<span id="L12"><span class="lineNum">      12</span>              : #include &quot;enums.h&quot;</span>
+<span id="L13"><span class="lineNum">      13</span>              : #include &quot;imitatepass.h&quot;</span>
+<span id="L14"><span class="lineNum">      14</span>              : #include &quot;passwordconfiguration.h&quot;</span>
+<span id="L15"><span class="lineNum">      15</span>              : #include &quot;profile.h&quot;</span>
+<span id="L16"><span class="lineNum">      16</span>              : #include &quot;realpass.h&quot;</span>
+<span id="L17"><span class="lineNum">      17</span>              : #include &quot;settingsconstants.h&quot;</span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span>              : #include &lt;QByteArray&gt;</span>
+<span id="L20"><span class="lineNum">      20</span>              : #include &lt;QHash&gt;</span>
+<span id="L21"><span class="lineNum">      21</span>              : #include &lt;QPoint&gt;</span>
+<span id="L22"><span class="lineNum">      22</span>              : #include &lt;QSettings&gt;</span>
+<span id="L23"><span class="lineNum">      23</span>              : #include &lt;QSize&gt;</span>
+<span id="L24"><span class="lineNum">      24</span>              : #include &lt;QVariant&gt;</span>
+<span id="L25"><span class="lineNum">      25</span>              : </span>
+<span id="L26"><span class="lineNum">      26</span>              : /**</span>
+<span id="L27"><span class="lineNum">      27</span>              :  * @class QtPassSettings</span>
+<span id="L28"><span class="lineNum">      28</span>              :  * @ingroup settings</span>
+<span id="L29"><span class="lineNum">      29</span>              :  * @brief Singleton that stores QtPass settings, handles persistence and</span>
+<span id="L30"><span class="lineNum">      30</span>              :  * defaults.</span>
+<span id="L31"><span class="lineNum">      31</span>              :  *</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * QtPassSettings manages all application configuration including:</span>
+<span id="L33"><span class="lineNum">      33</span>              :  * - Window geometry (QWidget::saveGeometry blobs, main window and dialogs)</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * - Password store configuration (path, GPG settings)</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * - Executable paths (pass, git, gpg, pwgen)</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * - UI preferences (clipboard, autoclear, display options)</span>
+<span id="L37"><span class="lineNum">      37</span>              :  * - gopass configuration</span>
+<span id="L38"><span class="lineNum">      38</span>              :  *</span>
+<span id="L39"><span class="lineNum">      39</span>              :  * Uses QSettings for persistence with a singleton pattern.</span>
+<span id="L40"><span class="lineNum">      40</span>              :  * All getters accept a default value returned when setting is not yet saved.</span>
+<span id="L41"><span class="lineNum">      41</span>              :  */</span>
+<span id="L42"><span class="lineNum">      42</span>              : class QtPassSettings : public QSettings {</span>
+<span id="L43"><span class="lineNum">      43</span>              : private:</span>
+<span id="L44"><span class="lineNum">      44</span>              :   /**</span>
+<span id="L45"><span class="lineNum">      45</span>              :    * @brief Private default constructor to enforce singleton usage and prevent</span>
+<span id="L46"><span class="lineNum">      46</span>              :    * direct instantiation.</span>
+<span id="L47"><span class="lineNum">      47</span>              :    */</span>
+<span id="L48"><span class="lineNum">      48</span>              :   explicit QtPassSettings() = delete;</span>
+<span id="L49"><span class="lineNum">      49</span>              : </span>
+<span id="L50"><span class="lineNum">      50</span>              :   /**</span>
+<span id="L51"><span class="lineNum">      51</span>              :    * @brief Settings in an explicit file: the portable `qtpass.ini` next to</span>
+<span id="L52"><span class="lineNum">      52</span>              :    * the executable, which getInstance() prefers when it exists.</span>
+<span id="L53"><span class="lineNum">      53</span>              :    * @param organization The file's path (QSettings' file-name constructor).</span>
+<span id="L54"><span class="lineNum">      54</span>              :    * @param format The file's format; IniFormat for the portable file.</span>
+<span id="L55"><span class="lineNum">      55</span>              :    */</span>
+<span id="L56"><span class="lineNum">      56</span>              :   QtPassSettings(const QString &amp;organization, const QSettings::Format format)</span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaUNC">           0 :       : QSettings(organization, format) {}</span></span>
+<span id="L58"><span class="lineNum">      58</span>              :   /**</span>
+<span id="L59"><span class="lineNum">      59</span>              :    * @brief Per-user settings in QSettings::defaultFormat().</span>
+<span id="L60"><span class="lineNum">      60</span>              :    *</span>
+<span id="L61"><span class="lineNum">      61</span>              :    * QSettings(organization, application) ignores setDefaultFormat() and</span>
+<span id="L62"><span class="lineNum">      62</span>              :    * always uses NativeFormat; going through the explicit-format constructor</span>
+<span id="L63"><span class="lineNum">      63</span>              :    * keeps the production default (NativeFormat) while letting the test</span>
+<span id="L64"><span class="lineNum">      64</span>              :    * suites redirect settings to an ini file in a temporary directory.</span>
+<span id="L65"><span class="lineNum">      65</span>              :    * @param organization The organisation the settings are filed under</span>
+<span id="L66"><span class="lineNum">      66</span>              :    *        (&quot;IJHack&quot;).</span>
+<span id="L67"><span class="lineNum">      67</span>              :    * @param application The application name (&quot;QtPass&quot;).</span>
+<span id="L68"><span class="lineNum">      68</span>              :    */</span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">          15 :   QtPassSettings(const QString &amp;organization, const QString &amp;application)</span></span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          15 :       : QSettings(QSettings::defaultFormat(), QSettings::UserScope,</span></span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          15 :                   organization, application) {}</span></span>
+<span id="L72"><span class="lineNum">      72</span>              : </span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaUNC">           0 :   ~QtPassSettings() override = default;</span></span>
+<span id="L74"><span class="lineNum">      74</span>              : </span>
+<span id="L75"><span class="lineNum">      75</span>              :   /// Whether getInstance() has chosen the store and built m_instance.</span>
+<span id="L76"><span class="lineNum">      76</span>              :   static bool initialized;</span>
+<span id="L77"><span class="lineNum">      77</span>              :   /// The one instance, built on the first getInstance() and kept for the</span>
+<span id="L78"><span class="lineNum">      78</span>              :   /// life of the process.</span>
+<span id="L79"><span class="lineNum">      79</span>              :   static QtPassSettings *m_instance;</span>
+<span id="L80"><span class="lineNum">      80</span>              : </span>
+<span id="L81"><span class="lineNum">      81</span>              : public:</span>
+<span id="L82"><span class="lineNum">      82</span>              :   /**</span>
+<span id="L83"><span class="lineNum">      83</span>              :    * @brief Get the singleton instance.</span>
+<span id="L84"><span class="lineNum">      84</span>              :    * @return Pointer to the QtPassSettings instance.</span>
+<span id="L85"><span class="lineNum">      85</span>              :    */</span>
+<span id="L86"><span class="lineNum">      86</span>              :   static auto getInstance() -&gt; QtPassSettings *;</span>
+<span id="L87"><span class="lineNum">      87</span>              : </span>
+<span id="L88"><span class="lineNum">      88</span>              :   /**</span>
+<span id="L89"><span class="lineNum">      89</span>              :    * @brief Load all flat settings into an AppSettings value object.</span>
+<span id="L90"><span class="lineNum">      90</span>              :    *</span>
+<span id="L91"><span class="lineNum">      91</span>              :    * Convenience facade over SettingsSerializer using the singleton store.</span>
+<span id="L92"><span class="lineNum">      92</span>              :    * Note: nested/keyed settings (profiles, per-dialog geometry) are not part</span>
+<span id="L93"><span class="lineNum">      93</span>              :    * of AppSettings and still use their dedicated accessors.</span>
+<span id="L94"><span class="lineNum">      94</span>              :    * @return Current settings.</span>
+<span id="L95"><span class="lineNum">      95</span>              :    */</span>
+<span id="L96"><span class="lineNum">      96</span>              :   static auto load() -&gt; AppSettings;</span>
+<span id="L97"><span class="lineNum">      97</span>              :   /**</span>
+<span id="L98"><span class="lineNum">      98</span>              :    * @brief Persist an AppSettings value object to the singleton store.</span>
+<span id="L99"><span class="lineNum">      99</span>              :    *</span>
+<span id="L100"><span class="lineNum">     100</span>              :    * Writes via SettingsSerializer and invalidates the cached Pass backend so a</span>
+<span id="L101"><span class="lineNum">     101</span>              :    * changed &quot;use pass&quot; mode takes effect on the next getPass().</span>
+<span id="L102"><span class="lineNum">     102</span>              :    * @param settings Values to save.</span>
+<span id="L103"><span class="lineNum">     103</span>              :    */</span>
+<span id="L104"><span class="lineNum">     104</span>              :   static void save(const AppSettings &amp;settings);</span>
+<span id="L105"><span class="lineNum">     105</span>              : </span>
+<span id="L106"><span class="lineNum">     106</span>              :   // Window settings</span>
+<span id="L107"><span class="lineNum">     107</span>              :   /**</span>
+<span id="L108"><span class="lineNum">     108</span>              :    * @brief Get saved application version.</span>
+<span id="L109"><span class="lineNum">     109</span>              :    * @param defaultValue String returned if no version saved.</span>
+<span id="L110"><span class="lineNum">     110</span>              :    * @return Application version string.</span>
+<span id="L111"><span class="lineNum">     111</span>              :    */</span>
+<span id="L112"><span class="lineNum">     112</span>              :   static auto getVersion(const QString &amp;defaultValue = QVariant().toString())</span>
+<span id="L113"><span class="lineNum">     113</span>              :       -&gt; QString;</span>
+<span id="L114"><span class="lineNum">     114</span>              :   /**</span>
+<span id="L115"><span class="lineNum">     115</span>              :    * @brief Save application version.</span>
+<span id="L116"><span class="lineNum">     116</span>              :    * @param version Version string to save.</span>
+<span id="L117"><span class="lineNum">     117</span>              :    */</span>
+<span id="L118"><span class="lineNum">     118</span>              :   static void setVersion(const QString &amp;version);</span>
+<span id="L119"><span class="lineNum">     119</span>              : </span>
+<span id="L120"><span class="lineNum">     120</span>              :   /**</span>
+<span id="L121"><span class="lineNum">     121</span>              :    * @brief Get saved window geometry.</span>
+<span id="L122"><span class="lineNum">     122</span>              :    * @param defaultValue Byte array returned if no geometry saved.</span>
+<span id="L123"><span class="lineNum">     123</span>              :    * @return Window geometry as QByteArray.</span>
+<span id="L124"><span class="lineNum">     124</span>              :    */</span>
+<span id="L125"><span class="lineNum">     125</span>              :   static auto</span>
+<span id="L126"><span class="lineNum">     126</span>              :   getGeometry(const QByteArray &amp;defaultValue = QVariant().toByteArray())</span>
+<span id="L127"><span class="lineNum">     127</span>              :       -&gt; QByteArray;</span>
+<span id="L128"><span class="lineNum">     128</span>              :   /**</span>
+<span id="L129"><span class="lineNum">     129</span>              :    * @brief Save window geometry.</span>
+<span id="L130"><span class="lineNum">     130</span>              :    * @param geometry Window geometry to save.</span>
+<span id="L131"><span class="lineNum">     131</span>              :    */</span>
+<span id="L132"><span class="lineNum">     132</span>              :   static void setGeometry(const QByteArray &amp;geometry);</span>
+<span id="L133"><span class="lineNum">     133</span>              : </span>
+<span id="L134"><span class="lineNum">     134</span>              :   /**</span>
+<span id="L135"><span class="lineNum">     135</span>              :    * @brief Get saved window state.</span>
+<span id="L136"><span class="lineNum">     136</span>              :    * @param defaultValue Byte array returned if no state saved.</span>
+<span id="L137"><span class="lineNum">     137</span>              :    * @return Window state as QByteArray.</span>
+<span id="L138"><span class="lineNum">     138</span>              :    */</span>
+<span id="L139"><span class="lineNum">     139</span>              :   static auto</span>
+<span id="L140"><span class="lineNum">     140</span>              :   getSavestate(const QByteArray &amp;defaultValue = QVariant().toByteArray())</span>
+<span id="L141"><span class="lineNum">     141</span>              :       -&gt; QByteArray;</span>
+<span id="L142"><span class="lineNum">     142</span>              :   /**</span>
+<span id="L143"><span class="lineNum">     143</span>              :    * @brief Save window state.</span>
+<span id="L144"><span class="lineNum">     144</span>              :    * @param saveState Window state to save.</span>
+<span id="L145"><span class="lineNum">     145</span>              :    */</span>
+<span id="L146"><span class="lineNum">     146</span>              :   static void setSavestate(const QByteArray &amp;saveState);</span>
+<span id="L147"><span class="lineNum">     147</span>              : </span>
+<span id="L148"><span class="lineNum">     148</span>              :   // Dialog-specific settings</span>
+<span id="L149"><span class="lineNum">     149</span>              :   /**</span>
+<span id="L150"><span class="lineNum">     150</span>              :    * @brief Get saved dialog geometry.</span>
+<span id="L151"><span class="lineNum">     151</span>              :    * @param key Dialog identifier (e.g., &quot;usersDialog&quot;).</span>
+<span id="L152"><span class="lineNum">     152</span>              :    * @param defaultValue Byte array returned if not saved.</span>
+<span id="L153"><span class="lineNum">     153</span>              :    * @return Dialog geometry as QByteArray.</span>
+<span id="L154"><span class="lineNum">     154</span>              :    */</span>
+<span id="L155"><span class="lineNum">     155</span>              :   static auto</span>
+<span id="L156"><span class="lineNum">     156</span>              :   getDialogGeometry(const QString &amp;key,</span>
+<span id="L157"><span class="lineNum">     157</span>              :                     const QByteArray &amp;defaultValue = QVariant().toByteArray())</span>
+<span id="L158"><span class="lineNum">     158</span>              :       -&gt; QByteArray;</span>
+<span id="L159"><span class="lineNum">     159</span>              :   /**</span>
+<span id="L160"><span class="lineNum">     160</span>              :    * @brief Save dialog geometry.</span>
+<span id="L161"><span class="lineNum">     161</span>              :    * @param key Dialog identifier.</span>
+<span id="L162"><span class="lineNum">     162</span>              :    * @param geometry Dialog geometry to save.</span>
+<span id="L163"><span class="lineNum">     163</span>              :    */</span>
+<span id="L164"><span class="lineNum">     164</span>              :   static void setDialogGeometry(const QString &amp;key, const QByteArray &amp;geometry);</span>
+<span id="L165"><span class="lineNum">     165</span>              : </span>
+<span id="L166"><span class="lineNum">     166</span>              :   // Password store settings</span>
+<span id="L167"><span class="lineNum">     167</span>              :   /**</span>
+<span id="L168"><span class="lineNum">     168</span>              :    * @brief Save use pass setting.</span>
+<span id="L169"><span class="lineNum">     169</span>              :    * @param usePass true to use pass, false for GPG.</span>
+<span id="L170"><span class="lineNum">     170</span>              :    */</span>
+<span id="L171"><span class="lineNum">     171</span>              :   static void setUsePass(const bool &amp;usePass);</span>
+<span id="L172"><span class="lineNum">     172</span>              : </span>
+<span id="L173"><span class="lineNum">     173</span>              :   // UI settings</span>
+<span id="L174"><span class="lineNum">     174</span>              : </span>
+<span id="L175"><span class="lineNum">     175</span>              :   /**</span>
+<span id="L176"><span class="lineNum">     176</span>              :    * @brief Get autoclear delay in seconds.</span>
+<span id="L177"><span class="lineNum">     177</span>              :    * @param defaultValue Integer returned if not saved.</span>
+<span id="L178"><span class="lineNum">     178</span>              :    * @return Seconds before clipboard is cleared.</span>
+<span id="L179"><span class="lineNum">     179</span>              :    */</span>
+<span id="L180"><span class="lineNum">     180</span>              :   static auto getAutoclearSeconds(const int &amp;defaultValue = QVariant().toInt())</span>
+<span id="L181"><span class="lineNum">     181</span>              :       -&gt; int;</span>
+<span id="L182"><span class="lineNum">     182</span>              :   // Pass store path</span>
+<span id="L183"><span class="lineNum">     183</span>              :   /**</span>
+<span id="L184"><span class="lineNum">     184</span>              :    * @brief Get password store directory path.</span>
+<span id="L185"><span class="lineNum">     185</span>              :    * @param defaultValue String returned if not saved.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    * @return Path to password store.</span>
+<span id="L187"><span class="lineNum">     187</span>              :    */</span>
+<span id="L188"><span class="lineNum">     188</span>              :   static auto getPassStore(const QString &amp;defaultValue = QVariant().toString())</span>
+<span id="L189"><span class="lineNum">     189</span>              :       -&gt; QString;</span>
+<span id="L190"><span class="lineNum">     190</span>              :   /**</span>
+<span id="L191"><span class="lineNum">     191</span>              :    * @brief Save password store path.</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @param passStore Path to password store.</span>
+<span id="L193"><span class="lineNum">     193</span>              :    */</span>
+<span id="L194"><span class="lineNum">     194</span>              :   static void setPassStore(const QString &amp;passStore);</span>
+<span id="L195"><span class="lineNum">     195</span>              : </span>
+<span id="L196"><span class="lineNum">     196</span>              :   // Executable paths</span>
+<span id="L197"><span class="lineNum">     197</span>              :   /**</span>
+<span id="L198"><span class="lineNum">     198</span>              :    * @brief Initialize executable paths by auto-detecting them.</span>
+<span id="L199"><span class="lineNum">     199</span>              :    */</span>
+<span id="L200"><span class="lineNum">     200</span>              :   static void initExecutables();</span>
+<span id="L201"><span class="lineNum">     201</span>              :   /**</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * @brief Get pass executable path.</span>
+<span id="L203"><span class="lineNum">     203</span>              :    * @param defaultValue String returned if not saved.</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * @return Path to pass executable.</span>
+<span id="L205"><span class="lineNum">     205</span>              :    */</span>
+<span id="L206"><span class="lineNum">     206</span>              :   static auto</span>
+<span id="L207"><span class="lineNum">     207</span>              :   getPassExecutable(const QString &amp;defaultValue = QVariant().toString())</span>
+<span id="L208"><span class="lineNum">     208</span>              :       -&gt; QString;</span>
+<span id="L209"><span class="lineNum">     209</span>              :   /**</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * @brief Get active profile name.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    * @param defaultValue String returned if not saved.</span>
+<span id="L212"><span class="lineNum">     212</span>              :    * @return Active profile name.</span>
+<span id="L213"><span class="lineNum">     213</span>              :    */</span>
+<span id="L214"><span class="lineNum">     214</span>              :   static auto getProfile(const QString &amp;defaultValue = QVariant().toString())</span>
+<span id="L215"><span class="lineNum">     215</span>              :       -&gt; QString;</span>
+<span id="L216"><span class="lineNum">     216</span>              : </span>
+<span id="L217"><span class="lineNum">     217</span>              :   /**</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * @brief Check whether Git integration is enabled.</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * @param defaultValue Value returned if not saved.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * @return True if Git integration is enabled.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    */</span>
+<span id="L222"><span class="lineNum">     222</span>              :   static auto isUseGit(const bool &amp;defaultValue = QVariant().toBool()) -&gt; bool;</span>
+<span id="L223"><span class="lineNum">     223</span>              :   /**</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * @brief Check whether content search is enabled.</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * @param defaultValue Value returned if not saved (defaults to false).</span>
+<span id="L226"><span class="lineNum">     226</span>              :    * @return True if grep search is enabled.</span>
+<span id="L227"><span class="lineNum">     227</span>              :    */</span>
+<span id="L228"><span class="lineNum">     228</span>              :   static auto isUseGrepSearch(const bool &amp;defaultValue = false) -&gt; bool;</span>
+<span id="L229"><span class="lineNum">     229</span>              :   /**</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @brief Check whether OTP support is enabled.</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * @param defaultValue Value returned if not saved (defaults to true).</span>
+<span id="L232"><span class="lineNum">     232</span>              :    * @return True if OTP support is enabled.</span>
+<span id="L233"><span class="lineNum">     233</span>              :    */</span>
+<span id="L234"><span class="lineNum">     234</span>              :   static auto isUseOtp(const bool &amp;defaultValue = true) -&gt; bool;</span>
+<span id="L235"><span class="lineNum">     235</span>              :   /**</span>
+<span id="L236"><span class="lineNum">     236</span>              :    * @brief Save qrencode executable path.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    * @param qrencodeExecutable Path to qrencode executable.</span>
+<span id="L238"><span class="lineNum">     238</span>              :    */</span>
+<span id="L239"><span class="lineNum">     239</span>              :   static void setQrencodeExecutable(const QString &amp;qrencodeExecutable);</span>
+<span id="L240"><span class="lineNum">     240</span>              : </span>
+<span id="L241"><span class="lineNum">     241</span>              :   /**</span>
+<span id="L242"><span class="lineNum">     242</span>              :    * @brief Get complete password generation configuration.</span>
+<span id="L243"><span class="lineNum">     243</span>              :    * @return Password generation configuration.</span>
+<span id="L244"><span class="lineNum">     244</span>              :    */</span>
+<span id="L245"><span class="lineNum">     245</span>              :   static auto getPasswordConfiguration() -&gt; PasswordConfiguration;</span>
+<span id="L246"><span class="lineNum">     246</span>              :   /**</span>
+<span id="L247"><span class="lineNum">     247</span>              :    * @brief Check whether closing the window hides the application.</span>
+<span id="L248"><span class="lineNum">     248</span>              :    * @param defaultValue Value returned if not saved.</span>
+<span id="L249"><span class="lineNum">     249</span>              :    * @return True if close action hides the application.</span>
+<span id="L250"><span class="lineNum">     250</span>              :    */</span>
+<span id="L251"><span class="lineNum">     251</span>              :   static auto isHideOnClose(const bool &amp;defaultValue = QVariant().toBool())</span>
+<span id="L252"><span class="lineNum">     252</span>              :       -&gt; bool;</span>
+<span id="L253"><span class="lineNum">     253</span>              :   /**</span>
+<span id="L254"><span class="lineNum">     254</span>              :    * @brief Check whether main window should stay always on top.</span>
+<span id="L255"><span class="lineNum">     255</span>              :    * @param defaultValue Value returned if not saved.</span>
+<span id="L256"><span class="lineNum">     256</span>              :    * @return True if always-on-top is enabled.</span>
+<span id="L257"><span class="lineNum">     257</span>              :    */</span>
+<span id="L258"><span class="lineNum">     258</span>              :   static auto isAlwaysOnTop(const bool &amp;defaultValue = QVariant().toBool())</span>
+<span id="L259"><span class="lineNum">     259</span>              :       -&gt; bool;</span>
+<span id="L260"><span class="lineNum">     260</span>              :   /**</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * @brief Check whether automatic push is enabled.</span>
+<span id="L262"><span class="lineNum">     262</span>              :    * @param defaultValue Value returned if not saved.</span>
+<span id="L263"><span class="lineNum">     263</span>              :    * @return True if automatic push is enabled.</span>
+<span id="L264"><span class="lineNum">     264</span>              :    */</span>
+<span id="L265"><span class="lineNum">     265</span>              :   static auto isAutoPush(const bool &amp;defaultValue = QVariant().toBool())</span>
+<span id="L266"><span class="lineNum">     266</span>              :       -&gt; bool;</span>
+<span id="L267"><span class="lineNum">     267</span>              :   /**</span>
+<span id="L268"><span class="lineNum">     268</span>              :    * @brief Get showProcessOutput setting.</span>
+<span id="L269"><span class="lineNum">     269</span>              :    * @param defaultValue Default value if not set.</span>
+<span id="L270"><span class="lineNum">     270</span>              :    * @return Whether process output should be displayed.</span>
+<span id="L271"><span class="lineNum">     271</span>              :    */</span>
+<span id="L272"><span class="lineNum">     272</span>              :   static auto isShowProcessOutput(const bool &amp;defaultValue = false) -&gt; bool;</span>
+<span id="L273"><span class="lineNum">     273</span>              :   /**</span>
+<span id="L274"><span class="lineNum">     274</span>              :    * @brief Get all configured profiles.</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * @return Profile map keyed by profile name.</span>
+<span id="L276"><span class="lineNum">     276</span>              :    */</span>
+<span id="L277"><span class="lineNum">     277</span>              :   static auto getProfiles() -&gt; Profiles;</span>
+<span id="L278"><span class="lineNum">     278</span>              :   /**</span>
+<span id="L279"><span class="lineNum">     279</span>              :    * @brief Save all configured profiles.</span>
+<span id="L280"><span class="lineNum">     280</span>              :    * @param profiles Profile map keyed by profile name.</span>
+<span id="L281"><span class="lineNum">     281</span>              :    */</span>
+<span id="L282"><span class="lineNum">     282</span>              :   static void setProfiles(const Profiles &amp;profiles);</span>
+<span id="L283"><span class="lineNum">     283</span>              : </span>
+<span id="L284"><span class="lineNum">     284</span>              :   /**</span>
+<span id="L285"><span class="lineNum">     285</span>              :    * @brief Get currently active pass backend instance.</span>
+<span id="L286"><span class="lineNum">     286</span>              :    * @return Pointer to pass backend.</span>
+<span id="L287"><span class="lineNum">     287</span>              :    */</span>
+<span id="L288"><span class="lineNum">     288</span>              :   static auto getPass() -&gt; Pass *;</span>
+<span id="L289"><span class="lineNum">     289</span>              :   /**</span>
+<span id="L290"><span class="lineNum">     290</span>              :    * @brief Get real pass backend instance.</span>
+<span id="L291"><span class="lineNum">     291</span>              :    * @return Pointer to real pass backend.</span>
+<span id="L292"><span class="lineNum">     292</span>              :    */</span>
+<span id="L293"><span class="lineNum">     293</span>              :   static auto getRealPass() -&gt; RealPass *;</span>
+<span id="L294"><span class="lineNum">     294</span>              :   /**</span>
+<span id="L295"><span class="lineNum">     295</span>              :    * @brief Get imitate pass backend instance.</span>
+<span id="L296"><span class="lineNum">     296</span>              :    * @return Pointer to imitate pass backend.</span>
+<span id="L297"><span class="lineNum">     297</span>              :    */</span>
+<span id="L298"><span class="lineNum">     298</span>              :   static auto getImitatePass() -&gt; ImitatePass *;</span>
+<span id="L299"><span class="lineNum">     299</span>              :   /**</span>
+<span id="L300"><span class="lineNum">     300</span>              :    * @brief Whether no backend, the active one or one kept from before a</span>
+<span id="L301"><span class="lineNum">     301</span>              :    * switch, runs or waits for anything (PassBackendFactory::isIdle()).</span>
+<span id="L302"><span class="lineNum">     302</span>              :    * @return true when all are idle.</span>
+<span id="L303"><span class="lineNum">     303</span>              :    */</span>
+<span id="L304"><span class="lineNum">     304</span>              :   static auto backendsIdle() -&gt; bool;</span>
+<span id="L305"><span class="lineNum">     305</span>              : };</span>
+<span id="L306"><span class="lineNum">     306</span>              : </span>
+<span id="L307"><span class="lineNum">     307</span>              : #endif // SRC_QTPASSSETTINGS_H_</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

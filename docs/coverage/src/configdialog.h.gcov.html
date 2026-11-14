@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/configdialog.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - configdialog.h<span style="font-size: 80%;"> (source / <a href="configdialog.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntry">5</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Settings dialog: every page of the configuration window and the</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * profile table, with the validation that gates OK.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #ifndef SRC_CONFIGDIALOG_H_</span>
+<span id="L9"><span class="lineNum">       9</span>              : #define SRC_CONFIGDIALOG_H_</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &quot;appsettings.h&quot;</span>
+<span id="L12"><span class="lineNum">      12</span>              : #include &quot;enums.h&quot;</span>
+<span id="L13"><span class="lineNum">      13</span>              : #include &quot;passwordconfiguration.h&quot;</span>
+<span id="L14"><span class="lineNum">      14</span>              : #include &quot;profile.h&quot;</span>
+<span id="L15"><span class="lineNum">      15</span>              : </span>
+<span id="L16"><span class="lineNum">      16</span>              : #include &lt;QDialog&gt;</span>
+<span id="L17"><span class="lineNum">      17</span>              : #include &lt;QHash&gt;</span>
+<span id="L18"><span class="lineNum">      18</span>              : #include &lt;QProcessEnvironment&gt;</span>
+<span id="L19"><span class="lineNum">      19</span>              : #include &lt;QSet&gt;</span>
+<span id="L20"><span class="lineNum">      20</span>              : #include &lt;optional&gt;</span>
+<span id="L21"><span class="lineNum">      21</span>              : </span>
+<span id="L22"><span class="lineNum">      22</span>              : namespace Ui {</span>
+<span id="L23"><span class="lineNum">      23</span>              : struct UserInfo;</span>
+<span id="L24"><span class="lineNum">      24</span>              : </span>
+<span id="L25"><span class="lineNum">      25</span>              : class ConfigDialog;</span>
+<span id="L26"><span class="lineNum">      26</span>              : } // namespace Ui</span>
+<span id="L27"><span class="lineNum">      27</span>              : </span>
+<span id="L28"><span class="lineNum">      28</span>              : class QLabel;</span>
+<span id="L29"><span class="lineNum">      29</span>              : </span>
+<span id="L30"><span class="lineNum">      30</span>              : /**</span>
+<span id="L31"><span class="lineNum">      31</span>              :  * @class ConfigDialog</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * @ingroup ui</span>
+<span id="L33"><span class="lineNum">      33</span>              :  * @brief The ConfigDialog handles the configuration interface.</span>
+<span id="L34"><span class="lineNum">      34</span>              :  *</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * Presents controls for profiles, generation tools (pwgen/pass),</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * GPG/git/OTP/qrencode integration, template handling, tray icon and</span>
+<span id="L37"><span class="lineNum">      37</span>              :  * autoclear options, and exposes methods to read and update those settings.</span>
+<span id="L38"><span class="lineNum">      38</span>              :  */</span>
+<span id="L39"><span class="lineNum">      39</span>              : class ConfigDialog : public QDialog {</span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">         454 :   Q_OBJECT</span></span>
+<span id="L41"><span class="lineNum">      41</span>              : </span>
+<span id="L42"><span class="lineNum">      42</span>              : public:</span>
+<span id="L43"><span class="lineNum">      43</span>              :   /**</span>
+<span id="L44"><span class="lineNum">      44</span>              :    * @brief Construct a ConfigDialog associated with the given main window.</span>
+<span id="L45"><span class="lineNum">      45</span>              :    * @param parent Parent widget, usually the main window.</span>
+<span id="L46"><span class="lineNum">      46</span>              :    */</span>
+<span id="L47"><span class="lineNum">      47</span>              :   explicit ConfigDialog(QWidget *parent);</span>
+<span id="L48"><span class="lineNum">      48</span>              :   ~ConfigDialog() override;</span>
+<span id="L49"><span class="lineNum">      49</span>              : </span>
+<span id="L50"><span class="lineNum">      50</span>              :   /**</span>
+<span id="L51"><span class="lineNum">      51</span>              :    * @brief Whether a signing-key setting holds only full key fingerprints</span>
+<span id="L52"><span class="lineNum">      52</span>              :    * (40 or 64 hexadecimal characters each, space separated); empty passes.</span>
+<span id="L53"><span class="lineNum">      53</span>              :    * @param setting The profile's signing key field.</span>
+<span id="L54"><span class="lineNum">      54</span>              :    * @return true when every token is a fingerprint.</span>
+<span id="L55"><span class="lineNum">      55</span>              :    */</span>
+<span id="L56"><span class="lineNum">      56</span>              :   static auto isFingerprintList(const QString &amp;setting) -&gt; bool;</span>
+<span id="L57"><span class="lineNum">      57</span>              : </span>
+<span id="L58"><span class="lineNum">      58</span>              :   /**</span>
+<span id="L59"><span class="lineNum">      59</span>              :    * @brief Enable or disable clipboard selection mode.</span>
+<span id="L60"><span class="lineNum">      60</span>              :    * @param useSelection true to enable selection mode.</span>
+<span id="L61"><span class="lineNum">      61</span>              :    */</span>
+<span id="L62"><span class="lineNum">      62</span>              :   void useSelection(bool useSelection);</span>
+<span id="L63"><span class="lineNum">      63</span>              : </span>
+<span id="L64"><span class="lineNum">      64</span>              :   /**</span>
+<span id="L65"><span class="lineNum">      65</span>              :    * @brief Return all configured profiles.</span>
+<span id="L66"><span class="lineNum">      66</span>              :    * @return Hash of profile name to key-value settings map.</span>
+<span id="L67"><span class="lineNum">      67</span>              :    */</span>
+<span id="L68"><span class="lineNum">      68</span>              :   auto getProfiles() -&gt; Profiles;</span>
+<span id="L69"><span class="lineNum">      69</span>              : </span>
+<span id="L70"><span class="lineNum">      70</span>              :   /**</span>
+<span id="L71"><span class="lineNum">      71</span>              :    * @brief Show or hide the system tray icon.</span>
+<span id="L72"><span class="lineNum">      72</span>              :    * @param useSystray true to enable the tray icon.</span>
+<span id="L73"><span class="lineNum">      73</span>              :    */</span>
+<span id="L74"><span class="lineNum">      74</span>              :   void useTrayIcon(bool useSystray);</span>
+<span id="L75"><span class="lineNum">      75</span>              : </span>
+<span id="L76"><span class="lineNum">      76</span>              :   /**</span>
+<span id="L77"><span class="lineNum">      77</span>              :    * @brief Enable or disable git integration.</span>
+<span id="L78"><span class="lineNum">      78</span>              :    * @param useGit true to enable git.</span>
+<span id="L79"><span class="lineNum">      79</span>              :    */</span>
+<span id="L80"><span class="lineNum">      80</span>              :   void useGit(bool useGit);</span>
+<span id="L81"><span class="lineNum">      81</span>              : </span>
+<span id="L82"><span class="lineNum">      82</span>              :   /**</span>
+<span id="L83"><span class="lineNum">      83</span>              :    * @brief Enable or disable OTP support.</span>
+<span id="L84"><span class="lineNum">      84</span>              :    * @param useOtp true to enable OTP.</span>
+<span id="L85"><span class="lineNum">      85</span>              :    */</span>
+<span id="L86"><span class="lineNum">      86</span>              :   void useOtp(bool useOtp);</span>
+<span id="L87"><span class="lineNum">      87</span>              : </span>
+<span id="L88"><span class="lineNum">      88</span>              :   /**</span>
+<span id="L89"><span class="lineNum">      89</span>              :    * @brief Enable or disable grep content search.</span>
+<span id="L90"><span class="lineNum">      90</span>              :    * @param useGrepSearch true to enable grep search.</span>
+<span id="L91"><span class="lineNum">      91</span>              :    */</span>
+<span id="L92"><span class="lineNum">      92</span>              :   void useGrepSearch(bool useGrepSearch);</span>
+<span id="L93"><span class="lineNum">      93</span>              : </span>
+<span id="L94"><span class="lineNum">      94</span>              :   /**</span>
+<span id="L95"><span class="lineNum">      95</span>              :    * @brief Enable or disable QR code display.</span>
+<span id="L96"><span class="lineNum">      96</span>              :    * @param useQrencode true to enable qrencode.</span>
+<span id="L97"><span class="lineNum">      97</span>              :    */</span>
+<span id="L98"><span class="lineNum">      98</span>              :   void useQrencode(bool useQrencode);</span>
+<span id="L99"><span class="lineNum">      99</span>              : </span>
+<span id="L100"><span class="lineNum">     100</span>              :   /**</span>
+<span id="L101"><span class="lineNum">     101</span>              :    * @brief Set the path to the pwgen executable.</span>
+<span id="L102"><span class="lineNum">     102</span>              :    * @param path Path to pwgen.</span>
+<span id="L103"><span class="lineNum">     103</span>              :    */</span>
+<span id="L104"><span class="lineNum">     104</span>              :   void setPwgenPath(const QString &amp;path);</span>
+<span id="L105"><span class="lineNum">     105</span>              : </span>
+<span id="L106"><span class="lineNum">     106</span>              :   /**</span>
+<span id="L107"><span class="lineNum">     107</span>              :    * @brief Enable or disable pwgen-based password generation.</span>
+<span id="L108"><span class="lineNum">     108</span>              :    * @param usePwgen true to use pwgen.</span>
+<span id="L109"><span class="lineNum">     109</span>              :    */</span>
+<span id="L110"><span class="lineNum">     110</span>              :   void usePwgen(bool usePwgen);</span>
+<span id="L111"><span class="lineNum">     111</span>              : </span>
+<span id="L112"><span class="lineNum">     112</span>              :   /**</span>
+<span id="L113"><span class="lineNum">     113</span>              :    * @brief Apply a password configuration to the dialog controls.</span>
+<span id="L114"><span class="lineNum">     114</span>              :    * @param config Configuration to display.</span>
+<span id="L115"><span class="lineNum">     115</span>              :    */</span>
+<span id="L116"><span class="lineNum">     116</span>              :   void setPasswordConfiguration(const PasswordConfiguration &amp;config);</span>
+<span id="L117"><span class="lineNum">     117</span>              : </span>
+<span id="L118"><span class="lineNum">     118</span>              :   /**</span>
+<span id="L119"><span class="lineNum">     119</span>              :    * @brief Read the current password configuration from the dialog controls.</span>
+<span id="L120"><span class="lineNum">     120</span>              :    * @return Current PasswordConfiguration.</span>
+<span id="L121"><span class="lineNum">     121</span>              :    */</span>
+<span id="L122"><span class="lineNum">     122</span>              :   auto getPasswordConfiguration() -&gt; PasswordConfiguration;</span>
+<span id="L123"><span class="lineNum">     123</span>              : </span>
+<span id="L124"><span class="lineNum">     124</span>              : protected:</span>
+<span id="L125"><span class="lineNum">     125</span>              :   /**</span>
+<span id="L126"><span class="lineNum">     126</span>              :    * @brief Forget the signing keys gpg did not know while the dialog is in</span>
+<span id="L127"><span class="lineNum">     127</span>              :    * the background, and check them again once it is back in front.</span>
+<span id="L128"><span class="lineNum">     128</span>              :    * @param event The change; only activation changes matter here.</span>
+<span id="L129"><span class="lineNum">     129</span>              :    */</span>
+<span id="L130"><span class="lineNum">     130</span>              :   void changeEvent(QEvent *event) override;</span>
+<span id="L131"><span class="lineNum">     131</span>              : </span>
+<span id="L132"><span class="lineNum">     132</span>              : private slots:</span>
+<span id="L133"><span class="lineNum">     133</span>              :   /**</span>
+<span id="L134"><span class="lineNum">     134</span>              :    * @brief On OK: warn about a dubious SSH_AUTH_SOCK override, save the</span>
+<span id="L135"><span class="lineNum">     135</span>              :    * settings and the profiles, let the active profile follow a rename, and</span>
+<span id="L136"><span class="lineNum">     136</span>              :    * create and initialise the stores of profiles added in this session.</span>
+<span id="L137"><span class="lineNum">     137</span>              :    */</span>
+<span id="L138"><span class="lineNum">     138</span>              :   void on_accepted();</span>
+<span id="L139"><span class="lineNum">     139</span>              :   /**</span>
+<span id="L140"><span class="lineNum">     140</span>              :    * @brief Fill the pass, gpg (gpg2 first), git and pwgen paths from PATH,</span>
+<span id="L141"><span class="lineNum">     141</span>              :    * keeping a field as it is when nothing is found, and choose the pass</span>
+<span id="L142"><span class="lineNum">     142</span>              :    * backend when pass was found.</span>
+<span id="L143"><span class="lineNum">     143</span>              :    */</span>
+<span id="L144"><span class="lineNum">     144</span>              :   void on_autodetectButton_clicked();</span>
+<span id="L145"><span class="lineNum">     145</span>              :   /// Native (gpg/git) backend chosen: enable its group box, disable pass's.</span>
+<span id="L146"><span class="lineNum">     146</span>              :   void on_radioButtonNative_clicked();</span>
+<span id="L147"><span class="lineNum">     147</span>              :   /// pass backend chosen: enable its group box, disable the native one.</span>
+<span id="L148"><span class="lineNum">     148</span>              :   void on_radioButtonPass_clicked();</span>
+<span id="L149"><span class="lineNum">     149</span>              :   /**</span>
+<span id="L150"><span class="lineNum">     150</span>              :    * @brief Pick the git executable in a file dialog; a cancelled dialog</span>
+<span id="L151"><span class="lineNum">     151</span>              :    * turns Git off and disables its checkbox, as a missing git does.</span>
+<span id="L152"><span class="lineNum">     152</span>              :    */</span>
+<span id="L153"><span class="lineNum">     153</span>              :   void on_toolButtonGit_clicked();</span>
+<span id="L154"><span class="lineNum">     154</span>              :   /// Pick the gpg executable in a file dialog; cancel keeps the field.</span>
+<span id="L155"><span class="lineNum">     155</span>              :   void on_toolButtonGpg_clicked();</span>
+<span id="L156"><span class="lineNum">     156</span>              :   /// Open KeygenDialog for the gpg shown in the dialog.</span>
+<span id="L157"><span class="lineNum">     157</span>              :   void on_pushButtonGenerateKey_clicked();</span>
+<span id="L158"><span class="lineNum">     158</span>              :   /**</span>
+<span id="L159"><span class="lineNum">     159</span>              :    * @brief Pick the pwgen executable; a choice enables &quot;use pwgen&quot;, a</span>
+<span id="L160"><span class="lineNum">     160</span>              :    * cancelled dialog unticks and disables it.</span>
+<span id="L161"><span class="lineNum">     161</span>              :    */</span>
+<span id="L162"><span class="lineNum">     162</span>              :   void on_toolButtonPwgen_clicked();</span>
+<span id="L163"><span class="lineNum">     163</span>              :   /// Pick the pass executable in a file dialog; cancel keeps the field.</span>
+<span id="L164"><span class="lineNum">     164</span>              :   void on_toolButtonPass_clicked();</span>
+<span id="L165"><span class="lineNum">     165</span>              :   /// Pick the password store folder for the pass backend's store path.</span>
+<span id="L166"><span class="lineNum">     166</span>              :   void on_toolButtonStore_clicked();</span>
+<span id="L167"><span class="lineNum">     167</span>              :   /**</span>
+<span id="L168"><span class="lineNum">     168</span>              :    * @brief Enable the controls that only mean something with a clipboard</span>
+<span id="L169"><span class="lineNum">     169</span>              :    * (selection, hiding, autoclear) unless &quot;No clipboard&quot; is chosen.</span>
+<span id="L170"><span class="lineNum">     170</span>              :    * @param index The combo box row; 0 is &quot;No clipboard&quot;.</span>
+<span id="L171"><span class="lineNum">     171</span>              :    */</span>
+<span id="L172"><span class="lineNum">     172</span>              :   void on_comboBoxClipboard_activated(int index);</span>
+<span id="L173"><span class="lineNum">     173</span>              :   /**</span>
+<span id="L174"><span class="lineNum">     174</span>              :    * @brief Show the chosen character set's characters in the line edit,</span>
+<span id="L175"><span class="lineNum">     175</span>              :    * editable only for the custom set.</span>
+<span id="L176"><span class="lineNum">     176</span>              :    * @param index A PasswordConfiguration::CharacterSet value.</span>
+<span id="L177"><span class="lineNum">     177</span>              :    */</span>
+<span id="L178"><span class="lineNum">     178</span>              :   void on_passwordCharTemplateSelector_activated(int index);</span>
+<span id="L179"><span class="lineNum">     179</span>              :   /// Re-apply the clipboard gating for the current clipboard mode.</span>
+<span id="L180"><span class="lineNum">     180</span>              :   void on_checkBoxSelection_clicked();</span>
+<span id="L181"><span class="lineNum">     181</span>              :   /**</span>
+<span id="L182"><span class="lineNum">     182</span>              :    * @brief Append a &quot;New profile&quot; row pointing at the global store path,</span>
+<span id="L183"><span class="lineNum">     183</span>              :    * select it and put the cursor in the name field.</span>
+<span id="L184"><span class="lineNum">     184</span>              :    */</span>
+<span id="L185"><span class="lineNum">     185</span>              :   void on_addButton_clicked();</span>
+<span id="L186"><span class="lineNum">     186</span>              :   /**</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * @brief Remove the selected profile row (a message when none is); the</span>
+<span id="L188"><span class="lineNum">     188</span>              :    * list's currentRowChanged re-points the form at a neighbour.</span>
+<span id="L189"><span class="lineNum">     189</span>              :    */</span>
+<span id="L190"><span class="lineNum">     190</span>              :   void on_deleteButton_clicked();</span>
+<span id="L191"><span class="lineNum">     191</span>              :   /// Pick the selected profile's store folder and store it in its entry.</span>
+<span id="L192"><span class="lineNum">     192</span>              :   void on_profilePathBrowse_clicked();</span>
+<span id="L193"><span class="lineNum">     193</span>              :   /// Hide-on-close and start-minimised are only offered with a tray icon.</span>
+<span id="L194"><span class="lineNum">     194</span>              :   void on_checkBoxUseTrayIcon_clicked();</span>
+<span id="L195"><span class="lineNum">     195</span>              :   /**</span>
+<span id="L196"><span class="lineNum">     196</span>              :    * @brief Enable the Git-dependent boxes (add .gpg-id, auto pull/push, and</span>
+<span id="L197"><span class="lineNum">     197</span>              :    * in native mode the parent-repository switch) with &quot;use Git&quot;.</span>
+<span id="L198"><span class="lineNum">     198</span>              :    */</span>
+<span id="L199"><span class="lineNum">     199</span>              :   void on_checkBoxUseGit_clicked();</span>
+<span id="L200"><span class="lineNum">     200</span>              :   /**</span>
+<span id="L201"><span class="lineNum">     201</span>              :    * @brief Enable pwgen's flags or the character-set controls, whichever</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * the &quot;use pwgen&quot; box selects; nothing in pass mode, where pass generates.</span>
+<span id="L203"><span class="lineNum">     203</span>              :    */</span>
+<span id="L204"><span class="lineNum">     204</span>              :   void on_checkBoxUsePwgen_clicked();</span>
+<span id="L205"><span class="lineNum">     205</span>              :   /**</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @brief The profile list's current row changed: show that profile.</span>
+<span id="L207"><span class="lineNum">     207</span>              :    * @param row The new row, -1 for none.</span>
+<span id="L208"><span class="lineNum">     208</span>              :    */</span>
+<span id="L209"><span class="lineNum">     209</span>              :   void onProfileSelected(int row);</span>
+<span id="L210"><span class="lineNum">     210</span>              :   /**</span>
+<span id="L211"><span class="lineNum">     211</span>              :    * @brief The name field was typed in: store it in the entry and the list</span>
+<span id="L212"><span class="lineNum">     212</span>              :    * item, then validate (duplicates, empty).</span>
+<span id="L213"><span class="lineNum">     213</span>              :    * @param name The text as typed.</span>
+<span id="L214"><span class="lineNum">     214</span>              :    */</span>
+<span id="L215"><span class="lineNum">     215</span>              :   void onProfileNameEdited(const QString &amp;name);</span>
+<span id="L216"><span class="lineNum">     216</span>              :   /**</span>
+<span id="L217"><span class="lineNum">     217</span>              :    * @brief The path field was typed in: store it in the entry, validate and</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * refresh the status line.</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * @param path The text as typed.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    */</span>
+<span id="L221"><span class="lineNum">     221</span>              :   void onProfilePathEdited(const QString &amp;path);</span>
+<span id="L222"><span class="lineNum">     222</span>              :   /**</span>
+<span id="L223"><span class="lineNum">     223</span>              :    * @brief The signing-key field was typed in: store it in the entry and</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * validate (fingerprints only, shared keys).</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * @param key The text as typed.</span>
+<span id="L226"><span class="lineNum">     226</span>              :    */</span>
+<span id="L227"><span class="lineNum">     227</span>              :   void onProfileSigningKeyEdited(const QString &amp;key);</span>
+<span id="L228"><span class="lineNum">     228</span>              :   /**</span>
+<span id="L229"><span class="lineNum">     229</span>              :    * @brief One of the profile's Git boxes was clicked: all three flags</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * become the profile's own (no longer following the globals), and push</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * and pull are enabled only with Git.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    */</span>
+<span id="L233"><span class="lineNum">     233</span>              :   void onProfileGitToggled();</span>
+<span id="L234"><span class="lineNum">     234</span>              : </span>
+<span id="L235"><span class="lineNum">     235</span>              : private:</span>
+<span id="L236"><span class="lineNum">     236</span>              :   /// The secret-fields and every-field checkboxes only while passwords are</span>
+<span id="L237"><span class="lineNum">     237</span>              :   /// hidden; the secret words and &quot;Default&quot; only while secret fields are</span>
+<span id="L238"><span class="lineNum">     238</span>              :   /// hidden and every field is not.</span>
+<span id="L239"><span class="lineNum">     239</span>              :   void updateSecretFieldsEnabled();</span>
+<span id="L240"><span class="lineNum">     240</span>              :   /**</span>
+<span id="L241"><span class="lineNum">     241</span>              :    * @brief One row of the profile list while the dialog is open. A QList</span>
+<span id="L242"><span class="lineNum">     242</span>              :    * rather than the Profiles map so a profile can pass through an empty or</span>
+<span id="L243"><span class="lineNum">     243</span>              :    * duplicate name while it is being typed; getProfiles() builds the map.</span>
+<span id="L244"><span class="lineNum">     244</span>              :    */</span>
+<span id="L245"><span class="lineNum">     245</span>              :   struct ProfileEntry {</span>
+<span id="L246"><span class="lineNum">     246</span>              :     QString name;    ///&lt; The name as typed; may be empty or a duplicate.</span>
+<span id="L247"><span class="lineNum">     247</span>              :     Profile profile; ///&lt; Path, signing key and Git flags as edited.</span>
+<span id="L248"><span class="lineNum">     248</span>              :     /// The name the profile had when the dialog opened (empty for one added</span>
+<span id="L249"><span class="lineNum">     249</span>              :     /// here), so a rename of the active profile can follow it.</span>
+<span id="L250"><span class="lineNum">     250</span>              :     QString originalName;</span>
+<span id="L251"><span class="lineNum">     251</span>              :   };</span>
+<span id="L252"><span class="lineNum">     252</span>              :   /// What is wrong with one profile's fields; empty strings where nothing is.</span>
+<span id="L253"><span class="lineNum">     253</span>              :   struct ProfileProblems {</span>
+<span id="L254"><span class="lineNum">     254</span>              :     QString name; ///&lt; Empty or duplicate name; empty when fine.</span>
+<span id="L255"><span class="lineNum">     255</span>              :     QString path; ///&lt; Missing store path; empty when fine.</span>
+<span id="L256"><span class="lineNum">     256</span>              :     QString key;  ///&lt; Signing key that is no fingerprint list; empty when fine.</span>
+<span id="L257"><span class="lineNum">     257</span>              :     /// Not a problem, a warning: other profiles sign with the same key.</span>
+<span id="L258"><span class="lineNum">     258</span>              :     /// It neither blocks OK nor marks the row.</span>
+<span id="L259"><span class="lineNum">     259</span>              :     QString sharedKey;</span>
+<span id="L260"><span class="lineNum">     260</span>              :     /**</span>
+<span id="L261"><span class="lineNum">     261</span>              :      * @brief Whether all three fields are fine.</span>
+<span id="L262"><span class="lineNum">     262</span>              :      * @return true when name, path and key have no complaint.</span>
+<span id="L263"><span class="lineNum">     263</span>              :      */</span>
+<span id="L264"><span class="lineNum">     264</span>              :     [[nodiscard]] auto none() const -&gt; bool {</span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         395 :       return name.isEmpty() &amp;&amp; path.isEmpty() &amp;&amp; key.isEmpty();</span></span>
+<span id="L266"><span class="lineNum">     266</span>              :     }</span>
+<span id="L267"><span class="lineNum">     267</span>              :     /**</span>
+<span id="L268"><span class="lineNum">     268</span>              :      * @brief The first complaint, for a tooltip on the profile's row.</span>
+<span id="L269"><span class="lineNum">     269</span>              :      * @return The name, path or key complaint, in that order; empty if none.</span>
+<span id="L270"><span class="lineNum">     270</span>              :      */</span>
+<span id="L271"><span class="lineNum">     271</span> <span class="tlaGNC">           7 :     [[nodiscard]] auto first() const -&gt; QString {</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">           7 :       return !name.isEmpty() ? name : !path.isEmpty() ? path : key;</span></span>
+<span id="L273"><span class="lineNum">     273</span>              :     }</span>
+<span id="L274"><span class="lineNum">     274</span>              :   };</span>
+<span id="L275"><span class="lineNum">     275</span>              :   /// Designer tooltip of the profile-name field, put back when validate()</span>
+<span id="L276"><span class="lineNum">     276</span>              :   /// has no complaint about it.</span>
+<span id="L277"><span class="lineNum">     277</span>              :   QString m_nameTip;</span>
+<span id="L278"><span class="lineNum">     278</span>              :   /// Designer tooltip of the store-path field, put back when validate() has</span>
+<span id="L279"><span class="lineNum">     279</span>              :   /// no complaint about it.</span>
+<span id="L280"><span class="lineNum">     280</span>              :   QString m_pathTip;</span>
+<span id="L281"><span class="lineNum">     281</span>              :   /// Designer tooltip of the signing-key field, put back when validate() has</span>
+<span id="L282"><span class="lineNum">     282</span>              :   /// no complaint about it.</span>
+<span id="L283"><span class="lineNum">     283</span>              :   QString m_keyTip;</span>
+<span id="L284"><span class="lineNum">     284</span>              :   /// Below the signing key: the profiles that share it, if any.</span>
+<span id="L285"><span class="lineNum">     285</span>              :   QLabel *m_sharedKeyWarning = nullptr;</span>
+<span id="L286"><span class="lineNum">     286</span>              :   /// In the pass box: the stores pass would commit outside of, if any.</span>
+<span id="L287"><span class="lineNum">     287</span>              :   QLabel *m_passGitWarning = nullptr;</span>
+<span id="L288"><span class="lineNum">     288</span>              :   /// Primary fingerprint per gpg and signing-key token (empty: gpg does</span>
+<span id="L289"><span class="lineNum">     289</span>              :   /// not know it), so each key is looked up once, not on every keystroke.</span>
+<span id="L290"><span class="lineNum">     290</span>              :   mutable QHash&lt;QString, QString&gt; m_primaryOf;</span>
+<span id="L291"><span class="lineNum">     291</span>              :   /// An unknown key was forgotten in the background: validate() again on</span>
+<span id="L292"><span class="lineNum">     292</span>              :   /// return.</span>
+<span id="L293"><span class="lineNum">     293</span>              :   bool m_recheckSigners = false;</span>
+<span id="L294"><span class="lineNum">     294</span>              :   /// The settings naming the GPG home those lookups run in, read on first</span>
+<span id="L295"><span class="lineNum">     295</span>              :   /// use.</span>
+<span id="L296"><span class="lineNum">     296</span>              :   mutable std::optional&lt;AppSettings&gt; m_gpgSettings;</span>
+<span id="L297"><span class="lineNum">     297</span>              :   /// The profiles as shown; index == row in profileList.</span>
+<span id="L298"><span class="lineNum">     298</span>              :   QList&lt;ProfileEntry&gt; m_entries;</span>
+<span id="L299"><span class="lineNum">     299</span>              :   /// Row whose fields the form shows, -1 for none.</span>
+<span id="L300"><span class="lineNum">     300</span>              :   int m_currentEntry = -1;</span>
+<span id="L301"><span class="lineNum">     301</span>              :   /// True while loadProfileForm() sets the fields, so their edited-signals</span>
+<span id="L302"><span class="lineNum">     302</span>              :   /// do not write back.</span>
+<span id="L303"><span class="lineNum">     303</span>              :   bool m_loadingForm = false;</span>
+<span id="L304"><span class="lineNum">     304</span>              : </span>
+<span id="L305"><span class="lineNum">     305</span>              :   /**</span>
+<span id="L306"><span class="lineNum">     306</span>              :    * @brief Show row @p row's profile in the form (or clear and disable it</span>
+<span id="L307"><span class="lineNum">     307</span>              :    * for -1), with m_loadingForm set so the fields' edited-signals do not</span>
+<span id="L308"><span class="lineNum">     308</span>              :    * write back. The Git boxes show the profile's own flags, else the</span>
+<span id="L309"><span class="lineNum">     309</span>              :    * global ones.</span>
+<span id="L310"><span class="lineNum">     310</span>              :    * @param row Row in m_entries, or -1 for none.</span>
+<span id="L311"><span class="lineNum">     311</span>              :    */</span>
+<span id="L312"><span class="lineNum">     312</span>              :   void loadProfileForm(int row);</span>
+<span id="L313"><span class="lineNum">     313</span>              :   /**</span>
+<span id="L314"><span class="lineNum">     314</span>              :    * @brief The entry the form is editing.</span>
+<span id="L315"><span class="lineNum">     315</span>              :    * @return A pointer into m_entries, or nullptr when no row is current.</span>
+<span id="L316"><span class="lineNum">     316</span>              :    */</span>
+<span id="L317"><span class="lineNum">     317</span>              :   auto currentEntry() -&gt; ProfileEntry *;</span>
+<span id="L318"><span class="lineNum">     318</span>              :   /**</span>
+<span id="L319"><span class="lineNum">     319</span>              :    * @brief Refresh the status line under the form: the profile's name and</span>
+<span id="L320"><span class="lineNum">     320</span>              :    * cleaned path, marked &quot;New&quot; while the folder does not exist, or a</span>
+<span id="L321"><span class="lineNum">     321</span>              :    * reminder to fill in the required fields.</span>
+<span id="L322"><span class="lineNum">     322</span>              :    */</span>
+<span id="L323"><span class="lineNum">     323</span>              :   void updateProfileStatus();</span>
+<span id="L324"><span class="lineNum">     324</span>              :   /// The widgets from configdialog.ui.</span>
+<span id="L325"><span class="lineNum">     325</span>              :   QScopedPointer&lt;Ui::ConfigDialog&gt; ui;</span>
+<span id="L326"><span class="lineNum">     326</span>              : </span>
+<span id="L327"><span class="lineNum">     327</span>              :   /**</span>
+<span id="L328"><span class="lineNum">     328</span>              :    * @brief Show @p path as the git executable; an empty path disables and</span>
+<span id="L329"><span class="lineNum">     329</span>              :    * turns off &quot;use Git&quot;.</span>
+<span id="L330"><span class="lineNum">     330</span>              :    * @param path The git executable, or empty for none.</span>
+<span id="L331"><span class="lineNum">     331</span>              :    */</span>
+<span id="L332"><span class="lineNum">     332</span>              :   void setGitPath(const QString &amp;path);</span>
+<span id="L333"><span class="lineNum">     333</span>              :   /**</span>
+<span id="L334"><span class="lineNum">     334</span>              :    * @brief Fill the profile list and m_entries from @p profiles, dropping</span>
+<span id="L335"><span class="lineNum">     335</span>              :    * the empty-named leftover older versions wrote, select</span>
+<span id="L336"><span class="lineNum">     336</span>              :    * @p currentProfile and validate.</span>
+<span id="L337"><span class="lineNum">     337</span>              :    * @param profiles The saved profiles.</span>
+<span id="L338"><span class="lineNum">     338</span>              :    * @param currentProfile The active profile's name, to select its row.</span>
+<span id="L339"><span class="lineNum">     339</span>              :    */</span>
+<span id="L340"><span class="lineNum">     340</span>              :   void setProfiles(Profiles profiles, const QString &amp;currentProfile);</span>
+<span id="L341"><span class="lineNum">     341</span>              :   /**</span>
+<span id="L342"><span class="lineNum">     342</span>              :    * @brief Tick the pass or the native radio button and enable the matching</span>
+<span id="L343"><span class="lineNum">     343</span>              :    * group box.</span>
+<span id="L344"><span class="lineNum">     344</span>              :    * @param usePass true for the pass backend.</span>
+<span id="L345"><span class="lineNum">     345</span>              :    */</span>
+<span id="L346"><span class="lineNum">     346</span>              :   void usePass(bool usePass);</span>
+<span id="L347"><span class="lineNum">     347</span>              : </span>
+<span id="L348"><span class="lineNum">     348</span>              :   /**</span>
+<span id="L349"><span class="lineNum">     349</span>              :    * @brief Load the dialog's value widgets from an AppSettings struct.</span>
+<span id="L350"><span class="lineNum">     350</span>              :    *</span>
+<span id="L351"><span class="lineNum">     351</span>              :    * Mirrors the legacy per-getter constructor loads. Sets values only; the</span>
+<span id="L352"><span class="lineNum">     352</span>              :    * constructor still handles environment-dependent gating (tray/OTP/qrencode</span>
+<span id="L353"><span class="lineNum">     353</span>              :    * availability, clipboard combo population, primary-selection support) and</span>
+<span id="L354"><span class="lineNum">     354</span>              :    * the profile table. Password-generation and pwgen-path widgets are</span>
+<span id="L355"><span class="lineNum">     355</span>              :    * intentionally not loaded here, matching the previous behaviour.</span>
+<span id="L356"><span class="lineNum">     356</span>              :    * @param settings Values to display.</span>
+<span id="L357"><span class="lineNum">     357</span>              :    */</span>
+<span id="L358"><span class="lineNum">     358</span>              :   void applySettings(const AppSettings &amp;settings);</span>
+<span id="L359"><span class="lineNum">     359</span>              :   /**</span>
+<span id="L360"><span class="lineNum">     360</span>              :    * @brief Build an AppSettings struct from the dialog's widgets.</span>
+<span id="L361"><span class="lineNum">     361</span>              :    *</span>
+<span id="L362"><span class="lineNum">     362</span>              :    * Starts from the currently persisted settings and overwrites only the</span>
+<span id="L363"><span class="lineNum">     363</span>              :    * fields this dialog owns, so unrelated keys (window geometry,</span>
+<span id="L364"><span class="lineNum">     364</span>              :    * profiles, etc.) are preserved on save.</span>
+<span id="L365"><span class="lineNum">     365</span>              :    * @return Settings reflecting the dialog state.</span>
+<span id="L366"><span class="lineNum">     366</span>              :    */</span>
+<span id="L367"><span class="lineNum">     367</span>              :   auto readSettings() -&gt; AppSettings;</span>
+<span id="L368"><span class="lineNum">     368</span>              : </span>
+<span id="L369"><span class="lineNum">     369</span>              :   /**</span>
+<span id="L370"><span class="lineNum">     370</span>              :    * @brief Enable the group box of the chosen backend and, in pass mode,</span>
+<span id="L371"><span class="lineNum">     371</span>              :    * disable the password-generation controls pass takes care of; in native</span>
+<span id="L372"><span class="lineNum">     372</span>              :    * mode hand them back to on_checkBoxUsePwgen_clicked().</span>
+<span id="L373"><span class="lineNum">     373</span>              :    */</span>
+<span id="L374"><span class="lineNum">     374</span>              :   void setGroupBoxState();</span>
+<span id="L375"><span class="lineNum">     375</span>              :   /**</span>
+<span id="L376"><span class="lineNum">     376</span>              :    * @brief Ask for an existing file in a read-only file dialog.</span>
+<span id="L377"><span class="lineNum">     377</span>              :    * @return The chosen file, empty when cancelled.</span>
+<span id="L378"><span class="lineNum">     378</span>              :    */</span>
+<span id="L379"><span class="lineNum">     379</span>              :   auto selectExecutable() -&gt; QString;</span>
+<span id="L380"><span class="lineNum">     380</span>              :   /**</span>
+<span id="L381"><span class="lineNum">     381</span>              :    * @brief Ask for a directory in a directories-only file dialog.</span>
+<span id="L382"><span class="lineNum">     382</span>              :    * @return The chosen folder, empty when cancelled.</span>
+<span id="L383"><span class="lineNum">     383</span>              :    */</span>
+<span id="L384"><span class="lineNum">     384</span>              :   auto selectFolder() -&gt; QString;</span>
+<span id="L385"><span class="lineNum">     385</span>              :   /**</span>
+<span id="L386"><span class="lineNum">     386</span>              :    * @brief QMessageBox::critical with a single OK button. Once a workaround</span>
+<span id="L387"><span class="lineNum">     387</span>              :    * for crashes in Qt 5.4.1 before QApplication::exec(); no caller today.</span>
+<span id="L388"><span class="lineNum">     388</span>              :    * @param title The box's title.</span>
+<span id="L389"><span class="lineNum">     389</span>              :    * @param text The message.</span>
+<span id="L390"><span class="lineNum">     390</span>              :    */</span>
+<span id="L391"><span class="lineNum">     391</span>              :   void criticalMessage(const QString &amp;title, const QString &amp;text);</span>
+<span id="L392"><span class="lineNum">     392</span>              : </span>
+<span id="L393"><span class="lineNum">     393</span>              :   /**</span>
+<span id="L394"><span class="lineNum">     394</span>              :    * @brief Whether qrencode can run: @p configuredPath when it is an</span>
+<span id="L395"><span class="lineNum">     395</span>              :    * executable file, else a `qrencode` on Util's PATH, which is then saved</span>
+<span id="L396"><span class="lineNum">     396</span>              :    * as the qrencode executable. Always false on Windows.</span>
+<span id="L397"><span class="lineNum">     397</span>              :    * @param configuredPath The saved qrencode executable, possibly empty.</span>
+<span id="L398"><span class="lineNum">     398</span>              :    * @return true when QR codes can be shown.</span>
+<span id="L399"><span class="lineNum">     399</span>              :    */</span>
+<span id="L400"><span class="lineNum">     400</span>              :   auto isQrencodeAvailable(const QString &amp;configuredPath) -&gt; bool;</span>
+<span id="L401"><span class="lineNum">     401</span>              :   /**</span>
+<span id="L402"><span class="lineNum">     402</span>              :    * @brief Check every profile (problemsOf(), sharingTheKey()), mark the</span>
+<span id="L403"><span class="lineNum">     403</span>              :    * rows and the form, enable OK only when no profile has a problem, and</span>
+<span id="L404"><span class="lineNum">     404</span>              :    * refresh the pass Git warning.</span>
+<span id="L405"><span class="lineNum">     405</span>              :    */</span>
+<span id="L406"><span class="lineNum">     406</span>              :   void validate();</span>
+<span id="L407"><span class="lineNum">     407</span>              :   /// Shows m_passGitWarning for the stores Util::repositoryPassClimbsTo()</span>
+<span id="L408"><span class="lineNum">     408</span>              :   /// names, while the pass backend is chosen.</span>
+<span id="L409"><span class="lineNum">     409</span>              :   void updatePassGitWarning();</span>
+<span id="L410"><span class="lineNum">     410</span>              :   /**</span>
+<span id="L411"><span class="lineNum">     411</span>              :    * @brief What is wrong with @p entry's name, store path and signing keys.</span>
+<span id="L412"><span class="lineNum">     412</span>              :    * @param entry The profile to check.</span>
+<span id="L413"><span class="lineNum">     413</span>              :    * @param names How many profiles carry each name, for duplicates.</span>
+<span id="L414"><span class="lineNum">     414</span>              :    * @return The complaints, empty where a field is fine.</span>
+<span id="L415"><span class="lineNum">     415</span>              :    */</span>
+<span id="L416"><span class="lineNum">     416</span>              :   auto problemsOf(const ProfileEntry &amp;entry,</span>
+<span id="L417"><span class="lineNum">     417</span>              :                   const QHash&lt;QString, int&gt; &amp;names) const -&gt; ProfileProblems;</span>
+<span id="L418"><span class="lineNum">     418</span>              :   /**</span>
+<span id="L419"><span class="lineNum">     419</span>              :    * @brief Mark row @p row of the profile list, and the form fields when it</span>
+<span id="L420"><span class="lineNum">     420</span>              :    * is the row being edited, with @p problems.</span>
+<span id="L421"><span class="lineNum">     421</span>              :    * @param row Row in the profile list.</span>
+<span id="L422"><span class="lineNum">     422</span>              :    * @param problems What problemsOf() found for it.</span>
+<span id="L423"><span class="lineNum">     423</span>              :    */</span>
+<span id="L424"><span class="lineNum">     424</span>              :   void showProblems(int row, const ProfileProblems &amp;problems);</span>
+<span id="L425"><span class="lineNum">     425</span>              :   /// Per profile row: its store as the file system resolves it, and its</span>
+<span id="L426"><span class="lineNum">     426</span>              :   /// signing-key fingerprints (upper case).</span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">         201 :   struct SigningStores {</span></span>
+<span id="L428"><span class="lineNum">     428</span>              :     QStringList stores;        ///&lt; Canonical (or cleaned) store path.</span>
+<span id="L429"><span class="lineNum">     429</span>              :     QList&lt;QSet&lt;QString&gt;&gt; keys; ///&lt; Fingerprints of the signing key.</span>
+<span id="L430"><span class="lineNum">     430</span>              :   };</span>
+<span id="L431"><span class="lineNum">     431</span>              :   /**</span>
+<span id="L432"><span class="lineNum">     432</span>              :    * @brief Resolve every profile's store and fingerprints once.</span>
+<span id="L433"><span class="lineNum">     433</span>              :    * @return One entry per row of m_entries.</span>
+<span id="L434"><span class="lineNum">     434</span>              :    */</span>
+<span id="L435"><span class="lineNum">     435</span>              :   [[nodiscard]] auto signingStores() const -&gt; SigningStores;</span>
+<span id="L436"><span class="lineNum">     436</span>              :   /**</span>
+<span id="L437"><span class="lineNum">     437</span>              :    * @brief One profile's signing keys as signers: each key as written, plus</span>
+<span id="L438"><span class="lineNum">     438</span>              :    * the primary fingerprint gpg gives for a complete key ID or (sub)key</span>
+<span id="L439"><span class="lineNum">     439</span>              :    * fingerprint.</span>
+<span id="L440"><span class="lineNum">     440</span>              :    * @param signingKey The profile's signing-key setting.</span>
+<span id="L441"><span class="lineNum">     441</span>              :    * @param env The environment gpg looks keys up in (its GPG home).</span>
+<span id="L442"><span class="lineNum">     442</span>              :    * @return Upper-case fingerprints and key IDs.</span>
+<span id="L443"><span class="lineNum">     443</span>              :    */</span>
+<span id="L444"><span class="lineNum">     444</span>              :   [[nodiscard]] auto signerKeys(const QString &amp;signingKey,</span>
+<span id="L445"><span class="lineNum">     445</span>              :                                 const QProcessEnvironment &amp;env) const</span>
+<span id="L446"><span class="lineNum">     446</span>              :       -&gt; QSet&lt;QString&gt;;</span>
+<span id="L447"><span class="lineNum">     447</span>              :   /**</span>
+<span id="L448"><span class="lineNum">     448</span>              :    * @brief The other profiles, for other stores, whose signing keys share a</span>
+<span id="L449"><span class="lineNum">     449</span>              :    * fingerprint with row @p row's.</span>
+<span id="L450"><span class="lineNum">     450</span>              :    * @param row The profile's row.</span>
+<span id="L451"><span class="lineNum">     451</span>              :    * @param resolved What signingStores() gave for this validation.</span>
+<span id="L452"><span class="lineNum">     452</span>              :    * @return Their names, sorted; empty when none or no key is set.</span>
+<span id="L453"><span class="lineNum">     453</span>              :    */</span>
+<span id="L454"><span class="lineNum">     454</span>              :   [[nodiscard]] auto sharingTheKey(int row, const SigningStores &amp;resolved) const</span>
+<span id="L455"><span class="lineNum">     455</span>              :       -&gt; QStringList;</span>
+<span id="L456"><span class="lineNum">     456</span>              : </span>
+<span id="L457"><span class="lineNum">     457</span>              :   /**</span>
+<span id="L458"><span class="lineNum">     458</span>              :    * @brief For every saved profile whose store was not a profile's store</span>
+<span id="L459"><span class="lineNum">     459</span>              :    * when the dialog opened: offer to create the folder and, when it has no</span>
+<span id="L460"><span class="lineNum">     460</span>              :    * `.gpg-id`, ask for recipients and initialise it.</span>
+<span id="L461"><span class="lineNum">     461</span>              :    * @param existingProfiles The profiles as they were when the dialog opened.</span>
+<span id="L462"><span class="lineNum">     462</span>              :    */</span>
+<span id="L463"><span class="lineNum">     463</span>              :   void initializeNewProfiles(const Profiles &amp;existingProfiles);</span>
+<span id="L464"><span class="lineNum">     464</span>              :   /**</span>
+<span id="L465"><span class="lineNum">     465</span>              :    * @brief Offer to create a new profile's store folder when it is missing.</span>
+<span id="L466"><span class="lineNum">     466</span>              :    * @param path The folder, cleaned.</span>
+<span id="L467"><span class="lineNum">     467</span>              :    * @return Whether the folder exists now.</span>
+<span id="L468"><span class="lineNum">     468</span>              :    */</span>
+<span id="L469"><span class="lineNum">     469</span>              :   auto ensureProfileFolder(const QString &amp;path) -&gt; bool;</span>
+<span id="L470"><span class="lineNum">     470</span>              :   /**</span>
+<span id="L471"><span class="lineNum">     471</span>              :    * @brief Ask for a new profile's recipients and initialise its store with</span>
+<span id="L472"><span class="lineNum">     472</span>              :    * them, keeping the active backend's settings and queue on the active</span>
+<span id="L473"><span class="lineNum">     473</span>              :    * store (#1774).</span>
+<span id="L474"><span class="lineNum">     474</span>              :    * @param name The profile's name, for titles and messages.</span>
+<span id="L475"><span class="lineNum">     475</span>              :    * @param profile The profile.</span>
+<span id="L476"><span class="lineNum">     476</span>              :    * @param path Its store folder, cleaned.</span>
+<span id="L477"><span class="lineNum">     477</span>              :    */</span>
+<span id="L478"><span class="lineNum">     478</span>              :   void initialiseProfileStore(const QString &amp;name, const Profile &amp;profile,</span>
+<span id="L479"><span class="lineNum">     479</span>              :                               const QString &amp;path);</span>
+<span id="L480"><span class="lineNum">     480</span>              :   /// Warn, without refusing, when the SSH_AUTH_SOCK override does not look</span>
+<span id="L481"><span class="lineNum">     481</span>              :   /// like a socket; the value is saved as entered either way.</span>
+<span id="L482"><span class="lineNum">     482</span>              :   void warnAboutSshAuthSockOverride();</span>
+<span id="L483"><span class="lineNum">     483</span>              :   /**</span>
+<span id="L484"><span class="lineNum">     484</span>              :    * @brief Point the active profile at its new name after a rename (or at</span>
+<span id="L485"><span class="lineNum">     485</span>              :    * none after a deletion), and let its own Git flags replace the global</span>
+<span id="L486"><span class="lineNum">     486</span>              :    * ones, as switching to it does.</span>
+<span id="L487"><span class="lineNum">     487</span>              :    * @param profiles The profiles as saved.</span>
+<span id="L488"><span class="lineNum">     488</span>              :    */</span>
+<span id="L489"><span class="lineNum">     489</span>              :   void followActiveProfile(const Profiles &amp;profiles);</span>
+<span id="L490"><span class="lineNum">     490</span>              : </span>
+<span id="L491"><span class="lineNum">     491</span>              :   /// User-defined custom charset, retained while a builtin set is selected so</span>
+<span id="L492"><span class="lineNum">     492</span>              :   /// it is not lost when the line edit shows the builtin's characters instead.</span>
+<span id="L493"><span class="lineNum">     493</span>              :   QString m_customPasswordChars;</span>
+<span id="L494"><span class="lineNum">     494</span>              : };</span>
+<span id="L495"><span class="lineNum">     495</span>              : </span>
+<span id="L496"><span class="lineNum">     496</span>              : #endif // SRC_CONFIGDIALOG_H_</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

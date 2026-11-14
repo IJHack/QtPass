@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/enums.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - enums.h<span style="font-size: 80%;"> (source / <a href="enums.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief The Enums namespace: clipboard behaviour and the identifiers of the</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * subprocess kinds QtPass queues.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #ifndef SRC_ENUMS_H_</span>
+<span id="L9"><span class="lineNum">       9</span>              : #define SRC_ENUMS_H_</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &lt;QMetaType&gt;</span>
+<span id="L12"><span class="lineNum">      12</span>              : </span>
+<span id="L13"><span class="lineNum">      13</span>              : /**</span>
+<span id="L14"><span class="lineNum">      14</span>              :  * @namespace Enums</span>
+<span id="L15"><span class="lineNum">      15</span>              :  * @ingroup process</span>
+<span id="L16"><span class="lineNum">      16</span>              :  * @brief Enumerators for QtPass configuration and runtime operations.</span>
+<span id="L17"><span class="lineNum">      17</span>              :  */</span>
+<span id="L18"><span class="lineNum">      18</span>              : namespace Enums {</span>
+<span id="L19"><span class="lineNum">      19</span>              : </span>
+<span id="L20"><span class="lineNum">      20</span>              : /**</span>
+<span id="L21"><span class="lineNum">      21</span>              :  * @enum ClipBoardType</span>
+<span id="L22"><span class="lineNum">      22</span>              :  * @brief Defines when to copy passwords to clipboard.</span>
+<span id="L23"><span class="lineNum">      23</span>              :  */</span>
+<span id="L24"><span class="lineNum">      24</span>              : enum ClipBoardType {</span>
+<span id="L25"><span class="lineNum">      25</span>              :   CLIPBOARD_NEVER = 0,    /**&lt; Never automatically copy to clipboard */</span>
+<span id="L26"><span class="lineNum">      26</span>              :   CLIPBOARD_ALWAYS = 1,   /**&lt; Always copy to clipboard after showing */</span>
+<span id="L27"><span class="lineNum">      27</span>              :   CLIPBOARD_ON_DEMAND = 2 /**&lt; Copy only when user explicitly requests */</span>
+<span id="L28"><span class="lineNum">      28</span>              : };</span>
+<span id="L29"><span class="lineNum">      29</span>              : </span>
+<span id="L30"><span class="lineNum">      30</span>              : /**</span>
+<span id="L31"><span class="lineNum">      31</span>              :  * @enum PROCESS</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * @brief Identifies different subprocess operations used in QtPass.</span>
+<span id="L33"><span class="lineNum">      33</span>              :  *</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * Adding a value: give it a row in the table in processinfo.cpp, which says</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * what the command is called and whether its stdout may contain a secret (a</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * decrypted entry, a search hit in one). Secret-bearing output reaches</span>
+<span id="L37"><span class="lineNum">      37</span>              :  * neither the process output panel nor the generic finished signal. The</span>
+<span id="L38"><span class="lineNum">      38</span>              :  * build fails until the row is there, and</span>
+<span id="L39"><span class="lineNum">      39</span>              :  * tst_realpass::genericOutputSignalIsAnAllowList() and</span>
+<span id="L40"><span class="lineNum">      40</span>              :  * tst_processoutputpanel::everyShownProcessHasItsCommandLabel() pin the</span>
+<span id="L41"><span class="lineNum">      41</span>              :  * decision.</span>
+<span id="L42"><span class="lineNum">      42</span>              :  */</span>
+<span id="L43"><span class="lineNum">      43</span>              : enum PROCESS {</span>
+<span id="L44"><span class="lineNum">      44</span>              :   GIT_INIT = 0,  /**&lt; Initialize Git repository */</span>
+<span id="L45"><span class="lineNum">      45</span>              :   GIT_ADD,       /**&lt; Git add command */</span>
+<span id="L46"><span class="lineNum">      46</span>              :   GIT_COMMIT,    /**&lt; Git commit */</span>
+<span id="L47"><span class="lineNum">      47</span>              :   GIT_RM,        /**&lt; Git remove */</span>
+<span id="L48"><span class="lineNum">      48</span>              :   GIT_PULL,      /**&lt; Git pull */</span>
+<span id="L49"><span class="lineNum">      49</span>              :   GIT_PUSH,      /**&lt; Git push */</span>
+<span id="L50"><span class="lineNum">      50</span>              :   PASS_SHOW,     /**&lt; Pass show - decrypt password file */</span>
+<span id="L51"><span class="lineNum">      51</span>              :   PASS_INSERT,   /**&lt; Pass insert - create/update password */</span>
+<span id="L52"><span class="lineNum">      52</span>              :   PASS_REMOVE,   /**&lt; Pass remove - delete password */</span>
+<span id="L53"><span class="lineNum">      53</span>              :   PASS_INIT,     /**&lt; Pass init - initialize store */</span>
+<span id="L54"><span class="lineNum">      54</span>              :   GPG_GENKEYS,   /**&lt; GPG key generation */</span>
+<span id="L55"><span class="lineNum">      55</span>              :   PASS_MOVE,     /**&lt; Move password file */</span>
+<span id="L56"><span class="lineNum">      56</span>              :   PASS_COPY,     /**&lt; Copy password file */</span>
+<span id="L57"><span class="lineNum">      57</span>              :   GIT_MOVE,      /**&lt; Git move/rename */</span>
+<span id="L58"><span class="lineNum">      58</span>              :   GIT_COPY,      /**&lt; Git copy */</span>
+<span id="L59"><span class="lineNum">      59</span>              :   PASS_GREP,     /**&lt; Not started any more (content search runs in-process,</span>
+<span id="L60"><span class="lineNum">      60</span>              :                       NativeGrep); kept for the process-name table and the</span>
+<span id="L61"><span class="lineNum">      61</span>              :                       checks that keep its output out of the panel */</span>
+<span id="L62"><span class="lineNum">      62</span>              :   PROCESS_COUNT, /**&lt; Total number of process types */</span>
+<span id="L63"><span class="lineNum">      63</span>              :   INVALID        /**&lt; Invalid/unknown process */</span>
+<span id="L64"><span class="lineNum">      64</span>              : };</span>
+<span id="L65"><span class="lineNum">      65</span>              : </span>
+<span id="L66"><span class="lineNum">      66</span>              : } // namespace Enums</span>
+<span id="L67"><span class="lineNum">      67</span>              : </span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">           3 : Q_DECLARE_METATYPE(Enums::PROCESS)</span></span>
+<span id="L69"><span class="lineNum">      69</span>              : </span>
+<span id="L70"><span class="lineNum">      70</span>              : #endif // SRC_ENUMS_H_</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

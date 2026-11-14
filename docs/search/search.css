@@ -27,7 +27,7 @@ dark-mode-toggle {
     white-space : nowrap;
     background: white;
     border-radius: 0.65em;
-    border: 1px solid #B6C4DF;
+    border: 1px solid #B6CBDF;
     z-index: 102;
     margin-right: 4px;
 }
@@ -225,7 +225,7 @@ a.SelectItem:active {
 
 a.SelectItem:hover {
     color: white;
-    background-color: #3D578C;
+    background-color: #3D668C;
     outline-style: none;
     text-decoration: none;
     cursor: pointer;
@@ -303,7 +303,7 @@ div.SRPage {
 
 .SRSymbol {
     font-weight: bold;
-    color: #425E97;
+    color: #426E97;
     font-family: Arial,Verdana,sans-serif;
     text-decoration: none;
     outline: none;
@@ -311,7 +311,7 @@ div.SRPage {
 
 a.SRScope {
     display: block;
-    color: #425E97;
+    color: #426E97;
     font-family: Arial,Verdana,sans-serif;
     font-size: 8pt;
     text-decoration: none;
@@ -351,9 +351,9 @@ div.searchresults {
 /*---------------- External search page results */
 
 .pages b {
-   color: #364D7C;
+   color: #365A7C;
    padding: 5px 5px 3px 5px;
-   background-color: #DCE2EF;
+   background-color: #DCE6EF;
    border-radius: 4px;
 }
 

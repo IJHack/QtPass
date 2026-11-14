@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/usersdialog.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - usersdialog.cpp<span style="font-size: 80%;"> (source / <a href="usersdialog.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">98.4&nbsp;%</td>
+            <td class="headerCovTableEntry">246</td>
+            <td class="headerCovTableEntry">242</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">27</td>
+            <td class="headerCovTableEntry">27</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Implements UsersDialog; selectRecipients() matches the `.gpg-id`</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * lines against the keyring and lists the ones no key answers to.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #include &quot;usersdialog.h&quot;</span>
+<span id="L9"><span class="lineNum">       9</span>              : #include &quot;importkeydialog.h&quot;</span>
+<span id="L10"><span class="lineNum">      10</span>              : #include &quot;pass.h&quot;</span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &quot;qtpasssettings.h&quot;</span>
+<span id="L12"><span class="lineNum">      12</span>              : #include &quot;ui_usersdialog.h&quot;</span>
+<span id="L13"><span class="lineNum">      13</span>              : #include &quot;windowstatestore.h&quot;</span>
+<span id="L14"><span class="lineNum">      14</span>              : #include &lt;QApplication&gt;</span>
+<span id="L15"><span class="lineNum">      15</span>              : #include &lt;QDateTime&gt;</span>
+<span id="L16"><span class="lineNum">      16</span>              : #include &lt;QDialogButtonBox&gt;</span>
+<span id="L17"><span class="lineNum">      17</span>              : #include &lt;QFont&gt;</span>
+<span id="L18"><span class="lineNum">      18</span>              : #include &lt;QHash&gt;</span>
+<span id="L19"><span class="lineNum">      19</span>              : #include &lt;QKeyEvent&gt;</span>
+<span id="L20"><span class="lineNum">      20</span>              : #include &lt;QLabel&gt;</span>
+<span id="L21"><span class="lineNum">      21</span>              : #include &lt;QLineEdit&gt;</span>
+<span id="L22"><span class="lineNum">      22</span>              : #include &lt;QListWidget&gt;</span>
+<span id="L23"><span class="lineNum">      23</span>              : #include &lt;QMessageBox&gt;</span>
+<span id="L24"><span class="lineNum">      24</span>              : #include &lt;QPalette&gt;</span>
+<span id="L25"><span class="lineNum">      25</span>              : #include &lt;QPushButton&gt;</span>
+<span id="L26"><span class="lineNum">      26</span>              : #include &lt;QRegularExpression&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>              : #include &lt;QSet&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>              : #include &lt;QSignalBlocker&gt;</span>
+<span id="L29"><span class="lineNum">      29</span>              : #include &lt;QWidget&gt;</span>
+<span id="L30"><span class="lineNum">      30</span>              : #include &lt;algorithm&gt;</span>
+<span id="L31"><span class="lineNum">      31</span>              : #include &lt;utility&gt;</span>
+<span id="L32"><span class="lineNum">      32</span>              : </span>
+<span id="L33"><span class="lineNum">      33</span>              : #include &quot;qtpasslogging.h&quot;</span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">          39 : UsersDialog::UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir,</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          39 :                          QWidget *parent)</span></span>
+<span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">          78 :     : UsersDialog(pass, s, std::move(dir), Preselect::FromList, parent) {}</span></span>
+<span id="L37"><span class="lineNum">      37</span>              : </span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          42 : UsersDialog::UsersDialog(Pass *pass, const AppSettings &amp;s, QString dir,</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          42 :                          Preselect preselect, QWidget *parent)</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          42 :     : QDialog(parent), ui(new Ui::UsersDialog), m_pass(pass),</span></span>
+<span id="L41"><span class="lineNum">      41</span>              :       m_passStore(s.passStore), m_gpgExe(s.gpgExecutable),</span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">          84 :       m_dir(std::move(dir)), m_preselect(preselect) {</span></span>
+<span id="L43"><span class="lineNum">      43</span>              :   Q_ASSERT(pass);</span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">          42 :   ui-&gt;setupUi(this);</span></span>
+<span id="L45"><span class="lineNum">      45</span>              : </span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">          42 :   restoreDialogState();</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">          42 :   if (!loadGpgKeys()) {</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           1 :     connect(ui-&gt;buttonBox, &amp;QDialogButtonBox::rejected, this, &amp;QDialog::reject);</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">           1 :     return;</span></span>
+<span id="L50"><span class="lineNum">      50</span>              :   }</span>
+<span id="L51"><span class="lineNum">      51</span>              : </span>
+<span id="L52"><span class="lineNum">      52</span> <span class="tlaGNC">          41 :   loadRecipients();</span></span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">          41 :   populateList();</span></span>
+<span id="L54"><span class="lineNum">      54</span>              : </span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          41 :   connectSignals();</span></span>
+<span id="L56"><span class="lineNum">      56</span> <span class="tlaUNC">           0 : }</span></span>
+<span id="L57"><span class="lineNum">      57</span>              : </span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaGNC">          41 : void UsersDialog::connectSignals() {</span></span>
+<span id="L59"><span class="lineNum">      59</span> <span class="tlaGNC">          41 :   connect(ui-&gt;buttonBox, &amp;QDialogButtonBox::accepted, this,</span></span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">          41 :           &amp;UsersDialog::accept);</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          41 :   connect(ui-&gt;buttonBox, &amp;QDialogButtonBox::rejected, this, &amp;QDialog::reject);</span></span>
+<span id="L62"><span class="lineNum">      62</span> <span class="tlaGNC">          41 :   connect(ui-&gt;listWidget, &amp;QListWidget::itemChanged, this,</span></span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">          82 :           &amp;UsersDialog::itemChange);</span></span>
+<span id="L64"><span class="lineNum">      64</span>              :   // importKeyButton is wired via Qt's automatic on_&lt;name&gt;_&lt;signal&gt; mechanism</span>
+<span id="L65"><span class="lineNum">      65</span>              :   // already triggered by setupUi().</span>
+<span id="L66"><span class="lineNum">      66</span>              : </span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">          41 :   ui-&gt;lineEdit-&gt;setClearButtonEnabled(true);</span></span>
+<span id="L68"><span class="lineNum">      68</span> <span class="tlaGNC">          41 : }</span></span>
+<span id="L69"><span class="lineNum">      69</span>              : </span>
+<span id="L70"><span class="lineNum">      70</span> <span class="tlaGNC">          42 : void UsersDialog::restoreDialogState() {</span></span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">          84 :   WindowStateStore::attach(*this, QStringLiteral(&quot;usersDialog&quot;));</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">          42 : }</span></span>
+<span id="L73"><span class="lineNum">      73</span>              : </span>
+<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">          43 : auto UsersDialog::loadGpgKeys() -&gt; bool {</span></span>
+<span id="L75"><span class="lineNum">      75</span> <span class="tlaGNC">          43 :   QList&lt;UserInfo&gt; users = m_pass-&gt;listKeys();</span></span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          43 :   if (users.isEmpty()) {</span></span>
+<span id="L77"><span class="lineNum">      77</span> <span class="tlaGNC">           3 :     QMessageBox::critical(parentWidget(), tr(&quot;Keylist missing&quot;),</span></span>
+<span id="L78"><span class="lineNum">      78</span> <span class="tlaUNC">           0 :                           tr(&quot;Could not fetch list of available GPG keys&quot;));</span></span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">           1 :     reject();</span></span>
+<span id="L80"><span class="lineNum">      80</span>              :     return false;</span>
+<span id="L81"><span class="lineNum">      81</span>              :   }</span>
+<span id="L82"><span class="lineNum">      82</span>              : </span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">          42 :   markSecretKeys(users);</span></span>
+<span id="L84"><span class="lineNum">      84</span>              : </span>
+<span id="L85"><span class="lineNum">      85</span>              :   m_userList = users;</span>
+<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">          42 :   return true;</span></span>
+<span id="L87"><span class="lineNum">      87</span>              : }</span>
+<span id="L88"><span class="lineNum">      88</span>              : </span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">          42 : void UsersDialog::markSecretKeys(QList&lt;UserInfo&gt; &amp;users) {</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">          84 :   QList&lt;UserInfo&gt; secret_keys = m_pass-&gt;listKeys(&quot;&quot;, true);</span></span>
+<span id="L91"><span class="lineNum">      91</span>              :   QSet&lt;QString&gt; secretKeyIds;</span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">          47 :   for (const UserInfo &amp;sec : secret_keys) {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">           5 :     secretKeyIds.insert(sec.key_id);</span></span>
+<span id="L94"><span class="lineNum">      94</span>              :   }</span>
+<span id="L95"><span class="lineNum">      95</span> <span class="tlaGNC">         125 :   for (auto &amp;user : users) {</span></span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">          83 :     if (secretKeyIds.contains(user.key_id)) {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">           5 :       user.have_secret = true;</span></span>
+<span id="L98"><span class="lineNum">      98</span>              :     }</span>
+<span id="L99"><span class="lineNum">      99</span>              :   }</span>
+<span id="L100"><span class="lineNum">     100</span> <span class="tlaGNC">          42 : }</span></span>
+<span id="L101"><span class="lineNum">     101</span>              : </span>
+<span id="L102"><span class="lineNum">     102</span> <span class="tlaGNC">           7 : void UsersDialog::showRecipientWarning(const QString &amp;text) {</span></span>
+<span id="L103"><span class="lineNum">     103</span>              :   // Plain text before the text is set: it can quote the store's recipient</span>
+<span id="L104"><span class="lineNum">     104</span>              :   // list, which as rich text could make Qt load a file (&lt;img src=...&gt;).</span>
+<span id="L105"><span class="lineNum">     105</span> <span class="tlaGNC">           7 :   auto *banner = new QLabel(this);</span></span>
+<span id="L106"><span class="lineNum">     106</span> <span class="tlaGNC">           7 :   banner-&gt;setTextFormat(Qt::PlainText);</span></span>
+<span id="L107"><span class="lineNum">     107</span> <span class="tlaGNC">           7 :   banner-&gt;setText(text);</span></span>
+<span id="L108"><span class="lineNum">     108</span> <span class="tlaGNC">          14 :   banner-&gt;setObjectName(QStringLiteral(&quot;recipientWarning&quot;));</span></span>
+<span id="L109"><span class="lineNum">     109</span> <span class="tlaGNC">           7 :   banner-&gt;setWordWrap(true);</span></span>
+<span id="L110"><span class="lineNum">     110</span>              :   // Palette, not a stylesheet colour, so it reads on dark themes too; red as</span>
+<span id="L111"><span class="lineNum">     111</span>              :   // ProcessOutputPanel paints error lines.</span>
+<span id="L112"><span class="lineNum">     112</span> <span class="tlaGNC">           7 :   QFont bold = banner-&gt;font();</span></span>
+<span id="L113"><span class="lineNum">     113</span>              :   bold.setBold(true);</span>
+<span id="L114"><span class="lineNum">     114</span> <span class="tlaGNC">           7 :   banner-&gt;setFont(bold);</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">           7 :   QPalette palette = banner-&gt;palette();</span></span>
+<span id="L116"><span class="lineNum">     116</span> <span class="tlaGNC">           7 :   palette.setColor(QPalette::WindowText, QColor(Qt::red));</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">           7 :   banner-&gt;setPalette(palette);</span></span>
+<span id="L118"><span class="lineNum">     118</span> <span class="tlaGNC">           7 :   banner-&gt;setContentsMargins(4, 4, 4, 4);</span></span>
+<span id="L119"><span class="lineNum">     119</span> <span class="tlaGNC">           7 :   ui-&gt;verticalLayout-&gt;insertWidget(1, banner);</span></span>
+<span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">           7 : }</span></span>
+<span id="L121"><span class="lineNum">     121</span>              : </span>
+<span id="L122"><span class="lineNum">     122</span>              : namespace {</span>
+<span id="L123"><span class="lineNum">     123</span>              : </span>
+<span id="L124"><span class="lineNum">     124</span>              : /// A key ID as written anywhere: without a 0x prefix, upper case.</span>
+<span id="L125"><span class="lineNum">     125</span> <span class="tlaGNC">          60 : auto normalisedKeyId(const QString &amp;id) -&gt; QString {</span></span>
+<span id="L126"><span class="lineNum">     126</span>              :   const QString trimmed = id.trimmed();</span>
+<span id="L127"><span class="lineNum">     127</span> <span class="tlaGNC">          60 :   return (trimmed.startsWith(QLatin1String(&quot;0x&quot;), Qt::CaseInsensitive)</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">         120 :               ? trimmed.mid(2)</span></span>
+<span id="L129"><span class="lineNum">     129</span>              :               : trimmed)</span>
+<span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">          60 :       .toUpper();</span></span>
+<span id="L131"><span class="lineNum">     131</span>              : }</span>
+<span id="L132"><span class="lineNum">     132</span>              : </span>
+<span id="L133"><span class="lineNum">     133</span>              : /// Whether @p recipient, as a .gpg-id lists it, names @p key the way gpg's</span>
+<span id="L134"><span class="lineNum">     134</span>              : /// -r resolves it: a key ID in any length gpg accepts (the key carries its</span>
+<span id="L135"><span class="lineNum">     135</span>              : /// fingerprint, the list may carry a long or short ID, a suffix of it, or</span>
+<span id="L136"><span class="lineNum">     136</span>              : /// the fingerprint; eight characters is the shortest), or else a name,</span>
+<span id="L137"><span class="lineNum">     137</span>              : /// matched case-insensitively as a substring of the UID after gpg's</span>
+<span id="L138"><span class="lineNum">     138</span>              : /// &quot;=&quot;, &quot;&lt;...&gt;&quot;, &quot;@&quot; and &quot;*&quot; markers.</span>
+<span id="L139"><span class="lineNum">     139</span> <span class="tlaGNC">          35 : auto answersTo(const UserInfo &amp;key, const QString &amp;recipient) -&gt; bool {</span></span>
+<span id="L140"><span class="lineNum">     140</span>              :   static const QRegularExpression hexId(</span>
+<span id="L141"><span class="lineNum">     141</span> <span class="tlaGNC">          38 :       QStringLiteral(&quot;^(0x)?[0-9A-Fa-f]{8,}$&quot;));</span></span>
+<span id="L142"><span class="lineNum">     142</span> <span class="tlaGNC">          70 :   if (hexId.match(recipient.trimmed()).hasMatch()) {</span></span>
+<span id="L143"><span class="lineNum">     143</span> <span class="tlaGNC">          30 :     const QString id = normalisedKeyId(recipient);</span></span>
+<span id="L144"><span class="lineNum">     144</span> <span class="tlaGNC">          30 :     const QString keyId = normalisedKeyId(key.key_id);</span></span>
+<span id="L145"><span class="lineNum">     145</span> <span class="tlaGNC">          30 :     return keyId.endsWith(id) || (keyId.size() &gt;= 8 &amp;&amp; id.endsWith(keyId));</span></span>
+<span id="L146"><span class="lineNum">     146</span>              :   }</span>
+<span id="L147"><span class="lineNum">     147</span>              :   QString term = recipient.trimmed();</span>
+<span id="L148"><span class="lineNum">     148</span> <span class="tlaGNC">           5 :   if (term.startsWith(u'=') || term.startsWith(u'@') || term.startsWith(u'*')) {</span></span>
+<span id="L149"><span class="lineNum">     149</span> <span class="tlaUNC">           0 :     term.remove(0, 1);</span></span>
+<span id="L150"><span class="lineNum">     150</span> <span class="tlaGNC">           5 :   } else if (term.startsWith(u'&lt;') &amp;&amp; term.endsWith(u'&gt;')) {</span></span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">           2 :     term = term.mid(1, term.size() - 2);</span></span>
+<span id="L152"><span class="lineNum">     152</span>              :   }</span>
+<span id="L153"><span class="lineNum">     153</span> <span class="tlaGNC">           5 :   return !term.isEmpty() &amp;&amp; key.name.contains(term, Qt::CaseInsensitive);</span></span>
+<span id="L154"><span class="lineNum">     154</span>              : }</span>
+<span id="L155"><span class="lineNum">     155</span>              : </span>
+<span id="L156"><span class="lineNum">     156</span>              : } // namespace</span>
+<span id="L157"><span class="lineNum">     157</span>              : </span>
+<span id="L158"><span class="lineNum">     158</span> <span class="tlaGNC">          20 : void UsersDialog::selectRecipients(const QStringList &amp;recipients) {</span></span>
+<span id="L159"><span class="lineNum">     159</span>              :   // Each per-line gpg lookup is a blocking call on the dialog's way up, so a</span>
+<span id="L160"><span class="lineNum">     160</span>              :   // store with many keys missing from the keyring (a fresh clone, a team</span>
+<span id="L161"><span class="lineNum">     161</span>              :   // store) is capped at this many across both the fallback below and the</span>
+<span id="L162"><span class="lineNum">     162</span>              :   // missing-key check; the rest resolve by the batched call or stay unchecked.</span>
+<span id="L163"><span class="lineNum">     163</span>              :   constexpr int kMaxLookups = 10;</span>
+<span id="L164"><span class="lineNum">     164</span>              :   int lookups = 0;</span>
+<span id="L165"><span class="lineNum">     165</span>              :   // Remembers the per-line lookups the fallback already ran, so the</span>
+<span id="L166"><span class="lineNum">     166</span>              :   // missing-key loop below reuses them instead of asking gpg a second time.</span>
+<span id="L167"><span class="lineNum">     167</span> <span class="tlaGNC">          20 :   QHash&lt;QString, bool&gt; perLineHasKey;</span></span>
+<span id="L168"><span class="lineNum">     168</span>              : </span>
+<span id="L169"><span class="lineNum">     169</span>              :   // One gpg call resolves every recipient, by key ID or by email/UID.</span>
+<span id="L170"><span class="lineNum">     170</span> <span class="tlaGNC">          40 :   QList&lt;UserInfo&gt; resolved = m_pass-&gt;listKeys(recipients);</span></span>
+<span id="L171"><span class="lineNum">     171</span> <span class="tlaGNC">          20 :   if (resolved.isEmpty() &amp;&amp; recipients.size() &gt; 1) {</span></span>
+<span id="L172"><span class="lineNum">     172</span>              :     // One line gpg cannot read as a key search (&quot;0x&quot;, a fingerprint one</span>
+<span id="L173"><span class="lineNum">     173</span>              :     // digit short) aborts that whole call with exit code 2, so nothing is</span>
+<span id="L174"><span class="lineNum">     174</span>              :     // listed for the other lines, whose keys are in the keyring all the same.</span>
+<span id="L175"><span class="lineNum">     175</span>              :     // Asked for one by one they still resolve; only the unreadable line is</span>
+<span id="L176"><span class="lineNum">     176</span>              :     // reported missing by the loop below, as an unknown key already is.</span>
+<span id="L177"><span class="lineNum">     177</span> <span class="tlaGNC">          25 :     for (const QString &amp;recipient : recipients) {</span></span>
+<span id="L178"><span class="lineNum">     178</span> <span class="tlaGNC">          22 :       if (lookups++ &gt;= kMaxLookups) {</span></span>
+<span id="L179"><span class="lineNum">     179</span>              :         break;</span>
+<span id="L180"><span class="lineNum">     180</span>              :       }</span>
+<span id="L181"><span class="lineNum">     181</span> <span class="tlaGNC">          21 :       const QList&lt;UserInfo&gt; keys = m_pass-&gt;listKeys(recipient);</span></span>
+<span id="L182"><span class="lineNum">     182</span> <span class="tlaGNC">          21 :       perLineHasKey.insert(recipient, !keys.isEmpty());</span></span>
+<span id="L183"><span class="lineNum">     183</span>              :       resolved += keys;</span>
+<span id="L184"><span class="lineNum">     184</span>              :     }</span>
+<span id="L185"><span class="lineNum">     185</span>              :   }</span>
+<span id="L186"><span class="lineNum">     186</span> <span class="tlaGNC">          59 :   for (UserInfo &amp;user : m_userList) {</span></span>
+<span id="L187"><span class="lineNum">     187</span> <span class="tlaGNC">          39 :     if (std::any_of(resolved.cbegin(), resolved.cend(),</span></span>
+<span id="L188"><span class="lineNum">     188</span>              :                     [&amp;user](const UserInfo &amp;key) {</span>
+<span id="L189"><span class="lineNum">     189</span> <span class="tlaGNC">          49 :                       return key.key_id == user.key_id;</span></span>
+<span id="L190"><span class="lineNum">     190</span>              :                     })) {</span>
+<span id="L191"><span class="lineNum">     191</span> <span class="tlaGNC">          29 :       user.enabled = true;</span></span>
+<span id="L192"><span class="lineNum">     192</span>              :     }</span>
+<span id="L193"><span class="lineNum">     193</span>              :   }</span>
+<span id="L194"><span class="lineNum">     194</span>              :   // Only what gpg itself cannot find is reported missing. The fallback's</span>
+<span id="L195"><span class="lineNum">     195</span>              :   // per-line answer, when it has one, is gpg's own verdict for that line and</span>
+<span id="L196"><span class="lineNum">     196</span>              :   // decides it outright. Otherwise the heuristic match is a fast path (a</span>
+<span id="L197"><span class="lineNum">     197</span>              :   // secondary UID or a subkey ID resolves in gpg without showing in what it</span>
+<span id="L198"><span class="lineNum">     198</span>              :   // lists), and a per-line gpg call settles anything it does not catch. Taking</span>
+<span id="L199"><span class="lineNum">     199</span>              :   // the cached answer first also keeps a genuinely unreadable line (&quot;0x&quot;)</span>
+<span id="L200"><span class="lineNum">     200</span>              :   // reported missing even when a resolved key's UID happens to contain it, so</span>
+<span id="L201"><span class="lineNum">     201</span>              :   // the heuristic answersTo() would otherwise match.</span>
+<span id="L202"><span class="lineNum">     202</span> <span class="tlaGNC">          70 :   for (const QString &amp;recipient : recipients) {</span></span>
+<span id="L203"><span class="lineNum">     203</span>              :     bool found = false;</span>
+<span id="L204"><span class="lineNum">     204</span> <span class="tlaGNC">          50 :     const auto cached = perLineHasKey.constFind(recipient);</span></span>
+<span id="L205"><span class="lineNum">     205</span>              :     if (cached != perLineHasKey.constEnd()) {</span>
+<span id="L206"><span class="lineNum">     206</span> <span class="tlaGNC">          21 :       found = cached.value();</span></span>
+<span id="L207"><span class="lineNum">     207</span>              :     } else {</span>
+<span id="L208"><span class="lineNum">     208</span> <span class="tlaGNC">          29 :       found = std::any_of(resolved.cbegin(), resolved.cend(),</span></span>
+<span id="L209"><span class="lineNum">     209</span>              :                           [&amp;recipient](const UserInfo &amp;key) {</span>
+<span id="L210"><span class="lineNum">     210</span> <span class="tlaGNC">          35 :                             return answersTo(key, recipient);</span></span>
+<span id="L211"><span class="lineNum">     211</span>              :                           });</span>
+<span id="L212"><span class="lineNum">     212</span> <span class="tlaGNC">          29 :       if (!found &amp;&amp; lookups++ &lt; kMaxLookups) {</span></span>
+<span id="L213"><span class="lineNum">     213</span> <span class="tlaGNC">           5 :         found = !m_pass-&gt;listKeys(recipient).isEmpty();</span></span>
+<span id="L214"><span class="lineNum">     214</span>              :       }</span>
+<span id="L215"><span class="lineNum">     215</span>              :     }</span>
+<span id="L216"><span class="lineNum">     216</span> <span class="tlaGNC">          50 :     if (!found) {</span></span>
+<span id="L217"><span class="lineNum">     217</span> <span class="tlaGNC">          26 :       UserInfo missing;</span></span>
+<span id="L218"><span class="lineNum">     218</span> <span class="tlaGNC">          26 :       missing.enabled = true;</span></span>
+<span id="L219"><span class="lineNum">     219</span> <span class="tlaGNC">          26 :       missing.key_id = recipient;</span></span>
+<span id="L220"><span class="lineNum">     220</span> <span class="tlaGNC">          52 :       missing.name = &quot; ?? &quot; + tr(&quot;Key not found in keyring&quot;);</span></span>
+<span id="L221"><span class="lineNum">     221</span>              :       m_userList.append(missing);</span>
+<span id="L222"><span class="lineNum">     222</span> <span class="tlaGNC">          26 :     }</span></span>
+<span id="L223"><span class="lineNum">     223</span>              :   }</span>
+<span id="L224"><span class="lineNum">     224</span> <span class="tlaGNC">          20 : }</span></span>
+<span id="L225"><span class="lineNum">     225</span>              : </span>
+<span id="L226"><span class="lineNum">     226</span> <span class="tlaGNC">          41 : void UsersDialog::loadRecipients() {</span></span>
+<span id="L227"><span class="lineNum">     227</span>              :   // A store that had no list when it was chosen (a new profile): a list</span>
+<span id="L228"><span class="lineNum">     228</span>              :   // that appeared since is nobody's choice, and was read under the active</span>
+<span id="L229"><span class="lineNum">     229</span>              :   // backend's signing policy, not the new profile's.</span>
+<span id="L230"><span class="lineNum">     230</span> <span class="tlaGNC">          41 :   if (m_preselect == Preselect::Nothing) {</span></span>
+<span id="L231"><span class="lineNum">     231</span> <span class="tlaGNC">           3 :     return;</span></span>
+<span id="L232"><span class="lineNum">     232</span>              :   }</span>
+<span id="L233"><span class="lineNum">     233</span>              :   // Through the backend: with a signing key only a verified list may be</span>
+<span id="L234"><span class="lineNum">     234</span>              :   // preselected, since OK signs whatever is selected.</span>
+<span id="L235"><span class="lineNum">     235</span>              :   const Pass::RecipientsForEditing loaded =</span>
+<span id="L236"><span class="lineNum">     236</span> <span class="tlaGNC">          38 :       m_pass-&gt;recipientsForEditing(m_dir, m_passStore);</span></span>
+<span id="L237"><span class="lineNum">     237</span> <span class="tlaGNC">          38 :   if (!loaded.warning.isEmpty()) {</span></span>
+<span id="L238"><span class="lineNum">     238</span> <span class="tlaGNC">           7 :     showRecipientWarning(loaded.warning);</span></span>
+<span id="L239"><span class="lineNum">     239</span>              :   }</span>
+<span id="L240"><span class="lineNum">     240</span>              :   // A folder without .gpg-id (new store, new profile) has no recipients yet;</span>
+<span id="L241"><span class="lineNum">     241</span>              :   // listKeys() with no filter would return the whole keyring, preselected.</span>
+<span id="L242"><span class="lineNum">     242</span> <span class="tlaGNC">          38 :   if (loaded.state != Pass::RecipientsForEditing::State::Rejected &amp;&amp;</span></span>
+<span id="L243"><span class="lineNum">     243</span>              :       !loaded.recipients.isEmpty()) {</span>
+<span id="L244"><span class="lineNum">     244</span> <span class="tlaGNC">          20 :     selectRecipients(loaded.recipients);</span></span>
+<span id="L245"><span class="lineNum">     245</span>              :   }</span>
+<span id="L246"><span class="lineNum">     246</span>              : }</span>
+<span id="L247"><span class="lineNum">     247</span>              : </span>
+<span id="L248"><span class="lineNum">     248</span> <span class="tlaGNC">          84 : UsersDialog::~UsersDialog() = default;</span></span>
+<span id="L249"><span class="lineNum">     249</span>              : </span>
+<span id="L250"><span class="lineNum">     250</span> <span class="tlaGNC">           8 : void UsersDialog::accept() {</span></span>
+<span id="L251"><span class="lineNum">     251</span> <span class="tlaGNC">           8 :   if (!hasSelection()) {</span></span>
+<span id="L252"><span class="lineNum">     252</span>              :     // Nothing to encrypt to: an empty .gpg-id would make every insert fail</span>
+<span id="L253"><span class="lineNum">     253</span>              :     // and the wizard never offers this dialog again once the file exists.</span>
+<span id="L254"><span class="lineNum">     254</span>              :     return;</span>
+<span id="L255"><span class="lineNum">     255</span>              :   }</span>
+<span id="L256"><span class="lineNum">     256</span> <span class="tlaGNC">           6 :   if (m_initOnAccept) {</span></span>
+<span id="L257"><span class="lineNum">     257</span> <span class="tlaGNC">           6 :     m_pass-&gt;Init(m_dir, m_userList);</span></span>
+<span id="L258"><span class="lineNum">     258</span>              :   }</span>
+<span id="L259"><span class="lineNum">     259</span>              : </span>
+<span id="L260"><span class="lineNum">     260</span> <span class="tlaGNC">           6 :   QDialog::accept();</span></span>
+<span id="L261"><span class="lineNum">     261</span>              : }</span>
+<span id="L262"><span class="lineNum">     262</span>              : </span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">         122 : auto UsersDialog::hasSelection() const -&gt; bool {</span></span>
+<span id="L264"><span class="lineNum">     264</span>              :   return std::any_of(m_userList.cbegin(), m_userList.cend(),</span>
+<span id="L265"><span class="lineNum">     265</span> <span class="tlaGNC">         189 :                      [](const UserInfo &amp;user) { return user.enabled; });</span></span>
+<span id="L266"><span class="lineNum">     266</span>              : }</span>
+<span id="L267"><span class="lineNum">     267</span>              : </span>
+<span id="L268"><span class="lineNum">     268</span> <span class="tlaGNC">         111 : void UsersDialog::updateOkButton() {</span></span>
+<span id="L269"><span class="lineNum">     269</span> <span class="tlaGNC">         111 :   if (auto *ok = ui-&gt;buttonBox-&gt;button(QDialogButtonBox::Ok)) {</span></span>
+<span id="L270"><span class="lineNum">     270</span> <span class="tlaGNC">         111 :     ok-&gt;setEnabled(hasSelection());</span></span>
+<span id="L271"><span class="lineNum">     271</span>              :   }</span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         111 : }</span></span>
+<span id="L273"><span class="lineNum">     273</span>              : </span>
+<span id="L274"><span class="lineNum">     274</span> <span class="tlaGNC">           1 : void UsersDialog::keyPressEvent(QKeyEvent *event) {</span></span>
+<span id="L275"><span class="lineNum">     275</span> <span class="tlaGNC">           1 :   switch (event-&gt;key()) {</span></span>
+<span id="L276"><span class="lineNum">     276</span> <span class="tlaGNC">           1 :   case Qt::Key_Escape:</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">           1 :     ui-&gt;lineEdit-&gt;clear();</span></span>
+<span id="L278"><span class="lineNum">     278</span> <span class="tlaGNC">           1 :     break;</span></span>
+<span id="L279"><span class="lineNum">     279</span>              :   default:</span>
+<span id="L280"><span class="lineNum">     280</span>              :     break;</span>
+<span id="L281"><span class="lineNum">     281</span>              :   }</span>
+<span id="L282"><span class="lineNum">     282</span> <span class="tlaGNC">           1 : }</span></span>
+<span id="L283"><span class="lineNum">     283</span>              : </span>
+<span id="L284"><span class="lineNum">     284</span> <span class="tlaGNC">         123 : void UsersDialog::itemChange(QListWidgetItem *item) {</span></span>
+<span id="L285"><span class="lineNum">     285</span> <span class="tlaGNC">         123 :   if (!item) {</span></span>
+<span id="L286"><span class="lineNum">     286</span> <span class="tlaGNC">          74 :     return;</span></span>
+<span id="L287"><span class="lineNum">     287</span>              :   }</span>
+<span id="L288"><span class="lineNum">     288</span> <span class="tlaGNC">         123 :   bool ok = false;</span></span>
+<span id="L289"><span class="lineNum">     289</span> <span class="tlaGNC">         123 :   const int index = item-&gt;data(Qt::UserRole).toInt(&amp;ok);</span></span>
+<span id="L290"><span class="lineNum">     290</span> <span class="tlaGNC">         123 :   if (!ok) {</span></span>
+<span id="L291"><span class="lineNum">     291</span> <span class="tlaGNC">         146 :     qCWarning(lcQtPass)</span></span>
+<span id="L292"><span class="lineNum">     292</span> <span class="tlaGNC">          73 :         &lt;&lt; &quot;UsersDialog::itemChange: invalid user index data for item&quot;;</span></span>
+<span id="L293"><span class="lineNum">     293</span> <span class="tlaGNC">          73 :     return;</span></span>
+<span id="L294"><span class="lineNum">     294</span>              :   }</span>
+<span id="L295"><span class="lineNum">     295</span> <span class="tlaGNC">          50 :   if (index &lt; 0 || index &gt;= m_userList.size()) {</span></span>
+<span id="L296"><span class="lineNum">     296</span> <span class="tlaGNC">           2 :     qCWarning(lcQtPass) &lt;&lt; &quot;UsersDialog::itemChange: user index out of range:&quot;</span></span>
+<span id="L297"><span class="lineNum">     297</span> <span class="tlaGNC">           1 :                         &lt;&lt; index &lt;&lt; &quot;valid range is [0,&quot;</span></span>
+<span id="L298"><span class="lineNum">     298</span> <span class="tlaGNC">           1 :                         &lt;&lt; (m_userList.size() - 1) &lt;&lt; &quot;]&quot;;</span></span>
+<span id="L299"><span class="lineNum">     299</span> <span class="tlaGNC">           1 :     return;</span></span>
+<span id="L300"><span class="lineNum">     300</span>              :   }</span>
+<span id="L301"><span class="lineNum">     301</span> <span class="tlaGNC">          49 :   m_userList[index].enabled = item-&gt;checkState() == Qt::Checked;</span></span>
+<span id="L302"><span class="lineNum">     302</span> <span class="tlaGNC">          49 :   updateOkButton();</span></span>
+<span id="L303"><span class="lineNum">     303</span>              : }</span>
+<span id="L304"><span class="lineNum">     304</span>              : </span>
+<span id="L305"><span class="lineNum">     305</span> <span class="tlaGNC">          62 : void UsersDialog::populateList(const QString &amp;filter) {</span></span>
+<span id="L306"><span class="lineNum">     306</span>              :   // Invalidate cached datetime so expiry checks use fresh current time</span>
+<span id="L307"><span class="lineNum">     307</span> <span class="tlaGNC">          62 :   m_cachedDateTimeValid = false;</span></span>
+<span id="L308"><span class="lineNum">     308</span>              : </span>
+<span id="L309"><span class="lineNum">     309</span> <span class="tlaGNC">          62 :   QString patternString = &quot;*&quot; + filter + &quot;*&quot;;</span></span>
+<span id="L310"><span class="lineNum">     310</span> <span class="tlaGNC">          62 :   if (m_cachedPatternString != patternString) {</span></span>
+<span id="L311"><span class="lineNum">     311</span>              :     QRegularExpression re(</span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         104 :         QRegularExpression::wildcardToRegularExpression(patternString),</span></span>
+<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">          52 :         QRegularExpression::CaseInsensitiveOption);</span></span>
+<span id="L314"><span class="lineNum">     314</span> <span class="tlaGNC">          52 :     if (re.isValid()) {</span></span>
+<span id="L315"><span class="lineNum">     315</span> <span class="tlaGNC">          52 :       m_cachedNameFilter = re;</span></span>
+<span id="L316"><span class="lineNum">     316</span> <span class="tlaGNC">          52 :       m_cachedPatternString = patternString;</span></span>
+<span id="L317"><span class="lineNum">     317</span>              :     }</span>
+<span id="L318"><span class="lineNum">     318</span> <span class="tlaGNC">          52 :   }</span></span>
+<span id="L319"><span class="lineNum">     319</span> <span class="tlaGNC">          62 :   const QRegularExpression &amp;nameFilter = m_cachedNameFilter;</span></span>
+<span id="L320"><span class="lineNum">     320</span> <span class="tlaGNC">          62 :   ui-&gt;listWidget-&gt;clear();</span></span>
+<span id="L321"><span class="lineNum">     321</span>              : </span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">         223 :   for (int i = 0; i &lt; m_userList.size(); ++i) {</span></span>
+<span id="L323"><span class="lineNum">     323</span>              :     const auto &amp;user = m_userList.at(i);</span>
+<span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">         161 :     if (!passesFilter(user, filter, nameFilter)) {</span></span>
+<span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">          23 :       continue;</span></span>
+<span id="L326"><span class="lineNum">     326</span>              :     }</span>
+<span id="L327"><span class="lineNum">     327</span>              : </span>
+<span id="L328"><span class="lineNum">     328</span> <span class="tlaGNC">         138 :     auto *item = new QListWidgetItem(buildUserText(user), ui-&gt;listWidget);</span></span>
+<span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">         138 :     applyUserStyling(item, user);</span></span>
+<span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">         204 :     item-&gt;setCheckState(user.enabled ? Qt::Checked : Qt::Unchecked);</span></span>
+<span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">         138 :     item-&gt;setData(Qt::UserRole, QVariant::fromValue(i));</span></span>
+<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">         138 :     ui-&gt;listWidget-&gt;addItem(item);</span></span>
+<span id="L333"><span class="lineNum">     333</span>              :   }</span>
+<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">          62 :   updateOkButton();</span></span>
+<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">          62 : }</span></span>
+<span id="L336"><span class="lineNum">     336</span>              : </span>
+<span id="L337"><span class="lineNum">     337</span> <span class="tlaGNC">         161 : bool UsersDialog::passesFilter(const UserInfo &amp;user, const QString &amp;filter,</span></span>
+<span id="L338"><span class="lineNum">     338</span>              :                                const QRegularExpression &amp;nameFilter) const {</span>
+<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">         171 :   if (!filter.isEmpty() &amp;&amp; !nameFilter.match(user.name).hasMatch()) {</span></span>
+<span id="L340"><span class="lineNum">     340</span>              :     return false;</span>
+<span id="L341"><span class="lineNum">     341</span>              :   }</span>
+<span id="L342"><span class="lineNum">     342</span>              :   // A ticked key is one the folder is encrypted to: it is shown whatever</span>
+<span id="L343"><span class="lineNum">     343</span>              :   // its state, or an expired or missing recipient stays in .gpg-id unseen and</span>
+<span id="L344"><span class="lineNum">     344</span>              :   // cannot be unticked. &quot;Show unusable keys&quot; is about keys to add.</span>
+<span id="L345"><span class="lineNum">     345</span> <span class="tlaGNC">         151 :   if (user.enabled || ui-&gt;checkBox-&gt;isChecked()) {</span></span>
+<span id="L346"><span class="lineNum">     346</span> <span class="tlaGNC">          81 :     return true;</span></span>
+<span id="L347"><span class="lineNum">     347</span>              :   }</span>
+<span id="L348"><span class="lineNum">     348</span> <span class="tlaGNC">          62 :   return user.isValid() &amp;&amp; !isUserExpired(user);</span></span>
+<span id="L349"><span class="lineNum">     349</span>              : }</span>
+<span id="L350"><span class="lineNum">     350</span>              : </span>
+<span id="L351"><span class="lineNum">     351</span> <span class="tlaGNC">         200 : auto UsersDialog::isUserExpired(const UserInfo &amp;user) const -&gt; bool {</span></span>
+<span id="L352"><span class="lineNum">     352</span> <span class="tlaGNC">         200 :   if (!m_cachedDateTimeValid) {</span></span>
+<span id="L353"><span class="lineNum">     353</span> <span class="tlaGNC">          60 :     m_cachedCurrentDateTime = QDateTime::currentDateTime();</span></span>
+<span id="L354"><span class="lineNum">     354</span> <span class="tlaGNC">          60 :     m_cachedDateTimeValid = true;</span></span>
+<span id="L355"><span class="lineNum">     355</span>              :   }</span>
+<span id="L356"><span class="lineNum">     356</span>              :   // gpg marks a key it already judged expired with validity 'e'.</span>
+<span id="L357"><span class="lineNum">     357</span> <span class="tlaGNC">         398 :   return user.validity == 'e' ||</span></span>
+<span id="L358"><span class="lineNum">     358</span> <span class="tlaGNC">         207 :          (user.expiry.isValid() &amp;&amp; m_cachedCurrentDateTime &gt; user.expiry);</span></span>
+<span id="L359"><span class="lineNum">     359</span>              : }</span>
+<span id="L360"><span class="lineNum">     360</span>              : </span>
+<span id="L361"><span class="lineNum">     361</span> <span class="tlaGNC">         138 : QString UsersDialog::buildUserText(const UserInfo &amp;user) const {</span></span>
+<span id="L362"><span class="lineNum">     362</span> <span class="tlaGNC">         138 :   QString text = user.name + &quot;\n&quot; + user.key_id;</span></span>
+<span id="L363"><span class="lineNum">     363</span> <span class="tlaGNC">         138 :   if (user.created.isValid()) {</span></span>
+<span id="L364"><span class="lineNum">     364</span> <span class="tlaGNC">         222 :     text += &quot; &quot; + tr(&quot;created&quot;) + &quot; &quot; +</span></span>
+<span id="L365"><span class="lineNum">     365</span> <span class="tlaGNC">         333 :             QLocale::system().toString(user.created, QLocale::ShortFormat);</span></span>
+<span id="L366"><span class="lineNum">     366</span>              :   }</span>
+<span id="L367"><span class="lineNum">     367</span> <span class="tlaGNC">         138 :   if (user.expiry.isValid()) {</span></span>
+<span id="L368"><span class="lineNum">     368</span> <span class="tlaGNC">          12 :     text += &quot; &quot; + tr(&quot;expires&quot;) + &quot; &quot; +</span></span>
+<span id="L369"><span class="lineNum">     369</span> <span class="tlaGNC">          18 :             QLocale::system().toString(user.expiry, QLocale::ShortFormat);</span></span>
+<span id="L370"><span class="lineNum">     370</span>              :   }</span>
+<span id="L371"><span class="lineNum">     371</span> <span class="tlaGNC">         138 :   return text;</span></span>
+<span id="L372"><span class="lineNum">     372</span>              : }</span>
+<span id="L373"><span class="lineNum">     373</span>              : </span>
+<span id="L374"><span class="lineNum">     374</span> <span class="tlaGNC">         138 : void UsersDialog::applyUserStyling(QListWidgetItem *item,</span></span>
+<span id="L375"><span class="lineNum">     375</span>              :                                    const UserInfo &amp;user) const {</span>
+<span id="L376"><span class="lineNum">     376</span> <span class="tlaGNC">         138 :   const QString originalText = item-&gt;text();</span></span>
+<span id="L377"><span class="lineNum">     377</span>              :   // Status badge first: an own key can be expired too, and then the marker</span>
+<span id="L378"><span class="lineNum">     378</span>              :   // matters more than the &quot;you can decrypt with this&quot; colour.</span>
+<span id="L379"><span class="lineNum">     379</span>              :   bool badged = true;</span>
+<span id="L380"><span class="lineNum">     380</span>              :   // Expired before invalid: gpg gives an expired key validity 'e', which is</span>
+<span id="L381"><span class="lineNum">     381</span>              :   // not a valid one, and &quot;expired&quot; says what to do about it.</span>
+<span id="L382"><span class="lineNum">     382</span> <span class="tlaGNC">         138 :   if (isUserExpired(user)) {</span></span>
+<span id="L383"><span class="lineNum">     383</span>              :     // A lone dark-red foreground is unreadable on dark themes, and gpg</span>
+<span id="L384"><span class="lineNum">     384</span>              :     // refuses to encrypt to expired keys anyway.</span>
+<span id="L385"><span class="lineNum">     385</span> <span class="tlaGNC">           6 :     item-&gt;setBackground(Qt::darkRed);</span></span>
+<span id="L386"><span class="lineNum">     386</span> <span class="tlaGNC">           6 :     item-&gt;setForeground(Qt::white);</span></span>
+<span id="L387"><span class="lineNum">     387</span> <span class="tlaGNC">          12 :     item-&gt;setText(tr(&quot;[EXPIRED] &quot;) + originalText);</span></span>
+<span id="L388"><span class="lineNum">     388</span>              :   } else if (!user.isValid()) {</span>
+<span id="L389"><span class="lineNum">     389</span> <span class="tlaGNC">          30 :     item-&gt;setBackground(Qt::darkRed);</span></span>
+<span id="L390"><span class="lineNum">     390</span> <span class="tlaGNC">          30 :     item-&gt;setForeground(Qt::white);</span></span>
+<span id="L391"><span class="lineNum">     391</span> <span class="tlaGNC">          60 :     item-&gt;setText(tr(&quot;[INVALID] &quot;) + originalText);</span></span>
+<span id="L392"><span class="lineNum">     392</span> <span class="tlaGNC">         102 :   } else if (!user.fullyValid()) {</span></span>
+<span id="L393"><span class="lineNum">     393</span> <span class="tlaGNC">           7 :     item-&gt;setBackground(Qt::darkYellow);</span></span>
+<span id="L394"><span class="lineNum">     394</span> <span class="tlaGNC">           7 :     item-&gt;setForeground(Qt::white);</span></span>
+<span id="L395"><span class="lineNum">     395</span> <span class="tlaGNC">          14 :     item-&gt;setText(tr(&quot;[PARTIAL] &quot;) + originalText);</span></span>
+<span id="L396"><span class="lineNum">     396</span>              :   } else {</span>
+<span id="L397"><span class="lineNum">     397</span> <span class="tlaGNC">          95 :     item-&gt;setText(originalText);</span></span>
+<span id="L398"><span class="lineNum">     398</span>              :     badged = false;</span>
+<span id="L399"><span class="lineNum">     399</span>              :   }</span>
+<span id="L400"><span class="lineNum">     400</span> <span class="tlaGNC">         138 :   if (user.have_secret) {</span></span>
+<span id="L401"><span class="lineNum">     401</span> <span class="tlaGNC">           7 :     if (!badged) {</span></span>
+<span id="L402"><span class="lineNum">     402</span> <span class="tlaGNC">          14 :       item-&gt;setForeground(QApplication::palette().color(QPalette::Link));</span></span>
+<span id="L403"><span class="lineNum">     403</span>              :     }</span>
+<span id="L404"><span class="lineNum">     404</span> <span class="tlaGNC">           7 :     QFont font = item-&gt;font();</span></span>
+<span id="L405"><span class="lineNum">     405</span>              :     font.setBold(true);</span>
+<span id="L406"><span class="lineNum">     406</span> <span class="tlaGNC">           7 :     item-&gt;setFont(font);</span></span>
+<span id="L407"><span class="lineNum">     407</span> <span class="tlaGNC">           7 :   }</span></span>
+<span id="L408"><span class="lineNum">     408</span> <span class="tlaGNC">         138 : }</span></span>
+<span id="L409"><span class="lineNum">     409</span>              : </span>
+<span id="L410"><span class="lineNum">     410</span> <span class="tlaGNC">          10 : void UsersDialog::on_lineEdit_textChanged(const QString &amp;filter) {</span></span>
+<span id="L411"><span class="lineNum">     411</span> <span class="tlaGNC">          10 :   populateList(filter);</span></span>
+<span id="L412"><span class="lineNum">     412</span> <span class="tlaGNC">          10 : }</span></span>
+<span id="L413"><span class="lineNum">     413</span>              : </span>
+<span id="L414"><span class="lineNum">     414</span> <span class="tlaGNC">          20 : void UsersDialog::on_checkBox_clicked() { populateList(ui-&gt;lineEdit-&gt;text()); }</span></span>
+<span id="L415"><span class="lineNum">     415</span>              : </span>
+<span id="L416"><span class="lineNum">     416</span> <span class="tlaGNC">           1 : void UsersDialog::selectImportedKey(const QString &amp;importedKey) {</span></span>
+<span id="L417"><span class="lineNum">     417</span>              :   // Suffixes shorter than 16 characters would give false positives.</span>
+<span id="L418"><span class="lineNum">     418</span> <span class="tlaGNC">           2 :   const auto sameKey = [&amp;importedKey](const QString &amp;keyId) {</span></span>
+<span id="L419"><span class="lineNum">     419</span> <span class="tlaGNC">           2 :     return (keyId.length() &gt;= 16 &amp;&amp;</span></span>
+<span id="L420"><span class="lineNum">     420</span> <span class="tlaGNC">           3 :             importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||</span></span>
+<span id="L421"><span class="lineNum">     421</span> <span class="tlaGNC">           2 :            (importedKey.length() &gt;= 16 &amp;&amp;</span></span>
+<span id="L422"><span class="lineNum">     422</span> <span class="tlaGNC">           1 :             keyId.endsWith(importedKey, Qt::CaseInsensitive));</span></span>
+<span id="L423"><span class="lineNum">     423</span> <span class="tlaGNC">           1 :   };</span></span>
+<span id="L424"><span class="lineNum">     424</span>              :   // The stored key_id, not the item text.</span>
+<span id="L425"><span class="lineNum">     425</span> <span class="tlaGNC">           2 :   for (int i = 0; i &lt; ui-&gt;listWidget-&gt;count(); ++i) {</span></span>
+<span id="L426"><span class="lineNum">     426</span> <span class="tlaGNC">           2 :     QListWidgetItem *item = ui-&gt;listWidget-&gt;item(i);</span></span>
+<span id="L427"><span class="lineNum">     427</span> <span class="tlaGNC">           2 :     bool ok = false;</span></span>
+<span id="L428"><span class="lineNum">     428</span> <span class="tlaGNC">           2 :     const int idx = item != nullptr ? item-&gt;data(Qt::UserRole).toInt(&amp;ok) : -1;</span></span>
+<span id="L429"><span class="lineNum">     429</span> <span class="tlaGNC">           4 :     if (ok &amp;&amp; idx &gt;= 0 &amp;&amp; idx &lt; m_userList.size() &amp;&amp;</span></span>
+<span id="L430"><span class="lineNum">     430</span> <span class="tlaGNC">           4 :         !m_userList[idx].key_id.isEmpty() &amp;&amp; sameKey(m_userList[idx].key_id)) {</span></span>
+<span id="L431"><span class="lineNum">     431</span> <span class="tlaGNC">           1 :       ui-&gt;listWidget-&gt;setCurrentItem(item);</span></span>
+<span id="L432"><span class="lineNum">     432</span> <span class="tlaGNC">           1 :       return;</span></span>
+<span id="L433"><span class="lineNum">     433</span>              :     }</span>
+<span id="L434"><span class="lineNum">     434</span>              :   }</span>
+<span id="L435"><span class="lineNum">     435</span>              : }</span>
+<span id="L436"><span class="lineNum">     436</span>              : </span>
+<span id="L437"><span class="lineNum">     437</span> <span class="tlaGNC">           2 : void UsersDialog::on_importKeyButton_clicked() {</span></span>
+<span id="L438"><span class="lineNum">     438</span> <span class="tlaGNC">           2 :   ImportKeyDialog dialog(m_gpgExe, this);</span></span>
+<span id="L439"><span class="lineNum">     439</span> <span class="tlaGNC">           2 :   if (dialog.exec() != QDialog::Accepted) {</span></span>
+<span id="L440"><span class="lineNum">     440</span>              :     return;</span>
+<span id="L441"><span class="lineNum">     441</span>              :   }</span>
+<span id="L442"><span class="lineNum">     442</span>              : </span>
+<span id="L443"><span class="lineNum">     443</span>              :   // Non-empty after Accepted, but an empty id would make the endsWith()</span>
+<span id="L444"><span class="lineNum">     444</span>              :   // below match the first listed key.</span>
+<span id="L445"><span class="lineNum">     445</span> <span class="tlaGNC">           1 :   const QString importedKey = dialog.importedKeyId();</span></span>
+<span id="L446"><span class="lineNum">     446</span> <span class="tlaGNC">           1 :   if (importedKey.isEmpty()) {</span></span>
+<span id="L447"><span class="lineNum">     447</span>              :     return;</span>
+<span id="L448"><span class="lineNum">     448</span>              :   }</span>
+<span id="L449"><span class="lineNum">     449</span>              : </span>
+<span id="L450"><span class="lineNum">     450</span>              :   // loadGpgKeys() rebuilds the key list from the keyring and drops every tick.</span>
+<span id="L451"><span class="lineNum">     451</span>              :   // Remember which recipients were selected (the .gpg-id list and the user's</span>
+<span id="L452"><span class="lineNum">     452</span>              :   // own ticks, including any &quot;key not found&quot; rows) and re-apply them after, so</span>
+<span id="L453"><span class="lineNum">     453</span>              :   // importing a key does not silently remove the other recipients.</span>
+<span id="L454"><span class="lineNum">     454</span> <span class="tlaGNC">           1 :   QStringList selected;</span></span>
+<span id="L455"><span class="lineNum">     455</span> <span class="tlaGNC">           2 :   for (const UserInfo &amp;user : std::as_const(m_userList)) {</span></span>
+<span id="L456"><span class="lineNum">     456</span> <span class="tlaGNC">           1 :     if (user.enabled) {</span></span>
+<span id="L457"><span class="lineNum">     457</span> <span class="tlaGNC">           1 :       selected.append(user.key_id);</span></span>
+<span id="L458"><span class="lineNum">     458</span>              :     }</span>
+<span id="L459"><span class="lineNum">     459</span>              :   }</span>
+<span id="L460"><span class="lineNum">     460</span>              : </span>
+<span id="L461"><span class="lineNum">     461</span> <span class="tlaGNC">           1 :   if (!loadGpgKeys()) {</span></span>
+<span id="L462"><span class="lineNum">     462</span>              :     return;</span>
+<span id="L463"><span class="lineNum">     463</span>              :   }</span>
+<span id="L464"><span class="lineNum">     464</span>              : </span>
+<span id="L465"><span class="lineNum">     465</span>              :   // Re-apply the remembered selection. Most saved identifiers are a key ID that</span>
+<span id="L466"><span class="lineNum">     466</span>              :   // is in the rebuilt list, so match those exactly first (no gpg lookup). An</span>
+<span id="L467"><span class="lineNum">     467</span>              :   // identifier that does not match a row is one that was listed as &quot;key not</span>
+<span id="L468"><span class="lineNum">     468</span>              :   // found&quot; - a short ID or email that gpg could not resolve, or whose key has</span>
+<span id="L469"><span class="lineNum">     469</span>              :   // just been imported and now shows under its fingerprint. Hand those to</span>
+<span id="L470"><span class="lineNum">     470</span>              :   // selectRecipients(), which resolves each against the refreshed keyring,</span>
+<span id="L471"><span class="lineNum">     471</span>              :   // ticks the matching row, and re-adds a &quot;key not found&quot; row for any that</span>
+<span id="L472"><span class="lineNum">     472</span>              :   // still does not resolve.</span>
+<span id="L473"><span class="lineNum">     473</span> <span class="tlaGNC">           1 :   QStringList unresolved;</span></span>
+<span id="L474"><span class="lineNum">     474</span> <span class="tlaGNC">           2 :   for (const QString &amp;keyId : std::as_const(selected)) {</span></span>
+<span id="L475"><span class="lineNum">     475</span>              :     bool matched = false;</span>
+<span id="L476"><span class="lineNum">     476</span> <span class="tlaGNC">           3 :     for (UserInfo &amp;user : m_userList) {</span></span>
+<span id="L477"><span class="lineNum">     477</span> <span class="tlaGNC">           2 :       if (user.key_id == keyId) {</span></span>
+<span id="L478"><span class="lineNum">     478</span> <span class="tlaGNC">           1 :         user.enabled = true;</span></span>
+<span id="L479"><span class="lineNum">     479</span>              :         matched = true;</span>
+<span id="L480"><span class="lineNum">     480</span>              :       }</span>
+<span id="L481"><span class="lineNum">     481</span>              :     }</span>
+<span id="L482"><span class="lineNum">     482</span> <span class="tlaGNC">           1 :     if (!matched) {</span></span>
+<span id="L483"><span class="lineNum">     483</span>              :       unresolved.append(keyId);</span>
+<span id="L484"><span class="lineNum">     484</span>              :     }</span>
+<span id="L485"><span class="lineNum">     485</span>              :   }</span>
+<span id="L486"><span class="lineNum">     486</span> <span class="tlaGNC">           1 :   if (!unresolved.isEmpty()) {</span></span>
+<span id="L487"><span class="lineNum">     487</span> <span class="tlaUNC">           0 :     selectRecipients(unresolved);</span></span>
+<span id="L488"><span class="lineNum">     488</span>              :   }</span>
+<span id="L489"><span class="lineNum">     489</span>              : </span>
+<span id="L490"><span class="lineNum">     490</span>              :   // Clear the filter so the just-imported key is visible. setText(&quot;&quot;) still</span>
+<span id="L491"><span class="lineNum">     491</span>              :   // emits textChanged once, so don't double-populate.</span>
+<span id="L492"><span class="lineNum">     492</span>              :   {</span>
+<span id="L493"><span class="lineNum">     493</span> <span class="tlaGNC">           1 :     const QSignalBlocker blocker(ui-&gt;lineEdit);</span></span>
+<span id="L494"><span class="lineNum">     494</span> <span class="tlaGNC">           1 :     ui-&gt;lineEdit-&gt;clear();</span></span>
+<span id="L495"><span class="lineNum">     495</span> <span class="tlaGNC">           1 :   }</span></span>
+<span id="L496"><span class="lineNum">     496</span> <span class="tlaGNC">           1 :   populateList(QString());</span></span>
+<span id="L497"><span class="lineNum">     497</span>              : </span>
+<span id="L498"><span class="lineNum">     498</span> <span class="tlaGNC">           1 :   selectImportedKey(importedKey);</span></span>
+<span id="L499"><span class="lineNum">     499</span> <span class="tlaGNC">           2 : }</span></span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

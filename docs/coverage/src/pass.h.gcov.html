@@ -1,0 +1,1017 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/pass.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - pass.h<span style="font-size: 80%;"> (source / <a href="pass.h.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryLo">69.2&nbsp;%</td>
+            <td class="headerCovTableEntry">13</td>
+            <td class="headerCovTableEntry">9</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">2</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Pass, the abstract password-store backend that RealPass and</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * ImitatePass implement, and gpgErrorMessage(), which turns gpg's stderr into</span>
+<span id="L7"><span class="lineNum">       7</span>              :  * a message for the user.</span>
+<span id="L8"><span class="lineNum">       8</span>              :  */</span>
+<span id="L9"><span class="lineNum">       9</span>              : #ifndef SRC_PASS_H_</span>
+<span id="L10"><span class="lineNum">      10</span>              : #define SRC_PASS_H_</span>
+<span id="L11"><span class="lineNum">      11</span>              : </span>
+<span id="L12"><span class="lineNum">      12</span>              : #include &quot;appsettings.h&quot;</span>
+<span id="L13"><span class="lineNum">      13</span>              : #include &quot;enums.h&quot;</span>
+<span id="L14"><span class="lineNum">      14</span>              : #include &quot;executor.h&quot;</span>
+<span id="L15"><span class="lineNum">      15</span>              : #include &quot;gpgidgeneration.h&quot;</span>
+<span id="L16"><span class="lineNum">      16</span>              : #include &quot;userinfo.h&quot;</span>
+<span id="L17"><span class="lineNum">      17</span>              : </span>
+<span id="L18"><span class="lineNum">      18</span>              : #include &lt;QProcess&gt;</span>
+<span id="L19"><span class="lineNum">      19</span>              : #include &lt;QProcessEnvironment&gt;</span>
+<span id="L20"><span class="lineNum">      20</span>              : #include &lt;QQueue&gt;</span>
+<span id="L21"><span class="lineNum">      21</span>              : #include &lt;QString&gt;</span>
+<span id="L22"><span class="lineNum">      22</span>              : #include &lt;QStringList&gt;</span>
+<span id="L23"><span class="lineNum">      23</span>              : </span>
+<span id="L24"><span class="lineNum">      24</span>              : class GpgIdSigner;</span>
+<span id="L25"><span class="lineNum">      25</span>              : #include &lt;cassert&gt;</span>
+<span id="L26"><span class="lineNum">      26</span>              : #include &lt;map&gt;</span>
+<span id="L27"><span class="lineNum">      27</span>              : #include &lt;optional&gt;</span>
+<span id="L28"><span class="lineNum">      28</span>              : </span>
+<span id="L29"><span class="lineNum">      29</span>              : /**</span>
+<span id="L30"><span class="lineNum">      30</span>              :  * @struct ResolvedGpgconfCommand</span>
+<span id="L31"><span class="lineNum">      31</span>              :  * @ingroup backend</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * @brief Represents a command invocation for gpgconf operations.</span>
+<span id="L33"><span class="lineNum">      33</span>              :  *</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * On Unix this is typically just the gpgconf binary; on Windows/WSL it may be</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * a wrapper such as wsl.exe with gpgconf as a prefixed argument.</span>
+<span id="L36"><span class="lineNum">      36</span>              :  */</span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           2 : struct ResolvedGpgconfCommand {</span></span>
+<span id="L38"><span class="lineNum">      38</span>              :   /**</span>
+<span id="L39"><span class="lineNum">      39</span>              :    * @brief Executable to run — may be a bare name resolved via PATH or a</span>
+<span id="L40"><span class="lineNum">      40</span>              :    * wrapper (e.g. wsl.exe) rather than a direct gpgconf path.</span>
+<span id="L41"><span class="lineNum">      41</span>              :    */</span>
+<span id="L42"><span class="lineNum">      42</span>              :   QString program;</span>
+<span id="L43"><span class="lineNum">      43</span>              :   /**</span>
+<span id="L44"><span class="lineNum">      44</span>              :    * @brief Full argv list, including any wrapper/prefix args followed by the</span>
+<span id="L45"><span class="lineNum">      45</span>              :    * actual gpgconf operation flags (e.g. [&quot;--kill&quot;, &quot;gpg-agent&quot;]).</span>
+<span id="L46"><span class="lineNum">      46</span>              :    */</span>
+<span id="L47"><span class="lineNum">      47</span>              :   QStringList arguments;</span>
+<span id="L48"><span class="lineNum">      48</span>              : };</span>
+<span id="L49"><span class="lineNum">      49</span>              : </span>
+<span id="L50"><span class="lineNum">      50</span>              : /**</span>
+<span id="L51"><span class="lineNum">      51</span>              :  * @class Pass</span>
+<span id="L52"><span class="lineNum">      52</span>              :  * @ingroup backend</span>
+<span id="L53"><span class="lineNum">      53</span>              :  * @brief Abstract base class for password store operations.</span>
+<span id="L54"><span class="lineNum">      54</span>              :  *</span>
+<span id="L55"><span class="lineNum">      55</span>              :  * Pass provides an abstraction layer for password management, supporting both</span>
+<span id="L56"><span class="lineNum">      56</span>              :  * the native 'pass' utility and gopass/imitation backends. It handles:</span>
+<span id="L57"><span class="lineNum">      57</span>              :  * - Password file operations (show, insert, remove, move, copy)</span>
+<span id="L58"><span class="lineNum">      58</span>              :  * - GPG key management and Git integration</span>
+<span id="L59"><span class="lineNum">      59</span>              :  * - OTP generation</span>
+<span id="L60"><span class="lineNum">      60</span>              :  * - Random password generation</span>
+<span id="L61"><span class="lineNum">      61</span>              :  *</span>
+<span id="L62"><span class="lineNum">      62</span>              :  * Subclasses must implement Git and password operations.</span>
+<span id="L63"><span class="lineNum">      63</span>              :  *</span>
+<span id="L64"><span class="lineNum">      64</span>              :  * Paths: the operations take a path relative to the store, or an absolute</span>
+<span id="L65"><span class="lineNum">      65</span>              :  * path spelled from the store as configured (`passStore`), as the store</span>
+<span id="L66"><span class="lineNum">      66</span>              :  * tree and the dialogs build them. The link checks, `pass` names and Git</span>
+<span id="L67"><span class="lineNum">      67</span>              :  * paths are worked out against that spelling. A path spelled through the</span>
+<span id="L68"><span class="lineNum">      68</span>              :  * target of a store root that is itself a link is not under the store as</span>
+<span id="L69"><span class="lineNum">      69</span>              :  * named. Init() places such a folder from its canonical path; the other</span>
+<span id="L70"><span class="lineNum">      70</span>              :  * operations would check only the entry itself for a link and give `pass`</span>
+<span id="L71"><span class="lineNum">      71</span>              :  * and Git `../` names, so callers must not hand one over. Resolving every</span>
+<span id="L72"><span class="lineNum">      72</span>              :  * link instead is no way out: a removal would then reach a link's target,</span>
+<span id="L73"><span class="lineNum">      73</span>              :  * not the link.</span>
+<span id="L74"><span class="lineNum">      74</span>              :  */</span>
+<span id="L75"><span class="lineNum">      75</span>              : class Pass : public QObject {</span>
+<span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">         232 :   Q_OBJECT</span></span>
+<span id="L77"><span class="lineNum">      77</span>              : </span>
+<span id="L78"><span class="lineNum">      78</span>              :   /** @brief Unused; kept from the time Pass tracked the running wrapper. */</span>
+<span id="L79"><span class="lineNum">      79</span>              :   bool wrapperRunning{false};</span>
+<span id="L80"><span class="lineNum">      80</span>              :   /**</span>
+<span id="L81"><span class="lineNum">      81</span>              :    * @brief The environment the store's processes run in: the system</span>
+<span id="L82"><span class="lineNum">      82</span>              :    * environment plus what updateEnv() sets (PASSWORD_STORE_ variables,</span>
+<span id="L83"><span class="lineNum">      83</span>              :    * GNUPGHOME, PATH additions, WSLENV). Read through storeEnvironment().</span>
+<span id="L84"><span class="lineNum">      84</span>              :    */</span>
+<span id="L85"><span class="lineNum">      85</span>              :   QProcessEnvironment env;</span>
+<span id="L86"><span class="lineNum">      86</span>              : </span>
+<span id="L87"><span class="lineNum">      87</span>              : protected:</span>
+<span id="L88"><span class="lineNum">      88</span>              :   /**</span>
+<span id="L89"><span class="lineNum">      89</span>              :    * @brief The environment QtPass runs the store's processes in.</span>
+<span id="L90"><span class="lineNum">      90</span>              :    *</span>
+<span id="L91"><span class="lineNum">      91</span>              :    * What updateEnv() made: the git ceiling and the PASSWORD_STORE_ variables</span>
+<span id="L92"><span class="lineNum">      92</span>              :    * QtPass's own environment does not carry. For blocking calls that start</span>
+<span id="L93"><span class="lineNum">      93</span>              :    * their own process.</span>
+<span id="L94"><span class="lineNum">      94</span>              :    * @return A copy of the environment.</span>
+<span id="L95"><span class="lineNum">      95</span>              :    */</span>
+<span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">         318 :   [[nodiscard]] auto storeEnvironment() const -&gt; QProcessEnvironment {</span></span>
+<span id="L97"><span class="lineNum">      97</span> <span class="tlaGNC">         318 :     return withCurrentGitPin(env);</span></span>
+<span id="L98"><span class="lineNum">      98</span>              :   }</span>
+<span id="L99"><span class="lineNum">      99</span>              : </span>
+<span id="L100"><span class="lineNum">     100</span>              :   /**</span>
+<span id="L101"><span class="lineNum">     101</span>              :    * @brief @p base with GIT_DIR and GIT_WORK_TREE as the store is now</span>
+<span id="L102"><span class="lineNum">     102</span>              :    * (Util::gitStoreVariables()), not as it was at updateEnv(): a `.git` that</span>
+<span id="L103"><span class="lineNum">     103</span>              :    * appeared or changed hands since then is judged when Git runs.</span>
+<span id="L104"><span class="lineNum">     104</span>              :    * @param base The environment to update.</span>
+<span id="L105"><span class="lineNum">     105</span>              :    * @return @p base, the two variables recomputed (left as they are when</span>
+<span id="L106"><span class="lineNum">     106</span>              :    *         the store keeps to a parent repository or there is none).</span>
+<span id="L107"><span class="lineNum">     107</span>              :    */</span>
+<span id="L108"><span class="lineNum">     108</span>              :   [[nodiscard]] auto withCurrentGitPin(QProcessEnvironment base) const</span>
+<span id="L109"><span class="lineNum">     109</span>              :       -&gt; QProcessEnvironment;</span>
+<span id="L110"><span class="lineNum">     110</span>              : </span>
+<span id="L111"><span class="lineNum">     111</span>              :   /**</span>
+<span id="L112"><span class="lineNum">     112</span>              :    * @brief Application settings snapshot injected at init() time.</span>
+<span id="L113"><span class="lineNum">     113</span>              :    *</span>
+<span id="L114"><span class="lineNum">     114</span>              :    * Populated by init(AppSettings) and valid for the lifetime of this backend</span>
+<span id="L115"><span class="lineNum">     115</span>              :    * instance. Subclasses read it in place of calling QtPassSettings directly.</span>
+<span id="L116"><span class="lineNum">     116</span>              :    */</span>
+<span id="L117"><span class="lineNum">     117</span>              :   AppSettings m_settings;</span>
+<span id="L118"><span class="lineNum">     118</span>              :   /**</span>
+<span id="L119"><span class="lineNum">     119</span>              :    * @brief Internal command executor for queuing and running subprocesses.</span>
+<span id="L120"><span class="lineNum">     120</span>              :    */</span>
+<span id="L121"><span class="lineNum">     121</span>              :   Executor exec;</span>
+<span id="L122"><span class="lineNum">     122</span>              : </span>
+<span id="L123"><span class="lineNum">     123</span>              :   /**</span>
+<span id="L124"><span class="lineNum">     124</span>              :    * @brief Alias for Enums::PROCESS used throughout this class.</span>
+<span id="L125"><span class="lineNum">     125</span>              :    */</span>
+<span id="L126"><span class="lineNum">     126</span>              :   using PROCESS = Enums::PROCESS;</span>
+<span id="L127"><span class="lineNum">     127</span>              : </span>
+<span id="L128"><span class="lineNum">     128</span>              : public:</span>
+<span id="L129"><span class="lineNum">     129</span>              :   /**</span>
+<span id="L130"><span class="lineNum">     130</span>              :    * @brief Construct a Pass instance.</span>
+<span id="L131"><span class="lineNum">     131</span>              :    */</span>
+<span id="L132"><span class="lineNum">     132</span>              :   Pass();</span>
+<span id="L133"><span class="lineNum">     133</span>              :   /**</span>
+<span id="L134"><span class="lineNum">     134</span>              :    * @brief Initialize the Pass instance with a settings snapshot.</span>
+<span id="L135"><span class="lineNum">     135</span>              :    * @param settings Application settings to use for this backend lifetime.</span>
+<span id="L136"><span class="lineNum">     136</span>              :    */</span>
+<span id="L137"><span class="lineNum">     137</span>              :   void init(const AppSettings &amp;settings);</span>
+<span id="L138"><span class="lineNum">     138</span>              :   /**</span>
+<span id="L139"><span class="lineNum">     139</span>              :    * @brief Check if GPG supports Ed25519 encryption.</span>
+<span id="L140"><span class="lineNum">     140</span>              :    * @param gpgExecutable Path to the gpg binary (defaults to &quot;gpg&quot;).</span>
+<span id="L141"><span class="lineNum">     141</span>              :    * @return true if Ed25519 is supported.</span>
+<span id="L142"><span class="lineNum">     142</span>              :    */</span>
+<span id="L143"><span class="lineNum">     143</span>              :   static bool gpgSupportsEd25519(const QString &amp;gpgExecutable = {});</span>
+<span id="L144"><span class="lineNum">     144</span>              :   /**</span>
+<span id="L145"><span class="lineNum">     145</span>              :    * @brief Get default key template for new GPG keys.</span>
+<span id="L146"><span class="lineNum">     146</span>              :    * @param gpgExecutable Path to the gpg binary (defaults to &quot;gpg&quot;).</span>
+<span id="L147"><span class="lineNum">     147</span>              :    * @return Default template string.</span>
+<span id="L148"><span class="lineNum">     148</span>              :    */</span>
+<span id="L149"><span class="lineNum">     149</span>              :   static QString getDefaultKeyTemplate(const QString &amp;gpgExecutable = {});</span>
+<span id="L150"><span class="lineNum">     150</span>              : </span>
+<span id="L151"><span class="lineNum">     151</span> <span class="tlaGNC">         222 :   ~Pass() override = default;</span></span>
+<span id="L152"><span class="lineNum">     152</span>              : </span>
+<span id="L153"><span class="lineNum">     153</span>              :   // Git operations</span>
+<span id="L154"><span class="lineNum">     154</span>              :   /**</span>
+<span id="L155"><span class="lineNum">     155</span>              :    * @brief Initialize Git repository in password store.</span>
+<span id="L156"><span class="lineNum">     156</span>              :    */</span>
+<span id="L157"><span class="lineNum">     157</span>              :   virtual void GitInit() = 0;</span>
+<span id="L158"><span class="lineNum">     158</span>              :   /**</span>
+<span id="L159"><span class="lineNum">     159</span>              :    * @brief Pull changes from remote Git repository.</span>
+<span id="L160"><span class="lineNum">     160</span>              :    */</span>
+<span id="L161"><span class="lineNum">     161</span>              :   virtual void GitPull() = 0;</span>
+<span id="L162"><span class="lineNum">     162</span>              :   /**</span>
+<span id="L163"><span class="lineNum">     163</span>              :    * @brief Pull with rebase from remote.</span>
+<span id="L164"><span class="lineNum">     164</span>              :    */</span>
+<span id="L165"><span class="lineNum">     165</span>              :   virtual void GitPull_b() = 0;</span>
+<span id="L166"><span class="lineNum">     166</span>              :   /**</span>
+<span id="L167"><span class="lineNum">     167</span>              :    * @brief Push changes to remote Git repository.</span>
+<span id="L168"><span class="lineNum">     168</span>              :    */</span>
+<span id="L169"><span class="lineNum">     169</span>              :   virtual void GitPush() = 0;</span>
+<span id="L170"><span class="lineNum">     170</span>              : </span>
+<span id="L171"><span class="lineNum">     171</span>              :   // Password operations</span>
+<span id="L172"><span class="lineNum">     172</span>              :   /**</span>
+<span id="L173"><span class="lineNum">     173</span>              :    * @brief Show decrypted password file.</span>
+<span id="L174"><span class="lineNum">     174</span>              :    * @param file Path to password file relative to store root.</span>
+<span id="L175"><span class="lineNum">     175</span>              :    */</span>
+<span id="L176"><span class="lineNum">     176</span>              :   virtual void Show(QString file) = 0;</span>
+<span id="L177"><span class="lineNum">     177</span>              :   /**</span>
+<span id="L178"><span class="lineNum">     178</span>              :    * @brief Insert or update password.</span>
+<span id="L179"><span class="lineNum">     179</span>              :    * @param file Path to password file.</span>
+<span id="L180"><span class="lineNum">     180</span>              :    * @param value Password content to store.</span>
+<span id="L181"><span class="lineNum">     181</span>              :    * @param force Overwrite existing file.</span>
+<span id="L182"><span class="lineNum">     182</span>              :    */</span>
+<span id="L183"><span class="lineNum">     183</span>              :   virtual void Insert(QString file, QString value, bool force) = 0;</span>
+<span id="L184"><span class="lineNum">     184</span>              :   /**</span>
+<span id="L185"><span class="lineNum">     185</span>              :    * @brief How many inserts have started queueing but not yet reported.</span>
+<span id="L186"><span class="lineNum">     186</span>              :    *</span>
+<span id="L187"><span class="lineNum">     187</span>              :    * One Insert() still in the command queue, or running, counts here until its</span>
+<span id="L188"><span class="lineNum">     188</span>              :    * PASS_INSERT result goes out. A PasswordDialog reads this just before its</span>
+<span id="L189"><span class="lineNum">     189</span>              :    * own Insert() so it can tell an earlier insert's report (which it is also</span>
+<span id="L190"><span class="lineNum">     190</span>              :    * connected to, once a hanging queue let it open while its save was still</span>
+<span id="L191"><span class="lineNum">     191</span>              :    * pending) from its own.</span>
+<span id="L192"><span class="lineNum">     192</span>              :    * @return The number of inserts awaiting their report.</span>
+<span id="L193"><span class="lineNum">     193</span>              :    */</span>
+<span id="L194"><span class="lineNum">     194</span> <span class="tlaGNC">          23 :   [[nodiscard]] auto insertsPending() const -&gt; int { return m_insertsPending; }</span></span>
+<span id="L195"><span class="lineNum">     195</span>              :   /**</span>
+<span id="L196"><span class="lineNum">     196</span>              :    * @brief Remove password file or directory.</span>
+<span id="L197"><span class="lineNum">     197</span>              :    * @param file Path to remove.</span>
+<span id="L198"><span class="lineNum">     198</span>              :    * @param isDir true if removing a directory.</span>
+<span id="L199"><span class="lineNum">     199</span>              :    */</span>
+<span id="L200"><span class="lineNum">     200</span>              :   virtual void Remove(QString file, bool isDir) = 0;</span>
+<span id="L201"><span class="lineNum">     201</span>              :   /**</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * @brief Move password file or directory.</span>
+<span id="L203"><span class="lineNum">     203</span>              :    * @param srcDir Source path.</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * @param dest Destination path.</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * @param force Overwrite existing.</span>
+<span id="L206"><span class="lineNum">     206</span>              :    */</span>
+<span id="L207"><span class="lineNum">     207</span>              :   virtual void Move(const QString srcDir, const QString dest,</span>
+<span id="L208"><span class="lineNum">     208</span>              :                     const bool force) = 0;</span>
+<span id="L209"><span class="lineNum">     209</span>              :   /**</span>
+<span id="L210"><span class="lineNum">     210</span>              :    * @brief Copy password file or directory.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    * @param srcDir Source path.</span>
+<span id="L212"><span class="lineNum">     212</span>              :    * @param dest Destination path.</span>
+<span id="L213"><span class="lineNum">     213</span>              :    * @param force Overwrite existing.</span>
+<span id="L214"><span class="lineNum">     214</span>              :    */</span>
+<span id="L215"><span class="lineNum">     215</span>              :   virtual void Copy(const QString srcDir, const QString dest,</span>
+<span id="L216"><span class="lineNum">     216</span>              :                     const bool force) = 0;</span>
+<span id="L217"><span class="lineNum">     217</span>              :   /**</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * @brief Initialize new password store.</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * @param path Root of password store.</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * @param users List of recipient GPG keys.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    */</span>
+<span id="L222"><span class="lineNum">     222</span>              :   virtual void Init(QString path, const QList&lt;UserInfo&gt; &amp;users) = 0;</span>
+<span id="L223"><span class="lineNum">     223</span>              :   /**</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * @brief Search password content for a pattern.</span>
+<span id="L225"><span class="lineNum">     225</span>              :    *</span>
+<span id="L226"><span class="lineNum">     226</span>              :    * Both backends decrypt each entry with gpg and match it in-process</span>
+<span id="L227"><span class="lineNum">     227</span>              :    * (NativeGrep), never through `pass grep`, so the pattern is one dialect</span>
+<span id="L228"><span class="lineNum">     228</span>              :    * for both: QRegularExpression, Perl-compatible (PCRE).</span>
+<span id="L229"><span class="lineNum">     229</span>              :    *</span>
+<span id="L230"><span class="lineNum">     230</span>              :    * @param pattern Search pattern, a Perl-compatible regular expression.</span>
+<span id="L231"><span class="lineNum">     231</span>              :    * @param caseInsensitive true for case-insensitive search.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    */</span>
+<span id="L233"><span class="lineNum">     233</span>              :   virtual void Grep(QString pattern, bool caseInsensitive) = 0;</span>
+<span id="L234"><span class="lineNum">     234</span>              : </span>
+<span id="L235"><span class="lineNum">     235</span>              :   /**</span>
+<span id="L236"><span class="lineNum">     236</span>              :    * @brief Generate random password.</span>
+<span id="L237"><span class="lineNum">     237</span>              :    * @param length Password length.</span>
+<span id="L238"><span class="lineNum">     238</span>              :    * @param charset Character set to use.</span>
+<span id="L239"><span class="lineNum">     239</span>              :    * @return Generated password.</span>
+<span id="L240"><span class="lineNum">     240</span>              :    */</span>
+<span id="L241"><span class="lineNum">     241</span>              :   virtual auto generatePassword(unsigned int length, const QString &amp;charset)</span>
+<span id="L242"><span class="lineNum">     242</span>              :       -&gt; QString;</span>
+<span id="L243"><span class="lineNum">     243</span>              : </span>
+<span id="L244"><span class="lineNum">     244</span>              :   // GPG operations</span>
+<span id="L245"><span class="lineNum">     245</span>              :   /**</span>
+<span id="L246"><span class="lineNum">     246</span>              :    * @brief Generate GPG keys using batch script.</span>
+<span id="L247"><span class="lineNum">     247</span>              :    * @param batch GPG batch script content.</span>
+<span id="L248"><span class="lineNum">     248</span>              :    */</span>
+<span id="L249"><span class="lineNum">     249</span>              :   void GenerateGPGKeys(QString batch);</span>
+<span id="L250"><span class="lineNum">     250</span>              :   /**</span>
+<span id="L251"><span class="lineNum">     251</span>              :    * @brief List GPG keys matching patterns.</span>
+<span id="L252"><span class="lineNum">     252</span>              :    * @param keystrings List of search patterns.</span>
+<span id="L253"><span class="lineNum">     253</span>              :    * @param secret Include secret keys.</span>
+<span id="L254"><span class="lineNum">     254</span>              :    * @return List of matching keys.</span>
+<span id="L255"><span class="lineNum">     255</span>              :    */</span>
+<span id="L256"><span class="lineNum">     256</span>              :   auto listKeys(QStringList keystrings, bool secret = false) -&gt; QList&lt;UserInfo&gt;;</span>
+<span id="L257"><span class="lineNum">     257</span>              :   /**</span>
+<span id="L258"><span class="lineNum">     258</span>              :    * @brief List GPG keys.</span>
+<span id="L259"><span class="lineNum">     259</span>              :    * @param keystring Search pattern.</span>
+<span id="L260"><span class="lineNum">     260</span>              :    * @param secret Include secret keys.</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * @return List of matching keys.</span>
+<span id="L262"><span class="lineNum">     262</span>              :    */</span>
+<span id="L263"><span class="lineNum">     263</span> <span class="tlaGNC">          86 :   auto listKeys(const QString &amp;keystring = &quot;&quot;, bool secret = false)</span></span>
+<span id="L264"><span class="lineNum">     264</span>              :       -&gt; QList&lt;UserInfo&gt;;</span>
+<span id="L265"><span class="lineNum">     265</span>              :   /**</span>
+<span id="L266"><span class="lineNum">     266</span>              :    * @brief Update environment for subprocesses.</span>
+<span id="L267"><span class="lineNum">     267</span>              :    */</span>
+<span id="L268"><span class="lineNum">     268</span>              :   void updateEnv();</span>
+<span id="L269"><span class="lineNum">     269</span>              : </span>
+<span id="L270"><span class="lineNum">     270</span>              :   /**</span>
+<span id="L271"><span class="lineNum">     271</span>              :    * @brief Most bytes of plaintext a gpg decryption may produce.</span>
+<span id="L272"><span class="lineNum">     272</span>              :    *</span>
+<span id="L273"><span class="lineNum">     273</span>              :    * An OpenPGP message is compressed, so a small entry in a shared store can</span>
+<span id="L274"><span class="lineNum">     274</span>              :    * decompress to gigabytes; gpg stops at this many (--max-output) instead of</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * filling QtPass's memory. Far above any real entry.</span>
+<span id="L276"><span class="lineNum">     276</span>              :    */</span>
+<span id="L277"><span class="lineNum">     277</span>              :   static constexpr qint64 kMaxPlaintextBytes = 64LL * 1024 * 1024;</span>
+<span id="L278"><span class="lineNum">     278</span>              : </span>
+<span id="L279"><span class="lineNum">     279</span>              :   /**</span>
+<span id="L280"><span class="lineNum">     280</span>              :    * @brief The gpg options that enforce kMaxPlaintextBytes.</span>
+<span id="L281"><span class="lineNum">     281</span>              :    * @return &quot;--max-output&quot; and the limit, for a gpg decryption's arguments.</span>
+<span id="L282"><span class="lineNum">     282</span>              :    */</span>
+<span id="L283"><span class="lineNum">     283</span>              :   static auto maxOutputArgs() -&gt; QStringList;</span>
+<span id="L284"><span class="lineNum">     284</span>              : </span>
+<span id="L285"><span class="lineNum">     285</span>              :   // Static helpers</span>
+<span id="L286"><span class="lineNum">     286</span>              :   /**</span>
+<span id="L287"><span class="lineNum">     287</span>              :    * @brief Resolve the gpgconf command to kill agents.</span>
+<span id="L288"><span class="lineNum">     288</span>              :    * @param gpgPath Path to gpg executable.</span>
+<span id="L289"><span class="lineNum">     289</span>              :    * @return Resolved command with program and arguments.</span>
+<span id="L290"><span class="lineNum">     290</span>              :    */</span>
+<span id="L291"><span class="lineNum">     291</span>              :   static auto resolveGpgconfCommand(const QString &amp;gpgPath)</span>
+<span id="L292"><span class="lineNum">     292</span>              :       -&gt; ResolvedGpgconfCommand;</span>
+<span id="L293"><span class="lineNum">     293</span>              :   /**</span>
+<span id="L294"><span class="lineNum">     294</span>              :    * @brief Get .gpg-id file path for a password file.</span>
+<span id="L295"><span class="lineNum">     295</span>              :    * @param for_file Path to password file.</span>
+<span id="L296"><span class="lineNum">     296</span>              :    * @param passStore Root directory of the password store.</span>
+<span id="L297"><span class="lineNum">     297</span>              :    * @return Path to .gpg-id file.</span>
+<span id="L298"><span class="lineNum">     298</span>              :    */</span>
+<span id="L299"><span class="lineNum">     299</span>              :   static auto getGpgIdPath(const QString &amp;for_file, const QString &amp;passStore)</span>
+<span id="L300"><span class="lineNum">     300</span>              :       -&gt; QString;</span>
+<span id="L301"><span class="lineNum">     301</span>              :   /**</span>
+<span id="L302"><span class="lineNum">     302</span>              :    * @brief The folder list getGpgIdPath() passed over on its way up to the</span>
+<span id="L303"><span class="lineNum">     303</span>              :    * one it returns, if it passed one over that a signed store must not.</span>
+<span id="L304"><span class="lineNum">     304</span>              :    *</span>
+<span id="L305"><span class="lineNum">     305</span>              :    * getGpgIdPath() skips a `.gpg-id` that is missing, a link or a junction</span>
+<span id="L306"><span class="lineNum">     306</span>              :    * and falls back to a parent folder's list, as `pass` does. In a signed</span>
+<span id="L307"><span class="lineNum">     307</span>              :    * store that lets anyone who can write to it, without the signing key,</span>
+<span id="L308"><span class="lineNum">     308</span>              :    * move a folder's entries to the parent's (also validly signed)</span>
+<span id="L309"><span class="lineNum">     309</span>              :    * recipients by removing or linking the folder's own list. This names the</span>
+<span id="L310"><span class="lineNum">     310</span>              :    * first such list between the start and the folder of the list found</span>
+<span id="L311"><span class="lineNum">     311</span>              :    * (that folder and the store root excluded): one that is under the name</span>
+<span id="L312"><span class="lineNum">     312</span>              :    * but not a regular file, or one that is gone although this device has</span>
+<span id="L313"><span class="lineNum">     313</span>              :    * accepted a list at that path before (GpgIdGeneration::remembered()).</span>
+<span id="L314"><span class="lineNum">     314</span>              :    * When the generation record cannot be read, whether a list was accepted</span>
+<span id="L315"><span class="lineNum">     315</span>              :    * at a path cannot be told: the first folder without its own list is</span>
+<span id="L316"><span class="lineNum">     316</span>              :    * named then too (fail closed), and @p recordError says why.</span>
+<span id="L317"><span class="lineNum">     317</span>              :    * @param forFile Entry or folder, as for getGpgIdPath().</span>
+<span id="L318"><span class="lineNum">     318</span>              :    * @param passStore Root directory of the password store.</span>
+<span id="L319"><span class="lineNum">     319</span>              :    * @param recordError Receives the record's error when it could not be</span>
+<span id="L320"><span class="lineNum">     320</span>              :    *        read, if not null; left untouched otherwise.</span>
+<span id="L321"><span class="lineNum">     321</span>              :    * @return The skipped `.gpg-id` path, or nothing when the list found is</span>
+<span id="L322"><span class="lineNum">     322</span>              :    *         the one that applies.</span>
+<span id="L323"><span class="lineNum">     323</span>              :    */</span>
+<span id="L324"><span class="lineNum">     324</span>              :   static auto skippedGpgId(const QString &amp;forFile, const QString &amp;passStore,</span>
+<span id="L325"><span class="lineNum">     325</span>              :                            QString *recordError = nullptr)</span>
+<span id="L326"><span class="lineNum">     326</span>              :       -&gt; std::optional&lt;QString&gt;;</span>
+<span id="L327"><span class="lineNum">     327</span>              :   /**</span>
+<span id="L328"><span class="lineNum">     328</span>              :    * @brief Get list of recipients for a password file.</span>
+<span id="L329"><span class="lineNum">     329</span>              :    * @param for_file Path to password file.</span>
+<span id="L330"><span class="lineNum">     330</span>              :    * @param passStore Root directory of the password store.</span>
+<span id="L331"><span class="lineNum">     331</span>              :    * @return List of recipient key IDs.</span>
+<span id="L332"><span class="lineNum">     332</span>              :    */</span>
+<span id="L333"><span class="lineNum">     333</span>              :   static auto getRecipientList(const QString &amp;for_file,</span>
+<span id="L334"><span class="lineNum">     334</span>              :                                const QString &amp;passStore) -&gt; QStringList;</span>
+<span id="L335"><span class="lineNum">     335</span>              : </span>
+<span id="L336"><span class="lineNum">     336</span>              :   /**</span>
+<span id="L337"><span class="lineNum">     337</span>              :    * @brief What a dialog may do with the list of a folder</span>
+<span id="L338"><span class="lineNum">     338</span>              :    * (recipientsForEditing()).</span>
+<span id="L339"><span class="lineNum">     339</span>              :    */</span>
+<span id="L340"><span class="lineNum">     340</span> <span class="tlaGNC">          82 :   struct RecipientsForEditing {</span></span>
+<span id="L341"><span class="lineNum">     341</span>              :     /** @brief How the list on disk stood up. */</span>
+<span id="L342"><span class="lineNum">     342</span>              :     enum class State {</span>
+<span id="L343"><span class="lineNum">     343</span>              :       /** @brief No signing key: the list as it is. */</span>
+<span id="L344"><span class="lineNum">     344</span>              :       Unsigned,</span>
+<span id="L345"><span class="lineNum">     345</span>              :       /** @brief Signature and generation and folder all accepted. */</span>
+<span id="L346"><span class="lineNum">     346</span>              :       Verified,</span>
+<span id="L347"><span class="lineNum">     347</span>              :       /**</span>
+<span id="L348"><span class="lineNum">     348</span>              :        * @brief Signed, authentic and bound to this folder, but older than a</span>
+<span id="L349"><span class="lineNum">     349</span>              :        * generation this device has accepted: preselected for the recovery,</span>
+<span id="L350"><span class="lineNum">     350</span>              :        * flagged for review.</span>
+<span id="L351"><span class="lineNum">     351</span>              :        */</span>
+<span id="L352"><span class="lineNum">     352</span>              :       VerifiedRollback,</span>
+<span id="L353"><span class="lineNum">     353</span>              :       /**</span>
+<span id="L354"><span class="lineNum">     354</span>              :        * @brief Not to be used: signature invalid, written for another folder</span>
+<span id="L355"><span class="lineNum">     355</span>              :        * or for no folder in particular while a generation was accepted here,</span>
+<span id="L356"><span class="lineNum">     356</span>              :        * malformed header, or no freshness record to judge by.</span>
+<span id="L357"><span class="lineNum">     357</span>              :        */</span>
+<span id="L358"><span class="lineNum">     358</span>              :       Rejected,</span>
+<span id="L359"><span class="lineNum">     359</span>              :     };</span>
+<span id="L360"><span class="lineNum">     360</span>              :     /** @brief How the list on disk stood up. */</span>
+<span id="L361"><span class="lineNum">     361</span>              :     State state = State::Unsigned;</span>
+<span id="L362"><span class="lineNum">     362</span>              :     /** @brief The recipients to preselect; empty when Rejected. */</span>
+<span id="L363"><span class="lineNum">     363</span>              :     QStringList recipients;</span>
+<span id="L364"><span class="lineNum">     364</span>              :     /** @brief What the dialog should show, if anything. */</span>
+<span id="L365"><span class="lineNum">     365</span>              :     QString warning;</span>
+<span id="L366"><span class="lineNum">     366</span>              :   };</span>
+<span id="L367"><span class="lineNum">     367</span>              : </span>
+<span id="L368"><span class="lineNum">     368</span>              :   /**</span>
+<span id="L369"><span class="lineNum">     369</span>              :    * @brief The recipients a dialog may preselect for editing the list of</span>
+<span id="L370"><span class="lineNum">     370</span>              :    * @p dir.</span>
+<span id="L371"><span class="lineNum">     371</span>              :    *</span>
+<span id="L372"><span class="lineNum">     372</span>              :    * With a signing key configured, only a list whose signature, generation</span>
+<span id="L373"><span class="lineNum">     373</span>              :    * and folder binding are all accepted: the Users dialog preselects what it</span>
+<span id="L374"><span class="lineNum">     374</span>              :    * loads and OK writes and signs the selection, so a list read</span>
+<span id="L375"><span class="lineNum">     375</span>              :    * unauthenticated would turn an attacker's unsigned edit into a genuinely</span>
+<span id="L376"><span class="lineNum">     376</span>              :    * signed one with one click. The one exception is an authentic list the</span>
+<span id="L377"><span class="lineNum">     377</span>              :    * generation record calls older (the recovery from a rollback goes through</span>
+<span id="L378"><span class="lineNum">     378</span>              :    * this dialog): preselected, with the reason shown for review. Anything</span>
+<span id="L379"><span class="lineNum">     379</span>              :    * else that fails preselects nothing and says why. Without a signing key,</span>
+<span id="L380"><span class="lineNum">     380</span>              :    * the list as it is.</span>
+<span id="L381"><span class="lineNum">     381</span>              :    * @param dir Folder whose list is edited; empty for the store root.</span>
+<span id="L382"><span class="lineNum">     382</span>              :    * @param passStore The store the folder belongs to: the dialog's, which</span>
+<span id="L383"><span class="lineNum">     383</span>              :    *        for a profile being set up is not this backend's.</span>
+<span id="L384"><span class="lineNum">     384</span>              :    * @return The state, the recipients to preselect and the warning to show.</span>
+<span id="L385"><span class="lineNum">     385</span>              :    */</span>
+<span id="L386"><span class="lineNum">     386</span>              :   auto recipientsForEditing(const QString &amp;dir, const QString &amp;passStore)</span>
+<span id="L387"><span class="lineNum">     387</span>              :       -&gt; RecipientsForEditing;</span>
+<span id="L388"><span class="lineNum">     388</span>              :   /**</span>
+<span id="L389"><span class="lineNum">     389</span>              :    * @brief Parse the contents of a .gpg-id: one recipient per line, `#`</span>
+<span id="L390"><span class="lineNum">     390</span>              :    * starts a comment, unusable lines are logged and skipped.</span>
+<span id="L391"><span class="lineNum">     391</span>              :    * @param contents The file's bytes.</span>
+<span id="L392"><span class="lineNum">     392</span>              :    * @param sourceName Where they came from, for the log.</span>
+<span id="L393"><span class="lineNum">     393</span>              :    * @return The recipient key IDs in file order.</span>
+<span id="L394"><span class="lineNum">     394</span>              :    */</span>
+<span id="L395"><span class="lineNum">     395</span>              :   static auto parseRecipients(const QByteArray &amp;contents,</span>
+<span id="L396"><span class="lineNum">     396</span>              :                               const QString &amp;sourceName) -&gt; QStringList;</span>
+<span id="L397"><span class="lineNum">     397</span>              :   /**</span>
+<span id="L398"><span class="lineNum">     398</span>              :    * @brief The arguments as they may appear in the debug log: the value of</span>
+<span id="L399"><span class="lineNum">     399</span>              :    * `--passphrase` and friends, and otpauth URIs, are replaced.</span>
+<span id="L400"><span class="lineNum">     400</span>              :    * @param args The argv about to be run.</span>
+<span id="L401"><span class="lineNum">     401</span>              :    * @return The same list with secret-shaped values redacted.</span>
+<span id="L402"><span class="lineNum">     402</span>              :    */</span>
+<span id="L403"><span class="lineNum">     403</span>              :   static auto loggableArgs(const QStringList &amp;args) -&gt; QStringList;</span>
+<span id="L404"><span class="lineNum">     404</span>              :   /**</span>
+<span id="L405"><span class="lineNum">     405</span>              :    * @brief Seed a new folder's .gpg-id from the recipients it inherits.</span>
+<span id="L406"><span class="lineNum">     406</span>              :    *</span>
+<span id="L407"><span class="lineNum">     407</span>              :    * Writes the recipient list that is in effect for @p newDir (found by</span>
+<span id="L408"><span class="lineNum">     408</span>              :    * walking up to the nearest parent .gpg-id, see getGpgIdPath) into</span>
+<span id="L409"><span class="lineNum">     409</span>              :    * @p newDir/.gpg-id atomically with owner-only permissions. Refuses to</span>
+<span id="L410"><span class="lineNum">     410</span>              :    * overwrite an existing .gpg-id and writes nothing when no recipient is</span>
+<span id="L411"><span class="lineNum">     411</span>              :    * inherited, so a zero-byte file never shadows the parent's list.</span>
+<span id="L412"><span class="lineNum">     412</span>              :    * @param newDir Absolute path of the freshly created folder.</span>
+<span id="L413"><span class="lineNum">     413</span>              :    * @param passStore Root directory of the password store.</span>
+<span id="L414"><span class="lineNum">     414</span>              :    * @return true when the file was written, false otherwise.</span>
+<span id="L415"><span class="lineNum">     415</span>              :    */</span>
+<span id="L416"><span class="lineNum">     416</span>              :   static auto seedGpgIdFile(const QString &amp;newDir, const QString &amp;passStore)</span>
+<span id="L417"><span class="lineNum">     417</span>              :       -&gt; bool;</span>
+<span id="L418"><span class="lineNum">     418</span>              : </span>
+<span id="L419"><span class="lineNum">     419</span>              :   /**</span>
+<span id="L420"><span class="lineNum">     420</span>              :    * @brief Whether no gpg, git or pass of this backend runs or waits.</span>
+<span id="L421"><span class="lineNum">     421</span>              :    * @return true when its executor is idle.</span>
+<span id="L422"><span class="lineNum">     422</span>              :    */</span>
+<span id="L423"><span class="lineNum">     423</span>              :   [[nodiscard]] auto isIdle() const -&gt; bool { return exec.isIdle(); }</span>
+<span id="L424"><span class="lineNum">     424</span>              : </span>
+<span id="L425"><span class="lineNum">     425</span>              : protected:</span>
+<span id="L426"><span class="lineNum">     426</span>              :   /**</span>
+<span id="L427"><span class="lineNum">     427</span>              :    * @brief With signing on, refuse to encrypt @p file when the lookup passed</span>
+<span id="L428"><span class="lineNum">     428</span>              :    * over its folder's own list (skippedGpgId()): the parent's list is not</span>
+<span id="L429"><span class="lineNum">     429</span>              :    * what was signed for it.</span>
+<span id="L430"><span class="lineNum">     430</span>              :    * @param file The entry or folder about to be encrypted to.</span>
+<span id="L431"><span class="lineNum">     431</span>              :    * @param signing Whether a signing key is set (signed lists in use).</span>
+<span id="L432"><span class="lineNum">     432</span>              :    * @param except A list about to be written (by `pass init`), which may</span>
+<span id="L433"><span class="lineNum">     433</span>              :    *        be missing now without that being refused.</span>
+<span id="L434"><span class="lineNum">     434</span>              :    * @return Whether it was refused (and the user told).</span>
+<span id="L435"><span class="lineNum">     435</span>              :    */</span>
+<span id="L436"><span class="lineNum">     436</span>              :   auto refuseSkippedGpgId(const QString &amp;file, bool signing,</span>
+<span id="L437"><span class="lineNum">     437</span>              :                           const QString &amp;except = QString()) -&gt; bool;</span>
+<span id="L438"><span class="lineNum">     438</span>              : </span>
+<span id="L439"><span class="lineNum">     439</span>              :   /**</span>
+<span id="L440"><span class="lineNum">     440</span>              :    * @brief Whether @p gpgIdFile is a signed list QtPass accepts: its</span>
+<span id="L441"><span class="lineNum">     441</span>              :    * signature verifies (GpgIdSigner::verifyFile()), and it is current and</span>
+<span id="L442"><span class="lineNum">     442</span>              :    * bound to the folder it lies in (GpgIdGeneration::accept()), so an older</span>
+<span id="L443"><span class="lineNum">     443</span>              :    * authentic list put back, or one signed for another folder, is refused.</span>
+<span id="L444"><span class="lineNum">     444</span>              :    * @param signer The verifier, with the configured signing keys.</span>
+<span id="L445"><span class="lineNum">     445</span>              :    * @param gpgIdFile The `.gpg-id`.</span>
+<span id="L446"><span class="lineNum">     446</span>              :    * @param contents Receives the verified bytes.</span>
+<span id="L447"><span class="lineNum">     447</span>              :    * @param why Receives why a current-and-bound check refused the list;</span>
+<span id="L448"><span class="lineNum">     448</span>              :    *        left as it is when the signature itself does not verify.</span>
+<span id="L449"><span class="lineNum">     449</span>              :    * @return Whether the list may be encrypted to.</span>
+<span id="L450"><span class="lineNum">     450</span>              :    */</span>
+<span id="L451"><span class="lineNum">     451</span>              :   auto verifySignedList(const GpgIdSigner &amp;signer, const QString &amp;gpgIdFile,</span>
+<span id="L452"><span class="lineNum">     452</span>              :                         QByteArray *contents, QString *why) const -&gt; bool;</span>
+<span id="L453"><span class="lineNum">     453</span>              : </span>
+<span id="L454"><span class="lineNum">     454</span>              :   /**</span>
+<span id="L455"><span class="lineNum">     455</span>              :    * @brief Whether the insert that just failed had put its entry in the</span>
+<span id="L456"><span class="lineNum">     456</span>              :    * store before a later step failed. The backend that writes the entry</span>
+<span id="L457"><span class="lineNum">     457</span>              :    * knows; this default says no.</span>
+<span id="L458"><span class="lineNum">     458</span>              :    * @param err What the failed insert reported on stderr.</span>
+<span id="L459"><span class="lineNum">     459</span>              :    * @return true when the failed insert's entry was written.</span>
+<span id="L460"><span class="lineNum">     460</span>              :    */</span>
+<span id="L461"><span class="lineNum">     461</span> <span class="tlaUNC">           0 :   [[nodiscard]] virtual auto insertWritten(const QString &amp;err) const -&gt; bool {</span></span>
+<span id="L462"><span class="lineNum">     462</span>              :     Q_UNUSED(err);</span>
+<span id="L463"><span class="lineNum">     463</span> <span class="tlaUNC">           0 :     return false;</span></span>
+<span id="L464"><span class="lineNum">     464</span>              :   }</span>
+<span id="L465"><span class="lineNum">     465</span>              : </span>
+<span id="L466"><span class="lineNum">     466</span>              :   /**</span>
+<span id="L467"><span class="lineNum">     467</span>              :    * @brief Remember what a Show() asked for, so its completion can say so.</span>
+<span id="L468"><span class="lineNum">     468</span>              :    *</span>
+<span id="L469"><span class="lineNum">     469</span>              :    * Backends call this first thing in Show(); Pass::finished() pops the</span>
+<span id="L470"><span class="lineNum">     470</span>              :    * entry again on success or failure. The Executor runs one queue in</span>
+<span id="L471"><span class="lineNum">     471</span>              :    * order, so the two stay aligned.</span>
+<span id="L472"><span class="lineNum">     472</span>              :    * @param file The Show() argument.</span>
+<span id="L473"><span class="lineNum">     473</span>              :    */</span>
+<span id="L474"><span class="lineNum">     474</span>              :   void queueShow(const QString &amp;file) { m_pendingShows.enqueue(file); }</span>
+<span id="L475"><span class="lineNum">     475</span>              :   /**</span>
+<span id="L476"><span class="lineNum">     476</span>              :    * @brief Count one insert that has started queueing but not yet reported.</span>
+<span id="L477"><span class="lineNum">     477</span>              :    *</span>
+<span id="L478"><span class="lineNum">     478</span>              :    * Backends call this where Insert() queues its work, past every refusal;</span>
+<span id="L479"><span class="lineNum">     479</span>              :    * Pass::finished() counts it off again when the insert reports. Each queued</span>
+<span id="L480"><span class="lineNum">     480</span>              :    * insert reports once, as a PASS_INSERT, so the count tracks the inserts in</span>
+<span id="L481"><span class="lineNum">     481</span>              :    * flight. A dialog reads insertsPending() before its own Insert() to learn</span>
+<span id="L482"><span class="lineNum">     482</span>              :    * how many earlier reports are not its own.</span>
+<span id="L483"><span class="lineNum">     483</span>              :    */</span>
+<span id="L484"><span class="lineNum">     484</span> <span class="tlaGNC">          77 :   void queueInsert() { ++m_insertsPending; }</span></span>
+<span id="L485"><span class="lineNum">     485</span>              :   /** @brief What refuseLinkedPath() judges. */</span>
+<span id="L486"><span class="lineNum">     486</span>              :   enum class LinkScope {</span>
+<span id="L487"><span class="lineNum">     487</span>              :     /** @brief The entry itself and every folder above it in the store. */</span>
+<span id="L488"><span class="lineNum">     488</span>              :     EntryAndParents,</span>
+<span id="L489"><span class="lineNum">     489</span>              :     /**</span>
+<span id="L490"><span class="lineNum">     490</span>              :      * @brief Only the folders above it: a removal unlinks a link and</span>
+<span id="L491"><span class="lineNum">     491</span>              :      * touches nothing behind it.</span>
+<span id="L492"><span class="lineNum">     492</span>              :      */</span>
+<span id="L493"><span class="lineNum">     493</span>              :     ParentsOnly,</span>
+<span id="L494"><span class="lineNum">     494</span>              :   };</span>
+<span id="L495"><span class="lineNum">     495</span>              :   /** @brief How a path handed to refuseLinkedPath() is spelled. */</span>
+<span id="L496"><span class="lineNum">     496</span>              :   enum class PathSpelling {</span>
+<span id="L497"><span class="lineNum">     497</span>              :     /**</span>
+<span id="L498"><span class="lineNum">     498</span>              :      * @brief As the store is configured or relative to it, the class's path</span>
+<span id="L499"><span class="lineNum">     499</span>              :      * rule. A path spelled through the target of a linked store root is</span>
+<span id="L500"><span class="lineNum">     500</span>              :      * then logged as a warning, so tests catch a caller that hands one over.</span>
+<span id="L501"><span class="lineNum">     501</span>              :      */</span>
+<span id="L502"><span class="lineNum">     502</span>              :     Configured,</span>
+<span id="L503"><span class="lineNum">     503</span>              :     /**</span>
+<span id="L504"><span class="lineNum">     504</span>              :      * @brief Through the target of a linked store root, by a caller that</span>
+<span id="L505"><span class="lineNum">     505</span>              :      * places such a folder itself (Init()): not logged.</span>
+<span id="L506"><span class="lineNum">     506</span>              :      */</span>
+<span id="L507"><span class="lineNum">     507</span>              :     PlacedByCaller,</span>
+<span id="L508"><span class="lineNum">     508</span>              :   };</span>
+<span id="L509"><span class="lineNum">     509</span>              :   /**</span>
+<span id="L510"><span class="lineNum">     510</span>              :    * @brief Refuse an operation on something that is, or lies behind, a</span>
+<span id="L511"><span class="lineNum">     511</span>              :    * symbolic link or NTFS junction inside the store.</span>
+<span id="L512"><span class="lineNum">     512</span>              :    *</span>
+<span id="L513"><span class="lineNum">     513</span>              :    * The store tree shows a linked entry or folder like any other, and gpg,</span>
+<span id="L514"><span class="lineNum">     514</span>              :    * pass and QFile all follow links, so without this a planted link would</span>
+<span id="L515"><span class="lineNum">     515</span>              :    * have an entry shown, edited, copied or written outside the store, with</span>
+<span id="L516"><span class="lineNum">     516</span>              :    * the store's recipients. The configured store root itself may be a link</span>
+<span id="L517"><span class="lineNum">     517</span>              :    * (a synced folder); that is not judged.</span>
+<span id="L518"><span class="lineNum">     518</span>              :    * @param path Store-relative (as Show/Insert/Remove get it, `.gpg`</span>
+<span id="L519"><span class="lineNum">     519</span>              :    *        included where it applies) or absolute (as Move/Copy get it).</span>
+<span id="L520"><span class="lineNum">     520</span>              :    * @param scope Whether the entry itself counts, or only the folders it</span>
+<span id="L521"><span class="lineNum">     521</span>              :    *        lies in (a removal).</span>
+<span id="L522"><span class="lineNum">     522</span>              :    * @param spelling Whether @p path follows the class's path rule, or the</span>
+<span id="L523"><span class="lineNum">     523</span>              :    *        caller places a target-spelled path itself (Init()).</span>
+<span id="L524"><span class="lineNum">     524</span>              :    * @return true when critical() and processErrorExit() were emitted and</span>
+<span id="L525"><span class="lineNum">     525</span>              :    *         the caller must stop.</span>
+<span id="L526"><span class="lineNum">     526</span>              :    */</span>
+<span id="L527"><span class="lineNum">     527</span>              :   auto refuseLinkedPath(const QString &amp;path,</span>
+<span id="L528"><span class="lineNum">     528</span>              :                         LinkScope scope = LinkScope::EntryAndParents,</span>
+<span id="L529"><span class="lineNum">     529</span>              :                         PathSpelling spelling = PathSpelling::Configured)</span>
+<span id="L530"><span class="lineNum">     530</span>              :       -&gt; bool;</span>
+<span id="L531"><span class="lineNum">     531</span>              :   /**</span>
+<span id="L532"><span class="lineNum">     532</span>              :    * @brief Refuse recipients for a folder outside the store, as pass</span>
+<span id="L533"><span class="lineNum">     533</span>              :    * refuses a path with `..` in it.</span>
+<span id="L534"><span class="lineNum">     534</span>              :    *</span>
+<span id="L535"><span class="lineNum">     535</span>              :    * ImitatePass would write a `.gpg-id` that the store never reads, and</span>
+<span id="L536"><span class="lineNum">     536</span>              :    * `pass init --path` would take the folder's absolute path as a folder</span>
+<span id="L537"><span class="lineNum">     537</span>              :    * under the store. Links on the way are resolved, as for the store root.</span>
+<span id="L538"><span class="lineNum">     538</span>              :    * @param folder The folder, absolute.</span>
+<span id="L539"><span class="lineNum">     539</span>              :    * @param relative Where the folder lies in the store, as</span>
+<span id="L540"><span class="lineNum">     540</span>              :    *        PathValidator::storeRelativePath() gives it (empty for the root),</span>
+<span id="L541"><span class="lineNum">     541</span>              :    *        when it is not refused; may be null.</span>
+<span id="L542"><span class="lineNum">     542</span>              :    * @return true when critical() and processErrorExit() were emitted and</span>
+<span id="L543"><span class="lineNum">     543</span>              :    *         the caller must stop.</span>
+<span id="L544"><span class="lineNum">     544</span>              :    */</span>
+<span id="L545"><span class="lineNum">     545</span>              :   auto refuseFolderOutsideStore(const QString &amp;folder,</span>
+<span id="L546"><span class="lineNum">     546</span>              :                                 QString *relative = nullptr) -&gt; bool;</span>
+<span id="L547"><span class="lineNum">     547</span>              : </span>
+<span id="L548"><span class="lineNum">     548</span>              :   /**</span>
+<span id="L549"><span class="lineNum">     549</span>              :    * @brief Run a git command in the store's repository, blocking.</span>
+<span id="L550"><span class="lineNum">     550</span>              :    *</span>
+<span id="L551"><span class="lineNum">     551</span>              :    * The two backends reach git differently: ImitatePass runs the configured</span>
+<span id="L552"><span class="lineNum">     552</span>              :    * git with `-C &lt;store&gt;`, RealPass runs `pass git`. The default (no git)</span>
+<span id="L553"><span class="lineNum">     553</span>              :    * answers false. Used by refuseUnfinishedGitOperation() to ask the</span>
+<span id="L554"><span class="lineNum">     554</span>              :    * repository its state before an operation changes the store.</span>
+<span id="L555"><span class="lineNum">     555</span>              :    * @param args The git arguments (without the executable or `-C`).</span>
+<span id="L556"><span class="lineNum">     556</span>              :    * @param out Receives the command's standard output; may be null.</span>
+<span id="L557"><span class="lineNum">     557</span>              :    * @return true when git ran and exited 0, false otherwise (git off, the</span>
+<span id="L558"><span class="lineNum">     558</span>              :    *         store is not a repository, or git failed).</span>
+<span id="L559"><span class="lineNum">     559</span>              :    */</span>
+<span id="L560"><span class="lineNum">     560</span> <span class="tlaUNC">           0 :   virtual auto storeGit(const QStringList &amp;args, QString *out) -&gt; bool {</span></span>
+<span id="L561"><span class="lineNum">     561</span>              :     Q_UNUSED(args);</span>
+<span id="L562"><span class="lineNum">     562</span>              :     Q_UNUSED(out);</span>
+<span id="L563"><span class="lineNum">     563</span> <span class="tlaUNC">           0 :     return false;</span></span>
+<span id="L564"><span class="lineNum">     564</span>              :   }</span>
+<span id="L565"><span class="lineNum">     565</span>              : </span>
+<span id="L566"><span class="lineNum">     566</span>              :   /**</span>
+<span id="L567"><span class="lineNum">     567</span>              :    * @brief Refuse to change the store while git is mid-rebase, -merge,</span>
+<span id="L568"><span class="lineNum">     568</span>              :    * -cherry-pick or -revert.</span>
+<span id="L569"><span class="lineNum">     569</span>              :    *</span>
+<span id="L570"><span class="lineNum">     570</span>              :    * A pull that stopped in a conflict leaves the repository part-way through</span>
+<span id="L571"><span class="lineNum">     571</span>              :    * an operation. Committing a save or a re-encryption into it lands the</span>
+<span id="L572"><span class="lineNum">     572</span>              :    * change on a detached HEAD (a later `git rebase --abort` drops it) or</span>
+<span id="L573"><span class="lineNum">     573</span>              :    * concludes the merge in favour of the local copy (pushing over a</span>
+<span id="L574"><span class="lineNum">     574</span>              :    * colleague's change). Every store-changing operation calls this at its</span>
+<span id="L575"><span class="lineNum">     575</span>              :    * entry, next to refuseLinkedPath(), so the change is refused before gpg or</span>
+<span id="L576"><span class="lineNum">     576</span>              :    * pass runs and the dialog keeps what was typed. Nothing is refused when git</span>
+<span id="L577"><span class="lineNum">     577</span>              :    * is off, the store is not a repository, or git gives no answer. A HEAD</span>
+<span id="L578"><span class="lineNum">     578</span>              :    * detached by hand (no operation in progress) is deliberately accepted.</span>
+<span id="L579"><span class="lineNum">     579</span>              :    * @return true when critical() and processErrorExit() were emitted and the</span>
+<span id="L580"><span class="lineNum">     580</span>              :    *         caller must stop.</span>
+<span id="L581"><span class="lineNum">     581</span>              :    */</span>
+<span id="L582"><span class="lineNum">     582</span>              :   auto refuseUnfinishedGitOperation() -&gt; bool;</span>
+<span id="L583"><span class="lineNum">     583</span>              : </span>
+<span id="L584"><span class="lineNum">     584</span>              :   /**</span>
+<span id="L585"><span class="lineNum">     585</span>              :    * @brief The unfinished git operation in progress in the store, if any.</span>
+<span id="L586"><span class="lineNum">     586</span>              :    *</span>
+<span id="L587"><span class="lineNum">     587</span>              :    * The detection behind refuseUnfinishedGitOperation(), without emitting a</span>
+<span id="L588"><span class="lineNum">     588</span>              :    * refusal: a backend re-checks it when a save's gpg step has finished (a</span>
+<span id="L589"><span class="lineNum">     589</span>              :    * pull queued before the save, from the asynchronous Update, may have</span>
+<span id="L590"><span class="lineNum">     590</span>              :    * finished and left a conflict meanwhile) so the entry is not placed or</span>
+<span id="L591"><span class="lineNum">     591</span>              :    * committed into the operation.</span>
+<span id="L592"><span class="lineNum">     592</span>              :    * @return A ready-to-show reason naming the operation (rebase, merge,</span>
+<span id="L593"><span class="lineNum">     593</span>              :    *         cherry-pick or revert), or an empty string when none is in</span>
+<span id="L594"><span class="lineNum">     594</span>              :    *         progress, git is off, or the store is not a repository.</span>
+<span id="L595"><span class="lineNum">     595</span>              :    */</span>
+<span id="L596"><span class="lineNum">     596</span>              :   auto unfinishedGitOperationReason() -&gt; QString;</span>
+<span id="L597"><span class="lineNum">     597</span>              : </span>
+<span id="L598"><span class="lineNum">     598</span>              :   /**</span>
+<span id="L599"><span class="lineNum">     599</span>              :    * @brief Refuse a store change while a Git pull is still queued or running.</span>
+<span id="L600"><span class="lineNum">     600</span>              :    *</span>
+<span id="L601"><span class="lineNum">     601</span>              :    * An operation checks the repository when it is requested, but a pull queued</span>
+<span id="L602"><span class="lineNum">     602</span>              :    * before it (the asynchronous Update) has not run yet, so a conflict it will</span>
+<span id="L603"><span class="lineNum">     603</span>              :    * cause is not visible. For operations that commit without a later point to</span>
+<span id="L604"><span class="lineNum">     604</span>              :    * re-check (every delete, move and copy, and the `pass` backend, whose</span>
+<span id="L605"><span class="lineNum">     605</span>              :    * single `pass insert` commits by itself), refuse while the pull is in</span>
+<span id="L606"><span class="lineNum">     606</span>              :    * flight so the change cannot land in the conflict it leaves. Nothing is</span>
+<span id="L607"><span class="lineNum">     607</span>              :    * refused when Git is off or no pull is pending.</span>
+<span id="L608"><span class="lineNum">     608</span>              :    * @return true when critical() and processErrorExit() were emitted and the</span>
+<span id="L609"><span class="lineNum">     609</span>              :    *         caller must stop.</span>
+<span id="L610"><span class="lineNum">     610</span>              :    */</span>
+<span id="L611"><span class="lineNum">     611</span>              :   auto refusePendingPull() -&gt; bool;</span>
+<span id="L612"><span class="lineNum">     612</span>              : </span>
+<span id="L613"><span class="lineNum">     613</span>              :   /**</span>
+<span id="L614"><span class="lineNum">     614</span>              :    * @brief Execute external wrapper command.</span>
+<span id="L615"><span class="lineNum">     615</span>              :    * @param id Process identifier.</span>
+<span id="L616"><span class="lineNum">     616</span>              :    * @param app Executable path.</span>
+<span id="L617"><span class="lineNum">     617</span>              :    * @param args Command arguments.</span>
+<span id="L618"><span class="lineNum">     618</span>              :    * @param readStdout Capture stdout.</span>
+<span id="L619"><span class="lineNum">     619</span>              :    * @param readStderr Capture stderr.</span>
+<span id="L620"><span class="lineNum">     620</span>              :    */</span>
+<span id="L621"><span class="lineNum">     621</span>              :   void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L622"><span class="lineNum">     622</span>              :                       bool readStdout = true, bool readStderr = true);</span>
+<span id="L623"><span class="lineNum">     623</span>              :   /**</span>
+<span id="L624"><span class="lineNum">     624</span>              :    * @brief Generate random password from charset.</span>
+<span id="L625"><span class="lineNum">     625</span>              :    * @param charset Character set.</span>
+<span id="L626"><span class="lineNum">     626</span>              :    * @param length Password length.</span>
+<span id="L627"><span class="lineNum">     627</span>              :    * @return Generated password.</span>
+<span id="L628"><span class="lineNum">     628</span>              :    */</span>
+<span id="L629"><span class="lineNum">     629</span>              :   auto generateRandomPassword(const QString &amp;charset, unsigned int length)</span>
+<span id="L630"><span class="lineNum">     630</span>              :       -&gt; QString;</span>
+<span id="L631"><span class="lineNum">     631</span>              :   /**</span>
+<span id="L632"><span class="lineNum">     632</span>              :    * @brief Generate random number in range.</span>
+<span id="L633"><span class="lineNum">     633</span>              :    * @param bound Upper bound (exclusive).</span>
+<span id="L634"><span class="lineNum">     634</span>              :    * @return Random number.</span>
+<span id="L635"><span class="lineNum">     635</span>              :    */</span>
+<span id="L636"><span class="lineNum">     636</span>              :   auto boundedRandom(quint32 bound) -&gt; quint32;</span>
+<span id="L637"><span class="lineNum">     637</span>              :   /**</span>
+<span id="L638"><span class="lineNum">     638</span>              :    * @brief Set or remove an environment variable.</span>
+<span id="L639"><span class="lineNum">     639</span>              :    *</span>
+<span id="L640"><span class="lineNum">     640</span>              :    * @param name Variable name (e.g. &quot;PASSWORD_STORE_DIR&quot;), no trailing '='.</span>
+<span id="L641"><span class="lineNum">     641</span>              :    * @param value New value; an empty string removes the variable entirely.</span>
+<span id="L642"><span class="lineNum">     642</span>              :    */</span>
+<span id="L643"><span class="lineNum">     643</span>              :   void setEnvVar(const QString &amp;name, const QString &amp;value);</span>
+<span id="L644"><span class="lineNum">     644</span>              : </span>
+<span id="L645"><span class="lineNum">     645</span>              :   /**</span>
+<span id="L646"><span class="lineNum">     646</span>              :    * @brief Execute wrapper with input.</span>
+<span id="L647"><span class="lineNum">     647</span>              :    * @param id Process identifier.</span>
+<span id="L648"><span class="lineNum">     648</span>              :    * @param app Executable path.</span>
+<span id="L649"><span class="lineNum">     649</span>              :    * @param args Command arguments.</span>
+<span id="L650"><span class="lineNum">     650</span>              :    * @param input Input to pass to stdin.</span>
+<span id="L651"><span class="lineNum">     651</span>              :    * @param readStdout Capture stdout.</span>
+<span id="L652"><span class="lineNum">     652</span>              :    * @param readStderr Capture stderr.</span>
+<span id="L653"><span class="lineNum">     653</span>              :    */</span>
+<span id="L654"><span class="lineNum">     654</span>              :   void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args,</span>
+<span id="L655"><span class="lineNum">     655</span>              :                       QString input, bool readStdout, bool readStderr);</span>
+<span id="L656"><span class="lineNum">     656</span>              :   /**</span>
+<span id="L657"><span class="lineNum">     657</span>              :    * @brief Hook invoked just before a wrapped command is dispatched.</span>
+<span id="L658"><span class="lineNum">     658</span>              :    *</span>
+<span id="L659"><span class="lineNum">     659</span>              :    * Default is a no-op; backends override it to wrap execution (e.g.</span>
+<span id="L660"><span class="lineNum">     660</span>              :    * ImitatePass registers a transaction). Keeps the dispatch surface a</span>
+<span id="L661"><span class="lineNum">     661</span>              :    * single non-virtual executeWrapper instead of an overridden one.</span>
+<span id="L662"><span class="lineNum">     662</span>              :    * @param id Process identifier of the command about to run.</span>
+<span id="L663"><span class="lineNum">     663</span>              :    */</span>
+<span id="L664"><span class="lineNum">     664</span>              :   virtual void beforeExecute(PROCESS id);</span>
+<span id="L665"><span class="lineNum">     665</span>              : </span>
+<span id="L666"><span class="lineNum">     666</span>              : protected slots:</span>
+<span id="L667"><span class="lineNum">     667</span>              :   /**</span>
+<span id="L668"><span class="lineNum">     668</span>              :    * @brief Handle process completion.</span>
+<span id="L669"><span class="lineNum">     669</span>              :    * @param id Process identifier.</span>
+<span id="L670"><span class="lineNum">     670</span>              :    * @param exitCode Process exit code.</span>
+<span id="L671"><span class="lineNum">     671</span>              :    * @param out Standard output.</span>
+<span id="L672"><span class="lineNum">     672</span>              :    * @param err Standard error.</span>
+<span id="L673"><span class="lineNum">     673</span>              :    */</span>
+<span id="L674"><span class="lineNum">     674</span>              :   virtual void finished(int id, int exitCode, const QString &amp;out,</span>
+<span id="L675"><span class="lineNum">     675</span>              :                         const QString &amp;err);</span>
+<span id="L676"><span class="lineNum">     676</span>              : </span>
+<span id="L677"><span class="lineNum">     677</span>              : private:</span>
+<span id="L678"><span class="lineNum">     678</span>              :   /// Files of the Show() calls still in flight, oldest first.</span>
+<span id="L679"><span class="lineNum">     679</span>              :   QQueue&lt;QString&gt; m_pendingShows;</span>
+<span id="L680"><span class="lineNum">     680</span>              :   /// Inserts that have started queueing but not yet reported; see queueInsert.</span>
+<span id="L681"><span class="lineNum">     681</span>              :   int m_insertsPending = 0;</span>
+<span id="L682"><span class="lineNum">     682</span>              :   /**</span>
+<span id="L683"><span class="lineNum">     683</span>              :    * @brief Report a process that exited non-zero; called by finished().</span>
+<span id="L684"><span class="lineNum">     684</span>              :    *</span>
+<span id="L685"><span class="lineNum">     685</span>              :    * Always ends in processErrorExit(). A failed insert first emits</span>
+<span id="L686"><span class="lineNum">     686</span>              :    * insertFailed(), and critical() too when the entry was written and only</span>
+<span id="L687"><span class="lineNum">     687</span>              :    * a git step after it failed; failed key generation first emits</span>
+<span id="L688"><span class="lineNum">     688</span>              :    * generateGPGKeysFailed().</span>
+<span id="L689"><span class="lineNum">     689</span>              :    * @param pid Which kind of process failed.</span>
+<span id="L690"><span class="lineNum">     690</span>              :    * @param exitCode Its exit code.</span>
+<span id="L691"><span class="lineNum">     691</span>              :    * @param out Its stdout; not used.</span>
+<span id="L692"><span class="lineNum">     692</span>              :    * @param err Its stderr, or the Executor's message for a failed start.</span>
+<span id="L693"><span class="lineNum">     693</span>              :    */</span>
+<span id="L694"><span class="lineNum">     694</span>              :   void handleProcessError(PROCESS pid, int exitCode, const QString &amp;out,</span>
+<span id="L695"><span class="lineNum">     695</span>              :                           const QString &amp;err);</span>
+<span id="L696"><span class="lineNum">     696</span>              :   /**</span>
+<span id="L697"><span class="lineNum">     697</span>              :    * @brief Put the translated reason for a failed insert above what gpg</span>
+<span id="L698"><span class="lineNum">     698</span>              :    * itself printed, leaving out the machine-readable `[GNUPG:]` lines.</span>
+<span id="L699"><span class="lineNum">     699</span>              :    * @param friendly Message from gpgErrorMessage().</span>
+<span id="L700"><span class="lineNum">     700</span>              :    * @param err gpg's stderr.</span>
+<span id="L701"><span class="lineNum">     701</span>              :    * @return @p friendly, followed by the human-readable rest of @p err when</span>
+<span id="L702"><span class="lineNum">     702</span>              :    *         there is any.</span>
+<span id="L703"><span class="lineNum">     703</span>              :    */</span>
+<span id="L704"><span class="lineNum">     704</span>              :   auto formatInsertError(const QString &amp;friendly, const QString &amp;err)</span>
+<span id="L705"><span class="lineNum">     705</span>              :       -&gt; QString;</span>
+<span id="L706"><span class="lineNum">     706</span>              :   /**</span>
+<span id="L707"><span class="lineNum">     707</span>              :    * @brief Emit the signals for a process that exited with 0; called by</span>
+<span id="L708"><span class="lineNum">     708</span>              :    * finished() for everything but PASS_SHOW.</span>
+<span id="L709"><span class="lineNum">     709</span>              :    *</span>
+<span id="L710"><span class="lineNum">     710</span>              :    * finishedAnyWithPid() goes out only for a process whose output cannot</span>
+<span id="L711"><span class="lineNum">     711</span>              :    * hold a secret (Enums::processInfo()), then the signal of that kind of</span>
+<span id="L712"><span class="lineNum">     712</span>              :    * process (finishedGitPull() and so on), if it has one.</span>
+<span id="L713"><span class="lineNum">     713</span>              :    * @param pid Which kind of process finished.</span>
+<span id="L714"><span class="lineNum">     714</span>              :    * @param out Its stdout.</span>
+<span id="L715"><span class="lineNum">     715</span>              :    * @param err Its stderr.</span>
+<span id="L716"><span class="lineNum">     716</span>              :    */</span>
+<span id="L717"><span class="lineNum">     717</span>              :   void emitProcessFinishedSignal(PROCESS pid, const QString &amp;out,</span>
+<span id="L718"><span class="lineNum">     718</span>              :                                  const QString &amp;err);</span>
+<span id="L719"><span class="lineNum">     719</span>              :   /**</span>
+<span id="L720"><span class="lineNum">     720</span>              :    * @brief Refuse an operation on something that is not part of the store.</span>
+<span id="L721"><span class="lineNum">     721</span>              :    *</span>
+<span id="L722"><span class="lineNum">     722</span>              :    * Emits startingExecuteWrapper(), critical() and processErrorExit(), so</span>
+<span id="L723"><span class="lineNum">     723</span>              :    * an interface that arms itself when an operation starts is released</span>
+<span id="L724"><span class="lineNum">     724</span>              :    * again although nothing was started. refuseLinkedPath() and</span>
+<span id="L725"><span class="lineNum">     725</span>              :    * refuseFolderOutsideStore() say why.</span>
+<span id="L726"><span class="lineNum">     726</span>              :    * @param why Translated reason, shown to the user.</span>
+<span id="L727"><span class="lineNum">     727</span>              :    */</span>
+<span id="L728"><span class="lineNum">     728</span>              :   void refuseAsNotPartOfStore(const QString &amp;why);</span>
+<span id="L729"><span class="lineNum">     729</span>              : </span>
+<span id="L730"><span class="lineNum">     730</span>              : signals:</span>
+<span id="L731"><span class="lineNum">     731</span>              :   /**</span>
+<span id="L732"><span class="lineNum">     732</span>              :    * @brief Nothing of the store's runs or waits any more (isIdle()).</span>
+<span id="L733"><span class="lineNum">     733</span>              :    *</span>
+<span id="L734"><span class="lineNum">     734</span>              :    * Emitted when the command queue drains. The main window re-enables the</span>
+<span id="L735"><span class="lineNum">     735</span>              :    * profile selector on it: switching stores is held back while commands</span>
+<span id="L736"><span class="lineNum">     736</span>              :    * for the current one are still queued.</span>
+<span id="L737"><span class="lineNum">     737</span>              :    */</span>
+<span id="L738"><span class="lineNum">     738</span>              :   void idle();</span>
+<span id="L739"><span class="lineNum">     739</span>              :   /**</span>
+<span id="L740"><span class="lineNum">     740</span>              :    * @brief Emitted each time a queued process is about to start, and by</span>
+<span id="L741"><span class="lineNum">     741</span>              :    * the refusals that go on to emit processErrorExit().</span>
+<span id="L742"><span class="lineNum">     742</span>              :    *</span>
+<span id="L743"><span class="lineNum">     743</span>              :    * The main window shows the busy state on it. An operation made of</span>
+<span id="L744"><span class="lineNum">     744</span>              :    * several processes emits it once per process; the operation then ends</span>
+<span id="L745"><span class="lineNum">     745</span>              :    * with a `finished...` signal or with processErrorExit().</span>
+<span id="L746"><span class="lineNum">     746</span>              :    */</span>
+<span id="L747"><span class="lineNum">     747</span>              :   void startingExecuteWrapper();</span>
+<span id="L748"><span class="lineNum">     748</span>              :   /**</span>
+<span id="L749"><span class="lineNum">     749</span>              :    * @brief Progress or a non-fatal problem worth a line in the status bar</span>
+<span id="L750"><span class="lineNum">     750</span>              :    * (&quot;Creating backup commit&quot;, &quot;Git pull failed: ...&quot;).</span>
+<span id="L751"><span class="lineNum">     751</span>              :    *</span>
+<span id="L752"><span class="lineNum">     752</span>              :    * Nothing depends on it being shown; an error the user must see goes out</span>
+<span id="L753"><span class="lineNum">     753</span>              :    * as critical() instead.</span>
+<span id="L754"><span class="lineNum">     754</span>              :    * @param msg Translated status text.</span>
+<span id="L755"><span class="lineNum">     755</span>              :    * @param timeout How long to show it, in milliseconds.</span>
+<span id="L756"><span class="lineNum">     756</span>              :    */</span>
+<span id="L757"><span class="lineNum">     757</span>              :   void statusMsg(const QString &amp;msg, int timeout);</span>
+<span id="L758"><span class="lineNum">     758</span>              :   /**</span>
+<span id="L759"><span class="lineNum">     759</span>              :    * @brief Something went wrong that the user has to be told about in a</span>
+<span id="L760"><span class="lineNum">     760</span>              :    * dialog, such as a refused path or a failed backup commit.</span>
+<span id="L761"><span class="lineNum">     761</span>              :    *</span>
+<span id="L762"><span class="lineNum">     762</span>              :    * Says only what happened; it does not by itself mean an operation is</span>
+<span id="L763"><span class="lineNum">     763</span>              :    * over. Every failure reported through the command queue goes on to</span>
+<span id="L764"><span class="lineNum">     764</span>              :    * processErrorExit(), and so do some refusals. Other checks made before</span>
+<span id="L765"><span class="lineNum">     765</span>              :    * anything is queued, such as an entry that already exists or a</span>
+<span id="L766"><span class="lineNum">     766</span>              :    * recipient list that cannot be used, emit this signal and nothing</span>
+<span id="L767"><span class="lineNum">     767</span>              :    * else.</span>
+<span id="L768"><span class="lineNum">     768</span>              :    * @param title Translated dialog title.</span>
+<span id="L769"><span class="lineNum">     769</span>              :    * @param message Translated description.</span>
+<span id="L770"><span class="lineNum">     770</span>              :    */</span>
+<span id="L771"><span class="lineNum">     771</span>              :   void critical(const QString &amp;title, const QString &amp;message);</span>
+<span id="L772"><span class="lineNum">     772</span>              : </span>
+<span id="L773"><span class="lineNum">     773</span>              :   /**</span>
+<span id="L774"><span class="lineNum">     774</span>              :    * @brief An operation ended in failure: its process exited non-zero,</span>
+<span id="L775"><span class="lineNum">     775</span>              :    * could not be started or crashed, or the operation was refused.</span>
+<span id="L776"><span class="lineNum">     776</span>              :    *</span>
+<span id="L777"><span class="lineNum">     777</span>              :    * The counterpart of the `finished...` signals for an operation that</span>
+<span id="L778"><span class="lineNum">     778</span>              :    * queued a command: it ends in one or the other. The main window</span>
+<span id="L779"><span class="lineNum">     779</span>              :    * releases the busy state and shows @p err in the password pane. One</span>
+<span id="L780"><span class="lineNum">     780</span>              :    * case emits both: when RealPass has removed a linked folder but could</span>
+<span id="L781"><span class="lineNum">     781</span>              :    * not commit that, this signal is followed by finishedRemove(), because</span>
+<span id="L782"><span class="lineNum">     782</span>              :    * the store did change.</span>
+<span id="L783"><span class="lineNum">     783</span>              :    *</span>
+<span id="L784"><span class="lineNum">     784</span>              :    * Before anything is queued the paths differ, so a caller must not wait</span>
+<span id="L785"><span class="lineNum">     785</span>              :    * for this signal after every call. A path behind a link and an</span>
+<span id="L786"><span class="lineNum">     786</span>              :    * unfinished Git operation are refused with startingExecuteWrapper(),</span>
+<span id="L787"><span class="lineNum">     787</span>              :    * critical() and this signal. Other early checks, such as an entry that</span>
+<span id="L788"><span class="lineNum">     788</span>              :    * already exists, emit critical() alone and return.</span>
+<span id="L789"><span class="lineNum">     789</span>              :    *</span>
+<span id="L790"><span class="lineNum">     790</span>              :    * insertFailed() and generateGPGKeysFailed() are emitted before this</span>
+<span id="L791"><span class="lineNum">     791</span>              :    * signal whenever their operation fails through a queued command, be it</span>
+<span id="L792"><span class="lineNum">     792</span>              :    * a non-zero exit, a crash or a process that could not be started, so</span>
+<span id="L793"><span class="lineNum">     793</span>              :    * their dialogs need not guess whose failure it is.</span>
+<span id="L794"><span class="lineNum">     794</span>              :    * generateGPGKeysFailed() also comes first when no gpg executable is</span>
+<span id="L795"><span class="lineNum">     795</span>              :    * configured and nothing is queued at all. A refusal that reaches this</span>
+<span id="L796"><span class="lineNum">     796</span>              :    * signal without queuing anything emits neither of them.</span>
+<span id="L797"><span class="lineNum">     797</span>              :    * @param exitCode Exit code of the process; -1 when it did not exit</span>
+<span id="L798"><span class="lineNum">     798</span>              :    *        normally, 1 for a refusal.</span>
+<span id="L799"><span class="lineNum">     799</span>              :    * @param err What to show the user: stderr, or a translated message.</span>
+<span id="L800"><span class="lineNum">     800</span>              :    */</span>
+<span id="L801"><span class="lineNum">     801</span>              :   void processErrorExit(int exitCode, const QString &amp;err);</span>
+<span id="L802"><span class="lineNum">     802</span>              : </span>
+<span id="L803"><span class="lineNum">     803</span>              :   /**</span>
+<span id="L804"><span class="lineNum">     804</span>              :    * @brief A process of any kind finished successfully and its output</span>
+<span id="L805"><span class="lineNum">     805</span>              :    * cannot contain a secret.</span>
+<span id="L806"><span class="lineNum">     806</span>              :    *</span>
+<span id="L807"><span class="lineNum">     807</span>              :    * Feeds the process output panel. Processes whose output may hold a</span>
+<span id="L808"><span class="lineNum">     808</span>              :    * decrypted entry (Enums::processInfo()) never emit it, so a receiver</span>
+<span id="L809"><span class="lineNum">     809</span>              :    * may log or display @p out and @p err as they are.</span>
+<span id="L810"><span class="lineNum">     810</span>              :    * @param out Standard output from the process.</span>
+<span id="L811"><span class="lineNum">     811</span>              :    * @param err Standard error from the process.</span>
+<span id="L812"><span class="lineNum">     812</span>              :    * @param pid Which kind of process it was.</span>
+<span id="L813"><span class="lineNum">     813</span>              :    */</span>
+<span id="L814"><span class="lineNum">     814</span>              :   void finishedAnyWithPid(const QString &amp;out, const QString &amp;err,</span>
+<span id="L815"><span class="lineNum">     815</span>              :                           Enums::PROCESS pid);</span>
+<span id="L816"><span class="lineNum">     816</span>              :   /**</span>
+<span id="L817"><span class="lineNum">     817</span>              :    * @brief `git init` in the store succeeded; the store is a repository</span>
+<span id="L818"><span class="lineNum">     818</span>              :    * now and the tree is re-read.</span>
+<span id="L819"><span class="lineNum">     819</span>              :    * @param out Standard output.</span>
+<span id="L820"><span class="lineNum">     820</span>              :    * @param err Standard error.</span>
+<span id="L821"><span class="lineNum">     821</span>              :    */</span>
+<span id="L822"><span class="lineNum">     822</span>              :   void finishedGitInit(const QString &amp;out, const QString &amp;err);</span>
+<span id="L823"><span class="lineNum">     823</span>              :   /**</span>
+<span id="L824"><span class="lineNum">     824</span>              :    * @brief `git pull` succeeded; entries may have changed on disk.</span>
+<span id="L825"><span class="lineNum">     825</span>              :    * @param out Standard output.</span>
+<span id="L826"><span class="lineNum">     826</span>              :    * @param err Standard error.</span>
+<span id="L827"><span class="lineNum">     827</span>              :    */</span>
+<span id="L828"><span class="lineNum">     828</span>              :   void finishedGitPull(const QString &amp;out, const QString &amp;err);</span>
+<span id="L829"><span class="lineNum">     829</span>              :   /**</span>
+<span id="L830"><span class="lineNum">     830</span>              :    * @brief `git push` succeeded.</span>
+<span id="L831"><span class="lineNum">     831</span>              :    * @param out Standard output.</span>
+<span id="L832"><span class="lineNum">     832</span>              :    * @param err Standard error.</span>
+<span id="L833"><span class="lineNum">     833</span>              :    */</span>
+<span id="L834"><span class="lineNum">     834</span>              :   void finishedGitPush(const QString &amp;out, const QString &amp;err);</span>
+<span id="L835"><span class="lineNum">     835</span>              :   /**</span>
+<span id="L836"><span class="lineNum">     836</span>              :    * @brief Emitted when a Show() succeeds.</span>
+<span id="L837"><span class="lineNum">     837</span>              :    *</span>
+<span id="L838"><span class="lineNum">     838</span>              :    * Requests complete in the order they were queued, so @p file is the</span>
+<span id="L839"><span class="lineNum">     839</span>              :    * argument of the Show() this result belongs to. Every receiver checks it</span>
+<span id="L840"><span class="lineNum">     840</span>              :    * against what it asked for; a failed decrypt emits processErrorExit()</span>
+<span id="L841"><span class="lineNum">     841</span>              :    * instead and never finishedShow().</span>
+<span id="L842"><span class="lineNum">     842</span>              :    * @param out Decrypted password file content.</span>
+<span id="L843"><span class="lineNum">     843</span>              :    * @param file The Show() argument this content is for.</span>
+<span id="L844"><span class="lineNum">     844</span>              :    */</span>
+<span id="L845"><span class="lineNum">     845</span>              :   void finishedShow(const QString &amp;out, const QString &amp;file);</span>
+<span id="L846"><span class="lineNum">     846</span>              :   /**</span>
+<span id="L847"><span class="lineNum">     847</span>              :    * @brief An Insert() succeeded: the entry is in the store and, with Git</span>
+<span id="L848"><span class="lineNum">     848</span>              :    * in use, committed.</span>
+<span id="L849"><span class="lineNum">     849</span>              :    *</span>
+<span id="L850"><span class="lineNum">     850</span>              :    * In ImitatePass this ends the whole transaction (gpg, then git add and</span>
+<span id="L851"><span class="lineNum">     851</span>              :    * commit), not just the gpg step. The password dialog closes on it. A</span>
+<span id="L852"><span class="lineNum">     852</span>              :    * failure reported through the command queue goes out as insertFailed()</span>
+<span id="L853"><span class="lineNum">     853</span>              :    * and processErrorExit() instead; an insert refused before anything is</span>
+<span id="L854"><span class="lineNum">     854</span>              :    * queued emits neither this signal nor insertFailed().</span>
+<span id="L855"><span class="lineNum">     855</span>              :    * @param out Standard output of the operation's processes.</span>
+<span id="L856"><span class="lineNum">     856</span>              :    * @param err Standard error.</span>
+<span id="L857"><span class="lineNum">     857</span>              :    */</span>
+<span id="L858"><span class="lineNum">     858</span>              :   void finishedInsert(const QString &amp;out, const QString &amp;err);</span>
+<span id="L859"><span class="lineNum">     859</span>              :   /**</span>
+<span id="L860"><span class="lineNum">     860</span>              :    * @brief A Remove() succeeded; the entry or folder is gone from the store.</span>
+<span id="L861"><span class="lineNum">     861</span>              :    * @param out Standard output.</span>
+<span id="L862"><span class="lineNum">     862</span>              :    * @param err Standard error.</span>
+<span id="L863"><span class="lineNum">     863</span>              :    */</span>
+<span id="L864"><span class="lineNum">     864</span>              :   void finishedRemove(const QString &amp;out, const QString &amp;err);</span>
+<span id="L865"><span class="lineNum">     865</span>              :   /**</span>
+<span id="L866"><span class="lineNum">     866</span>              :    * @brief An Init() succeeded: the folder's `.gpg-id` holds the new</span>
+<span id="L867"><span class="lineNum">     867</span>              :    * recipient list.</span>
+<span id="L868"><span class="lineNum">     868</span>              :    * @param out Standard output.</span>
+<span id="L869"><span class="lineNum">     869</span>              :    * @param err Standard error.</span>
+<span id="L870"><span class="lineNum">     870</span>              :    */</span>
+<span id="L871"><span class="lineNum">     871</span>              :   void finishedInit(const QString &amp;out, const QString &amp;err);</span>
+<span id="L872"><span class="lineNum">     872</span>              :   /**</span>
+<span id="L873"><span class="lineNum">     873</span>              :    * @brief A Move() succeeded; the entry or folder is under its new name.</span>
+<span id="L874"><span class="lineNum">     874</span>              :    * @param out Standard output.</span>
+<span id="L875"><span class="lineNum">     875</span>              :    * @param err Standard error.</span>
+<span id="L876"><span class="lineNum">     876</span>              :    */</span>
+<span id="L877"><span class="lineNum">     877</span>              :   void finishedMove(const QString &amp;out, const QString &amp;err);</span>
+<span id="L878"><span class="lineNum">     878</span>              :   /**</span>
+<span id="L879"><span class="lineNum">     879</span>              :    * @brief A Copy() succeeded; the copy exists beside the original.</span>
+<span id="L880"><span class="lineNum">     880</span>              :    * @param out Standard output.</span>
+<span id="L881"><span class="lineNum">     881</span>              :    * @param err Standard error.</span>
+<span id="L882"><span class="lineNum">     882</span>              :    */</span>
+<span id="L883"><span class="lineNum">     883</span>              :   void finishedCopy(const QString &amp;out, const QString &amp;err);</span>
+<span id="L884"><span class="lineNum">     884</span>              :   /**</span>
+<span id="L885"><span class="lineNum">     885</span>              :    * @brief GenerateGPGKeys() succeeded; the new key pair is in the keyring.</span>
+<span id="L886"><span class="lineNum">     886</span>              :    *</span>
+<span id="L887"><span class="lineNum">     887</span>              :    * The key generation dialog closes on it. A failure emits</span>
+<span id="L888"><span class="lineNum">     888</span>              :    * generateGPGKeysFailed() instead.</span>
+<span id="L889"><span class="lineNum">     889</span>              :    * @param out Standard output.</span>
+<span id="L890"><span class="lineNum">     890</span>              :    * @param err Standard error.</span>
+<span id="L891"><span class="lineNum">     891</span>              :    */</span>
+<span id="L892"><span class="lineNum">     892</span>              :   void finishedGenerateGPGKeys(const QString &amp;out, const QString &amp;err);</span>
+<span id="L893"><span class="lineNum">     893</span>              :   /**</span>
+<span id="L894"><span class="lineNum">     894</span>              :    * @brief Emitted when GPG key generation fails, alongside the generic</span>
+<span id="L895"><span class="lineNum">     895</span>              :    *        processErrorExit(); lets the keygen dialog react to its own</span>
+<span id="L896"><span class="lineNum">     896</span>              :    *        failure only, not to any other command failing meanwhile.</span>
+<span id="L897"><span class="lineNum">     897</span>              :    * @param err What gpg (or the setup) reported.</span>
+<span id="L898"><span class="lineNum">     898</span>              :    */</span>
+<span id="L899"><span class="lineNum">     899</span>              :   void generateGPGKeysFailed(const QString &amp;err);</span>
+<span id="L900"><span class="lineNum">     900</span>              :   /**</span>
+<span id="L901"><span class="lineNum">     901</span>              :    * @brief Emitted when an Insert() fails through a queued command, before</span>
+<span id="L902"><span class="lineNum">     902</span>              :    *        the generic processErrorExit(): the process exited non-zero,</span>
+<span id="L903"><span class="lineNum">     903</span>              :    *        crashed or could not be started, or the entry could not be put in</span>
+<span id="L904"><span class="lineNum">     904</span>              :    *        place afterwards. Lets the password dialog keep what was typed</span>
+<span id="L905"><span class="lineNum">     905</span>              :    *        and say why, without reacting to any other command failing</span>
+<span id="L906"><span class="lineNum">     906</span>              :    *        meanwhile. An insert refused before anything is queued does not</span>
+<span id="L907"><span class="lineNum">     907</span>              :    *        emit it.</span>
+<span id="L908"><span class="lineNum">     908</span>              :    * @param err What gpg, pass or the placement of the entry reported.</span>
+<span id="L909"><span class="lineNum">     909</span>              :    * @param written true when this insert did put the entry in the store and</span>
+<span id="L910"><span class="lineNum">     910</span>              :    *        only a later step (git add or commit) failed.</span>
+<span id="L911"><span class="lineNum">     911</span>              :    */</span>
+<span id="L912"><span class="lineNum">     912</span>              :   void insertFailed(const QString &amp;err, bool written);</span>
+<span id="L913"><span class="lineNum">     913</span>              :   /**</span>
+<span id="L914"><span class="lineNum">     914</span>              :    * @brief The newest Grep() is over; an empty list means no entry matched.</span>
+<span id="L915"><span class="lineNum">     915</span>              :    *</span>
+<span id="L916"><span class="lineNum">     916</span>              :    * Comes from NativeGrep on both backends and bypasses finished(), since</span>
+<span id="L917"><span class="lineNum">     917</span>              :    * the matching lines are decrypted content. A search superseded by a</span>
+<span id="L918"><span class="lineNum">     918</span>              :    * newer one never reports.</span>
+<span id="L919"><span class="lineNum">     919</span>              :    * @param results List of (entry path, matching lines) pairs.</span>
+<span id="L920"><span class="lineNum">     920</span>              :    */</span>
+<span id="L921"><span class="lineNum">     921</span>              :   void finishedGrep(const QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results);</span>
+<span id="L922"><span class="lineNum">     922</span>              : };</span>
+<span id="L923"><span class="lineNum">     923</span>              : </span>
+<span id="L924"><span class="lineNum">     924</span>              : /**</span>
+<span id="L925"><span class="lineNum">     925</span>              :  * @brief Maps GPG stderr (which may include --status-fd 2 tokens) to a</span>
+<span id="L926"><span class="lineNum">     926</span>              :  * translated user-friendly encryption error string.</span>
+<span id="L927"><span class="lineNum">     927</span>              :  *</span>
+<span id="L928"><span class="lineNum">     928</span>              :  * Checks machine-readable [GNUPG:] status tokens first (locale-independent),</span>
+<span id="L929"><span class="lineNum">     929</span>              :  * then falls back to case-insensitive substring matching for GPG builds that</span>
+<span id="L930"><span class="lineNum">     930</span>              :  * do not emit status tokens. Returns an empty string when no known pattern</span>
+<span id="L931"><span class="lineNum">     931</span>              :  * matches.</span>
+<span id="L932"><span class="lineNum">     932</span>              :  *</span>
+<span id="L933"><span class="lineNum">     933</span>              :  * Declared here so it can be exercised by unit tests without linking the full</span>
+<span id="L934"><span class="lineNum">     934</span>              :  * Pass object.</span>
+<span id="L935"><span class="lineNum">     935</span>              :  * @param err gpg's stderr, with or without `[GNUPG:]` status lines.</span>
+<span id="L936"><span class="lineNum">     936</span>              :  * @return A translated message, or an empty string for an error it does</span>
+<span id="L937"><span class="lineNum">     937</span>              :  *         not recognise.</span>
+<span id="L938"><span class="lineNum">     938</span>              :  */</span>
+<span id="L939"><span class="lineNum">     939</span>              : QString gpgErrorMessage(const QString &amp;err);</span>
+<span id="L940"><span class="lineNum">     940</span>              : </span>
+<span id="L941"><span class="lineNum">     941</span>              : #endif // SRC_PASS_H_</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

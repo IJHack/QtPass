@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/pathvalidator.cpp</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - pathvalidator.cpp<span style="font-size: 80%;"> (source / <a href="pathvalidator.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">93.3&nbsp;%</td>
+            <td class="headerCovTableEntry">45</td>
+            <td class="headerCovTableEntry">42</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">4</td>
+            <td class="headerCovTableEntry">4</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Implements PathValidator; storeRelativePath() does the canonical</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * comparison the other checks build on.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #include &quot;pathvalidator.h&quot;</span>
+<span id="L9"><span class="lineNum">       9</span>              : #include &lt;QDir&gt;</span>
+<span id="L10"><span class="lineNum">      10</span>              : #include &lt;QFileInfo&gt;</span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &lt;QStringList&gt;</span>
+<span id="L12"><span class="lineNum">      12</span>              : </span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">          72 : auto PathValidator::isPathInStore(const QString &amp;storeRoot,</span></span>
+<span id="L14"><span class="lineNum">      14</span>              :                                   const QString &amp;candidate) -&gt; bool {</span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">          72 :   return storeRelativePath(storeRoot, candidate).has_value();</span></span>
+<span id="L16"><span class="lineNum">      16</span>              : }</span>
+<span id="L17"><span class="lineNum">      17</span>              : </span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         126 : auto PathValidator::storeRelativePath(const QString &amp;storeRoot,</span></span>
+<span id="L19"><span class="lineNum">      19</span>              :                                       const QString &amp;candidate)</span>
+<span id="L20"><span class="lineNum">      20</span>              :     -&gt; std::optional&lt;QString&gt; {</span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         126 :   if (storeRoot.isEmpty() || candidate.isEmpty()) {</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">           3 :     return std::nullopt;</span></span>
+<span id="L23"><span class="lineNum">      23</span>              :   }</span>
+<span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">         123 :   const QString rootCanon = QDir(storeRoot).canonicalPath();</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         123 :   if (rootCanon.isEmpty()) {</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           1 :     return std::nullopt;</span></span>
+<span id="L27"><span class="lineNum">      27</span>              :   }</span>
+<span id="L28"><span class="lineNum">      28</span>              : </span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">         122 :   QString resolved;</span></span>
+<span id="L30"><span class="lineNum">      30</span> <span class="tlaGNC">         244 :   const QFileInfo fi(QDir::cleanPath(QFileInfo(candidate).absoluteFilePath()));</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">         122 :   if (fi.exists()) {</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         134 :     resolved = fi.canonicalFilePath();</span></span>
+<span id="L33"><span class="lineNum">      33</span>              :   } else {</span>
+<span id="L34"><span class="lineNum">      34</span>              :     // Walk up to the nearest existing ancestor so we can canonicalise it</span>
+<span id="L35"><span class="lineNum">      35</span>              :     // (resolves any symlinks on the way to the store root), then re-append</span>
+<span id="L36"><span class="lineNum">      36</span>              :     // the leaf components below that ancestor.</span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          55 :     QDir parent = fi.dir();</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          55 :     QStringList tail;</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">          55 :     tail.prepend(fi.fileName());</span></span>
+<span id="L40"><span class="lineNum">      40</span> <span class="tlaGNC">          63 :     while (!parent.exists()) {</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           8 :       tail.prepend(parent.dirName());</span></span>
+<span id="L42"><span class="lineNum">      42</span>              :       // The filesystem root always exists, so the loop terminates there</span>
+<span id="L43"><span class="lineNum">      43</span>              :       // before cdUp() can fail; this guard is defensive against a</span>
+<span id="L44"><span class="lineNum">      44</span>              :       // pathological QDir that can neither exist nor ascend.</span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">           8 :       if (!parent.cdUp()) {</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaUNC">           0 :         return std::nullopt;</span></span>
+<span id="L47"><span class="lineNum">      47</span>              :       }</span>
+<span id="L48"><span class="lineNum">      48</span>              :     }</span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">          55 :     const QString parentCanon = parent.canonicalPath();</span></span>
+<span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">          55 :     if (parentCanon.isEmpty()) {</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaUNC">           0 :       return std::nullopt;</span></span>
+<span id="L52"><span class="lineNum">      52</span>              :     }</span>
+<span id="L53"><span class="lineNum">      53</span> <span class="tlaGNC">         110 :     resolved = QDir::cleanPath(parentCanon + QLatin1Char('/') +</span></span>
+<span id="L54"><span class="lineNum">      54</span> <span class="tlaGNC">         110 :                                tail.join(QLatin1Char('/')));</span></span>
+<span id="L55"><span class="lineNum">      55</span> <span class="tlaGNC">          55 :   }</span></span>
+<span id="L56"><span class="lineNum">      56</span>              : </span>
+<span id="L57"><span class="lineNum">      57</span> <span class="tlaGNC">         122 :   if (resolved.isEmpty()) {</span></span>
+<span id="L58"><span class="lineNum">      58</span> <span class="tlaUNC">           0 :     return std::nullopt;</span></span>
+<span id="L59"><span class="lineNum">      59</span>              :   }</span>
+<span id="L60"><span class="lineNum">      60</span> <span class="tlaGNC">         122 :   if (resolved == rootCanon) {</span></span>
+<span id="L61"><span class="lineNum">      61</span> <span class="tlaGNC">          31 :     return QString();</span></span>
+<span id="L62"><span class="lineNum">      62</span>              :   }</span>
+<span id="L63"><span class="lineNum">      63</span> <span class="tlaGNC">         182 :   if (!resolved.startsWith(rootCanon + QLatin1Char('/'))) {</span></span>
+<span id="L64"><span class="lineNum">      64</span> <span class="tlaGNC">          22 :     return std::nullopt;</span></span>
+<span id="L65"><span class="lineNum">      65</span>              :   }</span>
+<span id="L66"><span class="lineNum">      66</span> <span class="tlaGNC">         138 :   return resolved.mid(rootCanon.size() + 1);</span></span>
+<span id="L67"><span class="lineNum">      67</span> <span class="tlaGNC">         122 : }</span></span>
+<span id="L68"><span class="lineNum">      68</span>              : </span>
+<span id="L69"><span class="lineNum">      69</span> <span class="tlaGNC">         300 : auto PathValidator::isTargetSpelled(const QString &amp;storeRoot,</span></span>
+<span id="L70"><span class="lineNum">      70</span>              :                                     const QString &amp;path) -&gt; bool {</span>
+<span id="L71"><span class="lineNum">      71</span> <span class="tlaGNC">         600 :   if (storeRoot.isEmpty() || !QDir::isAbsolutePath(path)) {</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">           2 :     return false;</span></span>
+<span id="L73"><span class="lineNum">      73</span>              :   }</span>
+<span id="L74"><span class="lineNum">      74</span>              : #ifdef Q_OS_WIN</span>
+<span id="L75"><span class="lineNum">      75</span>              :   constexpr auto cs = Qt::CaseInsensitive;</span>
+<span id="L76"><span class="lineNum">      76</span>              : #else</span>
+<span id="L77"><span class="lineNum">      77</span>              :   constexpr auto cs = Qt::CaseSensitive;</span>
+<span id="L78"><span class="lineNum">      78</span>              : #endif</span>
+<span id="L79"><span class="lineNum">      79</span> <span class="tlaGNC">         298 :   const QString root = QDir::cleanPath(storeRoot);</span></span>
+<span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         298 :   const QString canonical = QDir(root).canonicalPath();</span></span>
+<span id="L81"><span class="lineNum">      81</span> <span class="tlaGNC">         298 :   if (canonical.isEmpty() || canonical.compare(root, cs) == 0) {</span></span>
+<span id="L82"><span class="lineNum">      82</span> <span class="tlaGNC">         291 :     return false;</span></span>
+<span id="L83"><span class="lineNum">      83</span>              :   }</span>
+<span id="L84"><span class="lineNum">      84</span> <span class="tlaGNC">          12 :   const auto atOrUnder = [cs](const QString &amp;p, const QString &amp;dir) {</span></span>
+<span id="L85"><span class="lineNum">      85</span>              :     const QString prefix =</span>
+<span id="L86"><span class="lineNum">      86</span> <span class="tlaGNC">          12 :         dir.endsWith(QLatin1Char('/')) ? dir : dir + QLatin1Char('/');</span></span>
+<span id="L87"><span class="lineNum">      87</span> <span class="tlaGNC">          24 :     return p.compare(dir, cs) == 0 || p.startsWith(prefix, cs);</span></span>
+<span id="L88"><span class="lineNum">      88</span>              :   };</span>
+<span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">           7 :   const QString cleaned = QDir::cleanPath(path);</span></span>
+<span id="L90"><span class="lineNum">      90</span> <span class="tlaGNC">           7 :   return !atOrUnder(cleaned, root) &amp;&amp; atOrUnder(cleaned, canonical);</span></span>
+<span id="L91"><span class="lineNum">      91</span>              : }</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>

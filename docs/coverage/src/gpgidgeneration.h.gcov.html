@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - .lcov.total - src/gpgidgeneration.h</title>
+  <link rel="stylesheet" type="text/css" href="../gcov.css">
+</head>
+
+<body>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+
+            <tr>
+              <td width="100%">
+                <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - <a href="index.html" title="Click to go to directory src">src</a> - gpgidgeneration.h</td>
+            <td width="5%"></td>
+            <td width="5%"></td>
+            <td width="5%" class="headerCovTableHead">Coverage</td>
+            <td width="5%" class="headerCovTableHead" title="Covered + Uncovered code">Total</td>
+            <td width="5%" class="headerCovTableHead" title="Exercised code only">Hit</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">.lcov.total</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">1</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test Date:</td>
+            <td class="headerValue">2026-11-14 11:58:48</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntryHi">-</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">0</td>
+          </tr>
+                  <tr><td><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+                </table>
+              </td>
+            </tr>
+
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+          </table>
+
+          <table cellpadding=0 cellspacing=0 border=0>
+            <tr>
+              <td><br></td>
+            </tr>
+            <tr>
+              <td>
+<pre class="sourceHeading">            Line data    Source code</pre>
+<pre class="source">
+<span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span>
+<span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Rollback detection for signed `.gpg-id` files: the generation counter</span>
+<span id="L6"><span class="lineNum">       6</span>              :  * and the record of what was last seen.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #ifndef SRC_GPGIDGENERATION_H_</span>
+<span id="L9"><span class="lineNum">       9</span>              : #define SRC_GPGIDGENERATION_H_</span>
+<span id="L10"><span class="lineNum">      10</span>              : </span>
+<span id="L11"><span class="lineNum">      11</span>              : #include &lt;QByteArray&gt;</span>
+<span id="L12"><span class="lineNum">      12</span>              : #include &lt;QString&gt;</span>
+<span id="L13"><span class="lineNum">      13</span>              : #include &lt;optional&gt;</span>
+<span id="L14"><span class="lineNum">      14</span>              : </span>
+<span id="L15"><span class="lineNum">      15</span>              : /**</span>
+<span id="L16"><span class="lineNum">      16</span>              :  * @ingroup keys</span>
+<span id="L17"><span class="lineNum">      17</span>              :  * @brief Rollback detection for signed `.gpg-id` files.</span>
+<span id="L18"><span class="lineNum">      18</span>              :  *</span>
+<span id="L19"><span class="lineNum">      19</span>              :  * A signature proves that a recipient list is authentic and unmodified; it</span>
+<span id="L20"><span class="lineNum">      20</span>              :  * does not prove that it is the current one, nor that it was written for</span>
+<span id="L21"><span class="lineNum">      21</span>              :  * the folder it sits in. Whoever can write to a shared store can put back an</span>
+<span id="L22"><span class="lineNum">      22</span>              :  * older, genuinely signed list that still names a member since removed, or</span>
+<span id="L23"><span class="lineNum">      23</span>              :  * copy such a pair into a folder that never had a list of its own, and every</span>
+<span id="L24"><span class="lineNum">      24</span>              :  * later encryption there would include them again.</span>
+<span id="L25"><span class="lineNum">      25</span>              :  *</span>
+<span id="L26"><span class="lineNum">      26</span>              :  * So a `.gpg-id` QtPass writes for a store with a signing key starts with</span>
+<span id="L27"><span class="lineNum">      27</span>              :  * three comment lines, `# QtPass-GpgId-Generation: N`,</span>
+<span id="L28"><span class="lineNum">      28</span>              :  * `# QtPass-GpgId-Folder: &lt;store-relative folder&gt;` and</span>
+<span id="L29"><span class="lineNum">      29</span>              :  * `# QtPass-GpgId-Store: &lt;store id&gt;`, which `pass` (1.7.4 and later),</span>
+<span id="L30"><span class="lineNum">      30</span>              :  * QtPass (1.8 and later) and QtPass's own recipient parser ignore and the</span>
+<span id="L31"><span class="lineNum">      31</span>              :  * signature covers. The store id binds the list to its store, as the folder</span>
+<span id="L32"><span class="lineNum">      32</span>              :  * line binds it to its folder: one signing key may sign several stores, and</span>
+<span id="L33"><span class="lineNum">      33</span>              :  * a list of one copied into another at the same folder would verify there</span>
+<span id="L34"><span class="lineNum">      34</span>              :  * too (#2050). Each device remembers the id it first saw per store and</span>
+<span id="L35"><span class="lineNum">      35</span>              :  * refuses a list of another store, or a new list without the line. QtPass</span>
+<span id="L36"><span class="lineNum">      36</span>              :  * remembers, per `.gpg-id` file, the highest generation it has accepted or</span>
+<span id="L37"><span class="lineNum">      37</span>              :  * written, and refuses a signed list whose generation is lower or whose folder</span>
+<span id="L38"><span class="lineNum">      38</span>              :  * is not the one it sits in. Stores without a signing key get plain lists, as</span>
+<span id="L39"><span class="lineNum">      39</span>              :  * before: nothing checks their freshness, and older clients (pass up to 1.7.3,</span>
+<span id="L40"><span class="lineNum">      40</span>              :  * Android Password Store) take a comment for a recipient.</span>
+<span id="L41"><span class="lineNum">      41</span>              :  *</span>
+<span id="L42"><span class="lineNum">      42</span>              :  * What this is and is not: rollback detection on a device that has seen the</span>
+<span id="L43"><span class="lineNum">      43</span>              :  * newer list. A device seeing a store for the first time, or one that was</span>
+<span id="L44"><span class="lineNum">      44</span>              :  * offline, has nothing to compare against. The generation is monotonic per</span>
+<span id="L45"><span class="lineNum">      45</span>              :  * observer, not a distributed sequence number: two devices can both produce</span>
+<span id="L46"><span class="lineNum">      46</span>              :  * generation 19 from 18, and Git is what sorts that out; a device that</span>
+<span id="L47"><span class="lineNum">      47</span>              :  * accepted one of the two then meets the other as the same generation with</span>
+<span id="L48"><span class="lineNum">      48</span>              :  * different bytes, which is a conflict, not a rollback, and is refused until</span>
+<span id="L49"><span class="lineNum">      49</span>              :  * a holder of the signing key saves the recipients once more. For that the</span>
+<span id="L50"><span class="lineNum">      50</span>              :  * record keeps, next to the generation, a digest of the exact bytes it</span>
+<span id="L51"><span class="lineNum">      51</span>              :  * accepted or wrote. A list without the lines (written by `pass`, or by</span>
+<span id="L52"><span class="lineNum">      52</span>              :  * QtPass before 2.0) is generation 0 and is refused once anything higher</span>
+<span id="L53"><span class="lineNum">      53</span>              :  * was accepted; a holder of the signing key saving the recipients from</span>
+<span id="L54"><span class="lineNum">      54</span>              :  * QtPass writes the next generation. Without a readable and writable record</span>
+<span id="L55"><span class="lineNum">      55</span>              :  * nothing is accepted or written: unknown state is not &quot;never seen&quot;.</span>
+<span id="L56"><span class="lineNum">      56</span>              :  */</span>
+<span id="L57"><span class="lineNum">      57</span>              : class GpgIdGeneration {</span>
+<span id="L58"><span class="lineNum">      58</span>              : public:</span>
+<span id="L59"><span class="lineNum">      59</span>              :   /// The generation line. The grammar is strict: this prefix, one ASCII</span>
+<span id="L60"><span class="lineNum">      60</span>              :   /// decimal number of at most 18 digits, nothing else on the line.</span>
+<span id="L61"><span class="lineNum">      61</span>              :   static const QByteArray kGenerationPrefix;</span>
+<span id="L62"><span class="lineNum">      62</span>              :   /// The folder line: this prefix and the store-relative folder the list was</span>
+<span id="L63"><span class="lineNum">      63</span>              :   /// written for, `.` for the store root, `/`-separated.</span>
+<span id="L64"><span class="lineNum">      64</span>              :   static const QByteArray kFolderPrefix;</span>
+<span id="L65"><span class="lineNum">      65</span>              :   /// The store line: this prefix and the store's id, 32 lowercase hex</span>
+<span id="L66"><span class="lineNum">      66</span>              :   /// digits (a random 128-bit number given when the store's first signed</span>
+<span id="L67"><span class="lineNum">      67</span>              :   /// list is written).</span>
+<span id="L68"><span class="lineNum">      68</span>              :   static const QByteArray kStorePrefix;</span>
+<span id="L69"><span class="lineNum">      69</span>              :   /// The largest generation the grammar admits (18 nines). reserveNext()</span>
+<span id="L70"><span class="lineNum">      70</span>              :   /// never goes above it: a header QtPass writes must be one it reads back.</span>
+<span id="L71"><span class="lineNum">      71</span>              :   static const qint64 kMaxGeneration;</span>
+<span id="L72"><span class="lineNum">      72</span>              : </span>
+<span id="L73"><span class="lineNum">      73</span>              :   /// What a list's header says.</span>
+<span id="L74"><span class="lineNum">      74</span> <span class="tlaGNC">         166 :   struct Header {</span></span>
+<span id="L75"><span class="lineNum">      75</span>              :     /// 0 when the list carries no generation line.</span>
+<span id="L76"><span class="lineNum">      76</span>              :     qint64 generation = 0;</span>
+<span id="L77"><span class="lineNum">      77</span>              :     /// Nothing when the list carries no folder line.</span>
+<span id="L78"><span class="lineNum">      78</span>              :     std::optional&lt;QString&gt; folder;</span>
+<span id="L79"><span class="lineNum">      79</span>              :     /// Nothing when the list carries no store line.</span>
+<span id="L80"><span class="lineNum">      80</span>              :     std::optional&lt;QString&gt; store;</span>
+<span id="L81"><span class="lineNum">      81</span>              :   };</span>
+<span id="L82"><span class="lineNum">      82</span>              : </span>
+<span id="L83"><span class="lineNum">      83</span>              :   /**</span>
+<span id="L84"><span class="lineNum">      84</span>              :    * @brief The header a `.gpg-id`'s bytes declare.</span>
+<span id="L85"><span class="lineNum">      85</span>              :    * @param contents The file, as verified.</span>
+<span id="L86"><span class="lineNum">      86</span>              :    * @param error Receives why the metadata is unusable, if not null.</span>
+<span id="L87"><span class="lineNum">      87</span>              :    * @return The header (generation 0 and no folder for a list written</span>
+<span id="L88"><span class="lineNum">      88</span>              :    *         before generations existed, or by `pass`); nothing when a line</span>
+<span id="L89"><span class="lineNum">      89</span>              :    *         is malformed, appears twice, a generation line comes without a</span>
+<span id="L90"><span class="lineNum">      90</span>              :    *         folder line or a store line without a generation line, which is</span>
+<span id="L91"><span class="lineNum">      91</span>              :    *         not a list to trust.</span>
+<span id="L92"><span class="lineNum">      92</span>              :    */</span>
+<span id="L93"><span class="lineNum">      93</span>              :   static auto parse(const QByteArray &amp;contents, QString *error = nullptr)</span>
+<span id="L94"><span class="lineNum">      94</span>              :       -&gt; std::optional&lt;Header&gt;;</span>
+<span id="L95"><span class="lineNum">      95</span>              : </span>
+<span id="L96"><span class="lineNum">      96</span>              :   /**</span>
+<span id="L97"><span class="lineNum">      97</span>              :    * @brief The header lines for a list.</span>
+<span id="L98"><span class="lineNum">      98</span>              :    * @param generation The generation to declare.</span>
+<span id="L99"><span class="lineNum">      99</span>              :    * @param folder The store-relative folder the list is written for.</span>
+<span id="L100"><span class="lineNum">     100</span>              :    * @param store The store's id (storeIdFor()); empty writes no store line.</span>
+<span id="L101"><span class="lineNum">     101</span>              :    * @return The lines, newlines included.</span>
+<span id="L102"><span class="lineNum">     102</span>              :    */</span>
+<span id="L103"><span class="lineNum">     103</span>              :   static auto header(qint64 generation, const QString &amp;folder,</span>
+<span id="L104"><span class="lineNum">     104</span>              :                      const QString &amp;store = {}) -&gt; QByteArray;</span>
+<span id="L105"><span class="lineNum">     105</span>              : </span>
+<span id="L106"><span class="lineNum">     106</span>              :   /**</span>
+<span id="L107"><span class="lineNum">     107</span>              :    * @brief A complete list: the header in front of the recipients.</span>
+<span id="L108"><span class="lineNum">     108</span>              :    * @param generation The generation to declare.</span>
+<span id="L109"><span class="lineNum">     109</span>              :    * @param folder The store-relative folder the list is written for.</span>
+<span id="L110"><span class="lineNum">     110</span>              :    * @param recipients The recipient lines, one per line, no header.</span>
+<span id="L111"><span class="lineNum">     111</span>              :    * @param store The store's id (storeIdFor()); empty writes no store line.</span>
+<span id="L112"><span class="lineNum">     112</span>              :    * @return The bytes to write.</span>
+<span id="L113"><span class="lineNum">     113</span>              :    */</span>
+<span id="L114"><span class="lineNum">     114</span>              :   static auto withHeader(qint64 generation, const QString &amp;folder,</span>
+<span id="L115"><span class="lineNum">     115</span>              :                          const QByteArray &amp;recipients,</span>
+<span id="L116"><span class="lineNum">     116</span>              :                          const QString &amp;store = {}) -&gt; QByteArray;</span>
+<span id="L117"><span class="lineNum">     117</span>              : </span>
+<span id="L118"><span class="lineNum">     118</span>              :   /**</span>
+<span id="L119"><span class="lineNum">     119</span>              :    * @brief The store id to write into a list of @p storeRoot: the one this</span>
+<span id="L120"><span class="lineNum">     120</span>              :    * device knows the store by; else @p onDisk, the store line of the</span>
+<span id="L121"><span class="lineNum">     121</span>              :    * verified list being replaced, so a device joining a store takes its id</span>
+<span id="L122"><span class="lineNum">     122</span>              :    * over; else a new random one. Remembered before it is returned.</span>
+<span id="L123"><span class="lineNum">     123</span>              :    * @param storeRoot The configured store.</span>
+<span id="L124"><span class="lineNum">     124</span>              :    * @param onDisk The store line of the verified list on disk, if any.</span>
+<span id="L125"><span class="lineNum">     125</span>              :    * @param error Receives why the record could not be read or written.</span>
+<span id="L126"><span class="lineNum">     126</span>              :    * @return The id, or nothing when the record is unavailable; the caller</span>
+<span id="L127"><span class="lineNum">     127</span>              :    *         must not write the list then.</span>
+<span id="L128"><span class="lineNum">     128</span>              :    */</span>
+<span id="L129"><span class="lineNum">     129</span>              :   static auto storeIdFor(const QString &amp;storeRoot,</span>
+<span id="L130"><span class="lineNum">     130</span>              :                          const std::optional&lt;QString&gt; &amp;onDisk,</span>
+<span id="L131"><span class="lineNum">     131</span>              :                          QString *error = nullptr) -&gt; std::optional&lt;QString&gt;;</span>
+<span id="L132"><span class="lineNum">     132</span>              : </span>
+<span id="L133"><span class="lineNum">     133</span>              :   /**</span>
+<span id="L134"><span class="lineNum">     134</span>              :    * @brief The store-relative folder of @p gpgIdFile, as written in and</span>
+<span id="L135"><span class="lineNum">     135</span>              :    * compared against the folder line: `.` for the store root, `/`-separated,</span>
+<span id="L136"><span class="lineNum">     136</span>              :    * from canonical paths, lower-cased on Windows.</span>
+<span id="L137"><span class="lineNum">     137</span>              :    * @param gpgIdFile The `.gpg-id`.</span>
+<span id="L138"><span class="lineNum">     138</span>              :    * @param storeRoot The configured store.</span>
+<span id="L139"><span class="lineNum">     139</span>              :    * @return The folder, or nothing when @p gpgIdFile is not under the store</span>
+<span id="L140"><span class="lineNum">     140</span>              :    *         or a folder name on the way holds a control character, a line</span>
+<span id="L141"><span class="lineNum">     141</span>              :    *         break among them (the folder line could not record it).</span>
+<span id="L142"><span class="lineNum">     142</span>              :    */</span>
+<span id="L143"><span class="lineNum">     143</span>              :   static auto folderOf(const QString &amp;gpgIdFile, const QString &amp;storeRoot)</span>
+<span id="L144"><span class="lineNum">     144</span>              :       -&gt; std::optional&lt;QString&gt;;</span>
+<span id="L145"><span class="lineNum">     145</span>              : </span>
+<span id="L146"><span class="lineNum">     146</span>              :   /**</span>
+<span id="L147"><span class="lineNum">     147</span>              :    * @brief The highest generation this device has accepted or written for</span>
+<span id="L148"><span class="lineNum">     148</span>              :    * the `.gpg-id` at @p gpgIdFile. Unreadable is not &quot;never seen&quot;: a signed</span>
+<span id="L149"><span class="lineNum">     149</span>              :    * list must then be refused, not compared against 0.</span>
+<span id="L150"><span class="lineNum">     150</span>              :    * @param gpgIdFile The `.gpg-id`.</span>
+<span id="L151"><span class="lineNum">     151</span>              :    * @param error Receives why the record could not be read, if not null.</span>
+<span id="L152"><span class="lineNum">     152</span>              :    * @return 0 when this device has never seen the list, the generation</span>
+<span id="L153"><span class="lineNum">     153</span>              :    *         otherwise; nothing when the record cannot be read.</span>
+<span id="L154"><span class="lineNum">     154</span>              :    */</span>
+<span id="L155"><span class="lineNum">     155</span>              :   static auto remembered(const QString &amp;gpgIdFile, QString *error = nullptr)</span>
+<span id="L156"><span class="lineNum">     156</span>              :       -&gt; std::optional&lt;qint64&gt;;</span>
+<span id="L157"><span class="lineNum">     157</span>              : </span>
+<span id="L158"><span class="lineNum">     158</span>              :   /**</span>
+<span id="L159"><span class="lineNum">     159</span>              :    * @brief The outcome of accept(). Only Accepted means the list may be</span>
+<span id="L160"><span class="lineNum">     160</span>              :    * used; the others say why not, and Rollback alone is an authentic list</span>
+<span id="L161"><span class="lineNum">     161</span>              :    * of this folder.</span>
+<span id="L162"><span class="lineNum">     162</span>              :    */</span>
+<span id="L163"><span class="lineNum">     163</span>              :   enum class Verdict {</span>
+<span id="L164"><span class="lineNum">     164</span>              :     /** @brief Folder, generation and record all agree; remembered. */</span>
+<span id="L165"><span class="lineNum">     165</span>              :     Accepted,</span>
+<span id="L166"><span class="lineNum">     166</span>              :     /**</span>
+<span id="L167"><span class="lineNum">     167</span>              :      * @brief Authentic and bound to this folder, but older than a</span>
+<span id="L168"><span class="lineNum">     168</span>              :      * generation this device accepted.</span>
+<span id="L169"><span class="lineNum">     169</span>              :      */</span>
+<span id="L170"><span class="lineNum">     170</span>              :     Rollback,</span>
+<span id="L171"><span class="lineNum">     171</span>              :     /**</span>
+<span id="L172"><span class="lineNum">     172</span>              :      * @brief Older than a generation this device accepted and without a</span>
+<span id="L173"><span class="lineNum">     173</span>              :      * folder line: authentic, but written for who knows which folder</span>
+<span id="L174"><span class="lineNum">     174</span>              :      * (`pass`, or QtPass before 2.0, wrote it), so not this folder's to</span>
+<span id="L175"><span class="lineNum">     175</span>              :      * recover.</span>
+<span id="L176"><span class="lineNum">     176</span>              :      */</span>
+<span id="L177"><span class="lineNum">     177</span>              :     Unbound,</span>
+<span id="L178"><span class="lineNum">     178</span>              :     /**</span>
+<span id="L179"><span class="lineNum">     179</span>              :      * @brief The generation this device accepted last, but not the bytes:</span>
+<span id="L180"><span class="lineNum">     180</span>              :      * two devices saved at once (Git shows that as a conflict), or an</span>
+<span id="L181"><span class="lineNum">     181</span>              :      * authentic list of that generation was swapped in.</span>
+<span id="L182"><span class="lineNum">     182</span>              :      */</span>
+<span id="L183"><span class="lineNum">     183</span>              :     Conflict,</span>
+<span id="L184"><span class="lineNum">     184</span>              :     /** @brief Written for another folder of the store. */</span>
+<span id="L185"><span class="lineNum">     185</span>              :     WrongFolder,</span>
+<span id="L186"><span class="lineNum">     186</span>              :     /**</span>
+<span id="L187"><span class="lineNum">     187</span>              :      * @brief Written for another store (its store line names another id</span>
+<span id="L188"><span class="lineNum">     188</span>              :      * than this device knows the store by), or new to this device and</span>
+<span id="L189"><span class="lineNum">     189</span>              :      * without a store line while the store has an id.</span>
+<span id="L190"><span class="lineNum">     190</span>              :      */</span>
+<span id="L191"><span class="lineNum">     191</span>              :     WrongStore,</span>
+<span id="L192"><span class="lineNum">     192</span>              :     /** @brief A header line malformed or duplicated. */</span>
+<span id="L193"><span class="lineNum">     193</span>              :     Malformed,</span>
+<span id="L194"><span class="lineNum">     194</span>              :     /** @brief The record could not be read or written. */</span>
+<span id="L195"><span class="lineNum">     195</span>              :     RecordUnavailable,</span>
+<span id="L196"><span class="lineNum">     196</span>              :   };</span>
+<span id="L197"><span class="lineNum">     197</span>              : </span>
+<span id="L198"><span class="lineNum">     198</span>              :   /**</span>
+<span id="L199"><span class="lineNum">     199</span>              :    * @brief Decide about a verified list: its folder against where it sits,</span>
+<span id="L200"><span class="lineNum">     200</span>              :    * its generation against the remembered one, its bytes against the</span>
+<span id="L201"><span class="lineNum">     201</span>              :    * remembered digest when the generations are equal, and remember it when</span>
+<span id="L202"><span class="lineNum">     202</span>              :    * it passes. One transaction under the lock: read, compare, write through.</span>
+<span id="L203"><span class="lineNum">     203</span>              :    * @param gpgIdFile The `.gpg-id` the bytes came from.</span>
+<span id="L204"><span class="lineNum">     204</span>              :    * @param contents The verified bytes.</span>
+<span id="L205"><span class="lineNum">     205</span>              :    * @param storeRoot The configured store, for the folder check.</span>
+<span id="L206"><span class="lineNum">     206</span>              :    * @param error Receives the reason for a refusal, if not null. Where the</span>
+<span id="L207"><span class="lineNum">     207</span>              :    *        way through is saving the list again, the text says so, and that</span>
+<span id="L208"><span class="lineNum">     208</span>              :    *        the recipients the dialog then preselects are this list's.</span>
+<span id="L209"><span class="lineNum">     209</span>              :    * @return Accepted when the list may be used; otherwise why not. Without</span>
+<span id="L210"><span class="lineNum">     210</span>              :    *         established freshness state nothing is accepted.</span>
+<span id="L211"><span class="lineNum">     211</span>              :    */</span>
+<span id="L212"><span class="lineNum">     212</span>              :   static auto accept(const QString &amp;gpgIdFile, const QByteArray &amp;contents,</span>
+<span id="L213"><span class="lineNum">     213</span>              :                      const QString &amp;storeRoot, QString *error = nullptr)</span>
+<span id="L214"><span class="lineNum">     214</span>              :       -&gt; Verdict;</span>
+<span id="L215"><span class="lineNum">     215</span>              : </span>
+<span id="L216"><span class="lineNum">     216</span>              :   /**</span>
+<span id="L217"><span class="lineNum">     217</span>              :    * @brief Reserve the generation to write next for @p gpgIdFile: one above</span>
+<span id="L218"><span class="lineNum">     218</span>              :    * both what this device remembers and @p verifiedOnDisk, recorded as</span>
+<span id="L219"><span class="lineNum">     219</span>              :    * remembered before it is returned. One transaction under the lock, so two</span>
+<span id="L220"><span class="lineNum">     220</span>              :    * writers in this process cannot get the same number.</span>
+<span id="L221"><span class="lineNum">     221</span>              :    *</span>
+<span id="L222"><span class="lineNum">     222</span>              :    * Reserving before the file is written is what makes a failed write</span>
+<span id="L223"><span class="lineNum">     223</span>              :    * harmless (the record is ahead, the old list stays refused until a save</span>
+<span id="L224"><span class="lineNum">     224</span>              :    * succeeds) and a failed record fatal for the write: a list written but</span>
+<span id="L225"><span class="lineNum">     225</span>              :    * not recorded would let the previous one back in.</span>
+<span id="L226"><span class="lineNum">     226</span>              :    * @param gpgIdFile The `.gpg-id` about to be written.</span>
+<span id="L227"><span class="lineNum">     227</span>              :    * @param verifiedOnDisk The generation of the list currently on disk, if</span>
+<span id="L228"><span class="lineNum">     228</span>              :    *        its signature verified; nothing otherwise. An unverified number</span>
+<span id="L229"><span class="lineNum">     229</span>              :    *        is not taken: planted at the top of the grammar it would exhaust</span>
+<span id="L230"><span class="lineNum">     230</span>              :    *        the counter, planted high it would make every other device see a</span>
+<span id="L231"><span class="lineNum">     231</span>              :    *        jump.</span>
+<span id="L232"><span class="lineNum">     232</span>              :    * @param error Receives why nothing could be reserved, if not null.</span>
+<span id="L233"><span class="lineNum">     233</span>              :    * @return The generation to write, or nothing when the record could not</span>
+<span id="L234"><span class="lineNum">     234</span>              :    *         be read or written or the counter is exhausted; the caller must</span>
+<span id="L235"><span class="lineNum">     235</span>              :    *         not write the list then.</span>
+<span id="L236"><span class="lineNum">     236</span>              :    */</span>
+<span id="L237"><span class="lineNum">     237</span>              :   static auto reserveNext(const QString &amp;gpgIdFile,</span>
+<span id="L238"><span class="lineNum">     238</span>              :                           std::optional&lt;qint64&gt; verifiedOnDisk,</span>
+<span id="L239"><span class="lineNum">     239</span>              :                           QString *error = nullptr) -&gt; std::optional&lt;qint64&gt;;</span>
+<span id="L240"><span class="lineNum">     240</span>              : </span>
+<span id="L241"><span class="lineNum">     241</span>              :   /**</span>
+<span id="L242"><span class="lineNum">     242</span>              :    * @brief Record the bytes just written for @p gpgIdFile, so that this</span>
+<span id="L243"><span class="lineNum">     243</span>              :    * device recognises its own list afterwards and refuses another list of</span>
+<span id="L244"><span class="lineNum">     244</span>              :    * the same generation. Called after the file is on disk; the generation</span>
+<span id="L245"><span class="lineNum">     245</span>              :    * in @p contents must be the one reserveNext() gave.</span>
+<span id="L246"><span class="lineNum">     246</span>              :    * @param gpgIdFile The `.gpg-id` just written.</span>
+<span id="L247"><span class="lineNum">     247</span>              :    * @param contents The exact bytes written.</span>
+<span id="L248"><span class="lineNum">     248</span>              :    * @param error Receives why the record could not be written, if not null.</span>
+<span id="L249"><span class="lineNum">     249</span>              :    * @return Whether the digest was recorded. A list written but not</span>
+<span id="L250"><span class="lineNum">     250</span>              :    *         digested is still recognised by its generation; only a second</span>
+<span id="L251"><span class="lineNum">     251</span>              :    *         list of that generation would pass until it is read once.</span>
+<span id="L252"><span class="lineNum">     252</span>              :    */</span>
+<span id="L253"><span class="lineNum">     253</span>              :   static auto recordWritten(const QString &amp;gpgIdFile,</span>
+<span id="L254"><span class="lineNum">     254</span>              :                             const QByteArray &amp;contents,</span>
+<span id="L255"><span class="lineNum">     255</span>              :                             QString *error = nullptr) -&gt; bool;</span>
+<span id="L256"><span class="lineNum">     256</span>              : </span>
+<span id="L257"><span class="lineNum">     257</span>              :   /**</span>
+<span id="L258"><span class="lineNum">     258</span>              :    * @brief The digest of a list as the record keeps it: SHA-256 of the</span>
+<span id="L259"><span class="lineNum">     259</span>              :    * exact bytes, hexadecimal, so that two authentic lists of one generation</span>
+<span id="L260"><span class="lineNum">     260</span>              :    * can be told apart.</span>
+<span id="L261"><span class="lineNum">     261</span>              :    * @param contents The bytes.</span>
+<span id="L262"><span class="lineNum">     262</span>              :    * @return 64 hexadecimal characters.</span>
+<span id="L263"><span class="lineNum">     263</span>              :    */</span>
+<span id="L264"><span class="lineNum">     264</span>              :   static auto digest(const QByteArray &amp;contents) -&gt; QString;</span>
+<span id="L265"><span class="lineNum">     265</span>              : </span>
+<span id="L266"><span class="lineNum">     266</span>              :   /**</span>
+<span id="L267"><span class="lineNum">     267</span>              :    * @brief The settings key for a `.gpg-id`: a hash of its canonical path,</span>
+<span id="L268"><span class="lineNum">     268</span>              :    * so path spelling (case, separators, links on the way) and QSettings'</span>
+<span id="L269"><span class="lineNum">     269</span>              :    * treatment of `/` do not matter.</span>
+<span id="L270"><span class="lineNum">     270</span>              :    * @param gpgIdFile The `.gpg-id`, existing or about to be written.</span>
+<span id="L271"><span class="lineNum">     271</span>              :    * @return 64 hexadecimal characters.</span>
+<span id="L272"><span class="lineNum">     272</span>              :    */</span>
+<span id="L273"><span class="lineNum">     273</span>              :   static auto key(const QString &amp;gpgIdFile) -&gt; QString;</span>
+<span id="L274"><span class="lineNum">     274</span>              : </span>
+<span id="L275"><span class="lineNum">     275</span>              :   /**</span>
+<span id="L276"><span class="lineNum">     276</span>              :    * @brief The file the accepted generations are recorded in, so a refusal</span>
+<span id="L277"><span class="lineNum">     277</span>              :    * can name it: removing it forgets what was accepted, which is the manual</span>
+<span id="L278"><span class="lineNum">     278</span>              :    * way out for a device that cannot save the list itself.</span>
+<span id="L279"><span class="lineNum">     279</span>              :    * @return The record's path.</span>
+<span id="L280"><span class="lineNum">     280</span>              :    */</span>
+<span id="L281"><span class="lineNum">     281</span>              :   static auto recordFile() -&gt; QString;</span>
+<span id="L282"><span class="lineNum">     282</span>              : </span>
+<span id="L283"><span class="lineNum">     283</span>              :   /**</span>
+<span id="L284"><span class="lineNum">     284</span>              :    * @brief The file the store IDs are kept in, next to recordFile() and</span>
+<span id="L285"><span class="lineNum">     285</span>              :    * under its lock, so a QtPass from before store IDs, rewriting the record,</span>
+<span id="L286"><span class="lineNum">     286</span>              :    * cannot drop them. Removing it forgets the IDs.</span>
+<span id="L287"><span class="lineNum">     287</span>              :    * @return The file's path.</span>
+<span id="L288"><span class="lineNum">     288</span>              :    */</span>
+<span id="L289"><span class="lineNum">     289</span>              :   static auto storeRecordFile() -&gt; QString;</span>
+<span id="L290"><span class="lineNum">     290</span>              : </span>
+<span id="L291"><span class="lineNum">     291</span>              : private:</span>
+<span id="L292"><span class="lineNum">     292</span>              :   /**</span>
+<span id="L293"><span class="lineNum">     293</span>              :    * @brief Whether @p header's folder line, if it has one, names the folder</span>
+<span id="L294"><span class="lineNum">     294</span>              :    * the list sits in: a pair copied elsewhere is that folder's first list,</span>
+<span id="L295"><span class="lineNum">     295</span>              :    * a rollback in disguise.</span>
+<span id="L296"><span class="lineNum">     296</span>              :    * @param gpgIdFile The `.gpg-id` the bytes came from.</span>
+<span id="L297"><span class="lineNum">     297</span>              :    * @param header What its header says.</span>
+<span id="L298"><span class="lineNum">     298</span>              :    * @param storeRoot The configured store.</span>
+<span id="L299"><span class="lineNum">     299</span>              :    * @param error Receives why not, if not null.</span>
+<span id="L300"><span class="lineNum">     300</span>              :    * @return Whether the list belongs where it is.</span>
+<span id="L301"><span class="lineNum">     301</span>              :    */</span>
+<span id="L302"><span class="lineNum">     302</span>              :   static auto boundToItsFolder(const QString &amp;gpgIdFile, const Header &amp;header,</span>
+<span id="L303"><span class="lineNum">     303</span>              :                                const QString &amp;storeRoot, QString *error)</span>
+<span id="L304"><span class="lineNum">     304</span>              :       -&gt; bool;</span>
+<span id="L305"><span class="lineNum">     305</span>              : </span>
+<span id="L306"><span class="lineNum">     306</span>              :   /**</span>
+<span id="L307"><span class="lineNum">     307</span>              :    * @brief Whether @p header fits the store this device knows by @p pinned:</span>
+<span id="L308"><span class="lineNum">     308</span>              :    * its store line names that id, or it has none and is either generation 0</span>
+<span id="L309"><span class="lineNum">     309</span>              :    * (`pass`) or a list this device accepted before it knew the id.</span>
+<span id="L310"><span class="lineNum">     310</span>              :    * @param gpgIdFile The `.gpg-id` the bytes came from.</span>
+<span id="L311"><span class="lineNum">     311</span>              :    * @param header What its header says.</span>
+<span id="L312"><span class="lineNum">     312</span>              :    * @param pinned The store id this device knows the store by.</span>
+<span id="L313"><span class="lineNum">     313</span>              :    * @param alreadyAccepted Whether these exact bytes are the generation</span>
+<span id="L314"><span class="lineNum">     314</span>              :    *        this device accepted last for the file.</span>
+<span id="L315"><span class="lineNum">     315</span>              :    * @param recordPath The store IDs' file, which the refusal names.</span>
+<span id="L316"><span class="lineNum">     316</span>              :    * @param error Receives why not, if not null.</span>
+<span id="L317"><span class="lineNum">     317</span>              :    * @return Whether the list is this store's.</span>
+<span id="L318"><span class="lineNum">     318</span>              :    */</span>
+<span id="L319"><span class="lineNum">     319</span>              :   static auto ofThisStore(const QString &amp;gpgIdFile, const Header &amp;header,</span>
+<span id="L320"><span class="lineNum">     320</span>              :                           const QString &amp;pinned, bool alreadyAccepted,</span>
+<span id="L321"><span class="lineNum">     321</span>              :                           const QString &amp;recordPath, QString *error) -&gt; bool;</span>
+<span id="L322"><span class="lineNum">     322</span>              : </span>
+<span id="L323"><span class="lineNum">     323</span>              :   /**</span>
+<span id="L324"><span class="lineNum">     324</span>              :    * @brief How a holder of the signing key gets through a refusal, in words:</span>
+<span id="L325"><span class="lineNum">     325</span>              :    * saving the recipients writes the next generation, unless the record is</span>
+<span id="L326"><span class="lineNum">     326</span>              :    * already at the ceiling of the grammar, where it has to be removed first.</span>
+<span id="L327"><span class="lineNum">     327</span>              :    * @param last The generation this device accepted before.</span>
+<span id="L328"><span class="lineNum">     328</span>              :    * @param recordPath The record file, which the text names.</span>
+<span id="L329"><span class="lineNum">     329</span>              :    * @param saving What the user does in the Users dialog, in this refusal's</span>
+<span id="L330"><span class="lineNum">     330</span>              :    *        terms (&quot;checking the recipients and saving&quot;).</span>
+<span id="L331"><span class="lineNum">     331</span>              :    * @return The sentence to append to a refusal.</span>
+<span id="L332"><span class="lineNum">     332</span>              :    */</span>
+<span id="L333"><span class="lineNum">     333</span>              :   static auto wayThrough(qint64 last, const QString &amp;recordPath,</span>
+<span id="L334"><span class="lineNum">     334</span>              :                          const QString &amp;saving) -&gt; QString;</span>
+<span id="L335"><span class="lineNum">     335</span>              : </span>
+<span id="L336"><span class="lineNum">     336</span>              :   /**</span>
+<span id="L337"><span class="lineNum">     337</span>              :    * @brief The refusal for a list older than the one accepted here: a</span>
+<span id="L338"><span class="lineNum">     338</span>              :    * rollback, or an unbound list that could be any folder's history.</span>
+<span id="L339"><span class="lineNum">     339</span>              :    * @param gpgIdFile The `.gpg-id` the bytes came from.</span>
+<span id="L340"><span class="lineNum">     340</span>              :    * @param header What its header says.</span>
+<span id="L341"><span class="lineNum">     341</span>              :    * @param last The generation this device accepted before.</span>
+<span id="L342"><span class="lineNum">     342</span>              :    * @param recordPath The record file, which the text names.</span>
+<span id="L343"><span class="lineNum">     343</span>              :    * @param error Receives the reason, if not null.</span>
+<span id="L344"><span class="lineNum">     344</span>              :    * @return Rollback for a list that says which folder it is for, Unbound</span>
+<span id="L345"><span class="lineNum">     345</span>              :    *         for one that does not.</span>
+<span id="L346"><span class="lineNum">     346</span>              :    */</span>
+<span id="L347"><span class="lineNum">     347</span>              :   static auto staleList(const QString &amp;gpgIdFile, const Header &amp;header,</span>
+<span id="L348"><span class="lineNum">     348</span>              :                         qint64 last, const QString &amp;recordPath, QString *error)</span>
+<span id="L349"><span class="lineNum">     349</span>              :       -&gt; Verdict;</span>
+<span id="L350"><span class="lineNum">     350</span>              : };</span>
+<span id="L351"><span class="lineNum">     351</span>              : </span>
+<span id="L352"><span class="lineNum">     352</span>              : #endif // SRC_GPGIDGENERATION_H_</span>
+        </pre>
+              </td>
+            </tr>
+          </table>
+          <br>
+
+          <table width="100%" border=0 cellspacing=0 cellpadding=0>
+            <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
+            <tr><td class="versionInfo">Generated by: <a href="https://github.com//linux-test-project/lcov" target="_parent">LCOV version 2.0-1</a></td></tr>
+          </table>
+          <br>
+
+</body>
+</html>
