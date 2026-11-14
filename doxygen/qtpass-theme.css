@@ -1,0 +1,141 @@
+/*
+ * SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+/*
+ * The qtpass.org look for Doxygen Awesome: the site's Lato, palette and
+ * light/dark switch. Doxyfile loads this after doxygen-awesome.css, so it
+ * only overrides the theme's variables and a few header rules; the vendored
+ * theme stays unmodified.
+ *
+ * The fonts are not copied into the output. The documentation is published
+ * at qtpass.org/docs/, where ../fonts/ is the site's own Lato. A local build
+ * falls back to the next font in the stack.
+ *
+ * The colours are the site's (stylesheets/styles.css on the gh-pages branch);
+ * keep them in step when the site changes.
+ */
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/lato-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/lato-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/lato-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/lato-latin-700-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/lato-latin-900-normal.woff2") format("woff2");
+}
+
+html {
+  --primary-color: #19528a;
+  --primary-dark-color: #123c66;
+  --primary-light-color: #6f9fcf;
+  --on-primary-color: #fff;
+  --page-background-color: #fafbfc;
+  --page-foreground-color: #1f2933;
+  --page-secondary-foreground-color: #5b6772;
+  --separator-color: #dde3ea;
+  --side-nav-background: #f1f4f8;
+  --code-background: #f0f4f8;
+  --fragment-background: #f0f4f8;
+  --fragment-linenumber-background: #e6ebf1;
+  --fragment-linenumber-border: #dde3ea;
+  --tablehead-background: #f1f4f8;
+  --blockquote-background: #f1f4f8;
+  --blockquote-foreground: #5b6772;
+  --note-color: #e3edf6;
+  --note-color-dark: #19528a;
+  --note-color-darker: #123c66;
+  --font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-family-monospace:
+    ui-monospace, "Cascadia Mono", "JetBrains Mono", "Menlo", "Consolas",
+    monospace;
+
+  /* Lato runs smaller than the system faces the theme was sized for. */
+  --page-font-size: 16.5px;
+  --navigation-font-size: 15px;
+  --toc-font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light-mode) {
+    --primary-color: #6ea8e8;
+    --primary-dark-color: #8fbdf0;
+    --primary-light-color: #3a6898;
+
+    /* The dark accent is light, so text on it must be dark. */
+    --on-primary-color: #0e1216;
+    --page-background-color: #14181d;
+    --page-foreground-color: #d9dee4;
+    --page-secondary-foreground-color: #98a3ae;
+    --separator-color: #2a323b;
+    --side-nav-background: #1c232b;
+    --code-background: #1c232b;
+    --fragment-background: #1a2027;
+    --fragment-linenumber-background: #242d37;
+    --fragment-linenumber-border: #14181d;
+    --tablehead-background: #1c232b;
+    --blockquote-background: #1c232b;
+    --blockquote-foreground: #98a3ae;
+    --note-color: #17283a;
+    --note-color-dark: #6ea8e8;
+    --note-color-darker: #dbe9f8;
+  }
+}
+
+body {
+  background: var(--page-background-color);
+}
+
+/* The site's header: the logo beside a heavy name, the line under it muted. */
+#projectlogo img {
+  width: calc(var(--title-font-size) * 1.9);
+  height: auto;
+}
+
+#projectname {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+#projectbrief {
+  color: var(--page-secondary-foreground-color);
+}
+
+h1,
+h2,
+h3,
+div.headertitle .title {
+  font-weight: 700;
+}
