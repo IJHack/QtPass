@@ -512,6 +512,10 @@ auto MainWindow::config() -> bool {
 
   updateProfileBox();
   const AppSettings s = QtPassSettings::load();
+  // An open still waiting for the tree was asked of the old view; once
+  // re-rooted, it would find that name in the new store. A profile switch
+  // ends it by clearing the search text.
+  delete m_pendingOpen;
   m_tree->setStore(s.passStore);
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
@@ -841,7 +845,9 @@ void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
 }
 
 void MainWindow::onTimeoutSearch() {
-  QString query = ui->lineEdit->text();
+  // The tree matches slash-separated paths: on Windows, team\bank typed is
+  // team/bank, as exactMatchPath() reads it too.
+  QString query = QDir::fromNativeSeparators(ui->lineEdit->text());
 
   if (query.isEmpty()) {
     ui->treeView->collapseAll();

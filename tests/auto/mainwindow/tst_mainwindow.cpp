@@ -462,6 +462,8 @@ private Q_SLOTS:
   void anExactMatchKeepsSpacesInTheName();
   void messageFromAnotherInstanceLeavesContentSearch();
   void newSearchTextCancelsAWaitingOpen();
+  void acceptedSettingsCancelAWaitingOpen();
+  void backslashSearchFindsTheEntryOnWindows();
   void configDialogAcceptedReappliesTheSettings();
   void configDialogCancelledChangesNothing();
   void aboutBoxNamesTheProgramAndLicence();
@@ -905,6 +907,32 @@ auto addEntry(MainWindow *window, const QString &storeDir, const QString &name)
   auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
   auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
   QTRY_VERIFY_WITH_TIMEOUT_RETURN(fs->index(path).isValid(), 5000, false);
+  return true;
+}
+
+/// The file system model behind the tree.
+auto storeFileSystem(MainWindow *window) -> QFileSystemModel * {
+  auto *tree = window->findChild<QTreeView *>(QStringLiteral("treeView"));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(tree->model());
+  return qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+}
+
+/// Hide every entry but @p keep from the tree's model, as a folder still
+/// loading would: an open of @p path then has to wait.
+auto hideAllBut(QFileSystemModel *fs, const QString &path, const QString &keep)
+    -> bool {
+  fs->setNameFilters({keep});
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(!fs->index(path).isValid(), 5000, false);
+  return true;
+}
+
+/// Show every entry again and report the store folder loaded, as the model
+/// does when a folder finishes loading.
+auto showLoaded(QFileSystemModel *fs, const QString &path,
+                const QString &storeDir) -> bool {
+  fs->setNameFilters({QStringLiteral("*.gpg")});
+  QTRY_VERIFY_WITH_TIMEOUT_RETURN(fs->index(path).isValid(), 5000, false);
+  emit fs->directoryLoaded(storeDir);
   return true;
 }
 
@@ -3374,36 +3402,90 @@ void tst_mainwindow::newSearchTextCancelsAWaitingOpen() {
   QVERIFY(scratch.isValid());
   QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
   QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aaa")));
-  // Written straight to disk: the tree does not have it yet, so the open
-  // has to wait for the folder to load.
-  QFile f(QDir(m_storeDir.path()).filePath(QStringLiteral("waited.gpg")));
-  QVERIFY(f.open(QIODevice::WriteOnly));
-  f.write("not really encrypted");
-  f.close();
-  passwordName()->clear();
+  QVERIFY(
+      addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("waited")));
+  const QString path = QDir(m_storeDir.path()).filePath("waited.gpg");
+  QFileSystemModel *fs = storeFileSystem(m_window.data());
 
+  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  passwordName()->clear();
   m_window->messageAvailable(QStringLiteral("waited"));
-  QVERIFY2(passwordName()->text().isEmpty(), "the tree has not loaded it yet");
+  QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
   searchBox()->setText(QStringLiteral("other"));
   searchBox()->setText(QStringLiteral("waited"));
-
-  auto *proxy = qobject_cast<QSortFilterProxyModel *>(treeView()->model());
-  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
-  QTRY_VERIFY_WITH_TIMEOUT(fs->index(f.fileName()).isValid(), 5000);
-  QTest::qWait(500);
+  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
   QVERIFY2(passwordName()->text().isEmpty(),
            qPrintable(QStringLiteral("typing only highlights, opened: ") +
                       passwordName()->text()));
 
   // Control: unchallenged, the waiting open does land.
-  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aab")));
-  QFile g(QDir(m_storeDir.path()).filePath(QStringLiteral("waited2.gpg")));
-  QVERIFY(g.open(QIODevice::WriteOnly));
-  g.write("not really encrypted");
-  g.close();
-  m_window->messageAvailable(QStringLiteral("waited2"));
-  QTRY_COMPARE_WITH_TIMEOUT(passwordName()->text(), QStringLiteral("waited2"),
-                            5000);
+  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  m_window->messageAvailable(QStringLiteral("waited"));
+  QVERIFY2(passwordName()->text().isEmpty(), "hidden again: the open waits");
+  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
+  QCOMPARE(passwordName()->text(), QStringLiteral("waited"));
+#endif
+}
+
+/**
+ * @brief Settings accepted while an open waits for the tree end that wait:
+ *        the tree is re-rooted, and the name could be found in another store.
+ */
+void tst_mainwindow::acceptedSettingsCancelAWaitingOpen() {
+#ifdef Q_OS_WIN
+  QSKIP("uses a shell script as the gpg stand-in");
+#else
+  QTemporaryDir scratch;
+  QVERIFY(scratch.isValid());
+  QVERIFY(!rebuildWithFakeGpg(scratch).isEmpty());
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aaa")));
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("re-rooted")));
+  const QString path = QDir(m_storeDir.path()).filePath("re-rooted.gpg");
+  QFileSystemModel *fs = storeFileSystem(m_window.data());
+
+  QVERIFY(hideAllBut(fs, path, QStringLiteral("aaa.gpg")));
+  passwordName()->clear();
+  m_window->messageAvailable(QStringLiteral("re-rooted"));
+  QVERIFY2(passwordName()->text().isEmpty(), "hidden: the open waits");
+  ModalDriver driver([](QWidget *w) {
+    if (auto *dialog = qobject_cast<ConfigDialog *>(w)) {
+      dialog->accept();
+      return;
+    }
+    answerBox(QMessageBox::Ok)(w);
+  });
+  QVERIFY(m_window->config());
+  QVERIFY(showLoaded(fs, path, m_storeDir.path()));
+  QVERIFY2(passwordName()->text().isEmpty(),
+           qPrintable(QStringLiteral("nothing opened, opened: ") +
+                      passwordName()->text()));
+#endif
+}
+
+/**
+ * @brief On Windows a backslash typed in the search box is a folder separator
+ *        for the filter as well: team\bank finds team/bank, where the filter
+ *        used to hide it.
+ */
+void tst_mainwindow::backslashSearchFindsTheEntryOnWindows() {
+#ifndef Q_OS_WIN
+  QSKIP("a backslash separates folders only on Windows");
+#else
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(), QStringLiteral("aaa")));
+  QVERIFY(addEntry(m_window.data(), m_storeDir.path(),
+                   QStringLiteral("team/bank")));
+  treeView()->setCurrentIndex(QModelIndex());
+
+  searchBox()->setText(QStringLiteral("team\\bank"));
+  QVERIFY(QMetaObject::invokeMethod(m_window.data(), "onTimeoutSearch",
+                                    Qt::DirectConnection));
+  auto *proxy = qobject_cast<QSortFilterProxyModel *>(treeView()->model());
+  auto *fs = qobject_cast<QFileSystemModel *>(proxy->sourceModel());
+  const QString current =
+      fs->filePath(proxy->mapToSource(treeView()->currentIndex()));
+  QVERIFY2(current.endsWith(QStringLiteral("team/bank.gpg")),
+           qPrintable(current));
 #endif
 }
 
