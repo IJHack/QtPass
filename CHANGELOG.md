@@ -730,6 +730,11 @@ umbrella [#908](https://github.com/IJHack/QtPass/issues/908)).
   the line above) was saved as an empty first line with the password below:
   Ctrl+C then copied nothing and said it had, and the password showed in the
   text under the fields, also with "Hide password" on.
+- Switching the template in Add password, with the Template box or Ctrl+T,
+  keeps what was typed into the field rows. A field the new template has goes
+  into its row, any other stays a field row of its own. The rows used to be
+  rebuilt empty, and with a single template Ctrl+T did nothing but empty
+  them; it now leaves them alone.
 - The profile box is disabled while an operation runs, as the other
   controls are, and stays so until `gpg`, `git` or `pass` are done, also
   when the watchdog released the rest of the interface: switching profiles

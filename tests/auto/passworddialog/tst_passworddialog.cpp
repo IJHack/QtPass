@@ -176,7 +176,9 @@ private Q_SLOTS:
   void newEntryNameCannotEndInASlash();
   void acceptRefusesAnInvalidNameAndAnUncreatableFolder();
   void unknownDefaultTemplateFallsBackToTheFirst();
-  void reloadAndTemplateChangeDropOldFieldRows();
+  void reloadAndTemplateChangeKeepEachFieldOnce();
+  void typedValuesSurviveATemplateSwitch();
+  void ctrlTWithOneTemplateKeepsTheRows();
   void otpFieldFlagsAnInvalidSecret();
   void otpWarningSurvivesAReloadOnlyOnce();
   void otpUriIsNormalisedOnLeavingTheField();
@@ -1725,11 +1727,11 @@ void tst_passworddialog::unknownDefaultTemplateFallsBackToTheFirst() {
 }
 
 /**
- * @brief Re-populating the dialog (a second decrypt) and switching template
- *        both discard the previous entry-defined rows instead of stacking
- *        duplicates that would be written back twice.
+ * @brief Re-populating the dialog (a second decrypt) replaces the previous
+ *        entry-defined rows, and switching template keeps each field once:
+ *        no duplicates that would be written back twice, and no field lost.
  */
-void tst_passworddialog::reloadAndTemplateChangeDropOldFieldRows() {
+void tst_passworddialog::reloadAndTemplateChangeKeepEachFieldOnce() {
   FakePass pass;
   PasswordDialog d(&pass, allFieldsSettings(), QStringLiteral("entry.gpg"),
                    false);
@@ -1743,10 +1745,71 @@ void tst_passworddialog::reloadAndTemplateChangeDropOldFieldRows() {
 
   d.setAvailableTemplates(twoTemplates(), QStringLiteral("wifi"));
   QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
-  QVERIFY2(d.findChild<QLineEdit *>(QStringLiteral("login")) == nullptr,
-           "applying a template must drop the entry-defined rows");
+  const auto kept = d.findChildren<QLineEdit *>(QStringLiteral("login"));
+  QCOMPARE(kept.size(), 1);
+  QCOMPARE(kept.first()->text(), QStringLiteral("alice"));
   QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr);
-  QVERIFY(!d.getPassword().contains(QStringLiteral("login:")));
+  QCOMPARE(d.getPassword().count(QStringLiteral("login: alice\n")), 1);
+}
+
+/**
+ * @brief In Add password, values typed into the field rows survive a switch
+ *        of template: a field the new template has goes into its row, any
+ *        other stays a field row, and switching back puts it back.
+ */
+void tst_passworddialog::typedValuesSurviveATemplateSwitch() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setAvailableTemplates(twoTemplates(), QStringLiteral("login"));
+  auto *username = d.findChild<QLineEdit *>(QStringLiteral("username"));
+  auto *url = d.findChild<QLineEdit *>(QStringLiteral("url"));
+  QVERIFY(username != nullptr && url != nullptr);
+  username->setText(QStringLiteral("alice"));
+  url->setText(QStringLiteral("https://example.org"));
+  auto *box = d.findChild<QComboBox *>(QStringLiteral("templateBox"));
+  QVERIFY(box != nullptr);
+
+  box->setCurrentText(QStringLiteral("wifi"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY(d.findChild<QLineEdit *>(QStringLiteral("ssid")) != nullptr);
+  QString written = d.getPassword();
+  QCOMPARE(written.count(QStringLiteral("username: alice\n")), 1);
+  QCOMPARE(written.count(QStringLiteral("url: https://example.org\n")), 1);
+
+  box->setCurrentText(QStringLiteral("login"));
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QCOMPARE(d.findChildren<QLineEdit *>(QStringLiteral("username")).size(), 1);
+  QCOMPARE(d.findChild<QLineEdit *>(QStringLiteral("username"))->text(),
+           QStringLiteral("alice"));
+  written = d.getPassword();
+  QCOMPARE(written.count(QStringLiteral("username: alice\n")), 1);
+  QCOMPARE(written.count(QStringLiteral("url: https://example.org\n")), 1);
+}
+
+/**
+ * @brief With a single template Ctrl+T has nothing to switch to and leaves
+ *        the rows alone; it used to rebuild them empty.
+ */
+void tst_passworddialog::ctrlTWithOneTemplateKeepsTheRows() {
+  FakePass pass;
+  PasswordDialog d(&pass, QtPassSettings::load(), QStringLiteral("new.gpg"),
+                   true);
+  d.setAvailableTemplates({{QStringLiteral("web"),
+                            {QStringLiteral("login"), QStringLiteral("url")}}},
+                          QStringLiteral("web"));
+  d.show();
+  QVERIFY(QTest::qWaitForWindowExposed(&d));
+  d.activateWindow();
+  QPointer<QLineEdit> login = d.findChild<QLineEdit *>(QStringLiteral("login"));
+  QVERIFY(login != nullptr);
+  login->setText(QStringLiteral("alice"));
+
+  QTest::keyClick(&d, Qt::Key_T, Qt::ControlModifier);
+  QCoreApplication::processEvents();
+  QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
+  QVERIFY2(login != nullptr, "the row must not be rebuilt");
+  QCOMPARE(login->text(), QStringLiteral("alice"));
 }
 
 /**
