@@ -450,7 +450,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Lietot paplātes ikonu</translation>
+        <translation type="unfinished">Rādīt paplātes ikonu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -465,13 +465,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Ievērojiet satura meklēšanu</translation>
+        <translation type="unfinished">Iespējot satura meklēšanu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekundes</translation>
+        <translation type="unfinished">sekundes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Atgūt iecienītāko</translation>
+        <translation type="unfinished">Atjaunot iepriekšējo starpliktuves saturu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -497,7 +497,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Tur arī jāslēpj citi noslēpumi:</translation>
+        <translation type="unfinished">Slēpt arī citus noslēpumus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Pēc noklus</translation>
+        <translation type="unfinished">Noklusējums</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -537,7 +537,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Rakstzīmes</translation>
+        <translation type="unfinished">rakstzīmes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -1625,7 +1625,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai krātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
+        <translation type="unfinished">Pēc pull neizdevās pārbaudīt, vai glabātuvē ir nesapludināti faili. Pirms atkārtotas šifrēšanas pārbaudiet to ar git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
@@ -2059,8 +2059,8 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="914"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>Search password</source>
         <translation>Meklēt paroli</translation>
     </message>
@@ -2126,7 +2126,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Meklēt ievietotajā paroles satīnos</translation>
+        <translation type="unfinished">Meklēt paroļu saturā</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -2162,7 +2162,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
         <translation>Pievienot paroli</translation>
     </message>
@@ -2174,21 +2174,21 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1469"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
         <translation>Pievienot katalogu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1477"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Edit</source>
         <translation>Rediģēt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1489"/>
+        <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Delete</source>
         <translation>Dzēst</translation>
     </message>
@@ -2229,7 +2229,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1471"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
         <source>Users</source>
         <translation>Lietotāji</translation>
     </message>
@@ -2342,7 +2342,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="unfinished">Par &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="412"/>
+        <location filename="../src/mainwindow.cpp" line="421"/>
         <source>Welcome to QtPass %1</source>
         <translation>Laipni lūdzam QtPass %1</translation>
     </message>
@@ -2359,14 +2359,14 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Procesa izvade</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="540"/>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="563"/>
         <source>Updating password-store</source>
         <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="650"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="663"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
         <translation>Saturs paslēpts</translation>
     </message>
@@ -2375,7 +2375,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Parole</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="212"/>
+        <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Darbībai iestājās noildze; saskarne tiek iespējota no jauna.</translation>
     </message>
@@ -2384,20 +2384,20 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">OTP kods</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Neizdevās atšifrēt šo paroles ierakstu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
-        <location filename="../src/mainwindow.cpp" line="709"/>
-        <location filename="../src/mainwindow.cpp" line="1191"/>
+        <location filename="../src/mainwindow.cpp" line="704"/>
+        <location filename="../src/mainwindow.cpp" line="722"/>
+        <location filename="../src/mainwindow.cpp" line="1346"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP kods kopēts starpliktuvē</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="711"/>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
+        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
         <translation>Nav atrasts OTP kods šajā paroles ievades virzienā</translation>
     </message>
@@ -2406,27 +2406,27 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Parole un saturs paslēpts</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
         <source>About QtPass</source>
         <translation type="unfinished">Par QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="816"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Daudzplatformu grafiskā saskarne programmai &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standarta Unix paroļu pārvaldniekam.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Pirmkods un problēmu ziņojumi&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Autortiesības &amp;copy; 2014&amp;ndash;%2 IJhack. Licencēts saskaņā ar &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL 3. versiju&lt;/a&gt; vai jaunāku.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="820"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
         <source>Looking for: %1</source>
         <translation>Mēs meklējam: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="870"/>
+        <location filename="../src/mainwindow.cpp" line="885"/>
         <source>Searching…</source>
         <translation>Meklē…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="896"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Search content (regex)</source>
         <translation>Meklēt saturu (regex)</translation>
     </message>
@@ -2435,17 +2435,17 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="obsolete">Satura meklēšana izmanto POSIX pamata regulārās izteiksmes (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Satura meklēšana izmanto ar Perl saderīgas regulārās izteiksmes (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="939"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>No matches found.</source>
         <translation>Nav atrastu atbilstošus rezultātus.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="983"/>
+        <location filename="../src/mainwindow.cpp" line="1004"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Atrasts %n atbilstošs vienums</numerusform>
@@ -2454,7 +2454,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>no %n ieraksta.</numerusform>
@@ -2463,14 +2463,14 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1041"/>
+        <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
         <translation type="unfinished">Nederīgs nosaukums</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1042"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu krātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
+        <translation type="unfinished">Šis nosaukums norādītu ārpus paroļu glabātuves. Lūdzu, izvēlieties citu nosaukumu.</translation>
     </message>
     <message>
         <source>New file</source>
@@ -2483,7 +2483,7 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
 (Tiks ievietots %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Password and content hidden</source>
         <translation>Parole un saturs paslēpts</translation>
     </message>
@@ -2492,12 +2492,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished"> Un visu saturu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="1279"/>
         <source>Delete link?</source>
         <translation type="unfinished">Vai dzēst saiti?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts. Vai noņemt saiti? Tas, uz ko tā norāda, tiks atstāts neskarts.</translation>
     </message>
@@ -2506,12 +2506,12 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished"> un visu saturu? &lt;br&gt;&lt;strong&gt;Uzmanību: norādītajā mapē ir neparedzēti faili, pārbaudiet tos pirms turpināt.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1117"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
         <translation>Vai dzēst katalogu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete password?</source>
         <translation>Vai dzēst paroli?</translation>
     </message>
@@ -2520,43 +2520,43 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Jūs patiešām vēlaties dzēst %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1174"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>No password selected for OTP generation</source>
         <translation>Nav paroles izvēlēts OTP generācijai</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1464"/>
         <source>Profile changed to %1</source>
         <translation>Profils mainīts uz %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Open folder with file manager</source>
         <translation>Atvērt mapi failu pārvaldniekā</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1637"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder</source>
         <translation>Pārdēvēt mapi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1486"/>
+        <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Rename password</source>
         <translation>Pārveidot paroli</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1423"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Share</source>
         <translation>Kopīgot</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="963"/>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… vairāk atbilstu šajā ierakstā</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Rāda pirmo %n atbilstību; meklējiet ko konkrētāku, lai redzētu pārējās.</numerusform>
@@ -2565,95 +2565,95 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Vai tiešām vēlaties dzēst %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Vai tiešām vēlaties dzēst %1 un visu tā saturu?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1269"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Uzmanību: norādītajā mapē ir neparedzēti faili, pārbaudiet tos pirms turpināt.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1587"/>
         <source>Re-encrypt all passwords</source>
         <translation>Pāršifrēt visas paroles</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1592"/>
         <source>Export my public key...</source>
         <translation>Eksportēt manu publisko atslēgu...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1442"/>
+        <location filename="../src/mainwindow.cpp" line="1596"/>
         <source>Add recipient...</source>
         <translation>Pievienojiet saņēmēju...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
+        <location filename="../src/mainwindow.cpp" line="1601"/>
         <source>What is this?</source>
         <translation>Kāds ir šis?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>New folder</source>
         <translation type="unfinished">Jauna mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Jauna mape:
 (Tiks ievietota mapē %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Slēpta mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Mape, kas sākas ar punktu, sarakstā būtu paslēpta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file to: </source>
         <translation>Pārveidot failu uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1907"/>
+        <location filename="../src/mainwindow.cpp" line="1926"/>
         <source>Export public key</source>
         <translation>Eksportēt publisko atslēgu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1801"/>
+        <location filename="../src/mainwindow.cpp" line="1955"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Nav glabātuves mape</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1956"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ir simboliska saite vai savienojuma punkts, vai arī atrodas aiz tādas saites. Tas, uz ko tā norāda, nav paroļu glabātuves daļa un tiks atstāts neskarts.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1810"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>Sharing passwords with GPG</source>
         <translation>Paroļu kopīgums ar GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1811"/>
+        <location filename="../src/mainwindow.cpp" line="1965"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Paroļu kopīgošana ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgotu paroles ar citiem lietotājiem:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportējiet savu publisko atslēgu&lt;/b&gt; un nosūtiet to komandas biedriem&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet komandas biedru publiskās atslēgas&lt;/b&gt; savā GPG atslēgu saišķī&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroles&lt;/b&gt;, lai visi saņēmēji varētu tās atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroles var atšifrēt tikai tie, kuriem ir atbilstoša slepenā atslēga.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Padoms:&lt;/b&gt; Izmantojiet vienu un to pašu GPG atslēgu visām koplietotajām mapēm.&lt;/p&gt;&lt;p&gt;Plašāku informāciju skatiet BUJ.&lt;/p&gt;</translation>
     </message>
@@ -2664,29 +2664,29 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
 (Tiks ievietota mapē %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1569"/>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1708"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Error</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Failed to create folder: %1</source>
         <translation>Neizdevās izveidot mapi: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Neizdevās izveidot .gpg-id failu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder to: </source>
         <translation>Pārveidot mapi uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file</source>
         <translation>Pārveidot failu</translation>
     </message>
@@ -2699,23 +2699,23 @@ Pāršifrēšana netika pabeigta, tāpēc daži vai visi ieraksti joprojām ir �
         <translation type="vanished">Pārveidot failu uz: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1813"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Šajā ierakstā ir OTP noslēpums, nevis parole</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>Directory does not exist: %1</source>
         <translation>Katalogs neeksistē: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>Atšifrēt paroli</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1836"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2732,22 +2732,22 @@ Tas var pārrakstīt daudzus failus, un šo darbību nevar viegli atsaukt.
 Turpināt?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Notiek paroļu pāršifrēšana...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation type="unfinished">Atcelt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Pāršifrēšana tiek atcelta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1732"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Notiek paroļu pāršifrēšana: %1 no %2</translation>
     </message>
@@ -2760,7 +2760,7 @@ Turpināt?</translation>
         <translation type="vanished">&lt;h3&gt;Eksportējiet Jūsu Publisko Atslēgu&lt;/h3&gt;&lt;p&gt;Nav konfigurēta parakstīšanas atslēga. Iestatiet to QtPass iestatījumos &amp;gt; GPG atslēgas vai izpildiet šo terminālī:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsu-atslēgas-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tad nosūtiet failu savai komandai.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1927"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2769,7 +2769,7 @@ Turpināt?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>No output from gpg.</source>
         <translation>Nav gpg izvades.</translation>
     </message>
@@ -3001,7 +3001,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
         <source>Name</source>
-        <translation type="unfinished">Vārds</translation>
+        <translation type="unfinished">Nosaukums</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="99"/>
@@ -3572,8 +3572,8 @@ un pēc tam ieslēdziet Git sadaļā Iestatījumi.</translation>
         <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
         <translation type="unfinished">
-            <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
             <numerusform>Esoša paroļu glabātuve ar %n ierakstu.</numerusform>
+            <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
             <numerusform>Esoša paroļu glabātuve ar %n ierakstiem.</numerusform>
         </translation>
     </message>

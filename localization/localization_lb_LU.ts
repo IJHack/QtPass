@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/clipboardmanager.cpp" line="183"/>
         <source>Clipboard restored</source>
-        <translation type="unfinished">Le &quot;Clipboard&quot; wurde wiederhergestellt</translation>
+        <translation type="unfinished">Clipboard restauréiert</translation>
     </message>
     <message>
         <location filename="../src/clipboardmanager.cpp" line="184"/>
@@ -337,7 +337,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1145"/>
         <source>Native</source>
-        <translation>Naturheem</translation>
+        <translation type="unfinished">Direkt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1164"/>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="223"/>
         <source>Enable content search</source>
-        <translation type="unfinished">Aktiveren Sie die Suche nach Inhalten</translation>
+        <translation type="unfinished">Inhaltssich aktivéieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="352"/>
@@ -451,12 +451,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>When the clipboard is cleared, put back what was on it before the copy, as pass -c does, unless something else was copied meanwhile. Text only: formatting is not restored. That text stays in memory until then. Where the clipboard cannot be read without focus (some Wayland desktops), it is cleared instead.</source>
-        <translation type="unfinished">Wenn das Clipboard gelöscht wird, füge wieder den Inhalt ein, der vorher darauf war, wie es „pass -c“ tut, es sei denn, etwas anderes wurde inzwischen kopiert. Nur Text: die Formatierung ist nicht wiederhergestellt. Dieser Text bleibt bis dahin im Speicher. Wo das Clipboard ohne Fokus (einige Wayland-Desktops) nicht gelesen werden kann, wird es stattdessen gelöscht.</translation>
+        <translation type="unfinished">Wann de Clipboard geläscht gëtt, gëtt dat drop zeréckgesat, wat virun der Kopie drop war, sou wéi pass -c et mécht, ausser wann zwëschenzäitlech eppes anescht kopéiert gouf. Nëmmen Text: d&apos;Formatéierung gëtt net restauréiert. Dësen Text bleift bis dohin am Aarbechtsspäicher. Wou de Clipboard ouni Fokus net gelies ka ginn (e puer Wayland-Desktoppen), gëtt e amplaz geläscht.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restauréieren aus dem Clipboard</translation>
+        <translation type="unfinished">Fréiere Clipboard-Inhalt restauréieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -472,22 +472,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Versteck andere Geheimnisse:</translation>
+        <translation type="unfinished">Och aner Geheimnisser verstoppen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
         <source>Hide fields that hold a secret too, not only the password: a field whose name holds one of these words. Off: only the password is hidden.</source>
-        <translation type="unfinished">Verstecken Sie Felder, die ein Geheimnis enthalten, nicht nur das Passwort: ein Feld, dessen Name eines dieser Wörter enthält. Aus: Nur das Passwort wird versteckt.</translation>
+        <translation type="unfinished">Och Felder verstoppen, déi e Geheimnis enthalen, net nëmmen d&apos;Passwuert: e Feld mat engem vun dëse Wierder am Numm. Aus: nëmmen d&apos;Passwuert gëtt verstoppt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">Par défaut</translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
         <source>Put back the default words: pin, card codes, keys, tokens, recovery codes and the like.</source>
-        <translation type="unfinished">Restez les mots par défaut : PIN, codes de carte, clés, jetons et autres.</translation>
+        <translation type="unfinished">D&apos;Standardwierder zerécksetzen: PIN, Kaartecoden, Schlësselen, Tokens, Recovery-Coden an esou weider.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="496"/>
@@ -526,7 +526,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Benutze ein Git-Repository in einem Ordner oberhalb des Speichers</translation>
+        <translation type="unfinished">Git-Repository aus engem Dossier iwwer dem Späicher benotzen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -876,7 +876,7 @@ De Wäert gëtt nach ëmmer gespäichert wéi agiweent.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1114"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Ge&amp;bierteg Git/GPG</translation>
+        <translation type="unfinished">&amp;Direkt Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="80"/>
@@ -1130,7 +1130,7 @@ e-mail</translation>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation>Passwuertgeschäft net initialiséiert</translation>
+        <translation type="unfinished">Passwuertspäicher net initialiséiert</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
@@ -1392,7 +1392,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 sinn net an dem Passwuertspäicher, oder de Numm vun einem Dossier enthält eine Zeilenumbruch oder ein andeerts Kontrollzeichen, welche eine signierte Liste nicht aufzeichnen kann.</translation>
+        <translation type="unfinished">%1 ass net am Passwuertspäicher, oder en Dossiersnumm um Wee dohin enthält en Zeilenëmbroch oder en anert Kontrollzeechen, dat eng ënnerschriwwe Lëscht net ophuele kann.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1510,7 +1510,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="652"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2).</source>
-        <translation type="unfinished">%1 kann nicht als Empfängerliste gelesen werden (eine normale Datei von höchstens %2).</translation>
+        <translation type="unfinished">%1 kann net als Empfängerlëscht gelies ginn (eng normal Datei vu maximal %2).</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
@@ -1617,7 +1617,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>Aktualiséiert Passwuertgeschäft</translation>
+        <translation type="unfinished">Passwuertspäicher gëtt aktualiséiert</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -1666,7 +1666,7 @@ Dir kënnt keng nei bäigefüügt Passwierder entschlësselen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 ass, oder befindet sich hinter, einem symbolesche Link oder einer Verknüpfung nach dem Ziehen. Was dat zeiget, gehört nicht zum Passwuertspäicher und wird unverändert gelassen.</translation>
+        <translation type="unfinished">%1 ass nom Pull e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1875,7 +1875,7 @@ D&apos;Nei-Verschlësselung ass net fäerdeg ginn, dofir sinn e puer oder all An
     <message>
         <location filename="../src/importkeydialog.cpp" line="89"/>
         <source>%1 is larger than a key file can be.</source>
-        <translation type="unfinished">%1 ist grösser als eine Passwortdatei sein kann.</translation>
+        <translation type="unfinished">%1 ass méi grouss, wéi eng Schlësseldatei ka sinn.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="148"/>
@@ -2034,7 +2034,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="191"/>
         <source>The name and the passphrase cannot contain line breaks.</source>
-        <translation type="unfinished">D&apos;Numm an d&apos;Passwuert dürfen keine Zeilenumbrüche enthalten.</translation>
+        <translation type="unfinished">Den Numm an d&apos;Passphrase kënne keng Zeilenëmbréch enthalen.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -2090,8 +2090,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="914"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>Search password</source>
         <translation>Sich Passwuert</translation>
     </message>
@@ -2102,7 +2102,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Suche am Inhalt vom Passwuert</translation>
+        <translation type="unfinished">Am Passwuertinhalt sichen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -2286,7 +2286,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
         <translation>Füügt Passwuert</translation>
     </message>
@@ -2298,21 +2298,21 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1469"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
         <translation>Füügt Dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1477"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Edit</source>
         <translation>Ännerung</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1489"/>
+        <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Delete</source>
         <translation>Läschen</translation>
     </message>
@@ -2361,7 +2361,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1471"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
         <source>Users</source>
         <translation>Benotzer</translation>
     </message>
@@ -2379,7 +2379,7 @@ Expire-Date: 0
         <translation type="vanished">Configuratioun</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="412"/>
+        <location filename="../src/mainwindow.cpp" line="421"/>
         <source>Welcome to QtPass %1</source>
         <translation>Wëllkomm op QtPass %1</translation>
     </message>
@@ -2388,14 +2388,14 @@ Expire-Date: 0
         <translation type="vanished">Prozessausgab</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="540"/>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="563"/>
         <source>Updating password-store</source>
-        <translation>Aktualiséiert Passwuertgeschäft</translation>
+        <translation type="unfinished">Passwuertspäicher gëtt aktualiséiert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="650"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="663"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
         <translation>Inhalt verstoppt</translation>
     </message>
@@ -2408,15 +2408,15 @@ Expire-Date: 0
         <translation type="vanished">OTP Code</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
-        <location filename="../src/mainwindow.cpp" line="709"/>
-        <location filename="../src/mainwindow.cpp" line="1191"/>
+        <location filename="../src/mainwindow.cpp" line="704"/>
+        <location filename="../src/mainwindow.cpp" line="722"/>
+        <location filename="../src/mainwindow.cpp" line="1346"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP-Code an d&apos;Zwëschespäicher kopéiert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="711"/>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
+        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
         <translation>Kee OTP-Code an dësem Passwuert-Eingabe fonnt</translation>
     </message>
@@ -2425,22 +2425,22 @@ Expire-Date: 0
         <translation type="vanished">Passwuert an Inhalt verstoppt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="820"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
         <source>Looking for: %1</source>
         <translation>Sicht no: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="870"/>
+        <location filename="../src/mainwindow.cpp" line="885"/>
         <source>Searching…</source>
         <translation>Sichen…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="896"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Search content (regex)</source>
         <translation>Inhalt duerchsichen (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="939"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>No matches found.</source>
         <translation>Keng Treffer fonnt.</translation>
     </message>
@@ -2452,27 +2452,27 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="212"/>
+        <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>Zäitiwwerschreidung; d&apos;Interface gëtt nees aktivéiert.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Could not decrypt this password entry</source>
         <translation>Konnt dës Passwuert-Eingabe net entschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Password and content hidden</source>
         <translation>Passwuert an Inhalt verstoppt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
         <source>About QtPass</source>
         <translation>Iwwer QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="816"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Eng Multiplattform-GUI fir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, de Standard-Passwuertmanager fir Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Quellcode a Feelermeldungen&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Lizenzéiert ënner der &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL Versioun 3&lt;/a&gt; oder méi nei.&lt;/p&gt;</translation>
     </message>
@@ -2481,12 +2481,12 @@ Expire-Date: 0
         <translation type="vanished">D&apos;Inhaltssich benotzt POSIX-Basis-Regulärausdréck (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>D&apos;Inhaltssich benotzt Perl-kompatibel Regulärausdréck (PCRE).</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="983"/>
+        <location filename="../src/mainwindow.cpp" line="1004"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n Iwwerinstëmmung fonnt</numerusform>
@@ -2494,7 +2494,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>an %n Entrée.</numerusform>
@@ -2502,12 +2502,12 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1041"/>
+        <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
         <translation>Ongëltegen Numm</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1042"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation>Dësen Numm géif ausserhalb vum Passwuertspäicher weisen. Wielt w.e.g. en aneren Numm.</translation>
     </message>
@@ -2526,12 +2526,12 @@ Expire-Date: 0
         <translation type="vanished"> an de ganzen Inhalt?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="1279"/>
         <source>Delete link?</source>
         <translation>Link läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation>%1 ass e symbolesche Link oder eng Junction. De Link läschen? Dat, wourop e weist, bleift onberéiert.</translation>
     </message>
@@ -2540,12 +2540,12 @@ Expire-Date: 0
         <translation type="vanished"> an de ganzen Inhalt? &lt;br&gt; &lt;strong&gt; Opgepasst: et ginn onerwaart Dateien am gegebene Dossier, kontrolléiert se ier Dir weider geet. &lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1117"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
         <translation>Dossier läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete password?</source>
         <translation>Passwuert läschen?</translation>
     </message>
@@ -2554,43 +2554,43 @@ Expire-Date: 0
         <translation type="vanished">Sidd Dir sécher, dass Dir %1%2 wëllt läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1174"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>No password selected for OTP generation</source>
         <translation>Kee Passwuert fir d&apos;Generéierung vun engem OTP ausgewielt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1464"/>
         <source>Profile changed to %1</source>
         <translation>Profil geännert an %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Open folder with file manager</source>
         <translation>Open Dossier mat Dateemanager</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1637"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder</source>
         <translation>Dossier ëmbenennen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1486"/>
+        <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Rename password</source>
         <translation>Passwuert ëmbenennen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1423"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Share</source>
         <translation>Deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="963"/>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
-        <translation type="unfinished">… davantage de correspondances dans cette entrée</translation>
+        <translation type="unfinished">… weider Iwwereneestëmmungen an dësem Entrag</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Déi éischt %n Iwwereneestëmmung gëtt ugewisen; sicht méi genee fir de Rescht ze gesinn.</numerusform>
@@ -2598,125 +2598,125 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Sidd Dir sécher, dass Dir %1 wëllt läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation>Sidd Dir sécher, dass Dir %1 an de ganzen Inhalt wëllt läschen?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1269"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation>Opgepasst: et ginn onerwaart Dateien am gegebene Dossier, kontrolléiert se ier Dir weider gitt.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1587"/>
         <source>Re-encrypt all passwords</source>
         <translation>All Passwierder nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1592"/>
         <source>Export my public key...</source>
         <translation>Mäin ëffentleche Schlëssel exportéieren…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1442"/>
+        <location filename="../src/mainwindow.cpp" line="1596"/>
         <source>Add recipient...</source>
         <translation>Empfänger derbäi…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
+        <location filename="../src/mainwindow.cpp" line="1601"/>
         <source>What is this?</source>
         <translation>Wat ass dat?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>New folder</source>
         <translation>Neien Dossier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Neien Dossier:
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Verstoppten Dossier</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">En Dossier, deen mat engem Punkt ufänkt, wier an der Lëscht verstoppt: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder to: </source>
         <translation>Numm vun der Folder ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file to: </source>
         <translation>Numm vun der Datei ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1813"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Dës Eingabe enthält en OTP-Geheimnis, kee Passwuert</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation>Passwierder ginn nei verschlësselt...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation>Ofbriechen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation>Nei-Verschlësselung gëtt ofgebrach</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1732"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>Passwierder ginn nei verschlësselt: %1 vun %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1907"/>
+        <location filename="../src/mainwindow.cpp" line="1926"/>
         <source>Export public key</source>
         <translation>Ëffentleche Schlëssel exportéieren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1801"/>
+        <location filename="../src/mainwindow.cpp" line="1955"/>
         <source>Not a folder of the store</source>
         <translation>Keen Dossier vum Späicher</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1956"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation>%1 ass e symbolesche Link oder eng Junction, oder läit hannert engem. Dat, wourop dee weist, gehéiert net zum Passwuertspäicher a bleift onberéiert.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1810"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>Sharing passwords with GPG</source>
         <translation>Passwierder mat GPG deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1811"/>
+        <location filename="../src/mainwindow.cpp" line="1965"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Passwierder mat GPG deelen&lt;/h3&gt;&lt;p&gt;Fir Passwierder mat anere Benotzer ze deelen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportéiert Ären ëffentleche Schlëssel&lt;/b&gt; an schéckt en un Är Teammemberen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importéiert d&apos;ëffentlech Schlësselen vun Ären Teammemberen&lt;/b&gt; an Äre GPG-Schlësselbond&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlësselt d&apos;Passwierder nei&lt;/b&gt; sou datt all Empfänger se entschlësselen kann&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nëmme Persounen mat engem passende geheime Schlëssel kënnen d&apos;Passwierder entschlësselen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Benotzt deeselwechte GPG-Schlëssel fir all gedeelt Dossieren.&lt;/p&gt;&lt;p&gt;Kuckt d&apos;FAQ fir méi Detailer.&lt;/p&gt;</translation>
     </message>
@@ -2729,7 +2729,7 @@ Expire-Date: 0
         <translation type="vanished">&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1927"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2738,7 +2738,7 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>No output from gpg.</source>
         <translation>Keng Ausgab vum gpg.</translation>
     </message>
@@ -2761,24 +2761,24 @@ Expire-Date: 0
 (Ginn an %1 gesat)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1569"/>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1708"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Error</source>
         <translation>Feeler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Failed to create folder: %1</source>
         <translation>Konnt den Dossier net erstellen: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Konnt d&apos;.gpg-id Datei net erstellen an: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file</source>
         <translation>Rename Datei</translation>
     </message>
@@ -2791,18 +2791,18 @@ Expire-Date: 0
         <translation type="vanished">Numm vun der Datei ëmbenennen op: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>Directory does not exist: %1</source>
         <translation>Verzeichnis existéiert net: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>Passwierder nei verschlësselen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1836"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2917,7 +2917,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="567"/>
         <source>Saved, not committed</source>
-        <translation type="unfinished">Sauvé, mais pas commité</translation>
+        <translation type="unfinished">Gespäichert, net committ</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="568"/>
@@ -2936,7 +2936,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 ass net am Passwuertspäicher. Empfänger sinn für den Späicher oder ein Dossier darin festgelegt.</translation>
+        <translation type="unfinished">%1 ass net am Passwuertspäicher. Empfänger gi fir de Späicher oder fir en Dossier dran agestallt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3003,7 +3003,7 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="1109"/>
         <source>%1 cannot be read as a recipient list (a regular file of at most %2), so nothing is preselected. Check it before choosing recipients here: OK writes a new list over it.</source>
-        <translation type="unfinished">%1 kann nicht als Empfängerliste gelesen werden (eine normale Datei von höchstens %2), daher wird nichts vordefiniert. Überprüfen Sie es, bevor Sie hier Empfänger auswählen: &quot;OK&quot; schreibt eine neue Liste darüber.</translation>
+        <translation type="unfinished">%1 kann net als Empfängerlëscht gelies ginn (eng normal Datei vu maximal %2), dofir ass näischt virausgewielt. Kontrolléiert se, ier Dir hei Empfänger auswielt: OK schreift eng nei Lëscht driwwer.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1130"/>
@@ -3068,7 +3068,7 @@ Weider?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>Show Passwuert</translation>
+        <translation type="unfinished">Passwuert weisen</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
@@ -3276,7 +3276,7 @@ Weider?</translation>
     <message>
         <location filename="../src/profileinit.cpp" line="254"/>
         <source>The configured GPG home %1 does not exist.</source>
-        <translation type="unfinished">La configuration GPG à la maison %1 n&apos;existe pas.</translation>
+        <translation type="unfinished">De konfiguréierte GPG-Home %1 existéiert net.</translation>
     </message>
     <message>
         <location filename="../src/profileinit.cpp" line="276"/>
@@ -3397,7 +3397,7 @@ Weider?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation>Show Passwuert</translation>
+        <translation type="unfinished">Passwuert weisen</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
@@ -3518,7 +3518,7 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="149"/>
         <source>Checking the recipient lists under %1…</source>
-        <translation type="unfinished">Vérification des listes de destinataires sous %1…</translation>
+        <translation type="unfinished">D&apos;Empfängerlëschten ënner %1 ginn iwwerpréift…</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="269"/>
@@ -3544,7 +3544,7 @@ Weider?</translation>
     <message>
         <location filename="../src/realpass.cpp" line="369"/>
         <source>The link %1 was removed and git no longer tracks it, but the commit failed: %2</source>
-        <translation type="unfinished">Le lien %1 a ete retire, et git ne le suit plus, mais la commit a echoué: %2</translation>
+        <translation type="unfinished">De Link %1 gouf geläscht a git verfollegt en net méi, mä de Commit ass feelgeschloen: %2</translation>
     </message>
     <message>
         <location filename="../src/realpass.cpp" line="502"/>

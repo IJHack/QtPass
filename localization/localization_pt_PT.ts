@@ -177,7 +177,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="226"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Permitir pesquisa dentro do conteúdo dos ficheiros de palavras-passe. Requer decifrar cada ficheiro e pode ser lento em armazéns grandes.</translation>
+        <translation type="unfinished">Permitir pesquisa dentro do conteúdo dos ficheiros de palavras-passe. Requer decifrar cada ficheiro e pode ser lento em repositórios grandes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="339"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1017"/>
         <source>Use a Git repository in a folder above the store</source>
-        <translation type="unfinished">Use um repositório Git numa pasta acima do armazém</translation>
+        <translation type="unfinished">Use um repositório Git numa pasta acima do repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1100"/>
@@ -289,7 +289,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1392"/>
         <source>The password stores this QtPass knows; pick one to edit it</source>
-        <translation>Os armazéns de palavras-passe que este QtPass conhece; escolha um para o editar</translation>
+        <translation type="unfinished">Os repositórios de palavras-passe que este QtPass conhece; escolha um para o editar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1407"/>
@@ -299,7 +299,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1425"/>
         <source>Forget the selected profile; the store itself stays on disk</source>
-        <translation>Esquecer o perfil selecionado; o armazém em si permanece no disco</translation>
+        <translation type="unfinished">Esquecer o perfil selecionado; o repositório em si permanece no disco</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1471"/>
@@ -314,7 +314,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1506"/>
         <source>Path to the password store directory</source>
-        <translation>Caminho para a directoria do armazém de palavras-passe</translation>
+        <translation type="unfinished">Caminho para a directoria do repositório de palavras-passe</translation>
     </message>
     <message>
         <source>Signing Key</source>
@@ -507,7 +507,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="365"/>
         <source>Restore the previous clipboard</source>
-        <translation type="unfinished">Restaurar a área de transferência anterior</translation>
+        <translation type="unfinished">Restaurar o conteúdo anterior da área de transferência</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="439"/>
@@ -523,7 +523,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Esconder outros segredos:</translation>
+        <translation type="unfinished">Ocultar também outros segredos:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -563,12 +563,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="895"/>
         <source>One field name per line. A line such as &quot;# secret: pin, cvv&quot; marks fields to hide like the password while &quot;Hide password&quot; is on. The same line works in the store&apos;s .templates file, where it counts for every entry of the store, not only those made with that template.</source>
-        <translation type="unfinished">Um nome de campo por linha. Uma linha como &quot;# secret: pin, cvv&quot; marca os campos a ocultar tal como a palavra-passe enquanto &quot;Ocultar palavra-passe&quot; estiver ativado. A mesma linha funciona no ficheiro .templates do armazém, onde se aplica a todas as entradas do armazém, e não apenas às criadas com esse modelo.</translation>
+        <translation type="unfinished">Um nome de campo por linha. Uma linha como &quot;# secret: pin, cvv&quot; marca os campos a ocultar tal como a palavra-passe enquanto &quot;Ocultar palavra-passe&quot; estiver ativado. A mesma linha funciona no ficheiro .templates do repositório, onde se aplica a todas as entradas do repositório, e não apenas às criadas com esse modelo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
         <source>When the store has no Git repository of its own, use the one in a folder above it. Off by default, as with pass, so a store inside another repository (dotfiles, say) is never committed or pushed there by mistake. Native Git only: pass always stops at the store.</source>
-        <translation type="unfinished">Quando o armazém não tem um repositório Git próprio, utilizar o que se encontra numa pasta acima. Desativado por omissão, tal como no pass, para que um armazém dentro de outro repositório (dotfiles, por exemplo) nunca seja submetido ou enviado para lá por engano. Apenas Git nativo: o pass para sempre no armazém.</translation>
+        <translation type="unfinished">Quando o repositório de palavras-passe não tem um repositório Git próprio, utilizar o que se encontra numa pasta acima. Desativado por omissão, tal como no pass, para que um repositório de palavras-passe dentro de outro repositório (dotfiles, por exemplo) nunca seja submetido ou enviado para lá por engano. Apenas Git nativo: o pass para sempre no repositório de palavras-passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1308"/>
@@ -659,12 +659,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="508"/>
         <source>%1 signs with the same key for another store. A recipient list signed for one of these stores is accepted in the other: use a separate signing key for each store whose recipients differ.</source>
-        <translation type="unfinished">%1 assina com a mesma chave para outro armazém. Uma lista de destinatários assinada para um destes armazéns é aceite no outro: utilize uma chave de assinatura separada para cada armazém, cujo destinatário seja diferente.</translation>
+        <translation type="unfinished">%1 assina com a mesma chave para outro repositório. Uma lista de destinatários assinada para um destes repositórios é aceite no outro: utilize uma chave de assinatura separada para cada repositório, cujo destinatário seja diferente.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="536"/>
         <source>pass commits changes in %1 to the Git repository in %2: with a colon in the store&apos;s path, pass cannot keep Git to the store. Run &quot;git init&quot; in the store, or use native Git/GPG.</source>
-        <translation type="unfinished">O pass submete as alterações de %1 no repositório Git em %2: com dois pontos no caminho do armazém, o pass não consegue restringir o Git ao armazém. Execute &quot;git init&quot; no armazém, ou utilize o Git/GPG nativo.</translation>
+        <translation type="unfinished">O pass submete as alterações de %1 no repositório Git em %2: com dois pontos no caminho do repositório de palavras-passe, o pass não consegue restringir o Git ao repositório de palavras-passe. Execute &quot;git init&quot; no repositório de palavras-passe, ou utilize o Git/GPG nativo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="559"/>
@@ -707,7 +707,7 @@ O valor ainda será salvo conforme inserido.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="828"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Deseja criar um armazém de palavras-passe em %1?</translation>
+        <translation type="unfinished">Deseja criar um repositório de palavras-passe em %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="835"/>
@@ -838,7 +838,7 @@ O valor ainda será salvo conforme inserido.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1594"/>
         <source>Active store</source>
-        <translation>Armazém ativo</translation>
+        <translation type="unfinished">Repositório ativo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1634"/>
@@ -920,7 +920,7 @@ O valor ainda será salvo conforme inserido.</translation>
         <location filename="../src/configdialog.ui" line="1604"/>
         <location filename="../src/configdialog.ui" line="1607"/>
         <source>Choose the password store folder</source>
-        <translation>Escolher a pasta do armazém de palavras-passe</translation>
+        <translation type="unfinished">Escolher a pasta do repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="852"/>
@@ -962,17 +962,17 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="481"/>
         <source>Show the password line as dots; Show password reveals it</source>
-        <translation>Mostrar a linha da palavra-passe como pontos; Mostrar password revela-a</translation>
+        <translation type="unfinished">Mostrar a linha da palavra-passe como pontos; Mostrar palavra-passe revela-a</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="492"/>
         <source>Store: %1</source>
-        <translation>Armazém: %1</translation>
+        <translation type="unfinished">Repositório: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="494"/>
         <source>It is already a password store and is used as it is.</source>
-        <translation>Já é um armazém de palavras-passe e é utilizado tal como está.</translation>
+        <translation type="unfinished">Já é um repositório de palavras-passe e é utilizado tal como está.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="496"/>
@@ -1144,18 +1144,18 @@ e-mail</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="134"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Falha ao criar a password-store em: %1</translation>
+        <translation type="unfinished">Falha ao criar o repositório de palavras-passe em: %1</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="152"/>
         <location filename="../src/firstrunwizard.cpp" line="176"/>
         <source>Password store not initialised</source>
-        <translation>Password-store não foi inicializada</translation>
+        <translation type="unfinished">O repositório de palavras-passe não foi inicializado</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="159"/>
         <source>Password store</source>
-        <translation>Armazém de palavras-passe</translation>
+        <translation type="unfinished">Repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="160"/>
@@ -1236,25 +1236,25 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="622"/>
         <source>The signed recipient list %1 was written for the folder &quot;%2&quot; of the store, not for &quot;%3&quot;, and is not used. It may have been copied here by someone else; if the folder was moved or renamed instead, a holder of the signing key opens Users on it and saves the recipients, which binds the list to where it is now.</source>
-        <translation>A lista de destinatários assinada %1 foi escrita para a pasta &quot;%2&quot; do armazém, não para &quot;%3&quot;, e não é utilizada. Pode ter sido copiada para aqui por outra pessoa; se, em vez disso, a pasta foi movida ou renomeada, um detentor da chave de assinatura abre Utilizadores nessa pasta e guarda os destinatários, o que vincula a lista ao local onde está agora.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para a pasta &quot;%2&quot; do repositório, não para &quot;%3&quot;, e não é utilizada. Pode ter sido copiada para aqui por outra pessoa; se, em vez disso, a pasta foi movida ou renomeada, um detentor da chave de assinatura abre Utilizadores nessa pasta e guarda os destinatários, o que vincula a lista ao local onde está agora.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="453"/>
         <source>The list carries more than one store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">A lista contém mais de uma linha de ID do armazém.</translation>
+        <translation type="unfinished">A lista contém mais de uma linha de ID do repositório.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="464"/>
         <source>The store ID line is malformed: %1</source>
         <extracomment>The store ID line is the line of a signed recipient list (.gpg-id) that names the password store by its ID. &quot;Store&quot; is the password store, not a shop.</extracomment>
-        <translation type="unfinished">A linha de ID do armazém está mal formada: %1</translation>
+        <translation type="unfinished">A linha de ID do repositório está mal formada: %1</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="540"/>
         <source>The list carries a store ID line but no generation line.</source>
         <extracomment>The store ID line names the password store by its ID; see the other store ID line messages.</extracomment>
-        <translation type="unfinished">A lista contém uma linha de ID do armazém, mas nenhuma linha de geração.</translation>
+        <translation type="unfinished">A lista contém uma linha de ID do repositório, mas nenhuma linha de geração.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="635"/>
@@ -1269,7 +1269,7 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="659"/>
         <source>The signed recipient list %1 carries no generation line, while generation %2 was accepted here before. pass writes no generation line (also through QtPass&apos;s pass backend), nor did QtPass before 2.0; without one the list may also have been written for another folder of the store and copied here. %3</source>
-        <translation>A lista de destinatários assinada %1 não contém nenhuma linha de geração, embora a geração %2 tenha sido aceite aqui anteriormente. O pass não escreve linha de geração (também não através do backend pass do QtPass), nem o QtPass a escrevia antes da versão 2.0; sem ela, a lista pode também ter sido escrita para outra pasta do armazém e copiada para aqui. %3</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha de geração, embora a geração %2 tenha sido aceite aqui anteriormente. O pass não escreve linha de geração (também não através do backend pass do QtPass), nem o QtPass a escrevia antes da versão 2.0; sem ela, a lista pode também ter sido escrita para outra pasta do repositório e copiada para aqui. %3</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="668"/>
@@ -1316,13 +1316,13 @@ e-mail</translation>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="779"/>
         <source>The signed recipient list %1 was written for another password store (store ID %2; this device knows this store as %3) and is not used. It may have been copied here from a store signed with the same key. If this store was set up again instead, removing %4 forgets the store IDs this device knows.</source>
-        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro armazém de palavras-passe (ID do armazém %2; este dispositivo conhece este armazém como %3) e não é utilizada. Poderá ter sido copiada para aqui de um armazém assinado com a mesma chave. Se, em vez disso, este armazém tiver sido configurado novamente, remover %4 esquece os IDs de armazém que este dispositivo conhece.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 foi escrita para outro repositório de palavras-passe (ID do repositório %2; este dispositivo conhece este repositório como %3) e não é utilizada. Poderá ter sido copiada para aqui de um repositório assinado com a mesma chave. Se, em vez disso, este repositório tiver sido configurado novamente, remover %4 esquece os IDs de repositório que este dispositivo conhece.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="797"/>
         <source>The signed recipient list %1 carries no store ID line, while this device knows this store by its ID %2: it may have been written for another store and copied here, or by an older QtPass. A holder of the signing key gets through by opening Users, selecting the recipients afresh and saving, which writes the store ID line.</source>
         <extracomment>The store ID line is the line of a signed recipient list that names the password store by its ID (%2 here).</extracomment>
-        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha de ID do armazém, embora este dispositivo conheça este armazém pelo seu ID %2: pode ter sido escrita para outro armazém e copiada para aqui, ou por uma versão mais antiga do QtPass. Um detentor da chave de assinatura resolve a situação abrindo Utilizadores, selecionando novamente os destinatários e guardando, o que escreve a linha de ID do armazém.</translation>
+        <translation type="unfinished">A lista de destinatários assinada %1 não contém nenhuma linha de ID do repositório, embora este dispositivo conheça este repositório pelo seu ID %2: pode ter sido escrita para outro repositório e copiada para aqui, ou por uma versão mais antiga do QtPass. Um detentor da chave de assinatura resolve a situação abrindo Utilizadores, selecionando novamente os destinatários e guardando, o que escreve a linha de ID do repositório.</translation>
     </message>
     <message>
         <location filename="../src/gpgidgeneration.cpp" line="841"/>
@@ -1412,7 +1412,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="341"/>
         <source>%1 is not inside the password store, or a folder name on the way holds a line break or another control character, which a signed list cannot record.</source>
-        <translation type="unfinished">%1 não está dentro do armazém de palavras-passe, ou o nome de uma pasta contém um salto de linha ou outro caractere de controle, que uma lista assinada não consegue registar.</translation>
+        <translation type="unfinished">%1 não está dentro do repositório de palavras-passe, ou o nome de uma pasta contém um salto de linha ou outro caractere de controle, que uma lista assinada não consegue registar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="432"/>
@@ -1509,8 +1509,8 @@ Não poderá alterar a lista de utilizadores!</translation>
         <location filename="../src/imitatepass.cpp" line="420"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Nenhuma das chaves selecionadas tem uma chave secreta disponível.
-Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</translation>
+        <translation type="unfinished">Nenhuma das chaves selecionadas tem uma chave secreta disponível.
+Não conseguirá decifrar nenhuma das palavras-passe recentemente adicionadas!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="435"/>
@@ -1567,7 +1567,7 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="1009"/>
         <source>The password store&apos;s Git repository has unmerged files. Resolve the conflict with Git before re-encrypting.</source>
-        <translation type="unfinished">O repositório Git do armazém de palavras-passe tem ficheiros por fundir. Resolva o conflito com o Git antes de recifrar.</translation>
+        <translation type="unfinished">O repositório Git das palavras-passe tem ficheiros por fundir. Resolva o conflito com o Git antes de recifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1324"/>
@@ -1621,12 +1621,12 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="1070"/>
         <source>Not a folder of the store</source>
-        <translation>Não é uma pasta do armazém</translation>
+        <translation type="unfinished">Não é uma pasta do repositório</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1071"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and was not re-encrypted.</source>
-        <translation>%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do armazém de palavras-passe e não foi recifrado.</translation>
+        <translation type="unfinished">%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do repositório de palavras-passe e não foi recifrado.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1086"/>
@@ -1637,7 +1637,7 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
         <location filename="../src/imitatepass.cpp" line="1162"/>
         <location filename="../src/imitatepass.cpp" line="1351"/>
         <source>Updating password-store</source>
-        <translation>A atualizar a password-store</translation>
+        <translation type="unfinished">A atualizar o repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1175"/>
@@ -1648,24 +1648,24 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="1176"/>
         <source>Could not check the store for unmerged files after the pull. Check it with git before re-encrypting.</source>
-        <translation type="unfinished">Não foi possível verificar se o armazém tem ficheiros por fundir após o pull. Verifique-o com o git antes de recifrar.</translation>
+        <translation type="unfinished">Não foi possível verificar se o repositório tem ficheiros por fundir após o pull. Verifique-o com o git antes de recifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1182"/>
         <source>The pull left the store with unmerged files. Resolve the conflict before re-encrypting.</source>
-        <translation>O pull deixou o armazém com ficheiros por fundir. Resolva o conflito antes de recifrar.</translation>
+        <translation type="unfinished">O pull deixou o repositório com ficheiros por fundir. Resolva o conflito antes de recifrar.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1186"/>
         <source>Git pull failed, re-encrypting the store as it is</source>
-        <translation>O Git pull falhou, a recifrar o armazém tal como está</translation>
+        <translation type="unfinished">O Git pull falhou, a recifrar o repositório tal como está</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1197"/>
         <source>%n entr(y/ies) skipped: a symlink, junction or special file is not part of the store.</source>
-        <translation>
-            <numerusform>%n entrada ignorada: uma ligação simbólica, junção ou ficheiro especial não faz parte do armazém.</numerusform>
-            <numerusform>%n entradas ignoradas: uma ligação simbólica, junção ou ficheiro especial não faz parte do armazém.</numerusform>
+        <translation type="unfinished">
+            <numerusform>%n entrada ignorada: uma ligação simbólica, junção ou ficheiro especial não faz parte do repositório.</numerusform>
+            <numerusform>%n entradas ignoradas: uma ligação simbólica, junção ou ficheiro especial não faz parte do repositório.</numerusform>
         </translation>
     </message>
     <message>
@@ -1681,12 +1681,12 @@ Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</tran
     <message>
         <location filename="../src/imitatepass.cpp" line="1252"/>
         <source>Not part of the store</source>
-        <translation type="unfinished">Não faz parte do armazém</translation>
+        <translation type="unfinished">Não faz parte do repositório</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="1253"/>
         <source>%1 is, or lies behind, a symbolic link or junction after pulling. What that points to is not part of the password store and is left alone.</source>
-        <translation type="unfinished">%1 é uma ligação simbólica ou junção, ou está por detrás de uma, após o pull. O destino dessa ligação não faz parte do armazém de palavras-passe e fica intacto.</translation>
+        <translation type="unfinished">%1 é uma ligação simbólica ou junção, ou está por detrás de uma, após o pull. O destino dessa ligação não faz parte do repositório de palavras-passe e fica intacto.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/imitatepass.cpp" line="1322"/>
@@ -1934,7 +1934,7 @@ A recifragem não foi concluída, por isso algumas ou todas as entradas continua
     <message>
         <location filename="../src/firstrunwizard.cpp" line="296"/>
         <source>Passwords are encrypted to GnuPG keys. Tick the keys that should be able to open a new store; you need at least one with its secret half on this machine.</source>
-        <translation>As palavras-passe são cifradas para chaves GnuPG. Assinale as chaves que devem poder abrir um novo armazém; precisa de pelo menos uma com a sua parte secreta nesta máquina.</translation>
+        <translation type="unfinished">As palavras-passe são cifradas para chaves GnuPG. Assinale as chaves que devem poder abrir um novo repositório; precisa de pelo menos uma com a sua parte secreta nesta máquina.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="324"/>
@@ -2052,7 +2052,7 @@ A recifragem não foi concluída, por isso algumas ou todas as entradas continua
     <message>
         <location filename="../src/keygendialog.cpp" line="251"/>
         <source>No password store backend available</source>
-        <translation>Nenhum backend de armazém de palavras-passe disponível</translation>
+        <translation type="unfinished">Nenhum backend de repositório de palavras-passe disponível</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="285"/>
@@ -2101,14 +2101,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1477"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1489"/>
+        <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Delete</source>
         <translation>Remover</translation>
     </message>
@@ -2133,18 +2133,18 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="492"/>
         <source>Manage who can read password in folder</source>
-        <translation>Gerir quem pode ler a password na pasta</translation>
+        <translation type="unfinished">Gerir quem pode ler as palavras-passe na pasta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1471"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
         <source>Users</source>
         <translation>Utilizadores</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content</source>
-        <translation type="unfinished">Pesquisar dentro do conteúdo da palavra-passe</translation>
+        <translation type="unfinished">Pesquisar no conteúdo das palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="344"/>
@@ -2154,7 +2154,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="357"/>
         <source>&amp;Store</source>
-        <translation>&amp;Armazém</translation>
+        <translation type="unfinished">&amp;Repositório</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="368"/>
@@ -2216,7 +2216,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">qtpass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="412"/>
+        <location filename="../src/mainwindow.cpp" line="421"/>
         <source>Welcome to QtPass %1</source>
         <translation>Bem-vindo ao QtPass %1</translation>
     </message>
@@ -2252,18 +2252,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">A inicialização do fusedav, para ligar a WebDAV falhou:</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="540"/>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="563"/>
         <source>Updating password-store</source>
-        <translation>A atualizar a password-store</translation>
+        <translation type="unfinished">A atualizar o repositório de palavras-passe</translation>
     </message>
     <message>
         <source>Password hidden</source>
         <translation type="vanished">Password ocultada</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="650"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="663"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
         <translation>Conteúdo oculto</translation>
     </message>
@@ -2308,12 +2308,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="820"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
         <source>Looking for: %1</source>
         <translation>À procura de: %1</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="983"/>
+        <location filename="../src/mainwindow.cpp" line="1004"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>%n correspondência encontrada</numerusform>
@@ -2335,12 +2335,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">De certeza que deseja remover %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1117"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
         <translation>Remover pasta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="212"/>
+        <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation>A operação excedeu o tempo limite; a reactivar a interface.</translation>
     </message>
@@ -2349,14 +2349,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Saída do processo</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Could not decrypt this password entry</source>
         <translation>Não foi possível decifrar esta entrada de palavra-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete password?</source>
-        <translation>Remover password?</translation>
+        <translation type="unfinished">Remover palavra-passe?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -2379,23 +2379,23 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Nenhum código OTP encontrado nesta entrada de senha</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1464"/>
         <source>Profile changed to %1</source>
         <translation>Perfil mudou para %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1469"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
         <translation>Adicionar pasta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
-        <translation>Adicionar password</translation>
+        <translation type="unfinished">Adicionar palavra-passe</translation>
     </message>
     <message>
         <source>New Folder: 
@@ -2419,10 +2419,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="914"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>Search password</source>
-        <translation>Procurar password</translation>
+        <translation type="unfinished">Procurar palavra-passe</translation>
     </message>
     <message>
         <source>Search inside password content (pass grep)</source>
@@ -2607,40 +2607,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Código OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
-        <location filename="../src/mainwindow.cpp" line="709"/>
-        <location filename="../src/mainwindow.cpp" line="1191"/>
+        <location filename="../src/mainwindow.cpp" line="704"/>
+        <location filename="../src/mainwindow.cpp" line="722"/>
+        <location filename="../src/mainwindow.cpp" line="1346"/>
         <source>OTP code copied to clipboard</source>
         <translation>Código OTP copiado para a área de transferência</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="711"/>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
+        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
         <translation>Nenhum código OTP encontrado nesta entrada de palavra-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Password and content hidden</source>
-        <translation>Password e conteúdo ocultos</translation>
+        <translation type="unfinished">Palavra-passe e conteúdo ocultos</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
         <source>About QtPass</source>
         <translation>Acerca do QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="816"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Uma interface gráfica multiplataforma para o &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, o gestor de palavras-passe padrão do Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Código-fonte e problemas&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licenciado nos termos da &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL versão 3&lt;/a&gt; ou posterior.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="870"/>
+        <location filename="../src/mainwindow.cpp" line="885"/>
         <source>Searching…</source>
         <translation>A pesquisar…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="896"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Search content (regex)</source>
         <translation>Pesquisar conteúdo (regex)</translation>
     </message>
@@ -2649,17 +2649,17 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">A pesquisa de conteúdos utiliza expressões regulares básicas POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation>A pesquisa de conteúdos utiliza expressões regulares compatíveis com Perl (PCRE).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="939"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>No matches found.</source>
         <translation>Nenhuma correspondência encontrada.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>em %n entrada.</numerusform>
@@ -2667,26 +2667,26 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1041"/>
+        <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
         <translation>Nome inválido</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1042"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Esse nome apontaria para fora do armazém de palavras-passe. Escolha outro nome.</translation>
+        <translation type="unfinished">Esse nome apontaria para fora do repositório de palavras-passe. Escolha outro nome.</translation>
     </message>
     <message>
         <source> and the whole content?</source>
         <translation type="vanished"> e todo o conteúdo?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="1279"/>
         <source>Delete link?</source>
         <translation>Remover ligação?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation>%1 é uma ligação simbólica ou junção. Remover a ligação? O destino da ligação fica intacto.</translation>
     </message>
@@ -2695,38 +2695,38 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished"> e todo o conteúdo? &lt;br&gt;&lt;strong&gt;Atenção: há ficheiros inesperados na pasta dada, verificá-los antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1174"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>No password selected for OTP generation</source>
         <translation>Nenhuma palavra-passe selecionada para geração OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Open folder with file manager</source>
         <translation>Abrir pasta com gestor de ficheiros</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1637"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder</source>
         <translation>Renomear pasta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1486"/>
+        <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Rename password</source>
         <translation>Renomear palavra-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1423"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Share</source>
         <translation>Partilhar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="963"/>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… mais correspondências nesta entrada</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>A mostrar a primeira correspondência (%n); faça uma pesquisa mais específica para ver o resto.</numerusform>
@@ -2734,125 +2734,125 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Are you sure you want to delete %1?</source>
         <translation>Tem a certeza de que pretende eliminar %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation>Tem a certeza de que pretende eliminar %1 e todo o seu conteúdo?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1269"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation>Atenção: existem ficheiros inesperados na pasta indicada; verifique-os antes de continuar.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1587"/>
         <source>Re-encrypt all passwords</source>
         <translation>Cifrar novamente todas as palavras-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1592"/>
         <source>Export my public key...</source>
         <translation>Exportar a minha chave pública…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1442"/>
+        <location filename="../src/mainwindow.cpp" line="1596"/>
         <source>Add recipient...</source>
         <translation>Adicionar destinatário…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
+        <location filename="../src/mainwindow.cpp" line="1601"/>
         <source>What is this?</source>
         <translation>O que é isto?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>New folder</source>
         <translation>Nova pasta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Nova pasta:
 (Será posta em %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Pasta oculta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Uma pasta que comece com um ponto ficaria oculta na lista: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder to: </source>
         <translation>Renomeie pasta para: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file to: </source>
         <translation>Renome ficheiro para: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1813"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation>Esta entrada contém um segredo OTP, não uma palavra-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation>A recifrar palavras-passe...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation>A cancelar a recifragem</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1732"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation>A recifrar palavras-passe: %1 de %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1907"/>
+        <location filename="../src/mainwindow.cpp" line="1926"/>
         <source>Export public key</source>
         <translation>Exportar chave pública</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportar a sua chave pública&lt;/h3&gt;&lt;p&gt;Não está configurada nenhuma chave de assinatura. Defina uma em Definições do QtPass &amp;gt; chaves GPG, ou execute o seguinte num terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;De seguida envie o ficheiro aos seus colegas de equipa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1801"/>
+        <location filename="../src/mainwindow.cpp" line="1955"/>
         <source>Not a folder of the store</source>
-        <translation>Não é uma pasta do armazém</translation>
+        <translation type="unfinished">Não é uma pasta do repositório</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1956"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation>%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do armazém de palavras-passe e fica intacto.</translation>
+        <translation type="unfinished">%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do repositório de palavras-passe e fica intacto.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1810"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>Sharing passwords with GPG</source>
         <translation>Partilhar palavras-passe com GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1811"/>
+        <location filename="../src/mainwindow.cpp" line="1965"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Partilhar palavras-passe com GPG&lt;/h3&gt;&lt;p&gt;Para partilhar palavras-passe com outros utilizadores:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporte a sua chave pública&lt;/b&gt; e envie-a aos seus colegas de equipa&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importe as chaves públicas dos colegas de equipa&lt;/b&gt; para o seu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifre novamente as palavras-passe&lt;/b&gt; para que todos os destinatários as possam decifrar&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Apenas pessoas com uma chave secreta correspondente podem decifrar as palavras-passe.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sugestão:&lt;/b&gt; Use a mesma chave GPG para todas as pastas partilhadas.&lt;/p&gt;&lt;p&gt;Consulte as FAQ para mais detalhes.&lt;/p&gt;</translation>
     </message>
@@ -2865,7 +2865,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&lt;h3&gt;Exportar a sua chave pública&lt;/h3&gt;&lt;p&gt;Não está configurada nenhuma chave de assinatura. Defina uma em Definições do QtPass &amp;gt; chaves GPG, ou execute o seguinte num terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;De seguida envie o ficheiro aos seus colegas de equipa.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1927"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2874,7 +2874,7 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>No output from gpg.</source>
         <translation>Sem saída do gpg.</translation>
     </message>
@@ -2891,24 +2891,24 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Reencriptar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1569"/>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1708"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Failed to create folder: %1</source>
         <translation>Falha ao criar a pasta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Falha ao criar o ficheiro .gpg-id em: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file</source>
         <translation>Renomear ficheiro</translation>
     </message>
@@ -2921,18 +2921,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Renome ficheiro para: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>Directory does not exist: %1</source>
         <translation>O diretório não existe: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>Recifrar palavras-passe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1836"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -3007,7 +3007,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="266"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Não foi possível gerar password. Não existe nenhum caracter para escolher do grupo especificado na configuração!</translation>
+        <translation type="unfinished">Não foi possível gerar a palavra-passe. Não existem caracteres para escolher no conjunto definido na configuração!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="404"/>
@@ -3054,19 +3054,19 @@ Continua?</translation>
         <source>The entry is saved in the store, but recording it in git failed. What was reported:
 
 %1</source>
-        <translation type="unfinished">A entrada foi salva no armazém, mas a gravação no Git falhou. O que foi reportado:
+        <translation type="unfinished">A entrada foi salva no repositório, mas a gravação no Git falhou. O que foi reportado:
 
 %1</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="812"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
-        <translation>%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do armazém de palavras-passe e fica intacto.</translation>
+        <translation type="unfinished">%1 é uma ligação simbólica ou junção, ou está por detrás de uma. O destino dessa ligação não faz parte do repositório de palavras-passe e fica intacto.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="829"/>
         <source>%1 is not inside the password store. Recipients are set for the store or a folder in it.</source>
-        <translation type="unfinished">%1 não está dentro do armazém de palavras-passe. Os destinatários estão definidos para o armazém ou uma pasta nele.</translation>
+        <translation type="unfinished">%1 não está dentro do repositório de palavras-passe. Os destinatários estão definidos para o repositório ou uma pasta nele.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="848"/>
@@ -3103,12 +3103,12 @@ Continua?</translation>
         <location filename="../src/pass.cpp" line="891"/>
         <source>The password store&apos;s Git repository is in the middle of a %1. Finish or abort it with Git before changing the password store, or what you change may be lost.</source>
         <extracomment>%1 is a Git command name: rebase, merge, cherry-pick, revert, or &quot;cherry-pick or revert&quot;.</extracomment>
-        <translation type="unfinished">O repositório Git do armazém de palavras-passe está a meio de um %1. Conclua-o ou cancele-o com o Git antes de alterar o armazém de palavras-passe; caso contrário, o que alterar pode perder-se.</translation>
+        <translation type="unfinished">O repositório Git das palavras-passe está a meio de um %1. Conclua-o ou cancele-o com o Git antes de alterar o repositório de palavras-passe; caso contrário, o que alterar pode perder-se.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="904"/>
         <source>The password store is being updated (a Git pull is in progress). Wait until it has finished, then try again.</source>
-        <translation type="unfinished">O armazém de palavras-passe está a ser atualizado (está em curso um Git pull). Aguarde até que termine e tente novamente.</translation>
+        <translation type="unfinished">O repositório de palavras-passe está a ser atualizado (está em curso um Git pull). Aguarde até que termine e tente novamente.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="909"/>
@@ -3123,7 +3123,7 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="932"/>
         <source>Not part of the store</source>
-        <translation>Não faz parte do armazém</translation>
+        <translation type="unfinished">Não faz parte do repositório</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="1027"/>
@@ -3173,7 +3173,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="82"/>
         <source>The folder of the password store the new entry goes into</source>
-        <translation>A pasta do armazém de palavras-passe onde a nova entrada será colocada</translation>
+        <translation type="unfinished">A pasta do repositório de palavras-passe onde a nova entrada será colocada</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="89"/>
@@ -3198,7 +3198,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="141"/>
         <source>Show password</source>
-        <translation>Mostrar password</translation>
+        <translation type="unfinished">Mostrar palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="161"/>
@@ -3246,7 +3246,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="235"/>
         <source>Field template from the store&apos;s .templates file. Ctrl+T switches to the next one.</source>
-        <translation>Modelo de campos do ficheiro .templates do armazém. Ctrl+T muda para o seguinte.</translation>
+        <translation type="unfinished">Modelo de campos do ficheiro .templates do repositório. Ctrl+T muda para o seguinte.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="97"/>
@@ -3291,7 +3291,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="328"/>
         <source>That name would resolve outside the password store.</source>
-        <translation>Esse nome apontaria para fora do armazém de palavras-passe.</translation>
+        <translation type="unfinished">Esse nome apontaria para fora do repositório de palavras-passe.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="336"/>
@@ -3301,7 +3301,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.cpp" line="343"/>
         <source>%1 lies behind a symbolic link or junction, outside the password store.</source>
-        <translation type="unfinished">%1 está por detrás de uma ligação simbólica ou junção, fora do armazém de palavras-passe.</translation>
+        <translation type="unfinished">%1 está por detrás de uma ligação simbólica ou junção, fora do repositório de palavras-passe.</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.cpp" line="349"/>
@@ -3487,7 +3487,7 @@ Continua?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="241"/>
         <location filename="../src/passworddisplaypanel.cpp" line="283"/>
         <source>Password</source>
-        <translation>Password</translation>
+        <translation type="unfinished">Palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="180"/>
@@ -3527,7 +3527,7 @@ Continua?</translation>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="36"/>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="37"/>
         <source>Show password</source>
-        <translation>Mostrar password</translation>
+        <translation type="unfinished">Mostrar palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/qpushbuttonshowpassword.cpp" line="31"/>
@@ -3704,17 +3704,17 @@ Continua?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="369"/>
         <source>Keep the store under Git</source>
-        <translation>Manter o armazém sob Git</translation>
+        <translation type="unfinished">Manter o repositório sob Git</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="371"/>
         <source>Password store</source>
-        <translation>Armazém de palavras-passe</translation>
+        <translation type="unfinished">Repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="372"/>
         <source>The folder your passwords live in. An existing store is used as it is; an empty or missing folder is set up for the keys you ticked.</source>
-        <translation>A pasta onde ficam as suas palavras-passe. Um armazém existente é utilizado tal como está; uma pasta vazia ou inexistente é configurada para as chaves que assinalou.</translation>
+        <translation type="unfinished">A pasta onde ficam as suas palavras-passe. Um repositório existente é utilizado tal como está; uma pasta vazia ou inexistente é configurada para as chaves que assinalou.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="376"/>
@@ -3724,7 +3724,7 @@ Continua?</translation>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="378"/>
         <source>Choose the password store folder</source>
-        <translation>Escolher a pasta do armazém de palavras-passe</translation>
+        <translation type="unfinished">Escolher a pasta do repositório de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="403"/>
@@ -3750,20 +3750,20 @@ e ative depois o Git em Configurações.</translation>
     <message numerus="yes">
         <location filename="../src/firstrunwizard.cpp" line="435"/>
         <source>An existing password store with %n entries.</source>
-        <translation>
-            <numerusform>Um armazém de palavras-passe existente com %n entrada.</numerusform>
-            <numerusform>Um armazém de palavras-passe existente com %n entradas.</numerusform>
+        <translation type="unfinished">
+            <numerusform>Um repositório de palavras-passe existente com %n entrada.</numerusform>
+            <numerusform>Um repositório de palavras-passe existente com %n entradas.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="438"/>
         <source>An empty folder; it will be set up as a password store.</source>
-        <translation>Uma pasta vazia; será configurada como armazém de palavras-passe.</translation>
+        <translation type="unfinished">Uma pasta vazia; será configurada como repositório de palavras-passe.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="439"/>
         <source>This folder is not a password store yet; a .gpg-id for the ticked keys will be written into it.</source>
-        <translation>Esta pasta ainda não é um armazém de palavras-passe; será escrito nela um .gpg-id para as chaves assinaladas.</translation>
+        <translation type="unfinished">Esta pasta ainda não é um repositório de palavras-passe; será escrito nela um .gpg-id para as chaves assinaladas.</translation>
     </message>
     <message>
         <location filename="../src/firstrunwizard.cpp" line="442"/>

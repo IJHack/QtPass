@@ -445,7 +445,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="150"/>
         <source>Show tray icon</source>
-        <translation type="unfinished">Tumia Ikoni ya Trey</translation>
+        <translation type="unfinished">Onyesha ikoni ya trey</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="190"/>
@@ -466,7 +466,7 @@
         <location filename="../src/configdialog.ui" line="352"/>
         <location filename="../src/configdialog.ui" line="531"/>
         <source>seconds</source>
-        <translation type="unfinished">Sekunde</translation>
+        <translation type="unfinished">sekunde</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Also hide other secrets:</source>
-        <translation type="unfinished">Fichia pia siri zingine:</translation>
+        <translation type="unfinished">Ficha pia siri nyingine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="470"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="484"/>
         <source>Default</source>
-        <translation type="unfinished">chaguo la msingi</translation>
+        <translation type="unfinished">Chaguo-msingi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="487"/>
@@ -527,12 +527,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Password generation</source>
-        <translation type="unfinished">Uundaji wa Nenosiri</translation>
+        <translation type="unfinished">Uundaji wa nenosiri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="677"/>
         <source>characters</source>
-        <translation type="unfinished">Herufi</translation>
+        <translation type="unfinished">herufi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="798"/>
@@ -2050,8 +2050,8 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="731"/>
-        <location filename="../src/mainwindow.cpp" line="914"/>
+        <location filename="../src/mainwindow.cpp" line="744"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>Search password</source>
         <translation>Tafuta Nenosiri</translation>
     </message>
@@ -2153,7 +2153,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/mainwindow.ui" line="427"/>
         <location filename="../src/mainwindow.ui" line="430"/>
-        <location filename="../src/mainwindow.cpp" line="1470"/>
+        <location filename="../src/mainwindow.cpp" line="1624"/>
         <source>Add password</source>
         <translation>Ongeza nenosiri</translation>
     </message>
@@ -2165,21 +2165,21 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     <message>
         <location filename="../src/mainwindow.ui" line="438"/>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1469"/>
+        <location filename="../src/mainwindow.cpp" line="1623"/>
         <source>Add folder</source>
         <translation>Ongeza folda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="446"/>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/mainwindow.cpp" line="1477"/>
+        <location filename="../src/mainwindow.cpp" line="1631"/>
         <source>Edit</source>
         <translation>Hariri</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="454"/>
         <location filename="../src/mainwindow.ui" line="457"/>
-        <location filename="../src/mainwindow.cpp" line="1489"/>
+        <location filename="../src/mainwindow.cpp" line="1643"/>
         <source>Delete</source>
         <translation>Futa</translation>
     </message>
@@ -2220,7 +2220,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="489"/>
-        <location filename="../src/mainwindow.cpp" line="1471"/>
+        <location filename="../src/mainwindow.cpp" line="1625"/>
         <source>Users</source>
         <translation>Watumiaji</translation>
     </message>
@@ -2333,7 +2333,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="unfinished">Kuhusu &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="412"/>
+        <location filename="../src/mainwindow.cpp" line="421"/>
         <source>Welcome to QtPass %1</source>
         <translation>Karibu kwenye QtPass %1</translation>
     </message>
@@ -2350,14 +2350,14 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Matokeo ya Mchakato</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="540"/>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="553"/>
+        <location filename="../src/mainwindow.cpp" line="563"/>
         <source>Updating password-store</source>
         <translation>Inasasisha hifadhi ya nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="650"/>
-        <location filename="../src/mainwindow.cpp" line="965"/>
+        <location filename="../src/mainwindow.cpp" line="663"/>
+        <location filename="../src/mainwindow.cpp" line="986"/>
         <source>Content hidden</source>
         <translation>Maudhui yamefichwa</translation>
     </message>
@@ -2370,15 +2370,15 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Msimbo wa OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="691"/>
-        <location filename="../src/mainwindow.cpp" line="709"/>
-        <location filename="../src/mainwindow.cpp" line="1191"/>
+        <location filename="../src/mainwindow.cpp" line="704"/>
+        <location filename="../src/mainwindow.cpp" line="722"/>
+        <location filename="../src/mainwindow.cpp" line="1346"/>
         <source>OTP code copied to clipboard</source>
         <translation>Msimbo wa OTP umenakiliwa kwenye ubao wa kunakili</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="711"/>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
+        <location filename="../src/mainwindow.cpp" line="724"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
         <source>No OTP code found in this password entry</source>
         <translation>Hakuna msimbo wa OTP uliokutwa katika ingizo hili la nenosiri</translation>
     </message>
@@ -2387,27 +2387,27 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Nenosiri na Maudhui yamefichwa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="820"/>
+        <location filename="../src/mainwindow.cpp" line="833"/>
         <source>Looking for: %1</source>
         <translation>Inatafuta: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="870"/>
+        <location filename="../src/mainwindow.cpp" line="885"/>
         <source>Searching…</source>
         <translation>Inatafuta…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="896"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Search content (regex)</source>
         <translation>Tafuta maudhui (regex)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="939"/>
+        <location filename="../src/mainwindow.cpp" line="960"/>
         <source>No matches found.</source>
         <translation>Hakuna mechi zilizopatikana.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="983"/>
+        <location filename="../src/mainwindow.cpp" line="1004"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Imepatikana mechi %n</numerusform>
@@ -2415,7 +2415,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="985"/>
+        <location filename="../src/mainwindow.cpp" line="1006"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>katika ingizo %n.</numerusform>
@@ -2423,12 +2423,12 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1041"/>
+        <location filename="../src/mainwindow.cpp" line="1196"/>
         <source>Invalid name</source>
         <translation type="unfinished">Jina si sahihi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1042"/>
+        <location filename="../src/mainwindow.cpp" line="1197"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
         <translation type="unfinished">Jina hilo lingeelekeza nje ya hifadhi ya nenosiri. Tafadhali chagua jina lingine.</translation>
     </message>
@@ -2449,27 +2449,27 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="212"/>
+        <location filename="../src/mainwindow.cpp" line="221"/>
         <source>Operation timed out; re-enabling interface.</source>
         <translation type="unfinished">Muda wa operesheni umekwisha; kiolesura kinawezeshwa tena.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="680"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Could not decrypt this password entry</source>
         <translation type="unfinished">Haikuweza kusimbua ingizo hili la nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="735"/>
+        <location filename="../src/mainwindow.cpp" line="748"/>
         <source>Password and content hidden</source>
         <translation>Nenosiri na Maudhui yamefichwa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="802"/>
+        <location filename="../src/mainwindow.cpp" line="815"/>
         <source>About QtPass</source>
         <translation type="unfinished">Kuhusu QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="803"/>
+        <location filename="../src/mainwindow.cpp" line="816"/>
         <source>&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;A multi-platform GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard Unix password manager.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Source and issues&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2014&amp;ndash;%2 IJhack. Licensed under the &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL version 3&lt;/a&gt; or later.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;QtPass %1&lt;/h3&gt;&lt;p&gt;Kiolesura cha picha cha majukwaa mengi kwa &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, kidhibiti cha kawaida cha nenosiri cha Unix.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;qtpass.org&lt;/a&gt; &amp;middot; &lt;a href=&quot;https://github.com/IJHack/QtPass&quot;&gt;Msimbo chanzo na masuala&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hakimiliki &amp;copy; 2014&amp;ndash;%2 IJhack. Imetolewa chini ya leseni ya &lt;a href=&quot;https://www.gnu.org/licenses/gpl-3.0.html&quot;&gt;GNU GPL toleo la 3&lt;/a&gt; au toleo jipya zaidi.&lt;/p&gt;</translation>
     </message>
@@ -2478,7 +2478,7 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="obsolete">Utafutaji wa maudhui hutumia semi za kawaida za msingi za POSIX (pass grep).</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="900"/>
+        <location filename="../src/mainwindow.cpp" line="921"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
         <translation type="unfinished">Utafutaji wa maudhui hutumia semi za kawaida zinazooana na Perl (PCRE).</translation>
     </message>
@@ -2493,12 +2493,12 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished"> na maudhui yote?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="1279"/>
         <source>Delete link?</source>
         <translation type="unfinished">Futa kiungo?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1125"/>
+        <location filename="../src/mainwindow.cpp" line="1280"/>
         <source>%1 is a symbolic link or junction. Remove the link? What it points to is left alone.</source>
         <translation type="unfinished">%1 ni kiungo cha ishara au junction. Ondoa kiungo? Kile inachoelekeza hakitaguswa.</translation>
     </message>
@@ -2507,12 +2507,12 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished"> na maudhui yote? &lt;br&gt;&lt;strong&gt;Tahadhari: kuna faili zisizotarajiwa katika folda iliyotolewa, zikague kabla ya kuendelea.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1117"/>
+        <location filename="../src/mainwindow.cpp" line="1272"/>
         <source>Delete folder?</source>
         <translation>Futa folda?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Delete password?</source>
         <translation>Futa nenosiri?</translation>
     </message>
@@ -2521,43 +2521,43 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Je, una uhakika unataka kufuta %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1174"/>
+        <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>No password selected for OTP generation</source>
         <translation>Hakuna nenosiri lililochaguliwa kwa uundaji wa OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1464"/>
         <source>Profile changed to %1</source>
         <translation>Wasifu umebadilishwa kuwa %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <location filename="../src/mainwindow.cpp" line="1622"/>
         <source>Open folder with file manager</source>
         <translation>Fungua folda na kisimamizi cha faili</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1483"/>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1637"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder</source>
         <translation>Badilisha jina la folda</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1486"/>
+        <location filename="../src/mainwindow.cpp" line="1640"/>
         <source>Rename password</source>
         <translation>Badilisha jina la nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1423"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Share</source>
         <translation>Shiriki</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="963"/>
+        <location filename="../src/mainwindow.cpp" line="984"/>
         <source>… more matches in this entry</source>
         <translation type="unfinished">… mechi zaidi katika ingizo hili</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="978"/>
+        <location filename="../src/mainwindow.cpp" line="999"/>
         <source>Showing the first %n match(es); search for something narrower to see the rest.</source>
         <translation type="unfinished">
             <numerusform>Inaonyesha tokeo %n la kwanza; tafuta kitu mahususi zaidi ili kuona mengine.</numerusform>
@@ -2565,95 +2565,95 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Are you sure you want to delete %1?</source>
         <translation type="unfinished">Je, una uhakika unataka kufuta %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1101"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Are you sure you want to delete %1 and the whole content?</source>
         <translation type="unfinished">Je, una uhakika unataka kufuta %1 pamoja na maudhui yake yote?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1269"/>
         <source>Attention: there are unexpected files in the given folder, check them before continuing.</source>
         <translation type="unfinished">Tahadhari: kuna faili zisizotarajiwa kwenye folda uliyotaja, zikague kabla ya kuendelea.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1433"/>
+        <location filename="../src/mainwindow.cpp" line="1587"/>
         <source>Re-encrypt all passwords</source>
         <translation>Simba fiche tena nenosiri zote</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1592"/>
         <source>Export my public key...</source>
         <translation>Hamisha funguo yangu ya umma...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1442"/>
+        <location filename="../src/mainwindow.cpp" line="1596"/>
         <source>Add recipient...</source>
         <translation>Ongeza mpokeaji...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1447"/>
+        <location filename="../src/mainwindow.cpp" line="1601"/>
         <source>What is this?</source>
         <translation>Hii ni nini?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1521"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>New folder</source>
         <translation type="unfinished">Folda mpya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1522"/>
+        <location filename="../src/mainwindow.cpp" line="1676"/>
         <source>New folder: 
 (Will be placed in %1 )</source>
         <translation>Folda Mpya:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1700"/>
         <source>Hidden folder</source>
         <translation type="unfinished">Folda iliyofichwa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1547"/>
+        <location filename="../src/mainwindow.cpp" line="1701"/>
         <source>A folder that starts with a dot would be hidden from the list: %1</source>
         <translation type="unfinished">Folda inayoanza na nukta ingefichwa kwenye orodha: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file to: </source>
         <translation>Badilisha Jina la Faili Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1753"/>
-        <location filename="../src/mainwindow.cpp" line="1772"/>
+        <location filename="../src/mainwindow.cpp" line="1907"/>
+        <location filename="../src/mainwindow.cpp" line="1926"/>
         <source>Export public key</source>
         <translation>Hamisha Funguo ya Umma</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1754"/>
+        <location filename="../src/mainwindow.cpp" line="1908"/>
         <source>&lt;h3&gt;Export your public key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Hamisha Funguo Yako ya Umma&lt;/h3&gt;&lt;p&gt;Hakuna funguo ya kusaini iliyosanidiwa. Weka moja katika Mipangilio ya QtPass &amp;gt; Funguo za GPG, au endesha hii katika kituo:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;kitambulisho-chako-cha-funguo&amp;gt;&lt;/pre&gt;&lt;p&gt;Kisha tuma faili kwa wenzako wa timu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1801"/>
+        <location filename="../src/mainwindow.cpp" line="1955"/>
         <source>Not a folder of the store</source>
         <translation type="unfinished">Si folda ya hifadhi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1802"/>
+        <location filename="../src/mainwindow.cpp" line="1956"/>
         <source>%1 is, or lies behind, a symbolic link or junction. What that points to is not part of the password store and is left alone.</source>
         <translation type="unfinished">%1 ni, au iko nyuma ya, kiungo cha ishara au junction. Kile inachoelekeza si sehemu ya hifadhi ya nenosiri na hakitaguswa.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1810"/>
+        <location filename="../src/mainwindow.cpp" line="1964"/>
         <source>Sharing passwords with GPG</source>
         <translation>Kushiriki Nenosiri kwa GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1811"/>
+        <location filename="../src/mainwindow.cpp" line="1965"/>
         <source>&lt;h3&gt;Sharing passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Kushiriki Nenosiri kwa GPG&lt;/h3&gt;&lt;p&gt;Ili kushiriki nenosiri na watumiaji wengine:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Hamisha funguo yako ya umma&lt;/b&gt; na uitume kwa wenzako wa timu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Leta funguo za umma za wenzako&lt;/b&gt; katika pete yako ya funguo za GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Simba fiche tena nenosiri&lt;/b&gt; ili wapokeaji wote waweze kuzisimua&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ni watu wanaofanana na funguo ya siri pekee wanaoweza kusimua nenosiri.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Kidokezo:&lt;/b&gt; Tumia funguo sawa ya GPG kwa folda zote zinazoshirikishwa.&lt;/p&gt;&lt;p&gt;Angalia FAQ kwa maelezo zaidi.&lt;/p&gt;</translation>
     </message>
@@ -2664,29 +2664,29 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1554"/>
-        <location filename="../src/mainwindow.cpp" line="1569"/>
-        <location filename="../src/mainwindow.cpp" line="1672"/>
+        <location filename="../src/mainwindow.cpp" line="1708"/>
+        <location filename="../src/mainwindow.cpp" line="1723"/>
+        <location filename="../src/mainwindow.cpp" line="1826"/>
         <source>Error</source>
         <translation>Kosa</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1555"/>
+        <location filename="../src/mainwindow.cpp" line="1709"/>
         <source>Failed to create folder: %1</source>
         <translation>Imeshindwa kuunda folda: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1570"/>
+        <location filename="../src/mainwindow.cpp" line="1724"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Imeshindwa kuunda faili ya .gpg-id katika: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1735"/>
         <source>Rename folder to: </source>
         <translation>Badilisha Jina la Folda Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1620"/>
+        <location filename="../src/mainwindow.cpp" line="1774"/>
         <source>Rename file</source>
         <translation>Badilisha jina la faili</translation>
     </message>
@@ -2699,23 +2699,23 @@ Usimbaji fiche tena haukukamilika, kwa hivyo baadhi ya maingizo au yote bado yam
         <translation type="vanished">Badilisha Jina la Faili Kuwa: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1659"/>
+        <location filename="../src/mainwindow.cpp" line="1813"/>
         <source>This entry holds an OTP secret, not a password</source>
         <translation type="unfinished">Ingizo hili lina siri ya OTP, si nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1673"/>
+        <location filename="../src/mainwindow.cpp" line="1827"/>
         <source>Directory does not exist: %1</source>
         <translation>Saraka haipo: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1681"/>
-        <location filename="../src/mainwindow.cpp" line="1714"/>
+        <location filename="../src/mainwindow.cpp" line="1835"/>
+        <location filename="../src/mainwindow.cpp" line="1868"/>
         <source>Re-encrypt passwords</source>
         <translation>Simba fiche tena nenosiri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1682"/>
+        <location filename="../src/mainwindow.cpp" line="1836"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -2732,22 +2732,22 @@ Hii inaweza kuandika upya faili nyingi na haiwezi kutenduliwa nyuma kwa urahisi.
 Endelea?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1712"/>
+        <location filename="../src/mainwindow.cpp" line="1866"/>
         <source>Re-encrypting passwords...</source>
         <translation type="unfinished">Inasimba fiche tena nenosiri...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1713"/>
+        <location filename="../src/mainwindow.cpp" line="1867"/>
         <source>Cancel</source>
         <translation type="unfinished">Ghairi</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1721"/>
+        <location filename="../src/mainwindow.cpp" line="1875"/>
         <source>Cancelling re-encryption</source>
         <translation type="unfinished">Inaghairi usimbaji fiche tena</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1732"/>
+        <location filename="../src/mainwindow.cpp" line="1886"/>
         <source>Re-encrypting passwords: %1 of %2</source>
         <translation type="unfinished">Inasimba fiche tena nenosiri: %1 kati ya %2</translation>
     </message>
@@ -2760,7 +2760,7 @@ Endelea?</translation>
         <translation type="vanished">&lt;h3&gt;Hamisha Funguo Yako ya Umma&lt;/h3&gt;&lt;p&gt;Hakuna funguo ya kusaini iliyosanidiwa. Weka moja katika Mipangilio ya QtPass &amp;gt; Funguo za GPG, au endesha hii katika kituo:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;kitambulisho-chako-cha-funguo&amp;gt;&lt;/pre&gt;&lt;p&gt;Kisha tuma faili kwa wenzako wa timu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1773"/>
+        <location filename="../src/mainwindow.cpp" line="1927"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -2769,7 +2769,7 @@ Endelea?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1775"/>
+        <location filename="../src/mainwindow.cpp" line="1929"/>
         <source>No output from gpg.</source>
         <translation>Hakuna matokeo kutoka gpg.</translation>
     </message>
